@@ -1,71 +1,76 @@
 <template>
   <div>
-    <!-- 欢迎信息 -->
-    <section class="mb-10">
-      <div class="max-w-3xl mx-auto">
-        <h1 class="text-3xl md:text-4xl font-bold mb-4">
-          欢迎使用开发工具站
-        </h1>
-        <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-          高效、免费、简洁的在线工具，让您的工作更轻松
-        </p>
-      </div>
-    </section>
-  
-    <!-- 热门工具 -->
-    <section class="mb-10">
-      <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">热门工具</h2>
-        <a href="#" class="text-primary dark:text-primary-light text-sm hover:underline">查看全部</a>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <div 
-          v-for="tool in popularTools.slice(0, 6)" 
-          :key="tool.id"
-          class="tool-card flex flex-col"
-        >
-          <div class="flex items-start mb-3">
-            <div class="w-10 h-10 rounded bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="tool.icon" />
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-medium">{{ tool.name }}</h3>
-              <p class="text-xs text-gray-500 dark:text-gray-400">{{ tool.category }}</p>
-            </div>
-          </div>
-          <p class="text-sm text-gray-600 dark:text-gray-300 mb-3 flex-grow">{{ tool.description }}</p>
-          <router-link :to="`/tool/${tool.id}`" class="text-sm text-primary dark:text-primary-light hover:underline">使用工具</router-link>
+    <!-- 标签筛选部分 -->
+    <section class="mb-6">
+      <TagFilter v-model="selectedTags" />
+      
+      <!-- 当有选定标签时显示的结果 -->
+      <div v-if="selectedTags.length > 0">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-bold">筛选结果 ({{ filteredTools.length }})</h2>
+        </div>
+        
+        <div v-if="filteredTools.length > 0" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+          <ToolCard 
+            v-for="tool in filteredTools" 
+            :key="tool.id" 
+            :tool="tool"
+            @tag-click="addTagToFilter"
+          />
+        </div>
+        
+        <div v-else class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 text-center mb-10">
+          <p class="text-gray-600 dark:text-gray-400">没有符合所选标签的工具</p>
         </div>
       </div>
     </section>
   
-    <!-- 最新添加 -->
-    <section>
+    <!-- 热门工具部分 -->
+    <section v-if="selectedTags.length === 0" class="mb-10">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">最新添加</h2>
-        <a href="#" class="text-primary dark:text-primary-light text-sm hover:underline">查看全部</a>
+        <h2 class="text-xl font-bold">热门工具</h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <div 
+        <ToolCard 
+          v-for="tool in popularTools.slice(0, 6)" 
+          :key="tool.id"
+          :tool="tool"
+          @tag-click="addTagToFilter"
+        />
+      </div>
+    </section>
+  
+    <!-- 最新添加部分 -->
+    <section v-if="selectedTags.length === 0">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">最新添加</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <ToolCard 
           v-for="tool in newTools.slice(0, 6)" 
           :key="tool.id"
-          class="tool-card flex flex-col"
+          :tool="tool"
+          @tag-click="addTagToFilter"
+        />
+      </div>
+    </section>
+    
+    <!-- 热门标签部分，只在未选择标签时显示 -->
+    <section v-if="selectedTags.length === 0" class="mt-10">
+      <h2 class="text-xl font-bold mb-4">按标签浏览</h2>
+      <div class="flex flex-wrap gap-3">
+        <div 
+          v-for="tag in allTags.slice(0, 12)" 
+          :key="tag.id"
+          @click="addTagToFilter(tag.id)"
+          class="tag-card bg-white dark:bg-gray-800 rounded-lg shadow-sm p-3 cursor-pointer hover:shadow-md transition-shadow"
         >
-          <div class="flex items-start mb-3">
-            <div class="w-10 h-10 rounded bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="tool.icon" />
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-medium">{{ tool.name }}</h3>
-              <p class="text-xs text-gray-500 dark:text-gray-400">{{ tool.category }}</p>
-            </div>
+          <div class="flex items-center">
+            <TagBadge :tag-id="tag.id" />
+            <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">
+              {{ toolsByTag[tag.id].length }}个工具
+            </span>
           </div>
-          <p class="text-sm text-gray-600 dark:text-gray-300 mb-3 flex-grow">{{ tool.description }}</p>
-          <router-link :to="`/tool/${tool.id}`" class="text-sm text-primary dark:text-primary-light hover:underline">使用工具</router-link>
         </div>
       </div>
     </section>
@@ -73,28 +78,102 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, inject, computed, onMounted, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import TagFilter from '../components/ui/TagFilter.vue'
+import TagBadge from '../components/ui/TagBadge.vue'
+import ToolCard from '../components/ui/ToolCard.vue'
 
-// 示例数据
-const categories = ref([
-  { id: 'dev', name: '开发工具', count: 18, icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4' },
-  { id: 'design', name: '设计工具', count: 12, icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
-  { id: 'text', name: '文本工具', count: 9, icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z' },
-  { id: 'image', name: '图像与多媒体工具', count: 14, icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
-  { id: 'convert', name: '转换工具', count: 7, icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4' }
-])
+const route = useRoute()
+const router = useRouter()
 
-const popularTools = ref([
-  { id: 1, name: 'JSON格式化', category: '开发工具', description: '在线JSON格式化与验证工具，支持压缩和美化', icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4' },
-  { id: 2, name: '颜色选择器', category: '设计工具', description: '强大的颜色选择与调色板生成工具', icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01' },
-  { id: 3, name: 'Markdown编辑器', category: '文本工具', description: '简洁易用的Markdown编辑与预览工具', icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z' },
-  { id: 4, name: '图片压缩', category: '图像与多媒体工具', description: '高效无损的图片压缩工具', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' }
-])
+// 注入全局数据
+const allTools = inject('allTools')
+const allTags = inject('allTags')
+const toolsByTag = inject('toolsByTag')
 
-const newTools = ref([
-  { id: 5, name: '正则表达式测试', category: '开发工具', description: '在线正则表达式测试与调试工具', icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4' },
-  { id: 6, name: 'CSS渐变生成器', category: '设计工具', description: '简单易用的CSS渐变背景生成工具', icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01' },
-  { id: 7, name: '二维码生成器', category: '通用工具', description: '自定义生成清晰的二维码图片', icon: 'M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z' },
-  { id: 8, name: 'SVG优化器', category: '图像与多媒体工具', description: '优化SVG文件大小，提升加载性能', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' }
-])
+// 已选标签
+const selectedTags = ref([])
+
+// 从URL获取标签筛选参数
+function getTagsFromUrl() {
+  const tagsParam = route.query.tags
+  if (!tagsParam) return []
+  
+  // 支持单个标签或多个标签（逗号分隔）
+  return Array.isArray(tagsParam) 
+    ? tagsParam 
+    : tagsParam.split(',').map(tag => tag.trim()).filter(Boolean)
+}
+
+// 更新URL以反映当前筛选的标签
+function updateUrlWithTags() {
+  if (selectedTags.value.length === 0) {
+    // 如果没有选择任何标签，则移除URL参数
+    if (route.query.tags) {
+      router.replace({
+        query: { ...route.query, tags: undefined }
+      })
+    }
+    return
+  }
+  
+  // 更新URL，但不触发新的导航
+  router.replace({
+    query: { ...route.query, tags: selectedTags.value.join(',') }
+  })
+}
+
+// 根据所选标签筛选工具
+const filteredTools = computed(() => {
+  if (selectedTags.value.length === 0) return []
+  
+  return allTools.value.filter(tool => {
+    // 检查工具是否包含所有选定的标签
+    return selectedTags.value.every(tag => tool.tags.includes(tag))
+  })
+})
+
+// 添加标签到筛选器
+function addTagToFilter(tagId) {
+  if (!selectedTags.value.includes(tagId)) {
+    selectedTags.value.push(tagId)
+    updateUrlWithTags()
+  }
+}
+
+// 监听URL变化，更新选中的标签
+watch(() => route.query.tags, () => {
+  selectedTags.value = getTagsFromUrl()
+}, { immediate: true })
+
+// 监听选中标签的变化，更新URL
+watch(selectedTags, () => {
+  updateUrlWithTags()
+})
+
+// 示例数据（保留原有数据）
+const popularTools = computed(() => {
+  return allTools.value.slice(0, 4)
+})
+
+const newTools = computed(() => {
+  return [...allTools.value].reverse().slice(0, 4)
+})
+
+// 组件挂载时，同步URL和选中标签状态
+onMounted(() => {
+  selectedTags.value = getTagsFromUrl()
+})
 </script>
+
+<style scoped>
+.tag-card {
+  min-width: 140px;
+  transition: all 0.2s ease;
+}
+
+.tag-card:hover {
+  transform: translateY(-2px);
+}
+</style>

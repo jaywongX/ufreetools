@@ -24,9 +24,23 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="tool.icon" />
           </svg>
         </div>
-        <h1 class="text-2xl md:text-3xl font-bold">{{ tool.name }}</h1>
+        <div>
+          <h1 class="text-2xl md:text-3xl font-bold">{{ tool.name }}</h1>
+          
+          <!-- 工具标签 -->
+          <div class="flex flex-wrap gap-1 mt-2">
+            <router-link 
+              v-for="tag in tool.tags" 
+              :key="tag"
+              :to="`/?tags=${tag}`"
+              class="tag-link"
+            >
+              <TagBadge :tag-id="tag" />
+            </router-link>
+          </div>
+        </div>
       </div>
-      <p class="text-gray-600 dark:text-gray-300">{{ tool.description }}</p>
+      <p class="text-gray-600 dark:text-gray-300 mt-2">{{ tool.description }}</p>
     </div>
     
     <!-- 工具主体区域 -->
@@ -172,43 +186,54 @@
       <!-- JWT调试工具 -->
       <JwtDebugger v-else-if="tool.id === 100" />
       
+      <!-- API请求工具 -->
+      <ApiRequestTool v-else-if="tool.id === 50" />
+      
+      <!-- HTTP头安全检测 -->
+      <HttpHeaderAnalyzer v-else-if="tool.id === 51" />
+      
+      <!-- 请求头批量编辑器 -->
+      <HeadersEditor v-else-if="tool.id === 52" />
+      
+      <!-- 网络测速工具 -->
+      <NetworkSpeedTest v-else-if="tool.id === 53" />
+      
+      <!-- HMAC计算工具 -->
+      <HmacGenerator v-else-if="tool.id === 54" />
+      
+      <!-- 页面重定向检查器 -->
+      <RedirectChecker v-else-if="tool.id === 55" />
+      
+      <!-- IP地址查询 -->
+      <IpLookup v-else-if="tool.id === 56" />
+      
       <!-- 如果没有找到匹配的工具 -->
       <div v-else class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center">
         <p class="text-gray-600 dark:text-gray-400">该工具正在开发中，敬请期待...</p>
       </div>
     </div>
     
-    <!-- 相关工具推荐 -->
-    <div>
+    <!-- 相关工具推荐：基于标签的智能推荐 -->
+    <div class="mt-12">
       <h2 class="text-xl font-bold mb-4">相关工具</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <div 
+      
+      <div v-if="relatedTools.length > 0" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <ToolCard 
           v-for="relatedTool in relatedTools" 
           :key="relatedTool.id"
-          class="tool-card"
-        >
-          <div class="flex items-start mb-2">
-            <div class="w-8 h-8 rounded bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="relatedTool.icon" />
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-medium">{{ relatedTool.name }}</h3>
-              <p class="text-xs text-gray-500 dark:text-gray-400">{{ relatedTool.category }}</p>
-            </div>
-          </div>
-          <router-link :to="`/tool/${relatedTool.id}`" class="text-sm text-primary dark:text-primary-light hover:underline">
-            使用工具
-          </router-link>
-        </div>
+          :tool="relatedTool"
+        />
+      </div>
+      
+      <div v-else class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 text-center">
+        <p class="text-gray-600 dark:text-gray-400">没有找到相关工具</p>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, inject } from 'vue'
 import { useRoute } from 'vue-router'
 import JSONFormatter from '../components/tools/JSONFormatter.vue'
 import RegexTester from '../components/tools/RegexTester.vue'
@@ -258,6 +283,15 @@ import UserAgentGenerator from '../components/tools/UserAgentGenerator.vue'
 import UrlParamsParser from '../components/tools/UrlParamsParser.vue'
 import ProxyDetector from '../components/tools/ProxyDetector.vue'
 import JwtDebugger from '../components/tools/JwtDebugger.vue'
+import ApiRequestTool from '../components/tools/ApiRequestTool.vue'
+import HttpHeaderAnalyzer from '../components/tools/HttpHeaderAnalyzer.vue'
+import HeadersEditor from '../components/tools/HeadersEditor.vue'
+import NetworkSpeedTest from '../components/tools/NetworkSpeedTest.vue'
+import HmacGenerator from '../components/tools/HmacGenerator.vue'
+import RedirectChecker from '../components/tools/RedirectChecker.vue'
+import IpLookup from '../components/tools/IpLookup.vue'
+import TagBadge from '../components/ui/TagBadge.vue'
+import ToolCard from '../components/ui/ToolCard.vue'
 
 const route = useRoute()
 
@@ -312,7 +346,14 @@ const allTools = ref([
   { id: 46, name: 'User-Agent生成器', category: '网络与协议工具', description: '生成各种浏览器和设备的User-Agent字符串，用于网站测试、爬虫和开发', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', categoryId: 'network' },
   { id: 48, name: 'URL参数解析器', category: '网络与协议工具', description: '解析和查看URL查询参数，支持多种格式转换和导出选项', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', categoryId: 'network' },
   { id: 49, name: '前端代理检测器', category: '网络与协议工具', description: '检测您的连接是否使用了HTTP代理，分析X-Forwarded-For等代理相关的头信息', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', categoryId: 'network' },
-  { id: 100, name: 'JWT调试工具', category: '开发工具', description: '解析、验证和调试JWT令牌的在线工具', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', categoryId: 'dev' }
+  { id: 100, name: 'JWT调试工具', category: '开发工具', description: '解析、验证和调试JWT令牌的在线工具', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', categoryId: 'dev' },
+  { id: 50, name: 'API请求工具', category: '网络与协议工具', description: '类似Hoppscotch的API测试工具，支持多种HTTP方法、请求头和请求体格式', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', categoryId: 'network' },
+  { id: 51, name: 'HTTP头安全检测', category: '网络与协议工具', description: '分析网站的HTTP响应头，检测CSP、HSTS等安全配置，并提供改进建议', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', categoryId: 'network' },
+  { id: 52, name: '请求头批量编辑器', category: '网络与协议工具', description: '使用Headers API批量编辑、验证和格式化HTTP请求头，支持多种格式导出', icon: 'M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z', categoryId: 'network' },
+  { id: 53, name: '网络测速工具', category: '网络与协议工具', description: '测量资源加载时间，分析网络连接质量和性能', icon: 'M13 10V3L4 14h7v7l9-11h-7z', categoryId: 'network' },
+  { id: 54, name: 'HMAC计算工具', category: '数据与加密工具', description: '使用密钥生成消息认证码，支持多种哈希算法和输出格式', icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z', categoryId: 'crypto' },
+  { id: 55, name: '页面重定向检查器', category: '网络与协议工具', description: '检测和分析网页的重定向链，包括重定向类型、耗时和性能影响', icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm12 0a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z', categoryId: 'network' },
+  { id: 56, name: 'IP地址查询工具', category: '网络与协议工具', description: '查询IP地址的地理位置、ISP和ASN信息，支持IPv4和IPv6', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', categoryId: 'network' }
 ])
 
 // 当前工具信息
@@ -322,16 +363,40 @@ const tool = computed(() => {
     category: '',
     description: '您请求的工具不存在',
     icon: 'M6 18L18 6M6 6l12 12',
-    categoryId: ''
+    categoryId: '',
+    tags: []
   }
 })
 
-// 相关工具推荐（同类别的其他工具）
+// 相关工具推荐（基于标签的智能推荐）
 const relatedTools = computed(() => {
-  if (!tool.value.categoryId) return []
+  if (!tool.value.tags || tool.value.tags.length === 0) return []
   
-  return allTools.value
-    .filter(item => item.categoryId === tool.value.categoryId && item.id !== toolId.value)
+  // 构建工具相似度评分
+  const toolScores = allTools.value
+    .filter(item => item.id !== tool.value.id) // 排除当前工具
+    .map(item => {
+      // 计算共同标签数量
+      const commonTags = item.tags.filter(tag => tool.value.tags.includes(tag))
+      return {
+        ...item,
+        score: commonTags.length / Math.sqrt(item.tags.length * tool.value.tags.length) // 余弦相似度简化版
+      }
+    })
+    .filter(item => item.score > 0) // 只保留有共同标签的工具
+    .sort((a, b) => b.score - a.score) // 按相似度降序排列
     .slice(0, 4) // 最多显示4个相关工具
+  
+  return toolScores
 })
-</script> 
+</script>
+
+<style scoped>
+.tag-link {
+  transition: all 0.2s;
+}
+
+.tag-link:hover {
+  transform: translateY(-1px);
+}
+</style> 

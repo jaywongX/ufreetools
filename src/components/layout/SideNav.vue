@@ -1,606 +1,150 @@
 <template>
-  <aside class="w-64 bg-white dark:bg-gray-800 h-[calc(100vh-64px)] flex flex-col">
-    <div class="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600">
-      <div class="p-6">
-        <!-- 导航菜单 -->
-        <nav class="space-y-6">
-          <!-- 开发工具 -->
-          <div>
-            <div 
-              class="flex items-center justify-between text-gray-700 dark:text-gray-300 mb-2 cursor-pointer"
-              @click="toggleCategory('dev')"
-            >
-              <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-                <span>开发工具</span>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" :class="{'rotate-180': !expandedCategories.dev}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+  <aside 
+    class="min-h-screen bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-300"
+    :class="{ 'w-16': !sidebarOpen, 'w-64': sidebarOpen }"
+  >
+    <!-- 站点标题和Logo -->
+    <div class="h-16 flex items-center px-4 border-b border-gray-200 dark:border-gray-700">
+      <router-link to="/" class="flex items-center">
+        <!-- 仅在展开时显示文字 -->
+        <span v-if="sidebarOpen" class="font-bold text-xl text-primary">ufreetools</span>
+        <!-- 收起时只显示图标 -->
+        <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+        </svg>
+      </router-link>
+      
+      <!-- 展开/收起按钮 -->
+      <button 
+        @click="toggleSidebar"
+        class="ml-auto text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path v-if="sidebarOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+          <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- 导航内容 -->
+    <div class="overflow-y-auto h-[calc(100vh-64px)] scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600">
+      <nav class="p-4">
+        <div class="mb-4">
+          <h2 v-if="sidebarOpen" class="font-medium text-sm text-gray-500 dark:text-gray-400 px-3 mb-2">主导航</h2>
+          <router-link 
+            to="/" 
+            class="block py-2 px-3 rounded-md mb-1 font-medium transition-colors"
+            :class="isActive('/') ? 'bg-gray-100 dark:bg-gray-700 text-primary dark:text-primary-light' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'"
+          >
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
+              <span v-if="sidebarOpen" class="ml-2">首页</span>
             </div>
-            <ul class="ml-7 space-y-1 overflow-hidden transition-all" :class="{'h-0': !expandedCategories.dev, 'py-1': expandedCategories.dev}">
-              <li>
-                <router-link 
-                  to="/tool/1" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  JSON格式化
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/100" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  JWT调试工具
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/14" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  Mock API生成器
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/13" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  SQL格式化
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/12" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  时间戳转换
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/5" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  正则表达式测试
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/11" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  Base64编解码
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/9" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  代码美化/压缩
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/tool/10" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block">
-                  代码差异比较
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/15" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  HTTP状态码查询
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/18" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  URL编码/解码
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/19" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  HTML实体编码
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/20" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  XML解析/格式化
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/22" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  CSS压缩/美化
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/23" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  WebSocket测试
-                </router-link>
-              </li>
-              <li>
-                <a href="#" class="text-gray-500 dark:text-gray-500 text-sm py-1 block">
-                  查看全部...
-                </a>
-              </li>
-            </ul>
-          </div>
+          </router-link>
           
-          <!-- 设计工具 -->
-          <div>
-            <div 
-              class="flex items-center justify-between text-gray-700 dark:text-gray-300 mb-2 cursor-pointer"
-              @click="toggleCategory('design')"
-            >
-              <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#6366F1]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                </svg>
-                <span>设计工具</span>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" :class="{'rotate-180': !expandedCategories.design}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          <router-link 
+            to="/tags" 
+            class="block py-2 px-3 rounded-md mb-1 font-medium transition-colors"
+            :class="isActive('/tags') ? 'bg-gray-100 dark:bg-gray-700 text-primary dark:text-primary-light' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'"
+          >
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
               </svg>
+              <span v-if="sidebarOpen" class="ml-2">标签云</span>
             </div>
-            <ul class="ml-7 space-y-1 overflow-hidden transition-all" :class="{'h-0': !expandedCategories.design, 'py-1': expandedCategories.design}">
-              <li>
-                <router-link to="/tool/2" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block">
-                  颜色选择器
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/tool/6" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block">
-                  CSS渐变生成器
-                </router-link>
-              </li>
-              <li>
-                <a href="#" class="text-gray-500 dark:text-gray-500 text-sm py-1 block">
-                  查看全部...
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          <!-- 文本工具 -->
-          <div>
-            <div 
-              class="flex items-center justify-between text-gray-700 dark:text-gray-300 mb-2 cursor-pointer"
-              @click="toggleCategory('text')"
-            >
-              <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#EC4899]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+          </router-link>
+        </div>
+        
+        <!-- 工具分类 -->
+        <div>
+          <h2 v-if="sidebarOpen" class="font-medium text-sm text-gray-500 dark:text-gray-400 px-3 mb-2">工具分类</h2>
+          <div v-for="category in categories" :key="category.id" class="mb-1">
+            <!-- 分类标题 -->
+            <div class="flex items-center">
+              <router-link 
+                :to="`/category/${category.id}`" 
+                class="flex-1 block py-2 px-3 rounded-md font-medium transition-colors"
+                :class="isActive(`/category/${category.id}`) ? 'bg-gray-100 dark:bg-gray-700 text-primary dark:text-primary-light' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="category.icon" />
+                    </svg>
+                    <span v-if="sidebarOpen" class="ml-2">{{ category.name }}</span>
+                  </div>
+                  <span v-if="sidebarOpen && toolsByCategory && toolsByCategory[category.id]" 
+                    class="text-xs px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-full"
+                  >
+                    {{ toolsByCategory[category.id].length }}
+                  </span>
+                </div>
+              </router-link>
+              
+              <!-- 展开/折叠按钮 - 仅在侧边栏展开时显示 -->
+              <button 
+                v-if="sidebarOpen && toolsByCategory[category.id]?.length > 0"
+                @click="toggleCategory(category.id)"
+                class="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none"
+                :aria-label="expandedCategories[category.id] ? '折叠分类' : '展开分类'"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" :class="{ 'rotate-180': expandedCategories[category.id] }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
-                <span>文本工具</span>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" :class="{'rotate-180': !expandedCategories.text}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+              </button>
             </div>
-            <ul class="ml-7 space-y-1 overflow-hidden transition-all" :class="{'h-0': !expandedCategories.text, 'py-1': expandedCategories.text}">
-              <li>
-                <router-link to="/tool/3" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block">
-                  Markdown编辑器
-                </router-link>
-              </li>
-              <li>
-                <a href="#" class="text-gray-500 dark:text-gray-500 text-sm py-1 block">
-                  查看全部...
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          <!-- 图像与多媒体工具 -->
-          <div>
-            <div 
-              class="flex items-center justify-between text-gray-700 dark:text-gray-300 mb-2 cursor-pointer"
-              @click="toggleCategory('image')"
-            >
-              <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <span>图像与多媒体工具</span>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" :class="{'rotate-180': !expandedCategories.image}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+            
+            <!-- 分类下的工具列表 - 仅在展开时显示 -->
+            <div v-if="sidebarOpen && expandedCategories[category.id] && toolsByCategory[category.id]?.length > 0"
+                 class="ml-5 pl-4 border-l border-gray-200 dark:border-gray-700 my-1 py-1">
+              <router-link 
+                v-for="tool in toolsByCategory[category.id]" 
+                :key="tool.id"
+                :to="`/tool/${tool.id}`"
+                class="block py-1.5 px-3 rounded-md text-sm transition-colors"
+                :class="isActive(`/tool/${tool.id}`) ? 'text-primary dark:text-primary-light font-medium' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'"
+              >
+                {{ tool.name }}
+              </router-link>
             </div>
-            <ul class="ml-7 space-y-1 overflow-hidden transition-all" :class="{'h-0': !expandedCategories.image, 'py-1': expandedCategories.image}">
-              <li>
-                <router-link to="/tool/4" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block">
-                  图片压缩
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/tool/8" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block">
-                  SVG优化器
-                </router-link>
-              </li>
-              <li>
-                <a href="#" class="text-gray-500 dark:text-gray-500 text-sm py-1 block">
-                  查看全部...
-                </a>
-              </li>
-            </ul>
           </div>
-          
-          <!-- 转换工具 -->
-          <div>
-            <div 
-              class="flex items-center justify-between text-gray-700 dark:text-gray-300 mb-2 cursor-pointer"
-              @click="toggleCategory('convert')"
-            >
-              <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#F59E0B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                </svg>
-                <span>转换工具</span>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" :class="{'rotate-180': !expandedCategories.convert}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-            <ul class="ml-7 space-y-1 overflow-hidden transition-all" :class="{'h-0': !expandedCategories.convert, 'py-1': expandedCategories.convert}">
-              <li>
-                <router-link to="/tool/7" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block">
-                  二维码生成器
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/24" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  YAML/JSON转换
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/25" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  Markdown转HTML
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/44" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  CSV/JSON转换
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/45" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  进制转换工具
-                </router-link>
-              </li>
-              <li>
-                <a href="#" class="text-gray-500 dark:text-gray-500 text-sm py-1 block">
-                  查看全部...
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          <!-- 数据与加密工具 -->
-          <div>
-            <div 
-              class="flex items-center justify-between text-gray-700 dark:text-gray-300 mb-2 cursor-pointer"
-              @click="toggleCategory('crypto')"
-            >
-              <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-                <span>数据与加密工具</span>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" :class="{'rotate-180': !expandedCategories.crypto}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-            <ul class="ml-7 space-y-1 overflow-hidden transition-all" :class="{'h-0': !expandedCategories.crypto, 'py-1': expandedCategories.crypto}">
-              <li>
-                <router-link 
-                  to="/tool/27" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  密码生成器
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/28" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  密码强度检测
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/29" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  哈希运算
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/30" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  RSA算法
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/31" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  SM2算法
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/37" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  对称加密算法
-                </router-link>
-              </li>
-              <li>
-                <a href="#" class="text-gray-500 dark:text-gray-500 text-sm py-1 block">
-                  查看全部...
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          <!-- 网络与协议工具 -->
-          <div>
-            <div 
-              class="flex items-center justify-between text-gray-700 dark:text-gray-300 mb-2 cursor-pointer"
-              @click="toggleCategory('network')"
-            >
-              <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                </svg>
-                <span>网络与协议工具</span>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" :class="{'rotate-180': !expandedCategories.network}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-            <ul class="ml-7 space-y-1 overflow-hidden transition-all" :class="{'h-0': !expandedCategories.network, 'py-1': expandedCategories.network}">
-              <li>
-                <router-link 
-                  to="/tool/32" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  API请求工具
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/33" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  CORS配置生成器
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/34" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  MQTT消息测试
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/35" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  cURL转代码
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/36" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  gRPC调试器
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/46" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  User-Agent生成器
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/48" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  URL参数解析器
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/49" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  前端代理检测器
-                </router-link>
-              </li>
-              <li>
-                <a href="#" class="text-gray-500 dark:text-gray-500 text-sm py-1 block">
-                  更多工具即将上线...
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          <!-- 添加新的代码处理工具类别 -->
-          <div>
-            <div 
-              class="flex items-center justify-between text-gray-700 dark:text-gray-300 mb-2 cursor-pointer"
-              @click="toggleCategory('codeproc')"
-            >
-              <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <span>代码处理工具</span>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" :class="{'rotate-180': !expandedCategories.codeproc}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-            <ul class="ml-7 space-y-1 overflow-hidden transition-all" :class="{'h-0': !expandedCategories.codeproc, 'py-1': expandedCategories.codeproc}">
-              <li>
-                <router-link 
-                  to="/tool/38" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  代码混淆
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/39" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  OpenAPI→TS客户端
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/42" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  代码片段管理器
-                </router-link>
-              </li>
-              <li>
-                <router-link 
-                  to="/tool/43" 
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
-                  active-class="text-primary dark:text-primary-light font-medium"
-                >
-                  敏感词过滤
-                </router-link>
-              </li>
-              <li>
-                <a href="#" class="text-gray-500 dark:text-gray-500 text-sm py-1 block">
-                  更多代码处理工具即将上线...
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </div>
   </aside>
 </template>
 
 <script setup>
-import { ref, reactive, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { inject, computed, ref } from 'vue'
+import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const router = useRouter()
+const sidebarOpen = inject('sidebarOpen')
+const categories = inject('categories')
+const toolsByCategory = inject('toolsByCategory')
 
-// 监听路由变化
-watch(() => route.path, (newPath) => {
-  console.log('当前路由路径:', newPath)
-})
+// 跟踪哪些分类是展开的
+const expandedCategories = ref({})
 
-// 定义各分类是否展开的状态
-const expandedCategories = reactive({
-  dev: true,
-  design: true,
-  text: true,
-  image: true,
-  convert: true,
-  crypto: true,
-  network: true,
-  codeproc: true // 新增代码处理工具类别
-})
-
-// 添加手动导航功能进行测试
-function testNavigation(toolId) {
-  console.log('尝试导航到工具:', toolId)
-  router.push(`/tool/${toolId}`)
+// 切换分类的展开/折叠状态
+function toggleCategory(categoryId) {
+  expandedCategories.value[categoryId] = !expandedCategories.value[categoryId]
 }
 
-// 切换分类展开/收起状态
-function toggleCategory(category) {
-  expandedCategories[category] = !expandedCategories[category]
+// 检查当前路由是否激活
+function isActive(path) {
+  if (path === '/') {
+    return route.path === '/'
+  }
+  return route.path.startsWith(path)
+}
+
+// 切换侧边栏展开/关闭状态
+function toggleSidebar() {
+  sidebarOpen.value = !sidebarOpen.value
 }
 </script>
 

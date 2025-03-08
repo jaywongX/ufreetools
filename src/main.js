@@ -26,6 +26,25 @@ const router = createRouter({
       path: '/about',
       name: 'About',
       component: () => import('./pages/AboutPage.vue')
+    },
+    {
+      path: '/search',
+      component: () => import('./pages/SearchPage.vue')
+    },
+    {
+      path: '/contact',
+      name: 'Contact',
+      component: () => import('./pages/ContactPage.vue')
+    },
+    {
+      path: '/tag/:id',
+      name: 'Tag',
+      component: () => import('./pages/TagPage.vue')
+    },
+    {
+      path: '/tags',
+      name: 'Tags',
+      component: () => import('./pages/TagsPage.vue')
     }
   ]
 })

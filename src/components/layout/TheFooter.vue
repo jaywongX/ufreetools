@@ -4,7 +4,7 @@
       <div class="flex flex-col md:flex-row justify-between items-center">
         <!-- 版权信息 -->
         <div class="text-sm text-gray-500 dark:text-gray-400 mb-4 md:mb-0">
-          © {{ new Date().getFullYear() }} 开发工具站. 保留所有权利.
+          © {{ new Date().getFullYear() }} ufreetools. 保留所有权利.
         </div>
         
         <!-- 页脚导航 -->
