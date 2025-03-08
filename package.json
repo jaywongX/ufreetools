@@ -41,12 +41,12 @@
     "sm-crypto": "^0.3.13",
     "terser": "^5.39.0",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "censor-sensor": "^1.0.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
     "autoprefixer": "^10.4.20",
-    "censor-sensor": "^1.0.6",
     "highlight.js": "^11.7.0",
     "jwt-decode": "^4.0.0",
     "localforage": "^1.10.0",
