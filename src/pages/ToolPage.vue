@@ -169,6 +169,9 @@
       <!-- 前端代理检测器 -->
       <ProxyDetector v-else-if="tool.id === 49" />
       
+      <!-- JWT调试工具 -->
+      <JwtDebugger v-else-if="tool.id === 100" />
+      
       <!-- 如果没有找到匹配的工具 -->
       <div v-else class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center">
         <p class="text-gray-600 dark:text-gray-400">该工具正在开发中，敬请期待...</p>
@@ -254,6 +257,7 @@ import BaseNumberConverter from '../components/tools/BaseNumberConverter.vue'
 import UserAgentGenerator from '../components/tools/UserAgentGenerator.vue'
 import UrlParamsParser from '../components/tools/UrlParamsParser.vue'
 import ProxyDetector from '../components/tools/ProxyDetector.vue'
+import JwtDebugger from '../components/tools/JwtDebugger.vue'
 
 const route = useRoute()
 
@@ -307,7 +311,8 @@ const allTools = ref([
   { id: 45, name: '进制转换工具', category: '转换工具', description: '在二进制、八进制、十进制和十六进制等多种进制间转换，支持大数字', icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4', categoryId: 'convert' },
   { id: 46, name: 'User-Agent生成器', category: '网络与协议工具', description: '生成各种浏览器和设备的User-Agent字符串，用于网站测试、爬虫和开发', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', categoryId: 'network' },
   { id: 48, name: 'URL参数解析器', category: '网络与协议工具', description: '解析和查看URL查询参数，支持多种格式转换和导出选项', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', categoryId: 'network' },
-  { id: 49, name: '前端代理检测器', category: '网络与协议工具', description: '检测您的连接是否使用了HTTP代理，分析X-Forwarded-For等代理相关的头信息', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', categoryId: 'network' }
+  { id: 49, name: '前端代理检测器', category: '网络与协议工具', description: '检测您的连接是否使用了HTTP代理，分析X-Forwarded-For等代理相关的头信息', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', categoryId: 'network' },
+  { id: 100, name: 'JWT调试工具', category: '开发工具', description: '解析、验证和调试JWT令牌的在线工具', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', categoryId: 'dev' }
 ])
 
 // 当前工具信息

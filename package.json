@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.2.0",
+    "censor-sensor": "^1.0.6",
     "clean-css": "^5.3.3",
     "complexity-report": "^2.0.0-alpha",
     "crypto-js": "^4.2.0",
@@ -26,6 +27,7 @@
     "hygen": "^6.2.11",
     "isomorphic-git": "^1.24.5",
     "javascript-obfuscator": "^4.1.0",
+    "jose": "^6.0.8",
     "js-beautify": "^1.15.4",
     "js-yaml": "^4.1.0",
     "jsencrypt": "^3.3.2",
@@ -41,8 +43,7 @@
     "sm-crypto": "^0.3.13",
     "terser": "^5.39.0",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0",
-    "censor-sensor": "^1.0.6"
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",

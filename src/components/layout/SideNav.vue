@@ -32,6 +32,15 @@
               </li>
               <li>
                 <router-link 
+                  to="/tool/100" 
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
+                  active-class="text-primary dark:text-primary-light font-medium"
+                >
+                  JWT调试工具
+                </router-link>
+              </li>
+              <li>
+                <router-link 
                   to="/tool/14" 
                   class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light text-sm py-1 block"
                   active-class="text-primary dark:text-primary-light font-medium"
