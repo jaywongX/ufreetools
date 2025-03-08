@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义工具类 */
+@layer components {
+  .tool-card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow p-4 hover:shadow-md transition-shadow;
+  }
+  
+  .nav-link {
+    @apply px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary-light transition-colors duration-200;
+  }
+  
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark focus:ring-primary;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* 新增的样式 */
+  .btn-sm {
+    @apply px-3 py-1.5 rounded-md text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 flex items-center;
+  }
+}
+
+:root {
+  --color-primary: #3B82F6;
+  --color-primary-dark: #2563EB;
+  --color-primary-light: #60A5FA;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.dark .text-primary-light {
+  color: var(--color-primary-light);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.hover\:bg-primary-dark:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.focus\:ring-primary:focus {
+  --tw-ring-color: var(--color-primary);
+}

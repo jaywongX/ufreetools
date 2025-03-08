@@ -1,0 +1,339 @@
+<template>
+  <div>
+    <!-- 工具配置区域 -->
+    <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">User-Agent 生成器</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+        生成各种浏览器和设备的 User-Agent 字符串，用于网站测试、爬虫和开发
+      </p>
+      
+      <!-- 过滤选项 -->
+      <div class="mb-4">
+        <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">过滤条件</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- 浏览器选择 -->
+          <div>
+            <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">浏览器</label>
+            <select 
+              v-model="filters.browser" 
+              class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+            >
+              <option value="">所有浏览器</option>
+              <option value="chrome">Chrome</option>
+              <option value="firefox">Firefox</option>
+              <option value="safari">Safari</option>
+              <option value="opera">Opera</option>
+              <option value="edge">Edge</option>
+              <option value="ie">Internet Explorer</option>
+            </select>
+          </div>
+          
+          <!-- 操作系统选择 -->
+          <div>
+            <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">操作系统</label>
+            <select 
+              v-model="filters.os" 
+              class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+            >
+              <option value="">所有系统</option>
+              <option value="windows">Windows</option>
+              <option value="macos">macOS</option>
+              <option value="linux">Linux</option>
+              <option value="android">Android</option>
+              <option value="ios">iOS</option>
+            </select>
+          </div>
+          
+          <!-- 设备类型选择 -->
+          <div>
+            <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">设备类型</label>
+            <select 
+              v-model="filters.deviceType" 
+              class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+            >
+              <option value="">所有设备</option>
+              <option value="desktop">桌面电脑</option>
+              <option value="mobile">移动设备</option>
+              <option value="tablet">平板电脑</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 生成数量和操作按钮 -->
+      <div class="flex flex-col sm:flex-row gap-4 mb-4">
+        <div class="w-full sm:w-1/3">
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">生成数量</label>
+          <input 
+            v-model.number="generateCount" 
+            type="number" 
+            min="1" 
+            max="100"
+            class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+          >
+        </div>
+        <div class="flex gap-2 items-end flex-1">
+          <button 
+            @click="generateRandomUserAgents" 
+            class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark flex-1"
+          >
+            生成随机 User-Agent
+          </button>
+          <button 
+            @click="clearResults" 
+            class="px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-md"
+          >
+            清空结果
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 结果展示区域 -->
+    <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">生成结果</h3>
+        <button 
+          v-if="userAgents.length > 0"
+          @click="copyAllUserAgents" 
+          class="px-3 py-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 text-sm rounded-md flex items-center"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+          </svg>
+          复制全部
+        </button>
+      </div>
+      
+      <div v-if="userAgents.length === 0" class="text-center py-8 text-gray-500 dark:text-gray-400">
+        请点击"生成随机 User-Agent"按钮生成结果
+      </div>
+      
+      <div v-else class="space-y-3">
+        <div 
+          v-for="(ua, index) in userAgents" 
+          :key="index"
+          class="bg-gray-50 dark:bg-gray-750 p-3 rounded-md border border-gray-200 dark:border-gray-700"
+        >
+          <div class="flex justify-between items-start mb-2">
+            <div class="text-sm font-medium text-gray-700 dark:text-gray-300">
+              {{ getBrowserIconAndName(ua) }}
+              <span class="px-2 py-0.5 ml-2 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded text-xs">
+                {{ getOSName(ua) }}
+              </span>
+              <span v-if="getDeviceType(ua)" class="px-2 py-0.5 ml-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 rounded text-xs">
+                {{ getDeviceType(ua) }}
+              </span>
+            </div>
+            <button 
+              @click="copyUserAgent(ua)" 
+              class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              title="复制到剪贴板"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            </button>
+          </div>
+          <div class="text-xs font-mono text-gray-600 dark:text-gray-400 break-all">
+            {{ ua }}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 常用 User-Agent 说明 -->
+    <div class="mt-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
+      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">User-Agent 格式说明</h3>
+      
+      <div class="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+        <p>User-Agent 字符串通常包含浏览器名称、版本、操作系统和设备信息等，格式如下：</p>
+        <pre class="bg-gray-50 dark:bg-gray-750 p-3 rounded-md border border-gray-200 dark:border-gray-700 text-xs font-mono overflow-x-auto">Mozilla/5.0 (平台信息) 引擎信息 浏览器信息</pre>
+        
+        <h4 class="font-medium text-gray-700 dark:text-gray-300 mt-4">常见 User-Agent 示例：</h4>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><strong>Chrome (Windows):</strong> <span class="text-xs font-mono">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36</span></li>
+          <li><strong>Firefox (macOS):</strong> <span class="text-xs font-mono">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0</span></li>
+          <li><strong>Safari (iOS):</strong> <span class="text-xs font-mono">Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1</span></li>
+        </ul>
+        
+        <h4 class="font-medium text-gray-700 dark:text-gray-300 mt-4">使用场景：</h4>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>网站兼容性测试</li>
+          <li>爬虫和数据采集</li>
+          <li>API开发和测试</li>
+          <li>绕过浏览器检测</li>
+          <li>模拟不同设备访问</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, reactive, computed } from 'vue'
+import randomUseragent from 'random-useragent'
+
+// 过滤条件
+const filters = reactive({
+  browser: '',
+  os: '',
+  deviceType: ''
+})
+
+// 生成数量
+const generateCount = ref(5)
+
+// 存储生成的UA列表
+const userAgents = ref([])
+
+// 生成随机User-Agent
+function generateRandomUserAgents() {
+  userAgents.value = []
+  
+  // 清除现有结果并生成新的
+  const count = Math.min(Math.max(generateCount.value, 1), 100) // 限制数量在1-100之间
+  
+  for (let i = 0; i < count; i++) {
+    let ua = null
+    
+    // 根据过滤条件获取UA
+    if (filters.browser || filters.os || filters.deviceType) {
+      // 构建过滤条件
+      const filterOptions = {}
+      
+      if (filters.browser) {
+        filterOptions.browserName = filters.browser
+      }
+      
+      if (filters.os) {
+        filterOptions.osName = filters.os
+      }
+      
+      if (filters.deviceType) {
+        filterOptions.deviceType = filters.deviceType
+      }
+      
+      // 尝试获取匹配的UA，最多尝试10次
+      for (let attempt = 0; attempt < 10; attempt++) {
+        ua = randomUseragent.getRandom(function(agent) {
+          let match = true
+          
+          if (filterOptions.browserName && !agent.browserName.toLowerCase().includes(filterOptions.browserName.toLowerCase())) {
+            match = false
+          }
+          
+          if (filterOptions.osName && !agent.osName.toLowerCase().includes(filterOptions.osName.toLowerCase())) {
+            match = false
+          }
+          
+          if (filterOptions.deviceType && agent.deviceType !== filterOptions.deviceType) {
+            match = false
+          }
+          
+          return match
+        })
+        
+        if (ua) break
+      }
+      
+      // 如果无法找到匹配的UA，使用完全随机的
+      if (!ua) {
+        ua = randomUseragent.getRandom()
+      }
+    } else {
+      // 没有过滤条件，直接随机获取
+      ua = randomUseragent.getRandom()
+    }
+    
+    // 添加到结果列表
+    if (ua && !userAgents.value.includes(ua)) {
+      userAgents.value.push(ua)
+    } else {
+      // 如果重复或为空，尝试再次获取
+      i--
+    }
+  }
+}
+
+// 清空结果
+function clearResults() {
+  userAgents.value = []
+}
+
+// 复制单个User-Agent
+function copyUserAgent(ua) {
+  navigator.clipboard.writeText(ua)
+    .then(() => {
+      alert('已复制到剪贴板')
+    })
+    .catch(err => {
+      console.error('复制失败:', err)
+      alert('复制失败，请手动复制')
+    })
+}
+
+// 复制所有User-Agent
+function copyAllUserAgents() {
+  if (userAgents.value.length === 0) return
+  
+  const text = userAgents.value.join('\n\n')
+  
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      alert('已复制所有User-Agent到剪贴板')
+    })
+    .catch(err => {
+      console.error('复制失败:', err)
+      alert('复制失败，请手动复制')
+    })
+}
+
+// 获取浏览器图标和名称
+function getBrowserIconAndName(ua) {
+  try {
+    const info = randomUseragent.parse(ua)
+    if (!info || !info.browserName) return '未知浏览器'
+    
+    const browserName = info.browserName
+    const version = info.browserVersion ? ` ${info.browserVersion}` : ''
+    
+    return `${browserName}${version}`
+  } catch (err) {
+    console.error('解析浏览器信息失败:', err)
+    return '未知浏览器'
+  }
+}
+
+// 获取操作系统名称
+function getOSName(ua) {
+  try {
+    const info = randomUseragent.parse(ua)
+    if (!info || !info.osName) return '未知系统'
+    
+    return info.osName
+  } catch (err) {
+    console.error('解析操作系统信息失败:', err)
+    return '未知系统'
+  }
+}
+
+// 获取设备类型
+function getDeviceType(ua) {
+  try {
+    const info = randomUseragent.parse(ua)
+    if (!info || !info.deviceType) return null
+    
+    const deviceTypeMap = {
+      'mobile': '移动设备',
+      'desktop': '桌面电脑',
+      'tablet': '平板电脑'
+    }
+    
+    return deviceTypeMap[info.deviceType] || info.deviceType
+  } catch (err) {
+    console.error('解析设备类型失败:', err)
+    return null
+  }
+}
+</script> 
