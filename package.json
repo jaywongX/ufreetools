@@ -22,7 +22,6 @@
     "estraverse": "^5.3.0",
     "fast-xml-parser": "^4.3.4",
     "grpc-web": "^1.4.2",
-    "highlight.js": "^11.11.1",
     "html-minifier-terser": "^7.2.0",
     "hygen": "^6.2.11",
     "isomorphic-git": "^1.24.5",
@@ -48,7 +47,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
     "autoprefixer": "^10.4.20",
-    "highlight.js": "^11.7.0",
+    "highlight.js": "^11.11.1",
     "jwt-decode": "^4.0.0",
     "localforage": "^1.10.0",
     "papaparse": "^5.4.1",
