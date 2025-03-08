@@ -132,20 +132,22 @@
           <div>
             <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">浏览器信息</h4>
             <table class="w-full text-sm">
-              <tr class="border-b border-gray-200 dark:border-gray-700">
-                <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">名称</td>
-                <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.browser.name }}</td>
-              </tr>
-              <tr class="border-b border-gray-200 dark:border-gray-700">
-                <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">版本</td>
-                <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.browser.version }}</td>
-              </tr>
-              <tr class="border-b border-gray-200 dark:border-gray-700">
-                <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">引擎</td>
-                <td class="py-2 font-medium text-gray-800 dark:text-gray-200">
-                  {{ parsedResult.engine.name || '未知' }} {{ parsedResult.engine.version || '' }}
-                </td>
-              </tr>
+              <tbody>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">名称</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.browser.name }}</td>
+                </tr>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">版本</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.browser.version }}</td>
+                </tr>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">引擎</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">
+                    {{ parsedResult.engine.name || '未知' }} {{ parsedResult.engine.version || '' }}
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
           
@@ -153,18 +155,20 @@
           <div>
             <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">操作系统信息</h4>
             <table class="w-full text-sm">
-              <tr class="border-b border-gray-200 dark:border-gray-700">
-                <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">名称</td>
-                <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.os.name }}</td>
-              </tr>
-              <tr class="border-b border-gray-200 dark:border-gray-700">
-                <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">版本</td>
-                <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.os.version || '未知' }}</td>
-              </tr>
-              <tr class="border-b border-gray-200 dark:border-gray-700">
-                <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">平台</td>
-                <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.cpu.architecture || '未知' }}</td>
-              </tr>
+              <tbody>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">名称</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.os.name }}</td>
+                </tr>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">版本</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.os.version || '未知' }}</td>
+                </tr>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">平台</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.cpu.architecture || '未知' }}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
           
@@ -172,18 +176,20 @@
           <div>
             <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">设备信息</h4>
             <table class="w-full text-sm">
-              <tr class="border-b border-gray-200 dark:border-gray-700">
-                <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">类型</td>
-                <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ getDeviceTypeName(parsedResult.device.type) }}</td>
-              </tr>
-              <tr class="border-b border-gray-200 dark:border-gray-700">
-                <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">品牌</td>
-                <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.vendor || '未知' }}</td>
-              </tr>
-              <tr class="border-b border-gray-200 dark:border-gray-700">
-                <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">型号</td>
-                <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.model || '未知' }}</td>
-              </tr>
+              <tbody>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">类型</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ getDeviceTypeName(parsedResult.device.type) }}</td>
+                </tr>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">品牌</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.vendor || '未知' }}</td>
+                </tr>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">型号</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.model || '未知' }}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
           
@@ -191,18 +197,20 @@
           <div>
             <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">其他信息</h4>
             <table class="w-full text-sm">
-              <tr class="border-b border-gray-200 dark:border-gray-700">
-                <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">移动设备</td>
-                <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.type === 'mobile' ? '是' : '否' }}</td>
-              </tr>
-              <tr class="border-b border-gray-200 dark:border-gray-700">
-                <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">平板电脑</td>
-                <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.type === 'tablet' ? '是' : '否' }}</td>
-              </tr>
-              <tr class="border-b border-gray-200 dark:border-gray-700">
-                <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">桌面设备</td>
-                <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.type === 'desktop' ? '是' : '否' }}</td>
-              </tr>
+              <tbody>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">移动设备</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.type === 'mobile' ? '是' : '否' }}</td>
+                </tr>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">平板电脑</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.type === 'tablet' ? '是' : '否' }}</td>
+                </tr>
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">桌面设备</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.type === 'desktop' ? '是' : '否' }}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
