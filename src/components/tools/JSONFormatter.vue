@@ -143,23 +143,9 @@ const message = ref('');
 const messageType = ref('success');
 const isProcessing = ref(false);
 
-// 示例JSON数据
-const sampleJSON = {
-  "name": "JSON格式化工具",
-  "version": "1.0.0",
-  "description": "一个简单的在线JSON格式化工具",
-  "features": ["格式化", "压缩", "验证"],
-  "isAwesome": true,
-  "stats": {
-    "users": 1000,
-    "rating": 4.9
-  }
-};
-
 // 初始化
 onMounted(() => {
-  // 可以添加示例数据便于测试
-  jsonInput.value = JSON.stringify(sampleJSON);
+  // 移除示例数据初始化
 });
 
 // 格式化JSON

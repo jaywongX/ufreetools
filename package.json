@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "build": "npm run generate-sitemap && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -31,6 +32,7 @@
     "grpc-web": "^1.4.2",
     "html-minifier-terser": "^7.2.0",
     "hygen": "^6.2.11",
+    "iconv-lite": "^0.6.3",
     "isomorphic-git": "^1.24.5",
     "javascript-obfuscator": "^4.1.0",
     "jimp": "^0.22.10",
