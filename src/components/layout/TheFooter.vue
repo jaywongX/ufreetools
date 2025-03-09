@@ -10,17 +10,14 @@
         <!-- 页脚导航 -->
         <div class="flex space-x-4">
           <a href="#" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
-            关于我们
-          </a>
-          <a href="#" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
             隐私政策
           </a>
           <a href="#" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
             使用条款
           </a>
-          <a href="#" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
+          <router-link to="/about" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
             联系我们
-          </a>
+          </router-link>
         </div>
       </div>
     </div>

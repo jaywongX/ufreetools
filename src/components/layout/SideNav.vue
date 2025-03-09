@@ -103,9 +103,9 @@
               <router-link 
                 v-for="tool in toolsByCategory[category.id]" 
                 :key="tool.id"
-                :to="`/tool/${tool.id}`"
+                :to="`/tool/${tool.id.toString()}`"
                 class="block py-1.5 px-3 rounded-md text-sm transition-colors"
-                :class="isActive(`/tool/${tool.id}`) ? 'text-primary dark:text-primary-light font-medium' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'"
+                :class="isActive(`/tool/${tool.id.toString()}`) ? 'text-primary dark:text-primary-light font-medium' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'"
               >
                 {{ tool.name }}
               </router-link>

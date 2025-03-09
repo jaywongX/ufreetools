@@ -1,597 +1,404 @@
 <template>
-  <div>
-    <!-- 工具配置区域 -->
-    <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">Git冲突解决模拟器</h2>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        模拟Git合并冲突场景，练习解决代码冲突，提高版本控制技能
-      </p>
-      
-      <!-- 冲突场景选择 -->
-      <div class="mb-6">
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          选择冲突场景
-        </label>
-        <select 
-          v-model="selectedScenario"
-          class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-          @change="loadScenario"
-        >
-          <option value="" selected disabled>-- 选择一个冲突场景 --</option>
-          <option v-for="scenario in scenarios" :key="scenario.id" :value="scenario.id">
-            {{ scenario.name }} - {{ scenario.description }}
-          </option>
-        </select>
-      </div>
-      
-      <!-- 自定义冲突 -->
-      <div class="mb-6">
-        <div class="flex items-center justify-between mb-2">
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-            或者创建自定义冲突场景
-          </label>
+  <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+    <h1 class="text-2xl font-bold mb-4">Git 冲突解决模拟器</h1>
+    <p class="mb-6 text-gray-600 dark:text-gray-400">
+      此工具可以帮助你理解并练习解决 Git 合并冲突。输入冲突内容或使用示例，然后手动解决冲突。
+    </p>
+
+    <!-- 控制区 -->
+    <div class="mb-6 flex flex-wrap gap-4">
           <button 
-            @click="toggleCustomConflict" 
-            class="text-xs text-primary hover:text-primary-dark"
+        @click="generateExample" 
+        class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition"
           >
-            {{ showCustomConflict ? '隐藏' : '显示' }}
+        生成示例冲突
           </button>
-        </div>
-        
-        <div v-if="showCustomConflict" class="border border-gray-200 dark:border-gray-700 rounded-md p-4">
-          <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              原始文件内容
-            </label>
-            <textarea 
-              v-model="customConflict.original" 
-              placeholder="输入原始文件内容..."
-              class="w-full h-24 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
-            ></textarea>
-          </div>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            <div>
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                分支A的更改
-              </label>
-              <textarea 
-                v-model="customConflict.branchA" 
-                placeholder="分支A的修改版本..."
-                class="w-full h-24 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
-              ></textarea>
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                分支B的更改
-              </label>
-              <textarea 
-                v-model="customConflict.branchB" 
-                placeholder="分支B的修改版本..."
-                class="w-full h-24 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
-              ></textarea>
-            </div>
-          </div>
-          
-          <div class="flex justify-end">
             <button 
-              @click="createCustomConflict" 
-              class="px-3 py-1.5 bg-primary text-white rounded-md hover:bg-primary-dark"
-              :disabled="!isCustomConflictValid"
-            >
-              创建冲突
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- 冲突解决区域 -->
-    <div v-if="conflictFile" class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 mb-6">
-      <div class="mb-4">
-        <div class="flex justify-between items-center mb-2">
-          <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">解决冲突</h3>
-          <div class="flex gap-2">
-            <button 
-              @click="useVersion('ours')" 
-              class="px-3 py-1.5 text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600"
-            >
-              使用我们的版本
+        @click="resolveUsingOurs" 
+        class="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-md transition"
+        :disabled="!hasConflict"
+      >
+        使用我的更改 (HEAD)
             </button>
             <button 
-              @click="useVersion('theirs')" 
-              class="px-3 py-1.5 text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600"
+        @click="resolveUsingTheirs" 
+        class="px-4 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-md transition"
+        :disabled="!hasConflict"
             >
-              使用他们的版本
+        使用他们的更改
             </button>
-          </div>
-        </div>
-        
-        <div class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-          <p>文件: <span class="font-mono">{{ conflictFile.path }}</span></p>
-          <p class="mt-1">
-            冲突标记: <code class="bg-gray-100 dark:bg-gray-700 px-1 rounded"><<<<<<< HEAD</code> (当前分支) 和 
-            <code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">>>>>>>> branch-name</code> (合并分支)
-          </p>
-        </div>
-      </div>
-      
-      <!-- 编辑器区域 -->
-      <div class="border border-gray-200 dark:border-gray-700 rounded-md mb-4 overflow-hidden">
-        <div ref="editorContainer" class="h-96"></div>
-      </div>
-      
-      <!-- 操作按钮 -->
-      <div class="flex justify-center gap-4">
-        <button 
-          @click="resolveConflict" 
-          class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark"
-        >
-          解决冲突
+            <button 
+        @click="validateResolution" 
+        class="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-md transition"
+        :disabled="!hasConflict"
+      >
+        验证解决方案
         </button>
         <button 
-          @click="resetConflict" 
-          class="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600"
+        @click="resetContent" 
+        class="px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-md transition"
         >
           重置
         </button>
+    </div>
+
+    <!-- 状态消息 -->
+    <div v-if="message" class="mb-6" :class="messageClass">
+      <div class="p-4 rounded-md">
+        <p>{{ message }}</p>
       </div>
     </div>
     
-    <!-- 解决结果 -->
-    <div v-if="resolvedContent" class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">解决结果</h3>
-      
-      <div v-if="resolveSuccess" class="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-md mb-4">
-        <div class="flex items-start">
-          <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <div>
-            <p class="text-green-800 dark:text-green-200">冲突已成功解决！</p>
-            <p class="text-sm text-green-600 dark:text-green-300 mt-1">
-              在实际的Git仓库中，您现在可以继续提交这个解决方案。
-            </p>
+    <!-- 编辑区 -->
+    <div class="mb-6">
+      <div class="flex justify-between items-center mb-2">
+        <label for="conflictArea" class="text-lg font-semibold">冲突内容</label>
+        <div class="text-sm text-gray-600 dark:text-gray-400">
+          <span v-if="hasConflict" class="text-red-500">⚠️ 存在未解决冲突</span>
+          <span v-else class="text-green-500">✓ 无冲突</span>
           </div>
         </div>
+      <textarea
+        id="conflictArea"
+        v-model="content"
+        class="w-full h-80 p-4 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md font-mono text-sm"
+        @input="analyzeContent"
+      ></textarea>
       </div>
       
-      <div v-else class="p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-md mb-4">
-        <div class="flex items-start">
-          <svg class="h-5 w-5 text-yellow-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-          </svg>
+    <!-- 冲突解释 -->
+    <div v-if="conflicts.length > 0" class="mb-6">
+      <h2 class="text-xl font-semibold mb-3">冲突分析</h2>
+      <div 
+        v-for="(conflict, index) in conflicts" 
+        :key="index"
+        class="p-4 mb-4 bg-gray-100 dark:bg-gray-700 rounded-md"
+      >
+        <h3 class="font-semibold mb-2">冲突 #{{ index + 1 }}</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <p class="text-yellow-800 dark:text-yellow-200">檢測到未完全解决的冲突</p>
-            <p class="text-sm text-yellow-600 dark:text-yellow-300 mt-1">
-              請確保所有冲突標記 (&lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt;) 都已移除。
-            </p>
+            <h4 class="font-medium text-blue-600 dark:text-blue-400 mb-1">我的更改 (HEAD)</h4>
+            <pre class="p-3 bg-blue-50 dark:bg-blue-900 rounded border border-blue-200 dark:border-blue-800 overflow-x-auto">{{ conflict.ours }}</pre>
+          </div>
+          <div>
+            <h4 class="font-medium text-purple-600 dark:text-purple-400 mb-1">他们的更改</h4>
+            <pre class="p-3 bg-purple-50 dark:bg-purple-900 rounded border border-purple-200 dark:border-purple-800 overflow-x-auto">{{ conflict.theirs }}</pre>
           </div>
         </div>
+        <div class="mt-3">
+          <button 
+            @click="resolveConflict(index, 'ours')" 
+            class="mr-2 px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded-md text-sm transition"
+          >
+            使用我的
+          </button>
+          <button 
+            @click="resolveConflict(index, 'theirs')" 
+            class="mr-2 px-3 py-1 bg-purple-500 hover:bg-purple-600 text-white rounded-md text-sm transition"
+          >
+            使用他们的
+          </button>
+          <button 
+            @click="resolveConflict(index, 'both')" 
+            class="px-3 py-1 bg-green-500 hover:bg-green-600 text-white rounded-md text-sm transition"
+          >
+            合并两者
+          </button>
       </div>
-      
-      <!-- 显示解决后的内容 -->
-      <div class="mt-4">
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          解决后的代码
-        </label>
-        <div class="border border-gray-200 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-900 p-4 font-mono text-sm whitespace-pre-wrap overflow-auto max-h-60">
-          {{ resolvedContent }}
         </div>
       </div>
       
-      <!-- 学习资源 -->
-      <div class="mt-6">
-        <h4 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-2">
-          Git合并冲突解决技巧
-        </h4>
-        <ul class="list-disc pl-5 space-y-1 text-sm text-gray-600 dark:text-gray-400">
-          <li>始终先理解两边的更改含义，再尝试解决冲突</li>
-          <li>保留两边更改也是一种有效的解决方案</li>
-          <li>使用<code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">git diff</code>查看详细的更改差异</li>
-          <li>使用<code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">git merge --abort</code>可随时取消合并</li>
-          <li>冲突解决后使用<code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">git add &lt;文件&gt;</code>标记为已解决</li>
+    <!-- 教程部分 -->
+    <div class="mt-8 bg-gray-100 dark:bg-gray-700 p-6 rounded-lg">
+      <h2 class="text-xl font-semibold mb-3">如何解决 Git 冲突</h2>
+      <p class="mb-3">
+        Git 冲突通常在合并或变基操作中出现，当两个分支修改了同一文件的同一部分时会发生冲突。
+      </p>
+      <p class="mb-3">
+        冲突标记通常看起来像这样：
+      </p>
+      <pre class="p-3 bg-gray-200 dark:bg-gray-800 rounded mb-4 overflow-x-auto">
+<<<<<<< HEAD
+你的更改 (当前分支)
+=======
+他们的更改 (合并进来的分支)
+>>>>>>> 分支名称
+      </pre>
+      <p class="mb-3">
+        解决冲突的基本步骤：
+      </p>
+      <ol class="list-decimal pl-6 mb-3 space-y-1">
+        <li>找到所有冲突标记 (<code><<<<<<< HEAD</code>, <code>=======</code>, <code>>>>>>> 分支名</code>)</li>
+        <li>决定保留哪些代码（你的、他们的，或者两者的组合）</li>
+        <li>删除冲突标记，保留你决定要保留的代码</li>
+        <li>继续处理下一个冲突，直到解决所有冲突</li>
+      </ol>
+      <p>
+        常用的 Git 命令：
+      </p>
+      <ul class="list-disc pl-6 space-y-1">
+        <li><code>git status</code> - 查看哪些文件有冲突</li>
+        <li><code>git diff</code> - 查看冲突的详细内容</li>
+        <li><code>git merge --abort</code> - 取消合并，回到合并前的状态</li>
+        <li><code>git add &lt;文件&gt;</code> - 标记冲突文件为已解决</li>
+        <li><code>git commit</code> - 完成合并</li>
         </ul>
-      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, watch, nextTick } from 'vue'
-import * as monaco from 'monaco-editor'
-import { DiffMatchPatch } from 'diff-match-patch'
+import { ref, computed, onMounted } from 'vue'
 
-// 编辑器实例
-let editor = null
-const editorContainer = ref(null)
+// 内容和冲突状态
+const content = ref('')
+const conflicts = ref([])
+const message = ref('')
+const messageClass = ref('')
 
-// 当前冲突文件
-const conflictFile = ref(null)
-const originalContent = ref('')
-const resolvedContent = ref('')
-const resolveSuccess = ref(false)
-
-// 场景选择
-const selectedScenario = ref('')
-const showCustomConflict = ref(false)
-
-// 自定义冲突
-const customConflict = reactive({
-  original: '',
-  branchA: '',
-  branchB: ''
-})
-
-const isCustomConflictValid = computed(() => {
-  return customConflict.original && customConflict.branchA && customConflict.branchB
-})
-
-// 预设冲突场景
-const scenarios = [
+// 示例冲突
+const examples = [
   {
-    id: 'feature-readme',
-    name: '功能说明文档冲突',
-    description: '两个开发者修改了同一个README文件',
-    content: {
-      path: 'README.md',
-      base: `# 项目说明\n\n这是一个示例项目。\n\n## 功能\n\n- 用户管理\n- 数据分析\n- 报表导出\n\n## 开发环境\n\n- Node.js 14+\n- npm 6+\n\n## 安装方法\n\n\`\`\`bash\nnpm install\nnpm start\n\`\`\``,
-      ours: `# 项目说明\n\n这是一个示例项目，提供完整的企业级解决方案。\n\n## 功能\n\n- 用户管理\n- 数据分析\n- 报表导出\n- 权限控制\n- 审计日志\n\n## 开发环境\n\n- Node.js 14+\n- npm 6+\n\n## 安装方法\n\n\`\`\`bash\nnpm install\nnpm start\n\`\`\``,
-      theirs: `# 项目说明\n\n这是一个示例项目。\n\n## 功能\n\n- 用户管理\n- 数据分析\n- 报表导出\n\n## 开发环境\n\n- Node.js 16+\n- npm 8+\n- MongoDB 5+\n- Redis 6+\n\n## 安装方法\n\n\`\`\`bash\nnpm install\nnpm run dev\n\`\`\``
-    }
+    title: "简单函数冲突",
+    content: `function calculateTotal(items) {
+<<<<<<< HEAD
+  return items.reduce((sum, item) => sum + item.price, 0);
+=======
+  return items.reduce((total, item) => total + (item.price * item.quantity), 0);
+>>>>>>> feature/add-quantity
+}`
   },
   {
-    id: 'js-function',
-    name: 'JavaScript函数冲突',
-    description: '两个开发者修改了同一个JavaScript函数',
-    content: {
-      path: 'src/utils.js',
-      base: `/**
- * 格式化日期
- * @param {Date} date 日期对象
- * @returns {string} 格式化后的日期字符串
- */
-function formatDate(date) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  return \`\${year}-\${month}-\${day}\`;
-}
-
-/**
- * 计算两个数的和
- */
-function add(a, b) {
-  return a + b;
-}
-
-module.exports = {
-  formatDate,
-  add
-};`,
-      ours: `/**
- * 格式化日期
- * @param {Date} date 日期对象
- * @param {string} format 日期格式，默认为YYYY-MM-DD
- * @returns {string} 格式化后的日期字符串
- */
-function formatDate(date, format = 'YYYY-MM-DD') {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  
-  let result = format;
-  result = result.replace('YYYY', year);
-  result = result.replace('MM', month);
-  result = result.replace('DD', day);
-  
-  return result;
-}
-
-/**
- * 计算两个数的和
- */
-function add(a, b) {
-  return a + b;
-}
-
-module.exports = {
-  formatDate,
-  add
-};`,
-      theirs: `/**
- * 格式化日期
- * @param {Date} date 日期对象
- * @returns {string} 格式化后的日期字符串
- */
-function formatDate(date) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  const hours = String(date.getHours()).padStart(2, '0');
-  const minutes = String(date.getMinutes()).padStart(2, '0');
-  const seconds = String(date.getSeconds()).padStart(2, '0');
-  return \`\${year}-\${month}-\${day} \${hours}:\${minutes}:\${seconds}\`;
-}
-
-/**
- * 计算两个数的和
- */
-function add(a, b) {
-  return a + b;
-}
-
-module.exports = {
-  formatDate,
-  add
-};`
-    }
-  },
-  {
-    id: 'config-conflict',
-    name: '配置文件冲突',
-    description: '两个开发者修改了同一个配置文件',
-    content: {
-      path: 'config.json',
-      base: `{
-  "app": {
-    "name": "MyApp",
-    "version": "1.0.0",
-    "port": 3000,
-    "debug": false
-  },
-  "database": {
-    "host": "localhost",
-    "port": 27017,
-    "name": "myapp"
-  },
-  "logging": {
-    "level": "info",
-    "file": "logs/app.log"
-  }
-}`,
-      ours: `{
-  "app": {
-    "name": "MyApp",
-    "version": "1.1.0",
-    "port": 3000,
-    "debug": true,
-    "timeout": 30000
-  },
-  "database": {
-    "host": "localhost",
-    "port": 27017,
-    "name": "myapp"
-  },
-  "logging": {
-    "level": "debug",
-    "file": "logs/app.log"
-  }
-}`,
-      theirs: `{
-  "app": {
-    "name": "MyApp Pro",
-    "version": "1.0.0",
-    "port": 4000,
-    "debug": false
-  },
-  "database": {
-    "host": "mongodb",
-    "port": 27017,
-    "name": "myapp",
-    "user": "admin",
-    "password": "secret"
-  },
-  "logging": {
-    "level": "info",
-    "file": "logs/app.log"
+    title: "配置文件冲突",
+    content: `{
+  "name": "project-name",
+  "version": "1.0.0",
+<<<<<<< HEAD
+  "description": "Updated project description",
+  "dependencies": {
+    "react": "^17.0.2",
+    "lodash": "^4.17.21"
+=======
+  "description": "A sample project",
+  "dependencies": {
+    "react": "^18.0.0",
+    "axios": "^0.24.0"
+>>>>>>> feature/update-dependencies
   }
 }`
+  },
+  {
+    title: "HTML 结构冲突",
+    content: `<div class="container">
+<<<<<<< HEAD
+  <header class="main-header">
+    <h1>Welcome to our Website</h1>
+    <nav class="navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+=======
+  <div class="header">
+    <div class="logo">
+      <img src="/logo.png" alt="Logo" />
+    </div>
+    <h1>Welcome to Our New Site</h1>
+    <div class="menu">
+      <a href="/">Home</a>
+      <a href="/products">Products</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+>>>>>>> feature/redesign
+  <main>
+    <!-- Content here -->
+  </main>
+</div>`
+  }
+]
+
+// 计算是否有冲突
+const hasConflict = computed(() => {
+  return content.value.includes('<<<<<<<') && 
+         content.value.includes('=======') && 
+         content.value.includes('>>>>>>>')
+})
+
+// 分析内容找出冲突
+function analyzeContent() {
+  conflicts.value = []
+  message.value = ''
+  
+  if (!hasConflict.value) return
+  
+  const lines = content.value.split('\n')
+  let inConflict = false
+  let conflictStart = -1
+  let separatorIndex = -1
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+    
+    if (line.startsWith('<<<<<<<')) {
+      inConflict = true
+      conflictStart = i
+    } else if (inConflict && line.startsWith('=======')) {
+      separatorIndex = i
+    } else if (inConflict && line.startsWith('>>>>>>>')) {
+      // 冲突结束，收集信息
+      const oursLines = lines.slice(conflictStart + 1, separatorIndex)
+      const theirsLines = lines.slice(separatorIndex + 1, i)
+      
+      conflicts.value.push({
+        start: conflictStart,
+        middle: separatorIndex,
+        end: i,
+        ours: oursLines.join('\n'),
+        theirs: theirsLines.join('\n')
+      })
+      
+      inConflict = false
     }
   }
-];
+}
 
-// 初始化编辑器
+// 生成示例冲突
+function generateExample() {
+  const randomIndex = Math.floor(Math.random() * examples.length)
+  content.value = examples[randomIndex].content
+  analyzeContent()
+  setMessage("已生成示例冲突内容", "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200")
+}
+
+// 重置内容
+function resetContent() {
+  content.value = ''
+  conflicts.value = []
+  message.value = ''
+}
+
+// 全部使用我们的更改
+function resolveUsingOurs() {
+  if (!hasConflict.value) return
+  
+  let result = content.value
+  
+  // 从后往前处理，避免索引变化
+  const sortedConflicts = [...conflicts.value].sort((a, b) => b.start - a.start)
+  
+  for (const conflict of sortedConflicts) {
+    const lines = result.split('\n')
+    const before = lines.slice(0, conflict.start).join('\n')
+    const after = lines.slice(conflict.end + 1).join('\n')
+    const resolution = conflict.ours
+    
+    result = [before, resolution, after].filter(Boolean).join('\n')
+  }
+  
+  content.value = result
+  analyzeContent()
+  setMessage("已使用所有「我的更改」解决冲突", "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200")
+}
+
+// 全部使用他们的更改
+function resolveUsingTheirs() {
+  if (!hasConflict.value) return
+  
+  let result = content.value
+  
+  // 从后往前处理，避免索引变化
+  const sortedConflicts = [...conflicts.value].sort((a, b) => b.start - a.start)
+  
+  for (const conflict of sortedConflicts) {
+    const lines = result.split('\n')
+    const before = lines.slice(0, conflict.start).join('\n')
+    const after = lines.slice(conflict.end + 1).join('\n')
+    const resolution = conflict.theirs
+    
+    result = [before, resolution, after].filter(Boolean).join('\n')
+  }
+  
+  content.value = result
+  analyzeContent()
+  setMessage("已使用所有「他们的更改」解决冲突", "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200")
+}
+
+// 解决单个冲突
+function resolveConflict(index, type) {
+  if (index >= conflicts.value.length) return
+  
+  const conflict = conflicts.value[index]
+  const lines = content.value.split('\n')
+  
+  // 开始到冲突起始行
+  const beforeConflict = lines.slice(0, conflict.start).join('\n')
+  
+  // 冲突后的内容
+  const afterConflict = lines.slice(conflict.end + 1).join('\n')
+  
+  // 根据选择的类型确定处理后的内容
+  let resolution = ''
+  if (type === 'ours') {
+    resolution = conflict.ours
+  } else if (type === 'theirs') {
+    resolution = conflict.theirs
+  } else if (type === 'both') {
+    resolution = conflict.ours + '\n' + conflict.theirs
+  }
+  
+  // 组合新内容
+  content.value = [
+    beforeConflict,
+    resolution,
+    afterConflict
+  ].filter(Boolean).join('\n')
+  
+  // 重新分析剩余冲突
+  analyzeContent()
+  
+  setMessage(`已解决冲突 #${index + 1}`, "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200")
+}
+
+// 验证冲突是否已全部解决
+function validateResolution() {
+  if (!hasConflict.value) {
+    setMessage("✅ 所有冲突已成功解决！", "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200")
+  } else {
+    setMessage("⚠️ 仍有未解决的冲突，请检查并解决所有标记", "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200")
+  }
+}
+
+// 设置状态消息
+function setMessage(msg, classStr) {
+  message.value = msg
+  messageClass.value = classStr
+  
+  // 5秒后自动清除消息
+  setTimeout(() => {
+    if (message.value === msg) {
+      message.value = ''
+    }
+  }, 5000)
+}
+
+// 组件加载时生成示例
 onMounted(() => {
-  initializeEditor()
+  generateExample()
 })
+</script>
 
-// 初始化编辑器
-function initializeEditor() {
-  if (!editorContainer.value) return
-  
-  // 创建编辑器实例
-  editor = monaco.editor.create(editorContainer.value, {
-    value: '',
-    language: 'plaintext',
-    theme: 'vs-dark',
-    minimap: {
-      enabled: false
-    },
-    lineNumbers: 'on',
-    scrollBeyondLastLine: false,
-    automaticLayout: true
-  })
+<style scoped>
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
-// 监听场景选择
-watch(selectedScenario, (newValue) => {
-  if (newValue) {
-    loadScenario(newValue)
-  }
-})
-
-// 加载场景
-function loadScenario(scenarioId) {
-  const scenario = scenarios.find(s => s.id === scenarioId)
-  if (!scenario) return
-  
-  const content = scenario.content
-  
-  // 创建冲突内容
-  const conflictContent = createConflictContent(content.base, content.ours, content.theirs)
-  
-  // 设置冲突文件
-  conflictFile.value = {
-    path: content.path,
-    content: conflictContent
-  }
-  
-  // 保存原始内容
-  originalContent.value = conflictContent
-  
-  // 设置编辑器语言
-  const fileExt = content.path.split('.').pop()
-  let language = 'plaintext'
-  
-  switch (fileExt) {
-    case 'js':
-      language = 'javascript'
-      break
-    case 'json':
-      language = 'json'
-      break
-    case 'md':
-      language = 'markdown'
-      break
-    case 'html':
-      language = 'html'
-      break
-    case 'css':
-      language = 'css'
-      break
-  }
-  
-  // 更新编辑器
-  nextTick(() => {
-    monaco.editor.setModelLanguage(editor.getModel(), language)
-    editor.setValue(conflictContent)
-    resolvedContent.value = ''
-  })
+code {
+  @apply bg-gray-200 dark:bg-gray-800 px-1 py-0.5 rounded;
 }
-
-// 创建自定义冲突
-function createCustomConflict() {
-  // 创建冲突内容
-  const conflictContent = createConflictContent(
-    customConflict.original, 
-    customConflict.branchA, 
-    customConflict.branchB
-  )
-  
-  // 设置冲突文件
-  conflictFile.value = {
-    path: 'custom-file.txt',
-    content: conflictContent
-  }
-  
-  // 保存原始内容
-  originalContent.value = conflictContent
-  
-  // 更新编辑器
-  nextTick(() => {
-    monaco.editor.setModelLanguage(editor.getModel(), 'plaintext')
-    editor.setValue(conflictContent)
-    resolvedContent.value = ''
-  })
-  
-  // 隐藏自定义区域
-  showCustomConflict.value = false
-}
-
-// 使用指定版本
-function useVersion(version) {
-  if (!editor) return
-  
-  const content = editor.getValue()
-  const resolvedText = content.replace(/<<<<<<< HEAD\n([\s\S]*?)=======\n([\s\S]*?)>>>>>>> branch-name/g, (match, ours, theirs) => {
-    return version === 'ours' ? ours : theirs
-  })
-  
-  editor.setValue(resolvedText)
-}
-
-// 解决冲突
-function resolveConflict() {
-  if (!editor) return
-  
-  const content = editor.getValue()
-  resolvedContent.value = content
-  
-  // 检查是否还有冲突标记
-  resolveSuccess.value = !content.includes('<<<<<<< HEAD') && 
-                         !content.includes('=======') && 
-                         !content.includes('>>>>>>> branch-name')
-}
-
-// 重置冲突
-function resetConflict() {
-  if (!editor) return
-  editor.setValue(originalContent.value)
-  resolvedContent.value = ''
-}
-
-// 切换自定义冲突显示
-function toggleCustomConflict() {
-  showCustomConflict.value = !showCustomConflict.value
-}
-
-// 创建冲突内容
-function createConflictContent(base, ours, theirs) {
-  // 使用diff-match-patch来生成冲突内容
-  const dmp = new DiffMatchPatch()
-  
-  // 找出差异部分
-  const diff1 = dmp.diff_main(base, ours)
-  const diff2 = dmp.diff_main(base, theirs)
-  
-  // 简化冲突生成逻辑 - 这里使用一个简单的方式创建冲突
-  // 实际应用中应该更精确地定位冲突位置
-  
-  // 将base拆分为行
-  const lines = base.split('\n')
-  
-  // 随机选择一行作为冲突点(避免第一行和最后一行)
-  const conflictLineIndex = Math.floor(Math.random() * (lines.length - 2)) + 1
-  
-  // 提取ours和theirs对应的行(如果存在)
-  const oursLines = ours.split('\n')
-  const theirsLines = theirs.split('\n')
-  
-  // 创建冲突内容
-  let result = ''
-  
-  // 前面部分
-  for (let i = 0; i < conflictLineIndex; i++) {
-    result += lines[i] + '\n'
-  }
-  
-  // 冲突部分
-  result += '<<<<<<< HEAD\n'
-  
-  // 我们的版本(至少2行)
-  const oursStart = Math.max(0, conflictLineIndex - 1)
-  const oursEnd = Math.min(oursLines.length, conflictLineIndex + 3)
-  for (let i = oursStart; i < oursEnd; i++) {
-    result += oursLines[i] + '\n'
-  }
-  
-  result += '=======\n'
-  
-  // 他们的版本(至少2行)
-  const theirsStart = Math.max(0, conflictLineIndex - 1)
-  const theirsEnd = Math.min(theirsLines.length, conflictLineIndex + 3)
-  for (let i = theirsStart; i < theirsEnd; i++) {
-    result += theirsLines[i] + '\n'
-  }
-  
-  result += '>>>>>>> branch-name\n'
-  
-  // 剩余部分
-  for (let i = conflictLineIndex + 1; i < lines.length; i++) {
-    result += lines[i] + (i < lines.length - 1 ? '\n' : '')
-  }
-  
-  return result
-}
-</script> 
+</style> 

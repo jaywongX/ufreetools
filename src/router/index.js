@@ -21,14 +21,6 @@ const routes = [
     path: '/about',
     name: 'About',
     component: () => import('../pages/AboutPage.vue')
-  },
-  {
-    path: '/jwt-debugger',
-    name: 'JwtDebugger',
-    component: () => import('../components/tools/JwtDebugger.vue'),
-    meta: {
-      title: 'JWT调试工具'
-    }
   }
 ]
 

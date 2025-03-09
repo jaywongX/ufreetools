@@ -130,7 +130,7 @@
             </div>
             
             <button 
-              @click="expandedHeader = (expandedHeader === key) ? null : key" 
+              @click="expandedHeader.value = (expandedHeader.value === key) ? null : key" 
               class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
             >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -138,7 +138,7 @@
                   stroke-linecap="round" 
                   stroke-linejoin="round" 
                   stroke-width="2" 
-                  :d="expandedHeader === key ? 'M5 15l7-7 7 7' : 'M19 9l-7 7-7-7'"
+                  :d="expandedHeader.value === key ? 'M5 15l7-7 7 7' : 'M19 9l-7 7-7-7'"
                 ></path>
               </svg>
             </button>
@@ -147,13 +147,13 @@
       </div>
       
       <!-- 详细分析区域 -->
-      <div v-if="expandedHeader" class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 lg:col-span-3">
+      <div v-if="expandedHeader.value" class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 lg:col-span-3">
         <div class="flex justify-between items-start mb-3">
           <h3 class="text-md font-medium text-gray-800 dark:text-gray-200">
-            {{ securityHeaders[expandedHeader].name }} 详细分析
+            {{ securityHeaders[expandedHeader.value].name }} 详细分析
           </h3>
           <button 
-            @click="expandedHeader = null" 
+            @click="expandedHeader.value = null" 
             class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -166,28 +166,28 @@
           <div>
             <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">当前值</h4>
             <div class="bg-gray-50 dark:bg-gray-700 rounded p-3 text-sm font-mono break-words">
-              {{ securityHeaders[expandedHeader].value || '未设置' }}
+              {{ securityHeaders[expandedHeader.value].value || '未设置' }}
             </div>
           </div>
           
           <div>
             <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">说明</h4>
             <p class="text-sm text-gray-600 dark:text-gray-400">
-              {{ securityHeaders[expandedHeader].description }}
+              {{ securityHeaders[expandedHeader.value].description }}
             </p>
           </div>
           
           <div>
             <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">建议</h4>
             <p class="text-sm text-gray-600 dark:text-gray-400">
-              {{ securityHeaders[expandedHeader].recommendation }}
+              {{ securityHeaders[expandedHeader.value].recommendation }}
             </p>
           </div>
           
-          <div v-if="securityHeaders[expandedHeader].example">
+          <div v-if="securityHeaders[expandedHeader.value].example">
             <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">示例配置</h4>
             <div class="bg-gray-50 dark:bg-gray-700 rounded p-3 text-sm font-mono break-words">
-              {{ securityHeaders[expandedHeader].example }}
+              {{ securityHeaders[expandedHeader.value].example }}
             </div>
           </div>
         </div>
@@ -296,7 +296,7 @@ async function analyzeHeaders() {
   allHeaders.value = {}
   securityHeaders.value = {}
   securityScore.value = null
-  expandedHeader = null
+  expandedHeader.value = null
   
   try {
     // 尝试通过代理服务或CORS获取头信息（这里使用代理服务避免CORS限制）

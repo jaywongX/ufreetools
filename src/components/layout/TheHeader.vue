@@ -96,6 +96,14 @@
         </svg>
       </button>
       
+      <!-- 关于我们链接 -->
+      <router-link 
+        to="/about" 
+        class="p-2 text-sm text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light focus:outline-none"
+      >
+        关于我们
+      </router-link>
+      
       <!-- 可以添加更多右侧按钮，如登录、联系我们等 -->
     </div>
   </header>
@@ -139,7 +147,7 @@ const matchedTags = computed(() => {
   if (!searchQuery.value) return []
   
   const query = searchQuery.value.toLowerCase().trim()
-  return allTags.value
+  return allTags
     .filter(tag => 
       tag.id.toLowerCase().includes(query) || 
       tag.name.toLowerCase().includes(query)
@@ -165,12 +173,13 @@ const matchedTools = computed(() => {
   const tagIds = matchedTags.value.map(tag => tag.id)
   
   return allTools.value
-    .filter(tool => 
-      tool.name.toLowerCase().includes(query) || 
-      tool.description.toLowerCase().includes(query) || 
-      tool.category.toLowerCase().includes(query) ||
-      tool.tags.some(tagId => tagIds.includes(tagId))
-    )
+    .filter(tool => {
+      const nameMatch = tool.name && tool.name.toLowerCase().includes(query)
+      const descMatch = tool.description && tool.description.toLowerCase().includes(query)
+      const tagMatch = tool.tags && Array.isArray(tool.tags) && tool.tags.some(tagId => tagIds.includes(tagId))
+      
+      return nameMatch || descMatch || tagMatch
+    })
     .sort((a, b) => {
       // 精确匹配名称的排在前面
       const aExact = a.name.toLowerCase() === query

@@ -1,378 +1,729 @@
 <template>
-  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md">
-    <!-- 工具控制栏 -->
-    <div class="flex flex-wrap items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-      <div class="flex space-x-2 mb-2 sm:mb-0">
+  <div class="flex flex-col h-full">
+    <!-- 工具栏 -->
+    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-4 flex justify-between items-center flex-wrap gap-2">
+      <div class="flex space-x-2">
+        <label class="btn bg-primary hover:bg-primary-dark text-white cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          选择图片
+          <input type="file" accept="image/*" @change="loadImage" class="hidden" />
+        </label>
+        
         <button 
-          @click="clearImage" 
-          class="btn-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200"
-          :disabled="!imageFile || isProcessing"
+          @click="resetCanvas" 
+          class="btn bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200"
+          :disabled="!hasImage"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          清空
+          重置
         </button>
-
-        <!-- 操作提示 -->
-        <div 
-          v-if="message" 
-          class="flex items-center space-x-2 px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-300"
-          :class="{ 
-            'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300': messageType === 'success',
-            'bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300': messageType === 'error'
-          }"
-        >
-          <svg v-if="messageType === 'success'" class="w-4 h-4 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-          </svg>
-          <svg v-else class="w-4 h-4 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-          </svg>
-          <span>{{ message }}</span>
-        </div>
-      </div>
-    </div>
-    
-    <!-- 水印设置 -->
-    <div class="p-4 border-b border-gray-200 dark:border-gray-700">
-      <!-- 水印文字 -->
-      <div class="mb-6">
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">水印文字</label>
-        <input 
-          type="text" 
-          v-model="watermarkText"
-          class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-gray-700 dark:text-gray-300"
-          placeholder="请输入水印文字"
-        >
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- 左侧：颜色和透明度 -->
-        <div class="space-y-4">
-          <!-- 水印颜色 -->
-          <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">水印颜色</label>
-            <div class="space-y-3">
-              <div class="flex flex-wrap gap-2">
-                <button 
-                  v-for="color in commonColors" 
-                  :key="color.value"
-                  @click="watermarkColor = color.value"
-                  class="group relative"
-                >
-                  <div 
-                    class="w-8 h-8 rounded-lg border shadow-sm transition-transform transform hover:scale-110"
-                    :class="[
-                      watermarkColor === color.value ? 'ring-2 ring-primary ring-offset-2' : 'hover:ring-2 hover:ring-gray-400',
-                      color.value === '#ffffff' ? 'border-gray-300' : ''
-                    ]"
-                    :style="{ backgroundColor: color.value }"
-                  ></div>
-                  <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-xs whitespace-nowrap bg-gray-800 text-white px-2 py-1 rounded">
-                    {{ color.name }}
-                  </div>
-                </button>
-              </div>
-              <div class="flex items-center space-x-2">
-                <input 
-                  type="color" 
-                  v-model="watermarkColor"
-                  class="w-8 h-8 p-1 rounded cursor-pointer"
-                >
-                <span class="text-sm text-gray-600 dark:text-gray-400">自定义颜色</span>
-              </div>
+      <button 
+        @click="downloadImage" 
+        :disabled="!hasImage"
+        class="btn bg-green-600 hover:bg-green-700 text-white"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        下载图片
+      </button>
+    </div>
+    
+    <!-- 主内容区域 -->
+    <div class="flex-grow overflow-auto p-4 bg-gray-100 dark:bg-gray-900">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <!-- 左侧控制面板 -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4" :class="{'opacity-50': !hasImage}">
+          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">水印设置</h3>
+          
+          <!-- 水印类型选择 -->
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">水印类型</label>
+            <div class="flex space-x-2">
+              <button
+                @click="watermarkType = 'text'"
+                class="px-3 py-1.5 rounded text-sm"
+                :class="watermarkType === 'text' ? 'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200' : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'"
+                :disabled="!hasImage"
+              >
+                文字水印
+              </button>
+              <button
+                @click="watermarkType = 'image'"
+                class="px-3 py-1.5 rounded text-sm"
+                :class="watermarkType === 'image' ? 'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200' : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'"
+                :disabled="!hasImage"
+              >
+                图片水印
+              </button>
             </div>
           </div>
           
-          <!-- 透明度 -->
-          <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">透明度</label>
-            <div class="flex items-center space-x-3">
-              <input 
-                type="range" 
-                v-model="opacity"
-                min="0"
+          <!-- 文字水印设置 -->
+          <div v-if="watermarkType === 'text'" class="mb-4">
+            <div class="mb-3">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">水印文字</label>
+              <input
+                type="text"
+                v-model="textOptions.text"
+                placeholder="输入水印文字..."
+                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                :disabled="!hasImage"
+              />
+            </div>
+            
+            <div class="grid grid-cols-2 gap-3 mb-3">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">字体</label>
+                <select
+                  v-model="textOptions.fontFamily"
+                  class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                  :disabled="!hasImage"
+                >
+                  <option value="Arial">Arial</option>
+                  <option value="Verdana">Verdana</option>
+                  <option value="Helvetica">Helvetica</option>
+                  <option value="Times New Roman">Times New Roman</option>
+                  <option value="Courier New">Courier New</option>
+                  <option value="微软雅黑">微软雅黑</option>
+                  <option value="宋体">宋体</option>
+                  <option value="黑体">黑体</option>
+                </select>
+              </div>
+              
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">字号</label>
+                <input
+                  type="number"
+                  v-model="textOptions.fontSize"
+                  min="10"
+                  max="200"
+                  class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                  :disabled="!hasImage"
+                />
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-3 mb-3">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">字体样式</label>
+                <select
+                  v-model="textOptions.fontStyle"
+                  class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                  :disabled="!hasImage"
+                >
+                  <option value="normal">正常</option>
+                  <option value="italic">斜体</option>
+                </select>
+              </div>
+              
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">字体粗细</label>
+                <select
+                  v-model="textOptions.fontWeight"
+                  class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                  :disabled="!hasImage"
+                >
+                  <option value="normal">正常</option>
+                  <option value="bold">粗体</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">文字颜色</label>
+              <input
+                type="color"
+                v-model="textOptions.fill"
+                class="w-full h-10 p-1 rounded border border-gray-300 dark:border-gray-600"
+                :disabled="!hasImage"
+              />
+            </div>
+            
+            <div class="mb-3">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">透明度: {{ textOptions.opacity }}</label>
+              <input
+                type="range"
+                v-model="textOptions.opacity"
+                min="0.1"
                 max="1"
                 step="0.1"
-                class="flex-1"
-              >
-              <span class="text-sm text-gray-600 dark:text-gray-400 w-12 text-center">{{Math.round(opacity * 10)}}</span>
+                class="w-full"
+                :disabled="!hasImage"
+              />
             </div>
           </div>
+          
+          <!-- 图片水印设置 -->
+          <div v-if="watermarkType === 'image'" class="mb-4">
+            <div class="mb-3">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">水印图片</label>
+              <label class="block w-full p-2 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-md text-center cursor-pointer hover:border-gray-400 dark:hover:border-gray-500">
+                <span v-if="!watermarkImageSrc" class="text-gray-500 dark:text-gray-400">选择水印图片</span>
+                <img v-else :src="watermarkImageSrc" class="max-h-20 mx-auto" />
+                <input type="file" accept="image/*" @change="loadWatermarkImage" class="hidden" />
+              </label>
+            </div>
+            
+            <div class="mb-3">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">缩放比例: {{ imageOptions.scale }}</label>
+              <input
+                type="range"
+                v-model="imageOptions.scale"
+                min="0.1"
+                max="1"
+                step="0.1"
+                class="w-full"
+                :disabled="!hasImage || !watermarkImageSrc"
+              />
+            </div>
+            
+            <div class="mb-3">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">透明度: {{ imageOptions.opacity }}</label>
+              <input
+                type="range"
+                v-model="imageOptions.opacity"
+                min="0.1"
+                max="1"
+                step="0.1"
+                class="w-full"
+                :disabled="!hasImage || !watermarkImageSrc"
+              />
+            </div>
+          </div>
+          
+          <!-- 通用水印设置 -->
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">位置</label>
+            <div class="grid grid-cols-3 gap-2">
+              <button
+                v-for="position in ['top-left', 'top-center', 'top-right', 'middle-left', 'middle-center', 'middle-right', 'bottom-left', 'bottom-center', 'bottom-right']"
+                :key="position"
+                @click="watermarkPosition = position"
+                class="p-2 border rounded-md text-center"
+                :class="watermarkPosition === position ? 'border-primary bg-primary-50 dark:bg-primary-900/30 text-primary dark:text-primary-300' : 'border-gray-300 dark:border-gray-600'"
+                :disabled="!hasImage"
+              >
+                <div class="w-full h-5 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5h14M5 12h14M5 19h14" />
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">旋转角度: {{ watermarkRotation }}°</label>
+            <input
+              type="range"
+              v-model="watermarkRotation"
+              min="-180"
+              max="180"
+              class="w-full"
+              :disabled="!hasImage"
+            />
+          </div>
+          
+          <div class="mb-4">
+            <label class="flex items-center text-sm font-medium text-gray-700 dark:text-gray-300">
+              <input
+                type="checkbox"
+                v-model="tileWatermark"
+                class="mr-2 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700"
+                :disabled="!hasImage"
+              />
+              平铺水印
+            </label>
+          </div>
+          
+          <button
+            @click="applyWatermark"
+            class="w-full px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-md font-medium"
+            :disabled="!canApplyWatermark"
+          >
+            应用水印
+          </button>
         </div>
         
-        <!-- 右侧：字体大小、间隔和旋转 -->
-        <div class="space-y-4">
-          <!-- 字体大小 -->
-          <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">字体大小</label>
-            <div class="flex items-center space-x-3">
-              <input 
-                type="range" 
-                v-model="fontSize"
-                min="12"
-                max="48"
-                step="1"
-                class="flex-1"
-              >
-              <span class="text-sm text-gray-600 dark:text-gray-400 w-12 text-center">{{fontSize}}</span>
+        <!-- 右侧预览区域 -->
+        <div class="lg:col-span-2">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 h-full flex flex-col">
+            <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">图片预览</h3>
+            
+            <div v-if="!hasImage" class="flex-grow flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-lg p-8">
+              <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">请选择一张图片来添加水印</p>
+              </div>
             </div>
-          </div>
-          
-          <!-- 水印间隔 -->
-          <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">水印间隔</label>
-            <div class="flex items-center space-x-3">
-              <input 
-                type="range" 
-                v-model="spacing"
-                min="50"
-                max="300"
-                step="10"
-                class="flex-1"
-              >
-              <span class="text-sm text-gray-600 dark:text-gray-400 w-12 text-center">{{spacing}}</span>
-            </div>
-          </div>
-          
-          <!-- 旋转角度 -->
-          <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">旋转角度</label>
-            <div class="flex items-center space-x-3">
-              <input 
-                type="range" 
-                v-model="rotation"
-                min="-45"
-                max="45"
-                step="5"
-                class="flex-1"
-              >
-              <span class="text-sm text-gray-600 dark:text-gray-400 w-12 text-center">{{rotation}}°</span>
+            
+            <div v-else class="flex-grow relative flex items-center justify-center">
+              <canvas ref="canvas" class="max-w-full max-h-full shadow-sm"></canvas>
             </div>
           </div>
         </div>
       </div>
     </div>
     
-    <!-- 图片预览区域 -->
-    <div class="p-4">
-      <div class="grid grid-cols-2 gap-4">
-        <!-- 原始图片 -->
-        <div>
-          <div class="mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">原始图片</div>
-          <label class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-4 h-[calc(100vh-650px)] min-h-[300px] flex items-center justify-center cursor-pointer hover:border-primary dark:hover:border-primary-light transition-colors duration-200">
-            <input 
-              type="file" 
-              class="hidden" 
-              accept="image/*" 
-              @change="handleImageUpload"
-              :disabled="isProcessing"
-            >
-            <img 
-              v-if="previewUrl" 
-              :src="previewUrl" 
-              class="w-full h-full object-cover"
-              alt="原始图片"
-            >
-            <div v-else class="text-gray-400 dark:text-gray-500 text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <p class="text-sm">点击上传图片</p>
-            </div>
-          </label>
-        </div>
-        
-        <!-- 处理后图片 -->
-        <div>
-          <div class="mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">处理后图片</div>
-          <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-4 h-[calc(100vh-650px)] min-h-[300px] flex items-center justify-center">
-            <img 
-              v-if="processedImageUrl" 
-              :src="processedImageUrl" 
-              class="w-full h-full object-cover cursor-pointer"
-              @click="downloadImage"
-              alt="处理后图片"
-              title="点击下载"
-            >
-            <div v-else class="text-gray-400 dark:text-gray-500 text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-              </svg>
-              <p class="text-sm">处理后的图片将显示在这里</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- 通知提示 -->
+    <div 
+      v-if="notification.show" 
+      class="fixed bottom-4 right-4 px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white text-sm rounded-md shadow-lg transition-opacity duration-300"
+      :class="{'opacity-0': notification.fadeOut, 'opacity-100': !notification.fadeOut}"
+    >
+      {{ notification.message }}
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, computed, onMounted } from 'vue'
+import { fabric } from 'fabric'
 
-// 状态数据
-const imageFile = ref(null);
-const previewUrl = ref('');
-const processedImageUrl = ref('');
-const message = ref('');
-const messageType = ref('success');
-const isProcessing = ref(false);
+// 画布和状态变量
+const canvas = ref(null)
+const fabricCanvas = ref(null)
+const hasImage = ref(false)
+const backgroundImage = ref(null)
+const watermarkObject = ref(null)
+const notification = ref({
+  show: false,
+  message: '',
+  fadeOut: false
+})
 
-// 常用颜色
-const commonColors = [
-  { name: '白色', value: '#ffffff' },
-  { name: '黑色', value: '#000000' },
-  { name: '红色', value: '#ff0000' },
-  { name: '深蓝', value: '#0066ff' },
-  { name: '绿色', value: '#00cc00' },
-  { name: '紫色', value: '#800080' },
-  { name: '橙色', value: '#ff6600' },
-  { name: '灰色', value: '#808080' }
-];
+// 水印配置
+const watermarkType = ref('text')
+const watermarkPosition = ref('bottom-right')
+const watermarkRotation = ref(0)
+const tileWatermark = ref(false)
+const watermarkImageSrc = ref(null)
 
-// 水印设置
-const watermarkText = ref('');
-const fontSize = ref(24);
-const watermarkColor = ref('#ffffff');
-const opacity = ref(0.6);
-const rotation = ref(-30);
-const spacing = ref(180);
+// 文字水印选项
+const textOptions = ref({
+  text: '© 2024 版权所有',
+  fontFamily: '微软雅黑',
+  fontSize: 36,
+  fontStyle: 'normal',
+  fontWeight: 'normal',
+  fill: '#ffffff',
+  opacity: 0.7,
+})
 
-// 监听设置变化,自动重新处理图片
-watch([watermarkText, fontSize, watermarkColor, opacity, rotation, spacing], () => {
-  if (imageFile.value) {
-    processImage();
+// 图片水印选项
+const imageOptions = ref({
+  scale: 0.5,
+  opacity: 0.7
+})
+
+// 水印图片对象
+const watermarkImage = ref(null)
+
+// 计算属性 - 是否可以应用水印
+const canApplyWatermark = computed(() => {
+  if (!hasImage.value) return false
+  
+  if (watermarkType.value === 'text') {
+    return textOptions.value.text.trim() !== ''
+  } else {
+    return watermarkImageSrc.value !== null
   }
-});
+})
 
-// 处理图片上传
-const handleImageUpload = async (event) => {
-  const file = event.target.files[0];
-  if (!file) return;
+// 加载主图片
+async function loadImage(event) {
+  const file = event.target.files[0]
+  if (!file) return
   
-  // 验证文件类型
-  if (!file.type.startsWith('image/')) {
-    showMessage('请上传图片文件', 'error');
-    return;
+  // 重置画布
+  if (fabricCanvas.value) {
+    fabricCanvas.value.clear()
+  } else {
+    fabricCanvas.value = new fabric.Canvas(canvas.value)
   }
   
-  imageFile.value = file;
-  previewUrl.value = URL.createObjectURL(file);
-  processedImageUrl.value = ''; // 清空处理后的图片
-  
-  // 自动处理图片
-  await processImage();
-};
-
-// 处理图片
-const processImage = async () => {
-  if (!imageFile.value || !watermarkText.value) return;
-  
-  isProcessing.value = true;
-  showMessage('正在处理图片...', 'success');
+  // 从文件创建图片URL
+  const url = URL.createObjectURL(file)
   
   try {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    const img = new Image();
-    
-    await new Promise((resolve, reject) => {
-      img.onload = resolve;
-      img.onerror = reject;
-      img.src = previewUrl.value;
-    });
-    
-    // 设置画布尺寸
-    canvas.width = img.width;
-    canvas.height = img.height;
-    
-    // 绘制原始图片
-    ctx.drawImage(img, 0, 0);
-    
-    // 设置水印样式
-    ctx.font = `${fontSize.value}px Arial`;
-    ctx.fillStyle = watermarkColor.value;
-    ctx.globalAlpha = opacity.value;
-    
-    // 计算文本尺寸
-    const textWidth = ctx.measureText(watermarkText.value).width;
-    const textHeight = fontSize.value;
-    
-    // 计算偏移量,使水印更均匀分布
-    const xOffset = spacing.value * Math.cos((rotation.value * Math.PI) / 180);
-    const yOffset = spacing.value * Math.sin((rotation.value * Math.PI) / 180);
-    
-    // 计算重复次数,增加覆盖范围
-    const cols = Math.ceil(canvas.width / (spacing.value * 0.7)) + 2;
-    const rows = Math.ceil(canvas.height / (spacing.value * 0.7)) + 2;
-    
-    // 计算起始位置,使水印从画布外开始
-    const startX = -spacing.value;
-    const startY = -spacing.value;
-    
-    // 绘制重复的水印
-    for (let i = 0; i < rows; i++) {
-      for (let j = 0; j < cols; j++) {
-        // 交错排列,使水印分布更自然
-        const x = startX + j * spacing.value + (i % 2) * (spacing.value / 2);
-        const y = startY + i * spacing.value * 0.7;
-        
-        ctx.save();
-        ctx.translate(x, y);
-        ctx.rotate((rotation.value * Math.PI) / 180);
-        ctx.fillText(watermarkText.value, 0, 0);
-        ctx.restore();
+    // 创建fabric图片对象
+    fabric.Image.fromURL(url, img => {
+      // 调整画布大小以适应图片
+      const maxWidth = 1200
+      const maxHeight = 800
+      
+      let width = img.width
+      let height = img.height
+      
+      // 如果图片太大，按比例缩小
+      if (width > maxWidth || height > maxHeight) {
+        const ratio = Math.min(maxWidth / width, maxHeight / height)
+        width *= ratio
+        height *= ratio
       }
-    }
-    
-    // 重置透明度
-    ctx.globalAlpha = 1;
-    
-    // 转换为图片URL
-    processedImageUrl.value = canvas.toDataURL('image/png');
-    showMessage('图片处理完成', 'success');
+      
+      // 调整画布大小
+      fabricCanvas.value.setWidth(width)
+      fabricCanvas.value.setHeight(height)
+      
+      // 设置背景图片
+      img.selectable = false
+      fabricCanvas.value.setBackgroundImage(img, fabricCanvas.value.renderAll.bind(fabricCanvas.value))
+      
+      // 保存图片引用
+      backgroundImage.value = img
+      hasImage.value = true
+      
+      showNotification('图片已加载，可以添加水印了')
+    })
   } catch (error) {
-    console.error('Error processing image:', error);
-    showMessage('图片处理失败', 'error');
-  } finally {
-    isProcessing.value = false;
+    console.error('加载图片失败:', error)
+    showNotification('加载图片失败')
   }
-};
+}
 
-// 清空图片
-const clearImage = () => {
-  imageFile.value = null;
-  previewUrl.value = '';
-  processedImageUrl.value = '';
-  message.value = '';
-};
-
-// 下载处理后的图片
-const downloadImage = () => {
-  if (!processedImageUrl.value) return;
+// 加载水印图片
+function loadWatermarkImage(event) {
+  const file = event.target.files[0]
+  if (!file) return
   
-  const link = document.createElement('a');
-  link.download = '水印图片.png';
-  link.href = processedImageUrl.value;
-  link.click();
-};
-
-// 显示消息
-const showMessage = (msg, type = 'success') => {
-  message.value = msg;
-  messageType.value = type;
+  const url = URL.createObjectURL(file)
+  watermarkImageSrc.value = url
   
-  // 3秒后自动清除消息
+  // 创建fabric图片对象
+  fabric.Image.fromURL(url, img => {
+    watermarkImage.value = img
+  })
+}
+
+// 应用水印
+function applyWatermark() {
+  if (!fabricCanvas.value || !hasImage.value) return
+  
+  // 移除已有的水印
+  if (watermarkObject.value) {
+    fabricCanvas.value.remove(watermarkObject.value)
+    watermarkObject.value = null
+  }
+  
+  // 根据设置创建水印
+  if (tileWatermark.value) {
+    createTiledWatermark()
+  } else {
+    if (watermarkType.value === 'text') {
+      addTextWatermark()
+    } else {
+      addImageWatermark()
+    }
+  }
+  
+  showNotification('水印已应用')
+}
+
+// 添加文字水印
+function addTextWatermark() {
+  if (!fabricCanvas.value) return
+  
+  // 创建文本水印
+  const text = new fabric.Text(textOptions.value.text, {
+    fontFamily: textOptions.value.fontFamily,
+    fontSize: textOptions.value.fontSize,
+    fontStyle: textOptions.value.fontStyle,
+    fontWeight: textOptions.value.fontWeight,
+    fill: textOptions.value.fill,
+    opacity: textOptions.value.opacity,
+    angle: watermarkRotation.value,
+  })
+  
+  // 定位水印
+  positionWatermark(text)
+  
+  // 添加到画布并保存引用
+  fabricCanvas.value.add(text)
+  watermarkObject.value = text
+  fabricCanvas.value.renderAll()
+}
+
+// 添加图片水印
+function addImageWatermark() {
+  if (!fabricCanvas.value || !watermarkImage.value) return
+  
+  // 克隆图片对象避免修改原始对象
+  const img = fabric.util.object.clone(watermarkImage.value)
+  
+  // 应用设置
+  const canvasWidth = fabricCanvas.value.width
+  const scale = imageOptions.value.scale * (canvasWidth / img.width) * 0.3
+  
+  img.set({
+    scaleX: scale,
+    scaleY: scale,
+    opacity: imageOptions.value.opacity,
+    angle: watermarkRotation.value,
+  })
+  
+  // 定位水印
+  positionWatermark(img)
+  
+  // 添加到画布并保存引用
+  fabricCanvas.value.add(img)
+  watermarkObject.value = img
+  fabricCanvas.value.renderAll()
+}
+
+// 定位水印
+function positionWatermark(obj) {
+  if (!fabricCanvas.value) return
+  
+  const canvasWidth = fabricCanvas.value.width
+  const canvasHeight = fabricCanvas.value.height
+  const objWidth = obj.getScaledWidth()
+  const objHeight = obj.getScaledHeight()
+  
+  const padding = 20
+  
+  // 根据选定位置设置坐标
+  switch (watermarkPosition.value) {
+    case 'top-left':
+      obj.set({ left: padding, top: padding })
+      break
+    case 'top-center':
+      obj.set({ left: (canvasWidth - objWidth) / 2, top: padding })
+      break
+    case 'top-right':
+      obj.set({ left: canvasWidth - objWidth - padding, top: padding })
+      break
+    case 'middle-left':
+      obj.set({ left: padding, top: (canvasHeight - objHeight) / 2 })
+      break
+    case 'middle-center':
+      obj.set({ left: (canvasWidth - objWidth) / 2, top: (canvasHeight - objHeight) / 2 })
+      break
+    case 'middle-right':
+      obj.set({ left: canvasWidth - objWidth - padding, top: (canvasHeight - objHeight) / 2 })
+      break
+    case 'bottom-left':
+      obj.set({ left: padding, top: canvasHeight - objHeight - padding })
+      break
+    case 'bottom-center':
+      obj.set({ left: (canvasWidth - objWidth) / 2, top: canvasHeight - objHeight - padding })
+      break
+    case 'bottom-right':
+      obj.set({ left: canvasWidth - objWidth - padding, top: canvasHeight - objHeight - padding })
+      break
+  }
+}
+
+// 创建平铺水印
+function createTiledWatermark() {
+  if (!fabricCanvas.value) return
+  
+  // 如果已有水印对象，先移除
+  if (watermarkObject.value) {
+    fabricCanvas.value.remove(watermarkObject.value)
+    
+    // 创建平铺图案
+    const patternSource = watermarkType.value === 'text' 
+      ? createTextPatternSource()
+      : createImagePatternSource()
+    
+    if (patternSource) {
+      // 创建覆盖整个画布的水印图案
+      const patternRect = new fabric.Rect({
+        left: 0,
+        top: 0,
+        width: fabricCanvas.value.width,
+        height: fabricCanvas.value.height,
+        fill: new fabric.Pattern({
+          source: patternSource,
+          repeat: 'repeat'
+        }),
+        selectable: false
+      })
+      
+      fabricCanvas.value.add(patternRect)
+      watermarkObject.value = patternRect
+      fabricCanvas.value.renderAll()
+    }
+  } else {
+    // 移除平铺水印
+    fabricCanvas.value.remove(watermarkObject.value)
+    
+    // 重新添加单个水印
+    if (watermarkType.value === 'text') {
+      addTextWatermark()
+    } else {
+      addImageWatermark()
+    }
+  }
+}
+
+// 创建文字水印的模式源
+function createTextPatternSource() {
+  // 创建一个临时画布
+  const tempCanvas = document.createElement('canvas')
+  const tempContext = tempCanvas.getContext('2d')
+  
+  // 设置临时画布大小
+  tempCanvas.width = textOptions.value.fontSize * 8
+  tempCanvas.height = textOptions.value.fontSize * 4
+  
+  // 绘制文字
+  tempContext.font = `${textOptions.value.fontStyle} ${textOptions.value.fontWeight} ${textOptions.value.fontSize}px ${textOptions.value.fontFamily}`
+  tempContext.fillStyle = textOptions.value.fill
+  tempContext.globalAlpha = textOptions.value.opacity
+  
+  // 添加阴影
+  tempContext.shadowColor = 'rgba(0,0,0,0.5)'
+  tempContext.shadowBlur = 3
+  tempContext.shadowOffsetX = 2
+  tempContext.shadowOffsetY = 2
+  
+  // 旋转
+  tempContext.translate(tempCanvas.width / 2, tempCanvas.height / 2)
+  tempContext.rotate(watermarkRotation.value * Math.PI / 180)
+  
+  // 测量文本宽度
+  const textWidth = tempContext.measureText(textOptions.value.text).width
+  
+  // 绘制文本
+  tempContext.fillText(textOptions.value.text, -textWidth / 2, 0)
+  
+  // 重置变换
+  tempContext.resetTransform()
+  
+  return tempCanvas
+}
+
+// 创建图片水印的模式源
+function createImagePatternSource() {
+  if (!watermarkImage.value) return null
+  
+  // 图片间距
+  const tileSize = watermarkImage.value.width * imageOptions.value.scale
+  
+  // 创建临时画布
+  const tempCanvas = document.createElement('canvas')
+  const tempContext = tempCanvas.getContext('2d')
+  
+  tempCanvas.width = tileSize * 1.5
+  tempCanvas.height = tileSize * 1.5
+  
+  // 将fabric.Image对象转换为标准Image对象
+  const img = new Image()
+  img.src = watermarkImage.value._element.src
+  
+  // 绘制图片
+  tempContext.globalAlpha = imageOptions.value.opacity
+  tempContext.drawImage(
+    img, 
+    (tempCanvas.width - tileSize) / 2, 
+    (tempCanvas.height - tileSize) / 2, 
+    tileSize, 
+    tileSize * (img.height / img.width)
+  )
+  
+  return tempCanvas
+}
+
+// 重置画布
+function resetCanvas() {
+  if (!fabricCanvas.value || !backgroundImage.value) return
+  
+  // 移除所有对象
+  fabricCanvas.value.clear()
+  
+  // 重新设置背景图
+  fabricCanvas.value.setBackgroundImage(backgroundImage.value, fabricCanvas.value.renderAll.bind(fabricCanvas.value))
+  
+  // 重置水印状态
+  watermarkObject.value = null
+  tileWatermark.value = false
+  
+  // 重置选项
+  textOptions.value = {
+    fontFamily: '微软雅黑',
+    fontSize: 36,
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fill: '#ffffff',
+    opacity: 0.7,
+    text: '© 2024 版权所有'
+  }
+  
+  watermarkPosition.value = 'bottom-right'
+  watermarkRotation.value = 0
+  
+  showNotification('已重置')
+}
+
+// 下载图片
+function downloadImage() {
+  if (!fabricCanvas.value) return
+  
+  // 导出画布为数据URL
+  const dataUrl = fabricCanvas.value.toDataURL({
+    format: 'png',
+    quality: 0.8
+  })
+  
+  // 创建下载链接
+  const link = document.createElement('a')
+  link.download = `watermarked-image-${new Date().getTime()}.png`
+  link.href = dataUrl
+  link.click()
+  
+  showNotification('图片已下载')
+}
+
+// 显示通知
+function showNotification(message) {
+  notification.value = {
+    show: true,
+    message,
+    fadeOut: false
+  }
+  
+  // 3秒后开始淡出
   setTimeout(() => {
-    message.value = '';
-  }, 3000);
-};
+    notification.value.fadeOut = true
+    
+    // 淡出后隐藏
+    setTimeout(() => {
+      notification.value.show = false
+    }, 300)
+  }, 3000)
+}
+
+onMounted(() => {
+  // 初始化Fabric.js画布
+  fabricCanvas.value = new fabric.Canvas(canvas.value)
+  
+  // 监听窗口大小变化
+  window.addEventListener('resize', () => {
+    if (fabricCanvas.value && backgroundImage.value) {
+      // 重新调整画布尺寸
+      fabricCanvas.value.setDimensions({
+        width: backgroundImage.value.width,
+        height: backgroundImage.value.height
+      })
+      fabricCanvas.value.renderAll()
+    }
+  })
+})
 </script>
 
 <style scoped>
-.btn-sm {
-  @apply px-3 py-1.5 rounded text-sm font-medium flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-200;
+.btn {
+  @apply px-4 py-2 rounded-md flex items-center transition-colors duration-200 font-medium;
 }
 </style> 

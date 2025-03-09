@@ -32,7 +32,7 @@
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <ToolCard 
-          v-for="tool in popularTools.slice(0, 6)" 
+          v-for="tool in popularTools" 
           :key="tool.id"
           :tool="tool"
           @tag-click="addTagToFilter"
@@ -47,7 +47,7 @@
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <ToolCard 
-          v-for="tool in newTools.slice(0, 6)" 
+          v-for="tool in newTools" 
           :key="tool.id"
           :tool="tool"
           @tag-click="addTagToFilter"
@@ -89,6 +89,7 @@ const router = useRouter()
 
 // 注入全局数据
 const allTools = inject('allTools')
+const categories = inject('categories')
 const allTags = inject('allTags')
 const toolsByTag = inject('toolsByTag')
 
@@ -152,13 +153,24 @@ watch(selectedTags, () => {
   updateUrlWithTags()
 })
 
-// 示例数据（保留原有数据）
+// 确保 allTools 是数组
+const toolsArray = computed(() => {
+  return Array.isArray(allTools) ? allTools : (allTools.value || [])
+})
+
+// 使用 toolsArray 而不是直接使用 allTools
+const featuredTools = computed(() => {
+  return toolsArray.value.slice(0, 6)
+})
+
 const popularTools = computed(() => {
-  return allTools.value.slice(0, 4)
+  const tools = [...toolsArray.value]
+  // 随机排序以模拟"热门"工具
+  return tools.sort(() => 0.5 - Math.random()).slice(0, 6)
 })
 
 const newTools = computed(() => {
-  return [...allTools.value].reverse().slice(0, 4)
+  return [...toolsArray.value].reverse().slice(0, 4)
 })
 
 // 组件挂载时，同步URL和选中标签状态

@@ -13,7 +13,7 @@
     <div class="mb-8">
       <h1 class="text-2xl md:text-3xl font-bold mb-3">标签云</h1>
       <p class="text-gray-600 dark:text-gray-300">
-        发现{{ allTags.length }}个标签对应的{{allTools.length}}个工具
+        发现{{ allTags.value.length }}个标签对应的{{allTools.length}}个工具
       </p>
     </div>
     
@@ -141,7 +141,7 @@ const tagSearchQuery = ref('')
 
 // 按搜索过滤标签
 const filteredTags = computed(() => {
-  if (!tagSearchQuery.value) return allTags.value
+  if (!tagSearchQuery.value) return allTags
   
   const query = tagSearchQuery.value.toLowerCase().trim()
   return allTags.value.filter(tag => 
@@ -152,7 +152,7 @@ const filteredTags = computed(() => {
 
 // 按工具数量排序的热门标签
 const popularTags = computed(() => {
-  return [...allTags.value]
+  return [...allTags]
     .map(tag => ({
       ...tag,
       count: toolsByTag.value[tag.id]?.length || 0
@@ -202,7 +202,7 @@ const tagGroups = computed(() => {
     indigo: '文档相关',
     pink: '多媒体',
     gray: '其他标签',
-    teal: '网络工具',
+    teal: '网络与协议',
     orange: '性能相关',
     cyan: '数据处理',
     amber: '安全相关',

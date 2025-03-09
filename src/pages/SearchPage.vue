@@ -68,7 +68,7 @@ const searchResults = computed(() => {
   const query = searchQuery.value.toLowerCase().trim()
   
   // 寻找可能匹配的标签
-  const tagMatches = allTags.value
+  const tagMatches = allTags
     .filter(tag => 
       tag.name.toLowerCase().includes(query) || 
       tag.id.toLowerCase().includes(query)
@@ -91,7 +91,7 @@ const relatedTags = computed(() => {
   const query = searchQuery.value.toLowerCase().trim()
   
   // 找出与查询相关的标签
-  return allTags.value
+  return allTags
     .filter(tag => 
       tag.name.toLowerCase().includes(query) || 
       tag.id.toLowerCase().includes(query)
