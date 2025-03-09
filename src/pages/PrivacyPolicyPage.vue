@@ -47,10 +47,11 @@
       
       <section class="mb-8">
         <h2 class="text-2xl font-semibold mb-4">Cookie使用</h2>
-        <p>
-          我们可能使用少量的基本cookie来记住您的暗色/亮色模式偏好等界面设置。
-          这些cookie不包含任何个人信息，仅用于改善您的使用体验。
-        </p>
+        <ul class="list-disc pl-8 mb-4">
+          <li>不使用任何 Cookie</li>
+          <li>不使用第三方 Cookie</li>
+          <li>所有数据处理都在本地完成</li>
+        </ul>
       </section>
       
       <section class="mb-8">
