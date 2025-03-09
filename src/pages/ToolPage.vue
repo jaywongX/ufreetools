@@ -51,6 +51,7 @@ import { ref, computed, inject, onMounted, watch, markRaw } from 'vue'
 import { useRoute } from 'vue-router'
 import TagBadge from '../components/ui/TagBadge.vue'
 import ToolCard from '../components/ui/ToolCard.vue'
+import { addToHistory } from '../services/historyService'
 
 const route = useRoute()
 const allTools = inject('allTools', [])
@@ -130,6 +131,9 @@ function loadTool() {
         name: tool.value.name,
         component: tool.value.component
       })
+      
+      // 添加到历史记录
+      addToHistory(tool.value)
       
       // 工具数据加载完成后，加载组件
       loadComponent(tool.value.component)

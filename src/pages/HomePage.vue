@@ -25,6 +25,21 @@
       </div>
     </section>
   
+    <!-- 最近使用部分 -->
+    <section v-if="selectedTags.length === 0 && recentTools.length > 0" class="mb-10">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">最近使用</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <ToolCard 
+          v-for="tool in recentTools" 
+          :key="tool.id"
+          :tool="tool"
+          @tag-click="addTagToFilter"
+        />
+      </div>
+    </section>
+  
     <!-- 热门工具部分 -->
     <section v-if="selectedTags.length === 0" class="mb-10">
       <div class="flex justify-between items-center mb-6">
@@ -83,6 +98,7 @@ import { useRoute, useRouter } from 'vue-router'
 import TagFilter from '../components/ui/TagFilter.vue'
 import TagBadge from '../components/ui/TagBadge.vue'
 import ToolCard from '../components/ui/ToolCard.vue'
+import { getHistory } from '../services/historyService'
 
 const route = useRoute()
 const router = useRouter()
@@ -95,6 +111,9 @@ const toolsByTag = inject('toolsByTag')
 
 // 已选标签
 const selectedTags = ref([])
+
+// 最近使用的工具
+const recentTools = ref([])
 
 // 从URL获取标签筛选参数
 function getTagsFromUrl() {
@@ -173,9 +192,10 @@ const newTools = computed(() => {
   return [...toolsArray.value].reverse().slice(0, 4)
 })
 
-// 组件挂载时，同步URL和选中标签状态
+// 组件挂载时，同步URL和选中标签状态，加载最近使用的工具
 onMounted(() => {
   selectedTags.value = getTagsFromUrl()
+  recentTools.value = getHistory()
 })
 </script>
 
