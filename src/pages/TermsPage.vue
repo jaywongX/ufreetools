@@ -1,51 +1,98 @@
 <template>
-  <div class="max-w-4xl mx-auto px-4">
+  <div class="max-w-4xl mx-auto px-4 py-8">
     <h1 class="text-3xl font-bold mb-6">使用条款</h1>
     
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
-      <p class="text-gray-700 dark:text-gray-300 mb-4">
-        最后更新日期: {{ new Date().toISOString().split('T')[0] }}
-      </p>
+    <div class="prose dark:prose-invert max-w-none">
+      <p class="mb-4">最后更新日期: {{ new Date().toLocaleDateString() }}</p>
       
-      <h2 class="text-xl font-semibold mb-3">1. 接受条款</h2>
-      <p class="text-gray-700 dark:text-gray-300 mb-4">
-        通过访问或使用 UFreeTools 网站和服务，您同意受本使用条款的约束。如果您不同意这些条款，请不要使用我们的网站和服务。
-      </p>
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">欢迎使用 ufreetools</h2>
+        <p>
+          欢迎使用ufreetools（以下简称"本站"、"我们"）提供的在线工具集合。本使用条款（以下简称"条款"）规定了访问和使用本网站的规则和条件。
+          通过访问或使用本网站，您同意接受本条款的约束。如果您不同意本条款的任何部分，请不要使用本网站。
+        </p>
+      </section>
       
-      <h2 class="text-xl font-semibold mb-3">2. 服务描述</h2>
-      <p class="text-gray-700 dark:text-gray-300 mb-4">
-        UFreeTools 提供各种在线工具，帮助用户完成特定任务。我们的工具是免费的，但我们保留随时更改、暂停或终止任何服务的权利。
-      </p>
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">免费使用</h2>
+        <p>
+          ufreetools提供的所有工具均可免费使用。我们不收取任何费用，也不要求用户注册账号即可使用我们的服务。
+          但我们保留随时修改、暂停或终止部分或全部服务的权利，且无需事先通知。
+        </p>
+      </section>
       
-      <h2 class="text-xl font-semibold mb-3">3. 用户责任</h2>
-      <p class="text-gray-700 dark:text-gray-300 mb-4">
-        您同意合法使用我们的服务，不会用于任何非法或未经授权的目的。您应对您使用我们服务的所有活动负责。
-      </p>
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">用户责任</h2>
+        <p>
+          使用本网站时，用户需自行承担以下责任：
+        </p>
+        <ul class="list-disc pl-8 mb-4">
+          <li>确保上传或处理的内容不侵犯第三方的权利</li>
+          <li>遵守适用的法律法规</li>
+          <li>不以任何方式干扰或破坏网站的正常运行</li>
+          <li>不尝试未经授权访问本网站的系统或网络</li>
+          <li>对自己输入或上传的数据负责</li>
+        </ul>
+      </section>
       
-      <h2 class="text-xl font-semibold mb-3">4. 知识产权</h2>
-      <p class="text-gray-700 dark:text-gray-300 mb-4">
-        网站上的所有内容，包括但不限于文本、图形、徽标、图标、图像、音频剪辑和软件，都是 UFreeTools 或其内容提供商的财产，受版权法保护。
-      </p>
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">知识产权</h2>
+        <p>
+          本网站的设计、代码、内容（包括但不限于文本、图像、标志）均归ufreetools所有，受著作权法和其他知识产权法保护。
+          未经我们明确许可，不得复制、修改、分发或以其他方式使用这些内容。
+        </p>
+        <p class="mt-2">
+          通过我们的工具生成或处理的内容，其知识产权仍归原内容所有者所有。
+        </p>
+      </section>
       
-      <h2 class="text-xl font-semibold mb-3">5. 免责声明</h2>
-      <p class="text-gray-700 dark:text-gray-300 mb-4">
-        我们的服务按"原样"和"可用"提供，不提供任何明示或暗示的保证。我们不保证服务不会中断，也不保证服务不会包含错误或缺陷。
-      </p>
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">服务"按现状"提供</h2>
+        <p>
+          我们的工具和服务"按现状"提供，不提供任何形式的保证，无论是明示的还是暗示的，包括但不限于对适销性、特定用途适用性和非侵权性的保证。
+        </p>
+        <p class="mt-2">
+          虽然我们努力确保工具的准确性和可靠性，但不保证服务不会中断或无错误，也不保证缺陷会被纠正。
+        </p>
+      </section>
       
-      <h2 class="text-xl font-semibold mb-3">6. 责任限制</h2>
-      <p class="text-gray-700 dark:text-gray-300 mb-4">
-        在任何情况下，UFreeTools 及其管理人员、董事、雇员和代理人都不对任何直接、间接、附带、特殊、惩罚性或后果性损害承担责任。
-      </p>
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">责任限制</h2>
+        <p>
+          在任何情况下，ufreetools及其运营者、贡献者均不对因使用或无法使用本网站或其内容而导致的任何直接、间接、附带、特殊、惩罚性或后果性损害承担责任，
+          包括但不限于利润损失、商誉损失、数据损失、替代服务的采购成本或其他无形损失。
+        </p>
+      </section>
       
-      <h2 class="text-xl font-semibold mb-3">7. 条款变更</h2>
-      <p class="text-gray-700 dark:text-gray-300 mb-4">
-        我们保留随时修改这些条款的权利。条款变更后，我们会在网站上发布更新版本。您继续使用我们的服务即表示接受修改后的条款。
-      </p>
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">链接到第三方网站</h2>
+        <p>
+          本网站可能包含指向第三方网站的链接。这些链接仅为方便用户而提供，不构成我们对这些网站的认可或关联。
+          我们对这些网站的内容、隐私政策或做法不负责任。
+        </p>
+      </section>
       
-      <h2 class="text-xl font-semibold mb-3">8. 联系我们</h2>
-      <p class="text-gray-700 dark:text-gray-300 mb-4">
-        如果您对这些条款有任何疑问，请通过 <a href="mailto:support@ufreetools.com" class="text-primary dark:text-primary-light hover:underline">support@ufreetools.com</a> 联系我们。
-      </p>
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">条款变更</h2>
+        <p>
+          我们保留随时修改本条款的权利。修改后的条款将在发布时立即生效。用户继续使用本网站即表示接受修改后的条款。
+          我们建议用户定期查看本条款，以了解任何变更。
+        </p>
+      </section>
+      
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">联系我们</h2>
+        <p>
+          如果您对本使用条款有任何疑问，请随时通过以下电子邮件地址与我们联系：
+          <a href="mailto:support@ufreetools.com" class="text-primary dark:text-primary-light">
+            support@ufreetools.com
+          </a>
+        </p>
+      </section>
     </div>
   </div>
-</template> 
+</template>
+
+<script setup>
+// 不需要额外的逻辑
+</script> 

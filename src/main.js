@@ -51,6 +51,21 @@ const router = createRouter({
       path: '/tags',
       name: 'Tags',
       component: () => import('./pages/TagsPage.vue')
+    },
+    {
+      path: '/privacy-policy',
+      name: 'PrivacyPolicy',
+      component: () => import('./pages/PrivacyPolicyPage.vue')
+    },
+    {
+      path: '/feedback',
+      name: 'Feedback',
+      component: () => import('./pages/FeedbackPage.vue')
+    },
+    {
+      path: '/terms',
+      name: 'Terms',
+      component: () => import('./pages/TermsPage.vue')
     }
   ]
 })
