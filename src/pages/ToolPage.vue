@@ -47,7 +47,7 @@
 </template>
 
 <script setup>
-import { ref, computed, inject, onMounted, watch } from 'vue'
+import { ref, computed, inject, onMounted, watch, markRaw } from 'vue'
 import { useRoute } from 'vue-router'
 import TagBadge from '../components/ui/TagBadge.vue'
 import ToolCard from '../components/ui/ToolCard.vue'
@@ -157,7 +157,8 @@ async function loadComponent(componentName) {
     console.log('Loading component:', componentName)
     
     // 使用全局注册的 getComponent 方法加载组件
-    resolvedComponent.value = await app.config.globalProperties.getComponent(componentName)
+    const component = await app.config.globalProperties.getComponent(componentName)
+    resolvedComponent.value = markRaw(component)
     
     if (!resolvedComponent.value) {
       componentError.value = `无法加载组件 "${componentName}"`

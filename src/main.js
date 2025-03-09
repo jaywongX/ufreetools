@@ -1,10 +1,14 @@
 // Polyfill Node.js core modules in Vite
 import { Buffer } from 'buffer'
+import process from 'process'
+import * as browserOs from 'os-browserify/browser'
+
 window.Buffer = Buffer
-window.process = { env: {} }
+window.process = process
+window.os = browserOs
 window.global = window
 
-import { createApp } from 'vue'
+import { createApp, markRaw } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import './assets/css/tailwind.css'
@@ -75,7 +79,6 @@ const router = createRouter({
 const lazyComponentMap = {
   // 开发工具
   'CodeObfuscator': () => import('./components/tools/CodeObfuscator.vue'),
-  'CodeSnippetManager': () => import('./components/tools/CodeSnippetManager.vue'),
   'CodeDiff': () => import('./components/tools/CodeDiff.vue'),
   'CodeFormatter': () => import('./components/tools/CodeFormatter.vue'),
   'CodeComplexity': () => import('./components/tools/CodeComplexity.vue'),
@@ -185,10 +188,10 @@ app.config.globalProperties.getComponent = async function(componentName) {
   }
   
   try {
-    // 动态导入并缓存组件
+    // 动态导入并缓存组件，使用 markRaw 标记组件
     const module = await lazyComponent()
-    this.componentCache[componentName] = module.default
-    return module.default
+    this.componentCache[componentName] = markRaw(module.default)
+    return this.componentCache[componentName]
   } catch (error) {
     console.error(`加载组件 "${componentName}" 失败:`, error)
     return null

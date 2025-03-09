@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { ref, provide, onMounted, watch, computed } from 'vue'
+import { ref, provide, onMounted, watch, computed, markRaw } from 'vue'
 import TheHeader from './components/layout/TheHeader.vue'
 import TheFooter from './components/layout/TheFooter.vue'
 import SideNav from './components/layout/SideNav.vue'
@@ -181,26 +181,15 @@ const allTools = ref([
     tags: ['code', 'security', 'frontend', 'optimize']
   },
   { 
-    id: 'code-snippet-manager', 
-    name: '代码片段管理器', 
-    category: '代码处理工具', 
-    categoryId: 'dev',
-    description: '保存和管理常用代码片段，提高开发效率', 
-    path: '/tools/code-snippet-manager',
-    component: 'CodeSnippetManager',
-    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['code', 'utility', 'dev']
-  },
-  {
     id:'code-diff',
     name:'代码差异对比',
     category:'开发工具',
     categoryId:'dev',
     description:'在线对比两个代码文件的差异，支持多种语言',
     path:'/tools/code-diff',
-    component:'CodeDiff',
-    icon:'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags:['code','dev','validate']
+    component: 'CodeDiff',
+    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['code', 'utility', 'dev']
   },
   {
     id:'code-formatter',
@@ -943,6 +932,9 @@ allTools.value.forEach(tool => {
     const componentName = tool.name.replace(/\s+/g, '')
     tool.component = componentName
   }
+  
+  // 标记工具对象为非响应式
+  markRaw(tool)
 })
 
 // 按标签分组的工具
@@ -958,12 +950,12 @@ const toolsByTag = computed(() => {
   allTools.value.forEach(tool => {
     tool.tags.forEach(tagId => {
       if (result[tagId]) {
-        result[tagId].push(tool)
+        result[tagId].push(markRaw({...tool}))
       }
     })
   })
   
-  return result
+  return markRaw(result)
 })
 provide('toolsByTag', toolsByTag)
 
@@ -979,11 +971,11 @@ const toolsByCategory = computed(() => {
   // 根据分类分组工具
   allTools.value.forEach(tool => {
     if (result[tool.categoryId]) {
-      result[tool.categoryId].push(tool)
+      result[tool.categoryId].push(markRaw({...tool}))
     }
   })
   
-  return result
+  return markRaw(result)
 })
 provide('toolsByCategory', toolsByCategory)
 
