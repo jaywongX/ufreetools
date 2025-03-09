@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-cloak>
     <!-- 面包屑导航 -->
     <div class="mb-6 text-sm">
       <router-link to="/" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
@@ -13,7 +13,7 @@
     <div class="mb-8">
       <h1 class="text-2xl md:text-3xl font-bold mb-3">标签云</h1>
       <p class="text-gray-600 dark:text-gray-300">
-        发现{{ allTags.value.length }}个标签对应的{{allTools.length}}个工具
+        发现{{ allTags?.length || 0 }}个标签对应的{{ allTools?.length || 0 }}个工具
       </p>
     </div>
     
@@ -41,7 +41,7 @@
     </div>
     
     <!-- 标签分类展示 -->
-    <div v-if="!tagSearchQuery">
+    <div v-if="!tagSearchQuery && isDataReady">
       <!-- 热门标签 -->
       <section class="mb-10">
         <h2 class="text-xl font-bold mb-4">热门标签</h2>
@@ -56,8 +56,8 @@
               opacity: getTagOpacity(tag)
             }"
           >
-            <TagBadge :tag-id="tag.id" />
-            <span class="ml-1 text-xs text-gray-500">{{ toolsByTag[tag.id].length }}</span>
+            <TagBadge v-if="tag?.id" :tag-id="tag.id" />
+            <span class="ml-1 text-xs text-gray-500">{{ toolsByTag[tag.id]?.length || 0 }}</span>
           </router-link>
         </div>
       </section>
@@ -72,14 +72,14 @@
             :to="`/tag/${tag.id}`"
             class="tag-cloud-item"
           >
-            <TagBadge :tag-id="tag.id" />
-            <span class="ml-1 text-xs text-gray-500">{{ toolsByTag[tag.id].length }}</span>
+            <TagBadge v-if="tag?.id" :tag-id="tag.id" />
+            <span class="ml-1 text-xs text-gray-500">{{ toolsByTag[tag.id]?.length || 0 }}</span>
           </router-link>
         </div>
       </section>
       
       <!-- 标签关系可视化 -->
-      <section class="mb-10">
+      <section class="mb-10" v-if="topTagPairs.length">
         <h2 class="text-xl font-bold mb-4">标签关联分析</h2>
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
           <p class="text-gray-600 dark:text-gray-300 mb-4">
@@ -87,14 +87,12 @@
           </p>
           
           <div class="tag-relationship-chart">
-            <!-- 这里可以放一个简单的图表，显示标签之间的关联性 -->
-            <!-- 由于涉及到图表库的使用，在这里我们只展示简化的关联数据 -->
             <div v-for="(pair, idx) in topTagPairs" :key="idx" class="mb-3 p-3 rounded bg-gray-50 dark:bg-gray-700">
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                  <TagBadge :tag-id="pair.tags[0]" />
+                  <TagBadge v-if="pair.tags[0]" :tag-id="pair.tags[0]" />
                   <span class="mx-2">+</span>
-                  <TagBadge :tag-id="pair.tags[1]" />
+                  <TagBadge v-if="pair.tags[1]" :tag-id="pair.tags[1]" />
                 </div>
                 <div class="text-sm text-gray-500 dark:text-gray-400">
                   {{ pair.count }}个工具
@@ -107,7 +105,7 @@
     </div>
     
     <!-- 搜索标签结果 -->
-    <div v-else>
+    <div v-else-if="tagSearchQuery">
       <h2 class="text-xl font-bold mb-4">搜索结果: "{{ tagSearchQuery }}"</h2>
       <div v-if="filteredTags.length > 0" class="flex flex-wrap gap-3">
         <router-link 
@@ -116,8 +114,8 @@
           :to="`/tag/${tag.id}`"
           class="tag-cloud-item"
         >
-          <TagBadge :tag-id="tag.id" />
-          <span class="ml-1 text-xs text-gray-500">{{ toolsByTag[tag.id].length }}</span>
+          <TagBadge v-if="tag?.id" :tag-id="tag.id" />
+          <span class="ml-1 text-xs text-gray-500">{{ toolsByTag[tag.id]?.length || 0 }}</span>
         </router-link>
       </div>
       <div v-else class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 text-center">
@@ -128,68 +126,88 @@
 </template>
 
 <script setup>
-import { ref, computed, inject } from 'vue'
-import TagBadge from '../components/ui/TagBadge.vue'
+import { ref, computed, inject, markRaw, shallowRef } from 'vue'
+import _TagBadge from '../components/ui/TagBadge.vue'
 
-// 注入全局数据
-const allTools = inject('allTools')
-const allTags = inject('allTags')
-const toolsByTag = inject('toolsByTag')
+// 使用 markRaw 标记组件
+const TagBadge = markRaw(_TagBadge)
+
+// 使用 shallowRef 包装注入的数据
+const allTools = shallowRef(inject('allTools', []))
+const allTags = shallowRef(inject('allTags', []))
+const toolsByTag = shallowRef(inject('toolsByTag', {}))
 
 // 标签搜索功能
 const tagSearchQuery = ref('')
 
+// 数据准备状态
+const isDataReady = computed(() => {
+  return allTools.value?.length > 0 && 
+         allTags.value?.length > 0 && 
+         Object.keys(toolsByTag.value || {}).length > 0
+})
+
 // 按搜索过滤标签
 const filteredTags = computed(() => {
-  if (!tagSearchQuery.value) return allTags
+  if (!tagSearchQuery.value || !allTags.value) return []
   
   const query = tagSearchQuery.value.toLowerCase().trim()
   return allTags.value.filter(tag => 
-    tag.id.toLowerCase().includes(query) || 
-    tag.name.toLowerCase().includes(query)
+    tag?.id?.toLowerCase().includes(query) || 
+    tag?.name?.toLowerCase().includes(query)
   )
 })
 
 // 按工具数量排序的热门标签
 const popularTags = computed(() => {
-  return [...allTags]
-    .map(tag => ({
+  if (!allTags.value || !toolsByTag.value) return []
+  
+  return markRaw([...allTags.value]
+    .map(tag => markRaw({
       ...tag,
-      count: toolsByTag.value[tag.id]?.length || 0
-    }))
+      count: toolsByTag.value[tag?.id]?.length || 0
+    })))
     .sort((a, b) => b.count - a.count)
-    .slice(0, 20) // 显示前20个热门标签
+    .slice(0, 20)
 })
 
 // 根据使用频率计算标签大小
 function getTagSize(tag) {
+  if (!tag || !toolsByTag.value) return 0.9 // 默认最小尺寸
+  
   const count = toolsByTag.value[tag.id]?.length || 0
-  const maxCount = Math.max(...Object.values(toolsByTag.value).map(tools => tools.length))
+  const allCounts = Object.values(toolsByTag.value || {}).map(tools => tools?.length || 0)
+  const maxCount = allCounts.length > 0 ? Math.max(...allCounts) : 0
   const minSize = 0.9
   const maxSize = 1.5
   
-  return minSize + (count / maxCount) * (maxSize - minSize)
+  return maxCount === 0 ? minSize : minSize + (count / maxCount) * (maxSize - minSize)
 }
 
 // 根据使用频率计算标签透明度
 function getTagOpacity(tag) {
+  if (!tag || !toolsByTag.value) return 0.7 // 默认最小透明度
+  
   const count = toolsByTag.value[tag.id]?.length || 0
-  const maxCount = Math.max(...Object.values(toolsByTag.value).map(tools => tools.length))
+  const allCounts = Object.values(toolsByTag.value || {}).map(tools => tools?.length || 0)
+  const maxCount = allCounts.length > 0 ? Math.max(...allCounts) : 0
   const minOpacity = 0.7
   
-  return minOpacity + (count / maxCount) * (1 - minOpacity)
+  return maxCount === 0 ? minOpacity : minOpacity + (count / maxCount) * (1 - minOpacity)
 }
 
 // 标签分组
 const tagGroups = computed(() => {
-  // 简单示例：按颜色分组
+  if (!allTags.value) return []
+  
   const groups = {}
   
   allTags.value.forEach(tag => {
+    if (!tag?.color) return
     if (!groups[tag.color]) {
       groups[tag.color] = []
     }
-    groups[tag.color].push(tag)
+    groups[tag.color].push(markRaw({...tag}))
   })
   
   // 将分组转换为数组，并为每组添加名称
@@ -211,24 +229,30 @@ const tagGroups = computed(() => {
     rose: '生成工具'
   }
   
-  return Object.entries(groups).map(([color, tags]) => ({
-    name: colorNames[color] || `${color}类标签`,
-    color,
-    tags: tags.sort((a, b) => (toolsByTag.value[b.id]?.length || 0) - (toolsByTag.value[a.id]?.length || 0))
-  })).sort((a, b) => b.tags.length - a.tags.length)
+  return markRaw(Object.entries(groups)
+    .map(([color, tags]) => markRaw({
+      name: colorNames[color] || `${color}类标签`,
+      color,
+      tags: tags.sort((a, b) => (toolsByTag.value[b?.id]?.length || 0) - (toolsByTag.value[a?.id]?.length || 0))
+    })))
+    .sort((a, b) => b.tags.length - a.tags.length)
 })
 
 // 标签关联分析 - 寻找经常一起出现的标签对
 const topTagPairs = computed(() => {
+  if (!allTools.value) return []
+  
   const tagPairs = {}
   
   // 统计每个标签对出现的频率
   allTools.value.forEach(tool => {
-    const tags = tool.tags || []
+    if (!tool?.tags) return
+    const tags = tool.tags
     
     // 遍历所有可能的标签对组合
     for (let i = 0; i < tags.length; i++) {
       for (let j = i + 1; j < tags.length; j++) {
+        if (!tags[i] || !tags[j]) continue
         // 对标签ID进行排序，确保相同对的ID始终以相同顺序出现
         const pair = [tags[i], tags[j]].sort().join('_')
         tagPairs[pair] = (tagPairs[pair] || 0) + 1
@@ -237,17 +261,21 @@ const topTagPairs = computed(() => {
   })
   
   // 转换为数组并按出现频率排序
-  return Object.entries(tagPairs)
-    .map(([pair, count]) => ({
+  return markRaw(Object.entries(tagPairs)
+    .map(([pair, count]) => markRaw({
       tags: pair.split('_'),
       count
-    }))
+    })))
     .sort((a, b) => b.count - a.count)
-    .slice(0, 10) // 只显示前10个关联度最高的标签对
+    .slice(0, 10)
 })
 </script>
 
 <style scoped>
+[v-cloak] {
+  display: none;
+}
+
 .tag-cloud-item {
   display: inline-flex;
   align-items: center;

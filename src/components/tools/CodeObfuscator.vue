@@ -264,7 +264,7 @@ const jsOptions = ref({
   deadCodeInjection: false,
   deadCodeInjectionThreshold: 0.4,
   debugProtection: false,
-  debugProtectionInterval: false,
+  debugProtectionInterval: 4000,
   disableConsoleOutput: false,
   identifierNamesGenerator: 'hexadecimal',
   log: false,

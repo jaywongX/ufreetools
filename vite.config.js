@@ -12,6 +12,8 @@ export default defineConfig({
       stream: 'stream-browserify',
       util: 'util/',
       buffer: 'buffer/',
+      // 为 os 模块提供一个简单的替代实现
+      os: 'os-browserify/browser'
     }
   },
   define: {
@@ -22,6 +24,8 @@ export default defineConfig({
     'global': 'window',
     // Buffer polyfill
     'Buffer': ['buffer', 'Buffer'],
+    // 为一些 Node.js 全局变量提供替代值
+    'os.EOL': JSON.stringify('\n')
   },
   optimizeDeps: {
     esbuildOptions: {
