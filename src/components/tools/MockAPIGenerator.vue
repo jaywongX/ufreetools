@@ -25,7 +25,7 @@
               上传Java类文件
             </button>
             <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">
-              支持上传 .java 文件，自动解析类结构生成Mock配置 暂未支持对象属性
+              支持上传 .java 文件，自动解析类结构生成Mock配置 暂未支持多层对象属性
             </p>
             <p v-if="uploadedFileName" class="text-xs text-green-600 dark:text-green-400 font-medium">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -844,14 +844,35 @@ function generateBuilder() {
             valueStr = `new Date("${value}")`
             break
           case 'array':
-            valueStr = `Arrays.asList("${value.join('", "')}")`
+            if (field.itemType === 'object' && Array.isArray(value) && value.length > 0) {
+              // 处理对象数组
+              const objectItems = value.map(item => {
+                if (typeof item === 'object') {
+                  // 使用Builder模式替代Map.of
+                  const itemClassName = capitalizeFirstLetter(field.name.replace(/s$/, '')) // 尝试将复数形式转为单数
+                  let builderStr = `${itemClassName}.builder()\n`
+                  Object.entries(item).forEach(([k, v]) => {
+                    if (typeof v === 'string') {
+                      builderStr += `${prefix}        .${k}("${v}")\n`
+                    } else {
+                      builderStr += `${prefix}        .${k}(${v})\n`
+                    }
+                  })
+                  builderStr += `${prefix}        .build()`
+                  return builderStr
+                }
+                return `"${item}"`
+              }).join(', ')
+              valueStr = `Arrays.asList(${objectItems})`
+            } else {
+              // 处理基本类型数组
+              valueStr = `Arrays.asList("${value.join('", "')}")`
+            }
             break
           case 'object':
-            valueStr = `new HashMap<String, Object>() {{ 
-                put("id", ${value.id}); 
-                put("name", "${value.name}"); 
-                put("email", "${value.email}");
-            }}`
+            // 使用Builder模式替代Map.of
+            const objClassName = capitalizeFirstLetter(field.name)
+            valueStr = `${objClassName}.builder()\n${prefix}    .id(${value.id})\n${prefix}    .name("${value.name}")\n${prefix}    .email("${value.email}")\n${prefix}    .build()`
             break
           default:
             valueStr = value
@@ -891,4 +912,4 @@ function getJavaTypeFromMockType(mockType) {
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
-</script> 
+</script>
