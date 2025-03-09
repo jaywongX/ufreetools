@@ -364,6 +364,15 @@ const allTools = ref([
     description: '查询IP地址的地理位置、ISP和ASN信息，支持IPv4和IPv6', 
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
     tags: ['network', 'ip', 'utility']
+  },
+  { 
+    id: 102, 
+    name: '图片水印', 
+    category: '图像与多媒体工具', 
+    categoryId: 'image',
+    description: '为图片添加自定义水印，支持调整位置、大小、颜色和透明度', 
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image', 'watermark']
   }
 ])
 provide('allTools', allTools)

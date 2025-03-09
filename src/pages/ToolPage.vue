@@ -207,6 +207,9 @@
       <!-- IP地址查询 -->
       <IpLookup v-else-if="tool.id === 56" />
       
+      <!-- 图片水印工具 -->
+      <ImageWatermark v-else-if="tool.id === 102" />
+      
       <!-- 如果没有找到匹配的工具 -->
       <div v-else class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center">
         <p class="text-gray-600 dark:text-gray-400">该工具正在开发中，敬请期待...</p>
@@ -292,6 +295,7 @@ import RedirectChecker from '../components/tools/RedirectChecker.vue'
 import IpLookup from '../components/tools/IpLookup.vue'
 import TagBadge from '../components/ui/TagBadge.vue'
 import ToolCard from '../components/ui/ToolCard.vue'
+import ImageWatermark from '../components/tools/ImageWatermark.vue'
 
 const route = useRoute()
 
@@ -353,7 +357,8 @@ const allTools = ref([
   { id: 53, name: '网络测速工具', category: '网络与协议工具', description: '测量资源加载时间，分析网络连接质量和性能', icon: 'M13 10V3L4 14h7v7l9-11h-7z', categoryId: 'network' },
   { id: 54, name: 'HMAC计算工具', category: '数据与加密工具', description: '使用密钥生成消息认证码，支持多种哈希算法和输出格式', icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z', categoryId: 'crypto' },
   { id: 55, name: '页面重定向检查器', category: '网络与协议工具', description: '检测和分析网页的重定向链，包括重定向类型、耗时和性能影响', icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm12 0a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z', categoryId: 'network' },
-  { id: 56, name: 'IP地址查询工具', category: '网络与协议工具', description: '查询IP地址的地理位置、ISP和ASN信息，支持IPv4和IPv6', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', categoryId: 'network' }
+  { id: 56, name: 'IP地址查询工具', category: '网络与协议工具', description: '查询IP地址的地理位置、ISP和ASN信息，支持IPv4和IPv6', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', categoryId: 'network' },
+  { id: 102, name: '图片水印工具', category: '图像与多媒体工具', description: '为图片添加水印，保护图片版权和防止盗用', icon: 'M12 12s0 8 8 8 8-8 8-8-8-8-8 8z', categoryId: 'image' }
 ])
 
 // 当前工具信息
