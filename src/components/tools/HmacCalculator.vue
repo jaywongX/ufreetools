@@ -151,11 +151,23 @@
             <p v-if="hmacResult" class="mb-2">
               <span class="font-medium">JavaScript 示例：</span>
             </p>
-            <pre v-if="hmacResult" class="whitespace-pre-wrap break-all">
-const crypto = require('crypto');
-const hmac = crypto.createHmac('{{ algorithm }}', '{{ secretKey }}');
-hmac.update('{{ message }}');
-console.log(hmac.digest('{{ outputFormat }}')); // {{ hmacResult }}</pre>
+            <pre v-if="hmacResult" class="whitespace-pre-wrap break-all" v-html="algorithm === 'SM3' ? `import { sm3 } from 'sm-crypto';
+
+// 密钥和消息
+const key = '${secretKey}';
+const message = '${message}';
+
+// 计算 HMAC-SM3
+const result = sm3(message, {
+  key: key,
+  mode: 'hmac'
+});
+
+console.log(result);` : 
+`const crypto = require('crypto');
+const hmac = crypto.createHmac('${algorithm}', '${secretKey}');
+hmac.update('${message}');
+console.log(hmac.digest('${outputFormat}'));`"></pre>
             <p v-else class="text-gray-500 dark:text-gray-400">
               计算HMAC后，将显示相应的代码示例
             </p>
@@ -176,6 +188,7 @@ console.log(hmac.digest('{{ outputFormat }}')); // {{ hmacResult }}</pre>
 
 <script setup>
 import { ref, computed, watch } from 'vue'
+import { sm3 } from 'sm-crypto'
 
 // 状态变量
 const algorithm = ref('SHA-256')
@@ -193,6 +206,7 @@ const notification = ref({ show: false, message: '' })
 
 // 支持的算法
 const algorithms = [
+  { name: 'SM3', value: 'SM3' },
   { name: 'SHA-256', value: 'SHA-256' },
   { name: 'SHA-1', value: 'SHA-1' },
   { name: 'SHA-384', value: 'SHA-384' },
@@ -329,27 +343,46 @@ async function calculateHmac() {
     const keyBuffer = convertToArrayBuffer(secretKey.value, keyInputType.value)
     const messageBuffer = convertToArrayBuffer(message.value, messageInputType.value)
     
-    // 使用Web Crypto API计算HMAC
-    const cryptoKey = await window.crypto.subtle.importKey(
-      'raw',
-      keyBuffer,
-      {
-        name: 'HMAC',
-        hash: { name: algorithm.value }
-      },
-      false,
-      ['sign']
-    )
-    
-    const signature = await window.crypto.subtle.sign(
-      'HMAC',
-      cryptoKey,
-      messageBuffer
-    )
-    
-    // 转换为所需的输出格式
-    hmacResult.value = convertArrayBufferToOutput(signature, outputFormat.value)
-    
+    if (algorithm.value === 'SM3') {
+      // 使用SM3 HMAC
+      const key = new Uint8Array(keyBuffer)
+      const message = new Uint8Array(messageBuffer)
+      
+      // 直接使用sm3的hmac模式
+      const hmacHex = sm3(Array.from(message), {
+        key: Array.from(key),
+        mode: 'hmac'
+      })
+      
+      // 转换为所需的输出格式
+      if (outputFormat.value === 'hex') {
+        hmacResult.value = hmacHex
+      } else {
+        const hashBytes = new Uint8Array(hmacHex.match(/.{2}/g).map(byte => parseInt(byte, 16)))
+        hmacResult.value = convertArrayBufferToOutput(hashBytes.buffer, outputFormat.value)
+      }
+    } else {
+      // 使用Web Crypto API计算其他HMAC
+      const cryptoKey = await window.crypto.subtle.importKey(
+        'raw',
+        keyBuffer,
+        {
+          name: 'HMAC',
+          hash: { name: algorithm.value }
+        },
+        false,
+        ['sign']
+      )
+      
+      const signature = await window.crypto.subtle.sign(
+        'HMAC',
+        cryptoKey,
+        messageBuffer
+      )
+      
+      // 转换为所需的输出格式
+      hmacResult.value = convertArrayBufferToOutput(signature, outputFormat.value)
+    }
   } catch (err) {
     console.error('HMAC计算错误:', err)
     error.value = `计算错误: ${err.message || '未知错误'}`
