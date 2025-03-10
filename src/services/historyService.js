@@ -1,58 +1,68 @@
+/**
+ * 工具使用历史记录服务
+ * 使用 localStorage 存储用户最近使用过的工具
+ */
+
+// 存储键名
+const HISTORY_KEY = 'ufreetools_history';
 // 最大历史记录数量
-const MAX_HISTORY = 10
-const STORAGE_KEY = 'tool_history'
+const MAX_HISTORY_ITEMS = 6;
 
-// 获取历史记录
-export function getHistory() {
-  try {
-    const history = localStorage.getItem(STORAGE_KEY)
-    return history ? JSON.parse(history) : []
-  } catch (e) {
-    console.error('读取历史记录失败:', e)
-    return []
-  }
-}
-
-// 添加工具到历史记录
+/**
+ * 将工具添加到历史记录
+ * @param {Object} tool 工具对象
+ */
 export function addToHistory(tool) {
+  if (!tool || !tool.id) return;
+  
   try {
-    const history = getHistory()
+    // 获取现有历史记录
+    let history = getHistory();
     
-    // 移除已存在的相同工具（如果有）
-    const filteredHistory = history.filter(item => item.id !== tool.id)
+    // 移除已存在的相同工具(如果有)
+    history = history.filter(item => item.id !== tool.id);
     
-    // 在开头添加新工具
-    filteredHistory.unshift({
+    // 添加到最前面(最新的在前面)
+    history.unshift({
       id: tool.id,
       name: tool.name,
       description: tool.description,
-      category: tool.category,
-      categoryId: tool.categoryId,
       icon: tool.icon,
+      categoryId: tool.categoryId,
       tags: tool.tags,
+      component: tool.component,
       timestamp: Date.now()
-    })
+    });
     
-    // 保持历史记录在最大数量以内
-    const newHistory = filteredHistory.slice(0, MAX_HISTORY)
+    // 限制数量
+    if (history.length > MAX_HISTORY_ITEMS) {
+      history = history.slice(0, MAX_HISTORY_ITEMS);
+    }
     
-    // 保存到本地存储
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(newHistory))
-    
-    return newHistory
-  } catch (e) {
-    console.error('保存历史记录失败:', e)
-    return []
+    // 保存回 localStorage
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+  } catch (error) {
+    console.error('保存历史记录失败:', error);
   }
 }
 
-// 清除历史记录
-export function clearHistory() {
+/**
+ * 获取历史记录
+ * @returns {Array} 工具历史记录数组
+ */
+export function getHistory() {
   try {
-    localStorage.removeItem(STORAGE_KEY)
-    return true
-  } catch (e) {
-    console.error('清除历史记录失败:', e)
-    return false
+    const data = localStorage.getItem(HISTORY_KEY);
+    return data ? JSON.parse(data) : [];
+  } catch (error) {
+    console.error('读取历史记录失败:', error);
+    return [];
   }
+}
+
+/**
+ * 清除历史记录
+ */
+export function clearHistory() {
+  localStorage.removeItem(HISTORY_KEY);
 } 
