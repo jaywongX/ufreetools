@@ -47,63 +47,6 @@
         </div>
       </div>
 
-      <!-- 密钥和IV输入 -->
-      <div class="mb-4" v-if="selectedAlgorithm !== 'none'">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <!-- 密钥 -->
-          <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              密钥 <span class="text-xs text-gray-500">({{ getKeySize() }})</span>
-            </label>
-            <div class="flex mb-2">
-              <input 
-                v-model="key" 
-                type="text" 
-                :placeholder="`输入${getKeySize()}密钥`"
-                class="flex-grow px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-              >
-              <button 
-                @click="generateRandomKey()"
-                class="px-3 py-2 bg-gray-100 dark:bg-gray-600 border border-l-0 border-gray-300 dark:border-gray-600 rounded-r-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500"
-                title="生成随机密钥"
-              >
-                随机生成
-              </button>
-            </div>
-            <div class="flex items-center mb-2">
-              <input type="checkbox" id="keyHex" v-model="keyIsHex" class="mr-2">
-              <label for="keyHex" class="text-sm text-gray-700 dark:text-gray-300">十六进制格式</label>
-            </div>
-          </div>
-
-          <!-- IV (初始向量) -->
-          <div v-if="needsIV()">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              初始向量 (IV) <span class="text-xs text-gray-500">({{ getBlockSize() }})</span>
-            </label>
-            <div class="flex mb-2">
-              <input 
-                v-model="iv" 
-                type="text" 
-                :placeholder="`输入${getBlockSize()}初始向量`"
-                class="flex-grow px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-              >
-              <button 
-                @click="generateRandomIV()"
-                class="px-3 py-2 bg-gray-100 dark:bg-gray-600 border border-l-0 border-gray-300 dark:border-gray-600 rounded-r-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500"
-                title="生成随机IV"
-              >
-                随机生成
-              </button>
-            </div>
-            <div class="flex items-center mb-2">
-              <input type="checkbox" id="ivHex" v-model="ivIsHex" class="mr-2">
-              <label for="ivHex" class="text-sm text-gray-700 dark:text-gray-300">十六进制格式</label>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- 填充方式 -->
       <div class="mb-4" v-if="selectedAlgorithm !== 'none' && selectedMode !== 'CTR' && selectedMode !== 'OFB' && selectedMode !== 'CFB'">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -124,34 +67,14 @@
         </div>
       </div>
 
-      <!-- 输出格式 -->
-      <div class="mb-4" v-if="selectedAlgorithm !== 'none'">
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          输出格式
-        </label>
-        <div class="flex flex-wrap gap-2">
-          <button 
-            v-for="format in outputFormats" 
-            :key="format.id"
-            @click="selectedOutputFormat = format.id"
-            class="px-3 py-1.5 rounded-md text-sm"
-            :class="selectedOutputFormat === format.id 
-              ? 'bg-primary text-white' 
-              : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'"
-          >
-            {{ format.name }}
-          </button>
-        </div>
-      </div>
-
-      <!-- 操作类型 -->
-      <div class="mb-4" v-if="selectedAlgorithm !== 'none'">
+      <!-- 加密/解密切换 -->
+      <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
           操作类型
         </label>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex gap-2">
           <button 
-            @click="operation = 'encrypt'"
+            @click="switchOperation('encrypt')"
             class="px-3 py-1.5 rounded-md text-sm"
             :class="operation === 'encrypt' 
               ? 'bg-primary text-white' 
@@ -160,7 +83,7 @@
             加密
           </button>
           <button 
-            @click="operation = 'decrypt'"
+            @click="switchOperation('decrypt')"
             class="px-3 py-1.5 rounded-md text-sm"
             :class="operation === 'decrypt' 
               ? 'bg-primary text-white' 
@@ -171,26 +94,87 @@
         </div>
       </div>
 
+      <!-- 密钥和IV输入 -->
+      <div class="mb-4" v-if="selectedAlgorithm !== 'none'">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- 密钥 -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              密钥 <span class="text-xs text-gray-500">({{ getKeySize() }})</span>
+            </label>
+            <div class="flex mb-2">
+              <input 
+                v-model="key" 
+                type="text" 
+                :placeholder="`输入${getKeySize()}密钥（HEX格式）`"
+                class="flex-grow px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+              >
+              <button 
+                @click="generateRandomKey()"
+                class="px-3 py-2 bg-gray-100 dark:bg-gray-600 border border-l-0 border-gray-300 dark:border-gray-600 rounded-r-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500"
+                title="生成随机密钥"
+              >
+                随机生成
+              </button>
+            </div>
+          </div>
+
+          <!-- IV (初始向量) -->
+          <div v-if="needsIV()">
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              初始向量 (IV) <span class="text-xs text-gray-500">({{ getBlockSize() }})</span>
+            </label>
+            <div class="flex mb-2">
+              <input 
+                v-model="iv" 
+                type="text" 
+                :placeholder="`输入${getBlockSize()}初始向量（HEX格式）`"
+                class="flex-grow px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+              >
+              <button 
+                @click="generateRandomIV()"
+                class="px-3 py-2 bg-gray-100 dark:bg-gray-600 border border-l-0 border-gray-300 dark:border-gray-600 rounded-r-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500"
+                title="生成随机IV"
+              >
+                随机生成
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- 输入区域 -->
       <div class="mb-4" v-if="selectedAlgorithm !== 'none'">
-        <div class="flex justify-between items-center mb-2">
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+        <div class="flex items-center gap-4 mb-2">
+          <label class="text-sm font-medium text-gray-700 dark:text-gray-300 shrink-0">
             {{ operation === 'encrypt' ? '待加密内容' : '待解密内容' }}
           </label>
-          <div class="flex space-x-2">
+          <!-- 输入格式选择 -->
+          <div class="flex flex-wrap gap-2">
             <button 
-              @click="clearInput" 
-              class="text-xs text-red-500 hover:text-red-700"
-              v-if="input.length > 0"
+              v-for="format in operation === 'encrypt' ? inputFormats : decryptInputFormats" 
+              :key="format.id"
+              @click="selectedInputFormat = format.id"
+              class="px-3 py-1.5 rounded-md text-sm"
+              :class="selectedInputFormat === format.id 
+                ? 'bg-primary text-white' 
+                : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'"
             >
-              清空
+              {{ format.name }}
             </button>
           </div>
+          <button 
+            @click="clearInput" 
+            class="text-xs text-red-500 hover:text-red-700"
+            v-if="input.length > 0"
+          >
+            清空
+          </button>
         </div>
         <textarea 
           v-model="input" 
           class="w-full h-32 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
-          :placeholder="operation === 'encrypt' ? '输入要加密的文本' : '输入要解密的' + (selectedOutputFormat === 'base64' ? 'Base64' : '十六进制') + '文本'"
+          :placeholder="operation === 'encrypt' ? '输入要加密的文本' : '输入要解密的' + (selectedInputFormat === 'base64' ? 'Base64' : 'HEX格式密文')"
         ></textarea>
       </div>
 
@@ -207,16 +191,38 @@
 
       <!-- 结果区域 -->
       <div v-if="result" class="mb-4">
-        <div class="flex justify-between items-center mb-2">
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+        <div class="flex items-center gap-4 mb-2">
+          <label class="text-sm font-medium text-gray-700 dark:text-gray-300 shrink-0">
             {{ operation === 'encrypt' ? '加密结果' : '解密结果' }}
           </label>
-          <button 
-            @click="copyResult" 
-            class="text-xs text-primary hover:text-primary-dark"
-          >
-            复制结果
-          </button>
+          <!-- 输出格式选择 -->
+          <div class="flex flex-wrap gap-2">
+            <button 
+              v-for="format in operation === 'encrypt' ? outputFormats : decryptOutputFormats" 
+              :key="format.id"
+              @click="operation === 'encrypt' ? selectedOutputFormat = format.id : selectedDecryptOutputFormat = format.id"
+              class="px-2 py-1 rounded text-xs"
+              :class="(operation === 'encrypt' ? selectedOutputFormat : selectedDecryptOutputFormat) === format.id 
+                ? 'bg-primary text-white' 
+                : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'"
+            >
+              {{ format.name }}
+            </button>
+          </div>
+          <div class="flex items-center gap-2">
+            <button 
+              @click="copyResult" 
+              class="text-xs text-primary hover:text-primary-dark"
+            >
+              复制结果
+            </button>
+            <span 
+              v-if="copySuccess"
+              class="text-xs text-green-600 dark:text-green-400 transition-opacity duration-200"
+            >
+              已复制
+            </span>
+          </div>
         </div>
         <div class="w-full min-h-[100px] max-h-[200px] overflow-auto px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm break-all whitespace-pre-wrap">
           {{ result }}
@@ -252,23 +258,24 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import CryptoJS from 'crypto-js'
 import { sm4 } from 'sm-crypto'
 
 // 定义状态
 const selectedAlgorithm = ref('aes')
 const selectedMode = ref('CBC')
-const selectedPadding = ref('PKCS7')
-const selectedOutputFormat = ref('base64')
+const selectedPadding = ref('Pkcs7')
+const selectedOutputFormat = ref('hex')  // 默认使用hex
+const selectedInputFormat = ref('string')   // 默认使用string
+const selectedDecryptOutputFormat = ref('string')  // 默认解密输出为string
 const operation = ref('encrypt')
 const key = ref('')
 const iv = ref('')
-const keyIsHex = ref(false)
-const ivIsHex = ref(false)
 const input = ref('')
 const result = ref('')
 const error = ref('')
+const copySuccess = ref(false)  // 新增：复制成功提示状态
 
 // 算法列表
 const algorithms = [
@@ -280,8 +287,8 @@ const algorithms = [
 
 // 模式列表
 const modes = [
-  { id: 'ECB', name: 'ECB' },
   { id: 'CBC', name: 'CBC' },
+  { id: 'ECB', name: 'ECB' },
   { id: 'CFB', name: 'CFB' },
   { id: 'OFB', name: 'OFB' },
   { id: 'CTR', name: 'CTR' }
@@ -295,15 +302,34 @@ const sm4Modes = [
 
 // 填充方式
 const paddings = [
-  { id: 'PKCS7', name: 'PKCS7' },
-  { id: 'NoPadding', name: '无填充' },
+  { id: 'Pkcs7', name: 'PKCS7' },
   { id: 'ZeroPadding', name: '零填充' }
 ]
 
-// 输出格式
+// 输入格式（用于加密）
+const inputFormats = [
+  { id: 'string', name: '字符串' },
+  { id: 'hex', name: 'HEX' },
+  { id: 'base64', name: 'Base64' }
+]
+
+// 输入格式（用于解密）
+const decryptInputFormats = [
+  { id: 'hex', name: 'HEX' },
+  { id: 'base64', name: 'Base64' }
+]
+
+// 输出格式（用于加密）
 const outputFormats = [
-  { id: 'base64', name: 'Base64' },
-  { id: 'hex', name: '十六进制' }
+  { id: 'hex', name: 'HEX' },
+  { id: 'base64', name: 'Base64' }
+]
+
+// 输出格式（用于解密）
+const decryptOutputFormats = [
+  { id: 'string', name: '字符串' },
+  { id: 'hex', name: 'HEX' },
+  { id: 'base64', name: 'Base64' }
 ]
 
 // 获取当前算法的可用模式
@@ -353,24 +379,14 @@ function getBlockSize() {
 function generateRandomKey() {
   const keyLength = getDefaultKeyLength()
   const randomKey = CryptoJS.lib.WordArray.random(keyLength)
-  
-  if (keyIsHex.value) {
-    key.value = randomKey.toString(CryptoJS.enc.Hex)
-  } else {
-    key.value = randomKey.toString(CryptoJS.enc.Utf8)
-  }
+  key.value = randomKey.toString(CryptoJS.enc.Hex)
 }
 
 // 生成随机IV
 function generateRandomIV() {
   const blockSize = getDefaultBlockSize()
   const randomIV = CryptoJS.lib.WordArray.random(blockSize)
-  
-  if (ivIsHex.value) {
-    iv.value = randomIV.toString(CryptoJS.enc.Hex)
-  } else {
-    iv.value = randomIV.toString(CryptoJS.enc.Utf8)
-  }
+  iv.value = randomIV.toString(CryptoJS.enc.Hex).substring(0, 32) // 限制为16字节（32个十六进制字符）
 }
 
 // 获取默认密钥长度
@@ -403,6 +419,31 @@ function getDefaultBlockSize() {
   }
 }
 
+// 验证十六进制字符串
+function isValidHex(str) {
+  return /^[0-9a-fA-F]*$/.test(str)
+}
+
+// 监听密钥输入
+watch(key, (newValue) => {
+  if (newValue && !isValidHex(newValue)) {
+    error.value = '密钥必须是HEX格式'
+    key.value = newValue.replace(/[^0-9a-fA-F]/g, '') // 移除非HEX字符
+  } else {
+    error.value = ''
+  }
+})
+
+// 监听IV输入
+watch(iv, (newValue) => {
+  if (newValue && !isValidHex(newValue)) {
+    error.value = 'IV必须是HEX格式'
+    iv.value = newValue.replace(/[^0-9a-fA-F]/g, '') // 移除非HEX字符
+  } else {
+    error.value = ''
+  }
+})
+
 // 处理加密解密操作
 async function processOperation() {
   error.value = ''
@@ -423,8 +464,29 @@ async function processOperation() {
 // 加密函数
 async function encrypt() {
   // 处理密钥和IV
-  let processedKey = keyIsHex.value ? CryptoJS.enc.Hex.parse(key.value) : key.value
-  let processedIV = ivIsHex.value ? CryptoJS.enc.Hex.parse(iv.value) : iv.value
+  let processedKey = CryptoJS.enc.Hex.parse(key.value)
+  let processedIV = CryptoJS.enc.Hex.parse(iv.value.substring(0, 32))
+
+  // 处理输入
+  let processedInput
+  switch (selectedInputFormat.value) {
+    case 'string':
+      processedInput = input.value
+      break
+    case 'hex':
+      if (!isValidHex(input.value)) {
+        throw new Error('无效的HEX格式输入')
+      }
+      processedInput = CryptoJS.enc.Hex.parse(input.value)
+      break
+    case 'base64':
+      try {
+        processedInput = CryptoJS.enc.Base64.parse(input.value)
+      } catch (e) {
+        throw new Error('无效的Base64格式输入')
+      }
+      break
+  }
 
   // 如果模式不需要IV，设置为空
   if (!needsIV()) {
@@ -433,14 +495,14 @@ async function encrypt() {
   
   // SM4特殊处理
   if (selectedAlgorithm.value === 'sm4') {
-    return encryptSM4(input.value, processedKey, processedIV)
+    return encryptSM4(processedInput, processedKey, processedIV)
   }
   
   // 使用CryptoJS处理其他算法
   let encrypted
   let options = {
     mode: CryptoJS.mode[selectedMode.value],
-    padding: CryptoJS.pad[selectedPadding.value]
+    padding: selectedPadding.value === 'ZeroPadding' ? CryptoJS.pad.ZeroPadding : CryptoJS.pad.Pkcs7
   }
   
   if (needsIV()) {
@@ -449,13 +511,13 @@ async function encrypt() {
   
   switch (selectedAlgorithm.value) {
     case 'aes':
-      encrypted = CryptoJS.AES.encrypt(input.value, processedKey, options)
+      encrypted = CryptoJS.AES.encrypt(processedInput, processedKey, options)
       break
     case 'des':
-      encrypted = CryptoJS.DES.encrypt(input.value, processedKey, options)
+      encrypted = CryptoJS.DES.encrypt(processedInput, processedKey, options)
       break
     case '3des':
-      encrypted = CryptoJS.TripleDES.encrypt(input.value, processedKey, options)
+      encrypted = CryptoJS.TripleDES.encrypt(processedInput, processedKey, options)
       break
     default:
       throw new Error('不支持的算法')
@@ -465,14 +527,14 @@ async function encrypt() {
   if (selectedOutputFormat.value === 'hex') {
     return encrypted.ciphertext.toString(CryptoJS.enc.Hex)
   }
-  return encrypted.toString() // 默认为 base64
+  return encrypted.toString() // base64
 }
 
 // 解密函数
 async function decrypt() {
   // 处理密钥和IV
-  let processedKey = keyIsHex.value ? CryptoJS.enc.Hex.parse(key.value) : key.value
-  let processedIV = ivIsHex.value ? CryptoJS.enc.Hex.parse(iv.value) : iv.value
+  let processedKey = CryptoJS.enc.Hex.parse(key.value)
+  let processedIV = CryptoJS.enc.Hex.parse(iv.value.substring(0, 32))
   
   // 如果模式不需要IV，设置为空
   if (!needsIV()) {
@@ -481,117 +543,185 @@ async function decrypt() {
   
   // 按照输入格式解析密文
   let ciphertext
-  if (selectedOutputFormat.value === 'hex') {
+  if (selectedInputFormat.value === 'hex') {
+    // HEX格式
+    if (!isValidHex(input.value)) {
+      throw new Error('无效的HEX格式')
+    }
     ciphertext = CryptoJS.enc.Hex.parse(input.value)
+    // 对于非SM4算法，创建CipherParams对象
+    if (selectedAlgorithm.value !== 'sm4') {
+      let cipherParams = CryptoJS.lib.CipherParams.create({
+        ciphertext: ciphertext
+      })
+      return decryptWithCryptoJS(cipherParams, processedKey, processedIV)
+    }
   } else {
-    // 尝试按base64格式解析
+    // Base64格式
     try {
-      // 如果是标准的cryptojs格式，直接使用
-      if (input.value.indexOf('base64') !== -1) {
-        ciphertext = input.value 
-      } else {
-        // 否则按纯base64处理
-        ciphertext = CryptoJS.enc.Base64.parse(input.value).toString(CryptoJS.enc.Base64)
+      // 添加Base64格式验证
+      if (!/^[A-Za-z0-9+/]*={0,2}$/.test(input.value)) {
+        throw new Error('无效的Base64格式')
+      }
+      ciphertext = CryptoJS.enc.Base64.parse(input.value)
+      if (!ciphertext || ciphertext.sigBytes === 0) {
+        throw new Error('无效的Base64编码')
+      }
+      if (selectedAlgorithm.value !== 'sm4') {
+        let cipherParams = CryptoJS.lib.CipherParams.create({
+          ciphertext: ciphertext
+        })
+        return decryptWithCryptoJS(cipherParams, processedKey, processedIV)
       }
     } catch (e) {
-      ciphertext = input.value // 原样处理
+      error.value = e.message || '无效的Base64编码'
+      return ''
     }
   }
   
   // SM4特殊处理
   if (selectedAlgorithm.value === 'sm4') {
-    return decryptSM4(input.value, processedKey, processedIV)
+    const decrypted = decryptSM4(input.value, processedKey, processedIV)
+    return formatDecryptOutput(decrypted)
   }
-  
-  // 使用CryptoJS处理其他算法
-  let decrypted
+}
+
+// 使用CryptoJS进行解密的辅助函数
+function decryptWithCryptoJS(cipherParams, key, iv) {
   let options = {
     mode: CryptoJS.mode[selectedMode.value],
-    padding: CryptoJS.pad[selectedPadding.value]
+    padding: selectedPadding.value === 'ZeroPadding' ? CryptoJS.pad.ZeroPadding : CryptoJS.pad.Pkcs7
   }
   
   if (needsIV()) {
-    options.iv = processedIV
+    options.iv = iv
   }
   
-  // 如果是hex格式，需要特殊处理
-  if (selectedOutputFormat.value === 'hex') {
-    let encryptedObj = CryptoJS.lib.CipherParams.create({
-      ciphertext: CryptoJS.enc.Hex.parse(input.value)
-    })
-    
-    switch (selectedAlgorithm.value) {
-      case 'aes':
-        decrypted = CryptoJS.AES.decrypt(encryptedObj, processedKey, options)
-        break
-      case 'des':
-        decrypted = CryptoJS.DES.decrypt(encryptedObj, processedKey, options)
-        break
-      case '3des':
-        decrypted = CryptoJS.TripleDES.decrypt(encryptedObj, processedKey, options)
-        break
-      default:
-        throw new Error('不支持的算法')
-    }
-  } else {
-    // base64格式
-    switch (selectedAlgorithm.value) {
-      case 'aes':
-        decrypted = CryptoJS.AES.decrypt(ciphertext, processedKey, options)
-        break
-      case 'des':
-        decrypted = CryptoJS.DES.decrypt(ciphertext, processedKey, options)
-        break
-      case '3des':
-        decrypted = CryptoJS.TripleDES.decrypt(ciphertext, processedKey, options)
-        break
-      default:
-        throw new Error('不支持的算法')
-    }
+  let decrypted
+  switch (selectedAlgorithm.value) {
+    case 'aes':
+      decrypted = CryptoJS.AES.decrypt(cipherParams, key, options)
+      break
+    case 'des':
+      decrypted = CryptoJS.DES.decrypt(cipherParams, key, options)
+      break
+    case '3des':
+      decrypted = CryptoJS.TripleDES.decrypt(cipherParams, key, options)
+      break
+    default:
+      throw new Error('不支持的算法')
   }
   
-  return decrypted.toString(CryptoJS.enc.Utf8)
+  return formatDecryptOutput(decrypted.toString(CryptoJS.enc.Utf8))
+}
+
+// 格式化解密输出
+function formatDecryptOutput(text) {
+  switch (selectedDecryptOutputFormat.value) {
+    case 'string':
+      return text
+    case 'hex':
+      return CryptoJS.enc.Utf8.parse(text).toString(CryptoJS.enc.Hex)
+    case 'base64':
+      return CryptoJS.enc.Utf8.parse(text).toString(CryptoJS.enc.Base64)
+    default:
+      return text
+  }
 }
 
 // SM4加密
 function encryptSM4(plaintext, key, iv) {
   // 处理key为字符串格式
-  const keyStr = typeof key === 'string' ? key : key.toString(CryptoJS.enc.Utf8)
+  const keyStr = key.toString(CryptoJS.enc.Hex)
+  
+  // 处理输入为字符串格式
+  let inputStr
+  if (typeof plaintext === 'string') {
+    inputStr = plaintext
+  } else {
+    // 如果是WordArray对象，转换为字符串
+    inputStr = plaintext.toString(CryptoJS.enc.Utf8)
+  }
+
+  // 转换填充模式名称为小写
+  let paddingMode = selectedPadding.value === 'ZeroPadding' ? 'zero' : 'pkcs#7'
   
   // 根据模式处理加密
   if (selectedMode.value === 'ECB') {
-    const ciphertext = sm4.encrypt(plaintext, keyStr)
-    return selectedOutputFormat.value === 'hex' ? ciphertext : btoa(ciphertext)
+    const ciphertext = sm4.encrypt(inputStr, keyStr, {
+      mode: 'ecb',
+      padding: paddingMode,
+      output: selectedOutputFormat.value
+    })
+    return ciphertext
   } else {
     // CBC模式
-    const ivStr = typeof iv === 'string' ? iv : iv.toString(CryptoJS.enc.Utf8)
-    const ciphertext = sm4.encrypt(plaintext, keyStr, { mode: 'cbc', iv: ivStr })
-    return selectedOutputFormat.value === 'hex' ? ciphertext : btoa(ciphertext)
+    const ivStr = iv.toString(CryptoJS.enc.Hex).substring(0, 32)
+    const ciphertext = sm4.encrypt(inputStr, keyStr, { 
+      mode: 'cbc', 
+      iv: ivStr,
+      padding: paddingMode,
+      output: selectedOutputFormat.value
+    })
+    return ciphertext
   }
 }
 
 // SM4解密
 function decryptSM4(ciphertext, key, iv) {
   // 处理key为字符串格式
-  const keyStr = typeof key === 'string' ? key : key.toString(CryptoJS.enc.Utf8)
+  const keyStr = key.toString(CryptoJS.enc.Hex)
   
-  // 如果是base64格式，先转为hex
+  // 根据输入格式处理密文
   let processedCiphertext = ciphertext
-  if (selectedOutputFormat.value === 'base64') {
+  if (selectedInputFormat.value === 'base64') {
     try {
+      // 添加Base64格式验证
+      if (!/^[A-Za-z0-9+/]*={0,2}$/.test(ciphertext)) {
+        throw new Error('无效的Base64格式')
+      }
       processedCiphertext = atob(ciphertext)
+      if (!processedCiphertext) {
+        throw new Error('无效的Base64编码')
+      }
     } catch (e) {
-      throw new Error('无效的Base64编码')
+      error.value = e.message || '无效的Base64编码'
+      return ''
     }
+  } else {
+    // HEX格式
+    if (!isValidHex(ciphertext)) {
+      throw new Error('无效的HEX格式')
+    }
+    processedCiphertext = ciphertext
   }
+
+  // 转换填充模式名称为小写
+  let paddingMode = selectedPadding.value === 'ZeroPadding' ? 'zero' : 'pkcs#7'
   
   // 根据模式处理解密
-  if (selectedMode.value === 'ECB') {
-    return sm4.decrypt(processedCiphertext, keyStr)
-  } else {
-    // CBC模式
-    const ivStr = typeof iv === 'string' ? iv : iv.toString(CryptoJS.enc.Utf8)
-    return sm4.decrypt(processedCiphertext, keyStr, { mode: 'cbc', iv: ivStr })
+  try {
+    if (selectedMode.value === 'ECB') {
+      return sm4.decrypt(processedCiphertext, keyStr, {
+        mode: 'ecb',
+        padding: paddingMode,
+        input: selectedInputFormat.value,
+        output: 'string'
+      })
+    } else {
+      // CBC模式
+      const ivStr = iv.toString(CryptoJS.enc.Hex).substring(0, 32)
+      return sm4.decrypt(processedCiphertext, keyStr, { 
+        mode: 'cbc', 
+        iv: ivStr,
+        padding: paddingMode,
+        input: selectedInputFormat.value,
+        output: 'string'
+      })
+    }
+  } catch (e) {
+    error.value = '解密失败：' + (e.message || '未知错误')
+    return ''
   }
 }
 
@@ -616,11 +746,29 @@ function copyResult() {
   
   navigator.clipboard.writeText(result.value)
     .then(() => {
-      alert('已复制到剪贴板')
+      copySuccess.value = true
+      setTimeout(() => {
+        copySuccess.value = false
+      }, 2000)
     })
     .catch(err => {
       console.error('复制失败:', err)
-      alert('复制失败，请手动复制')
+      error.value = '复制失败，请手动复制'
     })
+}
+
+// 切换操作类型
+function switchOperation(newOperation) {
+  operation.value = newOperation
+  input.value = ''  // 清空输入框
+  result.value = '' // 清空结果
+  error.value = ''  // 清空错误信息
+  
+  // 设置默认输入格式
+  if (newOperation === 'decrypt') {
+    selectedInputFormat.value = 'hex'  // 解密时默认使用HEX格式
+  } else {
+    selectedInputFormat.value = 'string'  // 加密时默认使用字符串格式
+  }
 }
 </script> 
