@@ -69,7 +69,7 @@ const categoriesData = [
   { id: 'dev', title: '开发工具', description: '为开发者提供的编程、调试和优化工具' },
   { id: 'design', title: '设计工具', description: '辅助设计师创建和优化视觉作品的工具' },
   { id: 'text', title: '文本与编辑', description: '处理、编辑和转换文本内容的工具' },
-  { id: 'image', title: '图像与多媒体工具', description: '图像处理、优化和转换工具' },
+  { id: 'image', title: '图像与多媒体', description: '图像处理、优化和转换工具' },
   { id: 'convert', title: '转换工具', description: '各种文件格式之间的转换工具' },
   { id: 'utility', title: '实用效率', description: '各种实用的日常工具' },
   { id: 'network', title: '网络与协议工具', description: '网络分析、调试和测试工具' },
