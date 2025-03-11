@@ -14,6 +14,7 @@
           v-for="tagId in tool.tags" 
           :key="tagId" 
           :class="`px-3 py-1 rounded-full text-sm ${getTagColor(tagId) || 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300'}`"
+          :hidden="!findTagName(tagId)"
         >
           {{ findTagName(tagId) }}
         </span>
