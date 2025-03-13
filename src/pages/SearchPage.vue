@@ -55,8 +55,8 @@ const route = useRoute()
 const router = useRouter()
 
 // 注入全局数据
-const allTools = inject('allTools')
-const allTags = inject('allTags')
+const allTools = inject('allTools', [])
+const allTags = inject('allTags', { value: [] })
 
 // 从URL获取搜索查询
 const searchQuery = computed(() => route.query.q || '')
@@ -64,34 +64,34 @@ const searchQuery = computed(() => route.query.q || '')
 // 搜索结果
 const searchResults = computed(() => {
   if (!searchQuery.value) return []
+  const query = searchQuery.value.toLowerCase()
   
-  const query = searchQuery.value.toLowerCase().trim()
+  return allTools.filter(tool => {
+    return tool.name.toLowerCase().includes(query) ||
+           tool.description.toLowerCase().includes(query) ||
+           tool.tags.some(tag => tag.toLowerCase().includes(query))
+  })
+})
+
+// 匹配的标签
+const matchedTags = computed(() => {
+  if (!searchQuery.value || !allTags?.value) return []
+  const query = searchQuery.value.toLowerCase()
   
-  // 寻找可能匹配的标签
-  const tagMatches = allTags
-    .filter(tag => 
-      tag.name.toLowerCase().includes(query) || 
-      tag.id.toLowerCase().includes(query)
-    )
-    .map(tag => tag.id)
-  
-  // 搜索工具名称、描述、类别和标签
-  return allTools.value.filter(tool => 
-    tool.name.toLowerCase().includes(query) || 
-    tool.description.toLowerCase().includes(query) || 
-    tool.category.toLowerCase().includes(query) ||
-    tool.tags.some(tagId => tagMatches.includes(tagId))
+  return allTags.value.filter(tag => 
+    tag.name.toLowerCase().includes(query) || 
+    tag.id.toLowerCase().includes(query)
   )
 })
 
 // 相关标签推荐
 const relatedTags = computed(() => {
-  if (!searchQuery.value) return []
+  if (!searchQuery.value || !allTags?.value) return []
   
   const query = searchQuery.value.toLowerCase().trim()
   
   // 找出与查询相关的标签
-  return allTags
+  return allTags.value
     .filter(tag => 
       tag.name.toLowerCase().includes(query) || 
       tag.id.toLowerCase().includes(query)

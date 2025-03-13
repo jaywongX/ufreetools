@@ -1,5 +1,5 @@
 <template>
-  <div class="flex min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+  <div class="flex min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden">
     <!-- 左侧导航栏 -->
     <SideNav />
     
@@ -19,7 +19,6 @@ import { ref, provide, onMounted, watch, computed, markRaw } from 'vue'
 import TheHeader from './components/layout/TheHeader.vue'
 import TheFooter from './components/layout/TheFooter.vue'
 import SideNav from './components/layout/SideNav.vue'
-import PasswordStrengthChecker from './components/tools/PasswordStrengthChecker.vue'
 
 // 创建侧边栏状态并提供给所有子组件
 const sidebarOpen = ref(true)
@@ -98,7 +97,7 @@ const allTags = ref([
   { id: 'dev', name: '开发', color: 'orange' },
   { id: 'frontend', name: '前端', color: 'orange' },
   { id: 'backend', name: '后端', color: 'orange' },
-  { id: 'regex', name: '正则表达式', color: 'red' },
+  { id: 'regex', name: '正则', color: 'red' },
   { id: 'api', name: 'API', color: 'blue' },
   { id: 'debug', name: '调试', color: 'orange' },
   
@@ -150,7 +149,6 @@ const allTags = ref([
   { id: 'watermark', name: '水印', color: 'pink' },
   { id: 'copyright', name: '版权', color: 'amber' },
   { id: 'branding', name: '品牌', color: 'indigo' },
-  { id: 'batch', name: '批量处理', color: 'blue' },
   { id: 'compression', name: '压缩', color: 'green' },
   { id: 'metadata', name: '元数据', color: 'indigo' },
   { id: 'exif', name: 'EXIF', color: 'purple' },
@@ -481,7 +479,7 @@ const allTools = ref([
     path: '/tools/image-batch-resizer',
     component: 'ImageBatchResizer',
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['image', 'resize', 'batch', 'compression', 'quality']
+    tags: ['image', 'resize', 'compression', 'quality']
   },
   {
     id: 'id-photo-maker',

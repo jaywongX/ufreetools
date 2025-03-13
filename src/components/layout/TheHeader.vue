@@ -1,74 +1,36 @@
 <template>
   <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-30">
-    <div class="container-custom h-16 flex items-center justify-between">
+    <div class="h-16 flex items-center justify-between px-4">
       <!-- 左侧: 汉堡菜单和Logo -->
       <div class="flex items-center">
         <!-- 汉堡菜单按钮 -->
         <button 
           @click="toggleSidebar"
-          class="p-2 rounded-md text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 focus:outline-none"
+          class="p-2 rounded-md text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 focus:outline-none transition-transform duration-300 ease-in-out"
+          :class="{ 'rotate-90': !sidebarOpen }"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
         
-        <!-- 搜索框 (在移动设备上隐藏) -->
-        <div class="hidden md:block relative ml-6">
-          <div class="relative flex items-center">
-            <input 
-              type="text" 
-              v-model="searchQuery" 
-              @input="hideResults = false"
-              @keydown.enter="performSearch"
-              @blur="setTimeout(() => { hideResults = true }, 200)"
-              @focus="hideResults = false"
-              placeholder="搜索工具和标签..." 
-              class="w-64 lg:w-80 px-3 py-2 pl-10 rounded-md text-sm text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-primary dark:focus:ring-primary-light"
-            />
-            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-          </div>
+        <!-- 搜索框 -->
+        <div class="relative flex-1 max-w-xl">
+          <input 
+            type="text" 
+            v-model="searchQuery"
+            @input="handleInput"
+            @focus="handleFocus"
+            @blur="handleBlur"
+            @keydown.enter="performSearch"
+            placeholder="搜索工具..."
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-light"
+          />
           
-          <!-- 搜索结果下拉菜单 -->
-          <div 
-            v-if="searchQuery && !hideResults && searchResults.length > 0" 
-            class="absolute left-0 mt-2 w-full bg-white dark:bg-gray-800 shadow-lg rounded-md z-50 max-h-96 overflow-y-auto border border-gray-200 dark:border-gray-700"
-          >
-            <!-- 匹配的标签 -->
-            <div v-if="matchedTags.length > 0" class="px-4 py-2 text-xs text-gray-500 dark:text-gray-400 uppercase border-b border-gray-200 dark:border-gray-700">
-              标签
-            </div>
-            <div v-for="tag in matchedTags.slice(0, 5)" :key="tag.id" @click="navigateToTag(tag.id)" class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
-              <div class="flex items-center">
-                <TagBadge :tag="tag" class="inline-block" />
-              </div>
-            </div>
-            
-            <!-- 匹配的工具 -->
-            <div v-if="matchedTools.length > 0" class="px-4 py-2 text-xs text-gray-500 dark:text-gray-400 uppercase border-b border-gray-200 dark:border-gray-700">
-              工具
-            </div>
-            <div v-for="result in matchedTools.slice(0, 6)" :key="result.id" @click="navigateToTool(result.id)" class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
-              <div class="flex items-center">
-                <div>
-                  <div class="font-medium text-sm">{{ result.name }}</div>
-                  <div class="text-xs text-gray-500 dark:text-gray-400">{{ result.category }}</div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- 查看更多结果的链接 -->
-            <div 
-              v-if="hasMoreResults" 
-              @click="viewAllResults" 
-              class="text-center text-sm text-primary dark:text-primary-light py-2 border-t border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer"
-            >
-              查看全部{{ totalResults }}个结果
-            </div>
+          <!-- 搜索结果下拉框 -->
+          <div v-if="showResults && (matchedTools.length > 0 || matchedTags.length > 0)" 
+               class="absolute left-0 right-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50">
+            <!-- 搜索结果内容 -->
           </div>
         </div>
       </div>
@@ -119,12 +81,20 @@ const router = useRouter()
 // 注入
 const sidebarOpen = inject('sidebarOpen')
 const darkMode = inject('darkMode')
-const allTools = inject('allTools')
-const allTags = inject('allTags')
+const allTools = inject('allTools', { value: [] })
+const allTags = inject('allTags', { value: [] })
 
 // 搜索状态
 const searchQuery = ref('')
-const hideResults = ref(false)
+const showResults = ref(false)
+
+// 监听搜索框值的变化
+watch(searchQuery, (newValue) => {
+  if (!newValue.trim()) {
+    router.push('/')
+    showResults.value = false
+  }
+})
 
 // 切换侧边栏
 function toggleSidebar() {
@@ -167,7 +137,7 @@ onBeforeUnmount(() => {
 
 // 匹配的标签
 const matchedTags = computed(() => {
-  if (!searchQuery.value) return []
+  if (!searchQuery.value || !allTags?.value) return []
   
   const query = searchQuery.value.toLowerCase().trim()
   
@@ -186,7 +156,7 @@ const matchedTags = computed(() => {
 
 // 匹配的工具
 const matchedTools = computed(() => {
-  if (!searchQuery.value) return []
+  if (!searchQuery.value || !allTools?.value) return []
   
   const query = searchQuery.value.toLowerCase().trim()
   
@@ -229,43 +199,35 @@ const hasMoreResults = computed(() => {
 
 // 执行搜索
 function performSearch() {
-  if (!searchQuery.value.trim()) return
-  
-  // 如果只有一个精确匹配的标签，直接跳转到该标签页
-  if (matchedTags.value.length === 1 && 
-      (matchedTags.value[0].id.toLowerCase() === searchQuery.value.toLowerCase() || 
-       matchedTags.value[0].name.toLowerCase() === searchQuery.value.toLowerCase()) &&
-      matchedTools.value.length === 0) {
-    navigateToTag(matchedTags.value[0].id)
-    return
+  if (searchQuery.value.trim()) {
+    router.push(`/search?q=${encodeURIComponent(searchQuery.value.trim())}`)
+    showResults.value = false
   }
-  
-  // 否则跳转到搜索结果页
-  router.push({
-    path: '/search',
-    query: { q: searchQuery.value }
-  })
-  hideResults.value = true
 }
 
-// 查看所有搜索结果
-function viewAllResults() {
-  router.push({
-    path: '/search',
-    query: { q: searchQuery.value }
-  })
-  hideResults.value = true
+function handleInput() {
+  showResults.value = true
 }
 
-// 跳转到工具页面
-function navigateToTool(toolId) {
-  router.push(`/tool/${toolId}`)
-  hideResults.value = true
+function handleFocus() {
+  showResults.value = true
 }
 
-// 跳转到标签页面
-function navigateToTag(tagId) {
-  router.push(`/tag/${tagId}`)
-  hideResults.value = true
+function handleBlur() {
+  // 使用 window.setTimeout 而不是直接使用 setTimeout
+  window.setTimeout(() => {
+    showResults.value = false
+  }, 200)
 }
 </script>
+
+<style scoped>
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+/* 添加悬停效果 */
+button:hover svg {
+  transform: scale(1.1);
+}
+</style>
