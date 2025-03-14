@@ -161,6 +161,7 @@ const lazyComponentMap = {
   'HmacCalculator': () => import('./components/tools/HmacCalculator.vue'),
   
   // 实用效率
+  'UuidGenerator': () => import('./components/tools/UuidGenerator.vue'),
 }
 
 // 创建应用
