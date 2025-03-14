@@ -56,7 +56,7 @@ import { addToHistory } from '../services/historyService'
 const route = useRoute()
 const allTools = inject('allTools', [])
 const categories = inject('categories', [])
-const allTags = inject('allTags', { value: [] })
+const allTags = inject('allTags', [])
 const loading = ref(true)
 const tool = ref(null)
 const error = ref(null)
@@ -151,19 +151,18 @@ function loadTool() {
       return tools.find(t => String(t.id) === String(paramId))
     }
     
-    // 检查 allTools 的类型和值
-    console.log('allTools type:', typeof allTools)
-    console.log('Is allTools array?', Array.isArray(allTools))
-    console.log('Is allTools.value array?', allTools.value && Array.isArray(allTools.value))
+    // 确保正确访问 allTools 的值
+    const toolsArray = Array.isArray(allTools) ? allTools : 
+                      (allTools?.value && Array.isArray(allTools.value) ? allTools.value : [])
     
-    tool.value = findTool(allTools);
+    tool.value = findTool(toolsArray)
     
-    console.log('Found tool:', tool.value ? 'Yes' : 'No')
     if (tool.value) {
       console.log('Tool details:', {
         id: tool.value.id,
         name: tool.value.name,
-        component: tool.value.component
+        component: tool.value.component,
+        tags: tool.value.tags
       })
       
       // 添加到历史记录

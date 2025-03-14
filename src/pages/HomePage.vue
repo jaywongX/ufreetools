@@ -139,14 +139,35 @@ function updateUrlWithTags() {
   })
 }
 
+// 确保 allTools 是数组
+const toolsArray = computed(() => {
+  return Array.isArray(allTools) ? allTools : 
+         (allTools?.value && Array.isArray(allTools.value) ? allTools.value : [])
+})
+
+// 使用 toolsArray 计算热门工具
+const popularTools = computed(() => {
+  if (!toolsArray.value.length) return []
+  const tools = [...toolsArray.value]
+  // 随机排序以模拟"热门"工具
+  return tools.sort(() => 0.5 - Math.random()).slice(0, 6)
+})
+
+// 使用 toolsArray 计算最新工具
+const newTools = computed(() => {
+  if (!toolsArray.value.length) return []
+  const tools = [...toolsArray.value]
+  // 按照添加时间倒序排序（这里简单地反转数组）
+  return tools.slice(-6).reverse()
+})
+
 // 根据所选标签筛选工具
 const filteredTools = computed(() => {
   if (selectedTags.value.length === 0) return []
-  if (!Array.isArray(allTools)) return []
   
   // 只使用第一个标签进行筛选
   const selectedTag = selectedTags.value[0]
-  return allTools.filter(tool => tool.tags.includes(selectedTag))
+  return toolsArray.value.filter(tool => tool.tags.includes(selectedTag))
 })
 
 // 添加清除选中标签的方法
@@ -175,28 +196,6 @@ watch(() => route.query.tags, () => {
 // 监听选中标签的变化，更新URL
 watch(selectedTags, () => {
   updateUrlWithTags()
-})
-
-// 确保 allTools 是数组
-const toolsArray = computed(() => {
-  return Array.isArray(allTools) ? allTools : []
-})
-
-// 使用 toolsArray 而不是直接使用 allTools
-const featuredTools = computed(() => {
-  return toolsArray.value.slice(0, 6)
-})
-
-const popularTools = computed(() => {
-  if (!toolsArray.value.length) return []
-  const tools = [...toolsArray.value]
-  // 随机排序以模拟"热门"工具
-  return tools.sort(() => 0.5 - Math.random()).slice(0, 6)
-})
-
-const newTools = computed(() => {
-  if (!toolsArray.value.length) return []
-  return [...toolsArray.value].reverse().slice(0, 4)
 })
 
 // 组件挂载时，同步URL和选中标签状态，加载最近使用的工具
