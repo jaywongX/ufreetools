@@ -14,18 +14,6 @@
           生成二维码
         </button>
         <button 
-          @click="downloadQRCode" 
-          class="btn-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200"
-          :disabled="!qrCodeGenerated || isProcessing"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-          </svg>
-          下载
-        </button>
-      </div>
-      <div class="flex space-x-2">
-        <button 
           @click="resetForm" 
           class="btn-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200"
           :disabled="isProcessing"
@@ -34,6 +22,18 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
           重置
+        </button>
+      </div>
+      <div class="flex space-x-2">
+        <button 
+          @click="downloadQRCode" 
+          class="btn-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200"
+          :disabled="!qrCodeGenerated || isProcessing"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          下载
         </button>
       </div>
     </div>
@@ -94,6 +94,25 @@
               <div class="font-medium">{{ template.label }}</div>
               <div class="text-gray-500 dark:text-gray-400 truncate">{{ template.example }}</div>
             </button>
+          </div>
+          
+          <!-- 模板确认提示 -->
+          <div v-if="showTemplateConfirm" class="mt-2 p-3 bg-yellow-50 dark:bg-yellow-900 dark:bg-opacity-20 rounded-md">
+            <p class="text-sm text-yellow-800 dark:text-yellow-200">确定要替换当前内容吗？</p>
+            <div class="mt-2 flex space-x-2">
+              <button 
+                @click="confirmUseTemplate"
+                class="px-3 py-1 text-xs bg-yellow-500 hover:bg-yellow-600 text-white rounded"
+              >
+                确认
+              </button>
+              <button 
+                @click="cancelUseTemplate"
+                class="px-3 py-1 text-xs bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded"
+              >
+                取消
+              </button>
+            </div>
           </div>
         </div>
         
@@ -215,6 +234,18 @@
           class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-900 rounded-lg"
           style="min-height: 350px;"
         >
+          <div ref="qrCodeContainer" class="inline-block">
+            <canvas 
+              ref="qrCanvas" 
+              :width="qrSize" 
+              :height="qrSize"
+              class="mx-auto cursor-pointer"
+              :style="{ display: qrCodeGenerated ? 'block' : 'none' }"
+              @click="downloadQRCode"
+              :title="qrCodeGenerated ? '点击下载二维码' : ''"
+            ></canvas>
+          </div>
+          
           <div v-if="isProcessing" class="text-center">
             <svg class="animate-spin h-8 w-8 text-primary mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -222,17 +253,7 @@
             </svg>
             <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">生成中...</p>
           </div>
-          <div v-else-if="qrCodeGenerated" class="text-center">
-            <div ref="qrCodeContainer" class="inline-block">
-              <canvas 
-                ref="qrCanvas" 
-                :width="qrSize" 
-                :height="qrSize"
-                class="mx-auto"
-              ></canvas>
-            </div>
-          </div>
-          <div v-else class="text-center">
+          <div v-if="!isProcessing && !qrCodeGenerated" class="text-center">
             <div class="h-40 w-40 border-2 border-dashed border-gray-300 dark:border-gray-700 flex items-center justify-center rounded-lg mx-auto">
               <p class="text-sm text-gray-500 dark:text-gray-400">点击"生成二维码"按钮</p>
             </div>
@@ -255,7 +276,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, watch } from 'vue'
+import { ref, reactive, onMounted, watch, nextTick } from 'vue'
 import QRCode from 'qrcode'
 
 // 二维码内容
@@ -277,6 +298,8 @@ const qrCodeContainer = ref(null)
 // 状态消息
 const message = ref('')
 const messageType = ref('info')
+const showTemplateConfirm = ref(false)
+const pendingTemplate = ref(null)
 
 // QR码模板
 const qrTemplates = [
@@ -320,9 +343,30 @@ const qrTemplates = [
 
 // 使用模板
 function useTemplate(template) {
-  if (qrContent.value.trim() === '' || confirm('这将替换当前内容，是否继续？')) {
+  if (qrContent.value.trim() === '') {
     qrContent.value = template.template
+  } else {
+    pendingTemplate.value = template
+    showTemplateConfirm.value = true
+    showMessage('点击确认替换当前内容', 'info')
   }
+}
+
+// 确认使用模板
+function confirmUseTemplate() {
+  if (pendingTemplate.value) {
+    qrContent.value = pendingTemplate.value.template
+    pendingTemplate.value = null
+    showTemplateConfirm.value = false
+    showMessage('内容已更新', 'success')
+  }
+}
+
+// 取消使用模板
+function cancelUseTemplate() {
+  pendingTemplate.value = null
+  showTemplateConfirm.value = false
+  showMessage('已取消更改', 'info')
 }
 
 // 根据错误校正级别获取描述
@@ -434,21 +478,23 @@ function showMessage(msg, type = 'info') {
   }, 3000)
 }
 
+// 监听相关属性变化，自动更新二维码
+watch([qrContent, errorCorrectionLevel, qrSize, foregroundColor, backgroundColor], () => {
+  if (qrContent.value.trim() && qrCanvas.value && qrCodeContainer.value) {
+    generateQRCode()
+  }
+})
+
 // 确保组件完全挂载后再尝试访问canvas
 onMounted(() => {
   // 只在有内容时才自动生成
   if (qrContent.value.trim()) {
-    // 组件挂载后延迟一点时间再生成二维码，确保DOM已完全渲染
-    setTimeout(() => {
-      generateQRCode()
-    }, 100)
-  }
-})
-
-// 监听相关属性变化，自动更新二维码
-watch([qrContent, errorCorrectionLevel, qrSize, foregroundColor, backgroundColor], () => {
-  if (qrContent.value.trim() && qrCanvas.value) {
-    generateQRCode()
+    // 使用 nextTick 确保 DOM 已完全更新
+    nextTick(() => {
+      if (qrCanvas.value && qrCodeContainer.value) {
+        generateQRCode()
+      }
+    })
   }
 })
 </script>
