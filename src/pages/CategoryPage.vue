@@ -6,21 +6,29 @@
       <p class="text-gray-600 dark:text-gray-300">{{ categoryDescription }}</p>
     </div>
 
-    <!-- 工具筛选 -->
-    <div class="mb-6 flex flex-wrap gap-3">
-      <button 
-        class="px-3 py-1 text-sm rounded-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:border-primary dark:hover:border-primary-light"
-      >
-        全部
-      </button>
-      <button 
-        v-for="tag in popularTags" 
-        :key="tag"
-        class="px-3 py-1 text-sm rounded-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:border-primary dark:hover:border-primary-light"
-      >
-        {{ tag }}
-      </button>
-    </div>
+    <!-- 标签筛选 -->
+    <section class="mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-bold">标签筛选</h2>
+      </div>
+
+      <!-- 标签列表 -->
+      <div class="flex flex-wrap gap-3">
+        <div 
+          v-for="tag in (Array.isArray(allTags) ? allTags.slice(0, 12) : [])" 
+          :key="tag.id"
+          @click="addTagToFilter(tag.id)"
+          :class="[
+            'tag-card bg-white dark:bg-gray-800 rounded-lg shadow-sm p-3 cursor-pointer hover:shadow-md transition-shadow',
+            selectedTags[0] === tag.id ? 'ring-2 ring-primary dark:ring-primary-light' : ''
+          ]"
+        >
+          <div class="flex items-center">
+            <TagBadge :tag-id="tag.id" />
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- 工具列表 -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -55,8 +63,9 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, inject } from 'vue'
 import { useRoute } from 'vue-router'
+import TagBadge from '../components/ui/TagBadge.vue'
 
 const route = useRoute()
 
@@ -67,8 +76,8 @@ const categoryId = computed(() => route.params.id)
 const categoryInfo = ref({
   dev: { title: '开发工具', description: '为开发者提供的编程、调试和优化工具' },
   design: { title: '设计工具', description: '辅助设计师创建和优化视觉作品的工具' },
-  text: { title: '文本工具', description: '处理、编辑和转换文本内容的工具' },
-  image: { title: '图像与多媒体工具', description: '图像处理、优化和转换工具' },
+  text: { title: '文本与编辑', description: '处理、编辑和转换文本内容的工具' },
+  image: { title: '图像与多媒体', description: '图像处理、优化和转换工具' },
   convert: { title: '转换工具', description: '各种文件格式之间的转换工具' }
 })
 
@@ -78,27 +87,55 @@ const categoryTitle = computed(() => {
 })
 
 const categoryDescription = computed(() => {
-  return categoryInfo.value[categoryId.value]?.description || '实用工具集合'
+  return categoryInfo.value[categoryId.value]?.description || '实用效率集合'
 })
 
-// 流行标签
-const popularTags = ref(['常用', '最新', '热门', '高级'])
+// 注入全局数据
+const allTags = inject('allTags', [])
+const allTools = inject('allTools', [])
 
-// 示例工具数据
-const allTools = ref([
-  { id: 1, name: 'JSON格式化', category: '开发工具', description: '在线JSON格式化与验证工具，支持压缩和美化', icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', categoryId: 'dev' },
-  { id: 2, name: '颜色选择器', category: '设计工具', description: '强大的颜色选择与调色板生成工具', icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01', categoryId: 'design' },
-  { id: 3, name: 'Markdown编辑器', category: '文本工具', description: '简洁易用的Markdown编辑与预览工具', icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', categoryId: 'text' },
-  { id: 4, name: '图片压缩', category: '图像与多媒体工具', description: '高效无损的图片压缩工具', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z', categoryId: 'image' },
-  { id: 5, name: '正则表达式测试', category: '开发工具', description: '在线正则表达式测试与调试工具', icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', categoryId: 'dev' },
-  { id: 6, name: 'CSS渐变生成器', category: '设计工具', description: '简单易用的CSS渐变背景生成工具', icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01', categoryId: 'design' },
-  { id: 7, name: '二维码生成器', category: '通用工具', description: '自定义生成清晰的二维码图片', icon: 'M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z', categoryId: 'convert' },
-  { id: 8, name: 'SVG优化器', category: '图像与多媒体工具', description: '优化SVG文件大小，提升加载性能', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z', categoryId: 'image' }
-])
+// 已选标签
+const selectedTags = ref([])
 
-// 筛选当前分类的工具
+// 添加标签到筛选器
+function addTagToFilter(tagId) {
+  // 如果点击的是当前选中的标签，则清除选择
+  if (selectedTags.value[0] === tagId) {
+    selectedTags.value = []
+  } else {
+    // 否则替换为新标签
+    selectedTags.value = [tagId]
+  }
+}
+
+// 根据所选标签和分类筛选工具
 const tools = computed(() => {
   if (!categoryId.value) return []
-  return allTools.value.filter(tool => tool.categoryId === categoryId.value)
+  
+  // 确保正确访问 allTools 的值
+  const toolsArray = Array.isArray(allTools) ? allTools : 
+                    (allTools?.value && Array.isArray(allTools.value) ? allTools.value : [])
+  
+  let filteredTools = toolsArray.filter(tool => tool.categoryId === categoryId.value)
+  
+  // 如果有选中的标签，进一步筛选
+  if (selectedTags.value.length > 0) {
+    filteredTools = filteredTools.filter(tool => 
+      tool.tags && tool.tags.includes(selectedTags.value[0])
+    )
+  }
+  
+  return filteredTools
 })
-</script> 
+</script>
+
+<style scoped>
+.tag-card {
+  min-width: 80px;
+  transition: all 0.2s ease;
+}
+
+.tag-card:hover {
+  transform: translateY(-2px);
+}
+</style> 

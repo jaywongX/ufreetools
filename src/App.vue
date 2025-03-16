@@ -1,5 +1,5 @@
 <template>
-  <div class="flex min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+  <div class="flex min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden">
     <!-- 左侧导航栏 -->
     <SideNav />
     
@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { ref, provide, onMounted, watch, computed } from 'vue'
+import { ref, provide, onMounted, watch, computed, markRaw } from 'vue'
 import TheHeader from './components/layout/TheHeader.vue'
 import TheFooter from './components/layout/TheFooter.vue'
 import SideNav from './components/layout/SideNav.vue'
@@ -30,65 +30,96 @@ provide('darkMode', darkMode)
 
 // 工具分类定义
 const categories = ref([
-  { id: 'dev', name: '开发工具', icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4' },
-  { id: 'design', name: '设计工具', icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01' },
-  { id: 'text', name: '文本工具', icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z' },
-  { id: 'image', name: '图像工具', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
-  { id: 'convert', name: '转换工具', icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4' },
-  { id: 'crypto', name: '加密与安全', icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z' },
-  { id: 'network', name: '网络工具', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9' },
-  { id: 'utility', name: '实用工具', icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z' },
-  { id: 'format', name: '格式化工具', icon: 'M4 6h16M4 12h16M4 18h16' }
+  { 
+    id: 'dev', 
+    title: '开发工具', 
+    name: '开发工具',
+    description: '为开发者提供的编程、调试和优化工具',
+    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4'
+  },
+  { 
+    id: 'convert', 
+    title: '转换工具', 
+    name: '转换工具',
+    description: '各种文件格式之间的转换工具',
+    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+  },
+  { 
+    id: 'design', 
+    title: '设计工具', 
+    name: '设计工具',
+    description: '辅助设计师创建和优化视觉作品的工具',
+    icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01'
+  },
+  { 
+    id: 'text', 
+    title: '文本与编辑', 
+    name: '文本与编辑',
+    description: '处理、编辑和转换文本内容的工具',
+    icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'
+  },
+  { 
+    id: 'image', 
+    title: '图像与多媒体', 
+    name: '图像与多媒体',
+    description: '图像处理、优化和转换工具',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z'
+  },
+  { 
+    id: 'network', 
+    title: '网络与协议工具', 
+    name: '网络与协议',
+    description: '网络分析、调试和测试工具',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9'
+  },
+  { 
+    id: 'crypto', 
+    title: '密码与安全', 
+    name: '密码与安全',
+    description: '密码生成、加密、解密与安全工具',
+    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z'
+  },
+  { 
+    id: 'utility', 
+    title: '实用效率', 
+    name: '实用效率',
+    description: '各种实用的日常工具',
+    icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z'
+  }
 ])
-provide('categories', categories)
+provide('categories', categories.value)
 
-// 全局标签定义 - 调整颜色和分组
+// 全局标签定义 - 核心标签
 const allTags = ref([
-  // 开发相关标签
+  // 开发工具相关
+  { id: 'dev', name: '开发', color: 'blue' },
   { id: 'json', name: 'JSON', color: 'blue' },
-  { id: 'code', name: '代码', color: 'red' },
-  { id: 'dev', name: '开发', color: 'orange' },
-  { id: 'frontend', name: '前端', color: 'orange' },
-  { id: 'backend', name: '后端', color: 'orange' },
-  { id: 'regex', name: '正则表达式', color: 'red' },
-  { id: 'api', name: 'API', color: 'blue' },
-  { id: 'debug', name: '调试', color: 'orange' },
+  { id: 'regex', name: '正则', color: 'red' },
+  { id: 'api', name: 'API', color: 'teal' },
   
-  // 格式化/转换相关
+  // 格式化与转换
   { id: 'format', name: '格式化', color: 'green' },
   { id: 'convert', name: '转换', color: 'yellow' },
-  { id: 'compress', name: '压缩', color: 'emerald' },
+  { id: 'base64', name: 'Base64', color: 'indigo' },
+  { id: 'time', name: '时间', color: 'amber' },
   
-  // 设计相关
-  { id: 'color', name: '颜色', color: 'purple' },
-  { id: 'design', name: '设计', color: 'cyan' },
-  { id: 'css', name: 'CSS', color: 'purple' },
-  { id: 'gradient', name: '渐变', color: 'pink' },
-  { id: 'image', name: '图像', color: 'pink' },
-  { id: 'svg', name: 'SVG', color: 'purple' },
-  
-  // 文本相关
+  // 文本处理
   { id: 'text', name: '文本', color: 'gray' },
   { id: 'markdown', name: 'Markdown', color: 'lime' },
-  { id: 'parse', name: '解析', color: 'cyan' },
   
   // 安全相关
-  { id: 'crypto', name: '加密', color: 'indigo' },
+  { id: 'crypto', name: '加密', color: 'red' },
   { id: 'security', name: '安全', color: 'amber' },
-  { id: 'hash', name: '哈希', color: 'indigo' },
-  { id: 'jwt', name: 'JWT', color: 'indigo' },
+  { id: 'hash', name: '哈希', color: 'purple' },
   
   // 网络相关
-  { id: 'network', name: '网络', color: 'teal' },
+  { id: 'network', name: '网络', color: 'cyan' },
   { id: 'http', name: 'HTTP', color: 'teal' },
-  { id: 'url', name: 'URL', color: 'teal' },
   
   // 通用功能
   { id: 'generate', name: '生成', color: 'rose' },
-  { id: 'analyze', name: '分析', color: 'amber' },
-  { id: 'validate', name: '验证', color: 'amber' },
-  { id: 'optimize', name: '优化', color: 'emerald' },
-  { id: 'utility', name: '实用', color: 'gray' }
+  { id: 'utility', name: '实用', color: 'gray' },
+  { id: 'test', name: '测试', color: 'orange' }
 ])
 provide('allTags', allTags)
 
@@ -96,277 +127,714 @@ provide('allTags', allTags)
 const allTools = ref([
   // 开发工具
   { 
-    id: 1, 
+    id: 'json-formatter', 
     name: 'JSON格式化', 
     category: '开发工具', 
     categoryId: 'dev',
     description: '在线JSON格式化与验证工具，支持压缩和美化', 
+    path: '/tools/json-formatter',
+    component: 'JSONFormatter',
     icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
-    tags: ['json', 'format', 'dev', 'validate']
+    tags: ['json', 'format', 'dev']
   },
   { 
-    id: 5, 
+    id: 'regex-tester', 
     name: '正则表达式测试', 
     category: '开发工具', 
     categoryId: 'dev',
-    description: '在线正则表达式测试与调试工具', 
+    description: '测试和验证正则表达式，实时查看匹配结果', 
+    path: '/tools/regex-tester',
+    component: 'RegexTester',
     icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
-    tags: ['regex', 'dev', 'text', 'validate']
+    tags: ['dev', 'test']
   },
   { 
-    id: 100, 
-    name: 'JWT调试工具', 
+    id: 'xml-formatter', 
+    name: 'XML格式化', 
     category: '开发工具', 
     categoryId: 'dev',
-    description: '解析、验证和调试JWT令牌的在线工具', 
-    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
-    tags: ['jwt', 'security', 'debug', 'dev']
+    description: 'XML文档格式化工具', 
+    path: '/tools/xml-formatter',
+    component: 'XmlFormatter',
+    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+    tags: ['xml', 'format', 'dev']
   },
   { 
-    id: 38, 
-    name: '代码混淆', 
+    id: 'jwt-debugger', 
+    name: 'JWT调试器', 
     category: '开发工具', 
     categoryId: 'dev',
-    description: '对JavaScript和CSS代码进行混淆处理，提高代码安全性', 
-    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['code', 'security', 'frontend', 'optimize']
+    description: 'JWT令牌解析和验证工具', 
+    path: '/tools/jwt-debugger',
+    component: 'JwtDebugger',
+    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+    tags: ['dev', 'security']
+  },
+  { 
+    id: 'code-diff', 
+    name: '代码对比', 
+    category: '开发工具', 
+    categoryId: 'dev',
+    description: '代码差异对比工具', 
+    path: '/tools/code-diff',
+    component: 'CodeDiff',
+    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+    tags: ['dev', 'utility']
   },
   {
-    id: 39, 
-    name: 'OpenAPI→TS客户端', 
-    category: '开发工具', 
+    id: 'code-obfuscator',
+    name: '代码混淆',
+    category: '开发工具',
     categoryId: 'dev',
-    description: '根据OpenAPI规范自动生成TypeScript接口和API客户端代码', 
+    description: '代码混淆工具，提高代码安全性',
+    path: '/tools/code-obfuscator',
+    component: 'CodeObfuscator',
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['api', 'dev', 'frontend', 'generate']
+    tags: ['dev', 'security']
   },
-  
-  // 设计工具
-  { 
-    id: 2, 
-    name: '颜色选择器', 
-    category: '设计工具', 
-    categoryId: 'design',
-    description: '颜色选择、转换工具，支持HEX、RGB、HSL等多种格式', 
-    icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
-    tags: ['color', 'design', 'convert']
-  },
-  { 
-    id: 6, 
-    name: 'CSS渐变生成器', 
-    category: '设计工具', 
-    categoryId: 'design',
-    description: '简单易用的CSS渐变背景生成工具', 
-    icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
-    tags: ['css', 'design', 'gradient', 'generate', 'color']
-  },
-  { 
-    id: 56, 
-    name: '配色方案生成', 
-    category: '设计工具', 
-    categoryId: 'design',
-    description: '基于色彩理论生成和谐的配色方案', 
-    icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
-    tags: ['color', 'design', 'generate']
-  },
-  { 
-    id: 8, 
-    name: 'SVG优化器', 
-    category: '图像与多媒体工具', 
-    categoryId: 'image',
-    description: '优化SVG文件大小，提升加载性能', 
-    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['svg', 'image', 'optimize', 'design']
-  },
-  
-  // 文本工具
-  { 
-    id: 3, 
-    name: 'Markdown编辑器', 
-    category: '文本工具', 
-    categoryId: 'text',
-    description: '简洁易用的Markdown编辑与预览工具', 
-    icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
-    tags: ['markdown', 'text', 'editor']
-  },
-  { 
-    id: 43, 
-    name: '敏感词过滤', 
-    category: '文本工具', 
-    categoryId: 'text',
-    description: '检测和过滤文本中的敏感词汇，支持自定义敏感词库', 
+  // {
+  //   id: 'code-complexity',
+  //   name: '代码复杂度',
+  //   category: '开发工具',
+  //   categoryId: 'dev',
+  //   description: '代码复杂度分析工具',
+  //   path: '/tools/code-complexity',
+  //   component: 'CodeComplexity',
+  //   icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+  //   tags: ['dev', 'utility']
+  // },
+  // {
+  //   id: 'code-formatter',
+  //   name: '代码格式化',
+  //   category: '开发工具',
+  //   categoryId: 'dev',
+  //   description: '通用代码格式化工具',
+  //   path: '/tools/code-formatter',
+  //   component: 'CodeFormatter',
+  //   icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+  //   tags: ['dev', 'format']
+  // },
+  // {
+  //   id: 'code-highlighter',
+  //   name: '代码高亮',
+  //   category: '开发工具',
+  //   categoryId: 'dev',
+  //   description: '代码语法高亮工具',
+  //   path: '/tools/code-highlighter',
+  //   component: 'CodeHighlighter',
+  //   icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+  //   tags: ['dev', 'utility']
+  // },
+  {
+    id: 'git-conflict-resolver',
+    name: 'Git冲突解决',
+    category: '开发工具',
+    categoryId: 'dev',
+    description: 'Git冲突解决工具',
+    path: '/tools/git-conflict-resolver',
+    component: 'GitConflictResolver',
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['text', 'security', 'filter']
+    tags: ['dev', 'utility']
   },
-  
-  // 图像工具
-  { 
-    id: 4, 
-    name: '图片压缩', 
-    category: '图像与多媒体工具', 
-    categoryId: 'image',
-    description: '高效无损的图片压缩工具', 
-    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['image', 'compress', 'optimize']
+  {
+    id: 'openapi-generator',
+    name: 'OpenAPI生成',
+    category: '开发工具',
+    categoryId: 'dev',
+    description: 'OpenAPI文档生成工具',
+    path: '/tools/openapi-generator',
+    component: 'OpenApiGenerator',
+    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['dev', 'api']
   },
-  
-  // 转换工具
-  { 
-    id: 44, 
-    name: 'CSV/JSON转换', 
-    category: '转换工具', 
-    categoryId: 'convert',
-    description: 'CSV与JSON格式互相转换工具，支持自定义分隔符', 
-    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
-    tags: ['convert', 'json', 'csv', 'data']
+  {
+    id: 'cors-generator',
+    name: 'CORS配置生成',
+    category: '开发工具',
+    categoryId: 'dev',
+    description: 'CORS跨域配置生成工具',
+    path: '/tools/cors-generator',
+    component: 'CorsGenerator',
+    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['dev', 'network']
   },
-  { 
-    id: 45, 
-    name: '进制转换工具', 
-    category: '转换工具', 
-    categoryId: 'convert',
-    description: '在二进制、八进制、十进制和十六进制等多种进制间转换', 
-    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
-    tags: ['convert', 'number', 'utility']
+  {
+    id: 'grpc-debugger',
+    name: 'gRPC调试',
+    category: '开发工具',
+    categoryId: 'dev',
+    description: 'gRPC接口调试工具',
+    path: '/tools/grpc-debugger',
+    component: 'GrpcDebugger',
+    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['dev', 'network']
   },
-  
-  // 生成工具
-  { 
-    id: 7, 
-    name: '二维码生成器', 
-    category: '实用工具', 
-    categoryId: 'utility',
-    description: '自定义生成清晰的二维码图片', 
-    icon: 'M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z',
-    tags: ['generate', 'image', 'utility']
-  },
-  
   // 网络工具
-  { 
-    id: 46, 
-    name: 'User-Agent生成器', 
-    category: '网络与协议工具', 
+  {
+    id: 'api-request-tool',
+    name: 'API请求工具',
+    category: '网络与协议工具',
     categoryId: 'network',
-    description: '生成各种浏览器和设备的User-Agent字符串', 
+    description: 'HTTP API测试工具',
+    path: '/tools/api-request-tool',
+    component: 'ApiRequestTool',
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
-    tags: ['network', 'generate', 'http']
+    tags: ['network', 'api', 'http']
   },
-  { 
-    id: 48, 
-    name: 'URL参数解析器', 
-    category: '网络与协议工具', 
-    categoryId: 'network',
-    description: '解析和查看URL查询参数，支持多种格式转换和导出选项', 
+  {
+    id: 'websocket-tester',
+    name: 'WebSocket测试',
+    category: '开发工具',
+    categoryId: 'dev',
+    description: 'WebSocket连接测试工具',
+    path: '/tools/websocket-tester',
+    component: 'WebSocketTester',
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
-    tags: ['url', 'network', 'parse']
+    tags: ['network', 'websocket']
   },
-  { 
-    id: 50, 
-    name: 'API请求工具', 
-    category: '网络与协议工具', 
+  {
+    id: 'mqtt-tester',
+    name: 'MQTT测试',
+    category: '网络与协议工具',
     categoryId: 'network',
-    description: '类似Hoppscotch的API测试工具，支持多种HTTP方法', 
+    description: 'MQTT协议测试工具',
+    path: '/tools/mqtt-tester',
+    component: 'MqttTester',
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
-    tags: ['api', 'network', 'http', 'dev']
+    tags: ['network', 'mqtt']
   },
-  { 
-    id: 52, 
-    name: '请求头批量编辑器', 
-    category: '网络与协议工具', 
+  {
+    id: 'network-speed-test',
+    name: '网络速度测试',
+    category: '网络与协议工具',
     categoryId: 'network',
-    description: '使用Headers API批量编辑、验证和格式化HTTP请求头', 
-    icon: 'M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z',
-    tags: ['http', 'network', 'format']
+    description: '网络连接速度测试工具',
+    path: '/tools/network-speed-test',
+    component: 'NetworkSpeedTest',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'test']
   },
-  
-  // 加密安全工具
-  { 
-    id: 54, 
-    name: 'HMAC计算工具', 
-    category: '数据与加密工具', 
+  {
+    id: 'http-proxy-detector',
+    name: 'HTTP代理检测',
+    category: '网络与协议工具',
+    categoryId: 'network',
+    description: 'HTTP代理服务器检测工具',
+    path: '/tools/http-proxy-detector',
+    component: 'HttpProxyDetector',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'security']
+  },
+  {
+    id: 'url-params-parser',
+    name: 'URL参数解析',
+    category: '网络与协议工具',
+    categoryId: 'network',
+    description: 'URL参数解析工具',
+    path: '/tools/url-params-parser',
+    component: 'UrlParamsParser',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'utility']
+  },
+  {
+    id: 'url-encode-decode',
+    name: 'URL编解码',
+    category: '网络与协议工具',
+    categoryId: 'network',
+    description: 'URL编码解码工具',
+    path: '/tools/url-encode-decode',
+    component: 'UrlEncodeDecode',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'convert']
+  },
+  {
+    id: 'ip-lookup',
+    name: 'IP查询',
+    category: '网络与协议工具',
+    categoryId: 'network',
+    description: 'IP地址查询工具',
+    path: '/tools/ip-lookup',
+    component: 'IpLookup',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'utility']
+  },
+  {
+    id: 'page-redirect-checker',
+    name: '页面重定向检查',
+    category: '网络与协议工具',
+    categoryId: 'network',
+    description: '页面重定向检查工具',
+    path: '/tools/page-redirect-checker',
+    component: 'PageRedirectChecker',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'utility']
+  },
+  {
+    id: 'request-header-editor',
+    name: '请求头编辑',
+    category: '网络与协议工具',
+    categoryId: 'network',
+    description: 'HTTP请求头编辑工具',
+    path: '/tools/request-header-editor',
+    component: 'RequestHeaderEditor',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'utility']
+  },
+  {
+    id: 'http-header-security-checker',
+    name: 'HTTP安全头检查',
+    category: '网络与协议工具',
+    categoryId: 'network',
+    description: 'HTTP安全头检查工具',
+    path: '/tools/http-header-security-checker',
+    component: 'HttpHeaderSecurityChecker',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'security']
+  },
+  {
+    id: 'http-status-code-lookup',
+    name: 'HTTP状态码查询',
+    category: '网络与协议工具',
+    categoryId: 'network',
+    description: 'HTTP状态码查询工具',
+    path: '/tools/http-status-code-lookup',
+    component: 'HttpStatusCodeLookup',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'utility']
+  },
+  {
+    id: 'user-agent-parser',
+    name: 'UA解析',
+    category: '网络与协议工具',
+    categoryId: 'network',
+    description: 'User-Agent解析工具',
+    path: '/tools/user-agent-parser',
+    component: 'UserAgentParser',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'utility']
+  },
+  {
+    id: 'user-agent-generator',
+    name: 'UA生成',
+    category: '网络与协议工具',
+    categoryId: 'network',
+    description: 'User-Agent生成工具',
+    path: '/tools/user-agent-generator',
+    component: 'UserAgentGenerator',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'utility']
+  },
+  // 图像工具
+  {
+    id: 'image-mosaic-generator',
+    name: '图片马赛克',
+    category: '图像与多媒体',
+    categoryId: 'image',
+    description: '图片马赛克生成工具',
+    path: '/tools/image-mosaic-generator',
+    component: 'ImageMosaicGenerator',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image']
+  },
+  {
+    id: 'image-pixelator',
+    name: '图片像素化',
+    category: '图像与多媒体',
+    categoryId: 'image',
+    description: '图片像素化工具',
+    path: '/tools/image-pixelator',
+    component: 'ImagePixelator',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image']
+  },
+  {
+    id: 'image-to-ascii',
+    name: '图片转ASCII',
+    category: '图像与多媒体',
+    categoryId: 'image',
+    description: '图片转ASCII工具',
+    path: '/tools/image-to-ascii',
+    component: 'ImageToAscii',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image', 'convert']
+  },
+  {
+    id: 'image-exif-viewer',
+    name: '图片EXIF查看',
+    category: '图像与多媒体',
+    categoryId: 'image',
+    description: '图片EXIF信息查看工具',
+    path: '/tools/image-exif-viewer',
+    component: 'ImageExifViewer',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image', 'utility']
+  },
+  {
+    id: 'image-batch-resizer',
+    name: '图片批量缩放',
+    category: '图像与多媒体',
+    categoryId: 'image',
+    description: '图片批量缩放工具',
+    path: '/tools/image-batch-resizer',
+    component: 'ImageBatchResizer',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image', 'utility']
+  },
+  {
+    id: 'image-color-extractor',
+    name: '图片颜色提取',
+    category: '图像与多媒体',
+    categoryId: 'image',
+    description: '图片颜色提取工具',
+    path: '/tools/image-color-extractor',
+    component: 'ImageColorExtractor',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image', 'utility']
+  },
+  {
+    id: 'gif-frame-extractor',
+    name: 'GIF帧提取',
+    category: '图像与多媒体',
+    categoryId: 'image',
+    description: 'GIF帧提取工具',
+    path: '/tools/gif-frame-extractor',
+    component: 'GifFrameExtractor',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image', 'utility']
+  },
+  {
+    id: 'id-photo-maker',
+    name: '证件照制作',
+    category: '图像与多媒体',
+    categoryId: 'image',
+    description: '证件照制作工具',
+    path: '/tools/id-photo-maker',
+    component: 'IdPhotoMaker',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image', 'utility']
+  },
+  // 转换工具
+  {
+    id: 'number-converter',
+    name: '进制转换',
+    category: '转换工具',
+    categoryId: 'convert',
+    description: '数字进制转换工具',
+    path: '/tools/number-converter',
+    component: 'NumberConverter',
+    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
+    tags: ['convert']
+  },
+  {
+    id: 'base64-encoder-decoder',
+    name: 'Base64编解码',
+    category: '转换工具',
+    categoryId: 'convert',
+    description: 'Base64编码解码工具',
+    path: '/tools/base64-encoder-decoder',
+    component: 'Base64EncoderDecoder',
+    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
+    tags: ['convert', 'base64']
+  },
+  {
+    id: 'yaml-json-converter',
+    name: 'YAML/JSON转换',
+    category: '转换工具',
+    categoryId: 'convert',
+    description: 'YAML和JSON格式互转工具',
+    path: '/tools/yaml-json-converter',
+    component: 'YamlJsonConverter',
+    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
+    tags: ['convert', 'json']
+  },
+  {
+    id: 'xml-json-converter',
+    name: 'XML/JSON转换',
+    category: '转换工具',
+    categoryId: 'convert',
+    description: 'XML和JSON格式互转工具',
+    path: '/tools/xml-json-converter',
+    component: 'XmlJsonConverter',
+    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
+    tags: ['convert', 'json']
+  },
+  {
+    id: 'timestamp-converter',
+    name: '时间戳转换',
+    category: '转换工具',
+    categoryId: 'convert',
+    description: '时间戳转换工具',
+    path: '/tools/timestamp-converter',
+    component: 'TimestampConverter',
+    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
+    tags: ['convert', 'time']
+  },
+  // 开发工具
+  // {
+  //   id: 'html-formatter',
+  //   name: 'HTML格式化',
+  //   category: '开发工具',
+  //   categoryId: 'dev',
+  //   description: 'HTML代码格式化工具',
+  //   path: '/tools/html-formatter',
+  //   component: 'HtmlFormatter',
+  //   icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+  //   tags: ['dev', 'format']
+  // },
+  // {
+  //   id: 'css-formatter',
+  //   name: 'CSS格式化',
+  //   category: '开发工具',
+  //   categoryId: 'dev',
+  //   description: 'CSS代码格式化工具',
+  //   path: '/tools/css-formatter',
+  //   component: 'CssFormatter',
+  //   icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+  //   tags: ['dev', 'format']
+  // },
+  // {
+  //   id: 'javascript-formatter',
+  //   name: 'JavaScript格式化',
+  //   category: '开发工具',
+  //   categoryId: 'dev',
+  //   description: 'JavaScript代码格式化工具',
+  //   path: '/tools/javascript-formatter',
+  //   component: 'JavaScriptFormatter',
+  //   icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+  //   tags: ['dev', 'format']
+  // },
+  // {
+  //   id: 'sql-formatter',
+  //   name: 'SQL格式化',
+  //   category: '开发工具',
+  //   categoryId: 'dev',
+  //   description: 'SQL代码格式化工具',
+  //   path: '/tools/sql-formatter',
+  //   component: 'SQLFormatter',
+  //   icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+  //   tags: ['dev', 'format']
+  // },
+  {
+    id: 'mock-api-generator',
+    name: 'Mock API生成',
+    category: '开发工具',
+    categoryId: 'dev',
+    description: 'Mock API数据生成工具',
+    path: '/tools/mock-api-generator',
+    component: 'MockAPIGenerator',
+    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+    tags: ['dev', 'api', 'generate']
+  },
+  // 文本工具
+  {
+    id: 'markdown-editor',
+    name: 'Markdown编辑器',
+    category: '文本与编辑',
+    categoryId: 'text',
+    description: 'Markdown在线编辑工具',
+    path: '/tools/markdown-editor',
+    component: 'MarkdownEditor',
+    icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
+    tags: ['text', 'markdown']
+  },
+  {
+    id: 'markdown-to-html',
+    name: 'Markdown转HTML',
+    category: '文本与编辑',
+    categoryId: 'text',
+    description: 'Markdown转HTML工具',
+    path: '/tools/markdown-to-html',
+    component: 'MarkdownToHtml',
+    icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
+    tags: ['text', 'markdown', 'convert']
+  },
+  {
+    id: 'html-entity-encoder',
+    name: 'HTML实体编码',
+    category: '文本与编辑',
+    categoryId: 'text',
+    description: 'HTML实体编码转换工具',
+    path: '/tools/html-entity-encoder',
+    component: 'HtmlEntityEncoder',
+    icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
+    tags: ['text', 'convert']
+  },
+  // 设计工具
+  {
+    id: 'color-picker',
+    name: '颜色选择器',
+    category: '设计工具',
+    categoryId: 'design',
+    description: '颜色选择和转换工具',
+    path: '/tools/color-picker',
+    component: 'ColorPicker',
+    icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
+    tags: ['design']
+  },
+  {
+    id: 'color-scheme-generator',
+    name: '配色方案生成',
+    category: '设计工具',
+    categoryId: 'design',
+    description: '配色方案生成工具',
+    path: '/tools/color-scheme-generator',
+    component: 'ColorSchemeGenerator',
+    icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
+    tags: ['design']
+  },
+  {
+    id: 'css-gradient-generator',
+    name: 'CSS渐变生成',
+    category: '设计工具',
+    categoryId: 'design',
+    description: 'CSS渐变效果生成工具',
+    path: '/tools/css-gradient-generator',
+    component: 'CssGradientGenerator',
+    icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
+    tags: ['design']
+  },
+  // 图像工具
+  {
+    id: 'image-compressor',
+    name: '图片压缩',
+    category: '图像与多媒体',
+    categoryId: 'image',
+    description: '图片压缩工具',
+    path: '/tools/image-compressor',
+    component: 'ImageCompressor',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image']
+  },
+  {
+    id: 'image-filters',
+    name: '图片滤镜',
+    category: '图像与多媒体',
+    categoryId: 'image',
+    description: '图片滤镜效果工具',
+    path: '/tools/image-filters',
+    component: 'ImageFilters',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image']
+  },
+  {
+    id: 'image-cropper',
+    name: '图片裁剪',
+    category: '图像与多媒体',
+    categoryId: 'image',
+    description: '图片裁剪工具',
+    path: '/tools/image-cropper',
+    component: 'ImageCropper',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image']
+  },
+  {
+    id: 'image-watermark',
+    name: '图片水印',
+    category: '图像与多媒体',
+    categoryId: 'image',
+    description: '图片水印添加工具',
+    path: '/tools/image-watermark',
+    component: 'ImageWatermark',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image']
+  },
+  // 安全工具
+  {
+    id: 'hash-calculator',
+    name: '哈希计算',
+    category: '密码与安全',
     categoryId: 'crypto',
-    description: '使用密钥生成消息认证码，支持多种哈希算法和输出格式', 
+    description: '各种哈希算法计算工具',
+    path: '/tools/hash-calculator',
+    component: 'HashCalculator',
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
-    tags: ['crypto', 'hash', 'security', 'generate']
+    tags: ['security', 'hash']
   },
-  { 
-    id: 51, 
-    name: 'HTTP头安全检测', 
-    category: '网络与协议工具', 
-    categoryId: 'network',
-    description: '分析网站的HTTP响应头，检测CSP、HSTS等安全配置', 
-    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
-    tags: ['security', 'http', 'network', 'analyze']
+  {
+    id: 'rsa-crypto',
+    name: 'RSA加解密',
+    category: '密码与安全',
+    categoryId: 'crypto',
+    description: 'RSA加密解密工具',
+    path: '/tools/rsa-crypto',
+    component: 'RsaCrypto',
+    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+    tags: ['security', 'crypto']
   },
-  
-  // 性能工具
-  { 
-    id: 40, 
-    name: '代码复杂度分析', 
-    category: '代码处理工具', 
+  {
+    id: 'symmetric-crypto',
+    name: '对称加密',
+    category: '密码与安全',
+    categoryId: 'crypto',
+    description: '对称加密解密工具',
+    path: '/tools/symmetric-crypto',
+    component: 'SymmetricCrypto',
+    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+    tags: ['security', 'crypto']
+  },
+  {
+    id: 'sm2-crypto',
+    name: 'SM2加密',
+    category: '密码与安全',
+    categoryId: 'crypto',
+    description: '国密SM2加密工具',
+    path: '/tools/sm2-crypto',
+    component: 'Sm2Crypto',
+    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+    tags: ['security', 'crypto']
+  },
+  {
+    id: 'password-generator',
+    name: '密码生成',
+    category: '密码与安全',
+    categoryId: 'crypto',
+    description: '安全密码生成工具',
+    path: '/tools/password-generator',
+    component: 'PasswordGenerator',
+    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+    tags: ['security', 'generate']
+  },
+  // 实用工具
+  {
+    id: 'qrcode-generator',
+    name: '二维码生成',
+    category: '实用效率',
+    categoryId: 'utility',
+    description: '二维码生成工具',
+    path: '/tools/qrcode-generator',
+    component: 'QRCodeGenerator',
+    icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
+    tags: ['utility', 'generate']
+  },
+  {
+    id: 'uuid-generator',
+    name: 'UUID生成',
+    category: '开发工具',
     categoryId: 'dev',
-    description: '分析JavaScript代码的圈复杂度、Halstead度量和维护指数', 
-    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['code', 'analyze', 'performance', 'dev']
-  },
-  { 
-    id: 53, 
-    name: '网络测速工具', 
-    category: '网络与协议工具', 
-    categoryId: 'network',
-    description: '测量资源加载时间，分析网络连接质量和性能', 
-    icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-    tags: ['network', 'performance', 'analyze']
-  },
-  
-  // 更多有用的工具...
-  { 
-    id: 41, 
-    name: 'Git冲突解决模拟器', 
-    category: '代码处理工具', 
-    categoryId: 'dev',
-    description: '模拟Git合并冲突场景，练习解决代码冲突', 
-    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['git', 'code', 'dev', 'utility']
-  },
-  { 
-    id: 42, 
-    name: '代码片段管理器', 
-    category: '代码处理工具', 
-    categoryId: 'dev',
-    description: '保存和管理常用代码片段，提高开发效率', 
-    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['code', 'utility', 'dev']
-  },
-  { 
-    id: 49, 
-    name: '前端代理检测器', 
-    category: '网络与协议工具', 
-    categoryId: 'network',
-    description: '检测您的连接是否使用了HTTP代理，分析代理相关的头信息', 
-    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
-    tags: ['network', 'http', 'security', 'analyze']
-  },
-  { 
-    id: 55, 
-    name: '页面重定向检查器', 
-    category: '网络与协议工具', 
-    categoryId: 'network',
-    description: '检测和分析网页的重定向链，包括重定向类型和性能影响', 
-    icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm12 0a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z',
-    tags: ['network', 'analyze', 'http']
-  },
-  { 
-    id: 56, 
-    name: 'IP地址查询工具', 
-    category: '网络与协议工具', 
-    categoryId: 'network',
-    description: '查询IP地址的地理位置、ISP和ASN信息，支持IPv4和IPv6', 
-    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
-    tags: ['network', 'ip', 'utility']
+    description: 'UUID唯一标识符生成工具',
+    path: '/tools/uuid-generator',
+    component: 'UuidGenerator',
+    icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
+    tags: ['dev', 'generate']
   }
 ])
+
+// 对所有工具添加路径和组件映射
+allTools.value.forEach(tool => {
+  if (!tool.path) {
+    tool.path = `/tools/${tool.id}`
+  }
+  
+  if (!tool.component && tool.name) {
+    const componentName = tool.name.replace(/\s+/g, '')
+    tool.component = componentName
+  }
+})
+
+// 提供响应式数据
 provide('allTools', allTools)
+provide('allTags', allTags)
+provide('categories', categories)
 
 // 按标签分组的工具
 const toolsByTag = computed(() => {
@@ -379,11 +847,13 @@ const toolsByTag = computed(() => {
   
   // 根据标签分组工具
   allTools.value.forEach(tool => {
-    tool.tags.forEach(tagId => {
-      if (result[tagId]) {
-        result[tagId].push(tool)
-      }
-    })
+    if (tool.tags) {
+      tool.tags.forEach(tagId => {
+        if (result[tagId]) {
+          result[tagId].push(tool)
+        }
+      })
+    }
   })
   
   return result

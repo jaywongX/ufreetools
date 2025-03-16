@@ -23,8 +23,8 @@ export default {
         category: {
           dev: '#48BB78',     // 开发工具
           design: '#ED8936',  // 设计工具
-          text: '#9F7AEA',    // 文本工具
-          image: '#4299E1',   // 图像与多媒体工具
+          text: '#9F7AEA',    // 文本与编辑
+          image: '#4299E1',   // 图像与多媒体
           convert: '#38B2AC', // 转换工具
         },
       },

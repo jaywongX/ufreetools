@@ -292,11 +292,12 @@ function copyAllUserAgents() {
 // 获取浏览器图标和名称
 function getBrowserIconAndName(ua) {
   try {
-    const info = randomUseragent.parse(ua)
-    if (!info || !info.browserName) return '未知浏览器'
+    // 使用自定义解析函数
+    const info = parseUserAgent(ua)
+    if (!info || !info.browser.name) return '未知浏览器'
     
-    const browserName = info.browserName
-    const version = info.browserVersion ? ` ${info.browserVersion}` : ''
+    const browserName = info.browser.name
+    const version = info.browser.version ? ` ${info.browser.version}` : ''
     
     return `${browserName}${version}`
   } catch (err) {
@@ -308,10 +309,11 @@ function getBrowserIconAndName(ua) {
 // 获取操作系统名称
 function getOSName(ua) {
   try {
-    const info = randomUseragent.parse(ua)
-    if (!info || !info.osName) return '未知系统'
+    // 使用自定义解析函数
+    const info = parseUserAgent(ua)
+    if (!info || !info.os.name) return '未知系统'
     
-    return info.osName
+    return info.os.name
   } catch (err) {
     console.error('解析操作系统信息失败:', err)
     return '未知系统'
@@ -321,8 +323,9 @@ function getOSName(ua) {
 // 获取设备类型
 function getDeviceType(ua) {
   try {
-    const info = randomUseragent.parse(ua)
-    if (!info || !info.deviceType) return null
+    // 使用自定义解析函数
+    const info = parseUserAgent(ua)
+    if (!info || !info.device.type) return null
     
     const deviceTypeMap = {
       'mobile': '移动设备',
@@ -330,10 +333,195 @@ function getDeviceType(ua) {
       'tablet': '平板电脑'
     }
     
-    return deviceTypeMap[info.deviceType] || info.deviceType
+    return deviceTypeMap[info.device.type] || info.device.type
   } catch (err) {
     console.error('解析设备类型失败:', err)
     return null
   }
+}
+
+// 用户代理解析函数
+function parseUserAgent(uaString) {
+  // 基本解析结果结构
+  const result = {
+    ua: uaString,
+    browser: {
+      name: '未知',
+      version: '未知'
+    },
+    engine: {
+      name: '未知',
+      version: '未知'
+    },
+    os: {
+      name: '未知',
+      version: '未知'
+    },
+    device: {
+      model: '未知',
+      type: '未知',
+      vendor: '未知'
+    },
+    cpu: {
+      architecture: '未知'
+    }
+  }
+
+  // 浏览器检测
+  if (uaString.includes('Firefox/')) {
+    result.browser.name = 'Firefox'
+    result.browser.version = getVersion(uaString, 'Firefox/')
+  } else if (uaString.includes('Edg/')) {
+    result.browser.name = 'Edge'
+    result.browser.version = getVersion(uaString, 'Edg/')
+  } else if (uaString.includes('Chrome/')) {
+    result.browser.name = 'Chrome'
+    result.browser.version = getVersion(uaString, 'Chrome/')
+  } else if (uaString.includes('Safari/') && !uaString.includes('Chrome/')) {
+    result.browser.name = 'Safari'
+    result.browser.version = getVersion(uaString, 'Version/')
+  } else if (uaString.includes('MSIE')) {
+    result.browser.name = 'Internet Explorer'
+    result.browser.version = getVersion(uaString, 'MSIE ')
+  } else if (uaString.includes('Trident/') && uaString.includes('rv:')) {
+    result.browser.name = 'Internet Explorer'
+    result.browser.version = getIE11Version(uaString)
+  } else if (uaString.includes('OPR/') || uaString.includes('Opera/')) {
+    result.browser.name = 'Opera'
+    result.browser.version = uaString.includes('OPR/') ? getVersion(uaString, 'OPR/') : getVersion(uaString, 'Opera/')
+  }
+
+  // 引擎检测
+  if (uaString.includes('Gecko/')) {
+    result.engine.name = 'Gecko'
+    result.engine.version = getVersion(uaString, 'rv:')
+  } else if (uaString.includes('WebKit/')) {
+    result.engine.name = 'WebKit'
+    result.engine.version = getVersion(uaString, 'WebKit/')
+  } else if (uaString.includes('Trident/')) {
+    result.engine.name = 'Trident'
+    result.engine.version = getVersion(uaString, 'Trident/')
+  } else if (uaString.includes('Presto/')) {
+    result.engine.name = 'Presto'
+    result.engine.version = getVersion(uaString, 'Presto/')
+  }
+
+  // 操作系统检测
+  if (uaString.includes('Windows')) {
+    result.os.name = 'Windows'
+    result.os.version = getWindowsVersion(uaString)
+  } else if (uaString.includes('Macintosh') || uaString.includes('Mac OS X')) {
+    result.os.name = 'macOS'
+    result.os.version = getMacOSVersion(uaString)
+  } else if (uaString.includes('Linux')) {
+    result.os.name = 'Linux'
+  } else if (uaString.includes('Android')) {
+    result.os.name = 'Android'
+    result.os.version = getVersion(uaString, 'Android ')
+  } else if (uaString.includes('iOS') || uaString.includes('iPhone OS')) {
+    result.os.name = 'iOS'
+    result.os.version = getIOSVersion(uaString)
+  }
+
+  // 设备类型检测
+  if (uaString.includes('Mobile')) {
+    result.device.type = 'mobile'
+  } else if (uaString.includes('Tablet') || uaString.includes('iPad')) {
+    result.device.type = 'tablet'
+  } else {
+    result.device.type = 'desktop'
+  }
+
+  // 设备品牌和型号检测
+  if (uaString.includes('iPhone')) {
+    result.device.vendor = 'Apple'
+    result.device.model = 'iPhone'
+  } else if (uaString.includes('iPad')) {
+    result.device.vendor = 'Apple'
+    result.device.model = 'iPad'
+  } else if (uaString.includes('Macintosh')) {
+    result.device.vendor = 'Apple'
+    result.device.model = 'Mac'
+  } else if (uaString.includes('SM-')) {
+    result.device.vendor = 'Samsung'
+    result.device.model = getSamsungModel(uaString)
+  } else if (uaString.includes('Pixel')) {
+    result.device.vendor = 'Google'
+    result.device.model = getGooglePixelModel(uaString)
+  }
+
+  // CPU架构检测
+  if (uaString.includes('x86_64') || uaString.includes('x64') || uaString.includes('Win64')) {
+    result.cpu.architecture = 'x64'
+  } else if (uaString.includes('x86') || uaString.includes('WOW64')) {
+    result.cpu.architecture = 'x86'
+  } else if (uaString.includes('arm')) {
+    result.cpu.architecture = 'ARM'
+  }
+
+  return result
+}
+
+// 获取版本号（通用方法）
+function getVersion(uaString, versionMarker) {
+  const versionIndex = uaString.indexOf(versionMarker)
+  if (versionIndex === -1) return '未知'
+  
+  const versionStart = versionIndex + versionMarker.length
+  const versionEnd = uaString.indexOf(' ', versionStart)
+  
+  if (versionEnd === -1) {
+    return uaString.substring(versionStart)
+  }
+  
+  return uaString.substring(versionStart, versionEnd).replace(';', '')
+}
+
+// 获取IE11版本号
+function getIE11Version(uaString) {
+  const matches = uaString.match(/rv:(\d+\.\d+)/)
+  return matches ? matches[1] : '未知'
+}
+
+// 获取Windows版本
+function getWindowsVersion(uaString) {
+  if (uaString.includes('Windows NT 10.0')) return '10'
+  if (uaString.includes('Windows NT 6.3')) return '8.1'
+  if (uaString.includes('Windows NT 6.2')) return '8'
+  if (uaString.includes('Windows NT 6.1')) return '7'
+  if (uaString.includes('Windows NT 6.0')) return 'Vista'
+  if (uaString.includes('Windows NT 5.1')) return 'XP'
+  if (uaString.includes('Windows NT 5.0')) return '2000'
+  return '未知'
+}
+
+// 获取macOS版本
+function getMacOSVersion(uaString) {
+  const matches = uaString.match(/Mac OS X (\d+[._]\d+[._]?\d*)/)
+  if (matches) {
+    return matches[1].replace(/_/g, '.')
+  }
+  return '未知'
+}
+
+// 获取iOS版本
+function getIOSVersion(uaString) {
+  const matches = uaString.match(/OS (\d+[._]\d+[._]?\d*)/)
+  if (matches) {
+    return matches[1].replace(/_/g, '.')
+  }
+  return '未知'
+}
+
+// 获取三星设备型号
+function getSamsungModel(uaString) {
+  const matches = uaString.match(/SM-[A-Z0-9]+/i)
+  return matches ? matches[0] : '未知三星设备'
+}
+
+// 获取Google Pixel型号
+function getGooglePixelModel(uaString) {
+  const matches = uaString.match(/Pixel [0-9]+/i)
+  return matches ? matches[0] : '未知Pixel设备'
 }
 </script> 
