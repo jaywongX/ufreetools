@@ -87,7 +87,7 @@
                 <router-link 
                   v-for="tool in toolsByCategory[category.id]" 
                   :key="tool.id"
-                  :to="`/tool/${tool.id.toString()}`"
+                  :to="localizedRoute(`/tool/${tool.id.toString()}`)"
                   class="block py-1.5 px-3 rounded-md text-sm transition-all duration-300"
                   :class="isActive(`/tool/${tool.id.toString()}`) ? 'text-primary dark:text-primary-light font-medium' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'"
                 >
