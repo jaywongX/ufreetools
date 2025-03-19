@@ -7,7 +7,7 @@
       <!-- 分类和标签显示 -->
       <div v-if="category || validTags.length > 0" class="flex flex-wrap gap-2 mb-6">
         <span v-if="category" class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-          {{ category.name }}
+          {{ $t(`categories.${category.id}`) }}
         </span>
         
         <span 
@@ -22,17 +22,18 @@
     
     <div v-if="loading" class="flex justify-center items-center p-12">
       <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+      <span class="ml-3 text-gray-600 dark:text-gray-400">{{ $t('common.loading') }}</span>
     </div>
     
     <div v-else-if="!tool" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
-      <p>工具未找到或正在加载中，请稍后重试或返回<router-link to="/" class="underline font-medium">首页</router-link></p>
+      <p>{{ $t('errors.toolNotFound') }} <router-link :to="localizedRoute('/')" class="underline font-medium">{{ $t('header.home') }}</router-link></p>
     </div>
     
     <!-- 显示组件加载状态 -->
     <div v-else-if="componentLoading" class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 mb-6">
       <div class="flex justify-center items-center p-8">
         <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-primary"></div>
-        <span class="ml-3 text-gray-600 dark:text-gray-400">加载工具组件...</span>
+        <span class="ml-3 text-gray-600 dark:text-gray-400">{{ $t('common.loading') }}</span>
       </div>
     </div>
     
@@ -41,7 +42,7 @@
     
     <!-- 组件加载错误 -->
     <div v-else-if="componentError" class="bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-200 px-4 py-3 rounded mb-6">
-      <p>{{ componentError }}</p>
+      <p>{{ $t('errors.componentFailed') }}</p>
     </div>
   </div>
 </template>
@@ -52,17 +53,21 @@ import { useRoute } from 'vue-router'
 import TagBadge from '../components/ui/TagBadge.vue'
 import ToolCard from '../components/ui/ToolCard.vue'
 import { addToHistory } from '../services/historyService'
+import { useInternationalizedRoute } from '../composables/useInternationalizedRoute'
 
 const route = useRoute()
 const allTools = inject('allTools', [])
 const categories = inject('categories', [])
-const allTags = inject('allTags', [])
+const allTags = inject('allTags', { value: [] })
 const loading = ref(true)
 const tool = ref(null)
 const error = ref(null)
 const componentLoading = ref(false)
 const componentError = ref(null)
 const resolvedComponent = ref(null)
+
+// 使用国际化路由辅助函数
+const { localizedRoute } = useInternationalizedRoute()
 
 // 定义分类数据（作为备份）
 const categoriesData = [
@@ -151,18 +156,19 @@ function loadTool() {
       return tools.find(t => String(t.id) === String(paramId))
     }
     
-    // 确保正确访问 allTools 的值
-    const toolsArray = Array.isArray(allTools) ? allTools : 
-                      (allTools?.value && Array.isArray(allTools.value) ? allTools.value : [])
+    // 检查 allTools 的类型和值
+    console.log('allTools type:', typeof allTools)
+    console.log('Is allTools array?', Array.isArray(allTools))
+    console.log('Is allTools.value array?', allTools.value && Array.isArray(allTools.value))
     
-    tool.value = findTool(toolsArray)
+    tool.value = findTool(allTools);
     
+    console.log('Found tool:', tool.value ? 'Yes' : 'No')
     if (tool.value) {
       console.log('Tool details:', {
         id: tool.value.id,
         name: tool.value.name,
-        component: tool.value.component,
-        tags: tool.value.tags
+        component: tool.value.component
       })
       
       // 添加到历史记录

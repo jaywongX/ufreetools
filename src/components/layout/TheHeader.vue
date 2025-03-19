@@ -23,7 +23,7 @@
             @focus="handleFocus"
             @blur="handleBlur"
             @keydown.enter="performSearch"
-            placeholder="搜索工具..."
+            :placeholder="$t('header.search')"
             class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-light"
           />
           
@@ -51,21 +51,47 @@
           </svg>
         </button>
         
-        <!-- 反馈链接 - 使用文本而非图标 -->
+        <!-- 反馈链接 -->
         <router-link 
-          to="/feedback" 
+          :to="localizedRoute('/feedback')" 
           class="text-sm text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light"
         >
-          反馈
+          {{ $t('header.feedback') }}
         </router-link>
         
         <!-- 关于我们链接 -->
         <router-link 
-          to="/about" 
+          :to="localizedRoute('/about')" 
           class="text-sm text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light"
         >
-          关于我们
+          {{ $t('header.about') }}
         </router-link>
+        
+        <!-- 语言切换下拉菜单 -->
+        <div class="relative ml-4">
+          <button 
+            @click="toggleLanguageDropdown" 
+            @blur="closeLanguageDropdown"
+            class="flex items-center space-x-1 px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+          >
+            <span>{{ getCurrentLanguageName() }}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          <div v-if="showLanguageDropdown" class="absolute right-0 mt-2 py-2 w-32 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 z-50">
+            <button
+              v-for="lang in availableLanguages"
+              :key="lang.code"
+              @click="switchLanguage(lang.code)" 
+              class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+              :class="{'text-primary dark:text-primary-light font-medium': currentLanguage === lang.code}"
+            >
+              {{ lang.name }}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -73,10 +99,13 @@
 
 <script setup>
 import { ref, inject, computed, watch, onMounted, onBeforeUnmount } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import TagBadge from '../ui/TagBadge.vue'
 
 const router = useRouter()
+const route = useRoute()
+const { locale } = useI18n()
 
 // 注入
 const sidebarOpen = inject('sidebarOpen')
@@ -87,6 +116,14 @@ const allTags = inject('allTags', { value: [] })
 // 搜索状态
 const searchQuery = ref('')
 const showResults = ref(false)
+
+// 语言切换
+const availableLanguages = [
+  { code: 'zh', name: '中文' },
+  { code: 'en', name: 'English' }
+]
+
+const currentLanguage = computed(() => locale.value)
 
 // 监听搜索框值的变化
 watch(searchQuery, (newValue) => {
@@ -182,25 +219,10 @@ const matchedTools = computed(() => {
     })
 })
 
-// 合并搜索结果
-const searchResults = computed(() => {
-  return [...matchedTags.value, ...matchedTools.value]
-})
-
-// 总结果数量
-const totalResults = computed(() => {
-  return matchedTags.value.length + matchedTools.value.length
-})
-
-// 是否有更多未显示的结果
-const hasMoreResults = computed(() => {
-  return matchedTags.value.length > 5 || matchedTools.value.length > 6
-})
-
 // 执行搜索
 function performSearch() {
   if (searchQuery.value.trim()) {
-    router.push(`/search?q=${encodeURIComponent(searchQuery.value.trim())}`)
+    router.push(localizedRoute(`/search?q=${encodeURIComponent(searchQuery.value.trim())}`))
     showResults.value = false
   }
 }
@@ -219,6 +241,46 @@ function handleBlur() {
     showResults.value = false
   }, 200)
 }
+
+function switchLanguage(langCode) {
+  if (langCode === locale.value) return;
+  
+  const currentPath = route.path;
+  const currentPathWithoutLang = currentPath.replace(/^\/(zh|en)/, '');
+  
+  // 设置i18n语言
+  locale.value = langCode;
+  
+  // 更新URL
+  router.push(`/${langCode}${currentPathWithoutLang}`);
+  
+  // 保存用户的语言选择
+  localStorage.setItem('userLanguage', langCode);
+}
+
+// 语言切换下拉菜单状态
+const showLanguageDropdown = ref(false);
+
+function toggleLanguageDropdown() {
+  showLanguageDropdown.value = !showLanguageDropdown.value;
+}
+
+function closeLanguageDropdown() {
+  // 延迟关闭以允许点击事件先处理
+  setTimeout(() => {
+    showLanguageDropdown.value = false;
+  }, 100);
+}
+
+function getCurrentLanguageName() {
+  const lang = availableLanguages.find(l => l.code === currentLanguage.value);
+  return lang ? lang.name : 'Language';
+}
+
+function localizedRoute(path) {
+  const lang = locale.value;
+  return `/${lang}${path}`;
+}
 </script>
 
 <style scoped>
@@ -229,5 +291,22 @@ function handleBlur() {
 /* 添加悬停效果 */
 button:hover svg {
   transform: scale(1.1);
+}
+
+.language-switcher {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.language-link {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.language-link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  font-weight: bold;
 }
 </style>

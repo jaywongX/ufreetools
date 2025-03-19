@@ -1,0 +1,209 @@
+export default {
+  // UI Interface Text
+  title: '标签',
+  description: '按标签浏览工具',
+  popular: '热门标签',
+  all: '所有标签',
+  related: '相关标签',
+  noTools: '没有使用此标签的工具',
+  tagsCount: ' 个标签',
+  toolsCount: ' 个工具',
+  filterByTag: '按标签筛选',
+  showMore: '显示更多',
+  collapse: '收起',
+  selected: '已选择',
+  clearAll: '清除全部',
+  relatedTools: '相关工具',
+  combineFilters: '组合筛选',
+  foundCount: '找到 {count} 个与"{tag}"相关的工具',
+  searchPlaceholder: '搜索标签...',
+  searchResults: '搜索结果',
+  noMatchingTags: '没有找到匹配的标签',
+  relationshipAnalysis: '标签关系分析',
+  relationshipDesc: '通过分析工具标签之间的关联性，发现相互关联最紧密的标签组合',
+  toolsInPair: '个工具',
+  showMore: '显示更多',
+  collapse: '收起',
+  
+  // 开发类标签
+  dev: '开发',
+  frontend: '前端',
+  backend: '后端',
+  database: '数据库',
+  mobile: '移动',
+  debug: '调试',
+  api: 'API',
+  
+  // 设计类标签
+  design: '设计',
+  color: '颜色',
+  typography: '排版',
+  ui: '界面',
+  icon: '图标',
+  gradient: '渐变',
+  
+  // 网络类标签
+  network: '网络',
+  protocol: '协议',
+  http: 'HTTP',
+  url: 'URL',
+  
+  // 媒体类标签
+  image: '图片',
+  media: '媒体',
+  compress: '压缩',
+  resize: '调整大小',
+  crop: '裁剪',
+  effects: '特效',
+  filter: '滤镜',
+  art: '艺术效果',
+  watermark: '水印',
+  logo: '标志',
+  retro: "复古",
+  copyright: "版权",
+  ascii: "ASCII艺术",
+  pixelate: "像素化",
+  frames: "帧",
+  portrait: "人像",
+  
+  // 文本类标签
+  text: '文本',
+  format: '格式化',
+  convert: '转换',
+  encode: '编码',
+  decode: '解码',
+  
+  // 数据类标签
+  json: 'JSON',
+  xml: 'XML',
+  csv: 'CSV',
+  yaml: 'YAML',
+  
+  // 安全类标签
+  security: '安全',
+  crypto: '密码学',
+  hash: '哈希',
+  encrypt: '加密',
+  decrypt: '解密',
+  
+  // 实用工具类标签
+  utility: '实用工具',
+  calculator: '计算器',
+  converter: '转换器',
+  generator: '生成器',
+  validator: '验证器',
+  
+  // 分析类标签
+  analyze: '分析',
+  optimize: '优化',
+  
+  // 格式类标签
+  gif: 'GIF',
+  svg: 'SVG',
+  png: 'PNG',
+  jpg: 'JPG',
+  pdf: 'PDF',
+  
+  // 其他标签
+  data: '数据',
+  time: '时间',
+  date: '日期',
+  math: '数学',
+  diagram: '图表',
+  graph: '图形',
+  flowchart: '流程图',
+  jwt: 'JWT',
+  branding: '品牌',
+  metadata: '元数据',
+  seo: 'SEO',
+  password: '密码',
+  random: '随机',
+  unicode: 'Unicode',
+  regex: '正则表达式',
+  minify: '压缩',
+  beautify: '美化',
+  diff: '差异',
+  compare: '比较',
+  
+  // 验证相关
+  verify: '验证',
+  validation: '验证',
+  validate: '验证',
+  check: '检查',
+  
+  // 多媒体类
+  multimedia: '多媒体',
+  audio: '音频',
+  video: '视频',
+  animation: '动画',
+  
+  // 文档相关
+  document: '文档',
+  file: '文件',
+  docx: 'Word文档',
+  xlsx: 'Excel表格',
+  
+  // 开发工具
+  cli: '命令行工具',
+  ide: '开发环境',
+  framework: '框架',
+  library: '库',
+  
+  // 数据处理
+  processing: '处理',
+  extraction: '提取',
+  transformation: '转换',
+  
+  // 常见标签对
+  textconvert: '文本转换',
+  imageprocess: '图像处理',
+  formatconversion: '格式转换',
+  encoding: '编码',
+  decoding: '解码',
+  
+  // 特殊类型
+  generate: '生成',
+  detect: '检测',
+  recognize: '识别',
+  optimizing: '优化',
+  
+  // 其他常见标签
+  code: '代码',
+  optimization: '优化',
+  recognize: '识别',
+  validate: '验证', 
+  edit: '编辑',
+  effect: '特效',
+  photo: '照片',
+  compression: '压缩',
+  qrcode: '二维码',
+  convert: '转换',
+  font: '字体',
+  format: '格式化',
+  parse: '解析',
+  performance: '性能',
+  compare: '对比',
+  test: '测试',
+  diagnose: '诊断',
+  utility: '实用',
+  decode: '解码',
+  encrypt: '加密',
+  decrypt: '解密',
+  remove: '去除',
+  extract: '提取',
+  process: '处理',
+  
+  // 标签分类名称
+  categories: {
+    multimedia: '多媒体',
+    document: '文档相关',
+    development: '开发工具',
+    network: '网络与协议',
+    utility: '实用工具',
+    design: '设计与创意',
+    security: '安全工具',
+    data: '数据处理',
+    conversion: '格式转换',
+    analysis: '分析与诊断'
+  }
+} 

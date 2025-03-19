@@ -3,23 +3,34 @@
     <!-- 标签筛选标题行 -->
     <section class="mb-6">
       <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xl font-bold">标签筛选</h2>
+        <h2 class="text-xl font-bold">{{ $t('home.tagFilterTitle') }}</h2>
       </div>
 
       <!-- 标签列表 -->
       <div class="flex flex-wrap gap-3">
-        <div 
-          v-for="tag in (Array.isArray(allTags) ? allTags.slice(0, 12) : [])" 
+        <router-link 
+          v-for="tag in displayedTags" 
           :key="tag.id"
-          @click="addTagToFilter(tag.id)"
+          :to="{query: {tags: tag.id}}"
+          @click.prevent="addTagToFilter(tag.id)"
           :class="[
-            'tag-card bg-white dark:bg-gray-800 rounded-lg shadow-sm p-3 cursor-pointer hover:shadow-md transition-shadow',
+            'tag-cloud-item transition-all hover:shadow-sm',
             selectedTags[0] === tag.id ? 'ring-2 ring-primary dark:ring-primary-light' : ''
           ]"
         >
-          <div class="flex items-center">
-            <TagBadge :tag-id="tag.id" />
-          </div>
+          <TagBadge v-if="tag?.id" :tag-id="tag.id" />
+        </router-link>
+        
+        <!-- 显示更多/收起按钮 -->
+        <div 
+          v-if="Array.isArray(allTags) && allTags.length > 10"
+          @click="toggleTagsDisplay"
+          class="text-primary dark:text-primary-light py-2 px-4 cursor-pointer hover:underline flex items-center"
+        >
+          <span>{{ showAllTags ? $t('tags.collapse') : $t('tags.showMore') }} ({{ allTags.length }})</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" :class="{'transform rotate-180': showAllTags}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
         </div>
       </div>
     </section>
@@ -27,7 +38,7 @@
     <!-- 当有选定标签时显示的结果 -->
     <div v-if="selectedTags.length > 0">
       <div class="flex justify-between items-center mb-4">
-        <h2 class="text-xl font-bold">筛选结果 ({{ filteredTools.length }})</h2>
+        <h2 class="text-xl font-bold">{{ $t('home.filterResultsTitle') }} ({{ filteredTools.length }})</h2>
       </div>
       
       <div v-if="filteredTools.length > 0" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-10">
@@ -40,14 +51,14 @@
       </div>
       
       <div v-else class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 text-center mb-10">
-        <p class="text-gray-600 dark:text-gray-400">没有符合所选标签的工具</p>
+        <p class="text-gray-600 dark:text-gray-400">{{ $t('home.noMatchingTools') }}</p>
       </div>
     </div>
   
     <!-- 最近使用部分 -->
     <section v-if="selectedTags.length === 0 && recentTools.length > 0" class="mb-10">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">最近使用</h2>
+        <h2 class="text-xl font-bold">{{ $t('home.recentToolsTitle') }}</h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <ToolCard 
@@ -62,7 +73,7 @@
     <!-- 热门工具部分 -->
     <section v-if="selectedTags.length === 0" class="mb-10">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">热门工具</h2>
+        <h2 class="text-xl font-bold">{{ $t('home.popularToolsTitle') }}</h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <ToolCard 
@@ -77,7 +88,7 @@
     <!-- 最新添加部分 -->
     <section v-if="selectedTags.length === 0">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">最新添加</h2>
+        <h2 class="text-xl font-bold">{{ $t('home.newToolsTitle') }}</h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <ToolCard 
@@ -92,11 +103,12 @@
 </template>
 
 <script setup>
-import { ref, inject, computed, onMounted, watch } from 'vue'
+import { ref, inject, computed, onMounted, watch, onUpdated } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import TagBadge from '../components/ui/TagBadge.vue'
 import ToolCard from '../components/ui/ToolCard.vue'
 import { getHistory } from '../services/historyService'
+import { useMetaInfo } from '../mixins/metaInfoMixin'
 
 const route = useRoute()
 const router = useRouter()
@@ -112,6 +124,23 @@ const selectedTags = ref([])
 
 // 最近使用的工具
 const recentTools = ref([])
+
+// 使用元信息钩子
+const { updateMetaInfo } = useMetaInfo('home.title', 'home.description')
+
+// 控制标签显示状态
+const showAllTags = ref(false)
+
+// 计算要显示的标签
+const displayedTags = computed(() => {
+  if (!Array.isArray(allTags.value)) return []
+  return showAllTags.value ? allTags.value : allTags.value.slice(0, 10)
+})
+
+// 切换标签显示
+function toggleTagsDisplay() {
+  showAllTags.value = !showAllTags.value
+}
 
 // 从URL获取标签筛选参数
 function getTagsFromUrl() {
@@ -139,35 +168,14 @@ function updateUrlWithTags() {
   })
 }
 
-// 确保 allTools 是数组
-const toolsArray = computed(() => {
-  return Array.isArray(allTools) ? allTools : 
-         (allTools?.value && Array.isArray(allTools.value) ? allTools.value : [])
-})
-
-// 使用 toolsArray 计算热门工具
-const popularTools = computed(() => {
-  if (!toolsArray.value.length) return []
-  const tools = [...toolsArray.value]
-  // 随机排序以模拟"热门"工具
-  return tools.sort(() => 0.5 - Math.random()).slice(0, 6)
-})
-
-// 使用 toolsArray 计算最新工具
-const newTools = computed(() => {
-  if (!toolsArray.value.length) return []
-  const tools = [...toolsArray.value]
-  // 按照添加时间倒序排序（这里简单地反转数组）
-  return tools.slice(-6).reverse()
-})
-
 // 根据所选标签筛选工具
 const filteredTools = computed(() => {
   if (selectedTags.value.length === 0) return []
+  if (!Array.isArray(allTools)) return []
   
   // 只使用第一个标签进行筛选
   const selectedTag = selectedTags.value[0]
-  return toolsArray.value.filter(tool => tool.tags.includes(selectedTag))
+  return allTools.filter(tool => tool.tags.includes(selectedTag))
 })
 
 // 添加清除选中标签的方法
@@ -198,21 +206,57 @@ watch(selectedTags, () => {
   updateUrlWithTags()
 })
 
+// 确保 allTools 是数组
+const toolsArray = computed(() => {
+  return Array.isArray(allTools) ? allTools : []
+})
+
+// 使用 toolsArray 而不是直接使用 allTools
+const featuredTools = computed(() => {
+  return toolsArray.value.slice(0, 6)
+})
+
+const popularTools = computed(() => {
+  if (!toolsArray.value.length) return []
+  const tools = [...toolsArray.value]
+  // 随机排序以模拟"热门"工具
+  return tools.sort(() => 0.5 - Math.random()).slice(0, 6)
+})
+
+const newTools = computed(() => {
+  if (!toolsArray.value.length) return []
+  return [...toolsArray.value].reverse().slice(0, 4)
+})
+
 // 组件挂载时，同步URL和选中标签状态，加载最近使用的工具
 onMounted(() => {
   selectedTags.value = getTagsFromUrl()
   recentTools.value = getHistory()
+  updateMetaInfo()
+})
+
+onUpdated(() => {
+  updateMetaInfo()
 })
 </script>
 
 <style scoped>
-.tag-card {
-  min-width: 80px;
-  transition: all 0.2s ease;
+.tag-cloud-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  background-color: white;
+  transition: all 0.2s;
 }
 
-.tag-card:hover {
+.dark .tag-cloud-item {
+  background-color: rgb(31, 41, 55);
+}
+
+.tag-cloud-item:hover {
   transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* 统一滚动条样式 */
