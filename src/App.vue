@@ -683,17 +683,17 @@ const allTools = ref([
   },
   
   // 网络与协议
-  {
-    id: 'api-request-tool',
-    name: 'API请求工具',
-    category: '网络与协议工具',
-    categoryId: 'network',
-    description: '类似Hoppscotch的API测试工具，支持多种HTTP方法',
-    path: '/tools/api-request-tool',
-    component: 'ApiRequestTool',
-    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
-    tags: ['api', 'network', 'http', 'dev']
-  },
+  // {
+  //   id: 'api-request-tool',
+  //   name: 'API请求工具',
+  //   category: '网络与协议工具',
+  //   categoryId: 'network',
+  //   description: '类似Hoppscotch的API测试工具，支持多种HTTP方法',
+  //   path: '/tools/api-request-tool',
+  //   component: 'ApiRequestTool',
+  //   icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+  //   tags: ['api', 'network', 'http', 'dev']
+  // },
   { 
     id: 'http-header-security-checker', 
     name: 'HTTP头安全检测', 
@@ -705,17 +705,17 @@ const allTools = ref([
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
     tags: ['security', 'http', 'network', 'analyze']
   },
-  { 
-    id: 'request-header-editor', 
-    name: '请求头批量编辑器', 
-    category: '网络与协议工具', 
-    categoryId: 'network',
-    description: '使用Headers API批量编辑、验证和格式化HTTP请求头', 
-    path: '/tools/request-header-editor',
-    component: 'RequestHeaderEditor',
-    icon: 'M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z',
-    tags: ['http', 'network', 'format']
-  },
+  // { 
+  //   id: 'request-header-editor', 
+  //   name: '请求头批量编辑器', 
+  //   category: '网络与协议工具', 
+  //   categoryId: 'network',
+  //   description: '使用Headers API批量编辑、验证和格式化HTTP请求头', 
+  //   path: '/tools/request-header-editor',
+  //   component: 'RequestHeaderEditor',
+  //   icon: 'M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z',
+  //   tags: ['http', 'network', 'format']
+  // },
   {
     id: 'cors-generator',
     name: 'CORS生成器',

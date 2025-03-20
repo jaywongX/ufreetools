@@ -367,15 +367,32 @@ async function lookupIp() {
   error.value = ''
   
   try {
-    // 使用ip-api.com的免费API
-    const url = `https://ip-api.com/json/${encodeURIComponent(ipAddress.value)}?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query`
+    // 使用ip-api.com API
+    const url = `http://ip-api.com/json/${encodeURIComponent(ipAddress.value)}?fields=status,message,continent,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,asname,reverse,mobile,proxy,hosting,query`
     
     const response = await fetch(url)
     const data = await response.json()
     
     if (data.status === 'success') {
-      ipData.value = data
-      
+      ipData.value = {
+        query: data.query,
+        country: data.country,
+        countryCode: data.countryCode,
+        regionName: data.regionName,
+        city: data.city,
+        zip: data.zip,
+        lat: data.lat,
+        lon: data.lon,
+        timezone: data.timezone,
+        isp: data.isp,
+        org: data.org,
+        as: data.as,
+        asname: data.asname,
+        reverse: data.reverse,
+        mobile: data.mobile,
+        proxy: data.proxy,
+        hosting: data.hosting
+      }
       // 更新搜索历史
       if (!searchHistory.value.includes(ipAddress.value)) {
         searchHistory.value.unshift(ipAddress.value)
@@ -389,11 +406,12 @@ async function lookupIp() {
         localStorage.setItem('ipLookupHistory', JSON.stringify(searchHistory.value))
       }
     } else {
-      error.value = data.message || '无法获取IP信息'
+      error.value = '无法获取IP信息'
     }
   } catch (err) {
     console.error('IP查询错误:', err)
     error.value = '查询过程中发生错误，请稍后再试'
+    ipData.value = null
   } finally {
     isLoading.value = false
   }
@@ -405,12 +423,13 @@ async function lookupCurrentIp() {
   error.value = ''
   
   try {
-    // 获取当前用户的IP地址
-    const response = await fetch('https://api.ipify.org?format=json')
+    // 使用ip-api.com获取当前用户的IP地址
+    const url = 'http://ip-api.com/json/?fields=query'
+    const response = await fetch(url)
     const data = await response.json()
     
-    if (data.ip) {
-      ipAddress.value = data.ip
+    if (data.query) {
+      ipAddress.value = data.query
       lookupIp()
     } else {
       error.value = '无法获取您的IP地址'
@@ -494,4 +513,4 @@ onMounted(() => {
     }
   }
 })
-</script> 
+</script>
