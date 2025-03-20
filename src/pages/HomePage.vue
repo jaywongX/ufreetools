@@ -109,12 +109,14 @@ import TagBadge from '../components/ui/TagBadge.vue'
 import ToolCard from '../components/ui/ToolCard.vue'
 import { getHistory } from '../services/historyService'
 import { useMetaInfo } from '../mixins/metaInfoMixin'
+import { useI18n } from 'vue-i18n'
 
 const route = useRoute()
 const router = useRouter()
+const { t } = useI18n()
 
 // 注入全局数据
-const allTools = inject('allTools', [])
+const allTools = inject('allTools')
 const categories = inject('categories', [])
 const allTags = inject('allTags', [])
 const toolsByTag = inject('toolsByTag', {})
@@ -175,7 +177,7 @@ const filteredTools = computed(() => {
   
   // 只使用第一个标签进行筛选
   const selectedTag = selectedTags.value[0]
-  return allTools.filter(tool => tool.tags.includes(selectedTag))
+  return allTools.value.filter(tool => tool.tags.includes(selectedTag))
 })
 
 // 添加清除选中标签的方法

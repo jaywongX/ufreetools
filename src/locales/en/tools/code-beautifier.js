@@ -1,0 +1,71 @@
+export default {
+  name: 'Code Beautifier',
+  description: 'Beautify and format code with various language support',
+  options: {
+    language: 'Language',
+    indentSize: 'Indent Size',
+    useTabs: 'Use Tabs',
+    lineBreak: 'Line Break Style',
+    maxLineLength: 'Max Line Length',
+    wrapLineLength: 'Wrap Line Length',
+    bracketSpacing: 'Bracket Spacing',
+    arrowParens: 'Arrow Function Parentheses',
+    semicolons: 'Semicolons',
+    quotes: 'Quotes',
+    jsxBrackets: 'JSX Brackets',
+    objectCurlySpacing: 'Object Curly Spacing',
+    arrayBracketSpacing: 'Array Bracket Spacing',
+    preserveEmptyLines: 'Preserve Empty Lines',
+    formatOnPaste: 'Format on Paste',
+    formatOnSave: 'Format on Save'
+  },
+  languages: {
+    javascript: 'JavaScript',
+    typescript: 'TypeScript',
+    jsx: 'JSX/React',
+    html: 'HTML',
+    css: 'CSS',
+    scss: 'SCSS',
+    less: 'Less',
+    json: 'JSON',
+    xml: 'XML',
+    markdown: 'Markdown',
+    yaml: 'YAML',
+    python: 'Python',
+    java: 'Java',
+    c: 'C',
+    cpp: 'C++',
+    csharp: 'C#',
+    php: 'PHP',
+    ruby: 'Ruby',
+    go: 'Go',
+    rust: 'Rust',
+    swift: 'Swift',
+    kotlin: 'Kotlin'
+  },
+  linebreaks: {
+    auto: 'Auto',
+    lf: 'LF (Unix)',
+    crlf: 'CRLF (Windows)',
+    cr: 'CR (Mac)'
+  },
+  actions: {
+    beautify: 'Beautify Code',
+    minify: 'Minify',
+    copy: 'Copy',
+    clear: 'Clear',
+    upload: 'Upload File',
+    download: 'Download',
+    undo: 'Undo',
+    redo: 'Redo'
+  },
+  messages: {
+    copied: 'Copied to clipboard!',
+    beautified: 'Code beautified successfully',
+    minified: 'Code minified successfully',
+    uploadSuccess: 'File uploaded successfully',
+    invalidLanguage: 'Selected language does not match file content',
+    formatError: 'Error formatting code',
+    emptyCode: 'Please enter code to beautify'
+  }
+} 

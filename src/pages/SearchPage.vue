@@ -70,7 +70,7 @@ const searchResults = computed(() => {
   if (!searchQuery.value) return []
   const query = searchQuery.value.toLowerCase()
   
-  return allTools.filter(tool => {
+  return allTools.value.filter(tool => {
     return tool.name.toLowerCase().includes(query) ||
            tool.description.toLowerCase().includes(query) ||
            tool.tags.some(tag => tag.toLowerCase().includes(query))

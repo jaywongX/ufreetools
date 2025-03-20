@@ -1,0 +1,71 @@
+export default {
+  name: '代码美化器',
+  description: '美化并格式化多种语言的代码',
+  options: {
+    language: '语言',
+    indentSize: '缩进大小',
+    useTabs: '使用制表符',
+    lineBreak: '换行符样式',
+    maxLineLength: '最大行长度',
+    wrapLineLength: '包装行长度',
+    bracketSpacing: '括号间距',
+    arrowParens: '箭头函数括号',
+    semicolons: '分号',
+    quotes: '引号',
+    jsxBrackets: 'JSX括号',
+    objectCurlySpacing: '对象花括号空格',
+    arrayBracketSpacing: '数组括号空格',
+    preserveEmptyLines: '保留空行',
+    formatOnPaste: '粘贴时格式化',
+    formatOnSave: '保存时格式化'
+  },
+  languages: {
+    javascript: 'JavaScript',
+    typescript: 'TypeScript',
+    jsx: 'JSX/React',
+    html: 'HTML',
+    css: 'CSS',
+    scss: 'SCSS',
+    less: 'Less',
+    json: 'JSON',
+    xml: 'XML',
+    markdown: 'Markdown',
+    yaml: 'YAML',
+    python: 'Python',
+    java: 'Java',
+    c: 'C',
+    cpp: 'C++',
+    csharp: 'C#',
+    php: 'PHP',
+    ruby: 'Ruby',
+    go: 'Go',
+    rust: 'Rust',
+    swift: 'Swift',
+    kotlin: 'Kotlin'
+  },
+  linebreaks: {
+    auto: '自动',
+    lf: 'LF (Unix)',
+    crlf: 'CRLF (Windows)',
+    cr: 'CR (Mac)'
+  },
+  actions: {
+    beautify: '美化代码',
+    minify: '压缩',
+    copy: '复制',
+    clear: '清除',
+    upload: '上传文件',
+    download: '下载',
+    undo: '撤销',
+    redo: '重做'
+  },
+  messages: {
+    copied: '已复制到剪贴板！',
+    beautified: '代码美化成功',
+    minified: '代码压缩成功',
+    uploadSuccess: '文件上传成功',
+    invalidLanguage: '所选语言与文件内容不匹配',
+    formatError: '格式化代码时出错',
+    emptyCode: '请输入要美化的代码'
+  }
+} 
