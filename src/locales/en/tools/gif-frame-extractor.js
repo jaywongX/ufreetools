@@ -1,0 +1,93 @@
+export default {
+  name: 'GIF Frame Extractor',
+  description: 'Extract individual frames from GIF animations',
+  upload: {
+    title: 'Upload GIF',
+    dropzone: 'Drop a GIF file here or click to browse',
+    maxSize: 'Maximum file size: 20MB',
+    onlyGif: 'Only GIF files are supported'
+  },
+  analysis: {
+    title: 'GIF Analysis',
+    dimensions: 'Dimensions',
+    frameCount: 'Frame Count',
+    duration: 'Duration',
+    fps: 'Frames per Second',
+    fileSize: 'File Size',
+    loopCount: 'Loop Count',
+    infinite: 'Infinite'
+  },
+  extraction: {
+    title: 'Frame Extraction',
+    selectFrames: 'Select Frames',
+    allFrames: 'All Frames',
+    rangeOfFrames: 'Range of Frames',
+    from: 'From',
+    to: 'To',
+    specificFrames: 'Specific Frames',
+    frameNumbers: 'Frame Numbers (comma separated)',
+    everyNth: 'Every Nth Frame',
+    nth: 'Every',
+    frames: 'frames',
+    selectFirst: 'First Frame',
+    selectLast: 'Last Frame',
+    selectMiddle: 'Middle Frame',
+    selectKeyFrames: 'Auto-detect Key Frames'
+  },
+  output: {
+    title: 'Output Options',
+    format: 'Output Format',
+    png: 'PNG',
+    jpg: 'JPG',
+    webp: 'WebP',
+    scaling: 'Scaling',
+    originalSize: 'Original Size',
+    customSize: 'Custom Size',
+    width: 'Width',
+    height: 'Height',
+    quality: 'Quality',
+    naming: 'File Naming',
+    pattern: 'Pattern',
+    filename: 'Original filename',
+    framenumber: 'Frame number',
+    timestamp: 'Timestamp',
+    preview: 'Preview',
+    downloadOptions: 'Download Options',
+    separateFiles: 'Separate Files',
+    zipArchive: 'ZIP Archive',
+    spritesheet: 'Spritesheet',
+    gridSize: 'Grid Size',
+    columns: 'Columns',
+    animation: 'New Animation'
+  },
+  frames: {
+    title: 'Extracted Frames',
+    frameInfo: 'Frame {number} of {total}',
+    delay: 'Delay: {delay}ms',
+    downloadFrame: 'Download Frame',
+    copyFrame: 'Copy to Clipboard',
+    selectAll: 'Select All',
+    unselectAll: 'Unselect All',
+    invertSelection: 'Invert Selection'
+  },
+  actions: {
+    extract: 'Extract Frames',
+    preview: 'Preview',
+    downloadSelected: 'Download Selected',
+    downloadAll: 'Download All',
+    createSpritesheet: 'Create Spritesheet',
+    createNewGif: 'Create New GIF',
+    cancel: 'Cancel',
+    processing: 'Processing...'
+  },
+  messages: {
+    extractionComplete: 'Frame extraction complete',
+    extracting: 'Extracting frames...',
+    noFramesSelected: 'No frames selected',
+    processingGif: 'Processing GIF...',
+    invalidGif: 'Invalid GIF file',
+    framesCopied: 'Frames copied to clipboard',
+    downloadStarted: 'Download started',
+    spritesheetCreated: 'Spritesheet created successfully'
+  }
+} 

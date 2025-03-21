@@ -9,9 +9,12 @@ export default {
   },
   actions: {
     format: 'Format JSON',
+    compress:'Compress',
     clear: 'Clear',
     copy: 'Copy',
-    download: 'Download'
+    download: 'Download',
+    transferMeaning:"Transfer meaning",
+    contraposition:"Contraposition",
   },
   messages: {
     invalidJson: 'Invalid JSON syntax',

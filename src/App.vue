@@ -109,6 +109,8 @@ const allTags = ref([
   { id: 'regex', name: '正则', color: 'red' },
   { id: 'api', name: 'API', color: 'blue' },
   { id: 'debug', name: '调试', color: 'orange' },
+  { id: 'test', name: '测试', color: 'blue' },
+  { id: 'grpc', name: 'gRPC', color: 'orange' },
   
   // 格式化/转换相关
   { id: 'format', name: '格式化', color: 'green' },
@@ -124,7 +126,7 @@ const allTags = ref([
   { id: 'svg', name: 'SVG', color: 'purple' },
   
   // 文本相关
-  { id: 'text', name: '文本', color: 'gray' },
+  { id: 'text', name: '文本', color: 'lime' },
   { id: 'markdown', name: 'Markdown', color: 'lime' },
   { id: 'parse', name: '解析', color: 'cyan' },
 
@@ -142,17 +144,28 @@ const allTags = ref([
   { id: 'gif', name: 'GIF', color: 'indigo' },
   { id: 'animation', name: '动画', color: 'emerald' },
   { id: 'frames', name: '帧', color: 'lime' },
+  { id: 'csv', name: 'CSV', color: 'lime' },
   
   // 安全相关
   { id: 'crypto', name: '加密', color: 'indigo' },
   { id: 'security', name: '安全', color: 'amber' },
-  { id: 'hash', name: '哈希', color: 'indigo' },
-  { id: 'jwt', name: 'JWT', color: 'indigo' },
+  { id: 'hash', name: '哈希', color: 'pink' },
+  { id: 'jwt', name: 'JWT', color: 'amber' },
+  { id: 'password', name: '密码', color: 'rose' },
+  { id: 'rsa', name: 'RSA', color: 'amber' },
+  { id: 'sm2', name: 'SM2', color: 'pink' },
+  { id: 'encrypt', name: '加密', color: 'rose' },
+  { id: 'decrypt', name: '解密', color: 'teal' },
+  { id: 'check', name: '检查', color: 'teal' },
   
   // 网络相关
   { id: 'network', name: '网络', color: 'teal' },
-  { id: 'http', name: 'HTTP', color: 'teal' },
+  { id: 'http', name: 'HTTP', color: 'rose' },
   { id: 'url', name: 'URL', color: 'teal' },
+  { id: 'lookup', name: '查找', color: 'emerald' },
+  { id: 'status', name: '状态', color: 'amber' },
+  { id: 'ip', name: 'IP', color: 'pink' },
+  { id: 'html', name: 'HTML', color: 'pink' },
   
   // 通用功能
   { id: 'generate', name: '生成', color: 'rose' },
@@ -172,6 +185,7 @@ const allTags = ref([
   { id: 'branding', name: '品牌', color: 'indigo' },
   { id: 'compression', name: '压缩', color: 'green' },
   { id: 'metadata', name: '元数据', color: 'indigo' },
+  { id: 'number', name: '数字', color: 'green' },
 ])
 provide('allTags', allTags)
 
@@ -235,13 +249,13 @@ const allTools = computed(() => [
     tags: ['javascript','format','dev','validate']
   },
   { 
-    id: 'code-highlighter', 
-    name: t('tools.code-highlighter.name'),
+    id: 'code-beautifier', 
+    name: t('tools.code-beautifier.name'),
     category: t(`categories.dev`),
     categoryId: 'dev',
-    description: t('tools.code-highlighter.description'),
-    path: '/tools/code-highlighter',
-    component: 'CodeHighlighter',
+    description: t('tools.code-beautifier.description'),
+    path: '/tools/code-beautifier',
+    component: 'CodeBeautifier',
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['code','dev','highlight']
   },
@@ -806,23 +820,23 @@ const allTools = computed(() => [
     tags: ['network', 'generate', 'http']
   },
   { 
-    id: 'url-parameter-parser', 
-    name: t('tools.url-parameter-parser.name'),
+    id: 'url-params-parser', 
+    name: t('tools.url-params-parser.name'),
     category: t(`categories.network`),
     categoryId: 'network',
-    description: t('tools.url-parameter-parser.description'),
-    path: '/tools/url-parameter-parser',
+    description: t('tools.url-params-parser.description'),
+    path: '/tools/url-params-parser',
     component: 'UrlParamsParser',
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
     tags: ['url', 'network', 'parse']
   },
   {
-    id: 'http-status-codes',
-    name: t('tools.http-status-codes.name'),
+    id: 'http-status-code-lookup',
+    name: t('tools.http-status-code-lookup.name'),
     category: t(`categories.network`),
     categoryId: 'network',
-    description: t('tools.http-status-codes.description'),
-    path: '/tools/http-status-codes',
+    description: t('tools.http-status-code-lookup.description'),
+    path: '/tools/http-status-code-lookup',
     component: 'HttpStatusCodeLookup',
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['network', 'http', 'status', 'code']
@@ -893,7 +907,7 @@ const allTools = computed(() => [
     path: '/tools/hash-calculator',
     component: 'HashCalculator',
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
-    tags:['crypto','hash','calculate']
+    tags:['crypto','hash']
   },
   {
     id:'rsa-crypto',
@@ -926,7 +940,7 @@ const allTools = computed(() => [
     path: '/tools/symmetric-crypto',
     component: 'SymmetricCrypto',
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
-    tags:['crypto','symmetric','encrypt','decrypt']
+    tags:['crypto','encrypt','decrypt']
   },
   { 
     id: 'hmac-calculator', 

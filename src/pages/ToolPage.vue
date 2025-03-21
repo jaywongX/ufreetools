@@ -156,11 +156,6 @@ function loadTool() {
       return tools.value.find(t => String(t.id) === String(paramId))
     }
     
-    // 检查 allTools 的类型和值
-    console.log('allTools type:', typeof allTools)
-    console.log('Is allTools array?', Array.isArray(allTools))
-    console.log('Is allTools.value array?', allTools.value && Array.isArray(allTools.value))
-    
     tool.value = findTool(allTools);
     
     console.log('Found tool:', tool.value ? 'Yes' : 'No')

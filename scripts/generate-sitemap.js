@@ -43,8 +43,8 @@ const TOOLS = [
   'javascript-formatter', 'xml-formatter', 'sql-formatter', 'markdown-editor',
   'image-compressor', 'image-cropper', 'color-picker', 'gradient-generator',
   'password-generator', 'password-strength-checker', 'base64-encoder-decoder',
-  'url-encoder-decoder', 'hash-calculator', 'qr-code-generator', 'code-diff',
-  'code-obfuscator', 'csv-to-json', 'yaml-json-converter', 'regex-tester',
+  'url-encode-decode', 'hash-calculator', 'qr-code-generator', 'code-diff',
+  'code-obfuscator', 'csv-json-converter', 'yaml-json-converter', 'regex-tester',
   'json-to-typescript', 'api-request-tool', 'http-status-code-lookup', 'ip-lookup'
 ];
 

@@ -47,6 +47,7 @@ export default {
   protocol: '协议',
   http: 'HTTP',
   url: 'URL',
+  html: 'HTML',
   
   // 媒体类标签
   image: '图片',
@@ -192,6 +193,11 @@ export default {
   remove: '去除',
   extract: '提取',
   process: '处理',
+  lookup: '查找',
+  status: '状态',
+  test: '测试',
+  grpc: 'gRPC',
+  number: '数字',
   
   // 标签分类名称
   categories: {

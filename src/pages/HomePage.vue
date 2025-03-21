@@ -210,7 +210,7 @@ watch(selectedTags, () => {
 
 // 确保 allTools 是数组
 const toolsArray = computed(() => {
-  return Array.isArray(allTools) ? allTools : []
+  return Array.isArray(allTools.value) ? allTools.value : []
 })
 
 // 使用 toolsArray 而不是直接使用 allTools
@@ -227,7 +227,7 @@ const popularTools = computed(() => {
 
 const newTools = computed(() => {
   if (!toolsArray.value.length) return []
-  return [...toolsArray.value].reverse().slice(0, 4)
+  return [...toolsArray.value].reverse().slice(0, 6)
 })
 
 // 组件挂载时，同步URL和选中标签状态，加载最近使用的工具

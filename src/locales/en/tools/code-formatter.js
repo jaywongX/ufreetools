@@ -1,35 +1,64 @@
 export default {
   name: 'Code Formatter',
-  description: 'Online code formatting and validation tool, supporting multiple languages',
+  description: 'Format and beautify code in various languages',
   languages: {
-    javascript: 'JavaScript',
-    typescript: 'TypeScript',
+    title: 'Language',
     html: 'HTML',
     css: 'CSS',
+    javascript: 'JavaScript',
+    typescript: 'TypeScript',
     json: 'JSON',
-    xml: 'XML',
     sql: 'SQL',
-    graphql: 'GraphQL'
+    xml: 'XML',
+    markdown: 'Markdown'
   },
   options: {
-    indentSize: 'Indent Size',
-    tabWidth: 'Tab Width',
-    useTabs: 'Use Tabs',
-    semi: 'Semicolons',
-    singleQuote: 'Single Quotes',
-    trailingComma: 'Trailing Commas',
-    bracketSpacing: 'Bracket Spacing',
-    arrowParens: 'Arrow Function Parentheses'
+    title: 'Options',
+    indent: 'Indentation',
+    tabSize: 'Tab Size',
+    insertSpaces: 'Insert Spaces',
+    formatSelection: 'Format Selection',
+    formatOnType: 'Format On Type',
+    removeComments: 'Remove comments',
+    mangle: 'Mangle variable names',
+    lineBreak: 'Line break style'
   },
   actions: {
-    format: 'Format Code',
-    copy: 'Copy Formatted Code',
+    beautify: 'Beautify',
+    minify: 'Minify',
+    format: 'Format',
+    copy: 'Copy Result',
+    clear: 'Clear',
     download: 'Download',
-    settings: 'Formatting Settings'
+    paste: 'Paste from clipboard',
+    loadSample: 'Load sample code'
   },
   messages: {
-    copied: 'Copied to clipboard!',
     formatSuccess: 'Code formatted successfully',
-    formatError: 'Error formatting code'
+    formatError: 'Error formatting code',
+    copied: 'Copied to clipboard!',
+    languageChangeWarning: 'Changing language will reset your code. Continue?'
+  },
+  errors: {
+    emptyCode: 'Please enter code to format',
+    invalidJson: 'Invalid JSON',
+    jsCompressionError: 'JavaScript compression error'
+  },
+  input: 'Input',
+  output: 'Output',
+  placeholders: {
+    input: 'Paste your code here...',
+    output: 'Formatted code will appear here...'
+  },
+  characters: 'characters',
+  space: 'Space',
+  spaces: 'spaces',
+  auto: 'Auto',
+  tips: {
+    title: 'Usage Tips',
+    selectLanguage: 'Select the appropriate language for your code for best formatting results.',
+    beautifyMinify: 'Use "Beautify" for readable, indented code or "Minify" to reduce file size.',
+    customizeOptions: 'Customize formatting options using the settings panel below.',
+    keyboard: 'Press Tab key in the editor to insert indentation.'
   }
 } 

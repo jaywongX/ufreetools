@@ -9,9 +9,12 @@ export default {
   },
   actions: {
     format: '格式化JSON',
+    compress:'压缩',
     clear: '清除',
     copy: '复制',
-    download: '下载'
+    download: '下载',
+    transferMeaning:"转义",
+    contraposition:"反转义",
   },
   messages: {
     invalidJson: 'JSON语法无效',

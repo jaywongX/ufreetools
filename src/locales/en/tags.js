@@ -47,6 +47,7 @@ export default {
   protocol: 'Protocol',
   http: 'HTTP',
   url: 'URL',
+  html: 'HTML',
   
   // Media Tags
   image: 'Image',
@@ -174,7 +175,6 @@ export default {
   edit: 'Edit',
   effects: 'Effects',
   photo: 'Photo',
-  compression: 'Compression',
   qrCode: 'QR Code',
   convert: 'Convert',
   font: 'Font',
@@ -191,6 +191,11 @@ export default {
   remove: 'Remove',
   extract: 'Extract',
   process: 'Process',
+  lookup: 'lookup',
+  status: 'status',
+  test: 'test',
+  grpc: 'gRPC',
+  number: '数字',
   
   // Tag Categories
   categories: {
