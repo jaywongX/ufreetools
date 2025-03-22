@@ -10,7 +10,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
           </svg>
-          复制当前颜色
+          {{ $t('tools.color-picker.actions.copyColor') }}
         </button>
         <button 
           @click="resetColor" 
@@ -19,7 +19,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          重置
+          {{ $t('tools.color-picker.actions.reset') }}
         </button>
       </div>
       <div class="flex space-x-2">
@@ -33,7 +33,7 @@
             'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200': colorFormat !== format
           }"
         >
-          {{ format }}
+          {{ $t(`tools.color-picker.formats.${format.toLowerCase()}`) }}
         </button>
       </div>
     </div>
@@ -133,7 +133,9 @@
       <div class="space-y-6">
         <!-- 颜色预览 -->
         <div class="space-y-2">
-          <div class="text-sm font-medium text-gray-700 dark:text-gray-300">预览</div>
+          <div class="text-sm font-medium text-gray-700 dark:text-gray-300">
+          {{ $t('tools.color-picker.messages.preview') }}
+          </div>
           <div class="relative h-24 rounded-md bg-checkerboard">
             <div 
               class="absolute inset-0 rounded-md"
@@ -146,7 +148,9 @@
         
         <!-- 颜色值输入 -->
         <div class="space-y-4">
-          <div class="text-sm font-medium text-gray-700 dark:text-gray-300">颜色值</div>
+          <div class="text-sm font-medium text-gray-700 dark:text-gray-300">
+            {{ $t('tools.color-picker.messages.colorValue') }}
+          </div>
           
           <!-- HEX输入 -->
           <div v-if="colorFormat === 'HEX'" class="space-y-1">
@@ -246,7 +250,9 @@
           <!-- Alpha输入 -->
           <div class="space-y-1">
             <div class="flex justify-between">
-              <label class="text-xs text-gray-500 dark:text-gray-400">透明度</label>
+              <label class="text-xs text-gray-500 dark:text-gray-400">
+                {{ $t('tools.color-picker.colorAdjust.alpha') }}
+              </label>
               <span class="text-xs text-gray-500 dark:text-gray-400">{{ Math.round(alpha * 100) }}%</span>
             </div>
             <input
@@ -255,14 +261,16 @@
               min="0"
               max="1"
               step="0.01"
-              class="w-full"
+              class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
             />
           </div>
         </div>
         
         <!-- 颜色历史 -->
         <div class="space-y-2">
-          <div class="text-sm font-medium text-gray-700 dark:text-gray-300">历史颜色</div>
+          <div class="text-sm font-medium text-gray-700 dark:text-gray-300">
+            {{ $t('tools.color-picker.history.title') }}
+          </div>
           <div class="flex flex-wrap gap-2">
             <button 
               v-for="(color, index) in colorHistory" 
@@ -272,14 +280,14 @@
             >
               <div 
                 class="w-full h-full rounded" 
-                :style="{ backgroundColor: color.rgba }"
+                :style="{ backgroundColor: color.hex }"
               ></div>
             </button>
             <button 
               v-if="colorHistory.length > 0"
               @click="clearHistory"
               class="w-6 h-6 rounded border border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-500"
-              title="清空历史"
+              :title="$t('tools.color-picker.history.clear')"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -292,13 +300,20 @@
 
     <!-- 颜色方案建议 -->
     <div class="mt-6 p-4 border-t border-gray-200 dark:border-gray-700">
-      <div class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">颜色方案</div>
+      <div class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+        {{ $t('tools.color-picker.colorSchemes.title') }}
+      </div>
       
       <div class="space-y-3">
         <!-- 颜色方案类型 -->
         <div class="flex space-x-2 overflow-x-auto pb-1">
           <button 
-            v-for="scheme in ['互补色', '三元色', '类似色', '单色系']" 
+            v-for="scheme in [
+              $t('tools.color-picker.colorSchemes.complementary'), 
+              $t('tools.color-picker.colorSchemes.triadic'), 
+              $t('tools.color-picker.colorSchemes.analogous'), 
+              $t('tools.color-picker.colorSchemes.monochromatic'), 
+            ]" 
             :key="scheme"
             class="px-3 py-1 text-xs rounded-full whitespace-nowrap"
             :class="{
@@ -844,8 +859,10 @@ onUnmounted(() => {
   window.removeEventListener('keydown', null);
 });
 
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n();
 // 颜色方案
-const currentScheme = ref('互补色');
+const currentScheme = ref(t('tools.color-picker.colorSchemes.complementary'));
 
 // 根据当前颜色生成方案
 const colorScheme = computed(() => {
@@ -853,18 +870,18 @@ const colorScheme = computed(() => {
   const baseColor = `hsl(${h}, ${s}%, ${l}%)`;
   
   switch (currentScheme.value) {
-    case '互补色':
+    case t('tools.color-picker.colorSchemes.complementary'):
       return [
         baseColor,
         `hsl(${(h + 180) % 360}, ${s}%, ${l}%)`
       ];
-    case '三元色':
+    case t('tools.color-picker.colorSchemes.triadic'):
       return [
         baseColor,
         `hsl(${(h + 120) % 360}, ${s}%, ${l}%)`,
         `hsl(${(h + 240) % 360}, ${s}%, ${l}%)`
       ];
-    case '类似色':
+    case t('tools.color-picker.colorSchemes.analogous'):
       return [
         baseColor,
         `hsl(${(h + 30) % 360}, ${s}%, ${l}%)`,
@@ -872,7 +889,7 @@ const colorScheme = computed(() => {
         `hsl(${(h - 30 + 360) % 360}, ${s}%, ${l}%)`,
         `hsl(${(h - 60 + 360) % 360}, ${s}%, ${l}%)`
       ];
-    case '单色系':
+    case t('tools.color-picker.colorSchemes.monochromatic'):
       return [
         baseColor,
         `hsl(${h}, ${s}%, ${Math.min(100, l + 20)}%)`,
@@ -898,6 +915,69 @@ function applySchemeColor(color) {
     hexValue.value = rgbToHex(currentRGB.value);
     addToHistory();
   }
+}
+
+// 应用历史颜色
+function applyHistoryColor(color) {
+  // 解析颜色格式，可能是hex, rgb, hsl等
+  if (color.hex.startsWith('#')) {
+    // 是HEX格式
+    hexValue.value = color.hex;
+    const rgb = hexToRgb(color.hex);
+    if (rgb) {
+      currentRGB.value = rgb;
+      const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+      currentHSL.h = hsl.h;
+      currentHSL.s = hsl.s;
+      currentHSL.l = hsl.l;
+    }
+  } else if (color.rgb.startsWith('rgb')) {
+    // 是RGB格式
+    const match = color.rgb.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
+    if (match) {
+      const r = parseInt(match[1]);
+      const g = parseInt(match[2]);
+      const b = parseInt(match[3]);
+      const a = match[4] ? parseFloat(match[4]) : 1;
+      
+      currentRGB.value = { r, g, b };
+      const hsl = rgbToHsl(r, g, b);
+      currentHSL.h = hsl.h;
+      currentHSL.s = hsl.s;
+      currentHSL.l = hsl.l;
+      alpha = a;
+      hexValue.value = rgbToHex({ r, g, b });
+    }
+  } else if (color.hsl.startsWith('hsl')) {
+    // 是HSL格式
+    const match = color.hsl.match(/hsla?\((\d+),\s*(\d+)%,\s*(\d+)%(?:,\s*([\d.]+))?\)/);
+    if (match) {
+      const h = parseInt(match[1]);
+      const s = parseInt(match[2]);
+      const l = parseInt(match[3]);
+      const a = match[4] ? parseFloat(match[4]) : 1;
+      
+      currentHSL.h = h;
+      currentHSL.s = s;
+      currentHSL.l = l;
+      alpha = a;
+      const rgb = hslToRgb(h/360, s/100, l/100);
+      currentRGB.value = rgb;
+      hexValue.value = rgbToHex(rgb);
+    }
+  }
+}
+
+// 清空历史记录
+function clearHistory() {
+  colorHistory.value = [];
+  // 保存到localStorage
+  localStorage.setItem('colorHistory', JSON.stringify(colorHistory.value));
+}
+
+// 获取当前颜色的HEX表示
+function getCurrentColorAsHex() {
+  return hexValue.value;
 }
 </script>
 
