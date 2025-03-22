@@ -28,5 +28,6 @@ export default {
   nested: '嵌套',
   complex: '复杂',
   example: '示例',
+  loadExample: '加载示例',
   spaces: '空格'
 }; 

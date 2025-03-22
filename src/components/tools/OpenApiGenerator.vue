@@ -2,9 +2,9 @@
   <div>
     <!-- 工具配置区域 -->
     <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">OpenAPI → TypeScript客户端生成器</h2>
+      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ t('tools.openapi-generator.name') }}</h2>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        基于OpenAPI规范自动生成TypeScript接口和客户端代码，提高前后端协作效率
+        {{ t('tools.openapi-generator.description') }}
       </p>
       
       <!-- 输入区域 -->
@@ -18,13 +18,13 @@
               @click="toggleInputMode" 
               class="text-xs text-primary hover:text-primary-dark"
             >
-              {{ isFileUpload ? '切换到文本输入' : '切换到文件上传' }}
+              {{ isFileUpload ? t('tools.openapi-generator.inputMode.toggleToText') : t('tools.openapi-generator.inputMode.toggleToFile') }}
             </button>
             <button 
               @click="loadExample" 
               class="text-xs text-primary hover:text-primary-dark"
             >
-              加载示例
+              {{ t('tools.openapi-generator.inputMode.loadExample') }}
             </button>
           </div>
         </div>
@@ -50,17 +50,17 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
             </svg>
             <p class="text-sm text-gray-500 dark:text-gray-400">
-              拖拽OpenAPI文件到此处，或者<span class="text-primary">点击上传</span>
+              {{ t('tools.openapi-generator.fileUpload.dragAndDrop') }}
             </p>
             <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">
-              支持.json、.yaml和.yml文件格式
+              {{ t('tools.openapi-generator.fileUpload.supportedFormats') }}
             </p>
           </div>
           <div v-if="selectedFile" class="mt-2 flex items-center text-sm text-gray-700 dark:text-gray-300">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-green-500" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
             </svg>
-            已选择: {{ selectedFile.name }} ({{ formatFileSize(selectedFile.size) }})
+            {{ t('tools.openapi-generator.fileUpload.fileSelected', [selectedFile.name, formatFileSize(selectedFile.size)]) }}
           </div>
         </div>
         
@@ -68,7 +68,7 @@
         <div v-else>
           <textarea 
             v-model="openApiSpec" 
-            placeholder="粘贴OpenAPI规范(JSON或YAML)到这里..."
+            :placeholder="t('tools.openapi-generator.textInput.placeholder')"
             class="w-full h-64 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
           ></textarea>
         </div>
@@ -77,34 +77,34 @@
       <!-- 生成选项 -->
       <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          生成选项
+          {{ t('tools.openapi-generator.options.operationType') }}
         </label>
         <div class="space-y-3">
           <div class="flex items-center">
             <input type="checkbox" id="exportSchemas" v-model="options.exportSchemas" class="mr-2">
             <label for="exportSchemas" class="text-sm text-gray-700 dark:text-gray-300">
-              导出所有模型定义
+              {{ t('tools.openapi-generator.options.exportSchemas') }}
             </label>
           </div>
           
           <div class="flex items-center">
             <input type="checkbox" id="generateClient" v-model="options.generateClient" class="mr-2">
             <label for="generateClient" class="text-sm text-gray-700 dark:text-gray-300">
-              生成API客户端代码
+              {{ t('tools.openapi-generator.options.generateClient') }}
             </label>
           </div>
           
           <div class="flex items-center">
             <input type="checkbox" id="addComments" v-model="options.addComments" class="mr-2">
             <label for="addComments" class="text-sm text-gray-700 dark:text-gray-300">
-              添加注释和文档说明
+              {{ t('tools.openapi-generator.options.addComments') }}
             </label>
           </div>
           
           <div class="flex items-center">
             <input type="checkbox" id="useEnums" v-model="options.useEnums" class="mr-2">
             <label for="useEnums" class="text-sm text-gray-700 dark:text-gray-300">
-              使用TypeScript枚举（代替字符串联合类型）
+              {{ t('tools.openapi-generator.options.useEnums') }}
             </label>
           </div>
         </div>
@@ -117,15 +117,15 @@
           class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark disabled:opacity-50 disabled:cursor-not-allowed"
           :disabled="!canGenerate || processing"
         >
-          <span v-if="processing">处理中...</span>
-          <span v-else>生成TypeScript代码</span>
+          <span v-if="processing">{{ t('tools.openapi-generator.actions.processing') }}</span>
+          <span v-else>{{ t('tools.openapi-generator.actions.generate') }}</span>
         </button>
         
         <button 
           @click="clearAll"
           class="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600"
         >
-          清空
+          {{ t('tools.openapi-generator.actions.clear') }}
         </button>
       </div>
     </div>
@@ -133,26 +133,26 @@
     <!-- 结果展示区域 -->
     <div v-if="generatedCode || error" class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
       <div v-if="error" class="mb-4 p-3 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-md">
-        <h3 class="font-medium text-red-700 dark:text-red-300 mb-1">错误</h3>
+        <h3 class="font-medium text-red-700 dark:text-red-300 mb-1">{{ t('tools.openapi-generator.results.error') }}</h3>
         <p class="text-sm">{{ error }}</p>
       </div>
       
       <div v-if="generatedCode" class="mb-4">
         <div class="flex justify-between items-center mb-3">
-          <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">生成的TypeScript代码</h3>
+          <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">{{ t('tools.openapi-generator.results.generatedCode') }}</h3>
           <div class="flex gap-2">
             <button 
               @click="copyToClipboard"
               class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600 text-sm"
             >
-              复制代码
+              {{ t('tools.openapi-generator.actions.copy') }}
             </button>
             
             <button 
               @click="downloadCode"
               class="px-3 py-1.5 bg-primary text-white rounded-md hover:bg-primary-dark text-sm"
             >
-              下载代码
+              {{ t('tools.openapi-generator.actions.download') }}
             </button>
           </div>
         </div>
@@ -168,6 +168,10 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import * as yaml from 'js-yaml'
+import { useI18n } from 'vue-i18n'
+
+// 初始化国际化
+const { t } = useI18n()
 
 // 组件状态
 const isFileUpload = ref(true)
@@ -449,13 +453,13 @@ async function generateTypes() {
       try {
         parsedSpec = yaml.load(openApiSpec.value)
       } catch (yamlError) {
-        throw new Error('无法解析OpenAPI规范。请确保提供有效的JSON或YAML格式。')
+        throw new Error(t('tools.openapi-generator.errors.parseError'))
       }
     }
     
     // 验证是否为有效的OpenAPI规范
     if (!parsedSpec.openapi && !parsedSpec.swagger) {
-      throw new Error('无效的OpenAPI规范。未找到openapi或swagger版本标识。')
+      throw new Error(t('tools.openapi-generator.errors.invalidSpec'))
     }
     
     // 在浏览器环境中引入openapi-typescript，我们将在此模拟转换过程
@@ -703,7 +707,7 @@ async function simulateApiTypeGeneration(spec) {
     
     generatedCode.value = code
   } catch (error) {
-    throw new Error(`处理OpenAPI规范时出错: ${error.message}`)
+    throw new Error(t('tools.openapi-generator.errors.processingError', [error.message]))
   }
 }
 
@@ -713,7 +717,7 @@ function copyToClipboard() {
   
   navigator.clipboard.writeText(generatedCode.value)
     .then(() => {
-      alert('代码已复制到剪贴板')
+      alert(t('tools.openapi-generator.results.copied'))
     })
     .catch(err => {
       console.error('复制失败:', err)

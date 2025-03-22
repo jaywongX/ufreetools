@@ -8,7 +8,8 @@ export default {
     bulk: 'Bulk Edit',
     import: 'Import Headers',
     export: 'Export Headers',
-    clear: 'Clear All'
+    clear: 'Clear All',
+    importError: 'Import Error'
   },
   header: {
     name: 'Header Name',
@@ -19,7 +20,9 @@ export default {
     actions: 'Actions',
     enabled: 'Enabled',
     duplicate: 'Duplicate',
-    delete: 'Delete'
+    delete: 'Delete',
+    noHeaders: 'No headers, click "Add" button or load a template to start',
+    bulkPlaceholder: 'Paste headers, format: \'name: value\', one per line, or paste raw header text'
   },
   presets: {
     title: 'Presets',
@@ -59,7 +62,8 @@ export default {
     time: 'Time',
     size: 'Size',
     loading: 'Loading...',
-    noResponse: 'No response received'
+    noResponse: 'Add headers to see preview',
+    headerCount: 'headers'
   },
   options: {
     title: 'Options',
@@ -75,7 +79,9 @@ export default {
     curl: 'cURL Command',
     javascript: 'JavaScript',
     python: 'Python',
-    php: 'PHP'
+    php: 'PHP',
+    fetch: 'Fetch API',
+    axios: 'Axios'
   },
   guides: {
     title: 'Header Guides',
@@ -83,7 +89,14 @@ export default {
     securityHeaders: 'Security Headers',
     cachingHeaders: 'Caching Headers',
     corsHeaders: 'CORS Headers',
-    authenticationHeaders: 'Authentication Headers'
+    authenticationHeaders: 'Authentication Headers',
+    commonValues: 'Common Values'
+  },
+  actions: {
+    copy: 'Copy',
+    format: 'Format',
+    validate: 'Validate',
+    clear: 'Clear'
   },
   messages: {
     headerAdded: 'Header added',
@@ -97,6 +110,10 @@ export default {
     copied: 'Copied to clipboard',
     importSuccess: 'Headers imported successfully',
     exportSuccess: 'Headers exported successfully',
-    invalidUrl: 'Invalid URL'
+    invalidUrl: 'Invalid URL',
+    pleaseEnterHeader: 'Please enter header text',
+    invalidHeader: 'Could not parse any valid headers, please use "name: value" format',
+    invalidHeaderName: 'Invalid header name: {error}',
+    copyFailed: 'Copy failed, please copy manually'
   }
 } 

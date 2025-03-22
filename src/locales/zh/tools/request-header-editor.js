@@ -8,7 +8,8 @@ export default {
     bulk: '批量编辑',
     import: '导入头部',
     export: '导出头部',
-    clear: '清除全部'
+    clear: '清除全部',
+    importError: '导入错误'
   },
   header: {
     name: '头部名称',
@@ -19,7 +20,9 @@ export default {
     actions: '操作',
     enabled: '启用',
     duplicate: '复制',
-    delete: '删除'
+    delete: '删除',
+    noHeaders: '没有请求头，点击"添加"按钮或加载模板开始',
+    bulkPlaceholder: '粘贴请求头，格式: \'名称: 值\'，每行一个，或粘贴原始请求头文本'
   },
   presets: {
     title: '预设',
@@ -59,7 +62,8 @@ export default {
     time: '时间',
     size: '大小',
     loading: '加载中...',
-    noResponse: '未收到响应'
+    noResponse: '添加请求头以查看预览',
+    headerCount: '个请求头'
   },
   options: {
     title: '选项',
@@ -75,7 +79,9 @@ export default {
     curl: 'cURL命令',
     javascript: 'JavaScript',
     python: 'Python',
-    php: 'PHP'
+    php: 'PHP',
+    fetch: 'Fetch API',
+    axios: 'Axios'
   },
   guides: {
     title: '头部指南',
@@ -83,7 +89,14 @@ export default {
     securityHeaders: '安全头部',
     cachingHeaders: '缓存头部',
     corsHeaders: 'CORS头部',
-    authenticationHeaders: '认证头部'
+    authenticationHeaders: '认证头部',
+    commonValues: '常用值'
+  },
+  actions: {
+    copy: '复制',
+    format: '格式化',
+    validate: '验证',
+    clear: '清空'
   },
   messages: {
     headerAdded: '头部已添加',
@@ -97,6 +110,10 @@ export default {
     copied: '已复制到剪贴板',
     importSuccess: '头部导入成功',
     exportSuccess: '头部导出成功',
-    invalidUrl: '无效的URL'
+    invalidUrl: '无效的URL',
+    pleaseEnterHeader: '请输入请求头文本',
+    invalidHeader: '无法解析任何有效的请求头，请使用"名称: 值"格式',
+    invalidHeaderName: '无效的请求头名称: {error}',
+    copyFailed: '复制失败，请手动复制'
   }
 } 

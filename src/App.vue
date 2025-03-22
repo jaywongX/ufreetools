@@ -281,12 +281,12 @@ const allTools = computed(() => [
     tags: ['jwt', 'security', 'debug', 'dev']
   },
   { 
-    id: 'openapi-ts-client', 
-    name: t('tools.openapi-ts-client.name'),
+    id: 'openapi-generator', 
+    name: t('tools.openapi-generator.name'),
     category: t(`categories.dev`),
     categoryId: 'dev',
-    description: t('tools.openapi-ts-client.description'),
-    path: '/tools/openapi-ts-client',
+    description: t('tools.openapi-generator.description'),
+    path: '/tools/openapi-generator',
     component: 'OpenApiGenerator',
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['api', 'dev', 'frontend', 'generate']
@@ -774,17 +774,17 @@ const allTools = computed(() => [
   //   icon: 'M13 10V3L4 14h7v7l9-11h-7z',
   //   tags: ['network', 'performance', 'analyze']
   // },
-  { 
-    id: 'page-redirect-checker', 
-    name: t('tools.page-redirect-checker.name'),
-    category: t(`categories.network`),
-    categoryId: 'network',
-    description: t('tools.page-redirect-checker.description'),
-    path: '/tools/page-redirect-checker',
-    component: 'PageRedirectChecker',
-    icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm12 0a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z',
-    tags: ['network', 'analyze', 'http']
-  },
+  // { 
+  //   id: 'page-redirect-checker', 
+  //   name: t('tools.page-redirect-checker.name'),
+  //   category: t(`categories.network`),
+  //   categoryId: 'network',
+  //   description: t('tools.page-redirect-checker.description'),
+  //   path: '/tools/page-redirect-checker',
+  //   component: 'PageRedirectChecker',
+  //   icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm12 0a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z',
+  //   tags: ['network', 'analyze', 'http']
+  // },
   { 
     id: 'http-proxy-detector', 
     name: t('tools.http-proxy-detector.name'),

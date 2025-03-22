@@ -7,7 +7,7 @@ import javascriptFormatter from './tools/javascript-formatter.js';
 import htmlEntityEncoder from './tools/html-entity-encoder.js';
 import jwtDebugger from './tools/jwt-debugger.js';
 import codeBeautifier from './tools/code-beautifier.js';
-import openApiTsClient from './tools/openapi-ts-client.js';
+import openApiGenerator from './tools/openapi-generator.js';
 import mockApiGenerator from './tools/mock-api-generator.js';
 import codeMinifier from './tools/code-minifier.js';
 import htmlFormatter from './tools/html-formatter.js';
@@ -134,7 +134,7 @@ export default {
   'html-entity-encoder': htmlEntityEncoder,
   'jwt-debugger': jwtDebugger,
   'code-beautifier': codeBeautifier,
-  'openapi-ts-client': openApiTsClient,
+  'openapi-generator': openApiGenerator,
   'mock-api-generator': mockApiGenerator,
   'code-minifier': codeMinifier,
   'html-formatter': htmlFormatter,

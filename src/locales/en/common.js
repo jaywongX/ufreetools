@@ -28,5 +28,6 @@ export default {
   nested: 'Nested',
   complex: 'Complex',
   example: 'Example',
+  loadExample: 'Load Example',
   spaces: 'spaces'
 };

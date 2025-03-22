@@ -50,8 +50,6 @@
 <script setup>
 import { ref, computed, inject, onMounted, watch, markRaw } from 'vue'
 import { useRoute } from 'vue-router'
-import TagBadge from '../components/ui/TagBadge.vue'
-import ToolCard from '../components/ui/ToolCard.vue'
 import { addToHistory } from '../services/historyService'
 import { useInternationalizedRoute } from '../composables/useInternationalizedRoute'
 
@@ -133,12 +131,6 @@ function findTagName(tagId) {
   if (!allTags?.value) return tagId
   const tag = allTags.value.find(t => t.id === tagId)
   return tag?.name || tagId
-}
-
-function getTagColor(tagId) {
-  if (!allTags?.value) return 'gray'
-  const tag = allTags.value.find(t => t.id === tagId)
-  return tag?.color || 'gray'
 }
 
 // 加载工具数据

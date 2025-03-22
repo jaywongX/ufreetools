@@ -3,7 +3,7 @@ export default {
   description: '测试和调试MQTT连接，发布消息和订阅主题',
   connection: {
     title: '连接',
-    broker: '代理服务器',
+    broker: '端口号',
     url: '代理URL',
     urlPlaceholder: '例如：mqtt://broker.example.com:1883',
     clientId: '客户端ID',
@@ -16,6 +16,7 @@ export default {
     ssl: '使用SSL/TLS',
     sslOptions: 'SSL/TLS选项',
     protocol: '协议版本',
+    portInfo: '默认端口: MQTT(1883), WebSocket(8083)',
     connect: '连接',
     disconnect: '断开连接',
     status: '状态',

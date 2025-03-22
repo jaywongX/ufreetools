@@ -10,39 +10,39 @@
             :class="connected ? 'bg-green-500' : 'bg-red-500'"
           ></div>
           <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
-            {{ connected ? '已连接' : '未连接' }}
+            {{ connected ? t('tools.mqtt-tester.connection.connected') : t('tools.mqtt-tester.connection.disconnected') }}
           </span>
         </div>
         <div class="text-sm text-gray-600 dark:text-gray-400" v-if="connected">
-          客户端ID: {{ clientId || '未指定' }}
+          {{ t('tools.mqtt-tester.connection.clientId') }}: {{ clientId || t('tools.mqtt-tester.connection.clientIdPlaceholder') }}
         </div>
       </div>
 
       <!-- MQTT连接设置 -->
       <div class="mb-4">
-        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">MQTT连接设置</h3>
+        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ t('tools.mqtt-tester.connection.title') }}</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <!-- Broker URL -->
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              Broker URL
+              {{ t('tools.mqtt-tester.connection.url') }}
             </label>
             <input 
               v-model="brokerUrl" 
               type="text" 
-              placeholder="mqtt://broker.example.com"
+              :placeholder="t('tools.mqtt-tester.connection.urlPlaceholder')"
               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               :disabled="connected"
             >
             <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
-              例如: mqtt://broker.emqx.io 或 ws://broker.emqx.io:8083/mqtt
+              {{ t('tools.mqtt-tester.connection.urlPlaceholder') }}
             </p>
           </div>
           
           <!-- 端口号 -->
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              端口 (Port)
+              {{ t('tools.mqtt-tester.connection.broker') }}
             </label>
             <input 
               v-model.number="port" 
@@ -52,20 +52,20 @@
               :disabled="connected"
             >
             <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
-              标准端口: MQTT=1883, MQTTS=8883, WebSocket=8083, WSS=8084
+              {{ t('tools.mqtt-tester.connection.portInfo') }}
             </p>
           </div>
           
           <!-- 客户端ID -->
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              客户端ID
+              {{ t('tools.mqtt-tester.connection.clientId') }}
             </label>
             <div class="flex">
               <input 
                 v-model="clientId" 
                 type="text" 
-                placeholder="客户端ID (可选)"
+                :placeholder="t('tools.mqtt-tester.connection.clientIdPlaceholder')"
                 class="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                 :disabled="connected"
               >
@@ -74,18 +74,18 @@
                 class="px-3 py-2 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-r-md hover:bg-gray-300 dark:hover:bg-gray-500"
                 :disabled="connected"
               >
-                生成
+                {{ t('tools.mqtt-tester.subscribe.subscribe') }}
               </button>
             </div>
             <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
-              若留空将使用随机ID
+              {{ t('tools.mqtt-tester.connection.clientIdPlaceholder') }}
             </p>
           </div>
           
           <!-- 协议版本 -->
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              MQTT版本
+              {{ t('tools.mqtt-tester.connection.protocol') }}
             </label>
             <select 
               v-model="mqttVersion" 
@@ -110,31 +110,31 @@
               :disabled="connected"
             >
             <label for="use-auth" class="text-sm font-medium text-gray-700 dark:text-gray-300">
-              使用认证
+              {{ t('tools.mqtt-tester.connection.username') }}
             </label>
           </div>
           
           <div v-if="useAuth" class="grid grid-cols-1 md:grid-cols-2 gap-4 ml-6 mt-2">
             <div>
               <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                用户名
+                {{ t('tools.mqtt-tester.connection.username') }}
               </label>
               <input 
                 v-model="username" 
                 type="text" 
-                placeholder="用户名"
+                :placeholder="t('tools.mqtt-tester.connection.username')"
                 class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                 :disabled="connected"
               >
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                密码
+                {{ t('tools.mqtt-tester.connection.password') }}
               </label>
               <input 
                 v-model="password" 
                 type="password" 
-                placeholder="密码"
+                :placeholder="t('tools.mqtt-tester.connection.password')"
                 class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                 :disabled="connected"
               >
@@ -150,7 +150,7 @@
               :disabled="connected"
             >
             <label for="use-tls" class="text-sm font-medium text-gray-700 dark:text-gray-300">
-              使用TLS/SSL
+              {{ t('tools.mqtt-tester.connection.ssl') }}
             </label>
           </div>
         </div>
@@ -163,15 +163,15 @@
             class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark"
             :disabled="connecting"
           >
-            <span v-if="connecting">连接中...</span>
-            <span v-else>连接</span>
+            <span v-if="connecting">{{ t('tools.mqtt-tester.connection.connecting') }}</span>
+            <span v-else>{{ t('tools.mqtt-tester.connection.connect') }}</span>
           </button>
           <button 
             v-else
             @click="disconnect" 
             class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
           >
-            断开连接
+            {{ t('tools.mqtt-tester.connection.disconnect') }}
           </button>
         </div>
       </div>
@@ -185,7 +185,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
         <div>
-          <strong class="font-medium">连接错误:</strong>
+          <strong class="font-medium">{{ t('tools.mqtt-tester.notifications.connectError', { error: '' }) }}:</strong>
           <div class="mt-1">{{ connectionError }}</div>
         </div>
       </div>
@@ -196,17 +196,17 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <!-- 发布消息区域 -->
         <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-          <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-3">发布消息</h3>
+          <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-3">{{ t('tools.mqtt-tester.publish.title') }}</h3>
           
           <!-- 主题输入 -->
           <div class="mb-3">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              主题 (Topic)
+              {{ t('tools.mqtt-tester.publish.topic') }}
             </label>
             <input 
               v-model="publishTopic" 
               type="text" 
-              placeholder="example/topic"
+              :placeholder="t('tools.mqtt-tester.publish.topicPlaceholder')"
               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
             >
           </div>
@@ -214,20 +214,20 @@
           <!-- QoS选择 -->
           <div class="mb-3">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              QoS级别
+              {{ t('tools.mqtt-tester.publish.qos') }}
             </label>
             <div class="flex space-x-4">
               <label class="flex items-center">
                 <input type="radio" v-model="publishQos" :value="0" class="mr-1">
-                <span class="text-sm text-gray-700 dark:text-gray-300">0 (最多一次)</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">0 ({{ t('tools.mqtt-tester.lastWill.qos') }})</span>
               </label>
               <label class="flex items-center">
                 <input type="radio" v-model="publishQos" :value="1" class="mr-1">
-                <span class="text-sm text-gray-700 dark:text-gray-300">1 (至少一次)</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">1 ({{ t('tools.mqtt-tester.lastWill.retain') }})</span>
               </label>
               <label class="flex items-center">
                 <input type="radio" v-model="publishQos" :value="2" class="mr-1">
-                <span class="text-sm text-gray-700 dark:text-gray-300">2 (只有一次)</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">2 ({{ t('tools.mqtt-tester.lastWill.enable') }})</span>
               </label>
             </div>
           </div>
@@ -236,22 +236,22 @@
           <div class="mb-3">
             <label class="flex items-center">
               <input type="checkbox" v-model="retain" class="mr-1">
-              <span class="text-sm text-gray-700 dark:text-gray-300">保留消息 (Retain)</span>
+              <span class="text-sm text-gray-700 dark:text-gray-300">{{ t('tools.mqtt-tester.publish.retain') }}</span>
             </label>
             <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 ml-5">
-              保留的消息将被Broker存储，新客户端连接并订阅该主题时会立即收到
+              {{ t('tools.mqtt-tester.messages.retained') }}
             </p>
           </div>
           
           <!-- 消息内容 -->
           <div class="mb-3">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              消息内容
+              {{ t('tools.mqtt-tester.publish.message') }}
             </label>
             <textarea 
               v-model="publishMessageContent" 
               rows="4" 
-              placeholder="输入消息内容 (文本或JSON)"
+              :placeholder="t('tools.mqtt-tester.publish.messagePlaceholder')"
               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
             ></textarea>
           </div>
@@ -263,26 +263,26 @@
               class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark"
               :disabled="!publishTopic || publishing"
             >
-              <span v-if="publishing">发布中...</span>
-              <span v-else>发布消息</span>
+              <span v-if="publishing">{{ t('tools.mqtt-tester.connection.connecting') }}</span>
+              <span v-else>{{ t('tools.mqtt-tester.publish.send') }}</span>
             </button>
           </div>
         </div>
         
         <!-- 订阅消息区域 -->
         <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-          <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-3">订阅主题</h3>
+          <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-3">{{ t('tools.mqtt-tester.subscribe.title') }}</h3>
           
           <!-- 订阅主题输入 -->
           <div class="mb-3">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              主题 (支持通配符: # 和 +)
+              {{ t('tools.mqtt-tester.subscribe.topic') }} ({{ t('tools.mqtt-tester.subscribe.addSubscription') }})
             </label>
             <div class="flex">
               <input 
                 v-model="subscribeTopic" 
                 type="text" 
-                placeholder="example/# 或 example/+"
+                :placeholder="t('tools.mqtt-tester.subscribe.topicPlaceholder')"
                 class="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               >
               <button 
@@ -290,22 +290,22 @@
                 class="px-4 py-2 bg-primary text-white rounded-r-md hover:bg-primary-dark"
                 :disabled="!subscribeTopic || subscriptionLoading"
               >
-                <span v-if="subscriptionLoading">订阅中...</span>
-                <span v-else>订阅</span>
+                <span v-if="subscriptionLoading">{{ t('tools.mqtt-tester.connection.connecting') }}</span>
+                <span v-else>{{ t('tools.mqtt-tester.subscribe.subscribe') }}</span>
               </button>
             </div>
             <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
-              使用 # 匹配多级主题，+ 匹配单级主题
+              {{ t('tools.mqtt-tester.subscribe.topicPatterns') }}
             </p>
           </div>
           
           <!-- 活动订阅列表 -->
           <div class="mb-3">
             <div class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              活动订阅 ({{ activeSubscriptions.length }})
+              {{ t('tools.mqtt-tester.subscribe.subscriptions') }} ({{ activeSubscriptions.length }})
             </div>
             <div v-if="activeSubscriptions.length === 0" class="text-sm text-gray-500 dark:text-gray-400">
-              尚未订阅任何主题
+              {{ t('tools.mqtt-tester.subscribe.noSubscriptions') }}
             </div>
             <div 
               v-for="(sub, index) in activeSubscriptions" 
@@ -319,7 +319,7 @@
                 @click="unsubscribe(sub)" 
                 class="text-xs text-red-500 hover:text-red-700"
               >
-                取消订阅
+                {{ t('tools.mqtt-tester.subscribe.unsubscribe') }}
               </button>
             </div>
           </div>
@@ -329,12 +329,12 @@
       <!-- 接收到的消息 -->
       <div class="mt-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
         <div class="flex justify-between items-center mb-3">
-          <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">接收的消息</h3>
+          <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">{{ t('tools.mqtt-tester.messages.received') }}</h3>
           <button 
             @click="clearMessages" 
             class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
           >
-            清空记录
+            {{ t('tools.mqtt-tester.messages.clear') }}
           </button>
         </div>
         
@@ -342,7 +342,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
           </svg>
-          <p>订阅主题并等待消息...</p>
+          <p>{{ t('tools.mqtt-tester.messages.noMessages') }}</p>
         </div>
         
         <div v-else class="max-h-96 overflow-auto">
@@ -369,33 +369,33 @@
     
     <!-- MQTT指南 -->
     <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">MQTT指南</h3>
+      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ t('tools.mqtt-tester.tools.title') }}</h3>
       <div class="text-sm text-gray-600 dark:text-gray-400 space-y-2">
-        <p>MQTT是一种轻量级的消息传输协议，基于发布/订阅模式，特别适用于IoT应用场景。</p>
+        <p>{{ t('tools.mqtt-tester.description') }}</p>
         
         <div class="mt-2">
-          <h4 class="font-medium text-gray-700 dark:text-gray-300">公共MQTT Broker:</h4>
+          <h4 class="font-medium text-gray-700 dark:text-gray-300">{{ t('tools.mqtt-tester.connection.broker') }}:</h4>
           <ul class="list-disc pl-5 mt-1">
-            <li>EMQ X: mqtt://broker.emqx.io (端口: 1883) / ws://broker.emqx.io:8083/mqtt</li>
-            <li>Eclipse Mosquitto: mqtt://test.mosquitto.org (端口: 1883)</li>
-            <li>HiveMQ: mqtt://broker.hivemq.com (端口: 1883)</li>
+            <li>EMQ X: mqtt://broker.emqx.io ({{ t('tools.mqtt-tester.connection.url') }}: 1883) / ws://broker.emqx.io:8083/mqtt</li>
+            <li>Eclipse Mosquitto: mqtt://test.mosquitto.org ({{ t('tools.mqtt-tester.connection.url') }}: 1883)</li>
+            <li>HiveMQ: mqtt://broker.hivemq.com ({{ t('tools.mqtt-tester.connection.url') }}: 1883)</li>
           </ul>
         </div>
         
         <div class="mt-2">
-          <h4 class="font-medium text-gray-700 dark:text-gray-300">主题通配符:</h4>
+          <h4 class="font-medium text-gray-700 dark:text-gray-300">{{ t('tools.mqtt-tester.subscribe.topicPatterns') }}:</h4>
           <ul class="list-disc pl-5 mt-1">
-            <li><code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">#</code> - 匹配多级主题，例如 <code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">home/#</code> 匹配 home/livingroom, home/kitchen/temp 等</li>
-            <li><code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">+</code> - 匹配单级主题，例如 <code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">home/+/temp</code> 匹配 home/livingroom/temp 但不匹配 home/livingroom/sensor/temp</li>
+            <li><code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">#</code> - {{ t('tools.mqtt-tester.subscribe.systemTopics') }}</li>
+            <li><code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">+</code> - {{ t('tools.mqtt-tester.subscribe.systemTopics') }}</li>
           </ul>
         </div>
         
         <div class="mt-2">
-          <h4 class="font-medium text-gray-700 dark:text-gray-300">QoS (服务质量):</h4>
+          <h4 class="font-medium text-gray-700 dark:text-gray-300">{{ t('tools.mqtt-tester.publish.qos') }}:</h4>
           <ul class="list-disc pl-5 mt-1">
-            <li><strong>QoS 0</strong>: 最多传递一次，可能丢失消息</li>
-            <li><strong>QoS 1</strong>: 至少传递一次，可能重复</li>
-            <li><strong>QoS 2</strong>: 只传递一次，保证消息仅被接收一次</li>
+            <li><strong>QoS 0</strong>: {{ t('tools.mqtt-tester.lastWill.qos') }}</li>
+            <li><strong>QoS 1</strong>: {{ t('tools.mqtt-tester.lastWill.retain') }}</li>
+            <li><strong>QoS 2</strong>: {{ t('tools.mqtt-tester.lastWill.enable') }}</li>
           </ul>
         </div>
       </div>
@@ -405,6 +405,10 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+// 初始化国际化
+const { t } = useI18n()
 
 // MQTT客户端
 let mqttClient = null
@@ -519,7 +523,7 @@ async function connect() {
     // 设置连接超时
     const connectionTimeout = setTimeout(() => {
       if (!connected.value) {
-        connectionError.value = '连接超时，请检查Broker地址和端口是否正确'
+        connectionError.value = t('tools.mqtt-tester.notifications.connectError', { error: t('tools.mqtt-tester.connection.connecting') })
         connecting.value = false
         disconnect()
       }
@@ -527,20 +531,22 @@ async function connect() {
 
     mqttClient.on('error', (err) => {
       clearTimeout(connectionTimeout)
-      console.error('MQTT连接错误:', err)
-      let errorMsg = err.message
-      if (err.code === 'ECONNREFUSED') {
-        errorMsg = '连接被拒绝，请检查Broker地址和端口是否正确'
-      } else if (err.code === 'ENOTFOUND') {
-        errorMsg = '无法解析Broker地址，请检查地址是否正确'
-      } else if (err.code === 'ECONNABORTED') {
-        errorMsg = '连接中断，可能是网络不稳定或Broker不可用'
-      } else if (err.code === 'CERT_HAS_EXPIRED') {
-        errorMsg = 'SSL证书已过期，请检查证书是否有效'
-      } else if (err.code === 'UNABLE_TO_VERIFY_LEAF_SIGNATURE') {
-        errorMsg = 'SSL证书验证失败，请检查证书配置'
-      } else if (err.message.includes('Unexpected server response')) {
-        errorMsg = '服务器响应异常，可能是WebSocket端口配置错误'
+      console.error(t('tools.mqtt-tester.notifications.connectError', { error: err.message }), err)
+      
+      // 翻译错误消息
+      let errorMsg
+      if (err.message.includes('timeout')) {
+        errorMsg = t('tools.mqtt-tester.notifications.connectError', { error: t('tools.mqtt-tester.connection.connecting') })
+      } else if (err.message.includes('ENOTFOUND') || err.message.includes('ECONNREFUSED')) {
+        errorMsg = t('tools.mqtt-tester.notifications.connectError', { error: t('tools.mqtt-tester.connection.broker') })
+      } else if (err.message.includes('authentication')) {
+        errorMsg = t('tools.mqtt-tester.notifications.connectError', { error: t('tools.mqtt-tester.connection.username') })
+      } else if (err.message.includes('Client ID')) {
+        errorMsg = t('tools.mqtt-tester.notifications.connectError', { error: t('tools.mqtt-tester.connection.clientId') })
+      } else if (err.message.includes('protocol')) {
+        errorMsg = t('tools.mqtt-tester.notifications.connectError', { error: t('tools.mqtt-tester.connection.protocol') })
+      } else {
+        errorMsg = t('tools.mqtt-tester.notifications.connectError', { error: err.message })
       }
       connectionError.value = errorMsg
       connecting.value = false
@@ -600,10 +606,10 @@ function publishMessage() {
       (err) => {
         publishing.value = false
         if (err) {
-          console.error('发布失败:', err)
-          alert('发布失败: ' + err.message)
+          console.error(t('tools.mqtt-tester.notifications.publishError', { error: err.message }), err)
+          alert(t('tools.mqtt-tester.notifications.publishError', { error: err.message }))
         } else {
-          console.log('消息已发布')
+          console.log(t('tools.mqtt-tester.notifications.publishSuccess', { topic: publishTopic.value }))
           // 清空消息框(可选)
           // publishMessageContent.value = ''
         }
@@ -611,8 +617,8 @@ function publishMessage() {
     )
   } catch (error) {
     publishing.value = false
-    console.error('发布错误:', error)
-    alert('发布错误: ' + error.message)
+    console.error(t('tools.mqtt-tester.notifications.publishError', { error: error.message }), error)
+    alert(t('tools.mqtt-tester.notifications.publishError', { error: error.message }))
   }
 }
 
@@ -622,7 +628,7 @@ function subscribe() {
   
   // 检查是否已订阅
   if (activeSubscriptions.value.includes(subscribeTopic.value)) {
-    alert('已经订阅了该主题')
+    alert(t('tools.mqtt-tester.notifications.subscribeError', { error: t('tools.mqtt-tester.messages.duplicate') }))
     return
   }
   
@@ -631,10 +637,10 @@ function subscribe() {
   mqttClient.subscribe(subscribeTopic.value, { qos: 0 }, (err) => {
     subscriptionLoading.value = false
     if (err) {
-      console.error('订阅失败:', err)
-      alert('订阅失败: ' + err.message)
+      console.error(t('tools.mqtt-tester.notifications.subscribeError', { error: err.message }), err)
+      alert(t('tools.mqtt-tester.notifications.subscribeError', { error: err.message }))
     } else {
-      console.log('已订阅:', subscribeTopic.value)
+      console.log(t('tools.mqtt-tester.notifications.subscribeSuccess', { topic: subscribeTopic.value }))
       activeSubscriptions.value.push(subscribeTopic.value)
       // 清空订阅输入框
       subscribeTopic.value = ''
@@ -648,10 +654,10 @@ function unsubscribe(topic) {
   
   mqttClient.unsubscribe(topic, (err) => {
     if (err) {
-      console.error('取消订阅失败:', err)
-      alert('取消订阅失败: ' + err.message)
+      console.error(t('tools.mqtt-tester.notifications.unsubscribeError', { error: err.message }), err)
+      alert(t('tools.mqtt-tester.notifications.unsubscribeError', { error: err.message }))
     } else {
-      console.log('已取消订阅:', topic)
+      console.log(t('tools.mqtt-tester.notifications.unsubscribeSuccess', { topic: topic }))
       activeSubscriptions.value = activeSubscriptions.value.filter(t => t !== topic)
     }
   })

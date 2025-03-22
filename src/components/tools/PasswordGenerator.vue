@@ -6,7 +6,7 @@
         <!-- 密码长度设置 -->
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            密码长度
+            {{ $t('tools.password-generator.options.length') }}
           </label>
           <div class="flex items-center">
             <input 
@@ -29,33 +29,33 @@
         <!-- 密码强度设置 -->
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            密码强度
+            {{ $t('tools.password-generator.strength.title') }}
           </label>
           <select 
             v-model="passwordStrength"
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           >
-            <option value="easy">简单 (易记)</option>
-            <option value="medium">中等 (平衡)</option>
-            <option value="strong">强壮 (安全)</option>
-            <option value="custom">自定义</option>
+            <option value="easy">{{ $t('tools.password-generator.presets.memorable') }} ({{ $t('tools.password-generator.presets.easyToRemember') }})</option>
+            <option value="medium">{{ $t('tools.password-generator.presets.standard') }} ({{ $t('tools.password-generator.presets.balanced') }})</option>
+            <option value="strong">{{ $t('tools.password-generator.presets.strong') }} ({{ $t('tools.password-generator.presets.secure') }})</option>
+            <option value="custom">{{ $t('tools.password-generator.presets.custom') }}</option>
           </select>
         </div>
         
         <!-- 密码数量设置 -->
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            生成数量
+            {{ $t('tools.password-generator.options.quantity') }}
           </label>
           <select 
             v-model="passwordCount"
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           >
-            <option :value="1">1 个密码</option>
-            <option :value="5">5 个密码</option>
-            <option :value="10">10 个密码</option>
-            <option :value="20">20 个密码</option>
-            <option :value="50">50 个密码</option>
+            <option :value="1">1 {{ $t('tools.password-generator.units.passwords') }}</option>
+            <option :value="5">5 {{ $t('tools.password-generator.units.passwords') }}</option>
+            <option :value="10">10 {{ $t('tools.password-generator.units.passwords') }}</option>
+            <option :value="20">20 {{ $t('tools.password-generator.units.passwords') }}</option>
+            <option :value="50">50 {{ $t('tools.password-generator.units.passwords') }}</option>
           </select>
         </div>
       </div>
@@ -63,7 +63,7 @@
       <!-- 字符组合选项 -->
       <div v-if="passwordStrength === 'custom'" class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          字符类型
+          {{ $t('tools.password-generator.options.characterTypes') }}
         </label>
         <div class="flex flex-wrap gap-x-6 gap-y-2">
           <div class="flex items-center">
@@ -74,7 +74,7 @@
               class="h-4 w-4 text-primary border-gray-300 rounded"
             />
             <label for="include-uppercase" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              大写字母 (A-Z)
+              {{ $t('tools.password-generator.options.includeUppercase') }}
             </label>
           </div>
           <div class="flex items-center">
@@ -85,7 +85,7 @@
               class="h-4 w-4 text-primary border-gray-300 rounded"
             />
             <label for="include-lowercase" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              小写字母 (a-z)
+              {{ $t('tools.password-generator.options.includeLowercase') }}
             </label>
           </div>
           <div class="flex items-center">
@@ -96,7 +96,7 @@
               class="h-4 w-4 text-primary border-gray-300 rounded"
             />
             <label for="include-numbers" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              数字 (0-9)
+              {{ $t('tools.password-generator.options.includeNumbers') }}
             </label>
           </div>
           <div class="flex items-center">
@@ -107,7 +107,7 @@
               class="h-4 w-4 text-primary border-gray-300 rounded"
             />
             <label for="include-symbols" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              特殊符号 (!@#$%^&*)
+              {{ $t('tools.password-generator.options.includeSymbols') }}
             </label>
           </div>
         </div>
@@ -117,13 +117,13 @@
       <div class="mb-4">
         <div class="flex justify-between items-center mb-2">
           <label class="text-sm font-medium text-gray-700 dark:text-gray-300">
-            高级选项
+            {{ $t('tools.password-generator.options.advancedOptions') }}
           </label>
           <button 
             @click="showAdvancedOptions = !showAdvancedOptions"
             class="text-sm text-primary dark:text-primary-light flex items-center"
           >
-            {{ showAdvancedOptions ? '收起' : '展开' }}
+            {{ showAdvancedOptions ? $t('tools.password-generator.actions.collapse') : $t('tools.password-generator.actions.expand') }}
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform" :class="{'rotate-180': showAdvancedOptions}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -139,7 +139,7 @@
               class="h-4 w-4 text-primary border-gray-300 rounded"
             />
             <label for="exclude-similar" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              排除相似字符 (i, l, 1, L, o, 0, O)
+              {{ $t('tools.password-generator.options.excludeSimilar') }}
             </label>
           </div>
           <div class="flex items-center">
@@ -150,7 +150,7 @@
               class="h-4 w-4 text-primary border-gray-300 rounded"
             />
             <label for="exclude-ambiguous" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              排除难以辨认的符号 ({ } [ ] ( ) / \ ' " ` ~ , ; : . < >)
+              {{ $t('tools.password-generator.options.excludeAmbiguous') }}
             </label>
           </div>
           <div class="flex items-center">
@@ -161,7 +161,7 @@
               class="h-4 w-4 text-primary border-gray-300 rounded"
             />
             <label for="require-every-type" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              确保包含每种字符类型
+              {{ $t('tools.password-generator.options.requireAll') }}
             </label>
           </div>
         </div>
@@ -176,7 +176,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          生成随机密码
+          {{ $t('tools.password-generator.actions.generate') }}
         </button>
       </div>
     </div>
@@ -184,35 +184,35 @@
     <!-- 生成的密码列表 -->
     <div>
       <div class="flex justify-between items-center mb-3">
-        <h2 class="text-lg font-medium">生成的密码</h2>
+        <h2 class="text-lg font-medium">{{ $t('tools.password-generator.results.title') }}</h2>
         <div class="flex space-x-2">
           <button 
             v-if="generatedPasswords.length > 0"
             @click="copyAllPasswords"
             class="px-3 py-1 text-sm rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 flex items-center"
-            title="复制所有密码"
+            :title="$t('tools.password-generator.actions.copyAll')"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
-            复制全部
+            {{ $t('tools.password-generator.actions.copyAll') }}
           </button>
           <button 
             v-if="generatedPasswords.length > 0"
             @click="clearPasswords"
             class="px-3 py-1 text-sm rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 flex items-center"
-            title="清空密码"
+            :title="$t('tools.password-generator.actions.clear')"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
-            清空
+            {{ $t('tools.password-generator.actions.clear') }}
           </button>
         </div>
       </div>
       
       <div v-if="generatedPasswords.length === 0" class="bg-gray-50 dark:bg-gray-800 rounded-md p-8 text-center">
-        <p class="text-gray-500 dark:text-gray-400">点击上方按钮生成密码</p>
+        <p class="text-gray-500 dark:text-gray-400">{{ $t('tools.password-generator.messages.clickToGenerate') }}</p>
       </div>
       
       <div v-else class="space-y-3">
@@ -237,7 +237,7 @@
           <button 
             @click="copyPassword(password)"
             class="p-1.5 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700"
-            :title="`复制密码: ${password}`"
+            :title="$t('tools.password-generator.actions.copy') + ': ' + password"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -249,13 +249,13 @@
     
     <!-- 密码安全提示 -->
     <div class="mt-8 bg-blue-50 dark:bg-blue-900/30 rounded-md p-4 border border-blue-100 dark:border-blue-800">
-      <h3 class="text-blue-700 dark:text-blue-300 font-medium mb-2">密码安全提示</h3>
+      <h3 class="text-blue-700 dark:text-blue-300 font-medium mb-2">{{ $t('tools.password-generator.tips.title') }}</h3>
       <ul class="text-blue-600 dark:text-blue-400 text-sm space-y-1 list-disc pl-5">
-        <li>使用足够长的密码（至少12个字符）提高安全性</li>
-        <li>对每个网站或服务使用不同的密码</li>
-        <li>定期更换重要账户的密码</li>
-        <li>考虑使用密码管理器安全存储复杂密码</li>
-        <li>启用双因素认证以增加额外保护层</li>
+        <li>{{ $t('tools.password-generator.tips.useLength') }}</li>
+        <li>{{ $t('tools.password-generator.tips.useDifferent') }}</li>
+        <li>{{ $t('tools.password-generator.tips.changeRegularly') }}</li>
+        <li>{{ $t('tools.password-generator.tips.useManager') }}</li>
+        <li>{{ $t('tools.password-generator.tips.use2FA') }}</li>
       </ul>
     </div>
   </div>
@@ -263,6 +263,9 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t, locale } = useI18n()
 
 // 基本参数
 const passwordLength = ref(16)
@@ -371,7 +374,7 @@ function generatePassword() {
   
   const charset = generateCharset()
   if (!charset) {
-    alert('请至少选择一种字符类型')
+    alert(t('tools.password-generator.messages.invalidOptions'))
     return
   }
   
@@ -478,10 +481,10 @@ function shuffleString(str) {
 // 复制单个密码
 function copyPassword(password) {
   navigator.clipboard.writeText(password).then(() => {
-    alert('密码已复制到剪贴板')
+    alert(t('tools.password-generator.messages.copied'))
   }).catch(err => {
-    console.error('无法复制密码: ', err)
-    alert('复制失败，请手动复制')
+    console.error(t('tools.password-generator.errors.copyFailed'), err)
+    alert(t('tools.password-generator.errors.copyFailedManual'))
   })
 }
 
@@ -489,10 +492,10 @@ function copyPassword(password) {
 function copyAllPasswords() {
   const allPasswords = generatedPasswords.value.join('\n')
   navigator.clipboard.writeText(allPasswords).then(() => {
-    alert('所有密码已复制到剪贴板')
+    alert(t('tools.password-generator.messages.allCopied'))
   }).catch(err => {
-    console.error('无法复制密码: ', err)
-    alert('复制失败，请手动复制')
+    console.error(t('tools.password-generator.errors.copyFailed'), err)
+    alert(t('tools.password-generator.errors.copyFailedManual'))
   })
 }
 
@@ -544,14 +547,21 @@ function getStrengthColorClass(strength) {
 // 获取强度对应的文本
 function getStrengthText(strength) {
   switch (strength) {
-    case 0: return '非常弱'
-    case 1: return '弱'
-    case 2: return '一般'
-    case 3: return '强'
-    case 4: return '非常强'
-    default: return '未知'
+    case 0: return t('tools.password-generator.strength.veryWeak')
+    case 1: return t('tools.password-generator.strength.weak')
+    case 2: return t('tools.password-generator.strength.medium')
+    case 3: return t('tools.password-generator.strength.strong')
+    case 4: return t('tools.password-generator.strength.veryStrong')
+    default: return t('tools.password-generator.strength.unknown')
   }
 }
+
+// 监听语言变化时重新生成密码
+watch(locale, () => {
+  if (generatedPasswords.value.length > 0) {
+    generatePassword()
+  }
+})
 
 // 页面加载时自动生成密码
 generatePassword()

@@ -3,7 +3,7 @@ export default {
   description: 'Test and debug MQTT connections, publish messages, and subscribe to topics',
   connection: {
     title: 'Connection',
-    broker: 'Broker',
+    broker: 'Port',
     url: 'Broker URL',
     urlPlaceholder: 'e.g., mqtt://broker.example.com:1883',
     clientId: 'Client ID',
@@ -16,6 +16,7 @@ export default {
     ssl: 'Use SSL/TLS',
     sslOptions: 'SSL/TLS Options',
     protocol: 'Protocol Version',
+    portInfo: 'Default ports: MQTT(1883), WebSocket(8083)',
     connect: 'Connect',
     disconnect: 'Disconnect',
     status: 'Status',

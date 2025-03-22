@@ -210,7 +210,8 @@ export default {
   status: 'status',
   test: 'test',
   grpc: 'gRPC',
-  number: '数字',
+  number: 'number',
+  mqtt: 'MQTT',
   
   // Tag Categories
   categories: {

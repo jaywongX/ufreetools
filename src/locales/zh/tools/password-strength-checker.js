@@ -2,17 +2,18 @@ export default {
   name: '密码强度检查器',
   description: '检查和分析密码强度，提供详细的安全指标',
   input: {
-    title: '输入密码',
-    placeholder: '输入或粘贴您的密码',
+    title: '输入密码进行检测',
+    placeholder: '在此输入密码...',
     showPassword: '显示密码',
     hidePassword: '隐藏密码',
     clear: '清除',
     generate: '生成密码',
     check: '检查强度',
-    empty: '输入密码进行检查'
+    empty: '请输入密码以查看评估结果',
+    disclaimer: '输入任何密码进行安全强度评估。您的密码不会被存储或发送到任何服务器。'
   },
   results: {
-    title: '密码分析',
+    title: '密码强度评估',
     strength: '强度',
     score: '得分',
     entropy: '熵值',
@@ -24,21 +25,21 @@ export default {
     strong: '强',
     very_strong: '非常强',
     feedback: '反馈',
-    suggestions: '建议',
-    warnings: '警告',
+    suggestions: '改进建议',
+    warnings: '检测到的问题',
     noWarnings: '未检测到警告',
     noSuggestions: '没有可用的建议'
   },
   details: {
-    title: '详情',
-    length: '长度',
-    charset: '字符集',
+    title: '详细分析',
+    length: '密码长度',
+    charset: '字符多样性',
     patterns: '使用的模式',
     uniqueChars: '唯一字符',
     uppercase: '大写字母',
     lowercase: '小写字母',
     numbers: '数字',
-    symbols: '符号',
+    symbols: '特殊符号',
     repetitions: '重复',
     sequences: '序列',
     dictionary: '字典词',
@@ -74,15 +75,18 @@ export default {
     addSymbols: '包含符号',
     addNumbers: '包含数字',
     upperLower: '混合大小写',
-    avoidPatterns: '避免键盘模式',
-    avoidCommon: '避免常见密码',
+    avoidPatterns: '避免使用键盘上的连续字符或重复字符',
+    avoidCommon: '避免使用基于词典的密码或常见密码，哪怕通过替换字母为数字（例如把"e"换成"3"）',
     avoidPersonal: '避免个人信息',
     avoidDictionary: '避免字典词',
-    usePassphrase: '考虑使用密码短语',
+    usePassphrase: '考虑使用连词组合、不相关单词的组合或首字母缩略词来创建记忆性更好的强密码',
     increaseLonger: '增加密码长度',
     avoidSequence: '避免顺序模式',
     avoidRepeated: '避免重复字符',
-    avoidDates: '避免日期和年份'
+    avoidDates: '避免日期和年份',
+    addMoreChars: '增加密码长度至少12个字符，每增加一个字符，破解难度都会成倍增加',
+    addTypes: '添加{types}以增加密码复杂度',
+    useManager: '使用密码管理器来生成和管理强密码，每个网站使用不同的密码'
   },
   generator: {
     title: '密码生成器',
@@ -110,7 +114,8 @@ export default {
     copied: '已复制到剪贴板',
     saved: '已保存到历史',
     history: '历史记录',
-    noHistory: '没有可用的历史记录'
+    noHistory: '没有可用的历史记录',
+    common: '常见'
   },
   breach: {
     title: '数据泄露检查',
@@ -132,5 +137,56 @@ export default {
     timeoutDuration: '超时时长（秒）',
     clipboard: '复制后清除剪贴板',
     language: '语言'
+  },
+  score: {
+    none: '无评分'
+  },
+  descriptions: {
+    none: '无法评估密码强度',
+    veryWeak: '这个密码非常容易被猜测或破解，极其不安全',
+    weak: '这个密码安全性较低，可能会被轻易破解',
+    fair: '这个密码具有一定安全性，但仍有提升空间',
+    good: '这是一个安全性较高的密码，破解难度较大',
+    veryStrong: '这是一个非常安全的密码，几乎不可能被破解'
+  },
+  length: {
+    none: '无',
+    tooShort: '太短',
+    acceptable: '可接受',
+    good: '良好',
+    excellent: '优秀'
+  },
+  lengthMessage: {
+    none: '尚未输入密码',
+    needMore: '至少需要{min}个字符',
+    better: '{min}个或更多字符会更安全',
+    good: '很好！长密码更难被破解',
+    excellent: '优秀的长度！'
+  },
+  complexity: {
+    none: '无',
+    veryLow: '非常低',
+    fair: '一般',
+    good: '良好',
+    excellent: '优秀'
+  },
+  issues: {
+    tooShort: '密码太短（不足8个字符）',
+    noUppercase: '没有包含大写字母',
+    noLowercase: '没有包含小写字母',
+    noNumbers: '没有包含数字',
+    noSymbols: '没有包含特殊符号',
+    hasSequence: '包含常见键盘序列（如"qwerty"或"123456"）',
+    hasRepeated: '包含重复的字符（如"aaa"或"111"）',
+    commonPassword: '使用了常见或易猜测的密码'
+  },
+  characters: '个字符',
+  tips: {
+    title: '密码安全小贴士',
+    length: '使用至少12个字符的密码',
+    mix: '混合使用大写、小写字母、数字和特殊符号',
+    avoid: '避免使用常见单词、短语或个人信息',
+    unique: '不要在多个网站使用相同的密码',
+    manager: '考虑使用密码管理器来生成和存储复杂密码'
   }
 } 
