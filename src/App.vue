@@ -247,17 +247,17 @@ const allTools = computed(() => [
   //   icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
   //   tags: ['javascript','format','dev','validate']
   // },
-  { 
-    id: 'code-beautifier', 
-    name: t('tools.code-beautifier.name'),
-    category: t(`categories.dev`),
-    categoryId: 'dev',
-    description: t('tools.code-beautifier.description'),
-    path: '/tools/code-beautifier',
-    component: 'CodeBeautifier',
-    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['code','dev','highlight']
-  },
+  // { 
+  //   id: 'code-beautifier', 
+  //   name: t('tools.code-beautifier.name'),
+  //   category: t(`categories.dev`),
+  //   categoryId: 'dev',
+  //   description: t('tools.code-beautifier.description'),
+  //   path: '/tools/code-beautifier',
+  //   component: 'CodeBeautifier',
+  //   icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+  //   tags: ['code','dev','highlight']
+  // },
   { 
     id: 'html-entity-encoder', 
     name: t('tools.html-entity-encoder.name'),
@@ -460,28 +460,17 @@ const allTools = computed(() => [
     icon:'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
     tags:['markdown','text','editor']
   },
-  {
-    id:'xml-formatter',
-    name:'XML格式化',
-    category:'文本与编辑',
-    categoryId:'text',
-    description:'格式化XML代码，提升可读性',
-    path:'/tools/xml-formatter',
-    component:'XmlFormatter',
-    icon:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
-    tags:['xml','text','format']
-  },
-  {
-    id:'css-formatter',
-    name:'CSS格式化',
-    category:'文本与编辑',
-    categoryId:'text',
-    description:'格式化CSS代码，提升可读性',
-    path:'/tools/css-formatter',
-    component:'CssFormatter',
-    icon:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
-    tags:['css','text','format']
-  },
+  // {
+  //   id:'css-formatter',
+  //   name:'CSS格式化',
+  //   category:'文本与编辑',
+  //   categoryId:'text',
+  //   description:'格式化CSS代码，提升可读性',
+  //   path:'/tools/css-formatter',
+  //   component:'CssFormatter',
+  //   icon:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
+  //   tags:['css','text','format']
+  // },
   { 
     id: 'sensitive-word-filter', 
     name: t('tools.sensitive-word-filter.name'),
@@ -694,6 +683,17 @@ const allTools = computed(() => [
     component: 'XmlJsonConverter',
     icon:'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags:['convert','xml','json','data']
+  },
+  {
+    id:'xml-formatter',
+    name: t('tools.xml-formatter.name'),
+    category:t(`categories.convert`),
+    categoryId:'convert',
+    description: t('tools.xml-formatter.description'),
+    path:'/tools/xml-formatter',
+    component:'XmlFormatter',
+    icon:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
+    tags:['xml','text','format']
   },
   {
     id:'yaml-json-converter',
