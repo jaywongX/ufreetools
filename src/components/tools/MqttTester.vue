@@ -179,9 +179,15 @@
       <!-- 若连接错误显示错误信息 -->
       <div 
         v-if="connectionError" 
-        class="p-3 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-800 rounded-md text-red-700 dark:text-red-300 text-sm mb-4"
+        class="p-3 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-800 rounded-md text-red-700 dark:text-red-300 text-sm mb-4 flex items-start"
       >
-        <strong>连接错误:</strong> {{ connectionError }}
+        <svg class="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <div>
+          <strong class="font-medium">连接错误:</strong>
+          <div class="mt-1">{{ connectionError }}</div>
+        </div>
       </div>
     </div>
     
@@ -404,8 +410,8 @@ import { ref, onMounted, onUnmounted } from 'vue'
 let mqttClient = null
 
 // 连接设置
-const brokerUrl = ref('mqtt://broker.emqx.io')
-const port = ref(1883)
+const brokerUrl = ref('ws://broker.emqx.io')
+const port = ref(8083)
 const clientId = ref('')
 const mqttVersion = ref('4')
 const useAuth = ref(false)
@@ -460,6 +466,7 @@ async function connect() {
   
   connecting.value = true
   connectionError.value = ''
+  connected.value = false
   
   try {
     // 加载MQTT库
@@ -469,6 +476,13 @@ async function connect() {
     let url = brokerUrl.value
     if (!url.startsWith('mqtt://') && !url.startsWith('ws://') && !url.startsWith('mqtts://') && !url.startsWith('wss://')) {
       url = 'mqtt://' + url
+    }
+    
+    // 如果是WebSocket连接，确保URL末尾有/mqtt路径
+    if (url.startsWith('ws://') || url.startsWith('wss://')) {
+      if (!url.endsWith('/mqtt')) {
+        url = url + '/mqtt'
+      }
     }
     
     // 若指定了端口，添加到URL
@@ -502,16 +516,42 @@ async function connect() {
       console.log('已连接到MQTT Broker')
     })
     
+    // 设置连接超时
+    const connectionTimeout = setTimeout(() => {
+      if (!connected.value) {
+        connectionError.value = '连接超时，请检查Broker地址和端口是否正确'
+        connecting.value = false
+        disconnect()
+      }
+    }, 10000) // 10秒超时
+
     mqttClient.on('error', (err) => {
+      clearTimeout(connectionTimeout)
       console.error('MQTT连接错误:', err)
-      connectionError.value = err.message
+      let errorMsg = err.message
+      if (err.code === 'ECONNREFUSED') {
+        errorMsg = '连接被拒绝，请检查Broker地址和端口是否正确'
+      } else if (err.code === 'ENOTFOUND') {
+        errorMsg = '无法解析Broker地址，请检查地址是否正确'
+      } else if (err.code === 'ECONNABORTED') {
+        errorMsg = '连接中断，可能是网络不稳定或Broker不可用'
+      } else if (err.code === 'CERT_HAS_EXPIRED') {
+        errorMsg = 'SSL证书已过期，请检查证书是否有效'
+      } else if (err.code === 'UNABLE_TO_VERIFY_LEAF_SIGNATURE') {
+        errorMsg = 'SSL证书验证失败，请检查证书配置'
+      } else if (err.message.includes('Unexpected server response')) {
+        errorMsg = '服务器响应异常，可能是WebSocket端口配置错误'
+      }
+      connectionError.value = errorMsg
       connecting.value = false
+      connected.value = false
       disconnect()
     })
     
     mqttClient.on('close', () => {
       console.log('MQTT连接已关闭')
       connected.value = false
+      connecting.value = false
     })
     
     mqttClient.on('message', (topic, payload, packet) => {
@@ -652,4 +692,4 @@ onUnmounted(() => {
 onMounted(() => {
   generateClientId()
 })
-</script> 
+</script>

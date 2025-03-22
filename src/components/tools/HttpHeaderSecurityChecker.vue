@@ -130,7 +130,7 @@
             </div>
             
             <button 
-              @click="expandedHeader.value = (expandedHeader.value === key) ? null : key" 
+              @click="expandedHeader && expandedHeader.value === key ? expandedHeader.value = null : expandedHeader.value = key" 
               class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
             >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -138,7 +138,7 @@
                   stroke-linecap="round" 
                   stroke-linejoin="round" 
                   stroke-width="2" 
-                  :d="expandedHeader.value === key ? 'M5 15l7-7 7 7' : 'M19 9l-7 7-7-7'"
+                  :d="expandedHeader && expandedHeader.value === key ? 'M5 15l7-7 7 7' : 'M19 9l-7 7-7-7'"
                 ></path>
               </svg>
             </button>
@@ -147,7 +147,7 @@
       </div>
       
       <!-- 详细分析区域 -->
-      <div v-if="expandedHeader.value" class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 lg:col-span-3">
+      <div v-if="expandedHeader && expandedHeader.value" class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 lg:col-span-3">
         <div class="flex justify-between items-start mb-3">
           <h3 class="text-md font-medium text-gray-800 dark:text-gray-200">
             {{ securityHeaders[expandedHeader.value].name }} 详细分析
@@ -255,6 +255,7 @@ const isValidUrl = computed(() => {
 
 // 评分颜色
 const scoreColor = computed(() => {
+  if (!securityScore.value) return '#ef4444' // 默认红色
   if (securityScore.value >= 80) return '#10b981' // 绿色
   if (securityScore.value >= 50) return '#f59e0b' // 黄色
   return '#ef4444' // 红色
@@ -268,6 +269,7 @@ const scoreColorName = computed(() => {
 
 // 安全评级
 const securityRating = computed(() => {
+  if (!securityScore.value) return '未知'
   if (securityScore.value >= 90) return '优秀'
   if (securityScore.value >= 80) return '良好'
   if (securityScore.value >= 65) return '一般'
@@ -277,6 +279,7 @@ const securityRating = computed(() => {
 
 // 评级描述
 const securityRatingDescription = computed(() => {
+  if (!securityScore.value) return '无法获取网站的安全头信息'
   if (securityScore.value >= 90) return '该网站实施了全面的安全头配置'
   if (securityScore.value >= 80) return '该网站具有良好的安全头配置，有少量改进空间'
   if (securityScore.value >= 65) return '该网站实施了基本安全措施，但存在提升空间'
@@ -299,11 +302,8 @@ async function analyzeHeaders() {
   expandedHeader.value = null
   
   try {
-    // 尝试通过代理服务或CORS获取头信息（这里使用代理服务避免CORS限制）
-    // 在实际应用中需要使用自己的代理服务或支持CORS的API
-    const proxyUrl = `https://cors-anywhere.herokuapp.com/${url.value}`
-    
-    const response = await fetch(proxyUrl, {
+    // 使用本地代理服务或其他可用的代理服务
+    const response = await fetch(url.value, {
       method: 'HEAD',
       headers: {
         'X-Requested-With': 'XMLHttpRequest'
@@ -440,4 +440,4 @@ function analyzeSecurityHeaders(headers) {
   securityHeaders.value = secHeaders
   securityScore.value = totalScore
 }
-</script> 
+</script>
