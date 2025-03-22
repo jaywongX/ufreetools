@@ -140,7 +140,7 @@ export default {
     'code-complexity-analyzer': codeComplexityAnalyzer,
     'yaml-formatter': yamlFormatter,
     'csv-viewer': csvViewer,
-    'base64EncoderDecoder': base64EncoderDecoder,
+    'base64-encoder-decoder': base64EncoderDecoder,
     'timestamp-converter': timestampConverter,
     'url-encode-decode': urlEncodeDecode,
     'xml-formatter': xmlFormatter,
