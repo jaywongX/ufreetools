@@ -1,84 +1,68 @@
 export default {
-  name: '用户代理生成器',
-  description: '生成和自定义用户代理字符串用于测试和开发',
-  options: {
-    deviceType: '设备类型',
-    platform: '平台',
+  name: 'User-Agent 生成器',
+  description: '生成各种浏览器和设备的 User-Agent 字符串，用于网站测试、爬虫和开发',
+  filters: {
+    title: '过滤条件',
     browser: '浏览器',
-    browserVersion: '浏览器版本',
-    osVersion: '操作系统版本',
-    architecture: '架构',
-    engine: '浏览器引擎',
-    customization: '自定义选项'
+    os: '操作系统',
+    deviceType: '设备类型'
   },
-  deviceTypes: {
-    desktop: '桌面电脑',
-    mobile: '手机',
-    tablet: '平板电脑',
-    tv: '智能电视',
-    console: '游戏主机',
-    bot: '机器人/爬虫'
+  browsers: {
+    all: '所有浏览器',
+    chrome: 'Chrome',
+    firefox: 'Firefox',
+    safari: 'Safari',
+    opera: 'Opera',
+    edge: 'Edge',
+    ie: 'Internet Explorer',
+    unknown: '未知浏览器'
   },
-  platforms: {
+  operatingSystems: {
+    all: '所有系统',
     windows: 'Windows',
     macos: 'macOS',
     linux: 'Linux',
     android: 'Android',
     ios: 'iOS',
-    chromeos: 'Chrome OS'
+    unknown: '未知系统'
   },
-  browsers: {
-    chrome: 'Chrome',
-    firefox: 'Firefox',
-    safari: 'Safari',
-    edge: 'Edge',
-    opera: 'Opera',
-    ie: 'Internet Explorer'
+  deviceTypes: {
+    all: '所有设备',
+    desktop: '桌面电脑',
+    mobile: '移动设备',
+    tablet: '平板电脑',
+    unknown: '未知设备'
   },
-  architectures: {
-    x86: 'x86',
-    x64: 'x64',
-    arm: 'ARM',
-    arm64: 'ARM64'
+  generation: {
+    quantity: '生成数量',
+    generateRandom: '生成随机 User-Agent',
+    clearResults: '清空结果'
   },
-  engines: {
-    webkit: 'WebKit',
-    gecko: 'Gecko',
-    blink: 'Blink',
-    trident: 'Trident',
-    presto: 'Presto'
-  },
-  actions: {
-    generate: '生成用户代理',
-    copy: '复制用户代理',
-    randomize: '随机用户代理',
-    clear: '清除',
-    addToList: '添加到列表',
-    saveAs: '另存为...'
-  },
-  output: {
-    result: '生成的用户代理',
-    preview: '浏览器预览',
-    saved: '已保存的用户代理',
-    copySuccess: '用户代理已复制到剪贴板'
-  },
-  customPresets: {
-    title: '自定义预设',
-    save: '保存当前',
-    delete: '删除',
-    load: '加载预设',
-    noPresets: '没有已保存的预设'
-  },
-  predefined: {
-    title: '常用用户代理',
-    latestBrowsers: '最新浏览器',
-    mobileDevices: '移动设备',
-    searchEngineBots: '搜索引擎机器人',
-    oldBrowsers: '旧版浏览器'
+  results: {
+    title: '生成结果',
+    copyAll: '复制全部',
+    empty: '请点击"生成随机 User-Agent"按钮生成结果'
   },
   messages: {
-    presetSaved: '预设保存成功',
-    presetDeleted: '预设已删除',
-    invalidUserAgent: '无效的用户代理格式'
+    copied: '已复制到剪贴板',
+    allCopied: '所有 User-Agent 已复制到剪贴板',
+    copyFailed: '复制失败，请手动复制'
+  },
+  info: {
+    formatTitle: 'User-Agent 格式说明',
+    formatDescription: 'User-Agent 字符串通常包含浏览器名称、版本、操作系统和设备信息等，格式如下：',
+    formatExample: 'Mozilla/5.0 (平台信息) 引擎信息 浏览器信息',
+    examplesTitle: '常见 User-Agent 示例：',
+    chromeWindows: 'Chrome (Windows):',
+    firefoxMac: 'Firefox (macOS):',
+    safariIOS: 'Safari (iOS):',
+    useCasesTitle: '使用场景：',
+    useCases: [
+      '网站兼容性测试',
+      '爬虫和数据采集',
+      'API开发和测试',
+      '绕过浏览器检测',
+      '模拟不同设备访问'
+    ]
   }
 } 

@@ -1,84 +1,68 @@
 export default {
-  name: 'User Agent Generator',
-  description: 'Generate and customize user agent strings for testing and development',
-  options: {
-    deviceType: 'Device Type',
-    platform: 'Platform',
+  name: 'User-Agent Generator',
+  description: 'Generate User-Agent strings for various browsers and devices for website testing, web scraping, and development',
+  filters: {
+    title: 'Filter Options',
     browser: 'Browser',
-    browserVersion: 'Browser Version',
-    osVersion: 'OS Version',
-    architecture: 'Architecture',
-    engine: 'Browser Engine',
-    customization: 'Customization Options'
+    os: 'Operating System',
+    deviceType: 'Device Type'
   },
-  deviceTypes: {
-    desktop: 'Desktop',
-    mobile: 'Mobile',
-    tablet: 'Tablet',
-    tv: 'Smart TV',
-    console: 'Game Console',
-    bot: 'Bot/Crawler'
+  browsers: {
+    all: 'All Browsers',
+    chrome: 'Chrome',
+    firefox: 'Firefox',
+    safari: 'Safari',
+    opera: 'Opera',
+    edge: 'Edge',
+    ie: 'Internet Explorer',
+    unknown: 'Unknown Browser'
   },
-  platforms: {
+  operatingSystems: {
+    all: 'All Operating Systems',
     windows: 'Windows',
     macos: 'macOS',
     linux: 'Linux',
     android: 'Android',
     ios: 'iOS',
-    chromeos: 'Chrome OS'
+    unknown: 'Unknown OS'
   },
-  browsers: {
-    chrome: 'Chrome',
-    firefox: 'Firefox',
-    safari: 'Safari',
-    edge: 'Edge',
-    opera: 'Opera',
-    ie: 'Internet Explorer'
+  deviceTypes: {
+    all: 'All Devices',
+    desktop: 'Desktop',
+    mobile: 'Mobile',
+    tablet: 'Tablet',
+    unknown: 'Unknown Device'
   },
-  architectures: {
-    x86: 'x86',
-    x64: 'x64',
-    arm: 'ARM',
-    arm64: 'ARM64'
+  generation: {
+    quantity: 'Quantity',
+    generateRandom: 'Generate Random User-Agents',
+    clearResults: 'Clear Results'
   },
-  engines: {
-    webkit: 'WebKit',
-    gecko: 'Gecko',
-    blink: 'Blink',
-    trident: 'Trident',
-    presto: 'Presto'
-  },
-  actions: {
-    generate: 'Generate User Agent',
-    copy: 'Copy User Agent',
-    randomize: 'Random User Agent',
-    clear: 'Clear',
-    addToList: 'Add to List',
-    saveAs: 'Save As...'
-  },
-  output: {
-    result: 'Generated User Agent',
-    preview: 'Browser Preview',
-    saved: 'Saved User Agents',
-    copySuccess: 'User agent copied to clipboard'
-  },
-  customPresets: {
-    title: 'Custom Presets',
-    save: 'Save Current',
-    delete: 'Delete',
-    load: 'Load Preset',
-    noPresets: 'No saved presets'
-  },
-  predefined: {
-    title: 'Common User Agents',
-    latestBrowsers: 'Latest Browsers',
-    mobileDevices: 'Mobile Devices',
-    searchEngineBots: 'Search Engine Bots',
-    oldBrowsers: 'Old Browsers'
+  results: {
+    title: 'Results',
+    copyAll: 'Copy All',
+    empty: 'Click "Generate Random User-Agents" button to generate results'
   },
   messages: {
-    presetSaved: 'Preset saved successfully',
-    presetDeleted: 'Preset deleted',
-    invalidUserAgent: 'Invalid user agent format'
+    copied: 'Copied to clipboard',
+    allCopied: 'All User-Agents copied to clipboard',
+    copyFailed: 'Copy failed, please try manually'
+  },
+  info: {
+    formatTitle: 'User-Agent Format Guide',
+    formatDescription: 'User-Agent strings typically contain browser name, version, operating system, and device information, formatted as:',
+    formatExample: 'Mozilla/5.0 (Platform Information) Engine Information Browser Information',
+    examplesTitle: 'Common User-Agent Examples:',
+    chromeWindows: 'Chrome (Windows):',
+    firefoxMac: 'Firefox (macOS):',
+    safariIOS: 'Safari (iOS):',
+    useCasesTitle: 'Use Cases:',
+    useCases: [
+      'Website compatibility testing',
+      'Web scraping and data collection',
+      'API development and testing',
+      'Bypassing browser detection',
+      'Simulating different device access'
+    ]
   }
 } 

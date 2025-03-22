@@ -6,14 +6,14 @@
         <!-- 连接部分 -->
         <div class="flex-grow">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            WebSocket地址
+            {{ t('tools.websocket-tester.connection.url') }}
           </label>
           <div class="flex">
             <input 
               type="text"
               v-model="socketUrl"
               :disabled="connected"
-              placeholder="例如: ws://echo.websocket.org"
+              :placeholder="t('tools.websocket-tester.connection.urlPlaceholder')"
               class="flex-grow px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
             />
             <button 
@@ -21,7 +21,7 @@
               class="px-4 py-2 rounded-r-md border border-gray-300 dark:border-gray-600"
               :class="connected ? 'bg-red-500 hover:bg-red-600 text-white' : 'bg-green-500 hover:bg-green-600 text-white'"
             >
-              {{ connected ? '断开' : '连接' }}
+              {{ connected ? t('tools.websocket-tester.connection.disconnect') : t('tools.websocket-tester.connection.connect') }}
             </button>
           </div>
         </div>
@@ -29,13 +29,13 @@
         <!-- 子协议 -->
         <div class="w-full md:w-auto">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            子协议 (可选)
+            {{ t('tools.websocket-tester.connection.protocol') }}
           </label>
           <input 
             type="text"
             v-model="protocol"
             :disabled="connected"
-            placeholder="逗号分隔"
+            :placeholder="t('tools.websocket-tester.connection.protocolPlaceholder')"
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           />
         </div>
@@ -45,7 +45,7 @@
       <div class="flex flex-wrap gap-4 mb-4">
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            选项
+            {{ t('tools.websocket-tester.options.title') }}
           </label>
           <div class="space-y-2">
             <div class="flex items-center">
@@ -56,7 +56,7 @@
                 class="h-4 w-4 text-primary border-gray-300 rounded"
               />
               <label for="auto-reconnect" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                自动重连
+                {{ t('tools.websocket-tester.connection.autoReconnect') }}
               </label>
             </div>
             <div class="flex items-center">
@@ -67,7 +67,7 @@
                 class="h-4 w-4 text-primary border-gray-300 rounded"
               />
               <label for="auto-scroll" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                自动滚动日志
+                {{ t('tools.websocket-tester.options.autoScroll') }}
               </label>
             </div>
           </div>
@@ -76,7 +76,7 @@
         <!-- 连接状态 -->
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            连接状态
+            {{ t('tools.websocket-tester.connection.status') }}
           </label>
           <div class="flex items-center">
             <span 
@@ -95,7 +95,7 @@
       </div>
       
       <div class="text-sm text-gray-600 dark:text-gray-400">
-        <p>WebSocket测试工具允许您连接到WebSocket服务器，发送消息并查看响应。</p>
+        <p>{{ t('tools.websocket-tester.description') }}</p>
       </div>
     </div>
     
@@ -105,31 +105,31 @@
       <div>
         <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
           <div class="flex justify-between items-center mb-2">
-            <h3 class="text-lg font-medium">发送消息</h3>
+            <h3 class="text-lg font-medium">{{ t('tools.websocket-tester.messages.send') }}</h3>
             <div class="space-x-2">
               <button 
                 @click="loadTemplate('json')"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
               >
-                JSON
+                {{ t('tools.websocket-tester.messages.templates.json') }}
               </button>
               <button 
                 @click="loadTemplate('text')"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
               >
-                文本
+                {{ t('tools.websocket-tester.messages.templates.text') }}
               </button>
               <button 
                 @click="clearMessage"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
               >
-                清空
+                {{ t('tools.websocket-tester.messages.clearButton') }}
               </button>
             </div>
           </div>
           <textarea 
             v-model="messageToSend"
-            placeholder="输入要发送的消息..."
+            :placeholder="t('tools.websocket-tester.messages.placeholder')"
             class="w-full min-h-[140px] px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono"
           ></textarea>
           <div class="mt-2 flex justify-between">
@@ -138,15 +138,15 @@
               :disabled="!connected || !messageToSend.trim()"
               class="px-4 py-2 rounded-md bg-primary hover:bg-primary-dark text-white disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              发送
+              {{ t('tools.websocket-tester.messages.sendButton') }}
             </button>
             <select 
               v-model="messageFormat"
               class="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
             >
-              <option value="text">纯文本</option>
-              <option value="json">JSON</option>
-              <option value="binary">二进制</option>
+              <option value="text">{{ t('tools.websocket-tester.messages.format.text') }}</option>
+              <option value="json">{{ t('tools.websocket-tester.messages.format.json') }}</option>
+              <option value="binary">{{ t('tools.websocket-tester.messages.format.binary') }}</option>
             </select>
           </div>
         </div>
@@ -154,17 +154,17 @@
         <!-- 保存的连接 -->
         <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 mt-4">
           <div class="flex justify-between items-center mb-2">
-            <h3 class="text-lg font-medium">保存的连接</h3>
+            <h3 class="text-lg font-medium">{{ t('tools.websocket-tester.savedConnections.title') }}</h3>
             <button 
               @click="saveCurrentConnection"
               class="px-2 py-1 text-xs rounded bg-primary text-white hover:bg-primary-dark"
             >
-              保存当前连接
+              {{ t('tools.websocket-tester.savedConnections.save') }}
             </button>
           </div>
           <div class="space-y-2">
             <div v-if="savedConnections.length === 0" class="text-gray-500 dark:text-gray-400 text-sm">
-              暂无保存的连接
+              {{ t('tools.websocket-tester.savedConnections.empty') }}
             </div>
             <div 
               v-for="(conn, index) in savedConnections" 
@@ -177,13 +177,13 @@
                   @click="loadConnection(conn)"
                   class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
                 >
-                  加载
+                  {{ t('tools.websocket-tester.savedConnections.load') }}
                 </button>
                 <button 
                   @click="removeSavedConnection(index)"
                   class="px-2 py-1 text-xs rounded bg-red-100 dark:bg-red-900 hover:bg-red-200 dark:hover:bg-red-800 text-red-800 dark:text-red-200"
                 >
-                  删除
+                  {{ t('tools.websocket-tester.savedConnections.delete') }}
                 </button>
               </div>
             </div>
@@ -195,19 +195,19 @@
       <div>
         <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 h-full">
           <div class="flex justify-between items-center mb-2">
-            <h3 class="text-lg font-medium">消息日志</h3>
+            <h3 class="text-lg font-medium">{{ t('tools.websocket-tester.messages.logs') }}</h3>
             <div class="space-x-2">
               <button 
                 @click="clearLogs"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
               >
-                清空日志
+                {{ t('tools.websocket-tester.messages.clearLogs') }}
               </button>
               <button 
                 @click="copyLogs"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
               >
-                复制日志
+                {{ t('tools.websocket-tester.messages.copyLogs') }}
               </button>
             </div>
           </div>
@@ -216,7 +216,7 @@
             class="h-[400px] overflow-y-auto border border-gray-200 dark:border-gray-700 rounded-md p-2 font-mono text-sm"
           >
             <div v-if="logs.length === 0" class="text-gray-500 dark:text-gray-400 text-center py-4">
-              连接后的消息将显示在这里
+              {{ t('tools.websocket-tester.messages.emptyLogs') }}
             </div>
             <div 
               v-for="(log, index) in logs" 
@@ -240,9 +240,9 @@
                   }"
                 >
                   {{ 
-                    log.type === 'sent' ? '发送 →' : 
-                    log.type === 'received' ? '接收 ←' : 
-                    log.type === 'error' ? '错误 !' : '信息' 
+                    log.type === 'sent' ? t('tools.websocket-tester.messages.types.sent') : 
+                    log.type === 'received' ? t('tools.websocket-tester.messages.types.received') : 
+                    log.type === 'error' ? t('tools.websocket-tester.messages.types.error') : t('tools.websocket-tester.messages.types.info')
                   }}
                 </span>
                 <div class="flex-grow">
@@ -258,9 +258,9 @@
     
     <!-- 示例服务器 -->
     <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 mb-6">
-      <h3 class="text-lg font-medium mb-2">测试服务器</h3>
+      <h3 class="text-lg font-medium mb-2">{{ t('tools.websocket-tester.testServers.title') }}</h3>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
-        以下是一些可用于测试的公共WebSocket服务器:
+        {{ t('tools.websocket-tester.testServers.description') }}
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div 
@@ -275,7 +275,7 @@
               @click="useTestServer(server)"
               class="px-2 py-1 text-xs rounded bg-primary text-white hover:bg-primary-dark"
             >
-              使用此服务器
+              {{ t('tools.websocket-tester.testServers.useServer') }}
             </button>
           </div>
         </div>
@@ -288,15 +288,15 @@
       class="fixed inset-0 bg-black/50 flex items-center justify-center z-10"
     >
       <div class="bg-white dark:bg-gray-800 rounded-md p-4 w-80">
-        <h3 class="text-lg font-medium mb-4">保存连接</h3>
+        <h3 class="text-lg font-medium mb-4">{{ t('tools.websocket-tester.savedConnections.saveConnection') }}</h3>
         <div class="mb-4">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            连接名称
+            {{ t('tools.websocket-tester.savedConnections.connectionName') }}
           </label>
           <input 
             type="text"
             v-model="connectionToSave.name"
-            placeholder="输入连接名称"
+            :placeholder="t('tools.websocket-tester.savedConnections.connectionName')"
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           />
         </div>
@@ -305,13 +305,13 @@
             @click="showSaveModal = false"
             class="px-3 py-1 rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
           >
-            取消
+            {{ t('tools.websocket-tester.savedConnections.cancel') }}
           </button>
           <button 
             @click="confirmSaveConnection"
             class="px-3 py-1 rounded bg-primary text-white hover:bg-primary-dark"
           >
-            保存
+            {{ t('tools.websocket-tester.savedConnections.save') }}
           </button>
         </div>
       </div>
@@ -321,6 +321,9 @@
 
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 连接状态
 const socketUrl = ref('wss://echo.websocket.org')
@@ -345,28 +348,27 @@ const showSaveModal = ref(false)
 const connectionToSave = ref({ name: '', url: '', protocol: '' })
 
 // 测试服务器
-// 测试服务器
 const testServers = [
   { 
     name: 'Echo Test', 
     url: 'wss://echo.websocket.org',
-    description: '安全的回显测试服务器，支持WSS连接' 
+    description: 'Secure echo test server, supports WSS connections'
   },
   { 
     name: 'WebSocket.org', 
     url: 'wss://ws.postman-echo.com/raw',
-    description: 'Postman提供的Echo服务，支持WSS' 
+    description: 'Postman Echo service, supports WSS'
   }
 ]
 
 // 计算属性
 const connectionStatus = computed(() => {
   if (connected.value) {
-    return '已连接'
+    return t('tools.websocket-tester.connection.connected')
   } else if (connectionAttempted.value) {
-    return '未连接'
+    return t('tools.websocket-tester.connection.disconnected')
   } else {
-    return '等待连接'
+    return t('tools.websocket-tester.connection.waiting')
   }
 })
 
@@ -406,7 +408,7 @@ function formatLogContent(content) {
       return content
     }
   } else if (content instanceof Blob || content instanceof ArrayBuffer) {
-    return '[二进制数据]'
+    return t('tools.websocket-tester.logs.binaryData', '[二进制数据]')
   } else {
     return JSON.stringify(content, null, 2)
   }
@@ -430,7 +432,7 @@ function toggleConnection() {
 // 连接WebSocket
 function connect() {
   if (!socketUrl.value) {
-    addLog('请输入有效的WebSocket URL', 'error')
+    addLog(t('tools.websocket-tester.logs.emptyMessage'), 'error')
     return
   }
 
@@ -442,7 +444,7 @@ function connect() {
   try {
     connectionAttempted.value = true
     
-    addLog(`正在连接到 ${socketUrl.value}...`, 'info')
+    addLog(t('tools.websocket-tester.logs.connectingTo', [socketUrl.value]), 'info')
     
     if (protocol.value) {
       ws.value = new WebSocket(socketUrl.value, protocol.value.split(',').map(p => p.trim()))
@@ -455,7 +457,7 @@ function connect() {
     ws.value.onerror = handleError
     ws.value.onclose = handleClose
   } catch (error) {
-    addLog(`连接错误: ${error.message}`, 'error')
+    addLog(t('tools.websocket-tester.logs.sendFailed', [error.message]), 'error')
     connectionAttempted.value = true
     connected.value = false
   }
@@ -481,7 +483,7 @@ function handleOpen(event) {
   connected.value = true
   connectionAttempted.value = true
   reconnectCount.value = 0
-  addLog('连接成功', 'info')
+  addLog(t('tools.websocket-tester.logs.connectionSuccess'), 'info')
 }
 
 function handleMessage(event) {
@@ -489,7 +491,7 @@ function handleMessage(event) {
 }
 
 function handleError(event) {
-  addLog('WebSocket错误', 'error')
+  addLog(t('tools.websocket-tester.logs.connectionError'), 'error')
   connected.value = false
 }
 
@@ -497,12 +499,12 @@ function handleClose(event) {
   connected.value = false
   
   const reason = event.reason ? ` - ${event.reason}` : ''
-  addLog(`连接关闭 (代码: ${event.code}${reason})`, 'info')
+  addLog(t('tools.websocket-tester.logs.connectionClosed', [event.code, reason]), 'info')
   
   // 尝试自动重连
   if (autoReconnect.value && !event.wasClean) {
     const delay = Math.min(1000 * Math.pow(1.5, reconnectCount.value), 30000) // 指数退避，最多30秒
-    addLog(`将在 ${Math.round(delay/1000)} 秒后尝试重新连接...`, 'info')
+    addLog(t('tools.websocket-tester.connection.reconnectMessage', [Math.round(delay/1000)]), 'info')
     
     reconnectTimer.value = setTimeout(() => {
       if (!connected.value) {
@@ -516,12 +518,12 @@ function handleClose(event) {
 // 发送消息
 function sendMessage() {
   if (!connected.value || !ws.value) {
-    addLog('未连接WebSocket', 'error')
+    addLog(t('tools.websocket-tester.logs.notConnected'), 'error')
     return
   }
   
   if (!messageToSend.value.trim()) {
-    addLog('消息不能为空', 'error')
+    addLog(t('tools.websocket-tester.logs.emptyMessage'), 'error')
     return
   }
   
@@ -534,7 +536,7 @@ function sendMessage() {
         // 验证JSON格式
         JSON.parse(data)
       } catch (e) {
-        addLog(`无效的JSON格式: ${e.message}`, 'error')
+        addLog(t('tools.websocket-tester.logs.invalidJson', [e.message]), 'error')
         return
       }
     } else if (messageFormat.value === 'binary') {
@@ -552,7 +554,7 @@ function sendMessage() {
       messageToSend.value = ''
     }
   } catch (error) {
-    addLog(`发送失败: ${error.message}`, 'error')
+    addLog(t('tools.websocket-tester.logs.sendFailed', [error.message]), 'error')
   }
 }
 
@@ -587,7 +589,7 @@ function useTestServer(server) {
   socketUrl.value = server.url
   connect()
   socketUrl.value = server.url
-  addLog(`已选择服务器: ${server.name}`, 'info')
+  addLog(t('tools.websocket-tester.logs.serverSelected', [server.name]), 'info')
 }
 
 // 清空消息
@@ -608,16 +610,16 @@ function copyLogs() {
   
   const text = logs.value.map(log => {
     const time = formatTime(log.timestamp)
-    const type = log.type === 'sent' ? '[发送]' : 
-                log.type === 'received' ? '[接收]' : 
-                log.type === 'error' ? '[错误]' : '[信息]'
+    const type = log.type === 'sent' ? t('tools.websocket-tester.messages.types.sent') : 
+                log.type === 'received' ? t('tools.websocket-tester.messages.types.received') : 
+                log.type === 'error' ? t('tools.websocket-tester.messages.types.error') : t('tools.websocket-tester.messages.types.info')
     return `${time} ${type} ${typeof log.content === 'string' ? log.content : JSON.stringify(log.content)}`
   }).join('\n')
   
   navigator.clipboard.writeText(text).then(() => {
-    addLog('日志已复制到剪贴板', 'info')
+    addLog(t('tools.websocket-tester.logs.copied'), 'info')
   }).catch(err => {
-    addLog(`复制失败: ${err.message}`, 'error')
+    addLog(t('tools.websocket-tester.logs.copyFailed', [err.message]), 'error')
   })
 }
 

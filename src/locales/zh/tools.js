@@ -40,7 +40,7 @@ import jsonValidator from './tools/json-validator.js';
 import urlParser from './tools/url-parser.js';
 import hexColorPicker from './tools/hex-color-picker.js';
 import csvJsonConverter from './tools/csv-json-converter.js';
-import XmlJsonConverter from './tools/xml-json-converter.js';
+import xmlJsonConverter from './tools/xml-json-converter.js';
 import jwtValidator from './tools/jwt-validator.js';
 import jsonSchemaValidator from './tools/json-schema-validator.js';
 import CssGradientGenerator from './tools/css-gradient-generator.js';
@@ -168,7 +168,7 @@ export default {
   'url-parser': urlParser,
   'hex-color-picker': hexColorPicker,
   'csv-json-converter': csvJsonConverter,
-  'xml-json-converter': XmlJsonConverter,
+  'xml-json-converter': xmlJsonConverter,
   'jwt-validator': jwtValidator,
   'json-schema-validator': jsonSchemaValidator,
   'css-gradient-generator': CssGradientGenerator,

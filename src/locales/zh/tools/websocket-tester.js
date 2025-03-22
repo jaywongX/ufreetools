@@ -1,131 +1,88 @@
 export default {
-  name: 'WebSocket测试工具',
-  description: '测试和调试WebSocket连接，实现实时消息交换',
+  name: 'WebSocket测试器',
+  description: '连接到WebSocket服务器，发送消息并查看响应',
   connection: {
-    title: '连接',
-    url: 'WebSocket URL',
-    urlPlaceholder: '例如：ws://example.com/socket 或 wss://secure.example.com',
-    protocol: '协议',
-    protocolPlaceholder: '可选子协议（逗号分隔）',
+    url: 'WebSocket地址',
+    urlPlaceholder: '例如: ws://echo.websocket.org',
+    protocol: '子协议 (可选)',
+    protocolPlaceholder: '逗号分隔',
     connect: '连接',
-    disconnect: '断开连接',
-    status: '状态',
+    disconnect: '断开',
+    status: '连接状态',
     connected: '已连接',
-    disconnected: '已断开连接',
-    connecting: '连接中...',
-    reconnect: '自动重连',
-    timeout: '连接超时（秒）',
-    pingInterval: 'Ping间隔（秒）',
-    connectionOptions: '连接选项',
-    headers: '自定义头部'
+    disconnected: '未连接',
+    waiting: '等待连接',
+    autoReconnect: '自动重连',
+    reconnectMessage: '将在 {0} 秒后尝试重新连接...'
   },
-  message: {
-    title: '消息',
-    send: '发送',
-    sent: '已发送',
-    received: '已接收',
-    type: '消息类型',
-    text: '文本',
-    binary: '二进制',
-    json: 'JSON',
-    hex: '十六进制',
-    time: '时间',
-    clear: '清除消息',
-    filter: '筛选消息',
-    incoming: '接收',
-    outgoing: '发送',
-    export: '导出消息',
-    format: '格式化',
-    validate: '验证',
-    messagePlaceholder: '输入要发送的消息',
-    binaryPlaceholder: '以十六进制格式输入二进制数据',
-    noMessages: '暂无消息',
-    uploadFile: '上传文件',
-    maxSize: '最大大小：5MB'
+  options: {
+    title: '选项',
+    autoScroll: '自动滚动日志'
   },
-  templates: {
-    title: '消息模板',
-    save: '保存当前',
-    manage: '管理模板',
-    selectTemplate: '选择模板',
-    noTemplates: '没有保存的模板',
-    templateName: '模板名称',
-    templateContent: '内容',
-    saveButton: '保存',
-    deleteButton: '删除',
-    namePlaceholder: '输入模板名称',
-    successSaved: '模板已保存',
-    successDeleted: '模板已删除',
-    confirmDelete: '确定要删除此模板吗？'
+  messages: {
+    send: '发送消息',
+    logs: '消息日志',
+    emptyLogs: '连接后的消息将显示在这里',
+    placeholder: '输入要发送的消息...',
+    sendButton: '发送',
+    clearButton: '清空',
+    copyButton: '复制',
+    clearLogs: '清空日志',
+    copyLogs: '复制日志',
+    format: {
+      title: '格式',
+      text: '纯文本',
+      json: 'JSON',
+      binary: '二进制'
+    },
+    templates: {
+      json: 'JSON',
+      text: '文本'
+    },
+    types: {
+      sent: '发送 →',
+      received: '接收 ←',
+      error: '错误 !',
+      info: '信息'
+    }
   },
-  tools: {
-    title: '工具',
-    ping: 'Ping/Pong',
-    echo: '回声测试',
-    loadTest: '负载测试',
-    messageGenerator: '消息生成器',
-    socketInfo: '连接信息',
-    throttle: '节流模拟器',
-    playback: '消息回放',
-    recording: '会话录制'
+  savedConnections: {
+    title: '保存的连接',
+    empty: '暂无保存的连接',
+    save: '保存当前连接',
+    saveConnection: '保存连接',
+    connectionName: '连接名称',
+    load: '加载',
+    delete: '删除',
+    cancel: '取消'
   },
-  loadTest: {
-    title: '负载测试',
-    connectionCount: '连接数',
-    messageRate: '每秒消息数',
-    messageSize: '消息大小（字节）',
-    duration: '持续时间（秒）',
-    rampUp: '增长时间（秒）',
-    start: '开始测试',
-    stop: '停止测试',
-    results: '结果',
-    connections: '连接',
-    messagesSent: '已发送消息',
-    messagesReceived: '已接收消息',
-    errors: '错误',
-    avgLatency: '平均延迟',
-    progress: '进度'
+  testServers: {
+    title: '测试服务器',
+    description: '以下是一些可用于测试的公共WebSocket服务器:',
+    useServer: '使用此服务器',
+    servers: {
+      echo: {
+        name: 'Echo测试',
+        description: '安全的回显测试服务器，支持WSS连接'
+      },
+      postman: {
+        name: 'WebSocket.org',
+        description: 'Postman提供的Echo服务，支持WSS'
+      }
+    }
   },
-  info: {
-    title: '连接信息',
-    url: 'WebSocket URL',
-    protocol: '协议',
-    state: '连接状态',
-    extensions: '扩展',
-    version: 'WebSocket版本',
-    ip: '服务器IP',
-    latency: '延迟',
-    messages: '交换的消息',
-    uptime: '连接时长',
-    trafficSent: '已发送流量',
-    trafficReceived: '已接收流量'
-  },
-  settings: {
-    title: '设置',
-    maxMessages: '最大消息数',
-    timeFormat: '时间格式',
-    timestamps: '显示时间戳',
-    autoScroll: '自动滚动',
-    formattedJson: '格式化JSON消息',
-    binaryType: '二进制类型',
-    blobType: 'Blob',
-    arrayBufferType: 'ArrayBuffer',
-    theme: '主题',
-    saveHistory: '保存消息历史',
-    notifyMessages: '消息通知',
-    validateSsl: '验证SSL证书'
-  },
-  notifications: {
-    connected: '已连接到{url}',
-    disconnected: '已从{url}断开连接',
-    error: '错误：{message}',
-    reconnecting: '重新连接中...',
-    messageSent: '消息已发送',
-    messageReceived: '消息已接收',
-    invalidFormat: '无效的消息格式',
-    failedConnection: '连接失败：{reason}',
-    exportComplete: '导出完成',
-    invalidJson: '无效的JSON',
-    socketClosed: 'WebSocket已关闭，代码{code}：{reason}'
+  logs: {
+    connectingTo: '正在连接到 {0}...',
+    connectionSuccess: '连接成功',
+    connectionError: 'WebSocket错误',
+    connectionClosed: '连接关闭 (代码: {0}{1})',
+    invalidJson: '无效的JSON格式: {0}',
+    sendFailed: '发送失败: {0}',
+    emptyMessage: '消息不能为空',
+    notConnected: '未连接WebSocket',
+    copied: '日志已复制到剪贴板',
+    copyFailed: '复制失败: {0}',
+    serverSelected: '已选择服务器: {0}',
+    binaryData: '[二进制数据]'
   }
 } 

@@ -2,59 +2,59 @@
   <div>
     <!-- 工具配置区域 -->
     <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">User-Agent 生成器</h2>
+      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.user-agent-generator.name') }}</h2>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        生成各种浏览器和设备的 User-Agent 字符串，用于网站测试、爬虫和开发
+        {{ $t('tools.user-agent-generator.description') }}
       </p>
       
       <!-- 过滤选项 -->
       <div class="mb-4">
-        <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">过滤条件</h3>
+        <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.user-agent-generator.filters.title') }}</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <!-- 浏览器选择 -->
           <div>
-            <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">浏览器</label>
+            <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('tools.user-agent-generator.filters.browser') }}</label>
             <select 
               v-model="filters.browser" 
               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
             >
-              <option value="">所有浏览器</option>
-              <option value="chrome">Chrome</option>
-              <option value="firefox">Firefox</option>
-              <option value="safari">Safari</option>
-              <option value="opera">Opera</option>
-              <option value="edge">Edge</option>
-              <option value="ie">Internet Explorer</option>
+              <option value="">{{ $t('tools.user-agent-generator.browsers.all') }}</option>
+              <option value="chrome">{{ $t('tools.user-agent-generator.browsers.chrome') }}</option>
+              <option value="firefox">{{ $t('tools.user-agent-generator.browsers.firefox') }}</option>
+              <option value="safari">{{ $t('tools.user-agent-generator.browsers.safari') }}</option>
+              <option value="opera">{{ $t('tools.user-agent-generator.browsers.opera') }}</option>
+              <option value="edge">{{ $t('tools.user-agent-generator.browsers.edge') }}</option>
+              <option value="ie">{{ $t('tools.user-agent-generator.browsers.ie') }}</option>
             </select>
           </div>
           
           <!-- 操作系统选择 -->
           <div>
-            <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">操作系统</label>
+            <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('tools.user-agent-generator.filters.os') }}</label>
             <select 
               v-model="filters.os" 
               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
             >
-              <option value="">所有系统</option>
-              <option value="windows">Windows</option>
-              <option value="macos">macOS</option>
-              <option value="linux">Linux</option>
-              <option value="android">Android</option>
-              <option value="ios">iOS</option>
+              <option value="">{{ $t('tools.user-agent-generator.operatingSystems.all') }}</option>
+              <option value="windows">{{ $t('tools.user-agent-generator.operatingSystems.windows') }}</option>
+              <option value="macos">{{ $t('tools.user-agent-generator.operatingSystems.macos') }}</option>
+              <option value="linux">{{ $t('tools.user-agent-generator.operatingSystems.linux') }}</option>
+              <option value="android">{{ $t('tools.user-agent-generator.operatingSystems.android') }}</option>
+              <option value="ios">{{ $t('tools.user-agent-generator.operatingSystems.ios') }}</option>
             </select>
           </div>
           
           <!-- 设备类型选择 -->
           <div>
-            <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">设备类型</label>
+            <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('tools.user-agent-generator.filters.deviceType') }}</label>
             <select 
               v-model="filters.deviceType" 
               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
             >
-              <option value="">所有设备</option>
-              <option value="desktop">桌面电脑</option>
-              <option value="mobile">移动设备</option>
-              <option value="tablet">平板电脑</option>
+              <option value="">{{ $t('tools.user-agent-generator.deviceTypes.all') }}</option>
+              <option value="desktop">{{ $t('tools.user-agent-generator.deviceTypes.desktop') }}</option>
+              <option value="mobile">{{ $t('tools.user-agent-generator.deviceTypes.mobile') }}</option>
+              <option value="tablet">{{ $t('tools.user-agent-generator.deviceTypes.tablet') }}</option>
             </select>
           </div>
         </div>
@@ -63,7 +63,7 @@
       <!-- 生成数量和操作按钮 -->
       <div class="flex flex-col sm:flex-row gap-4 mb-4">
         <div class="w-full sm:w-1/3">
-          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">生成数量</label>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('tools.user-agent-generator.generation.quantity') }}</label>
           <input 
             v-model.number="generateCount" 
             type="number" 
@@ -77,13 +77,13 @@
             @click="generateRandomUserAgents" 
             class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark flex-1"
           >
-            生成随机 User-Agent
+            {{ $t('tools.user-agent-generator.generation.generateRandom') }}
           </button>
           <button 
             @click="clearResults" 
             class="px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-md"
           >
-            清空结果
+            {{ $t('tools.user-agent-generator.generation.clearResults') }}
           </button>
         </div>
       </div>
@@ -92,7 +92,7 @@
     <!-- 结果展示区域 -->
     <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
       <div class="flex justify-between items-center mb-4">
-        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">生成结果</h3>
+        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">{{ $t('tools.user-agent-generator.results.title') }}</h3>
         <button 
           v-if="userAgents.length > 0"
           @click="copyAllUserAgents" 
@@ -101,12 +101,12 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
           </svg>
-          复制全部
+          {{ $t('tools.user-agent-generator.results.copyAll') }}
         </button>
       </div>
       
       <div v-if="userAgents.length === 0" class="text-center py-8 text-gray-500 dark:text-gray-400">
-        请点击"生成随机 User-Agent"按钮生成结果
+        {{ $t('tools.user-agent-generator.results.empty') }}
       </div>
       
       <div v-else class="space-y-3">
@@ -128,7 +128,7 @@
             <button 
               @click="copyUserAgent(ua)" 
               class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-              title="复制到剪贴板"
+              :title="$t('tools.user-agent-generator.messages.copied')"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -144,26 +144,24 @@
     
     <!-- 常用 User-Agent 说明 -->
     <div class="mt-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">User-Agent 格式说明</h3>
+      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">{{ $t('tools.user-agent-generator.info.formatTitle') }}</h3>
       
       <div class="text-sm text-gray-600 dark:text-gray-400 space-y-2">
-        <p>User-Agent 字符串通常包含浏览器名称、版本、操作系统和设备信息等，格式如下：</p>
-        <pre class="bg-gray-50 dark:bg-gray-750 p-3 rounded-md border border-gray-200 dark:border-gray-700 text-xs font-mono overflow-x-auto">Mozilla/5.0 (平台信息) 引擎信息 浏览器信息</pre>
+        <p>{{ $t('tools.user-agent-generator.info.formatDescription') }}</p>
+        <pre class="bg-gray-50 dark:bg-gray-750 p-3 rounded-md border border-gray-200 dark:border-gray-700 text-xs font-mono overflow-x-auto">{{ $t('tools.user-agent-generator.info.formatExample') }}</pre>
         
-        <h4 class="font-medium text-gray-700 dark:text-gray-300 mt-4">常见 User-Agent 示例：</h4>
+        <h4 class="font-medium text-gray-700 dark:text-gray-300 mt-4">{{ $t('tools.user-agent-generator.info.examplesTitle') }}</h4>
         <ul class="list-disc pl-5 space-y-1">
-          <li><strong>Chrome (Windows):</strong> <span class="text-xs font-mono">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36</span></li>
-          <li><strong>Firefox (macOS):</strong> <span class="text-xs font-mono">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0</span></li>
-          <li><strong>Safari (iOS):</strong> <span class="text-xs font-mono">Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1</span></li>
+          <li><strong>{{ $t('tools.user-agent-generator.info.chromeWindows') }}</strong> <span class="text-xs font-mono">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36</span></li>
+          <li><strong>{{ $t('tools.user-agent-generator.info.firefoxMac') }}</strong> <span class="text-xs font-mono">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0</span></li>
+          <li><strong>{{ $t('tools.user-agent-generator.info.safariIOS') }}</strong> <span class="text-xs font-mono">Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1</span></li>
         </ul>
         
-        <h4 class="font-medium text-gray-700 dark:text-gray-300 mt-4">使用场景：</h4>
+        <h4 class="font-medium text-gray-700 dark:text-gray-300 mt-4">{{ $t('tools.user-agent-generator.info.useCasesTitle') }}</h4>
         <ul class="list-disc pl-5 space-y-1">
-          <li>网站兼容性测试</li>
-          <li>爬虫和数据采集</li>
-          <li>API开发和测试</li>
-          <li>绕过浏览器检测</li>
-          <li>模拟不同设备访问</li>
+          <li v-for="(useCase, index) in $t('tools.user-agent-generator.info.useCases')" :key="index">
+            {{ useCase }}
+          </li>
         </ul>
       </div>
     </div>
@@ -171,8 +169,11 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive } from 'vue'
 import randomUseragent from 'random-useragent'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 过滤条件
 const filters = reactive({
@@ -265,11 +266,11 @@ function clearResults() {
 function copyUserAgent(ua) {
   navigator.clipboard.writeText(ua)
     .then(() => {
-      alert('已复制到剪贴板')
+      alert(t('tools.user-agent-generator.messages.copied'))
     })
     .catch(err => {
       console.error('复制失败:', err)
-      alert('复制失败，请手动复制')
+      alert(t('tools.user-agent-generator.messages.copyFailed'))
     })
 }
 
@@ -281,11 +282,11 @@ function copyAllUserAgents() {
   
   navigator.clipboard.writeText(text)
     .then(() => {
-      alert('已复制所有User-Agent到剪贴板')
+      alert(t('tools.user-agent-generator.messages.allCopied'))
     })
     .catch(err => {
       console.error('复制失败:', err)
-      alert('复制失败，请手动复制')
+      alert(t('tools.user-agent-generator.messages.copyFailed'))
     })
 }
 
@@ -294,7 +295,7 @@ function getBrowserIconAndName(ua) {
   try {
     // 使用自定义解析函数
     const info = parseUserAgent(ua)
-    if (!info || !info.browser.name) return '未知浏览器'
+    if (!info || !info.browser.name) return t('tools.user-agent-generator.browsers.unknown')
     
     const browserName = info.browser.name
     const version = info.browser.version ? ` ${info.browser.version}` : ''
@@ -302,7 +303,7 @@ function getBrowserIconAndName(ua) {
     return `${browserName}${version}`
   } catch (err) {
     console.error('解析浏览器信息失败:', err)
-    return '未知浏览器'
+    return t('tools.user-agent-generator.browsers.unknown')
   }
 }
 
@@ -311,12 +312,12 @@ function getOSName(ua) {
   try {
     // 使用自定义解析函数
     const info = parseUserAgent(ua)
-    if (!info || !info.os.name) return '未知系统'
+    if (!info || !info.os.name) return t('tools.user-agent-generator.operatingSystems.unknown')
     
     return info.os.name
   } catch (err) {
     console.error('解析操作系统信息失败:', err)
-    return '未知系统'
+    return t('tools.user-agent-generator.operatingSystems.unknown')
   }
 }
 
@@ -328,9 +329,9 @@ function getDeviceType(ua) {
     if (!info || !info.device.type) return null
     
     const deviceTypeMap = {
-      'mobile': '移动设备',
-      'desktop': '桌面电脑',
-      'tablet': '平板电脑'
+      'mobile': t('tools.user-agent-generator.deviceTypes.mobile'),
+      'desktop': t('tools.user-agent-generator.deviceTypes.desktop'),
+      'tablet': t('tools.user-agent-generator.deviceTypes.tablet')
     }
     
     return deviceTypeMap[info.device.type] || info.device.type
@@ -346,24 +347,24 @@ function parseUserAgent(uaString) {
   const result = {
     ua: uaString,
     browser: {
-      name: '未知',
-      version: '未知'
+      name: t('tools.user-agent-generator.browsers.unknown'),
+      version: t('tools.user-agent-generator.operatingSystems.unknown')
     },
     engine: {
-      name: '未知',
-      version: '未知'
+      name: t('tools.user-agent-generator.operatingSystems.unknown'),
+      version: t('tools.user-agent-generator.operatingSystems.unknown')
     },
     os: {
-      name: '未知',
-      version: '未知'
+      name: t('tools.user-agent-generator.operatingSystems.unknown'),
+      version: t('tools.user-agent-generator.operatingSystems.unknown')
     },
     device: {
-      model: '未知',
-      type: '未知',
-      vendor: '未知'
+      model: t('tools.user-agent-generator.deviceTypes.unknown'),
+      type: t('tools.user-agent-generator.deviceTypes.unknown'),
+      vendor: t('tools.user-agent-generator.deviceTypes.unknown')
     },
     cpu: {
-      architecture: '未知'
+      architecture: t('tools.user-agent-generator.operatingSystems.unknown')
     }
   }
 
@@ -465,7 +466,7 @@ function parseUserAgent(uaString) {
 // 获取版本号（通用方法）
 function getVersion(uaString, versionMarker) {
   const versionIndex = uaString.indexOf(versionMarker)
-  if (versionIndex === -1) return '未知'
+  if (versionIndex === -1) return t('tools.user-agent-generator.operatingSystems.unknown')
   
   const versionStart = versionIndex + versionMarker.length
   const versionEnd = uaString.indexOf(' ', versionStart)
@@ -480,7 +481,7 @@ function getVersion(uaString, versionMarker) {
 // 获取IE11版本号
 function getIE11Version(uaString) {
   const matches = uaString.match(/rv:(\d+\.\d+)/)
-  return matches ? matches[1] : '未知'
+  return matches ? matches[1] : t('tools.user-agent-generator.operatingSystems.unknown')
 }
 
 // 获取Windows版本
@@ -492,7 +493,7 @@ function getWindowsVersion(uaString) {
   if (uaString.includes('Windows NT 6.0')) return 'Vista'
   if (uaString.includes('Windows NT 5.1')) return 'XP'
   if (uaString.includes('Windows NT 5.0')) return '2000'
-  return '未知'
+  return t('tools.user-agent-generator.operatingSystems.unknown')
 }
 
 // 获取macOS版本
@@ -501,7 +502,7 @@ function getMacOSVersion(uaString) {
   if (matches) {
     return matches[1].replace(/_/g, '.')
   }
-  return '未知'
+  return t('tools.user-agent-generator.operatingSystems.unknown')
 }
 
 // 获取iOS版本
@@ -510,18 +511,18 @@ function getIOSVersion(uaString) {
   if (matches) {
     return matches[1].replace(/_/g, '.')
   }
-  return '未知'
+  return t('tools.user-agent-generator.operatingSystems.unknown')
 }
 
 // 获取三星设备型号
 function getSamsungModel(uaString) {
   const matches = uaString.match(/SM-[A-Z0-9]+/i)
-  return matches ? matches[0] : '未知三星设备'
+  return matches ? matches[0] : t('tools.user-agent-generator.deviceTypes.unknown')
 }
 
 // 获取Google Pixel型号
 function getGooglePixelModel(uaString) {
   const matches = uaString.match(/Pixel [0-9]+/i)
-  return matches ? matches[0] : '未知Pixel设备'
+  return matches ? matches[0] : t('tools.user-agent-generator.deviceTypes.unknown')
 }
 </script> 

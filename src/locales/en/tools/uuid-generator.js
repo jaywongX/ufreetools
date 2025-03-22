@@ -1,13 +1,12 @@
 export default {
   name: 'UUID Generator',
-  description: 'Generate random UUIDs and GUIDs with customizable options',
+  description: 'Generate random UUIDs and GUIDs with customizable options, useful for database keys, temporary filenames, etc.',
   options: {
     version: 'UUID Version',
     quantity: 'Quantity',
-    format: 'Output Format',
-    uppercase: 'Uppercase',
-    braces: 'Include Braces',
-    hyphens: 'Include Hyphens'
+    format: 'Format Options',
+    includeDash: 'Include Hyphens (-)',
+    generateCount: 'Number of UUIDs'
   },
   versions: {
     v1: 'Version 1 (Time-based)',
@@ -15,17 +14,24 @@ export default {
     v5: 'Version 5 (Namespace)',
     custom: 'Custom'
   },
+  quantities: {
+    single: 'Single',
+    five: '5 UUIDs',
+    ten: '10 UUIDs',
+    twenty: '20 UUIDs'
+  },
   formats: {
     default: 'Default',
     base64: 'Base64',
     binary: 'Binary',
-    hex: 'Hexadecimal'
+    hex: 'Hexadecimal',
+    noDash: 'No Hyphens'
   },
   actions: {
     generate: 'Generate UUID',
     copy: 'Copy',
     copyAll: 'Copy All',
-    clear: 'Clear',
+    clear: 'Clear Results',
     download: 'Download as TXT'
   },
   messages: {
@@ -33,6 +39,7 @@ export default {
     generated: 'UUIDs generated successfully',
     tooMany: 'Maximum allowed quantity is 1000',
     invalidVersion: 'Invalid UUID version',
-    invalidNamespace: 'Invalid namespace UUID'
+    invalidNamespace: 'Invalid namespace UUID',
+    copyFailed: 'Copy failed'
   }
 } 

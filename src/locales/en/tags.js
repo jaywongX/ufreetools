@@ -53,6 +53,7 @@ export default {
   html: 'HTML',
   'user-agent': 'User Agent',
   ip: 'IP Address',
+  websocket: 'WebSocket',
   
   // Media Tags
   image: 'Image',

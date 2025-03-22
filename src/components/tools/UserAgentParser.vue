@@ -4,20 +4,20 @@
     <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
       <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          用户代理 (User-Agent) 字符串
+          {{ $t('tools.user-agent-parser.input.label') }}
         </label>
         <div class="flex">
           <textarea 
             v-model="userAgent" 
             class="flex-1 w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
             rows="3"
-            placeholder="输入或粘贴用户代理字符串..."
+            :placeholder="$t('tools.user-agent-parser.input.placeholder')"
           ></textarea>
           <button 
             @click="parseUA" 
             class="px-4 py-2 bg-primary text-white rounded-r-md hover:bg-primary-dark"
           >
-            解析
+            {{ $t('tools.user-agent-parser.actions.parse') }}
           </button>
         </div>
         <div class="flex mt-2 space-x-2">
@@ -28,7 +28,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
             </svg>
-            检测当前浏览器
+            {{ $t('tools.user-agent-parser.actions.detect') }}
           </button>
           <button 
             @click="clearInput" 
@@ -37,7 +37,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
-            清空
+            {{ $t('tools.user-agent-parser.actions.clear') }}
           </button>
         </div>
         <div v-if="parsingError" class="mt-2 text-sm text-red-500">
@@ -46,22 +46,22 @@
       </div>
       
       <div class="text-sm text-gray-600 dark:text-gray-400">
-        <p>用户代理(User-Agent)是浏览器发送给服务器的标识字符串，包含浏览器、操作系统和设备等信息。</p>
-        <p class="mt-1">常用于网站分析、浏览器兼容性处理和设备适配等场景。</p>
+        <p>{{ $t('tools.user-agent-parser.tips.description') }}</p>
+        <p class="mt-1">{{ $t('tools.user-agent-parser.tips.useCases') }}</p>
       </div>
     </div>
     
     <!-- 解析结果区域 -->
     <div v-if="parsedResult" class="bg-white dark:bg-gray-800 rounded-md overflow-hidden border border-gray-200 dark:border-gray-700">
       <div class="border-b border-gray-200 dark:border-gray-700 px-4 py-3">
-        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">解析结果</h3>
+        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">{{ $t('tools.user-agent-parser.results.title') }}</h3>
       </div>
       
       <!-- 摘要视图 -->
       <div class="p-4 bg-gray-50 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
         <div class="flex flex-wrap gap-4">
           <div class="bg-white dark:bg-gray-800 rounded-md p-3 border border-gray-200 dark:border-gray-600 flex-1 min-w-[200px]">
-            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1">浏览器</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1">{{ $t('tools.user-agent-parser.sections.browser') }}</div>
             <div class="flex items-center">
               <span 
                 class="w-8 h-8 rounded flex items-center justify-center mr-2"
@@ -73,13 +73,13 @@
               </span>
               <div>
                 <div class="font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.browser.name }}</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">版本 {{ parsedResult.browser.version }}</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">{{ $t('tools.user-agent-parser.fields.version') }} {{ parsedResult.browser.version }}</div>
               </div>
             </div>
           </div>
           
           <div class="bg-white dark:bg-gray-800 rounded-md p-3 border border-gray-200 dark:border-gray-600 flex-1 min-w-[200px]">
-            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1">操作系统</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1">{{ $t('tools.user-agent-parser.sections.os') }}</div>
             <div class="flex items-center">
               <span 
                 class="w-8 h-8 rounded flex items-center justify-center mr-2"
@@ -91,13 +91,13 @@
               </span>
               <div>
                 <div class="font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.os.name }}</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">版本 {{ parsedResult.os.version || '未知' }}</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">{{ $t('tools.user-agent-parser.fields.version') }} {{ parsedResult.os.version || $t('tools.user-agent-parser.messages.unknown') }}</div>
               </div>
             </div>
           </div>
           
           <div class="bg-white dark:bg-gray-800 rounded-md p-3 border border-gray-200 dark:border-gray-600 flex-1 min-w-[200px]">
-            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1">设备</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400 mb-1">{{ $t('tools.user-agent-parser.sections.device') }}</div>
             <div class="flex items-center">
               <span 
                 class="w-8 h-8 rounded flex items-center justify-center mr-2"
@@ -120,7 +120,7 @@
       <div class="p-4">
         <!-- 原始UA -->
         <div class="mb-4">
-          <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">原始用户代理字符串</h4>
+          <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ $t('tools.user-agent-parser.results.originalUA') }}</h4>
           <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded-md text-sm font-mono text-gray-600 dark:text-gray-300 overflow-x-auto">
             {{ parsedResult.ua }}
           </div>
@@ -130,21 +130,21 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <!-- 浏览器信息 -->
           <div>
-            <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">浏览器信息</h4>
+            <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.user-agent-parser.sections.browser') }}</h4>
             <table class="w-full text-sm">
               <tbody>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">名称</td>
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">{{ $t('tools.user-agent-parser.fields.name') }}</td>
                   <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.browser.name }}</td>
                 </tr>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">版本</td>
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">{{ $t('tools.user-agent-parser.fields.version') }}</td>
                   <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.browser.version }}</td>
                 </tr>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">引擎</td>
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">{{ $t('tools.user-agent-parser.fields.engine') }}</td>
                   <td class="py-2 font-medium text-gray-800 dark:text-gray-200">
-                    {{ parsedResult.engine.name || '未知' }} {{ parsedResult.engine.version || '' }}
+                    {{ parsedResult.engine.name || $t('tools.user-agent-parser.messages.unknown') }} {{ parsedResult.engine.version || '' }}
                   </td>
                 </tr>
               </tbody>
@@ -153,20 +153,20 @@
           
           <!-- 操作系统信息 -->
           <div>
-            <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">操作系统信息</h4>
+            <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.user-agent-parser.sections.os') }}</h4>
             <table class="w-full text-sm">
               <tbody>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">名称</td>
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">{{ $t('tools.user-agent-parser.fields.name') }}</td>
                   <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.os.name }}</td>
                 </tr>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">版本</td>
-                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.os.version || '未知' }}</td>
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">{{ $t('tools.user-agent-parser.fields.version') }}</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.os.version || $t('tools.user-agent-parser.messages.unknown') }}</td>
                 </tr>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">平台</td>
-                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.cpu.architecture || '未知' }}</td>
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">{{ $t('tools.user-agent-parser.fields.platform') }}</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.cpu.architecture || $t('tools.user-agent-parser.messages.unknown') }}</td>
                 </tr>
               </tbody>
             </table>
@@ -174,20 +174,20 @@
           
           <!-- 设备信息 -->
           <div>
-            <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">设备信息</h4>
+            <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.user-agent-parser.sections.device') }}</h4>
             <table class="w-full text-sm">
               <tbody>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">类型</td>
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">{{ $t('tools.user-agent-parser.fields.type') }}</td>
                   <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ getDeviceTypeName(parsedResult.device.type) }}</td>
                 </tr>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">品牌</td>
-                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.vendor || '未知' }}</td>
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">{{ $t('tools.user-agent-parser.fields.vendor') }}</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.vendor || $t('tools.user-agent-parser.messages.unknown') }}</td>
                 </tr>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">型号</td>
-                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.model || '未知' }}</td>
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">{{ $t('tools.user-agent-parser.fields.model') }}</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.model || $t('tools.user-agent-parser.messages.unknown') }}</td>
                 </tr>
               </tbody>
             </table>
@@ -195,20 +195,20 @@
           
           <!-- 其他信息 -->
           <div>
-            <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">其他信息</h4>
+            <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.user-agent-parser.sections.other') }}</h4>
             <table class="w-full text-sm">
               <tbody>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">移动设备</td>
-                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.type === 'mobile' ? '是' : '否' }}</td>
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400 w-1/3">{{ $t('tools.user-agent-parser.fields.isMobile') }}</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.type === 'mobile' ? $t('tools.user-agent-parser.messages.yes') : $t('tools.user-agent-parser.messages.no') }}</td>
                 </tr>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">平板电脑</td>
-                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.type === 'tablet' ? '是' : '否' }}</td>
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">{{ $t('tools.user-agent-parser.fields.isTablet') }}</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.type === 'tablet' ? $t('tools.user-agent-parser.messages.yes') : $t('tools.user-agent-parser.messages.no') }}</td>
                 </tr>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">桌面设备</td>
-                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.type === 'desktop' ? '是' : '否' }}</td>
+                  <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">{{ $t('tools.user-agent-parser.fields.isDesktop') }}</td>
+                  <td class="py-2 font-medium text-gray-800 dark:text-gray-200">{{ parsedResult.device.type === 'desktop' ? $t('tools.user-agent-parser.messages.yes') : $t('tools.user-agent-parser.messages.no') }}</td>
                 </tr>
               </tbody>
             </table>
@@ -222,13 +222,16 @@
       v-else
       class="bg-white dark:bg-gray-800 rounded-md p-8 text-center border border-gray-200 dark:border-gray-700"
     >
-      <p class="text-gray-600 dark:text-gray-400">输入用户代理字符串并点击"解析"来查看详细信息</p>
+      <p class="text-gray-600 dark:text-gray-400">{{ $t('tools.user-agent-parser.messages.emptyInput') }}</p>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 状态变量
 const userAgent = ref('')
@@ -243,7 +246,7 @@ onMounted(() => {
 // 解析用户代理字符串
 function parseUA() {
   if (!userAgent.value.trim()) {
-    parsingError.value = '请输入用户代理字符串'
+    parsingError.value = t('tools.user-agent-parser.messages.emptyInput')
     return
   }
   
@@ -251,7 +254,7 @@ function parseUA() {
     parsingError.value = ''
     parsedResult.value = parseUserAgent(userAgent.value)
   } catch (error) {
-    parsingError.value = '解析用户代理字符串时出错: ' + error.message
+    parsingError.value = t('tools.user-agent-parser.messages.parsingError') + ': ' + error.message
     console.error('UA解析错误:', error)
   }
 }
@@ -275,24 +278,24 @@ function parseUserAgent(uaString) {
   const result = {
     ua: uaString,
     browser: {
-      name: '未知',
-      version: '未知'
+      name: t('tools.user-agent-parser.messages.unknown'),
+      version: t('tools.user-agent-parser.messages.unknown')
     },
     engine: {
-      name: '未知',
-      version: '未知'
+      name: t('tools.user-agent-parser.messages.unknown'),
+      version: t('tools.user-agent-parser.messages.unknown')
     },
     os: {
-      name: '未知',
-      version: '未知'
+      name: t('tools.user-agent-parser.messages.unknown'),
+      version: t('tools.user-agent-parser.messages.unknown')
     },
     device: {
-      model: '未知',
-      type: '未知',
-      vendor: '未知'
+      model: t('tools.user-agent-parser.messages.unknown'),
+      type: t('tools.user-agent-parser.messages.unknown'),
+      vendor: t('tools.user-agent-parser.messages.unknown')
     },
     cpu: {
-      architecture: '未知'
+      architecture: t('tools.user-agent-parser.messages.unknown')
     }
   }
 
@@ -394,7 +397,7 @@ function parseUserAgent(uaString) {
 // 获取版本号（通用方法）
 function getVersion(uaString, versionMarker) {
   const versionIndex = uaString.indexOf(versionMarker)
-  if (versionIndex === -1) return '未知'
+  if (versionIndex === -1) return t('tools.user-agent-parser.messages.unknown')
   
   const versionStart = versionIndex + versionMarker.length
   const versionEnd = uaString.indexOf(' ', versionStart)
@@ -409,7 +412,7 @@ function getVersion(uaString, versionMarker) {
 // 获取IE11版本号
 function getIE11Version(uaString) {
   const matches = uaString.match(/rv:(\d+\.\d+)/)
-  return matches ? matches[1] : '未知'
+  return matches ? matches[1] : t('tools.user-agent-parser.messages.unknown')
 }
 
 // 获取Windows版本
@@ -421,7 +424,7 @@ function getWindowsVersion(uaString) {
   if (uaString.includes('Windows NT 6.0')) return 'Vista'
   if (uaString.includes('Windows NT 5.1')) return 'XP'
   if (uaString.includes('Windows NT 5.0')) return '2000'
-  return '未知'
+  return t('tools.user-agent-parser.messages.unknown')
 }
 
 // 获取macOS版本
@@ -430,7 +433,7 @@ function getMacOSVersion(uaString) {
   if (matches) {
     return matches[1].replace(/_/g, '.')
   }
-  return '未知'
+  return t('tools.user-agent-parser.messages.unknown')
 }
 
 // 获取iOS版本
@@ -439,28 +442,28 @@ function getIOSVersion(uaString) {
   if (matches) {
     return matches[1].replace(/_/g, '.')
   }
-  return '未知'
+  return t('tools.user-agent-parser.messages.unknown')
 }
 
 // 获取三星设备型号
 function getSamsungModel(uaString) {
   const matches = uaString.match(/SM-[A-Z0-9]+/i)
-  return matches ? matches[0] : '未知三星设备'
+  return matches ? matches[0] : t('tools.user-agent-parser.messages.unknown')
 }
 
 // 获取Google Pixel型号
 function getGooglePixelModel(uaString) {
   const matches = uaString.match(/Pixel [0-9]+/i)
-  return matches ? matches[0] : '未知Pixel设备'
+  return matches ? matches[0] : t('tools.user-agent-parser.messages.unknown')
 }
 
 // 获取设备类型名称
 function getDeviceTypeName(type) {
   switch (type) {
-    case 'mobile': return '移动设备'
-    case 'tablet': return '平板电脑'
-    case 'desktop': return '桌面设备'
-    default: return '未知设备'
+    case 'mobile': return t('tools.user-agent-parser.deviceTypes.mobile')
+    case 'tablet': return t('tools.user-agent-parser.deviceTypes.tablet')
+    case 'desktop': return t('tools.user-agent-parser.deviceTypes.desktop')
+    default: return t('tools.user-agent-parser.messages.unknown')
   }
 }
 
