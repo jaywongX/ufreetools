@@ -2,15 +2,15 @@
   <div>
     <!-- 工具配置区域 -->
     <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">代码混淆</h2>
+      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.code-obfuscator.name') }}</h2>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        对JavaScript和CSS代码进行混淆处理，提高代码安全性和保护知识产权
+        {{ $t('tools.code-obfuscator.description') }}
       </p>
       
       <!-- 语言选择 -->
       <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          选择语言
+          {{ $t('tools.code-obfuscator.languages.title') }}
         </label>
         <div class="flex flex-wrap gap-2">
           <button 
@@ -22,7 +22,7 @@
               ? 'bg-primary text-white' 
               : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'"
           >
-            {{ lang.name }}
+            {{ $t(`tools.code-obfuscator.languages.${lang.id}`) }}
           </button>
         </div>
       </div>
@@ -30,35 +30,35 @@
       <!-- 混淆选项 -->
       <div class="mb-4" v-if="selectedLanguage === 'javascript'">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          混淆选项
+          {{ $t('tools.code-obfuscator.options.title') }}
         </label>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <div class="flex items-center mb-3">
               <input type="checkbox" id="compact" v-model="jsOptions.compact" class="mr-2">
               <label for="compact" class="text-sm text-gray-700 dark:text-gray-300">
-                紧凑输出 (移除空白)
+                {{ $t('tools.code-obfuscator.options.javascript.compact') }}
               </label>
             </div>
             
             <div class="flex items-center mb-3">
               <input type="checkbox" id="controlFlowFlattening" v-model="jsOptions.controlFlowFlattening" class="mr-2">
               <label for="controlFlowFlattening" class="text-sm text-gray-700 dark:text-gray-300">
-                控制流扁平化
+                {{ $t('tools.code-obfuscator.options.javascript.controlFlowFlattening') }}
               </label>
             </div>
             
             <div class="flex items-center mb-3">
               <input type="checkbox" id="deadCodeInjection" v-model="jsOptions.deadCodeInjection" class="mr-2">
               <label for="deadCodeInjection" class="text-sm text-gray-700 dark:text-gray-300">
-                注入无效代码
+                {{ $t('tools.code-obfuscator.options.javascript.deadCodeInjection') }}
               </label>
             </div>
             
             <div class="flex items-center mb-3">
               <input type="checkbox" id="debugProtection" v-model="jsOptions.debugProtection" class="mr-2">
               <label for="debugProtection" class="text-sm text-gray-700 dark:text-gray-300">
-                调试保护
+                {{ $t('tools.code-obfuscator.options.javascript.debugProtection') }}
               </label>
             </div>
           </div>
@@ -67,51 +67,52 @@
             <div class="flex items-center mb-3">
               <input type="checkbox" id="selfDefending" v-model="jsOptions.selfDefending" class="mr-2">
               <label for="selfDefending" class="text-sm text-gray-700 dark:text-gray-300">
-                自我保护 (防止格式化)
+                {{ $t('tools.code-obfuscator.options.javascript.selfDefending') }}
               </label>
             </div>
             
             <div class="flex items-center mb-3">
               <input type="checkbox" id="stringArrayEncoding" v-model="jsOptions.stringArray" class="mr-2">
               <label for="stringArrayEncoding" class="text-sm text-gray-700 dark:text-gray-300">
-                字符串转数组
+                {{ $t('tools.code-obfuscator.options.javascript.stringArray') }}
               </label>
             </div>
             
             <div class="flex items-center mb-3">
               <input type="checkbox" id="renameGlobals" v-model="jsOptions.renameGlobals" class="mr-2">
               <label for="renameGlobals" class="text-sm text-gray-700 dark:text-gray-300">
-                重命名全局变量
+                {{ $t('tools.code-obfuscator.options.javascript.renameGlobals') }}
               </label>
             </div>
             
             <div class="flex items-center mb-3">
               <input type="checkbox" id="renameProperties" v-model="jsOptions.renameProperties" class="mr-2">
               <label for="renameProperties" class="text-sm text-gray-700 dark:text-gray-300">
-                重命名属性
+                {{ $t('tools.code-obfuscator.options.javascript.renameProperties') }}
               </label>
             </div>
           </div>
         </div>
       </div>
       
+      <!-- CSS混淆选项 -->
       <div class="mb-4" v-if="selectedLanguage === 'css'">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          混淆选项
+          {{ $t('tools.code-obfuscator.options.title') }}
         </label>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <div class="flex items-center mb-3">
               <input type="checkbox" id="cssCompact" v-model="cssOptions.compact" class="mr-2">
               <label for="cssCompact" class="text-sm text-gray-700 dark:text-gray-300">
-                紧凑输出 (移除空白)
+                {{ $t('tools.code-obfuscator.options.css.compact') }}
               </label>
             </div>
             
             <div class="flex items-center mb-3">
               <input type="checkbox" id="renameSelectors" v-model="cssOptions.renameSelectors" class="mr-2">
               <label for="renameSelectors" class="text-sm text-gray-700 dark:text-gray-300">
-                重命名选择器
+                {{ $t('tools.code-obfuscator.options.css.renameSelectors') }}
               </label>
             </div>
           </div>
@@ -120,14 +121,14 @@
             <div class="flex items-center mb-3">
               <input type="checkbox" id="preserveImportant" v-model="cssOptions.preserveImportant" class="mr-2">
               <label for="preserveImportant" class="text-sm text-gray-700 dark:text-gray-300">
-                保留 !important
+                {{ $t('tools.code-obfuscator.options.css.preserveImportant') }}
               </label>
             </div>
             
             <div class="flex items-center mb-3">
               <input type="checkbox" id="restructure" v-model="cssOptions.restructure" class="mr-2">
               <label for="restructure" class="text-sm text-gray-700 dark:text-gray-300">
-                重组样式规则
+                {{ $t('tools.code-obfuscator.options.css.restructure') }}
               </label>
             </div>
           </div>
@@ -139,19 +140,21 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- 输入区域 -->
       <div>
-        <h3 class="text-base font-medium text-gray-800 dark:text-gray-200 mb-2">源代码</h3>
+        <h3 class="text-base font-medium text-gray-800 dark:text-gray-200 mb-2">
+          {{ $t('tools.code-obfuscator.input.title') }}
+        </h3>
         <div class="relative">
           <textarea 
             v-model="sourceCode"
             class="w-full h-72 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
-            placeholder="在此粘贴需要混淆的代码..."
+            :placeholder="$t('tools.code-obfuscator.input.placeholder')"
           ></textarea>
           <div class="absolute top-2 right-2 flex space-x-1">
             <button 
               v-if="sourceCode" 
               @click="clearInput" 
               class="p-1 text-gray-500 hover:text-red-500"
-              title="清空"
+              :title="$t('tools.code-obfuscator.input.clear')"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
@@ -161,7 +164,7 @@
         </div>
         <!-- 源代码大小 -->
         <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
-          源代码大小: {{ formatSize(getByteSize(sourceCode)) }}
+          {{ $t('tools.code-obfuscator.output.stats.original') }}: {{ formatSize(getByteSize(sourceCode)) }}
         </p>
         
         <!-- 示例按钮 -->
@@ -172,27 +175,30 @@
             @click="loadExample(example)"
             class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-md hover:bg-gray-200 dark:hover:bg-gray-600"
           >
-            示例: {{ example.name }}
+          {{ $t('tools.code-obfuscator.demo.title') }}: 
+          {{ $t(`tools.code-obfuscator.demo.${example.name}`) }}
           </button>
         </div>
       </div>
       
       <!-- 输出区域 -->
       <div>
-        <h3 class="text-base font-medium text-gray-800 dark:text-gray-200 mb-2">混淆后的代码</h3>
+        <h3 class="text-base font-medium text-gray-800 dark:text-gray-200 mb-2">
+          {{ $t('tools.code-obfuscator.output.title') }}
+        </h3>
         <div class="relative">
           <textarea 
             v-model="resultCode"
             readonly
             class="w-full h-72 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-mono text-sm"
-            placeholder="混淆后的代码将显示在这里..."
+            :placeholder="$t('tools.code-obfuscator.output.placeholder')"
           ></textarea>
           <div class="absolute top-2 right-2 flex space-x-1">
             <button 
               v-if="resultCode" 
               @click="copyResult" 
               class="p-1 text-gray-500 hover:text-blue-500"
-              title="复制"
+              :title="$t('tools.code-obfuscator.output.copy')"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
@@ -205,10 +211,10 @@
         <!-- 结果大小和压缩率 -->
         <div class="mt-1 flex justify-between">
           <p class="text-sm text-gray-500 dark:text-gray-400">
-            混淆后大小: {{ formatSize(getByteSize(resultCode)) }}
+            {{ $t('tools.code-obfuscator.output.stats.obfuscated') }}: {{ formatSize(getByteSize(resultCode)) }}
           </p>
           <p class="text-sm" :class="compressionRate > 0 ? 'text-red-500' : 'text-green-500'">
-            {{ compressionRate > 0 ? '增加' : '减少' }} {{ Math.abs(compressionRate).toFixed(1) }}%
+            {{ compressionRate > 0 ? $t('tools.code-obfuscator.output.increase') : $t('tools.code-obfuscator.output.decrease') }} {{ Math.abs(compressionRate).toFixed(1) }}%
           </p>
         </div>
         
@@ -232,7 +238,7 @@
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
           </svg>
-          {{ processing ? '处理中...' : '混淆代码' }}
+          {{ processing ? $t('tools.code-obfuscator.messages.processing') : $t('tools.code-obfuscator.actions.obfuscate') }}
         </div>
       </button>
     </div>
@@ -242,6 +248,9 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import JavaScriptObfuscator from 'javascript-obfuscator'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 语言选择
 const languages = [
@@ -287,7 +296,9 @@ const cssOptions = ref({
   compact: true,
   renameSelectors: true,
   preserveImportant: true,
-  restructure: false
+  restructure: false,
+  keepVendorPrefixes: true,
+  removeComments: true
 })
 
 // 计算压缩率
@@ -303,7 +314,7 @@ function getExamples() {
   if (selectedLanguage.value === 'javascript') {
     return [
       {
-        name: '简单函数',
+        name: 'function',
         code: `function calculateTotal(items) {
   return items
     .map(item => item.price * item.quantity)
@@ -319,7 +330,7 @@ const cart = [
 console.log('Total: $' + calculateTotal(cart));`
       },
       {
-        name: '类示例',
+        name: 'class',
         code: `class Person {
   constructor(name, age) {
     this.name = name;
@@ -345,7 +356,7 @@ anonymous.sayHello();`
   } else {
     return [
       {
-        name: '简单样式',
+        name: 'simple',
         code: `.button {
   display: inline-block;
   padding: 10px 20px;
@@ -371,7 +382,7 @@ anonymous.sayHello();`
 }`
       },
       {
-        name: '动画效果',
+        name: 'animation',
         code: `@keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
