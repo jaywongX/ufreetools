@@ -2,15 +2,15 @@
   <div>
     <!-- 工具配置区域 -->
     <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">XML ↔ JSON 转换</h2>
+      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.xml-json-converter.title') }}</h2>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        在 XML 和 JSON 格式之间进行双向转换，支持高级选项和自定义设置
+        {{ $t('tools.xml-json-converter.description') }}
       </p>
       
       <!-- 转换方向选择 -->
       <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          转换方向
+          {{ $t('tools.xml-json-converter.conversion.direction') }}
         </label>
         <div class="flex gap-4">
           <label class="inline-flex items-center">
@@ -20,7 +20,7 @@
               value="xmlToJson" 
               class="text-primary"
             >
-            <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">XML 转 JSON</span>
+            <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">{{ $t('tools.xml-json-converter.conversion.xmlToJson') }}</span>
           </label>
           <label class="inline-flex items-center">
             <input 
@@ -29,7 +29,7 @@
               value="jsonToXml" 
               class="text-primary"
             >
-            <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">JSON 转 XML</span>
+            <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">{{ $t('tools.xml-json-converter.conversion.jsonToXml') }}</span>
           </label>
         </div>
       </div>
@@ -38,13 +38,13 @@
       <div class="mb-4">
         <div class="flex items-center justify-between mb-2">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-            转换选项
+            {{ $t('tools.xml-json-converter.options.title') }}
           </label>
           <button 
             @click="showOptions = !showOptions" 
             class="text-xs text-primary hover:text-primary-dark"
           >
-            {{ showOptions ? '隐藏选项' : '显示选项' }}
+            {{ showOptions ? $t('tools.xml-json-converter.options.hide') : $t('tools.xml-json-converter.options.show') }}
           </button>
         </div>
         
@@ -54,57 +54,57 @@
             <div class="mb-3">
               <label class="flex items-center">
                 <input type="checkbox" v-model="xmlOptions.ignoreAttributes" class="mr-1">
-                <span class="text-sm text-gray-700 dark:text-gray-300">忽略属性</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">{{ $t('tools.xml-json-converter.options.xmlToJson.ignoreAttributes') }}</span>
               </label>
               <p class="text-xs text-gray-500 dark:text-gray-400 ml-5 mt-1">
-                禁用此选项可在JSON中保留XML属性信息
+                {{ $t('tools.xml-json-converter.options.xmlToJson.ignoreAttributesHint') }}
               </p>
             </div>
             <div class="mb-3">
               <label class="flex items-center">
                 <input type="checkbox" v-model="xmlOptions.parseAttributeValue" class="mr-1">
-                <span class="text-sm text-gray-700 dark:text-gray-300">解析属性值</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">{{ $t('tools.xml-json-converter.options.xmlToJson.parseAttributeValue') }}</span>
               </label>
               <p class="text-xs text-gray-500 dark:text-gray-400 ml-5 mt-1">
-                将属性中的数字、布尔值等转换为实际类型而非字符串
+                {{ $t('tools.xml-json-converter.options.xmlToJson.parseAttributeValueHint') }}
               </p>
             </div>
             <div class="mb-3">
               <label class="flex items-center">
                 <input type="checkbox" v-model="xmlOptions.ignoreDeclaration" class="mr-1">
-                <span class="text-sm text-gray-700 dark:text-gray-300">忽略XML声明</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">{{ $t('tools.xml-json-converter.options.xmlToJson.ignoreDeclaration') }}</span>
               </label>
               <p class="text-xs text-gray-500 dark:text-gray-400 ml-5 mt-1">
-                忽略&lt;?xml version="1.0"?&gt;等声明信息
+                {{ $t('tools.xml-json-converter.options.xmlToJson.ignoreDeclarationHint') }}
               </p>
             </div>
             <div class="mb-3">
               <label class="flex items-center">
                 <input type="checkbox" v-model="xmlOptions.parseTagValue" class="mr-1">
-                <span class="text-sm text-gray-700 dark:text-gray-300">解析标签值</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">{{ $t('tools.xml-json-converter.options.xmlToJson.parseTagValue') }}</span>
               </label>
               <p class="text-xs text-gray-500 dark:text-gray-400 ml-5 mt-1">
-                将标签内容中的数字、布尔值等转换为实际类型而非字符串
+                {{ $t('tools.xml-json-converter.options.xmlToJson.parseTagValueHint') }}
               </p>
             </div>
             <div class="mb-3">
               <label class="flex items-center">
                 <input type="checkbox" v-model="xmlOptions.trimValues" class="mr-1">
-                <span class="text-sm text-gray-700 dark:text-gray-300">去除值前后空白</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">{{ $t('tools.xml-json-converter.options.xmlToJson.trimValues') }}</span>
               </label>
             </div>
             <div class="mb-3">
               <label class="block text-sm text-gray-700 dark:text-gray-300 mb-1">
-                属性前缀
+                {{ $t('tools.xml-json-converter.options.xmlToJson.attributePrefix') }}
               </label>
               <input 
                 type="text" 
                 v-model="xmlOptions.attributeNamePrefix" 
-                placeholder="如: @, _, attr_" 
+                :placeholder="$t('tools.xml-json-converter.options.xmlToJson.attributePrefixPlaceholder')" 
                 class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               >
               <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                在JSON中表示XML属性的前缀，默认为@
+                {{ $t('tools.xml-json-converter.options.xmlToJson.attributePrefixHint') }}
               </p>
             </div>
           </div>
@@ -114,53 +114,53 @@
             <div class="mb-3">
               <label class="flex items-center">
                 <input type="checkbox" v-model="jsonOptions.format" class="mr-1">
-                <span class="text-sm text-gray-700 dark:text-gray-300">格式化XML</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">{{ $t('tools.xml-json-converter.options.jsonToXml.format') }}</span>
               </label>
               <p class="text-xs text-gray-500 dark:text-gray-400 ml-5 mt-1">
-                启用缩进和换行，使XML更易读
+                {{ $t('tools.xml-json-converter.options.jsonToXml.formatHint') }}
               </p>
             </div>
             <div class="mb-3">
               <label class="flex items-center">
                 <input type="checkbox" v-model="jsonOptions.indentBy" class="mr-1">
-                <span class="text-sm text-gray-700 dark:text-gray-300">添加缩进（2个空格）</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">{{ $t('tools.xml-json-converter.options.jsonToXml.indentBy') }}</span>
               </label>
             </div>
             <div class="mb-3">
               <label class="flex items-center">
                 <input type="checkbox" v-model="jsonOptions.addDeclaration" class="mr-1">
-                <span class="text-sm text-gray-700 dark:text-gray-300">添加XML声明</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">{{ $t('tools.xml-json-converter.options.jsonToXml.addDeclaration') }}</span>
               </label>
               <p class="text-xs text-gray-500 dark:text-gray-400 ml-5 mt-1">
-                在XML开头添加 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                {{ $t('tools.xml-json-converter.options.jsonToXml.addDeclarationHint') }}
               </p>
             </div>
             <div class="mb-3">
               <label class="block text-sm text-gray-700 dark:text-gray-300 mb-1">
-                根元素名称（可选）
+                {{ $t('tools.xml-json-converter.options.jsonToXml.rootName') }}
               </label>
               <input 
                 type="text" 
                 v-model="jsonOptions.rootName" 
-                placeholder="如: root, data, xml" 
+                :placeholder="$t('tools.xml-json-converter.options.jsonToXml.rootNamePlaceholder')" 
                 class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               >
               <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                当JSON顶层有多个键时使用的根元素名称
+                {{ $t('tools.xml-json-converter.options.jsonToXml.rootNameHint') }}
               </p>
             </div>
             <div class="mb-3">
               <label class="block text-sm text-gray-700 dark:text-gray-300 mb-1">
-                属性前缀识别
+                {{ $t('tools.xml-json-converter.options.jsonToXml.attributePrefix') }}
               </label>
               <input 
                 type="text" 
                 v-model="jsonOptions.attributeNamePrefix" 
-                placeholder="如: @, _, attr_" 
+                :placeholder="$t('tools.xml-json-converter.options.jsonToXml.attributePrefixPlaceholder')" 
                 class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               >
               <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                用于识别JSON中的XML属性的前缀，默认为@
+                {{ $t('tools.xml-json-converter.options.jsonToXml.attributePrefixHint') }}
               </p>
             </div>
           </div>
@@ -173,7 +173,7 @@
           @click="convert" 
           class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark"
         >
-          转换
+          {{ $t('tools.xml-json-converter.buttons.convert') }}
         </button>
         <button 
           @click="swapContent" 
@@ -182,19 +182,19 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
           </svg>
-          交换内容
+          {{ $t('tools.xml-json-converter.buttons.swap') }}
         </button>
         <button 
           @click="clearInput" 
           class="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600"
         >
-          清空
+          {{ $t('tools.xml-json-converter.buttons.clear') }}
         </button>
         <button 
           @click="loadExample" 
           class="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600"
         >
-          加载示例
+          {{ $t('tools.xml-json-converter.buttons.loadExample') }}
         </button>
       </div>
     </div>
@@ -205,12 +205,12 @@
       <div>
         <div class="flex justify-between items-center mb-2">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-            {{ conversionDirection === 'xmlToJson' ? 'XML 输入' : 'JSON 输入' }}
+            {{ conversionDirection === 'xmlToJson' ? $t('tools.xml-json-converter.input.xmlInput') : $t('tools.xml-json-converter.input.jsonInput') }}
           </label>
         </div>
         <textarea 
           v-model="inputText" 
-          :placeholder="conversionDirection === 'xmlToJson' ? '输入XML...' : '输入JSON...'"
+          :placeholder="conversionDirection === 'xmlToJson' ? $t('tools.xml-json-converter.input.placeholder.xml') : $t('tools.xml-json-converter.input.placeholder.json')"
           class="w-full h-96 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
         ></textarea>
       </div>
@@ -219,7 +219,7 @@
       <div>
         <div class="flex justify-between items-center mb-2">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-            {{ conversionDirection === 'xmlToJson' ? 'JSON 结果' : 'XML 结果' }}
+            {{ conversionDirection === 'xmlToJson' ? $t('tools.xml-json-converter.output.jsonResult') : $t('tools.xml-json-converter.output.xmlResult') }}
           </label>
           <button 
             v-if="outputText" 
@@ -229,7 +229,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
             </svg>
-            复制
+            {{ $t('tools.xml-json-converter.output.copy') }}
           </button>
         </div>
         <div class="relative">
@@ -248,24 +248,24 @@
     
     <!-- 结果统计 -->
     <div v-if="outputText && !error" class="mt-4 p-4 bg-gray-50 dark:bg-gray-750 rounded-md border border-gray-200 dark:border-gray-700">
-      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">转换统计</h3>
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.xml-json-converter.stats.title') }}</h3>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div>
-          <p class="text-xs text-gray-500 dark:text-gray-400">输入大小</p>
+          <p class="text-xs text-gray-500 dark:text-gray-400">{{ $t('tools.xml-json-converter.stats.inputSize') }}</p>
           <p class="text-lg font-medium text-gray-800 dark:text-gray-200">{{ formatDataSize(inputText.length) }}</p>
         </div>
         <div>
-          <p class="text-xs text-gray-500 dark:text-gray-400">输出大小</p>
+          <p class="text-xs text-gray-500 dark:text-gray-400">{{ $t('tools.xml-json-converter.stats.outputSize') }}</p>
           <p class="text-lg font-medium text-gray-800 dark:text-gray-200">{{ formatDataSize(outputText.length) }}</p>
         </div>
         <div>
-          <p class="text-xs text-gray-500 dark:text-gray-400">大小变化</p>
+          <p class="text-xs text-gray-500 dark:text-gray-400">{{ $t('tools.xml-json-converter.stats.sizeChange') }}</p>
           <p class="text-lg font-medium" :class="sizeChangeColor">
             {{ sizeChange > 0 ? '+' : '' }}{{ sizeChange }}%
           </p>
         </div>
         <div>
-          <p class="text-xs text-gray-500 dark:text-gray-400">转换耗时</p>
+          <p class="text-xs text-gray-500 dark:text-gray-400">{{ $t('tools.xml-json-converter.stats.conversionTime') }}</p>
           <p class="text-lg font-medium text-gray-800 dark:text-gray-200">{{ conversionTime }}ms</p>
         </div>
       </div>
@@ -274,33 +274,27 @@
     <!-- 帮助说明 -->
     <div class="mt-6">
       <div class="flex items-center justify-between mb-2">
-        <h3 class="text-md font-medium text-gray-800 dark:text-gray-200">使用帮助</h3>
+        <h3 class="text-md font-medium text-gray-800 dark:text-gray-200">{{ $t('tools.xml-json-converter.help.title') }}</h3>
         <button 
           @click="showHelp = !showHelp" 
           class="text-xs text-primary hover:text-primary-dark"
         >
-          {{ showHelp ? '隐藏帮助' : '显示帮助' }}
+          {{ showHelp ? $t('tools.xml-json-converter.help.hide') : $t('tools.xml-json-converter.help.show') }}
         </button>
       </div>
       
       <div v-if="showHelp" class="p-4 bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 text-sm text-gray-700 dark:text-gray-300">
-        <h4 class="font-medium mb-2">XML和JSON格式说明</h4>
-        <p class="mb-2">XML (eXtensible Markup Language) 是一种可扩展标记语言，广泛用于配置文件、数据交换和Web服务。JSON (JavaScript Object Notation) 是一种轻量级的数据交换格式，易于人阅读和编写，也易于机器解析和生成。</p>
+        <h4 class="font-medium mb-2">{{ $t('tools.xml-json-converter.help.about.title') }}</h4>
+        <p class="mb-2">{{ $t('tools.xml-json-converter.help.about.content') }}</p>
         
-        <h4 class="font-medium mb-2 mt-4">XML转JSON注意事项</h4>
+        <h4 class="font-medium mb-2 mt-4">{{ $t('tools.xml-json-converter.help.xmlToJson.title') }}</h4>
         <ul class="list-disc pl-5 space-y-1">
-          <li>XML的属性在JSON中默认会转换为以@开头的键</li>
-          <li>XML的文本内容在JSON中默认以#text为键</li>
-          <li>开启"解析标签值"可将数字、布尔值等转换为实际JSON类型</li>
-          <li>XML可以有多个同名标签，转换为JSON时会自动转为数组</li>
+          <li v-for="(item, index) in $t('tools.xml-json-converter.help.xmlToJson.items')" :key="'xml-' + index">{{ item }}</li>
         </ul>
         
-        <h4 class="font-medium mb-2 mt-4">JSON转XML注意事项</h4>
+        <h4 class="font-medium mb-2 mt-4">{{ $t('tools.xml-json-converter.help.jsonToXml.title') }}</h4>
         <ul class="list-disc pl-5 space-y-1">
-          <li>JSON中以@开头的键默认被视为XML属性</li>
-          <li>JSON中使用数组会在XML中创建多个同名标签</li>
-          <li>复杂的嵌套JSON对象会生成层级化的XML结构</li>
-          <li>JSON顶层有多个键且未指定根元素名称时，将生成多个XML根元素</li>
+          <li v-for="(item, index) in $t('tools.xml-json-converter.help.jsonToXml.items')" :key="'json-' + index">{{ item }}</li>
         </ul>
       </div>
     </div>
@@ -310,6 +304,10 @@
 <script setup>
 import { ref, reactive, computed, watch } from 'vue'
 import { XMLParser, XMLBuilder } from 'fast-xml-parser'
+import { useI18n } from 'vue-i18n'
+
+// 初始化国际化
+const { t } = useI18n()
 
 // 转换方向
 const conversionDirection = ref('xmlToJson')
@@ -441,7 +439,7 @@ function copyOutput() {
   
   navigator.clipboard.writeText(outputText.value)
     .then(() => {
-      alert('已复制到剪贴板')
+      alert(t('tools.xml-json-converter.alerts.copied'))
     })
     .catch(err => {
       console.error('复制失败:', err)
@@ -491,7 +489,7 @@ function xmlToJson() {
     conversionTime.value = Math.round(performance.now() - startTime)
     return prettyJson
   } catch (err) {
-    error.value = `XML 解析错误: ${err.message}`
+    error.value = t('tools.xml-json-converter.errors.xmlParse', [err.message])
     conversionTime.value = Math.round(performance.now() - startTime)
     return ''
   }
@@ -509,14 +507,14 @@ function jsonToXml() {
     try {
       obj = JSON.parse(inputText.value)
     } catch (err) {
-      error.value = `JSON 解析错误: ${err.message}`
+      error.value = t('tools.xml-json-converter.errors.jsonParse', [err.message])
       conversionTime.value = Math.round(performance.now() - startTime)
       return ''
     }
     
     // 检查是否为空对象
     if (!obj || typeof obj !== 'object' || (Array.isArray(obj) && obj.length === 0)) {
-      error.value = 'JSON 对象为空或无效'
+      error.value = t('tools.xml-json-converter.errors.emptyObject')
       conversionTime.value = Math.round(performance.now() - startTime)
       return ''
     }
@@ -546,7 +544,7 @@ function jsonToXml() {
     conversionTime.value = Math.round(performance.now() - startTime)
     return xmlResult
   } catch (err) {
-    error.value = `XML 生成错误: ${err.message}`
+    error.value = t('tools.xml-json-converter.errors.xmlGeneration', [err.message])
     conversionTime.value = Math.round(performance.now() - startTime)
     return ''
   }
@@ -563,7 +561,7 @@ function convert() {
       outputText.value = jsonToXml()
     }
   } catch (err) {
-    error.value = `转换错误: ${err.message}`
+    error.value = t('tools.xml-json-converter.errors.conversion', [err.message])
     outputText.value = ''
   }
 }
