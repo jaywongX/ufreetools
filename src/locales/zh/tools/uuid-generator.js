@@ -1,13 +1,12 @@
 export default {
   name: 'UUID生成器',
-  description: '生成随机UUID和GUID，带有可自定义选项',
+  description: '生成随机UUID和GUID，带有可自定义选项，适用于数据库主键、临时文件名等场景',
   options: {
     version: 'UUID版本',
     quantity: '数量',
-    format: '输出格式',
-    uppercase: '大写',
-    braces: '包含大括号',
-    hyphens: '包含连字符'
+    format: '格式选项',
+    includeDash: '包含连字符 (-)',
+    generateCount: '生成数量'
   },
   versions: {
     v1: '版本1（基于时间）',
@@ -15,17 +14,24 @@ export default {
     v5: '版本5（命名空间）',
     custom: '自定义'
   },
+  quantities: {
+    single: '单个',
+    five: '5个',
+    ten: '10个',
+    twenty: '20个'
+  },
   formats: {
     default: '默认',
     base64: 'Base64',
     binary: '二进制',
-    hex: '十六进制'
+    hex: '十六进制',
+    noDash: '无连字符'
   },
   actions: {
     generate: '生成UUID',
     copy: '复制',
     copyAll: '复制全部',
-    clear: '清除',
+    clear: '清空结果',
     download: '下载为TXT'
   },
   messages: {
@@ -33,6 +39,7 @@ export default {
     generated: 'UUID生成成功',
     tooMany: '最大允许数量为1000',
     invalidVersion: '无效的UUID版本',
-    invalidNamespace: '无效的命名空间UUID'
+    invalidNamespace: '无效的命名空间UUID',
+    copyFailed: '复制失败'
   }
 } 
