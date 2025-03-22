@@ -1,131 +1,88 @@
 export default {
   name: 'WebSocket Tester',
-  description: 'Test and debug WebSocket connections with real-time message exchange',
+  description: 'Connect to WebSocket servers, send messages and view responses',
   connection: {
-    title: 'Connection',
     url: 'WebSocket URL',
-    urlPlaceholder: 'e.g., ws://example.com/socket or wss://secure.example.com',
-    protocol: 'Protocols',
-    protocolPlaceholder: 'Optional subprotocols (comma separated)',
+    urlPlaceholder: 'e.g. ws://echo.websocket.org',
+    protocol: 'Subprotocol (optional)',
+    protocolPlaceholder: 'Comma separated',
     connect: 'Connect',
     disconnect: 'Disconnect',
-    status: 'Status',
+    status: 'Connection Status',
     connected: 'Connected',
     disconnected: 'Disconnected',
-    connecting: 'Connecting...',
-    reconnect: 'Auto Reconnect',
-    timeout: 'Connection Timeout (seconds)',
-    pingInterval: 'Ping Interval (seconds)',
-    connectionOptions: 'Connection Options',
-    headers: 'Custom Headers'
+    waiting: 'Waiting to Connect',
+    autoReconnect: 'Auto Reconnect',
+    reconnectMessage: 'Will try to reconnect in {0} seconds...'
   },
-  message: {
-    title: 'Messages',
-    send: 'Send',
-    sent: 'Sent',
-    received: 'Received',
-    type: 'Message Type',
-    text: 'Text',
-    binary: 'Binary',
-    json: 'JSON',
-    hex: 'Hex',
-    time: 'Time',
-    clear: 'Clear Messages',
-    filter: 'Filter Messages',
-    incoming: 'Incoming',
-    outgoing: 'Outgoing',
-    export: 'Export Messages',
-    format: 'Format',
-    validate: 'Validate',
-    messagePlaceholder: 'Enter message to send',
-    binaryPlaceholder: 'Enter binary data in hex format',
-    noMessages: 'No messages yet',
-    uploadFile: 'Upload File',
-    maxSize: 'Max size: 5MB'
+  options: {
+    title: 'Options',
+    autoScroll: 'Auto Scroll Logs'
   },
-  templates: {
-    title: 'Message Templates',
-    save: 'Save Current',
-    manage: 'Manage Templates',
-    selectTemplate: 'Select Template',
-    noTemplates: 'No templates saved',
-    templateName: 'Template Name',
-    templateContent: 'Content',
-    saveButton: 'Save',
-    deleteButton: 'Delete',
-    namePlaceholder: 'Enter template name',
-    successSaved: 'Template saved',
-    successDeleted: 'Template deleted',
-    confirmDelete: 'Are you sure you want to delete this template?'
+  messages: {
+    send: 'Send Messages',
+    logs: 'Message Logs',
+    emptyLogs: 'Messages will appear here once connected',
+    placeholder: 'Enter message to send...',
+    sendButton: 'Send',
+    clearButton: 'Clear',
+    copyButton: 'Copy',
+    clearLogs: 'Clear Logs',
+    copyLogs: 'Copy Logs',
+    format: {
+      title: 'Format',
+      text: 'Plain Text',
+      json: 'JSON',
+      binary: 'Binary'
+    },
+    templates: {
+      json: 'JSON',
+      text: 'Text'
+    },
+    types: {
+      sent: 'Sent →',
+      received: 'Received ←',
+      error: 'Error !',
+      info: 'Info'
+    }
   },
-  tools: {
-    title: 'Tools',
-    ping: 'Ping/Pong',
-    echo: 'Echo Test',
-    loadTest: 'Load Test',
-    messageGenerator: 'Message Generator',
-    socketInfo: 'Connection Info',
-    throttle: 'Throttle Simulator',
-    playback: 'Message Playback',
-    recording: 'Session Recording'
+  savedConnections: {
+    title: 'Saved Connections',
+    empty: 'No saved connections',
+    save: 'Save Current Connection',
+    saveConnection: 'Save Connection',
+    connectionName: 'Connection Name',
+    load: 'Load',
+    delete: 'Delete',
+    cancel: 'Cancel'
   },
-  loadTest: {
-    title: 'Load Test',
-    connectionCount: 'Number of Connections',
-    messageRate: 'Messages per Second',
-    messageSize: 'Message Size (bytes)',
-    duration: 'Duration (seconds)',
-    rampUp: 'Ramp Up (seconds)',
-    start: 'Start Test',
-    stop: 'Stop Test',
-    results: 'Results',
-    connections: 'Connections',
-    messagesSent: 'Messages Sent',
-    messagesReceived: 'Messages Received',
-    errors: 'Errors',
-    avgLatency: 'Average Latency',
-    progress: 'Progress'
+  testServers: {
+    title: 'Test Servers',
+    description: 'Here are some public WebSocket servers available for testing:',
+    useServer: 'Use This Server',
+    servers: {
+      echo: {
+        name: 'Echo Test',
+        description: 'Secure echo test server, supports WSS connections'
+      },
+      postman: {
+        name: 'WebSocket.org',
+        description: 'Echo service provided by Postman, supports WSS'
+      }
+    }
   },
-  info: {
-    title: 'Connection Info',
-    url: 'WebSocket URL',
-    protocol: 'Protocol',
-    state: 'Connection State',
-    extensions: 'Extensions',
-    version: 'WebSocket Version',
-    ip: 'Server IP',
-    latency: 'Latency',
-    messages: 'Messages Exchanged',
-    uptime: 'Connection Uptime',
-    trafficSent: 'Traffic Sent',
-    trafficReceived: 'Traffic Received'
-  },
-  settings: {
-    title: 'Settings',
-    maxMessages: 'Maximum Messages',
-    timeFormat: 'Time Format',
-    timestamps: 'Show Timestamps',
-    autoScroll: 'Auto Scroll',
-    formattedJson: 'Format JSON Messages',
-    binaryType: 'Binary Type',
-    blobType: 'Blob',
-    arrayBufferType: 'ArrayBuffer',
-    theme: 'Theme',
-    saveHistory: 'Save Message History',
-    notifyMessages: 'Notify on Messages',
-    validateSsl: 'Validate SSL Certificate'
-  },
-  notifications: {
-    connected: 'Connected to {url}',
-    disconnected: 'Disconnected from {url}',
-    error: 'Error: {message}',
-    reconnecting: 'Reconnecting...',
-    messageSent: 'Message sent',
-    messageReceived: 'Message received',
-    invalidFormat: 'Invalid message format',
-    failedConnection: 'Failed to connect: {reason}',
-    exportComplete: 'Export complete',
-    invalidJson: 'Invalid JSON',
-    socketClosed: 'WebSocket closed with code {code}: {reason}'
+  logs: {
+    connectingTo: 'Connecting to {0}...',
+    connectionSuccess: 'Connection successful',
+    connectionError: 'WebSocket error',
+    connectionClosed: 'Connection closed (Code: {0}{1})',
+    invalidJson: 'Invalid JSON format: {0}',
+    sendFailed: 'Send failed: {0}',
+    emptyMessage: 'Message cannot be empty',
+    notConnected: 'WebSocket not connected',
+    copied: 'Logs copied to clipboard',
+    copyFailed: 'Copy failed: {0}',
+    serverSelected: 'Server selected: {0}',
+    binaryData: '[Binary data]'
   }
 } 
