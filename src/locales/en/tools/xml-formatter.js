@@ -14,6 +14,11 @@ export default {
     displayOptions: 'Display Options',
     showLineNumbers: 'Show Line Numbers'
   },
+  indentOptions: {
+    twoSpaces: '2 spaces',
+    fourSpaces: '4 spaces',
+    tabIndent: 'Tab indent'
+  },
   actions: {
     format: 'Format XML',
     minify: 'Minify XML',

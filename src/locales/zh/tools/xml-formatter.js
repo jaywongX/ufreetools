@@ -14,6 +14,11 @@ export default {
     displayOptions: '显示选项',
     showLineNumbers: '显示行号'
   },
+  indentOptions: {
+    twoSpaces: '2个空格',
+    fourSpaces: '4个空格',
+    tabIndent: 'Tab缩进'
+  },
   actions: {
     format: '格式化XML',
     minify: '压缩XML',

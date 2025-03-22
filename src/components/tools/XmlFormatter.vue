@@ -33,9 +33,9 @@
             v-model="indentSize" 
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           >
-            <option value="2">2个空格</option>
-            <option value="4">4个空格</option>
-            <option value="tab">Tab缩进</option>
+            <option value="2">{{ $t('tools.xml-formatter.indentOptions.twoSpaces') }}</option>
+            <option value="4">{{ $t('tools.xml-formatter.indentOptions.fourSpaces') }}</option>
+            <option value="tab">{{ $t('tools.xml-formatter.indentOptions.tabIndent') }}</option>
           </select>
         </div>
         
