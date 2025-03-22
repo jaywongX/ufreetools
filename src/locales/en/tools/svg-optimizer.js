@@ -7,7 +7,9 @@ export default {
     or: 'OR',
     pasteCode: 'Paste SVG code',
     maxSize: 'Maximum file size: 5MB',
-    onlySvg: 'Only SVG files are supported'
+    onlySvg: 'Only SVG files are supported',
+    selected: 'Selected',
+    changeFile: 'Change file'
   },
   input: {
     title: 'Input SVG',
@@ -17,12 +19,14 @@ export default {
     validate: 'Validate SVG'
   },
   output: {
-    title: 'Optimized SVG',
+    title: 'Optimization Results',
     copyToClipboard: 'Copy to Clipboard',
     download: 'Download SVG',
-    beforeSize: 'Before Size',
-    afterSize: 'After Size',
-    reduction: 'Reduction'
+    beforeSize: 'Original Size',
+    afterSize: 'Optimized Size',
+    reduction: 'Reduction',
+    reductionBy: 'Reduced by',
+    svgCode: 'SVG Code'
   },
   options: {
     title: 'Optimization Options',
@@ -34,25 +38,43 @@ export default {
       custom: 'Custom'
     },
     removeComments: 'Remove Comments',
+    removeCommentsDesc: 'Remove comments and CDATA sections',
     removeHiddenElements: 'Remove Hidden Elements',
     removeEmptyContainers: 'Remove Empty Containers',
     removeUnusedDefs: 'Remove Unused Defs',
     removeViewBox: 'Remove viewBox',
+    keepViewBox: 'Keep viewBox',
+    keepViewBoxDesc: 'Keep viewBox attribute to ensure SVG scalability',
     cleanupIDs: 'Clean up IDs',
+    cleanupIDsDesc: 'Remove or shorten unused IDs',
     convertColors: 'Convert Colors to Hex',
     removeMetadata: 'Remove Metadata',
+    removeMetadataDesc: 'Remove &lt;metadata&gt; elements',
     removeDoctype: 'Remove Doctype',
     removeXMLProcInst: 'Remove XML Instructions',
     removeEditorsNS: 'Remove Editor Namespaces',
     collapseGroups: 'Collapse Groups',
+    collapseGroupsDesc: 'Collapse groups without special attributes',
     convertPathData: 'Optimize Path Data',
+    convertPathDataDesc: 'Convert path data to relative coordinates, reduce decimals, etc.',
     convertTransforms: 'Optimize Transforms',
+    convertShapeToPath: 'Convert Shapes to Paths',
+    convertShapeToPathDesc: 'Convert basic shapes to &lt;path&gt; elements',
     removeUselessStrokeAndFill: 'Remove Useless Stroke & Fill',
     moveElemsAttrsToGroup: 'Move Elements Attributes to Group',
     mergePaths: 'Merge Paths',
     minifyStyles: 'Minify Styles',
     inlineStyles: 'Inline Styles',
-    cleanupNumericValues: 'Round Numeric Values'
+    inlineStylesDesc: 'Convert styles from &lt;style&gt; elements to inline',
+    cleanupNumericValues: 'Round Numeric Values',
+    precision: 'Numeric Precision',
+    decimalPlaces: 'decimal places',
+    lowPrecision: 'Low Precision (smaller size)',
+    highPrecision: 'High Precision (better quality)',
+    removeDimensions: 'Remove Dimensions',
+    removeDimensionsDesc: 'Remove width/height attributes, use viewBox instead',
+    sortAttrs: 'Sort Attributes',
+    sortAttrsDesc: 'Sort element attributes alphabetically'
   },
   view: {
     title: 'Preview',
@@ -66,9 +88,11 @@ export default {
   },
   actions: {
     optimize: 'Optimize SVG',
+    optimizing: 'Optimizing...',
     resetOptions: 'Reset Options',
-    download: 'Download',
+    download: 'Download Optimized SVG',
     copy: 'Copy Code',
+    copyCode: 'Copy Code',
     viewCode: 'View Code',
     viewPreview: 'View Preview'
   },
@@ -76,8 +100,11 @@ export default {
     optimizationSuccess: 'SVG optimized successfully',
     optimizationFailed: 'Failed to optimize SVG: {error}',
     invalidSvg: 'Invalid SVG file or code',
-    copied: 'SVG code copied to clipboard',
+    copied: 'Copied to clipboard',
+    copyFailed: 'Copy failed, please copy manually',
     downloaded: 'Optimized SVG downloaded',
-    emptyInput: 'Please provide SVG code or file to optimize'
+    emptyInput: 'Please provide SVG code or file to optimize',
+    onlySvgAllowed: 'Please upload an SVG file!',
+    failedToLoadLibrary: 'Failed to load SVGO library'
   }
 } 

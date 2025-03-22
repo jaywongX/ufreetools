@@ -1,102 +1,122 @@
 export default {
-  name: 'SM2 Cryptography',
-  description: 'Encrypt, decrypt, sign and verify with SM2, a Chinese national standard for public key cryptography',
-  key: {
-    title: 'Key Management',
-    generate: 'Generate Key Pair',
-    import: 'Import Keys',
-    export: 'Export Keys',
+  name: 'SM2 Crypto',
+  description: 'Generate key pairs, encrypt/decrypt data and create/verify signatures using SM2 cryptography',
+  tabs: {
+    title: 'Function Selection',
+    keyGeneration: 'Key Generation',
+    encryptDecrypt: 'Encrypt/Decrypt',
+    signVerify: 'Sign/Verify'
+  },
+  keyGeneration: {
+    title: 'SM2 Key Pair Generation',
+    generateButton: 'Generate Key Pair',
+    generating: 'Generating...',
     publicKey: 'Public Key',
     privateKey: 'Private Key',
-    copyPublic: 'Copy Public Key',
-    copyPrivate: 'Copy Private Key',
-    saveKeyPair: 'Save Key Pair',
-    loadKeyPair: 'Load Key Pair',
-    publicPlaceholder: 'Enter SM2 public key',
-    privatePlaceholder: 'Enter SM2 private key',
-    bits: 'Key Size',
-    format: 'Key Format',
-    der: 'DER',
-    pem: 'PEM',
-    raw: 'Raw Hex',
-    importSuccess: 'Keys imported successfully',
-    generateSuccess: 'Key pair generated successfully',
-    invalidKey: 'Invalid key format',
-    password: 'Password Protection',
-    passwordPlaceholder: 'Enter password to protect private key',
-    confirmPassword: 'Confirm password'
+    exportPublicKey: 'Export Public Key',
+    exportPrivateKey: 'Export Private Key',
+    copy: 'Copy',
+    info: {
+      title: 'About SM2 Key Pairs',
+      description: 'SM2 is an elliptic curve cryptography algorithm released by the Chinese National Cryptography Administration:',
+      points: [
+        'Public Key: Can be shared with others, used to encrypt data or verify signatures',
+        'Private Key: Must be kept secure, used to decrypt data or create signatures'
+      ],
+      features: 'SM2 Algorithm Features:',
+      featuresList: [
+        'Based on 256-bit elliptic curve, security equivalent to RSA 3072-bit',
+        'Fast execution, short keys',
+        'Chinese national standard (GB/T 32918 series), suitable for commercial cryptography in China',
+        'Integrates encryption, signature, and key exchange functions'
+      ],
+      securityTip: 'Security Tip: Never share your private key with anyone, keep your key pair secure.'
+    }
   },
-  encryption: {
-    title: 'Encryption',
-    plaintext: 'Plaintext',
-    plaintextPlaceholder: 'Enter text to encrypt',
-    ciphertext: 'Ciphertext',
-    ciphertextPlaceholder: 'Encrypted data will appear here',
+  encryptDecrypt: {
+    title: 'Operation Type',
     encrypt: 'Encrypt',
     decrypt: 'Decrypt',
-    mode: 'Mode',
-    c1c2c3: 'C1C2C3',
-    c1c3c2: 'C1C3C2',
-    encoding: 'Text Encoding',
-    output: 'Output Format',
-    asn1: 'ASN.1',
-    hex: 'Hex',
-    base64: 'Base64',
-    encryptSuccess: 'Encryption successful',
-    decryptSuccess: 'Decryption successful',
-    decryptError: 'Failed to decrypt: {error}',
-    encryptError: 'Failed to encrypt: {error}'
+    keyLabel: {
+      encrypt: 'Public Key',
+      decrypt: 'Private Key'
+    },
+    dataLabel: {
+      encrypt: 'Data to Encrypt',
+      decrypt: 'Data to Decrypt'
+    },
+    keyPlaceholder: 'Paste SM2 key',
+    dataPlaceholder: {
+      encrypt: 'Enter text to encrypt',
+      decrypt: 'Enter ciphertext to decrypt'
+    },
+    processButton: {
+      encrypt: 'Encrypt',
+      decrypt: 'Decrypt'
+    },
+    processing: 'Processing...',
+    resultLabel: {
+      encrypt: 'Encryption Result',
+      decrypt: 'Decryption Result'
+    },
+    info: {
+      title: 'SM2 Encryption/Decryption Instructions',
+      usage: 'How to use SM2 encryption/decryption:',
+      points: [
+        'Encryption: Use the recipient\'s public key to encrypt data that only they can decrypt',
+        'Decryption: Use your private key to decrypt data encrypted with your public key'
+      ],
+      limitations: 'Limitations:',
+      limitationsList: [
+        'SM2 algorithm has plaintext length limitations, suitable for short messages, keys or sensitive data',
+        'For long text encryption, consider using symmetric encryption (like SM4) first, then encrypt the symmetric key with SM2'
+      ],
+      note: 'Note: SM2 encrypted data format is not compatible with RSA, ensure the recipient supports SM2 algorithm.'
+    }
   },
-  signature: {
-    title: 'Digital Signature',
-    message: 'Message',
-    messagePlaceholder: 'Enter message to sign',
-    signature: 'Signature',
-    signaturePlaceholder: 'Signature will appear here',
+  signVerify: {
+    title: 'Operation Type',
     sign: 'Sign',
     verify: 'Verify',
-    valid: 'Signature is valid',
-    invalid: 'Signature is invalid',
-    algorithm: 'Hash Algorithm',
-    sm3: 'SM3',
-    sha256: 'SHA-256',
-    signSuccess: 'Message signed successfully',
-    verifySuccess: 'Signature verified successfully',
-    signError: 'Failed to sign: {error}',
-    verifyError: 'Failed to verify: {error}',
-    userId: 'User ID',
-    userIdPlaceholder: 'Enter User ID (default: 1234567812345678)'
+    keyLabel: {
+      sign: 'Private Key',
+      verify: 'Public Key'
+    },
+    dataLabel: 'Data to {operation}',
+    signatureLabel: 'Signature',
+    signatureValue: 'Generated Signature',
+    keyPlaceholder: 'Paste SM2 key',
+    dataPlaceholder: 'Enter original data text',
+    signaturePlaceholder: 'Enter signature to verify',
+    processButton: {
+      sign: 'Generate Signature',
+      verify: 'Verify Signature'
+    },
+    processing: 'Processing...',
+    verificationSuccess: 'Signature verification successful! Data is intact and unaltered.',
+    verificationFailed: 'Signature verification failed! Data may have been tampered with or signature is incorrect.',
+    info: {
+      title: 'SM2 Signature/Verification Instructions',
+      mainUses: 'Main uses of SM2 digital signatures:',
+      usesList: [
+        'Data Integrity: Ensure data hasn\'t been altered during transmission',
+        'Authentication: Verify data truly comes from the claimed sender',
+        'Non-repudiation: Sender cannot deny sending the message'
+      ],
+      usage: 'How to use:',
+      usageList: [
+        'Signing: Use your private key to generate a signature for your data',
+        'Verification: Use the sender\'s public key to verify the signature\'s authenticity'
+      ],
+      note: 'Note: SM2 signatures use China\'s cryptographic standards, which are not compatible with international signature algorithms, requiring the recipient to support SM2 algorithm.'
+    }
   },
-  file: {
-    title: 'File Operations',
-    selectFile: 'Select File',
-    dropFile: 'or drop file here',
-    fileSelected: 'Selected file: {name}',
-    encryptFile: 'Encrypt File',
-    decryptFile: 'Decrypt File',
-    signFile: 'Sign File',
-    verifyFile: 'Verify File',
-    download: 'Download Result',
-    maxSize: 'Max size: 10MB',
-    processing: 'Processing file...',
-    fileError: 'File error: {error}',
-    fileTooBig: 'File is too large. Maximum size is 10MB'
-  },
-  options: {
-    title: 'Options',
-    asn1Format: 'Use ASN.1 Format',
-    compress: 'Use Point Compression',
-    useUid: 'Custom User ID',
-    defaultUid: 'Default User ID (1234567812345678)',
-    inputHex: 'Input is Hex Encoded',
-    outputHex: 'Output as Hex Encoded'
-  },
-  about: {
-    title: 'About SM2',
-    description: 'SM2 is an elliptic curve cryptography (ECC) standard developed by the Chinese government.',
-    strength: 'It offers security equivalent to 256-bit RSA while using smaller key sizes.',
-    usage: 'Used for secure communications, digital signatures, and data encryption in China.',
-    compatibility: 'This implementation complies with GM/T 0003-2012 specifications.',
-    warning: 'Note: For critical applications, use certified implementations approved by regulatory authorities.'
+  messages: {
+    copied: 'Copied to clipboard',
+    copyFailed: 'Copy failed, please copy manually',
+    keygenError: 'Error generating key pair: {error}',
+    processError: 'Operation failed. Please check your key and input data.',
+    emptyKey: 'Please enter a key',
+    emptyData: 'Please enter data to process'
   }
 } 

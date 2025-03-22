@@ -1,9 +1,9 @@
 export default {
   name: '敏感词过滤器',
-  description: '过滤、检测并替换文本内容中的敏感词',
+  description: '检测和过滤文本中的敏感词，支持自定义敏感词库和过滤规则',
   input: {
     title: '输入文本',
-    placeholder: '输入或粘贴要检查敏感词的文本...',
+    placeholder: '请输入需要检测的文本内容...',
     loadSample: '加载示例',
     clearInput: '清除输入',
     uploadFile: '上传文本文件'
@@ -70,18 +70,64 @@ export default {
     categoryBreakdown: '类别分布',
     cleanlinessScore: '纯净度分数'
   },
+  filterOptions: {
+    title: '过滤模式',
+    modes: {
+      asterisk: '替换为 *',
+      custom: '自定义替换字符',
+      remove: '删除敏感词'
+    },
+    replaceChar: {
+      title: '替换字符',
+      placeholder: '输入替换字符'
+    }
+  },
+  customWords: {
+    title: '自定义敏感词库',
+    addWord: '添加词语',
+    addPrompt: '请输入要添加的敏感词：',
+    removeWord: '移除'
+  },
   actions: {
-    filter: '过滤文本',
+    filter: '开始过滤',
+    reset: '重置',
+    processing: '处理中...',
     clearAll: '全部清除',
     copyFiltered: '复制过滤后文本',
     downloadReport: '下载报告',
     resetSettings: '重置设置'
   },
+  results: {
+    title: '过滤结果',
+    tabs: {
+      filteredResult: '过滤结果',
+      detectionReport: '检测报告'
+    },
+    filteredText: {
+      title: '过滤后的文本',
+      copy: '复制结果',
+      empty: '无过滤结果显示'
+    },
+    statistics: {
+      detectedCount: '检测到的敏感词数量',
+      retentionRate: '文本保留率',
+      totalWords: '文本总字数'
+    },
+    detectedWords: {
+      title: '检测到的敏感词',
+      empty: '未检测到敏感词'
+    }
+  },
   messages: {
+    copied: '已复制到剪贴板',
+    copyFailed: '复制失败，请手动复制',
+    noInput: '请输入要过滤的文本',
+    inputTooLong: '输入文本过长',
+    wordAdded: '词语已添加到敏感词库',
+    wordExists: '此词已存在于敏感词库中',
+    wordRemoved: '词语已从敏感词库中移除',
     filterSuccess: '文本过滤成功',
     noSensitiveWords: '未发现敏感词',
-    wordAdded: '词汇已添加到词典',
-    wordRemoved: '词汇已从词典中移除',
     dictionaryCleared: '词典已清空',
     dictionaryImported: '词典已导入',
     dictionaryExported: '词典已导出',
