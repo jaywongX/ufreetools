@@ -2,15 +2,15 @@
   <div>
     <!-- 工具配置区域 -->
     <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">对称加密算法</h2>
+      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.symmetric-crypto.name') }}</h2>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        实现文本和文件的安全加密与解密，支持多种对称加密算法，包括AES、DES和国密SM4
+        {{ $t('tools.symmetric-crypto.description') }}
       </p>
 
       <!-- 算法选择 -->
       <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          选择算法
+          {{ $t('tools.symmetric-crypto.algorithm.title') }}
         </label>
         <div class="flex flex-wrap gap-2">
           <button 
@@ -22,7 +22,7 @@
               ? 'bg-primary text-white' 
               : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'"
           >
-            {{ algo.name }}
+            {{ $t(`tools.symmetric-crypto.algorithm.${algo.id}`) }}
           </button>
         </div>
       </div>
@@ -30,7 +30,7 @@
       <!-- 工作模式 -->
       <div class="mb-4" v-if="selectedAlgorithm !== 'none'">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          工作模式
+          {{ $t('tools.symmetric-crypto.mode.title') }}
         </label>
         <div class="flex flex-wrap gap-2">
           <button 
@@ -42,7 +42,7 @@
               ? 'bg-primary text-white' 
               : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'"
           >
-            {{ mode.name }}
+            {{ $t(`tools.symmetric-crypto.mode.${mode.id.toLowerCase()}`) }}
           </button>
         </div>
       </div>
@@ -50,7 +50,7 @@
       <!-- 填充方式 -->
       <div class="mb-4" v-if="selectedAlgorithm !== 'none' && selectedMode !== 'CTR' && selectedMode !== 'OFB' && selectedMode !== 'CFB'">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          填充方式
+          {{ $t('tools.symmetric-crypto.padding.title') }}
         </label>
         <div class="flex flex-wrap gap-2">
           <button 
@@ -62,7 +62,7 @@
               ? 'bg-primary text-white' 
               : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'"
           >
-            {{ padding.name }}
+            {{ $t(`tools.symmetric-crypto.padding.${padding.id.toLowerCase()}`) }}
           </button>
         </div>
       </div>
@@ -70,7 +70,7 @@
       <!-- 加密/解密切换 -->
       <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          操作类型
+          {{ $t('tools.symmetric-crypto.operation.title') }}
         </label>
         <div class="flex gap-2">
           <button 
@@ -80,7 +80,7 @@
               ? 'bg-primary text-white' 
               : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'"
           >
-            加密
+            {{ $t('tools.symmetric-crypto.operation.encrypt') }}
           </button>
           <button 
             @click="switchOperation('decrypt')"
@@ -89,7 +89,7 @@
               ? 'bg-primary text-white' 
               : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'"
           >
-            解密
+            {{ $t('tools.symmetric-crypto.operation.decrypt') }}
           </button>
         </div>
       </div>
@@ -100,21 +100,21 @@
           <!-- 密钥 -->
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              密钥 <span class="text-xs text-gray-500">({{ getKeySize() }})</span>
+              {{ $t('tools.symmetric-crypto.key.title') }} <span class="text-xs text-gray-500">({{ getKeySize() }})</span>
             </label>
             <div class="flex mb-2">
               <input 
                 v-model="key" 
                 type="text" 
-                :placeholder="`输入${getKeySize()}密钥（HEX格式）`"
+                :placeholder="$t('tools.symmetric-crypto.key.placeholder', { keySize: getKeySize() })"
                 class="flex-grow px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               >
               <button 
                 @click="generateRandomKey()"
                 class="px-3 py-2 bg-gray-100 dark:bg-gray-600 border border-l-0 border-gray-300 dark:border-gray-600 rounded-r-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500"
-                title="生成随机密钥"
+                :title="$t('tools.symmetric-crypto.key.generateRandom')"
               >
-                随机生成
+                {{ $t('tools.symmetric-crypto.key.generateRandom') }}
               </button>
             </div>
           </div>
@@ -122,21 +122,21 @@
           <!-- IV (初始向量) -->
           <div v-if="needsIV()">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              初始向量 (IV) <span class="text-xs text-gray-500">({{ getBlockSize() }})</span>
+              {{ $t('tools.symmetric-crypto.iv.label') }} <span class="text-xs text-gray-500">({{ getBlockSize() }})</span>
             </label>
             <div class="flex mb-2">
               <input 
                 v-model="iv" 
                 type="text" 
-                :placeholder="`输入${getBlockSize()}初始向量（HEX格式）`"
+                :placeholder="$t('tools.symmetric-crypto.iv.placeholder', { blockSize: getBlockSize() })"
                 class="flex-grow px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               >
               <button 
                 @click="generateRandomIV()"
                 class="px-3 py-2 bg-gray-100 dark:bg-gray-600 border border-l-0 border-gray-300 dark:border-gray-600 rounded-r-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500"
-                title="生成随机IV"
+                :title="$t('tools.symmetric-crypto.iv.generateRandom')"
               >
-                随机生成
+                {{ $t('tools.symmetric-crypto.iv.generateRandom') }}
               </button>
             </div>
           </div>
@@ -147,7 +147,7 @@
       <div class="mb-4" v-if="selectedAlgorithm !== 'none'">
         <div class="flex items-center gap-4 mb-2">
           <label class="text-sm font-medium text-gray-700 dark:text-gray-300 shrink-0">
-            {{ operation === 'encrypt' ? '待加密内容' : '待解密内容' }}
+            {{ operation === 'encrypt' ? $t('tools.symmetric-crypto.input.title') : $t('tools.symmetric-crypto.input.titleDecrypt') }}
           </label>
           <!-- 输入格式选择 -->
           <div class="flex flex-wrap gap-2">
@@ -160,7 +160,7 @@
                 ? 'bg-primary text-white' 
                 : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'"
             >
-              {{ format.name }}
+              {{ $t(`tools.symmetric-crypto.inputFormat.${format.id}`) }}
             </button>
           </div>
           <button 
@@ -168,13 +168,13 @@
             class="text-xs text-red-500 hover:text-red-700"
             v-if="input.length > 0"
           >
-            清空
+            {{ $t('tools.symmetric-crypto.input.clear') }}
           </button>
         </div>
         <textarea 
           v-model="input" 
           class="w-full h-32 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
-          :placeholder="operation === 'encrypt' ? '输入要加密的文本' : '输入要解密的' + (selectedInputFormat === 'base64' ? 'Base64' : 'HEX格式密文')"
+          :placeholder="operation === 'encrypt' ? $t('tools.symmetric-crypto.input.placeholder') : $t('tools.symmetric-crypto.input.placeholderDecrypt', { format: $t(`tools.symmetric-crypto.inputFormat.${selectedInputFormat}`) })"
         ></textarea>
       </div>
 
@@ -185,7 +185,7 @@
           class="w-full px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark disabled:opacity-50 disabled:cursor-not-allowed"
           :disabled="!canProcess()"
         >
-          {{ operation === 'encrypt' ? '加密' : '解密' }}
+          {{ operation === 'encrypt' ? $t('tools.symmetric-crypto.buttons.process') : $t('tools.symmetric-crypto.buttons.processDecrypt') }}
         </button>
       </div>
 
@@ -193,20 +193,20 @@
       <div v-if="result" class="mb-4">
         <div class="flex items-center gap-4 mb-2">
           <label class="text-sm font-medium text-gray-700 dark:text-gray-300 shrink-0">
-            {{ operation === 'encrypt' ? '加密结果' : '解密结果' }}
+            {{ operation === 'encrypt' ? $t('tools.symmetric-crypto.output.title') : $t('tools.symmetric-crypto.output.titleDecrypt') }}
           </label>
           <!-- 输出格式选择 -->
           <div class="flex flex-wrap gap-2">
             <button 
               v-for="format in operation === 'encrypt' ? outputFormats : decryptOutputFormats" 
               :key="format.id"
-              @click="operation === 'encrypt' ? selectedOutputFormat = format.id : selectedDecryptOutputFormat = format.id"
+              @click="changeOutputFormat(format.id)"
               class="px-2 py-1 rounded text-xs"
               :class="(operation === 'encrypt' ? selectedOutputFormat : selectedDecryptOutputFormat) === format.id 
                 ? 'bg-primary text-white' 
                 : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'"
             >
-              {{ format.name }}
+              {{ $t(`tools.symmetric-crypto.outputFormat.${format.id}`) }}
             </button>
           </div>
           <div class="flex items-center gap-2">
@@ -214,13 +214,13 @@
               @click="copyResult" 
               class="text-xs text-primary hover:text-primary-dark"
             >
-              复制结果
+              {{ $t('tools.symmetric-crypto.output.copyResult') }}
             </button>
             <span 
               v-if="copySuccess"
               class="text-xs text-green-600 dark:text-green-400 transition-opacity duration-200"
             >
-              已复制
+              {{ $t('tools.symmetric-crypto.output.copied') }}
             </span>
           </div>
         </div>
@@ -231,26 +231,23 @@
 
       <!-- 错误提示 -->
       <div v-if="error" class="mt-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md text-red-600 dark:text-red-400 text-sm">
-        <strong>错误：</strong> {{ error }}
+        <strong>{{ $t('tools.symmetric-crypto.error.title') }}：</strong> {{ error }}
       </div>
 
       <!-- 算法说明区域 -->
       <div class="mt-6 text-sm text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 pt-4">
-        <h3 class="font-medium text-gray-700 dark:text-gray-300 mb-2">算法说明</h3>
+        <h3 class="font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.symmetric-crypto.info.title') }}</h3>
         <ul class="list-disc list-inside space-y-1">
-          <li><strong>AES</strong>：高级加密标准，可以使用128位、192位或256位密钥</li>
-          <li><strong>DES</strong>：数据加密标准，使用56位密钥，安全性较低</li>
-          <li><strong>3DES</strong>：三重DES，使用三个56位DES密钥，提供更高安全性</li>
-          <li><strong>SM4</strong>：中国国密标准，分组密码算法，使用128位密钥</li>
+          <li v-for="algo in algorithms" :key="`info-${algo.id}`">
+            <strong>{{ algo.name }}</strong>: {{ $t(`tools.symmetric-crypto.info.algorithms.${algo.id}`) }}
+          </li>
         </ul>
         
-        <h3 class="font-medium text-gray-700 dark:text-gray-300 mt-4 mb-2">工作模式说明</h3>
+        <h3 class="font-medium text-gray-700 dark:text-gray-300 mt-4 mb-2">{{ $t('tools.symmetric-crypto.info.modes.title') }}</h3>
         <ul class="list-disc list-inside space-y-1">
-          <li><strong>ECB</strong>：电子密码本模式，各个分组独立加密，不推荐用于敏感数据</li>
-          <li><strong>CBC</strong>：密码分组链接模式，每个分组依赖前一个分组，更加安全</li>
-          <li><strong>CFB</strong>：密文反馈模式，将分组密码转换为流密码</li>
-          <li><strong>OFB</strong>：输出反馈模式，也是一种流密码模式，加解密使用相同操作</li>
-          <li><strong>CTR</strong>：计数器模式，每个分组使用递增计数器进行加密，可并行处理</li>
+          <li v-for="mode in modes" :key="`info-${mode.id}`">
+            <strong>{{ mode.name }}</strong>: {{ $t(`tools.symmetric-crypto.info.modes.${mode.id.toLowerCase()}`) }}
+          </li>
         </ul>
       </div>
     </div>
@@ -261,6 +258,7 @@
 import { ref, computed, watch } from 'vue'
 import CryptoJS from 'crypto-js'
 import { sm4 } from 'sm-crypto'
+import { useI18n } from 'vue-i18n'
 
 // 定义状态
 const selectedAlgorithm = ref('aes')
@@ -281,7 +279,7 @@ const copySuccess = ref(false)  // 新增：复制成功提示状态
 const algorithms = [
   { id: 'aes', name: 'AES' },
   { id: 'des', name: 'DES' },
-  { id: '3des', name: '3DES' },
+  { id: 'tripledes', name: '3DES' },
   { id: 'sm4', name: 'SM4 (国密)' }
 ]
 
@@ -347,15 +345,18 @@ function needsIV() {
 
 // 获取当前算法的密钥大小提示
 function getKeySize() {
+  const { locale } = useI18n()
+  const unit = locale.value === 'zh' ? '字节' : 'bytes'
+  
   switch (selectedAlgorithm.value) {
     case 'aes':
-      return '16/24/32字节'
+      return `16/24/32 ${unit}`
     case 'des':
-      return '8字节'
-    case '3des':
-      return '24字节'
+      return `8 ${unit}`
+    case 'tripledes':
+      return `24 ${unit}`
     case 'sm4':
-      return '16字节'
+      return `16 ${unit}`
     default:
       return ''
   }
@@ -363,13 +364,16 @@ function getKeySize() {
 
 // 获取当前算法的块大小
 function getBlockSize() {
+  const { locale } = useI18n()
+  const unit = locale.value === 'zh' ? '字节' : 'bytes'
+  
   switch (selectedAlgorithm.value) {
     case 'aes':
     case 'sm4':
-      return '16字节'
+      return `16 ${unit}`
     case 'des':
-    case '3des':
-      return '8字节'
+    case 'tripledes':
+      return `8 ${unit}`
     default:
       return ''
   }
@@ -396,7 +400,7 @@ function getDefaultKeyLength() {
       return 16 // 128位
     case 'des':
       return 8 // 56位（实际使用64位，但有8位是校验位）
-    case '3des':
+    case 'tripledes':
       return 24 // 3个8字节密钥
     case 'sm4':
       return 16 // 128位
@@ -412,7 +416,7 @@ function getDefaultBlockSize() {
     case 'sm4':
       return 16 // 128位
     case 'des':
-    case '3des':
+    case 'tripledes':
       return 8 // 64位
     default:
       return 16
@@ -427,7 +431,7 @@ function isValidHex(str) {
 // 监听密钥输入
 watch(key, (newValue) => {
   if (newValue && !isValidHex(newValue)) {
-    error.value = '密钥必须是HEX格式'
+    error.value = $t('tools.symmetric-crypto.error.invalidHex')
     key.value = newValue.replace(/[^0-9a-fA-F]/g, '') // 移除非HEX字符
   } else {
     error.value = ''
@@ -437,7 +441,7 @@ watch(key, (newValue) => {
 // 监听IV输入
 watch(iv, (newValue) => {
   if (newValue && !isValidHex(newValue)) {
-    error.value = 'IV必须是HEX格式'
+    error.value = $t('tools.symmetric-crypto.error.invalidIvHex')
     iv.value = newValue.replace(/[^0-9a-fA-F]/g, '') // 移除非HEX字符
   } else {
     error.value = ''
@@ -475,7 +479,7 @@ async function encrypt() {
       break
     case 'hex':
       if (!isValidHex(input.value)) {
-        throw new Error('无效的HEX格式输入')
+        throw new Error($t('tools.symmetric-crypto.error.invalidHexInput'))
       }
       processedInput = CryptoJS.enc.Hex.parse(input.value)
       break
@@ -483,7 +487,7 @@ async function encrypt() {
       try {
         processedInput = CryptoJS.enc.Base64.parse(input.value)
       } catch (e) {
-        throw new Error('无效的Base64格式输入')
+        throw new Error($t('tools.symmetric-crypto.error.invalidBase64'))
       }
       break
   }
@@ -516,11 +520,11 @@ async function encrypt() {
     case 'des':
       encrypted = CryptoJS.DES.encrypt(processedInput, processedKey, options)
       break
-    case '3des':
+    case 'tripledes':
       encrypted = CryptoJS.TripleDES.encrypt(processedInput, processedKey, options)
       break
     default:
-      throw new Error('不支持的算法')
+      throw new Error($t('tools.symmetric-crypto.error.unsupportedAlgorithm'))
   }
   
   // 按照选择的格式输出
@@ -605,7 +609,7 @@ function decryptWithCryptoJS(cipherParams, key, iv) {
     case 'des':
       decrypted = CryptoJS.DES.decrypt(cipherParams, key, options)
       break
-    case '3des':
+    case 'tripledes':
       decrypted = CryptoJS.TripleDES.decrypt(cipherParams, key, options)
       break
     default:
@@ -753,7 +757,7 @@ function copyResult() {
     })
     .catch(err => {
       console.error('复制失败:', err)
-      error.value = '复制失败，请手动复制'
+      error.value = $t('tools.symmetric-crypto.error.copyFailed')
     })
 }
 
@@ -769,6 +773,20 @@ function switchOperation(newOperation) {
     selectedInputFormat.value = 'hex'  // 解密时默认使用HEX格式
   } else {
     selectedInputFormat.value = 'string'  // 加密时默认使用字符串格式
+  }
+}
+
+// 切换输出格式
+function changeOutputFormat(formatId) {
+  if (operation.value === 'encrypt') {
+    selectedOutputFormat.value = formatId
+  } else {
+    selectedDecryptOutputFormat.value = formatId
+  }
+  
+  // 如果已有结果，重新处理以更新输出格式
+  if (result.value) {
+    processOperation()
   }
 }
 </script> 

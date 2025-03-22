@@ -1,6 +1,6 @@
 export default {
-  name: '对称加密',
-  description: '使用AES、DES等对称加密算法加密和解密数据',
+  name: '对称加密算法',
+  description: '实现文本和文件的安全加密与解密，支持多种对称加密算法，包括AES、DES和国密SM4',
   encryption: {
     title: '加密/解密',
     plaintext: '明文',
@@ -17,79 +17,103 @@ export default {
     decryptError: '解密失败：{error}'
   },
   algorithm: {
-    title: '算法',
+    title: '选择算法',
     aes: 'AES',
     des: 'DES',
     tripledes: '3DES（三重DES）',
-    rc4: 'RC4',
-    rc2: 'RC2',
-    blowfish: 'Blowfish',
-    twofish: 'Twofish',
-    camellia: 'Camellia',
-    idea: 'IDEA',
-    sm4: 'SM4',
-    chacha20: 'ChaCha20'
+    sm4: 'SM4 (国密)',
+    "3des": '3DES（三重DES）'
   },
   mode: {
-    title: '操作模式',
-    ecb: 'ECB - 电子密码本',
-    cbc: 'CBC - 密码块链接',
-    cfb: 'CFB - 密码反馈',
-    ofb: 'OFB - 输出反馈',
-    ctr: 'CTR - 计数器',
-    gcm: 'GCM - 伽罗瓦/计数器模式',
-    ccm: 'CCM - 带CBC-MAC的计数器',
-    stream: '流密码（无模式）'
+    title: '工作模式',
+    ecb: 'ECB - 电子密码本模式',
+    cbc: 'CBC - 密码分组链接模式',
+    cfb: 'CFB - 密文反馈模式',
+    ofb: 'OFB - 输出反馈模式',
+    ctr: 'CTR - 计数器模式'
+  },
+  padding: {
+    title: '填充方式',
+    pkcs7: 'PKCS7',
+    zeroPadding: '零填充',
+    zeropadding: '零填充'
+  },
+  operation: {
+    title: '操作类型',
+    encrypt: '加密',
+    decrypt: '解密'
   },
   key: {
     title: '密钥',
-    password: '密码',
-    passwordPlaceholder: '输入加密密码',
-    generateKey: '生成密钥',
-    bits: '密钥大小（位）',
-    hexKey: '十六进制密钥',
-    hexKeyPlaceholder: '输入十六进制密钥',
-    base64Key: 'Base64密钥',
-    base64KeyPlaceholder: '输入Base64密钥',
-    showKey: '显示密钥',
-    hideKey: '隐藏密钥',
-    copy: '复制密钥',
-    copied: '已复制',
-    deriveFrom: '从密码派生密钥',
-    enterKey: '直接输入密钥',
-    randomKey: '随机密钥'
+    label: '密钥',
+    placeholder: '输入{keySize}密钥（HEX格式）',
+    generateRandom: '随机生成',
+    sizeHint: '{keySize}'
   },
   iv: {
-    title: 'IV / 随机数',
-    description: '初始化向量或随机数',
-    placeholder: '输入IV（十六进制）',
-    generate: '生成随机IV',
-    required: '此模式需要IV',
-    notRequired: 'ECB模式不需要IV',
-    auto: '自动生成'
+    title: '初始向量 (IV)',
+    label: '初始向量 (IV)',
+    placeholder: '输入{blockSize}初始向量（HEX格式）',
+    generateRandom: '随机生成',
+    sizeHint: '{blockSize}'
   },
-  params: {
-    title: '高级参数',
-    padding: '填充',
-    pkcs7: 'PKCS#7',
-    iso10126: 'ISO 10126',
-    ansix923: 'ANSI X.923',
-    iso97971: 'ISO/IEC 9797-1',
-    noPadding: '无填充',
-    zeroPadding: '零填充',
-    encoding: '文本编码',
-    utf8: 'UTF-8',
-    ascii: 'ASCII',
-    latin1: 'Latin1 (ISO-8859-1)',
-    format: '输出格式',
-    hex: '十六进制',
-    base64: 'Base64',
-    base64url: 'Base64URL',
-    raw: '原始字节',
-    iterations: '迭代次数（用于密钥派生）',
-    tagLength: '认证标签长度（用于GCM/CCM）',
-    authData: '附加认证数据（AAD）',
-    aadPlaceholder: '输入要认证的附加数据（可选）'
+  input: {
+    title: '待加密内容',
+    titleDecrypt: '待解密内容',
+    clear: '清空',
+    placeholder: '输入要加密的文本',
+    placeholderDecrypt: '输入要解密的{format}格式密文'
+  },
+  inputFormat: {
+    title: '输入格式',
+    string: '字符串',
+    hex: 'HEX',
+    base64: 'Base64'
+  },
+  output: {
+    title: '加密结果',
+    titleDecrypt: '解密结果',
+    copyResult: '复制结果',
+    copied: '已复制'
+  },
+  outputFormat: {
+    title: '输出格式',
+    string: '字符串',
+    hex: 'HEX',
+    base64: 'Base64'
+  },
+  error: {
+    title: '错误',
+    invalidHex: '密钥必须是HEX格式',
+    invalidIvHex: 'IV必须是HEX格式',
+    invalidHexInput: '无效的HEX格式输入',
+    invalidBase64: '无效的Base64格式输入',
+    unsupportedAlgorithm: '不支持的算法',
+    decryptionFailed: '解密失败：{message}',
+    copyFailed: '复制失败，请手动复制',
+    unknownError: '处理过程中发生错误'
+  },
+  info: {
+    title: '算法说明',
+    algorithms: {
+      aes: 'AES：高级加密标准，可以使用128位、192位或256位密钥',
+      des: 'DES：数据加密标准，使用56位密钥，安全性较低',
+      tripledes: '3DES：三重DES，使用三个56位DES密钥，提供更高安全性',
+      sm4: 'SM4：中国国密标准，分组密码算法，使用128位密钥',
+      "3des": '3DES：三重DES，使用三个56位DES密钥，提供更高安全性'
+    },
+    modes: {
+      title: '工作模式说明',
+      ecb: 'ECB：电子密码本模式，各个分组独立加密，不推荐用于敏感数据',
+      cbc: 'CBC：密码分组链接模式，每个分组依赖前一个分组，更加安全',
+      cfb: 'CFB：密文反馈模式，将分组密码转换为流密码',
+      ofb: 'OFB：输出反馈模式，也是一种流密码模式，加解密使用相同操作',
+      ctr: 'CTR：计数器模式，每个分组使用递增计数器进行加密，可并行处理'
+    }
+  },
+  buttons: {
+    process: '加密',
+    processDecrypt: '解密'
   },
   file: {
     title: '文件加密',

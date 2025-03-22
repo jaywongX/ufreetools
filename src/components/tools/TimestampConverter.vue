@@ -3,12 +3,12 @@
     <div class="mb-6 grid gap-6">
       <!-- 时间戳与日期互转 -->
       <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-        <h3 class="text-lg font-medium mb-3 text-gray-800 dark:text-gray-200">时间戳与日期互转</h3>
+        <h3 class="text-lg font-medium mb-3 text-gray-800 dark:text-gray-200">{{ $t('tools.timestamp-converter.labels.unixTimestamp') }}</h3>
         <div class="max-w-md space-y-4">
           <div>
             <div class="flex justify-between items-center mb-2">
               <label class="text-sm font-medium text-gray-700 dark:text-gray-300">
-                {{ isTimestampToDate ? 'Unix时间戳 (秒)' : '日期时间' }}
+                {{ isTimestampToDate ? $t('tools.timestamp-converter.labels.unixTimestamp') : $t('tools.timestamp-converter.labels.dateTime') }}
               </label>
               <div class="flex items-center space-x-2">
                 <button 
@@ -19,13 +19,13 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                   </svg>
-                  <span>刷新</span>
+                  <span>{{ $t('tools.timestamp-converter.actions.refresh') }}</span>
                 </button>
                 <button 
                   @click="switchConvertMode"
                   class="text-primary hover:text-primary-dark text-sm flex items-center space-x-1"
                 >
-                  <span>切换</span>
+                  <span>{{ $t('tools.timestamp-converter.actions.switch') }}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
                   </svg>
@@ -39,7 +39,7 @@
                 v-model="timestampInput"
                 @input="convertTimestampToDate"
                 class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-                placeholder="请输入Unix时间戳"
+                :placeholder="$t('tools.timestamp-converter.placeholders.enterTimestamp')"
               />
               <input 
                 v-else
@@ -47,12 +47,13 @@
                 v-model="dateInput"
                 @input="convertDateToTimestamp"
                 class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+                step="1"
               />
               <button 
                 v-if="isTimestampToDate ? timestampInput : dateInput"
                 @click="copyToClipboard(isTimestampToDate ? timestampInput : dateInput)" 
                 class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 px-3 rounded-r-md border border-gray-200 dark:border-gray-600"
-                title="复制"
+                :title="$t('tools.timestamp-converter.actions.copy')"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
@@ -63,7 +64,7 @@
 
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              {{ isTimestampToDate ? '日期时间' : 'Unix时间戳 (秒)' }}
+              {{ isTimestampToDate ? $t('tools.timestamp-converter.labels.dateTime') : $t('tools.timestamp-converter.labels.unixTimestamp') }}
             </label>
             <div class="flex">
               <input 
@@ -76,7 +77,7 @@
                 v-if="isTimestampToDate ? dateFromTimestamp : timestampFromDate"
                 @click="copyToClipboard(isTimestampToDate ? dateFromTimestamp : timestampFromDate)" 
                 class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 px-3 rounded-r-md border border-gray-200 dark:border-gray-600"
-                title="复制"
+                :title="$t('tools.timestamp-converter.actions.copy')"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
@@ -89,11 +90,11 @@
       
       <!-- 时间单位转换 -->
       <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-        <h3 class="text-lg font-medium mb-3 text-gray-800 dark:text-gray-200">时间单位转换</h3>
+        <h3 class="text-lg font-medium mb-3 text-gray-800 dark:text-gray-200">{{ $t('tools.timestamp-converter.labels.unitConversion') }}</h3>
         <div class="max-w-md space-y-4">
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              输入值
+              {{ $t('tools.timestamp-converter.labels.inputValue') }}
             </label>
             <div class="flex">
               <input 
@@ -101,25 +102,25 @@
                 v-model="timeValue"
                 @input="convertTime"
                 class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-                placeholder="请输入数值"
+                :placeholder="$t('tools.timestamp-converter.placeholders.enterValue')"
               />
               <select 
                 v-model="selectedUnit"
                 @change="convertTime"
                 class="w-32 px-3 py-2 border border-l-0 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-r-md"
               >
-                <option value="milliseconds">毫秒</option>
-                <option value="seconds">秒</option>
-                <option value="minutes">分钟</option>
-                <option value="hours">小时</option>
-                <option value="days">天</option>
+                <option value="milliseconds">{{ $t('tools.timestamp-converter.timeUnits.milliseconds') }}</option>
+                <option value="seconds">{{ $t('tools.timestamp-converter.timeUnits.seconds') }}</option>
+                <option value="minutes">{{ $t('tools.timestamp-converter.timeUnits.minutes') }}</option>
+                <option value="hours">{{ $t('tools.timestamp-converter.timeUnits.hours') }}</option>
+                <option value="days">{{ $t('tools.timestamp-converter.timeUnits.days') }}</option>
               </select>
             </div>
           </div>
           
           <div class="space-y-2">
             <div v-for="(value, unit) in convertedTimes" :key="unit">
-              <div class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ getUnitLabel(unit) }}</div>
+              <div class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ $t(`tools.timestamp-converter.timeUnits.${unit}`) }}</div>
               <div class="flex">
                 <div class="w-full bg-gray-50 dark:bg-gray-700 rounded-l-md p-2 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 border-r-0">
                   {{ value }}
@@ -127,7 +128,7 @@
                 <button 
                   @click="copyToClipboard(value)" 
                   class="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 px-3 rounded-r-md border border-gray-200 dark:border-gray-600"
-                  title="复制"
+                  :title="$t('tools.timestamp-converter.actions.copy')"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
@@ -141,18 +142,18 @@
     </div>
     
     <div v-if="copyStatus" class="fixed right-4 bottom-4 bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-100 px-4 py-2 rounded-md shadow-md">
-      已复制到剪贴板
+      {{ $t('tools.timestamp-converter.messages.copied') }}
     </div>
     
     <div class="bg-gray-50 dark:bg-gray-800 rounded-md p-4 text-sm text-gray-700 dark:text-gray-300">
-      <h3 class="font-medium mb-2">关于Unix时间戳</h3>
-      <p class="mb-2">Unix时间戳表示从UTC时间1970年1月1日0时0分0秒开始经过的秒数。它是一种广泛用于计算机系统和应用程序的时间表示方式。</p>
-      <p class="mb-2">常见用途：</p>
+      <h3 class="font-medium mb-2">{{ $t('tools.timestamp-converter.info.aboutTimestamp') }}</h3>
+      <p class="mb-2">{{ $t('tools.timestamp-converter.info.timestampDescription') }}</p>
+      <p class="mb-2">{{ $t('tools.timestamp-converter.info.commonUsage') }}</p>
       <ul class="list-disc pl-5 mb-2">
-        <li>数据库记录时间</li>
-        <li>API通信中的时间表示</li>
-        <li>日志记录</li>
-        <li>文件系统中的时间戳</li>
+        <li>{{ $t('tools.timestamp-converter.info.usages.database') }}</li>
+        <li>{{ $t('tools.timestamp-converter.info.usages.api') }}</li>
+        <li>{{ $t('tools.timestamp-converter.info.usages.logging') }}</li>
+        <li>{{ $t('tools.timestamp-converter.info.usages.filesystem') }}</li>
       </ul>
     </div>
   </div>
@@ -301,14 +302,7 @@ function convertToMilliseconds(value, unit) {
 
 // 获取单位标签
 function getUnitLabel(unit) {
-  const labels = {
-    milliseconds: '毫秒',
-    seconds: '秒',
-    minutes: '分钟',
-    hours: '小时',
-    days: '天'
-  }
-  return labels[unit]
+  return this.$t(`tools.timestamp-converter.timeUnits.${unit}`)
 }
 
 // 切换转换模式
@@ -333,7 +327,8 @@ function setCurrentTime() {
     const day = String(now.getDate()).padStart(2, '0')
     const hours = String(now.getHours()).padStart(2, '0')
     const minutes = String(now.getMinutes()).padStart(2, '0')
-    dateInput.value = `${year}-${month}-${day}T${hours}:${minutes}`
+    const seconds = String(now.getSeconds()).padStart(2, '0')
+    dateInput.value = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`
     convertDateToTimestamp()
   }
 }
