@@ -18,5 +18,15 @@ export default {
   defaultDescription: '为开发者、设计师和日常用户提供的免费在线工具。',
   site: {
     name: '工具集'
-  }
+  },
+  characters: '字符数',
+  lines: '行数',
+  pasteFromClipboard: '从剪贴板粘贴',
+  pasteError: '无法从剪贴板读取',
+  copyFailed: '复制失败',
+  simple: '简单',
+  nested: '嵌套',
+  complex: '复杂',
+  example: '示例',
+  spaces: '空格'
 }; 

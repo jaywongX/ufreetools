@@ -1,8 +1,8 @@
 <template>
   <div class="container-fluid px-4 py-6 mr-8">
     <div v-if="tool" class="mb-6">
-      <h1 class="text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">{{ tool.name }}</h1>
-      <p class="text-gray-600 dark:text-gray-400 mb-4">{{ tool.description }}</p>
+      <h1 class="text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">{{ $t(`tools.${tool.id}.name`) }}</h1>
+      <p class="text-gray-600 dark:text-gray-400 mb-4">{{ $t(`tools.${tool.id}.description`) }}</p>
       
       <!-- 分类和标签显示 -->
       <div v-if="category || validTags.length > 0" class="flex flex-wrap gap-2 mb-6">

@@ -5,7 +5,7 @@
       <div class="flex flex-wrap gap-4 mb-4">
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            转换方向
+            {{ t('tools.yaml-json-converter.options.conversionMode') }}
           </label>
           <div class="flex">
             <button 
@@ -13,21 +13,21 @@
               class="px-4 py-2 rounded-l-md border border-r-0 border-gray-300 dark:border-gray-600"
               :class="conversionMode === 'yaml-to-json' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
             >
-              YAML → JSON
+              {{ t('tools.yaml-json-converter.options.yamlToJson') }}
             </button>
             <button 
               @click="conversionMode = 'json-to-yaml'" 
               class="px-4 py-2 rounded-r-md border border-gray-300 dark:border-gray-600"
               :class="conversionMode === 'json-to-yaml' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
             >
-              JSON → YAML
+              {{ t('tools.yaml-json-converter.options.jsonToYaml') }}
             </button>
           </div>
         </div>
         
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            输出格式选项
+            {{ t('tools.yaml-json-converter.options.formatOutput') }}
           </label>
           <div class="flex flex-wrap">
             <div v-if="conversionMode === 'yaml-to-json'" class="space-y-2">
@@ -39,20 +39,20 @@
                   class="h-4 w-4 text-primary border-gray-300 rounded"
                 />
                 <label for="pretty-json" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                  美化JSON
+                  {{ t('tools.yaml-json-converter.actions.beautify') }}
                 </label>
               </div>
               <div v-if="prettyPrint" class="flex items-center">
                 <label for="indent-size" class="text-sm text-gray-700 dark:text-gray-300 mr-2">
-                  缩进大小:
+                  {{ t('tools.yaml-json-converter.options.indentSize') }}:
                 </label>
                 <select 
                   id="indent-size"
                   v-model="indentSize" 
                   class="px-2 py-1 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                 >
-                  <option value="2">2空格</option>
-                  <option value="4">4空格</option>
+                  <option value="2">2 {{ conversionMode === 'yaml-to-json' ? t('common.spaces') : t('common.spaces') }}</option>
+                  <option value="4">4 {{ conversionMode === 'yaml-to-json' ? t('common.spaces') : t('common.spaces') }}</option>
                 </select>
               </div>
             </div>
@@ -65,20 +65,20 @@
                   class="h-4 w-4 text-primary border-gray-300 rounded"
                 />
                 <label for="sort-keys" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                  对象键排序
+                  {{ t('tools.yaml-json-converter.options.sortKeys') }}
                 </label>
               </div>
               <div class="flex items-center">
                 <label for="flow-style" class="text-sm text-gray-700 dark:text-gray-300 mr-2">
-                  YAML风格:
+                  {{ t('tools.yaml-json-converter.options.flowStyle') }}:
                 </label>
                 <select 
                   id="flow-style"
                   v-model="flowStyle" 
                   class="px-2 py-1 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                 >
-                  <option value="block">块级(默认)</option>
-                  <option value="flow">流式(类JSON)</option>
+                  <option value="block">{{ t('tools.yaml-json-converter.flowStyles.block') }}</option>
+                  <option value="flow">{{ t('tools.yaml-json-converter.flowStyles.flow') }}</option>
                 </select>
               </div>
             </div>
@@ -87,26 +87,26 @@
         
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            示例数据
+            {{ t('tools.yaml-json-converter.input.loadSample') }}
           </label>
           <div class="flex flex-wrap gap-2">
             <button 
               @click="loadExample('simple')"
               class="px-3 py-1 text-sm rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
             >
-              简单示例
+              {{ t('common.simple') }}
             </button>
             <button 
               @click="loadExample('nested')"
               class="px-3 py-1 text-sm rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
             >
-              嵌套对象
+              {{ t('common.nested') }}
             </button>
             <button 
               @click="loadExample('complex')"
               class="px-3 py-1 text-sm rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
             >
-              复杂数据
+              {{ t('common.complex') }}
             </button>
           </div>
         </div>
@@ -120,13 +120,13 @@
         <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 mb-2">
           <div class="flex justify-between items-center p-3 border-b border-gray-200 dark:border-gray-700">
             <h3 class="font-medium">
-              {{ conversionMode === 'yaml-to-json' ? 'YAML' : 'JSON' }} 输入
+              {{ conversionMode === 'yaml-to-json' ? 'YAML' : 'JSON' }} {{ t('tools.yaml-json-converter.input.title') }}
             </h3>
             <div class="space-x-2">
               <button 
                 @click="clearInput"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-                title="清空"
+                :title="t('tools.yaml-json-converter.input.clearInput')"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -135,7 +135,7 @@
               <button 
                 @click="pasteFromClipboard"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-                title="从剪贴板粘贴"
+                :title="t('common.pasteFromClipboard')"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -147,14 +147,14 @@
             <textarea 
               v-model="inputData" 
               class="w-full h-80 p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
-              :placeholder="conversionMode === 'yaml-to-json' ? 'paste YAML here...' : 'paste JSON here...'"
+              :placeholder="conversionMode === 'yaml-to-json' ? t('tools.yaml-json-converter.input.yamlPlaceholder') : t('tools.yaml-json-converter.input.jsonPlaceholder')"
               @input="autoConvert"
             ></textarea>
           </div>
         </div>
         <div class="text-sm text-gray-600 dark:text-gray-400 flex justify-between">
-          <span>字符数: {{ inputData.length }}</span>
-          <span>行数: {{ inputData.split('\n').length }}</span>
+          <span>{{ t('common.characters') }}: {{ inputData.length }}</span>
+          <span>{{ t('common.lines') }}: {{ inputData.split('\n').length }}</span>
         </div>
       </div>
       
@@ -163,20 +163,20 @@
         <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 mb-2">
           <div class="flex justify-between items-center p-3 border-b border-gray-200 dark:border-gray-700">
             <h3 class="font-medium">
-              {{ conversionMode === 'yaml-to-json' ? 'JSON' : 'YAML' }} 输出
+              {{ conversionMode === 'yaml-to-json' ? 'JSON' : 'YAML' }} {{ t('tools.yaml-json-converter.output.title') }}
             </h3>
             <div class="space-x-2">
               <button 
                 @click="convert"
                 class="px-2 py-1 text-xs rounded bg-primary text-white hover:bg-primary-dark"
-                title="转换"
+                :title="t('tools.yaml-json-converter.actions.convert')"
               >
-                转换
+                {{ t('tools.yaml-json-converter.actions.convert') }}
               </button>
               <button 
                 @click="copyOutput"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-                title="复制"
+                :title="t('tools.yaml-json-converter.output.copyOutput')"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-5m-4 0V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v5M8 21h4" />
@@ -185,7 +185,7 @@
               <button 
                 @click="downloadOutput"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-                title="下载"
+                :title="t('tools.yaml-json-converter.output.downloadOutput')"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -200,16 +200,16 @@
           </div>
         </div>
         <div class="text-sm text-gray-600 dark:text-gray-400 flex justify-between">
-          <span>字符数: {{ outputData.length }}</span>
-          <span>行数: {{ outputData.split('\n').length }}</span>
-          <span v-if="copySuccess" class="text-green-500">已复制到剪贴板!</span>
+          <span>{{ t('common.characters') }}: {{ outputData.length }}</span>
+          <span>{{ t('common.lines') }}: {{ outputData.split('\n').length }}</span>
+          <span v-if="copySuccess" class="text-green-500">{{ t('tools.yaml-json-converter.messages.copySuccess') }}</span>
         </div>
       </div>
     </div>
     
     <!-- 错误提示 -->
     <div v-if="errorMessage" class="mt-4 p-3 bg-red-100 dark:bg-red-900 border border-red-200 dark:border-red-800 text-red-800 dark:text-red-200 rounded-md">
-      <h4 class="font-medium">错误:</h4>
+      <h4 class="font-medium">{{ t('common.error') }}:</h4>
       <p>{{ errorMessage }}</p>
     </div>
   </div>
@@ -218,6 +218,9 @@
 <script setup>
 import { ref, watch } from 'vue'
 import jsYaml from 'js-yaml'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 状态
 const conversionMode = ref('yaml-to-json')
@@ -276,7 +279,7 @@ function convert() {
       try {
         jsonObj = JSON.parse(inputData.value)
       } catch (error) {
-        throw new Error('无效的JSON: ' + error.message)
+        throw new Error(t('tools.yaml-json-converter.messages.invalidJson') + ': ' + error.message)
       }
       
       const yamlOptions = {
@@ -287,7 +290,7 @@ function convert() {
       outputData.value = jsYaml.dump(jsonObj, yamlOptions)
     }
   } catch (error) {
-    errorMessage.value = error.message || '转换时发生错误'
+    errorMessage.value = error.message || t('tools.yaml-json-converter.messages.conversionFailed', { error: '' })
     outputData.value = ''
   }
 }
@@ -304,7 +307,7 @@ function copyOutput() {
       }, 2000)
     })
     .catch(err => {
-      errorMessage.value = '复制失败: ' + err.message
+      errorMessage.value = t('common.copyFailed') + ': ' + err.message
     })
 }
 
@@ -338,7 +341,7 @@ async function pasteFromClipboard() {
     inputData.value = text
     autoConvert()
   } catch (err) {
-    errorMessage.value = '无法从剪贴板读取: ' + err.message
+    errorMessage.value = t('common.pasteError') + ': ' + err.message
   }
 }
 
@@ -355,7 +358,7 @@ function loadExample(type) {
     // YAML示例
     switch(type) {
       case 'simple':
-        inputData.value = `# 简单的YAML示例
+        inputData.value = `# ${t('common.simple')} YAML ${t('common.example')}
 name: John Doe
 age: 30
 city: New York
@@ -366,7 +369,7 @@ skills:
   - Docker`
         break
       case 'nested':
-        inputData.value = `# 嵌套对象示例
+        inputData.value = `# ${t('common.nested')} ${t('common.example')}
 user:
   profile:
     name: Jane Smith
@@ -382,7 +385,7 @@ user:
     language: zh-CN`
         break
       case 'complex':
-        inputData.value = `# 复杂数据示例
+        inputData.value = `# ${t('common.complex')} ${t('common.example')}
 company:
   name: Acme Corporation
   founded: 1985
