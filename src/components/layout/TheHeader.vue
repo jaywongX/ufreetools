@@ -71,8 +71,7 @@
         <div class="relative ml-4">
           <button 
             @click="toggleLanguageDropdown" 
-            @blur="closeLanguageDropdown"
-            class="flex items-center space-x-1 px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+            class="flex items-center space-x-1 px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 language-switcher-button"
           >
             <span>{{ getCurrentLanguageName() }}</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -85,7 +84,7 @@
               v-for="lang in availableLanguages"
               :key="lang.code"
               @click="switchLanguage(lang.code)" 
-              class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+              class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 language-option"
               :class="{'text-primary dark:text-primary-light font-medium': currentLanguage === lang.code}"
             >
               {{ lang.name }}
@@ -242,6 +241,30 @@ function handleBlur() {
   }, 200)
 }
 
+// 语言切换下拉菜单状态
+const showLanguageDropdown = ref(false);
+
+function toggleLanguageDropdown() {
+  showLanguageDropdown.value = !showLanguageDropdown.value;
+  
+  if (showLanguageDropdown.value) {
+    // 添加点击外部区域关闭下拉菜单的事件监听
+    window.setTimeout(() => {
+      window.addEventListener('click', handleClickOutside);
+    }, 0);
+  }
+}
+
+function handleClickOutside(event) {
+  const dropdown = document.querySelector('.language-option');
+  const button = document.querySelector('.language-switcher-button');
+  
+  if (!dropdown?.contains(event.target) && !button?.contains(event.target)) {
+    showLanguageDropdown.value = false;
+    window.removeEventListener('click', handleClickOutside);
+  }
+}
+
 function switchLanguage(langCode) {
   if (langCode === locale.value) return;
   
@@ -256,18 +279,15 @@ function switchLanguage(langCode) {
   
   // 保存用户的语言选择
   localStorage.setItem('userLanguage', langCode);
+  
+  // 关闭下拉菜单
+  showLanguageDropdown.value = false;
+  window.removeEventListener('click', handleClickOutside);
 }
 
-// 语言切换下拉菜单状态
-const showLanguageDropdown = ref(false);
-
-function toggleLanguageDropdown() {
-  showLanguageDropdown.value = !showLanguageDropdown.value;
-}
-
-function closeLanguageDropdown() {
-  // 延迟关闭以允许点击事件先处理
-  setTimeout(() => {
+function closeLanguageDropdown(event) {
+  // 延迟执行关闭操作，确保语言切换动作能够完成
+  window.setTimeout(() => {
     showLanguageDropdown.value = false;
   }, 100);
 }

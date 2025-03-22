@@ -22,7 +22,6 @@ import TheHeader from './components/layout/TheHeader.vue'
 import TheFooter from './components/layout/TheFooter.vue'
 import SideNav from './components/layout/SideNav.vue'
 import SeoHead from './components/seo/SeoHead.vue'
-import LanguageAlternates from './components/seo/LanguageAlternates.vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 
@@ -215,17 +214,17 @@ const allTools = computed(() => [
     icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
     tags: ['regex', 'test', 'dev', 'validate']
   },
-  { 
-    id: 'sql-formatter', 
-    name: t('tools.sql-formatter.name'),
-    category: t(`categories.dev`),
-    categoryId: 'dev',
-    description: t('tools.sql-formatter.description'),
-    path: '/tools/sql-formatter',
-    component: 'SQLFormatter',
-    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['sql','format','dev','validate']
-  },
+  // { 
+  //   id: 'sql-formatter', 
+  //   name: t('tools.sql-formatter.name'),
+  //   category: t(`categories.dev`),
+  //   categoryId: 'dev',
+  //   description: t('tools.sql-formatter.description'),
+  //   path: '/tools/sql-formatter',
+  //   component: 'SQLFormatter',
+  //   icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+  //   tags: ['sql','format','dev','validate']
+  // },
   { 
     id: 'git-conflict-resolver', 
     name: t('tools.git-conflict-resolver.name'),
@@ -237,17 +236,17 @@ const allTools = computed(() => [
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['git', 'code', 'dev', 'utility']
   },
-  { 
-    id: 'javascript-formatter', 
-    name: t('tools.javascript-formatter.name'),
-    category: t(`categories.dev`),
-    categoryId: 'dev',
-    description: t('tools.javascript-formatter.description'),
-    path: '/tools/javascript-formatter',
-    component: 'JavaScriptFormatter',
-    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
-    tags: ['javascript','format','dev','validate']
-  },
+  // { 
+  //   id: 'javascript-formatter', 
+  //   name: t('tools.javascript-formatter.name'),
+  //   category: t(`categories.dev`),
+  //   categoryId: 'dev',
+  //   description: t('tools.javascript-formatter.description'),
+  //   path: '/tools/javascript-formatter',
+  //   component: 'JavaScriptFormatter',
+  //   icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+  //   tags: ['javascript','format','dev','validate']
+  // },
   { 
     id: 'code-beautifier', 
     name: t('tools.code-beautifier.name'),
@@ -325,17 +324,17 @@ const allTools = computed(() => [
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['code', 'utility', 'dev']
   },
-  { 
-    id: 'code-formatter', 
-    name: t('tools.code-formatter.name'),
-    category: t(`categories.dev`),
-    categoryId: 'dev',
-    description: t('tools.code-formatter.description'),
-    path: '/tools/code-formatter',
-    component: 'CodeFormatter',
-    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
-    tags: ['code','format','dev','validate']
-  },
+  // { 
+  //   id: 'code-formatter', 
+  //   name: t('tools.code-formatter.name'),
+  //   category: t(`categories.dev`),
+  //   categoryId: 'dev',
+  //   description: t('tools.code-formatter.description'),
+  //   path: '/tools/code-formatter',
+  //   component: 'CodeFormatter',
+  //   icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+  //   tags: ['code','format','dev','validate']
+  // },
   { 
     id: 'code-obfuscator', 
     name: t('tools.code-obfuscator.name'),
@@ -518,17 +517,17 @@ const allTools = computed(() => [
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['image', 'resize', 'compression', 'quality']
   },
-  {
-    id: 'id-photo-maker',
-    name: t('tools.id-photo-maker.name'),
-    category: t(`categories.image`),
-    categoryId: 'image',
-    description: t('tools.id-photo-maker.description'),
-    path: '/tools/id-photo-maker',
-    component: 'IdPhotoMaker',
-    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['image', 'portrait', 'document', 'photo', 'resize']
-  },
+  // {
+  //   id: 'id-photo-maker',
+  //   name: t('tools.id-photo-maker.name'),
+  //   category: t(`categories.image`),
+  //   categoryId: 'image',
+  //   description: t('tools.id-photo-maker.description'),
+  //   path: '/tools/id-photo-maker',
+  //   component: 'IdPhotoMaker',
+  //   icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+  //   tags: ['image', 'portrait', 'document', 'photo', 'resize']
+  // },
   {
     id: 'image-watermark',
     name: t('tools.image-watermark.name'),
@@ -709,17 +708,6 @@ const allTools = computed(() => [
   },
   
   // 网络与协议
-  {
-    id: 'api-request-tool',
-    name: t('tools.api-request-tool.name'),
-    category: t(`categories.network`),
-    categoryId: 'network',
-    description: t('tools.api-request-tool.description'),
-    path: '/tools/api-request-tool',
-    component: 'ApiRequestTool',
-    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
-    tags: ['api', 'network', 'http', 'dev']
-  },
   { 
     id: 'http-header-security-checker', 
     name: t('tools.http-header-security-checker.name'),
@@ -775,17 +763,17 @@ const allTools = computed(() => [
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['network', 'grpc', 'debug']
   },
-  { 
-    id: 'network-speed-test', 
-    name: t('tools.network-speed-test.name'),
-    category: t(`categories.network`),
-    categoryId: 'network',
-    description: t('tools.network-speed-test.description'),
-    path: '/tools/network-speed-test',
-    component: 'NetworkSpeedTest',
-    icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-    tags: ['network', 'performance', 'analyze']
-  },
+  // { 
+  //   id: 'network-speed-test', 
+  //   name: t('tools.network-speed-test.name'),
+  //   category: t(`categories.network`),
+  //   categoryId: 'network',
+  //   description: t('tools.network-speed-test.description'),
+  //   path: '/tools/network-speed-test',
+  //   component: 'NetworkSpeedTest',
+  //   icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+  //   tags: ['network', 'performance', 'analyze']
+  // },
   { 
     id: 'page-redirect-checker', 
     name: t('tools.page-redirect-checker.name'),

@@ -323,7 +323,7 @@
 import { ref, computed, onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
 
 // 连接状态
-const socketUrl = ref('ws://echo.websocket.org')
+const socketUrl = ref('wss://echo.websocket.org')
 const protocol = ref('')
 const connected = ref(false)
 const connectionAttempted = ref(false)
@@ -345,26 +345,17 @@ const showSaveModal = ref(false)
 const connectionToSave = ref({ name: '', url: '', protocol: '' })
 
 // 测试服务器
+// 测试服务器
 const testServers = [
   { 
-    name: 'Echo服务器', 
-    url: 'ws://echo.websocket.org',
-    description: '简单的回显服务器，将发送的消息原样返回' 
+    name: 'Echo Test', 
+    url: 'wss://echo.websocket.org',
+    description: '安全的回显测试服务器，支持WSS连接' 
   },
   { 
-    name: 'WebSocket.in', 
-    url: 'wss://socketsbay.com/wss/v2/1/demo/',
-    description: '公共聊天室，多人可以连接并通信' 
-  },
-  { 
-    name: 'API-Football', 
-    url: 'wss://wss.api-football.com/',
-    description: '足球数据API (需要API密钥)' 
-  },
-  { 
-    name: 'Blockchain.info', 
-    url: 'wss://ws.blockchain.info/inv',
-    description: '比特币交易数据流' 
+    name: 'WebSocket.org', 
+    url: 'wss://ws.postman-echo.com/raw',
+    description: 'Postman提供的Echo服务，支持WSS' 
   }
 ]
 
@@ -594,6 +585,8 @@ function useTestServer(server) {
     disconnect()
   }
   socketUrl.value = server.url
+  connect()
+  socketUrl.value = server.url
   addLog(`已选择服务器: ${server.name}`, 'info')
 }
 
@@ -695,4 +688,4 @@ onBeforeUnmount(() => {
 pre {
   margin: 0;
 }
-</style> 
+</style>
