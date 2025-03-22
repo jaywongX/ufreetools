@@ -2,10 +2,10 @@
   <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
     <router-link :to="localizedRoute(`tool/${tool.id}`)" class="block p-5">
       <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2 line-clamp-1">
-        {{ tool.name }}
+        {{ $t(`tools.${tool.id}.name`, tool.name) }}
       </h3>
       <p class="text-gray-600 dark:text-gray-400 text-sm mb-3 line-clamp-2">
-        {{ tool.description }}
+        {{ $t(`tools.${tool.id}.description`, tool.description) }}
       </p>
       
       <!-- 标签显示 -->

@@ -15,7 +15,7 @@
           :key="tagId" 
           :class="`px-3 py-1 rounded-full text-sm ${getTagStyle(tagId)}`"
         >
-          {{ findTagName(tagId) }}
+          {{ $t(`tags.${tagId}`) }}
         </span>
       </div>
     </div>
@@ -153,13 +153,8 @@ function loadTool() {
   setTimeout(() => {
     const paramId = route.params.id
     const findTool = (tools) => {
-      return tools.find(t => String(t.id) === String(paramId))
+      return tools.value.find(t => String(t.id) === String(paramId))
     }
-    
-    // 检查 allTools 的类型和值
-    console.log('allTools type:', typeof allTools)
-    console.log('Is allTools array?', Array.isArray(allTools))
-    console.log('Is allTools.value array?', allTools.value && Array.isArray(allTools.value))
     
     tool.value = findTool(allTools);
     

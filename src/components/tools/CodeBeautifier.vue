@@ -5,7 +5,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            编程语言
+            {{ $t('tools.code-beautifier.languages.title') }}
           </label>
           <select 
             v-model="selectedLanguage" 
@@ -18,7 +18,7 @@
         </div>
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            主题样式
+            {{ $t('tools.code-beautifier.options.theme') }}
           </label>
           <select 
             v-model="selectedTheme" 
@@ -34,7 +34,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            显示行号
+            {{ $t('tools.code-beautifier.options.indentSize') }}
           </label>
           <div class="flex items-center">
             <input 
@@ -44,13 +44,13 @@
               class="h-4 w-4 text-primary border-gray-300 rounded"
             />
             <label for="show-line-numbers" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              显示代码行号
+            {{ $t('tools.code-beautifier.options.showLineNumbers') }}
             </label>
           </div>
         </div>
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            自动检测语言
+            {{ $t('tools.code-beautifier.options.indentWith') }}
           </label>
           <div class="flex items-center">
             <input 
@@ -60,7 +60,7 @@
               class="h-4 w-4 text-primary border-gray-300 rounded"
             />
             <label for="auto-detect" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              尝试自动检测语言
+            {{ $t('tools.code-beautifier.options.tryAutoDetect') }}
             </label>
           </div>
         </div>
@@ -71,7 +71,7 @@
     <div class="mb-6">
       <div class="flex justify-between items-center mb-2">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          输入代码
+            {{ $t('tools.code-beautifier.input.title') }}
         </label>
         <button 
           @click="clearCode" 
@@ -80,7 +80,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
           </svg>
-          清空
+          {{ $t('tools.code-beautifier.actions.clear') }}
         </button>
       </div>
       <div class="border border-gray-300 dark:border-gray-600 rounded-md">
@@ -88,7 +88,7 @@
           v-model="codeInput" 
           rows="10" 
           class="w-full px-3 py-2 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm rounded-md"
-          placeholder="在此粘贴或输入代码..."
+          :placeholder="$t('tools.code-beautifier.input.placeholder')"
           @input="autoDetectLanguage"
         ></textarea>
       </div>
@@ -98,7 +98,7 @@
           @click="highlightCode" 
           class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark"
         >
-          生成高亮代码
+          {{ $t('tools.code-beautifier.actions.beautify') }}
         </button>
       </div>
     </div>
@@ -107,7 +107,7 @@
     <div v-if="highlightedCode" class="mb-6">
       <div class="flex justify-between items-center mb-2">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          高亮代码预览
+          {{ $t('tools.code-beautifier.messages.preview') }}
         </label>
         <div class="flex space-x-2">
           <button 
@@ -117,7 +117,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
             </svg>
-            复制HTML {{ copyHtmlStatus ? '(已复制!)' : '' }}
+          {{ $t('tools.code-beautifier.actions.copy') }} HTML {{ copyHtmlStatus ? $t('tools.code-beautifier.messages.copied')  : '' }}
           </button>
         </div>
       </div>
@@ -131,7 +131,7 @@
       <div class="mt-4">
         <div class="flex justify-between items-center mb-2">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-            HTML 代码
+          {{ $t('tools.code-beautifier.messages.HTMLCode') }}
           </label>
           <button 
             @click="copyRawHTML" 
@@ -140,7 +140,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
             </svg>
-            复制代码 {{ copyRawStatus ? '(已复制!)' : '' }}
+            {{ $t('tools.code-beautifier.actions.copy') }} {{ copyRawStatus ? $t('tools.code-beautifier.messages.copied') : '' }}
           </button>
         </div>
         <pre class="text-xs bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-md p-3 overflow-auto max-h-60 font-mono">{{ htmlOutput }}</pre>
@@ -149,22 +149,25 @@
     
     <!-- 使用说明 -->
     <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h3 class="text-lg font-medium mb-3 text-gray-800 dark:text-gray-200">使用提示</h3>
+      <h3 class="text-lg font-medium mb-3 text-gray-800 dark:text-gray-200">{{ $t('tools.code-beautifier.tips.title') }}</h3>
       <ul class="text-sm text-gray-600 dark:text-gray-400 list-disc pl-5 space-y-1">
-        <li>选择合适的编程语言以获得最佳语法高亮效果</li>
-        <li>可以选择不同主题风格以适应您的网站样式</li>
-        <li>复制生成的HTML代码，可直接粘贴到支持HTML的编辑器或网站中</li>
-        <li>生成的高亮代码支持自适应和暗黑模式</li>
-        <li>展示代码时添加行号可以提高可读性和引用便捷性</li>
+        <li>{{ $t('tools.code-beautifier.tips.tip1') }}</li>
+        <li>{{ $t('tools.code-beautifier.tips.tip2') }}</li>
+        <li>{{ $t('tools.code-beautifier.tips.tip3') }}</li>
+        <li>{{ $t('tools.code-beautifier.tips.tip4') }}</li>
+        <li>{{ $t('tools.code-beautifier.tips.tip5') }}</li>
       </ul>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import hljs from 'highlight.js'
-import 'highlight.js/styles/default.css'
+import 'highlight.js/styles/github.css'
+
+const { t } = useI18n()
 
 // 语言选项
 const languages = [
@@ -197,7 +200,7 @@ const languages = [
 
 // 主题选项
 const themes = [
-  { name: '默认', value: 'default' },
+  { name: 'Default', value: 'default' },
   { name: 'GitHub', value: 'github' },
   { name: 'VS Code', value: 'vs2015' },
   { name: 'Atom One Dark', value: 'atom-one-dark' },
