@@ -18,5 +18,15 @@ export default {
   defaultDescription: 'Free online tools for developers, designers and everyday users.',
   site: {
     name: 'Tool Collection'
-  }
+  },
+  characters: 'Characters',
+  lines: 'Lines',
+  pasteFromClipboard: 'Paste from clipboard',
+  pasteError: 'Unable to read from clipboard',
+  copyFailed: 'Copy failed',
+  simple: 'Simple',
+  nested: 'Nested',
+  complex: 'Complex',
+  example: 'Example',
+  spaces: 'spaces'
 };
