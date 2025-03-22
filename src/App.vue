@@ -22,7 +22,6 @@ import TheHeader from './components/layout/TheHeader.vue'
 import TheFooter from './components/layout/TheFooter.vue'
 import SideNav from './components/layout/SideNav.vue'
 import SeoHead from './components/seo/SeoHead.vue'
-import LanguageAlternates from './components/seo/LanguageAlternates.vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 
@@ -215,17 +214,17 @@ const allTools = computed(() => [
     icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
     tags: ['regex', 'test', 'dev', 'validate']
   },
-  { 
-    id: 'sql-formatter', 
-    name: t('tools.sql-formatter.name'),
-    category: t(`categories.dev`),
-    categoryId: 'dev',
-    description: t('tools.sql-formatter.description'),
-    path: '/tools/sql-formatter',
-    component: 'SQLFormatter',
-    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['sql','format','dev','validate']
-  },
+  // { 
+  //   id: 'sql-formatter', 
+  //   name: t('tools.sql-formatter.name'),
+  //   category: t(`categories.dev`),
+  //   categoryId: 'dev',
+  //   description: t('tools.sql-formatter.description'),
+  //   path: '/tools/sql-formatter',
+  //   component: 'SQLFormatter',
+  //   icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+  //   tags: ['sql','format','dev','validate']
+  // },
   { 
     id: 'git-conflict-resolver', 
     name: t('tools.git-conflict-resolver.name'),
@@ -237,17 +236,17 @@ const allTools = computed(() => [
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['git', 'code', 'dev', 'utility']
   },
-  { 
-    id: 'javascript-formatter', 
-    name: t('tools.javascript-formatter.name'),
-    category: t(`categories.dev`),
-    categoryId: 'dev',
-    description: t('tools.javascript-formatter.description'),
-    path: '/tools/javascript-formatter',
-    component: 'JavaScriptFormatter',
-    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
-    tags: ['javascript','format','dev','validate']
-  },
+  // { 
+  //   id: 'javascript-formatter', 
+  //   name: t('tools.javascript-formatter.name'),
+  //   category: t(`categories.dev`),
+  //   categoryId: 'dev',
+  //   description: t('tools.javascript-formatter.description'),
+  //   path: '/tools/javascript-formatter',
+  //   component: 'JavaScriptFormatter',
+  //   icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+  //   tags: ['javascript','format','dev','validate']
+  // },
   { 
     id: 'code-beautifier', 
     name: t('tools.code-beautifier.name'),
@@ -325,17 +324,17 @@ const allTools = computed(() => [
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['code', 'utility', 'dev']
   },
-  { 
-    id: 'code-formatter', 
-    name: t('tools.code-formatter.name'),
-    category: t(`categories.dev`),
-    categoryId: 'dev',
-    description: t('tools.code-formatter.description'),
-    path: '/tools/code-formatter',
-    component: 'CodeFormatter',
-    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
-    tags: ['code','format','dev','validate']
-  },
+  // { 
+  //   id: 'code-formatter', 
+  //   name: t('tools.code-formatter.name'),
+  //   category: t(`categories.dev`),
+  //   categoryId: 'dev',
+  //   description: t('tools.code-formatter.description'),
+  //   path: '/tools/code-formatter',
+  //   component: 'CodeFormatter',
+  //   icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+  //   tags: ['code','format','dev','validate']
+  // },
   { 
     id: 'code-obfuscator', 
     name: t('tools.code-obfuscator.name'),

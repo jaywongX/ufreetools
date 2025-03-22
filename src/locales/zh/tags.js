@@ -33,6 +33,10 @@ export default {
   mobile: '移动',
   debug: '调试',
   api: 'API',
+  css: 'CSS',
+  git: 'Git',
+  curl: 'cURL',
+  editor: '编辑器',
   
   // 设计类标签
   design: '设计',
@@ -48,6 +52,10 @@ export default {
   http: 'HTTP',
   url: 'URL',
   html: 'HTML',
+  'user-agent': 'User Agent',
+  ip: 'IP地址',
+  hex: '十六进制',
+  websocket: 'WebSocket',
   
   // 媒体类标签
   image: '图片',
@@ -55,6 +63,7 @@ export default {
   compress: '压缩',
   resize: '调整大小',
   crop: '裁剪',
+  exif: 'EXIF',
   effects: '特效',
   filter: '滤镜',
   art: '艺术效果',
@@ -66,6 +75,8 @@ export default {
   pixelate: "像素化",
   frames: "帧",
   portrait: "人像",
+  rotate: "旋转",
+  mosaic: "马赛克",
   
   // 文本类标签
   text: '文本',
@@ -86,6 +97,9 @@ export default {
   hash: '哈希',
   encrypt: '加密',
   decrypt: '解密',
+  sm2: 'SM2',
+  rsa: 'RSA',
+  base64: 'Base64',
   
   // 实用工具类标签
   utility: '实用工具',
@@ -109,10 +123,12 @@ export default {
   data: '数据',
   time: '时间',
   date: '日期',
+  timestamp: '时间戳',
   math: '数学',
   diagram: '图表',
   graph: '图形',
   flowchart: '流程图',
+  visualization: '可视化',
   jwt: 'JWT',
   branding: '品牌',
   metadata: '元数据',
@@ -143,6 +159,7 @@ export default {
   file: '文件',
   docx: 'Word文档',
   xlsx: 'Excel表格',
+  markdown: 'Markdown',
   
   // 开发工具
   cli: '命令行工具',
@@ -167,6 +184,7 @@ export default {
   detect: '检测',
   recognize: '识别',
   optimizing: '优化',
+  example: '示例',
   
   // 其他常见标签
   code: '代码',
@@ -212,4 +230,4 @@ export default {
     conversion: '格式转换',
     analysis: '分析与诊断'
   }
-} 
+}

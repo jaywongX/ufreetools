@@ -33,6 +33,9 @@ export default {
   mobile: 'Mobile',
   debug: 'Debug',
   api: 'API',
+  css: 'CSS',
+  git: 'Git',
+  curl: 'cURL',
   
   // Design Tags
   design: 'Design',
@@ -48,6 +51,8 @@ export default {
   http: 'HTTP',
   url: 'URL',
   html: 'HTML',
+  'user-agent': 'User Agent',
+  ip: 'IP Address',
   
   // Media Tags
   image: 'Image',
@@ -55,6 +60,7 @@ export default {
   compression: 'Compression',
   resize: 'Resize',
   crop: 'Crop',
+  exif: 'EXIF',
   effects: 'Effects',
   filter: 'Filter',
   art: 'Art Effect',
@@ -66,6 +72,7 @@ export default {
   pixelate: "Pixelate",
   frames: "Frames",
   portrait: "Portrait",
+  rotate: "Rotate",
 
   // Text Tags
   text: 'Text',
@@ -86,6 +93,9 @@ export default {
   hash: 'Hash',
   encrypt: 'Encryption',
   decrypt: 'Decryption',
+  sm2: 'SM2',
+  rsa: 'RSA',
+  base64: 'Base64',
   
   // Utility Tags
   utility: 'Utility',
@@ -109,6 +119,7 @@ export default {
   data: 'Data',
   time: 'Time',
   date: 'Date',
+  timestamp: 'Timestamp',
   math: 'Mathematics',
   diagram: 'Diagram',
   graph: 'Graph',
@@ -166,9 +177,12 @@ export default {
   detect: 'Detect',
   recognize: 'Recognize',
   optimizing: 'Optimizing',
+  example: 'Example',
   
   // Code Tags
   code: 'Code',
+
+  highlight: 'Highlight',
   optimization: 'Optimization',
   recognition: 'Recognition',
   validation: 'Validation',
@@ -210,4 +224,4 @@ export default {
     conversion: 'Format Conversion',
     analysis: 'Analysis & Diagnostics'
   }
-} 
+}
