@@ -271,6 +271,17 @@
         </button>
       </div>
     </div>
+
+    <!-- 确认对话框 -->
+    <ConfirmDialog
+      :title="dialogTitle"
+      :message="dialogMessage"
+      :confirm-text="dialogConfirmText"
+      :cancel-text="dialogCancelText"
+      :is-open="showDialog"
+      @confirm="onDialogConfirm"
+      @cancel="onDialogCancel"
+    />
   </div>
 </template>
 
@@ -281,6 +292,7 @@ import DOMPurify from 'dompurify'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github-dark.css'
 import { useI18n } from 'vue-i18n'
+import ConfirmDialog from './ConfirmDialog.vue'
 
 // 初始化国际化
 const { t, locale } = useI18n()
@@ -302,6 +314,15 @@ const markdownTemplates = ref([])
 
 // 记录是否用户已进行编辑
 const userHasEdited = ref(false)
+
+// 对话框配置
+const showDialog = ref(false)
+const dialogTitle = ref('')
+const dialogMessage = ref('')
+const dialogConfirmText = ref('')
+const dialogCancelText = ref('')
+const currentDialogAction = ref(null)
+const dialogParams = ref(null)
 
 // 初始化marked选项
 marked.setOptions({
@@ -351,11 +372,41 @@ const copyMarkdown = async () => {
   }
 }
 
+// 显示确认对话框
+const showConfirmDialog = (title, message, confirmCallback, params = null) => {
+  dialogTitle.value = title
+  dialogMessage.value = message
+  dialogConfirmText.value = t('common.confirm')
+  dialogCancelText.value = t('common.cancel')
+  currentDialogAction.value = confirmCallback
+  dialogParams.value = params
+  showDialog.value = true
+}
+
+// 确认对话框回调
+const onDialogConfirm = () => {
+  if (currentDialogAction.value) {
+    currentDialogAction.value(dialogParams.value)
+  }
+  showDialog.value = false
+}
+
+// 取消对话框回调
+const onDialogCancel = () => {
+  showDialog.value = false
+}
+
 // 清空编辑器
 const clearMarkdown = () => {
-  if (markdownContent.value && confirm(t('tools.markdown-editor.messages.clearConfirm'))) {
-    markdownContent.value = ''
-    updatePreview()
+  if (markdownContent.value) {
+    showConfirmDialog(
+      t('tools.markdown-editor.dialogs.clear.title'),
+      t('tools.markdown-editor.dialogs.clear.message'),
+      () => {
+        markdownContent.value = ''
+        updatePreview()
+      }
+    )
   }
 }
 
@@ -825,13 +876,22 @@ watch(locale, () => {
 
 // 应用模板
 const applyTemplate = (template) => {
-  if (markdownContent.value && !confirm(t('tools.markdown-editor.messages.templateConfirm'))) {
-    return
+  if (markdownContent.value) {
+    showConfirmDialog(
+      t('tools.markdown-editor.dialogs.template.title'),
+      t('tools.markdown-editor.dialogs.template.message'),
+      (template) => {
+        markdownContent.value = template.content
+        updatePreview()
+        showMessage(t('tools.markdown-editor.messages.templateApplied', { name: template.name }), 'success')
+      },
+      template
+    )
+  } else {
+    markdownContent.value = template.content
+    updatePreview()
+    showMessage(t('tools.markdown-editor.messages.templateApplied', { name: template.name }), 'success')
   }
-  
-  markdownContent.value = template.content
-  updatePreview()
-  showMessage(t('tools.markdown-editor.messages.templateApplied', { name: template.name }), 'success')
 }
 
 // 监听用户输入

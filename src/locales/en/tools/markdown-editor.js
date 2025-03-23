@@ -50,5 +50,15 @@ export default {
     title: 'Quick Templates',
     apply: 'Apply Template',
     confirm: 'Apply Template'
+  },
+  dialogs: {
+    clear: {
+      title: 'Clear Editor',
+      message: 'Are you sure you want to clear the editor content?'
+    },
+    template: {
+      title: 'Apply Template',
+      message: 'Applying the template will replace the current content. Continue?'
+    }
   }
 } 

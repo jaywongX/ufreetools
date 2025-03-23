@@ -50,5 +50,15 @@ export default {
     title: '快速模板',
     apply: '应用模板',
     confirm: '确认应用'
+  },
+  dialogs: {
+    clear: {
+      title: '清空编辑器',
+      message: '确定要清空编辑器内容吗？'
+    },
+    template: {
+      title: '应用模板',
+      message: '应用模板将替换当前内容，确定继续吗？'
+    }
   }
 } 
