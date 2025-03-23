@@ -2,9 +2,9 @@
   <div class="flex flex-col h-full">
     <!-- 工具配置区域 -->
     <div class="mb-4 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">配色方案生成工具</h2>
+      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.color-scheme-generator.name') }}</h2>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        基于色彩理论生成和谐的配色方案，帮助设计师快速创建协调的色板
+        {{ $t('tools.color-scheme-generator.description') }}
       </p>
     </div>
     
@@ -12,7 +12,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 flex-1">
       <!-- 左侧：基础颜色选择 -->
       <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 flex flex-col">
-        <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-4">基础颜色</h3>
+        <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-4">{{ $t('tools.color-scheme-generator.baseColor.title') }}</h3>
         
         <!-- 颜色选择器 -->
         <div class="mb-4">
@@ -36,12 +36,14 @@
               placeholder="#RRGGBB"
             />
           </div>
-          <div class="text-xs text-gray-500 dark:text-gray-400">点击颜色块或输入十六进制颜色值</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400">{{ $t('tools.color-scheme-generator.baseColor.hint') }}</div>
         </div>
         
         <!-- 配色方案类型选择 -->
         <div class="mb-4">
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">色彩理论</label>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            {{ $t('tools.color-scheme-generator.schemeTypes.title') }} 
+          </label>
           <div class="grid grid-cols-2 gap-2">
             <button 
               v-for="scheme in colorSchemes" 
@@ -52,19 +54,23 @@
                 ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200' 
                 : 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'"
             >
-              {{ scheme.name }}
+              {{ t(`tools.color-scheme-generator.schemeTypes.${scheme.id}`) }}
             </button>
           </div>
         </div>
         
         <!-- 颜色调整 -->
         <div class="mb-4">
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">调整参数</label>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              {{ t('tools.color-scheme-generator.messages.adjustmentParam') }}
+            </label>
           
           <!-- 色相偏移 -->
           <div class="mb-3">
             <div class="flex justify-between mb-1">
-              <span class="text-xs text-gray-500 dark:text-gray-400">色相偏移</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">
+                {{ t('tools.color-scheme-generator.sortOptions.hue') }}
+              </span>
               <span class="text-xs text-gray-600 dark:text-gray-300">{{ hueShift }}°</span>
             </div>
             <input 
@@ -79,7 +85,9 @@
           <!-- 饱和度调整 -->
           <div class="mb-3">
             <div class="flex justify-between mb-1">
-              <span class="text-xs text-gray-500 dark:text-gray-400">饱和度</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">
+                {{ t('tools.color-scheme-generator.sortOptions.saturation') }}
+              </span>
               <span class="text-xs text-gray-600 dark:text-gray-300">{{ saturation }}%</span>
             </div>
             <input 
@@ -94,7 +102,9 @@
           <!-- 明度调整 -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-xs text-gray-500 dark:text-gray-400">明度</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">
+                {{ t('tools.color-scheme-generator.sortOptions.brightness') }}
+              </span>
               <span class="text-xs text-gray-600 dark:text-gray-300">{{ brightness }}%</span>
             </div>
             <input 
@@ -112,7 +122,7 @@
           @click="generateRandomColor" 
           class="mt-auto mb-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md transition duration-200"
         >
-          随机生成
+          {{ t('tools.color-scheme-generator.actions.regenerate') }}
         </button>
         
         <!-- 重置按钮 -->
@@ -120,13 +130,15 @@
           @click="resetSettings" 
           class="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-md transition duration-200"
         >
-          重置设置
+          {{ t('tools.color-scheme-generator.actions.reset') }}
         </button>
       </div>
       
       <!-- 中间：颜色方案展示 -->
       <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 flex flex-col">
-        <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-4">生成的色板</h3>
+        <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-4">
+          {{ t('tools.color-scheme-generator.palettes.title') }}
+        </h3>
         
         <!-- 颜色方案展示 -->
         <div class="flex-1 overflow-y-auto space-y-3">
@@ -166,20 +178,22 @@
             @click="copyAllColors" 
             class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition duration-200 flex-1 text-sm"
           >
-            复制所有颜色
+            {{ t('tools.color-scheme-generator.palettes.copy') }}
           </button>
           <button 
             @click="exportAsCss" 
             class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md transition duration-200 flex-1 text-sm"
           >
-            导出为CSS变量
+            {{ t('tools.color-scheme-generator.palettes.export') }}
           </button>
         </div>
       </div>
       
       <!-- 右侧：预览和保存 -->
       <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 flex flex-col">
-        <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-4">设计预览</h3>
+        <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-4">
+          {{ t('tools.color-scheme-generator.preview.title') }}
+        </h3>
         
         <!-- 设计预览 -->
         <div class="flex-1">
@@ -270,7 +284,7 @@
                   color: previewStyles.buttonText
                 }"
               >
-                主按钮
+                {{ t('tools.color-scheme-generator.preview.mainButton') }}
               </div>
               <div 
                 class="p-2 rounded-md text-center text-xs"
@@ -279,7 +293,7 @@
                   color: previewStyles.buttonText 
                 }"
               >
-                次要按钮
+                {{ t('tools.color-scheme-generator.preview.secondButton') }}
               </div>
             </div>
             
@@ -293,7 +307,8 @@
                   color: getContrastColor(color)
                 }"
               >
-                标签 {{ index + 1 }}
+                {{ t('tools.color-scheme-generator.preview.tag') }}
+                {{ index + 1 }}
               </div>
             </div>
           </div>
@@ -305,14 +320,14 @@
             <input 
               type="text" 
               v-model="schemeName" 
-              placeholder="方案名称" 
+              :placeholder="t('tools.color-scheme-generator.messages.schemeName')"
               class="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
             />
             <button 
               @click="saveScheme" 
               class="ml-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md transition duration-200"
             >
-              保存方案
+                {{ t('tools.color-scheme-generator.actions.save') }}
             </button>
           </div>
           
@@ -375,6 +390,8 @@
 <script setup>
 import { ref, computed, watch, onMounted } from 'vue'
 import chroma from 'chroma-js'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n();
 
 // 基础颜色和设置
 const baseColor = ref('#3b82f6')  // 默认蓝色
@@ -385,12 +402,12 @@ const brightness = ref(50)
 
 // 配色方案类型
 const colorSchemes = [
-  { id: 'monochromatic', name: '单色' },
-  { id: 'complementary', name: '互补色' },
-  { id: 'analogous', name: '邻近色' },
-  { id: 'triadic', name: '三角色' },
-  { id: 'tetradic', name: '四角色' },
-  { id: 'split-complementary', name: '分裂互补' }
+  { id: 'monochromatic', name: t('tools.color-scheme-generator.schemeTypes.monochromatic') },
+  { id: 'complementary', name: t('tools.color-scheme-generator.schemeTypes.complementary') },
+  { id: 'analogous', name: t('tools.color-scheme-generator.schemeTypes.analogous') },
+  { id: 'triadic', name: t('tools.color-scheme-generator.schemeTypes.triadic') },
+  { id: 'tetradic', name: t('tools.color-scheme-generator.schemeTypes.tetradic') },
+  { id: 'splitComplementary', name: t('tools.color-scheme-generator.schemeTypes.splitComplementary') }
 ]
 const selectedScheme = ref('monochromatic')
 
@@ -440,7 +457,7 @@ function validateColor() {
     baseColor.value = chroma(baseColor.value).hex()
   } catch (e) {
     // 如果无效，回退到之前的有效颜色
-    console.log('无效的颜色格式')
+    console.log(e.message)
   }
   
   // 重新生成颜色方案
@@ -600,16 +617,16 @@ function generateSplitComplementaryScheme(h, s, l) {
 // 复制颜色到剪贴板
 function copyColor(color) {
   navigator.clipboard.writeText(color)
-    .then(() => showNotification(`已复制: ${color}`))
-    .catch(() => showNotification('复制失败，请手动复制'))
+    .then(() => showNotification(t('tools.color-scheme-generator.messages.copied')+`: ${color}`))
+    .catch((e) => showNotification(e.message))
 }
 
 // 复制所有颜色
 function copyAllColors() {
   const colorText = generatedColors.value.join('\n')
   navigator.clipboard.writeText(colorText)
-    .then(() => showNotification('已复制所有颜色'))
-    .catch(() => showNotification('复制失败，请手动复制'))
+    .then(() => showNotification(t('tools.color-scheme-generator.messages.copyAllColors')))
+    .catch((e) => showNotification(e.message))
 }
 
 // 导出为CSS变量
@@ -631,18 +648,22 @@ function exportAsCss() {
   const cssText = cssVars.join('\n')
   
   navigator.clipboard.writeText(cssText)
-    .then(() => showNotification('已复制CSS变量'))
-    .catch(() => showNotification('复制失败，请手动复制'))
+    .then(() => showNotification(t('tools.color-scheme-generator.messages.copied')))
+    .catch((e) => showNotification(e.message))
 }
 
 // 保存当前方案
 function saveScheme() {
   if (generatedColors.value.length === 0) {
-    showNotification('没有可保存的方案')
+    showNotification(t('tools.color-scheme-generator.savedPalettes.noSavedPalettes'))
+    return
+  }
+  if (schemeName.value.length === 0) {
+    showNotification(t('tools.color-scheme-generator.savedPalettes.schemeNameEmpty'))
     return
   }
   
-  const name = schemeName.value.trim() || `方案 ${savedSchemes.value.length + 1}`
+  const name = schemeName.value.trim()
   const scheme = {
     name,
     colors: [...generatedColors.value],
@@ -658,7 +679,7 @@ function saveScheme() {
   savedSchemes.value.push(scheme)
   localStorage.setItem('colorSchemes', JSON.stringify(savedSchemes.value))
   schemeName.value = ''
-  showNotification(`已保存方案: ${name}`)
+  showNotification(t('tools.color-scheme-generator.savedPalettes.saved')+`: ${name}`)
 }
 
 // 加载保存的方案
@@ -672,7 +693,7 @@ function loadScheme(scheme) {
   // 应用方案颜色
   generatedColors.value = [...scheme.colors]
   
-  showNotification(`已加载方案: ${scheme.name}`)
+  showNotification(t('tools.color-scheme-generator.savedPalettes.load') + `: ${scheme.name}`)
 }
 
 // 删除保存的方案
@@ -680,7 +701,7 @@ function deleteScheme(index) {
   const name = savedSchemes.value[index].name
   savedSchemes.value.splice(index, 1)
   localStorage.setItem('colorSchemes', JSON.stringify(savedSchemes.value))
-  showNotification(`已删除方案: ${name}`)
+  showNotification(t('tools.color-scheme-generator.savedPalettes.delete') + `: ${name}`)
 }
 
 // 获取对比色（黑色或白色文本）
@@ -746,7 +767,7 @@ onMounted(() => {
     try {
       savedSchemes.value = JSON.parse(savedSchemesStr)
     } catch (e) {
-      console.error('解析保存的方案失败:', e)
+      console.error(e)
     }
   }
 })

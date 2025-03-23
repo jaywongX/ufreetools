@@ -8,10 +8,11 @@ export default {
     rgb: 'RGB',
     hsl: 'HSL',
     random: 'Random Color',
-    recent: 'Recent Colors'
+    recent: 'Recent Colors',
+    hint: 'Click the color block or enter a hexadecimal color value',
   },
   schemeTypes: {
-    title: 'Scheme Type',
+    title: 'Color theory',
     monochromatic: 'Monochromatic',
     analogous: 'Analogous',
     complementary: 'Complementary',
@@ -52,7 +53,7 @@ export default {
     title: 'Generated Palette',
     save: 'Save Palette',
     copy: 'Copy Palette',
-    export: 'Export',
+    export: 'Export as a CSS variable',
     apply: 'Apply to Preview'
   },
   exportFormats: {
@@ -73,26 +74,35 @@ export default {
     dashboard: 'Dashboard',
     card: 'Card',
     poster: 'Poster',
-    custom: 'Custom'
+    custom: 'Custom',
+    mainButton: 'Main button',
+    secondButton: 'Secondary button',
+    tag: 'Tag'
   },
   savedPalettes: {
     title: 'Saved Palettes',
     load: 'Load',
     delete: 'Delete',
     rename: 'Rename',
-    noSavedPalettes: 'No saved palettes'
+    noSavedPalettes: 'No saved palettes',
+    saved: 'Saved palettes',
+    schemeNameEmpty: 'Scheme name empty',
   },
   actions: {
     generate: 'Generate Scheme',
     regenerate: 'Regenerate',
     reset: 'Reset',
     lockColor: 'Lock Color',
-    unlockColor: 'Unlock Color'
+    unlockColor: 'Unlock Color',
+    save: 'Save scheme',
   },
   messages: {
     paletteSaved: 'Palette saved successfully',
     paletteDeleted: 'Palette deleted',
     copied: 'Copied to clipboard',
-    exported: 'Exported successfully'
+    exported: 'Exported successfully',
+    adjustmentParam: 'Adjustment parameter',
+    schemeName: 'Scheme name',
+    copyAllColors: 'Copy All Colors',
   }
 } 

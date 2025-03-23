@@ -1,8 +1,8 @@
 <template>
   <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-    <h1 class="text-2xl font-bold mb-4">渐变配色生成器</h1>
+    <h1 class="text-2xl font-bold mb-4">{{ $t('tools.css-gradient-generator.name') }}</h1>
     <p class="mb-6 text-gray-600 dark:text-gray-400">
-      创建并自定义漂亮的CSS渐变，实时预览效果，复制代码到您的项目中。
+      {{ $t('tools.css-gradient-generator.description') }}
     </p>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -10,7 +10,7 @@
       <div class="lg:col-span-1 space-y-6">
         <!-- 渐变类型选择 -->
         <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-          <h2 class="text-lg font-semibold mb-3">渐变类型</h2>
+          <h2 class="text-lg font-semibold mb-3">{{ $t('tools.css-gradient-generator.gradientTypes.title') }}</h2>
           <div class="flex flex-wrap gap-2">
             <button 
               v-for="type in gradientTypes" 
@@ -23,7 +23,7 @@
                   : 'bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500'
               ]"
             >
-              {{ type.label }}
+              {{ $t(`tools.css-gradient-generator.gradientTypes.${type.value}`) }}
             </button>
           </div>
         </div>
@@ -31,13 +31,13 @@
         <!-- 颜色控制 -->
         <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
           <div class="flex justify-between items-center mb-3">
-            <h2 class="text-lg font-semibold">颜色控制</h2>
+            <h2 class="text-lg font-semibold">{{ $t('tools.css-gradient-generator.controls.title') }}</h2>
             <button 
               @click="addColorStop" 
               class="px-2 py-1 bg-green-500 text-white rounded-md text-sm hover:bg-green-600 transition-colors"
               :disabled="colorStops.length >= 10"
             >
-              添加颜色
+              {{ $t('tools.css-gradient-generator.controls.addColor') }}
             </button>
           </div>
           
@@ -68,7 +68,7 @@
           
           <div v-if="selectedStopIndex !== null" class="space-y-3">
             <div>
-              <label class="block text-sm font-medium mb-1">颜色</label>
+              <label class="block text-sm font-medium mb-1">{{ $t('tools.css-gradient-generator.controls.color') }}</label>
               <div class="flex">
                 <input 
                   type="color" 
@@ -87,7 +87,7 @@
             </div>
             
             <div>
-              <label class="block text-sm font-medium mb-1">位置 ({{ colorStops[selectedStopIndex].position }}%)</label>
+              <label class="block text-sm font-medium mb-1">{{ $t('tools.css-gradient-generator.controls.position') }} ({{ colorStops[selectedStopIndex].position }}%)</label>
               <input 
                 type="range" 
                 v-model.number="colorStops[selectedStopIndex].position"
@@ -104,13 +104,13 @@
                 class="px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded"
                 :disabled="colorStops.length <= 2"
               >
-                删除此颜色
+                {{ $t('tools.css-gradient-generator.controls.delete') }}
               </button>
               <button 
                 @click="selectedStopIndex = null" 
                 class="px-3 py-1 bg-gray-500 hover:bg-gray-600 text-white rounded"
               >
-                完成编辑
+                {{ $t('tools.css-gradient-generator.actions.completeEdit') }}
               </button>
             </div>
           </div>
@@ -119,11 +119,13 @@
         <!-- 渐变方向控制 -->
         <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
           <h2 class="text-lg font-semibold mb-3">
-            {{ gradientType === 'linear' ? '渐变角度' : '渐变位置' }}
+            {{ gradientType === 'linear' 
+              ? $t('tools.css-gradient-generator.controls.angle') 
+              : $t('tools.css-gradient-generator.controls.position') }}
           </h2>
           
           <div v-if="gradientType === 'linear'">
-            <label class="block text-sm font-medium mb-1">角度 ({{ angle }}°)</label>
+            <label class="block text-sm font-medium mb-1">{{ $t('tools.css-gradient-generator.controls.angle', { angle }) }}</label>
             <input 
               type="range" 
               v-model.number="angle"
@@ -139,14 +141,14 @@
                 @click="angle = preset.value"
                 class="p-1 text-xs bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded"
               >
-                {{ preset.label }}
+                {{ $t(`tools.css-gradient-generator.anglePresets.${preset.label}`) }}
               </button>
             </div>
           </div>
           
           <div v-else-if="gradientType === 'radial'">
             <div class="mb-3">
-              <label class="block text-sm font-medium mb-1">形状</label>
+              <label class="block text-sm font-medium mb-1">{{ $t('tools.css-gradient-generator.controls.shape') }}</label>
               <div class="flex gap-2">
                 <button 
                   v-for="shape in radialShapes" 
@@ -159,14 +161,14 @@
                       : 'bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500'
                   ]"
                 >
-                  {{ shape.label }}
+                  {{ $t(`tools.css-gradient-generator.radialShapes.${shape.value}`) }}
                 </button>
               </div>
             </div>
             
             <div class="grid grid-cols-2 gap-3">
               <div>
-                <label class="block text-sm font-medium mb-1">X位置 ({{ positionX }}%)</label>
+                <label class="block text-sm font-medium mb-1">{{ $t('tools.css-gradient-generator.controls.positionX') }} ({{ positionX }}%)</label>
                 <input 
                   type="range" 
                   v-model.number="positionX"
@@ -177,7 +179,7 @@
                 >
               </div>
               <div>
-                <label class="block text-sm font-medium mb-1">Y位置 ({{ positionY }}%)</label>
+                <label class="block text-sm font-medium mb-1">{{ $t('tools.css-gradient-generator.controls.positionY') }} ({{ positionY }}%)</label>
                 <input 
                   type="range" 
                   v-model.number="positionY"
@@ -190,7 +192,7 @@
             </div>
             
             <div class="mt-3">
-              <label class="block text-sm font-medium mb-1">尺寸</label>
+              <label class="block text-sm font-medium mb-1">{{ $t('tools.css-gradient-generator.controls.size') }}</label>
               <div class="flex gap-2">
                 <button 
                   v-for="size in radialSizes" 
@@ -203,7 +205,7 @@
                       : 'bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500'
                   ]"
                 >
-                  {{ size.label }}
+                  {{ $t(`tools.css-gradient-generator.radialSizes.${size.value}`) }}
                 </button>
               </div>
             </div>
@@ -212,7 +214,7 @@
           <div v-else-if="gradientType === 'conic'">
             <div class="grid grid-cols-2 gap-3">
               <div>
-                <label class="block text-sm font-medium mb-1">开始角度 ({{ fromAngle }}°)</label>
+                <label class="block text-sm font-medium mb-1">{{ $t('tools.css-gradient-generator.controls.fromAngle') }} ({{ fromAngle }}°)</label>
                 <input 
                   type="range" 
                   v-model.number="fromAngle"
@@ -223,7 +225,7 @@
                 >
               </div>
               <div>
-                <label class="block text-sm font-medium mb-1">X位置 ({{ positionX }}%)</label>
+                <label class="block text-sm font-medium mb-1">{{ $t('tools.css-gradient-generator.controls.positionX') }} ({{ positionX }}%)</label>
                 <input 
                   type="range" 
                   v-model.number="positionX"
@@ -234,7 +236,7 @@
                 >
               </div>
               <div>
-                <label class="block text-sm font-medium mb-1">Y位置 ({{ positionY }}%)</label>
+                <label class="block text-sm font-medium mb-1">{{ $t('tools.css-gradient-generator.controls.positionY') }} ({{ positionY }}%)</label>
                 <input 
                   type="range" 
                   v-model.number="positionY"
@@ -254,7 +256,7 @@
         <!-- 预览区域 -->
         <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
           <div class="flex justify-between items-center mb-3">
-            <h2 class="text-lg font-semibold">渐变预览</h2>
+            <h2 class="text-lg font-semibold">{{ $t('tools.css-gradient-generator.messages.preview') }}</h2>
             <button 
               @click="downloadGradient" 
               class="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded flex items-center gap-1"
@@ -262,7 +264,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
-              下载PNG
+              {{ $t('tools.css-gradient-generator.output.download') }}
             </button>
           </div>
           
@@ -274,17 +276,17 @@
           >
             <div v-if="showCopiedMessage" class="flex items-center justify-center h-full bg-black bg-opacity-50 rounded-lg transition-opacity">
               <div class="px-4 py-2 bg-white dark:bg-gray-800 rounded-md shadow-lg">
-                <p class="text-center text-green-600 dark:text-green-400 font-medium">CSS已复制到剪贴板!</p>
+                <p class="text-center text-green-600 dark:text-green-400 font-medium">{{ $t('tools.css-gradient-generator.messages.copied') }}</p>
               </div>
             </div>
           </div>
-          <p class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">点击预览区域复制CSS代码</p>
+          <p class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">{{ $t('tools.css-gradient-generator.actions.clickToCopy') }}</p>
         </div>
         
         <!-- CSS代码 -->
         <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
           <div class="flex justify-between items-center mb-3">
-            <h2 class="text-lg font-semibold">CSS代码</h2>
+            <h2 class="text-lg font-semibold">{{ $t('tools.css-gradient-generator.output.title') }}</h2>
             <button 
               @click="copyGradientCSS" 
               class="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded flex items-center gap-1"
@@ -292,18 +294,18 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
               </svg>
-              复制
+              {{ $t('tools.css-gradient-generator.output.copyCode') }}
             </button>
           </div>
           
           <div class="bg-gray-800 text-gray-100 p-4 rounded overflow-x-auto">
-            <pre><code>{{ cssCode }}</code></pre>
+           <pre><code>{{ cssCode }}</code></pre>
           </div>
         </div>
         
         <!-- 快速预设 -->
         <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-          <h2 class="text-lg font-semibold mb-3">渐变预设</h2>
+          <h2 class="text-lg font-semibold mb-3">{{ $t('tools.css-gradient-generator.presets.title') }}</h2>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
             <div 
               v-for="(preset, index) in presets" 
@@ -321,12 +323,15 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 渐变类型
 const gradientTypes = [
-  { label: '线性渐变', value: 'linear' },
-  { label: '径向渐变', value: 'radial' },
-  { label: '锥形渐变', value: 'conic' }
+  { value: 'linear' },
+  { value: 'radial' },
+  { value: 'conic' }
 ]
 const gradientType = ref('linear')
 
@@ -340,28 +345,28 @@ const selectedStopIndex = ref(null)
 // 线性渐变角度
 const angle = ref(90)
 const anglePresets = [
-  { label: '上', value: 0 },
-  { label: '右上', value: 45 },
-  { label: '右', value: 90 },
-  { label: '右下', value: 135 },
-  { label: '下', value: 180 },
-  { label: '左下', value: 225 },
-  { label: '左', value: 270 },
-  { label: '左上', value: 315 }
+  { label: 'top', value: 0 },
+  { label: 'topRight', value: 45 },
+  { label: 'right', value: 90 },
+  { label: 'bottomRight', value: 135 },
+  { label: 'bottom', value: 180 },
+  { label: 'bottomLeft', value: 225 },
+  { label: 'left', value: 270 },
+  { label: 'topLeft', value: 315 }
 ]
 
 // 径向渐变选项
 const radialShape = ref('circle')
 const radialShapes = [
-  { label: '圆形', value: 'circle' },
-  { label: '椭圆', value: 'ellipse' }
+  { value: 'circle' },
+  { value: 'ellipse' }
 ]
 const radialSize = ref('farthest-corner')
 const radialSizes = [
-  { label: '最远角', value: 'farthest-corner' },
-  { label: '最近角', value: 'closest-corner' },
-  { label: '最远边', value: 'farthest-side' },
-  { label: '最近边', value: 'closest-side' }
+  { value: 'farthestCorner' },
+  { value: 'closestCorner' },
+  { value: 'farthestSide' },
+  { value: 'closestSide' }
 ]
 
 // 锥形渐变选项

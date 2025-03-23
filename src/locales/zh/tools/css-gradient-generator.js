@@ -1,82 +1,100 @@
 export default {
-  name: 'CSS网格生成器',
-  description: '可视化创建CSS Grid布局并生成相应代码',
-  container: {
-    title: '网格容器',
-    gridTemplateColumns: 'grid-template-columns',
-    gridTemplateRows: 'grid-template-rows',
-    gridGap: 'grid-gap',
-    rowGap: 'row-gap',
-    columnGap: 'column-gap',
-    justifyItems: 'justify-items',
-    alignItems: 'align-items',
-    justifyContent: 'justify-content',
-    alignContent: 'align-content',
-    autoFlow: 'grid-auto-flow',
-    autoRows: 'grid-auto-rows',
-    autoColumns: 'grid-auto-columns'
+  name: '渐变配色生成器',
+  description: '创建并自定义漂亮的CSS渐变，实时预览效果，复制代码到您的项目中',
+  
+  gradientTypes: {
+    title: '渐变类型',
+    linear: '线性渐变',
+    radial: '径向渐变',
+    conic: '锥形渐变'
   },
-  gridUnits: {
-    pixels: '像素 (px)',
-    percentage: '百分比 (%)',
-    fraction: '比例 (fr)',
-    auto: '自动',
-    minmax: 'minmax()',
-    fitContent: 'fit-content()',
-    repeat: 'repeat()'
-  },
-  gridItems: {
-    title: '网格项目',
-    item: '项目',
-    content: '内容',
-    gridColumn: 'grid-column',
-    gridRow: 'grid-row',
-    justifySelf: 'justify-self',
-    alignSelf: 'align-self',
-    order: '顺序',
+  
+  controls: {
+    title: '颜色控制',
+    addColor: '添加颜色',
     color: '颜色',
-    backgroundColor: '背景颜色',
-    padding: '内边距'
+    position: '位置 (%)',
+    delete: '删除颜色',
+    angle: '角度',
+    degrees: '度',
+    shape: '形状',
+    circle: '圆形',
+    ellipse: '椭圆形',
+    positionX: '位置 X (%)',
+    positionY: '位置 Y (%)',
+    size: '尺寸',
+    closestSide: '最近边',
+    closestCorner: '最近角',
+    farthestSide: '最远边',
+    farthestCorner: '最远角',
+    fromAngle: '起始角度'
   },
-  alignment: {
-    start: '起点对齐',
-    end: '终点对齐',
-    center: '居中',
-    stretch: '拉伸',
-    spaceAround: '分散对齐',
-    spaceBetween: '两端对齐',
-    spaceEvenly: '均匀对齐'
+  
+  output: {
+    title: 'CSS代码',
+    copyCode: '复制代码',
+    preview: '预览区域',
+    copied: 'CSS代码已复制到剪贴板！',
+    download: '下载PNG'
   },
-  autoFlow: {
-    row: '行',
-    column: '列',
-    dense: '紧密',
-    rowDense: '行紧密',
-    columnDense: '列紧密'
+  
+  presets: {
+    title: '渐变预设',
+    apply: '应用预设',
+    sunnyMorning: '晴朗早晨',
+    winterNeva: '冬日涅瓦',
+    rareWind: '稀有风',
+    deepBlue: '深蓝',
+    perfect: '完美白',
+    cloudyKnoxville: '多云诺克斯维尔',
+    greenBeach: '绿色海滩',
+    plumBath: '梅花浴',
+    everlasting: '永恒天空'
   },
+
+  accessibility: {
+    colorPicker: '颜色选择器',
+    deleteSwatch: '删除颜色停止点',
+    dragToReposition: '拖动以重新定位颜色停止点'
+  },
+  
   actions: {
-    addColumn: '添加列',
-    removeColumn: '删除列',
-    addRow: '添加行',
-    removeRow: '删除行',
-    addItem: '添加项目',
-    removeItem: '删除项目',
-    generateCSS: '生成CSS',
-    copyCSS: '复制CSS',
-    copyHTML: '复制HTML',
     reset: '重置',
-    download: '下载'
+    generateCSS: '生成CSS',
+    clickToCopy: '点击并拷贝代码',
+    completeEdit: '完成编辑'
   },
-  preview: {
-    title: '预览',
-    code: '代码',
-    toggleLines: '显示/隐藏网格线',
-    toggleNumbers: '显示/隐藏线条编号',
-    responsiveView: '响应式视图'
-  },
+  
   messages: {
-    copied: '已复制到剪贴板！',
-    codeGenerated: 'CSS代码生成成功',
-    invalidTrackSize: '无效的轨道大小'
-  }
-} 
+    copied: 'CSS代码已复制到剪贴板！',
+    noColors: '添加至少两种颜色以创建渐变',
+    maxColors: '已达到最大颜色停止点数量(10)',
+    useKeyboard: '使用Delete键删除选中的颜色停止点',
+    invalidHex: '请输入有效的十六进制颜色代码',
+    downloadError: '下载PNG失败，请稍后重试',
+    preview: '预览'
+  },
+  
+  anglePresets: {
+    top: '上',
+    topRight: '右上',
+    right: '右',
+    bottomRight: '右下',
+    bottom: '下',
+    bottomLeft: '左下',
+    left: '左',
+    topLeft: '左上'
+  },
+
+  radialShapes: {
+    circle: '圆形',
+    ellipse: '椭圆'
+  },
+
+  radialSizes: {
+    farthestCorner: '最远角',
+    closestCorner: '最近角',
+    farthestSide: '最远边',
+    closestSide: '最近边',
+  },
+}

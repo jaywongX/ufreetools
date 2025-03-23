@@ -1,82 +1,100 @@
 export default {
-  name: 'CSS Grid Generator',
-  description: 'Visually create CSS Grid layouts and generate the corresponding code',
-  container: {
-    title: 'Grid Container',
-    gridTemplateColumns: 'grid-template-columns',
-    gridTemplateRows: 'grid-template-rows',
-    gridGap: 'grid-gap',
-    rowGap: 'row-gap',
-    columnGap: 'column-gap',
-    justifyItems: 'justify-items',
-    alignItems: 'align-items',
-    justifyContent: 'justify-content',
-    alignContent: 'align-content',
-    autoFlow: 'grid-auto-flow',
-    autoRows: 'grid-auto-rows',
-    autoColumns: 'grid-auto-columns'
+  name: 'Gradient Color Generator',
+  description: 'Create and customize beautiful CSS gradients with real-time preview and copy the code to your project',
+
+  gradientTypes: {
+    title: 'Gradient Type',
+    linear: 'Linear Gradient',
+    radial: 'Radial Gradient',
+    conic: 'Conic Gradient'
   },
-  gridUnits: {
-    pixels: 'pixels (px)',
-    percentage: 'percentage (%)',
-    fraction: 'fraction (fr)',
-    auto: 'auto',
-    minmax: 'minmax()',
-    fitContent: 'fit-content()',
-    repeat: 'repeat()'
-  },
-  gridItems: {
-    title: 'Grid Items',
-    item: 'Item',
-    content: 'Content',
-    gridColumn: 'grid-column',
-    gridRow: 'grid-row',
-    justifySelf: 'justify-self',
-    alignSelf: 'align-self',
-    order: 'order',
+
+  controls: {
+    title: 'Color Controls',
+    addColor: 'Add Color',
     color: 'Color',
-    backgroundColor: 'Background Color',
-    padding: 'Padding'
+    position: 'Position (%)',
+    delete: 'Delete Color',
+    angle: 'Angle',
+    degrees: 'Degrees',
+    shape: 'Shape',
+    circle: 'Circle',
+    ellipse: 'Ellipse',
+    positionX: 'Position X (%)',
+    positionY: 'Position Y (%)',
+    size: 'Size',
+    closestSide: 'Closest Side',
+    closestCorner: 'Closest Corner',
+    farthestSide: 'Farthest Side',
+    farthestCorner: 'Farthest Corner',
+    fromAngle: 'Starting Angle'
   },
-  alignment: {
-    start: 'start',
-    end: 'end',
-    center: 'center',
-    stretch: 'stretch',
-    spaceAround: 'space-around',
-    spaceBetween: 'space-between',
-    spaceEvenly: 'space-evenly'
+
+  output: {
+    title: 'CSS Code',
+    copyCode: 'Copy Code',
+    preview: 'Preview Area',
+    copied: 'CSS Code Copied to Clipboard!',
+    download: 'Download PNG'
   },
-  autoFlow: {
-    row: 'row',
-    column: 'column',
-    dense: 'dense',
-    rowDense: 'row dense',
-    columnDense: 'column dense'
+
+  presets: {
+    title: 'Gradient Presets',
+    apply: 'Apply Preset',
+    sunnyMorning: 'Sunny Morning',
+    winterNeva: 'Winter in Neva',
+    rareWind: 'Rare Wind',
+    deepBlue: 'Deep Blue',
+    perfect: 'Perfect White',
+    cloudyKnoxville: 'Cloudy Knoxville',
+    greenBeach: 'Green Beach',
+    plumBath: 'Plum Bath',
+    everlasting: 'Everlasting Sky'
   },
+
+  accessibility: {
+    colorPicker: 'Color Picker',
+    deleteSwatch: 'Delete Color Stop',
+    dragToReposition: 'Drag to Reposition Color Stop'
+  },
+
   actions: {
-    addColumn: 'Add Column',
-    removeColumn: 'Remove Column',
-    addRow: 'Add Row',
-    removeRow: 'Remove Row',
-    addItem: 'Add Item',
-    removeItem: 'Remove Item',
-    generateCSS: 'Generate CSS',
-    copyCSS: 'Copy CSS',
-    copyHTML: 'Copy HTML',
     reset: 'Reset',
-    download: 'Download'
+    generateCSS: 'Generate CSS',
+    clickToCopy: 'Click to Copy Code',
+    completeEdit: 'Complete Editing'
   },
-  preview: {
-    title: 'Preview',
-    code: 'Code',
-    toggleLines: 'Toggle Grid Lines',
-    toggleNumbers: 'Toggle Line Numbers',
-    responsiveView: 'Responsive View'
-  },
+
   messages: {
-    copied: 'Copied to clipboard!',
-    codeGenerated: 'CSS code generated successfully',
-    invalidTrackSize: 'Invalid track size'
-  }
-} 
+    copied: 'CSS Code Copied to Clipboard!',
+    noColors: 'Add at least two colors to create a gradient',
+    maxColors: 'Maximum number of color stops reached (10)',
+    useKeyboard: 'Use the Delete key to delete the selected color stop',
+    invalidHex: 'Please enter a valid hexadecimal color code',
+    downloadError: 'Failed to download PNG, please try again later',
+    preview: 'Preview'
+  },
+
+  anglePresets: {
+    top: 'Top',
+    topRight: 'Top Right',
+    right: 'Right',
+    bottomRight: 'Bottom Right',
+    bottom: 'Bottom',
+    bottomLeft: 'Bottom Left',
+    left: 'Left',
+    topLeft: 'Top Left'
+  },
+
+  radialShapes: {
+    circle: 'Circle',
+    ellipse: 'Ellipse'
+  },
+
+  radialSizes: {
+    farthestCorner: 'Farthest corne',
+    closestCorner: 'Closest corner',
+    farthestSide: 'Farthest side',
+    closestSide: 'Closest side',
+  },
+}
