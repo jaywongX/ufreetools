@@ -1,12 +1,14 @@
 export default {
   name: 'cURL转换器',
   description: '将cURL命令转换为不同编程语言的代码片段',
+  title: 'cURL转代码',
+  subtitle: '将cURL命令转换为多种编程语言代码，方便快速集成HTTP请求到您的项目中',
   input: {
     title: 'cURL命令',
-    placeholder: '在这里输入或粘贴cURL命令...',
+    placeholder: '在此输入cURL命令，例如: curl -X POST https://api.example.com -H "Content-Type: application/json" -d "{"key":"value"}"',
     parse: '解析cURL',
-    clear: '清除',
-    examples: '示例',
+    clear: '清空',
+    examples: '示例命令:',
     options: '解析器选项',
     validateCommand: '验证命令',
     formatCurl: '格式化cURL'
@@ -22,10 +24,13 @@ export default {
   },
   output: {
     title: '代码输出',
-    language: '语言',
+    language: '目标语言',
     copy: '复制',
+    copyTooltip: '复制到剪贴板',
     download: '下载',
     beautify: '美化',
+    codeTitle: '{language} 代码',
+    errorTitle: '转换错误',
     languages: {
       python: 'Python (requests)',
       pythonHttp: 'Python (http.client)',
@@ -46,7 +51,8 @@ export default {
       browser: '浏览器 (fetch)',
       curl: 'cURL (已格式化)',
       json: 'JSON (请求对象)',
-      har: 'HAR (HTTP归档)'
+      har: 'HAR (HTTP归档)',
+      javascript: 'JavaScript (Fetch)'
     }
   },
   request: {
@@ -89,7 +95,9 @@ export default {
     emptyCurl: '请输入cURL命令',
     validCurl: '有效的cURL命令',
     unknownOption: '未知选项：{option}',
-    unsupportedMethod: '警告：不是所有语言都支持HTTP方法{method}'
+    unsupportedMethod: '警告：不是所有语言都支持HTTP方法{method}',
+    curlRequired: '命令必须以 "curl " 开头',
+    copyFailed: '复制失败，请手动复制'
   },
   examples: {
     title: '示例cURL命令',
@@ -98,6 +106,17 @@ export default {
     post: '带JSON的POST',
     formData: '表单数据提交',
     auth: '基本认证',
-    complex: '复杂示例'
+    complex: '复杂示例',
+    exampleCommands: {
+      getRequest: 'GET请求',
+      postJson: 'POST JSON',
+      postForm: 'POST表单',
+      withAuth: '带认证',
+      uploadFile: '上传文件'
+    }
+  },
+  actions: {
+    convert: '转换',
+    converting: '转换中...'
   }
 } 
