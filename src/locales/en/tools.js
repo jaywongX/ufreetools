@@ -6,6 +6,7 @@ import gitConflictResolver from './tools/git-conflict-resolver.js';
 import javascriptFormatter from './tools/javascript-formatter.js';
 import htmlEntityEncoder from './tools/html-entity-encoder.js';
 import jwtDebugger from './tools/jwt-debugger.js';
+import ipLookup from './tools/ip-lookup.js';
 import codeBeautifier from './tools/code-beautifier.js';
 import openApiGenerator from './tools/openapi-generator.js';
 import mockApiGenerator from './tools/mock-api-generator.js';
@@ -130,6 +131,7 @@ export default {
     'javascript-formatter': javascriptFormatter,
     'html-entity-encoder': htmlEntityEncoder,
     'jwt-debugger': jwtDebugger,
+    'ip-lookup': ipLookup,
     'code-beautifier': codeBeautifier,
     'openapi-generator': openApiGenerator,
     'mock-api-generator': mockApiGenerator,
