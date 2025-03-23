@@ -1,44 +1,54 @@
 export default {
   name: 'GIF Frame Extractor',
   description: 'Extract individual frames from GIF animations',
+  uploadBtn: 'Select GIF',
+  resetBtn: 'Reset',
+  extractBtn: 'Extract Frames',
+  extractingBtn: 'Extracting...',
+  downloadAllBtn: 'Download All Frames',
   upload: {
     title: 'Upload GIF',
-    dropzone: 'Drop a GIF file here or click to browse',
+    dropzone: 'Drop your GIF file here or click to browse',
     maxSize: 'Maximum file size: 20MB',
-    onlyGif: 'Only GIF files are supported'
+    onlyGif: 'Only GIF files are supported',
+    selectGif: 'Please select a GIF file'
   },
   analysis: {
-    title: 'GIF Analysis',
+    title: 'GIF Information',
     dimensions: 'Dimensions',
     frameCount: 'Frame Count',
     duration: 'Duration',
-    fps: 'Frames per Second',
+    fps: 'Frames Per Second',
     fileSize: 'File Size',
     loopCount: 'Loop Count',
-    infinite: 'Infinite'
+    infinite: 'Infinite',
+    fileName: 'File Name',
+    size: 'Size',
+    totalFrames: 'Total Frames',
+    notExtracted: 'Not Extracted'
   },
   extraction: {
     title: 'Frame Extraction',
     selectFrames: 'Select Frames',
     allFrames: 'All Frames',
-    rangeOfFrames: 'Range of Frames',
+    rangeOfFrames: 'Frame Range',
     from: 'From',
     to: 'To',
     specificFrames: 'Specific Frames',
-    frameNumbers: 'Frame Numbers (comma separated)',
+    frameNumbers: 'Frame Numbers (comma-separated)',
     everyNth: 'Every Nth Frame',
     nth: 'Every',
-    frames: 'frames',
+    frames: 'Frames',
     selectFirst: 'First Frame',
     selectLast: 'Last Frame',
     selectMiddle: 'Middle Frame',
     selectKeyFrames: 'Auto-detect Key Frames'
   },
   output: {
-    title: 'Output Options',
+    title: 'Export Settings',
     format: 'Output Format',
     png: 'PNG',
-    jpg: 'JPG',
+    jpeg: 'JPEG',
     webp: 'WebP',
     scaling: 'Scaling',
     originalSize: 'Original Size',
@@ -46,10 +56,13 @@ export default {
     width: 'Width',
     height: 'Height',
     quality: 'Quality',
+    qualityValue: 'Quality: {value}%',
+    lowQuality: 'Low Quality (smaller file)',
+    highQuality: 'High Quality (larger file)',
     naming: 'File Naming',
     pattern: 'Pattern',
-    filename: 'Original filename',
-    framenumber: 'Frame number',
+    filename: 'Original Filename',
+    framenumber: 'Frame Number',
     timestamp: 'Timestamp',
     preview: 'Preview',
     downloadOptions: 'Download Options',
@@ -63,12 +76,15 @@ export default {
   frames: {
     title: 'Extracted Frames',
     frameInfo: 'Frame {number} of {total}',
-    delay: 'Delay: {delay}ms',
-    downloadFrame: 'Download Frame',
-    copyFrame: 'Copy to Clipboard',
+    frame: 'Frame',
+    delay: 'Delay: {delay} ms',
+    downloadFrame: 'Download',
+    copyFrame: 'Copy',
     selectAll: 'Select All',
     unselectAll: 'Unselect All',
-    invertSelection: 'Invert Selection'
+    invertSelection: 'Invert Selection',
+    noFrames: 'No frames have been extracted yet',
+    extractFirst: 'Please extract frames first'
   },
   actions: {
     extract: 'Extract Frames',
@@ -88,6 +104,12 @@ export default {
     invalidGif: 'Invalid GIF file',
     framesCopied: 'Frames copied to clipboard',
     downloadStarted: 'Download started',
-    spritesheetCreated: 'Spritesheet created successfully'
+    spritesheetCreated: 'Spritesheet created successfully',
+    frameDownloaded: 'Frame downloaded',
+    preparingFrames: 'Preparing all frames, please wait...',
+    allFramesDownloaded: 'All frames downloaded',
+    downloadError: 'Failed to download all frames',
+    resetComplete: 'Reset complete',
+    fileEmpty: 'File data is empty'
   }
-} 
+}

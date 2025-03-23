@@ -1,21 +1,31 @@
 export default {
   name: 'GIF帧提取器',
   description: '从GIF动画中提取单个帧',
+  uploadBtn: '选择GIF',
+  resetBtn: '重置',
+  extractBtn: '提取帧',
+  extractingBtn: '提取中...',
+  downloadAllBtn: '下载所有帧',
   upload: {
     title: '上传GIF',
     dropzone: '将GIF文件拖放到此处或点击浏览',
     maxSize: '最大文件大小：20MB',
-    onlyGif: '仅支持GIF文件'
+    onlyGif: '仅支持GIF文件',
+    selectGif: '请选择一个GIF文件'
   },
   analysis: {
-    title: 'GIF分析',
+    title: 'GIF信息',
     dimensions: '尺寸',
     frameCount: '帧数',
     duration: '持续时间',
     fps: '每秒帧数',
     fileSize: '文件大小',
     loopCount: '循环次数',
-    infinite: '无限'
+    infinite: '无限',
+    fileName: '文件名',
+    size: '尺寸',
+    totalFrames: '总帧数',
+    notExtracted: '未提取'
   },
   extraction: {
     title: '帧提取',
@@ -35,10 +45,10 @@ export default {
     selectKeyFrames: '自动检测关键帧'
   },
   output: {
-    title: '输出选项',
+    title: '导出设置',
     format: '输出格式',
     png: 'PNG',
-    jpg: 'JPG',
+    jpeg: 'JPEG',
     webp: 'WebP',
     scaling: '缩放',
     originalSize: '原始大小',
@@ -46,6 +56,9 @@ export default {
     width: '宽度',
     height: '高度',
     quality: '质量',
+    qualityValue: '质量: {value}%',
+    lowQuality: '低质量 (小文件)',
+    highQuality: '高质量 (大文件)',
     naming: '文件命名',
     pattern: '模式',
     filename: '原始文件名',
@@ -63,12 +76,15 @@ export default {
   frames: {
     title: '提取的帧',
     frameInfo: '第{number}帧，共{total}帧',
+    frame: '帧',
     delay: '延迟：{delay}毫秒',
-    downloadFrame: '下载帧',
-    copyFrame: '复制到剪贴板',
+    downloadFrame: '下载',
+    copyFrame: '复制',
     selectAll: '全选',
     unselectAll: '取消全选',
-    invertSelection: '反选'
+    invertSelection: '反选',
+    noFrames: '暂无提取的帧',
+    extractFirst: '请先提取帧'
   },
   actions: {
     extract: '提取帧',
@@ -88,6 +104,12 @@ export default {
     invalidGif: '无效的GIF文件',
     framesCopied: '帧已复制到剪贴板',
     downloadStarted: '下载已开始',
-    spritesheetCreated: '精灵表创建成功'
+    spritesheetCreated: '精灵表创建成功',
+    frameDownloaded: '帧已下载',
+    preparingFrames: '正在准备所有帧，请稍候...',
+    allFramesDownloaded: '已下载所有帧',
+    downloadError: '下载所有帧失败',
+    resetComplete: '已重置',
+    fileEmpty: '文件数据为空',
   }
 } 
