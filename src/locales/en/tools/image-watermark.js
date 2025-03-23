@@ -91,13 +91,22 @@ export default {
     cancel: 'Cancel Processing'
   },
   messages: {
-    processing: 'Processing images...',
+    processing: 'Processing...',
     success: 'Watermark applied successfully',
-    error: 'Error applying watermark: {error}',
+    error: 'Error: {error}',
     noImages: 'Please add images first',
     noWatermark: 'Please add text or image watermark',
     presetSaved: 'Preset saved successfully',
     presetLoaded: 'Preset loaded successfully',
-    presetDeleted: 'Preset deleted'
+    presetDeleted: 'Preset deleted',
+    watermarkApplied: 'Watermark applied',
+    watermarkImageLoadError: 'Failed to load watermark image',
+    imageLoadError: 'Failed to load image',
+    resetSuccess: 'Reset successful',
+    downloadStarted: 'Download started',
+    downloadError: 'Failed to download image',
+    imageLoaded: 'Image loaded successfully',
+    canvasInitError: 'Failed to initialize canvas',
+    tiledWatermarkError: 'Failed to create tiled watermark'
   }
 } 

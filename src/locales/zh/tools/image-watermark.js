@@ -91,13 +91,22 @@ export default {
     cancel: '取消处理'
   },
   messages: {
-    processing: '处理图像中...',
+    processing: '处理中...',
     success: '水印应用成功',
-    error: '应用水印出错：{error}',
+    error: '错误：{error}',
     noImages: '请先添加图像',
     noWatermark: '请添加文本或图像水印',
     presetSaved: '预设保存成功',
     presetLoaded: '预设加载成功',
-    presetDeleted: '预设已删除'
+    presetDeleted: '预设已删除',
+    watermarkApplied: '水印已应用',
+    watermarkImageLoadError: '水印图片加载失败',
+    imageLoadError: '图片加载失败',
+    resetSuccess: '已重置',
+    downloadStarted: '开始下载',
+    downloadError: '下载图片失败',
+    imageLoaded: '图片加载成功',
+    canvasInitError: '画布初始化失败',
+    tiledWatermarkError: '创建平铺水印失败'
   }
 } 
