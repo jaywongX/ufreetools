@@ -17,6 +17,7 @@ export default {
   actions: {
     bold: 'Bold',
     italic: 'Italic',
+    strikethrough: 'Strikethrough',
     heading: 'Heading',
     link: 'Link',
     image: 'Image',
@@ -24,6 +25,7 @@ export default {
     quote: 'Quote',
     code: 'Code',
     table: 'Table',
+    hr: 'Horizontal Rule',
     preview: 'Preview',
     copy: 'Copy',
     clear: 'Clear',
@@ -32,11 +34,21 @@ export default {
     upload: 'Upload Markdown'
   },
   messages: {
-    copied: 'Copied to clipboard!',
+    copied: 'Content copied to clipboard!',
+    copyError: 'Copy failed, please copy manually',
+    clearConfirm: 'Are you sure you want to clear the editor content?',
+    templateConfirm: 'Applying the template will replace the current content. Continue?',
+    templateApplied: 'Applied "{name}" template',
     saved: 'Document saved',
     uploadSuccess: 'Document uploaded successfully',
     uploadError: 'Error uploading document',
     wordCount: '{count} words',
     charCount: '{count} characters'
+  },
+  placeholder: 'Enter your Markdown content here...',
+  templates: {
+    title: 'Quick Templates',
+    apply: 'Apply Template',
+    confirm: 'Apply Template'
   }
 } 

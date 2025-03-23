@@ -6,7 +6,10 @@ export default {
     placeholder: 'Enter or paste your Markdown text here...',
     loadSample: 'Load Sample',
     clearInput: 'Clear Input',
-    uploadFile: 'Upload Markdown File'
+    uploadFile: 'Upload Markdown File',
+    paste: 'Paste from clipboard',
+    charCount: 'Characters',
+    lineCount: 'Lines'
   },
   output: {
     title: 'HTML Output',
@@ -15,7 +18,9 @@ export default {
     copyOutput: 'Copy HTML',
     clearOutput: 'Clear Output',
     previewTab: 'Preview',
-    htmlTab: 'HTML'
+    htmlTab: 'HTML Code',
+    previewMode: 'Preview Mode',
+    sourceMode: 'HTML Source'
   },
   options: {
     title: 'Conversion Options',
@@ -31,7 +36,10 @@ export default {
     footnotes: 'Footnotes',
     taskLists: 'Task Lists',
     emoji: 'Emoji Support',
-    includeStyle: 'Include Default CSS'
+    includeStyle: 'Include Default CSS',
+    realtimePreview: 'Realtime Preview',
+    scrollSync: 'Scroll Sync',
+    htmlOptions: 'HTML Options'
   },
   styles: {
     title: 'Style Options',
@@ -74,5 +82,22 @@ export default {
     emptyInput: 'Please enter some Markdown to convert',
     copied: 'HTML copied to clipboard',
     tocGenerated: 'Table of contents generated'
+  },
+  alerts: {
+    copied: 'Copied to clipboard',
+    copyFailed: 'Failed to copy to clipboard',
+    pasteFailed: 'Failed to paste from clipboard',
+    confirmClear: 'Are you sure you want to clear the input?'
+  },
+  status: {
+    lastConversion: 'Last conversion time'
+  },
+  samples: {
+    basic: 'Basic',
+    extended: 'Extended',
+    article: 'Article'
+  },
+  download: {
+    title: 'Markdown to HTML Export'
   }
 } 
