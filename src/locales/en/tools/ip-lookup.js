@@ -80,7 +80,9 @@ export default {
       hosting: 'Hosting Provider',
       associated: 'Associated Domains',
       abuseContact: 'Abuse Contact'
-    }
+    },
+    queryTime: 'Query Time',
+    dataSource: 'Data Source'
   },
   map: {
     title: 'Location Map',
@@ -94,6 +96,11 @@ export default {
     invalidIP: 'Invalid IP address',
     invalidHostname: 'Invalid hostname',
     publicIPOnly: 'This tool only works with public IP addresses',
-    rateLimited: 'Rate limit exceeded. Please try again later.'
+    rateLimited: 'Rate limit exceeded. Please try again later.',
+    historyCleared: 'History cleared'
+  },
+  history: {
+    title: 'Search History',
+    clear: 'Clear History'
   }
 } 

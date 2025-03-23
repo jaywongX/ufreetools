@@ -26,6 +26,8 @@ export default {
     noResults: '没有可显示的信息',
     error: '错误：{message}',
     unknown: '未知',
+    queryTime: '查询时间',
+    dataSource: '数据来源',
     general: {
       title: '基本信息',
       ipAddress: 'IP地址',
@@ -94,6 +96,11 @@ export default {
     invalidIP: '无效的IP地址',
     invalidHostname: '无效的主机名',
     publicIPOnly: '此工具仅适用于公共IP地址',
-    rateLimited: '超出速率限制。请稍后再试。'
+    rateLimited: '超出速率限制。请稍后再试。',
+    historyCleared: '历史记录已清除'
+  },
+  history: {
+    title: '搜索历史',
+    clear: '清除历史'
   }
 } 

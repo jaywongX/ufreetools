@@ -11,7 +11,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
-          格式化
+          {{ $t('tools.json-formatter.actions.format') }}
         </button>
         <button 
           @click="compressJSON" 
@@ -21,7 +21,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
           </svg>
-          压缩
+          {{ $t('tools.json-formatter.actions.compress') }}
         </button>
         <button 
           @click="clearJSON" 
@@ -31,7 +31,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
           </svg>
-          清空
+          {{ $t('tools.json-formatter.actions.clear') }}
         </button>
         <button 
           @click="escapeJSON" 
@@ -41,7 +41,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
-          转义
+          {{ $t('tools.json-formatter.actions.transferMeaning') }}
         </button>
         <button 
           @click="unescapeJSON" 
@@ -51,7 +51,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          反转义
+          {{ $t('tools.json-formatter.actions.contraposition') }}
         </button>
         <!-- 操作提示 -->
         <div 
@@ -80,7 +80,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
           </svg>
-          复制
+          {{ $t('tools.json-formatter.actions.copy') }}
         </button>
       </div>
     </div>
@@ -90,11 +90,11 @@
       <div class="grid grid-cols-2 gap-2">
         <!-- 左侧输入区域 -->
         <div>
-          <div class="mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">JSON 数据</div>
+          <div class="mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.json-formatter.labels.jsonData') }}</div>
           <textarea 
             v-model="jsonInput" 
             class="w-full h-[calc(100vh-650px)] min-h-[60px] p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-mono text-sm resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
-            placeholder="粘贴您的JSON数据..."
+            :placeholder="$t('tools.json-formatter.placeholders.jsonInput')"
             :disabled="isProcessing"
           ></textarea>
         </div>
@@ -102,8 +102,8 @@
         <!-- 右侧属性列表 -->
         <div>
           <div class="mb-1 text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center justify-between">
-            <span>属性列表</span>
-            <span class="text-xs text-gray-500 dark:text-gray-400">(点击值复制)</span>
+            <span>{{ $t('tools.json-formatter.labels.propertyList') }}</span>
+            <span class="text-xs text-gray-500 dark:text-gray-400">{{ $t('tools.json-formatter.labels.clickToCopy') }}</span>
           </div>
           <div class="h-[calc(100vh-650px)] min-h-[60px] overflow-y-auto">
             <div v-if="parsedData">
@@ -117,7 +117,7 @@
               />
             </div>
             <div v-else class="flex items-center justify-center h-full text-gray-400 dark:text-gray-500">
-              <span class="text-sm">格式化或压缩JSON后显示属性列表</span>
+              <span class="text-sm">{{ $t('tools.json-formatter.messages.formatTip') }}</span>
             </div>
           </div>
         </div>
@@ -132,9 +132,13 @@ import hljs from 'highlight.js/lib/core';
 import json from 'highlight.js/lib/languages/json';
 import 'highlight.js/styles/github-dark.css';
 import JsonTreeNode from './JsonTreeNode.vue';
+import { useI18n } from 'vue-i18n';
 
 // 注册JSON语言支持
 hljs.registerLanguage('json', json);
+
+// 初始化国际化
+const { t } = useI18n();
 
 // 状态数据
 const jsonInput = ref('');
@@ -151,7 +155,7 @@ onMounted(() => {
 // 格式化JSON
 const formatJSON = () => {
   if (!jsonInput.value.trim()) {
-    showMessage('请输入JSON数据', 'error');
+    showMessage(t('tools.json-formatter.messages.empty'), 'error');
     return;
   }
   
@@ -162,9 +166,9 @@ const formatJSON = () => {
     // 验证成功，继续格式化
     parsedData.value = parsed;
     jsonInput.value = JSON.stringify(parsed, null, 2);
-    showMessage('JSON格式有效，格式化成功', 'success');
+    showMessage(t('tools.json-formatter.messages.formatSuccess'), 'success');
   } catch (error) {
-    showMessage(`JSON格式错误: ${error.message}`, 'error');
+    showMessage(t('tools.json-formatter.messages.invalidJson'), 'error');
     parsedData.value = null;
   } finally {
     isProcessing.value = false;
@@ -174,7 +178,7 @@ const formatJSON = () => {
 // 压缩JSON
 const compressJSON = () => {
   if (!jsonInput.value.trim()) {
-    showMessage('请输入JSON数据', 'error');
+    showMessage(t('tools.json-formatter.messages.empty'), 'error');
     return;
   }
   
@@ -184,9 +188,9 @@ const compressJSON = () => {
     const parsed = JSON.parse(jsonInput.value);
     parsedData.value = parsed;
     jsonInput.value = JSON.stringify(parsed);
-    showMessage('JSON压缩成功', 'success');
+    showMessage(t('tools.json-formatter.messages.compressSuccess'), 'success');
   } catch (error) {
-    showMessage(`JSON格式错误: ${error.message}`, 'error');
+    showMessage(t('tools.json-formatter.messages.invalidJson'), 'error');
     parsedData.value = null;
   } finally {
     isProcessing.value = false;
@@ -206,9 +210,9 @@ const copyResult = async () => {
   
   try {
     await navigator.clipboard.writeText(jsonInput.value);
-    showMessage('已复制到剪贴板', 'success');
+    showMessage(t('tools.json-formatter.messages.copied'), 'success');
   } catch (error) {
-    showMessage('复制失败，请手动复制', 'error');
+    showMessage(t('tools.json-formatter.messages.copyFailed'), 'error');
   }
 };
 
@@ -241,16 +245,16 @@ const copyValue = async (value) => {
       : String(value);
       
     await navigator.clipboard.writeText(textToCopy);
-    showMessage('已复制到剪贴板', 'success');
+    showMessage(t('tools.json-formatter.messages.copied'), 'success');
   } catch (error) {
-    showMessage('复制失败，请手动复制', 'error');
+    showMessage(t('tools.json-formatter.messages.copyFailed'), 'error');
   }
 };
 
 // 转义 JSON
 const escapeJSON = () => {
   if (!jsonInput.value.trim()) {
-    showMessage('请输入JSON数据', 'error');
+    showMessage(t('tools.json-formatter.messages.empty'), 'error');
     return;
   }
   
@@ -269,26 +273,23 @@ const escapeJSON = () => {
     
     // 转义处理
     const escaped = input
-      // 基本转义
       .replace(/\\/g, '\\\\')  // 反斜杠
       .replace(/"/g, '\\"')    // 双引号
       .replace(/'/g, "\\'")    // 单引号
       .replace(/\//g, '\\/')   // 斜杠
-      // 控制字符转义
       .replace(/[\b]/g, '\\b')     // 退格
       .replace(/\f/g, '\\f')       // 换页
       .replace(/\n/g, '\\n')       // 换行
       .replace(/\r/g, '\\r')       // 回车
       .replace(/\t/g, '\\t')       // 制表符
-      // Unicode字符转义
       .replace(/[\u0000-\u001F\u2028\u2029]/g, (char) => {
         return '\\u' + ('0000' + char.charCodeAt(0).toString(16)).slice(-4);
       });
     
     jsonInput.value = escaped;
-    showMessage('JSON转义成功', 'success');
+    showMessage(t('tools.json-formatter.messages.escapeSuccess'), 'success');
   } catch (error) {
-    showMessage(`转义处理出错: ${error.message}`, 'error');
+    showMessage(t('tools.json-formatter.messages.invalidJson'), 'error');
   } finally {
     isProcessing.value = false;
   }
@@ -297,7 +298,7 @@ const escapeJSON = () => {
 // 反转义 JSON
 const unescapeJSON = () => {
   if (!jsonInput.value.trim()) {
-    showMessage('请输入JSON数据', 'error');
+    showMessage(t('tools.json-formatter.messages.empty'), 'error');
     return;
   }
   
@@ -330,9 +331,9 @@ const unescapeJSON = () => {
     );
     
     jsonInput.value = unescaped;
-    showMessage('JSON反转义成功', 'success');
+    showMessage(t('tools.json-formatter.messages.unescapeSuccess'), 'success');
   } catch (error) {
-    showMessage(`反转义处理出错: ${error.message}`, 'error');
+    showMessage(t('tools.json-formatter.messages.invalidJson'), 'error');
   } finally {
     isProcessing.value = false;
   }
