@@ -1,19 +1,20 @@
 export default {
-  name: 'CORS Policy Generator',
-  description: 'Generate and test Cross-Origin Resource Sharing (CORS) headers',
+  name: 'CORS Configuration Generator',
+  description: 'Quickly create Cross-Origin Resource Sharing (CORS) configurations supporting multiple server environments',
   options: {
     title: 'CORS Options',
     allowedOrigins: {
-      title: 'Allowed Origins',
-      all: 'Allow all origins (*)  - Not recommended for production',
-      specific: 'Specific origins only',
+      title: 'Allowed Origins (Access-Control-Allow-Origin)',
+      allowAll: 'Allow all origins (*) <span class="text-yellow-500 text-xs ml-1">(Insecure, does not support credentials)</span>',
+      specific: 'Specify allowed origins (Recommended)',
       addOrigin: 'Add Origin',
-      originPlaceholder: 'Enter origin (e.g., https://example.com)',
-      wildcard: 'Allow subdomains (wildcards)',
-      null: 'Allow null origin'
+      placeholder: 'Enter origin (e.g., https://example.com)',
+      wildcard: 'Allow subdomains (wildcard)',
+      null: 'Allow null origin',
+      remove: 'Remove domain'
     },
     allowedMethods: {
-      title: 'Allowed Methods',
+      title: 'Allowed HTTP Methods (Access-Control-Allow-Methods)',
       selectMethods: 'Select HTTP methods',
       get: 'GET',
       post: 'POST',
@@ -24,30 +25,55 @@ export default {
       options: 'OPTIONS'
     },
     allowedHeaders: {
-      title: 'Allowed Headers',
-      all: 'Allow all requested headers (*)',
-      specific: 'Specific headers only',
+      title: 'Allowed Request Headers (Access-Control-Allow-Headers)',
+      all: 'Allow all headers (*)',
+      specific: 'Only specific headers',
       addHeader: 'Add Header',
       headerPlaceholder: 'Enter header name',
-      common: 'Add common headers'
+      common: 'Common request headers',
+      custom: 'Custom headers',
+      contentType: 'Content-Type',
+      accept: 'Accept',
+      authorization: 'Authorization',
+      origin: 'Origin',
+      xRequestedWith: 'X-Requested-With',
+      contentDisposition: 'Content-Disposition',
+      remove: 'Remove header'
     },
     exposedHeaders: {
-      title: 'Exposed Headers',
-      description: 'Headers the browser is allowed to access',
-      addHeader: 'Add Exposed Header',
+      title: 'Exposed Response Headers (Access-Control-Expose-Headers)',
+      description: 'Allow browser to access these response headers',
+      addHeader: 'Add exposed header',
       headerPlaceholder: 'Enter header name'
     },
     credentials: {
-      title: 'Allow Credentials',
-      description: 'Allow cookies and authentication to be sent cross-origin',
+      title: 'Allow Credentials (Access-Control-Allow-Credentials)',
+      description: 'Allow cookies and authentication headers',
       allow: 'Allow credentials',
-      warning: 'Warning: Only enable this if you need to send cookies or authentication'
+      warning: 'Can only be used with specific origins, cannot be used with wildcard (*)'
     },
     maxAge: {
-      title: 'Max Age',
-      description: 'How long (in seconds) browsers should cache preflight responses',
-      seconds: 'seconds',
+      title: 'Preflight Cache Duration (Access-Control-Max-Age)',
+      description: 'Duration for caching preflight request results (seconds)',
+      seconds: 'Seconds',
+      default: 'Default:',
       recommended: 'Recommended: 3600 (1 hour)'
+    },
+    serverType: {
+      title: 'Server Type',
+      apache: 'Apache (.htaccess)',
+      nginx: 'Nginx',
+      express: 'Express.js',
+      springBoot: 'Spring Boot',
+      php: 'PHP',
+      flask: 'Flask (Python)',
+      django: 'Django',
+      rails: 'Ruby on Rails',
+      aws: 'AWS S3/CloudFront',
+      azure: 'Azure',
+      iis: 'IIS (web.config)',
+      jetty: 'Jetty',
+      headers: 'HTTP Headers'
     }
   },
   output: {
@@ -72,8 +98,8 @@ export default {
     iis: 'IIS Web.config'
   },
   testing: {
-    title: 'CORS Test',
-    description: 'Test if your CORS configuration works correctly',
+    title: 'CORS Testing',
+    description: 'Test if your CORS configuration works properly',
     originUrl: 'Origin URL',
     targetUrl: 'Target URL',
     method: 'Request Method',
@@ -82,8 +108,8 @@ export default {
     addHeader: 'Add Header',
     testButton: 'Test CORS',
     results: 'Test Results',
-    success: 'CORS test successful ✓',
-    failure: 'CORS test failed ✗',
+    success: 'CORS Test Successful ✓',
+    failure: 'CORS Test Failed ✗',
     details: 'Response Details',
     response: 'Response',
     logs: 'CORS Logs',
@@ -101,10 +127,16 @@ export default {
   },
   tips: {
     title: 'CORS Tips',
-    security: 'Security Considerations',
-    debugging: 'Debugging CORS Issues',
-    browsers: 'Browser Compatibility',
-    viewMore: 'View CORS Guide'
+    tip1: 'Cross-Origin Resource Sharing (CORS) is an HTTP-header-based mechanism that allows a server to indicate any other origins (domain, protocol, or port) from which a browser should permit loading of resources.',
+    tip2: 'CORS protection is a security feature in modern browsers that blocks web pages from making requests to different domains than the one serving the web page, protecting users from cross-site request forgery attacks.',
+    usage: {
+      title: 'CORS Usage Scenarios:',
+      tip1: 'Allow front-end JavaScript to access APIs from different domains',
+      tip2: 'Support cross-origin Ajax or Fetch requests',
+      tip3: 'Allow cross-origin access to fonts, CSS, or other resources',
+      tip4: 'Set up inter-service communication in a microservices architecture'
+    },
+    safe: 'Security Tip: It is generally advisable to avoid using the "*" wildcard as the allowed origin and instead explicitly specify the domains you trust to reduce potential security risks.'
   },
   messages: {
     copied: 'Headers copied to clipboard',
@@ -114,5 +146,39 @@ export default {
     testFailed: 'CORS request failed: {error}',
     presetSaved: 'Preset saved',
     presetLoaded: 'Preset loaded'
+  },
+  config: {
+    title: 'Configuration',
+    empty: 'Configure options to generate CORS settings',
+    copied: 'Configuration copied to clipboard!',
+    copy: 'Copy'
+  },
+  comments: {
+    expressMiddleware: "// Use Express application middleware",
+    applyGlobalCors: "// Apply CORS middleware globally",
+    applySpecificRoute: "// Or apply to specific routes",
+    applyRequest: "// Apply request",
+    apacheAllowedOrigins: "# Allowed Origins",
+    apacheAllowedMethods: "# Allowed HTTP Methods",
+    apacheAllowedHeaders: "# Allowed HTTP Headers",
+    apacheAllowedCredentials: "# Allowed Credentials",
+    preflightCacheDuration: "# Preflight Cache Duration",
+    handlePreflightRequest: "# Handling Preflight Requests",
+    apacheExposeHeaders: "# Expose headers",
+    nginxConfiguration: "# CORS Configuration\n# Add this configuration to your server or location block",
+    nginxAllowedOrigins: "# Allowed Origins",
+    nginxAllowedMethods: "# Allowed HTTP Methods",
+    nginxAllowedHeaders: "# Allowed HTTP Headers",
+    nginxAllowedCredentials: "# Allowed Credentials",
+    nginxPreflightCacheDuration: "# Preflight Cache Duration",
+    nginxExposeHeaders: '# Expose headers',
+    nginxHandlePreflight: "# Handling Preflight Requests",
+    httpHeadersConfiguration: "# CORS HTTP Headers Configuration",
+    httpAllowedOrigins: "# Allowed Origins",
+    httpAllowedMethods: "# Allowed HTTP Methods",
+    httpAllowedHeaders: "# Allowed HTTP Headers",
+    httpAllowedCredentials: "# Allowed Credentials",
+    httpPreflightCacheDuration: "# Preflight Cache Duration",
+    httpExposeHeaders: '# Expose headers',
   }
-} 
+}
