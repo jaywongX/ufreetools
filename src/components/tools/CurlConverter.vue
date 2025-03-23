@@ -2,27 +2,27 @@
   <div>
     <!-- 工具配置区域 -->
     <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">cURL转代码</h2>
+      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.curl-converter.name') }}</h2>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        将cURL命令转换为多种编程语言代码，方便快速集成HTTP请求到您的项目中
+        {{ $t('tools.curl-converter.description') }}
       </p>
       
       <!-- cURL输入区域 -->
       <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-          cURL命令
+          {{ $t('tools.curl-converter.input.title') }}
         </label>
         <div class="relative">
           <textarea 
             v-model="curlCommand" 
             class="w-full h-32 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
-            placeholder="在此输入cURL命令，例如: curl -X POST https://api.example.com -H &quot;Content-Type: application/json&quot; -d &quot;{&quot;key&quot;:&quot;value&quot;}&quot;"
+            :placeholder="$t('tools.curl-converter.input.placeholder')"
           ></textarea>
           <button 
             v-if="curlCommand" 
             @click="curlCommand = ''" 
             class="absolute top-2 right-2 p-1 text-gray-500 hover:text-red-500"
-            title="清空"
+            :title="$t('tools.curl-converter.input.clear')"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
@@ -33,7 +33,7 @@
       
       <!-- 示例命令 -->
       <div class="mb-4">
-        <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">示例命令:</h3>
+        <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.curl-converter.input.examples') }}</h3>
         <div class="flex flex-wrap gap-2">
           <button 
             v-for="(example, index) in examples" 
@@ -41,7 +41,7 @@
             @click="selectExample(example)"
             class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-md hover:bg-gray-200 dark:hover:bg-gray-600"
           >
-            {{ example.name }}
+            {{ $t(`tools.curl-converter.examples.exampleCommands.${example.name}`) }}
           </button>
         </div>
       </div>
@@ -49,7 +49,7 @@
       <!-- 目标语言选择 -->
       <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-          目标语言
+          {{ $t('tools.curl-converter.output.language') }}
         </label>
         <div class="flex flex-wrap gap-2">
           <button 
@@ -73,8 +73,8 @@
           class="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary-dark"
           :disabled="converting || !curlCommand.trim()"
         >
-          <span v-if="converting">转换中...</span>
-          <span v-else>转换</span>
+          <span v-if="converting">{{ $t('tools.curl-converter.actions.converting') }}</span>
+          <span v-else>{{ $t('tools.curl-converter.actions.convert') }}</span>
         </button>
       </div>
     </div>
@@ -83,16 +83,16 @@
     <div v-if="convertedCode || conversionError" class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 overflow-hidden">
       <div class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-750">
         <h3 class="font-medium text-gray-800 dark:text-gray-200">
-          {{ conversionError ? '转换错误' : `${getSelectedLanguageName()} 代码` }}
+          {{ conversionError ? $t('tools.curl-converter.output.errorTitle') : $t('tools.curl-converter.output.codeTitle', { language: getSelectedLanguageName() }) }}
         </h3>
         <div class="flex space-x-2">
           <button 
             v-if="convertedCode"
             @click="copyCode" 
             class="px-3 py-1 text-sm text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-600 rounded hover:bg-gray-300 dark:hover:bg-gray-500"
-            title="复制到剪贴板"
+            :title="$t('tools.curl-converter.output.copyTooltip')"
           >
-            复制
+            {{ $t('tools.curl-converter.output.copy') }}
           </button>
         </div>
       </div>
@@ -113,6 +113,9 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 当前输入的cURL命令
 const curlCommand = ref('')
@@ -144,23 +147,23 @@ const languages = [
 // 示例cURL命令
 const examples = [
   { 
-    name: 'GET请求', 
+    name: 'getRequest', 
     command: 'curl https://api.example.com/users'
   },
   { 
-    name: 'POST JSON', 
+    name: 'postJson', 
     command: 'curl -X POST https://api.example.com/users -H "Content-Type: application/json" -d \'{"name":"John Doe","email":"john@example.com"}\''
   },
   { 
-    name: 'POST表单', 
+    name: 'postForm', 
     command: 'curl -X POST https://api.example.com/form -d "name=John&age=25"'
   },
   { 
-    name: '带认证', 
+    name: 'withAuth', 
     command: 'curl -u username:password https://api.example.com/auth'
   },
   { 
-    name: '上传文件', 
+    name: 'uploadFile', 
     command: 'curl -F "file=@/path/to/file.jpg" https://api.example.com/upload'
   }
 ]
@@ -179,7 +182,7 @@ async function convertCurl() {
     
     // 检查命令是否以curl开头
     if (!curlCommand.value.trim().toLowerCase().startsWith('curl ')) {
-      throw new Error('命令必须以 "curl " 开头')
+      throw new Error(t('tools.curl-converter.messages.curlRequired'))
     }
     
     // 根据选择的语言生成代码
@@ -219,7 +222,7 @@ async function convertCurl() {
     convertedCode.value = code
   } catch (error) {
     console.error('转换失败:', error)
-    conversionError.value = `转换失败: ${error.message}`
+    conversionError.value = t('tools.curl-converter.messages.parseFailed', { error: error.message })
   } finally {
     converting.value = false
   }
@@ -241,10 +244,10 @@ function copyCode() {
   if (!convertedCode.value) return
   
   navigator.clipboard.writeText(convertedCode.value).then(() => {
-    alert('代码已复制到剪贴板')
+    alert(t('tools.curl-converter.messages.copied'))
   }).catch(err => {
     console.error('复制失败:', err)
-    alert('复制失败，请手动复制')
+    alert(t('tools.curl-converter.messages.copyFailed'))
   })
 }
 
@@ -547,6 +550,10 @@ class Program
 
 function generateRubyCode(curl) {
   // 示例Ruby代码生成
+  const method = extractMethod(curl);
+  // Capitalize the method (first letter uppercase, rest lowercase)
+  const capitalizedMethod = method.charAt(0).toUpperCase() + method.slice(1).toLowerCase();
+  
   return `require 'uri'
 require 'net/http'
 require 'openssl'
@@ -556,7 +563,7 @@ url = URI("${extractUrl(curl)}")
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = (url.scheme == 'https')
 
-request = Net::HTTP::${extractMethod(curl).capitalize()}.new(url)
+request = Net::HTTP::${capitalizedMethod}.new(url)
 ${Object.entries(extractHeaders(curl)).map(([k, v]) => `request["${k}"] = "${v}"`).join('\n')}
 
 response = http.request(request)
