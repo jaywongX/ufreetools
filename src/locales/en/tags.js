@@ -36,6 +36,7 @@ export default {
   css: 'CSS',
   git: 'Git',
   curl: 'cURL',
+  editor: 'Editor',
   
   // Design Tags
   design: 'Design',
@@ -155,6 +156,7 @@ export default {
   file: 'File',
   docx: 'Word Document',
   xlsx: 'Excel Spreadsheet',
+  markdown: 'Markdown',
   
   // Development Tool Tags
   cli: 'Command Line Tool',
@@ -212,6 +214,7 @@ export default {
   grpc: 'gRPC',
   number: 'number',
   mqtt: 'MQTT',
+  mock: 'Mock',
   
   // Tag Categories
   categories: {

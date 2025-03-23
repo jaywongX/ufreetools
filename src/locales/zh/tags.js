@@ -217,6 +217,7 @@ export default {
   grpc: 'gRPC',
   number: '数字',
   mqtt: 'MQTT',
+  mock: 'Mock',
   
   // 标签分类名称
   categories: {

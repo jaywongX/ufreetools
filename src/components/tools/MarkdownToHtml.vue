@@ -5,7 +5,7 @@
       <div class="flex flex-wrap gap-4 mb-4">
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            预览选项
+            {{ t('tools.markdown-to-html.options.title') }}
           </label>
           <div class="space-y-2">
             <div class="flex items-center">
@@ -16,7 +16,7 @@
                 class="h-4 w-4 text-primary border-gray-300 rounded"
               />
               <label for="realtime-preview" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                实时预览
+                {{ t('tools.markdown-to-html.options.realtimePreview') }}
               </label>
             </div>
             <div class="flex items-center">
@@ -27,7 +27,7 @@
                 class="h-4 w-4 text-primary border-gray-300 rounded"
               />
               <label for="scroll-sync" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                滚动同步
+                {{ t('tools.markdown-to-html.options.scrollSync') }}
               </label>
             </div>
           </div>
@@ -35,7 +35,7 @@
         
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            HTML选项
+            {{ t('tools.markdown-to-html.options.htmlOptions') }}
           </label>
           <div class="space-y-2">
             <div class="flex items-center">
@@ -46,7 +46,7 @@
                 class="h-4 w-4 text-primary border-gray-300 rounded"
               />
               <label for="sanitize" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                过滤不安全标签
+                {{ t('tools.markdown-to-html.options.sanitize') }}
               </label>
             </div>
             <div class="flex items-center">
@@ -57,7 +57,7 @@
                 class="h-4 w-4 text-primary border-gray-300 rounded"
               />
               <label for="include-css" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                包含基础样式
+                {{ t('tools.markdown-to-html.options.includeStyle') }}
               </label>
             </div>
           </div>
@@ -65,26 +65,26 @@
         
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            示例文档
+            {{ t('tools.markdown-to-html.input.loadSample') }}
           </label>
           <div class="flex flex-wrap gap-2">
             <button 
-              @click="loadExample('basic')"
+              @click="loadSample('basic')"
               class="px-3 py-1 text-sm rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
             >
-              基础语法
+              {{ t('tools.markdown-to-html.samples.basic') }}
             </button>
             <button 
-              @click="loadExample('extended')"
+              @click="loadSample('extended')"
               class="px-3 py-1 text-sm rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
             >
-              扩展格式
+              {{ t('tools.markdown-to-html.samples.extended') }}
             </button>
             <button 
-              @click="loadExample('article')"
+              @click="loadSample('article')"
               class="px-3 py-1 text-sm rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
             >
-              示例文章
+              {{ t('tools.markdown-to-html.samples.article') }}
             </button>
           </div>
         </div>
@@ -97,12 +97,12 @@
       <div>
         <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 mb-2">
           <div class="flex justify-between items-center p-3 border-b border-gray-200 dark:border-gray-700">
-            <h3 class="font-medium">Markdown 输入</h3>
+            <h3 class="font-medium">{{ t('tools.markdown-to-html.input.title') }}</h3>
             <div class="space-x-2">
               <button 
                 @click="clearInput"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-                title="清空"
+                :title="t('tools.markdown-to-html.input.clearInput')"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -111,7 +111,7 @@
               <button 
                 @click="pasteFromClipboard"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-                title="从剪贴板粘贴"
+                :title="t('tools.markdown-to-html.input.paste')"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -124,15 +124,15 @@
               ref="markdownInput"
               v-model="markdownText" 
               class="w-full h-80 p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
-              placeholder="输入Markdown文本..."
+              :placeholder="t('tools.markdown-to-html.input.placeholder')"
               @input="onMarkdownChange"
               @scroll="handleMarkdownScroll"
             ></textarea>
           </div>
         </div>
         <div class="text-sm text-gray-600 dark:text-gray-400 flex justify-between">
-          <span>字符数: {{ markdownText.length }}</span>
-          <span>行数: {{ markdownText.split('\n').length }}</span>
+          <span>{{ t('tools.markdown-to-html.input.charCount') }}: {{ markdownText.length }}</span>
+          <span>{{ t('tools.markdown-to-html.input.lineCount') }}: {{ markdownText.split('\n').length }}</span>
         </div>
       </div>
       
@@ -146,21 +146,21 @@
                 class="px-3 py-1 text-sm rounded"
                 :class="previewMode === 'preview' ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600'"
               >
-                预览
+                {{ t('tools.markdown-to-html.output.previewTab') }}
               </button>
               <button 
                 @click="previewMode = 'html'"
                 class="px-3 py-1 text-sm rounded"
                 :class="previewMode === 'html' ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600'"
               >
-                HTML代码
+                {{ t('tools.markdown-to-html.output.htmlTab') }}
               </button>
             </div>
             <div class="space-x-2">
               <button 
                 @click="refreshPreview"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-                title="刷新预览"
+                :title="t('tools.markdown-to-html.actions.convert')"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -169,7 +169,7 @@
               <button 
                 @click="copyOutput"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-                title="复制到剪贴板"
+                :title="t('tools.markdown-to-html.output.copyOutput')"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-8m-10 0h4l-5-5-5 5h4v8" />
@@ -178,7 +178,7 @@
               <button 
                 @click="downloadHtml"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-                title="下载HTML文件"
+                :title="t('tools.markdown-to-html.output.download')"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -195,14 +195,14 @@
           </div>
         </div>
         <div class="text-sm text-gray-600 dark:text-gray-400">
-          {{ previewMode === 'preview' ? '预览模式' : 'HTML源码' }}
+          {{ previewMode === 'preview' ? t('tools.markdown-to-html.output.previewMode') : t('tools.markdown-to-html.output.sourceMode') }}
         </div>
       </div>
     </div>
     
     <!-- 转换状态提示 -->
     <div class="mt-4 text-sm text-gray-600 dark:text-gray-400" v-if="lastConversionTime">
-      <p>最后转换时间: {{ new Date(lastConversionTime).toLocaleTimeString() }}</p>
+      <p>{{ t('tools.markdown-to-html.status.lastConversion') }}: {{ new Date(lastConversionTime).toLocaleTimeString() }}</p>
     </div>
     
     <!-- 复制成功提示 -->
@@ -211,7 +211,7 @@
       class="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg transition-opacity duration-300"
       :class="{'opacity-100': copySuccess, 'opacity-0': !copySuccess}"
     >
-      已复制到剪贴板
+      {{ t('tools.markdown-to-html.alerts.copied') }}
     </div>
   </div>
 </template>
@@ -220,6 +220,10 @@
 import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import MarkdownIt from 'markdown-it'
 import DOMPurify from 'dompurify'
+import { useI18n } from 'vue-i18n'
+
+// 初始化国际化
+const { t, locale } = useI18n()
 
 // 状态变量
 const markdownText = ref('')
@@ -232,6 +236,7 @@ const includeCss = ref(true)
 const lastConversionTime = ref(null)
 const copySuccess = ref(false)
 const isScrolling = ref(false) // 防止滚动循环
+const currentSampleType = ref('basic') // 记录当前加载的示例类型
 
 // DOM引用
 const markdownInput = ref(null)
@@ -451,10 +456,92 @@ function handlePreviewScroll() {
 }
 
 // 加载示例Markdown
-function loadExample(type) {
+function loadSample(type) {
+  // 记录当前加载的示例类型
+  currentSampleType.value = type
+  
+  // 使用 i18n 当前语言
+  const currentLocale = locale.value;
+  
   switch(type) {
     case 'basic':
-      markdownText.value = `# Markdown基础语法示例
+      if (currentLocale === 'en') {
+        markdownText.value = `# Markdown Basic Syntax Example
+
+## 1. Headings
+
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+
+## 2. Text Formatting
+
+Plain text
+
+**Bold text**
+
+*Italic text*
+
+~~Strikethrough~~
+
+**_Bold and italic_**
+
+## 3. Lists
+
+### Unordered Lists
+- Item 1
+- Item 2
+  - Sub-item A
+  - Sub-item B
+
+### Ordered Lists
+1. First item
+2. Second item
+3. Third item
+
+## 4. Links and Images
+
+[Link to Google](https://www.google.com)
+
+![Image example](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBmaWxsPSIjY2NjY2NjIiAvPgogICAgPHRleHQgeD0iNzUiIHk9Ijc1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZpbGw9IiM0NDQ0NDQiPjE1MHgxNTA8L3RleHQ+Cjwvc3ZnPg==)
+
+## 5. Blockquotes
+
+> This is a blockquote
+> 
+> Blockquotes can span multiple lines
+
+## 6. Code
+
+Inline code: \`console.log('Hello World')\`
+
+Code block:
+\`\`\`javascript
+function greeting(name) {
+  return \`Hello, \${name}!\`;
+}
+console.log(greeting('World'));
+\`\`\`
+
+## 7. Tables
+
+| Name | Age | Occupation |
+| ---- | --- | ---------- |
+| John | 25  | Engineer   |
+| Jane | 30  | Designer   |
+| Bob  | 28  | Product Manager |
+
+## 8. Horizontal Rules
+
+---
+
+***
+`
+      } else {
+        markdownText.value = `# Markdown基础语法示例
 
 ## 1. 标题
 
@@ -494,7 +581,7 @@ function loadExample(type) {
 
 [链接到百度](https://www.baidu.com)
 
-![图片示例](https://via.placeholder.com/150)
+![图片示例](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBmaWxsPSIjY2NjY2NjIiAvPgogICAgPHRleHQgeD0iNzUiIHk9Ijc1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZpbGw9IiM0NDQ0NDQiPjE1MHgxNTA8L3RleHQ+Cjwvc3ZnPg==)
 
 ## 5. 引用
 
@@ -528,9 +615,88 @@ console.log(greeting('World'));
 
 ***
 `
-      break
+      }
+      break;
     case 'extended':
-      markdownText.value = `# Markdown扩展语法
+      if (currentLocale === 'en') {
+        markdownText.value = `# Markdown Extended Syntax
+
+## 1. Task Lists
+
+- [x] Completed task
+- [ ] Pending task
+- [x] Another completed task
+
+## 2. Emoji
+
+Supports GitHub-style emoji like :smile: :heart: :thumbsup:
+
+## 3. Math Formulas (requires extension)
+
+Inline formula: $E=mc^2$
+
+Block formula:
+
+$$
+\\frac{n!}{k!(n-k)!} = \\binom{n}{k}
+$$
+
+## 4. Footnotes
+
+Here's a footnote reference[^1]
+
+[^1]: This is the footnote content.
+
+## 5. Definition Lists
+
+Term 1
+: Definition 1
+
+Term 2
+: Definition 2a
+: Definition 2b
+
+## 6. Highlighting (requires extension)
+
+This is ==highlighted text==
+
+## 7. Superscript and Subscript (requires extension)
+
+Superscript: X^2^
+Subscript: H~2~O
+
+## 8. Admonitions (requires extension)
+
+:::warning
+This is a warning message
+:::
+
+:::info
+This is an informational message
+:::
+
+## 9. Custom Containers (requires extension)
+
+::: details Click to expand details
+Here is the detailed content
+:::
+
+## 10. Flowcharts (requires extension)
+
+\`\`\`mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+\`\`\`
+
+## 11. Table of Contents (requires extension)
+
+[TOC]
+`
+      } else {
+        markdownText.value = `# Markdown扩展语法
 
 ## 1. 任务列表
 
@@ -606,9 +772,98 @@ graph TD;
 
 [TOC]
 `
-      break
+      }
+      break;
     case 'article':
-      markdownText.value = `# Markdown: 简单而强大的文本格式语言
+      if (currentLocale === 'en') {
+        markdownText.value = `# Markdown: A Simple Yet Powerful Text Formatting Language
+
+## Introduction
+
+In the era of digital content creation, **Markdown** has emerged as the preferred lightweight markup language for technical documentation, blog writing, and content management. This article explores Markdown's history, basic syntax, and widespread applications.
+
+## History and Design Philosophy of Markdown
+
+Markdown was created by John Gruber and Aaron Swartz in 2004. Its design goal was to enable people to write in an easy-to-read, easy-to-write plain text format that could be converted to structurally valid HTML.
+
+> "The overriding design goal for Markdown's formatting syntax is to make it as readable as possible. The idea is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions."
+> — John Gruber
+
+This design philosophy distinguishes Markdown from other markup languages: **it focuses on content rather than appearance**.
+
+## Basic Markdown Syntax
+
+Markdown offers a simple set of syntax rules. Here are some basic elements:
+
+### 1. Headings
+
+Markdown uses the # symbol to denote heading levels:
+
+\`\`\`markdown
+# Heading 1
+## Heading 2
+### Heading 3
+\`\`\`
+
+### 2. Formatted Text
+
+- **Bold**: \`**text**\` or \`__text__\`
+- *Italic*: \`*text*\` or \`_text_\`
+- ~~Strikethrough~~: \`~~text~~\`
+
+### 3. Lists
+
+Unordered lists use hyphens, plus signs, or asterisks as list markers:
+
+- Item 1
+- Item 2
+  - Sub-item A
+  - Sub-item B
+
+Ordered lists use numbers followed by periods:
+
+1. First item
+2. Second item
+3. Third item
+
+### 4. Links and Images
+
+Link syntax: \`[link text](URL)\`  
+Image syntax: \`![alt text](image URL)\`
+
+### 5. Code Blocks
+
+\`\`\`javascript
+function helloWorld() {
+  console.log("Hello, world!");
+}
+\`\`\`
+
+## Widespread Applications of Markdown
+
+Markdown is widely used across various platforms and tools:
+
+| Platform/Tool | Application |
+| ------------- | ----------- |
+| GitHub        | Code documentation, Issues, Pull Requests |
+| Stack Overflow | Question formatting |
+| WordPress     | Blog writing |
+| Discord/Slack | Message formatting |
+| Notion        | Notes and knowledge management |
+
+## Conclusion
+
+With its simplicity, efficiency, and cross-platform capabilities, Markdown has become an invaluable tool for content creators. Whether writing technical documentation, blog posts, or simple notes, Markdown provides a consistent and efficient writing experience.
+
+Learning Markdown isn't difficult, but mastering it will significantly enhance your digital writing productivity. If you haven't tried Markdown yet, now is the perfect time to start!
+
+---
+
+*Author: Markdown Enthusiast*  
+*Published: October 15, 2023*
+`
+      } else {
+        markdownText.value = `# Markdown: 简单而强大的文本格式语言
 
 ## 引言
 
@@ -694,7 +949,8 @@ Markdown凭借其简洁、高效和跨平台的特性，已经成为内容创作
 *文章作者: Markdown爱好者*  
 *发布日期: 2023年10月15日*
 `
-      break
+      }
+      break;
   }
   
   convertMarkdownToHtml()
@@ -707,7 +963,7 @@ onMounted(() => {
   }
   
   // 初始加载示例
-  loadExample('basic')
+  loadSample('basic')
 })
 
 // 清理事件监听
@@ -740,6 +996,14 @@ watch(includeCss, () => {
 watch(sanitize, () => {
   convertMarkdownToHtml()
 })
+
+// 监听语言变化，自动更新示例
+watch(locale, (newLocale) => {
+  if (currentSampleType.value) {
+    // 如果已经加载了示例，则重新加载当前示例类型
+    loadSample(currentSampleType.value);
+  }
+});
 </script>
 
 <style>

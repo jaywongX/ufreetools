@@ -5,8 +5,11 @@ export default {
     title: '输入Markdown',
     placeholder: '在此输入或粘贴您的Markdown文本...',
     loadSample: '加载示例',
-    clearInput: '清除输入',
-    uploadFile: '上传Markdown文件'
+    clearInput: '清空',
+    uploadFile: '上传Markdown文件',
+    paste: '从剪贴板粘贴',
+    charCount: '字符数',
+    lineCount: '行数'
   },
   output: {
     title: 'HTML输出',
@@ -15,7 +18,9 @@ export default {
     copyOutput: '复制HTML',
     clearOutput: '清除输出',
     previewTab: '预览',
-    htmlTab: 'HTML'
+    htmlTab: 'HTML代码',
+    previewMode: '预览模式',
+    sourceMode: 'HTML源码'
   },
   options: {
     title: '转换选项',
@@ -31,7 +36,10 @@ export default {
     footnotes: '脚注',
     taskLists: '任务列表',
     emoji: '表情符号支持',
-    includeStyle: '包含默认CSS'
+    includeStyle: '包含默认CSS',
+    realtimePreview: '实时预览',
+    scrollSync: '滚动同步',
+    htmlOptions: 'HTML选项'
   },
   styles: {
     title: '样式选项',
@@ -74,5 +82,22 @@ export default {
     emptyInput: '请输入要转换的Markdown',
     copied: 'HTML已复制到剪贴板',
     tocGenerated: '已生成目录'
+  },
+  alerts: {
+    copied: '已复制到剪贴板',
+    copyFailed: '复制到剪贴板失败',
+    pasteFailed: '从剪贴板粘贴失败',
+    confirmClear: '确定要清空输入内容吗？'
+  },
+  status: {
+    lastConversion: '最后转换时间'
+  },
+  samples: {
+    basic: '基础示例',
+    extended: '扩展示例',
+    article: '文章示例'
+  },
+  download: {
+    title: 'Markdown转HTML导出'
   }
 } 

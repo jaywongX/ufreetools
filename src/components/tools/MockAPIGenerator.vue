@@ -2,7 +2,7 @@
   <div>
     <!-- 配置区域 -->
     <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h3 class="text-lg font-medium mb-3 text-gray-800 dark:text-gray-200">Mock API 配置</h3>
+      <h3 class="text-lg font-medium mb-3 text-gray-800 dark:text-gray-200">{{ t('tools.mock-api-generator.name') }}</h3>
       
       <!-- Java类上传区域 -->
       <div class="mb-4 p-3 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-md">
@@ -22,16 +22,16 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
               </svg>
-              上传Java类文件
+              {{ t('tools.mock-api-generator.actions.uploadJava') }}
             </button>
             <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">
-              支持上传 .java 文件，自动解析类结构生成Mock配置 暂未支持多层对象属性
+              {{ t('tools.mock-api-generator.help.uploadHint') }}
             </p>
             <p v-if="uploadedFileName" class="text-xs text-green-600 dark:text-green-400 font-medium">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              已上传: {{ uploadedFileName }}
+              {{ t('tools.mock-api-generator.messages.fileUploaded') }}: {{ uploadedFileName }}
             </p>
           </div>
         </div>
@@ -44,7 +44,7 @@
           <!-- 字段配置 -->
           <div class="flex justify-between items-center mb-2 flex-shrink-0">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              字段定义
+              {{ t('tools.mock-api-generator.fields.title') }}
             </label>
             <button 
               @click="() => addField()" 
@@ -53,7 +53,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
               </svg>
-              添加字段
+              {{ t('tools.mock-api-generator.fields.addField') }}
             </button>
           </div>
           
@@ -68,7 +68,7 @@
                         <div class="flex space-x-2">
                           <input 
                             v-model="field.name" 
-                            placeholder="字段名" 
+                            :placeholder="t('tools.mock-api-generator.fields.fieldName')" 
                             class="w-1/2 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                           />
                           
@@ -76,47 +76,47 @@
                             v-model="field.type" 
                             class="w-1/2 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                           >
-                            <option value="string">字符串</option>
-                            <option value="number">数字</option>
-                            <option value="boolean">布尔值</option>
-                            <option value="date">日期</option>
-                            <option value="name">姓名</option>
-                            <option value="email">邮箱</option>
-                            <option value="phone">电话</option>
-                            <option value="address">地址</option>
-                            <option value="id">ID</option>
-                            <option value="image">图片URL</option>
-                            <option value="array">数组</option>
-                            <option value="object">对象</option>
+                            <option value="string">{{ t('tools.mock-api-generator.fieldTypes.string') }}</option>
+                            <option value="number">{{ t('tools.mock-api-generator.fieldTypes.number') }}</option>
+                            <option value="boolean">{{ t('tools.mock-api-generator.fieldTypes.boolean') }}</option>
+                            <option value="date">{{ t('tools.mock-api-generator.fieldTypes.date') }}</option>
+                            <option value="name">{{ t('tools.mock-api-generator.fieldTypes.name') }}</option>
+                            <option value="email">{{ t('tools.mock-api-generator.fieldTypes.email') }}</option>
+                            <option value="phone">{{ t('tools.mock-api-generator.fieldTypes.phone') }}</option>
+                            <option value="address">{{ t('tools.mock-api-generator.fieldTypes.address') }}</option>
+                            <option value="id">{{ t('tools.mock-api-generator.fieldTypes.id') }}</option>
+                            <option value="image">{{ t('tools.mock-api-generator.fieldTypes.image') }}</option>
+                            <option value="array">{{ t('tools.mock-api-generator.fieldTypes.array') }}</option>
+                            <option value="object">{{ t('tools.mock-api-generator.fieldTypes.object') }}</option>
                           </select>
                         </div>
                         
                         <!-- 数组类型的配置 -->
                         <div v-if="field.type === 'array'" class="mt-2 ml-4 space-y-2">
                           <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-600 dark:text-gray-400">数组项类型</span>
+                            <span class="text-sm text-gray-600 dark:text-gray-400">{{ t('tools.mock-api-generator.array.itemType') }}</span>
                             <select 
                               v-model="field.itemType" 
                               class="w-1/2 px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                             >
-                              <option value="string">字符串</option>
-                              <option value="number">数字</option>
-                              <option value="boolean">布尔值</option>
-                              <option value="date">日期</option>
-                              <option value="name">姓名</option>
-                              <option value="email">邮箱</option>
-                              <option value="phone">电话</option>
-                              <option value="address">地址</option>
-                              <option value="id">ID</option>
-                              <option value="image">图片URL</option>
-                              <option value="object">对象</option>
+                              <option value="string">{{ t('tools.mock-api-generator.fieldTypes.string') }}</option>
+                              <option value="number">{{ t('tools.mock-api-generator.fieldTypes.number') }}</option>
+                              <option value="boolean">{{ t('tools.mock-api-generator.fieldTypes.boolean') }}</option>
+                              <option value="date">{{ t('tools.mock-api-generator.fieldTypes.date') }}</option>
+                              <option value="name">{{ t('tools.mock-api-generator.fieldTypes.name') }}</option>
+                              <option value="email">{{ t('tools.mock-api-generator.fieldTypes.email') }}</option>
+                              <option value="phone">{{ t('tools.mock-api-generator.fieldTypes.phone') }}</option>
+                              <option value="address">{{ t('tools.mock-api-generator.fieldTypes.address') }}</option>
+                              <option value="id">{{ t('tools.mock-api-generator.fieldTypes.id') }}</option>
+                              <option value="image">{{ t('tools.mock-api-generator.fieldTypes.image') }}</option>
+                              <option value="object">{{ t('tools.mock-api-generator.fieldTypes.object') }}</option>
                             </select>
                           </div>
                           
                           <!-- 对象数组的子字段配置 -->
                           <div v-if="field.itemType === 'object'" class="mt-2">
                             <div class="flex justify-between items-center">
-                              <span class="text-sm text-gray-600 dark:text-gray-400">数组项字段</span>
+                              <span class="text-sm text-gray-600 dark:text-gray-400">{{ t('tools.mock-api-generator.array.arrayFields') }}</span>
                               <button 
                                 @click="addField(field)"
                                 class="text-xs text-primary dark:text-primary-light hover:underline flex items-center"
@@ -124,7 +124,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                                 </svg>
-                                添加字段
+                                {{ t('tools.mock-api-generator.fields.addField') }}
                               </button>
                             </div>
                             
@@ -134,7 +134,7 @@
                                 <div class="flex space-x-2">
                                   <input 
                                     v-model="subField.name" 
-                                    placeholder="字段名" 
+                                    :placeholder="t('tools.mock-api-generator.fields.fieldName')" 
                                     class="w-1/2 px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                                   />
                                   
@@ -142,18 +142,18 @@
                                     v-model="subField.type" 
                                     class="w-1/2 px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                                   >
-                                    <option value="string">字符串</option>
-                                    <option value="number">数字</option>
-                                    <option value="boolean">布尔值</option>
-                                    <option value="date">日期</option>
-                                    <option value="name">姓名</option>
-                                    <option value="email">邮箱</option>
-                                    <option value="phone">电话</option>
-                                    <option value="address">地址</option>
-                                    <option value="id">ID</option>
-                                    <option value="image">图片URL</option>
-                                    <option value="array">数组</option>
-                                    <option value="object">对象</option>
+                                    <option value="string">{{ t('tools.mock-api-generator.fieldTypes.string') }}</option>
+                                    <option value="number">{{ t('tools.mock-api-generator.fieldTypes.number') }}</option>
+                                    <option value="boolean">{{ t('tools.mock-api-generator.fieldTypes.boolean') }}</option>
+                                    <option value="date">{{ t('tools.mock-api-generator.fieldTypes.date') }}</option>
+                                    <option value="name">{{ t('tools.mock-api-generator.fieldTypes.name') }}</option>
+                                    <option value="email">{{ t('tools.mock-api-generator.fieldTypes.email') }}</option>
+                                    <option value="phone">{{ t('tools.mock-api-generator.fieldTypes.phone') }}</option>
+                                    <option value="address">{{ t('tools.mock-api-generator.fieldTypes.address') }}</option>
+                                    <option value="id">{{ t('tools.mock-api-generator.fieldTypes.id') }}</option>
+                                    <option value="image">{{ t('tools.mock-api-generator.fieldTypes.image') }}</option>
+                                    <option value="array">{{ t('tools.mock-api-generator.fieldTypes.array') }}</option>
+                                    <option value="object">{{ t('tools.mock-api-generator.fieldTypes.object') }}</option>
                                   </select>
                                 </div>
                               </div>
@@ -173,7 +173,7 @@
                         <!-- 对象类型的子字段 -->
                         <div v-if="field.type === 'object'" class="mt-2 ml-4 space-y-2">
                           <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-600 dark:text-gray-400">子字段</span>
+                            <span class="text-sm text-gray-600 dark:text-gray-400">{{ t('tools.mock-api-generator.object.childFields') }}</span>
                             <button 
                               @click="addField(field)"
                               class="text-xs text-primary dark:text-primary-light hover:underline flex items-center"
@@ -181,7 +181,7 @@
                               <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                               </svg>
-                              添加子字段
+                              {{ t('tools.mock-api-generator.fields.addChildField') }}
                             </button>
                           </div>
                           
@@ -191,7 +191,7 @@
                               <div class="flex space-x-2">
                                 <input 
                                   v-model="subField.name" 
-                                  placeholder="字段名" 
+                                  :placeholder="t('tools.mock-api-generator.fields.fieldName')" 
                                   class="w-1/2 px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                                 />
                                 
@@ -199,18 +199,18 @@
                                   v-model="subField.type" 
                                   class="w-1/2 px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                                 >
-                                  <option value="string">字符串</option>
-                                  <option value="number">数字</option>
-                                  <option value="boolean">布尔值</option>
-                                  <option value="date">日期</option>
-                                  <option value="name">姓名</option>
-                                  <option value="email">邮箱</option>
-                                  <option value="phone">电话</option>
-                                  <option value="address">地址</option>
-                                  <option value="id">ID</option>
-                                  <option value="image">图片URL</option>
-                                  <option value="array">数组</option>
-                                  <option value="object">对象</option>
+                                  <option value="string">{{ t('tools.mock-api-generator.fieldTypes.string') }}</option>
+                                  <option value="number">{{ t('tools.mock-api-generator.fieldTypes.number') }}</option>
+                                  <option value="boolean">{{ t('tools.mock-api-generator.fieldTypes.boolean') }}</option>
+                                  <option value="date">{{ t('tools.mock-api-generator.fieldTypes.date') }}</option>
+                                  <option value="name">{{ t('tools.mock-api-generator.fieldTypes.name') }}</option>
+                                  <option value="email">{{ t('tools.mock-api-generator.fieldTypes.email') }}</option>
+                                  <option value="phone">{{ t('tools.mock-api-generator.fieldTypes.phone') }}</option>
+                                  <option value="address">{{ t('tools.mock-api-generator.fieldTypes.address') }}</option>
+                                  <option value="id">{{ t('tools.mock-api-generator.fieldTypes.id') }}</option>
+                                  <option value="image">{{ t('tools.mock-api-generator.fieldTypes.image') }}</option>
+                                  <option value="array">{{ t('tools.mock-api-generator.fieldTypes.array') }}</option>
+                                  <option value="object">{{ t('tools.mock-api-generator.fieldTypes.object') }}</option>
                                 </select>
                               </div>
                             </div>
@@ -250,21 +250,21 @@
             <div class="flex space-x-4">
               <div class="flex-1">
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  响应类型
+                  {{ t('tools.mock-api-generator.options.responseType') }}
                 </label>
                 <select 
                   v-model="apiConfig.responseType" 
                   class="w-full px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                 >
-                  <option value="object">单个对象</option>
-                  <option value="array">对象数组</option>
-                  <option value="custom">自定义结构</option>
+                  <option value="object">{{ t('tools.mock-api-generator.responseTypes.object') }}</option>
+                  <option value="array">{{ t('tools.mock-api-generator.responseTypes.array') }}</option>
+                  <option value="custom">{{ t('tools.mock-api-generator.responseTypes.custom') }}</option>
                 </select>
               </div>
               
               <div class="flex-1" v-if="apiConfig.responseType === 'array'">
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  数组长度
+                  {{ t('tools.mock-api-generator.options.arrayLength') }}
                 </label>
                 <input 
                   type="number" 
@@ -277,14 +277,14 @@
 
               <div class="flex-1">
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  响应格式
+                  {{ t('tools.mock-api-generator.options.responseFormat') }}
                 </label>
                 <select 
                   v-model="apiConfig.wrapResponse" 
                   class="w-full px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                 >
-                  <option :value="false">仅数据</option>
-                  <option :value="true">标准REST响应 (code, data, message)</option>
+                  <option :value="false">{{ t('tools.mock-api-generator.responseFormats.dataOnly') }}</option>
+                  <option :value="true">{{ t('tools.mock-api-generator.responseFormats.standard') }}</option>
                 </select>
               </div>
             </div>
@@ -303,7 +303,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
-                生成JSON
+                {{ t('tools.mock-api-generator.actions.generateJson') }}
               </button>
 
               <button 
@@ -313,7 +313,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                 </svg>
-                生成Builder
+                {{ t('tools.mock-api-generator.actions.generateBuilder') }}
               </button>
               
               <button 
@@ -323,7 +323,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                 </svg>
-                清空
+                {{ t('tools.mock-api-generator.actions.clear') }}
               </button>
             </div>
 
@@ -336,7 +336,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
                 </svg>
-                美化
+                {{ t('tools.mock-api-generator.actions.format') }}
               </button>
               <button 
                 v-if="mockData"
@@ -346,7 +346,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
                 </svg>
-                复制
+                {{ t('tools.mock-api-generator.actions.copy') }}
               </button>
             </div>
           </div>
@@ -360,7 +360,7 @@
 
       <!-- 复制成功提示 -->
       <div v-if="copyStatus" class="fixed right-4 bottom-4 bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-100 px-4 py-2 rounded-md shadow-md">
-        已复制到剪贴板
+        {{ t('tools.mock-api-generator.messages.copied') }}
       </div>
 
       <!-- 修改：居中显示的Toast提示组件 -->
@@ -375,6 +375,10 @@
 
 <script setup>
 import { ref, reactive, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+// 初始化 i18n
+const { t } = useI18n()
 
 // API配置
 const apiConfig = reactive({
@@ -658,7 +662,7 @@ function formatOutput() {
 // 处理展示格式
 const formattedOutput = computed(() => {
   if (!mockData.value) {
-    return '// 生成的Mock数据将显示在这里'
+    return t('tools.mock-api-generator.placeholder.output')
   }
   
   if (isFormatted.value) {
@@ -708,7 +712,7 @@ async function handleFileUpload(event) {
     
   } catch (error) {
     console.error('解析Java类失败:', error)
-    showToastMessage('解析Java类失败，请确保文件格式正确')
+    showToastMessage(t('tools.mock-api-generator.messages.parseError'))
   } finally {
     if (fileInput.value) {
       fileInput.value.value = ''
