@@ -1,6 +1,8 @@
 export default {
   name: 'gRPC Debugger',
   description: 'Test and debug gRPC services and protobuf messages',
+  title: 'Online gRPC Debugger',
+  intro: 'Debug gRPC services directly through your browser with support for proto file parsing and dynamic form building',
   connection: {
     title: 'Connection',
     server: 'Server Address',
@@ -12,6 +14,12 @@ export default {
     clientKey: 'Client Key',
     insecure: 'Skip TLS verification (insecure)',
     timeout: 'Timeout (seconds)',
+    serverUrl: 'gRPC Service URL',
+    serverUrlPlaceholder: 'https://your-grpc-server.com',
+    timeoutMs: 'Request Timeout (milliseconds)',
+    timeoutPlaceholder: '30000',
+    defaultTimeout: 'Default: 30000ms (30 seconds)',
+    corsNote: 'Note: The server must support the gRPC-Web protocol and CORS',
     keepalive: 'Enable Keepalive',
     connect: 'Connect',
     disconnect: 'Disconnect'
@@ -22,7 +30,7 @@ export default {
     load: 'Load Proto File',
     paste: 'Paste Proto Definition',
     protoPath: 'Proto File Path',
-    importPath: 'Import Paths',
+    importPath: 'Import Path',
     services: 'Services',
     methods: 'Methods',
     selectService: 'Select Service',
@@ -31,7 +39,18 @@ export default {
     unary: 'Unary',
     serverStreaming: 'Server Streaming',
     clientStreaming: 'Client Streaming',
-    bidirectional: 'Bidirectional Streaming'
+    bidirectional: 'Bidirectional Streaming',
+    protoDefinition: 'Proto File Definition',
+    switchToText: 'Switch to Text Input',
+    switchToFile: 'Switch to File Upload',
+    dragDrop: 'Drag and drop .proto files here, or',
+    clickUpload: 'click to upload',
+    onlyProto: 'Only .proto file formats are supported',
+    loadExample: 'Load Example Proto',
+    formatProto: 'Format',
+    clear: 'Clear',
+    parse: 'Parse Proto Definition',
+    parsing: 'Parsing...'
   },
   request: {
     title: 'Request',
@@ -50,7 +69,15 @@ export default {
     exampleMessage: 'Example Message',
     validJson: 'Valid JSON',
     invalidJson: 'Invalid JSON',
-    history: 'Request History'
+    history: 'Request History',
+    body: 'Request Body',
+    bodyPlaceholder: 'Enter the JSON-formatted request body here...',
+    runQuery: 'Run Query',
+    requestSent: 'Sent',
+    param: 'Request Parameter',
+    edit: 'Edit',
+    sending: 'Sending...',
+    time: 'Request Time'
   },
   response: {
     title: 'Response',
@@ -64,10 +91,13 @@ export default {
     copy: 'Copy Response',
     download: 'Download',
     clear: 'Clear',
-    streamClosed: 'Stream closed',
-    streamMessage: 'Stream message #{number}',
+    streamClosed: 'Stream Closed',
+    streamMessage: 'Stream Message #{number}',
     stats: 'Statistics',
-    messagesReceived: 'Messages received'
+    messagesReceived: 'Messages Received',
+    startTime: 'Start Time',
+    endTime: 'End Time',
+    time: 'Response Time'
   },
   settings: {
     title: 'Settings',
@@ -75,8 +105,8 @@ export default {
     light: 'Light',
     dark: 'Dark',
     language: 'Language',
-    maxResponseSize: 'Max Response Size',
-    timeoutMs: 'Default Timeout (ms)',
+    maxResponseSize: 'Maximum Response Size',
+    timeoutMs: 'Default Timeout (milliseconds)',
     prettyPrint: 'Pretty Print JSON',
     saveDir: 'Save Directory',
     clearHistory: 'Clear History',
@@ -88,19 +118,33 @@ export default {
   messages: {
     connecting: 'Connecting to {server}...',
     connected: 'Connected to {server}',
-    disconnected: 'Disconnected from server',
+    disconnected: 'Disconnected from the server',
     connectionError: 'Connection error: {error}',
     requestSent: 'Request sent',
     responseReceived: 'Response received',
     streamingStarted: 'Streaming started',
     streamingEnded: 'Streaming ended',
     protoLoaded: 'Proto file loaded successfully',
-    protoError: 'Error loading proto file: {error}',
+    protoError: 'Error loading Proto file: {error}',
     metadataAdded: 'Metadata added',
     metadataError: 'Invalid metadata',
-    savedToFile: 'Saved response to file',
+    savedToFile: 'Response saved to file',
     parsingError: 'Error parsing message: {error}',
     reflectionError: 'Server reflection error: {error}',
-    invalidProto: 'Invalid proto definition'
+    invalidProto: 'Invalid Proto definition',
+    emptyUrl: 'Please enter a service URL',
+    selectServiceMethod: 'Please select a service and method',
+    invalidJson: 'Request body is not valid JSON: {error}',
+    copy: 'Copy',
+    copied: 'Response copied to clipboard',
+    copyFailed: 'Copy failed, please copy manually'
+  },
+  errors: {
+    invalidArgument: 'INVALID_ARGUMENT - Invalid argument',
+    notFound: 'NOT_FOUND - Resource not found',
+    alreadyExists: 'ALREADY_EXISTS - Resource already exists',
+    permissionDenied: 'PERMISSION_DENIED - Permission denied',
+    internal: 'INTERNAL - Internal error',
+    requestFailed: 'Request failed: {error}'
   }
-} 
+}

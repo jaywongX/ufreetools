@@ -2,9 +2,9 @@
   <div>
     <!-- 工具配置区域 -->
     <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">gRPC在线调试器</h2>
+      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.grpc-debugger.title') }}</h2>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        通过浏览器直接调试gRPC服务，支持proto文件解析和动态表单构建
+        {{ $t('tools.grpc-debugger.intro') }}
       </p>
       
       <!-- 连接设置 -->
@@ -13,32 +13,32 @@
           <!-- 服务URL -->
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              gRPC服务URL
+              {{ $t('tools.grpc-debugger.connection.serverUrl') }}
             </label>
             <input 
               v-model="serviceUrl" 
               type="text" 
-              placeholder="https://your-grpc-server.com"
+              :placeholder="$t('tools.grpc-debugger.connection.serverUrlPlaceholder')"
               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
             >
             <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
-              注意：服务器需要支持gRPC-Web协议和CORS
+              {{ $t('tools.grpc-debugger.connection.corsNote') }}
             </p>
           </div>
           
           <!-- 超时设置 -->
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              请求超时 (毫秒)
+              {{ $t('tools.grpc-debugger.connection.timeoutMs') }}
             </label>
             <input 
               v-model="timeout" 
               type="number" 
-              placeholder="30000"
+              :placeholder="$t('tools.grpc-debugger.connection.timeoutPlaceholder')"
               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
             >
             <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
-              默认: 30000ms (30秒)
+              {{ $t('tools.grpc-debugger.connection.defaultTimeout') }}
             </p>
           </div>
         </div>
@@ -48,14 +48,14 @@
       <div class="mb-4">
         <div class="flex justify-between items-center mb-2">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-            Proto文件定义
+            {{ $t('tools.grpc-debugger.service.protoDefinition') }}
           </label>
           <div class="flex space-x-2">
             <button 
               @click="toggleProtoInputMode" 
               class="text-xs text-primary hover:text-primary-dark"
             >
-              {{ isFileUpload ? '切换到文本输入' : '切换到文件上传' }}
+              {{ isFileUpload ? $t('tools.grpc-debugger.service.switchToText') : $t('tools.grpc-debugger.service.switchToFile') }}
             </button>
           </div>
         </div>
@@ -82,8 +82,8 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
               </svg>
-              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">拖放.proto文件到此处，或 <span class="text-primary">点击上传</span></p>
-              <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">仅支持.proto文件格式</p>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{{ $t('tools.grpc-debugger.service.dragDrop') }} <span class="text-primary">{{ $t('tools.grpc-debugger.service.clickUpload') }}</span></p>
+              <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">{{ $t('tools.grpc-debugger.service.onlyProto') }}</p>
             </div>
             
             <div v-else class="text-left">
@@ -131,7 +131,7 @@ message HelloResponse {
               v-if="protoContent" 
               @click="protoContent = ''" 
               class="absolute top-2 right-2 p-1 text-gray-500 hover:text-red-500"
-              title="清空"
+              :title="$t('tools.grpc-debugger.service.clear')"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
@@ -144,7 +144,7 @@ message HelloResponse {
               @click="loadSampleProto" 
               class="text-xs text-primary hover:text-primary-dark"
             >
-              加载示例Proto
+              {{ $t('tools.grpc-debugger.service.loadExample') }}
             </button>
           </div>
         </div>
@@ -157,27 +157,24 @@ message HelloResponse {
           class="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary-dark"
           :disabled="parsing || (!protoFile && !protoContent)"
         >
-          <span v-if="parsing">解析中...</span>
-          <span v-else>解析Proto定义</span>
+          <span v-if="parsing">{{ $t('tools.grpc-debugger.service.parsing') }}</span>
+          <span v-else>{{ $t('tools.grpc-debugger.service.parse') }}</span>
         </button>
       </div>
     </div>
     
     <!-- 服务和方法选择 (仅在解析成功后显示) -->
-    <div v-if="services.length > 0" class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">选择服务和方法</h3>
-      
-      <!-- 服务选择 -->
-      <div class="mb-4">
+    <div v-if="services.length > 0" class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-          服务 (Service)
+          {{ $t('tools.grpc-debugger.service.selectService') }}
         </label>
         <select 
           v-model="selectedService" 
           class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           @change="onServiceChange"
         >
-          <option value="">-- 选择服务 --</option>
+          <option value="">-- {{ $t('tools.grpc-debugger.service.selectService') }} --</option>
           <option v-for="service in services" :key="service.name" :value="service.name">
             {{ service.name }}
           </option>
@@ -187,7 +184,7 @@ message HelloResponse {
       <!-- 方法选择 -->
       <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-          方法 (Method)
+          {{ $t('tools.grpc-debugger.service.selectMethod') }}
         </label>
         <select 
           v-model="selectedMethod" 
@@ -195,7 +192,7 @@ message HelloResponse {
           @change="onMethodChange"
           :disabled="!selectedService"
         >
-          <option value="">-- 选择方法 --</option>
+          <option value="">-- {{ $t('tools.grpc-debugger.service.selectMethod') }} --</option>
           <option v-for="method in availableMethods" :key="method.name" :value="method.name">
             {{ method.name }}
           </option>
@@ -205,9 +202,13 @@ message HelloResponse {
     
     <!-- 请求参数编辑 (仅在选择方法后显示) -->
     <div v-if="selectedMethod && requestSchema" class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">请求参数</h3>
+      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">
+        {{ $t('tools.grpc-debugger.request.param') }}
+      </h3>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        编辑 <span class="font-mono text-primary">{{ getSelectedMethodInputType() }}</span> 请求参数
+        {{ $t('tools.grpc-debugger.request.edit') }}
+        <span class="font-mono text-primary">{{ getSelectedMethodInputType() }}</span> 
+        {{ $t('tools.grpc-debugger.request.param') }}
       </p>
       
       <!-- 动态生成的表单 -->
@@ -221,7 +222,7 @@ message HelloResponse {
           <button 
             @click="formatRequestBody" 
             class="absolute top-2 right-2 p-1 text-gray-500 hover:text-primary"
-            title="格式化JSON"
+            :title="$t('tools.grpc-debugger.service.formatProto')"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
@@ -238,8 +239,8 @@ message HelloResponse {
           class="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary-dark"
           :disabled="sending"
         >
-          <span v-if="sending">发送中...</span>
-          <span v-else>发送gRPC请求</span>
+          <span v-if="sending">{{ $t('tools.grpc-debugger.request.sending') }}</span>
+          <span v-else>{{ $t('tools.grpc-debugger.request.send') }}</span>
         </button>
       </div>
     </div>
@@ -254,9 +255,9 @@ message HelloResponse {
           <button 
             @click="copyResponse" 
             class="px-3 py-1 text-sm text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-600 rounded hover:bg-gray-300 dark:hover:bg-gray-500"
-            title="复制到剪贴板"
+            :title="$t('tools.grpc-debugger.messages.copied')"
           >
-            复制
+            {{ $t('tools.grpc-debugger.messages.copy') }}
           </button>
         </div>
       </div>
@@ -277,8 +278,8 @@ message HelloResponse {
       <!-- 请求信息 -->
       <div v-if="lastRequestTime" class="mt-4 text-xs text-gray-500 dark:text-gray-400">
         <div class="flex justify-between">
-          <span>请求时间: {{ lastRequestTime }}</span>
-          <span>响应耗时: {{ responseTime }}ms</span>
+          <span>{{ $t('tools.grpc-debugger.request.time') }}: {{ lastRequestTime }}</span>
+          <span>{{ $t('tools.grpc-debugger.response.time') }}: {{ responseTime }}ms</span>
         </div>
       </div>
     </div>
@@ -289,6 +290,9 @@ message HelloResponse {
 import { ref, computed, reactive, onMounted } from 'vue'
 import * as protobuf from 'protobufjs'
 import * as grpcWeb from 'grpc-web'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 状态变量
 const serviceUrl = ref('https://demo.connect.build')
@@ -579,11 +583,11 @@ async function sendGrpcRequest() {
     
     // 验证输入
     if (!serviceUrl.value) {
-      throw new Error('请输入服务URL')
+      throw new Error(t('tools.grpc-debugger.messages.emptyUrl'))
     }
     
     if (!selectedService.value || !selectedMethod.value) {
-      throw new Error('请选择服务和方法')
+      throw new Error(t('tools.grpc-debugger.messages.selectServiceMethod'))
     }
     
     // 解析请求体
@@ -591,7 +595,7 @@ async function sendGrpcRequest() {
     try {
       requestData = JSON.parse(requestBody.value)
     } catch (error) {
-      throw new Error('请求体不是有效的JSON: ' + error.message)
+      throw new Error(t('tools.grpc-debugger.messages.invalidJson', { error: error.message }))
     }
     
     // 记录开始时间
@@ -655,19 +659,19 @@ async function sendGrpcRequest() {
     } else {
       // 模拟错误情况
       const errorCodes = [
-        'INVALID_ARGUMENT',
-        'NOT_FOUND',
-        'ALREADY_EXISTS',
-        'PERMISSION_DENIED',
-        'INTERNAL'
+        t('tools.grpc-debugger.errors.invalidArgument'),
+        t('tools.grpc-debugger.errors.notFound'),
+        t('tools.grpc-debugger.errors.alreadyExists'),
+        t('tools.grpc-debugger.errors.permissionDenied'),
+        t('tools.grpc-debugger.errors.internal')
       ]
       
       const errorCode = errorCodes[Math.floor(Math.random() * errorCodes.length)]
-      responseError.value = `gRPC错误: ${errorCode} - 请求处理失败`
+      responseError.value = `gRPC错误: ${errorCode}`
     }
   } catch (error) {
     console.error('发送gRPC请求失败:', error)
-    responseError.value = `请求失败: ${error.message}`
+    responseError.value = t('tools.grpc-debugger.errors.requestFailed', { error: error.message })
   } finally {
     sending.value = false
   }
@@ -679,11 +683,11 @@ function copyResponse() {
   
   navigator.clipboard.writeText(JSON.stringify(response.value, null, 2))
     .then(() => {
-      alert('响应已复制到剪贴板')
+      alert(t('tools.grpc-debugger.messages.copied'))
     })
     .catch(err => {
       console.error('复制失败:', err)
-      alert('复制失败，请手动复制')
+      alert(t('tools.grpc-debugger.messages.copyFailed'))
     })
 }
 
