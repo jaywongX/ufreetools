@@ -3,23 +3,24 @@ export default {
   description: 'Generate and verify hash digests for text or files using various algorithms',
   input: {
     title: 'Input',
-    text: 'Text',
-    file: 'File',
-    textPlaceholder: 'Enter text to hash',
+    text: 'Text Input',
+    file: 'File Input',
+    textPlaceholder: 'Enter the text to calculate the hash here...',
     fileSelect: 'Select File',
-    fileDrop: 'or drop file here',
+    fileDrop: 'Drop file here or click to upload',
     fileSelected: 'Selected file: {name}',
-    clearFile: 'Clear File',
-    maxSize: 'Max size: 100MB',
-    encoding: 'Text Encoding',
+    fileSize: '{size}',
+    removeFile: 'Remove File',
+    localProcessing: 'The file will be processed locally and not uploaded to the server',
+    encoding: 'Encoding',
+    selectAlgorithm: 'Select Hash Algorithm',
     utf8: 'UTF-8',
     ascii: 'ASCII',
-    latin1: 'ISO-8859-1',
-    windows1252: 'Windows-1252',
-    base64: 'Base64',
-    hex: 'Hex',
-    calculate: 'Calculate Hashes',
-    clear: 'Clear Input'
+    latin1: 'Latin1',
+    calculate: 'Calculate Hash',
+    calculating: 'Calculating...',
+    clear: 'Clear Input',
+    hashValue: 'Hash Value'
   },
   algorithms: {
     title: 'Algorithms',
@@ -53,26 +54,32 @@ export default {
     title: 'Hash Results',
     algorithm: 'Algorithm',
     digest: 'Digest',
-    noInput: 'Enter text or select a file to calculate hashes',
+    noInput: 'Enter text or select a file to calculate the hash',
     calculating: 'Calculating...',
     copy: 'Copy',
-    copied: 'Copied!',
+    copied: 'Copied to clipboard',
+    copyFailed: 'Copy failed, please copy manually',
     copyAll: 'Copy All',
     download: 'Download Results',
     fileInfo: 'File Information',
     fileName: 'Name',
     fileSize: 'Size',
     fileType: 'Type',
-    lastModified: 'Last Modified'
+    lastModified: 'Last Modified',
+    hexFormat: 'Hexadecimal Format',
+    base64Format: 'Base64 Format',
+    upperHexFormat: 'Uppercase Hexadecimal Format'
   },
   verification: {
     title: 'Hash Verification',
-    paste: 'Paste hash to verify',
+    inputVerifyHash: 'Enter the hash to verify',
+    placeholder: 'Enter the hash for comparison...',
+    paste: 'Paste hash for verification',
     matches: 'Hash matches!',
     doesNotMatch: 'Hash does not match',
     notFound: 'Algorithm not found',
     verify: 'Verify',
-    autoDetect: 'Auto-detect algorithm',
+    autoDetect: 'Auto-detect Algorithm',
     result: 'Verification Result'
   },
   options: {
@@ -81,7 +88,7 @@ export default {
     showTiming: 'Show Calculation Time',
     autoCalculate: 'Auto Calculate',
     formatOutput: 'Format Long Output',
-    binaryOutput: 'Binary View (for non-text files)',
+    binaryOutput: 'Binary View (For Non-Text Files)',
     compareHashes: 'Compare Hashes',
     hmacMode: 'Enable HMAC Mode'
   },
@@ -99,7 +106,7 @@ export default {
     addFiles: 'Add Files',
     processFiles: 'Process Files',
     clearAll: 'Clear All',
-    fileName: 'File Name',
+    fileName: 'Filename',
     algorithm: 'Algorithm',
     status: 'Status',
     actions: 'Actions',
@@ -110,25 +117,69 @@ export default {
     remove: 'Remove',
     filesSelected: '{count} files selected',
     exportResults: 'Export Results',
-    selectAlgorithm: 'Select algorithm for all files'
+    selectAlgorithm: 'Select Algorithm for All Files'
   },
   messages: {
     fileTooBig: 'File is too large. Maximum allowed size is 100MB.',
     hashCalculated: 'Hash calculated successfully',
     invalidInput: 'Invalid input',
-    invalidEncoding: 'Invalid encoding',
-    processingError: 'Error processing file: {error}',
-    noAlgorithm: 'Please select at least one algorithm',
-    hmacEnabled: 'HMAC mode enabled',
-    hmacDisabled: 'HMAC mode disabled',
-    clipboardError: 'Error copying to clipboard: {error}'
+    readError: 'Failed to read file',
+    processingError: 'Error processing file: {error}'
   },
   security: {
-    title: 'Security Notice',
-    insecure: 'Warning: {algorithm} is considered cryptographically insecure',
-    collision: 'Vulnerable to collision attacks',
-    recommendation: 'For security-critical applications, use SHA-256 or stronger algorithms',
-    notForPasswords: 'These hash functions are not suitable for password storage',
-    passwordInfo: 'For passwords, use specialized algorithms like Argon2, bcrypt, or PBKDF2'
+    warning: 'Using hash tools on an insecure HTTP connection poses security risks'
+  },
+  algorithmDetails: {
+    title: 'About Hash Algorithms',
+    usage: 'Common Usage',
+    safe: 'Security',
+    md5: {
+      name: 'MD5 (128-bit)',
+      description: 'MD5 is a widely used hash function that produces a 128-bit (16-byte) hash value, typically represented as a 32-character hexadecimal number.',
+      usage: 'File integrity checks, storing passwords (insecure)',
+      security: 'Proven to lack collision resistance; should not be used in security-sensitive contexts.'
+    },
+    sha1: {
+      name: 'SHA-1 (160-bit)',
+      description: 'SHA-1 is a cryptographic hash function that produces a 160-bit (20-byte) hash value, typically represented as a 40-character hexadecimal number.',
+      usage: 'Version control systems (e.g., Git), file integrity verification',
+      security: 'Proven to have collision attack vulnerabilities; not recommended for security-critical applications.'
+    },
+    sha256: {
+      name: 'SHA-256 (256-bit)',
+      description: 'SHA-256 belongs to the SHA-2 family and produces a 256-bit (32-byte) hash value, typically represented as a 64-character hexadecimal number.',
+      usage: 'Digital signatures, digital certificates, password storage, blockchain',
+      security: 'Currently considered secure and widely used in high-security scenarios.'
+    },
+    sha384: {
+      name: 'SHA-384 (384-bit)',
+      description: 'SHA-384 is a truncated version of SHA-512, producing a 384-bit (48-byte) hash value.',
+      usage: 'Scenarios requiring higher security than SHA-256',
+      security: 'Provides stronger security than SHA-256 with no known attack methods.'
+    },
+    sha512: {
+      name: 'SHA-512 (512-bit)',
+      description: 'SHA-512 is the longest standard algorithm in the SHA-2 family, producing a 512-bit (64-byte) hash value.',
+      usage: 'Applications requiring the highest level of security',
+      security: 'Provides the highest level of security with no known effective attacks.'
+    },
+    sha3_256: {
+      name: 'SHA3-256 (256-bit)',
+      description: 'SHA3-256 is part of the SHA-3 standard and has a completely different internal structure from the SHA-2 series.',
+      usage: 'Long-term security applications resistant to quantum computing threats',
+      security: 'Designed to resist future potential attacks, including quantum computing attacks.'
+    },
+    sha3_512: {
+      name: 'SHA3-512 (512-bit)',
+      description: 'SHA3-512 is the algorithm in the SHA-3 standard that provides the highest level of security.',
+      usage: 'Scenarios requiring extremely high security and resistance to quantum computing',
+      security: 'Provides the highest level of security assurance and is the safest algorithm in the SHA-3 series.'
+    },
+    ripemd160: {
+      name: 'RIPEMD-160 (160-bit)',
+      description: 'RIPEMD-160 is a hash function developed by the European RIPE project, producing a 160-bit hash value.',
+      usage: 'Bitcoin address generation, blockchain applications',
+      security: 'More secure than SHA-1 of the same length but less commonly used.'
+    }
   }
-} 
+}

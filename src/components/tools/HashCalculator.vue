@@ -5,7 +5,7 @@
       <div class="flex flex-wrap gap-4 mb-4">
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            选择哈希算法
+            {{ $t('tools.hash-calculator.input.selectAlgorithm') }}
           </label>
           <select 
             v-model="selectedHash" 
@@ -19,7 +19,7 @@
         
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            输入类型
+            {{ $t('tools.hash-calculator.input.title') }}
           </label>
           <div class="flex flex-wrap">
             <button 
@@ -27,21 +27,21 @@
               class="px-4 py-2 rounded-l-md border border-r-0 border-gray-300 dark:border-gray-600"
               :class="inputMode === 'text' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
             >
-              文本输入
+              {{ $t('tools.hash-calculator.input.text') }}
             </button>
             <button 
               @click="inputMode = 'file'" 
               class="px-4 py-2 rounded-r-md border border-gray-300 dark:border-gray-600"
               :class="inputMode === 'file' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
             >
-              文件输入
+              {{ $t('tools.hash-calculator.input.file') }}
             </button>
           </div>
         </div>
         
         <div v-if="inputMode === 'text'">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            编码
+            {{ $t('tools.hash-calculator.input.encoding') }}
           </label>
           <select 
             v-model="encoding" 
@@ -57,19 +57,19 @@
       <div class="mb-4">
         <div v-if="inputMode === 'text'">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            输入文本
+            {{ $t('tools.hash-calculator.input.title') }}
           </label>
           <textarea 
             v-model="inputText" 
             rows="5" 
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-            placeholder="在此输入要计算哈希值的文本..."
+            :placeholder="$t('tools.hash-calculator.input.textPlaceholder')"
           ></textarea>
         </div>
         
         <div v-else>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            选择文件
+            {{ $t('tools.hash-calculator.input.fileSelect') }}
           </label>
           <div class="flex items-center justify-center w-full">
             <label class="flex flex-col w-full h-32 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-750">
@@ -78,25 +78,25 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                 </svg>
                 <p class="text-sm text-gray-500 dark:text-gray-400">
-                  <span class="font-medium">点击上传文件</span> 或拖放文件到此处
+                  <span class="font-medium">{{ $t('tools.hash-calculator.input.fileSelect') }}</span> {{ $t('tools.hash-calculator.input.fileDrop') }}
                 </p>
                 <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                  文件将在本地处理，不会上传到服务器
+                  {{ $t('tools.hash-calculator.input.localProcessing') }}
                 </p>
               </div>
               <div class="flex flex-col items-center justify-center pt-5 pb-6" v-else>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <p class="text-sm text-gray-700 dark:text-gray-300 font-medium">已选择文件：{{ selectedFile.name }}</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300 font-medium">{{ $t('tools.hash-calculator.input.fileSelected', {name: selectedFile.name}) }}</p>
                 <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                  {{ formatFileSize(selectedFile.size) }}
+                  {{ $t('tools.hash-calculator.input.fileSize', {size: formatFileSize(selectedFile.size)}) }}
                 </p>
                 <button 
                   @click.prevent="selectedFile = null" 
                   class="text-xs text-red-500 hover:text-red-700 mt-2"
                 >
-                  移除文件
+                  {{ $t('tools.hash-calculator.input.removeFile') }}
                 </button>
               </div>
               <input 
@@ -120,20 +120,20 @@
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            计算中...
+            {{ $t('tools.hash-calculator.input.calculating') }}
           </span>
-          <span v-else>计算哈希值</span>
+          <span v-else>{{ $t('tools.hash-calculator.input.calculate') }}</span>
         </button>
       </div>
     </div>
     
     <!-- 结果显示区域 -->
     <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 mb-6" v-if="hashResult">
-      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">哈希计算结果</h3>
+      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.hash-calculator.results.title') }}</h3>
       
       <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-          {{ getSelectedAlgorithmName() }} 哈希值
+          {{ getSelectedAlgorithmName() }} {{ $t('tools.hash-calculator.results.hashValue') }}
         </label>
         <div class="flex">
           <input 
@@ -157,7 +157,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            大写十六进制
+            {{ $t('tools.hash-calculator.results.upperHexFormat') }}
           </label>
           <div class="flex">
             <input 
@@ -179,7 +179,7 @@
         
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            Base64 编码
+            Base64 {{ $t('tools.hash-calculator.input.encoding') }}
           </label>
           <div class="flex">
             <input 
@@ -203,16 +203,16 @@
     
     <!-- 哈希验证区域 -->
     <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700" v-if="hashResult">
-      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">哈希验证</h3>
+      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.hash-calculator.verification.title') }}</h3>
       
       <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-          输入待验证的哈希值
+          {{ $t('tools.hash-calculator.verification.inputVerifyHash') }}
         </label>
         <input 
           type="text" 
           v-model="verifyHash" 
-          placeholder="输入哈希值进行比对..."
+          :placeholder="$t('tools.hash-calculator.verification.inputVerifyHash')"
           class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
         />
       </div>
@@ -222,20 +222,20 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
-          <span class="text-green-700 dark:text-green-400">哈希值匹配！</span>
+          <span class="text-green-700 dark:text-green-400">{{ $t('tools.hash-calculator.verification.matches') }}</span>
         </div>
         <div v-else class="p-3 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-md flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
-          <span class="text-red-700 dark:text-red-400">哈希值不匹配！</span>
+          <span class="text-red-700 dark:text-red-400">{{ $t('tools.hash-calculator.verification.doesNotMatch') }}</span>
         </div>
       </div>
     </div>
     
     <!-- 算法说明 -->
     <div class="mt-8 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">关于哈希算法</h3>
+      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.hash-calculator.algorithmDetails.title') }}</h3>
       
       <div v-if="selectedHash" class="text-sm text-gray-600 dark:text-gray-400">
         <div class="mb-2" v-if="getSelectedAlgorithmDescription()">
@@ -243,12 +243,12 @@
         </div>
         
         <div class="mb-2" v-if="getSelectedAlgorithmUsage()">
-          <h4 class="font-medium text-gray-700 dark:text-gray-300 mb-1">常见用途</h4>
+          <h4 class="font-medium text-gray-700 dark:text-gray-300 mb-1">{{ $t('tools.hash-calculator.algorithmDetails.usage') }}</h4>
           <p>{{ getSelectedAlgorithmUsage() }}</p>
         </div>
         
         <div v-if="getSelectedAlgorithmSecurity()">
-          <h4 class="font-medium text-gray-700 dark:text-gray-300 mb-1">安全性</h4>
+          <h4 class="font-medium text-gray-700 dark:text-gray-300 mb-1">{{ $t('tools.hash-calculator.algorithmDetails.safe') }}</h4>
           <p>{{ getSelectedAlgorithmSecurity() }}</p>
         </div>
       </div>
@@ -259,8 +259,10 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import CryptoJS from 'crypto-js'
+import { useI18n } from 'vue-i18n'
 
 // 状态变量
+const { t } = useI18n()
 const inputMode = ref('text')
 const selectedHash = ref('sha256')
 const inputText = ref('')
@@ -273,38 +275,62 @@ const encoding = ref('utf8')
 
 // 可用的哈希算法
 const hashAlgorithms = [
-  { name: 'MD5 (128位)', value: 'md5', 
-    description: 'MD5是一种广泛使用的哈希函数，可产生128位（16字节）哈希值，通常以32位十六进制数表示。', 
-    usage: '文件完整性校验、存储密码（不安全）', 
-    security: '已被证明不具备抗碰撞性，不应用于安全场景。' },
-  { name: 'SHA-1 (160位)', value: 'sha1', 
-    description: 'SHA-1是一种密码哈希函数，可产生160位（20字节）哈希值，通常以40位十六进制数表示。', 
-    usage: '版本控制系统（如Git）、文件完整性验证', 
-    security: '已被证明存在碰撞攻击风险，不建议用于安全关键应用。' },
-  { name: 'SHA-256 (256位)', value: 'sha256', 
-    description: 'SHA-256属于SHA-2家族，产生256位（32字节）哈希值，通常以64位十六进制数表示。', 
-    usage: '数字签名、数字证书、密码存储、区块链', 
-    security: '目前被认为安全，广泛应用于需要高安全性的场景。' },
-  { name: 'SHA-384 (384位)', value: 'sha384', 
-    description: 'SHA-384是SHA-512的截断版本，产生384位（48字节）哈希值。', 
-    usage: '需要比SHA-256更高安全性的场景', 
-    security: '提供比SHA-256更强的安全性，尚无已知的攻击方法。' },
-  { name: 'SHA-512 (512位)', value: 'sha512', 
-    description: 'SHA-512是SHA-2家族中最长的标准算法，产生512位（64字节）哈希值。', 
-    usage: '要求最高安全级别的应用', 
-    security: '提供最高级别的安全性，目前没有已知的有效攻击。' },
-  { name: 'SHA3-256 (256位)', value: 'sha3_256', 
-    description: 'SHA3-256是SHA-3标准的一部分，与SHA-2系列有完全不同的内部结构。', 
-    usage: '对抗量子计算威胁的长期安全应用', 
-    security: '设计目标是抵抗未来可能出现的攻击，包括量子计算攻击。' },
-  { name: 'SHA3-512 (512位)', value: 'sha3_512', 
-    description: 'SHA3-512是SHA-3标准中提供最高安全性的算法。', 
-    usage: '需要极高安全性和抗量子计算能力的场景', 
-    security: '提供最高级别的安全保障，是SHA-3系列中最安全的算法。' },
-  { name: 'RIPEMD-160 (160位)', value: 'ripemd160', 
-    description: 'RIPEMD-160是欧洲RIPE项目开发的哈希函数，产生160位哈希值。', 
-    usage: '比特币地址生成、区块链应用', 
-    security: '比同长度的SHA-1更安全，但使用率较低。' }
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.md5.name'), 
+    value: 'md5', 
+    description: t('tools.hash-calculator.algorithmDetails.md5.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.md5.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.md5.security') 
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.sha1.name'), 
+    value: 'sha1', 
+    description: t('tools.hash-calculator.algorithmDetails.sha1.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.sha1.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.sha1.security') 
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.sha256.name'), 
+    value: 'sha256', 
+    description: t('tools.hash-calculator.algorithmDetails.sha256.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.sha256.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.sha256.security') 
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.sha384.name'), 
+    value: 'sha384', 
+    description: t('tools.hash-calculator.algorithmDetails.sha384.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.sha384.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.sha384.security') 
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.sha512.name'), 
+    value: 'sha512', 
+    description: t('tools.hash-calculator.algorithmDetails.sha512.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.sha512.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.sha512.security') 
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.sha3_256.name'), 
+    value: 'sha3_256', 
+    description: t('tools.hash-calculator.algorithmDetails.sha3_256.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.sha3_256.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.sha3_256.security') 
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.sha3_512.name'), 
+    value: 'sha3_512', 
+    description: t('tools.hash-calculator.algorithmDetails.sha3_512.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.sha3_512.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.sha3_512.security') 
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.ripemd160.name'), 
+    value: 'ripemd160', 
+    description: t('tools.hash-calculator.algorithmDetails.ripemd160.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.ripemd160.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.ripemd160.security') 
+  }
 ]
 
 // 获取当前选择的算法名称
@@ -364,7 +390,7 @@ function arrayBufferToBase64(buffer) {
 function calculateFileHash() {
   return new Promise((resolve, reject) => {
     if (!selectedFile.value) {
-      reject(new Error('未选择文件'))
+      reject(new Error($t('tools.hash-calculator.messages.readError')))
       return
     }
     
@@ -410,7 +436,7 @@ function calculateFileHash() {
     }
     
     reader.onerror = function() {
-      reject(new Error('读取文件失败'))
+      reject(new Error(t('tools.hash-calculator.messages.readError')))
     }
     
     reader.readAsArrayBuffer(selectedFile.value)
@@ -420,7 +446,7 @@ function calculateFileHash() {
 // 计算文本的哈希值
 function calculateTextHash() {
   if (!inputText.value) {
-    return Promise.reject(new Error('请输入文本'))
+    return Promise.reject(new Error(t('tools.hash-calculator.messages.invalidInput')))
   }
   
   let hash
@@ -479,7 +505,7 @@ async function calculateHash() {
     hashResult.value = result.hex
     hashResultBase64.value = result.base64
   } catch (error) {
-    alert(`计算哈希值失败: ${error.message}`)
+    alert(t('tools.hash-calculator.messages.processingError', {error: error.message}))
   } finally {
     isCalculating.value = false
   }
@@ -488,10 +514,10 @@ async function calculateHash() {
 // 复制到剪贴板
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(() => {
-    alert('已复制到剪贴板')
+    alert(t('tools.hash-calculator.results.copied'))
   }).catch(err => {
-    alert('复制失败，请手动复制')
-    console.error('复制失败:', err)
+    alert(t('tools.hash-calculator.results.copyFailed'))
+    console.error(t('tools.hash-calculator.messages.processingError', {error: err}))
   })
 }
 
@@ -499,7 +525,7 @@ function copyToClipboard(text) {
 onMounted(() => {
   // 如果用户访问的是来自不安全源的页面，提示安全风险
   if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost') {
-    console.warn('在不安全的HTTP连接上使用哈希工具有安全风险')
+    console.warn(t('tools.hash-calculator.security.warning'))
   }
 })
 </script> 
