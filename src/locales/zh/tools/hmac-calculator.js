@@ -1,12 +1,17 @@
 export default {
   name: 'HMAC计算器',
   description: '计算数据的HMAC（基于哈希的消息认证码）',
+  title: 'HMAC 消息认证码计算工具',
+  intro: '使用密钥生成消息认证码，支持多种哈希算法和输出格式',
   input: {
     title: '输入',
     message: '消息',
     messagePlaceholder: '输入要认证的消息',
     key: '密钥',
-    keyPlaceholder: '输入您的密钥',
+    keyLabel: '密钥 (Secret Key)',
+    keyPlaceholder: '输入HMAC密钥',
+    messageLabel: '消息 (Message)',
+    messageLongPlaceholder: '输入要计算HMAC的消息',
     file: '文件',
     text: '文本',
     fileSelect: '选择文件',
@@ -16,31 +21,39 @@ export default {
     encoding: '输入编码',
     keyEncoding: '密钥编码',
     outputFormat: '输出格式',
+    inputType: '输入类型',
     utf8: 'UTF-8',
     ascii: 'ASCII',
     base64: 'Base64',
     hex: '十六进制',
     binary: '二进制',
     calculate: '计算HMAC',
+    calculating: '计算中...',
     clear: '清除全部'
   },
   algorithms: {
     title: '算法',
+    label: '哈希算法',
     hmacMd5: 'HMAC-MD5',
     hmacSha1: 'HMAC-SHA1',
     hmacSha224: 'HMAC-SHA224',
     hmacSha256: 'HMAC-SHA256',
     hmacSha384: 'HMAC-SHA384',
     hmacSha512: 'HMAC-SHA512',
-    hmacRipemd160: 'HMAC-RIPEMD160'
+    hmacRipemd160: 'HMAC-RIPEMD160',
+    hmacSm3: 'HMAC-SM3'
   },
   result: {
     title: 'HMAC结果',
     digest: 'HMAC摘要',
+    outputLabel: 'HMAC 结果',
     copy: '复制',
     copied: '已复制！',
     noResult: '输入消息和密钥以计算HMAC',
-    calculating: '计算中...'
+    calculating: '计算中...',
+    placeholder: 'HMAC 结果将显示在这里',
+    useExample: '使用实例',
+    jsExample: 'JavaScript 示例：',
   },
   validation: {
     title: 'HMAC验证',
@@ -75,7 +88,11 @@ export default {
     processingError: '处理错误：{error}',
     success: 'HMAC计算成功',
     invalidKey: '所选编码的密钥格式无效',
-    fileTooBig: '文件太大。最大大小为5MB'
+    fileTooBig: '文件太大。最大大小为5MB',
+    copied: '已复制到剪贴板',
+    copyFailed: '复制失败，请手动复制',
+    invalidHex: '密钥不是有效的十六进制格式',
+    invalidBase64: '密钥不是有效的Base64格式',
   },
   security: {
     title: '安全说明',
