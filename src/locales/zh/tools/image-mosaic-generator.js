@@ -25,9 +25,20 @@ export default {
   settings: {
     title: '马赛克设置',
     tileSize: '瓦片大小',
-    small: '小',
+    small: '小块 (细致)',
     medium: '中',
-    large: '大',
+    large: '大块 (粗糙)',
+    square: '方形',
+    circle: '圆形',
+    applicationMode: '马赛克应用方式',
+    all: '全图',
+    selectRegion: '选择区域',
+    selectingRegion: '选择区域中...',
+    autoDetectFaces: '自动检测人脸',
+    detectFaces: '检测人脸',
+    detectFacesDescription: '检测图片中的人脸并自动为其应用马赛克',
+    edgeSmoothing: '边缘平滑',
+    edgeSmoothingDescription: '平滑马赛克块的边缘，使过渡更自然',
     custom: '自定义',
     width: '宽度',
     height: '高度',
@@ -69,6 +80,7 @@ export default {
     backgroundColor: '背景颜色'
   },
   output: {
+    fileName: '文件名',
     title: '输出',
     preview: '预览',
     original: '原始',
@@ -82,13 +94,18 @@ export default {
     highRes: '高分辨率',
     resolution: '输出分辨率',
     format: '格式',
-    quality: '质量'
+    quality: '质量',
+    size: '尺寸',
+    pixel: '像素',
+    pleaseSelectImage: '请选择图片',
+    pleaseSelectImageAndAdjustSettings: '请选择图片并调整设置'
   },
   actions: {
     generate: '生成马赛克',
     regenerate: '重新生成',
     cancel: '取消生成',
-    reset: '全部重置',
+    reset: '重置',
+    detectFaces: '检测人脸',
     saveSettings: '保存设置',
     loadSettings: '加载设置'
   },
@@ -99,6 +116,14 @@ export default {
     tileProcessing: '正在处理瓦片图像：{progress}%',
     downloadStarted: '下载已开始',
     settingsSaved: '设置已保存',
+    selecting: '选择区域中...',
+    preview: '应用马赛克后的效果将显示在这里',
+    faceDetected: '已检测到人脸区域',
+    facesDetected: '已检测到{count}个人脸',
+    noFacesDetected: '未检测到人脸',
+    loadingModels: '正在加载人脸检测模型...',
+    faceDetectionFailed: '人脸检测失败',
+    reset: '已重置',
     error: '错误：{message}'
   }
 } 

@@ -7,7 +7,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
-          选择图片
+          {{ $t('tools.image-mosaic-generator.upload.title') }}
           <input type="file" accept="image/*" @change="loadImage" class="hidden" />
         </label>
         
@@ -19,7 +19,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          重置
+          {{ $t('tools.image-mosaic-generator.actions.reset') }}
         </button>
       </div>
       
@@ -31,7 +31,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
         </svg>
-        下载马赛克图片
+        {{ $t('tools.image-mosaic-generator.output.download') }}
       </button>
     </div>
     
@@ -49,12 +49,12 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <!-- 左侧设置面板 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">马赛克设置</h3>
+          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">{{ $t('tools.image-mosaic-generator.settings.title') }}</h3>
           
           <!-- 马赛克大小 -->
           <div class="mb-4">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              马赛克大小: {{ settings.mosaicSize }}px
+              {{ $t('tools.image-mosaic-generator.settings.tileSize') }}: {{ settings.mosaicSize }}px
             </label>
             <input
               v-model.number="settings.mosaicSize"
@@ -67,14 +67,14 @@
               @input="applyMosaic"
             />
             <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
-              <span>小块 (细致)</span>
-              <span>大块 (粗糙)</span>
+              <span>{{ $t('tools.image-mosaic-generator.settings.small') }}</span>
+              <span>{{ $t('tools.image-mosaic-generator.settings.large') }}</span>
             </div>
           </div>
           
           <!-- 马赛克形状 -->
           <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">马赛克形状</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-mosaic-generator.advanced.tileShape') }}</label>
             <div class="grid grid-cols-2 gap-2">
               <button
                 @click="settings.mosaicShape = 'square'; applyMosaic()"
@@ -84,7 +84,7 @@
                   : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300'"
                 :disabled="!hasImage || isProcessing"
               >
-                方形
+                {{ $t('tools.image-mosaic-generator.settings.square') }}
               </button>
               <button
                 @click="settings.mosaicShape = 'circle'; applyMosaic()"
@@ -94,14 +94,14 @@
                   : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300'"
                 :disabled="!hasImage || isProcessing"
               >
-                圆形
+                {{ $t('tools.image-mosaic-generator.settings.circle') }}
               </button>
             </div>
           </div>
           
           <!-- 选择区域应用马赛克 -->
           <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">马赛克应用方式</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-mosaic-generator.settings.applicationMode') }}</label>
             <div class="grid grid-cols-2 gap-2">
               <button
                 @click="settings.applyMode = 'all'; applyMosaic()"
@@ -111,7 +111,7 @@
                   : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300'"
                 :disabled="!hasImage || isProcessing || isSelecting"
               >
-                全图
+                {{ $t('tools.image-mosaic-generator.settings.all') }}
               </button>
               <button
                 @click="startSelection"
@@ -121,7 +121,7 @@
                   : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300'"
                 :disabled="!hasImage || isProcessing"
               >
-                {{ isSelecting ? '选择区域中...' : '选择区域' }}
+                {{ isSelecting ? $t('tools.image-mosaic-generator.settings.selectingRegion') : $t('tools.image-mosaic-generator.settings.selectRegion') }}
               </button>
             </div>
           </div>
@@ -129,17 +129,17 @@
           <!-- 人脸检测 -->
           <div class="mb-4">
             <div class="flex items-center justify-between">
-              <label class="text-sm font-medium text-gray-700 dark:text-gray-300">自动检测人脸</label>
+              <label class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.image-mosaic-generator.messages.faceDetected') }}</label>
               <button
                 @click="detectFaces"
                 class="px-3 py-1 text-sm border rounded-md transition-colors bg-blue-600 text-white hover:bg-blue-700"
                 :disabled="!hasImage || isProcessing"
               >
-                检测人脸
+                {{ $t('tools.image-mosaic-generator.actions.detectFaces') }}
               </button>
             </div>
             <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-              检测图片中的人脸并自动为其应用马赛克
+              {{ $t('tools.image-mosaic-generator.settings.detectFacesDescription') }}
             </p>
           </div>
           
@@ -155,11 +155,11 @@
                 @change="applyMosaic"
               />
               <label for="edgeSmoothing" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                边缘平滑
+                {{ $t('tools.image-mosaic-generator.settings.edgeSmoothing') }}
               </label>
             </div>
             <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-              平滑马赛克块的边缘，使过渡更自然
+              {{ $t('tools.image-mosaic-generator.settings.edgeSmoothingDescription') }}
             </p>
           </div>
         </div>
@@ -169,15 +169,15 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <!-- 原图 -->
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-              <h3 class="text-lg font-medium mb-2 text-gray-800 dark:text-gray-200">原图</h3>
+              <h3 class="text-lg font-medium mb-2 text-gray-800 dark:text-gray-200">{{ $t('tools.image-mosaic-generator.output.original') }}</h3>
               <div class="relative aspect-w-16 aspect-h-9 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
                 <div v-if="!hasImage" class="flex items-center justify-center h-full text-gray-500 dark:text-gray-400">
-                  请选择图片
+                  {{ $t('tools.image-mosaic-generator.output.pleaseSelectImage') }}
                 </div>
                 <img 
                   v-else 
                   :src="originalImageUrl" 
-                  alt="原始图片" 
+                  :alt="$t('tools.image-mosaic-generator.output.original')" 
                   class="object-contain w-full h-full"
                   ref="originalImageRef"
                   @load="imageLoaded"
@@ -206,24 +206,24 @@
                 </div>
               </div>
               <div class="text-sm text-gray-600 dark:text-gray-400 mt-2" v-if="imageInfo.width && imageInfo.height">
-                尺寸: {{ imageInfo.width }} x {{ imageInfo.height }} 像素 | {{ formatFileSize(imageInfo.size) }}
+                {{ $t('tools.image-mosaic-generator.output.size') }}: {{ imageInfo.width }} x {{ imageInfo.height }} {{ $t('tools.image-mosaic-generator.output.pixel') }} | {{ formatFileSize(imageInfo.size) }}
               </div>
             </div>
             
             <!-- 马赛克效果预览 -->
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-              <h3 class="text-lg font-medium mb-2 text-gray-800 dark:text-gray-200">马赛克效果</h3>
+              <h3 class="text-lg font-medium mb-2 text-gray-800 dark:text-gray-200">{{ $t('tools.image-mosaic-generator.output.mosaic') }}</h3>
               <div class="relative aspect-w-16 aspect-h-9 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
                 <div v-if="isProcessing" class="flex items-center justify-center h-full">
                   <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
                 </div>
                 <div v-else-if="!processedImageUrl" class="flex items-center justify-center h-full text-gray-500 dark:text-gray-400">
-                  请先选择图片并调整设置
+                  {{ $t('tools.image-mosaic-generator.output.pleaseSelectImageAndAdjustSettings') }}
                 </div>
                 <img 
                   v-else 
                   :src="processedImageUrl" 
-                  alt="马赛克效果" 
+                  :alt="$t('tools.image-mosaic-generator.output.mosaic')" 
                   class="object-contain w-full h-full"
                 />
               </div>
@@ -237,6 +237,10 @@
 
 <script setup>
 import { ref, reactive, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+import * as faceapi from 'face-api.js'
+
+const { t } = useI18n()
 
 // 状态管理
 const originalImageUrl = ref(null)
@@ -277,6 +281,11 @@ const notification = ref({
   message: '',
   fadeOut: false
 })
+
+// 人脸检测模型是否已加载
+const modelsLoaded = ref(false)
+// 是否正在加载模型
+const isLoadingModels = ref(false)
 
 // 加载图片
 function loadImage(event) {
@@ -357,8 +366,8 @@ async function applyMosaic() {
     // 输出处理后的图片
     processedImageUrl.value = canvas.value.toDataURL('image/png')
   } catch (error) {
-    console.error('应用马赛克时出错:', error)
-    showNotification('应用马赛克时出错')
+    console.error(error)
+    showNotification(t('tools.image-mosaic-generator.messages.error'))
   } finally {
     isProcessing.value = false
   }
@@ -366,6 +375,7 @@ async function applyMosaic() {
 
 // 在指定区域应用马赛克
 function applyMosaicToRegion(region) {
+  console.log('applyMosaicToRegion', region)
   const { x, y, width, height } = region
   const mosaicSize = settings.mosaicSize
   
@@ -549,7 +559,6 @@ function startSelection() {
   settings.applyMode = 'region'
   selectionStart.value = null
   selectionCurrent.value = null
-  showNotification('请在图片上拖动选择要应用马赛克的区域')
 }
 
 // 处理鼠标按下事件
@@ -607,6 +616,7 @@ function handleMouseUp() {
     width: imgWidth,
     height: imgHeight
   }
+  console.log('selectedRegion', newRegion)
   
   // 清空之前的区域并添加新区域
   settings.regions = [newRegion]
@@ -622,35 +632,77 @@ function handleMouseUp() {
 
 // 检测并马赛克人脸
 async function detectFaces() {
-  showNotification('人脸检测功能正在初始化...')
+  if (!hasImage.value || isProcessing.value) return
+  
+  isProcessing.value = true
   
   try {
-    isProcessing.value = true
-    
-    // 这里应该加载人脸检测模型，但由于模型加载可能需要额外的库，
-    // 这里使用模拟的区域作为示例
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    // 模拟检测到的人脸位置 (实际应用中应该使用人脸检测API)
-    // 这里只是一个演示，使用图像中央区域作为"检测到的人脸"
-    const faceRegion = {
-      x: Math.floor(imageInfo.width * 0.3),
-      y: Math.floor(imageInfo.height * 0.2),
-      width: Math.floor(imageInfo.width * 0.4),
-      height: Math.floor(imageInfo.height * 0.4)
+    // 如果模型尚未加载，先加载模型
+    if (!modelsLoaded.value) {
+      if (!isLoadingModels.value) {
+        isLoadingModels.value = true
+        showNotification(t('tools.image-mosaic-generator.messages.loadingModels'))
+        
+        // 加载人脸检测所需的模型
+        await Promise.all([
+          faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+          faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+        ])
+        
+        modelsLoaded.value = true
+        isLoadingModels.value = false
+      } else {
+        // 如果正在加载模型，等待完成
+        while (!modelsLoaded.value) {
+          await new Promise(resolve => setTimeout(resolve, 500))
+        }
+      }
     }
     
-    // 设置区域并应用马赛克
-    settings.regions = [faceRegion]
+    // 创建用于检测的图像元素
+    const img = new Image()
+    img.src = originalImageUrl.value
+    await new Promise(resolve => { img.onload = resolve })
+    
+    // 检测人脸
+    const detections = await faceapi.detectAllFaces(img, new faceapi.TinyFaceDetectorOptions())
+      .withFaceLandmarks()
+    
+    if (detections.length === 0) {
+      showNotification(t('tools.image-mosaic-generator.messages.noFacesDetected'))
+      isProcessing.value = false
+      return
+    }
+    
+    // 创建面部区域数组
+    settings.regions = detections.map(detection => {
+      const box = detection.detection.box
+      
+      // 稍微扩大区域以确保覆盖整个面部
+      const expandFactor = 0.2
+      const expandedX = Math.max(0, box.x - box.width * expandFactor)
+      const expandedY = Math.max(0, box.y - box.height * expandFactor)
+      const expandedWidth = Math.min(imageInfo.width - expandedX, box.width * (1 + expandFactor * 2))
+      const expandedHeight = Math.min(imageInfo.height - expandedY, box.height * (1 + expandFactor * 2))
+      
+      return {
+        x: Math.floor(expandedX),
+        y: Math.floor(expandedY),
+        width: Math.floor(expandedWidth),
+        height: Math.floor(expandedHeight)
+      }
+    })
+    console.log('faceRegions', settings.regions)
+    
     settings.applyMode = 'region'
     
-    showNotification('已检测到人脸区域')
+    showNotification(t('tools.image-mosaic-generator.messages.facesDetected', { count: detections.length }))
     
     // 应用马赛克
     await applyMosaic()
   } catch (error) {
     console.error('人脸检测失败:', error)
-    showNotification('人脸检测失败')
+    showNotification(t('tools.image-mosaic-generator.messages.faceDetectionFailed'))
   } finally {
     isProcessing.value = false
   }
@@ -673,7 +725,7 @@ function downloadImage() {
   link.click()
   document.body.removeChild(link)
   
-  showNotification('图片已下载')
+  showNotification(t('tools.image-mosaic-generator.messages.downloadStarted'))
 }
 
 // 重置编辑器
@@ -695,7 +747,7 @@ function resetEditor() {
   selectionStart.value = null
   selectionCurrent.value = null
   
-  showNotification('已重置')
+  showNotification(t('tools.image-mosaic-generator.messages.reset'))
 }
 
 // 格式化文件大小
