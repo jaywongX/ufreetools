@@ -3,7 +3,7 @@ export default {
   description: 'Apply various filters and effects to images with real-time preview',
   upload: {
     title: 'Upload Image',
-    dropzone: 'Drop an image here or click to browse',
+    dropzone: 'Drag and drop your image here or click to browse',
     maxSize: 'Maximum file size: 10MB',
     supportedFormats: 'Supported formats: JPG, PNG, WEBP, GIF'
   },
@@ -59,13 +59,15 @@ export default {
   presets: {
     title: 'Presets',
     custom: 'Custom',
-    blackAndWhite: 'Black & White',
+    blackAndWhite: 'Black and White',
     highContrast: 'High Contrast',
+    normal: 'Normal',
     cinematic: 'Cinematic',
     warm: 'Warm',
     cool: 'Cool',
     sunset: 'Sunset',
     vintage: 'Vintage',
+    invert: 'Invert',
     cross: 'Cross Process',
     matte: 'Matte',
     flat: 'Flat',
@@ -95,7 +97,7 @@ export default {
     clear: 'Clear History'
   },
   actions: {
-    apply: 'Apply Filters',
+    apply: 'Apply Filter',
     download: 'Download',
     save: 'Save',
     reset: 'Reset',
@@ -104,11 +106,11 @@ export default {
   messages: {
     imageLoaded: 'Image loaded successfully',
     filterApplied: 'Filter applied successfully',
-    filtersReset: 'Filters reset to default',
-    downloadStarted: 'Download started',
+    filtersReset: 'Filters have been reset to default values',
+    downloadStarted: 'Download has started',
     presetSaved: 'Preset saved successfully',
-    presetDeleted: 'Preset deleted',
+    presetDeleted: 'Preset has been deleted',
     invalidFile: 'Invalid file. Please upload a valid image.',
     fileTooLarge: 'File is too large. Maximum size is 10MB.'
   }
-} 
+}
