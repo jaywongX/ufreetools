@@ -7,7 +7,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
-          选择图片
+          {{ $t('tools.image-batch-resizer.input.selectImages') }}
           <input type="file" accept="image/*" @change="loadImages" class="hidden" multiple />
         </label>
         
@@ -19,7 +19,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          重置
+          {{ $t('tools.image-batch-resizer.actions.reset') }}
         </button>
       </div>
       
@@ -32,7 +32,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
-          {{ isProcessing ? '处理中...' : '应用到所有图片' }}
+          {{ isProcessing ? $t('tools.image-batch-resizer.actions.processing') : $t('tools.image-batch-resizer.options.applyToAllImages') }}
         </button>
         
         <button 
@@ -43,7 +43,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
           </svg>
-          下载全部
+          {{ $t('tools.image-batch-resizer.output.downloadAll') }}
         </button>
       </div>
     </div>
@@ -53,11 +53,11 @@
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
         <!-- 左侧控制面板 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4" :class="{'opacity-50': !hasImages}">
-          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">调整设置</h3>
+          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">{{ $t('tools.image-batch-resizer.options.settingsTitle') }}</h3>
           
           <!-- 调整尺寸方式 -->
           <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">调整方式</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-batch-resizer.options.resizeMethod') }}</label>
             <div class="flex space-x-2">
               <button
                 @click="resizeMethod = 'pixel'"
@@ -65,7 +65,7 @@
                 :class="resizeMethod === 'pixel' ? 'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200' : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'"
                 :disabled="!hasImages"
               >
-                像素
+                {{ $t('tools.image-batch-resizer.options.pixelMode') }}
               </button>
               <button
                 @click="resizeMethod = 'percentage'"
@@ -73,7 +73,7 @@
                 :class="resizeMethod === 'percentage' ? 'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200' : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'"
                 :disabled="!hasImages"
               >
-                百分比
+                {{ $t('tools.image-batch-resizer.options.percentageMode') }}
               </button>
               <button
                 @click="resizeMethod = 'maxdimension'"
@@ -81,14 +81,14 @@
                 :class="resizeMethod === 'maxdimension' ? 'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200' : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'"
                 :disabled="!hasImages"
               >
-                最大尺寸
+                {{ $t('tools.image-batch-resizer.options.maxDimensionMode') }}
               </button>
             </div>
           </div>
           
           <!-- 宽度设置 -->
           <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">宽度</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-batch-resizer.options.width') }}</label>
             <div class="flex items-center">
               <input
                 type="number"
@@ -106,7 +106,7 @@
           
           <!-- 高度设置 -->
           <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">高度</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-batch-resizer.options.height') }}</label>
             <div class="flex items-center">
               <input
                 type="number"
@@ -131,13 +131,13 @@
                 class="mr-2 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700"
                 :disabled="!hasImages"
               />
-              保持纵横比
+              {{ $t('tools.image-batch-resizer.options.maintainAspectRatio') }}
             </label>
           </div>
           
           <!-- 输出格式 -->
           <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">输出格式</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-batch-resizer.options.outputFormat') }}</label>
             <select
               v-model="outputFormat"
               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
@@ -166,16 +166,16 @@
           
           <!-- Pica 选项 -->
           <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">调整质量</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-batch-resizer.options.quality') }}</label>
             <select
               v-model="picaOptions.quality"
               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
               :disabled="!hasImages"
             >
-              <option value="0">快速处理</option>
-              <option value="1">一般质量</option>
-              <option value="2">高质量 (推荐)</option>
-              <option value="3">最佳质量 (较慢)</option>
+              <option value="0">{{ $t('tools.image-batch-resizer.qualityOptions.fast') }}</option>
+              <option value="1">{{ $t('tools.image-batch-resizer.qualityOptions.medium') }}</option>
+              <option value="2">{{ $t('tools.image-batch-resizer.qualityOptions.high') }}</option>
+              <option value="3">{{ $t('tools.image-batch-resizer.qualityOptions.best') }}</option>
             </select>
           </div>
         </div>
@@ -186,17 +186,17 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 dark:text-gray-500 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <p class="text-gray-500 dark:text-gray-400 mb-2">请选择图片</p>
-            <p class="text-gray-400 dark:text-gray-500 text-sm text-center">支持批量选择多张图片一次性处理</p>
+            <p class="text-gray-500 dark:text-gray-400 mb-2">{{ $t('tools.image-batch-resizer.preview.selectImage') }}</p>
+            <p class="text-gray-400 dark:text-gray-500 text-sm text-center">{{ $t('tools.image-batch-resizer.preview.batchSupport') }}</p>
           </div>
           
           <div v-else>
             <div class="flex justify-between items-center mb-4">
               <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">
-                图片预览 ({{ imageList.length }}张)
+                {{ $t('tools.image-batch-resizer.preview.title', { count: imageList.length }) }}
               </h3>
               <div class="text-sm text-gray-500 dark:text-gray-400">
-                {{ hasProcessedImages ? '处理完成' : '等待处理' }}
+                {{ hasProcessedImages ? $t('tools.image-batch-resizer.messages.processingComplete') : $t('tools.image-batch-resizer.messages.waitingForProcess') }}
               </div>
             </div>
             
@@ -254,7 +254,7 @@
                     @click="downloadImage(image)"
                     class="flex-1 py-1.5 text-xs text-center border-l border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 text-green-600 dark:text-green-400"
                   >
-                    下载
+                  {{ $t('tools.image-batch-resizer.preview.download') }}
                   </button>
                   
                   <button 
@@ -262,7 +262,7 @@
                     class="flex-1 py-1.5 text-xs text-center border-l border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 text-red-600 dark:text-red-400"
                     :disabled="image.isProcessing"
                   >
-                    删除
+                  {{ $t('tools.image-batch-resizer.preview.delete') }}
                   </button>
                 </div>
               </div>
@@ -287,6 +287,9 @@
 import { ref, computed, onMounted } from 'vue'
 import pica from 'pica'
 import JSZip from 'jszip'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 创建pica实例
 const picaInstance = pica()
@@ -372,7 +375,7 @@ async function processImage(image, index) {
     (resizeMethod.value !== 'maxdimension' && !resizeOptions.value.width) || 
     (resizeMethod.value !== 'maxdimension' && !maintainAspectRatio.value && !resizeOptions.value.height)
   ) {
-    showNotification('请输入有效的宽度和高度')
+    showNotification(t('tools.image-batch-resizer.messages.invalidWidthHeight'))
     return
   }
   
@@ -458,10 +461,10 @@ async function processImage(image, index) {
       isProcessing: false
     }
     
-    showNotification('处理完成')
+    showNotification(t('tools.image-batch-resizer.messages.processingComplete'))
   } catch (error) {
-    console.error('处理图片时出错:', error)
-    showNotification('处理图片时出错')
+    console.error(error)
+    showNotification(t('tools.image-batch-resizer.messages.processingError'))
     
     // 移除处理状态
     imageList.value[index].isProcessing = false
@@ -473,7 +476,7 @@ async function processAllImages() {
   if (isProcessing.value || !hasImages.value) return
   
   isProcessing.value = true
-  showNotification('开始批量处理图片...')
+  showNotification(t('tools.image-batch-resizer.messages.processing'))
   
   try {
     for (let i = 0; i < imageList.value.length; i++) {
@@ -483,10 +486,10 @@ async function processAllImages() {
       }
     }
     
-    showNotification('所有图片处理完成')
+    showNotification(t('tools.image-batch-resizer.messages.processingComplete'))
   } catch (error) {
-    console.error('批量处理图片时出错:', error)
-    showNotification('批量处理图片时出错')
+    console.error(t('tools.image-batch-resizer.messages.processingError'), error)
+    showNotification(t('tools.image-batch-resizer.messages.processingError'))
   } finally {
     isProcessing.value = false
   }
@@ -531,7 +534,7 @@ async function downloadAll() {
   const processedImages = imageList.value.filter(img => img.processedDataUrl)
   
   if (processedImages.length === 0) {
-    showNotification('没有可下载的图片')
+    showNotification(t('tools.image-batch-resizer.messages.noImagesToDownload'))
     return
   }
   
@@ -581,10 +584,10 @@ async function downloadAll() {
     link.href = URL.createObjectURL(zipBlob)
     link.click()
     
-    showNotification(`已创建包含${processedImages.length}张图片的压缩包`)
+    showNotification(t('tools.image-batch-resizer.messages.zipCreated', { count: processedImages.length }))
   } catch (error) {
-    console.error('创建zip文件时出错:', error)
-    showNotification('创建压缩包时出错')
+    console.error(error)
+    showNotification(t('tools.image-batch-resizer.messages.zipError'))
   }
 }
 

@@ -5,6 +5,7 @@ export default {
     title: '输入图像',
     dropzone: '将图像拖放到此处或点击浏览',
     addMore: '添加更多图像',
+    selectImages: '选择图片',
     clearAll: '清除全部',
     maxFiles: '最多{count}张图像',
     maxSize: '每张图像最大大小：{size}MB',
@@ -12,7 +13,12 @@ export default {
   },
   options: {
     title: '调整选项',
+    settingsTitle: '调整设置',
     resizeMode: '调整模式',
+    resizeMethod: '调整方式',
+    pixelMode: '像素',
+    percentageMode: '百分比',
+    maxDimensionMode: '最大尺寸',
     outputFormat: '输出格式',
     quality: '质量',
     width: '宽度',
@@ -25,6 +31,7 @@ export default {
     naming: '输出命名',
     filenamePrefix: '文件名前缀',
     filenameSuffix: '文件名后缀',
+    applyToAllImages: '应用到所有图片',
     applyToAll: '应用于所有图像'
   },
   resizeModes: {
@@ -96,6 +103,8 @@ export default {
   actions: {
     resize: '调整大小',
     preview: '预览',
+    processing: '处理中...',
+    reset: '重置',
     applySettings: '应用设置',
     resetSettings: '重置设置',
     cancel: '取消'
@@ -104,11 +113,31 @@ export default {
     resizeSuccess: '图像调整大小成功',
     resizeFailed: '调整图像大小失败：{error}',
     invalidDimensions: '请输入有效的尺寸',
+    invalidWidthHeight: '请输入有效的宽度和高度',
     noImages: '请添加要调整大小的图像',
+    noImagesToDownload: '没有可下载的图片',
     processing: '处理图像中...',
+    processingComplete: '处理完成',
+    processingError: '处理图片时出错',
+    waitingForProcess: '等待处理',
     downloadStarted: '下载已开始',
     allDownloaded: '所有图像已下载',
     presetSaved: '预设已保存',
-    presetLoaded: '预设已加载'
+    presetLoaded: '预设已加载',
+    zipCreated: '已创建包含{count}张图片的压缩包',
+    zipError: '创建压缩包时出错'
+  },
+  preview: {
+    title: '图片预览 ({count}张)',
+    selectImage: '请选择图片',
+    batchSupport: '支持批量选择多张图片一次性处理',
+    download: '下载',
+    delete: '删除'
+  },
+  qualityOptions: {
+    fast: '快速处理',
+    medium: '一般质量',
+    high: '高质量 (推荐)',
+    best: '最佳质量 (较慢)'
   }
 } 
