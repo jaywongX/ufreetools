@@ -25,17 +25,17 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <h3 class="mt-2 text-sm font-medium text-gray-700 dark:text-gray-300">拖放图片到此处或点击上传</h3>
-            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">支持 JPG, PNG, GIF, WEBP 格式</p>
+            <h3 class="mt-2 text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.image-compressor.input.dragDrop') }}</h3>
+            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">{{ $t('tools.image-compressor.input.supportedFormats') }}</p>
           </div>
           
           <div v-else class="text-gray-700 dark:text-gray-300">
-            <p>已选择 {{ files.length }} 个文件</p>
+            <p>{{ $t('tools.image-compressor.input.selected', { count: files.length }) }}</p>
             <button 
               class="mt-2 text-sm text-primary hover:underline"
               @click.stop="$refs.fileInput.click()"
             >
-              更换文件
+              {{ $t('tools.image-compressor.input.changeFiles') }}
             </button>
           </div>
         </div>
@@ -45,7 +45,7 @@
           <!-- 质量设置 -->
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              质量 ({{ quality }}%)
+              {{ $t('tools.image-compressor.options.qualityValue', { value: quality }) }}
             </label>
             <input 
               type="range" 
@@ -55,15 +55,15 @@
               class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer"
             >
             <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400">
-              <span>低质量/小文件</span>
-              <span>高质量/大文件</span>
+              <span>{{ $t('tools.image-compressor.options.lowQuality') }}</span>
+              <span>{{ $t('tools.image-compressor.options.highQuality') }}</span>
             </div>
           </div>
           
           <!-- 最大尺寸设置 -->
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              最大尺寸 ({{ maxWidth }} × {{ maxHeight }} px)
+              {{ $t('tools.image-compressor.options.maxSize', { width: maxWidth, height: maxHeight }) }}
             </label>
             <div class="flex space-x-2">
               <input 
@@ -72,7 +72,7 @@
                 min="1" 
                 max="10000"
                 class="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-                placeholder="宽度"
+                :placeholder="$t('tools.image-compressor.input.width')"
               >
               <span class="flex items-center text-gray-500">×</span>
               <input 
@@ -81,11 +81,11 @@
                 min="1" 
                 max="10000"
                 class="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-                placeholder="高度"
+                :placeholder="$t('tools.image-compressor.input.height')"
               >
             </div>
             <div class="mt-1 text-xs text-gray-500 dark:text-gray-400">
-              设置为0表示保持原始尺寸
+              {{ $t('tools.image-compressor.input.keepOriginal') }}
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@
         <!-- 输出格式设置 -->
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            输出格式
+            {{ $t('tools.image-compressor.options.format') }}
           </label>
           <div class="flex flex-wrap gap-2">
             <button 
@@ -107,9 +107,9 @@
             </button>
           </div>
           <div class="mt-1 text-xs text-gray-500 dark:text-gray-400">
-            <span v-if="outputFormat === 'jpeg'">JPEG格式适合照片，不支持透明背景</span>
-            <span v-else-if="outputFormat === 'png'">PNG格式支持透明背景，适合图标和图形</span>
-            <span v-else-if="outputFormat === 'webp'">WebP格式提供更好的压缩率，但部分旧浏览器不支持</span>
+            <span v-if="outputFormat === 'jpeg'">{{ $t('tools.image-compressor.formats.jpegDesc') }}</span>
+            <span v-else-if="outputFormat === 'png'">{{ $t('tools.image-compressor.formats.pngDesc') }}</span>
+            <span v-else-if="outputFormat === 'webp'">{{ $t('tools.image-compressor.formats.webpDesc') }}</span>
           </div>
         </div>
         
@@ -125,9 +125,9 @@
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
-              压缩中...
+              {{ $t('tools.image-compressor.actions.processing') }}
             </span>
-            <span v-else>开始压缩</span>
+            <span v-else>{{ $t('tools.image-compressor.actions.compress') }}</span>
           </button>
         </div>
       </div>
@@ -139,24 +139,24 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <!-- 原始图片 -->
           <div class="space-y-2">
-            <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">原始图片</h3>
-            <img :src="img.original.url" alt="原始图片" class="w-full h-auto max-h-60 object-contain rounded border border-gray-200 dark:border-gray-700">
+            <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.image-compressor.results.originalImage') }}</h3>
+            <img :src="img.original.url" :alt="$t('tools.image-compressor.results.originalImage')" class="w-full h-auto max-h-60 object-contain rounded border border-gray-200 dark:border-gray-700">
             <div class="text-sm text-gray-600 dark:text-gray-400">
-              <div>文件名: {{ img.name }}</div>
-              <div>尺寸: {{ img.original.width }} × {{ img.original.height }} px</div>
-              <div>大小: {{ formatFileSize(img.original.size) }}</div>
+              <div>{{ $t('tools.image-compressor.results.filename') }} {{ img.name }}</div>
+              <div>{{ $t('tools.image-compressor.results.dimensions') }} {{ img.original.width }} × {{ img.original.height }} px</div>
+              <div>{{ $t('tools.image-compressor.results.fileSize') }} {{ formatFileSize(img.original.size) }}</div>
             </div>
           </div>
           
           <!-- 压缩后图片 -->
           <div class="space-y-2">
-            <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">压缩后</h3>
-            <img :src="img.compressed.url" alt="压缩后图片" class="w-full h-auto max-h-60 object-contain rounded border border-gray-200 dark:border-gray-700">
+            <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.image-compressor.results.compressedImage') }}</h3>
+            <img :src="img.compressed.url" :alt="$t('tools.image-compressor.results.compressedImage')" class="w-full h-auto max-h-60 object-contain rounded border border-gray-200 dark:border-gray-700">
             <div class="text-sm text-gray-600 dark:text-gray-400">
-              <div>尺寸: {{ img.compressed.width }} × {{ img.compressed.height }} px</div>
-              <div>大小: {{ formatFileSize(img.compressed.size) }}</div>
+              <div>{{ $t('tools.image-compressor.results.dimensions') }} {{ img.compressed.width }} × {{ img.compressed.height }} px</div>
+              <div>{{ $t('tools.image-compressor.results.fileSize') }} {{ formatFileSize(img.compressed.size) }}</div>
               <div>
-                压缩率: 
+                {{ $t('tools.image-compressor.results.compressionRatio') }} 
                 <span :class="{'text-green-600 dark:text-green-400': img.savingsPercent > 0, 'text-yellow-600 dark:text-yellow-400': img.savingsPercent <= 0}">
                   {{ img.savingsPercent > 0 ? '-' : '+' }}{{ Math.abs(img.savingsPercent).toFixed(1) }}%
                 </span>
@@ -167,13 +167,13 @@
                 @click="downloadImage(img)"
                 class="px-3 py-1.5 bg-primary text-white rounded-md text-sm hover:bg-primary-dark"
               >
-                下载
+                {{ $t('tools.image-compressor.actions.download') }}
               </button>
               <button 
                 @click="showOriginal(index)"
                 class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md text-sm hover:bg-gray-200 dark:hover:bg-gray-600 border border-gray-300 dark:border-gray-600"
               >
-                查看原图
+                {{ $t('tools.image-compressor.results.viewOriginal') }}
               </button>
             </div>
           </div>
@@ -193,21 +193,21 @@
     
     <!-- 技术说明 -->
     <div class="mt-8 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">关于图片压缩</h3>
+      <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.image-compressor.about.title') }}</h3>
       <div class="text-sm text-gray-600 dark:text-gray-400 space-y-2">
-        <p>本工具通过浏览器的Canvas API实现图片压缩，所有处理均在您的设备上完成，图片不会上传到服务器。</p>
-        <p>压缩原理:</p>
+        <p>{{ $t('tools.image-compressor.about.description') }}</p>
+        <p>{{ $t('tools.image-compressor.about.principlesTitle') }}</p>
         <ul class="list-disc pl-5 space-y-1">
-          <li>调整图片尺寸：较小的尺寸意味着更少的像素数据</li>
-          <li>降低质量：降低图片的品质参数，减少文件大小</li>
-          <li>转换格式：不同的图片格式有不同的压缩特性</li>
+          <li>{{ $t('tools.image-compressor.about.principles.resize') }}</li>
+          <li>{{ $t('tools.image-compressor.about.principles.quality') }}</li>
+          <li>{{ $t('tools.image-compressor.about.principles.format') }}</li>
         </ul>
-        <p>适用场景:</p>
+        <p>{{ $t('tools.image-compressor.about.useCasesTitle') }}</p>
         <ul class="list-disc pl-5 space-y-1">
-          <li>网站图片优化，提升加载速度</li>
-          <li>减小邮件附件大小</li>
-          <li>社交媒体上传前压缩</li>
-          <li>存储空间优化</li>
+          <li>{{ $t('tools.image-compressor.about.useCases.web') }}</li>
+          <li>{{ $t('tools.image-compressor.about.useCases.email') }}</li>
+          <li>{{ $t('tools.image-compressor.about.useCases.social') }}</li>
+          <li>{{ $t('tools.image-compressor.about.useCases.storage') }}</li>
         </ul>
       </div>
     </div>
@@ -216,6 +216,9 @@
 
 <script setup>
 import { ref, computed, nextTick } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 上传和预览状态
 const isDragging = ref(false)
@@ -254,7 +257,7 @@ function handleFiles(selectedFiles) {
   // 过滤出图片文件
   const imageFiles = selectedFiles.filter(file => file.type.startsWith('image/'))
   if (imageFiles.length === 0) {
-    alert('请选择有效的图片文件')
+    alert(t('tools.image-compressor.messages.invalidImage'))
     return
   }
   
@@ -432,17 +435,67 @@ async function downloadAllImages() {
   
   try {
     // 如果浏览器支持JSZip，则打包下载
-    alert('批量下载功能需要另行添加JSZip库。请逐个下载图片，或添加zip库支持。')
+    alert(t('tools.image-compressor.messages.batchDownloadNotSupported'))
     // 在实际应用中，这里可以添加使用JSZip库创建zip文件的代码
   } catch (error) {
-    console.error('批量下载图片时出错:', error)
-    alert('批量下载图片时出错: ' + error.message)
+    console.error(error)
+    alert(t('tools.image-compressor.messages.batchDownloadError', { error: error.message }))
   }
 }
 
 // 在新窗口显示原图
 function showOriginal(index) {
-  window.open(compressedImages.value[index].original.url, '_blank')
+  // 创建一个简单的HTML页面来显示图片
+  const img = compressedImages.value[index].original
+  const html = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>${compressedImages.value[index].name} - ${t('tools.image-compressor.results.originalImage')}</title>
+        <meta charset="utf-8">
+        <style>
+          body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f5f5f5;
+          }
+          img {
+            max-width: 100%;
+            max-height: 90vh;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          }
+          .info {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-family: sans-serif;
+          }
+        </style>
+      </head>
+      <body>
+        <img src="${img.url}" alt="${compressedImages.value[index].name}">
+        <div class="info">
+          ${compressedImages.value[index].name} - ${img.width}×${img.height}px - ${formatFileSize(img.size)}
+        </div>
+      </body>
+    </html>
+  `
+  
+  // 创建并打开一个新窗口，显示HTML内容
+  const newWindow = window.open('', '_blank')
+  if (newWindow) {
+    newWindow.document.write(html)
+    newWindow.document.close()
+  }
 }
 </script>
 
