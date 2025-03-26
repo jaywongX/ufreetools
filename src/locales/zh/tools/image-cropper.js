@@ -5,7 +5,8 @@ export default {
     title: '上传图像',
     dropzone: '将图像拖放到此处或点击浏览',
     maxSize: '最大文件大小：10MB',
-    supportedFormats: '支持的格式：JPG、PNG、WEBP、GIF'
+    supportedFormats: '支持的格式：JPG、PNG、WEBP、GIF',
+    select: '请选择一张图片开始裁剪和编辑'
   },
   editor: {
     title: '图像编辑器',

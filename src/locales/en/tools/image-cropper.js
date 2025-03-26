@@ -1,11 +1,12 @@
 export default {
   name: 'Image Cropper',
-  description: 'Crop, resize, and rotate images with precision',
+  description: 'Precisely crop, resize, and rotate images',
   upload: {
     title: 'Upload Image',
-    dropzone: 'Drop an image here or click to browse',
+    dropzone: 'Drag and drop your image here or click to browse',
     maxSize: 'Maximum file size: 10MB',
-    supportedFormats: 'Supported formats: JPG, PNG, WEBP, GIF'
+    supportedFormats: 'Supported formats: JPG, PNG, WEBP, GIF',
+    select: 'Please select an image to start cropping and editing'
   },
   editor: {
     title: 'Image Editor',
@@ -32,8 +33,8 @@ export default {
     width: 'Width',
     height: 'Height',
     unit: 'Unit',
-    pixels: 'pixels',
-    percent: 'percent',
+    pixels: 'Pixels',
+    percent: 'Percentage',
     lockAspectRatio: 'Lock Aspect Ratio'
   },
   presets: {
@@ -72,9 +73,9 @@ export default {
   messages: {
     cropSuccess: 'Image cropped successfully',
     downloadReady: 'Your cropped image is ready to download',
-    processing: 'Processing image...',
-    copied: 'Image copied to clipboard',
+    processing: 'Processing the image...',
+    copied: 'Image has been copied to clipboard',
     invalidFile: 'Invalid file. Please upload a valid image.',
     fileTooLarge: 'File is too large. Maximum size is 10MB.'
   }
-} 
+}
