@@ -63,7 +63,9 @@ export default {
     brightness: '亮度',
     sceneCaptureType: '场景捕捉类型',
     gainControl: '增益控制',
-    serialNumber: '序列号'
+    serialNumber: '序列号',
+    width: '宽度',
+    height: '高度',
   },
   map: {
     title: '照片位置',
@@ -75,6 +77,7 @@ export default {
   },
   actions: {
     showAll: '显示所有元数据',
+    hideAll: '隐藏所有元数据',
     copyAll: '复制所有元数据',
     save: '将元数据保存为JSON',
     removeMeta: '移除元数据',
@@ -101,6 +104,28 @@ export default {
     saved: '元数据已保存为JSON文件',
     noExif: '在此图像中未找到EXIF数据',
     metadataRemoved: '元数据移除成功',
-    imageLoaded: '图像加载成功'
+    imageLoaded: '图像加载成功',
+    notUse: '未使用',
+    use: '已使用',
+    auto: '自动',
+    manual: '手动',
+    reset: '已重置',
+    exifExtracted: '已提取EXIF数据',
+  },
+  error: {
+    copyFailed: '复制失败',
+    exportFailed: '导出失败',
+    exifExtractionFailed: '提取EXIF数据失败',
+    imageLoadFailed: '加载图片失败',
+  },
+  orientation: {
+    normal: '正常',
+    horizontalFlip: '水平翻转',
+    rotate180: '旋转180°',
+    verticalFlip: '垂直翻转',
+    rotate90VerticalFlip: '顺时针旋转90°并垂直翻转',
+    rotate90: '顺时针旋转90°',
+    rotate90HorizontalFlip: '顺时针旋转90°并水平翻转',
+    rotate270: '逆时针旋转90°'
   }
 } 

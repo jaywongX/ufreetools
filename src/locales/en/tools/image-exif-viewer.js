@@ -1,12 +1,12 @@
 export default {
   name: 'Image EXIF Viewer',
-  description: 'View and analyze EXIF metadata from your photos',
+  description: 'View and analyze EXIF metadata in photos',
   upload: {
     title: 'Upload Image',
-    dropzone: 'Drop an image here or click to browse',
+    dropzone: 'Drag and drop your image here or click to browse',
     maxSize: 'Maximum file size: 15MB',
     supportedFormats: 'Supported formats: JPG, TIFF, HEIC, PNG',
-    anyImageFile: 'Any image file with EXIF data'
+    anyImageFile: 'Any image file containing EXIF data'
   },
   display: {
     title: 'Image Information',
@@ -30,7 +30,7 @@ export default {
     focalLength: 'Focal Length',
     focalLength35: 'Focal Length (35mm)',
     aperture: 'Aperture',
-    fNumber: 'F-Number',
+    fNumber: 'F-Value',
     exposureTime: 'Exposure Time',
     shutterSpeed: 'Shutter Speed',
     iso: 'ISO',
@@ -40,14 +40,14 @@ export default {
     flash: 'Flash',
     flashMode: 'Flash Mode',
     whiteBalance: 'White Balance',
-    exposureBias: 'Exposure Bias',
+    exposureBias: 'Exposure Compensation',
     latitude: 'Latitude',
     longitude: 'Longitude',
     altitude: 'Altitude',
     locationName: 'Location Name',
     dateOriginal: 'Date Taken',
-    dateDigitized: 'Date Digitized',
-    dateModified: 'Date Modified',
+    dateDigitized: 'Digitization Date',
+    dateModified: 'Modification Date',
     software: 'Software',
     artist: 'Artist',
     copyright: 'Copyright',
@@ -63,7 +63,9 @@ export default {
     brightness: 'Brightness',
     sceneCaptureType: 'Scene Capture Type',
     gainControl: 'Gain Control',
-    serialNumber: 'Serial Number'
+    serialNumber: 'Serial Number',
+    width: 'Width',
+    height: 'Height',
   },
   map: {
     title: 'Photo Location',
@@ -75,11 +77,12 @@ export default {
   },
   actions: {
     showAll: 'Show All Metadata',
+    hideAll: 'Hide All Metadata',
     copyAll: 'Copy All Metadata',
     save: 'Save Metadata as JSON',
     removeMeta: 'Remove Metadata',
-    download: 'Download Clean Image',
-    viewFullSize: 'View Full Size',
+    download: 'Download Image Without Metadata',
+    viewFullSize: 'View Original Size',
     refresh: 'Reload Data'
   },
   settings: {
@@ -92,15 +95,37 @@ export default {
     mapProvider: 'Map Provider'
   },
   tips: {
-    privacy: 'Privacy Tip: Photos may contain personal data like location and device information.',
-    noExif: 'Can\'t see EXIF data? Some social media and image editing tools strip metadata.',
+    privacy: 'Privacy Tip: Photos may contain personal data such as location and device information.',
+    noExif: 'Can’t see EXIF data? Some social media platforms and image editing tools remove metadata.',
     rawView: 'Switch to "Raw View" to see all available metadata.'
   },
   messages: {
     copied: 'Metadata copied to clipboard',
-    saved: 'Metadata saved as JSON file',
+    saved: 'Metadata saved as a JSON file',
     noExif: 'No EXIF data found in this image',
-    metadataRemoved: 'Metadata removed successfully',
-    imageLoaded: 'Image loaded successfully'
+    metadataRemoved: 'Metadata removal successful',
+    imageLoaded: 'Image loaded successfully',
+    notUse: 'Not Used',
+    use: 'Used',
+    auto: 'Auto',
+    manual: 'Manual',
+    reset: 'Reset Successfully',
+    exifExtracted: 'EXIF data extracted successfully'
+  },
+  error: {
+    copyFailed: 'Copy failed',
+    exportFailed: 'Export failed',
+    exifExtractionFailed: 'Failed to extract EXIF data',
+    imageLoadFailed: 'Failed to load the image'
+  },
+  orientation: {
+    normal: 'Normal',
+    horizontalFlip: 'Horizontal Flip',
+    rotate180: 'Rotate 180°',
+    verticalFlip: 'Vertical Flip',
+    rotate90VerticalFlip: 'Rotate 90° Clockwise and Vertical Flip',
+    rotate90: 'Rotate 90° Clockwise',
+    rotate90HorizontalFlip: 'Rotate 90° Clockwise and Horizontal Flip',
+    rotate270: 'Rotate 90° Counter-Clockwise'
   }
-} 
+}
