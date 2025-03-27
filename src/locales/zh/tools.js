@@ -9,44 +9,24 @@ import jwtDebugger from './tools/jwt-debugger.js';
 import codeBeautifier from './tools/code-beautifier.js';
 import openApiGenerator from './tools/openapi-generator.js';
 import mockApiGenerator from './tools/mock-api-generator.js';
-import codeMinifier from './tools/code-minifier.js';
-import htmlFormatter from './tools/html-formatter.js';
 import cssFormatter from './tools/css-formatter.js';
 import rsaCrypto from './tools/rsa-crypto.js';
 import codeComplexityAnalyzer from './tools/code-complexity-analyzer.js';
-import yamlFormatter from './tools/yaml-formatter.js';
-import csvViewer from './tools/csv-viewer.js';
 import base64EncoderDecoder from './tools/base64-encoder-decoder.js';
 import timestampConverter from './tools/timestamp-converter.js';
 import urlEncodeDecode from './tools/url-encode-decode.js';
 import xmlFormatter from './tools/xml-formatter.js';
 import markdownEditor from './tools/markdown-editor.js';
-import jwtDecoder from './tools/jwt-decoder.js';
 import colorPicker from './tools/color-picker.js';
-import diffViewer from './tools/diff-viewer.js';
-import htmlToPdf from './tools/html-to-pdf.js';
 import qrCodeGenerator from './tools/qr-code-generator.js';
-import jsonYamlConverter from './tools/json-yaml-converter.js';
-import sqlDatabaseDesigner from './tools/sql-database-designer.js';
-import cronExpressionGenerator from './tools/cron-expression-generator.js';
 import imageCompressor from './tools/image-compressor.js';
 import uuidGenerator from './tools/uuid-generator.js';
 import passwordGenerator from './tools/password-generator.js';
-import textCaseConverter from './tools/text-case-converter.js';
-import loremIpsumGenerator from './tools/lorem-ipsum-generator.js';
-import cssFlexboxGenerator from './tools/css-flexbox-generator.js';
 import apiRequestTool from './tools/api-request-tool.js';
-import jsonValidator from './tools/json-validator.js';
-import urlParser from './tools/url-parser.js';
-import hexColorPicker from './tools/hex-color-picker.js';
 import csvJsonConverter from './tools/csv-json-converter.js';
 import xmlJsonConverter from './tools/xml-json-converter.js';
-import jwtValidator from './tools/jwt-validator.js';
-import jsonSchemaValidator from './tools/json-schema-validator.js';
 import CssGradientGenerator from './tools/css-gradient-generator.js';
-import fontConverter from './tools/font-converter.js';
 import imageColorExtractor from './tools/image-color-extractor.js';
-import regexGenerator from './tools/regex-generator.js';
 import javascriptObfuscator from './tools/javascript-obfuscator.js';
 import flowchartGenerator from './tools/flowchart-generator.js';
 import diagramExamples from './tools/diagram-examples.js';
@@ -67,13 +47,9 @@ import svgOptimizer from './tools/svg-optimizer.js';
 import imageFilters from './tools/image-filters.js';
 import imageExifViewer from './tools/image-exif-viewer.js';
 import imageToAscii from './tools/image-to-ascii.js';
-import portScanner from './tools/port-scanner.js';
-import pingTool from './tools/ping-tool.js';
 import networkSpeedTest from './tools/network-speed-test.js';
-import httpRequestTool from './tools/http-request-tool.js';
 import imageMosaicGenerator from './tools/image-mosaic-generator.js';
 import imagePixelator from './tools/image-pixelator.js';
-import dnsLookup from './tools/dns-lookup.js';
 import ipLookup from './tools/ip-lookup.js';
 import httpHeaderSecurityChecker from './tools/http-header-security-checker.js';
 import requestHeaderEditor from './tools/request-header-editor.js';
@@ -136,45 +112,25 @@ export default {
   'code-beautifier': codeBeautifier,
   'openapi-generator': openApiGenerator,
   'mock-api-generator': mockApiGenerator,
-  'code-minifier': codeMinifier,
-  'html-formatter': htmlFormatter,
   'css-formatter': cssFormatter,
   'rsa-crypto': rsaCrypto,
   'code-complexity-analyzer': codeComplexityAnalyzer,
-  'yaml-formatter': yamlFormatter,
-  'csv-viewer': csvViewer,
   'base64-encoder-decoder': base64EncoderDecoder,
   'timestamp-converter': timestampConverter,
   'url-encode-decode': urlEncodeDecode,
   'xml-formatter': xmlFormatter,
   'markdown-editor': markdownEditor,
-  'jwt-decoder': jwtDecoder,
   'color-picker': colorPicker,
-  'diff-viewer': diffViewer,
-  'html-to-pdf': htmlToPdf,
   'qr-code-generator': qrCodeGenerator,
-  'json-yaml-converter': jsonYamlConverter,
-  'sql-database-designer': sqlDatabaseDesigner,
-  'cron-expression-generator': cronExpressionGenerator,
   'code-beautifier': codeBeautifier,
   'image-compressor': imageCompressor,
   'uuid-generator': uuidGenerator,
   'password-generator': passwordGenerator,
-  'text-case-converter': textCaseConverter,
-  'lorem-ipsum-generator': loremIpsumGenerator,
-  'css-flexbox-generator': cssFlexboxGenerator,
   'api-request-tool': apiRequestTool,
-  'json-validator': jsonValidator,
-  'url-parser': urlParser,
-  'hex-color-picker': hexColorPicker,
   'csv-json-converter': csvJsonConverter,
   'xml-json-converter': xmlJsonConverter,
-  'jwt-validator': jwtValidator,
-  'json-schema-validator': jsonSchemaValidator,
   'css-gradient-generator': CssGradientGenerator,
-  'font-converter': fontConverter,
   'image-color-extractor': imageColorExtractor,
-  'regex-generator': regexGenerator,
   'javascript-obfuscator': javascriptObfuscator,
   'flowchart-generator': flowchartGenerator,
   'diagram-examples': diagramExamples,
@@ -195,13 +151,9 @@ export default {
   'image-filters': imageFilters,
   'image-exif-viewer': imageExifViewer,
   'image-to-ascii': imageToAscii,
-  'port-scanner': portScanner,
-  'ping-tool': pingTool,
   'network-speed-test': networkSpeedTest,
-  'http-request-tool': httpRequestTool,
   'image-mosaic-generator': imageMosaicGenerator,
   'image-pixelator': imagePixelator,
-  'dns-lookup': dnsLookup,
   'ip-lookup': ipLookup,
   'http-header-security-checker': httpHeaderSecurityChecker,
   'request-header-editor': requestHeaderEditor,

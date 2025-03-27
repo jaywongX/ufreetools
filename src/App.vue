@@ -46,18 +46,18 @@ const categories = ref([
     icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4'
   },
   { 
-    id: 'convert', 
-    title: '转换工具', 
-    name: '转换工具',
-    description: '各种文件格式之间的转换工具',
-    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
-  },
-  { 
     id: 'design', 
     title: '设计工具', 
     name: '设计工具',
     description: '辅助设计师创建和优化视觉作品的工具',
     icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01'
+  },
+  { 
+    id: 'convert', 
+    title: '转换工具', 
+    name: '转换工具',
+    description: '各种文件格式之间的转换工具',
+    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
   },
   { 
     id: 'text', 
