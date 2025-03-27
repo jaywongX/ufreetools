@@ -40,9 +40,21 @@ export default {
       nes: 'NES',
       cpc: 'CPC',
       c64: 'C64',
-      custom: '自定义'
+      custom: '自定义',
+      normal: '正常',
+      retro: '复古',
+      sepia: '怀旧',
+      bright: '明亮',
+      cool: '冷色调',
+      warm: '暖色调',
+      bw: '黑白',
+      invert: '反色'
     },
-    customPalette: '自定义调色板颜色'
+    customPalette: '自定义调色板颜色',
+    small: '小 (精细)',
+    large: '大 (粗糙)',
+    low: '低 (复古)',
+    high:'高 (真彩)',
   },
   effects: {
     title: '效果',
@@ -83,7 +95,10 @@ export default {
     webp: 'WebP',
     spritesheet: '精灵表',
     quality: '质量',
-    scale: '缩放'
+    scale: '缩放',
+    loading: '加载中...',
+    noImage: '请选择一张图片',
+    processing: '处理中...'
   },
   presets: {
     title: '预设',
@@ -105,7 +120,8 @@ export default {
     reset: '重置设置',
     applyChanges: '应用更改',
     undoChanges: '撤销更改',
-    downloadImage: '下载图像'
+    downloadImage: '下载图像',
+    selectImage: '选择图片'
   },
   messages: {
     processing: '处理图像中...',
@@ -114,6 +130,13 @@ export default {
     presetSaved: '预设保存成功',
     presetLoaded: '预设已加载',
     presetDeleted: '预设已删除',
-    error: '错误：{error}'
+    error: '错误：{error}',
+    fileSize: '文件大小',
+    pixels: '像素',
+    imageSize: '图像尺寸',
+    downloadSuccess: '图片已下载',
+    downloadFailed: '下载失败',
+    resetSuccess: '已重置',
+    fileName: '文件名'
   }
 } 

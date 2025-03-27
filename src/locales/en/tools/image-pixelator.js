@@ -1,14 +1,14 @@
 export default {
-  name: 'Image Pixelator',
+  name: 'Image Pixelizer',
   description: 'Convert images into pixel art with customizable resolution and effects',
   upload: {
     title: 'Upload Image',
-    dropzone: 'Drop image here or click to browse',
+    dropzone: 'Drag and drop your image here or click to browse',
     maxSize: 'Maximum file size: 10MB',
     supportedFormats: 'Supported formats: JPG, PNG, WEBP, GIF'
   },
   settings: {
-    title: 'Pixelation Settings',
+    title: 'Pixelization Settings',
     pixelSize: 'Pixel Size',
     pixelShape: 'Pixel Shape',
     shapes: {
@@ -23,7 +23,7 @@ export default {
     height: 'Height',
     preserveAspect: 'Preserve Aspect Ratio',
     colorReduction: 'Color Reduction',
-    colors: 'Colors',
+    colors: 'Number of Colors',
     dithering: 'Dithering',
     ditheringTypes: {
       none: 'None',
@@ -36,13 +36,25 @@ export default {
     palettes: {
       auto: 'Auto',
       grayscale: 'Grayscale',
-      gameboy: 'Gameboy',
+      gameboy: 'Game Boy',
       nes: 'NES',
       cpc: 'CPC',
       c64: 'C64',
-      custom: 'Custom'
+      custom: 'Custom',
+      normal: 'Normal',
+      retro: 'Retro',
+      sepia: 'Sepia',
+      bright: 'Bright',
+      cool: 'Cool',
+      warm: 'Warm',
+      bw: 'Black & White',
+      invert: 'Inverted'
     },
-    customPalette: 'Custom Palette Colors'
+    customPalette: 'Custom Palette Colors',
+    small: 'Small (Fine)',
+    large: 'Large (Coarse)',
+    low: 'Low (Retro)',
+    high: 'High (True Color)'
   },
   effects: {
     title: 'Effects',
@@ -83,7 +95,10 @@ export default {
     webp: 'WebP',
     spritesheet: 'Spritesheet',
     quality: 'Quality',
-    scale: 'Scale'
+    scale: 'Scale',
+    loading: 'Loading...',
+    noImage: 'Please select an image',
+    processing: 'Processing...'
   },
   presets: {
     title: 'Presets',
@@ -101,19 +116,27 @@ export default {
     }
   },
   actions: {
-    pixelate: 'Pixelate Image',
+    pixelate: 'Pixelize Image',
     reset: 'Reset Settings',
     applyChanges: 'Apply Changes',
     undoChanges: 'Undo Changes',
-    downloadImage: 'Download Image'
+    downloadImage: 'Download Image',
+    selectImage: 'Select Image'
   },
   messages: {
-    processing: 'Processing image...',
-    success: 'Image pixelated successfully',
-    downloading: 'Preparing download...',
+    processing: 'Processing the image...',
+    success: 'Image pixelization successful',
+    downloading: 'Preparing for download...',
     presetSaved: 'Preset saved successfully',
     presetLoaded: 'Preset loaded',
     presetDeleted: 'Preset deleted',
-    error: 'Error: {error}'
+    error: 'Error: {error}',
+    fileSize: 'File Size',
+    pixels: 'Pixels',
+    imageSize: 'Image Dimensions',
+    downloadSuccess: 'Image downloaded successfully',
+    downloadFailed: 'Download failed',
+    resetSuccess: 'Settings have been reset',
+    fileName: 'File Name'
   }
-} 
+}
