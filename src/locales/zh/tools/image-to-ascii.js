@@ -86,7 +86,13 @@ export default {
     resetOptions: '重置选项',
     refreshPreview: '刷新预览',
     loadImage: '加载新图像',
-    applyChanges: '应用更改'
+    applyChanges: '应用更改',
+    selectImage: '选择图片',
+    reset: '重置',
+    processing: '处理中...',
+    generate: '生成ASCII',
+    copy: '复制',
+    download: '下载'
   },
   messages: {
     converting: '正在将图像转换为ASCII...',
@@ -94,10 +100,42 @@ export default {
     conversionFailed: '图像转换失败：{error}',
     copied: 'ASCII已复制到剪贴板',
     downloadStarted: '下载已开始',
+    downloadComplete: 'ASCII已下载',
+    downloadFailed: '下载失败',
+    copyFailed: '复制失败',
+    resetComplete: '已重置',
+    asciiGenerated: 'ASCII艺术已生成',
+    generationFailed: '生成ASCII失败',
     presetSaved: '预设已保存',
     presetLoaded: '预设已加载',
     presetDeleted: '预设已删除',
     invalidImage: '无效的图像格式或损坏的文件',
-    imageTooBig: '图像尺寸太大，无法转换'
+    imageTooBig: '图像尺寸太大，无法转换',
+    selectOrLoad: '请选择图像或从URL加载',
+    asciiWillDisplay: 'ASCII将在这里显示',
+    customCharsPlaceholder: '输入字符，从暗到亮排序...',
+    tip: '调整设置后点击"生成ASCII"按钮来查看效果',
+    drapPlaceHolder: '选择或拖放图片到这里',
+    noImage: '请先选择一张图片',
+    generateAscii: '点击"生成ASCII"按钮转换图片',
+    tip2: '提示：使用复制按钮可以将ASCII艺术复制到剪贴板，或使用下载按钮保存为文本文件。'
+  },
+  charSets: {
+    standard: '标准 (@#W$9876543210?!abc+;:=-,._ )',
+    simple: '简单 (@%#*+=-:. )',
+    blocks: '方块 (█▓▒░ )',
+    custom: '自定义'
+  },
+  settings: {
+    title: 'ASCII设置',
+    customCharsetLabel: '自定义字符集（从暗到亮）',
+    asciiWidth: 'ASCII宽度',
+    invert: '反转颜色',
+    colored: '彩色输出',
+    fontSize: '字体大小'
+  },
+  preview: {
+    originalImage: '原始图像',
+    generatedAscii: '生成的ASCII'
   }
 } 
