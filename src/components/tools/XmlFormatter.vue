@@ -5,7 +5,7 @@
       <div class="flex flex-wrap gap-4 mb-4">
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            操作类型
+            {{ $t('tools.xml-formatter.options.operationType') }}
           </label>
           <div class="flex">
             <button 
@@ -13,35 +13,35 @@
               class="px-4 py-2 rounded-l-md border border-r-0 border-gray-300 dark:border-gray-600"
               :class="formatMode === 'beautify' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
             >
-              美化
+              {{ $t('tools.xml-formatter.actions.beautify') }}
             </button>
             <button 
               @click="formatMode = 'minify'" 
               class="px-4 py-2 rounded-r-md border border-gray-300 dark:border-gray-600"
               :class="formatMode === 'minify' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
             >
-              压缩
+              {{ $t('tools.xml-formatter.actions.minify') }}
             </button>
           </div>
         </div>
         
         <div v-if="formatMode === 'beautify'">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            缩进设置
+            {{ $t('tools.xml-formatter.options.indentSettings') }}
           </label>
           <select 
             v-model="indentSize" 
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           >
-            <option value="2">2个空格</option>
-            <option value="4">4个空格</option>
-            <option value="tab">Tab缩进</option>
+            <option value="2">{{ $t('tools.xml-formatter.indentOptions.twoSpaces') }}</option>
+            <option value="4">{{ $t('tools.xml-formatter.indentOptions.fourSpaces') }}</option>
+            <option value="tab">{{ $t('tools.xml-formatter.indentOptions.tabIndent') }}</option>
           </select>
         </div>
         
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            显示选项
+            {{ $t('tools.xml-formatter.options.displayOptions') }}
           </label>
           <div class="flex items-center">
             <input 
@@ -51,14 +51,14 @@
               class="h-4 w-4 text-primary border-gray-300 rounded"
             />
             <label for="show-line-numbers" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              显示行号
+              {{ $t('tools.xml-formatter.options.showLineNumbers') }}
             </label>
           </div>
         </div>
       </div>
       
       <div class="text-sm text-gray-600 dark:text-gray-400">
-        <p>XML格式化工具可以帮助开发者美化或压缩XML文档，并检查XML语法是否正确。</p>
+        <p>{{ $t('tools.xml-formatter.description') }}</p>
       </div>
     </div>
     
@@ -66,7 +66,7 @@
     <div class="mb-6">
       <div class="flex justify-between items-center mb-2">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          XML输入
+          {{ $t('tools.xml-formatter.input.xmlInput') }}
         </label>
         <div class="flex space-x-2">
           <button 
@@ -76,7 +76,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
             </svg>
-            {{ formatMode === 'beautify' ? '美化' : '压缩' }}
+            {{ formatMode === 'beautify' ? $t('tools.xml-formatter.actions.beautify') : $t('tools.xml-formatter.actions.minify') }}
           </button>
           <button 
             @click="clearInput" 
@@ -85,7 +85,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
-            清空
+            {{ $t('tools.xml-formatter.actions.clear') }}
           </button>
         </div>
       </div>
@@ -95,11 +95,11 @@
             v-model="inputXml" 
             rows="10" 
             class="w-full px-3 py-2 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm rounded-md"
-            placeholder="在这里粘贴或输入XML..."
+            :placeholder="$t('tools.xml-formatter.input.placeholder')"
           ></textarea>
         </div>
         <div class="mt-2 text-xs text-right text-gray-500 dark:text-gray-400">
-          字符数: {{ inputXml.length }}
+          {{ $t('tools.xml-formatter.messages.characterCount', { 0: inputXml.length }) }}
         </div>
       </div>
       <div v-if="errorMessage" class="mt-2 p-2 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 rounded-md text-sm">
@@ -111,7 +111,7 @@
     <div v-if="outputXml">
       <div class="flex justify-between items-center mb-2">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          格式化结果
+          {{ $t('tools.xml-formatter.messages.formatResult') }}
         </label>
         <button 
           @click="copyOutput" 
@@ -120,7 +120,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
           </svg>
-          {{ copyStatus ? '已复制!' : '复制代码' }}
+          {{ copyStatus ? $t('tools.xml-formatter.messages.copied') : $t('tools.xml-formatter.actions.copyCode') }}
         </button>
       </div>
       
@@ -148,34 +148,34 @@
       </div>
       
       <div class="mt-2 text-xs text-right text-gray-500 dark:text-gray-400">
-        字符数: {{ outputXml.length }} | 行数: {{ outputLines.length }}
+        {{ $t('tools.xml-formatter.messages.characterAndLineCount', { 0: outputXml.length, 1: outputLines.length }) }}
       </div>
     </div>
     
     <!-- 示例区域 -->
     <div class="mt-8">
       <div class="mb-2">
-        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">示例XML</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400">点击加载示例：</p>
+        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">{{ $t('tools.xml-formatter.examples.title') }}</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">{{ $t('tools.xml-formatter.examples.description') }}</p>
       </div>
       <div class="flex flex-wrap gap-2">
         <button 
           @click="loadExample('simple')" 
           class="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600"
         >
-          简单XML
+          {{ $t('tools.xml-formatter.examples.simpleXml') }}
         </button>
         <button 
           @click="loadExample('bookstore')" 
           class="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600"
         >
-          书店目录
+          {{ $t('tools.xml-formatter.examples.bookstore') }}
         </button>
         <button 
           @click="loadExample('complex')" 
           class="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600"
         >
-          复杂XML
+          {{ $t('tools.xml-formatter.examples.complexXml') }}
         </button>
       </div>
     </div>
@@ -184,6 +184,9 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 状态变量
 const inputXml = ref('')
@@ -203,7 +206,7 @@ const outputLines = computed(() => {
 // 格式化XML函数
 function formatXml() {
   if (!inputXml.value.trim()) {
-    errorMessage.value = '请输入XML内容'
+    errorMessage.value = t('tools.xml-formatter.messages.pleaseEnterXml')
     return
   }
   
@@ -215,7 +218,7 @@ function formatXml() {
     // 检查是否有解析错误
     const parseError = xmlDoc.getElementsByTagName('parsererror')
     if (parseError.length > 0) {
-      errorMessage.value = '无效的XML: ' + parseError[0].textContent
+      errorMessage.value = t('tools.xml-formatter.messages.invalidXml', { 0: parseError[0].textContent })
       return
     }
     
@@ -240,7 +243,7 @@ function formatXml() {
       outputXml.value = xmlString
     }
   } catch (error) {
-    errorMessage.value = '处理XML时出错: ' + error.message
+    errorMessage.value = t('tools.xml-formatter.messages.processingError', { 0: error.message })
     console.error('XML处理错误:', error)
   }
 }

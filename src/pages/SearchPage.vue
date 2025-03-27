@@ -2,25 +2,25 @@
   <div>
     <!-- 面包屑导航 -->
     <div class="mb-6 text-sm">
-      <router-link to="/" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
-        首页
+      <router-link :to="localizedRoute('/')" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
+        {{ $t('header.home') }}
       </router-link>
       <span class="mx-2 text-gray-400">/</span>
-      <span class="text-gray-700 dark:text-gray-300">搜索结果</span>
+      <span class="text-gray-700 dark:text-gray-300">{{ $t('search.title') }}</span>
     </div>
     
     <!-- 搜索结果 -->
     <div class="mb-8">
-      <h1 class="text-2xl font-bold mb-2">搜索结果: "{{ searchQuery }}"</h1>
+      <h1 class="text-2xl font-bold mb-2">{{ $t('search.resultsFor') }}: "{{ searchQuery }}"</h1>
       
       <!-- 相关标签推荐 -->
       <div v-if="relatedTags.length > 0" class="mb-6">
-        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">相关标签:</p>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">{{ $t('search.relatedTags') }}:</p>
         <div class="flex flex-wrap gap-2">
           <router-link
             v-for="tag in relatedTags"
             :key="tag.id"
-            :to="`/?tags=${tag.id}`"
+            :to="localizedRoute(`/?tags=${tag.id}`)"
             class="tag-link"
           >
             <TagBadge :tag-id="tag.id" />
@@ -38,8 +38,8 @@
         />
       </div>
       <div v-else class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 text-center">
-        <p class="text-gray-600 dark:text-gray-400">没有找到匹配的工具</p>
-        <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">尝试使用其他关键词或浏览标签</p>
+        <p class="text-gray-600 dark:text-gray-400">{{ $t('search.noResults') }}</p>
+        <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">{{ $t('search.tryOtherKeywords') }}</p>
       </div>
     </div>
   </div>
@@ -50,13 +50,17 @@ import { ref, computed, onMounted, inject, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import TagBadge from '../components/ui/TagBadge.vue'
 import ToolCard from '../components/ui/ToolCard.vue'
+import { useI18n } from 'vue-i18n'
+import { useInternationalizedRoute } from '../composables/useInternationalizedRoute'
 
 const route = useRoute()
 const router = useRouter()
+const { t, locale } = useI18n()
+const { localizedRoute } = useInternationalizedRoute()
 
 // 注入全局数据
-const allTools = inject('allTools')
-const allTags = inject('allTags')
+const allTools = inject('allTools', [])
+const allTags = inject('allTags', { value: [] })
 
 // 从URL获取搜索查询
 const searchQuery = computed(() => route.query.q || '')
@@ -64,34 +68,34 @@ const searchQuery = computed(() => route.query.q || '')
 // 搜索结果
 const searchResults = computed(() => {
   if (!searchQuery.value) return []
+  const query = searchQuery.value.toLowerCase()
   
-  const query = searchQuery.value.toLowerCase().trim()
+  return allTools.value.filter(tool => {
+    return tool.name.toLowerCase().includes(query) ||
+           tool.description.toLowerCase().includes(query) ||
+           tool.tags.some(tag => tag.toLowerCase().includes(query))
+  })
+})
+
+// 匹配的标签
+const matchedTags = computed(() => {
+  if (!searchQuery.value || !allTags?.value) return []
+  const query = searchQuery.value.toLowerCase()
   
-  // 寻找可能匹配的标签
-  const tagMatches = allTags
-    .filter(tag => 
-      tag.name.toLowerCase().includes(query) || 
-      tag.id.toLowerCase().includes(query)
-    )
-    .map(tag => tag.id)
-  
-  // 搜索工具名称、描述、类别和标签
-  return allTools.value.filter(tool => 
-    tool.name.toLowerCase().includes(query) || 
-    tool.description.toLowerCase().includes(query) || 
-    tool.category.toLowerCase().includes(query) ||
-    tool.tags.some(tagId => tagMatches.includes(tagId))
+  return allTags.value.filter(tag => 
+    tag.name.toLowerCase().includes(query) || 
+    tag.id.toLowerCase().includes(query)
   )
 })
 
 // 相关标签推荐
 const relatedTags = computed(() => {
-  if (!searchQuery.value) return []
+  if (!searchQuery.value || !allTags?.value) return []
   
   const query = searchQuery.value.toLowerCase().trim()
   
   // 找出与查询相关的标签
-  return allTags
+  return allTags.value
     .filter(tag => 
       tag.name.toLowerCase().includes(query) || 
       tag.id.toLowerCase().includes(query)
@@ -101,20 +105,20 @@ const relatedTags = computed(() => {
 
 // 导航到标签页面
 function navigateToTag(tagId) {
-  router.push(`/?tags=${tagId}`)
+  router.push(localizedRoute(`/?tags=${tagId}`))
 }
 
 // 监听路由变化更新标题
 watch(() => route.query.q, (newQuery) => {
   if (newQuery) {
-    document.title = `搜索结果: ${newQuery} - 工具集`
+    document.title = `${t('search.pageTitle', { query: newQuery })} - ${t('site.name')}`
   }
 })
 
 // 设置页面标题
 onMounted(() => {
   if (searchQuery.value) {
-    document.title = `搜索结果: ${searchQuery.value} - 工具集`
+    document.title = `${t('search.pageTitle', { query: searchQuery.value })} - ${t('site.name')}`
   }
 })
 </script>

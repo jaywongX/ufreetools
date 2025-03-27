@@ -7,7 +7,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
-          选择图片
+          {{ $t('tools.image-pixelator.actions.selectImage') }}
           <input type="file" accept="image/*" @change="loadImage" class="hidden" />
         </label>
         
@@ -19,7 +19,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          重置
+          {{ $t('tools.image-pixelator.actions.reset') }}
         </button>
       </div>
       
@@ -31,7 +31,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
         </svg>
-        下载图片
+        {{ $t('tools.image-pixelator.actions.downloadImage') }}
       </button>
     </div>
     
@@ -49,12 +49,12 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <!-- 左侧设置面板 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">像素化设置</h3>
+          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">{{ $t('tools.image-pixelator.settings.title') }}</h3>
           
           <!-- 像素块大小 -->
           <div class="mb-4">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              像素块大小: {{ settings.pixelSize }}px
+              {{ $t('tools.image-pixelator.settings.pixelSize') }}: {{ settings.pixelSize }}px
             </label>
             <input
               v-model.number="settings.pixelSize"
@@ -67,14 +67,14 @@
               @input="applyPixelate"
             />
             <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
-              <span>小 (精细)</span>
-              <span>大 (粗糙)</span>
+              <span>{{ $t('tools.image-pixelator.settings.small') }}</span>
+              <span>{{ $t('tools.image-pixelator.settings.large') }}</span>
             </div>
           </div>
           
           <!-- 像素形状 -->
           <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">像素形状</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-pixelator.settings.pixelShape') }}</label>
             <div class="grid grid-cols-3 gap-2">
               <button
                 @click="settings.pixelShape = 'square'; applyPixelate()"
@@ -84,7 +84,7 @@
                   : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300'"
                 :disabled="!hasImage || isProcessing"
               >
-                方形
+                {{ $t('tools.image-pixelator.settings.shapes.square') }}
               </button>
               <button
                 @click="settings.pixelShape = 'circle'; applyPixelate()"
@@ -94,7 +94,7 @@
                   : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300'"
                 :disabled="!hasImage || isProcessing"
               >
-                圆形
+                {{ $t('tools.image-pixelator.settings.shapes.circle') }}
               </button>
               <button
                 @click="settings.pixelShape = 'diamond'; applyPixelate()"
@@ -104,7 +104,7 @@
                   : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300'"
                 :disabled="!hasImage || isProcessing"
               >
-                菱形
+                {{ $t('tools.image-pixelator.settings.shapes.diamond') }}
               </button>
             </div>
           </div>
@@ -112,7 +112,7 @@
           <!-- 色彩设置 -->
           <div class="mb-4">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              色彩降低: {{ settings.colorSteps }}色阶
+              {{ $t('tools.image-pixelator.settings.colorReduction') }}: {{ settings.colorSteps }}{{ $t('tools.image-pixelator.settings.colors') }}
             </label>
             <input
               v-model.number="settings.colorSteps"
@@ -125,14 +125,14 @@
               @input="applyPixelate"
             />
             <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
-              <span>低 (复古)</span>
-              <span>高 (真彩)</span>
+              <span>{{ $t('tools.image-pixelator.settings.low') }}</span>
+              <span>{{ $t('tools.image-pixelator.settings.high') }}</span>
             </div>
           </div>
           
           <!-- 色彩风格 -->
           <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">色彩风格</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-pixelator.settings.palette') }}</label>
             <div class="grid grid-cols-2 gap-2">
               <button
                 v-for="style in colorStyles"
@@ -152,7 +152,7 @@
           <!-- 边缘锐化 -->
           <div class="mb-4">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              边缘锐化: {{ settings.edgeEnhance }}%
+              {{ $t('tools.image-pixelator.effects.outline') }}: {{ settings.edgeEnhance }}%
             </label>
             <input
               v-model.number="settings.edgeEnhance"
@@ -169,14 +169,14 @@
           <!-- 噪点 -->
           <div class="mb-4">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              复古噪点: {{ settings.noise }}%
+              {{ $t('tools.image-pixelator.effects.noise') }}: {{ settings.noise }}%
             </label>
             <input
               v-model.number="settings.noise"
               type="range"
               min="0"
-              max="50"
-              step="1"
+              max="100"
+              step="5"
               class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer"
               :disabled="!hasImage || isProcessing"
               @input="applyPixelate"
@@ -186,34 +186,34 @@
         
         <!-- 中间原图预览 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">原图</h3>
+          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">{{ $t('tools.image-pixelator.output.original') }}</h3>
           
           <div class="w-full aspect-w-16 aspect-h-9 bg-gray-200 dark:bg-gray-700 rounded-md overflow-hidden flex items-center justify-center">
             <div v-if="!hasImage" class="text-gray-500 dark:text-gray-400 text-center p-4">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              <p>请选择要处理的图片</p>
+              <p>{{ $t('tools.image-pixelator.output.noImage') }}</p>
             </div>
             <img 
               v-else 
               :src="originalImageUrl" 
-              alt="原图" 
+              :alt="$t('tools.image-pixelator.output.original')" 
               class="max-w-full max-h-full object-contain"
             />
           </div>
           
           <div v-if="hasImage" class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            <p>原始尺寸: {{ imageWidth }} × {{ imageHeight }} 像素</p>
-            <p>文件名: {{ fileName }}</p>
+            <p>{{ $t('tools.image-pixelator.messages.fileSize') }}: {{ imageWidth }} × {{ imageHeight }} {{ $t('tools.image-pixelator.messages.pixels') }}</p>
+            <p>{{ $t('tools.image-pixelator.messages.fileName') }}: {{ fileName }}</p>
           </div>
         </div>
         
         <!-- 右侧处理后预览 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
           <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">
-            像素化结果
-            <span v-if="isProcessing" class="ml-2 text-sm font-normal text-gray-500 dark:text-gray-400">处理中...</span>
+            {{ $t('tools.image-pixelator.output.pixelated') }}
+            <span v-if="isProcessing" class="ml-2 text-sm font-normal text-gray-500 dark:text-gray-400">{{ $t('tools.image-pixelator.output.processing') }}</span>
           </h3>
           
           <div class="w-full aspect-w-16 aspect-h-9 bg-gray-200 dark:bg-gray-700 rounded-md overflow-hidden flex items-center justify-center">
@@ -221,28 +221,15 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
               </svg>
-              <p>上传图片后将在此处显示结果</p>
+              <p>{{ $t('tools.image-pixelator.output.preview') }}</p>
             </div>
             <img 
               v-else 
               :src="processedImageUrl" 
-              alt="处理后的图片" 
+              :alt="$t('tools.image-pixelator.output.pixelated')" 
               class="max-w-full max-h-full object-contain"
               :class="{ 'opacity-50': isProcessing }"
             />
-          </div>
-          
-          <div v-if="processedImageUrl" class="mt-4 flex justify-center">
-            <button 
-              @click="downloadImage" 
-              class="btn bg-green-600 hover:bg-green-700 text-white"
-              :disabled="isProcessing"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-              下载像素化图片
-            </button>
           </div>
         </div>
       </div>
@@ -252,6 +239,9 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 状态变量
 const originalImageUrl = ref(null)
@@ -283,14 +273,14 @@ const settings = ref({
 
 // 色彩风格预设
 const colorStyles = [
-  { id: 'normal', name: '正常' },
-  { id: 'retro', name: '复古' },
-  { id: 'sepia', name: '怀旧' },
-  { id: 'bright', name: '明亮' },
-  { id: 'cool', name: '冷色调' },
-  { id: 'warm', name: '暖色调' },
-  { id: 'bw', name: '黑白' },
-  { id: 'invert', name: '反色' }
+  { id: 'normal', name: t('tools.image-pixelator.settings.palettes.normal') },
+  { id: 'retro', name: t('tools.image-pixelator.settings.palettes.retro') },
+  { id: 'sepia', name: t('tools.image-pixelator.settings.palettes.sepia') },
+  { id: 'bright', name: t('tools.image-pixelator.settings.palettes.bright') },
+  { id: 'cool', name: t('tools.image-pixelator.settings.palettes.cool') },
+  { id: 'warm', name: t('tools.image-pixelator.settings.palettes.warm') },
+  { id: 'bw', name: t('tools.image-pixelator.settings.palettes.bw') },
+  { id: 'invert', name: t('tools.image-pixelator.settings.palettes.invert') }
 ]
 
 // Canvas元素
@@ -342,7 +332,7 @@ function applyPixelate() {
   if (!hasImage.value) return
   
   isProcessing.value = true
-  showNotification('正在处理图片...')
+  showNotification(t('tools.image-pixelator.messages.processing'))
   
   setTimeout(() => {
     try {
@@ -376,11 +366,11 @@ function applyPixelate() {
       // 转换为Base64并更新预览
       processedImageUrl.value = processedCanvas.value.toDataURL('image/png')
       isProcessing.value = false
-      showNotification('图片处理完成')
+      showNotification(t('tools.image-pixelator.messages.success'))
     } catch (error) {
-      console.error('处理图片时出错:', error)
+      console.error(error)
       isProcessing.value = false
-      showNotification('处理失败，请重试')
+      showNotification(t('tools.image-pixelator.messages.error', { error: error.message }))
     }
   }, 100)
 }
@@ -694,10 +684,10 @@ function downloadImage() {
     link.download = `pixelated_${fileName.value}`
     link.click()
     
-    showNotification('图片已下载')
+    showNotification(t('tools.image-pixelator.messages.downloadSuccess'))
   } catch (error) {
     console.error('下载失败:', error)
-    showNotification('下载失败')
+    showNotification(t('tools.image-pixelator.messages.downloadFailed'))
   }
 }
 
@@ -720,7 +710,7 @@ function resetEditor() {
     noise: 0
   }
   
-  showNotification('已重置')
+  showNotification(t('tools.image-pixelator.messages.resetSuccess'))
 }
 
 // 显示通知

@@ -3,12 +3,13 @@
     class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
     :class="tagClasses"
   >
-    {{ tagName }}
+    {{ translatedTagName }}
   </span>
 </template>
 
 <script setup>
 import { computed, inject } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const props = defineProps({
   tagId: {
@@ -17,13 +18,22 @@ const props = defineProps({
   }
 })
 
+const { t } = useI18n()
 const allTags = inject('allTags')
 
 const tag = computed(() => {
   return allTags.value.find(t => t.id === props.tagId) || { id: props.tagId, name: props.tagId, color: 'gray' }
 })
 
-const tagName = computed(() => tag.value.name)
+// 国际化标签名称：优先使用i18n翻译，如果没有对应翻译则使用原始名称
+const translatedTagName = computed(() => {
+  // 检查i18n中是否存在该标签的翻译
+  const i18nKey = `tags.${props.tagId}`
+  const hasTranslation = t(i18nKey) !== i18nKey // 当没有翻译时，vue-i18n会返回key本身
+  
+  // 如果有翻译则使用翻译，否则回退到原始标签名
+  return hasTranslation ? t(i18nKey) : tag.value.name
+})
 
 const tagClasses = computed(() => {
   const colorMap = {

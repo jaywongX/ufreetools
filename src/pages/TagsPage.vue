@@ -2,18 +2,18 @@
   <div v-cloak>
     <!-- 面包屑导航 -->
     <div class="mb-6 text-sm">
-      <router-link to="/" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
-        首页
+      <router-link :to="localizedRoute('/')" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
+        {{ $t('header.home') }}
       </router-link>
       <span class="mx-2 text-gray-400">/</span>
-      <span class="text-gray-700 dark:text-gray-300">标签云</span>
+      <span class="text-gray-700 dark:text-gray-300">{{ $t('tags.title') }}</span>
     </div>
     
     <!-- 页面标题 -->
     <div class="mb-8">
-      <h1 class="text-2xl md:text-3xl font-bold mb-3">标签云</h1>
+      <h1 class="text-2xl md:text-3xl font-bold mb-3">{{ $t('tags.title') }}</h1>
       <p class="text-gray-600 dark:text-gray-300">
-        发现{{ allTags?.length || 0 }}个标签对应的{{ allTools?.length || 0 }}个工具
+        {{ $t('tags.description') }} ({{ allTags?.length || 0 }}{{ $t('tags.tagsCount') }}, {{ allTools?.length || 0 }}{{ $t('tags.toolsCount') }})
       </p>
     </div>
     
@@ -23,7 +23,7 @@
         <input 
           type="text" 
           v-model="tagSearchQuery" 
-          placeholder="搜索标签..." 
+          :placeholder="$t('tags.searchPlaceholder')" 
           class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-light"
         />
         <svg 
@@ -44,12 +44,12 @@
     <div v-if="!tagSearchQuery && isDataReady">
       <!-- 热门标签 -->
       <section class="mb-10">
-        <h2 class="text-xl font-bold mb-4">热门标签</h2>
+        <h2 class="text-xl font-bold mb-4">{{ $t('tags.popular') }}</h2>
         <div class="flex flex-wrap gap-3">
           <router-link 
             v-for="tag in popularTags" 
             :key="tag.id"
-            :to="`/tag/${tag.id}`"
+            :to="localizedRoute(`/tag/${tag.id}`)"
             class="tag-cloud-item"
             :style="{
               fontSize: `${getTagSize(tag)}rem`,
@@ -64,12 +64,12 @@
       
       <!-- 按类别分组的标签 -->
       <section v-for="(group, index) in tagGroups" :key="index" class="mb-10">
-        <h2 class="text-xl font-bold mb-4">{{ group.name }}</h2>
+        <h2 class="text-xl font-bold mb-4">{{ getLocalizedGroupName(group.name) }}</h2>
         <div class="flex flex-wrap gap-3">
           <router-link 
             v-for="tag in group.tags" 
             :key="tag.id"
-            :to="`/tag/${tag.id}`"
+            :to="localizedRoute(`/tag/${tag.id}`)"
             class="tag-cloud-item"
           >
             <TagBadge v-if="tag?.id" :tag-id="tag.id" />
@@ -78,12 +78,12 @@
         </div>
       </section>
       
-      <!-- 标签关系可视化 -->
+      <!-- 标签关系分析 -->
       <section class="mb-10" v-if="topTagPairs.length">
-        <h2 class="text-xl font-bold mb-4">标签关联分析</h2>
+        <h2 class="text-xl font-bold mb-4">{{ $t('tags.relationshipAnalysis') }}</h2>
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
           <p class="text-gray-600 dark:text-gray-300 mb-4">
-            通过分析工具标签之间的关联性，发现相互关联最紧密的标签组合
+            {{ $t('tags.relationshipDesc') }}
           </p>
           
           <div class="tag-relationship-chart">
@@ -95,7 +95,7 @@
                   <TagBadge v-if="pair.tags[1]" :tag-id="pair.tags[1]" />
                 </div>
                 <div class="text-sm text-gray-500 dark:text-gray-400">
-                  {{ pair.count }}个工具
+                  {{ pair.count }}{{ $t('tags.toolsInPair') }}
                 </div>
               </div>
             </div>
@@ -106,12 +106,12 @@
     
     <!-- 搜索标签结果 -->
     <div v-else-if="tagSearchQuery">
-      <h2 class="text-xl font-bold mb-4">搜索结果: "{{ tagSearchQuery }}"</h2>
+      <h2 class="text-xl font-bold mb-4">{{ $t('tags.searchResults') }}: "{{ tagSearchQuery }}"</h2>
       <div v-if="filteredTags.length > 0" class="flex flex-wrap gap-3">
         <router-link 
           v-for="tag in filteredTags" 
           :key="tag.id"
-          :to="`/tag/${tag.id}`"
+          :to="localizedRoute(`/tag/${tag.id}`)"
           class="tag-cloud-item"
         >
           <TagBadge v-if="tag?.id" :tag-id="tag.id" />
@@ -119,7 +119,7 @@
         </router-link>
       </div>
       <div v-else class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 text-center">
-        <p class="text-gray-600 dark:text-gray-400">没有找到匹配的标签</p>
+        <p class="text-gray-600 dark:text-gray-400">{{ $t('tags.noMatchingTags') }}</p>
       </div>
     </div>
   </div>
@@ -128,6 +128,8 @@
 <script setup>
 import { ref, computed, inject, markRaw, shallowRef } from 'vue'
 import _TagBadge from '../components/ui/TagBadge.vue'
+import { useI18n } from 'vue-i18n'
+import { useInternationalizedRoute } from '../composables/useInternationalizedRoute'
 
 // 使用 markRaw 标记组件
 const TagBadge = markRaw(_TagBadge)
@@ -269,6 +271,18 @@ const topTagPairs = computed(() => {
     .sort((a, b) => b.count - a.count)
     .slice(0, 10)
 })
+
+const { t } = useI18n()
+const { localizedRoute } = useInternationalizedRoute()
+
+function getLocalizedGroupName(groupName) {
+  // 尝试从categories获取翻译，如果找不到就使用原名
+  const translatedName = t(`tags.categories.${groupName.toLowerCase().replace(/\s+/g, '')}`, { silent: true });
+  if (translatedName && translatedName !== `tags.categories.${groupName.toLowerCase().replace(/\s+/g, '')}`) {
+    return translatedName;
+  }
+  return groupName;
+}
 </script>
 
 <style scoped>

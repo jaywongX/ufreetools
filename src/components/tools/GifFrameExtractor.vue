@@ -7,7 +7,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
-          选择GIF
+          {{ $t('tools.gif-frame-extractor.uploadBtn') }}
           <input type="file" accept="image/gif" @change="loadGif" class="hidden" />
         </label>
         
@@ -19,7 +19,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          重置
+          {{ $t('tools.gif-frame-extractor.resetBtn') }}
         </button>
       </div>
       
@@ -32,7 +32,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
           </svg>
-          {{ isProcessing ? '提取中...' : '提取帧' }}
+          {{ isProcessing ? $t('tools.gif-frame-extractor.extractingBtn') : $t('tools.gif-frame-extractor.extractBtn') }}
         </button>
         
         <button 
@@ -43,7 +43,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
           </svg>
-          下载所有帧
+          {{ $t('tools.gif-frame-extractor.downloadAllBtn') }}
         </button>
       </div>
     </div>
@@ -62,13 +62,13 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <!-- 左侧设置面板 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">GIF信息</h3>
+          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">{{ $t('tools.gif-frame-extractor.analysis.title') }}</h3>
           
           <div v-if="!hasGif" class="text-center py-12 text-gray-500 dark:text-gray-400">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <p>请选择一个GIF文件</p>
+            <p>{{ $t('tools.gif-frame-extractor.upload.selectGif') }}</p>
           </div>
           
           <div v-else class="space-y-4">
@@ -86,30 +86,30 @@
             <!-- GIF信息 -->
             <div class="space-y-2 text-sm">
               <div class="flex justify-between">
-                <span class="text-gray-600 dark:text-gray-400">文件名:</span>
+                <span class="text-gray-600 dark:text-gray-400">{{ $t('tools.gif-frame-extractor.analysis.fileName') }}:</span>
                 <span class="font-medium text-gray-800 dark:text-gray-200">{{ fileName }}</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-gray-600 dark:text-gray-400">尺寸:</span>
+                <span class="text-gray-600 dark:text-gray-400">{{ $t('tools.gif-frame-extractor.analysis.size') }}:</span>
                 <span class="font-medium text-gray-800 dark:text-gray-200">{{ gifInfo.width }}×{{ gifInfo.height }}px</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-gray-600 dark:text-gray-400">文件大小:</span>
+                <span class="text-gray-600 dark:text-gray-400">{{ $t('tools.gif-frame-extractor.analysis.fileSize') }}:</span>
                 <span class="font-medium text-gray-800 dark:text-gray-200">{{ formatFileSize(gifInfo.size) }}</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-gray-600 dark:text-gray-400">总帧数:</span>
-                <span class="font-medium text-gray-800 dark:text-gray-200">{{ frames.length || '未提取' }}</span>
+                <span class="text-gray-600 dark:text-gray-400">{{ $t('tools.gif-frame-extractor.analysis.totalFrames') }}:</span>
+                <span class="font-medium text-gray-800 dark:text-gray-200">{{ frames.length || $t('tools.gif-frame-extractor.analysis.notExtracted') }}</span>
               </div>
             </div>
             
             <!-- 导出设置 -->
             <div class="space-y-3 pt-4 border-t border-gray-200 dark:border-gray-700">
-              <h4 class="font-medium text-gray-800 dark:text-gray-200">导出设置</h4>
+              <h4 class="font-medium text-gray-800 dark:text-gray-200">{{ $t('tools.gif-frame-extractor.output.title') }}</h4>
               
               <!-- 输出格式 -->
               <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">输出格式</label>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.gif-frame-extractor.output.format') }}</label>
                 <div class="grid grid-cols-2 gap-2">
                   <button
                     v-for="format in ['png', 'jpeg', 'webp']"
@@ -128,7 +128,7 @@
               <!-- 质量设置 (仅适用于JPEG/WebP) -->
               <div v-if="settings.outputFormat !== 'png'">
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  质量: {{ settings.quality }}%
+                  {{ $t('tools.gif-frame-extractor.output.qualityValue', { value: settings.quality }) }}
                 </label>
                 <input
                   v-model.number="settings.quality"
@@ -139,8 +139,8 @@
                   class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer"
                 />
                 <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
-                  <span>低质量 (小文件)</span>
-                  <span>高质量 (大文件)</span>
+                  <span>{{ $t('tools.gif-frame-extractor.output.lowQuality') }}</span>
+                  <span>{{ $t('tools.gif-frame-extractor.output.highQuality') }}</span>
                 </div>
               </div>
             </div>
@@ -151,7 +151,7 @@
         <div class="lg:col-span-2">
           <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 h-full">
             <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">
-              帧预览
+              {{ $t('tools.gif-frame-extractor.frames.title') }}
               <span v-if="frames.length" class="text-sm font-normal text-gray-500 dark:text-gray-400">
                 ({{ frames.length }}帧)
               </span>
@@ -161,8 +161,8 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
               </svg>
-              <p v-if="hasGif">点击"提取帧"按钮来分解GIF</p>
-              <p v-else>请先选择一个GIF文件</p>
+              <p class="text-lg">{{ $t('tools.gif-frame-extractor.frames.noFrames') }}</p>
+              <p v-if="hasGif" class="mt-2">{{ $t('tools.gif-frame-extractor.frames.extractFirst') }}</p>
             </div>
             
             <div v-else class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -189,7 +189,7 @@
                   </div>
                 </div>
                 <div class="p-2 text-xs bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300 flex justify-between">
-                  <span>帧 #{{ index + 1 }}</span>
+                  <span>{{ $t('tools.gif-frame-extractor.frames.frame') }} #{{ index + 1 }}</span>
                   <span>{{ frame.delay }}ms</span>
                 </div>
               </div>
@@ -205,8 +205,10 @@
 import { ref, computed, onMounted, reactive } from 'vue'
 import gifFrames from 'gif-frames'
 import JSZip from 'jszip'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
-// 状态管理
+// 状态变量
 const gifUrl = ref(null)
 const fileName = ref('')
 const frames = ref([])
@@ -223,7 +225,7 @@ const gifInfo = reactive({
 })
 
 // 导出设置
-const settings = reactive({
+const settings = ref({
   outputFormat: 'png',
   quality: 90
 })
@@ -241,81 +243,77 @@ const hasGif = computed(() => !!gifUrl.value)
 // 图片加载事件
 async function loadGif(event) {
   const file = event.target.files[0]
-  if (!file || !file.type.includes('gif')) {
-    showNotification('请选择有效的GIF文件')
+  if (!file) return
+  
+  // 检查文件类型
+  if (!file.type.includes('gif')) {
+    showNotification(t('tools.gif-frame-extractor.messages.invalidGif'))
     return
   }
   
   fileName.value = file.name
-  gifUrl.value = URL.createObjectURL(file)
+  gifInfo.size = file.size
   
-  // 获取GIF信息
-  const img = new Image()
-  img.onload = () => {
+  try {
+    // 创建文件URL
+    gifUrl.value = URL.createObjectURL(file)
+    
+    // 获取GIF尺寸
+    const img = new Image()
+    await new Promise((resolve) => {
+      img.onload = resolve
+      img.src = gifUrl.value
+    })
+    
     gifInfo.width = img.width
     gifInfo.height = img.height
-    gifInfo.size = file.size
+    
+    showNotification(t('tools.gif-frame-extractor.messages.processingGif'))
+  } catch (error) {
+    console.error('加载GIF失败:', error)
+    showNotification(t('tools.gif-frame-extractor.messages.invalidGif'))
   }
-  img.src = gifUrl.value
 }
 
 // 提取帧
 async function extractFrames() {
-  if (!hasGif.value || isProcessing.value) return
+  if (!gifUrl.value) {
+    showNotification(t('tools.gif-frame-extractor.messages.invalidGif'))
+    return
+  }
   
   isProcessing.value = true
-  frames.value = [] // 清空之前的帧
+  frames.value = []
   
   try {
-    showNotification('正在提取帧，请稍候...')
-    
-    // 使用gif-frames库提取帧
-    const gifBlob = await fetch(gifUrl.value).then(res => res.blob())
-    const arrayBuffer = await gifBlob.arrayBuffer()
-    
-    if (arrayBuffer.byteLength === 0) {
-      throw new Error('文件数据为空')
+    // 检查文件URL是否有效
+    if (!gifUrl.value || typeof gifUrl.value !== 'string') {
+      throw new Error(t('tools.gif-frame-extractor.messages.fileEmpty'))
     }
     
-    const frameData = await gifFrames({ 
-      url: arrayBuffer, 
-      frames: 'all', 
-      outputType: 'canvas' 
+    // 提取帧
+    const frameData = await gifFrames({
+      url: gifUrl.value,
+      frames: 'all',
+      outputType: 'canvas'
     })
     
-    // 处理每一帧
-    for (let i = 0; i < frameData.length; i++) {
-      const frame = frameData[i]
-      const frameCanvas = frame.getImage()
+    // 处理帧数据
+    frames.value = frameData.map((frame, index) => {
+      const canvas = frame.getImage()
       
-      // 转换为dataURL
-      const dataUrl = frameCanvas.toDataURL('image/png')
-      
-      // 添加到帧列表
-      frames.value.push({
-        url: dataUrl,
-        index: i,
-        delay: frame.frameInfo.delay * 10 // 延迟时间（毫秒）
-      })
-    }
+      return {
+        index,
+        url: canvas.toDataURL(`image/${settings.value.outputFormat === 'jpeg' ? 'jpeg' : 'png'}`),
+        delay: frame.frameInfo.delay * 10 // 转换为毫秒
+      }
+    })
     
-    // 更新帧数
     gifInfo.frameCount = frames.value.length
-    
-    showNotification(`成功提取 ${frames.value.length} 帧`)
+    showNotification(t('tools.gif-frame-extractor.messages.extractionComplete'))
   } catch (error) {
-    console.error('提取失败:', error)
-    let errorMessage = '帧提取失败'
-    
-    if (error.message.includes('Image given has not extension .gif')) {
-      errorMessage = '无效的GIF格式'
-    } else if (error.message.includes('No frames found')) {
-      errorMessage = '未找到任何有效帧'
-    } else if (error.message.includes('timeout')) {
-      errorMessage = '提取超时，请尝试较小的GIF文件'
-    }
-    
-    showNotification(`${errorMessage}，请检查GIF文件`)
+    console.error('提取帧失败:', error)
+    showNotification(error.message || t('tools.gif-frame-extractor.messages.invalidGif'))
   } finally {
     isProcessing.value = false
   }
@@ -323,14 +321,16 @@ async function extractFrames() {
 
 // 下载单个帧
 function downloadFrame(frame) {
+  if (!frame) return
+  
   const link = document.createElement('a')
   link.href = frame.url
-  link.download = `${fileName.value.replace('.gif', '')}_frame_${frame.index + 1}.${settings.outputFormat}`
+  link.download = `${fileName.value.replace('.gif', '')}_frame_${frame.index + 1}.${settings.value.outputFormat}`
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)
   
-  showNotification('帧已下载')
+  showNotification(t('tools.gif-frame-extractor.messages.frameDownloaded'))
 }
 
 // 下载所有帧
@@ -339,13 +339,13 @@ async function downloadAllFrames() {
   
   try {
     isProcessing.value = true
-    showNotification('正在准备所有帧，请稍候...')
+    showNotification(t('tools.gif-frame-extractor.messages.preparingFrames'))
     
     // 创建ZIP文件
     const zip = new JSZip()
     const mimeType = getMimeType()
-    const ext = settings.outputFormat
-    const quality = settings.outputFormat === 'png' ? undefined : settings.quality / 100
+    const ext = settings.value.outputFormat
+    const quality = settings.value.outputFormat === 'png' ? undefined : settings.value.quality / 100
     
     // 处理每一帧
     for (let i = 0; i < frames.value.length; i++) {
@@ -386,10 +386,10 @@ async function downloadAllFrames() {
     link.click()
     document.body.removeChild(link)
     
-    showNotification('已下载所有帧')
+    showNotification(t('tools.gif-frame-extractor.messages.allFramesDownloaded'))
   } catch (error) {
-    console.error('下载所有帧失败:', error)
-    showNotification('下载所有帧失败')
+    console.error(error)
+    showNotification(t('tools.gif-frame-extractor.messages.downloadError'))
   } finally {
     isProcessing.value = false
   }
@@ -397,7 +397,7 @@ async function downloadAllFrames() {
 
 // 获取MIME类型
 function getMimeType() {
-  switch (settings.outputFormat) {
+  switch (settings.value.outputFormat) {
     case 'jpeg': return 'image/jpeg'
     case 'webp': return 'image/webp'
     default: return 'image/png'
@@ -415,10 +415,10 @@ function resetExtractor() {
   gifInfo.size = 0
   gifInfo.frameCount = 0
   
-  settings.outputFormat = 'png'
-  settings.quality = 90
+  settings.value.outputFormat = 'png'
+  settings.value.quality = 90
   
-  showNotification('已重置')
+  showNotification(t('tools.gif-frame-extractor.messages.resetComplete'))
 }
 
 // 格式化文件大小

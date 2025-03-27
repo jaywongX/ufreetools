@@ -10,69 +10,140 @@ window.global = window
 
 import { createApp, markRaw } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import { createI18n } from 'vue-i18n'
 import App from './App.vue'
 import './assets/css/tailwind.css'
 
+// 导入新的模块化国际化文件
+import messages from './locales'
+
+// 配置i18n
+const i18n = createI18n({
+  legacy: false, // 使用组合式API
+  locale: 'zh', // 默认语言
+  fallbackLocale: 'en', // 回退语言
+  messages
+})
+
 // 路由配置
+const routes = [
+  {
+    path: '/',
+    redirect: '/zh' // 重定向到默认语言
+  },
+  {
+    path: '/:lang',
+    component: () => import('./components/layout/LanguageLayout.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Home',
+        component: () => import('./pages/HomePage.vue'),
+        meta: { 
+          title: 'home.title', 
+          description: 'home.description' 
+        }
+      },
+      {
+        path: 'about',
+        name: 'About',
+        component: () => import('./pages/AboutPage.vue'),
+        meta: { 
+          title: 'about.title', 
+          description: 'about.description' 
+        }
+      },
+      {
+        path: 'contact',
+        name: 'Contact',
+        component: () => import('./pages/ContactPage.vue'),
+        meta: { 
+          title: 'contact.title', 
+          description: 'contact.description' 
+        }
+      },
+      {
+        path: 'terms',
+        name: 'Terms',
+        component: () => import('./pages/TermsPage.vue'),
+        meta: { 
+          title: 'terms.title', 
+          description: 'terms.description' 
+        }
+      },
+      {
+        path: 'privacy-policy',
+        name: 'PrivacyPolicy',
+        component: () => import('./pages/PrivacyPolicyPage.vue'),
+        meta: { 
+          title: 'privacyPolicy.title', 
+          description: 'privacyPolicy.description' 
+        }
+      },
+      {
+        path: 'category/:id',
+        name: 'Category',
+        component: () => import('./pages/CategoryPage.vue')
+      },
+      {
+        path: 'tool/:id',
+        name: 'Tool',
+        component: () => import('./pages/ToolPage.vue')
+      },
+      {
+        path: 'search',
+        component: () => import('./pages/SearchPage.vue')
+      },
+      {
+        path: 'tag/:id',
+        name: 'Tag',
+        component: () => import('./pages/TagPage.vue')
+      },
+      {
+        path: 'tags',
+        name: 'Tags',
+        component: () => import('./pages/TagsPage.vue')
+      },
+      {
+        path: 'feedback',
+        name: 'Feedback',
+        component: () => import('./pages/FeedbackPage.vue')
+      }
+    ]
+  }
+]
+
 const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: () => import('./pages/HomePage.vue')
-    },
-    {
-      path: '/category/:id',
-      name: 'Category',
-      component: () => import('./pages/CategoryPage.vue')
-    },
-    {
-      path: '/tool/:id',
-      name: 'Tool',
-      component: () => import('./pages/ToolPage.vue')
-    },
-    {
-      path: '/about',
-      name: 'About',
-      component: () => import('./pages/AboutPage.vue')
-    },
-    {
-      path: '/search',
-      component: () => import('./pages/SearchPage.vue')
-    },
-    {
-      path: '/contact',
-      name: 'Contact',
-      component: () => import('./pages/ContactPage.vue')
-    },
-    {
-      path: '/tag/:id',
-      name: 'Tag',
-      component: () => import('./pages/TagPage.vue')
-    },
-    {
-      path: '/tags',
-      name: 'Tags',
-      component: () => import('./pages/TagsPage.vue')
-    },
-    {
-      path: '/privacy-policy',
-      name: 'PrivacyPolicy',
-      component: () => import('./pages/PrivacyPolicyPage.vue')
-    },
-    {
-      path: '/feedback',
-      name: 'Feedback',
-      component: () => import('./pages/FeedbackPage.vue')
-    },
-    {
-      path: '/terms',
-      name: 'Terms',
-      component: () => import('./pages/TermsPage.vue')
-    }
-  ]
+  routes
 })
+
+// 路由守卫设置语言
+router.beforeEach((to, from, next) => {
+  // 支持的语言列表
+  const supportedLanguages = ['zh', 'en'];
+  
+  // 从路由中获取语言 (例如 /zh/about)
+  const lang = to.params.lang;
+  
+  // 检查是否支持该语言
+  if (lang && supportedLanguages.includes(lang)) {
+    // 设置i18n的locale
+    i18n.global.locale.value = lang;
+  } else if (to.path === '/') {
+    // 根路径重定向到默认语言或用户之前选择的语言
+    const savedLang = localStorage.getItem('userLanguage');
+    const userLang = savedLang && supportedLanguages.includes(savedLang) 
+      ? savedLang 
+      : navigator.language.split('-')[0]; // 浏览器语言
+    
+    const targetLang = supportedLanguages.includes(userLang) ? userLang : 'zh';
+    next(`/${targetLang}`);
+    return;
+  }
+  
+  next();
+});
 
 // 使用动态导入替代静态导入
 // 定义工具组件映射 - 使用懒加载
@@ -82,7 +153,7 @@ const lazyComponentMap = {
   'CodeDiff': () => import('./components/tools/CodeDiff.vue'),
   'CodeFormatter': () => import('./components/tools/CodeFormatter.vue'),
   'CodeComplexity': () => import('./components/tools/CodeComplexity.vue'),
-  'CodeHighlighter': () => import('./components/tools/CodeHighlighter.vue'),
+  'CodeBeautifier': () => import('./components/tools/CodeBeautifier.vue'),
   'GitConflictResolver': () => import('./components/tools/GitConflictResolver.vue'),
   'HtmlEntityEncoder': () => import('./components/tools/HtmlEntityEncoder.vue'),
   'HtmlFormatter': () => import('./components/tools/HtmlFormatter.vue'),
@@ -161,11 +232,13 @@ const lazyComponentMap = {
   'HmacCalculator': () => import('./components/tools/HmacCalculator.vue'),
   
   // 实用效率
+  'UuidGenerator': () => import('./components/tools/UuidGenerator.vue'),
 }
 
 // 创建应用
 const app = createApp(App)
 app.use(router)
+app.use(i18n)
 
 // 将组件懒加载映射添加到全局属性
 app.config.globalProperties.lazyComponentMap = lazyComponentMap

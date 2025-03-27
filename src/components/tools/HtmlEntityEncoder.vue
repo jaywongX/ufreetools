@@ -5,40 +5,40 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            操作类型
+            {{ $t('tools.html-entity-encoder.operation.title') }}
           </label>
           <select 
             v-model="operationType" 
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           >
-            <option value="encode">HTML实体编码</option>
-            <option value="decode">HTML实体解码</option>
+            <option value="encode">{{ $t('tools.html-entity-encoder.operation.encode') }}</option>
+            <option value="decode">{{ $t('tools.html-entity-encoder.operation.decode') }}</option>
           </select>
         </div>
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            编码模式
+            {{ $t('tools.html-entity-encoder.mode.title') }}
           </label>
           <select 
             v-model="encodeMode" 
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
             :disabled="operationType === 'decode'"
           >
-            <option value="named">命名实体 (&amp;lt;)</option>
-            <option value="decimal">十进制实体 (&amp;#60;)</option>
-            <option value="hex">十六进制实体 (&amp;#x3C;)</option>
-            <option value="full">完全编码 (所有字符)</option>
+            <option value="named">{{ $t('tools.html-entity-encoder.mode.named') }}</option>
+            <option value="decimal">{{ $t('tools.html-entity-encoder.mode.decimal') }}</option>
+            <option value="hex">{{ $t('tools.html-entity-encoder.mode.hex') }}</option>
+            <option value="full">{{ $t('tools.html-entity-encoder.mode.full') }}</option>
           </select>
         </div>
       </div>
       
       <div class="text-sm text-gray-600 dark:text-gray-400">
-        <p>HTML实体编码用于将特殊字符转换为HTML安全的格式，常用于防止XSS攻击或显示HTML源代码。</p>
+        <p>{{ $t('tools.html-entity-encoder.intro') }}</p>
         <ul class="list-disc pl-5 mt-1">
-          <li><span class="font-medium">命名实体</span> - 使用命名格式如 &amp;lt; 表示 &lt; (仅适用于常见HTML实体)</li>
-          <li><span class="font-medium">十进制实体</span> - 使用十进制格式如 &amp;#60; 表示 &lt;</li>
-          <li><span class="font-medium">十六进制实体</span> - 使用十六进制格式如 &amp;#x3C; 表示 &lt;</li>
-          <li><span class="font-medium">完全编码</span> - 编码所有非字母数字字符，包括空格、换行等</li>
+          <li><span class="font-medium">{{ $t('tools.html-entity-encoder.mode.named') }}</span> - {{ $t('tools.html-entity-encoder.reference.description.named') }}</li>
+          <li><span class="font-medium">{{ $t('tools.html-entity-encoder.mode.decimal') }}</span> - {{ $t('tools.html-entity-encoder.reference.description.decimal') }}</li>
+          <li><span class="font-medium">{{ $t('tools.html-entity-encoder.mode.hex') }}</span> - {{ $t('tools.html-entity-encoder.reference.description.hex') }}</li>
+          <li><span class="font-medium">{{ $t('tools.html-entity-encoder.mode.full') }}</span> - {{ $t('tools.html-entity-encoder.reference.description.full') }}</li>
         </ul>
       </div>
     </div>
@@ -47,7 +47,7 @@
     <div class="mb-6">
       <div class="flex justify-between items-center mb-2">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          {{ operationType === 'encode' ? '需要编码的文本' : '需要解码的文本' }}
+          {{ operationType === 'encode' ? $t('tools.html-entity-encoder.input.encodeTitle') : $t('tools.html-entity-encoder.input.decodeTitle') }}
         </label>
         <button 
           @click="clearInput" 
@@ -56,7 +56,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
           </svg>
-          清空
+          {{ $t('tools.html-entity-encoder.input.clear') }}
         </button>
       </div>
       <div class="border border-gray-300 dark:border-gray-600 rounded-md">
@@ -64,7 +64,7 @@
           v-model="inputText" 
           rows="5" 
           class="w-full px-3 py-2 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm rounded-md"
-          :placeholder="operationType === 'encode' ? '输入要编码的HTML或文本...' : '输入要解码的HTML实体文本...'"
+          :placeholder="operationType === 'encode' ? $t('tools.html-entity-encoder.input.encodePlaceholder') : $t('tools.html-entity-encoder.input.decodePlaceholder')"
         ></textarea>
       </div>
       
@@ -73,7 +73,7 @@
           @click="processText" 
           class="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary-dark"
         >
-          {{ operationType === 'encode' ? '编码' : '解码' }}
+          {{ operationType === 'encode' ? $t('tools.html-entity-encoder.operation.encode') : $t('tools.html-entity-encoder.operation.decode') }}
         </button>
       </div>
     </div>
@@ -82,7 +82,7 @@
     <div v-if="outputText">
       <div class="flex justify-between items-center mb-2">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          {{ operationType === 'encode' ? '编码结果' : '解码结果' }}
+          {{ operationType === 'encode' ? $t('tools.html-entity-encoder.output.encodeTitle') : $t('tools.html-entity-encoder.output.decodeTitle') }}
         </label>
         <div class="flex space-x-2">
           <button 
@@ -92,7 +92,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
             </svg>
-            复制结果 {{ copyStatus ? '(已复制!)' : '' }}
+            {{ $t('tools.html-entity-encoder.output.copy') }} {{ copyStatus ? $t('tools.html-entity-encoder.output.copied') : '' }}
           </button>
           <button
             v-if="operationType === 'encode'"
@@ -103,7 +103,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
             </svg>
-            {{ showPreview ? '显示源码' : '预览效果' }}
+            {{ showPreview ? $t('tools.html-entity-encoder.output.showSource') : $t('tools.html-entity-encoder.output.preview') }}
           </button>
         </div>
       </div>
@@ -127,12 +127,14 @@
     <!-- 常见HTML实体参考表 -->
     <div class="mt-8">
       <div class="flex justify-between items-center mb-2">
-        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">常见HTML实体参考表</h3>
+        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">
+          {{ $t('tools.html-entity-encoder.reference.commonReferenceTables') }}
+        </h3>
         <button
           @click="showReferenceTable = !showReferenceTable"
           class="text-sm text-gray-600 dark:text-gray-400 hover:underline flex items-center"
         >
-          {{ showReferenceTable ? '隐藏表格' : '显示表格' }}
+          {{ showReferenceTable ? $t('tools.html-entity-encoder.reference.hide') : $t('tools.html-entity-encoder.reference.show') }}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" :class="{'rotate-180': !showReferenceTable}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
@@ -144,10 +146,10 @@
           <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
             <thead class="bg-gray-50 dark:bg-gray-700">
               <tr>
-                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">字符</th>
-                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">命名实体</th>
-                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">数字实体</th>
-                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">描述</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">{{ $t('tools.html-entity-encoder.reference.table.char') }}</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">{{ $t('tools.html-entity-encoder.reference.table.named') }}</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">{{ $t('tools.html-entity-encoder.reference.table.decimal') }}</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">{{ $t('tools.html-entity-encoder.reference.table.description') }}</th>
               </tr>
             </thead>
             <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
@@ -167,6 +169,9 @@
 
 <script setup>
 import { ref, watch, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 状态变量
 const operationType = ref('encode')
@@ -283,7 +288,7 @@ function copyOutput() {
       }, 2000)
     })
     .catch(error => {
-      console.error('复制失败:', error)
+      console.error(error)
     })
 }
 
@@ -301,25 +306,25 @@ function clearInput() {
 
 // 常见HTML实体参考表
 const entityReferences = [
-  { char: '<', named: '&lt;', decimal: '&#60;', description: '小于号' },
-  { char: '>', named: '&gt;', decimal: '&#62;', description: '大于号' },
-  { char: '&', named: '&amp;', decimal: '&#38;', description: '和号' },
-  { char: '"', named: '&quot;', decimal: '&#34;', description: '双引号' },
-  { char: '\'', named: '&#39;', decimal: '&#39;', description: '单引号' },
-  { char: '©', named: '&copy;', decimal: '&#169;', description: '版权符号' },
-  { char: '®', named: '&reg;', decimal: '&#174;', description: '注册商标' },
-  { char: '™', named: '&trade;', decimal: '&#8482;', description: '商标符号' },
-  { char: ' ', named: '&nbsp;', decimal: '&#160;', description: '不换行空格' },
-  { char: '¢', named: '&cent;', decimal: '&#162;', description: '分符号' },
-  { char: '£', named: '&pound;', decimal: '&#163;', description: '英镑符号' },
-  { char: '€', named: '&euro;', decimal: '&#8364;', description: '欧元符号' },
-  { char: '¥', named: '&yen;', decimal: '&#165;', description: '日元/人民币符号' },
-  { char: '§', named: '&sect;', decimal: '&#167;', description: '章节符号' },
-  { char: '−', named: '&minus;', decimal: '&#8722;', description: '减号' },
-  { char: '×', named: '&times;', decimal: '&#215;', description: '乘号' },
-  { char: '÷', named: '&divide;', decimal: '&#247;', description: '除号' },
-  { char: '°', named: '&deg;', decimal: '&#176;', description: '度数符号' },
-  { char: '±', named: '&plusmn;', decimal: '&#177;', description: '正负号' },
-  { char: '¼', named: '&frac14;', decimal: '&#188;', description: '四分之一' }
+  { char: '<', named: '&lt;', decimal: '&#60;', description: t('tools.html-entity-encoder.reference.entities.lt') },
+  { char: '>', named: '&gt;', decimal: '&#62;', description: t('tools.html-entity-encoder.reference.entities.gt') },
+  { char: '&', named: '&amp;', decimal: '&#38;', description: t('tools.html-entity-encoder.reference.entities.amp') },
+  { char: '"', named: '&quot;', decimal: '&#34;', description: t('tools.html-entity-encoder.reference.entities.quot') },
+  { char: '\'', named: '&#39;', decimal: '&#39;', description: t('tools.html-entity-encoder.reference.entities.apos') },
+  { char: '©', named: '&copy;', decimal: '&#169;', description: t('tools.html-entity-encoder.reference.entities.copy') },
+  { char: '®', named: '&reg;', decimal: '&#174;', description: t('tools.html-entity-encoder.reference.entities.reg') },
+  { char: '™', named: '&trade;', decimal: '&#8482;', description: t('tools.html-entity-encoder.reference.entities.trade') },
+  { char: ' ', named: '&nbsp;', decimal: '&#160;', description: t('tools.html-entity-encoder.reference.entities.nbsp') },
+  { char: '¢', named: '&cent;', decimal: '&#162;', description: t('tools.html-entity-encoder.reference.entities.cent') },
+  { char: '£', named: '&pound;', decimal: '&#163;', description: t('tools.html-entity-encoder.reference.entities.pound') },
+  { char: '€', named: '&euro;', decimal: '&#8364;', description: t('tools.html-entity-encoder.reference.entities.euro') },
+  { char: '¥', named: '&yen;', decimal: '&#165;', description: t('tools.html-entity-encoder.reference.entities.yen') },
+  { char: '§', named: '&sect;', decimal: '&#167;', description: t('tools.html-entity-encoder.reference.entities.sect') },
+  { char: '−', named: '&minus;', decimal: '&#8722;', description: t('tools.html-entity-encoder.reference.entities.minus') },
+  { char: '×', named: '&times;', decimal: '&#215;', description: t('tools.html-entity-encoder.reference.entities.times') },
+  { char: '÷', named: '&divide;', decimal: '&#247;', description: t('tools.html-entity-encoder.reference.entities.divide') },
+  { char: '°', named: '&deg;', decimal: '&#176;', description: t('tools.html-entity-encoder.reference.entities.deg') },
+  { char: '±', named: '&plusmn;', decimal: '&#177;', description: t('tools.html-entity-encoder.reference.entities.plusmn') },
+  { char: '¼', named: '&frac14;', decimal: '&#188;', description: t('tools.html-entity-encoder.reference.entities.frac14') }
 ]
 </script> 

@@ -3,33 +3,32 @@
     <div class="max-w-5xl mx-auto">
       <!-- 页面标题 -->
       <div class="text-center mb-12">
-        <h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-4">关于 uFreeTools</h1>
+        <h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-4">{{ $t('about.title') }}</h1>
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          一站式在线工具平台，为您提供便捷高效的<span class="text-primary dark:text-primary-light font-semibold">{{ toolCount }}+</span>种免费工具
+          {{ $t('about.description') }} <span class="text-primary dark:text-primary-light font-semibold">{{ toolCount }}+</span>
         </p>
       </div>
       
       <!-- 主要内容 -->
       <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden mb-10">
         <div class="p-6 md:p-8">
-          <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">我们的使命</h2>
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">{{ $t('about.ourMission') }}</h2>
           <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-            uFreeTools 的使命是提供一个免费、高效且易用的在线工具集合，帮助开发者、设计师和所有互联网用户轻松解决日常工作中的技术问题。
-            我们相信，优质的工具不应该有高昂的价格或复杂的安装过程，每个人都应该能够轻松访问并使用它们。
+            {{ $t('about.missionText') }}
           </p>
           
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div class="bg-gray-50 dark:bg-gray-700 p-5 rounded-lg">
-              <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">完全在线，零安装</h3>
+              <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">{{ $t('about.onlineOnly') }}</h3>
               <p class="text-gray-600 dark:text-gray-300">
-                所有工具在浏览器中运行，无需下载、安装或注册，随时随地满足您的需求。
+                {{ $t('about.onlineDescription') }}
               </p>
             </div>
             
             <div class="bg-gray-50 dark:bg-gray-700 p-5 rounded-lg">
-              <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">注重隐私安全</h3>
+              <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">{{ $t('about.privacy') }}</h3>
               <p class="text-gray-600 dark:text-gray-300">
-                所有数据处理在浏览器本地完成，不会将您的信息上传至服务器，确保您的隐私安全。
+                {{ $t('about.privacyDescription') }}
               </p>
             </div>
           </div>
@@ -38,7 +37,7 @@
       
       <!-- 平台优势 -->
       <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 md:p-8 mb-12">
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">为什么选择 uFreeTools?</h2>
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">{{ $t('about.whyChooseUs') }}</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="bg-white dark:bg-gray-800 bg-opacity-80 dark:bg-opacity-30 p-5 rounded-lg">
@@ -47,9 +46,9 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-800 dark:text-white mb-2">高效便捷</h3>
+            <h3 class="font-semibold text-gray-800 dark:text-white mb-2">{{ $t('about.efficient') }}</h3>
             <p class="text-sm text-gray-600 dark:text-gray-300">
-              所有工具经过优化，快速加载，即时响应，高效处理您的任务
+              {{ $t('about.efficientDescription') }}
             </p>
           </div>
           
@@ -59,9 +58,9 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-800 dark:text-white mb-2">质量保证</h3>
+            <h3 class="font-semibold text-gray-800 dark:text-white mb-2">{{ $t('about.quality') }}</h3>
             <p class="text-sm text-gray-600 dark:text-gray-300">
-              每个工具经过精心设计和测试，确保稳定可靠的使用体验
+              {{ $t('about.qualityDescription') }}
             </p>
           </div>
           
@@ -71,9 +70,9 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-800 dark:text-white mb-2">安全可靠</h3>
+            <h3 class="font-semibold text-gray-800 dark:text-white mb-2">{{ $t('about.security') }}</h3>
             <p class="text-sm text-gray-600 dark:text-gray-300">
-              无需担心数据泄露，您的文件和信息完全在本地处理
+              {{ $t('about.securityDescription') }}
             </p>
           </div>
           
@@ -83,9 +82,9 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-800 dark:text-white mb-2">持续更新</h3>
+            <h3 class="font-semibold text-gray-800 dark:text-white mb-2">{{ $t('about.updates') }}</h3>
             <p class="text-sm text-gray-600 dark:text-gray-300">
-              我们不断添加新工具和改进现有功能，满足您不断变化的需求
+              {{ $t('about.updatesDescription') }}
             </p>
           </div>
         </div>
@@ -94,27 +93,27 @@
       <!-- 用户群体 -->
       <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden mb-10">
         <div class="p-6 md:p-8">
-          <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">我们的用户群体</h2>
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">{{ $t('about.ourUsers') }}</h2>
           
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-5">
-              <h3 class="font-semibold text-gray-800 dark:text-white mb-3">开发者与程序员</h3>
+              <h3 class="font-semibold text-gray-800 dark:text-white mb-3">{{ $t('about.developers') }}</h3>
               <p class="text-sm text-gray-600 dark:text-gray-300">
-                提供代码格式化、正则测试、API调试等效率工具，帮助开发者更高效地编写和调试代码
+                {{ $t('about.developersDescription') }}
               </p>
             </div>
             
             <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-5">
-              <h3 class="font-semibold text-gray-800 dark:text-white mb-3">设计师与创意工作者</h3>
+              <h3 class="font-semibold text-gray-800 dark:text-white mb-3">{{ $t('about.designers') }}</h3>
               <p class="text-sm text-gray-600 dark:text-gray-300">
-                提供色彩选择、图像处理、SVG优化等设计工具，助力创意工作的实现
+                {{ $t('about.designersDescription') }}
               </p>
             </div>
             
             <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-5">
-              <h3 class="font-semibold text-gray-800 dark:text-white mb-3">普通用户</h3>
+              <h3 class="font-semibold text-gray-800 dark:text-white mb-3">{{ $t('about.generalUsers') }}</h3>
               <p class="text-sm text-gray-600 dark:text-gray-300">
-                提供文本转换、图片压缩、密码生成等实用工具，解决日常数字生活中的各种问题
+                {{ $t('about.generalUsersDescription') }}
               </p>
             </div>
           </div>
@@ -123,10 +122,10 @@
       
       <!-- 联系我们和反馈 -->
       <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 md:p-8">
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">联系与反馈</h2>
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">{{ $t('about.contactFeedback') }}</h2>
         
         <p class="text-gray-600 dark:text-gray-300 mb-6">
-          我们非常重视用户的反馈和建议。如果您有任何问题、建议或合作意向，欢迎随时与我们联系。
+          {{ $t('about.contactFeedbackDescription') }}
         </p>
         
         <div class="flex flex-col md:flex-row gap-4">
@@ -134,7 +133,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            发送邮件
+            {{ $t('about.sendEmail') }}
           </a>
         </div>
       </div>

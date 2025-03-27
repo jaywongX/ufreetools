@@ -11,7 +11,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          {{ action === 'format' ? '美化代码' : '压缩代码' }}
+          {{ action === 'format' ? $t('tools.code-formatter.actions.beautify') : $t('tools.code-formatter.actions.minify') }}
         </button>
         <button 
           @click="copyResult" 
@@ -21,7 +21,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
           </svg>
-          复制结果
+          {{ $t('tools.code-formatter.actions.copy') }}
         </button>
         <button 
           @click="clearAll" 
@@ -31,7 +31,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
           </svg>
-          清空
+          {{ $t('tools.code-formatter.actions.clear') }}
         </button>
       </div>
       <div class="flex flex-wrap space-x-2">
@@ -46,7 +46,7 @@
               'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200': action !== 'format'
             }"
           >
-            美化
+            {{ $t('tools.code-formatter.actions.beautify') }}
           </button>
           <button
             @click="action = 'minify'"
@@ -57,7 +57,7 @@
               'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200': action !== 'minify'
             }"
           >
-            压缩
+            {{ $t('tools.code-formatter.actions.minify') }}
           </button>
         </div>
         
@@ -66,10 +66,12 @@
           v-model="language" 
           class="px-3 py-1.5 text-xs rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         >
-          <option value="html">HTML</option>
-          <option value="css">CSS</option>
-          <option value="javascript">JavaScript</option>
-          <option value="json">JSON</option>
+          <option value="html">{{ $t('tools.code-formatter.languages.html') }}</option>
+          <option value="css">{{ $t('tools.code-formatter.languages.css') }}</option>
+          <option value="javascript">{{ $t('tools.code-formatter.languages.javascript') }}</option>
+          <option value="json">{{ $t('tools.code-formatter.languages.json') }}</option>
+          <option value="typescript">{{ $t('tools.code-formatter.languages.typescript') }}</option>
+          <option value="sql">{{ $t('tools.code-formatter.languages.sql') }}</option>
         </select>
       </div>
     </div>
@@ -91,12 +93,12 @@
       <!-- 输入区域 -->
       <div class="space-y-2">
         <div class="flex justify-between">
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">输入代码</label>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.code-formatter.input') }}</label>
           <div class="flex space-x-2">
             <button 
               @click="pasteFromClipboard" 
               class="text-xs text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary-light"
-              title="从剪贴板粘贴"
+              :title="$t('tools.code-formatter.actions.paste')"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -105,7 +107,7 @@
             <button 
               @click="loadSampleCode" 
               class="text-xs text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary-light"
-              title="加载示例代码"
+              :title="$t('tools.code-formatter.actions.loadSample')"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -123,7 +125,7 @@
           <textarea
             v-model="inputCode"
             class="w-full h-80 p-2 pl-10 font-mono text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-            placeholder="在此输入您的代码..."
+            :placeholder="$t('tools.code-formatter.placeholders.input')"
             :disabled="isProcessing"
             @keydown.tab.prevent="insertTab"
           ></textarea>
@@ -132,25 +134,23 @@
         <!-- 输入设置 -->
         <div v-if="action === 'format'" class="grid grid-cols-2 gap-2 pt-2">
           <div class="space-y-1">
-            <label class="block text-xs text-gray-600 dark:text-gray-400">缩进</label>
+            <label class="block text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.code-formatter.options.indent') }}</label>
             <select 
-              v-model="formatOptions.indent"
+              v-model="formatOptions.indent_size"
               class="w-full px-2 py-1 text-xs rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
             >
-              <option value="2">2 空格</option>
-              <option value="4">4 空格</option>
-              <option value="tab">Tab</option>
+              <option value="2">2 {{ $t('tools.code-formatter.spaces') }}</option>
+              <option value="4">4 {{ $t('tools.code-formatter.spaces') }}</option>
             </select>
           </div>
           <div class="space-y-1">
-            <label class="block text-xs text-gray-600 dark:text-gray-400">换行符</label>
+            <label class="block text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.code-formatter.options.insertSpaces') }}</label>
             <select 
-              v-model="formatOptions.eol"
+              v-model="formatOptions.indent_char"
               class="w-full px-2 py-1 text-xs rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
             >
-              <option value="auto">自动</option>
-              <option value="lf">LF (Unix)</option>
-              <option value="crlf">CRLF (Windows)</option>
+              <option value="space">{{ $t('tools.code-formatter.space') }}</option>
+              <option value="tab">Tab</option>
             </select>
           </div>
         </div>
@@ -163,7 +163,7 @@
               v-model="minifyOptions.removeComments"
               class="h-3.5 w-3.5 rounded border-gray-300 text-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-800 dark:ring-offset-gray-800"
             >
-            <label for="remove-comments" class="ml-2 text-xs text-gray-600 dark:text-gray-400">移除注释</label>
+            <label for="remove-comments" class="ml-2 text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.code-formatter.options.removeComments') }}</label>
           </div>
           
           <div v-if="language === 'javascript'" class="flex items-center">
@@ -173,7 +173,7 @@
               v-model="minifyOptions.mangle" 
               class="h-3.5 w-3.5 rounded border-gray-300 text-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-800 dark:ring-offset-gray-800"
             >
-            <label for="mangle" class="ml-2 text-xs text-gray-600 dark:text-gray-400">变量名混淆</label>
+            <label for="mangle" class="ml-2 text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.code-formatter.options.mangle') }}</label>
           </div>
         </div>
       </div>
@@ -181,10 +181,10 @@
       <!-- 输出区域 -->
       <div class="space-y-2">
         <div class="flex justify-between">
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">输出结果</label>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.code-formatter.output') }}</label>
           <div class="text-xs text-gray-500 dark:text-gray-400">
             <span v-if="outputStats.charCount > 0">
-              {{ outputStats.charCount }} 字符 
+              {{ outputStats.charCount }} {{ $t('tools.code-formatter.characters') }} 
               <span v-if="inputStats.charCount > 0">
                 ({{ outputStats.charCount < inputStats.charCount ? '-' : '+' }}{{ Math.abs(Math.round((outputStats.charCount - inputStats.charCount) / inputStats.charCount * 100)) }}%)
               </span>
@@ -209,6 +209,82 @@
         </div>
       </div>
     </div>
+
+    <!-- 设置面板 -->
+    <div class="settings-panel p-4 border-t border-gray-200 dark:border-gray-700">
+      <div v-if="showingSettings" class="space-y-4">
+        <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.code-formatter.options.title') }}</h3>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div v-if="action === 'format'" class="space-y-2">
+            <div class="space-y-1">
+              <label class="block text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.code-formatter.options.indent') }}</label>
+              <select 
+                v-model="formatOptions.indent_size"
+                class="w-full px-2 py-1 text-xs rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
+              >
+                <option value="2">2 {{ $t('tools.code-formatter.spaces') }}</option>
+                <option value="4">4 {{ $t('tools.code-formatter.spaces') }}</option>
+              </select>
+            </div>
+            <div class="space-y-1">
+              <label class="block text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.code-formatter.options.insertSpaces') }}</label>
+              <select 
+                v-model="formatOptions.indent_char"
+                class="w-full px-2 py-1 text-xs rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
+              >
+                <option value="space">{{ $t('tools.code-formatter.space') }}</option>
+                <option value="tab">Tab</option>
+              </select>
+            </div>
+            <div class="space-y-1">
+              <label class="block text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.code-formatter.options.lineBreak') }}</label>
+              <select 
+                v-model="formatOptions.eol"
+                class="w-full px-2 py-1 text-xs rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
+              >
+                <option value="auto">{{ $t('tools.code-formatter.auto') }}</option>
+                <option value="lf">LF (Unix)</option>
+                <option value="crlf">CRLF (Windows)</option>
+              </select>
+            </div>
+          </div>
+
+          <div v-if="action === 'minify'" class="space-y-2 pt-2">
+            <div class="flex items-center">
+              <input 
+                id="remove-comments" 
+                type="checkbox" 
+                v-model="minifyOptions.removeComments"
+                class="h-3.5 w-3.5 rounded border-gray-300 text-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-800 dark:ring-offset-gray-800"
+              >
+              <label for="remove-comments" class="ml-2 text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.code-formatter.options.removeComments') }}</label>
+            </div>
+            
+            <div v-if="language === 'javascript'" class="flex items-center">
+              <input 
+                id="mangle" 
+                type="checkbox" 
+                v-model="minifyOptions.mangle" 
+                class="h-3.5 w-3.5 rounded border-gray-300 text-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-800 dark:ring-offset-gray-800"
+              >
+              <label for="mangle" class="ml-2 text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.code-formatter.options.mangle') }}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 使用提示 -->
+      <div v-if="showTips" class="mt-4 p-3 bg-blue-50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-md text-sm">
+        <h4 class="font-medium mb-2">{{ $t('tools.code-formatter.tips.title') }}</h4>
+        <ul class="list-disc pl-4 space-y-1 text-xs">
+          <li>{{ $t('tools.code-formatter.tips.selectLanguage') }}</li>
+          <li>{{ $t('tools.code-formatter.tips.beautifyMinify') }}</li>
+          <li>{{ $t('tools.code-formatter.tips.customizeOptions') }}</li>
+          <li>{{ $t('tools.code-formatter.tips.keyboard') }}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -222,6 +298,7 @@ import * as beautify from 'js-beautify'
 import { minify as terserMinify } from 'terser'
 import { minify as htmlMinify } from 'html-minifier-terser'
 import CleanCSS from 'clean-css'
+import { useI18n } from 'vue-i18n'
 
 // 状态
 const isProcessing = ref(false)
@@ -234,7 +311,9 @@ const messageType = ref('info')
 const language = ref('javascript')
 const action = ref('format')
 const formatOptions = ref({
-  indent: '2', // 缩进空格数量或tab
+  indent_size: '2',
+  indent_char: 'space',
+  eol: 'auto',
   maxLineLength: '100',
   wrapAttributes: 'auto',
   preserveNewlines: true,
@@ -271,10 +350,13 @@ const highlightedOutput = computed(() => {
   }
 })
 
+// 获取i18n实例
+const { t } = useI18n()
+
 // 格式化代码
 async function formatCode() {
   if (!inputCode.value.trim()) {
-    showMessage('请输入要处理的代码', 'error')
+    showMessage(t('tools.code-formatter.errors.emptyCode'), 'error')
     return
   }
   
@@ -290,10 +372,10 @@ async function formatCode() {
       await minifyCode()
     }
     
-    showMessage(`代码${action.value === 'format' ? '美化' : '压缩'}成功！`, 'success')
+    showMessage(t('tools.code-formatter.messages.formatSuccess'), 'success')
   } catch (error) {
     console.error('格式化错误:', error)
-    showMessage(`处理代码时出错: ${error.message}`, 'error')
+    showMessage(t('tools.code-formatter.messages.formatError') + ': ' + error.message, 'error')
     outputCode.value = ''
   } finally {
     isProcessing.value = false
@@ -302,13 +384,13 @@ async function formatCode() {
 
 // 美化代码
 async function beautifyCode() {
-  const indent = formatOptions.indent === 'tab' ? '\t' : ' '.repeat(parseInt(formatOptions.indent))
+  const indent = formatOptions.indent_char === 'tab' ? '\t' : ' '.repeat(parseInt(formatOptions.indent_size))
   
   switch (language.value) {
     case 'html':
       outputCode.value = beautify.html(inputCode.value, {
-        indent_size: formatOptions.indent === 'tab' ? 1 : parseInt(formatOptions.indent),
-        indent_char: formatOptions.indent === 'tab' ? '\t' : ' ',
+        indent_size: formatOptions.indent_size === 'tab' ? 1 : parseInt(formatOptions.indent_size),
+        indent_char: formatOptions.indent_char === 'tab' ? '\t' : ' ',
         max_preserve_newlines: formatOptions.preserveNewlines ? 2 : 0,
         preserve_newlines: formatOptions.preserveNewlines,
         indent_inner_html: true,
@@ -320,15 +402,15 @@ async function beautifyCode() {
       
     case 'css':
       outputCode.value = beautify.css(inputCode.value, {
-        indent_size: formatOptions.indent === 'tab' ? 1 : parseInt(formatOptions.indent),
-        indent_char: formatOptions.indent === 'tab' ? '\t' : ' '
+        indent_size: formatOptions.indent_size === 'tab' ? 1 : parseInt(formatOptions.indent_size),
+        indent_char: formatOptions.indent_char === 'tab' ? '\t' : ' '
       })
       break
       
     case 'javascript':
       outputCode.value = beautify.js(inputCode.value, {
-        indent_size: formatOptions.indent === 'tab' ? 1 : parseInt(formatOptions.indent),
-        indent_char: formatOptions.indent === 'tab' ? '\t' : ' ',
+        indent_size: formatOptions.indent_size === 'tab' ? 1 : parseInt(formatOptions.indent_size),
+        indent_char: formatOptions.indent_char === 'tab' ? '\t' : ' ',
         preserve_newlines: formatOptions.preserveNewlines,
         max_preserve_newlines: formatOptions.preserveNewlines ? 2 : 0,
         space_after_anon_function: true,
@@ -342,7 +424,7 @@ async function beautifyCode() {
         const jsonObj = JSON.parse(inputCode.value)
         outputCode.value = JSON.stringify(jsonObj, null, indent)
       } catch (error) {
-        throw new Error(`无效的JSON: ${error.message}`)
+        throw new Error(t('tools.code-formatter.errors.invalidJson') + ': ' + error.message)
       }
       break
   }
@@ -381,7 +463,7 @@ async function minifyCode() {
         })
         outputCode.value = result.code
       } catch (error) {
-        throw new Error(`JavaScript压缩错误: ${error.message}`)
+        throw new Error(t('tools.code-formatter.errors.jsCompressionError') + ': ' + error.message)
       }
       break
       
@@ -391,7 +473,7 @@ async function minifyCode() {
         const jsonObj = JSON.parse(inputCode.value)
         outputCode.value = JSON.stringify(jsonObj)
       } catch (error) {
-        throw new Error(`无效的JSON: ${error.message}`)
+        throw new Error(t('tools.code-formatter.errors.invalidJson') + ': ' + error.message)
       }
       break
   }
@@ -400,17 +482,17 @@ async function minifyCode() {
 // 复制结果
 function copyResult() {
   if (!outputCode.value) {
-    showMessage('没有可复制的结果', 'error')
+    showMessage(t('tools.code-formatter.errors.noOutput'), 'error')
     return
   }
   
   navigator.clipboard.writeText(outputCode.value)
     .then(() => {
-      showMessage('已复制到剪贴板', 'success')
+      showMessage(t('tools.code-formatter.messages.copied'), 'success')
     })
     .catch(err => {
       console.error('复制失败:', err)
-      showMessage('复制失败，请手动复制', 'error')
+      showMessage(t('tools.code-formatter.messages.copyError'), 'error')
     })
 }
 
@@ -419,7 +501,7 @@ function clearAll() {
   inputCode.value = ''
   outputCode.value = ''
   message.value = ''
-  showMessage('已清空', 'info')
+  showMessage(t('common.clear'), 'info')
 }
 
 // 从剪贴板粘贴
@@ -427,10 +509,10 @@ async function pasteFromClipboard() {
   try {
     const text = await navigator.clipboard.readText()
     inputCode.value = text
-    showMessage('已从剪贴板粘贴内容', 'info')
+    showMessage(t('tools.code-formatter.messages.clipboard'), 'info')
   } catch (err) {
     console.error('粘贴失败:', err)
-    showMessage('无法访问剪贴板，请手动粘贴', 'error')
+    showMessage(t('tools.code-formatter.messages.clipboardError'), 'error')
   }
 }
 
@@ -647,7 +729,7 @@ function calculateTotal(items, promoCode = null) {
   
   inputCode.value = sample
   outputCode.value = ''
-  showMessage('已加载示例代码', 'info')
+  showMessage(t('tools.code-formatter.messages.sampleCode'), 'info')
 }
 
 // 显示消息
@@ -666,7 +748,7 @@ function showMessage(msg, type = 'info') {
 // 处理Tab键插入制表符
 function insertTab(e) {
   // 插入制表符或空格
-  const tabReplacement = formatOptions.indent === 'tab' ? '\t' : ' '.repeat(parseInt(formatOptions.indent))
+  const tabReplacement = formatOptions.indent_char === 'tab' ? '\t' : ' '.repeat(parseInt(formatOptions.indent_size))
   const start = e.target.selectionStart
   const end = e.target.selectionEnd
   
@@ -681,7 +763,7 @@ function insertTab(e) {
 // 监听语言变化，修改示例代码和格式化选项
 watch(language, () => {
   // 如果用户已输入代码，不要覆盖
-  if (inputCode.value && !confirm('切换语言将清除当前代码，是否继续？')) {
+  if (inputCode.value && !confirm(t('tools.code-formatter.messages.languageChangeWarning'))) {
     return
   }
   
@@ -691,13 +773,13 @@ watch(language, () => {
   
   // 根据语言设置默认选项
   if (language.value === 'html') {
-    formatOptions.indent = '2'
+    formatOptions.indent_size = '2'
   } else if (language.value === 'css') {
-    formatOptions.indent = '2'
+    formatOptions.indent_size = '2'
   } else if (language.value === 'javascript') {
-    formatOptions.indent = '2'
+    formatOptions.indent_size = '2'
   } else if (language.value === 'json') {
-    formatOptions.indent = '2'
+    formatOptions.indent_size = '2'
   }
 })
 

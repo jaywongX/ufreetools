@@ -2,9 +2,9 @@
   <div>
     <!-- 工具配置区域 -->
     <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">前端代理检测器</h2>
+      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.http-proxy-detector.title') }}</h2>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        检测您的网络连接是否使用了代理，分析X-Forwarded-For和其他代理相关的HTTP头信息
+        {{ $t('tools.http-proxy-detector.intro') }}
       </p>
       
       <!-- 操作按钮 -->
@@ -18,7 +18,7 @@
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
           </svg>
-          <span>{{ isDetecting ? '检测中...' : '开始检测' }}</span>
+          <span>{{ isDetecting ? $t('tools.http-proxy-detector.detection.detecting') : $t('tools.http-proxy-detector.detection.start') }}</span>
         </button>
         
         <select 
@@ -51,21 +51,21 @@
             class="px-6 py-3 text-sm font-medium whitespace-nowrap"
             :class="activeTab === 'summary' ? 'border-b-2 border-primary text-primary' : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300'"
           >
-            代理摘要
+            {{ $t('tools.http-proxy-detector.results.summary') }}
           </button>
           <button 
             @click="activeTab = 'headers'"
             class="px-6 py-3 text-sm font-medium whitespace-nowrap"
             :class="activeTab === 'headers' ? 'border-b-2 border-primary text-primary' : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300'"
           >
-            完整请求头
+            {{ $t('tools.http-proxy-detector.results.headers') }}
           </button>
           <button 
             @click="activeTab = 'info'"
             class="px-6 py-3 text-sm font-medium whitespace-nowrap"
             :class="activeTab === 'info' ? 'border-b-2 border-primary text-primary' : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300'"
           >
-            代理信息解释
+            {{ $t('tools.http-proxy-detector.results.info') }}
           </button>
         </nav>
       </div>
@@ -85,30 +85,30 @@
             </div>
             <div>
               <h3 class="text-md font-medium" :class="proxyDetected ? 'text-yellow-800 dark:text-yellow-300' : 'text-green-800 dark:text-green-300'">
-                {{ proxyDetected ? '检测到代理' : '未检测到代理' }}
+                {{ proxyDetected ? $t('tools.http-proxy-detector.results.detected') : $t('tools.http-proxy-detector.results.notDetected') }}
               </h3>
               <p class="text-sm mt-1" :class="proxyDetected ? 'text-yellow-700 dark:text-yellow-400' : 'text-green-700 dark:text-green-400'">
-                {{ proxyDetected ? '您的请求可能经过了一个或多个代理服务器' : '您的请求似乎直接到达了目标服务器，未经过代理' }}
+                {{ proxyDetected ? $t('tools.http-proxy-detector.results.detectedDescription') : $t('tools.http-proxy-detector.results.notDetectedDescription') }}
               </p>
             </div>
           </div>
           
           <!-- IP地址信息 -->
           <div class="mb-6 bg-gray-50 dark:bg-gray-750 p-4 rounded-md border border-gray-200 dark:border-gray-700">
-            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-3">客户端IP信息</h3>
+            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-3">{{ $t('tools.http-proxy-detector.results.clientInfo') }}</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">远程IP地址:</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('tools.http-proxy-detector.results.remoteIp') }}:</p>
                 <p class="font-mono text-gray-800 dark:text-gray-200">{{ proxyResults.remoteAddress || 'N/A' }}</p>
               </div>
               <div v-if="proxyResults.geoInfo">
-                <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">地理位置:</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('tools.http-proxy-detector.results.location') }}:</p>
                 <p class="text-gray-800 dark:text-gray-200">
                   {{ proxyResults.geoInfo.country || 'N/A' }}{{ proxyResults.geoInfo.city ? `, ${proxyResults.geoInfo.city}` : '' }}
                 </p>
               </div>
               <div v-if="proxyResults.geoInfo && proxyResults.geoInfo.isp">
-                <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">ISP提供商:</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('tools.http-proxy-detector.results.isp') }}:</p>
                 <p class="text-gray-800 dark:text-gray-200">{{ proxyResults.geoInfo.isp }}</p>
               </div>
             </div>
@@ -116,21 +116,21 @@
           
           <!-- 代理头信息 -->
           <div class="bg-gray-50 dark:bg-gray-750 p-4 rounded-md border border-gray-200 dark:border-gray-700">
-            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-3">代理相关头信息</h3>
+            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-3">{{ $t('tools.http-proxy-detector.results.proxyHeaders') }}</h3>
             
             <div class="space-y-4">
               <!-- X-Forwarded-For -->
               <div class="border-b border-gray-200 dark:border-gray-700 pb-3">
                 <div class="flex justify-between items-center mb-2">
-                  <p class="font-medium text-gray-700 dark:text-gray-300">X-Forwarded-For</p>
+                  <p class="font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.http-proxy-detector.headers.common.xForwardedFor') }}</p>
                   <span 
                     v-if="proxyResults.headers['x-forwarded-for']" 
                     class="px-2 py-0.5 text-xs rounded-full"
                     :class="proxyDetected ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-300' : 'bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300'"
                   >
-                    {{ proxyDetected ? '已检测' : '已设置' }}
+                    {{ proxyDetected ? $t('tools.http-proxy-detector.detection.noProxies') : $t('tools.http-proxy-detector.headers.select') }}
                   </span>
-                  <span v-else class="px-2 py-0.5 text-xs bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400 rounded-full">未设置</span>
+                  <span v-else class="px-2 py-0.5 text-xs bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400 rounded-full">{{ $t('tools.http-proxy-detector.results.notSet') }}</span>
                 </div>
                 
                 <div v-if="proxyResults.headers['x-forwarded-for']" class="mb-2">
@@ -139,7 +139,7 @@
                   </div>
                   
                   <div v-if="forwardedIps.length > 0" class="mt-3">
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">代理链:</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">{{ $t('tools.http-proxy-detector.results.proxyChain') }}:</p>
                     <div class="flex flex-wrap items-center">
                       <template v-for="(ip, index) in forwardedIps" :key="index">
                         <div class="bg-primary bg-opacity-10 dark:bg-opacity-20 text-primary px-2 py-1 rounded font-mono text-xs">
@@ -153,12 +153,12 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                       </svg>
                       <div class="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-2 py-1 rounded font-mono text-xs">
-                        {{ proxyResults.remoteAddress || 'Server' }}
+                        {{ proxyResults.remoteAddress || $t('tools.http-proxy-detector.results.server') }}
                       </div>
                     </div>
                   </div>
                 </div>
-                <p v-else class="text-sm text-gray-600 dark:text-gray-400 italic">未发现X-Forwarded-For头，这表明请求可能未经过代理或代理未添加此头信息。</p>
+                <p v-else class="text-sm text-gray-600 dark:text-gray-400 italic">{{ $t('tools.http-proxy-detector.xff.notFound') }}</p>
               </div>
               
               <!-- 其他代理相关头 -->
@@ -169,9 +169,9 @@
                     v-if="proxyResults.headers[header]" 
                     class="px-2 py-0.5 text-xs bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300 rounded-full"
                   >
-                    已设置
+                    {{ $t('tools.http-proxy-detector.detection.completed') }}
                   </span>
-                  <span v-else class="px-2 py-0.5 text-xs bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400 rounded-full">未设置</span>
+                  <span v-else class="px-2 py-0.5 text-xs bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400 rounded-full">{{ $t('tools.http-proxy-detector.results.notSet') }}</span>
                 </div>
                 
                 <div v-if="proxyResults.headers[header]" class="mb-2">
@@ -179,7 +179,7 @@
                     <code class="font-mono text-sm text-gray-800 dark:text-gray-200">{{ proxyResults.headers[header] }}</code>
                   </div>
                 </div>
-                <p v-else class="text-sm text-gray-600 dark:text-gray-400 italic">未发现此头信息</p>
+                <p v-else class="text-sm text-gray-600 dark:text-gray-400 italic">{{ $t('tools.http-proxy-detector.headers.notFound') }}</p>
               </div>
             </div>
           </div>
@@ -188,14 +188,14 @@
         <!-- 完整请求头 -->
         <div v-if="activeTab === 'headers'">
           <div class="bg-gray-50 dark:bg-gray-750 p-4 rounded-md border border-gray-200 dark:border-gray-700">
-            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-3">所有HTTP请求头</h3>
+            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-3">{{ $t('tools.http-proxy-detector.headers.all') }}</h3>
             
             <div class="bg-white dark:bg-gray-800 p-3 rounded border border-gray-200 dark:border-gray-700 max-h-96 overflow-y-auto">
               <table class="w-full">
                 <thead class="bg-gray-50 dark:bg-gray-750 border-b border-gray-200 dark:border-gray-700">
                   <tr>
-                    <th class="py-2 px-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300">头名称</th>
-                    <th class="py-2 px-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300">值</th>
+                    <th class="py-2 px-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.http-proxy-detector.headers.name') }}</th>
+                    <th class="py-2 px-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.http-proxy-detector.headers.value') }}</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -215,7 +215,7 @@
                 <svg class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
                 </svg>
-                复制到剪贴板
+                {{ $t('tools.http-proxy-detector.actions.copyToClipboard') }}
               </button>
             </div>
           </div>
@@ -224,17 +224,16 @@
         <!-- 代理信息解释 -->
         <div v-if="activeTab === 'info'" class="space-y-6">
           <div>
-            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-2">什么是X-Forwarded-For?</h3>
+            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.http-proxy-detector.xff.title') }}</h3>
             <p class="text-gray-600 dark:text-gray-400 text-sm">
-              X-Forwarded-For (XFF) 是一个HTTP头字段，用于标识通过HTTP代理或负载均衡器连接到Web服务器的客户端的原始IP地址。
-              当请求经过代理时，服务器通常只能看到代理服务器的IP地址，而XFF头提供了一个追溯原始客户端IP的方法。
+              {{ $t('tools.http-proxy-detector.xff.description') }}
             </p>
           </div>
           
           <div>
-            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-2">XFF头的格式</h3>
+            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.http-proxy-detector.xff.format.title') }}</h3>
             <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">
-              XFF头的标准格式是一个逗号分隔的IP地址列表，最左边的IP是原始客户端，而后续的IP是经过的代理服务器：
+              {{ $t('tools.http-proxy-detector.xff.format.description') }}
             </p>
             <div class="bg-gray-50 dark:bg-gray-750 p-3 rounded border border-gray-200 dark:border-gray-700 font-mono text-sm">
               X-Forwarded-For: client, proxy1, proxy2
@@ -242,50 +241,49 @@
           </div>
           
           <div>
-            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-2">其他相关代理头</h3>
+            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.http-proxy-detector.xff.related.title') }}</h3>
             <ul class="space-y-3">
               <li class="text-gray-600 dark:text-gray-400 text-sm">
                 <span class="font-medium text-gray-800 dark:text-gray-200">X-Forwarded-Proto</span>: 
-                标识客户端连接到代理使用的协议(HTTP或HTTPS)
+                {{ $t('tools.http-proxy-detector.xff.related.forwardedProto') }}
               </li>
               <li class="text-gray-600 dark:text-gray-400 text-sm">
                 <span class="font-medium text-gray-800 dark:text-gray-200">X-Forwarded-Host</span>: 
-                标识客户端请求的原始主机名
+                {{ $t('tools.http-proxy-detector.xff.related.forwardedHost') }}
               </li>
               <li class="text-gray-600 dark:text-gray-400 text-sm">
                 <span class="font-medium text-gray-800 dark:text-gray-200">Via</span>: 
-                指示请求和响应经过的代理服务器
+                {{ $t('tools.http-proxy-detector.xff.related.via') }}
               </li>
               <li class="text-gray-600 dark:text-gray-400 text-sm">
                 <span class="font-medium text-gray-800 dark:text-gray-200">Forwarded</span>: 
-                较新的标准头，包含了客户端和所有代理信息
+                {{ $t('tools.http-proxy-detector.xff.related.forwarded') }}
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-2">为什么代理信息很重要</h3>
+            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.http-proxy-detector.xff.importance.title') }}</h3>
             <ul class="list-disc list-inside space-y-1">
               <li class="text-gray-600 dark:text-gray-400 text-sm">
-                安全和访问控制 - 准确识别客户端IP对于防止滥用和实施IP-based访问控制很重要
+                {{ $t('tools.http-proxy-detector.xff.importance.security') }}
               </li>
               <li class="text-gray-600 dark:text-gray-400 text-sm">
-                日志记录 - 对于审计和问题诊断，记录真实的客户端IP比代理IP更有用
+                {{ $t('tools.http-proxy-detector.xff.importance.logging') }}
               </li>
               <li class="text-gray-600 dark:text-gray-400 text-sm">
-                地理位置服务 - 基于IP的地理位置服务需要真实的客户端IP才能提供准确结果
+                {{ $t('tools.http-proxy-detector.xff.importance.geolocation') }}
               </li>
               <li class="text-gray-600 dark:text-gray-400 text-sm">
-                内容定制 - 一些服务根据用户地理位置提供本地化内容
+                {{ $t('tools.http-proxy-detector.xff.importance.content') }}
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-2">安全注意事项</h3>
+            <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.http-proxy-detector.xff.security.title') }}</h3>
             <p class="text-gray-600 dark:text-gray-400 text-sm">
-              需要注意的是，X-Forwarded-For头可以被客户端伪造。在高安全性要求的环境中，应该仅信任来自已知代理服务器添加的XFF信息，
-              或使用其他方法验证客户端IP。
+              {{ $t('tools.http-proxy-detector.xff.security.description') }}
             </p>
           </div>
         </div>
@@ -299,12 +297,11 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
         <div>
-          <p class="font-medium mb-1">隐私提示</p>
+          <p class="font-medium mb-1">{{ $t('tools.http-proxy-detector.privacy.title') }}</p>
           <p class="mb-2">
-            检测过程中，您的IP地址和HTTP头信息将被发送到第三方API服务用于分析。
-            这些服务可能会收集并存储这些信息以提供服务。
+            {{ $t('tools.http-proxy-detector.privacy.description') }}
           </p>
-          <p>如有隐私顾虑，请选择不同的API提供商或考虑使用VPN服务。</p>
+          <p>{{ $t('tools.http-proxy-detector.privacy.suggestion') }}</p>
         </div>
       </div>
     </div>
@@ -313,8 +310,11 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-// 状态变量
+const { t } = useI18n()
+
+// 状态管理
 const isDetecting = ref(false)
 const error = ref('')
 const activeTab = ref('summary')
@@ -430,7 +430,7 @@ async function detectProxy() {
               hasResults.value = true
             }
           } else {
-            throw new Error(data.message || '获取IP信息失败')
+            throw new Error(data.message || $t('tools.http-proxy-detector.messages.unknown'))
           }
         }
         break
@@ -455,8 +455,8 @@ async function detectProxy() {
         break
     }
   } catch (err) {
-    console.error('代理检测失败:', err)
-    error.value = `检测失败: ${err.message || '未知错误'}`
+    console.error(err)
+    error.value = t('tools.http-proxy-detector.messages.error', { message: err.message || t('tools.http-proxy-detector.messages.unknown') })
     hasResults.value = false
   } finally {
     isDetecting.value = false
@@ -471,11 +471,11 @@ function copyHeadersToClipboard() {
   
   navigator.clipboard.writeText(headersText)
     .then(() => {
-      alert('已复制请求头到剪贴板')
+      alert(t('tools.http-proxy-detector.messages.copied'))
     })
     .catch(err => {
-      console.error('复制失败:', err)
-      alert('复制失败，请手动复制')
+      console.error(err)
+      alert(t('tools.http-proxy-detector.messages.copyFailed'))
     })
 }
 

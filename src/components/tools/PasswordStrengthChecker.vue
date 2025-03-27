@@ -2,13 +2,13 @@
   <div>
     <!-- 工具配置区域 -->
     <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">输入密码进行检测</h2>
+      <h2 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">{{ $t('tools.password-strength-checker.input.title') }}</h2>
       
       <div class="relative">
         <input 
           :type="showPassword ? 'text' : 'password'" 
           v-model="password" 
-          placeholder="在此输入密码..."
+          :placeholder="$t('tools.password-strength-checker.input.placeholder')"
           class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 pr-10 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           @input="analyzePassword"
         />
@@ -27,7 +27,7 @@
       </div>
       
       <div class="mt-1 text-sm text-gray-500 dark:text-gray-400">
-        输入任何密码进行安全强度评估。您的密码不会被存储或发送到任何服务器。
+        {{ $t('tools.password-strength-checker.input.disclaimer') }}
       </div>
     </div>
     
@@ -36,7 +36,7 @@
       <!-- 主要评分显示 -->
       <div class="p-6 pb-3 border-b border-gray-200 dark:border-gray-700">
         <div class="flex items-center justify-between mb-3">
-          <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200">密码强度评估</h3>
+          <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200">{{ $t('tools.password-strength-checker.results.title') }}</h3>
           <div class="flex items-center" v-if="password">
             <div 
               class="w-2 h-2 rounded-full mr-2"
@@ -67,20 +67,20 @@
           </p>
         </div>
         <div class="mt-3 text-sm text-gray-500 dark:text-gray-400" v-else>
-          请输入密码以查看评估结果。
+          {{ $t('tools.password-strength-checker.input.empty') }}
         </div>
       </div>
       
       <!-- 详细分析 -->
       <div class="p-6 border-b border-gray-200 dark:border-gray-700" v-if="password">
-        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">详细分析</h3>
+        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">{{ $t('tools.password-strength-checker.details.title') }}</h3>
         
         <div class="space-y-5">
           <!-- 密码长度 -->
           <div>
             <div class="flex justify-between items-center mb-1">
               <div class="text-sm font-medium text-gray-700 dark:text-gray-300">
-                密码长度 ({{ password.length }} 个字符)
+                {{ $t('tools.password-strength-checker.details.length') }} ({{ password.length }} {{ $t('tools.password-strength-checker.characters') }})
               </div>
               <div class="text-xs font-medium" :class="getLengthScoreClass()">
                 {{ getLengthScore() }}
@@ -102,7 +102,7 @@
           <div>
             <div class="flex justify-between items-center mb-1">
               <div class="text-sm font-medium text-gray-700 dark:text-gray-300">
-                字符多样性
+                {{ $t('tools.password-strength-checker.details.charset') }}
               </div>
               <div class="text-xs font-medium" :class="getComplexityScoreClass()">
                 {{ getComplexityScore() }}
@@ -123,7 +123,7 @@
                 >
                   <span v-if="hasUppercase">✓</span>
                 </div>
-                <span class="text-xs text-gray-600 dark:text-gray-400">大写字母 (A-Z)</span>
+                <span class="text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.password-strength-checker.details.uppercase') }} (A-Z)</span>
               </div>
               <div class="flex items-center">
                 <div 
@@ -132,7 +132,7 @@
                 >
                   <span v-if="hasLowercase">✓</span>
                 </div>
-                <span class="text-xs text-gray-600 dark:text-gray-400">小写字母 (a-z)</span>
+                <span class="text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.password-strength-checker.details.lowercase') }} (a-z)</span>
               </div>
               <div class="flex items-center">
                 <div 
@@ -141,7 +141,7 @@
                 >
                   <span v-if="hasNumbers">✓</span>
                 </div>
-                <span class="text-xs text-gray-600 dark:text-gray-400">数字 (0-9)</span>
+                <span class="text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.password-strength-checker.details.numbers') }} (0-9)</span>
               </div>
               <div class="flex items-center">
                 <div 
@@ -150,7 +150,7 @@
                 >
                   <span v-if="hasSymbols">✓</span>
                 </div>
-                <span class="text-xs text-gray-600 dark:text-gray-400">特殊符号 (!@#$%^&*)</span>
+                <span class="text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.password-strength-checker.details.symbols') }} (!@#$%^&*)</span>
               </div>
             </div>
           </div>
@@ -158,7 +158,7 @@
           <!-- 常见问题和漏洞 -->
           <div v-if="issues.length > 0">
             <div class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              检测到的问题
+              {{ $t('tools.password-strength-checker.results.warnings') }}
             </div>
             <ul class="space-y-2">
               <li v-for="(issue, index) in issues" :key="index" class="flex items-start">
@@ -174,7 +174,7 @@
       
       <!-- 改进建议 -->
       <div class="p-6" v-if="password">
-        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">改进建议</h3>
+        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">{{ $t('tools.password-strength-checker.results.suggestions') }}</h3>
         
         <ul class="space-y-3">
           <li v-for="(suggestion, index) in suggestions" :key="index" class="flex items-start">
@@ -193,13 +193,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           <div>
-            <h4 class="text-sm font-medium text-blue-800 dark:text-blue-300 mb-1">密码安全小贴士</h4>
+            <h4 class="text-sm font-medium text-blue-800 dark:text-blue-300 mb-1">{{ $t('tools.password-strength-checker.tips.title') }}</h4>
             <ul class="text-xs text-blue-700 dark:text-blue-400 space-y-1 list-disc pl-4">
-              <li>使用至少12个字符的密码</li>
-              <li>混合使用大写、小写字母、数字和特殊符号</li>
-              <li>避免使用常见单词、短语或个人信息</li>
-              <li>不要在多个网站使用相同的密码</li>
-              <li>考虑使用密码管理器来生成和存储复杂密码</li>
+              <li>{{ $t('tools.password-strength-checker.tips.length') }}</li>
+              <li>{{ $t('tools.password-strength-checker.tips.mix') }}</li>
+              <li>{{ $t('tools.password-strength-checker.tips.avoid') }}</li>
+              <li>{{ $t('tools.password-strength-checker.tips.unique') }}</li>
+              <li>{{ $t('tools.password-strength-checker.tips.manager') }}</li>
             </ul>
           </div>
         </div>
@@ -210,6 +210,9 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t, locale } = useI18n()
 
 // 状态变量
 const password = ref('')
@@ -330,31 +333,31 @@ function collectIssues() {
   const newIssues = []
   
   if (password.value.length < 8) {
-    newIssues.push('密码太短（不足8个字符）')
+    newIssues.push(t('tools.password-strength-checker.issues.tooShort'))
   }
   
   if (!hasUppercase.value) {
-    newIssues.push('没有包含大写字母')
+    newIssues.push(t('tools.password-strength-checker.issues.noUppercase'))
   }
   
   if (!hasLowercase.value) {
-    newIssues.push('没有包含小写字母')
+    newIssues.push(t('tools.password-strength-checker.issues.noLowercase'))
   }
   
   if (!hasNumbers.value) {
-    newIssues.push('没有包含数字')
+    newIssues.push(t('tools.password-strength-checker.issues.noNumbers'))
   }
   
   if (!hasSymbols.value) {
-    newIssues.push('没有包含特殊符号')
+    newIssues.push(t('tools.password-strength-checker.issues.noSymbols'))
   }
   
   if (hasSequence.value) {
-    newIssues.push('包含常见键盘序列（如"qwerty"或"123456"）')
+    newIssues.push(t('tools.password-strength-checker.issues.hasSequence'))
   }
   
   if (hasRepeatedChars.value) {
-    newIssues.push('包含重复的字符（如"aaa"或"111"）')
+    newIssues.push(t('tools.password-strength-checker.issues.hasRepeated'))
   }
   
   const lowerPassword = password.value.toLowerCase()
@@ -363,7 +366,7 @@ function collectIssues() {
   )
   
   if (isCommonPassword) {
-    newIssues.push('使用了常见或易猜测的密码')
+    newIssues.push(t('tools.password-strength-checker.issues.commonPassword'))
   }
   
   issues.value = newIssues
@@ -374,35 +377,35 @@ function generateSuggestions() {
   const newSuggestions = []
   
   if (password.value.length < 12) {
-    newSuggestions.push('增加密码长度至少12个字符，每增加一个字符，破解难度都会成倍增加。')
+    newSuggestions.push(t('tools.password-strength-checker.suggestions.addMoreChars'))
   }
   
   // 如果缺少字符类型
   const missingTypes = []
-  if (!hasUppercase.value) missingTypes.push('大写字母')
-  if (!hasLowercase.value) missingTypes.push('小写字母')
-  if (!hasNumbers.value) missingTypes.push('数字')
-  if (!hasSymbols.value) missingTypes.push('特殊符号')
+  if (!hasUppercase.value) missingTypes.push(t('tools.password-strength-checker.details.uppercase'))
+  if (!hasLowercase.value) missingTypes.push(t('tools.password-strength-checker.details.lowercase'))
+  if (!hasNumbers.value) missingTypes.push(t('tools.password-strength-checker.details.numbers'))
+  if (!hasSymbols.value) missingTypes.push(t('tools.password-strength-checker.details.symbols'))
   
   if (missingTypes.length > 0) {
-    newSuggestions.push(`添加${missingTypes.join('、')}以增加密码复杂度。`)
+    newSuggestions.push(t('tools.password-strength-checker.suggestions.addTypes', { types: missingTypes.join('、') }))
   }
   
   if (hasSequence.value || hasRepeatedChars.value) {
-    newSuggestions.push('避免使用键盘上的连续字符或重复字符。')
+    newSuggestions.push(t('tools.password-strength-checker.suggestions.avoidPatterns'))
   }
   
-  if (issues.value.some(issue => issue.includes('常见'))) {
-    newSuggestions.push('避免使用基于词典的密码或常见密码，哪怕通过替换字母为数字（例如把"e"换成"3"）。')
+  if (issues.value.some(issue => issue.includes(t('tools.password-strength-checker.common.common')))) {
+    newSuggestions.push(t('tools.password-strength-checker.suggestions.avoidCommon'))
   }
   
   // 增加通用的建议
   if (newSuggestions.length < 2) {
-    newSuggestions.push('使用密码管理器来生成和管理强密码，每个网站使用不同的密码。')
+    newSuggestions.push(t('tools.password-strength-checker.suggestions.useManager'))
   }
   
   if (score.value < 5 && newSuggestions.length < 3) {
-    newSuggestions.push('考虑使用连词组合、不相关单词的组合或首字母缩略词来创建记忆性更好的强密码。')
+    newSuggestions.push(t('tools.password-strength-checker.suggestions.usePassphrase'))
   }
   
   suggestions.value = newSuggestions
@@ -410,22 +413,22 @@ function generateSuggestions() {
 
 // 获取得分的标签
 function getScoreLabel(score) {
-  if (score === 0) return '无评分'
-  if (score < 3) return '非常弱'
-  if (score < 5) return '弱'
-  if (score < 7) return '一般'
-  if (score < 9) return '强'
-  return '非常强'
+  if (score === 0) return t('tools.password-strength-checker.score.none')
+  if (score < 3) return t('tools.password-strength-checker.results.very_weak')
+  if (score < 5) return t('tools.password-strength-checker.results.weak')
+  if (score < 7) return t('tools.password-strength-checker.results.fair')
+  if (score < 9) return t('tools.password-strength-checker.results.good')
+  return t('tools.password-strength-checker.results.very_strong')
 }
 
 // 获取得分的描述
 function getScoreDescription(score) {
-  if (score === 0) return '无法评估密码强度'
-  if (score < 3) return '这个密码非常容易被猜测或破解，极其不安全。'
-  if (score < 5) return '这个密码安全性较低，可能会被轻易破解。'
-  if (score < 7) return '这个密码具有一定安全性，但仍有提升空间。'
-  if (score < 9) return '这是一个安全性较高的密码，破解难度较大。'
-  return '这是一个非常安全的密码，几乎不可能被破解。'
+  if (score === 0) return t('tools.password-strength-checker.descriptions.none')
+  if (score < 3) return t('tools.password-strength-checker.descriptions.veryWeak')
+  if (score < 5) return t('tools.password-strength-checker.descriptions.weak')
+  if (score < 7) return t('tools.password-strength-checker.descriptions.fair')
+  if (score < 9) return t('tools.password-strength-checker.descriptions.good')
+  return t('tools.password-strength-checker.descriptions.veryStrong')
 }
 
 // 获取得分的颜色类
@@ -449,11 +452,11 @@ function getScorePercentage(score) {
 function getLengthScore() {
   const length = password.value.length
   
-  if (length === 0) return '无'
-  if (length < 8) return '太短'
-  if (length < 12) return '可接受'
-  if (length < 16) return '良好'
-  return '优秀'
+  if (length === 0) return t('tools.password-strength-checker.length.none')
+  if (length < 8) return t('tools.password-strength-checker.length.tooShort')
+  if (length < 12) return t('tools.password-strength-checker.length.acceptable')
+  if (length < 16) return t('tools.password-strength-checker.length.good')
+  return t('tools.password-strength-checker.length.excellent')
 }
 
 // 获取长度评分的CSS类
@@ -488,11 +491,11 @@ function getLengthScorePercentage() {
 function getLengthMessage() {
   const length = password.value.length
   
-  if (length === 0) return '尚未输入密码'
-  if (length < 8) return '至少需要8个字符'
-  if (length < 12) return '12个或更多字符会更安全'
-  if (length < 16) return '很好！长密码更难被破解'
-  return '优秀的长度！'
+  if (length === 0) return t('tools.password-strength-checker.lengthMessage.none')
+  if (length < 8) return t('tools.password-strength-checker.lengthMessage.needMore', { min: 8 })
+  if (length < 12) return t('tools.password-strength-checker.lengthMessage.better', { min: 12 })
+  if (length < 16) return t('tools.password-strength-checker.lengthMessage.good')
+  return t('tools.password-strength-checker.lengthMessage.excellent')
 }
 
 // 获取复杂度评分
@@ -500,11 +503,11 @@ function getComplexityScore() {
   const types = [hasUppercase.value, hasLowercase.value, hasNumbers.value, hasSymbols.value]
     .filter(Boolean).length
   
-  if (types === 0) return '无'
-  if (types === 1) return '非常低'
-  if (types === 2) return '一般'
-  if (types === 3) return '良好'
-  return '优秀'
+  if (types === 0) return t('tools.password-strength-checker.complexity.none')
+  if (types === 1) return t('tools.password-strength-checker.complexity.veryLow')
+  if (types === 2) return t('tools.password-strength-checker.complexity.fair')
+  if (types === 3) return t('tools.password-strength-checker.complexity.good')
+  return t('tools.password-strength-checker.complexity.excellent')
 }
 
 // 获取复杂度评分的CSS类
@@ -539,8 +542,8 @@ function getComplexityScorePercentage() {
   return (types / 4) * 100
 }
 
-// 监听密码变化
-watch(password, (newValue) => {
+// 监听密码变化和语言变化
+watch([password, locale], () => {
   analyzePassword()
 })
 </script> 

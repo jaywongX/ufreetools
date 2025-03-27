@@ -2,21 +2,21 @@
   <div>
     <!-- 工具配置区域 -->
     <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">URL参数解析器</h2>
+      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.url-params-parser.name') }}</h2>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        解析URL查询字符串并提取参数，支持多种格式的参数分析和转换
+        {{ $t('tools.url-params-parser.description') }}
       </p>
       
       <!-- 输入区域 -->
       <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          输入URL或查询字符串
+          {{ $t('tools.url-params-parser.input.title') }}
         </label>
         <div class="flex">
           <input 
             v-model="inputUrl" 
             @input="parseUrl"
-            placeholder="https://example.com/path?param1=value1&param2=value2 或 param1=value1&param2=value2"
+            :placeholder="$t('tools.url-params-parser.input.urlPlaceholder')"
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           >
         </div>
@@ -25,25 +25,25 @@
             @click="pasteFromClipboard" 
             class="text-xs text-primary hover:text-primary-dark mr-3"
           >
-            从剪贴板粘贴
+            {{ $t('tools.url-params-parser.input.parseFromClipboard') }}
           </button>
           <button 
             @click="loadSampleUrl" 
             class="text-xs text-primary hover:text-primary-dark mr-3"
           >
-            加载示例
+            {{ $t('tools.url-params-parser.input.examples') }}
           </button>
           <button 
             @click="parseCurrentUrl" 
             class="text-xs text-primary hover:text-primary-dark mr-3"
           >
-            使用当前页面URL
+            {{ $t('tools.url-params-parser.input.parse') }}
           </button>
           <button 
             @click="clearInput" 
             class="text-xs text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
           >
-            清空
+            {{ $t('tools.url-params-parser.input.clear') }}
           </button>
         </div>
         <div v-if="error" class="mt-2 text-sm text-red-500">
@@ -54,41 +54,41 @@
       <!-- 选项区域 -->
       <div class="flex flex-wrap gap-4 mb-4">
         <div>
-          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">解析模式</label>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('tools.url-params-parser.settings.detectTypes') }}</label>
           <select 
             v-model="parseMode" 
             @change="parseUrl"
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           >
-            <option value="auto">自动检测</option>
-            <option value="full-url">完整URL</option>
-            <option value="query-only">仅查询字符串</option>
+            <option value="auto">{{ $t('tools.url-params-parser.visualization.auto') }}</option>
+            <option value="full-url">{{ $t('tools.url-params-parser.visualization.fullUrl') }}</option>
+            <option value="query-only">{{ $t('tools.url-params-parser.visualization.queryOnly') }}</option>
           </select>
         </div>
         <div>
-          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">URL解码</label>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('tools.url-params-parser.settings.decodeAutomatically') }}</label>
           <select 
             v-model="decodeMode" 
             @change="parseUrl"
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           >
-            <option value="auto">自动解码</option>
-            <option value="decode-once">解码一次</option>
-            <option value="decode-twice">解码两次</option>
-            <option value="no-decode">不解码</option>
+            <option value="auto">{{ $t('tools.url-params-parser.settings.decodeAuto') }}</option>
+            <option value="decode-once">{{ $t('tools.url-params-parser.settings.decodeOnce') }}</option>
+            <option value="decode-twice">{{ $t('tools.url-params-parser.settings.decodeTwice') }}</option>
+            <option value="no-decode">{{ $t('tools.url-params-parser.settings.noDecode') }}</option>
           </select>
         </div>
         <div>
-          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">排序方式</label>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('tools.url-params-parser.params.sort') }}</label>
           <select 
             v-model="sortMode" 
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           >
-            <option value="default">默认顺序</option>
-            <option value="name-asc">参数名升序</option>
-            <option value="name-desc">参数名降序</option>
-            <option value="value-asc">参数值升序</option>
-            <option value="value-desc">参数值降序</option>
+            <option value="default">{{ $t('tools.url-params-parser.settings.sortDefault') }}</option>
+            <option value="name-asc">{{ $t('tools.url-params-parser.settings.sortNameAsc') }}</option>
+            <option value="name-desc">{{ $t('tools.url-params-parser.settings.sortNameDesc') }}</option>
+            <option value="value-asc">{{ $t('tools.url-params-parser.settings.sortValueAsc') }}</option>
+            <option value="value-desc">{{ $t('tools.url-params-parser.settings.sortValueDesc') }}</option>
           </select>
         </div>
       </div>
@@ -103,28 +103,28 @@
             class="px-6 py-3 text-sm font-medium whitespace-nowrap"
             :class="activeTab === 'table' ? 'border-b-2 border-primary text-primary' : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300'"
           >
-            参数表格
+            {{ $t('tools.url-params-parser.visualization.table') }}
           </button>
           <button 
             @click="activeTab = 'json'"
             class="px-6 py-3 text-sm font-medium whitespace-nowrap"
             :class="activeTab === 'json' ? 'border-b-2 border-primary text-primary' : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300'"
           >
-            JSON格式
+            {{ $t('tools.url-params-parser.visualization.json') }}
           </button>
           <button 
             @click="activeTab = 'url-parts'"
             class="px-6 py-3 text-sm font-medium whitespace-nowrap"
             :class="activeTab === 'url-parts' ? 'border-b-2 border-primary text-primary' : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300'"
           >
-            URL组成部分
+            {{ $t('tools.url-params-parser.results.parsed') }}
           </button>
           <button 
             @click="activeTab = 'export'"
             class="px-6 py-3 text-sm font-medium whitespace-nowrap"
             :class="activeTab === 'export' ? 'border-b-2 border-primary text-primary' : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300'"
           >
-            导出选项
+            {{ $t('tools.url-params-parser.codes.title') }}
           </button>
         </nav>
       </div>
@@ -132,18 +132,18 @@
       <!-- 参数表格视图 -->
       <div v-if="activeTab === 'table'" class="p-4">
         <div class="flex justify-between items-center mb-3">
-          <h3 class="text-md font-medium text-gray-800 dark:text-gray-200">参数列表（{{ sortedParams.length }}个）</h3>
+          <h3 class="text-md font-medium text-gray-800 dark:text-gray-200">{{ $t('tools.url-params-parser.params.title') }}（{{ sortedParams.length }}个）</h3>
           <div class="flex items-center">
             <input 
               v-model="searchFilter" 
-              placeholder="搜索参数..."
+              :placeholder="$t('tools.url-params-parser.params.search')"
               class="mr-2 px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
             >
             <button 
               @click="copyParamsAsText()" 
               class="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded"
             >
-              复制为文本
+              {{ $t('tools.url-params-parser.params.copy') }}
             </button>
           </div>
         </div>
@@ -158,7 +158,7 @@
                   scope="col" 
                   class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer"
                 >
-                  参数名
+                  {{ $t('tools.url-params-parser.params.name') }}
                   <span v-if="sortMode === 'name-asc'">↑</span>
                   <span v-if="sortMode === 'name-desc'">↓</span>
                 </th>
@@ -167,12 +167,12 @@
                   scope="col" 
                   class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer"
                 >
-                  参数值
+                  {{ $t('tools.url-params-parser.params.value') }}
                   <span v-if="sortMode === 'value-asc'">↑</span>
                   <span v-if="sortMode === 'value-desc'">↓</span>
                 </th>
                 <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  操作
+                  {{ $t('tools.url-params-parser.params.actions') }}
                 </th>
               </tr>
             </thead>
@@ -190,7 +190,7 @@
                       @click="toggleJsonView(index)" 
                       class="text-xs text-primary hover:text-primary-dark"
                     >
-                      {{ expandedJsonParams.includes(index) ? '收起JSON' : '查看为JSON' }}
+                      {{ expandedJsonParams.includes(index) ? $t('tools.url-params-parser.visualization.hideJson') : $t('tools.url-params-parser.visualization.viewAsJson') }}
                     </button>
                     <div v-if="expandedJsonParams.includes(index)" class="mt-2 p-2 bg-gray-50 dark:bg-gray-750 rounded border border-gray-200 dark:border-gray-700 font-mono text-xs overflow-auto max-h-60">
                       <pre>{{ formatJson(param.value) }}</pre>
@@ -202,13 +202,13 @@
                     @click="copyToClipboard(`${param.name}=${param.value}`)" 
                     class="text-primary hover:text-primary-dark"
                   >
-                    复制
+                    {{ $t('tools.url-params-parser.params.copy') }}
                   </button>
                 </td>
               </tr>
               <tr v-if="filteredParams.length === 0">
                 <td colspan="3" class="px-6 py-4 text-center text-sm text-gray-500 dark:text-gray-400">
-                  {{ searchFilter ? '没有找到匹配的参数' : '没有参数' }}
+                  {{ searchFilter ? $t('tools.url-params-parser.params.noMatchingParams') : $t('tools.url-params-parser.params.noParams') }}
                 </td>
               </tr>
             </tbody>
@@ -219,12 +219,12 @@
       <!-- JSON格式视图 -->
       <div v-else-if="activeTab === 'json'" class="p-4">
         <div class="flex justify-between items-center mb-3">
-          <h3 class="text-md font-medium text-gray-800 dark:text-gray-200">JSON格式</h3>
+          <h3 class="text-md font-medium text-gray-800 dark:text-gray-200">{{ $t('tools.url-params-parser.visualization.json') }}</h3>
           <button 
             @click="copyJson()" 
             class="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded"
           >
-            复制JSON
+            {{ $t('tools.url-params-parser.codes.copyJson') }}
           </button>
         </div>
         
@@ -235,83 +235,83 @@
       
       <!-- URL组成部分 -->
       <div v-else-if="activeTab === 'url-parts'" class="p-4">
-        <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-3">URL组成部分</h3>
+        <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-3">{{ $t('tools.url-params-parser.results.title') }}</h3>
         
         <div class="space-y-3">
           <div v-if="urlParts.protocol" class="flex flex-col sm:flex-row">
-            <div class="w-full sm:w-32 font-medium text-gray-700 dark:text-gray-300">协议</div>
+            <div class="w-full sm:w-32 font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.url-params-parser.results.protocol') }}</div>
             <div class="flex-1 font-mono text-gray-800 dark:text-gray-200 break-all">
               {{ urlParts.protocol }}
               <button 
                 @click="copyToClipboard(urlParts.protocol)" 
                 class="ml-2 text-xs text-primary hover:text-primary-dark"
               >
-                复制
+                {{ $t('tools.url-params-parser.params.copy') }}
               </button>
             </div>
           </div>
           
           <div v-if="urlParts.host" class="flex flex-col sm:flex-row">
-            <div class="w-full sm:w-32 font-medium text-gray-700 dark:text-gray-300">主机名</div>
+            <div class="w-full sm:w-32 font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.url-params-parser.results.domain') }}</div>
             <div class="flex-1 font-mono text-gray-800 dark:text-gray-200 break-all">
               {{ urlParts.host }}
               <button 
                 @click="copyToClipboard(urlParts.host)" 
                 class="ml-2 text-xs text-primary hover:text-primary-dark"
               >
-                复制
+                {{ $t('tools.url-params-parser.params.copy') }}
               </button>
             </div>
           </div>
           
           <div v-if="urlParts.port" class="flex flex-col sm:flex-row">
-            <div class="w-full sm:w-32 font-medium text-gray-700 dark:text-gray-300">端口</div>
+            <div class="w-full sm:w-32 font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.url-params-parser.results.port') }}</div>
             <div class="flex-1 font-mono text-gray-800 dark:text-gray-200">
               {{ urlParts.port }}
               <button 
                 @click="copyToClipboard(urlParts.port)" 
                 class="ml-2 text-xs text-primary hover:text-primary-dark"
               >
-                复制
+                {{ $t('tools.url-params-parser.params.copy') }}
               </button>
             </div>
           </div>
           
           <div v-if="urlParts.pathname" class="flex flex-col sm:flex-row">
-            <div class="w-full sm:w-32 font-medium text-gray-700 dark:text-gray-300">路径</div>
+            <div class="w-full sm:w-32 font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.url-params-parser.results.path') }}</div>
             <div class="flex-1 font-mono text-gray-800 dark:text-gray-200 break-all">
               {{ urlParts.pathname }}
               <button 
                 @click="copyToClipboard(urlParts.pathname)" 
                 class="ml-2 text-xs text-primary hover:text-primary-dark"
               >
-                复制
+                {{ $t('tools.url-params-parser.params.copy') }}
               </button>
             </div>
           </div>
           
           <div v-if="urlParts.search" class="flex flex-col sm:flex-row">
-            <div class="w-full sm:w-32 font-medium text-gray-700 dark:text-gray-300">查询字符串</div>
+            <div class="w-full sm:w-32 font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.url-params-parser.results.queryString') }}</div>
             <div class="flex-1 font-mono text-gray-800 dark:text-gray-200 break-all">
               {{ urlParts.search }}
               <button 
                 @click="copyToClipboard(urlParts.search)" 
                 class="ml-2 text-xs text-primary hover:text-primary-dark"
               >
-                复制
+                {{ $t('tools.url-params-parser.params.copy') }}
               </button>
             </div>
           </div>
           
           <div v-if="urlParts.hash" class="flex flex-col sm:flex-row">
-            <div class="w-full sm:w-32 font-medium text-gray-700 dark:text-gray-300">锚点</div>
+            <div class="w-full sm:w-32 font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.url-params-parser.results.fragment') }}</div>
             <div class="flex-1 font-mono text-gray-800 dark:text-gray-200 break-all">
               {{ urlParts.hash }}
               <button 
                 @click="copyToClipboard(urlParts.hash)" 
                 class="ml-2 text-xs text-primary hover:text-primary-dark"
               >
-                复制
+                {{ $t('tools.url-params-parser.params.copy') }}
               </button>
             </div>
           </div>
@@ -320,18 +320,18 @@
       
       <!-- 导出选项 -->
       <div v-else-if="activeTab === 'export'" class="p-4">
-        <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-3">导出选项</h3>
+        <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-3">{{ $t('tools.url-params-parser.codes.title') }}</h3>
         
         <div class="space-y-4">
           <!-- 查询字符串 -->
           <div class="p-3 bg-gray-50 dark:bg-gray-750 rounded-md border border-gray-200 dark:border-gray-700">
             <div class="flex justify-between items-center mb-2">
-              <h4 class="font-medium text-gray-700 dark:text-gray-300">查询字符串</h4>
+              <h4 class="font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.url-params-parser.results.queryString') }}</h4>
               <button 
                 @click="copyToClipboard(getExportedQueryString())" 
                 class="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded"
               >
-                复制
+                {{ $t('tools.url-params-parser.params.copy') }}
               </button>
             </div>
             <div class="font-mono text-sm text-gray-600 dark:text-gray-400 break-all bg-white dark:bg-gray-800 p-2 rounded-md border border-gray-200 dark:border-gray-700 max-h-32 overflow-auto">
@@ -342,12 +342,12 @@
           <!-- JavaScript代码 -->
           <div class="p-3 bg-gray-50 dark:bg-gray-750 rounded-md border border-gray-200 dark:border-gray-700">
             <div class="flex justify-between items-center mb-2">
-              <h4 class="font-medium text-gray-700 dark:text-gray-300">JavaScript (URLSearchParams)</h4>
+              <h4 class="font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.url-params-parser.codes.javascript') }}</h4>
               <button 
                 @click="copyToClipboard(getJsCode())" 
                 class="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded"
               >
-                复制
+                {{ $t('tools.url-params-parser.codes.copyCode') }}
               </button>
             </div>
             <div class="font-mono text-sm text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-800 p-2 rounded-md border border-gray-200 dark:border-gray-700 max-h-40 overflow-auto">
@@ -358,12 +358,12 @@
           <!-- PHP代码 -->
           <div class="p-3 bg-gray-50 dark:bg-gray-750 rounded-md border border-gray-200 dark:border-gray-700">
             <div class="flex justify-between items-center mb-2">
-              <h4 class="font-medium text-gray-700 dark:text-gray-300">PHP</h4>
+              <h4 class="font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.url-params-parser.codes.php') }}</h4>
               <button 
                 @click="copyToClipboard(getPhpCode())" 
                 class="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded"
               >
-                复制
+                {{ $t('tools.url-params-parser.codes.copyCode') }}
               </button>
             </div>
             <div class="font-mono text-sm text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-800 p-2 rounded-md border border-gray-200 dark:border-gray-700 max-h-40 overflow-auto">
@@ -374,12 +374,12 @@
           <!-- Python代码 -->
           <div class="p-3 bg-gray-50 dark:bg-gray-750 rounded-md border border-gray-200 dark:border-gray-700">
             <div class="flex justify-between items-center mb-2">
-              <h4 class="font-medium text-gray-700 dark:text-gray-300">Python</h4>
+              <h4 class="font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.url-params-parser.codes.python') }}</h4>
               <button 
                 @click="copyToClipboard(getPythonCode())" 
                 class="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded"
               >
-                复制
+                {{ $t('tools.url-params-parser.codes.copyCode') }}
               </button>
             </div>
             <div class="font-mono text-sm text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-800 p-2 rounded-md border border-gray-200 dark:border-gray-700 max-h-40 overflow-auto">
@@ -393,7 +393,7 @@
     <!-- 空状态 -->
     <div v-else-if="inputUrl && !hasParams" class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 text-center">
       <p class="text-gray-500 dark:text-gray-400">
-        未检测到任何URL参数
+        {{ $t('tools.url-params-parser.params.noParams') }}
       </p>
     </div>
   </div>
@@ -401,6 +401,9 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 状态变量
 const inputUrl = ref('')
@@ -422,7 +425,7 @@ async function pasteFromClipboard() {
     parseUrl()
   } catch (err) {
     console.error('从剪贴板粘贴失败:', err)
-    error.value = '无法从剪贴板读取内容。请确保您已授予剪贴板权限，或手动粘贴内容。'
+    error.value = t('tools.url-params-parser.messages.error', { message: t('tools.url-params-parser.messages.clipboardError') })
   }
 }
 
@@ -519,7 +522,7 @@ function parseUrl() {
         } catch (e) {
           // 不是有效的URL，尝试作为查询字符串处理
           if (!url.includes('=')) {
-            error.value = '无效的URL或查询字符串'
+            error.value = t('tools.url-params-parser.messages.invalidUrl')
             params.value = []
             return
           }
@@ -531,7 +534,7 @@ function parseUrl() {
         queryString = url.startsWith('?') ? url.substring(1) : url
         urlParts.value = {}
       } else {
-        error.value = '无法识别的输入格式'
+        error.value = t('tools.url-params-parser.messages.invalidUrl')
         params.value = []
         return
       }
@@ -548,7 +551,7 @@ function parseUrl() {
         queryString = urlObj.search.replace(/^\?/, '')
         extractUrlParts(urlObj)
       } catch (e) {
-        error.value = '无效的URL'
+        error.value = t('tools.url-params-parser.messages.invalidUrl')
         params.value = []
         return
       }
@@ -579,7 +582,7 @@ function parseUrl() {
     params.value = paramArray
   } catch (err) {
     console.error('解析URL错误:', err)
-    error.value = `解析错误: ${err.message}`
+    error.value = t('tools.url-params-parser.messages.error', { message: err.message })
     params.value = []
   }
 }
@@ -662,11 +665,11 @@ const formattedJson = computed(() => {
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text)
     .then(() => {
-      alert('已复制到剪贴板')
+      alert(t('tools.url-params-parser.messages.copied'))
     })
     .catch(err => {
       console.error('复制失败:', err)
-      alert('复制失败，请手动复制')
+      alert(t('tools.url-params-parser.messages.error', { message: t('tools.url-params-parser.messages.copyFailed') }))
     })
 }
 
@@ -695,15 +698,15 @@ function getJsCode() {
   const paramsString = sortedParams.value
     .map(p => `params.append('${p.name.replace(/'/g, "\\'")}', '${p.value.replace(/'/g, "\\'")}')`).join('\n')
   
-  return `// 创建URLSearchParams对象
+  return `// ${t('tools.url-params-parser.codes.jsComment1')}
 const params = new URLSearchParams()
 ${paramsString}
 
-// 获取查询字符串
+// ${t('tools.url-params-parser.codes.jsComment2')}
 const queryString = params.toString()
 console.log(queryString)
 
-// 添加到URL
+// ${t('tools.url-params-parser.codes.jsComment3')}
 const url = 'https://example.com/path?' + queryString`
 }
 
@@ -714,15 +717,15 @@ function getPhpCode() {
     .join(",\n")
   
   return `<?php
-// 参数数组
+// ${t('tools.url-params-parser.codes.phpComment1')}
 $params = [
 ${paramsArray}
 ];
 
-// 构建查询字符串
+// ${t('tools.url-params-parser.codes.phpComment2')}
 $queryString = http_build_query($params);
 
-// 完整URL
+// ${t('tools.url-params-parser.codes.phpComment3')}
 $url = 'https://example.com/path?' . $queryString;
 echo $url;
 ?>`
@@ -734,18 +737,18 @@ function getPythonCode() {
     .map(p => `    '${p.name.replace(/'/g, "\\'")}': '${p.value.replace(/'/g, "\\'")}'`)
     .join(",\n")
   
-  return `# 使用 urllib.parse
+  return `# ${t('tools.url-params-parser.codes.pythonComment1')}
 import urllib.parse
 
-# 参数字典
+# ${t('tools.url-params-parser.codes.pythonComment2')}
 params = {
 ${paramsDict}
 }
 
-# 构建查询字符串
+# ${t('tools.url-params-parser.codes.pythonComment3')}
 query_string = urllib.parse.urlencode(params)
 
-# 完整URL
+# ${t('tools.url-params-parser.codes.pythonComment4')}
 url = 'https://example.com/path?' + query_string
 print(url)`
 }

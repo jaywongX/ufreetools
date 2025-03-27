@@ -2,9 +2,9 @@
   <div class="flex flex-col h-full">
     <!-- 工具配置区域 -->
     <div class="mb-4 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">API 请求工具</h2>
+      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.api-request-tool.name') }}</h2>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        发送HTTP请求并查看响应，支持GET、POST、PUT、DELETE等方法
+        {{ $t('tools.api-request-tool.description') }}
       </p>
     </div>
     
@@ -41,8 +41,8 @@
             :disabled="!url || isLoading"
             class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <span v-if="isLoading">发送中...</span>
-            <span v-else>发送</span>
+            <span v-if="isLoading">{{ $t('tools.api-request-tool.request.send') }}...</span>
+            <span v-else>{{ $t('tools.api-request-tool.request.send') }}</span>
           </button>
         </div>
         
@@ -66,12 +66,12 @@
           <!-- 查询参数 -->
           <div v-if="activeTab === 'params'">
             <div class="mb-2 flex justify-between items-center">
-              <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">查询参数</h3>
+              <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.api-request-tool.request.parameters') }}</h3>
               <button 
                 @click="addParam" 
                 class="text-xs bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
               >
-                添加参数
+                {{ $t('tools.api-request-tool.request.addParameter') }}
               </button>
             </div>
             
@@ -79,13 +79,13 @@
               <input 
                 v-model="param.key" 
                 type="text" 
-                placeholder="参数名" 
+                :placeholder="$t('tools.api-request-tool.request.paramNamePlaceholder')" 
                 class="flex-1 px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               />
               <input 
                 v-model="param.value" 
                 type="text" 
-                placeholder="参数值" 
+                :placeholder="$t('tools.api-request-tool.request.paramValuePlaceholder')" 
                 class="flex-1 px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               />
               <button 
@@ -97,19 +97,19 @@
             </div>
             
             <div v-if="params.length === 0" class="text-sm text-gray-500 dark:text-gray-400 text-center py-4">
-              没有查询参数
+              {{ $t('tools.api-request-tool.history.empty') }}
             </div>
           </div>
           
           <!-- 请求头 -->
           <div v-if="activeTab === 'headers'">
             <div class="mb-2 flex justify-between items-center">
-              <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">请求头</h3>
+              <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.api-request-tool.request.headers') }}</h3>
               <button 
                 @click="addHeader" 
                 class="text-xs bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
               >
-                添加请求头
+                {{ $t('tools.api-request-tool.request.addHeader') }}
               </button>
             </div>
             
@@ -117,13 +117,13 @@
               <input 
                 v-model="header.key" 
                 type="text" 
-                placeholder="Header名" 
+                :placeholder="$t('tools.api-request-tool.request.headerNamePlaceholder')" 
                 class="flex-1 px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               />
               <input 
                 v-model="header.value" 
                 type="text" 
-                placeholder="Header值" 
+                :placeholder="$t('tools.api-request-tool.request.headerValuePlaceholder')" 
                 class="flex-1 px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               />
               <button 
@@ -135,22 +135,22 @@
             </div>
             
             <div v-if="headers.length === 0" class="text-sm text-gray-500 dark:text-gray-400 text-center py-4">
-              没有请求头
+              {{ $t('tools.api-request-tool.history.empty') }}
             </div>
           </div>
           
           <!-- 请求体 -->
           <div v-if="activeTab === 'body'">
             <div class="mb-2">
-              <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">请求体类型</h3>
+              <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ $t('tools.api-request-tool.request.body') }}</h3>
               <select 
                 v-model="bodyType" 
                 class="w-full px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               >
-                <option value="none">无请求体</option>
-                <option value="json">JSON</option>
-                <option value="form">Form Data</option>
-                <option value="raw">Raw</option>
+                <option value="none">{{ $t('tools.api-request-tool.request.contentTypes.none') }}</option>
+                <option value="json">{{ $t('tools.api-request-tool.request.contentTypes.json') }}</option>
+                <option value="form">{{ $t('tools.api-request-tool.request.contentTypes.form') }}</option>
+                <option value="raw">{{ $t('tools.api-request-tool.request.contentTypes.text') }}</option>
               </select>
             </div>
             
@@ -170,12 +170,12 @@
             <!-- Form Data请求体 -->
             <div v-if="bodyType === 'form'" class="mt-3">
               <div class="mb-2 flex justify-between items-center">
-                <h3 class="text-xs text-gray-700 dark:text-gray-300">表单数据</h3>
+                <h3 class="text-xs text-gray-700 dark:text-gray-300">{{ $t('tools.api-request-tool.request.formData') }}</h3>
                 <button 
                   @click="addFormItem" 
                   class="text-xs bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
                 >
-                  添加表单项
+                  {{ $t('tools.api-request-tool.request.addFormItem') }}
                 </button>
               </div>
               
@@ -183,13 +183,13 @@
                 <input 
                   v-model="item.key" 
                   type="text" 
-                  placeholder="名称" 
+                  :placeholder="$t('tools.api-request-tool.request.paramName')" 
                   class="flex-1 px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                 />
                 <input 
                   v-model="item.value" 
                   type="text" 
-                  placeholder="值" 
+                  :placeholder="$t('tools.api-request-tool.request.paramValue')" 
                   class="flex-1 px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                 />
                 <button 
@@ -201,7 +201,7 @@
               </div>
               
               <div v-if="formItems.length === 0" class="text-sm text-gray-500 dark:text-gray-400 text-center py-4">
-                没有表单数据
+                {{ $t('tools.api-request-tool.history.empty') }}
               </div>
             </div>
             
@@ -210,7 +210,7 @@
               <textarea 
                 v-model="rawBody" 
                 rows="10" 
-                placeholder="输入原始请求体内容" 
+                :placeholder="$t('tools.api-request-tool.request.bodyPlaceholder')" 
                 class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md font-mono text-sm bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               ></textarea>
             </div>
@@ -221,11 +221,11 @@
       <!-- 响应区域 -->
       <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 flex flex-col h-full">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="font-medium text-gray-700 dark:text-gray-300">响应</h3>
+          <h3 class="font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.api-request-tool.response.title') }}</h3>
           
           <div class="flex items-center space-x-4">
             <div v-if="responseStatus" class="flex items-center">
-              <span class="text-xs mr-2 text-gray-600 dark:text-gray-400">状态:</span>
+              <span class="text-xs mr-2 text-gray-600 dark:text-gray-400">{{ $t('tools.api-request-tool.response.status') }}:</span>
               <span 
                 class="px-2 py-1 rounded-full text-xs font-medium"
                 :class="responseStatus >= 200 && responseStatus < 300 
@@ -239,7 +239,7 @@
             </div>
             
             <div v-if="responseTime" class="text-xs text-gray-600 dark:text-gray-400">
-              {{ responseTime }}ms
+              {{ $t('tools.api-request-tool.response.time') }}: {{ responseTime }}ms
             </div>
             
             <button 
@@ -247,7 +247,7 @@
               @click="copyResponse" 
               class="text-xs bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
             >
-              复制
+              {{ $t('tools.api-request-tool.response.copyBody') }}
             </button>
           </div>
         </div>
@@ -259,7 +259,7 @@
           </div>
           
           <div v-else-if="error" class="bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/20 rounded-md p-4 text-red-600 dark:text-red-400">
-            <h4 class="font-medium mb-2">错误</h4>
+            <h4 class="font-medium mb-2">{{ $t('tools.api-request-tool.response.error') }}</h4>
             <p>{{ error }}</p>
           </div>
           
@@ -283,7 +283,7 @@
             <div v-if="activeResponseTab === 'body'" class="h-[calc(100%-2rem)] overflow-auto">
               <pre v-if="formattedResponse" class="text-xs font-mono p-2 bg-gray-50 dark:bg-gray-900 rounded border border-gray-200 dark:border-gray-700 overflow-auto h-full"><code>{{ formattedResponse }}</code></pre>
               <div v-else class="text-sm text-gray-500 dark:text-gray-400 text-center py-4">
-                没有响应体
+                {{ $t('tools.api-request-tool.response.noResponse') }}
               </div>
             </div>
             
@@ -292,8 +292,8 @@
               <table v-if="Object.keys(responseHeaders).length" class="w-full text-xs">
                 <thead class="bg-gray-50 dark:bg-gray-900">
                   <tr>
-                    <th class="py-2 px-4 text-left text-gray-700 dark:text-gray-300 font-medium">名称</th>
-                    <th class="py-2 px-4 text-left text-gray-700 dark:text-gray-300 font-medium">值</th>
+                    <th class="py-2 px-4 text-left text-gray-700 dark:text-gray-300 font-medium">{{ $t('tools.api-request-tool.response.headerName') }}</th>
+                    <th class="py-2 px-4 text-left text-gray-700 dark:text-gray-300 font-medium">{{ $t('tools.api-request-tool.response.headerValue') }}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -304,7 +304,7 @@
                 </tbody>
               </table>
               <div v-else class="text-sm text-gray-500 dark:text-gray-400 text-center py-4">
-                没有响应头
+                {{ $t('tools.api-request-tool.response.noResponse') }}
               </div>
             </div>
           </div>
@@ -314,7 +314,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-2 opacity-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              <p>发送请求以查看响应</p>
+              <p>{{ $t('tools.api-request-tool.response.waiting') }}</p>
             </div>
           </div>
         </div>
@@ -325,6 +325,9 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 请求配置
 const method = ref('GET')
@@ -385,7 +388,7 @@ watch(jsonBody, (newVal) => {
     JSON.parse(newVal)
     jsonError.value = ''
   } catch (e) {
-    jsonError.value = 'JSON格式无效'
+    jsonError.value = $t('tools.api-request-tool.messages.invalidJson')
   }
 })
 
@@ -458,7 +461,7 @@ function buildRequestBody() {
     try {
       return JSON.parse(jsonBody.value)
     } catch (e) {
-      throw new Error('JSON格式无效')
+      throw new Error($t('tools.api-request-tool.messages.invalidJson'))
     }
   }
   
@@ -530,7 +533,7 @@ async function sendRequest() {
           }
         }
       } catch (e) {
-        throw new Error(`请求体错误: ${e.message}`)
+        throw new Error($t('tools.api-request-tool.messages.requestBodyError')`: ${e.message}`)
       }
     }
     

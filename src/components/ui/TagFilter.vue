@@ -1,6 +1,6 @@
 <template>
   <div class="mb-6">
-    <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">按标签筛选</h3>
+    <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tags.filterByTag') }}</h3>
     
     <div class="flex flex-wrap gap-2">
       <button
@@ -18,7 +18,7 @@
         @click="showAllTags = true"
         class="text-xs text-primary dark:text-primary-light hover:underline"
       >
-        显示更多 ({{ allTags.length - popularTagCount }})
+        {{ $t('tags.showMore') }} ({{ allTags.length - popularTagCount }})
       </button>
     </div>
     
@@ -38,19 +38,19 @@
         @click="showAllTags = false"
         class="text-xs text-primary dark:text-primary-light hover:underline"
       >
-        收起
+        {{ $t('tags.collapse') }}
       </button>
     </div>
     
     <!-- 已选标签 -->
     <div v-if="selectedTags.length > 0" class="mt-3">
       <div class="flex justify-between items-center">
-        <span class="text-xs text-gray-600 dark:text-gray-400">已选：{{ selectedTags.length }}</span>
+        <span class="text-xs text-gray-600 dark:text-gray-400">{{ $t('tags.selected') }}: {{ selectedTags.length }}</span>
         <button 
           @click="clearTags"
           class="text-xs text-red-600 dark:text-red-400 hover:underline"
         >
-          清除全部
+          {{ $t('tags.clearAll') }}
         </button>
       </div>
     </div>
@@ -60,6 +60,9 @@
 <script setup>
 import { ref, computed, defineProps, defineEmits, inject } from 'vue'
 import TagBadge from './TagBadge.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const props = defineProps({
   modelValue: {

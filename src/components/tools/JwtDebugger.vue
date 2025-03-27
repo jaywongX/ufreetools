@@ -13,7 +13,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
             </svg>
-            随机Token
+            {{ $t('tools.jwt-debugger.actions.generateRandomToken') }}
           </button>
           <button 
             @click="clearAll" 
@@ -23,7 +23,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
-            清空
+            {{ $t('tools.jwt-debugger.actions.clear') }}
           </button>
         </div>
       </div>
@@ -34,7 +34,7 @@
         <div class="h-[calc(100vh-16rem)] min-h-[28rem] max-h-[40rem] flex flex-col">
           <div class="flex flex-wrap items-center mb-3">
             <div class="mr-4 mb-2 sm:mb-0">
-              <span class="text-sm font-medium text-gray-700 dark:text-gray-300 mr-2">算法:</span>
+              <span class="text-sm font-medium text-gray-700 dark:text-gray-300 mr-2">{{ $t('tools.jwt-debugger.labels.algorithm') }}:</span>
               <div class="inline-flex space-x-3">
                 <label class="inline-flex items-center">
                   <input type="radio" v-model="algorithm" value="HS256" class="form-radio text-primary">
@@ -59,7 +59,7 @@
               <div>
                 <div class="flex justify-between items-center mb-1">
                   <div class="flex items-center">
-                    <span class="text-xs font-medium text-gray-700 dark:text-gray-300 mr-2">密钥</span>
+                    <span class="text-xs font-medium text-gray-700 dark:text-gray-300 mr-2">{{ $t('tools.jwt-debugger.labels.secretKey') }}</span>
                     <button 
                       @click="generateRandomSecretKey" 
                       class="btn-mini bg-indigo-500 hover:bg-indigo-600 text-white"
@@ -68,21 +68,21 @@
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
                       </svg>
-                      生成随机密钥
+                      {{ $t('tools.jwt-debugger.actions.generateRandomKey') }}
                     </button>
                   </div>
                   <button 
                     v-if="secretKey"
                     @click="copyToClipboard(secretKey)" 
                     class="text-xs text-primary hover:text-primary-dark"
-                    title="复制密钥"
+                    :title="$t('tools.jwt-debugger.actions.copy')"
                   >
-                    复制
+                    {{ $t('tools.jwt-debugger.actions.copy') }}
                   </button>
                 </div>
                 <input 
                   v-model="secretKey" 
-                  placeholder="请输入密钥" 
+                  :placeholder="$t('tools.jwt-debugger.placeholders.secretKey')" 
                   type="text"
                   class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-mono text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
                   :disabled="isProcessing"
@@ -94,7 +94,7 @@
               <div>
                 <div class="flex justify-between items-center mb-1">
                   <div class="flex items-center">
-                    <span class="text-xs font-medium text-gray-700 dark:text-gray-300 mr-2">私钥</span>
+                    <span class="text-xs font-medium text-gray-700 dark:text-gray-300 mr-2">{{ $t('tools.jwt-debugger.labels.privateKey') }}</span>
                     <button 
                       @click="generateKeyPair(algorithm)" 
                       class="btn-mini bg-indigo-500 hover:bg-indigo-600 text-white"
@@ -103,21 +103,21 @@
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
                       </svg>
-                      生成{{ algorithm }}密钥对
+                      {{ $t('tools.jwt-debugger.actions.generateKeyPair') }} {{ algorithm }}
                     </button>
                   </div>
                   <button 
                     v-if="privateKey"
                     @click="copyToClipboard(privateKey)" 
                     class="text-xs text-primary hover:text-primary-dark"
-                    title="复制私钥"
+                    :title="$t('tools.jwt-debugger.actions.copy')"
                   >
-                    复制
+                    {{ $t('tools.jwt-debugger.actions.copy') }}
                   </button>
                 </div>
                 <textarea 
                   v-model="privateKey" 
-                  placeholder="请输入或生成私钥" 
+                  :placeholder="$t('tools.jwt-debugger.placeholders.privateKey')" 
                   rows="2"
                   class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-mono text-sm resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   :disabled="isProcessing"
@@ -126,19 +126,19 @@
               
               <div>
                 <div class="flex justify-between items-center mb-1">
-                  <span class="text-xs font-medium text-gray-700 dark:text-gray-300">公钥</span>
+                  <span class="text-xs font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.jwt-debugger.labels.publicKey') }}</span>
                   <button 
                     v-if="publicKey"
                     @click="copyToClipboard(publicKey)" 
                     class="text-xs text-primary hover:text-primary-dark"
-                    title="复制公钥"
+                    :title="$t('tools.jwt-debugger.actions.copy')"
                   >
-                    复制
+                    {{ $t('tools.jwt-debugger.actions.copy') }}
                   </button>
                 </div>
                 <textarea 
                   v-model="publicKey" 
-                  placeholder="请输入或生成公钥" 
+                  :placeholder="$t('tools.jwt-debugger.placeholders.publicKey')" 
                   rows="2"
                   class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-mono text-sm resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   :disabled="isProcessing"
@@ -149,7 +149,7 @@
               <div v-if="algorithm === 'SM2'">
                 <div class="flex justify-between items-center mb-1 cursor-pointer" @click="toggleCertificatePanel">
                   <div class="flex items-center">
-                    <span class="text-xs font-medium text-gray-700 dark:text-gray-300">数字证书 (可选)</span>
+                    <span class="text-xs font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.jwt-debugger.labels.certificate') }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 text-gray-500 dark:text-gray-400 transition-transform duration-200" :class="{'rotate-180': isCertificatePanelOpen}" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                     </svg>
@@ -158,9 +158,9 @@
                     v-if="certificate"
                     @click.stop="clearCertificate" 
                     class="text-xs text-red-500 hover:text-red-700"
-                    title="清除证书"
+                    :title="$t('tools.jwt-debugger.buttons.clearCert')"
                   >
-                    清除
+                    {{ $t('tools.jwt-debugger.buttons.clearCert') }}
                   </button>
                 </div>
                 
@@ -179,7 +179,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                           </svg>
-                          <span class="text-sm text-gray-600 dark:text-gray-400">拖放证书文件或点击选择</span>
+                          <span class="text-sm text-gray-600 dark:text-gray-400">{{ $t('tools.jwt-debugger.labels.uploadCert') }}</span>
                           <input 
                             type="file" 
                             accept=".cer,.crt,.pem,.der" 
@@ -189,49 +189,49 @@
                         </label>
                       </div>
                       <div v-else class="text-sm text-gray-700 dark:text-gray-300 py-2">
-                        <div><span class="font-semibold">证书名称:</span> {{ certificateInfo.name }}</div>
+                        <div><span class="font-semibold">{{ $t('tools.jwt-debugger.labels.certName') }}:</span> {{ certificateInfo.name }}</div>
                         <div class="text-xs text-gray-500 dark:text-gray-400 mt-1 break-all">
-                          <span class="font-semibold">SM3指纹 (x5t#sm3):</span> {{ certificateInfo.sm3Fingerprint }}
+                          <span class="font-semibold">{{ $t('tools.jwt-debugger.labels.sm3Fingerprint') }}:</span> {{ certificateInfo.sm3Fingerprint }}
                         </div>
                       </div>
                     </div>
                     <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                      上传证书后，JWT头部将添加"x5t#sm3"字段
+                      {{ $t('tools.jwt-debugger.labels.certUploadNote') }}
                     </div>
                   </div>
                 </transition>
               </div>
             </template>
-
+            
             <!-- 载荷区域添加复制按钮 -->
             <div>
               <div class="flex justify-between items-center mb-1">
                 <div class="flex items-center">
-                  <span class="text-xs font-medium text-gray-700 dark:text-gray-300 mr-2">载荷 (Payload)</span>
+                  <span class="text-xs font-medium text-gray-700 dark:text-gray-300 mr-2">{{ $t('tools.jwt-debugger.labels.payload') }}</span>
                   <button 
                     @click="generateRandomPayload" 
                     class="btn-mini bg-indigo-500 hover:bg-indigo-600 text-white"
                     :disabled="isProcessing"
-                    title="生成随机Payload"
+                    :title="$t('tools.jwt-debugger.actions.generateRandomPayload')"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                     </svg>
-                    生成随机载荷
+                    {{ $t('tools.jwt-debugger.actions.generateRandomPayload') }}
                   </button>
                 </div>
                 <button 
                   v-if="payload"
                   @click="copyToClipboard(payload)" 
                   class="text-xs text-primary hover:text-primary-dark"
-                  title="复制载荷"
+                  :title="$t('tools.jwt-debugger.actions.copy')"
                 >
-                  复制
+                  {{ $t('tools.jwt-debugger.actions.copy') }}
                 </button>
               </div>
               <textarea 
                 v-model="payload" 
-                placeholder="请输入JSON格式的Payload"
+                :placeholder="$t('tools.jwt-debugger.placeholders.payload')"
                 rows="6"
                 class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-mono text-sm resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 :disabled="isProcessing"
@@ -241,21 +241,21 @@
             <!-- Token输入框 -->
             <div>
               <div class="flex justify-between items-center mb-1">
-                <span class="text-xs font-medium text-gray-700 dark:text-gray-300">Token</span>
+                <span class="text-xs font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.jwt-debugger.labels.token') }}</span>
                 <div class="flex space-x-2">
                   <button 
                     v-if="token"
                     @click="copyToClipboard(token)" 
                     class="text-xs text-primary hover:text-primary-dark"
-                    title="复制Token"
+                    :title="$t('tools.jwt-debugger.actions.copy')"
                   >
-                    复制
+                    {{ $t('tools.jwt-debugger.actions.copy') }}
                   </button>
                 </div>
               </div>
               <textarea 
                 v-model="token" 
-                placeholder="请输入或生成JWT Token"
+                :placeholder="$t('tools.jwt-debugger.placeholders.token')"
                 rows="4"
                 class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-mono text-sm resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 :disabled="isProcessing"
@@ -266,11 +266,11 @@
             <!-- 验证公钥输入框 -->
             <div v-if="token && !publicKey && (detectedAlgorithm === 'RSA' || detectedAlgorithm === 'SM2')">
               <div class="flex justify-between items-center mb-1">
-                <span class="text-xs font-medium text-gray-700 dark:text-gray-300">验证公钥</span>
+                <span class="text-xs font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.jwt-debugger.labels.verificationPublicKey') }}</span>
               </div>
               <textarea 
                 v-model="verificationPublicKey" 
-                placeholder="请输入验证公钥" 
+                :placeholder="$t('tools.jwt-debugger.placeholders.verificationPublicKey')" 
                 rows="2"
                 class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-mono text-sm resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 :disabled="isProcessing"
@@ -288,7 +288,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              生成Token
+              {{ $t('tools.jwt-debugger.buttons.generateToken') }}
             </button>
             <button 
               @click="handleDecodeToken" 
@@ -298,7 +298,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              解析Token
+              {{ $t('tools.jwt-debugger.buttons.decodeToken') }}
             </button>
             <button 
               @click="handleVerifyToken" 
@@ -308,7 +308,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              验证Token
+              {{ $t('tools.jwt-debugger.buttons.verifyToken') }}
             </button>
           </div>
         </div>
@@ -316,7 +316,7 @@
         <!-- 右侧结果区域 -->
         <div class="h-[calc(100vh-16rem)] min-h-[28rem] max-h-[40rem] flex flex-col">
           <div class="flex justify-between items-center mb-1">
-            <span class="text-xs font-medium text-gray-700 dark:text-gray-300">Token解析结果</span>
+            <span class="text-xs font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.jwt-debugger.labels.tokenResult') }}</span>
           </div>
           <div v-if="token && decodedToken" class="bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md p-3 flex-1 overflow-auto">
             <!-- Token可视化 -->
@@ -325,19 +325,19 @@
                 <span 
                   class="text-pink-600 dark:text-pink-400 cursor-pointer" 
                   @click="copyToClipboard(token.split('.')[0])"
-                  title="点击复制Header部分"
+                  :title="$t('tools.jwt-debugger.actions.copy')"
                 >{{ token.split('.')[0] }}</span>
                 <span class="text-gray-500 dark:text-gray-400">.</span>
                 <span 
                   class="text-purple-600 dark:text-purple-400 cursor-pointer" 
                   @click="copyToClipboard(token.split('.')[1])"
-                  title="点击复制Payload部分"
+                  :title="$t('tools.jwt-debugger.actions.copy')"
                 >{{ token.split('.')[1] }}</span>
                 <span class="text-gray-500 dark:text-gray-400">.</span>
                 <span 
                   class="text-blue-600 dark:text-blue-400 cursor-pointer" 
                   @click="copyToClipboard(token.split('.')[2])"
-                  title="点击复制Signature部分"
+                  :title="$t('tools.jwt-debugger.actions.copy')"
                 >{{ token.split('.')[2] }}</span>
               </div>
             </div>
@@ -345,13 +345,13 @@
             <!-- Header -->
             <div class="mb-3">
               <div class="flex items-center justify-between mb-1">
-                <div class="text-xs text-gray-500 dark:text-gray-400">Header</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">{{ $t('tools.jwt-debugger.sections.header') }}</div>
                 <button 
                   @click="copyToClipboard(JSON.stringify(decodedToken.header, null, 2))" 
                   class="btn-link"
-                  title="复制"
+                  :title="$t('tools.jwt-debugger.actions.copy')"
                 >
-                  复制
+                  {{ $t('tools.jwt-debugger.actions.copy') }}
                 </button>
               </div>
               <pre class="bg-white dark:bg-gray-700 p-2 rounded-md font-mono text-sm overflow-x-auto">{{ JSON.stringify(decodedToken.header, null, 2) }}</pre>
@@ -360,25 +360,25 @@
             <!-- Payload -->
             <div>
               <div class="flex items-center justify-between mb-1">
-                <div class="text-xs text-gray-500 dark:text-gray-400">Payload</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">{{ $t('tools.jwt-debugger.sections.payload') }}</div>
                 <button 
                   @click="copyToClipboard(JSON.stringify(decodedToken.payload, null, 2))" 
                   class="btn-link"
-                  title="复制"
+                  :title="$t('tools.jwt-debugger.actions.copy')"
                 >
-                  复制
+                  {{ $t('tools.jwt-debugger.actions.copy') }}
                 </button>
               </div>
               <pre class="bg-white dark:bg-gray-700 p-2 rounded-md font-mono text-sm overflow-x-auto">{{ JSON.stringify(decodedToken.payload, null, 2) }}</pre>
               
               <!-- 时间戳解析 -->
               <div v-if="decodedToken.payload.iat || decodedToken.payload.exp" class="mt-3 p-2 bg-gray-100 dark:bg-gray-700 rounded-md">
-                <div class="text-xs text-gray-500 dark:text-gray-400 mb-1">时间戳解析</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400 mb-1">{{ $t('tools.jwt-debugger.labels.timestamp') }}</div>
                 <div v-if="decodedToken.payload.iat" class="text-sm mb-1">
-                  <span class="font-medium">签发时间 (iat):</span> {{ formatTimestamp(decodedToken.payload.iat) }}
+                  <span class="font-medium">{{ $t('tools.jwt-debugger.labels.issuedAt') }}:</span> {{ formatTimestamp(decodedToken.payload.iat) }}
                 </div>
                 <div v-if="decodedToken.payload.exp" class="text-sm">
-                  <span class="font-medium">过期时间 (exp):</span> {{ formatTimestamp(decodedToken.payload.exp) }}
+                  <span class="font-medium">{{ $t('tools.jwt-debugger.labels.expiration') }}:</span> {{ formatTimestamp(decodedToken.payload.exp) }}
                 </div>
               </div>
             </div>
@@ -389,7 +389,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-2 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
-              <p class="text-sm">输入或生成JWT Token后将在此显示解析结果</p>
+              <p class="text-sm">{{ $t('tools.jwt-debugger.labels.tokenFormatDesc') }}</p>
             </div>
           </div>
         </div>
@@ -424,35 +424,35 @@
     <div v-if="showVerificationDialog" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 max-w-lg w-full mx-4">
         <div class="mb-4">
-          <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">验证Token</h3>
+          <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{ $t('tools.jwt-debugger.labels.verifyToken') }}</h3>
           <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-            检测到Token使用 {{ detectedAlgorithm }} 算法签名
+            {{ $t('tools.jwt-debugger.labels.tokenDecoded', { alg: detectedAlgorithm }) }}
           </p>
         </div>
         
         <template v-if="detectedAlgorithm === 'HS256'">
           <div class="mb-4">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              验证密钥
+              {{ $t('tools.jwt-debugger.labels.secretKey') }}
             </label>
             <input 
               v-model="verificationSecretKey" 
               type="text"
               class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-mono text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
-              placeholder="请输入验证密钥"
+              :placeholder="$t('tools.jwt-debugger.placeholders.verificationSecretKey')"
             />
           </div>
         </template>
         <template v-else>
           <div class="mb-4">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              验证公钥
+              {{ $t('tools.jwt-debugger.labels.publicKey') }}
             </label>
             <textarea 
               v-model="verificationPublicKey" 
               rows="3"
               class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-mono text-sm resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
-              placeholder="请输入验证公钥"
+              :placeholder="$t('tools.jwt-debugger.placeholders.verificationPublicKey')"
             ></textarea>
           </div>
         </template>
@@ -462,13 +462,13 @@
             @click="closeVerificationDialog"
             class="btn-secondary"
           >
-            取消
+            {{ $t('tools.jwt-debugger.buttons.cancel') }}
           </button>
           <button 
             @click="confirmVerification"
             class="btn-primary"
           >
-            验证
+            {{ $t('tools.jwt-debugger.buttons.verify') }}
           </button>
         </div>
       </div>
@@ -479,9 +479,13 @@
 <script setup>
 import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import * as jose from 'jose'
 import * as sm2 from 'sm-crypto/src/sm2'
 import { sm3 } from 'sm-crypto'
+
+// 初始化国际化
+const { t, locale } = useI18n()
 
 // 路由信息
 const route = useRoute()
@@ -541,9 +545,9 @@ const showMessage = (text, type = 'success') => {
 const copyToClipboard = async (text) => {
   try {
     await navigator.clipboard.writeText(text)
-    showMessage('已复制到剪贴板', 'success')
+    showMessage(t('tools.jwt-debugger.messages.copied'), 'success')
   } catch (err) {
-    showMessage('复制失败，请手动复制', 'error')
+    showMessage(t('tools.jwt-debugger.messages.copyFailed'), 'error')
   }
 }
 
@@ -560,7 +564,7 @@ const clearAll = () => {
   decodedToken.value = null
   message.value = ''
   verificationPublicKey.value = ''
-  showMessage('已清空所有内容', 'success')
+  showMessage(t('tools.jwt-debugger.messages.contentCleared'), 'success')
 }
 
 // 生成密钥对
@@ -593,10 +597,10 @@ const generateKeyPair = async (type) => {
       privateKey.value = keyPair.privateKey
       publicKey.value = keyPair.publicKey
     }
-    showMessage('密钥对生成成功', 'success')
+    showMessage(t('tools.jwt-debugger.messages.keyGenerated'), 'success')
   } catch (error) {
     console.error('生成密钥对失败:', error)
-    showMessage('生成密钥对失败', 'error')
+    showMessage(t('tools.jwt-debugger.messages.keyGenerationFailed'), 'error')
   } finally {
     isProcessing.value = false
   }
@@ -633,7 +637,7 @@ const handleCertificateUpload = (event) => {
           derEncoded = Uint8Array.from(atob(base64Content), c => c.charCodeAt(0))
         } catch (error) {
           console.error('PEM格式解析失败:', error)
-          showMessage('证书格式无效', 'error')
+          showMessage(t('tools.jwt-debugger.messages.certFormatInvalid'), 'error')
           clearCertificate()
           return
         }
@@ -680,16 +684,16 @@ const handleCertificateUpload = (event) => {
         sm3Fingerprint: base64Fingerprint
       }
       
-      showMessage('证书上传成功', 'success')
+      showMessage(t('tools.jwt-debugger.messages.certUploadSuccess'), 'success')
     } catch (error) {
       console.error('证书处理失败:', error)
-      showMessage('证书格式无效', 'error')
+      showMessage(t('tools.jwt-debugger.messages.certFormatInvalid'), 'error')
       clearCertificate()
     }
   }
   
   reader.onerror = () => {
-    showMessage('证书读取失败', 'error')
+    showMessage(t('tools.jwt-debugger.messages.certReadFailed'), 'error')
     clearCertificate()
   }
   
@@ -716,7 +720,7 @@ const generateToken = async () => {
     try {
       payloadObj = JSON.parse(payload.value)
     } catch (error) {
-      showMessage('Payload格式错误，请检查JSON格式', 'error')
+      showMessage(t('tools.jwt-debugger.messages.payloadFormatError'), 'error')
       return null
     }
 
@@ -726,7 +730,7 @@ const generateToken = async () => {
     switch (algorithm.value) {
       case 'HS256':
         if (!secretKey.value) {
-          showMessage('请输入密钥', 'warning')
+          showMessage(t('tools.jwt-debugger.messages.pleaseInputKey'), 'warning')
           return null
         }
         generatedToken = await new jose.SignJWT(payloadObj)
@@ -735,7 +739,7 @@ const generateToken = async () => {
         break
       case 'RSA':
         if (!privateKey.value) {
-          showMessage('请先生成RSA密钥对', 'warning')
+          showMessage(t('tools.jwt-debugger.messages.pleaseGenerateKeyPair', { type: 'RSA' }), 'warning')
           return null
         }
         const privateKeyBase64 = privateKey.value
@@ -759,7 +763,7 @@ const generateToken = async () => {
         break
       case 'SM2':
         if (!privateKey.value) {
-          showMessage('请先生成SM2密钥对', 'warning')
+          showMessage(t('tools.jwt-debugger.messages.pleaseGenerateKeyPair', { type: 'SM2' }), 'warning')
           return null
         }
         const encoder = new TextEncoder()
@@ -783,11 +787,11 @@ const generateToken = async () => {
         break
     }
 
-    showMessage('Token生成成功', 'success')
+    showMessage(t('tools.jwt-debugger.messages.tokenGenerated'), 'success')
     return generatedToken
   } catch (error) {
     console.error('生成Token失败:', error)
-    showMessage('生成Token失败', 'error')
+    showMessage(t('tools.jwt-debugger.messages.tokenGenerationFailed'), 'error')
     return null
   } finally {
     isProcessing.value = false
@@ -800,7 +804,7 @@ const handleGenerateToken = async () => {
   if (newToken) {
     token.value = newToken
     decodedToken.value = decodeToken(newToken)
-    showMessage('Token生成并解析成功', 'success')
+    showMessage(t('tools.jwt-debugger.messages.tokenGenerated'), 'success')
   }
 }
 
@@ -830,14 +834,14 @@ const handleGenerateRandomToken = async () => {
   if (newToken) {
     token.value = newToken
     decodedToken.value = decodeToken(newToken)
-    showMessage('随机Token生成并解析成功', 'success')
+    showMessage(t('tools.jwt-debugger.messages.randomTokenGenerated'), 'success')
   }
 }
 
 // 处理验证Token
 const handleVerifyToken = async () => {
   if (!token.value) {
-    showMessage('请输入需要验证的Token', 'warning')
+    showMessage(t('tools.jwt-debugger.messages.pleaseInputToken'), 'warning')
     return
   }
 
@@ -845,7 +849,7 @@ const handleVerifyToken = async () => {
     // 验证token格式
     const parts = token.value.split('.')
     if (parts.length !== 3) {
-      showMessage('无效的Token格式，JWT应该包含三部分并用点号分隔', 'error')
+      showMessage(t('tools.jwt-debugger.messages.tokenFormatError'), 'error')
       return
     }
 
@@ -853,7 +857,7 @@ const handleVerifyToken = async () => {
     try {
       const header = JSON.parse(atob(parts[0].replace(/-/g, '+').replace(/_/g, '/')))
       if (!header.alg) {
-        showMessage('Token头部缺少算法(alg)字段', 'error')
+        showMessage(t('tools.jwt-debugger.messages.tokenHeaderMissingAlg'), 'error')
         return
       }
       
@@ -877,14 +881,14 @@ const handleVerifyToken = async () => {
         }
       }
     } catch (error) {
-      showMessage('Token头部格式无效', 'error')
+      showMessage(t('tools.jwt-debugger.messages.tokenHeaderInvalid'), 'error')
       return
     }
 
     // 显示验证弹窗
     showVerificationDialog.value = true
   } catch (error) {
-    showMessage('Token格式验证失败', 'error')
+    showMessage(t('tools.jwt-debugger.messages.tokenVerificationFailed'), 'error')
   }
 }
 
@@ -907,10 +911,10 @@ const generateRandomSecretKey = () => {
       .map(b => b.toString(16).padStart(2, '0'))
       .join('')
     secretKey.value = randomKey
-    showMessage('随机密钥生成成功', 'success')
+    showMessage(t('tools.jwt-debugger.messages.randomSecretGenerated'), 'success')
   } catch (error) {
     console.error('生成随机密钥失败:', error)
-    showMessage('生成随机密钥失败', 'error')
+    showMessage(t('tools.jwt-debugger.messages.randomSecretGenerationFailed'), 'error')
   }
 }
 
@@ -924,11 +928,11 @@ const closeVerificationDialog = () => {
 // 确认验证
 const confirmVerification = async () => {
   if (detectedAlgorithm.value === 'HS256' && !verificationSecretKey.value) {
-    showMessage('请输入验证密钥', 'warning')
+    showMessage(t('tools.jwt-debugger.messages.pleaseInputVerificationKey'), 'warning')
     return
   }
   if ((detectedAlgorithm.value === 'RSA' || detectedAlgorithm.value === 'SM2') && !verificationPublicKey.value) {
-    showMessage('请输入验证公钥', 'warning')
+    showMessage(t('tools.jwt-debugger.messages.pleaseInputPublicKey'), 'warning')
     return
   }
 
@@ -951,7 +955,7 @@ const decodeToken = (tokenToDecode) => {
   }
 }
 
-// 格式化时间戳为中国时间
+// 格式化时间戳为本地时间
 const formatTimestamp = (timestamp) => {
   try {
     // 检查时间戳是秒级还是毫秒级
@@ -961,11 +965,11 @@ const formatTimestamp = (timestamp) => {
     
     // 检查日期是否有效
     if (isNaN(date.getTime())) {
-      return '无效的时间戳'
+      return t('tools.jwt-debugger.messages.invalidTimestamp')
     }
     
-    // 格式化为中国时间
-    const formattedDate = new Intl.DateTimeFormat('zh-CN', {
+    // 格式化为当前语言环境的时间
+    const formattedDate = new Intl.DateTimeFormat(locale.value === 'zh' ? 'zh-CN' : 'en-US', {
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',
@@ -977,10 +981,14 @@ const formatTimestamp = (timestamp) => {
     }).format(date)
     
     // 添加时间戳信息
-    return `${formattedDate} (${isSeconds ? '秒级时间戳' : '毫秒级时间戳'}: ${timestamp})`
+    const timestampType = isSeconds ? 
+      t('tools.jwt-debugger.labels.secondsTimestamp') : 
+      t('tools.jwt-debugger.labels.millisecondsTimestamp')
+    
+    return `${formattedDate} (${timestampType}: ${timestamp})`
   } catch (error) {
     console.error('格式化时间戳失败:', error)
-    return '无效的时间戳'
+    return t('tools.jwt-debugger.messages.invalidTimestamp')
   }
 }
 
@@ -1009,10 +1017,10 @@ const generateRandomPayload = () => {
       aud: 'ufreetools-client'
     }
     payload.value = JSON.stringify(randomPayload, null, 2)
-    showMessage('已生成随机Payload', 'success')
+    showMessage(t('tools.jwt-debugger.messages.randomPayloadGenerated'), 'success')
   } catch (error) {
     console.error('生成随机Payload失败:', error)
-    showMessage('生成随机Payload失败', 'error')
+    showMessage(t('tools.jwt-debugger.messages.randomPayloadGenerationFailed'), 'error')
   }
 }
 
@@ -1030,17 +1038,17 @@ const verifyToken = async (tokenToVerify) => {
     
     // 检查是否过期
     if (payload.exp && now > payload.exp) {
-      throw new Error(`Token已过期。过期时间：${formatTimestamp(payload.exp)}`)
+      throw new Error(t('tools.jwt-debugger.messages.tokenExpired', { time: formatTimestamp(payload.exp) }))
     }
     
     // 检查是否在生效时间之前
     if (payload.nbf && now < payload.nbf) {
-      throw new Error(`Token尚未生效。生效时间：${formatTimestamp(payload.nbf)}`)
+      throw new Error(t('tools.jwt-debugger.messages.tokenNotEffective', { time: formatTimestamp(payload.nbf) }))
     }
 
     // 检查签发时间是否在未来
     if (payload.iat && now < payload.iat) {
-      throw new Error(`Token签发时间异常，签发时间在未来。签发时间：${formatTimestamp(payload.iat)}`)
+      throw new Error(t('tools.jwt-debugger.messages.tokenIssuedInFuture', { time: formatTimestamp(payload.iat) }))
     }
 
     switch (header.alg) {
@@ -1073,19 +1081,19 @@ const verifyToken = async (tokenToVerify) => {
         const signature = atob(signatureB64.replace(/-/g, '+').replace(/_/g, '/'))
         const result = sm2.doVerifySignature(sm3(message), signature, verificationPublicKey.value, { hash: true })
         if (!result) {
-          throw new Error('无效的签名')
+          throw new Error(t('tools.jwt-debugger.errors.invalidSignature'))
         }
         break
       }
       default:
-        throw new Error('不支持的算法')
+        throw new Error(t('tools.jwt-debugger.messages.algorithmNotSupported'))
     }
 
-    showMessage('Token验证成功', 'success')
+    showMessage(t('tools.jwt-debugger.messages.verificationSuccess'), 'success')
     return true
   } catch (error) {
     console.error('Token验证失败:', error)
-    showMessage(error.message || 'Token验证失败', 'error')
+    showMessage(error.message || t('tools.jwt-debugger.messages.verificationFailed'), 'error')
     return false
   } finally {
     isProcessing.value = false
@@ -1095,20 +1103,20 @@ const verifyToken = async (tokenToVerify) => {
 // 处理解析Token按钮点击
 const handleDecodeToken = () => {
   if (!token.value) {
-    showMessage('请输入需要解析的Token', 'warning')
+    showMessage(t('tools.jwt-debugger.messages.pleaseInputToken'), 'warning')
     return
   }
   
   try {
     decodedToken.value = decodeToken(token.value)
     if (decodedToken.value) {
-      showMessage('Token解析成功', 'success')
+      showMessage(t('tools.jwt-debugger.messages.tokenDecodeSuccess'), 'success')
     } else {
-      showMessage('Token解析失败', 'error')
+      showMessage(t('tools.jwt-debugger.messages.tokenDecodeFailed'), 'error')
     }
   } catch (error) {
     console.error('Token解析失败:', error)
-    showMessage('Token解析失败', 'error')
+    showMessage(t('tools.jwt-debugger.messages.tokenDecodeFailed'), 'error')
   }
 }
 </script>

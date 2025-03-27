@@ -7,14 +7,14 @@
           class="px-4 py-2 rounded-md"
           :class="mode === 'encode' ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
         >
-          编码
+          {{ $t('tools.base64-encoder-decoder.mode.encode') }}
         </button>
         <button 
           @click="mode = 'decode'" 
           class="px-4 py-2 rounded-md"
           :class="mode === 'decode' ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
         >
-          解码
+          {{ $t('tools.base64-encoder-decoder.mode.decode') }}
         </button>
       </div>
 
@@ -27,7 +27,7 @@
           class="px-4 py-2 rounded-md"
           :class="inputType === type.value ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
         >
-          {{ type.label }}
+          {{ $t(`tools.base64-encoder-decoder.input.${type.value}Option`) }}
         </button>
       </div>
 
@@ -39,13 +39,17 @@
             v-model="addImageHeader"
             class="form-checkbox h-4 w-4 text-primary"
           >
-          <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">添加图片 Base64 头 (如: data:image/jpeg;base64,)</span>
+          <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            {{ $t('tools.base64-encoder-decoder.options.addImageHeader') }}
+          </span>
         </label>
       </div>
 
       <!-- 字符集选择 -->
       <div v-if="mode === 'decode'" class="mb-4">
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">字符集</label>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          {{ $t('tools.base64-encoder-decoder.options.encoding') }}
+        </label>
         <select 
           v-model="charset"
           class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
@@ -58,7 +62,7 @@
       <!-- 文件输入 -->
       <div v-if="inputType === 'file'" class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          选择文件
+          {{ $t('tools.base64-encoder-decoder.input.selectFile') }}
         </label>
         <div class="relative">
           <input 
@@ -78,7 +82,9 @@
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                   <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                <span class="text-sm text-gray-600 dark:text-gray-300">处理中...</span>
+                <span class="text-sm text-gray-600 dark:text-gray-300">
+                  {{ $t('tools.base64-encoder-decoder.messages.processing') }}
+                </span>
               </div>
               <div v-if="processProgress > 0" class="w-full max-w-xs bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
                 <div class="bg-primary h-1.5 rounded-full" :style="{ width: processProgress + '%' }"></div>
@@ -91,13 +97,13 @@
       <!-- 文本输入 -->
       <div v-else class="mb-4">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          {{ getInputLabel }}
+          {{ $t('tools.base64-encoder-decoder.input.title') }}
         </label>
         <div class="relative">
           <textarea 
             v-model="input" 
             class="w-full h-40 p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
-            :placeholder="getInputPlaceholder"
+            :placeholder="$t('tools.base64-encoder-decoder.input.placeholder')"
             :disabled="isLoading"
           ></textarea>
           <div 
@@ -110,7 +116,9 @@
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                   <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                <span class="text-sm text-gray-600 dark:text-gray-300">处理中...</span>
+                <span class="text-sm text-gray-600 dark:text-gray-300">
+                  {{ $t('tools.base64-encoder-decoder.messages.processing') }}
+                </span>
               </div>
               <div v-if="processProgress > 0" class="w-full max-w-xs bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
                 <div class="bg-primary h-1.5 rounded-full" :style="{ width: processProgress + '%' }"></div>
@@ -125,20 +133,20 @@
           @click="processData" 
           class="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark"
         >
-          {{ mode === 'encode' ? '编码' : '解码' }}
+          {{ mode === 'encode' ? $t('tools.base64-encoder-decoder.mode.encode') : $t('tools.base64-encoder-decoder.mode.decode') }}
         </button>
         <button 
           @click="clearAll" 
           class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600"
         >
-          清空
+          {{ $t('tools.base64-encoder-decoder.input.clear') }}
         </button>
       </div>
       
       <div>
         <div class="flex justify-between items-center mb-2">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-            {{ mode === 'encode' ? 'Base64编码' : '解码结果' }}
+            {{ $t('tools.base64-encoder-decoder.output.placeholder') }}
           </label>
           <div class="flex space-x-2 items-center">
             <select 
@@ -147,7 +155,7 @@
               class="text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-2 py-1"
             >
               <option v-for="type in fileTypeOptions" :key="type.value" :value="type.value">
-                {{ type.label }}
+                {{ $t(`tools.base64-encoder-decoder.fileTypeLabel.${type.value}`) }}
               </option>
             </select>
             <button 
@@ -162,7 +170,7 @@
               @click="downloadOutput" 
               class="text-sm text-primary hover:text-primary-dark"
             >
-              下载为文件
+              {{ $t('tools.base64-encoder-decoder.output.download') }}
             </button>
           </div>
         </div>
@@ -195,7 +203,7 @@
           </button>
         </div>
         <div v-if="copyStatus" class="text-sm text-green-600 dark:text-green-400 mt-2">
-          已复制到剪贴板！
+          {{ $t('tools.base64-encoder-decoder.messages.copied') }}
         </div>
         <div v-if="error" class="text-sm text-red-600 dark:text-red-400 mt-2">
           {{ error }}
@@ -204,25 +212,25 @@
     </div>
     
     <div class="bg-gray-50 dark:bg-gray-800 rounded-md p-4 text-sm text-gray-700 dark:text-gray-300">
-      <h3 class="font-medium mb-2">关于Base64编解码</h3>
-      <p class="mb-2">Base64是一种基于64个可打印字符来表示二进制数据的表示方法，常用于在处理文本的场合，表示、传输、存储一些二进制数据。</p>
+      <h3 class="font-medium mb-2">{{ $t('tools.base64-encoder-decoder.about.title') }}</h3>
+      <p class="mb-2">{{ $t('tools.base64-encoder-decoder.about.description') }}</p>
       
-      <h4 class="font-medium mb-2">功能说明：</h4>
+      <h4 class="font-medium mb-2">{{ $t('tools.base64-encoder-decoder.features.title') }}</h4>
       <ul class="list-disc pl-5 mb-2">
-        <li>支持文本、Hex、文件三种输入方式</li>
-        <li>支持UTF-8和GBK字符集解码</li>
-        <li>支持图片预览（小于1MB的图片文件）</li>
-        <li>支持多种格式文件下载（默认PDF格式）</li>
-        <li>大文件分块处理，实时显示处理进度</li>
-        <li>自动识别和预览图片类型</li>
+        <li>{{ $t('tools.base64-encoder-decoder.features.multiInput') }}</li>
+        <li>{{ $t('tools.base64-encoder-decoder.features.charsetSupport') }}</li>
+        <li>{{ $t('tools.base64-encoder-decoder.features.imagePreview') }}</li>
+        <li>{{ $t('tools.base64-encoder-decoder.features.fileDownload') }}</li>
+        <li>{{ $t('tools.base64-encoder-decoder.features.chunkProcessing') }}</li>
+        <li>{{ $t('tools.base64-encoder-decoder.features.autoDetect') }}</li>
       </ul>
       <div class="mt-4 p-3 bg-yellow-50 dark:bg-yellow-900 rounded-md">
-        <p class="text-yellow-800 dark:text-yellow-200">注意事项：</p>
+        <p class="text-yellow-800 dark:text-yellow-200">{{ $t('tools.base64-encoder-decoder.notes.title') }}</p>
         <ul class="list-disc pl-5 mt-1 text-yellow-700 dark:text-yellow-300">
-          <li>Base64编码会使数据量增加约33%</li>
-          <li>大文件处理采用分块处理，进度条分两阶段显示</li>
-          <li>10MB以上文件仅支持下载查看，不显示文本内容</li>
-          <li>建议大文件使用文件方式输入，避免在文本框中粘贴</li>
+          <li>{{ $t('tools.base64-encoder-decoder.notes.sizeIncrease') }}</li>
+          <li>{{ $t('tools.base64-encoder-decoder.notes.chunkProcessing') }}</li>
+          <li>{{ $t('tools.base64-encoder-decoder.notes.largeFiles') }}</li>
+          <li>{{ $t('tools.base64-encoder-decoder.notes.fileInput') }}</li>
         </ul>
       </div>
     </div>
@@ -233,6 +241,9 @@
 import { ref, watch, computed } from 'vue'
 import { Buffer } from 'buffer'
 import iconv from 'iconv-lite'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const mode = ref('encode')
 const input = ref('')
@@ -264,22 +275,6 @@ const decodeInputTypes = [
 
 const getInputTypes = computed(() => {
   return mode.value === 'encode' ? inputTypes : decodeInputTypes
-})
-
-const getInputLabel = computed(() => {
-  if (mode.value === 'encode') {
-    return inputType.value === 'hex' ? 'Hex输入' : '输入文本'
-  }
-  return 'Base64编码'
-})
-
-const getInputPlaceholder = computed(() => {
-  if (mode.value === 'encode') {
-    return inputType.value === 'hex' 
-      ? '输入Hex字符串(例如: 48656C6C6F)...'
-      : '输入要编码的文本...'
-  }
-  return '输入要解码的Base64编码...'
 })
 
 // 当输入改变时自动处理
@@ -412,8 +407,8 @@ async function processDataAsync(data) {
             // 处理Hex输入
             const hexString = data.replace(/[^0-9A-Fa-f]/g, '')
             if (hexString.length % 2 !== 0) {
-              throw new Error('无效的Hex字符串')
-            }
+              throw new Error($t('tools.base64-encoder-decoder.messages.invalidHex'))
+          }
             const bytes = Buffer.from(hexString, 'hex')
             resolve(bytes.toString('base64'))
           } else {
@@ -425,7 +420,7 @@ async function processDataAsync(data) {
           // 解码
           // 首先验证是否为有效的Base64
           if (!isValidBase64(data.trim())) {
-            throw new Error('输入的内容不是有效的Base64编码')
+            throw new Error($t('tools.base64-encoder-decoder.messages.invalidBase64'))
           }
           
           const decoded = Buffer.from(data.trim(), 'base64')
@@ -527,7 +522,7 @@ async function processData() {
           const chunk = content.slice(start, end)
           
           if (!isValidBase64(chunk)) {
-            throw new Error('输入的内容不是有效的Base64编码')
+            throw new Error($t('tools.base64-encoder-decoder.messages.invalidBase64'))
           }
           
           processProgress.value = Math.round((i + 1) / totalChunks * 40)
@@ -561,14 +556,12 @@ async function processData() {
         if (decoded.length < 10 * 1024 * 1024) { // 小于10MB才显示
           output.value = iconv.decode(decoded, charset.value)
         } else {
-          output.value = '文件过大，请使用下载功能查看'
+          output.value = $t('tools.base64-encoder-decoder.messages.fileTooLarge')
         }
       }
     }
   } catch (e) {
-    error.value = mode.value === 'encode' 
-      ? '编码失败：' + e.message 
-      : '解码失败：' + e.message
+    error.value = e.message
     output.value = ''
     decodedBinaryData.value = null
   } finally {
@@ -618,7 +611,7 @@ async function handleFileInput(event) {
             const chunk = content.slice(start, end).trim()
             
             if (!isValidBase64(chunk)) {
-              throw new Error('输入的内容不是有效的Base64编码')
+              throw new Error($t('tools.base64-encoder-decoder.messages.invalidBase64'))
             }
             
             const decodedChunk = Buffer.from(chunk, 'base64')
@@ -646,11 +639,11 @@ async function handleFileInput(event) {
           if (decoded.length < 10 * 1024 * 1024) { // 小于10MB的文件才尝试显示文本
             output.value = iconv.decode(decoded, charset.value)
           } else {
-            output.value = '文件过大，请直接下载查看'
+            output.value = $t('tools.base64-encoder-decoder.messages.fileTooLarge')
           }
           
         } catch (e) {
-          error.value = '文件内容不是有效的Base64编码'
+          error.value = $t('tools.base64-encoder-decoder.messages.invalidBase64')
           output.value = ''
           decodedBinaryData.value = null
         } finally {
@@ -659,7 +652,7 @@ async function handleFileInput(event) {
         }
       }
       reader.onerror = () => {
-        error.value = '文件读取失败'
+        error.value = $t('tools.base64-encoder-decoder.messages.readFailed')
         output.value = ''
         decodedBinaryData.value = null
         isLoading.value = false
@@ -668,7 +661,7 @@ async function handleFileInput(event) {
       reader.readAsText(file)
     }
   } catch (e) {
-    error.value = '文件处理失败：' + e.message
+    error.value = e.message
     output.value = ''
     decodedBinaryData.value = null
     processProgress.value = 0
@@ -708,7 +701,7 @@ function downloadOutput() {
       document.body.removeChild(a)
       URL.revokeObjectURL(url)
     } catch (e) {
-      error.value = '文件下载失败：' + e.message
+      error.value = e.message
     }
   }
 }
@@ -725,7 +718,7 @@ function copyToClipboard() {
       }, 2000)
     })
     .catch(() => {
-      error.value = '复制失败，请手动复制'
+      error.value = $t('tools.base64-encoder-decoder.messages.copyFailed')
     })
 }
 
@@ -748,11 +741,11 @@ function clearAll() {
 
 // 文件类型选项
 const fileTypeOptions = [
-  { label: 'PDF文档', value: 'pdf', mime: 'application/pdf', ext: '.pdf' },
-  { label: '文本文件', value: 'txt', mime: 'text/plain', ext: '.txt' },
-  { label: 'JPEG图片', value: 'jpg', mime: 'image/jpeg', ext: '.jpg' },
-  { label: 'PNG图片', value: 'png', mime: 'image/png', ext: '.png' },
-  { label: 'ZIP压缩包', value: 'zip', mime: 'application/zip', ext: '.zip' },
-  { label: '二进制文件', value: 'bin', mime: 'application/octet-stream', ext: '.bin' }
+  { value: 'pdf', mime: 'application/pdf', ext: '.pdf' },
+  { value: 'txt', mime: 'text/plain', ext: '.txt' },
+  { value: 'jpg', mime: 'image/jpeg', ext: '.jpg' },
+  { value: 'png', mime: 'image/png', ext: '.png' },
+  { value: 'zip', mime: 'application/zip', ext: '.zip' },
+  { value: 'bin', mime: 'application/octet-stream', ext: '.bin' }
 ]
 </script> 

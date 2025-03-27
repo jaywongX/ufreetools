@@ -6,7 +6,7 @@
         <!-- 功能选择 -->
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            功能选择
+            {{ $t('tools.rsa-crypto.tabs.title') }}
           </label>
           <div class="flex flex-wrap">
             <button 
@@ -17,21 +17,21 @@
                 'rounded-l-md'
               ]"
             >
-              密钥生成
+              {{ $t('tools.rsa-crypto.tabs.keyGeneration') }}
             </button>
             <button 
               @click="selectedTab = 'encrypt'" 
               class="px-4 py-2 border border-r-0 border-gray-300 dark:border-gray-600"
               :class="selectedTab === 'encrypt' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
             >
-              加密/解密
+              {{ $t('tools.rsa-crypto.tabs.encryptDecrypt') }}
             </button>
             <button 
               @click="selectedTab = 'sign'" 
               class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-r-md"
               :class="selectedTab === 'sign' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
             >
-              签名/验证
+              {{ $t('tools.rsa-crypto.tabs.signVerify') }}
             </button>
           </div>
         </div>
@@ -39,16 +39,16 @@
         <!-- 密钥长度选择 (仅在生成密钥时显示) -->
         <div v-if="selectedTab === 'keygen'">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            密钥长度
+            {{ $t('tools.rsa-crypto.keyGeneration.keyLength') }}
           </label>
           <select 
             v-model="keySize" 
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           >
-            <option :value="512">512位 (不推荐用于安全场景)</option>
-            <option :value="1024">1024位 (基本安全)</option>
-            <option :value="2048">2048位 (推荐)</option>
-            <option :value="4096">4096位 (高安全性)</option>
+            <option :value="512">{{ $t('tools.rsa-crypto.keyGeneration.keySizes.size512') }}</option>
+            <option :value="1024">{{ $t('tools.rsa-crypto.keyGeneration.keySizes.size1024') }}</option>
+            <option :value="2048">{{ $t('tools.rsa-crypto.keyGeneration.keySizes.size2048') }}</option>
+            <option :value="4096">{{ $t('tools.rsa-crypto.keyGeneration.keySizes.size4096') }}</option>
           </select>
         </div>
       </div>
@@ -58,7 +58,7 @@
     <div v-if="selectedTab === 'keygen'" class="space-y-6">
       <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
         <div class="flex justify-between items-center mb-4">
-          <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">RSA密钥对生成</h3>
+          <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">{{ $t('tools.rsa-crypto.keyGeneration.title') }}</h3>
           <button 
             @click="generateKeyPair" 
             :disabled="isGenerating"
@@ -69,9 +69,9 @@
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
-              生成中...
+              {{ $t('tools.rsa-crypto.keyGeneration.generating') }}
             </span>
-            <span v-else>生成密钥对</span>
+            <span v-else>{{ $t('tools.rsa-crypto.keyGeneration.generateButton') }}</span>
           </button>
         </div>
         
@@ -80,13 +80,13 @@
           <div>
             <div class="flex justify-between items-center mb-1">
               <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                公钥 (Public Key)
+                {{ $t('tools.rsa-crypto.keyGeneration.publicKey') }}
               </label>
               <button 
                 @click="copyToClipboard(publicKey)"
                 class="text-xs text-primary hover:text-primary-dark"
               >
-                复制
+                {{ $t('tools.rsa-crypto.keyGeneration.copy') }}
               </button>
             </div>
             <textarea 
@@ -101,13 +101,13 @@
           <div>
             <div class="flex justify-between items-center mb-1">
               <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                私钥 (Private Key)
+                {{ $t('tools.rsa-crypto.keyGeneration.privateKey') }}
               </label>
               <button 
                 @click="copyToClipboard(privateKey)"
                 class="text-xs text-primary hover:text-primary-dark"
               >
-                复制
+                {{ $t('tools.rsa-crypto.keyGeneration.copy') }}
               </button>
             </div>
             <textarea 
@@ -124,32 +124,32 @@
               @click="downloadKey(publicKey, 'public.pem')"
               class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-md border border-gray-300 dark:border-gray-600 text-sm hover:bg-gray-200 dark:hover:bg-gray-600"
             >
-              导出公钥
+              {{ $t('tools.rsa-crypto.keyGeneration.exportPublicKey') }}
             </button>
             <button 
               @click="downloadKey(privateKey, 'private.pem')"
               class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-md border border-gray-300 dark:border-gray-600 text-sm hover:bg-gray-200 dark:hover:bg-gray-600"
             >
-              导出私钥
+              {{ $t('tools.rsa-crypto.keyGeneration.exportPrivateKey') }}
             </button>
           </div>
         </div>
       </div>
       
       <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-3">了解RSA密钥对</h3>
+        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-3">{{ $t('tools.rsa-crypto.keyGeneration.info.title') }}</h3>
         <div class="text-sm text-gray-600 dark:text-gray-400 space-y-2">
-          <p>RSA是一种非对称加密算法，使用一对密钥：</p>
+          <p>{{ $t('tools.rsa-crypto.keyGeneration.info.description') }}</p>
           <ul class="list-disc pl-5 space-y-1">
-            <li><strong>公钥</strong>：可以安全地分享给任何人，用于加密数据或验证签名。</li>
-            <li><strong>私钥</strong>：必须安全保管，不能泄露，用于解密数据或创建签名。</li>
+            <li>{{ $t('tools.rsa-crypto.keyGeneration.info.points.0') }}</li>
+            <li>{{ $t('tools.rsa-crypto.keyGeneration.info.points.1') }}</li>
           </ul>
-          <p>密钥长度决定了安全性级别：</p>
+          <p>{{ $t('tools.rsa-crypto.keyGeneration.info.keyLengthTitle') }}</p>
           <ul class="list-disc pl-5 space-y-1">
-            <li>512位 - 已不再安全，仅用于测试</li>
-            <li>1024位 - 较弱，不推荐用于敏感数据</li>
-            <li>2048位 - 目前推荐使用的标准</li>
-            <li>4096位 - 提供更高安全性，但处理速度较慢</li>
+            <li>{{ $t('tools.rsa-crypto.keyGeneration.info.keyLengthPoints.0') }}</li>
+            <li>{{ $t('tools.rsa-crypto.keyGeneration.info.keyLengthPoints.1') }}</li>
+            <li>{{ $t('tools.rsa-crypto.keyGeneration.info.keyLengthPoints.2') }}</li>
+            <li>{{ $t('tools.rsa-crypto.keyGeneration.info.keyLengthPoints.3') }}</li>
           </ul>
         </div>
       </div>
@@ -157,246 +157,239 @@
     
     <!-- 加密/解密 -->
     <div v-if="selectedTab === 'encrypt'" class="space-y-6">
-      <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-        <div class="mb-4">
-          <div class="flex justify-between items-center mb-1">
-            <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">加密与解密</h3>
-            <div class="flex gap-2">
-              <button 
-                @click="operation = 'encrypt'" 
-                class="px-3 py-1 text-sm rounded-md"
-                :class="operation === 'encrypt' ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
-              >
-                加密模式
-              </button>
-              <button 
-                @click="operation = 'decrypt'" 
-                class="px-3 py-1 text-sm rounded-md"
-                :class="operation === 'decrypt' ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
-              >
-                解密模式
-              </button>
-            </div>
-          </div>
-          <p class="text-sm text-gray-600 dark:text-gray-400">
-            {{ operation === 'encrypt' ? '使用公钥加密数据，只有拥有对应私钥的人才能解密。' : '使用私钥解密之前用公钥加密的数据。' }}
-          </p>
-        </div>
-
-        <!-- 密钥输入 -->
-        <div class="mb-4">
+      <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 space-y-4">
+        <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            {{ operation === 'encrypt' ? '公钥 (Public Key)' : '私钥 (Private Key)' }}
+            {{ $t('tools.rsa-crypto.encryptDecrypt.title') }}
+          </label>
+          <div class="flex">
+            <button 
+              @click="operation = 'encrypt'" 
+              class="px-4 py-2 border border-r-0 border-gray-300 dark:border-gray-600 rounded-l-md"
+              :class="operation === 'encrypt' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
+            >
+              {{ $t('tools.rsa-crypto.encryptDecrypt.encrypt') }}
+            </button>
+            <button 
+              @click="operation = 'decrypt'" 
+              class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-r-md"
+              :class="operation === 'decrypt' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
+            >
+              {{ $t('tools.rsa-crypto.encryptDecrypt.decrypt') }}
+            </button>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            {{ operation === 'encrypt' ? $t('tools.rsa-crypto.encryptDecrypt.keyLabel.encrypt') : $t('tools.rsa-crypto.encryptDecrypt.keyLabel.decrypt') }}
           </label>
           <textarea 
-            :value="operation === 'encrypt' ? encryptPublicKey : decryptPrivateKey" 
-            @input="e => operation === 'encrypt' ? encryptPublicKey = e.target.value : decryptPrivateKey = e.target.value"
+            v-model="cryptoKey" 
             rows="4" 
+            :placeholder="$t('tools.rsa-crypto.encryptDecrypt.keyPlaceholder')"
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
-            placeholder="请粘贴RSA密钥"
           ></textarea>
         </div>
         
-        <!-- 输入数据 -->
-        <div class="mb-4">
+        <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            {{ operation === 'encrypt' ? '要加密的数据' : '要解密的数据' }}
+            {{ operation === 'encrypt' ? $t('tools.rsa-crypto.encryptDecrypt.dataLabel.encrypt') : $t('tools.rsa-crypto.encryptDecrypt.dataLabel.decrypt') }}
           </label>
           <textarea 
             v-model="inputData" 
             rows="5" 
-            class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-            :placeholder="operation === 'encrypt' ? '在此输入要加密的文本' : '在此输入要解密的数据（Base64格式）'"
+            :placeholder="operation === 'encrypt' ? $t('tools.rsa-crypto.encryptDecrypt.dataPlaceholder.encrypt') : $t('tools.rsa-crypto.encryptDecrypt.dataPlaceholder.decrypt')"
+            class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
           ></textarea>
         </div>
         
-        <!-- 处理按钮 -->
-        <div class="mb-4">
+        <div class="flex justify-end">
           <button 
-            @click="processEncryptDecrypt" 
-            :disabled="isProcessing || !canProcess"
-            class="w-full px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50"
+            @click="processData" 
+            :disabled="isProcessing || !inputData || !cryptoKey"
+            class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50"
           >
             <span v-if="isProcessing" class="inline-flex items-center">
               <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
-              处理中...
+              {{ $t('tools.rsa-crypto.encryptDecrypt.processing') }}
             </span>
-            <span v-else>{{ operation === 'encrypt' ? '加密数据' : '解密数据' }}</span>
+            <span v-else>{{ operation === 'encrypt' ? $t('tools.rsa-crypto.encryptDecrypt.encryptButton') : $t('tools.rsa-crypto.encryptDecrypt.decryptButton') }}</span>
           </button>
         </div>
         
-        <!-- 输出结果 -->
-        <div v-if="outputData" class="mt-4">
+        <div v-if="processedData" class="mt-2">
           <div class="flex justify-between items-center mb-1">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              {{ operation === 'encrypt' ? '加密结果' : '解密结果' }}
+              {{ operation === 'encrypt' ? $t('tools.rsa-crypto.encryptDecrypt.resultLabel.encrypt') : $t('tools.rsa-crypto.encryptDecrypt.resultLabel.decrypt') }}
             </label>
             <button 
-              @click="copyToClipboard(outputData)"
+              @click="copyToClipboard(processedData)"
               class="text-xs text-primary hover:text-primary-dark"
             >
-              复制
+              {{ $t('tools.rsa-crypto.keyGeneration.copy') }}
             </button>
           </div>
           <textarea 
-            v-model="outputData" 
+            v-model="processedData" 
             readonly
             rows="5" 
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
           ></textarea>
         </div>
-        
-        <!-- 错误消息 -->
-        <div v-if="error" class="mt-4 p-3 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 text-sm rounded-md border border-red-200 dark:border-red-900">
-          {{ error }}
+      </div>
+      
+      <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
+        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-3">{{ $t('tools.rsa-crypto.encryptDecrypt.info.title') }}</h3>
+        <div class="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+          <p>{{ $t('tools.rsa-crypto.encryptDecrypt.info.description') }}</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>{{ $t('tools.rsa-crypto.encryptDecrypt.info.points.0') }}</li>
+            <li>{{ $t('tools.rsa-crypto.encryptDecrypt.info.points.1') }}</li>
+            <li>{{ $t('tools.rsa-crypto.encryptDecrypt.info.points.2') }}</li>
+            <li>{{ $t('tools.rsa-crypto.encryptDecrypt.info.points.3') }}</li>
+          </ul>
         </div>
       </div>
     </div>
     
     <!-- 签名/验证 -->
     <div v-if="selectedTab === 'sign'" class="space-y-6">
-      <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-        <div class="mb-4">
-          <div class="flex justify-between items-center mb-1">
-            <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">签名与验证</h3>
-            <div class="flex gap-2">
-              <button 
-                @click="signOperation = 'sign'" 
-                class="px-3 py-1 text-sm rounded-md"
-                :class="signOperation === 'sign' ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
-              >
-                签名模式
-              </button>
-              <button 
-                @click="signOperation = 'verify'" 
-                class="px-3 py-1 text-sm rounded-md"
-                :class="signOperation === 'verify' ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
-              >
-                验证模式
-              </button>
-            </div>
-          </div>
-          <p class="text-sm text-gray-600 dark:text-gray-400">
-            {{ signOperation === 'sign' ? '使用私钥对数据进行签名，证明数据来源的真实性和完整性。' : '使用公钥验证签名，确认数据未被篡改且来自预期的发送者。' }}
-          </p>
-        </div>
-
-        <!-- 密钥输入 -->
-        <div class="mb-4">
+      <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 space-y-4">
+        <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            {{ signOperation === 'sign' ? '私钥 (Private Key)' : '公钥 (Public Key)' }}
+            {{ $t('tools.rsa-crypto.signVerify.title') }}
+          </label>
+          <div class="flex">
+            <button 
+              @click="signOperation = 'sign'" 
+              class="px-4 py-2 border border-r-0 border-gray-300 dark:border-gray-600 rounded-l-md"
+              :class="signOperation === 'sign' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
+            >
+              {{ $t('tools.rsa-crypto.signVerify.sign') }}
+            </button>
+            <button 
+              @click="signOperation = 'verify'" 
+              class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-r-md"
+              :class="signOperation === 'verify' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
+            >
+              {{ $t('tools.rsa-crypto.signVerify.verify') }}
+            </button>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            {{ signOperation === 'sign' ? $t('tools.rsa-crypto.signVerify.keyLabel.sign') : $t('tools.rsa-crypto.signVerify.keyLabel.verify') }}
           </label>
           <textarea 
-            :value="signOperation === 'sign' ? signPrivateKey : verifyPublicKey" 
-            @input="e => signOperation === 'sign' ? signPrivateKey = e.target.value : verifyPublicKey = e.target.value"
+            v-model="signKey" 
             rows="4" 
+            :placeholder="$t('tools.rsa-crypto.signVerify.keyPlaceholder')"
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
-            placeholder="请粘贴RSA密钥"
           ></textarea>
         </div>
         
-        <!-- 选择哈希算法 -->
-        <div class="mb-4">
+        <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            哈希算法
-          </label>
-          <select 
-            v-model="hashAlgorithm" 
-            class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-          >
-            <option value="sha1">SHA-1 (不推荐用于安全场景)</option>
-            <option value="sha256">SHA-256 (推荐)</option>
-            <option value="sha512">SHA-512 (高安全性)</option>
-            <option value="md5">MD5 (仅用于测试，不安全)</option>
-          </select>
-        </div>
-        
-        <!-- 输入数据 -->
-        <div class="mb-4">
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            数据
+            {{ $t('tools.rsa-crypto.signVerify.dataLabel', { operation: signOperation === 'sign' ? $t('tools.rsa-crypto.signVerify.sign') : $t('tools.rsa-crypto.signVerify.verify') }) }}
           </label>
           <textarea 
             v-model="signData" 
-            rows="5" 
-            class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-            placeholder="在此输入要签名或验证的数据"
+            rows="4" 
+            :placeholder="$t('tools.rsa-crypto.signVerify.dataPlaceholder')"
+            class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
           ></textarea>
         </div>
         
-        <!-- 签名 -->
-        <div v-if="signOperation === 'verify'" class="mb-4">
+        <div v-if="signOperation === 'verify'">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            签名 (Base64格式)
+            {{ $t('tools.rsa-crypto.signVerify.signatureLabel') }}
           </label>
           <textarea 
             v-model="signature" 
-            rows="3" 
+            rows="4" 
+            :placeholder="$t('tools.rsa-crypto.signVerify.signaturePlaceholder')"
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
-            placeholder="在此输入签名数据"
           ></textarea>
         </div>
         
-        <!-- 处理按钮 -->
-        <div class="mb-4">
+        <div class="flex justify-end">
           <button 
             @click="processSignVerify" 
-            :disabled="isProcessingSign || !canProcessSign"
-            class="w-full px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50"
+            :disabled="isSignProcessing || !signData || !signKey || (signOperation === 'verify' && !signature)"
+            class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50"
           >
-            <span v-if="isProcessingSign" class="inline-flex items-center">
+            <span v-if="isSignProcessing" class="inline-flex items-center">
               <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
-              处理中...
+              {{ $t('tools.rsa-crypto.signVerify.processing') }}
             </span>
-            <span v-else>{{ signOperation === 'sign' ? '生成签名' : '验证签名' }}</span>
+            <span v-else>{{ signOperation === 'sign' ? $t('tools.rsa-crypto.signVerify.signButton') : $t('tools.rsa-crypto.signVerify.verifyButton') }}</span>
           </button>
         </div>
         
-        <!-- 结果输出 (签名结果或验证结果) -->
-        <div v-if="signOperation === 'sign' && generatedSignature" class="mt-4">
+        <!-- 签名结果 -->
+        <div v-if="signOperation === 'sign' && signatureOutput" class="mt-2">
           <div class="flex justify-between items-center mb-1">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              签名结果 (Base64格式)
+              {{ $t('tools.rsa-crypto.signVerify.signatureValue') }}
             </label>
             <button 
-              @click="copyToClipboard(generatedSignature)"
+              @click="copyToClipboard(signatureOutput)"
               class="text-xs text-primary hover:text-primary-dark"
             >
-              复制
+              {{ $t('tools.rsa-crypto.keyGeneration.copy') }}
             </button>
           </div>
           <textarea 
-            v-model="generatedSignature" 
+            v-model="signatureOutput" 
             readonly
-            rows="3" 
+            rows="4" 
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
           ></textarea>
         </div>
         
         <!-- 验证结果 -->
-        <div v-if="signOperation === 'verify' && verificationResult !== null" class="mt-4">
-          <div 
-            class="p-4 rounded-md text-center"
-            :class="verificationResult ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-900' : 'bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-900'"
+        <div v-if="signOperation === 'verify' && verificationResult !== null" class="mt-2">
+          <div class="p-3 rounded-md text-sm"
+            :class="{
+              'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-900': verificationResult,
+              'bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-900': !verificationResult
+            }"
           >
-            <div class="text-lg font-medium mb-1">
-              {{ verificationResult ? '签名验证成功' : '签名验证失败' }}
+            <div class="flex items-center">
+              <svg v-if="verificationResult" class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <svg v-else class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+              </svg>
+              {{ verificationResult ? $t('tools.rsa-crypto.signVerify.verificationResult.success') : $t('tools.rsa-crypto.signVerify.verificationResult.failed') }}
             </div>
-            <p class="text-sm">
-              {{ verificationResult ? '数据未被篡改，且来自预期的发送者。' : '数据可能已被篡改，或签名不是由对应的私钥创建的。' }}
-            </p>
           </div>
         </div>
         
-        <!-- 错误消息 -->
-        <div v-if="signError" class="mt-4 p-3 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 text-sm rounded-md border border-red-200 dark:border-red-900">
+        <div v-if="signError" class="mt-2 p-3 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 text-sm rounded-md border border-red-200 dark:border-red-900">
           {{ signError }}
+        </div>
+      </div>
+      
+      <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
+        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-3">{{ $t('tools.rsa-crypto.signVerify.info.title') }}</h3>
+        <div class="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+          <p>{{ $t('tools.rsa-crypto.signVerify.info.description') }}</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>{{ $t('tools.rsa-crypto.signVerify.info.points.0') }}</li>
+            <li>{{ $t('tools.rsa-crypto.signVerify.info.points.1') }}</li>
+            <li>{{ $t('tools.rsa-crypto.signVerify.info.points.2') }}</li>
+            <li>{{ $t('tools.rsa-crypto.signVerify.info.points.3') }}</li>
+          </ul>
         </div>
       </div>
     </div>

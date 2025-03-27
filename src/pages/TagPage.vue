@@ -2,12 +2,12 @@
   <div>
     <!-- 面包屑导航 -->
     <div class="mb-6 text-sm">
-      <router-link to="/" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
-        首页
+      <router-link :to="localizedRoute('/')" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
+        {{ $t('header.home') }}
       </router-link>
       <span class="mx-2 text-gray-400">/</span>
-      <router-link to="/tags" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
-        标签
+      <router-link :to="localizedRoute('/tags')" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
+        {{ $t('tags.title') }}
       </router-link>
       <span class="mx-2 text-gray-400">/</span>
       <span class="text-gray-700 dark:text-gray-300">{{ tagInfo.name }}</span>
@@ -17,16 +17,16 @@
     <div class="mb-8">
       <div class="flex items-center mb-4">
         <TagBadge :tag-id="tagId" class="mr-2 text-base px-3 py-1" />
-        <h1 class="text-2xl font-bold">{{ tagInfo.name }} 相关工具</h1>
+        <h1 class="text-2xl font-bold">{{ tagInfo.name }} {{ $t('tags.relatedTools') }}</h1>
       </div>
       <p class="text-gray-600 dark:text-gray-300">
-        找到 {{ taggedTools.length }} 个与"{{ tagInfo.name }}"相关的工具
+        {{ $t('tags.foundCount', { count: taggedTools.length, tag: tagInfo.name }) }}
       </p>
     </div>
     
     <!-- 标签页筛选和排序 -->
     <div class="mb-6 flex flex-wrap gap-3">
-      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">组合筛选:</h3>
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tags.combineFilters') }}:</h3>
       <div class="flex flex-wrap gap-2">
         <button
           v-for="tag in relatedTags"
@@ -57,9 +57,13 @@ import { ref, computed, inject } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import TagBadge from '../components/ui/TagBadge.vue'
 import ToolCard from '../components/ui/ToolCard.vue'
+import { useI18n } from 'vue-i18n'
+import { useInternationalizedRoute } from '../composables/useInternationalizedRoute'
 
 const route = useRoute()
 const router = useRouter()
+const { t } = useI18n()
+const { localizedRoute } = useInternationalizedRoute()
 
 // 注入全局数据
 const allTools = inject('allTools')
@@ -130,7 +134,7 @@ function toggleTag(tag) {
 // 导航到其他标签页
 function navigateToTag(tag) {
   if (tag === tagId.value) return
-  router.push(`/tag/${tag}`)
+  router.push(localizedRoute(`/tag/${tag}`))
 }
 </script>
 

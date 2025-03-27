@@ -7,7 +7,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
-          选择图片
+          {{ $t('tools.image-color-extractor.input.selectImage') }}
           <input type="file" accept="image/*" @change="loadImage" class="hidden" />
         </label>
         
@@ -19,7 +19,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          重置
+          {{ $t('tools.image-color-extractor.actions.reset') }}
         </button>
       </div>
       
@@ -32,7 +32,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
           </svg>
-          {{ isProcessing ? '处理中...' : '提取颜色' }}
+          {{ isProcessing ? $t('tools.image-color-extractor.actions.extracting') : $t('tools.image-color-extractor.actions.extract') }}
         </button>
         
         <button 
@@ -43,7 +43,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
           </svg>
-          复制调色板
+          {{ $t('tools.image-color-extractor.actions.copyPalette') }}
         </button>
       </div>
     </div>
@@ -62,12 +62,12 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <!-- 左侧设置面板 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">提取设置</h3>
+          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">{{ $t('tools.image-color-extractor.options.extractSettings') }}</h3>
           
           <!-- 调色板大小设置 -->
           <div class="mb-4">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              调色板大小: {{ settings.paletteSize }}
+              {{ $t('tools.image-color-extractor.options.paletteSize') }}: {{ settings.paletteSize }}
             </label>
             <input
               v-model.number="settings.paletteSize"
@@ -79,14 +79,14 @@
               :disabled="!hasImage || isProcessing"
             />
             <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
-              <span>最少 (3)</span>
-              <span>最多 (20)</span>
+              <span>{{ $t('tools.image-color-extractor.options.paletteMin') }}</span>
+              <span>{{ $t('tools.image-color-extractor.options.paletteMax') }}</span>
             </div>
           </div>
           
           <!-- 颜色格式设置 -->
           <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">颜色格式</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-color-extractor.options.colorFormat') }}</label>
             <div class="grid grid-cols-3 gap-2">
               <button
                 @click="settings.colorFormat = 'hex'"
@@ -130,55 +130,55 @@
                 class="h-4 w-4 text-primary rounded border-gray-300 focus:ring-primary"
                 :disabled="!hasImage || isProcessing"
               >
-              <span class="ml-2">允许相似颜色</span>
+              <span class="ml-2">{{ $t('tools.image-color-extractor.options.similiarityToggle') }}</span>
             </label>
             <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-              如果关闭，会过滤掉看起来相似的颜色以获得更多样化的调色板
+              {{ $t('tools.image-color-extractor.options.colorSimilarity') }}
             </p>
           </div>
           
           <!-- 排序方式 -->
           <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">调色板排序</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-color-extractor.options.sortBy') }}</label>
             <select
               v-model="settings.sortBy"
               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
               :disabled="!hasImage || isProcessing"
             >
-              <option value="popularity">流行度 (数量)</option>
-              <option value="hue">色相</option>
-              <option value="luminance">亮度</option>
-              <option value="saturation">饱和度</option>
+              <option value="popularity">{{ $t('tools.image-color-extractor.options.sortByPopularity') }}</option>
+              <option value="hue">{{ $t('tools.image-color-extractor.options.sortByHue') }}</option>
+              <option value="luminance">{{ $t('tools.image-color-extractor.options.sortByLuminance') }}</option>
+              <option value="saturation">{{ $t('tools.image-color-extractor.options.sortBySaturation') }}</option>
             </select>
           </div>
         </div>
         
         <!-- 中间区域：图片预览 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
-          <h3 class="text-lg font-medium p-4 text-gray-800 dark:text-gray-200 border-b border-gray-200 dark:border-gray-700">原始图片</h3>
+          <h3 class="text-lg font-medium p-4 text-gray-800 dark:text-gray-200 border-b border-gray-200 dark:border-gray-700">{{ $t('tools.image-color-extractor.display.originalImage') }}</h3>
           <div class="p-4 flex justify-center items-center min-h-[300px]">
             <img 
               v-if="imageUrl" 
               :src="imageUrl" 
               class="max-w-full max-h-[400px] object-contain" 
-              alt="原始图片"
+              :alt="$t('tools.image-color-extractor.display.originalImage')"
             />
             <div v-else class="text-center text-gray-500 dark:text-gray-400">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              <p>请选择一张图片</p>
+              <p>{{ $t('tools.image-color-extractor.messages.noImageSelected') }}</p>
             </div>
           </div>
         </div>
         
         <!-- 右侧：颜色提取结果 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
-          <h3 class="text-lg font-medium p-4 text-gray-800 dark:text-gray-200 border-b border-gray-200 dark:border-gray-700">颜色提取结果</h3>
+          <h3 class="text-lg font-medium p-4 text-gray-800 dark:text-gray-200 border-b border-gray-200 dark:border-gray-700">{{ $t('tools.image-color-extractor.results.colorPalette') }}</h3>
           <div class="p-4">
             <!-- 主色 -->
             <div v-if="colors.dominant" class="mb-6">
-              <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">主色调</h4>
+              <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-color-extractor.results.mainColor') }}</h4>
               <div class="flex items-center space-x-2">
                 <div 
                   class="w-12 h-12 rounded-md shadow-sm border border-gray-200 dark:border-gray-700"
@@ -189,7 +189,7 @@
                     {{ formatColor(colors.dominant) }}
                   </div>
                   <div class="text-xs text-gray-500 dark:text-gray-400">
-                    占比: {{ Math.round(colors.dominant.percentage * 100) }}%
+                    {{ $t('tools.image-color-extractor.results.percentage', { value: Math.round(colors.dominant.percentage * 100) }) }}
                   </div>
                 </div>
                 <button 
@@ -205,7 +205,7 @@
             
             <!-- 调色板 -->
             <div v-if="colors.palette.length">
-              <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">色彩调色板</h4>
+              <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-color-extractor.display.colorPalette') }}</h4>
               <div class="grid grid-cols-1 gap-2">
                 <div 
                   v-for="(color, index) in colors.palette" 
@@ -221,7 +221,7 @@
                       {{ formatColor(color) }}
                     </div>
                     <div class="text-xs text-gray-500 dark:text-gray-400">
-                      占比: {{ Math.round(color.percentage * 100) }}%
+                      {{ $t('tools.image-color-extractor.results.percentage', { value: Math.round(color.percentage * 100) }) }}
                     </div>
                   </div>
                   <button 
@@ -241,7 +241,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
               </svg>
-              <p>点击"提取颜色"按钮获取图片的调色板</p>
+              <p>{{ $t('tools.image-color-extractor.display.clickExtract') }}</p>
             </div>
             
             <!-- 没有图片时的提示 -->
@@ -249,7 +249,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              <p>请先上传一张图片</p>
+              <p>{{ $t('tools.image-color-extractor.display.uploadFirst') }}</p>
             </div>
           </div>
         </div>
@@ -257,7 +257,7 @@
       
       <!-- 颜色预览 -->
       <div v-if="colors.palette.length" class="mt-6 bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-        <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">调色板预览</h3>
+        <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">{{ $t('tools.image-color-extractor.results.palettePreview') }}</h3>
         <div class="flex overflow-x-auto pb-2">
           <div 
             v-for="(color, index) in colors.palette" 
@@ -265,7 +265,7 @@
             class="flex-shrink-0 w-16 h-16 rounded-md mr-2 shadow-sm cursor-pointer hover:shadow-md transition-shadow"
             :style="{ backgroundColor: color.hex }"
             @click="copyColor(formatColor(color))"
-            :title="`点击复制颜色: ${formatColor(color)}`"
+            :title="$t('tools.image-color-extractor.results.clickToCopy', { color: formatColor(color) })"
           ></div>
         </div>
       </div>
@@ -275,6 +275,9 @@
 
 <script setup>
 import { ref, reactive, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 图片数据
 const imageUrl = ref(null)
@@ -319,10 +322,10 @@ async function loadImage(event) {
     colors.palette = []
     
     // 提示用户
-    showNotification('图片已加载，点击"提取颜色"按钮获取调色板')
+    showNotification(t('tools.image-color-extractor.messages.imageLoaded'))
   } catch (error) {
-    console.error('加载图片失败:', error)
-    showNotification('加载图片失败')
+    console.error(error)
+    showNotification(t('tools.image-color-extractor.messages.extractionFailed', { error: error.message }))
   }
 }
 
@@ -331,7 +334,7 @@ async function extractColors() {
   if (!imageUrl.value) return
   
   isProcessing.value = true
-  showNotification('正在提取颜色...')
+  showNotification(t('tools.image-color-extractor.messages.processingImage'))
   
   try {
     // 创建Image对象
@@ -451,18 +454,18 @@ async function extractColors() {
       colors.palette = colorArray
       
       isProcessing.value = false
-      showNotification('颜色提取完成')
+      showNotification(t('tools.image-color-extractor.messages.extractionComplete'))
     }
     
     img.onerror = () => {
       isProcessing.value = false
-      showNotification('处理图片时出错')
+      showNotification(t('tools.image-color-extractor.messages.extractionFailed', { error: '处理图片时出错' }))
     }
     
     img.src = imageUrl.value
   } catch (error) {
-    console.error('提取颜色失败:', error)
-    showNotification('提取颜色失败')
+    console.error(error)
+    showNotification(t('tools.image-color-extractor.messages.extractionFailed', { error: error.message }))
     isProcessing.value = false
   }
 }
@@ -545,11 +548,11 @@ function formatColor(color) {
 function copyColor(colorStr) {
   navigator.clipboard.writeText(colorStr)
     .then(() => {
-      showNotification(`已复制: ${colorStr}`)
+      showNotification(t('tools.image-color-extractor.messages.copiedColor', { color: colorStr }))
     })
     .catch(err => {
       console.error('复制失败: ', err)
-      showNotification('复制失败')
+      showNotification(t('tools.image-color-extractor.messages.copyFailed'))
     })
 }
 
@@ -560,11 +563,11 @@ function copyPalette() {
   const colorTexts = colors.palette.map(color => formatColor(color))
   navigator.clipboard.writeText(colorTexts.join('\n'))
     .then(() => {
-      showNotification('已复制所有颜色')
+      showNotification(t('tools.image-color-extractor.messages.copiedAll'))
     })
     .catch(err => {
-      console.error('复制失败: ', err)
-      showNotification('复制失败')
+      console.error(err)
+      showNotification(t('tools.image-color-extractor.messages.copyFailed'))
     })
 }
 
@@ -581,7 +584,7 @@ function resetExtractor() {
   settings.allowSimilar = false
   settings.sortBy = 'popularity'
   
-  showNotification('已重置')
+  showNotification(t('tools.image-color-extractor.messages.resetDone'))
 }
 
 // 显示通知

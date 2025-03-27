@@ -11,20 +11,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
           </svg>
-          生成二维码
+          {{ $t('tools.qr-code-generator.actions.generate') }}
         </button>
-        <button 
-          @click="downloadQRCode" 
-          class="btn-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200"
-          :disabled="!qrCodeGenerated || isProcessing"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-          </svg>
-          下载
-        </button>
-      </div>
-      <div class="flex space-x-2">
         <button 
           @click="resetForm" 
           class="btn-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200"
@@ -33,7 +21,19 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          重置
+          {{ $t('tools.qr-code-generator.actions.clear') }}
+        </button>
+      </div>
+      <div class="flex space-x-2">
+        <button 
+          @click="downloadQRCode" 
+          class="btn-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200"
+          :disabled="!qrCodeGenerated || isProcessing"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          {{ $t('tools.qr-code-generator.actions.download') }}
         </button>
       </div>
     </div>
@@ -57,25 +57,25 @@
         <!-- 内容输入 -->
         <div class="space-y-2">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-            二维码内容
+            {{ $t('tools.qr-code-generator.options.content') }}
           </label>
           <textarea
             v-model="qrContent"
             rows="4"
             class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
-            placeholder="输入文本、链接或其他内容..."
+            :placeholder="$t('tools.qr-code-generator.placeholders.content')"
             :disabled="isProcessing"
           ></textarea>
           <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400">
-            <span>{{ qrContent.length }} 个字符</span>
-            <span>建议不超过300字符</span>
+            <span>{{ qrContent.length }} {{ $t('tools.qr-code-generator.characters') }}</span>
+            <span>{{ $t('tools.qr-code-generator.maxChars') }}</span>
           </div>
         </div>
         
         <!-- 常用类型 -->
         <div class="space-y-2">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-            快速模板
+            {{ $t('tools.qr-code-generator.templates.title') }}
           </label>
           <div class="grid grid-cols-2 gap-2">
             <button 
@@ -91,20 +91,39 @@
               }"
               :disabled="isProcessing"
             >
-              <div class="font-medium">{{ template.label }}</div>
+              <div class="font-medium">{{ $t(`tools.qr-code-generator.templates.${template.id}.name`) }}</div>
               <div class="text-gray-500 dark:text-gray-400 truncate">{{ template.example }}</div>
             </button>
+          </div>
+          
+          <!-- 模板确认提示 -->
+          <div v-if="showTemplateConfirm" class="mt-2 p-3 bg-yellow-50 dark:bg-yellow-900 dark:bg-opacity-20 rounded-md">
+            <p class="text-sm text-yellow-800 dark:text-yellow-200">{{ $t('tools.qr-code-generator.templates.confirmReplace') }}</p>
+            <div class="mt-2 flex space-x-2">
+              <button 
+                @click="confirmUseTemplate"
+                class="px-3 py-1 text-xs bg-yellow-500 hover:bg-yellow-600 text-white rounded"
+              >
+                {{ $t('tools.qr-code-generator.templates.confirm') }}
+              </button>
+              <button 
+                @click="cancelUseTemplate"
+                class="px-3 py-1 text-xs bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded"
+              >
+                {{ $t('tools.qr-code-generator.templates.cancel') }}
+              </button>
+            </div>
           </div>
         </div>
         
         <!-- 外观设置 -->
         <div class="space-y-4">
-          <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">外观设置</h3>
+          <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.qr-code-generator.appearance.title') }}</h3>
           
           <!-- 错误校正级别 -->
           <div class="space-y-2">
             <label class="block text-xs text-gray-600 dark:text-gray-400">
-              错误校正级别
+              {{ $t('tools.qr-code-generator.options.errorCorrectionLevel') }}
             </label>
             <div class="flex space-x-2">
               <button 
@@ -117,7 +136,7 @@
                   'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300': errorCorrectionLevel !== level
                 }"
                 :disabled="isProcessing"
-                :title="getErrorCorrectionTitle(level)"
+                :title="$t(`tools.qr-code-generator.errorLevels.${level}`)"
               >
                 {{ level }}
               </button>
@@ -128,7 +147,7 @@
           <div class="space-y-2">
             <div class="flex items-center justify-between">
               <label class="block text-xs text-gray-600 dark:text-gray-400">
-                尺寸
+                {{ $t('tools.qr-code-generator.options.size') }}
               </label>
               <span class="text-xs text-gray-600 dark:text-gray-400">{{ qrSize }}px</span>
             </div>
@@ -147,7 +166,7 @@
           <div class="grid grid-cols-2 gap-4">
             <div class="space-y-2">
               <label class="block text-xs text-gray-600 dark:text-gray-400">
-                前景色
+                {{ $t('tools.qr-code-generator.options.foregroundColor') }}
               </label>
               <div class="flex">
                 <input
@@ -166,7 +185,7 @@
             </div>
             <div class="space-y-2">
               <label class="block text-xs text-gray-600 dark:text-gray-400">
-                背景色
+                {{ $t('tools.qr-code-generator.options.backgroundColor') }}
               </label>
               <div class="flex">
                 <input
@@ -189,7 +208,7 @@
           <div class="space-y-2">
             <div class="flex items-center justify-between">
               <label class="block text-xs text-gray-600 dark:text-gray-400">
-                圆角
+                {{ $t('tools.qr-code-generator.options.cornerRadius') }}
               </label>
               <span class="text-xs text-gray-600 dark:text-gray-400">{{ Math.round(cornerRadius * 100) }}%</span>
             </div>
@@ -208,33 +227,35 @@
       
       <!-- 右侧：QR码预览区域 -->
       <div class="space-y-4">
-        <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">预览</h3>
+        <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.qr-code-generator.preview.title') }}</h3>
         
         <!-- QR码显示 -->
         <div 
           class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-900 rounded-lg"
           style="min-height: 350px;"
         >
+          <div ref="qrCodeContainer" class="inline-block">
+            <canvas 
+              ref="qrCanvas" 
+              :width="qrSize" 
+              :height="qrSize"
+              class="mx-auto cursor-pointer"
+              :style="{ display: qrCodeGenerated ? 'block' : 'none' }"
+              @click="downloadQRCode"
+              :title="qrCodeGenerated ? $t('tools.qr-code-generator.preview.clickToDownload') : ''"
+            ></canvas>
+          </div>
+          
           <div v-if="isProcessing" class="text-center">
             <svg class="animate-spin h-8 w-8 text-primary mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">生成中...</p>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{{ $t('tools.qr-code-generator.preview.generating') }}</p>
           </div>
-          <div v-else-if="qrCodeGenerated" class="text-center">
-            <div ref="qrCodeContainer" class="inline-block">
-              <canvas 
-                ref="qrCanvas" 
-                :width="qrSize" 
-                :height="qrSize"
-                class="mx-auto"
-              ></canvas>
-            </div>
-          </div>
-          <div v-else class="text-center">
+          <div v-if="!isProcessing && !qrCodeGenerated" class="text-center">
             <div class="h-40 w-40 border-2 border-dashed border-gray-300 dark:border-gray-700 flex items-center justify-center rounded-lg mx-auto">
-              <p class="text-sm text-gray-500 dark:text-gray-400">点击"生成二维码"按钮</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">{{ $t('tools.qr-code-generator.preview.clickGenerateButton') }}</p>
             </div>
           </div>
         </div>
@@ -242,11 +263,11 @@
         <!-- 说明文字 -->
         <div class="text-xs text-gray-500 dark:text-gray-400">
           <p class="mb-2">
-            <span class="font-medium">提示：</span>
-            生成的二维码可以保存为图片，用于打印或分享。
+            <span class="font-medium">{{ $t('tools.qr-code-generator.tips.title') }}：</span>
+            {{ $t('tools.qr-code-generator.tips.saveToPrint') }}
           </p>
           <p>
-            错误校正级别表示二维码被部分遮挡或损坏时的可读性。L级别容错率最低，H级别最高但会使二维码更复杂。
+            {{ $t('tools.qr-code-generator.tips.errorCorrection') }}
           </p>
         </div>
       </div>
@@ -255,8 +276,11 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, watch } from 'vue'
+import { ref, reactive, onMounted, watch, nextTick } from 'vue'
 import QRCode from 'qrcode'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 二维码内容
 const qrContent = ref('')
@@ -277,41 +301,49 @@ const qrCodeContainer = ref(null)
 // 状态消息
 const message = ref('')
 const messageType = ref('info')
+const showTemplateConfirm = ref(false)
+const pendingTemplate = ref(null)
 
 // QR码模板
 const qrTemplates = [
   { 
-    label: '网址链接', 
+    id: 'url',
+    label: t('tools.qr-code-generator.templates.url.name'),
     prefix: 'https://', 
     example: 'https://example.com',
     template: 'https://'
   },
   { 
-    label: '邮箱地址', 
+    id: 'email',
+    label: t('tools.qr-code-generator.templates.email.name'),
     prefix: 'mailto:', 
     example: 'mailto:example@example.com',
     template: 'mailto:'
   },
   { 
-    label: '电话号码', 
+    id: 'phone',
+    label: t('tools.qr-code-generator.templates.phone.name'),
     prefix: 'tel:', 
     example: 'tel:+86-123-4567-8901',
     template: 'tel:+86-'
   },
   { 
-    label: '短信', 
+    id: 'sms',
+    label: t('tools.qr-code-generator.templates.sms.name'),
     prefix: 'sms:', 
     example: 'sms:+86123456789',
     template: 'sms:+86'
   },
   { 
-    label: 'Wi-Fi配置', 
+    id: 'wifi',
+    label: t('tools.qr-code-generator.templates.wifi.name'),
     prefix: 'WIFI:', 
-    example: 'WIFI:T:WPA;S:网络名;P:密码;;',
+    example: `WIFI:T:WPA;S:${t('tools.qr-code-generator.templates.wifi.example.ssid')};P:${t('tools.qr-code-generator.templates.wifi.example.password')};;`,
     template: 'WIFI:T:WPA;S:;P:;;'
   },
   { 
-    label: '地理位置', 
+    id: 'geo',
+    label: t('tools.qr-code-generator.templates.geo.name'),
     prefix: 'geo:', 
     example: 'geo:40.7128,-74.0060',
     template: 'geo:'
@@ -320,26 +352,41 @@ const qrTemplates = [
 
 // 使用模板
 function useTemplate(template) {
-  if (qrContent.value.trim() === '' || confirm('这将替换当前内容，是否继续？')) {
+  if (qrContent.value.trim() === '') {
     qrContent.value = template.template
+  } else {
+    pendingTemplate.value = template
+    showTemplateConfirm.value = true
+    showMessage(t('tools.qr-code-generator.messages.confirmReplace'), 'info')
   }
+}
+
+// 确认使用模板
+function confirmUseTemplate() {
+  if (pendingTemplate.value) {
+    qrContent.value = pendingTemplate.value.template
+    pendingTemplate.value = null
+    showTemplateConfirm.value = false
+    showMessage(t('tools.qr-code-generator.messages.contentUpdated'), 'success')
+  }
+}
+
+// 取消使用模板
+function cancelUseTemplate() {
+  pendingTemplate.value = null
+  showTemplateConfirm.value = false
+  showMessage(t('tools.qr-code-generator.messages.changesCancelled'), 'info')
 }
 
 // 根据错误校正级别获取描述
 function getErrorCorrectionTitle(level) {
-  switch(level) {
-    case 'L': return '低 (7%)'
-    case 'M': return '中 (15%)'
-    case 'Q': return '高 (25%)'
-    case 'H': return '最高 (30%)'
-    default: return ''
-  }
+  return t(`tools.qr-code-generator.errorLevels.${level}`)
 }
 
 // 生成二维码
 function generateQRCode() {
   if (qrContent.value.trim() === '') {
-    showMessage('请输入二维码内容', 'error')
+    showMessage(t('tools.qr-code-generator.messages.contentRequired'), 'error')
     return
   }
   
@@ -349,7 +396,7 @@ function generateQRCode() {
   
   // 确保canvas元素存在且已挂载
   if (!qrCanvas.value) {
-    console.error('Canvas元素尚未准备好')
+    console.error(t('tools.qr-code-generator.errors.canvasNotReady'))
     isProcessing.value = false
     return
   }
@@ -371,17 +418,17 @@ function generateQRCode() {
   try {
     QRCode.toCanvas(canvas, qrContent.value, options, (error) => {
       if (error) {
-        console.error('生成二维码出错:', error)
-        showMessage('生成二维码时出错: ' + error.message, 'error')
+        console.error(t('tools.qr-code-generator.errors.generationError'), error)
+        showMessage(t('tools.qr-code-generator.errors.generationErrorWithMessage', { message: error.message }), 'error')
       } else {
         qrCodeGenerated.value = true
-        showMessage('二维码生成成功', 'success')
+        showMessage(t('tools.qr-code-generator.messages.generated'), 'success')
       }
       isProcessing.value = false
     })
   } catch (err) {
-    console.error('二维码生成过程中发生错误:', err)
-    showMessage('生成二维码时出错: ' + err.message, 'error')
+    console.error(t('tools.qr-code-generator.errors.generationError'), err)
+    showMessage(t('tools.qr-code-generator.errors.generationErrorWithMessage', { message: err.message }), 'error')
     isProcessing.value = false
   }
 }
@@ -403,9 +450,9 @@ function downloadQRCode() {
     link.click()
     document.body.removeChild(link)
     
-    showMessage('二维码已下载', 'success')
+    showMessage(t('tools.qr-code-generator.messages.downloaded'), 'success')
   } catch (error) {
-    showMessage('下载二维码时出错: ' + error.message, 'error')
+    showMessage(t('tools.qr-code-generator.errors.downloadError', { message: error.message }), 'error')
   }
 }
 
@@ -434,21 +481,23 @@ function showMessage(msg, type = 'info') {
   }, 3000)
 }
 
+// 监听相关属性变化，自动更新二维码
+watch([qrContent, errorCorrectionLevel, qrSize, foregroundColor, backgroundColor], () => {
+  if (qrContent.value.trim() && qrCanvas.value && qrCodeContainer.value) {
+    generateQRCode()
+  }
+})
+
 // 确保组件完全挂载后再尝试访问canvas
 onMounted(() => {
   // 只在有内容时才自动生成
   if (qrContent.value.trim()) {
-    // 组件挂载后延迟一点时间再生成二维码，确保DOM已完全渲染
-    setTimeout(() => {
-      generateQRCode()
-    }, 100)
-  }
-})
-
-// 监听相关属性变化，自动更新二维码
-watch([qrContent, errorCorrectionLevel, qrSize, foregroundColor, backgroundColor], () => {
-  if (qrContent.value.trim() && qrCanvas.value) {
-    generateQRCode()
+    // 使用 nextTick 确保 DOM 已完全更新
+    nextTick(() => {
+      if (qrCanvas.value && qrCodeContainer.value) {
+        generateQRCode()
+      }
+    })
   }
 })
 </script>

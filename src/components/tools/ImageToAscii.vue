@@ -7,7 +7,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
-          选择图片
+          {{ $t('tools.image-to-ascii.actions.selectImage') }}
           <input type="file" accept="image/*" @change="loadImage" class="hidden" />
         </label>
         
@@ -19,7 +19,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          重置
+          {{ $t('tools.image-to-ascii.actions.reset') }}
         </button>
       </div>
       
@@ -32,7 +32,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
-          {{ isProcessing ? '处理中...' : '生成ASCII' }}
+          {{ isProcessing ? $t('tools.image-to-ascii.actions.processing') : $t('tools.image-to-ascii.actions.generate') }}
         </button>
         
         <button 
@@ -43,7 +43,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
           </svg>
-          复制
+          {{ $t('tools.image-to-ascii.actions.copy') }}
         </button>
         
         <button 
@@ -54,7 +54,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
           </svg>
-          下载
+          {{ $t('tools.image-to-ascii.actions.download') }}
         </button>
       </div>
     </div>
@@ -73,38 +73,38 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <!-- 左侧控制面板 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">ASCII设置</h3>
+          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">{{ $t('tools.image-to-ascii.settings.title') }}</h3>
           
           <!-- 字符集选择 -->
           <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">字符集</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-to-ascii.options.charSet') }}</label>
             <select
               v-model="settings.charset"
               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
               :disabled="!hasImage"
             >
-              <option value="standard">标准 (@#W$9876543210?!abc+;:=-,._ )</option>
-              <option value="simple">简单 (@%#*+=-:. )</option>
-              <option value="blocks">方块 (█▓▒░ )</option>
-              <option value="custom">自定义</option>
+              <option value="standard">{{ $t('tools.image-to-ascii.charSets.standard') }}</option>
+              <option value="simple">{{ $t('tools.image-to-ascii.charSets.simple') }}</option>
+              <option value="blocks">{{ $t('tools.image-to-ascii.charSets.blocks') }}</option>
+              <option value="custom">{{ $t('tools.image-to-ascii.charSets.custom') }}</option>
             </select>
           </div>
           
           <!-- 自定义字符集 -->
           <div v-if="settings.charset === 'custom'" class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">自定义字符集（从暗到亮）</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-to-ascii.settings.customCharsetLabel') }}</label>
             <input
               v-model="settings.customCharset"
               type="text"
               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-              placeholder="输入字符，从暗到亮排序..."
+              :placeholder="$t('tools.image-to-ascii.messages.customCharsPlaceholder')"
             />
           </div>
           
           <!-- 宽度设置 -->
           <div class="mb-4">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              ASCII宽度: {{ settings.width }}
+              {{ $t('tools.image-to-ascii.settings.asciiWidth') }}: {{ settings.width }}
             </label>
             <input
               v-model.number="settings.width"
@@ -133,7 +133,7 @@
                 :disabled="!hasImage"
               />
               <label for="invert" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
-                反转颜色
+                {{ $t('tools.image-to-ascii.settings.invert') }}
               </label>
             </div>
           </div>
@@ -147,47 +147,47 @@
                 class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
                 :disabled="!hasImage"
               />
-              <label for="colorOutput" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
-                彩色输出
+              <label for="color" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+                {{ $t('tools.image-to-ascii.settings.colored') }}
               </label>
             </div>
           </div>
           
           <div class="mb-4">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              字体大小: {{ settings.fontSize }}px
+              {{ $t('tools.image-to-ascii.settings.fontSize') }}: {{ settings.fontSize }}px
             </label>
             <input
               v-model.number="settings.fontSize"
               type="range"
-              min="6"
-              max="16"
+              min="4"
+              max="20"
               step="1"
               class="w-full"
               :disabled="!hasImage"
             />
             <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400">
-              <span>6px</span>
+              <span>4px</span>
               <span>12px</span>
-              <span>16px</span>
+              <span>20px</span>
             </div>
           </div>
           
           <!-- 提示信息 -->
           <div v-if="hasImage" class="text-sm text-gray-500 dark:text-gray-400 mt-4">
-            <p>调整设置后点击"生成ASCII"按钮来查看效果</p>
+            <p>{{ $t('tools.image-to-ascii.messages.tip') }}</p>
           </div>
         </div>
         
         <!-- 中间图片预览 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">原始图片</h3>
+          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">{{ $t('tools.image-to-ascii.preview.originalImage') }}</h3>
           
           <div v-if="!imageUrl" class="border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-lg p-6 flex flex-col items-center justify-center h-64">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">选择或拖放图片到这里</p>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{{ $t('tools.image-to-ascii.messages.drapPlaceHolder') }}</p>
           </div>
           
           <div v-else class="relative overflow-hidden rounded-lg">
@@ -204,14 +204,14 @@
         
         <!-- 右侧结果展示 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">ASCII结果</h3>
+          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">{{ $t('tools.image-to-ascii.preview.generatedAscii') }}</h3>
           
           <div v-if="!asciiResult" class="border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-lg p-6 flex flex-col items-center justify-center h-64">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
             </svg>
             <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-              {{ hasImage ? '点击"生成ASCII"按钮转换图片' : '请先选择一张图片' }}
+              {{ hasImage ? $t('tools.image-to-ascii.messages.generateAscii') : $t('tools.image-to-ascii.messages.noImage') }}
             </p>
           </div>
           
@@ -232,7 +232,7 @@
             </div>
             
             <div class="mt-4 text-sm text-gray-500 dark:text-gray-400">
-              <p>提示：使用复制按钮可以将ASCII艺术复制到剪贴板，或使用下载按钮保存为文本文件。</p>
+              <p>{{ $t('tools.image-to-ascii.messages.tip2') }}</p>
             </div>
           </div>
         </div>
@@ -243,6 +243,9 @@
 
 <script setup>
 import { ref, reactive, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 状态变量
 const imageUrl = ref(null)
@@ -307,10 +310,10 @@ async function loadImage(event) {
     }
     img.src = imageUrl.value
     
-    showNotification('图片已加载')
+    showNotification(t('tools.image-to-ascii.messages.imageLoaded'))
   } catch (error) {
-    console.error('加载图片失败:', error)
-    showNotification('加载图片失败')
+    console.error(error)
+    showNotification(t('tools.image-to-ascii.messages.imageLoadFailed'))
   }
 }
 
@@ -389,10 +392,10 @@ async function generateAscii() {
     asciiResult.value = result
     coloredAsciiHtml.value = coloredHtml
     
-    showNotification('ASCII艺术已生成')
+    showNotification(t('tools.image-to-ascii.messages.asciiGenerated'))
   } catch (error) {
-    console.error('生成ASCII失败:', error)
-    showNotification('生成ASCII失败')
+    console.error(error)
+    showNotification(t('tools.image-to-ascii.messages.asciiGenerationFailed'))
   } finally {
     isProcessing.value = false
   }
@@ -404,10 +407,10 @@ function copyAscii() {
   
   try {
     navigator.clipboard.writeText(asciiResult.value)
-    showNotification('ASCII已复制到剪贴板')
+    showNotification(t('tools.image-to-ascii.messages.copied'))
   } catch (error) {
-    console.error('复制失败:', error)
-    showNotification('复制失败')
+    console.error(error)
+    showNotification(t('tools.image-to-ascii.messages.copyFailed'))
   }
 }
 
@@ -425,10 +428,10 @@ function downloadAscii() {
     link.click()
     
     URL.revokeObjectURL(url)
-    showNotification('ASCII已下载')
+    showNotification(t('tools.image-to-ascii.messages.downloadComplete'))
   } catch (error) {
-    console.error('下载失败:', error)
-    showNotification('下载失败')
+    console.error(error)
+    showNotification(t('tools.image-to-ascii.messages.downloadFailed'))
   }
 }
 
@@ -446,7 +449,7 @@ function resetCanvas() {
   settings.colorOutput = false
   settings.fontSize = 8
   
-  showNotification('已重置')
+  showNotification(t('tools.image-to-ascii.messages.resetComplete'))
 }
 
 // 显示通知

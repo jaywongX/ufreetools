@@ -7,7 +7,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
-          选择图片
+          {{ $t('tools.image-filters.upload.title') }}
           <input type="file" accept="image/*" @change="loadImage" class="hidden" />
         </label>
         
@@ -19,7 +19,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          重置
+          {{ $t('tools.image-filters.actions.reset') }}
         </button>
       </div>
       
@@ -31,7 +31,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
         </svg>
-        下载图片
+        {{ $t('tools.image-filters.actions.download') }}
       </button>
     </div>
     
@@ -40,12 +40,12 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <!-- 左侧滤镜控制区域 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4" :class="{'opacity-50': !hasImage}">
-          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">滤镜选项</h3>
+          <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">{{ $t('tools.image-filters.filters.title') }}</h3>
           
           <div class="space-y-6">
             <!-- 预设滤镜快捷选择 -->
             <div>
-              <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">预设滤镜</h4>
+              <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-filters.presets.title') }}</h4>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 <button 
                   v-for="preset in presetFilters" 
@@ -90,7 +90,7 @@
         
         <!-- 中间原图区域 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col">
-          <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">原图</h3>
+          <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-filters.editor.original') }}</h3>
           
           <div class="flex-grow flex items-center justify-center bg-gray-50 dark:bg-gray-900 rounded overflow-hidden">
             <div v-if="!hasImage" class="text-center p-8">
@@ -98,27 +98,27 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               <p class="text-gray-500 dark:text-gray-400">
-                请选择一张图片开始添加滤镜
+                {{ $t('tools.image-filters.upload.dropzone') }}
               </p>
             </div>
             <img 
               v-if="originalImageUrl" 
               :src="originalImageUrl" 
-              alt="原图" 
+              :alt="$t('tools.image-filters.editor.original')" 
               class="max-w-full max-h-full object-contain"
               ref="originalImage"
             />
           </div>
           
           <div v-if="imageInfo" class="mt-2 text-xs text-gray-500 dark:text-gray-400">
-            尺寸: {{ imageInfo.width }} × {{ imageInfo.height }} | 
-            大小: {{ formatFileSize(imageInfo.size) }}
+            {{ $t('tools.image-filters.output.width') }}: {{ imageInfo.width }} × {{ imageInfo.height }} | 
+            {{ $t('tools.image-filters.output.quality') }}: {{ formatFileSize(imageInfo.size) }}
           </div>
         </div>
         
         <!-- 右侧效果预览区域 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col">
-          <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">效果预览</h3>
+          <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.image-filters.editor.filtered') }}</h3>
           
           <div class="flex-grow flex items-center justify-center bg-gray-50 dark:bg-gray-900 rounded overflow-hidden">
             <div v-if="!hasImage" class="text-center p-8">
@@ -126,13 +126,13 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
               </svg>
               <p class="text-gray-500 dark:text-gray-400">
-                应用滤镜后的效果将显示在这里
+                {{ $t('tools.image-filters.messages.filterApplied') }}
               </p>
             </div>
             <div v-if="hasImage" class="relative w-full h-full flex items-center justify-center">
               <img 
                 :src="originalImageUrl" 
-                alt="效果预览" 
+                :alt="$t('tools.image-filters.editor.filtered')" 
                 class="max-w-full max-h-full object-contain filtered-image"
                 :style="filterStyle"
                 ref="filteredImage"
@@ -141,7 +141,7 @@
           </div>
           
           <div v-if="hasImage" class="mt-2 text-xs text-gray-500 dark:text-gray-400">
-            当前滤镜: {{ activePreset || '自定义' }}
+            {{ $t('tools.image-filters.presets.title') }}: {{ activePreset || $t('tools.image-filters.presets.custom') }}
           </div>
         </div>
       </div>
@@ -151,6 +151,9 @@
 
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 状态变量
 const originalImageUrl = ref(null)
@@ -160,41 +163,41 @@ const activePreset = ref(null)
 
 // 滤镜控制
 const filters = ref([
-  { name: 'grayscale', label: '灰度', value: 0, min: 0, max: 100, step: 1, unit: '%' },
-  { name: 'brightness', label: '亮度', value: 100, min: 0, max: 200, step: 1, unit: '%' },
-  { name: 'contrast', label: '对比度', value: 100, min: 0, max: 200, step: 1, unit: '%' },
-  { name: 'saturate', label: '饱和度', value: 100, min: 0, max: 200, step: 1, unit: '%' },
-  { name: 'hue-rotate', label: '色相旋转', value: 0, min: 0, max: 360, step: 1, unit: 'deg' },
-  { name: 'invert', label: '反色', value: 0, min: 0, max: 100, step: 1, unit: '%' },
-  { name: 'sepia', label: '褐色', value: 0, min: 0, max: 100, step: 1, unit: '%' },
-  { name: 'blur', label: '模糊', value: 0, min: 0, max: 10, step: 0.1, unit: 'px' }
+  { name: 'grayscale', label: t('tools.image-filters.filters.grayscale'), value: 0, min: 0, max: 100, step: 1, unit: '%' },
+  { name: 'brightness', label: t('tools.image-filters.filters.brightness'), value: 100, min: 0, max: 200, step: 1, unit: '%' },
+  { name: 'contrast', label: t('tools.image-filters.filters.contrast'), value: 100, min: 0, max: 200, step: 1, unit: '%' },
+  { name: 'saturate', label: t('tools.image-filters.filters.saturation'), value: 100, min: 0, max: 200, step: 1, unit: '%' },
+  { name: 'hue-rotate', label: t('tools.image-filters.filters.hue'), value: 0, min: 0, max: 360, step: 1, unit: 'deg' },
+  { name: 'invert', label: t('tools.image-filters.filters.color'), value: 0, min: 0, max: 100, step: 1, unit: '%' },
+  { name: 'sepia', label: t('tools.image-filters.filters.sepia'), value: 0, min: 0, max: 100, step: 1, unit: '%' },
+  { name: 'blur', label: t('tools.image-filters.filters.blur'), value: 0, min: 0, max: 10, step: 0.1, unit: 'px' }
 ])
 
 // 预设滤镜
 const presetFilters = [
   { 
-    name: '正常', 
+    name: t('tools.image-filters.presets.normal'), 
     values: { grayscale: 0, brightness: 100, contrast: 100, saturate: 100, 'hue-rotate': 0, invert: 0, sepia: 0, blur: 0 } 
   },
   { 
-    name: '灰度', 
+    name: t('tools.image-filters.presets.blackAndWhite'), 
     values: { grayscale: 100, brightness: 100, contrast: 100, saturate: 100, 'hue-rotate': 0, invert: 0, sepia: 0, blur: 0 } 
   },
   { 
-    name: '复古', 
+    name: t('tools.image-filters.presets.vintage'), 
     values: { grayscale: 0, brightness: 100, contrast: 110, saturate: 80, 'hue-rotate': 0, invert: 0, sepia: 50, blur: 0 } 
   },
   { 
-    name: '反色', 
+    name: t('tools.image-filters.presets.invert'), 
     values: { grayscale: 0, brightness: 100, contrast: 100, saturate: 100, 'hue-rotate': 0, invert: 100, sepia: 0, blur: 0 } 
   },
   { 
-    name: '高对比', 
+    name: t('tools.image-filters.presets.highContrast'), 
     values: { grayscale: 0, brightness: 90, contrast: 150, saturate: 110, 'hue-rotate': 0, invert: 0, sepia: 0, blur: 0 } 
   },
   { 
-    name: '柔焦', 
-    values: { grayscale: 0, brightness: 105, contrast: 90, saturate: 100, 'hue-rotate': 0, invert: 0, sepia: 0, blur: 1.5 } 
+    name: t('tools.image-filters.presets.matte'), 
+    values: { grayscale: 0, brightness: 105, contrast: 90, saturate: 100, 'hue-rotate': 0, invert: 0, sepia: 0, blur: 0 } 
   }
 ]
 

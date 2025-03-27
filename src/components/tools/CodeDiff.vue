@@ -11,7 +11,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
           </svg>
-          比较
+          {{ $t('tools.code-diff.actions.compare') }}
         </button>
         <button 
           @click="clearAll" 
@@ -21,7 +21,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
           </svg>
-          清空
+          {{ $t('tools.code-diff.actions.clear') }}
         </button>
       </div>
       <div class="flex space-x-2">
@@ -30,7 +30,7 @@
           v-model="language" 
           class="px-3 py-1.5 text-xs rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         >
-          <option value="plaintext">纯文本</option>
+          <option value="plaintext">{{ $t('tools.code-diff.options.languages.plaintext') }}</option>
           <option value="html">HTML</option>
           <option value="css">CSS</option>
           <option value="javascript">JavaScript</option>
@@ -44,8 +44,8 @@
           v-model="displayMode" 
           class="px-3 py-1.5 text-xs rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         >
-          <option value="side-by-side">并排视图</option>
-          <option value="unified">合并视图</option>
+          <option value="side-by-side">{{ $t('tools.code-diff.options.diffStyles.split') }}</option>
+          <option value="unified">{{ $t('tools.code-diff.options.diffStyles.inline') }}</option>
         </select>
       </div>
     </div>
@@ -68,7 +68,7 @@
       <!-- 原始代码 -->
       <div class="space-y-2">
         <div class="flex justify-between">
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">原始代码</label>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.code-diff.inputs.original') }}</label>
           <div class="flex space-x-2">
             <!-- 删除加载示例代码按钮 -->
           </div>
@@ -83,7 +83,7 @@
           <textarea
             v-model="originalCode"
             class="w-full h-64 p-2 pl-10 font-mono text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-            placeholder="输入原始代码..."
+            :placeholder="$t('tools.code-diff.inputs.placeholderOriginal')"
             :disabled="isProcessing"
           ></textarea>
         </div>
@@ -92,10 +92,10 @@
       <!-- 修改后代码 -->
       <div class="space-y-2">
         <div class="flex justify-between">
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">修改后代码</label>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.code-diff.inputs.modified') }}</label>
           <button 
             @click="swapCodes" 
-            class="text-xs text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary-light"
+            class="text-xs text-primary hover:text-primary-dark"
             title="交换代码"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -113,7 +113,7 @@
           <textarea
             v-model="modifiedCode"
             class="w-full h-64 p-2 pl-10 font-mono text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-            placeholder="输入修改后代码..."
+            :placeholder="$t('tools.code-diff.inputs.placeholderModified')"
             :disabled="isProcessing"
           ></textarea>
         </div>
@@ -174,6 +174,9 @@ import { ref, computed, watch, onMounted } from 'vue'
 import { diffLines, diffWords } from 'diff'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github.css'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // 状态
 const isProcessing = ref(false)
@@ -218,12 +221,12 @@ function highlightCode(code, lang) {
 // 比较代码
 async function compareCodes() {
   if (!originalCode.value.trim() || !modifiedCode.value.trim()) {
-    showMessage('请输入需要比较的代码', 'error')
+    showMessage(t('tools.code-diff.messages.inputRequired'), 'error')
     return
   }
   
   isProcessing.value = true
-  showMessage('正在比较代码...', 'info')
+  showMessage(t('tools.code-diff.messages.loading'), 'info')
   
   try {
     // 使用 diff 库进行比较
@@ -251,10 +254,10 @@ async function compareCodes() {
     // 保存比较结果
     diffResult.value = diffResult
     
-    showMessage('比较完成', 'success')
+    showMessage(t('tools.code-diff.messages.diffGenerated'), 'success')
   } catch (error) {
     console.error('比较代码出错:', error)
-    showMessage('比较代码时出错: ' + error.message, 'error')
+    showMessage(t('tools.code-diff.messages.error') + ': ' + error.message, 'error')
   } finally {
     isProcessing.value = false
   }
@@ -335,7 +338,7 @@ function showMessage(msg, type = 'info') {
 // 监听语言变化
 watch(language, () => {
   if (originalCode.value || modifiedCode.value) {
-    if (confirm('切换语言会清除当前代码，是否继续？')) {
+    if (confirm(t('tools.code-diff.messages.confirmLanguageChange'))) {
       originalCode.value = ''
       modifiedCode.value = ''
       diffResult.value = null
