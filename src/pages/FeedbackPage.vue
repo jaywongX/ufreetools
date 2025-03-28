@@ -121,11 +121,28 @@ async function submitFeedback() {
   submitStatus.value = ''
   
   try {
-    // 这里添加实际的提交逻辑
-    await new Promise(resolve => setTimeout(resolve, 1000)) // 模拟API调用
+    // 提交表单到 Vercel API 路由
+    const response = await fetch('/api/submit-feedback', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: formData.value.name,
+        email: formData.value.email,
+        type: formData.value.type,
+        message: formData.value.message
+      })
+    })
     
-    // 成功提示
-    submitStatus.value = t('feedback.success')
+    const data = await response.json()
+    
+    if (!response.ok) {
+      throw new Error(data.message || '提交反馈时出错')
+    }
+    
+    // 显示服务器返回的成功消息
+    submitStatus.value = data.message || t('feedback.success')
     
     // 重置表单
     formData.value = {
@@ -135,8 +152,8 @@ async function submitFeedback() {
       message: ''
     }
   } catch (error) {
-    // 错误提示
-    submitStatus.value = t('feedback.error')
+    // 显示详细错误信息
+    submitStatus.value = error.message || t('feedback.error')
   } finally {
     isSubmitting.value = false
   }
