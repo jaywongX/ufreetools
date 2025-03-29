@@ -233,6 +233,7 @@ const lazyComponentMap = {
   
   // 实用效率
   'UuidGenerator': () => import('./components/tools/UuidGenerator.vue'),
+  'LatexFormulaGenerator': () => import('./components/tools/LatexFormulaGenerator.vue'),
 }
 
 // 创建应用

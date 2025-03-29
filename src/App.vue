@@ -185,6 +185,9 @@ const allTags = ref([
   { id: 'compression', name: '压缩', color: 'green' },
   { id: 'metadata', name: '元数据', color: 'indigo' },
   { id: 'number', name: '数字', color: 'green' },
+  { id: 'latex', name: 'LaTeX', color: 'purple' },
+  { id: 'math', name: '数学', color: 'blue' },
+  { id: 'formula', name: '公式', color: 'indigo' },
 ])
 provide('allTags', allTags)
 
@@ -940,6 +943,19 @@ const allTools = computed(() => [
     component: 'HmacCalculator',
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['crypto', 'hash', 'security', 'generate']
+  },
+
+  // 实用与效率
+  { 
+    id: 'latex-formula-generator', 
+    name: t('tools.latex-formula-generator.name'),
+    category: t(`categories.text`),
+    categoryId: 'utility',
+    description: t('tools.latex-formula-generator.description'),
+    path: '/tools/latex-formula-generator',
+    component: 'LatexFormulaGenerator',
+    icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
+    tags: ['text', 'latex', 'math', 'formula', 'editor']
   },
 ])
 // provide('allTools', allTools.value || allTools)

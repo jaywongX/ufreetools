@@ -215,7 +215,10 @@ export default {
   number: 'number',
   mqtt: 'MQTT',
   mock: 'Mock',
-  
+  latex: 'LaTeX',
+  math: 'Math',
+  formula: 'Formula',
+
   // Tag Categories
   categories: {
     multimedia: 'Multimedia',

@@ -218,6 +218,9 @@ export default {
   number: '数字',
   mqtt: 'MQTT',
   mock: 'Mock',
+  latex: 'LaTeX',
+  math: '数学',
+  formula: '公式',
   
   // 标签分类名称
   categories: {

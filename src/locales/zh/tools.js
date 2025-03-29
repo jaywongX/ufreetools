@@ -67,6 +67,7 @@ import hmacCalculator from './tools/hmac-calculator.js';
 import sm2Crypto from './tools/sm2-crypto.js';
 import symmetricCrypto from './tools/symmetric-crypto.js';
 import pageRedirectChecker from './tools/page-redirect-checker.js';
+import latexFormulaGenerator from './tools/latex-formula-generator.js';
 // 导入其他工具...
 
 export default {
@@ -170,5 +171,6 @@ export default {
   'hmac-calculator': hmacCalculator,
   'sm2-crypto': sm2Crypto,
   'symmetric-crypto': symmetricCrypto,
-  'page-redirect-checker': pageRedirectChecker
+  'page-redirect-checker': pageRedirectChecker,
+  'latex-formula-generator': latexFormulaGenerator,
 }; 
