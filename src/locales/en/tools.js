@@ -71,6 +71,7 @@ import latexFormulaGenerator from './tools/latex-formula-generator.js';
 import cookieManager from './tools/cookie-manager.js';
 import countdownGenerator from './tools/countdown-generator.js';
 import pomodoroTimer from './tools/pomodoro-timer.js';
+import loanCalculator from './tools/loan-calculator.js';
 // Import other tool translations as needed
 
 export default {
@@ -178,4 +179,5 @@ export default {
     'cookie-manager': cookieManager,
     'countdown-generator': countdownGenerator,
     'pomodoro-timer': pomodoroTimer,
+    'loan-calculator': loanCalculator,
   }

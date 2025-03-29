@@ -228,6 +228,9 @@ export default {
   productivity: '生产力',
   timer: '计时器',
   pomodoro: '番茄钟',
+  finance: '金融',
+  loan: '贷款',
+  money: '货币',
 
   // 标签分类名称
   categories: {

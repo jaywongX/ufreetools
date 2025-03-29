@@ -237,7 +237,7 @@ const lazyComponentMap = {
   'LatexFormulaGenerator': () => import('./components/tools/LatexFormulaGenerator.vue'),
   'CountdownGenerator': () => import('./components/tools/CountdownGenerator.vue'),
   'PomodoroTimer': () => import('./components/tools/PomodoroTimer.vue'),
-  'PomodoroTimer': () => import('./components/tools/PomodoroTimer.vue'),
+  'LoanCalculator': () => import('./components/tools/LoanCalculator.vue'),
 }
 
 // 创建应用

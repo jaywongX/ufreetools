@@ -225,6 +225,9 @@ export default {
   productivity: 'Productivity',
   timer: 'Timer',
   pomodoro: 'Pomodoro',
+  finance: 'Finance',
+  loan: 'Loan',
+  money: 'Money',
 
   // Tag Categories
   categories: {
