@@ -69,6 +69,7 @@ import symmetricCrypto from './tools/symmetric-crypto.js';
 import pageRedirectChecker from './tools/page-redirect-checker.js';
 import latexFormulaGenerator from './tools/latex-formula-generator.js';
 import cookieManager from './tools/cookie-manager.js';
+import countdownGenerator from './tools/countdown-generator.js';
 // 导入其他工具...
 
 export default {
@@ -175,4 +176,5 @@ export default {
   'page-redirect-checker': pageRedirectChecker,
   'latex-formula-generator': latexFormulaGenerator,
   'cookie-manager': cookieManager,
+  'countdown-generator': countdownGenerator,
 }; 

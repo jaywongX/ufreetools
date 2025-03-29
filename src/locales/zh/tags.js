@@ -224,6 +224,7 @@ export default {
   cookie: 'Cookie',
   browser: '浏览器',
   privacy: '隐私',
+  countdown: '倒计时',
   
   // 标签分类名称
   categories: {

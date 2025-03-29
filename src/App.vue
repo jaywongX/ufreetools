@@ -191,6 +191,9 @@ const allTags = ref([
   { id: 'cookie', name: 'Cookie', color: 'amber' },
   { id: 'browser', name: '浏览器', color: 'orange' },
   { id: 'privacy', name: '隐私', color: 'rose' },
+  { id: 'time', name: '时间', color: 'cyan' },
+  { id: 'date', name: '日期', color: 'teal' },
+  { id: 'countdown', name: '倒计时', color: 'yellow' },
 ])
 provide('allTags', allTags)
 
@@ -868,6 +871,17 @@ const allTools = computed(() => [
     icon: "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z",
     tags: ['network', 'websocket', 'test']
   },
+  { 
+    id: 'cookie-manager', 
+    name: t('tools.cookie-manager.name'),
+    category: t(`categories.network`),
+    categoryId: 'network',
+    description: t('tools.cookie-manager.description'),
+    path: '/tools/cookie-manager',
+    component: 'CookieManager',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'http', 'browser', 'cookie', 'privacy', 'security']
+  },
   
   // 加密安全工具
   {
@@ -961,15 +975,15 @@ const allTools = computed(() => [
     tags: ['text', 'latex', 'math', 'formula', 'editor']
   },
   { 
-    id: 'cookie-manager', 
-    name: t('tools.cookie-manager.name'),
-    category: t(`categories.network`),
-    categoryId: 'network',
-    description: t('tools.cookie-manager.description'),
-    path: '/tools/cookie-manager',
-    component: 'CookieManager',
-    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
-    tags: ['network', 'http', 'browser', 'cookie', 'privacy', 'security']
+    id: 'countdown-generator', 
+    name: t('tools.countdown-generator.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.countdown-generator.description'),
+    path: '/tools/countdown-generator',
+    component: 'CountdownGenerator',
+    icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['utility', 'time', 'date', 'countdown']
   },
 ])
 // provide('allTools', allTools.value || allTools)
