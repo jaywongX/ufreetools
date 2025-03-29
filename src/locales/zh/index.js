@@ -5,6 +5,7 @@ import tools from './tools.js';
 import categories from './categories.js';
 import errors from './errors.js';
 import tags from './tags.js';
+import feedback from './feedback.js';
 
 export default {
   common,
@@ -13,5 +14,6 @@ export default {
   tools,
   categories,
   errors,
-  tags
+  tags,
+  feedback
 }; 
