@@ -72,6 +72,7 @@ import cookieManager from './tools/cookie-manager.js';
 import countdownGenerator from './tools/countdown-generator.js';
 import pomodoroTimer from './tools/pomodoro-timer.js';
 import loanCalculator from './tools/loan-calculator.js';
+import incomeTaxCalculator from './tools/income-tax-calculator.js';
 // Import other tool translations as needed
 
 export default {
@@ -180,4 +181,5 @@ export default {
     'countdown-generator': countdownGenerator,
     'pomodoro-timer': pomodoroTimer,
     'loan-calculator': loanCalculator,
+    'income-tax-calculator': incomeTaxCalculator,
   }

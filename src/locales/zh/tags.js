@@ -231,6 +231,8 @@ export default {
   finance: '金融',
   loan: '贷款',
   money: '货币',
+  tax: '税务',
+  salary: '薪资',
 
   // 标签分类名称
   categories: {

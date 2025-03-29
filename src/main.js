@@ -238,6 +238,7 @@ const lazyComponentMap = {
   'CountdownGenerator': () => import('./components/tools/CountdownGenerator.vue'),
   'PomodoroTimer': () => import('./components/tools/PomodoroTimer.vue'),
   'LoanCalculator': () => import('./components/tools/LoanCalculator.vue'),
+  'IncomeTaxCalculator': () => import('./components/tools/IncomeTaxCalculator.vue'),
 }
 
 // 创建应用

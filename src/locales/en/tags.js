@@ -228,6 +228,8 @@ export default {
   finance: 'Finance',
   loan: 'Loan',
   money: 'Money',
+  tax: 'Tax',
+  salary: 'Salary',
 
   // Tag Categories
   categories: {

@@ -200,6 +200,8 @@ const allTags = ref([
   { id: 'finance', name: '金融', color: 'green' },
   { id: 'loan', name: '贷款', color: 'emerald' },
   { id: 'money', name: '货币', color: 'lime' },
+  { id: 'tax', name: '税务', color: 'indigo' },
+  { id: 'salary', name: '薪资', color: 'purple' },
 ])
 provide('allTags', allTags)
 
@@ -1012,6 +1014,17 @@ const allTools = computed(() => [
     component: 'LoanCalculator',
     icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     tags: ['utility', 'calculator', 'finance', 'loan', 'money']
+  },
+  { 
+    id: 'income-tax-calculator', 
+    name: t('tools.income-tax-calculator.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.income-tax-calculator.description'),
+    path: '/tools/income-tax-calculator',
+    component: 'IncomeTaxCalculator',
+    icon: 'M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z',
+    tags: ['utility', 'calculator', 'finance', 'tax', 'salary', 'money']
   },
 ])
 // provide('allTools', allTools.value || allTools)
