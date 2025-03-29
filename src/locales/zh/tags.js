@@ -221,6 +221,9 @@ export default {
   latex: 'LaTeX',
   math: '数学',
   formula: '公式',
+  cookie: 'Cookie',
+  browser: '浏览器',
+  privacy: '隐私',
   
   // 标签分类名称
   categories: {

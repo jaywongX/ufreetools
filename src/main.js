@@ -221,6 +221,7 @@ const lazyComponentMap = {
   'UserAgentParser': () => import('./components/tools/UserAgentParser.vue'),
   'UrlParamsParser': () => import('./components/tools/UrlParamsParser.vue'),
   'WebSocketTester': () => import('./components/tools/WebSocketTester.vue'),
+  'CookieManager': () => import('./components/tools/CookieManager.vue'),
   
   // 密码与安全
   'PasswordGenerator': () => import('./components/tools/PasswordGenerator.vue'),

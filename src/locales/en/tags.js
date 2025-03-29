@@ -218,6 +218,9 @@ export default {
   latex: 'LaTeX',
   math: 'Math',
   formula: 'Formula',
+  cookie: 'Cookie',
+  browser: 'Browser',
+  privacy: 'Privacy',
 
   // Tag Categories
   categories: {

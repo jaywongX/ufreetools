@@ -188,6 +188,9 @@ const allTags = ref([
   { id: 'latex', name: 'LaTeX', color: 'purple' },
   { id: 'math', name: '数学', color: 'blue' },
   { id: 'formula', name: '公式', color: 'indigo' },
+  { id: 'cookie', name: 'Cookie', color: 'amber' },
+  { id: 'browser', name: '浏览器', color: 'orange' },
+  { id: 'privacy', name: '隐私', color: 'rose' },
 ])
 provide('allTags', allTags)
 
@@ -956,6 +959,17 @@ const allTools = computed(() => [
     component: 'LatexFormulaGenerator',
     icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
     tags: ['text', 'latex', 'math', 'formula', 'editor']
+  },
+  { 
+    id: 'cookie-manager', 
+    name: t('tools.cookie-manager.name'),
+    category: t(`categories.network`),
+    categoryId: 'network',
+    description: t('tools.cookie-manager.description'),
+    path: '/tools/cookie-manager',
+    component: 'CookieManager',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'http', 'browser', 'cookie', 'privacy', 'security']
   },
 ])
 // provide('allTools', allTools.value || allTools)

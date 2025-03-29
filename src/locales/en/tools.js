@@ -68,6 +68,7 @@ import sm2Crypto from './tools/sm2-crypto.js';
 import symmetricCrypto from './tools/symmetric-crypto.js';
 import pageRedirectChecker from './tools/page-redirect-checker.js';
 import latexFormulaGenerator from './tools/latex-formula-generator.js';
+import cookieManager from './tools/cookie-manager.js';
 // Import other tool translations as needed
 
 export default {
@@ -172,4 +173,5 @@ export default {
     'symmetric-crypto': symmetricCrypto,
     'page-redirect-checker': pageRedirectChecker,
     'latex-formula-generator': latexFormulaGenerator,
-}
+    'cookie-manager': cookieManager,
+  }
