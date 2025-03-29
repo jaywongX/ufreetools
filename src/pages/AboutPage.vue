@@ -120,23 +120,6 @@
         </div>
       </div>
       
-      <!-- 联系我们和反馈 -->
-      <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 md:p-8">
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">{{ $t('about.contactFeedback') }}</h2>
-        
-        <p class="text-gray-600 dark:text-gray-300 mb-6">
-          {{ $t('about.contactFeedbackDescription') }}
-        </p>
-        
-        <div class="flex flex-col md:flex-row gap-4">
-          <a href="mailto:support@ufreetools.com" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            {{ $t('about.sendEmail') }}
-          </a>
-        </div>
-      </div>
     </div>
   </div>
 </template>

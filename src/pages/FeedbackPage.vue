@@ -7,155 +7,70 @@
         {{ $t('feedback.description') }}
       </p>
       
-      <form @submit.prevent="submitFeedback" class="space-y-4">
-        <!-- 姓名 -->
-        <div>
-          <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            {{ $t('feedback.nameLabel') }}
-          </label>
-          <input
-            id="name"
-            v-model="formData.name"
-            type="text"
-            class="w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
-            :placeholder="$t('feedback.namePlaceholder')"
-          />
+      <!-- 邮件发送指南 -->
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">{{ $t('feedback.howToSend') }}</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600 dark:text-gray-300">
+            {{ $t('feedback.emailInstructions') }}
+          </p>
+          
+          <div class="flex justify-center my-6">
+            <a 
+              href="mailto:support@ufreetools.com?subject=UFreeTools反馈" 
+              class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary-dark text-white font-medium rounded-md transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              {{ $t('feedback.sendEmail') }}
+            </a>
+          </div>
         </div>
+      </div>
+      
+      <!-- 反馈示例 -->
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">{{ $t('feedback.exampleTitle') }}</h2>
         
-        <!-- 邮箱 -->
-        <div>
-          <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            {{ $t('feedback.emailLabel') }}
-          </label>
-          <input
-            id="email"
-            v-model="formData.email"
-            type="email"
-            class="w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
-            :placeholder="$t('feedback.emailPlaceholder')"
-          />
+        <div class="space-y-6">
+          <!-- 一般反馈示例 -->
+          <div class="p-4 bg-gray-50 dark:bg-gray-700 rounded-md">
+            <h3 class="font-medium text-gray-800 dark:text-white mb-2">{{ $t('feedback.typeGeneral') }}</h3>
+            <pre class="text-sm text-gray-600 dark:text-gray-300 whitespace-pre-wrap font-mono bg-gray-100 dark:bg-gray-800 p-3 rounded">
+{{ $t('feedback.exampleGeneral') }}</pre>
+          </div>
+          
+          <!-- 错误报告示例 -->
+          <div class="p-4 bg-gray-50 dark:bg-gray-700 rounded-md">
+            <h3 class="font-medium text-gray-800 dark:text-white mb-2">{{ $t('feedback.typeBug') }}</h3>
+            <pre class="text-sm text-gray-600 dark:text-gray-300 whitespace-pre-wrap font-mono bg-gray-100 dark:bg-gray-800 p-3 rounded">
+{{ $t('feedback.exampleBug') }}</pre>
+          </div>
+          
+          <!-- 功能请求示例 -->
+          <div class="p-4 bg-gray-50 dark:bg-gray-700 rounded-md">
+            <h3 class="font-medium text-gray-800 dark:text-white mb-2">{{ $t('feedback.typeFeature') }}</h3>
+            <pre class="text-sm text-gray-600 dark:text-gray-300 whitespace-pre-wrap font-mono bg-gray-100 dark:bg-gray-800 p-3 rounded">
+{{ $t('feedback.exampleFeature') }}</pre>
+          </div>
         </div>
-        
-        <!-- 反馈类型 -->
-        <div>
-          <label for="feedbackType" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            {{ $t('feedback.typeLabel') }}
-          </label>
-          <select
-            id="feedbackType"
-            v-model="formData.type"
-            class="w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
-          >
-            <option value="general">{{ $t('feedback.typeGeneral') }}</option>
-            <option value="bug">{{ $t('feedback.typeBug') }}</option>
-            <option value="feature">{{ $t('feedback.typeFeature') }}</option>
-            <option value="other">{{ $t('feedback.typeOther') }}</option>
-          </select>
-        </div>
-        
-        <!-- 消息内容 -->
-        <div>
-          <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            {{ $t('feedback.messageLabel') }}
-          </label>
-          <textarea
-            id="message"
-            v-model="formData.message"
-            rows="5"
-            class="w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
-            :placeholder="$t('feedback.messagePlaceholder')"
-          ></textarea>
-        </div>
-        
-        <!-- 提交按钮 -->
-        <div>
-          <button
-            type="submit"
-            class="w-full md:w-auto px-6 py-3 bg-primary hover:bg-primary-dark text-white font-medium rounded-md transition-colors"
-            :disabled="isSubmitting"
-          >
-            {{ isSubmitting ? $t('feedback.submitting') : $t('feedback.submit') }}
-          </button>
-        </div>
-        
-        <!-- 提交状态提示 -->
-        <div v-if="submitStatus" class="mt-4 p-3 rounded-md" :class="submitStatusClass">
-          {{ submitStatus }}
-        </div>
-      </form>
+      </div>
+      
+      <!-- 其他联系方式 -->
+      <div>
+        <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">{{ $t('feedback.additionalContact') }}</h2>
+        <p class="text-gray-600 dark:text-gray-300">
+          {{ $t('feedback.responseTime') }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
-
-// 表单数据
-const formData = ref({
-  name: '',
-  email: '',
-  type: 'general',
-  message: ''
-})
-
-// 提交状态
-const isSubmitting = ref(false)
-const submitStatus = ref('')
-
-// 提交状态样式
-const submitStatusClass = computed(() => {
-  return {
-    'bg-green-100 text-green-700 dark:bg-green-800 dark:text-green-100': submitStatus.value === t('feedback.success'),
-    'bg-red-100 text-red-700 dark:bg-red-800 dark:text-red-100': submitStatus.value === t('feedback.error')
-  }
-})
-
-// 提交表单
-async function submitFeedback() {
-  if (isSubmitting.value) return
-  
-  isSubmitting.value = true
-  submitStatus.value = ''
-  
-  try {
-    // 提交表单到 Vercel API 路由
-    const response = await fetch('/api/submit-feedback', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: formData.value.name,
-        email: formData.value.email,
-        type: formData.value.type,
-        message: formData.value.message
-      })
-    })
-    
-    const data = await response.json()
-    
-    if (!response.ok) {
-      throw new Error(data.message || '提交反馈时出错')
-    }
-    
-    // 显示服务器返回的成功消息
-    submitStatus.value = data.message || t('feedback.success')
-    
-    // 重置表单
-    formData.value = {
-      name: '',
-      email: '',
-      type: 'general',
-      message: ''
-    }
-  } catch (error) {
-    // 显示详细错误信息
-    submitStatus.value = error.message || t('feedback.error')
-  } finally {
-    isSubmitting.value = false
-  }
-}
+// 用于访问国际化文本
+useI18n()
 </script>
