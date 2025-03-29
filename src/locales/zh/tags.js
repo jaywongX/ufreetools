@@ -233,6 +233,8 @@ export default {
   money: '货币',
   tax: '税务',
   salary: '薪资',
+  health: '健康',
+  fitness: '健身',
 
   // 标签分类名称
   categories: {
@@ -246,5 +248,6 @@ export default {
     data: '数据处理',
     conversion: '格式转换',
     analysis: '分析与诊断'
-  }
+  },
+
 }

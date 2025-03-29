@@ -230,6 +230,8 @@ export default {
   money: 'Money',
   tax: 'Tax',
   salary: 'Salary',
+  health: 'Health',
+  fitness: 'Fitness',
 
   // Tag Categories
   categories: {
@@ -243,5 +245,6 @@ export default {
     data: 'Data Processing',
     conversion: 'Format Conversion',
     analysis: 'Analysis & Diagnostics'
-  }
+  },
+
 }

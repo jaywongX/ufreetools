@@ -73,10 +73,9 @@ import countdownGenerator from './tools/countdown-generator.js';
 import pomodoroTimer from './tools/pomodoro-timer.js';
 import loanCalculator from './tools/loan-calculator.js';
 import incomeTaxCalculator from './tools/income-tax-calculator.js';
-// 导入其他工具...
+import bmiCalculator from './tools/bmi-calculator.js';
 
 export default {
-  // 工具通用文本
   common: {
     tryNow: '立即使用',
     relatedTools: '相关工具',
@@ -183,4 +182,5 @@ export default {
   'pomodoro-timer': pomodoroTimer,
   'loan-calculator': loanCalculator,
   'income-tax-calculator': incomeTaxCalculator,
+  'bmi-calculator': bmiCalculator,
 }; 

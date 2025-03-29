@@ -202,6 +202,8 @@ const allTags = ref([
   { id: 'money', name: '货币', color: 'lime' },
   { id: 'tax', name: '税务', color: 'indigo' },
   { id: 'salary', name: '薪资', color: 'purple' },
+  { id: 'health', name: '健康', color: 'teal' },
+  { id: 'fitness', name: '健身', color: 'cyan' },
 ])
 provide('allTags', allTags)
 
@@ -1025,6 +1027,17 @@ const allTools = computed(() => [
     component: 'IncomeTaxCalculator',
     icon: 'M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z',
     tags: ['utility', 'calculator', 'finance', 'tax', 'salary', 'money']
+  },
+  { 
+    id: 'bmi-calculator', 
+    name: t('tools.bmi-calculator.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.bmi-calculator.description'),
+    path: '/tools/bmi-calculator',
+    component: 'BmiCalculator',
+    icon: 'M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z',
+    tags: ['utility', 'calculator', 'health', 'fitness']
   },
 ])
 // provide('allTools', allTools.value || allTools)

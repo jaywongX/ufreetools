@@ -73,7 +73,7 @@ import countdownGenerator from './tools/countdown-generator.js';
 import pomodoroTimer from './tools/pomodoro-timer.js';
 import loanCalculator from './tools/loan-calculator.js';
 import incomeTaxCalculator from './tools/income-tax-calculator.js';
-// Import other tool translations as needed
+import bmiCalculator from './tools/bmi-calculator.js';
 
 export default {
     common: {
@@ -182,4 +182,5 @@ export default {
     'pomodoro-timer': pomodoroTimer,
     'loan-calculator': loanCalculator,
     'income-tax-calculator': incomeTaxCalculator,
+    'bmi-calculator': bmiCalculator,
   }
