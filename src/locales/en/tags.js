@@ -221,6 +221,10 @@ export default {
   cookie: 'Cookie',
   browser: 'Browser',
   privacy: 'Privacy',
+  countdown: 'Countdown',
+  productivity: 'Productivity',
+  timer: 'Timer',
+  pomodoro: 'Pomodoro',
 
   // Tag Categories
   categories: {

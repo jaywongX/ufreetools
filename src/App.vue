@@ -194,6 +194,9 @@ const allTags = ref([
   { id: 'time', name: '时间', color: 'cyan' },
   { id: 'date', name: '日期', color: 'teal' },
   { id: 'countdown', name: '倒计时', color: 'yellow' },
+  { id: 'productivity', name: '生产力', color: 'emerald' },
+  { id: 'timer', name: '计时器', color: 'rose' },
+  { id: 'pomodoro', name: '番茄工作法', color: 'red' },
 ])
 provide('allTags', allTags)
 
@@ -984,6 +987,17 @@ const allTools = computed(() => [
     component: 'CountdownGenerator',
     icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['utility', 'time', 'date', 'countdown']
+  },
+  { 
+    id: 'pomodoro-timer', 
+    name: t('tools.pomodoro-timer.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.pomodoro-timer.description'),
+    path: '/tools/pomodoro-timer',
+    component: 'PomodoroTimer',
+    icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
+    tags: ['utility', 'time', 'productivity', 'timer', 'pomodoro']
   },
 ])
 // provide('allTools', allTools.value || allTools)

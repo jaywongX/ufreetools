@@ -236,6 +236,8 @@ const lazyComponentMap = {
   'UuidGenerator': () => import('./components/tools/UuidGenerator.vue'),
   'LatexFormulaGenerator': () => import('./components/tools/LatexFormulaGenerator.vue'),
   'CountdownGenerator': () => import('./components/tools/CountdownGenerator.vue'),
+  'PomodoroTimer': () => import('./components/tools/PomodoroTimer.vue'),
+  'PomodoroTimer': () => import('./components/tools/PomodoroTimer.vue'),
 }
 
 // 创建应用

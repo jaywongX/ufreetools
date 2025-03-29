@@ -225,7 +225,10 @@ export default {
   browser: '浏览器',
   privacy: '隐私',
   countdown: '倒计时',
-  
+  productivity: '生产力',
+  timer: '计时器',
+  pomodoro: '番茄钟',
+
   // 标签分类名称
   categories: {
     multimedia: '多媒体',
