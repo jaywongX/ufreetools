@@ -253,4 +253,9 @@ export default {
     analysis: 'Analysis & Diagnostics'
   },
 
+  // New tags
+  currency: 'Currency',
+  exchange: 'Exchange Rate',
+  converter: 'Converter',
+
 }

@@ -256,4 +256,9 @@ export default {
     analysis: '分析与诊断'
   },
 
+  // 添加新标签
+  currency: '货币',
+  exchange: '汇率',
+  converter: '转换器',
+
 }
