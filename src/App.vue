@@ -223,6 +223,12 @@ const allTags = ref([
   { id: 'global', name: '全球', color: 'pink' },
   { id: 'international', name: '国际', color: 'rose' },
   { id: 'travel', name: '旅行', color: 'orange' },
+  { id: 'name', name: '名字', color: 'indigo' },
+  { id: 'generator', name: '生成器', color: 'purple' },
+  { id: 'random', name: '随机', color: 'fuchsia' },
+  { id: 'culture', name: '文化', color: 'pink' },
+  { id: 'writing', name: '写作', color: 'orange' },
+  { id: 'character', name: '角色', color: 'amber' },
 ])
 provide('allTags', allTags)
 
@@ -1112,6 +1118,17 @@ const allTools = computed(() => [
     component: 'CurrencyConverter',
     icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     tags: ['utility', 'finance', 'currency', 'converter', 'exchange', 'calculator', 'money']
+  },
+  { 
+    id: 'name-generator', 
+    name: t('tools.name-generator.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.name-generator.description'),
+    path: '/tools/name-generator',
+    component: 'NameGenerator',
+    icon: 'M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z',
+    tags: ['utility', 'creative', 'name', 'generator', 'random', 'culture', 'writing', 'character']
   },
 ])
 // provide('allTools', allTools.value || allTools)

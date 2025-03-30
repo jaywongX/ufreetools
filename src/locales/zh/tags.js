@@ -269,5 +269,11 @@ export default {
   global: '全球',
   international: '国际',
   travel: '旅行',
+  name: '名字',
+  generator: '生成器',
+  random: '随机',
+  culture: '文化',
+  writing: '写作',
+  character: '角色',
 
 }

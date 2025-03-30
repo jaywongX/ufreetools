@@ -271,4 +271,13 @@ export default {
   international: 'International',
   travel: 'Travel',
 
+  // New tags
+  name: 'Name',
+  generator: 'Generator',
+  random: 'Random',
+  creative: 'Creative',
+  culture: 'Culture',
+  writing: 'Writing',
+  character: 'Character',
+
 }

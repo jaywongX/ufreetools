@@ -79,6 +79,7 @@ import todoList from './tools/todo-list.js';
 import currencyConverter from './tools/currency-converter.js';
 import drawingBoard from './tools/drawing-board.js';
 import timezoneConverter from './tools/timezone-converter.js';
+import nameGenerator from './tools/name-generator.js';
 
 export default {
     common: {
@@ -193,4 +194,5 @@ export default {
     'currency-converter': currencyConverter,
     'drawing-board': drawingBoard,
     'timezone-converter': timezoneConverter,
+    'name-generator': nameGenerator,
   }
