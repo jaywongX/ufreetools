@@ -75,6 +75,7 @@ import loanCalculator from './tools/loan-calculator.js';
 import incomeTaxCalculator from './tools/income-tax-calculator.js';
 import bmiCalculator from './tools/bmi-calculator.js';
 import holidayCalendar from './tools/holiday-calendar.js';
+import todoList from './tools/todo-list.js';
 
 export default {
     common: {
@@ -185,4 +186,5 @@ export default {
     'income-tax-calculator': incomeTaxCalculator,
     'bmi-calculator': bmiCalculator,
     'holiday-calendar': holidayCalendar,
+    'todo-list': todoList,
   }

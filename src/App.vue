@@ -207,6 +207,9 @@ const allTags = ref([
   { id: 'calendar', name: '日历', color: 'amber' },
   { id: 'holiday', name: '节假日', color: 'orange' },
   { id: 'date', name: '日期', color: 'yellow' },
+  { id: 'planner', name: '规划', color: 'blue' },
+  { id: 'task', name: '任务', color: 'indigo' },
+  { id: 'organization', name: '组织', color: 'sky' },
 ])
 provide('allTags', allTags)
 
@@ -1052,6 +1055,17 @@ const allTools = computed(() => [
     component: 'HolidayCalendar',
     icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['utility', 'calendar', 'holiday', 'date']
+  },
+  { 
+    id: 'todo-list', 
+    name: t('tools.todo-list.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.todo-list.description'),
+    path: '/tools/todo-list',
+    component: 'TodoList',
+    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
+    tags: ['utility', 'productivity', 'planner', 'task', 'organization']
   },
 ])
 // provide('allTools', allTools.value || allTools)

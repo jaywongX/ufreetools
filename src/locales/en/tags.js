@@ -235,6 +235,9 @@ export default {
   calendar: 'Calendar',
   holiday: 'Holiday',
   date: 'Date',
+  planner: 'Planner',
+  task: 'Task',
+  organization: 'Organization',
 
   // Tag Categories
   categories: {

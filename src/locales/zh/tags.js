@@ -238,6 +238,9 @@ export default {
   calendar: '日历',
   holiday: '节假日',
   date: '日期',
+  planner: '计划',
+  task: '任务',
+  organization: '组织',
 
   // 标签分类名称
   categories: {

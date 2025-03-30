@@ -241,6 +241,7 @@ const lazyComponentMap = {
   'IncomeTaxCalculator': () => import('./components/tools/IncomeTaxCalculator.vue'),
   'BmiCalculator': () => import('./components/tools/BmiCalculator.vue'),
   'HolidayCalendar': () => import('./components/tools/HolidayCalendar.vue'),
+  'TodoList': () => import('./components/tools/TodoList.vue'),
 }
 
 // 创建应用
