@@ -275,5 +275,8 @@ export default {
   culture: '文化',
   writing: '写作',
   character: '角色',
+  budget: '预算',
+  planning: '规划',
+  expense: '支出',
 
 }

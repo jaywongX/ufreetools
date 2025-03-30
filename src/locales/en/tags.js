@@ -280,4 +280,9 @@ export default {
   writing: 'Writing',
   character: 'Character',
 
+  // New tags
+  budget: 'Budget',
+  planning: 'Planning',
+  expense: 'Expense',
+
 }

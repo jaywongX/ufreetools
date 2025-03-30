@@ -222,7 +222,11 @@ const allTags = ref([
   { id: 'clock', name: '时钟', color: 'fuchsia' },
   { id: 'global', name: '全球', color: 'pink' },
   { id: 'international', name: '国际', color: 'rose' },
-  { id: 'travel', name: '旅行', color: 'orange' },
+  { id: 'travel', name: '旅行', color: 'blue' },
+  { id: 'budget', name: '预算', color: 'emerald' },
+  { id: 'planning', name: '规划', color: 'violet' },
+  { id: 'finance', name: '财务', color: 'green' },
+  { id: 'expense', name: '支出', color: 'red' },
   { id: 'name', name: '名字', color: 'indigo' },
   { id: 'generator', name: '生成器', color: 'purple' },
   { id: 'random', name: '随机', color: 'fuchsia' },
@@ -1129,6 +1133,17 @@ const allTools = computed(() => [
     component: 'NameGenerator',
     icon: 'M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z',
     tags: ['utility', 'creative', 'name', 'generator', 'random', 'culture', 'writing', 'character']
+  },
+  { 
+    id: 'travel-budget-planner', 
+    name: t('tools.travel-budget-planner.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.travel-budget-planner.description'),
+    path: '/tools/travel-budget-planner',
+    component: 'TravelBudgetPlanner',
+    icon: 'M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z',
+    tags: ['utility', 'travel', 'budget', 'planning', 'finance', 'calculator', 'expense']
   },
 ])
 // provide('allTools', allTools.value || allTools)
