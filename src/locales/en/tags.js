@@ -232,6 +232,9 @@ export default {
   salary: 'Salary',
   health: 'Health',
   fitness: 'Fitness',
+  calendar: 'Calendar',
+  holiday: 'Holiday',
+  date: 'Date',
 
   // Tag Categories
   categories: {

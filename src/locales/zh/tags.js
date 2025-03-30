@@ -235,6 +235,9 @@ export default {
   salary: '薪资',
   health: '健康',
   fitness: '健身',
+  calendar: '日历',
+  holiday: '节假日',
+  date: '日期',
 
   // 标签分类名称
   categories: {
