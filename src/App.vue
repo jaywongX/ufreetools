@@ -213,6 +213,10 @@ const allTags = ref([
   { id: 'currency', name: '货币', color: 'emerald' },
   { id: 'exchange', name: '汇率', color: 'teal' },
   { id: 'converter', name: '转换器', color: 'cyan' },
+  { id: 'drawing', name: '绘图', color: 'rose' },
+  { id: 'sketch', name: '草图', color: 'pink' },
+  { id: 'art', name: '艺术', color: 'fuchsia' },
+  { id: 'creative', name: '创意', color: 'purple' },
 ])
 provide('allTags', allTags)
 
@@ -463,6 +467,17 @@ const allTools = computed(() => [
     component:'DiagramExamples',
     icon:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
     tags:['design','diagram','example','visualization']
+  },
+  { 
+    id: 'drawing-board', 
+    name: t('tools.drawing-board.name'),
+    category: t(`categories.design`),
+    categoryId: 'design',
+    description: t('tools.drawing-board.description'),
+    path: '/tools/drawing-board',
+    component: 'DrawingBoard',
+    icon: 'M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z',
+    tags: ['design', 'drawing', 'sketch', 'art', 'creative']
   },
 
   // 文本与编辑

@@ -243,6 +243,7 @@ const lazyComponentMap = {
   'HolidayCalendar': () => import('./components/tools/HolidayCalendar.vue'),
   'TodoList': () => import('./components/tools/TodoList.vue'),
   'CurrencyConverter': () => import('./components/tools/CurrencyConverter.vue'),
+  'DrawingBoard': () => import('./components/tools/DrawingBoard.vue'),
 }
 
 // 创建应用

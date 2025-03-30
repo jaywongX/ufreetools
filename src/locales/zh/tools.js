@@ -77,6 +77,7 @@ import bmiCalculator from './tools/bmi-calculator.js';
 import holidayCalendar from './tools/holiday-calendar.js';
 import todoList from './tools/todo-list.js';
 import currencyConverter from './tools/currency-converter.js';
+import drawingBoard from './tools/drawing-board.js';
 
 export default {
   common: {
@@ -189,4 +190,5 @@ export default {
   'holiday-calendar': holidayCalendar,
   'todo-list': todoList,
   'currency-converter': currencyConverter,
+  'drawing-board': drawingBoard,
 }; 

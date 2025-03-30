@@ -258,4 +258,9 @@ export default {
   exchange: 'Exchange Rate',
   converter: 'Converter',
 
+  // New tags
+  drawing: 'Drawing',
+  sketch: 'Sketch',
+  creative: 'Creative',
+
 }

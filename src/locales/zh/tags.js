@@ -260,5 +260,8 @@ export default {
   currency: '货币',
   exchange: '汇率',
   converter: '转换器',
+  drawing: '绘图',
+  sketch: '草图',
+  creative: '创意',
 
 }
