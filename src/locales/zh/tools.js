@@ -78,6 +78,7 @@ import holidayCalendar from './tools/holiday-calendar.js';
 import todoList from './tools/todo-list.js';
 import currencyConverter from './tools/currency-converter.js';
 import drawingBoard from './tools/drawing-board.js';
+import timezoneConverter from './tools/timezone-converter.js';
 
 export default {
   common: {
@@ -191,4 +192,5 @@ export default {
   'todo-list': todoList,
   'currency-converter': currencyConverter,
   'drawing-board': drawingBoard,
+  'timezone-converter': timezoneConverter,
 }; 

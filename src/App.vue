@@ -217,6 +217,12 @@ const allTags = ref([
   { id: 'sketch', name: '草图', color: 'pink' },
   { id: 'art', name: '艺术', color: 'fuchsia' },
   { id: 'creative', name: '创意', color: 'purple' },
+  { id: 'timezone', name: '时区', color: 'blue' },
+  { id: 'world', name: '世界', color: 'purple' },
+  { id: 'clock', name: '时钟', color: 'fuchsia' },
+  { id: 'global', name: '全球', color: 'pink' },
+  { id: 'international', name: '国际', color: 'rose' },
+  { id: 'travel', name: '旅行', color: 'orange' },
 ])
 provide('allTags', allTags)
 
@@ -748,6 +754,17 @@ const allTools = computed(() => [
     component: 'YamlJsonConverter',
     icon:'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags:['convert','yaml','json','data']
+  },
+  { 
+    id: 'timezone-converter', 
+    name: t('tools.timezone-converter.name'),
+    category: t(`categories.convert`),
+    categoryId: 'convert',
+    description: t('tools.timezone-converter.description'),
+    path: '/tools/timezone-converter',
+    component: 'TimezoneConverter',
+    icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
+    tags: ['convert', 'time', 'timezone', 'world', 'clock', 'global', 'international', 'travel', 'converter']
   },
   
   // 网络与协议

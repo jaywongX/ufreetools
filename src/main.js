@@ -244,6 +244,7 @@ const lazyComponentMap = {
   'TodoList': () => import('./components/tools/TodoList.vue'),
   'CurrencyConverter': () => import('./components/tools/CurrencyConverter.vue'),
   'DrawingBoard': () => import('./components/tools/DrawingBoard.vue'),
+  'TimezoneConverter': () => import('./components/tools/TimezoneConverter.vue'),
 }
 
 // 创建应用

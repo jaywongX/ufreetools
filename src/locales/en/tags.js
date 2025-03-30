@@ -263,4 +263,12 @@ export default {
   sketch: 'Sketch',
   creative: 'Creative',
 
+  // New tags
+  timezone: 'Timezone',
+  world: 'World',
+  clock: 'Clock',
+  global: 'Global',
+  international: 'International',
+  travel: 'Travel',
+
 }

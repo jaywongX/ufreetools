@@ -263,5 +263,11 @@ export default {
   drawing: '绘图',
   sketch: '草图',
   creative: '创意',
+  timezone: '时区',
+  world: '世界',
+  clock: '时钟',
+  global: '全球',
+  international: '国际',
+  travel: '旅行',
 
 }
