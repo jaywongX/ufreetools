@@ -249,7 +249,7 @@
           <div>
             <h4 class="font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.svg-optimizer.view.title') }}</h4>
             <div class="border border-gray-200 dark:border-gray-700 rounded-md p-4 bg-white dark:bg-gray-900 flex items-center justify-center min-h-[200px]">
-              <div v-html="optimizedSvg" class="max-w-full max-h-[300px]"></div>
+              <div v-html="getSanitizedSvgForPreview(optimizedSvg)" class="max-w-full max-h-[300px]"></div>
             </div>
           </div>
           
@@ -286,7 +286,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -535,6 +535,41 @@ function downloadOptimizedSvg() {
   // 释放URL对象
   setTimeout(() => URL.revokeObjectURL(url), 100)
 }
+
+// 修复方案2: 如果使用v-html方式渲染，确保正确处理SVG字符串
+const getSanitizedSvgForPreview = (svgString) => {
+  if (!svgString) return '';
+  
+  // 确保SVG包含正确的命名空间
+  if (!svgString.includes('xmlns=')) {
+    svgString = svgString.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
+  }
+  
+  // 确保SVG元素有合适的尺寸属性
+  if (!svgString.includes('width=') && !svgString.includes('height=')) {
+    svgString = svgString.replace('<svg', '<svg width="100%" height="100%"');
+  }
+  
+  return svgString;
+}
+
+// 修复方案3: 在挂载后检查预览容器
+onMounted(() => {
+  // 确保预览容器存在并可见
+  const previewContainer = document.querySelector('.max-w-full.max-h-\\[300px\\]');
+  if (previewContainer) {
+    // 设置最小尺寸以确保可见
+    if (!previewContainer.style.minHeight) {
+      previewContainer.style.minHeight = '200px';
+    }
+    if (!previewContainer.style.minWidth) {
+      previewContainer.style.minWidth = '200px';
+    }
+    
+    // 添加边框以便于调试
+    previewContainer.style.border = '1px dashed #ccc';
+  }
+});
 </script>
 
 <style scoped>
