@@ -218,7 +218,30 @@ export default {
   number: '数字',
   mqtt: 'MQTT',
   mock: 'Mock',
-  
+  latex: 'LaTeX',
+  math: '数学',
+  formula: '公式',
+  cookie: 'Cookie',
+  browser: '浏览器',
+  privacy: '隐私',
+  countdown: '倒计时',
+  productivity: '生产力',
+  timer: '计时器',
+  pomodoro: '番茄钟',
+  finance: '金融',
+  loan: '贷款',
+  money: '货币',
+  tax: '税务',
+  salary: '薪资',
+  health: '健康',
+  fitness: '健身',
+  calendar: '日历',
+  holiday: '节假日',
+  date: '日期',
+  planner: '计划',
+  task: '任务',
+  organization: '组织',
+
   // 标签分类名称
   categories: {
     multimedia: '多媒体',
@@ -231,5 +254,29 @@ export default {
     data: '数据处理',
     conversion: '格式转换',
     analysis: '分析与诊断'
-  }
+  },
+
+  // 添加新标签
+  currency: '货币',
+  exchange: '汇率',
+  converter: '转换器',
+  drawing: '绘图',
+  sketch: '草图',
+  creative: '创意',
+  timezone: '时区',
+  world: '世界',
+  clock: '时钟',
+  global: '全球',
+  international: '国际',
+  travel: '旅行',
+  name: '名字',
+  generator: '生成器',
+  random: '随机',
+  culture: '文化',
+  writing: '写作',
+  character: '角色',
+  budget: '预算',
+  planning: '规划',
+  expense: '支出',
+
 }

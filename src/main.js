@@ -221,6 +221,7 @@ const lazyComponentMap = {
   'UserAgentParser': () => import('./components/tools/UserAgentParser.vue'),
   'UrlParamsParser': () => import('./components/tools/UrlParamsParser.vue'),
   'WebSocketTester': () => import('./components/tools/WebSocketTester.vue'),
+  'CookieManager': () => import('./components/tools/CookieManager.vue'),
   
   // 密码与安全
   'PasswordGenerator': () => import('./components/tools/PasswordGenerator.vue'),
@@ -233,6 +234,19 @@ const lazyComponentMap = {
   
   // 实用效率
   'UuidGenerator': () => import('./components/tools/UuidGenerator.vue'),
+  'LatexFormulaGenerator': () => import('./components/tools/LatexFormulaGenerator.vue'),
+  'CountdownGenerator': () => import('./components/tools/CountdownGenerator.vue'),
+  'PomodoroTimer': () => import('./components/tools/PomodoroTimer.vue'),
+  'LoanCalculator': () => import('./components/tools/LoanCalculator.vue'),
+  'IncomeTaxCalculator': () => import('./components/tools/IncomeTaxCalculator.vue'),
+  'BmiCalculator': () => import('./components/tools/BmiCalculator.vue'),
+  'HolidayCalendar': () => import('./components/tools/HolidayCalendar.vue'),
+  'TodoList': () => import('./components/tools/TodoList.vue'),
+  'CurrencyConverter': () => import('./components/tools/CurrencyConverter.vue'),
+  'DrawingBoard': () => import('./components/tools/DrawingBoard.vue'),
+  'TimezoneConverter': () => import('./components/tools/TimezoneConverter.vue'),
+  'NameGenerator': () => import('./components/tools/NameGenerator.vue'),
+  'TravelBudgetPlanner': () => import('./components/tools/TravelBudgetPlanner.vue'),
 }
 
 // 创建应用

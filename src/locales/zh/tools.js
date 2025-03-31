@@ -67,10 +67,22 @@ import hmacCalculator from './tools/hmac-calculator.js';
 import sm2Crypto from './tools/sm2-crypto.js';
 import symmetricCrypto from './tools/symmetric-crypto.js';
 import pageRedirectChecker from './tools/page-redirect-checker.js';
-// 导入其他工具...
+import latexFormulaGenerator from './tools/latex-formula-generator.js';
+import cookieManager from './tools/cookie-manager.js';
+import countdownGenerator from './tools/countdown-generator.js';
+import pomodoroTimer from './tools/pomodoro-timer.js';
+import loanCalculator from './tools/loan-calculator.js';
+import incomeTaxCalculator from './tools/income-tax-calculator.js';
+import bmiCalculator from './tools/bmi-calculator.js';
+import holidayCalendar from './tools/holiday-calendar.js';
+import todoList from './tools/todo-list.js';
+import currencyConverter from './tools/currency-converter.js';
+import drawingBoard from './tools/drawing-board.js';
+import timezoneConverter from './tools/timezone-converter.js';
+import nameGenerator from './tools/name-generator.js';
+import travelBudgetPlanner from './tools/travel-budget-planner.js';
 
 export default {
-  // 工具通用文本
   common: {
     tryNow: '立即使用',
     relatedTools: '相关工具',
@@ -170,5 +182,19 @@ export default {
   'hmac-calculator': hmacCalculator,
   'sm2-crypto': sm2Crypto,
   'symmetric-crypto': symmetricCrypto,
-  'page-redirect-checker': pageRedirectChecker
+  'page-redirect-checker': pageRedirectChecker,
+  'latex-formula-generator': latexFormulaGenerator,
+  'cookie-manager': cookieManager,
+  'countdown-generator': countdownGenerator,
+  'pomodoro-timer': pomodoroTimer,
+  'loan-calculator': loanCalculator,
+  'income-tax-calculator': incomeTaxCalculator,
+  'bmi-calculator': bmiCalculator,
+  'holiday-calendar': holidayCalendar,
+  'todo-list': todoList,
+  'currency-converter': currencyConverter,
+  'drawing-board': drawingBoard,
+  'timezone-converter': timezoneConverter,
+  'name-generator': nameGenerator,
+  'travel-budget-planner': travelBudgetPlanner,
 }; 

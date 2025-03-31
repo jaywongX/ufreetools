@@ -215,7 +215,30 @@ export default {
   number: 'number',
   mqtt: 'MQTT',
   mock: 'Mock',
-  
+  latex: 'LaTeX',
+  math: 'Math',
+  formula: 'Formula',
+  cookie: 'Cookie',
+  browser: 'Browser',
+  privacy: 'Privacy',
+  countdown: 'Countdown',
+  productivity: 'Productivity',
+  timer: 'Timer',
+  pomodoro: 'Pomodoro',
+  finance: 'Finance',
+  loan: 'Loan',
+  money: 'Money',
+  tax: 'Tax',
+  salary: 'Salary',
+  health: 'Health',
+  fitness: 'Fitness',
+  calendar: 'Calendar',
+  holiday: 'Holiday',
+  date: 'Date',
+  planner: 'Planner',
+  task: 'Task',
+  organization: 'Organization',
+
   // Tag Categories
   categories: {
     multimedia: 'Multimedia',
@@ -228,5 +251,38 @@ export default {
     data: 'Data Processing',
     conversion: 'Format Conversion',
     analysis: 'Analysis & Diagnostics'
-  }
+  },
+
+  // New tags
+  currency: 'Currency',
+  exchange: 'Exchange Rate',
+  converter: 'Converter',
+
+  // New tags
+  drawing: 'Drawing',
+  sketch: 'Sketch',
+  creative: 'Creative',
+
+  // New tags
+  timezone: 'Timezone',
+  world: 'World',
+  clock: 'Clock',
+  global: 'Global',
+  international: 'International',
+  travel: 'Travel',
+
+  // New tags
+  name: 'Name',
+  generator: 'Generator',
+  random: 'Random',
+  creative: 'Creative',
+  culture: 'Culture',
+  writing: 'Writing',
+  character: 'Character',
+
+  // New tags
+  budget: 'Budget',
+  planning: 'Planning',
+  expense: 'Expense',
+
 }

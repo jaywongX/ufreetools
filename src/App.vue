@@ -185,6 +185,54 @@ const allTags = ref([
   { id: 'compression', name: '压缩', color: 'green' },
   { id: 'metadata', name: '元数据', color: 'indigo' },
   { id: 'number', name: '数字', color: 'green' },
+  { id: 'latex', name: 'LaTeX', color: 'purple' },
+  { id: 'math', name: '数学', color: 'blue' },
+  { id: 'formula', name: '公式', color: 'indigo' },
+  { id: 'cookie', name: 'Cookie', color: 'amber' },
+  { id: 'browser', name: '浏览器', color: 'orange' },
+  { id: 'privacy', name: '隐私', color: 'rose' },
+  { id: 'time', name: '时间', color: 'cyan' },
+  { id: 'date', name: '日期', color: 'teal' },
+  { id: 'countdown', name: '倒计时', color: 'yellow' },
+  { id: 'productivity', name: '生产力', color: 'emerald' },
+  { id: 'timer', name: '计时器', color: 'rose' },
+  { id: 'pomodoro', name: '番茄工作法', color: 'red' },
+  { id: 'finance', name: '金融', color: 'green' },
+  { id: 'loan', name: '贷款', color: 'emerald' },
+  { id: 'money', name: '货币', color: 'lime' },
+  { id: 'tax', name: '税务', color: 'indigo' },
+  { id: 'salary', name: '薪资', color: 'purple' },
+  { id: 'health', name: '健康', color: 'teal' },
+  { id: 'fitness', name: '健身', color: 'cyan' },
+  { id: 'calendar', name: '日历', color: 'amber' },
+  { id: 'holiday', name: '节假日', color: 'orange' },
+  { id: 'date', name: '日期', color: 'yellow' },
+  { id: 'planner', name: '规划', color: 'blue' },
+  { id: 'task', name: '任务', color: 'indigo' },
+  { id: 'organization', name: '组织', color: 'sky' },
+  { id: 'currency', name: '货币', color: 'emerald' },
+  { id: 'exchange', name: '汇率', color: 'teal' },
+  { id: 'converter', name: '转换器', color: 'cyan' },
+  { id: 'drawing', name: '绘图', color: 'rose' },
+  { id: 'sketch', name: '草图', color: 'pink' },
+  { id: 'art', name: '艺术', color: 'fuchsia' },
+  { id: 'creative', name: '创意', color: 'purple' },
+  { id: 'timezone', name: '时区', color: 'blue' },
+  { id: 'world', name: '世界', color: 'purple' },
+  { id: 'clock', name: '时钟', color: 'fuchsia' },
+  { id: 'global', name: '全球', color: 'pink' },
+  { id: 'international', name: '国际', color: 'rose' },
+  { id: 'travel', name: '旅行', color: 'blue' },
+  { id: 'budget', name: '预算', color: 'emerald' },
+  { id: 'planning', name: '规划', color: 'violet' },
+  { id: 'finance', name: '财务', color: 'green' },
+  { id: 'expense', name: '支出', color: 'red' },
+  { id: 'name', name: '名字', color: 'indigo' },
+  { id: 'generator', name: '生成器', color: 'purple' },
+  { id: 'random', name: '随机', color: 'fuchsia' },
+  { id: 'culture', name: '文化', color: 'pink' },
+  { id: 'writing', name: '写作', color: 'orange' },
+  { id: 'character', name: '角色', color: 'amber' },
 ])
 provide('allTags', allTags)
 
@@ -435,6 +483,17 @@ const allTools = computed(() => [
     component:'DiagramExamples',
     icon:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
     tags:['design','diagram','example','visualization']
+  },
+  { 
+    id: 'drawing-board', 
+    name: t('tools.drawing-board.name'),
+    category: t(`categories.design`),
+    categoryId: 'design',
+    description: t('tools.drawing-board.description'),
+    path: '/tools/drawing-board',
+    component: 'DrawingBoard',
+    icon: 'M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z',
+    tags: ['design', 'drawing', 'sketch', 'art', 'creative']
   },
 
   // 文本与编辑
@@ -706,6 +765,17 @@ const allTools = computed(() => [
     icon:'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags:['convert','yaml','json','data']
   },
+  { 
+    id: 'timezone-converter', 
+    name: t('tools.timezone-converter.name'),
+    category: t(`categories.convert`),
+    categoryId: 'convert',
+    description: t('tools.timezone-converter.description'),
+    path: '/tools/timezone-converter',
+    component: 'TimezoneConverter',
+    icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
+    tags: ['convert', 'time', 'timezone', 'world', 'clock', 'global', 'international', 'travel', 'converter']
+  },
   
   // 网络与协议
   { 
@@ -862,6 +932,17 @@ const allTools = computed(() => [
     icon: "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z",
     tags: ['network', 'websocket', 'test']
   },
+  { 
+    id: 'cookie-manager', 
+    name: t('tools.cookie-manager.name'),
+    category: t(`categories.network`),
+    categoryId: 'network',
+    description: t('tools.cookie-manager.description'),
+    path: '/tools/cookie-manager',
+    component: 'CookieManager',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'http', 'browser', 'cookie', 'privacy', 'security']
+  },
   
   // 加密安全工具
   {
@@ -940,6 +1021,129 @@ const allTools = computed(() => [
     component: 'HmacCalculator',
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['crypto', 'hash', 'security', 'generate']
+  },
+
+  // 实用与效率
+  { 
+    id: 'latex-formula-generator', 
+    name: t('tools.latex-formula-generator.name'),
+    category: t(`categories.text`),
+    categoryId: 'utility',
+    description: t('tools.latex-formula-generator.description'),
+    path: '/tools/latex-formula-generator',
+    component: 'LatexFormulaGenerator',
+    icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
+    tags: ['text', 'latex', 'math', 'formula', 'editor']
+  },
+  { 
+    id: 'countdown-generator', 
+    name: t('tools.countdown-generator.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.countdown-generator.description'),
+    path: '/tools/countdown-generator',
+    component: 'CountdownGenerator',
+    icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['utility', 'time', 'date', 'countdown']
+  },
+  { 
+    id: 'pomodoro-timer', 
+    name: t('tools.pomodoro-timer.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.pomodoro-timer.description'),
+    path: '/tools/pomodoro-timer',
+    component: 'PomodoroTimer',
+    icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
+    tags: ['utility', 'time', 'productivity', 'timer', 'pomodoro']
+  },
+  { 
+    id: 'loan-calculator', 
+    name: t('tools.loan-calculator.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.loan-calculator.description'),
+    path: '/tools/loan-calculator',
+    component: 'LoanCalculator',
+    icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+    tags: ['utility', 'calculator', 'finance', 'loan', 'money']
+  },
+  { 
+    id: 'income-tax-calculator', 
+    name: t('tools.income-tax-calculator.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.income-tax-calculator.description'),
+    path: '/tools/income-tax-calculator',
+    component: 'IncomeTaxCalculator',
+    icon: 'M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z',
+    tags: ['utility', 'calculator', 'finance', 'tax', 'salary', 'money']
+  },
+  { 
+    id: 'bmi-calculator', 
+    name: t('tools.bmi-calculator.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.bmi-calculator.description'),
+    path: '/tools/bmi-calculator',
+    component: 'BmiCalculator',
+    icon: 'M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z',
+    tags: ['utility', 'calculator', 'health', 'fitness']
+  },
+  { 
+    id: 'holiday-calendar', 
+    name: t('tools.holiday-calendar.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.holiday-calendar.description'),
+    path: '/tools/holiday-calendar',
+    component: 'HolidayCalendar',
+    icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['utility', 'calendar', 'holiday', 'date']
+  },
+  { 
+    id: 'todo-list', 
+    name: t('tools.todo-list.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.todo-list.description'),
+    path: '/tools/todo-list',
+    component: 'TodoList',
+    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
+    tags: ['utility', 'productivity', 'planner', 'task', 'organization']
+  },
+  { 
+    id: 'currency-converter', 
+    name: t('tools.currency-converter.name'),
+    category: t(`categories.finance`),
+    categoryId: 'utility',
+    description: t('tools.currency-converter.description'),
+    path: '/tools/currency-converter',
+    component: 'CurrencyConverter',
+    icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+    tags: ['utility', 'finance', 'currency', 'converter', 'exchange', 'calculator', 'money']
+  },
+  { 
+    id: 'name-generator', 
+    name: t('tools.name-generator.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.name-generator.description'),
+    path: '/tools/name-generator',
+    component: 'NameGenerator',
+    icon: 'M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z',
+    tags: ['utility', 'creative', 'name', 'generator', 'random', 'culture', 'writing', 'character']
+  },
+  { 
+    id: 'travel-budget-planner', 
+    name: t('tools.travel-budget-planner.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.travel-budget-planner.description'),
+    path: '/tools/travel-budget-planner',
+    component: 'TravelBudgetPlanner',
+    icon: 'M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z',
+    tags: ['utility', 'travel', 'budget', 'planning', 'finance', 'calculator', 'expense']
   },
 ])
 // provide('allTools', allTools.value || allTools)
