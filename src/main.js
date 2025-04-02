@@ -11,6 +11,7 @@ window.global = window
 import { createApp, markRaw } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { createI18n } from 'vue-i18n'
+import { createHead } from '@vueuse/head'
 import App from './App.vue'
 import './assets/css/tailwind.css'
 
@@ -20,8 +21,8 @@ import messages from './locales'
 // 配置i18n
 const i18n = createI18n({
   legacy: false, // 使用组合式API
-  locale: 'zh', // 默认语言
-  fallbackLocale: 'en', // 回退语言
+  locale: 'en', // 默认语言
+  fallbackLocale: 'zh', // 回退语言
   messages
 })
 
@@ -137,7 +138,7 @@ router.beforeEach((to, from, next) => {
       ? savedLang 
       : navigator.language.split('-')[0]; // 浏览器语言
     
-    const targetLang = supportedLanguages.includes(userLang) ? userLang : 'zh';
+    const targetLang = supportedLanguages.includes(userLang) ? userLang : 'en';
     next(`/${targetLang}`);
     return;
   }
@@ -251,8 +252,11 @@ const lazyComponentMap = {
 
 // 创建应用
 const app = createApp(App)
+const head = createHead()
+
 app.use(router)
 app.use(i18n)
+app.use(head)
 
 // 将组件懒加载映射添加到全局属性
 app.config.globalProperties.lazyComponentMap = lazyComponentMap

@@ -2,1183 +2,1303 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
     <loc>https://ufreetools.com/</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/about</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tags</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/privacy-policy</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/terms</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/contact</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/feedback</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/category/dev</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/category/convert</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/category/design</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/category/text</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/category/image</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/category/network</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/category/security</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/category/utility</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tag/code</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tag/dev</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tag/convert</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tag/utility</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tag/image</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tag/text</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tag/security</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tag/format</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tag/validate</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tag/design</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tag/frontend</loc>
-    <lastmod>2025-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ufreetools.com/en/tag/backend</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tag/data</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tag/web</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/api-request-tool</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/base64-encoder-decoder</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/code-beautifier</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/code-complexity-analyzer</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/code-diff</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/code-formatter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/code-obfuscator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/color-picker</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/color-scheme-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/cors-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/css-formatter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/css-gradient-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/csv-json-converter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/curl-converter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/diagram-examples</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/flowchart-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/gif-frame-extractor</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/git-conflict-resolver</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/grpc-debugger</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/hash-calculator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/hmac-calculator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/html-entity-encoder</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/html-formatter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/http-header-security-checker</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/http-proxy-detector</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/http-status-code-lookup</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/id-photo-maker</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/image-batch-resizer</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/image-color-extractor</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/image-compressor</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/image-cropper</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/image-exif-viewer</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/image-filters</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/image-mosaic-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/image-pixelator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/image-to-ascii</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/ip-lookup</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/javascript-formatter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/javascript-obfuscator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/json-formatter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/jwt-debugger</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/markdown-editor</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/markdown-to-html</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/mock-api-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/mqtt-tester</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/network-speed-test</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/number-converter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/openapi-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/page-redirect-checker</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/password-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/password-strength-checker</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/qr-code-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/regex-tester</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/request-header-editor</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/rsa-crypto</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/sensitive-word-filter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/sm2-crypto</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/sql-formatter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/svg-optimizer</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/symmetric-crypto</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/timestamp-converter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/url-encode-decode</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/url-params-parser</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/user-agent-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/user-agent-parser</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/uuid-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/websocket-tester</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/xml-formatter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/xml-json-converter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/en/tool/yaml-json-converter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/en/tool/latex-equation-generator</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/en/tool/countdown-generator</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/en/tool/pomodoro-timer</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/en/tool/loan-calculator</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/en/tool/income-tax-calculator</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/en/tool/bmi-calculator</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/en/tool/holiday-calendar</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/en/tool/todo-list</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/en/tool/currency-converter</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/en/tool/name-generator</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/en/tool/travel-budget-planner</loc>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/about</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tags</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/privacy-policy</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/terms</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/contact</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/feedback</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/category/dev</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/category/convert</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/category/design</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/category/text</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/category/image</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/category/network</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/category/security</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/category/utility</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tag/code</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tag/dev</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tag/convert</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tag/utility</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tag/image</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tag/text</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tag/security</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tag/format</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tag/validate</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tag/design</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tag/frontend</loc>
-    <lastmod>2025-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ufreetools.com/zh/tag/backend</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tag/data</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tag/web</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/api-request-tool</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/base64-encoder-decoder</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/code-beautifier</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/code-complexity-analyzer</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/code-diff</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/code-formatter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/code-obfuscator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/color-picker</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/color-scheme-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/cors-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/css-formatter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/css-gradient-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/csv-json-converter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/curl-converter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/diagram-examples</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/flowchart-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/gif-frame-extractor</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/git-conflict-resolver</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/grpc-debugger</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/hash-calculator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/hmac-calculator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/html-entity-encoder</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/html-formatter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/http-header-security-checker</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/http-proxy-detector</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/http-status-code-lookup</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/id-photo-maker</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/image-batch-resizer</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/image-color-extractor</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/image-compressor</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/image-cropper</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/image-exif-viewer</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/image-filters</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/image-mosaic-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/image-pixelator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/image-to-ascii</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/ip-lookup</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/javascript-formatter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/javascript-obfuscator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/json-formatter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/jwt-debugger</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/markdown-editor</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/markdown-to-html</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/mock-api-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/mqtt-tester</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/network-speed-test</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/number-converter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/openapi-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/page-redirect-checker</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/password-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/password-strength-checker</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/qr-code-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/regex-tester</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/request-header-editor</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/rsa-crypto</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/sensitive-word-filter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/sm2-crypto</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/sql-formatter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/svg-optimizer</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/symmetric-crypto</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/timestamp-converter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/url-encode-decode</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/url-params-parser</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/user-agent-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/user-agent-parser</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/uuid-generator</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/websocket-tester</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/xml-formatter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/xml-json-converter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ufreetools.com/zh/tool/yaml-json-converter</loc>
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/zh/tool/latex-equation-generator</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/zh/tool/countdown-generator</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/zh/tool/pomodoro-timer</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/zh/tool/loan-calculator</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/zh/tool/income-tax-calculator</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/zh/tool/bmi-calculator</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/zh/tool/holiday-calendar</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/zh/tool/todo-list</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/zh/tool/currency-converter</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/zh/tool/name-generator</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/zh/tool/travel-budget-planner</loc>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

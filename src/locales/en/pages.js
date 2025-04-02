@@ -1,6 +1,6 @@
 export default {
   home: {
-    title: 'Welcome to Our Tool Platform',
+    title: 'Your free toolset',
     description: 'Discover useful online tools to simplify your work',
     getStarted: 'Get Started',
     tagFilterTitle: 'Tag Filter',

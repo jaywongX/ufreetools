@@ -102,11 +102,26 @@
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               {{ $t('tools.symmetric-crypto.key.title') }} <span class="text-xs text-gray-500">({{ getKeySize() }})</span>
             </label>
+            <!-- 密钥格式选择 -->
+            <div class="flex mb-2 text-sm">
+              <span class="mr-2 text-gray-600 dark:text-gray-400">{{ $t('tools.symmetric-crypto.inputFormat.title') }}:</span>
+              <button 
+                v-for="format in ['string', 'hex', 'base64']" 
+                :key="`key-${format}`"
+                @click="keyInputFormat = format"
+                class="mr-2 px-2 py-0.5 rounded"
+                :class="keyInputFormat === format 
+                  ? 'bg-primary text-white' 
+                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
+              >
+                {{ $t(`tools.symmetric-crypto.inputFormat.${format}`) }}
+              </button>
+            </div>
             <div class="flex mb-2">
               <input 
                 v-model="key" 
                 type="text" 
-                :placeholder="$t('tools.symmetric-crypto.key.placeholder', { keySize: getKeySize() })"
+                :placeholder="getKeyPlaceholder()"
                 class="flex-grow px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               >
               <button 
@@ -117,6 +132,10 @@
                 {{ $t('tools.symmetric-crypto.key.generateRandom') }}
               </button>
             </div>
+            <!-- 密钥输入框下方 -->
+            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+              {{ $t('tools.symmetric-crypto.key.autoFillHint') }}
+            </div>
           </div>
 
           <!-- IV (初始向量) -->
@@ -124,11 +143,26 @@
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               {{ $t('tools.symmetric-crypto.iv.label') }} <span class="text-xs text-gray-500">({{ getBlockSize() }})</span>
             </label>
+            <!-- IV格式选择 -->
+            <div class="flex mb-2 text-sm">
+              <span class="mr-2 text-gray-600 dark:text-gray-400">{{ $t('tools.symmetric-crypto.inputFormat.title') }}:</span>
+              <button 
+                v-for="format in ['string', 'hex', 'base64']" 
+                :key="`iv-${format}`"
+                @click="ivInputFormat = format"
+                class="mr-2 px-2 py-0.5 rounded"
+                :class="ivInputFormat === format 
+                  ? 'bg-primary text-white' 
+                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
+              >
+                {{ $t(`tools.symmetric-crypto.inputFormat.${format}`) }}
+              </button>
+            </div>
             <div class="flex mb-2">
               <input 
                 v-model="iv" 
                 type="text" 
-                :placeholder="$t('tools.symmetric-crypto.iv.placeholder', { blockSize: getBlockSize() })"
+                :placeholder="getIVPlaceholder()"
                 class="flex-grow px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               >
               <button 
@@ -138,6 +172,10 @@
               >
                 {{ $t('tools.symmetric-crypto.iv.generateRandom') }}
               </button>
+            </div>
+            <!-- IV输入框下方 -->
+            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+              {{ $t('tools.symmetric-crypto.iv.autoFillHint') }}
             </div>
           </div>
         </div>
@@ -274,6 +312,8 @@ const input = ref('')
 const result = ref('')
 const error = ref('')
 const copySuccess = ref(false)  // 新增：复制成功提示状态
+const keyInputFormat = ref('string')
+const ivInputFormat = ref('string')
 
 // 算法列表
 const algorithms = [
@@ -379,18 +419,121 @@ function getBlockSize() {
   }
 }
 
+// 获取当前算法密钥大小（字节）
+function getKeySizeBytes() {
+  switch (selectedAlgorithm.value) {
+    case 'aes':
+      return 16 // AES-128 (16 bytes = 128 bits)
+    case 'des':
+      return 8  // DES (8 bytes = 64 bits, 但实际使用56位)
+    case 'tripledes':
+      return 24 // 3DES (24 bytes = 192 bits)
+    case 'sm4':
+      return 16 // SM4 (16 bytes = 128 bits)
+    default:
+      return 16
+  }
+}
+
+// 获取当前算法块大小（字节）
+function getBlockSizeBytes() {
+  switch (selectedAlgorithm.value) {
+    case 'aes':
+      return 16 // AES 块大小: 16 bytes
+    case 'des':
+    case 'tripledes':
+      return 8  // DES/3DES 块大小: 8 bytes
+    case 'sm4':
+      return 16 // SM4 块大小: 16 bytes
+    default:
+      return 16
+  }
+}
+
+// 在setup函数中获取t函数
+const { t } = useI18n()
+
+// 修改getKeyPlaceholder和getIVPlaceholder函数
+function getKeyPlaceholder() {
+  const keySize = getKeySize()
+  switch(keyInputFormat.value) {
+    case 'string':
+      return t('tools.symmetric-crypto.key.placeholderString', { keySize })
+    case 'hex':
+      return t('tools.symmetric-crypto.key.placeholderHex', { keySize })
+    case 'base64':
+      return t('tools.symmetric-crypto.key.placeholderBase64', { keySize })
+    default:
+      return t('tools.symmetric-crypto.key.placeholder', { keySize })
+  }
+}
+
+function getIVPlaceholder() {
+  const blockSize = getBlockSize()
+  switch(ivInputFormat.value) {
+    case 'string':
+      return t('tools.symmetric-crypto.iv.placeholderString', { blockSize })
+    case 'hex':
+      return t('tools.symmetric-crypto.iv.placeholderHex', { blockSize })
+    case 'base64':
+      return t('tools.symmetric-crypto.iv.placeholderBase64', { blockSize })
+    default:
+      return t('tools.symmetric-crypto.iv.placeholder', { blockSize })
+  }
+}
+
 // 生成随机密钥
 function generateRandomKey() {
-  const keyLength = getDefaultKeyLength()
-  const randomKey = CryptoJS.lib.WordArray.random(keyLength)
-  key.value = randomKey.toString(CryptoJS.enc.Hex)
+  const keySizeBytes = getKeySizeBytes()
+  const randomBytes = new Uint8Array(keySizeBytes)
+  crypto.getRandomValues(randomBytes)
+  
+  let randomKey
+  switch(keyInputFormat.value) {
+    case 'string':
+      // 生成可打印字符的随机字符串
+      randomKey = Array.from(randomBytes)
+        .map(byte => String.fromCharCode(32 + (byte % 94))) // 可打印ASCII
+        .join('')
+      break
+    case 'hex':
+      randomKey = Array.from(randomBytes)
+        .map(byte => byte.toString(16).padStart(2, '0'))
+        .join('')
+      break
+    case 'base64':
+      randomKey = btoa(String.fromCharCode.apply(null, randomBytes))
+      break
+  }
+  
+  key.value = randomKey
 }
 
 // 生成随机IV
 function generateRandomIV() {
-  const blockSize = getDefaultBlockSize()
-  const randomIV = CryptoJS.lib.WordArray.random(blockSize)
-  iv.value = randomIV.toString(CryptoJS.enc.Hex).substring(0, 32) // 限制为16字节（32个十六进制字符）
+  const blockSizeBytes = getBlockSizeBytes()
+  const randomBytes = new Uint8Array(blockSizeBytes)
+  crypto.getRandomValues(randomBytes)
+  
+  let randomIV
+  switch(ivInputFormat.value) {
+    case 'string':
+      // 生成可打印字符的随机字符串
+      randomIV = Array.from(randomBytes)
+        .map(byte => String.fromCharCode(32 + (byte % 94))) // 可打印ASCII
+        .join('')
+      break
+    case 'hex':
+      randomIV = Array.from(randomBytes)
+        .map(byte => byte.toString(16).padStart(2, '0'))
+        .join('')
+      break
+    case 'base64':
+      randomIV = btoa(String.fromCharCode.apply(null, randomBytes))
+      break
+  }
+  
+  iv.value = randomIV
 }
 
 // 获取默认密钥长度
@@ -428,26 +571,6 @@ function isValidHex(str) {
   return /^[0-9a-fA-F]*$/.test(str)
 }
 
-// 监听密钥输入
-watch(key, (newValue) => {
-  if (newValue && !isValidHex(newValue)) {
-    error.value = $t('tools.symmetric-crypto.error.invalidHex')
-    key.value = newValue.replace(/[^0-9a-fA-F]/g, '') // 移除非HEX字符
-  } else {
-    error.value = ''
-  }
-})
-
-// 监听IV输入
-watch(iv, (newValue) => {
-  if (newValue && !isValidHex(newValue)) {
-    error.value = $t('tools.symmetric-crypto.error.invalidIvHex')
-    iv.value = newValue.replace(/[^0-9a-fA-F]/g, '') // 移除非HEX字符
-  } else {
-    error.value = ''
-  }
-})
-
 // 处理加密解密操作
 async function processOperation() {
   error.value = ''
@@ -465,12 +588,110 @@ async function processOperation() {
   }
 }
 
+/**
+ * 处理密钥，确保长度符合算法要求
+ * @param {CryptoJS.lib.WordArray} keyWordArray - 原始密钥WordArray
+ * @param {number} requiredBytes - 需要的字节数
+ * @returns {CryptoJS.lib.WordArray} - 处理后的密钥
+ */
+function padKey(keyWordArray, requiredBytes) {
+  const keyBytes = keyWordArray.sigBytes;
+  
+  // 如果密钥长度已经符合要求，直接返回
+  if (keyBytes === requiredBytes) {
+    return keyWordArray;
+  }
+  
+  // 如果密钥太长，截断它
+  if (keyBytes > requiredBytes) {
+    const truncatedWords = [];
+    const words = keyWordArray.words;
+    
+    // 每个word是4字节，计算需要的word数
+    const requiredWords = Math.ceil(requiredBytes / 4);
+    
+    for (let i = 0; i < requiredWords; i++) {
+      truncatedWords[i] = words[i];
+    }
+    
+    // 创建新的WordArray
+    return CryptoJS.lib.WordArray.create(
+      truncatedWords, 
+      requiredBytes
+    );
+  }
+  
+  // 如果密钥太短，添加0填充
+  const paddedWords = [...keyWordArray.words];
+  const currentWords = Math.ceil(keyBytes / 4);
+  const requiredWords = Math.ceil(requiredBytes / 4);
+  
+  // 添加全0的word
+  for (let i = currentWords; i < requiredWords; i++) {
+    paddedWords[i] = 0;
+  }
+  
+  // 创建新的WordArray
+  return CryptoJS.lib.WordArray.create(
+    paddedWords, 
+    requiredBytes
+  );
+}
+
 // 加密函数
 async function encrypt() {
-  // 处理密钥和IV
-  let processedKey = CryptoJS.enc.Hex.parse(key.value)
-  let processedIV = CryptoJS.enc.Hex.parse(iv.value.substring(0, 32))
-
+  // 处理密钥
+  let processedKey
+  switch(keyInputFormat.value) {
+    case 'string':
+      processedKey = CryptoJS.enc.Utf8.parse(key.value)
+      break
+    case 'hex':
+      if (!isValidHex(key.value)) {
+        throw new Error(t('tools.symmetric-crypto.error.invalidHexKey'))
+      }
+      processedKey = CryptoJS.enc.Hex.parse(key.value)
+      break
+    case 'base64':
+      try {
+        processedKey = CryptoJS.enc.Base64.parse(key.value)
+      } catch (e) {
+        throw new Error(t('tools.symmetric-crypto.error.invalidBase64Key'))
+      }
+      break
+  }
+  
+  // 确保密钥长度符合要求
+  processedKey = padKey(processedKey, getKeySizeBytes())
+  
+  // 处理IV
+  let processedIV
+  if (needsIV()) {
+    switch(ivInputFormat.value) {
+      case 'string':
+        processedIV = CryptoJS.enc.Utf8.parse(iv.value)
+        break
+      case 'hex':
+        if (!isValidHex(iv.value)) {
+          throw new Error(t('tools.symmetric-crypto.error.invalidHexIV'))
+        }
+        processedIV = CryptoJS.enc.Hex.parse(iv.value)
+        break
+      case 'base64':
+        try {
+          processedIV = CryptoJS.enc.Base64.parse(iv.value)
+        } catch (e) {
+          throw new Error(t('tools.symmetric-crypto.error.invalidBase64IV'))
+        }
+        break
+    }
+    
+    // 确保IV长度符合要求
+    processedIV = padKey(processedIV, getBlockSizeBytes())
+  } else {
+    processedIV = CryptoJS.lib.WordArray.create()
+  }
+  
   // 处理输入
   let processedInput
   switch (selectedInputFormat.value) {
@@ -479,7 +700,7 @@ async function encrypt() {
       break
     case 'hex':
       if (!isValidHex(input.value)) {
-        throw new Error($t('tools.symmetric-crypto.error.invalidHexInput'))
+        throw new Error(t('tools.symmetric-crypto.error.invalidHexInput'))
       }
       processedInput = CryptoJS.enc.Hex.parse(input.value)
       break
@@ -487,7 +708,7 @@ async function encrypt() {
       try {
         processedInput = CryptoJS.enc.Base64.parse(input.value)
       } catch (e) {
-        throw new Error($t('tools.symmetric-crypto.error.invalidBase64'))
+        throw new Error(t('tools.symmetric-crypto.error.invalidBase64'))
       }
       break
   }
@@ -524,7 +745,7 @@ async function encrypt() {
       encrypted = CryptoJS.TripleDES.encrypt(processedInput, processedKey, options)
       break
     default:
-      throw new Error($t('tools.symmetric-crypto.error.unsupportedAlgorithm'))
+      throw new Error(t('tools.symmetric-crypto.error.unsupportedAlgorithm'))
   }
   
   // 按照选择的格式输出
@@ -536,12 +757,55 @@ async function encrypt() {
 
 // 解密函数
 async function decrypt() {
-  // 处理密钥和IV
-  let processedKey = CryptoJS.enc.Hex.parse(key.value)
-  let processedIV = CryptoJS.enc.Hex.parse(iv.value.substring(0, 32))
+  // 处理密钥
+  let processedKey
+  switch(keyInputFormat.value) {
+    case 'string':
+      processedKey = CryptoJS.enc.Utf8.parse(key.value)
+      break
+    case 'hex':
+      if (!isValidHex(key.value)) {
+        throw new Error(t('tools.symmetric-crypto.error.invalidHexKey'))
+      }
+      processedKey = CryptoJS.enc.Hex.parse(key.value)
+      break
+    case 'base64':
+      try {
+        processedKey = CryptoJS.enc.Base64.parse(key.value)
+      } catch (e) {
+        throw new Error(t('tools.symmetric-crypto.error.invalidBase64Key'))
+      }
+      break
+  }
   
-  // 如果模式不需要IV，设置为空
-  if (!needsIV()) {
+  // 确保密钥长度符合要求  
+  processedKey = padKey(processedKey, getKeySizeBytes())
+  
+  // 处理IV
+  let processedIV
+  if (needsIV()) {
+    switch(ivInputFormat.value) {
+      case 'string':
+        processedIV = CryptoJS.enc.Utf8.parse(iv.value)
+        break
+      case 'hex':
+        if (!isValidHex(iv.value)) {
+          throw new Error(t('tools.symmetric-crypto.error.invalidHexIV'))
+        }
+        processedIV = CryptoJS.enc.Hex.parse(iv.value)
+        break
+      case 'base64':
+        try {
+          processedIV = CryptoJS.enc.Base64.parse(iv.value)
+        } catch (e) {
+          throw new Error(t('tools.symmetric-crypto.error.invalidBase64IV'))
+        }
+        break
+    }
+    
+    // 确保IV长度符合要求
+    processedIV = padKey(processedIV, getBlockSizeBytes())
+  } else {
     processedIV = CryptoJS.lib.WordArray.create()
   }
   
@@ -550,7 +814,7 @@ async function decrypt() {
   if (selectedInputFormat.value === 'hex') {
     // HEX格式
     if (!isValidHex(input.value)) {
-      throw new Error('无效的HEX格式')
+      throw new Error(t('tools.symmetric-crypto.error.invalidHexFormat'))
     }
     ciphertext = CryptoJS.enc.Hex.parse(input.value)
     // 对于非SM4算法，创建CipherParams对象
@@ -565,11 +829,11 @@ async function decrypt() {
     try {
       // 添加Base64格式验证
       if (!/^[A-Za-z0-9+/]*={0,2}$/.test(input.value)) {
-        throw new Error('无效的Base64格式')
+        throw new Error(t('tools.symmetric-crypto.error.invalidBase64Format'))
       }
       ciphertext = CryptoJS.enc.Base64.parse(input.value)
       if (!ciphertext || ciphertext.sigBytes === 0) {
-        throw new Error('无效的Base64编码')
+        throw new Error(t('tools.symmetric-crypto.error.emptyBase64'))
       }
       if (selectedAlgorithm.value !== 'sm4') {
         let cipherParams = CryptoJS.lib.CipherParams.create({
@@ -578,7 +842,7 @@ async function decrypt() {
         return decryptWithCryptoJS(cipherParams, processedKey, processedIV)
       }
     } catch (e) {
-      error.value = e.message || '无效的Base64编码'
+      error.value = e.message || t('tools.symmetric-crypto.error.invalidBase64')
       return ''
     }
   }
@@ -682,20 +946,20 @@ function decryptSM4(ciphertext, key, iv) {
     try {
       // 添加Base64格式验证
       if (!/^[A-Za-z0-9+/]*={0,2}$/.test(ciphertext)) {
-        throw new Error('无效的Base64格式')
+        throw new Error(t('tools.symmetric-crypto.error.invalidBase64Format'))
       }
       processedCiphertext = atob(ciphertext)
       if (!processedCiphertext) {
-        throw new Error('无效的Base64编码')
+        throw new Error(t('tools.symmetric-crypto.error.emptyBase64'))
       }
     } catch (e) {
-      error.value = e.message || '无效的Base64编码'
+      error.value = e.message || t('tools.symmetric-crypto.error.invalidBase64')
       return ''
     }
   } else {
     // HEX格式
     if (!isValidHex(ciphertext)) {
-      throw new Error('无效的HEX格式')
+      throw new Error(t('tools.symmetric-crypto.error.invalidHexFormat'))
     }
     processedCiphertext = ciphertext
   }
@@ -724,7 +988,7 @@ function decryptSM4(ciphertext, key, iv) {
       })
     }
   } catch (e) {
-    error.value = '解密失败：' + (e.message || '未知错误')
+    error.value = t('tools.symmetric-crypto.error.decryptFailed') + (e.message || t('tools.symmetric-crypto.error.unknownError'))
     return ''
   }
 }
@@ -756,8 +1020,8 @@ function copyResult() {
       }, 2000)
     })
     .catch(err => {
-      console.error('复制失败:', err)
-      error.value = $t('tools.symmetric-crypto.error.copyFailed')
+      console.error(t('tools.symmetric-crypto.error.copyFailed'), err)
+      error.value = t('tools.symmetric-crypto.error.copyFailed')
     })
 }
 

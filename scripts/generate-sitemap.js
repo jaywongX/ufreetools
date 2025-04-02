@@ -37,7 +37,7 @@ const CATEGORIES = [
 // 标签页面
 const TAGS = [
   'code', 'dev', 'convert', 'utility', 'image', 'text', 'security', 
-  'format', 'validate', 'design', 'frontend', 'backend', 'data', 'web'
+  'format', 'validate', 'design', 'frontend', 'data', 'web'
 ];
 
 // 工具页面
@@ -111,7 +111,19 @@ const TOOLS = [
   'websocket-tester',
   'xml-formatter',
   'xml-json-converter',
-  'yaml-json-converter'
+  'yaml-json-converter',
+  // 新增实用工具
+  'latex-equation-generator',
+  'countdown-generator',
+  'pomodoro-timer',
+  'loan-calculator',
+  'income-tax-calculator',
+  'bmi-calculator',
+  'holiday-calendar',
+  'todo-list',
+  'currency-converter',
+  'name-generator',
+  'travel-budget-planner'
 ];
 
 // 生成 XML 条目
