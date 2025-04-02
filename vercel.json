@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "http://ufreetools.com/:path*",
+      "destination": "https://www.ufreetools.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "https://ufreetools.com/:path*",
+      "destination": "https://www.ufreetools.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "http://www.ufreetools.com/:path*",
+      "destination": "https://www.ufreetools.com/:path*",
+      "permanent": true
+    }
+  ]
+} 
