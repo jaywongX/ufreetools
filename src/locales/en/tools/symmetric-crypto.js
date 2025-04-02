@@ -46,16 +46,24 @@ export default {
   key: {
     title: 'Key',
     label: 'Key',
-    placeholder: 'Enter {keySize} key (HEX format)',
+    placeholder: 'Enter {keySize} key',
+    placeholderString: 'Enter {keySize} string key (auto-padded)',
+    placeholderHex: 'Enter {keySize} HEX key (auto-padded)',
+    placeholderBase64: 'Enter {keySize} Base64 key (auto-padded)',
     generateRandom: 'Generate Random',
-    sizeHint: '{keySize}'
+    sizeHint: '{keySize}',
+    autoFillHint: 'Keys shorter than required length will be zero-padded, longer keys will be truncated'
   },
   iv: {
     title: 'Initialization Vector (IV)',
     label: 'Initialization Vector (IV)',
-    placeholder: 'Enter {blockSize} IV (HEX format)',
+    placeholder: 'Enter {blockSize} IV',
+    placeholderString: 'Enter {blockSize} string IV (auto-padded)',
+    placeholderHex: 'Enter {blockSize} HEX IV (auto-padded)',
+    placeholderBase64: 'Enter {blockSize} Base64 IV (auto-padded)',
     generateRandom: 'Generate Random',
-    sizeHint: '{blockSize}'
+    sizeHint: '{blockSize}',
+    autoFillHint: 'IVs shorter than required length will be zero-padded, longer IVs will be truncated'
   },
   input: {
     title: 'Content to Encrypt',
@@ -91,7 +99,11 @@ export default {
     unsupportedAlgorithm: 'Unsupported algorithm',
     decryptionFailed: 'Decryption failed: {message}',
     copyFailed: 'Copy failed, please copy manually',
-    unknownError: 'An error occurred during processing'
+    unknownError: 'An error occurred during processing',
+    invalidHexFormat: 'Invalid HEX format',
+    invalidBase64Format: 'Invalid Base64 format',
+    emptyBase64: 'Invalid Base64 encoding',
+    decryptFailed: 'Decryption failed: '
   },
   info: {
     title: 'Algorithm Information',

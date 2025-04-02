@@ -46,16 +46,24 @@ export default {
   key: {
     title: '密钥',
     label: '密钥',
-    placeholder: '输入{keySize}密钥（HEX格式）',
+    placeholder: '输入{keySize}密钥',
+    placeholderString: '输入{keySize}字符串密钥 (不足自动填充)',
+    placeholderHex: '输入{keySize}十六进制密钥 (不足自动填充)',
+    placeholderBase64: '输入{keySize}Base64密钥 (不足自动填充)',
     generateRandom: '随机生成',
-    sizeHint: '{keySize}'
+    sizeHint: '{keySize}',
+    autoFillHint: '密钥长度不足时将自动补零填充，超出部分将被截断'
   },
   iv: {
     title: '初始向量 (IV)',
     label: '初始向量 (IV)',
-    placeholder: '输入{blockSize}初始向量（HEX格式）',
+    placeholder: '输入{blockSize}初始向量',
+    placeholderString: '输入{blockSize}字符串IV (不足自动填充)',
+    placeholderHex: '输入{blockSize}十六进制IV (不足自动填充)',
+    placeholderBase64: '输入{blockSize}Base64 IV (不足自动填充)',
     generateRandom: '随机生成',
-    sizeHint: '{blockSize}'
+    sizeHint: '{blockSize}',
+    autoFillHint: 'IV长度不足时将自动补零填充，超出部分将被截断'
   },
   input: {
     title: '待加密内容',
@@ -91,7 +99,11 @@ export default {
     unsupportedAlgorithm: '不支持的算法',
     decryptionFailed: '解密失败：{message}',
     copyFailed: '复制失败，请手动复制',
-    unknownError: '处理过程中发生错误'
+    unknownError: '处理过程中发生错误',
+    invalidHexFormat: '无效的HEX格式',
+    invalidBase64Format: '无效的Base64格式',
+    emptyBase64: '无效的Base64编码',
+    decryptFailed: '解密失败：'
   },
   info: {
     title: '算法说明',
