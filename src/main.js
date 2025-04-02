@@ -14,6 +14,7 @@ import { createI18n } from 'vue-i18n'
 import { createHead } from '@vueuse/head'
 import App from './App.vue'
 import './assets/css/tailwind.css'
+import { inject } from '@vercel/analytics'
 
 // 导入新的模块化国际化文件
 import messages from './locales'
@@ -249,6 +250,9 @@ const lazyComponentMap = {
   'NameGenerator': () => import('./components/tools/NameGenerator.vue'),
   'TravelBudgetPlanner': () => import('./components/tools/TravelBudgetPlanner.vue'),
 }
+
+// 初始化Vercel Analytics
+inject()
 
 // 创建应用
 const app = createApp(App)
