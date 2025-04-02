@@ -1,6 +1,6 @@
 export default {
   home: {
-    title: '欢迎使用我们的工具平台',
+    title: '你的免费工具集',
     description: '发现有用的在线工具，简化您的工作',
     getStarted: '开始使用',
     tagFilterTitle: '标签筛选',

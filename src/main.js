@@ -20,8 +20,8 @@ import messages from './locales'
 // 配置i18n
 const i18n = createI18n({
   legacy: false, // 使用组合式API
-  locale: 'zh', // 默认语言
-  fallbackLocale: 'en', // 回退语言
+  locale: 'en', // 默认语言
+  fallbackLocale: 'zh', // 回退语言
   messages
 })
 
@@ -137,7 +137,7 @@ router.beforeEach((to, from, next) => {
       ? savedLang 
       : navigator.language.split('-')[0]; // 浏览器语言
     
-    const targetLang = supportedLanguages.includes(userLang) ? userLang : 'zh';
+    const targetLang = supportedLanguages.includes(userLang) ? userLang : 'en';
     next(`/${targetLang}`);
     return;
   }

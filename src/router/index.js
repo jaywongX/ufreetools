@@ -67,7 +67,7 @@ router.beforeEach((to, from, next) => {
     }
     
     // 默认使用中文
-    return 'zh';
+    return 'en';
   };
   
   const targetLang = getBrowserLanguage();
