@@ -37,7 +37,7 @@ const CATEGORIES = [
 // 标签页面
 const TAGS = [
   'code', 'dev', 'convert', 'utility', 'image', 'text', 'security', 
-  'format', 'validate', 'design', 'frontend', 'backend', 'data', 'web'
+  'format', 'validate', 'design', 'frontend', 'data', 'web'
 ];
 
 // 工具页面

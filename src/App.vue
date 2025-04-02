@@ -24,6 +24,7 @@ import SideNav from './components/layout/SideNav.vue'
 import SeoHead from './components/seo/SeoHead.vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { useHead } from '@vueuse/head'
 
 const route = useRoute()
 const { locale, t } = useI18n()
@@ -1257,5 +1258,55 @@ watch(() => route.params.lang, (newLang) => {
 // Watch for language changes to update tool names/descriptions
 watch(locale, () => {
   // The computed property will automatically refresh when the locale changes
+})
+
+// 计算当前规范URL
+const canonicalUrl = computed(() => {
+  // 获取当前路径
+  const path = route.path
+  // 构建完整URL (确保使用www版本)
+  return `https://www.ufreetools.com${path}`
+})
+
+// 设置头部元数据
+useHead({
+  link: computed(() => {
+    const path = route.path
+    const basePath = path.replace(/^\/(zh|en)/, '')
+    const isZh = path.startsWith('/zh')
+    const isEn = path.startsWith('/en')
+    
+    const links = [
+      {
+        rel: 'canonical',
+        href: `https://www.ufreetools.com${path}`
+      }
+    ]
+    
+    // 添加hreflang标签
+    if (isZh || isEn) {
+      // 如果当前是语言页面，添加两种语言的替代版本
+      links.push({
+        rel: 'alternate',
+        hreflang: 'zh',
+        href: `https://www.ufreetools.com/zh${basePath}`
+      })
+      
+      links.push({
+        rel: 'alternate',
+        hreflang: 'en',
+        href: `https://www.ufreetools.com/en${basePath}`
+      })
+      
+      // 添加默认语言标记
+      links.push({
+        rel: 'alternate',
+        hreflang: 'x-default',
+        href: `https://www.ufreetools.com/en${basePath}`
+      })
+    }
+    
+    return links
+  })
 })
 </script>
