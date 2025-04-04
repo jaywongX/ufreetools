@@ -29,11 +29,6 @@ const CORE_PAGES = [
   { path: '/feedback', priority: '0.6', changefreq: 'monthly' },
 ];
 
-// 分类页面
-const CATEGORIES = [
-  'dev', 'convert', 'design', 'text', 'image', 'network', 'security', 'utility'
-];
-
 // 标签页面
 const TAGS = [
   'code', 'dev', 'convert', 'utility', 'image', 'text', 'security', 
@@ -42,8 +37,9 @@ const TAGS = [
 
 // 工具页面
 const TOOLS = [
-  'api-request-tool',
+  // 'api-request-tool',
   'base64-encoder-decoder',
+  'bmi-calculator',
   'code-beautifier',
   'code-complexity-analyzer',
   'code-diff',
@@ -51,18 +47,23 @@ const TOOLS = [
   'code-obfuscator',
   'color-picker',
   'color-scheme-generator',
+  'cookie-manager',
   'cors-generator',
+  'countdown-generator',
   'css-formatter',
   'css-gradient-generator',
   'csv-json-converter',
   'curl-converter',
+  'currency-converter',
   'diagram-examples',
+  'drawing-board',
   'flowchart-generator',
   'gif-frame-extractor',
   'git-conflict-resolver',
   'grpc-debugger',
   'hash-calculator',
   'hmac-calculator',
+  'holiday-calendar',
   'html-entity-encoder',
   'html-formatter',
   'http-header-security-checker',
@@ -78,21 +79,27 @@ const TOOLS = [
   'image-mosaic-generator',
   'image-pixelator',
   'image-to-ascii',
+  'image-watermark',
+  'income-tax-calculator',
   'ip-lookup',
   'javascript-formatter',
   'javascript-obfuscator',
   'json-formatter',
   'jwt-debugger',
+  'latex-formula-generator',
+  'loan-calculator',
   'markdown-editor',
   'markdown-to-html',
   'mock-api-generator',
   'mqtt-tester',
+  'name-generator',
   'network-speed-test',
   'number-converter',
   'openapi-generator',
   'page-redirect-checker',
   'password-generator',
   'password-strength-checker',
+  'pomodoro-timer',
   'qr-code-generator',
   'regex-tester',
   'request-header-editor',
@@ -103,6 +110,8 @@ const TOOLS = [
   'svg-optimizer',
   'symmetric-crypto',
   'timestamp-converter',
+  'todo-list',
+  'travel-budget-planner',
   'url-encode-decode',
   'url-params-parser',
   'user-agent-generator',
@@ -112,18 +121,6 @@ const TOOLS = [
   'xml-formatter',
   'xml-json-converter',
   'yaml-json-converter',
-  // 新增实用工具
-  'latex-equation-generator',
-  'countdown-generator',
-  'pomodoro-timer',
-  'loan-calculator',
-  'income-tax-calculator',
-  'bmi-calculator',
-  'holiday-calendar',
-  'todo-list',
-  'currency-converter',
-  'name-generator',
-  'travel-budget-planner'
 ];
 
 // 生成 XML 条目
@@ -149,11 +146,6 @@ function generateSitemap() {
     for (const page of CORE_PAGES) {
       if (page.path === '/') continue; // 跳过根路径，已添加
       entries.push(generateUrlEntry(`/${lang}${page.path}`, page.priority, page.changefreq));
-    }
-    
-    // 分类页面
-    for (const cat of CATEGORIES) {
-      entries.push(generateUrlEntry(`/${lang}/category/${cat}`, '0.8', 'weekly'));
     }
     
     // 标签页面
