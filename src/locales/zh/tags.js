@@ -279,4 +279,9 @@ export default {
   planning: '规划',
   expense: '支出',
 
+  accounting: '会计',
+  tracker: '追踪',
+  personal: '个人',
+  account: '账户',
+  book: '书籍',
 }

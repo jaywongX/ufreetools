@@ -81,6 +81,7 @@ import drawingBoard from './tools/drawing-board.js';
 import timezoneConverter from './tools/timezone-converter.js';
 import nameGenerator from './tools/name-generator.js';
 import travelBudgetPlanner from './tools/travel-budget-planner.js';
+import personalAccountBook from './tools/personal-account-book.js';
 
 export default {
   common: {
@@ -197,4 +198,5 @@ export default {
   'timezone-converter': timezoneConverter,
   'name-generator': nameGenerator,
   'travel-budget-planner': travelBudgetPlanner,
+  'personal-account-book': personalAccountBook,
 }; 

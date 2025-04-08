@@ -134,6 +134,7 @@ const lazyComponentMap = {
   'TimezoneConverter': () => import('./components/tools/TimezoneConverter.vue'),
   'NameGenerator': () => import('./components/tools/NameGenerator.vue'),
   'TravelBudgetPlanner': () => import('./components/tools/TravelBudgetPlanner.vue'),
+  'PersonalAccountBook': () => import('./components/tools/PersonalAccountBook.vue'),
 }
 
 // 初始化Vercel Analytics
