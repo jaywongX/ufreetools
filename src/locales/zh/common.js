@@ -29,5 +29,13 @@ export default {
   complex: '复杂',
   example: '示例',
   loadExample: '加载示例',
-  spaces: '空格'
+  spaces: '空格',
+  donate: '捐赠',
+  buyMeACoffee: '请我喝咖啡',
+  donateInternational: '海外用户',
+  donateChina: '中国大陆',
+  wechatPay: '微信赞赏码',
+  wechatDonation: '微信赞赏码',
+  scanToSupport: '扫描下面的二维码进行赞赏',
+  thankYouForSupport: '感谢您的支持！',
 }; 

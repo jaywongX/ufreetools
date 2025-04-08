@@ -51,6 +51,9 @@
           </svg>
         </button>
         
+        <!-- 添加捐赠按钮 -->
+        <DonateButton class="ml-4 mr-2" />
+        
         <!-- 反馈链接 -->
         <router-link 
           :to="localizedRoute('/feedback')" 
@@ -101,6 +104,7 @@ import { ref, inject, computed, watch, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import TagBadge from '../ui/TagBadge.vue'
+import DonateButton from '../common/DonateButton.vue'
 
 const router = useRouter()
 const route = useRoute()

@@ -7,7 +7,10 @@
     
     <!-- 右侧内容区域 -->
     <div class="flex-1 flex flex-col">
-      <TheHeader />
+      <div class="relative">
+        <TheHeader />
+        <!-- 移除这里额外添加的捐赠按钮 -->
+      </div>
       <main class="flex-1 p-6 overflow-auto">
         <router-view />
       </main>
@@ -22,6 +25,7 @@ import TheHeader from './components/layout/TheHeader.vue'
 import TheFooter from './components/layout/TheFooter.vue'
 import SideNav from './components/layout/SideNav.vue'
 import SeoHead from './components/seo/SeoHead.vue'
+// 移除不需要的导入
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useHead } from '@vueuse/head'
