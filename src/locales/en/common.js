@@ -29,5 +29,13 @@ export default {
   complex: 'Complex',
   example: 'Example',
   loadExample: 'Load Example',
-  spaces: 'spaces'
+  spaces: 'spaces',
+  donate: 'Donate',
+  buyMeACoffee: 'Buy me a coffee',
+  donateInternational: 'International',
+  donateChina: 'Mainland China',
+  wechatPay: 'WeChat Pay',
+  wechatDonation: 'WeChat Donation QR Code',
+  scanToSupport: 'Scan the QR code below to support us',
+  thankYouForSupport: 'Thank you for your support!'
 };

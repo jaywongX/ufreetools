@@ -285,4 +285,9 @@ export default {
   planning: 'Planning',
   expense: 'Expense',
 
+  accounting: 'Accounting',
+  tracker: 'Tracker',
+  personal: 'Personal',
+  account: 'Account',
+  book: 'Book',
 }
