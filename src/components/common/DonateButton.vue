@@ -74,16 +74,18 @@ export default {
   display: flex;
   align-items: center;
   padding: 0.5rem 0.75rem;
+  background-color: transparent;
+  border: none;
   border-radius: 0.25rem;
-  color: #6f4e37; /* 咖啡色 */
+  color: #6f4e37;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .donate-button:hover {
-  background-color: #6f4e37;
-  color: white;
-  border-color: #6f4e37;
+  background-color: rgba(111, 78, 55, 0.1);
+  color: #6f4e37;
+  border: none;
 }
 
 .coffee-icon {
@@ -121,6 +123,8 @@ export default {
   color: #333;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  width: 100%;
+  text-align: center;
 }
 
 .donate-option:hover {
@@ -147,7 +151,7 @@ export default {
 .qr-modal {
   background-color: white;
   border-radius: 0.5rem;
-  width: 300px;
+  width: 400px;
   max-width: 90vw;
   overflow: hidden;
 }
@@ -186,15 +190,14 @@ export default {
 
 .qr-code-wrapper {
   margin: 1rem 0;
-  padding: 1rem;
-  border: 1px solid #eee;
-  border-radius: 0.25rem;
+  padding: 0;
+  width: 100%;
 }
 
 .qr-image {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media (max-width: 640px) {
