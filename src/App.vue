@@ -9,10 +9,11 @@
     <div class="flex-1 flex flex-col">
       <div class="relative">
         <TheHeader />
-        <!-- 移除这里额外添加的捐赠按钮 -->
       </div>
       <main class="flex-1 p-6 overflow-auto">
         <router-view />
+        <!-- 在主要内容区域下方添加广告 -->
+        <!-- <AdSense /> -->
       </main>
       <TheFooter />
     </div>
@@ -25,6 +26,7 @@ import TheHeader from './components/layout/TheHeader.vue'
 import TheFooter from './components/layout/TheFooter.vue'
 import SideNav from './components/layout/SideNav.vue'
 import SeoHead from './components/seo/SeoHead.vue'
+// import AdSense from './components/common/AdSense.vue'
 // 移除不需要的导入
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
@@ -40,6 +42,35 @@ provide('sidebarOpen', sidebarOpen)
 // 暗黑模式状态
 const darkMode = ref(false)
 provide('darkMode', darkMode)
+
+// 客户端路径检测和重定向
+onMounted(() => {
+  // 检查URL是否具有语言前缀
+  const path = window.location.pathname;
+  const supportedLanguages = ['zh', 'en'];
+  const pathParts = path.split('/').filter(Boolean);
+  
+  // 如果路径不为空且第一段不是语言代码
+  if (pathParts.length > 0 && !supportedLanguages.includes(pathParts[0])) {
+    // 获取用户偏好语言
+    const savedLang = localStorage.getItem('userLanguage');
+    const browserLang = navigator.language.split('-')[0];
+    
+    // 确定目标语言
+    let targetLang;
+    if (savedLang && supportedLanguages.includes(savedLang)) {
+      targetLang = savedLang;
+    } else if (supportedLanguages.includes(browserLang)) {
+      targetLang = browserLang;
+    } else {
+      targetLang = 'en';
+    }
+    
+    // 构建新路径并重定向
+    const newPath = `/${targetLang}${path}`;
+    window.location.href = newPath;
+  }
+});
 
 // 工具分类定义
 const categories = ref([
