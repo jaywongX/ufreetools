@@ -17,7 +17,8 @@ export default {
         newsletter: 'Newsletter',
         subscribePrompt: 'Subscribe to get updates',
         emailPlaceholder: 'Your email address',
-        subscribe: 'Subscribe'
+        subscribe: 'Subscribe',
+        partners: 'Partners'
     },
     sidebar: {
         tools: 'Tools',

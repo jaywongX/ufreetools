@@ -17,7 +17,8 @@ export default {
     newsletter: '新闻订阅',
     subscribePrompt: '订阅获取更新',
     emailPlaceholder: '您的电子邮箱',
-    subscribe: '订阅'
+    subscribe: '订阅',
+    partners: '合作伙伴'
   },
   sidebar: {
     tools: '工具',
