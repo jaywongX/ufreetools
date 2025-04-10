@@ -82,7 +82,7 @@ import timezoneConverter from './tools/timezone-converter.js';
 import nameGenerator from './tools/name-generator.js';
 import travelBudgetPlanner from './tools/travel-budget-planner.js';
 import personalAccountBook from './tools/personal-account-book.js';
-
+import htmlFormatter from './tools/html-formatter.js';
 export default {
     common: {
       tryNow: 'Try Now',
@@ -199,4 +199,5 @@ export default {
     'name-generator': nameGenerator,
     'travel-budget-planner': travelBudgetPlanner,
     'personal-account-book': personalAccountBook,
+    'html-formatter': htmlFormatter,
   }
