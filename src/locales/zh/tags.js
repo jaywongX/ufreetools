@@ -290,4 +290,9 @@ export default {
   social: '社交媒体',
   'social-media': '社交媒体',
   post: '帖子',
+
+  // 添加新标签
+  bitwise: '位运算',
+  'bitwise-operations': '位运算',
+  and: '与运算',
 }

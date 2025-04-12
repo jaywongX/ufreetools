@@ -463,6 +463,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ufreetools.com/en/tool/personal-account-book</loc>
+    <lastmod>2025-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ufreetools.com/en/tool/openapi-generator</loc>
     <lastmod>2025-04-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -877,6 +883,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ufreetools.com/zh/tool/hex-and-calculator</loc>
+    <lastmod>2025-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ufreetools.com/zh/tool/hmac-calculator</loc>
     <lastmod>2025-04-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -987,6 +999,12 @@
   <url>
     <loc>https://ufreetools.com/zh/tool/income-tax-calculator</loc>
     <lastmod>2025-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/zh/tool/instagram-post-generator</loc>
+    <lastmod>2025-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
