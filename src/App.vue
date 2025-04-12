@@ -452,6 +452,17 @@ const allTools = computed(() => [
      icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
      tags: ['dev', 'generate']
    },
+  {
+     id: 'html-formatter',
+     name: t('tools.html-formatter.name'),
+     category: t(`categories.dev`),
+     categoryId: 'dev',
+     description: t('tools.html-formatter.description'),
+     path: '/tools/html-formatter',
+     component: 'HtmlFormatter',
+     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+     tags: ['html','dev','format']
+   },
 
   // 设计工具
   { 
@@ -1191,6 +1202,17 @@ const allTools = computed(() => [
     component: 'PersonalAccountBook',
     icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     tags: ['utility', 'finance', 'accounting', 'budget', 'money', 'expense', 'tracker', 'personal', 'account', 'book']
+  },
+  {
+    id: 'instagram-post-generator',
+    name: t('tools.instagram-post-generator.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.instagram-post-generator.description'),
+    path: '/tools/instagram-post-generator',
+    component: 'InstagramPostGenerator',
+    icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+    tags: ['utility', 'social', 'media', 'post', 'generator', 'instagram', 'design']
   }
 ])
 // provide('allTools', allTools.value || allTools)

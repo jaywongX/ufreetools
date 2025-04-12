@@ -284,4 +284,10 @@ export default {
   personal: '个人',
   account: '账户',
   book: '书籍',
+
+  // 添加以下标签
+  instagram: 'Instagram',
+  social: '社交媒体',
+  'social-media': '社交媒体',
+  post: '帖子',
 }

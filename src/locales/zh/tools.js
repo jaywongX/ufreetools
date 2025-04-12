@@ -82,6 +82,8 @@ import timezoneConverter from './tools/timezone-converter.js';
 import nameGenerator from './tools/name-generator.js';
 import travelBudgetPlanner from './tools/travel-budget-planner.js';
 import personalAccountBook from './tools/personal-account-book.js';
+import htmlFormatter from './tools/html-formatter.js';
+import instagramPostGenerator from './tools/instagram-post-generator.js';
 
 export default {
   common: {
@@ -199,4 +201,6 @@ export default {
   'name-generator': nameGenerator,
   'travel-budget-planner': travelBudgetPlanner,
   'personal-account-book': personalAccountBook,
+  'html-formatter': htmlFormatter,
+  'instagram-post-generator': instagramPostGenerator,
 }; 

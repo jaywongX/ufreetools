@@ -290,4 +290,10 @@ export default {
   personal: 'Personal',
   account: 'Account',
   book: 'Book',
+
+  // Added tags
+  instagram: 'Instagram',
+  social: 'Social Media',
+  'social-media': 'Social Media',
+  post: 'Post',
 }

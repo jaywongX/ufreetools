@@ -5,7 +5,7 @@
       <div class="flex flex-wrap gap-4 mb-4">
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            操作类型
+            {{ $t('tools.html-formatter.formatMode') }}
           </label>
           <div class="flex">
             <button 
@@ -13,35 +13,35 @@
               class="px-4 py-2 rounded-l-md border border-r-0 border-gray-300 dark:border-gray-600"
               :class="formatMode === 'beautify' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
             >
-              美化
+              {{ $t('tools.html-formatter.beautify') }}
             </button>
             <button 
               @click="formatMode = 'minify'" 
               class="px-4 py-2 rounded-r-md border border-gray-300 dark:border-gray-600"
               :class="formatMode === 'minify' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'"
             >
-              压缩
+              {{ $t('tools.html-formatter.minify') }}
             </button>
           </div>
         </div>
         
         <div v-if="formatMode === 'beautify'">
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            缩进设置
+            {{ $t('tools.html-formatter.options.indentSize') }}
           </label>
           <select 
             v-model="indentSize" 
             class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           >
-            <option value="2">2个空格</option>
-            <option value="4">4个空格</option>
-            <option value="tab">Tab缩进</option>
+            <option value="2">{{ $t('tools.html-formatter.indentOptions.spaces', { count: 2 }) }}</option>
+            <option value="4">{{ $t('tools.html-formatter.indentOptions.spaces', { count: 4 }) }}</option>
+            <option value="tab">{{ $t('tools.html-formatter.indentOptions.tab') }}</option>
           </select>
         </div>
         
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            格式化选项
+            {{ $t('tools.html-formatter.formatOptions') }}
           </label>
           <div class="space-y-2">
             <div class="flex items-center">
@@ -52,10 +52,10 @@
                 class="h-4 w-4 text-primary border-gray-300 rounded"
               />
               <label for="remove-comments" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                {{ formatMode === 'minify' ? '移除注释' : '保留注释' }}
+                {{ formatMode === 'minify' ? $t('tools.html-formatter.removeComments') : $t('tools.html-formatter.preserveComments') }}
               </label>
             </div>
-            <div class="flex items-center" v-if="formatMode === 'beautify'">
+            <!-- <div class="flex items-center" v-if="formatMode === 'beautify'">
               <input 
                 type="checkbox" 
                 id="show-line-numbers" 
@@ -63,7 +63,29 @@
                 class="h-4 w-4 text-primary border-gray-300 rounded"
               />
               <label for="show-line-numbers" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                显示行号
+                {{ $t('tools.html-formatter.showLineNumbers') }}
+              </label>
+            </div> -->
+            <div class="flex items-center" v-if="formatMode === 'beautify'">
+              <input 
+                type="checkbox" 
+                id="indent-inner-html" 
+                v-model="indentInnerHtml"
+                class="h-4 w-4 text-primary border-gray-300 rounded"
+              />
+              <label for="indent-inner-html" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                {{ $t('tools.html-formatter.options.indentInnerHtml') }}
+              </label>
+            </div>
+            <div class="flex items-center" v-if="formatMode === 'beautify'">
+              <input 
+                type="checkbox" 
+                id="preserve-newlines" 
+                v-model="preserveNewlines"
+                class="h-4 w-4 text-primary border-gray-300 rounded"
+              />
+              <label for="preserve-newlines" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                {{ $t('tools.html-formatter.options.preserveNewlines') }}
               </label>
             </div>
             <div class="flex items-center" v-if="formatMode === 'minify'">
@@ -74,15 +96,54 @@
                 class="h-4 w-4 text-primary border-gray-300 rounded"
               />
               <label for="preserve-line-breaks" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                保留换行符
+                {{ $t('tools.html-formatter.options.preserveNewlines') }}
               </label>
             </div>
           </div>
         </div>
       </div>
       
-      <div class="text-sm text-gray-600 dark:text-gray-400">
-        <p>HTML美化/压缩工具可以帮助开发者快速整理或优化HTML代码，提高可读性或减小文件体积。</p>
+      <div v-if="formatMode === 'beautify'" class="mt-4 border-t border-gray-200 dark:border-gray-700 pt-4">
+        <details>
+          <summary class="text-sm font-medium text-gray-700 dark:text-gray-300 cursor-pointer">
+            高级选项
+          </summary>
+          <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="wrap-line-length" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                {{ $t('tools.html-formatter.options.wrapLength') }}
+              </label>
+              <input 
+                type="number" 
+                id="wrap-line-length" 
+                v-model.number="wrapLineLength"
+                min="0" 
+                max="1000"
+                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+              />
+              <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                0 = 不换行
+              </p>
+            </div>
+            <div>
+              <label for="max-preserve-newlines" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                {{ $t('tools.html-formatter.options.maxPreserveNewlines') }}
+              </label>
+              <input 
+                type="number" 
+                id="max-preserve-newlines" 
+                v-model.number="maxPreserveNewlines"
+                min="0" 
+                max="999"
+                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+              />
+            </div>
+          </div>
+        </details>
+      </div>
+      
+      <div class="text-sm text-gray-600 dark:text-gray-400 mt-4">
+        <p>{{ $t('tools.html-formatter.helpText') }}</p>
       </div>
     </div>
     
@@ -90,7 +151,7 @@
     <div class="mb-6">
       <div class="flex justify-between items-center mb-2">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          HTML输入
+          {{ $t('tools.html-formatter.input') }}
         </label>
         <div class="flex space-x-2">
           <button 
@@ -100,7 +161,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
             </svg>
-            {{ formatMode === 'beautify' ? '美化' : '压缩' }}
+            {{ formatMode === 'beautify' ? $t('tools.html-formatter.actions.format') : $t('tools.html-formatter.actions.minify') }}
           </button>
           <button 
             @click="clearInput" 
@@ -109,7 +170,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
-            清空
+            {{ $t('tools.html-formatter.actions.clear') }}
           </button>
           <div class="relative" v-if="examples && examples.length > 0">
             <button 
@@ -119,7 +180,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
               </svg>
-              示例
+              {{ $t('tools.html-formatter.examples') }}
             </button>
             <div 
               v-if="showExamplesDropdown"
@@ -131,7 +192,7 @@
                 @click="loadExample(example.id); showExamplesDropdown = false"
                 class="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
               >
-                {{ example.name }}
+                {{ $t(`tools.html-formatter.exampleNames.${example.id}`) }}
               </button>
             </div>
           </div>
@@ -143,11 +204,11 @@
             v-model="inputHtml" 
             rows="10" 
             class="w-full px-3 py-2 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm rounded-md"
-            placeholder="在这里粘贴或输入HTML代码..."
+            :placeholder="$t('tools.html-formatter.inputPlaceholder')"
           ></textarea>
         </div>
         <div class="mt-2 text-xs text-right text-gray-500 dark:text-gray-400">
-          字符数: {{ inputHtml.length }} | 行数: {{ inputHtml.split('\n').length }}
+          {{ $t('tools.html-formatter.stats.chars') }}: {{ inputHtml.length }} | {{ $t('tools.html-formatter.stats.lines') }}: {{ inputHtml.split('\n').length }}
         </div>
       </div>
       <div v-if="errorMessage" class="mt-2 p-2 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 rounded-md text-sm">
@@ -159,7 +220,7 @@
     <div v-if="outputHtml">
       <div class="flex justify-between items-center mb-2">
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          {{ formatMode === 'beautify' ? '美化结果' : '压缩结果' }}
+          {{ formatMode === 'beautify' ? $t('tools.html-formatter.beautifiedResult') : $t('tools.html-formatter.minifiedResult') }}
         </label>
         <button 
           @click="copyOutput" 
@@ -168,7 +229,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
           </svg>
-          {{ copyStatus ? '已复制！' : '复制' }}
+          {{ copyStatus ? $t('tools.html-formatter.messages.copied') : $t('tools.html-formatter.actions.copy') }}
         </button>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 overflow-x-auto">
@@ -187,8 +248,8 @@
         >{{ outputHtml }}</pre>
       </div>
       <div class="mt-2 text-xs text-right text-gray-500 dark:text-gray-400">
-        字符数: {{ outputHtml.length }} | 行数: {{ outputHtml.split('\n').length }} | 
-        {{ formatMode === 'minify' ? '减少了 ' + (inputHtml.length - outputHtml.length) + ' 个字符 (' + Math.round((1 - outputHtml.length / inputHtml.length) * 100) + '%)' : '' }}
+        {{ $t('tools.html-formatter.stats.chars') }}: {{ outputHtml.length }} | {{ $t('tools.html-formatter.stats.lines') }}: {{ outputHtml.split('\n').length }} | 
+        {{ formatMode === 'minify' ? $t('tools.html-formatter.stats.reduction', { chars: (inputHtml.length - outputHtml.length), percent: Math.round((1 - outputHtml.length / inputHtml.length) * 100) }) : '' }}
       </div>
     </div>
   </div>
@@ -196,6 +257,7 @@
 
 <script setup>
 import { ref, watch } from 'vue'
+import { html as beautify } from 'js-beautify'
 
 // 状态变量
 const formatMode = ref('beautify')  // 'beautify' 或 'minify'
@@ -208,6 +270,12 @@ const outputHtml = ref('')
 const errorMessage = ref('')
 const copyStatus = ref(false)
 const showExamplesDropdown = ref(false)
+
+// 新增的高级选项
+const indentInnerHtml = ref(true)
+const preserveNewlines = ref(true)
+const maxPreserveNewlines = ref(2)
+const wrapLineLength = ref(0)
 
 // HTML示例
 const examples = [
@@ -224,7 +292,7 @@ const examples = [
 // 格式化HTML
 function formatHtml() {
   if (!inputHtml.value.trim()) {
-    errorMessage.value = '请输入需要处理的HTML代码'
+    errorMessage.value = $t('tools.html-formatter.errorMessages.emptyInput')
     return
   }
   
@@ -238,31 +306,34 @@ function formatHtml() {
     
     errorMessage.value = ''
   } catch (error) {
-    errorMessage.value = `处理HTML失败：${error.message}`
+    errorMessage.value = $t('tools.html-formatter.errorMessages.processingFailed', { message: error.message })
     console.error('HTML处理错误:', error)
   }
 }
 
 // 美化HTML
 function beautifyHtml(html) {
-  // 处理一些常见错误，例如缺少结束标签
-  html = html.trim()
+  // 使用js-beautify库进行格式化
+  const options = {
+    indent_size: indentSize.value === 'tab' ? 1 : parseInt(indentSize.value),
+    indent_char: indentSize.value === 'tab' ? '\t' : ' ',
+    indent_with_tabs: indentSize.value === 'tab',
+    preserve_newlines: preserveNewlines.value,
+    max_preserve_newlines: maxPreserveNewlines.value,
+    wrap_line_length: wrapLineLength.value,
+    indent_inner_html: indentInnerHtml.value,
+    unformatted: ['code', 'pre', 'textarea', 'script'],
+    content_unformatted: ['pre', 'textarea'],
+    extra_liners: ['head', 'body', '/html'],
+    end_with_newline: true
+  }
   
-  // 移除注释（如果选择了该选项）
+  // 处理注释
   if (removeComments.value) {
     html = html.replace(/<!--[\s\S]*?-->/g, '')
   }
   
-  // 缩进设置
-  let indent
-  if (indentSize.value === 'tab') {
-    indent = '\t'
-  } else {
-    indent = ' '.repeat(parseInt(indentSize.value))
-  }
-  
-  // 格式化HTML
-  return prettyPrintHtml(html, indent)
+  return beautify(html, options)
 }
 
 // 压缩HTML
@@ -289,52 +360,6 @@ function minifyHtml(html) {
   }
   
   return result
-}
-
-// HTML美化核心算法
-function prettyPrintHtml(html, indent) {
-  let result = ''
-  let indentLevel = 0
-  
-  // 预处理HTML
-  html = html
-    .replace(/<!DOCTYPE[^>]*>/i, match => match + '\n') // 在DOCTYPE声明后添加换行
-    .replace(/<([^\/!])([^>]*)>/g, (match, p1, p2) => {
-      // 对自闭合标签特殊处理
-      if (p2.endsWith('/')) {
-        return match
-      }
-      // 对内联元素不换行
-      if (/^(a|abbr|b|bdi|bdo|br|button|cite|code|data|datalist|dfn|em|i|kbd|mark|q|rp|rt|ruby|s|samp|small|span|strong|sub|sup|time|u|var|wbr)(\s|$)/i.test(p1 + p2)) {
-        return match
-      }
-      return match + '\n'
-    })
-    .replace(/<\/(html|head|body|div|p|ul|ol|li|dl|dt|dd|header|footer|section|article|aside|nav|table|thead|tbody|tr|th|td|form|fieldset|h[1-6]|blockquote|pre|figure|figcaption)[^>]*>/gi, match => match + '\n')
-  
-  // 处理每一行
-  const lines = html.split('\n')
-  for (let i = 0; i < lines.length; i++) {
-    let line = lines[i].trim()
-    if (!line) continue
-    
-    // 减少缩进级别的结束标签
-    if (line.match(/^<\/[^>]+>/)) {
-      indentLevel = Math.max(0, indentLevel - 1)
-    }
-    
-    // 添加适当的缩进
-    if (line.length > 0) {
-      result += indent.repeat(indentLevel) + line + '\n'
-    }
-    
-    // 增加缩进级别的开始标签（非自闭合）
-    if (line.match(/^<[^\/!][^>]*>$/) && !line.match(/\/>$/) && !line.match(/^<(br|hr|img|input|link|meta|area|base|col|embed|keygen|source|track|wbr)/i)) {
-      indentLevel++
-    }
-  }
-  
-  return result.trim()
 }
 
 // 复制输出结果

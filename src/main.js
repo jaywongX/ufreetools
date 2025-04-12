@@ -135,6 +135,7 @@ const lazyComponentMap = {
   'NameGenerator': () => import('./components/tools/NameGenerator.vue'),
   'TravelBudgetPlanner': () => import('./components/tools/TravelBudgetPlanner.vue'),
   'PersonalAccountBook': () => import('./components/tools/PersonalAccountBook.vue'),
+  'InstagramPostGenerator': () => import('./components/tools/InstagramPostGenerator.vue'),
 }
 
 // 初始化Vercel Analytics
