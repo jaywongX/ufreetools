@@ -1159,7 +1159,7 @@
   
   // State
   const postText = ref('Your inspirational text here. Make it catchy and engaging!')
-  const imagePreview = ref(null)
+  const imagePreview = ref('/instagram.png')
   const imageFile = ref(null)
   const copyStatus = ref(false)
   const isGenerating = ref(false)
