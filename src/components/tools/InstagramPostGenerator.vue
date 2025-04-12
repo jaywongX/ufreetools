@@ -1033,62 +1033,6 @@
             </div>
           </div>
           
-          <!-- Related Tools Section -->
-          <h3 class="text-xl font-semibold mt-8" id="related-tools">{{ $t('tools.instagram-post-generator.documentation.relatedTools.title') }}</h3>
-          <p>{{ $t('tools.instagram-post-generator.documentation.relatedTools.description') }}</p>
-          
-          <div class="mt-4">
-            <h4 class="text-lg font-medium">{{ $t('tools.instagram-post-generator.documentation.relatedTools.title') }}</h4>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-              <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                <h5 class="font-medium text-primary-600 dark:text-primary-400">{{ $t('tools.instagram-post-generator.documentation.relatedTools.tool1.name') }}</h5>
-                <p class="text-sm mt-1">{{ $t('tools.instagram-post-generator.documentation.relatedTools.tool1.description') }}</p>
-                <a :href="$t('tools.instagram-post-generator.documentation.relatedTools.tool1.url')" class="inline-block text-sm text-primary-600 dark:text-primary-400 mt-2 hover:underline">{{ $t('learnMore') || 'Learn More' }}</a>
-              </div>
-              <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                <h5 class="font-medium text-primary-600 dark:text-primary-400">{{ $t('tools.instagram-post-generator.documentation.relatedTools.tool2.name') }}</h5>
-                <p class="text-sm mt-1">{{ $t('tools.instagram-post-generator.documentation.relatedTools.tool2.description') }}</p>
-                <a :href="$t('tools.instagram-post-generator.documentation.relatedTools.tool2.url')" class="inline-block text-sm text-primary-600 dark:text-primary-400 mt-2 hover:underline">{{ $t('learnMore') || 'Learn More' }}</a>
-              </div>
-              <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                <h5 class="font-medium text-primary-600 dark:text-primary-400">{{ $t('tools.instagram-post-generator.documentation.relatedTools.tool3.name') }}</h5>
-                <p class="text-sm mt-1">{{ $t('tools.instagram-post-generator.documentation.relatedTools.tool3.description') }}</p>
-                <a :href="$t('tools.instagram-post-generator.documentation.relatedTools.tool3.url')" class="inline-block text-sm text-primary-600 dark:text-primary-400 mt-2 hover:underline">{{ $t('learnMore') || 'Learn More' }}</a>
-              </div>
-              <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                <h5 class="font-medium text-primary-600 dark:text-primary-400">{{ $t('tools.instagram-post-generator.documentation.relatedTools.tool4.name') }}</h5>
-                <p class="text-sm mt-1">{{ $t('tools.instagram-post-generator.documentation.relatedTools.tool4.description') }}</p>
-                <a :href="$t('tools.instagram-post-generator.documentation.relatedTools.tool4.url')" class="inline-block text-sm text-primary-600 dark:text-primary-400 mt-2 hover:underline">{{ $t('learnMore') || 'Learn More' }}</a>
-              </div>
-              <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                <h5 class="font-medium text-primary-600 dark:text-primary-400">{{ $t('tools.instagram-post-generator.documentation.relatedTools.tool5.name') }}</h5>
-                <p class="text-sm mt-1">{{ $t('tools.instagram-post-generator.documentation.relatedTools.tool5.description') }}</p>
-                <a :href="$t('tools.instagram-post-generator.documentation.relatedTools.tool5.url')" class="inline-block text-sm text-primary-600 dark:text-primary-400 mt-2 hover:underline">{{ $t('learnMore') || 'Learn More' }}</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="mt-6">
-            <h4 class="text-lg font-medium">{{ $t('relatedArticles') || 'Related Articles' }}</h4>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-              <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                <h5 class="font-medium text-primary-600 dark:text-primary-400">{{ $t('tools.instagram-post-generator.documentation.relatedTools.article1.title') }}</h5>
-                <p class="text-sm mt-1">{{ $t('tools.instagram-post-generator.documentation.relatedTools.article1.description') }}</p>
-                <a :href="$t('tools.instagram-post-generator.documentation.relatedTools.article1.url')" class="inline-block text-sm text-primary-600 dark:text-primary-400 mt-2 hover:underline">{{ $t('readMore') || 'Read More' }}</a>
-              </div>
-              <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                <h5 class="font-medium text-primary-600 dark:text-primary-400">{{ $t('tools.instagram-post-generator.documentation.relatedTools.article2.title') }}</h5>
-                <p class="text-sm mt-1">{{ $t('tools.instagram-post-generator.documentation.relatedTools.article2.description') }}</p>
-                <a :href="$t('tools.instagram-post-generator.documentation.relatedTools.article2.url')" class="inline-block text-sm text-primary-600 dark:text-primary-400 mt-2 hover:underline">{{ $t('readMore') || 'Read More' }}</a>
-              </div>
-              <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                <h5 class="font-medium text-primary-600 dark:text-primary-400">{{ $t('tools.instagram-post-generator.documentation.relatedTools.article3.title') }}</h5>
-                <p class="text-sm mt-1">{{ $t('tools.instagram-post-generator.documentation.relatedTools.article3.description') }}</p>
-                <a :href="$t('tools.instagram-post-generator.documentation.relatedTools.article3.url')" class="inline-block text-sm text-primary-600 dark:text-primary-400 mt-2 hover:underline">{{ $t('readMore') || 'Read More' }}</a>
-              </div>
-            </div>
-          </div>
-          
           <h3 class="text-xl font-semibold mt-8" id="conclusion">{{ $t('tools.instagram-post-generator.documentation.conclusion.title') }}</h3>
           <div>
             <p class="mt-4">{{ $t('tools.instagram-post-generator.documentation.conclusion.paragraph1') }}</p>
