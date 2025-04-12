@@ -563,7 +563,7 @@
             <!-- 完整的Instagram帖子预览 -->
             <div class="instagram-post-preview shadow-lg rounded-xl overflow-hidden max-w-md mx-auto">
               <!-- 帖子头部 -->
-              <div class="flex items-center p-3 border-b border-gray-100" :class="theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'">
+              <div class="flex items-center p-3 border-b border-gray-100" :class="'bg-white text-gray-900'">
                 <div class="relative">
                   <!-- 故事环 -->
                   <div v-if="hasStory" class="absolute inset-0 rounded-full bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-0.5 animate-pulse"></div>
@@ -628,7 +628,7 @@
               </div>
               
               <!-- 帖子互动区域 -->
-              <div class="p-3" :class="theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'">
+              <div class="p-3" :class="'bg-white text-gray-900'">
                 <!-- 互动按钮 -->
                 <div class="flex justify-between mb-2">
                   <div class="flex space-x-4">
