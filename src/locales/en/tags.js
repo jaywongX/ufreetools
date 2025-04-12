@@ -54,6 +54,7 @@ export default {
   html: 'HTML',
   'user-agent': 'User Agent',
   ip: 'IP Address',
+  hex: 'Hexadecimal',
   websocket: 'WebSocket',
   
   // Media Tags
@@ -296,4 +297,9 @@ export default {
   social: 'Social Media',
   'social-media': 'Social Media',
   post: 'Post',
+
+  // 添加新标签
+  bitwise: 'Bitwise',
+  'bitwise-operations': 'Bitwise Operations',
+  and: 'AND',
 }

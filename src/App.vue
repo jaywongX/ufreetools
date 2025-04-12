@@ -823,6 +823,17 @@ const allTools = computed(() => [
     icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
     tags: ['convert', 'time', 'timezone', 'world', 'clock', 'global', 'international', 'travel', 'converter']
   },
+  {
+    id: 'hex-and-calculator',
+    name: t('tools.hex-and-calculator.name'),
+    category: t(`categories.convert`),
+    categoryId: 'convert',
+    description: t('tools.hex-and-calculator.description'),
+    path: '/tools/hex-and-calculator',
+    component: 'HexAndCalculator',
+    icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+    tags: ['calculator', 'hex', 'utility', 'number', 'bitwise', 'bitwise-operations', 'and'],
+  },
   
   // 网络与协议
   { 
@@ -1213,7 +1224,7 @@ const allTools = computed(() => [
     component: 'InstagramPostGenerator',
     icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     tags: ['utility', 'social', 'media', 'post', 'generator', 'instagram', 'design']
-  }
+  },
 ])
 // provide('allTools', allTools.value || allTools)
 provide('allTools', allTools)
