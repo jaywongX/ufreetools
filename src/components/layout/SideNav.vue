@@ -58,7 +58,7 @@
             <div v-for="category in categories" :key="category.id" class="mb-1">
               <div 
                 class="flex items-center justify-between px-3 py-2 cursor-pointer rounded-md hover:bg-gray-100 dark:hover:bg-gray-700"
-                @click="toggleCategory(category.id)"
+                @click="handleCategoryClick(category.id)"
               >
                 <!-- 分类图标和名称 -->
                 <div class="flex items-center">
@@ -96,6 +96,9 @@
               </div>
             </div>
           </div>
+          
+          <!-- 添加广告组件 -->
+          <SideNavAd v-if="sidebarOpen" />
         </nav>
       </div>
     </aside>
@@ -107,6 +110,7 @@
 import { inject, computed, ref, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useInternationalizedRoute } from '../../composables/useInternationalizedRoute'
+import SideNavAd from '../common/SideNavAd.vue'
 
 const route = useRoute()
 const sidebarOpen = inject('sidebarOpen')
@@ -119,6 +123,20 @@ const expandedCategories = ref({})
 // 切换分类的展开/折叠状态
 function toggleCategory(categoryId) {
   expandedCategories.value[categoryId] = !expandedCategories.value[categoryId]
+}
+
+// 处理分类点击事件
+function handleCategoryClick(categoryId) {
+  if (!sidebarOpen.value) {
+    // 如果侧边栏是折叠状态，点击分类图标时展开侧边栏
+    sidebarOpen.value = true
+    
+    // 确保该分类的工具列表展开
+    expandedCategories.value[categoryId] = true
+  } else {
+    // 侧边栏已展开时，正常切换分类展开/折叠状态
+    toggleCategory(categoryId)
+  }
 }
 
 // 检查当前路由是否激活
