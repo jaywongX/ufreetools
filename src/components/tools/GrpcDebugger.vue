@@ -283,6 +283,9 @@ message HelloResponse {
         </div>
       </div>
     </div>
+    
+    <!-- 添加文章组件 -->
+    <GrpcDebuggerArticle />
   </div>
 </template>
 
@@ -291,6 +294,7 @@ import { ref, computed, reactive, onMounted } from 'vue'
 import * as protobuf from 'protobufjs'
 import * as grpcWeb from 'grpc-web'
 import { useI18n } from 'vue-i18n'
+import GrpcDebuggerArticle from './GrpcDebuggerArticle.vue'
 
 const { t } = useI18n()
 
