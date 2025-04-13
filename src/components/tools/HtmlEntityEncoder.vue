@@ -164,12 +164,16 @@
         </div>
       </div>
     </div>
+    
+    <!-- 在底部添加文章部分 -->
+    <HtmlEntityEncoderArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, watch, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import HtmlEntityEncoderArticle from './HtmlEntityEncoderArticle.vue'
 
 const { t } = useI18n()
 
