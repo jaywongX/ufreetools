@@ -16,6 +16,13 @@
           >
             Twelve Tools
           </a>
+          <a href="http://www.canadawebdir.com/shopping/home_and_garden/"
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light transition-colors"
+          >
+            home_and_garden com
+          </a>
           <!-- 可以在这里添加更多合作伙伴链接 -->
         </div>
       </div>

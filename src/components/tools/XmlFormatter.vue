@@ -180,11 +180,15 @@
       </div>
     </div>
   </div>
+  
+  <!-- 添加文章部分 -->
+  <XmlFormatterArticle />
 </template>
 
 <script setup>
 import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import XmlFormatterArticle from './XmlFormatterArticle.vue'
 
 const { t } = useI18n()
 

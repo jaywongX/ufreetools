@@ -391,12 +391,16 @@
         <li>{{ t('tools.income-tax-calculator.taxTip5') }}</li>
       </ul>
     </div>
+
+    <!-- 添加文章部分 -->
+    <IncomeTaxCalculatorArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, reactive, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
+import IncomeTaxCalculatorArticle from './IncomeTaxCalculatorArticle.vue';
 
 const { t, locale } = useI18n();
 

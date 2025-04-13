@@ -177,6 +177,9 @@
         </div>
       </div>
     </div>
+    
+    <!-- 添加文章部分 -->
+    <SensitiveWordFilterArticle />
   </div>
 </template>
 
@@ -185,6 +188,7 @@ import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 // 直接导入 CensorSensor 类
 import { CensorSensor } from 'censor-sensor'
+import SensitiveWordFilterArticle from './SensitiveWordFilterArticle.vue'
 
 const { t } = useI18n()
 

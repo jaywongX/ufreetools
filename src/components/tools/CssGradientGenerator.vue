@@ -318,12 +318,16 @@
         </div>
       </div>
     </div>
+
+    <!-- 添加文章部分 -->
+    <CssGradientGeneratorArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import CssGradientGeneratorArticle from './CssGradientGeneratorArticle.vue'
 
 const { t } = useI18n()
 

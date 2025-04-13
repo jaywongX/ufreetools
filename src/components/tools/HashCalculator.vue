@@ -253,6 +253,9 @@
         </div>
       </div>
     </div>
+
+    <!-- 添加文章部分 -->
+    <HashCalculatorArticle />
   </div>
 </template>
 
@@ -260,6 +263,7 @@
 import { ref, computed, onMounted } from 'vue'
 import CryptoJS from 'crypto-js'
 import { useI18n } from 'vue-i18n'
+import HashCalculatorArticle from './HashCalculatorArticle.vue'
 
 // 状态变量
 const { t } = useI18n()

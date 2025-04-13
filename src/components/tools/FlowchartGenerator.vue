@@ -130,12 +130,16 @@
       </div>
     </div>
   </div>
+  
+  <!-- 添加文章部分 -->
+  <FlowchartGeneratorArticle />
 </template>
 
 <script setup>
 import { ref, onMounted, watch, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import mermaid from 'mermaid'
+import FlowchartGeneratorArticle from './FlowchartGeneratorArticle.vue'
 
 const { t } = useI18n()
 

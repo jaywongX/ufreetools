@@ -151,10 +151,11 @@ function generateSitemap() {
       entries.push(generateUrlEntry(`/${lang}${page.path}`, page.priority, page.changefreq));
     }
     
+    // 标签页面的内容太少，暂时不加入sitemap.xml
     // 标签页面
-    for (const tag of TAGS) {
-      entries.push(generateUrlEntry(`/${lang}/tag/${tag}`, '0.7', 'weekly'));
-    }
+    // for (const tag of TAGS) {
+    //   entries.push(generateUrlEntry(`/${lang}/tag/${tag}`, '0.7', 'weekly'));
+    // }
     
     // 工具页面
     for (const tool of TOOLS) {
