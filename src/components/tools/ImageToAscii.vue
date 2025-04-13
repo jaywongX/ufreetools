@@ -238,12 +238,16 @@
         </div>
       </div>
     </div>
+
+    <!-- 添加文章部分 -->
+    <ImageToAsciiArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, reactive, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import ImageToAsciiArticle from './ImageToAsciiArticle.vue'
 
 const { t } = useI18n()
 
