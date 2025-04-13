@@ -181,6 +181,9 @@ console.log(hmac.digest('${outputFormat}'));`"></pre>
     >
       {{ notification.message }}
     </div>
+    
+    <!-- 文章部分 -->
+    <HmacCalculatorArticle />
   </div>
 </template>
 
@@ -188,6 +191,7 @@ console.log(hmac.digest('${outputFormat}'));`"></pre>
 import { ref, computed, watch } from 'vue'
 import { sm3 } from 'sm-crypto'
 import { useI18n } from 'vue-i18n'
+import HmacCalculatorArticle from './HmacCalculatorArticle.vue'
 
 const { t } = useI18n()
 
