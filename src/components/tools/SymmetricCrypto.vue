@@ -289,6 +289,9 @@
         </ul>
       </div>
     </div>
+
+    <!-- 添加文章部分 -->
+    <SymmetricCryptoArticle />
   </div>
 </template>
 
@@ -297,6 +300,7 @@ import { ref, computed, watch } from 'vue'
 import CryptoJS from 'crypto-js'
 import { sm4 } from 'sm-crypto'
 import { useI18n } from 'vue-i18n'
+import SymmetricCryptoArticle from './SymmetricCryptoArticle.vue'
 
 // 定义状态
 const selectedAlgorithm = ref('aes')
