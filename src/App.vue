@@ -12,8 +12,7 @@
       </div>
       <main class="flex-1 p-6 overflow-auto">
         <router-view />
-        <!-- 在主要内容区域下方添加广告 -->
-        <!-- <AdSense /> -->
+        <MainAreaFooterAd />
       </main>
       <TheFooter />
     </div>
@@ -26,7 +25,7 @@ import TheHeader from './components/layout/TheHeader.vue'
 import TheFooter from './components/layout/TheFooter.vue'
 import SideNav from './components/layout/SideNav.vue'
 import SeoHead from './components/seo/SeoHead.vue'
-// import AdSense from './components/common/AdSense.vue'
+import MainAreaFooterAd from './components/common/MainAreaFooterAd.vue'
 // 移除不需要的导入
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
