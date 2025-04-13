@@ -224,12 +224,16 @@
     >
       <p class="text-gray-600 dark:text-gray-400">{{ $t('tools.user-agent-parser.messages.emptyInput') }}</p>
     </div>
+    
+    <!-- 添加文章组件 -->
+    <UserAgentParserArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UserAgentParserArticle from './UserAgentParserArticle.vue'
 
 const { t } = useI18n()
 
