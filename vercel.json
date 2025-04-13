@@ -11,9 +11,6 @@
   ],
   "redirects": [
     { "source": "/:path+", "destination": "/:path+/", "permanent": true },
-    
-    { "source": "http://:domain/:path*", "destination": "https://:domain/:path*", "permanent": true },
-    
-    { "source": "https://:domain/:path*", "destination": "https://www.:domain/:path*", "permanent": true }
+    { "source": "/:path*", "destination": "https://www.ufreetools.com/:path*", "permanent": true }
   ]
-} 
+}

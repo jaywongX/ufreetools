@@ -166,6 +166,9 @@
         </div>
       </div>
     </div>
+    
+    <!-- 在底部添加文章部分 -->
+    <CodeDiffArticle />
   </div>
 </template>
 
@@ -175,6 +178,7 @@ import { diffLines, diffWords } from 'diff'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github.css'
 import { useI18n } from 'vue-i18n'
+import CodeDiffArticle from './CodeDiffArticle.vue'
 
 const { t } = useI18n()
 

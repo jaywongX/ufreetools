@@ -230,12 +230,16 @@
         <li>{{ t('tools.drawing-board.tip5') }}</li>
       </ul>
     </div>
+
+    <!-- 添加文章部分 -->
+    <DrawingBoardArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import DrawingBoardArticle from './DrawingBoardArticle.vue'
 
 const { t } = useI18n()
 

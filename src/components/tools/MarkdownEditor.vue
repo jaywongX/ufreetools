@@ -282,6 +282,9 @@
       @confirm="onDialogConfirm"
       @cancel="onDialogCancel"
     />
+
+    <!-- 在底部添加文章部分 -->
+    <MarkdownEditorArticle />
   </div>
 </template>
 
@@ -293,6 +296,7 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/github-dark.css'
 import { useI18n } from 'vue-i18n'
 import ConfirmDialog from './ConfirmDialog.vue'
+import MarkdownEditorArticle from './MarkdownEditorArticle.vue'
 
 // 初始化国际化
 const { t, locale } = useI18n()

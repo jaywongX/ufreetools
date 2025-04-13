@@ -574,44 +574,21 @@
       </div>
     </div>
 
-    <!-- 工具说明文档 -->
-    <div class="tool-documentation mt-8 p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-      <h2 class="text-xl font-bold mb-4">{{ $t('tools.personal-account-book.documentation.title') }}</h2>
-      
-      <div class="markdown-content prose dark:prose-invert max-w-none">
-        <p>{{ $t('tools.personal-account-book.documentation.introduction') }}</p>
-        
-        <h3>{{ $t('tools.personal-account-book.documentation.whyUse.title') }}</h3>
-        <ul>
-          <li>{{ $t('tools.personal-account-book.documentation.whyUse.points1') }}</li>
-          <li>{{ $t('tools.personal-account-book.documentation.whyUse.points2') }}</li>
-          <li>{{ $t('tools.personal-account-book.documentation.whyUse.points3') }}</li>
-          <li>{{ $t('tools.personal-account-book.documentation.whyUse.points4') }}</li>
-          <li>{{ $t('tools.personal-account-book.documentation.whyUse.points5') }}</li>
-        </ul>
-        
-        <h3>{{ $t('tools.personal-account-book.documentation.tips.title') }}</h3>
-        <ul>
-          <li>{{ $t('tools.personal-account-book.documentation.tips.points1') }}</li>
-          <li>{{ $t('tools.personal-account-book.documentation.tips.points2') }}</li>
-          <li>{{ $t('tools.personal-account-book.documentation.tips.points3') }}</li>
-          <li>{{ $t('tools.personal-account-book.documentation.tips.points4') }}</li>
-          <li>{{ $t('tools.personal-account-book.documentation.tips.points5') }}</li>
-        </ul>
-        
-        <h3>{{ $t('tools.personal-account-book.documentation.dataStorage.title') }}</h3>
-        <p>{{ $t('tools.personal-account-book.documentation.dataStorage.content') }}</p>
-      </div>
-    </div>
+    <!-- 在底部添加文章部分 -->
+    <PersonalAccountBookArticle />
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
+import PersonalAccountBookArticle from './PersonalAccountBookArticle.vue';
 
 export default defineComponent({
   name: 'PersonalAccountBook',
+  components: {
+    PersonalAccountBookArticle
+  },
   data() {
     return {
       transactions: [],
