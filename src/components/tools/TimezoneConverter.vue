@@ -235,12 +235,16 @@
         <li>{{ t('tools.timezone-converter.howToUse4') }}</li>
       </ol>
     </div>
+    
+    <!-- 在底部添加文章部分 -->
+    <TimezoneConverterArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import TimezoneConverterArticle from './TimezoneConverterArticle.vue'
 
 const { t, locale } = useI18n()
 
