@@ -228,12 +228,16 @@
         {{ $t('tools.http-header-security-checker.emptyState.line2') }}
       </p>
     </div>
+    
+    <!-- 在底部添加文章部分 -->
+    <HttpHeaderSecurityCheckerArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import HttpHeaderSecurityCheckerArticle from './HttpHeaderSecurityCheckerArticle.vue'
 
 const { t } = useI18n()
 
