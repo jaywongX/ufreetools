@@ -124,6 +124,9 @@
       </div>
     </div>
   </div>
+  
+  <!-- 添加文章部分 -->
+  <JSONFormatterArticle />
 </template>
 
 <script setup>
@@ -133,6 +136,7 @@ import json from 'highlight.js/lib/languages/json';
 import 'highlight.js/styles/github-dark.css';
 import JsonTreeNode from './JsonTreeNode.vue';
 import { useI18n } from 'vue-i18n';
+import JSONFormatterArticle from './JSONFormatterArticle.vue';
 
 // 注册JSON语言支持
 hljs.registerLanguage('json', json);
