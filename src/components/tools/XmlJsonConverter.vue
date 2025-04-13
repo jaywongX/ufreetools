@@ -298,6 +298,9 @@
         </ul>
       </div>
     </div>
+    
+    <!-- 在底部添加文章部分 -->
+    <XmlJsonConverterArticle />
   </div>
 </template>
 
@@ -305,6 +308,7 @@
 import { ref, reactive, computed, watch } from 'vue'
 import { XMLParser, XMLBuilder } from 'fast-xml-parser'
 import { useI18n } from 'vue-i18n'
+import XmlJsonConverterArticle from './XmlJsonConverterArticle.vue'
 
 // 初始化国际化
 const { t } = useI18n()
