@@ -108,12 +108,16 @@
       </div>
     </div>
   </div>
+  
+  <!-- 添加文章部分 -->
+  <CurlConverterArticle />
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 import { onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import CurlConverterArticle from './CurlConverterArticle.vue'
 
 const { t } = useI18n()
 
@@ -599,9 +603,9 @@ function extractHeaders(curl) {
   
   for (const match of headerMatches) {
     if (match[2]) {
-      const [name, value] = match[2].split(': ')
+      const [name, value] = match[2].split(': ');
       if (name && value) {
-        headers[name.trim()] = value.trim()
+        headers[name.trim()] = value.trim();
       }
     }
   }
