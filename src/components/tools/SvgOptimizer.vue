@@ -282,12 +282,16 @@
         </div>
       </div>
     </div>
+    
+    <!-- 在最末尾添加文章组件 -->
+    <SvgOptimizerArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, reactive, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import SvgOptimizerArticle from './SvgOptimizerArticle.vue'
 
 const { t } = useI18n()
 
