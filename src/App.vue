@@ -430,17 +430,6 @@ const allTools = computed(() => [
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['code', 'security', 'frontend', 'optimize']
   },
-  { 
-    id: 'user-agent-generator', 
-    name: t('tools.user-agent-generator.name'),
-    category: t(`categories.dev`),
-    categoryId: 'dev',
-    description: t('tools.user-agent-generator.description'),
-    path: '/tools/user-agent-generator',
-    component: 'UserAgentGenerator',
-    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['user-agent','dev','generate']
-  },
   {
      id: 'uuid-generator',
      name: t('tools.uuid-generator.name'),
@@ -611,6 +600,17 @@ const allTools = computed(() => [
     component: 'ImageBatchResizer',
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['image', 'resize', 'compression', 'quality']
+  },
+  {
+    id: 'image-color-extractor',
+    name: t('tools.image-color-extractor.name'),
+    category: t(`categories.image`),
+    categoryId: 'image',
+    description: t('tools.image-color-extractor.description'),
+    path: '/tools/image-color-extractor',
+    component: 'ImageColorExtractor',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image', 'color', 'extract', 'palette', 'design']
   },
   // {
   //   id: 'id-photo-maker',
@@ -934,6 +934,17 @@ const allTools = computed(() => [
     component: 'UserAgentGenerator',
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
     tags: ['network', 'generate', 'http']
+  },
+  {
+    id: 'user-agent-parser',
+    name: t('tools.user-agent-parser.name'),
+    category: t(`categories.network`),
+    categoryId: 'network',
+    description: t('tools.user-agent-parser.description'),
+    path: '/tools/user-agent-parser',
+    component: 'UserAgentParser',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'user-agent', 'parser']
   },
   { 
     id: 'url-params-parser', 

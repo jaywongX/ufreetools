@@ -268,12 +268,16 @@
     <div v-if="notification" class="fixed bottom-4 right-4 p-4 rounded-md shadow-lg" :class="notificationClass">
       {{ notification }}
     </div>
+    
+    <!-- 添加文章组件 -->
+    <CookieManagerArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
+import CookieManagerArticle from './CookieManagerArticle.vue'
 
 const { t } = useI18n();
 
@@ -648,4 +652,6 @@ function showNotification(message, type) {
   max-width: 1200px;
   margin: 0 auto;
 }
-</style> 
+</style>
+
+<CookieManagerArticle /> 

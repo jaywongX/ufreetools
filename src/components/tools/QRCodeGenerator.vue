@@ -272,6 +272,9 @@
         </div>
       </div>
     </div>
+
+    <!-- 在底部添加文章组件 -->
+    <QRCodeGeneratorArticle />
   </div>
 </template>
 
@@ -279,6 +282,7 @@
 import { ref, reactive, onMounted, watch, nextTick } from 'vue'
 import QRCode from 'qrcode'
 import { useI18n } from 'vue-i18n'
+import QRCodeGeneratorArticle from './QRCodeGeneratorArticle.vue'
 
 const { t } = useI18n()
 

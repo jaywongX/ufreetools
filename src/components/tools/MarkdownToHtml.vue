@@ -213,6 +213,9 @@
     >
       {{ t('tools.markdown-to-html.alerts.copied') }}
     </div>
+    
+    <!-- 添加文章组件 -->
+    <MarkdownToHtmlArticle />
   </div>
 </template>
 
@@ -221,6 +224,7 @@ import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import MarkdownIt from 'markdown-it'
 import DOMPurify from 'dompurify'
 import { useI18n } from 'vue-i18n'
+import MarkdownToHtmlArticle from './MarkdownToHtmlArticle.vue'
 
 // 初始化国际化
 const { t, locale } = useI18n()

@@ -155,11 +155,15 @@
         </div>
       </div>
     </div>
+    
+    <!-- 在最末尾添加文章组件 -->
+    <RegexTesterArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, watch } from 'vue';
+import RegexTesterArticle from './RegexTesterArticle.vue';
 
 // 状态数据
 const regexPattern = ref('');

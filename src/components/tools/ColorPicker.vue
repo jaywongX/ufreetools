@@ -356,11 +356,15 @@
         </div>
       </div>
     </div>
+
+    <!-- 在底部添加文章组件 -->
+    <ColorPickerArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, reactive, computed, onMounted, watch, onUnmounted } from 'vue'
+import ColorPickerArticle from './ColorPickerArticle.vue'
 
 // 颜色格式
 const colorFormat = ref('HEX'); // HEX, RGB, HSL

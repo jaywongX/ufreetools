@@ -27,16 +27,17 @@ import apiRequestTool from './tools/api-request-tool.js';
 import csvJsonConverter from './tools/csv-json-converter.js';
 import xmlJsonConverter from './tools/xml-json-converter.js';
 import CssGradientGenerator from './tools/css-gradient-generator.js';
-import imageColorExtractor from './tools/image-color-extractor.js';
 import javascriptObfuscator from './tools/javascript-obfuscator.js';
 import flowchartGenerator from './tools/flowchart-generator.js';
 import diagramExamples from './tools/diagram-examples.js';
 import markdownToHtml from './tools/markdown-to-html.js';
 import sensitiveWordFilter from './tools/sensitive-word-filter.js';
 import imageBatchResizer from './tools/image-batch-resizer.js';
+import imageColorExtractor from './tools/image-color-extractor.js';
 import codeDiff from './tools/code-diff.js';
 import codeObfuscator from './tools/code-obfuscator.js';
 import userAgentGenerator from './tools/user-agent-generator.js';
+import userAgentParser from './tools/user-agent-parser.js';
 import numberConverter from './tools/number-converter.js';
 import yamlJsonConverter from './tools/yaml-json-converter.js';
 import colorSchemeGenerator from './tools/color-scheme-generator.js';
@@ -147,16 +148,17 @@ export default {
     'csv-json-converter': csvJsonConverter,
     'xml-json-converter': xmlJsonConverter,
     'css-gradient-generator': CssGradientGenerator,
-    'image-color-extractor': imageColorExtractor,
     'javascript-obfuscator': javascriptObfuscator,
     'flowchart-generator': flowchartGenerator,
     'diagram-examples': diagramExamples,
     'markdown-to-html': markdownToHtml,
     'sensitive-word-filter': sensitiveWordFilter,
     'image-batch-resizer': imageBatchResizer,
+    'image-color-extractor': imageColorExtractor,
     'code-diff':codeDiff,
     'code-obfuscator':codeObfuscator,
     'user-agent-generator':userAgentGenerator,
+    'user-agent-parser':userAgentParser,
     'number-converter':numberConverter,
     'yaml-json-converter':yamlJsonConverter,
     'color-scheme-generator':colorSchemeGenerator,

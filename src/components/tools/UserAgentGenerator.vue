@@ -159,12 +159,17 @@
         
         <h4 class="font-medium text-gray-700 dark:text-gray-300 mt-4">{{ $t('tools.user-agent-generator.info.useCasesTitle') }}</h4>
         <ul class="list-disc pl-5 space-y-1">
-          <li v-for="(useCase, index) in $t('tools.user-agent-generator.info.useCases')" :key="index">
-            {{ useCase }}
-          </li>
+          <li>{{ $t('tools.user-agent-generator.info.useCases[0]') }}</li>
+          <li>{{ $t('tools.user-agent-generator.info.useCases[1]') }}</li>
+          <li>{{ $t('tools.user-agent-generator.info.useCases[2]') }}</li>
+          <li>{{ $t('tools.user-agent-generator.info.useCases[3]') }}</li>
+          <li>{{ $t('tools.user-agent-generator.info.useCases[4]') }}</li>
         </ul>
       </div>
     </div>
+    
+    <!-- 添加文章组件 -->
+    <UserAgentGeneratorArticle />
   </div>
 </template>
 
@@ -172,6 +177,7 @@
 import { ref, reactive } from 'vue'
 import randomUseragent from 'random-useragent'
 import { useI18n } from 'vue-i18n'
+import UserAgentGeneratorArticle from './UserAgentGeneratorArticle.vue'
 
 const { t } = useI18n()
 
