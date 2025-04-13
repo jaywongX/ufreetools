@@ -396,12 +396,16 @@
         {{ $t('tools.url-params-parser.params.noParams') }}
       </p>
     </div>
+
+    <!-- 在最末尾添加文章组件 -->
+    <UrlParamsParserArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UrlParamsParserArticle from './UrlParamsParserArticle.vue'
 
 const { t } = useI18n()
 
