@@ -280,6 +280,9 @@
     >
       {{ notification.message }}
     </div>
+    
+    <!-- 在最末尾添加文章组件 -->
+    <ImageBatchResizerArticle />
   </div>
 </template>
 
@@ -288,6 +291,7 @@ import { ref, computed, onMounted } from 'vue'
 import pica from 'pica'
 import JSZip from 'jszip'
 import { useI18n } from 'vue-i18n'
+import ImageBatchResizerArticle from './ImageBatchResizerArticle.vue'
 
 const { t } = useI18n()
 
