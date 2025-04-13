@@ -202,12 +202,16 @@
     >
       {{ notification.message }}
     </div>
+
+    <!-- 在最底部添加文章组件 -->
+    <RequestHeaderEditorArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import RequestHeaderEditorArticle from './RequestHeaderEditorArticle.vue'
 
 // 使用国际化
 const { t, locale } = useI18n()
