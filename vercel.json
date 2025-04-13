@@ -11,6 +11,6 @@
   ],
   "redirects": [
     { "source": "/:path+", "destination": "/:path+/", "permanent": true },
-    { "source": "/:path*", "destination": "https://www.ufreetools.com/:path*", "permanent": true }
+    { "source": "/((?!assets|static).*)", "destination": "https://www.ufreetools.com/:path*", "permanent": true }
   ]
 }
