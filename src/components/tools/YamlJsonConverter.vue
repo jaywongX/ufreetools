@@ -212,6 +212,9 @@
       <h4 class="font-medium">{{ t('common.error') }}:</h4>
       <p>{{ errorMessage }}</p>
     </div>
+    
+    <!-- 在底部添加文章部分 -->
+    <YamlJsonConverterArticle />
   </div>
 </template>
 
@@ -219,6 +222,7 @@
 import { ref, watch } from 'vue'
 import jsYaml from 'js-yaml'
 import { useI18n } from 'vue-i18n'
+import YamlJsonConverterArticle from './YamlJsonConverterArticle.vue'
 
 const { t } = useI18n()
 
