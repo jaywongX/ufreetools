@@ -255,6 +255,9 @@
         </div>
       </div>
     </div>
+    
+    <!-- 在底部添加文章部分 -->
+    <CsvJsonConverterArticle />
   </div>
 </template>
 
@@ -262,6 +265,8 @@
 import { ref, reactive, watch } from 'vue'
 import Papa from 'papaparse'
 import { useI18n } from 'vue-i18n'
+import CsvJsonConverterArticle from './CsvJsonConverterArticle.vue'
+
 const { t } = useI18n()
 
 // 状态变量
