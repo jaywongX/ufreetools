@@ -258,12 +258,16 @@
         <li>{{ $t('tools.password-generator.tips.use2FA') }}</li>
       </ul>
     </div>
+    
+    <!-- 新增工具文章部分 -->
+    <PasswordGeneratorArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import PasswordGeneratorArticle from './PasswordGeneratorArticle.vue'
 
 const { t, locale } = useI18n()
 

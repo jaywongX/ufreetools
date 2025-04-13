@@ -1339,14 +1339,6 @@ watch(locale, () => {
   // The computed property will automatically refresh when the locale changes
 })
 
-// 计算当前规范URL
-const canonicalUrl = computed(() => {
-  // 获取当前路径
-  const path = route.path
-  // 构建完整URL (确保使用www版本)
-  return `https://www.ufreetools.com${path}`
-})
-
 // 设置头部元数据
 useHead({
   link: computed(() => {
