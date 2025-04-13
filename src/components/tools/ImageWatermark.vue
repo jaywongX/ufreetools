@@ -393,6 +393,9 @@
     >
       {{ notification.message }}
     </div>
+
+    <!-- 在底部添加文章部分 -->
+    <ImageWatermarkArticle />
   </div>
 </template>
 
@@ -400,6 +403,7 @@
 import { ref, computed, onMounted, nextTick, watch } from "vue";
 import { fabric } from "fabric";
 import { useI18n } from 'vue-i18n';
+import ImageWatermarkArticle from './ImageWatermarkArticle.vue'
 
 // 初始化国际化
 const { t, locale } = useI18n();
