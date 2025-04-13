@@ -473,6 +473,9 @@
         </div>
       </div>
     </div>
+
+    <!-- 添加文章部分 -->
+    <JwtDebuggerArticle />
   </div>
 </template>
 
@@ -483,6 +486,7 @@ import { useI18n } from 'vue-i18n'
 import * as jose from 'jose'
 import * as sm2 from 'sm-crypto/src/sm2'
 import { sm3 } from 'sm-crypto'
+import JwtDebuggerArticle from './JwtDebuggerArticle.vue'
 
 // 初始化国际化
 const { t, locale } = useI18n()
