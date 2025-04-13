@@ -16,10 +16,12 @@
           {{ $t('tools.image-color-extractor.article.features.useCases.title') }}
         </h4>
         <ul class="list-disc pl-6 space-y-3 text-gray-600 dark:text-gray-400">
-          <li v-for="(item, index) in $t('tools.image-color-extractor.article.features.useCases.items')" 
-              :key="index" 
-              v-html="item">
-          </li>
+          <li v-html="$t('tools.image-color-extractor.article.features.useCases.items[0]')"></li>
+          <li v-html="$t('tools.image-color-extractor.article.features.useCases.items[1]')"></li>
+          <li v-html="$t('tools.image-color-extractor.article.features.useCases.items[2]')"></li>
+          <li v-html="$t('tools.image-color-extractor.article.features.useCases.items[3]')"></li>
+          <li v-html="$t('tools.image-color-extractor.article.features.useCases.items[4]')"></li>
+          <li v-html="$t('tools.image-color-extractor.article.features.useCases.items[5]')"></li>
         </ul>
       </div>
     </div>
@@ -30,9 +32,35 @@
         {{ $t('tools.image-color-extractor.article.faq.title') }}
       </h3>
       <div class="space-y-4">
-        <div v-for="(item, index) in $t('tools.image-color-extractor.article.faq.items')" :key="index" class="pb-4 border-b border-gray-200 dark:border-gray-700 last:border-0">
-          <h4 class="text-lg font-medium mb-2 text-gray-700 dark:text-gray-300">{{ item.question }}</h4>
-          <div class="text-gray-600 dark:text-gray-400" v-html="item.answer"></div>
+        <div class="pb-4 border-b border-gray-200 dark:border-gray-700">
+          <h4 class="text-lg font-medium mb-2 text-gray-700 dark:text-gray-300">
+            {{ $t('tools.image-color-extractor.article.faq.items[0].question') }}
+          </h4>
+          <div class="text-gray-600 dark:text-gray-400" v-html="$t('tools.image-color-extractor.article.faq.items[0].answer')"></div>
+        </div>
+        <div class="pb-4 border-b border-gray-200 dark:border-gray-700">
+          <h4 class="text-lg font-medium mb-2 text-gray-700 dark:text-gray-300">
+            {{ $t('tools.image-color-extractor.article.faq.items[1].question') }}
+          </h4>
+          <div class="text-gray-600 dark:text-gray-400" v-html="$t('tools.image-color-extractor.article.faq.items[1].answer')"></div>
+        </div>
+        <div class="pb-4 border-b border-gray-200 dark:border-gray-700">
+          <h4 class="text-lg font-medium mb-2 text-gray-700 dark:text-gray-300">
+            {{ $t('tools.image-color-extractor.article.faq.items[2].question') }}
+          </h4>
+          <div class="text-gray-600 dark:text-gray-400" v-html="$t('tools.image-color-extractor.article.faq.items[2].answer')"></div>
+        </div>
+        <div class="pb-4 border-b border-gray-200 dark:border-gray-700">
+          <h4 class="text-lg font-medium mb-2 text-gray-700 dark:text-gray-300">
+            {{ $t('tools.image-color-extractor.article.faq.items[3].question') }}
+          </h4>
+          <div class="text-gray-600 dark:text-gray-400" v-html="$t('tools.image-color-extractor.article.faq.items[3].answer')"></div>
+        </div>
+        <div class="pb-4 border-b border-gray-200 dark:border-gray-700 last:border-0">
+          <h4 class="text-lg font-medium mb-2 text-gray-700 dark:text-gray-300">
+            {{ $t('tools.image-color-extractor.article.faq.items[4].question') }}
+          </h4>
+          <div class="text-gray-600 dark:text-gray-400" v-html="$t('tools.image-color-extractor.article.faq.items[4].answer')"></div>
         </div>
       </div>
     </div>
