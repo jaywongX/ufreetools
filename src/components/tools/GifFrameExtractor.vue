@@ -198,6 +198,9 @@
         </div>
       </div>
     </div>
+    
+    <!-- 在底部添加文章部分 -->
+    <GifFrameExtractorArticle />
   </div>
 </template>
 
@@ -206,6 +209,8 @@ import { ref, computed, onMounted, reactive } from 'vue'
 import gifFrames from 'gif-frames'
 import JSZip from 'jszip'
 import { useI18n } from 'vue-i18n'
+import GifFrameExtractorArticle from './GifFrameExtractorArticle.vue'
+
 const { t } = useI18n()
 
 // 状态变量
