@@ -317,11 +317,15 @@
       </div>
     </div>
   </div>
+  
+  <!-- 添加文章部分 -->
+  <WebSocketTesterArticle />
 </template>
 
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
+import WebSocketTesterArticle from './WebSocketTesterArticle.vue'
 
 const { t } = useI18n()
 
