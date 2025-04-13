@@ -98,12 +98,16 @@
     <div v-if="message" class="mt-4 p-3 rounded-md" :class="messageClass">
       {{ message }}
     </div>
+
+    <!-- 在底部添加文章部分 -->
+    <UuidGeneratorArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UuidGeneratorArticle from './UuidGeneratorArticle.vue'
 
 const { t } = useI18n()
 
