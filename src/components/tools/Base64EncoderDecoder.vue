@@ -234,6 +234,9 @@
         </ul>
       </div>
     </div>
+
+    <!-- 在底部添加文章部分 -->
+    <Base64EncoderDecoderArticle />
   </div>
 </template>
 
@@ -242,6 +245,7 @@ import { ref, watch, computed } from 'vue'
 import { Buffer } from 'buffer'
 import iconv from 'iconv-lite'
 import { useI18n } from 'vue-i18n'
+import Base64EncoderDecoderArticle from './Base64EncoderDecoderArticle.vue'
 
 const { t } = useI18n()
 
@@ -408,7 +412,7 @@ async function processDataAsync(data) {
             const hexString = data.replace(/[^0-9A-Fa-f]/g, '')
             if (hexString.length % 2 !== 0) {
               throw new Error($t('tools.base64-encoder-decoder.messages.invalidHex'))
-          }
+            }
             const bytes = Buffer.from(hexString, 'hex')
             resolve(bytes.toString('base64'))
           } else {
