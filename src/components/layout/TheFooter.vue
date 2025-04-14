@@ -16,7 +16,7 @@
           >
             Twelve Tools
           </a>
-          <a href="http://www.canadawebdir.com/shopping/home_and_garden/"
+          <a href="https://www.canadawebdir.com/shopping/home_and_garden/"
             target="_blank" 
             rel="noopener noreferrer" 
             class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light transition-colors"
