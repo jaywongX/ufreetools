@@ -8,5 +8,30 @@
         { "key": "X-XSS-Protection", "value": "1; mode=block" }
       ]
     }
+  ],
+  "redirects": [
+    { 
+      "source": "/", 
+      "destination": "/en", 
+      "permanent": true 
+    },
+    { 
+      "source": "/:path*", 
+      "has": [
+        {
+          "type": "host",
+          "value": "ufreetools.com"
+        }
+      ],
+      "missing": [
+        {
+          "type": "path-param",
+          "key": "path",
+          "value": "^(zh|en).*$"
+        }
+      ],
+      "destination": "/en/:path*", 
+      "permanent": true 
+    }
   ]
 }

@@ -42,35 +42,6 @@ provide('sidebarOpen', sidebarOpen)
 const darkMode = ref(false)
 provide('darkMode', darkMode)
 
-// 客户端路径检测和重定向
-onMounted(() => {
-  // 检查URL是否具有语言前缀
-  const path = window.location.pathname;
-  const supportedLanguages = ['zh', 'en'];
-  const pathParts = path.split('/').filter(Boolean);
-  
-  // 如果路径不为空且第一段不是语言代码
-  if (pathParts.length > 0 && !supportedLanguages.includes(pathParts[0])) {
-    // 获取用户偏好语言
-    const savedLang = localStorage.getItem('userLanguage');
-    const browserLang = navigator.language.split('-')[0];
-    
-    // 确定目标语言
-    let targetLang;
-    if (savedLang && supportedLanguages.includes(savedLang)) {
-      targetLang = savedLang;
-    } else if (supportedLanguages.includes(browserLang)) {
-      targetLang = browserLang;
-    } else {
-      targetLang = 'en';
-    }
-    
-    // 构建新路径并重定向
-    const newPath = `/${targetLang}${path}`;
-    window.location.href = newPath;
-  }
-});
-
 // 工具分类定义
 const categories = ref([
   { 

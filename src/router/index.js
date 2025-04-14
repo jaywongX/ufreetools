@@ -111,12 +111,26 @@ const setupLanguageGuard = (i18n) => {
     
     // 检查是否支持该语言
     if (lang && supportedLanguages.includes(lang)) {
+      // 获取用户之前选择的语言偏好
+      const savedLang = localStorage.getItem('userLanguage');
+      
+      // 如果用户有明确的语言偏好且与当前路由语言不同，则重定向
+      if (savedLang && supportedLanguages.includes(savedLang) && savedLang !== lang) {
+        // 构建新的URL路径，保留当前路径的其余部分
+        const path = to.path.replace(`/${lang}`, `/${savedLang}`);
+        next(path);
+        return;
+      }
+      
       // 设置i18n的locale
       i18n.global.locale.value = lang;
+      
       // 保存用户语言选择到localStorage
       localStorage.setItem('userLanguage', lang);
     } else if (to.path === '/') {
       // 根路径重定向到默认语言或用户之前选择的语言
+      // 注意：此处代码通常不会执行，因为vercel.json已经处理了根路径重定向
+      // 但保留作为客户端备用方案
       const savedLang = localStorage.getItem('userLanguage');
       const userLang = savedLang && supportedLanguages.includes(savedLang) 
         ? savedLang 
