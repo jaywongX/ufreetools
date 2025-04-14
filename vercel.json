@@ -23,13 +23,6 @@
           "value": "ufreetools.com"
         }
       ],
-      "missing": [
-        {
-          "type": "path-param",
-          "key": "path",
-          "value": "^(zh|en).*$"
-        }
-      ],
       "destination": "/en/:path*", 
       "permanent": true 
     }
