@@ -86,7 +86,7 @@ import personalAccountBook from './tools/personal-account-book.js';
 import htmlFormatter from './tools/html-formatter.js';
 import instagramPostGenerator from './tools/instagram-post-generator.js';
 import hexAndCalculator from './tools/hex-and-calculator.js';
-
+import verticalToHorizontalImage from './tools/vertical-to-horizontal-image.js';
 export default {
     common: {
       tryNow: 'Try Now',
@@ -207,4 +207,5 @@ export default {
     'html-formatter': htmlFormatter,
     'instagram-post-generator': instagramPostGenerator,
     'hex-and-calculator': hexAndCalculator,
+    'vertical-to-horizontal-image': verticalToHorizontalImage,
   }

@@ -82,7 +82,8 @@ const lazyComponentMap = {
   'ImageToAscii': () => import('./components/tools/ImageToAscii.vue'),
   'ImageWatermark': () => import('./components/tools/ImageWatermark.vue'),
   'GifFrameExtractor': () => import('./components/tools/GifFrameExtractor.vue'),
-  
+  'VerticalToHorizontalImage': () => import('./components/tools/VerticalToHorizontalImage.vue'),
+
   // 转换工具
   'Base64EncoderDecoder': () => import('./components/tools/Base64EncoderDecoder.vue'),
   'CsvJsonConverter': () => import('./components/tools/CsvJsonConverter.vue'),
