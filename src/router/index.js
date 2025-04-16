@@ -4,9 +4,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 // 路由配置
 const routes = [
   {
-    path: '/'
-  },
-  {
     path: '/:lang',
     component: () => import('../components/layout/LanguageLayout.vue'),
     children: [
@@ -85,6 +82,17 @@ const routes = [
         component: () => import('../pages/FeedbackPage.vue')
       }
     ]
+  },
+  
+  // 添加通配符路由捕获所有没有语言前缀的路径
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: to => {
+      // 获取用户偏好语言或默认为英文
+      const savedLang = localStorage.getItem('userLanguage') || 'en';
+      // 保持原始路径，只添加语言前缀
+      return `/${savedLang}${to.path}`;
+    }
   }
 ]
 
@@ -105,11 +113,19 @@ const setupLanguageGuard = (i18n) => {
   router.beforeEach((to, from, next) => {
     // 支持的语言列表
     const supportedLanguages = ['zh', 'en'];
-    
-    // 从路由中获取语言 (例如 /zh/about)
     const lang = to.params.lang;
     
-    // 检查是否支持该语言
+    // 添加对Googlebot和其他爬虫的例外
+    const userAgent = navigator.userAgent || '';
+    const isCrawler = /bot|googlebot|crawler|spider|robot|crawling/i.test(userAgent);
+    
+    if (isCrawler) {
+      // 让爬虫继续前进，不进行语言重定向
+      next();
+      return;
+    }
+    
+    // 继续使用现有的语言逻辑
     if (lang && supportedLanguages.includes(lang)) {
       // 获取用户之前选择的语言偏好
       const savedLang = localStorage.getItem('userLanguage');
