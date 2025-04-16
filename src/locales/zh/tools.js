@@ -87,6 +87,7 @@ import htmlFormatter from './tools/html-formatter.js';
 import instagramPostGenerator from './tools/instagram-post-generator.js';
 import hexAndCalculator from './tools/hex-and-calculator.js';
 import verticalToHorizontalImage from './tools/vertical-to-horizontal-image.js';
+import horizontalToVerticalImage from './tools/horizontal-to-vertical-image.js';
 
 export default {
   common: {
@@ -209,4 +210,5 @@ export default {
   'instagram-post-generator': instagramPostGenerator,
   'hex-and-calculator': hexAndCalculator,
   'vertical-to-horizontal-image': verticalToHorizontalImage,
+  'horizontal-to-vertical-image': horizontalToVerticalImage,
 };
