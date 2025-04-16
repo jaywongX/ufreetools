@@ -1,0 +1,155 @@
+export default {
+  name: '竖图转横图',
+  description: '将垂直肖像图像转换为横向景观格式，提供多种转换选项',
+  
+  upload: {
+    title: '上传图片',
+    dropzone: '拖放图片到这里',
+    maxSize: '最大文件大小：10MB',
+    supportedFormats: '支持的格式：JPG、PNG、WEBP、GIF'
+  },
+  
+  settings: {
+    title: '转换设置',
+    presets: '快速预设',
+    conversionMode: '转换模式',
+    modes: {
+      rotate: '旋转',
+      fill: '填充背景',
+      blur: '模糊背景',
+      stretch: '拉伸边缘',
+      dualColor: '双色背景'
+    },
+    rotationAngle: '旋转角度',
+    fillColor: '背景颜色',
+    blurRadius: '模糊程度',
+    stretchEdges: '拉伸程度',
+    leftColor: '左侧颜色',
+    rightColor: '右侧颜色',
+    sizeOption: '尺寸设置',
+    sizeModes: {
+      auto: '自动尺寸',
+      preset: '常用尺寸',
+      custom: '自定义尺寸'
+    },
+    sizePresets: '尺寸预设',
+    outputSize: '输出尺寸',
+    width: '宽度',
+    height: '高度',
+    dimensionsHint: '以像素为单位输入尺寸',
+    autoSize: '自动计算尺寸',
+    outputFormat: '输出格式',
+    quality: '图像质量',
+    advancedOptions: '高级选项',
+    preserveRatio: '保持宽高比',
+    sharpen: '锐化',
+    addWatermark: '添加水印',
+    watermarkPlaceholder: '输入水印文字',
+    watermarkColor: '水印颜色'
+  },
+  
+  output: {
+    preview: '结果预览',
+    dimensions: '尺寸',
+    before: '转换前',
+    after: '转换后'
+  },
+  
+  actions: {
+    selectImage: '选择图片',
+    convert: '转换图片',
+    download: '下载图片',
+    reset: '移除',
+    showSideBySide: '显示对比',
+    hideComparison: '隐藏对比',
+    hideSideBySide: '关闭'
+  },
+  
+  messages: {
+    processing: '处理图片中...',
+    convertPrompt: '转换图片后结果将显示在这里',
+    error: '处理图片时发生错误',
+    success: '转换成功完成！'
+  },
+
+  examples: {
+    title: '使用技巧',
+    social: '非常适合社交媒体帖子，横向图像表现更好',
+    socialTip: '使用模糊模式获得最佳社交媒体效果',
+    website: '为网站和博客创建横幅图像',
+    websiteTip: '双色模式非常适合网页横幅'
+  },
+
+  help: {
+    title: '如何使用此工具',
+    description: '此工具可让您使用各种方法将垂直（肖像）图像转换为水平（景观）格式，同时保持视觉质量和效果。',
+    example1: {
+      title: '社交媒体帖子',
+      description: '将肖像照片转换为社交媒体友好的横向格式，带模糊背景'
+    },
+    example2: {
+      title: '网站横幅',
+      description: '使用颜色填充背景，从垂直图像创建网站头部和横幅'
+    }
+  },
+
+  article: {
+    title: "竖图转横图：完整指南",
+    
+    intro: {
+      title: "工具功能和应用场景",
+      content: `
+        <p>我们的<strong>竖图转横图转换工具</strong>可将肖像（竖向）图像转换为风景（横向）格式，同时保持视觉质量。这个强大的工具提供多种转换方法，包括模糊背景、纯色填充、双色渐变、边缘拉伸和旋转调整。</p>
+        
+        <p>主要功能：</p>
+        <ul>
+          <li><strong>多种转换模式</strong>，适合不同的视觉风格和用途</li>
+          <li><strong>社交媒体优化</strong>，为各种平台提供预设尺寸</li>
+          <li><strong>专业自定义选项</strong>，包括锐化和水印等高级设置</li>
+          <li><strong>高质量输出</strong>，支持多种格式（JPEG、PNG、WebP）</li>
+        </ul>
+        
+        <h4>常见应用场景：</h4>
+        
+        <p><strong>社交媒体内容</strong>：将竖直的智能手机照片转换为横向帖子，用于Facebook、Twitter、LinkedIn和YouTube等横向格式表现更佳的平台。</p>
+        
+        <p><strong>网站横幅</strong>：从竖直产品照片或人像创建宽幅头图和横幅，用于电子商务网站、博客和营销材料。</p>
+        
+        <p><strong>数字营销</strong>：将竖直产品图像调整为横向广告格式，适用于各广告平台和电子邮件营销活动。</p>
+        
+        <p><strong>视频缩略图</strong>：将竖直视频截图转换为横向缩略图，用于YouTube、Vimeo和其他视频平台。</p>
+        
+        <p><strong>演示幻灯片</strong>：将竖直图像转换为适合PowerPoint、Google幻灯片和其他演示软件的横向格式。</p>
+      `
+    },
+    
+    faq: {
+      title: "常见问题解答",
+      q1: "为什么我应该将竖图转换为横图？",
+      a1: "横向图像在许多平台上更受欢迎，包括社交媒体信息流、网站、演示文稿和营销材料。它们通常获得更高的互动率，并在各种设备上有更好的显示效果。",
+      q2: "竖图转换为横图时会失去质量吗？",
+      a2: "不会，我们的工具在转换过程中保持图像质量。我们使用模糊、颜色填充和边缘拉伸等高级技术，而不是简单的裁剪，以保留原始图像的内容。",
+      q3: "社交媒体应该选择哪种转换模式？",
+      a3: "对于社交媒体，模糊背景模式通常效果最佳，因为它可以保持主体居中，同时用原始图像的美观模糊版本水平延伸图像。",
+      q4: "横向图像的最佳尺寸是多少？",
+      a4: "常见的横向比例包括16:9（宽屏）、3:2（标准横向），以及特定平台比例，如Facebook的1200×630像素或YouTube的1280×720。我们的预设选项可以为您处理这些计算。",
+      q5: "我可以添加水印来保护转换后的图像吗？",
+      a5: "是的，我们的工具在高级选项中包含水印功能。您可以添加自定义文本并调整颜色，帮助保护您的知识产权。",
+      q6: "这个工具可以在移动设备上使用吗？",
+      a6: "当然可以！我们的竖图转横图转换工具完全响应式，可在任何使用现代浏览器的智能手机、平板电脑和台式电脑上使用。"
+    },
+    
+    tutorial: {
+      title: "步骤指南",
+      step1: "通过将竖图拖放到上传区域或点击\"选择图片\"按钮来上传您的竖图。",
+      step2: "根据您的需求选择转换模式：模糊、填充、双色、拉伸或旋转。",
+      step3: "调整特定模式的设置（模糊程度、背景颜色等）以自定义外观。",
+      step4: "选择尺寸选项：自动（推荐）、特定平台的预设尺寸或自定义尺寸。",
+      step5: "对于高级需求，展开高级选项部分以访问锐化、纵横比控制和水印功能。",
+      step6: "点击\"转换图片\"将您的竖图处理为横图格式。",
+      step7: "预览结果，并使用对比视图查看转换前后的变化。",
+      step8: "如有需要，调整设置并再次转换，直到您对结果满意为止。",
+      step9: "以您首选的格式（JPEG、PNG或WebP）下载横向图像。"
+    }
+  }
+}

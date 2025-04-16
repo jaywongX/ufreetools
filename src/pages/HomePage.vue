@@ -213,16 +213,24 @@ const toolsArray = computed(() => {
   return Array.isArray(allTools.value) ? allTools.value : []
 })
 
-// 使用 toolsArray 而不是直接使用 allTools
-const featuredTools = computed(() => {
-  return toolsArray.value.slice(0, 6)
-})
-
 const popularTools = computed(() => {
   if (!toolsArray.value.length) return []
-  const tools = [...toolsArray.value]
-  // 随机排序以模拟"热门"工具
-  return tools.sort(() => 0.5 - Math.random()).slice(0, 6)
+  
+  // Define IDs of tools we consider "popular"
+  const popularToolIds = [
+    'json-formatter', 
+    'password-generator',
+    'qr-code-generator',
+    'code-obfuscator',
+    'name-generator', 
+    'uuid-generator',
+    'base64-encoder-decoder',
+    'image-cropper',
+    'hex-and-calculator',
+  ]
+  
+  // Filter tools by ID to get the popular ones
+  return toolsArray.value.filter(tool => popularToolIds.includes(tool.id))
 })
 
 const newTools = computed(() => {

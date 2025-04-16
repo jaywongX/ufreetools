@@ -205,6 +205,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ufreetools.com/en/tool/horizontal-to-vertical-image</loc>
+    <lastmod>2025-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ufreetools.com/en/tool/html-entity-encoder</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -535,6 +541,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ufreetools.com/en/tool/vertical-to-horizontal-image</loc>
+    <lastmod>2025-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ufreetools.com/en/tool/websocket-tester</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -753,6 +765,12 @@
   <url>
     <loc>https://ufreetools.com/zh/tool/holiday-calendar</loc>
     <lastmod>2025-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/zh/tool/horizontal-to-vertical-image</loc>
+    <lastmod>2025-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1083,6 +1101,12 @@
   <url>
     <loc>https://ufreetools.com/zh/tool/uuid-generator</loc>
     <lastmod>2025-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ufreetools.com/zh/tool/vertical-to-horizontal-image</loc>
+    <lastmod>2025-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
