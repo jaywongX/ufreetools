@@ -152,4 +152,3 @@ watch([() => route.path, locale], updateMetaTags, { immediate: true });
 
 onMounted(initialize);
 </script>
-</script>
