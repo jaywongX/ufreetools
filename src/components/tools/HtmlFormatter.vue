@@ -252,12 +252,18 @@
         {{ formatMode === 'minify' ? $t('tools.html-formatter.stats.reduction', { chars: (inputHtml.length - outputHtml.length), percent: Math.round((1 - outputHtml.length / inputHtml.length) * 100) }) : '' }}
       </div>
     </div>
+    
+    <!-- 文章部分 -->
+    <div class="mt-10 pt-6 border-t dark:border-gray-700">
+      <HtmlFormatterArticle />
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, watch } from 'vue'
 import { html as beautify } from 'js-beautify'
+import HtmlFormatterArticle from './HtmlFormatterArticle.vue'
 
 // 状态变量
 const formatMode = ref('beautify')  // 'beautify' 或 'minify'

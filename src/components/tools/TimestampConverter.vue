@@ -156,11 +156,17 @@
         <li>{{ $t('tools.timestamp-converter.info.usages.filesystem') }}</li>
       </ul>
     </div>
+
+    <!-- 文章部分 -->
+    <div class="mt-10 pt-6 border-t dark:border-gray-700">
+      <TimestampConverterArticle />
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import TimestampConverterArticle from './TimestampConverterArticle.vue'
 
 // 当前时间相关
 const currentDateTime = ref('')

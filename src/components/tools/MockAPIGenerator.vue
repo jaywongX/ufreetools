@@ -370,12 +370,18 @@
         </div>
       </div>
     </div>
+
+    <!-- 文章部分 -->
+    <div class="mt-10 pt-6 border-t dark:border-gray-700">
+      <MockApiGeneratorArticle />
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import MockApiGeneratorArticle from './MockApiGeneratorArticle.vue'
 
 // 初始化 i18n
 const { t } = useI18n()

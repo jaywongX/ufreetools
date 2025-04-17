@@ -88,6 +88,7 @@ import instagramPostGenerator from './tools/instagram-post-generator.js';
 import hexAndCalculator from './tools/hex-and-calculator.js';
 import verticalToHorizontalImage from './tools/vertical-to-horizontal-image.js';
 import horizontalToVerticalImage from './tools/horizontal-to-vertical-image.js';
+import wordShuffler from './tools/word-shuffler.js';
 
 export default {
     common: {
@@ -211,4 +212,5 @@ export default {
     'hex-and-calculator': hexAndCalculator,
     'vertical-to-horizontal-image': verticalToHorizontalImage,
     'horizontal-to-vertical-image': horizontalToVerticalImage,
+    'word-shuffler': wordShuffler,
   }

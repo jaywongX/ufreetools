@@ -240,12 +240,18 @@
         <p class="text-gray-500 dark:text-gray-400">{{ t('tools.number-converter.input.placeholder') }}</p>
       </div>
     </div>
+    
+    <!-- 文章部分 -->
+    <div class="mt-10 pt-6 border-t dark:border-gray-700">
+      <NumberConverterArticle />
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, reactive, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import NumberConverterArticle from './NumberConverterArticle.vue'
 
 // 初始化国际化
 const { t, locale } = useI18n()

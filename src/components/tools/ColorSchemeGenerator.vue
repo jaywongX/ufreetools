@@ -384,6 +384,11 @@
       </svg>
       {{ notification.message }}
     </div>
+    
+    <!-- 文章部分 -->
+    <div class="mt-10 pt-6 border-t dark:border-gray-700">
+      <ColorSchemeGeneratorArticle />
+    </div>
   </div>
 </template>
 
@@ -391,6 +396,7 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import chroma from 'chroma-js'
 import { useI18n } from 'vue-i18n'
+import ColorSchemeGeneratorArticle from './ColorSchemeGeneratorArticle.vue'
 const { t } = useI18n();
 
 // 基础颜色和设置

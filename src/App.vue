@@ -547,6 +547,17 @@ const allTools = computed(() => [
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['text', 'security', 'filter']
   },
+  {
+    id: 'word-shuffler',
+    name: t('tools.word-shuffler.name'),
+    category: t(`categories.text`),
+    categoryId: 'text',
+    description: t('tools.word-shuffler.description'),
+    path: '/tools/word-shuffler',
+    component: 'WordShuffler',
+    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+    tags: ['text', 'utility', 'random', 'word', 'shuffle', 'edit']
+  },
   
   // 图像与多媒体
   {
