@@ -242,6 +242,11 @@
         </div>
       </button>
     </div>
+    
+    <!-- 文章部分 -->
+    <div class="mt-10 pt-6 border-t dark:border-gray-700">
+      <CodeObfuscatorArticle />
+    </div>
   </div>
 </template>
 
@@ -249,6 +254,7 @@
 import { ref, computed, onMounted } from 'vue'
 import JavaScriptObfuscator from 'javascript-obfuscator'
 import { useI18n } from 'vue-i18n'
+import CodeObfuscatorArticle from './CodeObfuscatorArticle.vue'
 
 const { t } = useI18n()
 
