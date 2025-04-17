@@ -228,6 +228,11 @@
         </div>
       </div>
     </div>
+    
+    <!-- 文章部分 -->
+    <div class="mt-10 pt-6 border-t dark:border-gray-700">
+      <CodeComplexityArticle />
+    </div>
   </div>
 </template>
 
@@ -236,6 +241,7 @@ import { ref, reactive, computed } from 'vue'
 import * as esprima from 'esprima'
 import * as estraverse from 'estraverse'
 import { useI18n } from 'vue-i18n'
+import CodeComplexityArticle from './CodeComplexityArticle.vue'
 
 const { t } = useI18n()
 
