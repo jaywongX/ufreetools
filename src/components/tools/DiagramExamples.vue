@@ -21,12 +21,18 @@
         </div>
       </div>
     </div>
+    
+    <!-- 文章部分 -->
+    <div class="mt-10 pt-6 border-t dark:border-gray-700">
+      <DiagramExamplesArticle />
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import DiagramExamplesArticle from './DiagramExamplesArticle.vue'
 
 const { t } = useI18n()
 
