@@ -302,4 +302,7 @@ export default {
   bitwise: 'Bitwise',
   'bitwise-operations': 'Bitwise Operations',
   and: 'AND',
+
+  word: 'Word',
+  shuffle: 'Shuffle',
 }

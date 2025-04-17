@@ -295,4 +295,7 @@ export default {
   bitwise: '位运算',
   'bitwise-operations': '位运算',
   and: '与运算',
+
+  word: '单词',
+  shuffle: '洗牌',
 }

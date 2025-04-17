@@ -68,6 +68,7 @@ const lazyComponentMap = {
   'XmlFormatter': () => import('./components/tools/XmlFormatter.vue'),
   'CssFormatter': () => import('./components/tools/CssFormatter.vue'),
   'SensitiveWordFilter': () => import('./components/tools/SensitiveWordFilter.vue'),
+  'WordShuffler': () => import('./components/tools/WordShuffler.vue'),
   
   // 图像与多媒体
   'IdPhotoMaker': () => import('./components/tools/IdPhotoMaker.vue'),
