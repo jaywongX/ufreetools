@@ -138,12 +138,18 @@
         <li v-html="$t('tools.git-conflict-resolver.tutorial.commands.commit')"></li>
       </ul>
     </div>
+
+    <!-- 文章部分 -->
+    <div class="mt-10 pt-6 border-t dark:border-gray-700">
+      <GitConflictResolverArticle />
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import GitConflictResolverArticle from './GitConflictResolverArticle.vue'
 
 const { t } = useI18n()
 
