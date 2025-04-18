@@ -89,6 +89,7 @@ import hexAndCalculator from './tools/hex-and-calculator.js';
 import verticalToHorizontalImage from './tools/vertical-to-horizontal-image.js';
 import horizontalToVerticalImage from './tools/horizontal-to-vertical-image.js';
 import wordShuffler from './tools/word-shuffler.js';
+import cashAppFeeCalculator from './tools/cash-app-fee-calculator.js';
 
 export default {
     common: {
@@ -213,4 +214,5 @@ export default {
     'vertical-to-horizontal-image': verticalToHorizontalImage,
     'horizontal-to-vertical-image': horizontalToVerticalImage,
     'word-shuffler': wordShuffler,
+    'cash-app-fee-calculator': cashAppFeeCalculator,
   }
