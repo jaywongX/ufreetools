@@ -315,4 +315,9 @@ export default {
 
   cash: 'Cash',
   app: 'App',
+
+  // Added from the code block
+  hexadecimal: 'Hexadecimal',
+  case: 'Case',
+  
 }
