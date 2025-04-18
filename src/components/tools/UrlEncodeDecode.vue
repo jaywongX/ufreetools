@@ -131,19 +131,21 @@
               <tr v-for="item in referenceChars" :key="item.char">
                 <td class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-100">{{ item.char }}</td>
                 <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{{ item.encoded }}</td>
-                <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{{ $t(`tools.url-encode-decode.referenceTable.descriptions.${item.char}`) || item.description }}</td>
+                <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{{ item.description }}</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
+    <UrlEncodeDecodeArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import UrlEncodeDecodeArticle from './UrlEncodeDecodeArticle.vue'
 
 const { t } = useI18n()
 
@@ -154,7 +156,7 @@ const inputText = ref('')
 const outputText = ref('')
 const errorMessage = ref('')
 const copyStatus = ref(false)
-const showReferenceTable = ref(false)
+const showReferenceTable = ref(true)
 
 // 重置错误消息
 watch([operationType, inputText], () => {
