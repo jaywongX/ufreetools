@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ufreetools.com/sitemap.xml 
+Sitemap: https://www.ufreetools.com/sitemap.xml 
