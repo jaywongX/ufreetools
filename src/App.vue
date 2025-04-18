@@ -1239,6 +1239,17 @@ const allTools = computed(() => [
     icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     tags: ['utility', 'social', 'media', 'post', 'generator', 'instagram', 'design']
   },
+  {
+    id: 'cash-app-fee-calculator',
+    name: t('tools.cash-app-fee-calculator.name'),
+    category: t(`categories.utility`),
+    categoryId: 'utility',
+    description: t('tools.cash-app-fee-calculator.description'),
+    path: '/tools/cash-app-fee-calculator',
+    component: 'CashAppFeeCalculator',
+    icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+    tags: ['utility', 'finance', 'cash', 'app', 'fee', 'calculator', 'money']
+  },
 ])
 // provide('allTools', allTools.value || allTools)
 provide('allTools', allTools)

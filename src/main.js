@@ -140,6 +140,7 @@ const lazyComponentMap = {
   'TravelBudgetPlanner': () => import('./components/tools/TravelBudgetPlanner.vue'),
   'PersonalAccountBook': () => import('./components/tools/PersonalAccountBook.vue'),
   'InstagramPostGenerator': () => import('./components/tools/InstagramPostGenerator.vue'),
+  'CashAppFeeCalculator': () => import('./components/tools/CashAppFeeCalculator.vue'),
 }
 
 // 初始化Vercel Analytics

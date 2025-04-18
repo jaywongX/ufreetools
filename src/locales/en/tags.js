@@ -305,4 +305,14 @@ export default {
 
   word: 'Word',
   shuffle: 'Shuffle',
+
+  // Added from the code block
+  cashapp: 'Cash App',
+  fee: 'Fee',
+  payment: 'Payment',
+  transfer: 'Transfer',
+  transaction: 'Transaction',
+
+  cash: 'Cash',
+  app: 'App',
 }

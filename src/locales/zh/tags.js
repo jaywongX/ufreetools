@@ -298,4 +298,18 @@ export default {
 
   word: '单词',
   shuffle: '洗牌',
+
+  // Add to the existing tags object:
+  cashapp: 'Cash App',
+  fee: '手续费',
+  calculator: '计算器',
+  payment: '支付',
+  transfer: '转账',
+  finance: '金融',
+  money: '资金',
+  transaction: '交易',
+
+  cash: '现金',
+  app: '应用',
+  
 }
