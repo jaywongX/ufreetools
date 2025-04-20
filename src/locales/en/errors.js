@@ -1,5 +1,6 @@
 export default {
     pageNotFound: 'Page Not Found',
+    pageNotFoundDesc: "Sorry, the page you requested does not exist." ,
     goBackHome: 'Go Back Home',
     somethingWrong: 'Something went wrong',
     tryAgain: 'Try Again',

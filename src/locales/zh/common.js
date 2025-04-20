@@ -38,4 +38,5 @@ export default {
   wechatDonation: '微信赞赏码',
   scanToSupport: '扫描下面的二维码进行赞赏',
   thankYouForSupport: '感谢您的支持！',
+  backToHome: "返回首页",
 }; 

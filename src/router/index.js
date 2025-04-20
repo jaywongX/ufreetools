@@ -93,6 +93,16 @@ const routes = [
       // 保持原始路径，只添加语言前缀
       return `/${savedLang}${to.path}`;
     }
+  },
+  
+  // 404路由 - 必须放在最后
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: () => import('../pages/NotFound.vue'),
+    meta: {
+      title: '404 - Page Not Found'
+    }
   }
 ]
 

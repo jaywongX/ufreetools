@@ -48,12 +48,13 @@
 </template>
 
 <script setup>
-import { ref, computed, inject, onMounted, watch, markRaw } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref, computed, inject, onMounted, watch, markRaw, nextTick } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { addToHistory } from '../services/historyService'
 import { useInternationalizedRoute } from '../composables/useInternationalizedRoute'
 
 const route = useRoute()
+const router = useRouter()
 const allTools = inject('allTools', [])
 const categories = inject('categories', [])
 const allTags = inject('allTags', { value: [] })
@@ -142,7 +143,7 @@ function loadTool() {
   
   console.log('Loading tool with ID:', route.params.id)
   
-  setTimeout(() => {
+  setTimeout(async () => {
     const paramId = route.params.id
     const findTool = (tools) => {
       return tools.value.find(t => String(t.id) === String(paramId))
@@ -166,6 +167,15 @@ function loadTool() {
     } else {
       error.value = '未找到该工具'
       console.error('Tool not found')
+      
+      // 关键修改：工具未找到时重定向到404页面
+      await nextTick()
+      router.replace({ 
+        name: 'not-found', 
+        params: { pathMatch: route.path.substring(1).split('/') },
+        query: route.query,
+        hash: route.hash
+      })
     }
     
     loading.value = false

@@ -1,5 +1,6 @@
 export default {
   pageNotFound: '页面未找到',
+  pageNotFoundDesc: "抱歉，您请求的页面不存在。",
   goBackHome: '返回首页',
   somethingWrong: '出现了一些问题',
   tryAgain: '请重试',
