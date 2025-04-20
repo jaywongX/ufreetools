@@ -37,5 +37,6 @@ export default {
   wechatPay: 'WeChat Pay',
   wechatDonation: 'WeChat Donation QR Code',
   scanToSupport: 'Scan the QR code below to support us',
-  thankYouForSupport: 'Thank you for your support!'
+  thankYouForSupport: 'Thank you for your support!',
+  backToHome: "Back to home",
 };
