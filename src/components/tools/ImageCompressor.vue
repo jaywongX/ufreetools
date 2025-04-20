@@ -211,12 +211,15 @@
         </ul>
       </div>
     </div>
+
+    <ImageCompressorArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
+import ImageCompressorArticle from './ImageCompressorArticle.vue'
 
 const { t } = useI18n()
 

@@ -90,7 +90,7 @@ import verticalToHorizontalImage from './tools/vertical-to-horizontal-image.js';
 import horizontalToVerticalImage from './tools/horizontal-to-vertical-image.js';
 import wordShuffler from './tools/word-shuffler.js';
 import cashAppFeeCalculator from './tools/cash-app-fee-calculator.js';
-
+import hexadecimalCaseConverter from './tools/hexadecimal-case-converter.js';
 export default {
   common: {
     tryNow: '立即使用',
@@ -215,4 +215,5 @@ export default {
   'horizontal-to-vertical-image': horizontalToVerticalImage,
   'word-shuffler': wordShuffler,
   'cash-app-fee-calculator': cashAppFeeCalculator,
+  'hexadecimal-case-converter': hexadecimalCaseConverter,
 };

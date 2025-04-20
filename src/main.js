@@ -141,6 +141,7 @@ const lazyComponentMap = {
   'PersonalAccountBook': () => import('./components/tools/PersonalAccountBook.vue'),
   'InstagramPostGenerator': () => import('./components/tools/InstagramPostGenerator.vue'),
   'CashAppFeeCalculator': () => import('./components/tools/CashAppFeeCalculator.vue'),
+  'HexadecimalCaseConverter': () => import('./components/tools/HexadecimalCaseConverter.vue'),
 }
 
 // 初始化Vercel Analytics

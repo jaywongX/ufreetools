@@ -311,5 +311,9 @@ export default {
 
   cash: '现金',
   app: '应用',
+
+  // Added from the code block
+  hexadecimal: '十六进制',
+  case: '大小写',
   
 }
