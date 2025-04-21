@@ -332,7 +332,9 @@ export default {
   // Added from the code block
   hexadecimal: 'Hexadecimal',
   case: 'Case',
-  
+  jfif: 'JFIF',
+  jpeg: 'JPEG',
+  quality: 'Quality',
   
   // 英文版本的分类名称
   groupNames: {

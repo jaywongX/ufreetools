@@ -722,6 +722,17 @@ const allTools = computed(() => [
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['image', 'convert', 'rotate', 'edit', 'utility']
   },
+  {
+    id: 'jfif-jpg-converter',
+    name: t('tools.jfif-jpg-converter.name'),
+    category: t(`categories.image`),
+    categoryId: 'image',
+    description: t('tools.jfif-jpg-converter.description'),
+    path: '/tools/jfif-jpg-converter',
+    component: 'JfifJpgConverter',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image', 'convert', 'jpg', 'jfif', 'jpeg', 'format', 'utility']
+  },
   
   // 转换工具
   {

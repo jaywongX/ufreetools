@@ -330,6 +330,9 @@ export default {
   // Added from the code block
   hexadecimal: '十六进制',
   case: '大小写',
+  jfif: 'JFIF',
+  jpeg: 'JPEG',
+  quality: '质量',
   
   
   // 根据截图中的实际分类添加
