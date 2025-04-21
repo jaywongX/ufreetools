@@ -1,7 +1,7 @@
 export default {
   // UI Interface Text
   title: 'Tags',
-  description: 'Browse tools by tags',
+  description: 'Browse all tool tags',
   popular: 'Popular Tags',
   all: 'All Tags',
   related: 'Related Tags',
@@ -20,7 +20,7 @@ export default {
   searchResults: 'Search Results',
   noMatchingTags: 'No matching tags found',
   relationshipAnalysis: 'Tag Relationship Analysis',
-  relationshipDesc: 'Discover the most closely related tag combinations by analyzing the connections between tool tags',
+  relationshipDesc: 'These tags frequently appear together in the same tool',
   toolsInPair: ' tools',
   showMore: 'Show more',
   collapse: 'Collapse',
@@ -28,7 +28,6 @@ export default {
   // Development Tags
   dev: 'Development',
   frontend: 'Frontend',
-  backend: 'Backend',
   database: 'Database',
   mobile: 'Mobile',
   debug: 'Debug',
@@ -153,7 +152,6 @@ export default {
   animation: 'Animation',
   
   // Document Tags
-  document: 'Document',
   file: 'File',
   docx: 'Word Document',
   xlsx: 'Excel Spreadsheet',
@@ -251,7 +249,22 @@ export default {
     security: 'Security Tools',
     data: 'Data Processing',
     conversion: 'Format Conversion',
-    analysis: 'Analysis & Diagnostics'
+    analysis: 'Analysis & Diagnostics',
+    blue: 'Blue Tags',
+    green: 'Green Tags',
+    red: 'Red Tags',
+    yellow: 'Yellow Tags',
+    purple: 'Purple Tags',
+    indigo: 'Indigo Tags',
+    pink: 'Pink Tags',
+    gray: 'Gray Tags',
+    teal: 'Teal Tags',
+    orange: 'Orange Tags',
+    cyan: 'Cyan Tags',
+    amber: 'Amber Tags',
+    lime: 'Lime Tags',
+    emerald: 'Emerald Tags',
+    rose: 'Rose Tags'
   },
 
   // New tags
@@ -320,4 +333,21 @@ export default {
   hexadecimal: 'Hexadecimal',
   case: 'Case',
   
+  
+  // 英文版本的分类名称
+  groupNames: {
+    performance: 'Performance Related',
+    compression: 'Compression Tools',
+    document: 'Document Related',
+    generator: 'Generator Tools',
+    dataProcessing: 'Data Processing',
+    development: 'Development Related',
+    text: 'Text Related',
+    code: 'Code Processing',
+    conversion: 'Conversion Tools',
+    fuchsia: 'Fuchsia Type Tags',
+    other: 'Other Tags',
+    sky: 'Sky Type Tags',
+    violet: 'Violet Type Tags'
+  }
 }
