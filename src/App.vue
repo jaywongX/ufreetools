@@ -110,7 +110,6 @@ const allTags = ref([
   { id: 'code', name: '代码', color: 'red' },
   { id: 'dev', name: '开发', color: 'orange' },
   { id: 'frontend', name: '前端', color: 'orange' },
-  { id: 'backend', name: '后端', color: 'orange' },
   { id: 'regex', name: '正则', color: 'red' },
   { id: 'api', name: 'API', color: 'blue' },
   { id: 'debug', name: '调试', color: 'orange' },
@@ -141,8 +140,6 @@ const allTags = ref([
   { id: 'filter', name: '滤镜', color: 'pink' },
   { id: 'ascii', name: 'ASCII艺术', color: 'orange' },
   { id: 'art', name: '艺术效果', color: 'pink' },
-  { id: 'document', name: '证件', color: 'teal' },
-  { id: 'portrait', name: '人像', color: 'rose' },
   { id: 'pixelate', name: '像素化', color: 'blue' },
   { id: 'exif', name: 'EXIF', color: 'purple' },
   { id: 'retro', name: '复古', color: 'amber' },
@@ -724,6 +721,17 @@ const allTools = computed(() => [
     component: 'HorizontalToVerticalImage',
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['image', 'convert', 'rotate', 'edit', 'utility']
+  },
+  {
+    id: 'jfif-jpg-converter',
+    name: t('tools.jfif-jpg-converter.name'),
+    category: t(`categories.image`),
+    categoryId: 'image',
+    description: t('tools.jfif-jpg-converter.description'),
+    path: '/tools/jfif-jpg-converter',
+    component: 'JfifJpgConverter',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image', 'convert', 'jpg', 'jfif', 'jpeg', 'format', 'utility']
   },
   
   // 转换工具

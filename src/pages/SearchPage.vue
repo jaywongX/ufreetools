@@ -20,7 +20,7 @@
           <router-link
             v-for="tag in relatedTags"
             :key="tag.id"
-            :to="localizedRoute(`/?tags=${tag.id}`)"
+            :to="localizedRoute(`/tag/${tag.id}`)"
             class="tag-link"
           >
             <TagBadge :tag-id="tag.id" />
@@ -105,7 +105,7 @@ const relatedTags = computed(() => {
 
 // 导航到标签页面
 function navigateToTag(tagId) {
-  router.push(localizedRoute(`/?tags=${tagId}`))
+  router.push(localizedRoute(`/tag/${tagId}`))
 }
 
 // 监听路由变化更新标题

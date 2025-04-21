@@ -212,28 +212,10 @@ const tagGroups = computed(() => {
     groups[tag.color].push(markRaw({...tag}))
   })
   
-  // 将分组转换为数组，并为每组添加名称
-  const colorNames = {
-    blue: '蓝色标签',
-    green: '开发相关',
-    red: '代码处理',
-    yellow: '转换工具',
-    purple: '图形设计',
-    indigo: '文档相关',
-    pink: '多媒体',
-    gray: '其他标签',
-    teal: '网络与协议',
-    orange: '性能相关',
-    cyan: '数据处理',
-    amber: '安全相关',
-    lime: '文本相关',
-    emerald: '压缩工具',
-    rose: '生成工具'
-  }
-  
+  // 将颜色映射到本地化的分类名称
   return markRaw(Object.entries(groups)
     .map(([color, tags]) => markRaw({
-      name: colorNames[color] || `${color}类标签`,
+      name: getLocalizedGroupName(t(`tags.categories.${color}`, color)),
       color,
       tags: tags.sort((a, b) => (toolsByTag.value[b?.id]?.length || 0) - (toolsByTag.value[a?.id]?.length || 0))
     })))
@@ -276,11 +258,38 @@ const { t } = useI18n()
 const { localizedRoute } = useInternationalizedRoute()
 
 function getLocalizedGroupName(groupName) {
-  // 尝试从categories获取翻译，如果找不到就使用原名
-  const translatedName = t(`tags.categories.${groupName.toLowerCase().replace(/\s+/g, '')}`, { silent: true });
-  if (translatedName && translatedName !== `tags.categories.${groupName.toLowerCase().replace(/\s+/g, '')}`) {
-    return translatedName;
+  // 首先检查是否有直接匹配的翻译
+  const directTranslation = t(`tags.categories.${groupName.toLowerCase()}`, { silent: true });
+  if (directTranslation && directTranslation !== `tags.categories.${groupName.toLowerCase()}`) {
+    return directTranslation;
   }
+  
+  // 然后检查是否在 groupNames 中有匹配
+  // 这里需要根据实际分类名称进行映射
+  const groupMapping = {
+    '蓝色标签': 'blue',
+    '性能相关': 'performance',
+    '压缩工具': 'compression',
+    '文档相关': 'document',
+    '生成工具': 'generator',
+    '数据处理': 'dataProcessing',
+    '开发相关': 'development',
+    '文本相关': 'text',
+    '代码处理': 'code',
+    '转换工具': 'conversion',
+    'fuchsia类标签': 'fuchsia',
+    '其他标签': 'other',
+    'sky类标签': 'sky',
+    'violet类标签': 'violet'
+  };
+  
+  const key = groupMapping[groupName] || groupName.toLowerCase().replace(/\s+/g, '');
+  const mappedTranslation = t(`tags.groupNames.${key}`, { silent: true });
+  if (mappedTranslation && mappedTranslation !== `tags.groupNames.${key}`) {
+    return mappedTranslation;
+  }
+  
+  // 如果没有找到任何翻译，返回原始名称
   return groupName;
 }
 </script>

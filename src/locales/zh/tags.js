@@ -253,7 +253,22 @@ export default {
     security: '安全工具',
     data: '数据处理',
     conversion: '格式转换',
-    analysis: '分析与诊断'
+    analysis: '分析与诊断',
+    blue: '蓝色标签',
+    green: '绿色标签',
+    red: '红色标签',
+    yellow: '黄色标签',
+    purple: '紫色标签',
+    indigo: '靛蓝标签',
+    pink: '粉色标签',
+    gray: '灰色标签',
+    teal: '蓝绿色标签',
+    orange: '橙色标签',
+    cyan: '青色标签',
+    amber: '琥珀色标签',
+    lime: '青柠色标签',
+    emerald: '祖母绿标签',
+    rose: '玫瑰色标签'
   },
 
   // 添加新标签
@@ -315,5 +330,25 @@ export default {
   // Added from the code block
   hexadecimal: '十六进制',
   case: '大小写',
+  jfif: 'JFIF',
+  jpeg: 'JPEG',
+  quality: '质量',
   
+  
+  // 根据截图中的实际分类添加
+  groupNames: {
+    performance: '性能相关',
+    compression: '压缩工具',
+    document: '文档相关',
+    generator: '生成工具',
+    dataProcessing: '数据处理',
+    development: '开发相关',
+    text: '文本相关',
+    code: '代码处理',
+    conversion: '转换工具',
+    fuchsia: 'fuchsia类标签',
+    other: '其他标签',
+    sky: 'sky类标签',
+    violet: 'violet类标签'
+  }
 }

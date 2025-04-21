@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
     <loc>https://www.ufreetools.com/</loc>
     <lastmod>2025-04-13</lastmod>
@@ -1525,4 +1526,5 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/hexadecimal-case-converter" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/hexadecimal-case-converter" />
+  </url>
 </urlset>

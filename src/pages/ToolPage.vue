@@ -1,6 +1,11 @@
 <template>
   <div class="container-fluid px-4 py-6 mr-8">
     <div v-if="tool" class="mb-6">
+      <!-- 添加SeoHead组件并传递动态标题 -->
+      <SeoHead 
+        :title="$t(`tools.${tool.id}.name`)" 
+        :description="$t(`tools.${tool.id}.description`)"
+      />
       <h1 class="text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">{{ $t(`tools.${tool.id}.name`) }}</h1>
       <p class="text-gray-600 dark:text-gray-400 mb-4">{{ $t(`tools.${tool.id}.description`) }}</p>
       
@@ -52,6 +57,7 @@ import { ref, computed, inject, onMounted, watch, markRaw, nextTick } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { addToHistory } from '../services/historyService'
 import { useInternationalizedRoute } from '../composables/useInternationalizedRoute'
+import SeoHead from '../components/seo/SeoHead.vue'
 
 const route = useRoute()
 const router = useRouter()

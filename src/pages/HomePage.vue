@@ -11,12 +11,8 @@
         <router-link 
           v-for="tag in displayedTags" 
           :key="tag.id"
-          :to="{query: {tags: tag.id}}"
-          @click.prevent="addTagToFilter(tag.id)"
-          :class="[
-            'tag-cloud-item transition-all hover:shadow-sm',
-            selectedTags[0] === tag.id ? 'ring-2 ring-primary dark:ring-primary-light' : ''
-          ]"
+          :to="localizedRoute(`/tag/${tag.id}`)"
+          :class="['tag-cloud-item transition-all hover:shadow-sm']"
         >
           <TagBadge v-if="tag?.id" :tag-id="tag.id" />
         </router-link>
@@ -110,10 +106,12 @@ import ToolCard from '../components/ui/ToolCard.vue'
 import { getHistory } from '../services/historyService'
 import { useMetaInfo } from '../mixins/metaInfoMixin'
 import { useI18n } from 'vue-i18n'
+import { useInternationalizedRoute } from '../composables/useInternationalizedRoute'
 
 const route = useRoute()
 const router = useRouter()
 const { t } = useI18n()
+const { localizedRoute } = useInternationalizedRoute()
 
 // 注入全局数据
 const allTools = inject('allTools')

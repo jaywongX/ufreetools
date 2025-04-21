@@ -1,5 +1,9 @@
 <template>
   <div class="container-custom py-8">
+    <SeoHead 
+      :title="$t('about.title')"
+      :description="$t('about.description')"
+    />
     <div class="max-w-5xl mx-auto">
       <!-- 页面标题 -->
       <div class="text-center mb-12">
@@ -127,7 +131,7 @@
 <script setup>
 import { inject, computed } from 'vue'
 import { useRouter } from 'vue-router'
-
+import SeoHead from '../components/seo/SeoHead.vue'
 const router = useRouter()
 const allTools = inject('allTools')
 const allCategories = inject('categories')
