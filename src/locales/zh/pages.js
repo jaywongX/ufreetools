@@ -59,6 +59,7 @@ export default {
   },
   privacyPolicy: {
     title: '隐私政策',
+    description: '我们的隐私政策',
     lastUpdated: '最后更新',
     introduction: '引言',
     informationCollection: '信息收集',

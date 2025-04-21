@@ -60,7 +60,7 @@ const supportedLanguages = ['zh', 'en'];
 // 更新文档元数据
 function updateMetaTags() {
   // 页面标题
-  document.title = `${pageTitle.value} | UFreeTools`;
+  document.title = `${pageTitle.value}`;
   
   // 基本元标签
   updateMetaTag('description', pageDescription.value);

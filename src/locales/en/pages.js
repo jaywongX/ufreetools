@@ -61,6 +61,7 @@ export default {
   },
   privacyPolicy: {
     title: 'Privacy Policy',
+    description: 'Our Privacy Policy',
     lastUpdated: 'Last Updated',
     introduction: 'Introduction',
     informationCollection: 'Information Collection',

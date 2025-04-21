@@ -1,5 +1,9 @@
 <template>
   <div class="container mx-auto px-4 py-8">
+    <SeoHead 
+      :title="$t('feedback.title')"
+      :description="$t('feedback.description')"
+    />
     <h1 class="text-3xl font-bold mb-6">{{ $t('feedback.title') }}</h1>
     
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
@@ -70,7 +74,7 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
-
+import SeoHead from '../components/seo/SeoHead.vue'
 // 用于访问国际化文本
 useI18n()
 </script>
