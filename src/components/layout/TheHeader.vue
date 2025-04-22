@@ -57,42 +57,59 @@
         <!-- 反馈链接 -->
         <router-link 
           :to="localizedRoute('/feedback')" 
-          class="text-sm text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light"
+          class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light"
+          aria-label="feedback"
+          target="_blank"
         >
-          {{ $t('header.feedback') }}
-        </router-link>
-        
-        <!-- 关于我们链接 -->
-        <router-link 
-          :to="localizedRoute('/about')" 
-          class="text-sm text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light"
-        >
-          {{ $t('header.about') }}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
         </router-link>
         
         <!-- 语言切换下拉菜单 -->
         <div class="relative ml-4">
           <button 
             @click="toggleLanguageDropdown" 
-            class="flex items-center space-x-1 px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 language-switcher-button"
+            class="flex items-center justify-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none transition-all duration-300"
+            aria-label="切换语言"
           >
-            <span>{{ getCurrentLanguageName() }}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+              </svg>
+              <span class="text-sm font-medium">{{ currentLanguage.toUpperCase() }}</span>
+            </div>
           </button>
           
-          <div v-if="showLanguageDropdown" class="absolute right-0 mt-2 py-2 w-32 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 z-50">
-            <button
-              v-for="lang in availableLanguages"
-              :key="lang.code"
-              @click="switchLanguage(lang.code)" 
-              class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 language-option"
-              :class="{'text-primary dark:text-primary-light font-medium': currentLanguage === lang.code}"
-            >
-              {{ lang.name }}
-            </button>
-          </div>
+          <div 
+            v-if="showLanguageDropdown" 
+            class="fixed inset-0 bg-black bg-opacity-20 z-[998]"
+            @click="closeLanguageDropdown"
+          ></div>
+          
+          <transition name="fade">
+            <div v-if="showLanguageDropdown" 
+                 :class="[
+                   'bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 z-[999]',
+                   'absolute right-0 mt-2 w-48 rounded-lg'
+                 ]">
+              <div class="p-2">
+                <button
+                  v-for="lang in availableLanguages"
+                  :key="lang.code"
+                  @click="switchLanguage(lang.code)" 
+                  class="flex items-center w-full px-4 py-4 rounded-md transition-colors duration-200 mb-1"
+                  :class="{'bg-primary/10 text-primary dark:text-primary-light': currentLanguage === lang.code, 'hover:bg-gray-100 dark:hover:bg-gray-700': currentLanguage !== lang.code}"
+                >
+                  <div class="w-6 h-6 mr-3 flex items-center justify-center overflow-hidden rounded-full border border-gray-200 dark:border-gray-600">
+                    <span v-if="lang.code === 'zh'">🇨🇳</span>
+                    <span v-else-if="lang.code === 'en'">🇺🇸</span>
+                  </div>
+                  <span class="text-sm font-medium text-gray-800 dark:text-gray-200">{{ lang.name }}</span>
+                </button>
+              </div>
+            </div>
+          </transition>
         </div>
       </div>
     </div>
@@ -289,11 +306,8 @@ function switchLanguage(langCode) {
   window.removeEventListener('click', handleClickOutside);
 }
 
-function closeLanguageDropdown(event) {
-  // 延迟执行关闭操作，确保语言切换动作能够完成
-  window.setTimeout(() => {
-    showLanguageDropdown.value = false;
-  }, 100);
+function closeLanguageDropdown() {
+  showLanguageDropdown.value = false;
 }
 
 function getCurrentLanguageName() {
@@ -332,5 +346,20 @@ button:hover svg {
 .language-link.active {
   background-color: rgba(255, 255, 255, 0.1);
   font-weight: bold;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@media (max-width: 640px) {
+  .fade-enter-from, .fade-leave-to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
 }
 </style>
