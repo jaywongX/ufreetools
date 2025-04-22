@@ -1,5 +1,5 @@
 <template>
-  <div class="ad-container my-8">
+  <div class="ad-container my-8" ref="adContainer">
     <div class="ad-flex-container">
       <!-- 广告单元1 -->
       <div class="ad-item">
@@ -35,13 +35,21 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
+
+const adContainer = ref(null)
 
 onMounted(() => {
   try {
-    const adElements = document.querySelectorAll('.adsbygoogle');
+    // Only select ad elements within this component
+    const adElements = adContainer.value.querySelectorAll('.adsbygoogle');
+    
     adElements.forEach(ad => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      // Only initialize if not already initialized
+      if (!ad.getAttribute('data-adsbygoogle-initialized')) {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        ad.setAttribute('data-adsbygoogle-initialized', 'true');
+      }
     });
   } catch (error) {
     console.error('AdSense error:', error);
