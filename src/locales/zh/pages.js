@@ -1,7 +1,7 @@
 export default {
   home: {
-    title: '你的免费工具集',
-    description: '发现有用的在线工具，简化您的工作',
+    title: 'UFreeTools - 你的最佳免费工具集',
+    description: 'UFUFreeTools 是一个集成了多种高效、实用工具的在线平台，提供一系列完全免费的在线工具，涵盖开发、设计、文本、图像、网络、密码和日常生活等多个领域。',
     getStarted: '开始使用',
     tagFilterTitle: '标签筛选',
     filterResultsTitle: '筛选结果',
