@@ -45,10 +45,16 @@
         
         <!-- 页脚导航 -->
         <div class="flex space-x-4">
-          <router-link :to="localizedRoute('/privacy-policy')" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
+          <router-link 
+            :to="localizedRoute('/about')" 
+            class="text-sm text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light" target="_blank"
+          >
+            {{ $t('header.about') }}
+          </router-link>
+          <router-link :to="localizedRoute('/privacy-policy')" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light" target="_blank">
             {{ $t('footer.privacyPolicy') }}
           </router-link>
-          <router-link :to="localizedRoute('/terms')" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
+          <router-link :to="localizedRoute('/terms')" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light" target="_blank">
             {{ $t('footer.terms') }}
           </router-link>
         </div>

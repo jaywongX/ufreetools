@@ -92,6 +92,7 @@ import wordShuffler from './tools/word-shuffler.js';
 import cashAppFeeCalculator from './tools/cash-app-fee-calculator.js';
 import hexadecimalCaseConverter from './tools/hexadecimal-case-converter.js';
 import jfifJpgConverter from './tools/jfif-jpg-converter.js';
+import jpgJfifConverter from './tools/jpg-jfif-converter.js';
 export default {
   common: {
     tryNow: '立即使用',
@@ -218,4 +219,5 @@ export default {
   'cash-app-fee-calculator': cashAppFeeCalculator,
   'hexadecimal-case-converter': hexadecimalCaseConverter,
   'jfif-jpg-converter': jfifJpgConverter,
+  'jpg-jfif-converter': jpgJfifConverter,
 };
