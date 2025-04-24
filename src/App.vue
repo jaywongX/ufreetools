@@ -2,20 +2,23 @@
   <div class="flex min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden">
     <!-- SEO 组件 -->
     <SeoHead />
-    <!-- 左侧导航栏 -->
-    <SideNav />
-    
+    <!-- PC端 左侧导航栏 - 只在中等屏幕及以上显示 -->
+    <LeftSideNav class="hidden md:block" />
+      
     <!-- 右侧内容区域 -->
     <div class="flex-1 flex flex-col">
       <div class="relative">
         <TheHeader />
       </div>
-      <main class="flex-1 p-6 overflow-auto">
+      <main class="flex-1 p-1 md:p-6 overflow-auto">
         <router-view />
         <MainAreaFooterAd />
       </main>
       <TheFooter />
     </div>
+    
+    <!-- 移动端 底部导航栏 - 只在中等屏幕以下显示 -->
+    <ButtomSideNav class="md:hidden" />
   </div>
 </template>
 
@@ -23,9 +26,10 @@
 import { ref, provide, onMounted, watch, computed, markRaw } from 'vue'
 import TheHeader from './components/layout/TheHeader.vue'
 import TheFooter from './components/layout/TheFooter.vue'
-import SideNav from './components/layout/SideNav.vue'
+import LeftSideNav from './components/layout/LeftSideNav.vue'
 import SeoHead from './components/seo/SeoHead.vue'
 import MainAreaFooterAd from './components/common/MainAreaFooterAd.vue'
+import ButtomSideNav from './components/layout/ButtomSideNav.vue'
 // 移除不需要的导入
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
@@ -88,8 +92,8 @@ const categories = ref([
   },
   { 
     id: 'crypto', 
-    title: '密码与安全', 
-    name: '密码与安全',
+    title: '密码安全', 
+    name: '密码安全',
     description: '密码生成、加密、解密与安全工具',
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z'
   },

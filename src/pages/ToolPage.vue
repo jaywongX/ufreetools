@@ -1,32 +1,32 @@
 <template>
-  <div class="container-fluid px-4 py-6 mr-8">
-    <div v-if="tool" class="mb-6">
+  <div class="px-1 py-1 md:px-4 md:py-2">
+    <div v-if="tool" class="mb-4">
       <!-- 添加SeoHead组件并传递动态标题 -->
       <SeoHead 
         :title="$t(`tools.${tool.id}.name`)" 
         :description="$t(`tools.${tool.id}.description`)"
       />
-      <h1 class="text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">{{ $t(`tools.${tool.id}.name`) }}</h1>
-      <p class="text-gray-600 dark:text-gray-400 mb-4">{{ $t(`tools.${tool.id}.description`) }}</p>
+      <h1 class="text-2xl md:text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">{{ $t(`tools.${tool.id}.name`) }}</h1>
+      <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm md:text-base">{{ $t(`tools.${tool.id}.description`) }}</p>
       
       <!-- 分类和标签显示 -->
-      <div v-if="category || validTags.length > 0" class="flex flex-wrap gap-2 mb-6">
-        <span v-if="category" class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+      <div v-if="category || validTags.length > 0" class="flex flex-wrap gap-1 mb-4">
+        <span v-if="category" class="px-2 py-0.5 rounded-full text-xs bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
           {{ $t(`categories.${category.id}`) }}
         </span>
         
         <span 
           v-for="tagId in validTags" 
           :key="tagId" 
-          :class="`px-3 py-1 rounded-full text-sm ${getTagStyle(tagId)}`"
+          :class="`px-2 py-0.5 rounded-full text-xs ${getTagStyle(tagId)}`"
         >
           {{ $t(`tags.${tagId}`) }}
         </span>
       </div>
     </div>
     
-    <div v-if="loading" class="flex justify-center items-center p-12">
-      <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+    <div v-if="loading" class="flex justify-center items-center p-6">
+      <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-primary"></div>
       <span class="ml-3 text-gray-600 dark:text-gray-400">{{ $t('common.loading') }}</span>
     </div>
     
@@ -34,19 +34,18 @@
       <p>{{ $t('errors.toolNotFound') }} <router-link :to="localizedRoute('/')" class="underline font-medium">{{ $t('header.home') }}</router-link></p>
     </div>
     
-    <!-- 显示组件加载状态 -->
-    <div v-else-if="componentLoading" class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 mb-6">
-      <div class="flex justify-center items-center p-8">
-        <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-primary"></div>
+    <div v-else-if="componentLoading" class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 mb-4">
+      <div class="flex justify-center items-center p-4">
+        <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary"></div>
         <span class="ml-3 text-gray-600 dark:text-gray-400">{{ $t('common.loading') }}</span>
       </div>
     </div>
     
-    <!-- 动态组件显示 -->
-    <component v-else-if="resolvedComponent" :is="resolvedComponent" />
+    <div v-else-if="resolvedComponent" class="w-full">
+      <component :is="resolvedComponent" />
+    </div>
     
-    <!-- 组件加载错误 -->
-    <div v-else-if="componentError" class="bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-200 px-4 py-3 rounded mb-6">
+    <div v-else-if="componentError" class="bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-200 px-4 py-3 rounded mb-4">
       <p>{{ $t('errors.componentFailed') }}</p>
     </div>
   </div>
@@ -83,7 +82,7 @@ const categoriesData = [
   { id: 'convert', title: '转换工具', description: '各种文件格式之间的转换工具' },
   { id: 'utility', title: '实用效率', description: '各种实用的日常工具' },
   { id: 'network', title: '网络与协议工具', description: '网络分析、调试和测试工具' },
-  { id: 'crypto', title: '密码与安全', description: '密码生成、加密、解密与安全工具' }
+  { id: 'crypto', title: '密码安全', description: '密码生成、加密、解密与安全工具' }
 ]
 
 // 安全地获取分类信息

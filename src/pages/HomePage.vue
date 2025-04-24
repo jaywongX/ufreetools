@@ -1,13 +1,13 @@
 <template>
   <div>
     <!-- 标签筛选标题行 -->
-    <section class="mb-6">
+    <!-- <section class="mb-6">
       <div class="flex items-center justify-between mb-4">
         <h2 class="text-xl font-bold">{{ $t('home.tagFilterTitle') }}</h2>
-      </div>
+      </div> -->
 
       <!-- 标签列表 -->
-      <div class="flex flex-wrap gap-3">
+      <!-- <div class="flex flex-wrap gap-3">
         <router-link 
           v-for="tag in displayedTags" 
           :key="tag.id"
@@ -15,10 +15,10 @@
           :class="['tag-cloud-item transition-all hover:shadow-sm']"
         >
           <TagBadge v-if="tag?.id" :tag-id="tag.id" />
-        </router-link>
+        </router-link> -->
         
         <!-- 显示更多/收起按钮 -->
-        <div 
+        <!-- <div 
           v-if="Array.isArray(allTags) && allTags.length > 10"
           @click="toggleTagsDisplay"
           class="text-primary dark:text-primary-light py-2 px-4 cursor-pointer hover:underline flex items-center"
@@ -29,10 +29,10 @@
           </svg>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- 当有选定标签时显示的结果 -->
-    <div v-if="selectedTags.length > 0">
+    <!-- <div v-if="selectedTags.length > 0">
       <div class="flex justify-between items-center mb-4">
         <h2 class="text-xl font-bold">{{ $t('home.filterResultsTitle') }} ({{ filteredTools.length }})</h2>
       </div>
@@ -49,7 +49,7 @@
       <div v-else class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 text-center mb-10">
         <p class="text-gray-600 dark:text-gray-400">{{ $t('home.noMatchingTools') }}</p>
       </div>
-    </div>
+    </div> -->
   
     <!-- 最近使用部分 -->
     <section v-if="selectedTags.length === 0 && recentTools.length > 0" class="mb-10">
