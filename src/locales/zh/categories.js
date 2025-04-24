@@ -7,6 +7,6 @@ export default {
   text: '文本编辑',
   image: '图像处理',
   network: '网络工具',
-  crypto: '密码与安全',
+  crypto: '密码安全',
   utility: '实用工具'
 }; 

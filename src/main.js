@@ -114,7 +114,7 @@ const lazyComponentMap = {
   'WebSocketTester': () => import('./components/tools/WebSocketTester.vue'),
   'CookieManager': () => import('./components/tools/CookieManager.vue'),
   
-  // 密码与安全
+  // 密码安全
   'PasswordGenerator': () => import('./components/tools/PasswordGenerator.vue'),
   'PasswordStrengthChecker': () => import('./components/tools/PasswordStrengthChecker.vue'),
   'HashCalculator': () => import('./components/tools/HashCalculator.vue'),
