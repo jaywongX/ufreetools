@@ -380,7 +380,7 @@ async function processImage(image, index) {
     (resizeMethod.value !== 'maxdimension' && !maintainAspectRatio.value && !resizeOptions.value.height)
   ) {
     showNotification(t('tools.image-batch-resizer.messages.invalidWidthHeight'))
-    return
+    throw new Error(t('tools.image-batch-resizer.messages.invalidWidthHeight'))
   }
   
   // 标记为处理中
@@ -492,8 +492,8 @@ async function processAllImages() {
     
     showNotification(t('tools.image-batch-resizer.messages.processingComplete'))
   } catch (error) {
-    console.error(t('tools.image-batch-resizer.messages.processingError'), error)
-    showNotification(t('tools.image-batch-resizer.messages.processingError'))
+    console.error(error)
+    showNotification(error)
   } finally {
     isProcessing.value = false
   }
