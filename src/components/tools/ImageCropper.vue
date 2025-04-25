@@ -154,6 +154,7 @@
         </div>
       </div>
     </div>
+    <ImageCropperArticle />
   </div>
 </template>
 
@@ -162,7 +163,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import Cropper from 'cropperjs'
 import 'cropperjs/dist/cropper.css'
 import { useI18n } from 'vue-i18n'
-
+import ImageCropperArticle from './ImageCropperArticle.vue'
 const { t } = useI18n()
 
 // 状态变量
