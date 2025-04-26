@@ -39,4 +39,6 @@ export default {
   scanToSupport: 'Scan the QR code below to support us',
   thankYouForSupport: 'Thank you for your support!',
   backToHome: "Back to home",
+  submit: 'Submit',
+  submitting: 'Submitting...'
 };

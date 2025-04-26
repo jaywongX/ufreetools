@@ -71,7 +71,7 @@
         
         <!-- Empty State -->
         <div v-if="categoryTools.length === 0" class="py-8 text-center text-gray-500 dark:text-gray-400">
-          <p>{{ $t('common.noTools') || '暂无工具' }}</p>
+          <p>{{ $t('common.noTools') }}</p>
         </div>
       </div>
     </transition>

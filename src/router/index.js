@@ -81,6 +81,11 @@ const routes = [
         path: 'feedback',
         name: 'Feedback',
         component: () => import('../pages/FeedbackPage.vue')
+      },
+      {
+        path: 'submit-tool',
+        name: 'SubmitTool',
+        component: () => import('../pages/SubmitToolPage.vue')
       }
     ]
   },
@@ -163,6 +168,11 @@ const routes = [
         path: 'feedback',
         name: 'FeedbackNoLang',
         component: () => import('../pages/FeedbackPage.vue')
+      },
+      {
+        path: 'submit-tool',
+        name: 'SubmitToolNoLang',
+        component: () => import('../pages/SubmitToolPage.vue')
       }
     ]
   },

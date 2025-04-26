@@ -135,5 +135,29 @@ export default {
     submitting: 'Submitting...',
     success: 'Thank you for your feedback! We appreciate your input.',
     error: 'There was an error submitting your feedback. Please try again later.'
+  },
+  suggestTool: {
+    title: 'Suggest a Tool',
+    toolName: 'Tool Name',
+    toolNamePlaceholder: 'Enter the name of the tool',
+    email: 'Your Email',
+    emailPlaceholder: 'Enter your email address',
+    description: 'Tool Description',
+    descriptionPlaceholder: 'Describe what the tool does and why it would be useful',
+    thankYou: 'Thank You!',
+    successMessage: 'Your tool suggestion has been submitted successfully. We will review it soon.',
+    errors: {
+      requiredField: 'This field is required',
+      toolNameTooShort: 'Tool name must be at least 3 characters',
+      invalidEmail: 'Please enter a valid email address',
+      descriptionTooShort: 'Description must be at least 10 characters',
+      submissionFailed: 'Failed to submit your suggestion. Please try again.',
+      unexpectedError: 'An unexpected error occurred. Please try again.',
+      recaptchaFailed: "Human verification failed. Please try again."
+    },
+    submitAnother: 'Submit Another Tool',
+    recaptchaDisclaimer: 'This site is protected by reCAPTCHA and the Google',
+    privacyPolicy: 'Privacy Policy',
+    termsOfService: 'Terms of Service',
   }
 }

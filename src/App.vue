@@ -1393,11 +1393,6 @@ watch(() => route.params.lang, (newLang) => {
   }
 })
 
-// Watch for language changes to update tool names/descriptions
-watch(locale, () => {
-  // The computed property will automatically refresh when the locale changes
-})
-
 // 设置头部元数据
 useHead({
   link: computed(() => {
