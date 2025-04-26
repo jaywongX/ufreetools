@@ -54,6 +54,18 @@
         <!-- 添加捐赠按钮 -->
         <DonateButton class="ml-4 mr-2" />
         
+        <!-- 提交工具 -->
+        <router-link 
+          :to="localizedRoute('/submit-tool')" 
+          class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light"
+          aria-label="submit-tool"
+          target="_blank"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+          </svg>
+        </router-link>
+        
         <!-- 反馈链接 -->
         <router-link 
           :to="localizedRoute('/feedback')" 

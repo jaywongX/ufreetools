@@ -39,4 +39,6 @@ export default {
   scanToSupport: '扫描下面的二维码进行赞赏',
   thankYouForSupport: '感谢您的支持！',
   backToHome: "返回首页",
+  submit: '提交',
+  submitting: '提交中...'
 }; 

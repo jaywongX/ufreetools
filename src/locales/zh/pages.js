@@ -133,5 +133,29 @@ export default {
     submitting: '提交中...',
     success: '感谢您的反馈！我们感谢您的意见。',
     error: '提交反馈时出错。请稍后再试。'
+  },
+  suggestTool: {
+    title: '建议工具',
+    toolName: '工具名称',
+    toolNamePlaceholder: '输入工具名称',
+    email: '您的邮箱',
+    emailPlaceholder: 'your-email@example.com',
+    description: '工具描述',
+    descriptionPlaceholder: '描述该工具的功能及其实用性',
+    thankYou: '谢谢您！',
+    successMessage: '您的工具建议已成功提交。我们将尽快审核。',
+    errors: {
+      requiredField: '此字段为必填项',
+      toolNameTooShort: '工具名称至少需要3个字符',
+      invalidEmail: '请输入有效的电子邮件地址',
+      descriptionTooShort: '描述至少需要10个字符',
+      submissionFailed: '提交建议失败。请重试。',
+      unexpectedError: '发生意外错误。请重试。',
+      recaptchaFailed: "人机验证失败。请重试。",
+    },
+    submitAnother: '提交另一个工具',
+    recaptchaDisclaimer: "本网站受 reCAPTCHA 和 Google 的保护",
+    privacyPolicy: "隐私政策",
+    termsOfService: "服务条款",
   }
 }; 
