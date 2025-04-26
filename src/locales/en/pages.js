@@ -141,7 +141,7 @@ export default {
     toolName: 'Tool Name',
     toolNamePlaceholder: 'Enter the name of the tool',
     email: 'Your Email',
-    emailPlaceholder: 'your-email@example.com',
+    emailPlaceholder: 'Enter your email address',
     description: 'Tool Description',
     descriptionPlaceholder: 'Describe what the tool does and why it would be useful',
     thankYou: 'Thank You!',

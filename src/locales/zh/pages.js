@@ -139,7 +139,7 @@ export default {
     toolName: '工具名称',
     toolNamePlaceholder: '输入工具名称',
     email: '您的邮箱',
-    emailPlaceholder: 'your-email@example.com',
+    emailPlaceholder: '请输入您的邮箱地址',
     description: '工具描述',
     descriptionPlaceholder: '描述该工具的功能及其实用性',
     thankYou: '谢谢您！',
