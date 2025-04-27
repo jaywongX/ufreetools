@@ -224,6 +224,9 @@
     >
       {{ notification.message }}
     </div>
+
+    <ImageExifViewerArticle />
+
   </div>
 </template>
 
@@ -231,6 +234,7 @@
 import { ref, computed, onMounted } from 'vue'
 import * as exifr from 'exifr'
 import { useI18n } from 'vue-i18n'
+import ImageExifViewerArticle from './ImageExifViewerArticle.vue'
 
 const { t } = useI18n()
 
