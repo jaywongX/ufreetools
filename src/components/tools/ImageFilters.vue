@@ -147,11 +147,13 @@
       </div>
     </div>
   </div>
+  <ImageFiltersArticle />
 </template>
 
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useI18n } from 'vue-i18n'
+import ImageFiltersArticle from './ImageFiltersArticle.vue'
 
 const { t } = useI18n()
 
