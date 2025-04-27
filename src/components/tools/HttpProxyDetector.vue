@@ -305,13 +305,14 @@
         </div>
       </div>
     </div>
+    <HttpProxyDetectorArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-
+import HttpProxyDetectorArticle from './HttpProxyDetectorArticle.vue'
 const { t } = useI18n()
 
 // 状态管理

@@ -44,6 +44,22 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.ufreetools.com/en/submit-tool</loc>
+    <lastmod>2025-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/submit-tool" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/submit-tool" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/submit-tool</loc>
+    <lastmod>2025-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/submit-tool" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/submit-tool" />
+  </url>
+  <url>
     <loc>https://www.ufreetools.com/en/tool/base64-encoder-decoder</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>monthly</changefreq>
