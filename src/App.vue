@@ -1221,7 +1221,7 @@ const allTools = computed(() => [
   { 
     id: 'currency-converter', 
     name: t('tools.currency-converter.name'),
-    category: t(`categories.finance`),
+    category: t(`categories.utility`),
     categoryId: 'utility',
     description: t('tools.currency-converter.description'),
     path: '/tools/currency-converter',

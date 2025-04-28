@@ -1,5 +1,5 @@
 <template>
-  <div class="loan-calculator">
+  <div class="flex flex-col h-full">
     <!-- 输入区域 -->
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -239,6 +239,9 @@
         <li class="mb-2">{{ t('tools.loan-calculator.tip4') }}</li>
       </ul>
     </div>
+    
+    <!-- 添加文章组件 -->
+    <LoanCalculatorArticle />
   </div>
 </template>
 
@@ -246,6 +249,7 @@
 import { ref, computed, reactive, onMounted, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import * as XLSX from 'xlsx';
+import LoanCalculatorArticle from './LoanCalculatorArticle.vue';
 
 const { t, locale } = useI18n();
 
@@ -619,10 +623,6 @@ function getPaymentMethodName() {
 </script>
 
 <style scoped>
-.loan-calculator {
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
 table {
   width: 100%;

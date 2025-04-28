@@ -146,7 +146,7 @@ function loadTool() {
   resolvedComponent.value = null
   componentError.value = null
   
-  console.log('Loading tool with ID:', route.params.id)
+  // console.log('Loading tool with ID:', route.params.id)
   
   setTimeout(async () => {
     const paramId = route.params.id
@@ -156,13 +156,12 @@ function loadTool() {
     
     tool.value = findTool(allTools);
     
-    console.log('Found tool:', tool.value ? 'Yes' : 'No')
     if (tool.value) {
-      console.log('Tool details:', {
-        id: tool.value.id,
-        name: tool.value.name,
-        component: tool.value.component
-      })
+      // console.log('Tool details:', {
+      //   id: tool.value.id,
+      //   name: tool.value.name,
+      //   component: tool.value.component
+      // })
       
       // 添加到历史记录
       addToHistory(tool.value)
@@ -199,8 +198,6 @@ async function loadComponent(componentName) {
   resolvedComponent.value = null
   
   try {
-    console.log('Loading component:', componentName)
-    
     // 使用全局注册的 getComponent 方法加载组件
     const component = await app.config.globalProperties.getComponent(componentName)
     resolvedComponent.value = markRaw(component)
@@ -217,15 +214,6 @@ async function loadComponent(componentName) {
 }
 
 onMounted(() => {
-  // 检查环境
-  console.log('App object available:', !!app)
-  console.log('Lazy component map available:', !!app?.config?.globalProperties?.lazyComponentMap)
-  
-  // 列出可用的组件
-  if (app?.config?.globalProperties?.lazyComponentMap) {
-    console.log('Available lazy components:', Object.keys(app.config.globalProperties.lazyComponentMap).length)
-  }
-  
   loadTool()
 })
 

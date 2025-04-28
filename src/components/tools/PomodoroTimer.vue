@@ -1,5 +1,5 @@
 <template>
-  <div class="pomodoro-timer">
+  <div class="flex flex-col h-full">
     <!-- 主要内容区域 -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
       <!-- 左侧：设置面板 -->
@@ -597,10 +597,6 @@ function calculateAveragePomodoros() {
 </script>
 
 <style scoped>
-.pomodoro-timer {
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
 .clock-display {
   font-family: 'Courier New', monospace;

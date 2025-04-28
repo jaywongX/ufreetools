@@ -1,5 +1,5 @@
 export default {
-  name: 'User-Agent 生成器',
+  name: 'User Agent 生成器',
   description: '生成各种浏览器和设备的 User-Agent 字符串，用于网站测试、爬虫和开发',
   filters: {
     title: '过滤条件',

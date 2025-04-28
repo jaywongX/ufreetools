@@ -144,6 +144,7 @@
         </div>
       </div>
     </div>
+    <LaTeXFormulaGeneratorArticle />
   </div>
 </template>
 
@@ -151,6 +152,7 @@
 import { ref, onMounted, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import debounce from 'lodash/debounce';
+import LaTeXFormulaGeneratorArticle from './LaTeXFormulaGeneratorArticle.vue'
 
 const { t } = useI18n();
 

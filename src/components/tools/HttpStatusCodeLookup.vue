@@ -30,13 +30,13 @@
       </div>
       
       <div class="text-sm text-gray-600 dark:text-gray-400">
-        <p>{{ $t('tools.http-status-code-lookup.description.intro') }}</p>
+        <p>{{ $t('tools.http-status-code-lookup.category.intro') }}</p>
         <ul class="list-disc pl-5 mt-1">
-          <li>{{ $t('tools.http-status-code-lookup.description.informational') }}</li>
-          <li>{{ $t('tools.http-status-code-lookup.description.success') }}</li>
-          <li>{{ $t('tools.http-status-code-lookup.description.redirection') }}</li>
-          <li>{{ $t('tools.http-status-code-lookup.description.clientError') }}</li>
-          <li>{{ $t('tools.http-status-code-lookup.description.serverError') }}</li>
+          <li>{{ $t('tools.http-status-code-lookup.category.informational') }}</li>
+          <li>{{ $t('tools.http-status-code-lookup.category.success') }}</li>
+          <li>{{ $t('tools.http-status-code-lookup.category.redirection') }}</li>
+          <li>{{ $t('tools.http-status-code-lookup.category.clientError') }}</li>
+          <li>{{ $t('tools.http-status-code-lookup.category.serverError') }}</li>
         </ul>
       </div>
     </div>
@@ -113,12 +113,14 @@
         <p class="text-gray-600 dark:text-gray-400">{{ $t('tools.http-status-code-lookup.results.noResults') }}</p>
       </div>
     </div>
+    <HttpStatusCodeLookupArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import HttpStatusCodeLookupArticle from './HttpStatusCodeLookupArticle.vue'
 
 const { t } = useI18n()
 

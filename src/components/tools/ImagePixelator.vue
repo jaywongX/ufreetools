@@ -234,13 +234,14 @@
         </div>
       </div>
     </div>
+    <ImagePixelatorArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-
+import ImagePixelatorArticle from './ImagePixelatorArticle.vue'
 const { t } = useI18n()
 
 // 状态变量

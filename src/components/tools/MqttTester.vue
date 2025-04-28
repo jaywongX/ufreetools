@@ -400,12 +400,14 @@
         </div>
       </div>
     </div>
+    <MqttTesterArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import MqttTesterArticle from './MqttTesterArticle.vue'
 
 // 初始化国际化
 const { t } = useI18n()

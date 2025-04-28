@@ -232,6 +232,7 @@
         </div>
       </div>
     </div>
+    <ImageMosaicGeneratorArticle />
   </div>
 </template>
 
@@ -239,6 +240,7 @@
 import { ref, reactive, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import * as faceapi from 'face-api.js'
+import ImageMosaicGeneratorArticle from './ImageMosaicGeneratorArticle.vue'
 
 const { t } = useI18n()
 

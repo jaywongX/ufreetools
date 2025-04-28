@@ -40,5 +40,17 @@ export default {
   thankYouForSupport: '感谢您的支持！',
   backToHome: "返回首页",
   submit: '提交',
-  submitting: '提交中...'
+  submitting: '提交中...',
+  favorites: {
+    title: '我的收藏',
+    description: '查看和管理您收藏的工具',
+    add: '添加到收藏',
+    remove: '从收藏中移除',
+    empty: '您的收藏夹中还没有工具',
+    browseTools: '浏览所有工具'
+  },
+  home: {
+    favoritedToolsTitle: '我的收藏',
+    viewAllFavorites: '查看全部',
+  }
 }; 

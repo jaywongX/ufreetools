@@ -239,12 +239,15 @@
     >
       {{ notification.message }}
     </div>
+    
+    <IpLookupArticle />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import IpLookupArticle from './IpLookupArticle.vue'
 
 // 初始化国际化
 const { t, locale } = useI18n()

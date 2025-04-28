@@ -1,7 +1,10 @@
 <template>
-    <div class="article-container mt-8 prose dark:prose-invert max-w-none">
-      <h2 class="text-2xl font-bold mb-6">{{ $t('tools.cash-app-fee-calculator.article.title') }}</h2>
-      
+  <div class="mt-12 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+    <article class="prose dark:prose-invert max-w-none">
+    <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200 border-b pb-2">
+        {{ $t('tools.cash-app-fee-calculator.article.title') }}
+    </h2>
+
       <!-- 工具功能介绍 -->
       <section class="mb-8">
         <h3 class="text-xl font-semibold mb-4">{{ $t('tools.cash-app-fee-calculator.article.intro.title') }}</h3>
@@ -181,11 +184,6 @@
         <h3 class="text-xl font-semibold mb-4">{{ $t('tools.cash-app-fee-calculator.article.conclusion.title') }}</h3>
         <p v-html="$t('tools.cash-app-fee-calculator.article.conclusion.content')"></p>
       </section>
+      </article>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'CashAppFeeCalculatorArticle'
-  }
-  </script>
+</template>

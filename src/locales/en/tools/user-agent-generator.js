@@ -1,5 +1,5 @@
 export default {
-  name: 'User-Agent Generator',
+  name: 'User Agent Generator',
   description: 'Generate User-Agent strings for various browsers and devices for website testing, web scraping, and development',
   filters: {
     title: 'Filter Options',

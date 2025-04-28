@@ -20,6 +20,7 @@
       <div class="overflow-y-auto h-[calc(100vh-64px)] scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600">
         <nav class="p-4">
           <div class="mb-4">
+            
             <router-link 
               :to="localizedRoute('/')" 
               class="block py-2 px-3 rounded-md mb-1 font-medium transition-colors"
@@ -49,6 +50,23 @@
                 <span v-if="sidebarOpen" class="ml-2">{{ $t('tags.title') }}</span>
               </div>
             </router-link>
+
+            <!-- 收藏夹链接 -->
+            <router-link 
+              :to="localizedRoute('/favorites')" 
+              class="block py-2 px-3 rounded-md mb-1 font-medium transition-colors"
+              :class="isActive('/favorites') ? 'bg-gray-100 dark:bg-gray-700 text-primary dark:text-primary-light' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'"
+            >
+              <div class="flex items-center">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <span v-if="sidebarOpen" class="ml-2">{{ $t('common.favorites.title') }}</span>
+              </div>
+            </router-link>
+
           </div>
           
           <!-- 工具分类 -->

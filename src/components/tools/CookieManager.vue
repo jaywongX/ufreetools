@@ -1,5 +1,5 @@
 <template>
-  <div class="cookie-manager">
+  <div class="flex flex-col h-full">
     <!-- 功能选项卡 -->
     <div class="mb-6 border-b dark:border-gray-700">
       <div class="flex justify-between items-center mb-4">
@@ -646,12 +646,5 @@ function showNotification(message, type) {
   }, 3000);
 }
 </script>
-
-<style scoped>
-.cookie-manager {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-</style>
 
 <CookieManagerArticle /> 
