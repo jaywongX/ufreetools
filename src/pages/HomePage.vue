@@ -51,6 +51,24 @@
       </div>
     </div> -->
   
+    <!-- 收藏工具部分 -->
+    <section v-if="selectedTags.length === 0 && favoritedTools.length > 0" class="mb-10">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">{{ $t('common.home.favoritedToolsTitle') }}</h2>
+        <router-link :to="localizedRoute('/favorites')" class="text-primary dark:text-primary-light hover:underline text-sm">
+          {{ $t('common.home.viewAllFavorites') }}
+        </router-link>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <ToolCard 
+          v-for="tool in favoritedTools.slice(0, 3)" 
+          :key="tool.id"
+          :tool="tool"
+          @tag-click="addTagToFilter"
+        />
+      </div>
+    </section>
+  
     <!-- 最近使用部分 -->
     <section v-if="selectedTags.length === 0 && recentTools.length > 0" class="mb-10">
       <div class="flex justify-between items-center mb-6">
@@ -107,6 +125,7 @@ import { getHistory } from '../services/historyService'
 import { useMetaInfo } from '../mixins/metaInfoMixin'
 import { useI18n } from 'vue-i18n'
 import { useInternationalizedRoute } from '../composables/useInternationalizedRoute'
+import { getFavorites } from '../services/favoritesService'
 
 const route = useRoute()
 const router = useRouter()
@@ -236,15 +255,20 @@ const newTools = computed(() => {
   return [...toolsArray.value].reverse().slice(0, 6)
 })
 
+// 收藏的工具
+const favoritedTools = ref([])
+
 // 组件挂载时，同步URL和选中标签状态，加载最近使用的工具
 onMounted(() => {
   selectedTags.value = getTagsFromUrl()
   recentTools.value = getHistory()
   updateMetaInfo()
+  favoritedTools.value = getFavorites().slice(0, 3)
 })
 
 onUpdated(() => {
   updateMetaInfo()
+  favoritedTools.value = getFavorites().slice(0, 3)
 })
 </script>
 

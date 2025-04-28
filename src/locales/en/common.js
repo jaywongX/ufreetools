@@ -40,5 +40,17 @@ export default {
   thankYouForSupport: 'Thank you for your support!',
   backToHome: "Back to home",
   submit: 'Submit',
-  submitting: 'Submitting...'
+  submitting: 'Submitting...',
+  favorites: {
+    title: 'My Favorites',
+    description: 'View and manage your favorite tools',
+    add: 'Add to Favorites',
+    remove: 'Remove from Favorites',
+    empty: 'Your favorites list is empty',
+    browseTools: 'Browse all tools'
+  },
+  home: {
+    favoritedToolsTitle: 'My Favorites',
+    viewAllFavorites: 'View all',
+  }
 };

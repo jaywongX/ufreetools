@@ -67,7 +67,6 @@ const initAds = () => {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
       });
       
-      console.log('Ads reinitialized on route change');
     }, 50);
   } catch (error) {
     console.error('AdSense error:', error);

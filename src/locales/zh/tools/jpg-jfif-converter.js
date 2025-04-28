@@ -4,7 +4,7 @@ export default {
     tags: ['图片', '转换', 'jpg', 'jfif', 'jpeg', '格式', '工具'],
     
     meta: {
-      title: 'JPG转JFIF转换器 - 免费在线图像转换工具 | UFreeTools',
+      title: 'JPG转JFIF转换器 - 免费在线图像转换工具',
       description: '免费在线将JPG转换为JFIF。快速、安全的浏览器内转换，支持批量处理、预览对比和高级质量设置。无水印，无需注册。'
     },
     

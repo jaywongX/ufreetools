@@ -86,6 +86,11 @@ const routes = [
         path: 'submit-tool',
         name: 'SubmitTool',
         component: () => import('../pages/SubmitToolPage.vue')
+      },
+      {
+        path: 'favorites',
+        name: 'Favorites',
+        component: () => import('../pages/FavoritesPage.vue')
       }
     ]
   },
@@ -173,6 +178,11 @@ const routes = [
         path: 'submit-tool',
         name: 'SubmitToolNoLang',
         component: () => import('../pages/SubmitToolPage.vue')
+      },
+      {
+        path: 'favorites',
+        name: 'FavoritesNoLang',
+        component: () => import('../pages/FavoritesPage.vue')
       }
     ]
   },

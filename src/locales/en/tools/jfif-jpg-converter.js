@@ -4,7 +4,7 @@ export default {
   tags: ['image', 'convert', 'jpg', 'jfif', 'jpeg', 'format', 'utility'],
   
   meta: {
-    title: 'JFIF to JPG Converter - Free Online Image Conversion Tool | UFreeTools',
+    title: 'JFIF to JPG Converter - Free Online Image Conversion Tool',
     description: 'Convert JFIF to JPG online for free. Fast, secure browser-based converter with batch processing, preview comparison and advanced quality settings. No watermarks, no registration.'
   },
   

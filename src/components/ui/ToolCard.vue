@@ -1,9 +1,12 @@
 <template>
   <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
-    <router-link :to="localizedRoute(`tool/${tool.id}`)" class="block p-5">
-      <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2 line-clamp-1">
-        {{ $t(`tools.${tool.id}.name`, tool.name) }}
-      </h3>
+    <router-link :to="localizedRoute(`tool/${tool.id}`)" class="block p-5" >
+      <div class="flex justify-between items-start mb-2">
+        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2 line-clamp-1">
+          {{ tool.name }}
+        </h3>
+        <FavoriteButton :tool="tool"/>
+      </div>
       <p class="text-gray-600 dark:text-gray-400 text-sm mb-3 line-clamp-2">
         {{ $t(`tools.${tool.id}.description`, tool.description) }}
       </p>
@@ -25,6 +28,7 @@
 import { defineProps } from 'vue'
 import TagBadge from './TagBadge.vue'
 import { useInternationalizedRoute } from '../../composables/useInternationalizedRoute'
+import FavoriteButton from './FavoriteButton.vue'
 
 const props = defineProps({
   tool: {

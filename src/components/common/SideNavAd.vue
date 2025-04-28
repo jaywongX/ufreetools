@@ -47,7 +47,6 @@ const initAd = () => {
       // 初始化新广告
       setTimeout(() => {
         (window.adsbygoogle = window.adsbygoogle || []).push({})
-        console.log('SideNav ad reinitialized')
       }, 50)
     }
   } catch (error) {
