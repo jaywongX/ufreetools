@@ -1,5 +1,5 @@
 <template>
-    <div class="name-generator w-full max-w-none">
+    <div class="flex flex-col h-full">
       <!-- 工具主体内容 -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
         <!-- 左侧面板：设置 -->
@@ -734,9 +734,6 @@ generateNames()
 </script>
 
 <style scoped>
-.name-generator {
-  max-width: 100%;
-}
 
 @media (min-width: 1280px) {
   .name-generator {

@@ -247,7 +247,7 @@ const submitFormWithRecaptcha = async () => {
     try {
       result = JSON.parse(responseText);
     } catch (e) {
-      console.error('无法解析响应JSON:', responseText);
+      console.error(e);
     }
     
     if (!response.ok) {
