@@ -93,6 +93,7 @@ import cashAppFeeCalculator from './tools/cash-app-fee-calculator.js';
 import hexadecimalCaseConverter from './tools/hexadecimal-case-converter.js';
 import jfifJpgConverter from './tools/jfif-jpg-converter.js';
 import jpgJfifConverter from './tools/jpg-jfif-converter.js';
+import sealGenerator from './tools/seal-generator.js';
 export default {
   common: {
     tryNow: '立即使用',
@@ -220,4 +221,5 @@ export default {
   'hexadecimal-case-converter': hexadecimalCaseConverter,
   'jfif-jpg-converter': jfifJpgConverter,
   'jpg-jfif-converter': jpgJfifConverter,
+  'seal-generator': sealGenerator,
 };

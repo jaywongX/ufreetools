@@ -126,8 +126,7 @@ export default {
     copied: '已复制！',
     generating: '正在生成图片...',
     
-    // Documentation
-    documentation: {
+    article: {
       title: 'Instagram 帖子生成器：完整指南',
       introduction: '使用我们的综合工具，为营销、设计规划或教育目的创建逼真的 Instagram 帖子模拟。',
       

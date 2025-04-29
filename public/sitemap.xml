@@ -1,47 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    <url>
+  <url>
     <loc>https://www.ufreetools.com/</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/</loc>
+    <lastmod>2025-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/</loc>
+    <lastmod>2025-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/en/about</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.8</priority>  
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/about" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/en/tags</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tags" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tags" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/en/privacy-policy</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/privacy-policy" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/en/terms</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/terms" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/terms" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/en/contact</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/contact" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/en/feedback</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/feedback" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/feedback" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/en/submit-tool</loc>
@@ -784,36 +814,48 @@
     <lastmod>2025-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/about" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/zh/tags</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tags" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tags" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/zh/privacy-policy</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/privacy-policy" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/zh/terms</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/terms" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/terms" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/zh/contact</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/contact" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/zh/feedback</loc>
     <lastmod>2025-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/feedback" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/feedback" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/zh/tool/base64-encoder-decoder</loc>
@@ -1575,5 +1617,36 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/jpg-jfif-converter" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/jpg-jfif-converter" />
   </url>
-
+  <url>
+  <loc>https://www.ufreetools.com/en/favorites</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/favorites" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/favorites" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/favorites</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/favorites" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/favorites" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/seal-generator</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/seal-generator" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/seal-generator" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/tool/seal-generator</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/seal-generator" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/seal-generator" />
+  </url>
 </urlset>
