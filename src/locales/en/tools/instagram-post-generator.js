@@ -126,8 +126,7 @@ export default {
   copied: 'Copied!',
   generating: 'Generating image...',
   
-  // Documentation
-  documentation: {
+  article: {
     title: 'Instagram Post Generator: Complete Guide',
     introduction: 'Create realistic Instagram post mockups for marketing, design planning, or educational purposes with our comprehensive tool.',
     

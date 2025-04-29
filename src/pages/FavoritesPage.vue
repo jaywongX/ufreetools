@@ -15,7 +15,7 @@
     </div>
     
     <!-- 收藏的工具列表 -->
-    <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-10">
       <div v-for="tool in favorites" :key="tool.id" 
           class="relative bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
         <!-- 工具信息 -->
@@ -52,6 +52,129 @@
         </div>
       </div>
     </div>
+
+    <!-- 收藏夹功能介绍文章 -->
+    <section class="mt-8 mb-12 bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+      <article class="prose dark:prose-invert max-w-none">
+        <h2 class="text-xl font-bold mb-4">{{ $t('common.favorites.article.title') }}</h2>
+        
+        <!-- 功能介绍及应用场景 -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold mb-3">{{ $t('common.favorites.article.intro.title') }}</h3>
+          <p v-html="$t('common.favorites.article.intro.p1')"></p>
+          <p class="my-3" v-html="$t('common.favorites.article.intro.p2')"></p>
+          <p v-html="$t('common.favorites.article.intro.p3')"></p>
+        </div>
+        
+        <!-- 操作指南 -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold mb-3">{{ $t('common.favorites.article.tutorial.title') }}</h3>
+          <p class="mb-4">{{ $t('common.favorites.article.tutorial.intro') }}</p>
+          
+          <div class="ml-4 mb-3">
+            <h4 class="font-medium mb-1">{{ $t('common.favorites.article.tutorial.step1.title') }}</h4>
+            <p>{{ $t('common.favorites.article.tutorial.step1.description') }}</p>
+          </div>
+          
+          <div class="ml-4 mb-3">
+            <h4 class="font-medium mb-1">{{ $t('common.favorites.article.tutorial.step2.title') }}</h4>
+            <p>{{ $t('common.favorites.article.tutorial.step2.description') }}</p>
+          </div>
+          
+          <div class="ml-4 mb-3">
+            <h4 class="font-medium mb-1">{{ $t('common.favorites.article.tutorial.step3.title') }}</h4>
+            <p>{{ $t('common.favorites.article.tutorial.step3.description') }}</p>
+          </div>
+          
+          <div class="ml-4 mb-3">
+            <h4 class="font-medium mb-1">{{ $t('common.favorites.article.tutorial.step4.title') }}</h4>
+            <p>{{ $t('common.favorites.article.tutorial.step4.description') }}</p>
+          </div>
+        </div>
+        
+        <!-- 常见问题解答 -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold mb-3">{{ $t('common.favorites.article.faq.title') }}</h3>
+          
+          <div itemscope itemtype="https://schema.org/FAQPage">
+            <div class="border-b border-gray-200 dark:border-gray-700 py-4" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h4 itemprop="name" class="font-medium mb-2">{{ $t('common.favorites.article.faq.q1') }}</h4>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div itemprop="text" v-html="$t('common.favorites.article.faq.a1')"></div>
+              </div>
+            </div>
+            
+            <div class="border-b border-gray-200 dark:border-gray-700 py-4" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h4 itemprop="name" class="font-medium mb-2">{{ $t('common.favorites.article.faq.q2') }}</h4>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div itemprop="text" v-html="$t('common.favorites.article.faq.a2')"></div>
+              </div>
+            </div>
+            
+            <div class="border-b border-gray-200 dark:border-gray-700 py-4" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h4 itemprop="name" class="font-medium mb-2">{{ $t('common.favorites.article.faq.q3') }}</h4>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div itemprop="text" v-html="$t('common.favorites.article.faq.a3')"></div>
+              </div>
+            </div>
+            
+            <div class="border-b border-gray-200 dark:border-gray-700 py-4" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h4 itemprop="name" class="font-medium mb-2">{{ $t('common.favorites.article.faq.q4') }}</h4>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div itemprop="text" v-html="$t('common.favorites.article.faq.a4')"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 相关工具推荐 -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold mb-3">{{ $t('common.favorites.article.relatedTools.title') }}</h3>
+          <p class="mb-4">{{ $t('common.favorites.article.relatedTools.description') }}</p>
+          
+          <ul class="ml-6 list-disc">
+            <li class="mb-2">
+              <a :href="$t('common.favorites.article.relatedTools.tool1.url')" target="_blank" class="text-primary dark:text-primary-light hover:underline">
+                {{ $t('common.favorites.article.relatedTools.tool1.name') }}
+              </a>
+              <p class="text-sm text-gray-600 dark:text-gray-400">{{ $t('common.favorites.article.relatedTools.tool1.description') }}</p>
+            </li>
+            <li class="mb-2">
+              <a :href="$t('common.favorites.article.relatedTools.tool2.url')" target="_blank" class="text-primary dark:text-primary-light hover:underline">
+                {{ $t('common.favorites.article.relatedTools.tool2.name') }}
+              </a>
+              <p class="text-sm text-gray-600 dark:text-gray-400">{{ $t('common.favorites.article.relatedTools.tool2.description') }}</p>
+            </li>
+            <li class="mb-2">
+              <a :href="$t('common.favorites.article.relatedTools.tool3.url')" target="_blank" class="text-primary dark:text-primary-light hover:underline">
+                {{ $t('common.favorites.article.relatedTools.tool3.name') }}
+              </a>
+              <p class="text-sm text-gray-600 dark:text-gray-400">{{ $t('common.favorites.article.relatedTools.tool3.description') }}</p>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- 外部资源链接 -->
+        <div>
+          <h3 class="text-lg font-semibold mb-3">{{ $t('common.favorites.article.resources.title') }}</h3>
+          
+          <ul class="ml-6 list-disc">
+            <li class="mb-2">
+              <a :href="$t('common.favorites.article.resources.resource1.url')" target="_blank" rel="noopener noreferrer" class="text-primary dark:text-primary-light hover:underline">
+                {{ $t('common.favorites.article.resources.resource1.name') }}
+              </a>
+              <p class="text-sm text-gray-600 dark:text-gray-400">{{ $t('common.favorites.article.resources.resource1.description') }}</p>
+            </li>
+            <li class="mb-2">
+              <a :href="$t('common.favorites.article.resources.resource2.url')" target="_blank" rel="noopener noreferrer" class="text-primary dark:text-primary-light hover:underline">
+                {{ $t('common.favorites.article.resources.resource2.name') }}
+              </a>
+              <p class="text-sm text-gray-600 dark:text-gray-400">{{ $t('common.favorites.article.resources.resource2.description') }}</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
   </div>
 </template>
 
