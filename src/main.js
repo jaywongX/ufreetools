@@ -87,6 +87,8 @@ const lazyComponentMap = {
   'HorizontalToVerticalImage': () => import('./components/tools/HorizontalToVerticalImage.vue'),
   'JfifJpgConverter': () => import('./components/tools/JfifJpgConverter.vue'),
   'JpgJfifConverter': () => import('./components/tools/JpgJfifConverter.vue'),
+  'SealGenerator': () => import('./components/tools/SealGenerator.vue'),
+  
   // 转换工具
   'Base64EncoderDecoder': () => import('./components/tools/Base64EncoderDecoder.vue'),
   'CsvJsonConverter': () => import('./components/tools/CsvJsonConverter.vue'),

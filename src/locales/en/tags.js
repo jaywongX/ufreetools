@@ -335,7 +335,8 @@ export default {
   jfif: 'JFIF',
   jpeg: 'JPEG',
   quality: 'Quality',
-  
+  seal: 'Seal',
+  stamp: 'Stamp',
   // 英文版本的分类名称
   groupNames: {
     performance: 'Performance Related',

@@ -333,7 +333,8 @@ export default {
   jfif: 'JFIF',
   jpeg: 'JPEG',
   quality: '质量',
-  
+  seal: '印章',
+  stamp: '图章',
   
   // 根据截图中的实际分类添加
   groupNames: {
