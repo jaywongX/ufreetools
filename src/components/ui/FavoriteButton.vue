@@ -38,7 +38,13 @@ const toggleFavorite = () => {
   if (isFavorited.value) {
     removeFromFavorites(props.tool.id);
   } else {
-    addToFavorites(props.tool);
+    const simplifiedTool = {
+      id: props.tool.id,
+      name: props.tool.name,
+      description: props.tool.description,
+      tags: Array.isArray(props.tool.tags) ? [...props.tool.tags] : []
+    };
+    addToFavorites(simplifiedTool);
   }
   checkFavoriteStatus();
 };

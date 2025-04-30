@@ -11,13 +11,34 @@ export const getFavorites = () => {
   }
 };
 
+// 添加一个函数，安全地序列化对象，处理循环引用
+function safeStringify(obj) {
+  const seen = new WeakSet();
+  return JSON.stringify(obj, (key, value) => {
+    if (typeof value === 'object' && value !== null) {
+      if (seen.has(value)) {
+        return '[Circular]'; // 处理循环引用
+      }
+      seen.add(value);
+    }
+    return value;
+  });
+}
+
 export const addToFavorites = (tool) => {
   try {
     const favorites = getFavorites();
     // 检查工具是否已经在收藏夹中
     if (!favorites.some(fav => fav.id === tool.id)) {
-      favorites.push(tool);
-      localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favorites));
+      // 只存储关键数据
+      const essentialData = {
+        id: tool.id,
+        name: tool.name,
+        description: tool.description,
+        tags: Array.isArray(tool.tags) ? [...tool.tags] : []
+      };
+      favorites.push(essentialData);
+      localStorage.setItem(FAVORITES_STORAGE_KEY, safeStringify(favorites));
     }
     return favorites;
   } catch (error) {
