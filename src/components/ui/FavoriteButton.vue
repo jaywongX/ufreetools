@@ -22,43 +22,47 @@ import { ref, onMounted } from 'vue';
 import { addToFavorites, removeFromFavorites, isToolFavorited } from '../../services/favoritesService';
 
 const props = defineProps({
-  tool: {
-    type: Object,
+  toolId: {
+    type: String,
     required: true
+  },
+  toolName: {
+    type: String,
+    default: ''
+  },
+  toolDescription: {
+    type: String,
+    default: ''
+  },
+  toolTags: {
+    type: Array,
+    default: () => []
   }
 });
 
 const isFavorited = ref(false);
 
-let isChecking = false;
-// 增加防重逻辑
 const checkFavoriteStatus = () => {
-  if (isChecking) return;
-  isChecking = true;
-  isFavorited.value = isToolFavorited(props.tool.id);
-  isChecking = false;
+  isFavorited.value = isToolFavorited(props.toolId);
 };
 
 const toggleFavorite = () => {
   if (isFavorited.value) {
-    removeFromFavorites(props.tool.id);
+    removeFromFavorites(props.toolId);
+    isFavorited.value = false;
   } else {
-    const simplifiedTool = {
-      id: props.tool.id,
-      name: props.tool.name,
-      description: props.tool.description,
-      tags: [...props.tool.tags]
+    const toolData = {
+      id: props.toolId,
+      name: props.toolName,
+      description: props.toolDescription,
+      tags: [...props.toolTags]
     };
-    addToFavorites(simplifiedTool);
+    addToFavorites(toolData);
+    isFavorited.value = true;
   }
-  // checkFavoriteStatus();
-  // ✅ 延迟执行，避免同步死循环
-  setTimeout(checkFavoriteStatus, 0);
 };
 
-onMounted(() => {
-  checkFavoriteStatus();
-});
+onMounted(checkFavoriteStatus);
 </script>
 
 <style scoped>

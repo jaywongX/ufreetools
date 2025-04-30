@@ -5,7 +5,12 @@
         <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2 line-clamp-1">
           {{ tool.name }}
         </h3>
-        <FavoriteButton :tool="tool"/>
+        <FavoriteButton 
+          :toolId="tool.id"
+          :toolName="tool.name"
+          :toolDescription="$t(`tools.${tool.id}.description`, tool.description)"
+          :toolTags="tool.tags || []"
+        />
       </div>
       <p class="text-gray-600 dark:text-gray-400 text-sm mb-3 line-clamp-2">
         {{ $t(`tools.${tool.id}.description`, tool.description) }}
