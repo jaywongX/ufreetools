@@ -18,38 +18,51 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted } from 'vue';
 import { addToFavorites, removeFromFavorites, isToolFavorited } from '../../services/favoritesService';
 
 const props = defineProps({
-  tool: {
-    type: Object,
+  toolId: {
+    type: String,
     required: true
+  },
+  toolName: {
+    type: String,
+    default: ''
+  },
+  toolDescription: {
+    type: String,
+    default: ''
+  },
+  toolTags: {
+    type: Array,
+    default: () => []
   }
 });
 
 const isFavorited = ref(false);
 
 const checkFavoriteStatus = () => {
-  isFavorited.value = isToolFavorited(props.tool.id);
+  isFavorited.value = isToolFavorited(props.toolId);
 };
 
 const toggleFavorite = () => {
   if (isFavorited.value) {
-    removeFromFavorites(props.tool.id);
+    removeFromFavorites(props.toolId);
+    isFavorited.value = false;
   } else {
-    addToFavorites(props.tool);
+    const toolData = {
+      id: props.toolId,
+      name: props.toolName,
+      description: props.toolDescription,
+      tags: [...props.toolTags]
+    };
+    addToFavorites(toolData);
+    isFavorited.value = true;
   }
-  checkFavoriteStatus();
 };
 
-onMounted(() => {
-  checkFavoriteStatus();
-});
-
-// 监听工具变化，更新收藏状态
-watch(() => props.tool, checkFavoriteStatus, { deep: true });
-
+onMounted(checkFavoriteStatus);
 </script>
 
 <style scoped>

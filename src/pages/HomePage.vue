@@ -268,7 +268,6 @@ onMounted(() => {
 
 onUpdated(() => {
   updateMetaInfo()
-  favoritedTools.value = getFavorites().slice(0, 3)
 })
 </script>
 

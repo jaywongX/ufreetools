@@ -16,7 +16,15 @@ export const addToFavorites = (tool) => {
     const favorites = getFavorites();
     // 检查工具是否已经在收藏夹中
     if (!favorites.some(fav => fav.id === tool.id)) {
-      favorites.push(tool);
+      // 确保我们只存储必要的字段，避免引用循环
+      const simplifiedTool = {
+        id: tool.id,
+        name: tool.name,
+        description: tool.description,
+        tags: Array.isArray(tool.tags) ? [...tool.tags] : [] // 确保是数组且是副本
+      };
+      
+      favorites.push(simplifiedTool);
       localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favorites));
     }
     return favorites;
@@ -41,6 +49,7 @@ export const removeFromFavorites = (toolId) => {
 export const isToolFavorited = (toolId) => {
   try {
     const favorites = getFavorites();
+    // 只检查ID是否存在于收藏夹中
     return favorites.some(tool => tool.id === toolId);
   } catch (error) {
     console.error('Error checking if tool is favorited:', error);
