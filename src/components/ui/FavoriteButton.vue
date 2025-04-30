@@ -30,36 +30,35 @@ const props = defineProps({
 
 const isFavorited = ref(false);
 
-// 检查收藏状态，只在组件挂载时调用一次
+let isChecking = false;
+// 增加防重逻辑
 const checkFavoriteStatus = () => {
-  // 确保工具ID存在
-  if (props.tool && props.tool.id) {
-    isFavorited.value = isToolFavorited(props.tool.id);
-  }
+  if (isChecking) return;
+  isChecking = true;
+  isFavorited.value = isToolFavorited(props.tool.id);
+  isChecking = false;
 };
 
 const toggleFavorite = () => {
-  // 确保工具ID存在
-  if (!props.tool || !props.tool.id) return;
-  
   if (isFavorited.value) {
     removeFromFavorites(props.tool.id);
-    isFavorited.value = false;
   } else {
-    // 使用一个简单对象存储必要信息
-    addToFavorites({
+    const simplifiedTool = {
       id: props.tool.id,
-      name: props.tool.name || '',
-      description: props.tool.description || '',
-      // 如果tags不存在，使用空数组
-      tags: Array.isArray(props.tool.tags) ? 
-        props.tool.tags.map(tag => tag).filter(Boolean) : []
-    });
-    isFavorited.value = true;
+      name: props.tool.name,
+      description: props.tool.description,
+      tags: [...props.tool.tags]
+    };
+    addToFavorites(simplifiedTool);
   }
+  // checkFavoriteStatus();
+  // ✅ 延迟执行，避免同步死循环
+  setTimeout(checkFavoriteStatus, 0);
 };
 
-onMounted(checkFavoriteStatus);
+onMounted(() => {
+  checkFavoriteStatus();
+});
 </script>
 
 <style scoped>
