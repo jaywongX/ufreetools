@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted } from 'vue';
 import { addToFavorites, removeFromFavorites, isToolFavorited } from '../../services/favoritesService';
 
 const props = defineProps({
@@ -42,7 +42,7 @@ const toggleFavorite = () => {
       id: props.tool.id,
       name: props.tool.name,
       description: props.tool.description,
-      tags: Array.isArray(props.tool.tags) ? [...props.tool.tags] : []
+      tags: [...props.tool.tags]
     };
     addToFavorites(simplifiedTool);
   }
@@ -52,10 +52,6 @@ const toggleFavorite = () => {
 onMounted(() => {
   checkFavoriteStatus();
 });
-
-// 监听工具变化，更新收藏状态
-watch(() => props.tool, checkFavoriteStatus, { deep: true });
-
 </script>
 
 <style scoped>

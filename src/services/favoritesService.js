@@ -11,34 +11,21 @@ export const getFavorites = () => {
   }
 };
 
-// 添加一个函数，安全地序列化对象，处理循环引用
-function safeStringify(obj) {
-  const seen = new WeakSet();
-  return JSON.stringify(obj, (key, value) => {
-    if (typeof value === 'object' && value !== null) {
-      if (seen.has(value)) {
-        return '[Circular]'; // 处理循环引用
-      }
-      seen.add(value);
-    }
-    return value;
-  });
-}
-
 export const addToFavorites = (tool) => {
   try {
     const favorites = getFavorites();
     // 检查工具是否已经在收藏夹中
     if (!favorites.some(fav => fav.id === tool.id)) {
-      // 只存储关键数据
-      const essentialData = {
+      // 确保我们只存储必要的字段，避免引用循环
+      const simplifiedTool = {
         id: tool.id,
         name: tool.name,
         description: tool.description,
-        tags: Array.isArray(tool.tags) ? [...tool.tags] : []
+        tags: Array.isArray(tool.tags) ? [...tool.tags] : [] // 确保是数组且是副本
       };
-      favorites.push(essentialData);
-      localStorage.setItem(FAVORITES_STORAGE_KEY, safeStringify(favorites));
+      
+      favorites.push(simplifiedTool);
+      localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favorites));
     }
     return favorites;
   } catch (error) {
@@ -62,6 +49,7 @@ export const removeFromFavorites = (toolId) => {
 export const isToolFavorited = (toolId) => {
   try {
     const favorites = getFavorites();
+    // 只检查ID是否存在于收藏夹中
     return favorites.some(tool => tool.id === toolId);
   } catch (error) {
     console.error('Error checking if tool is favorited:', error);
