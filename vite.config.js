@@ -11,7 +11,7 @@ export default defineConfig({
       path: 'path-browserify',
       stream: 'stream-browserify',
       util: 'util/',
-      buffer: 'buffer/',
+      buffer: 'buffer',
       // 为 os 模块提供一个简单的替代实现
       os: 'os-browserify/browser'
     }
