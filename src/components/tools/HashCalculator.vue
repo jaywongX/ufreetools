@@ -337,15 +337,14 @@ import CryptoJS from 'crypto-js'
 import sm3 from 'sm-crypto'
 import md2 from 'js-md2'
 import md4 from 'js-md4'
-import { shake128, shake256, keccak224, keccak256, keccak384, keccak512, cshake128, cshake256 } from 'js-sha3'
+import { shake128, shake256, sha3_224, sha3_256, sha3_384, sha3_512, keccak224, keccak256, keccak384, keccak512, cshake128, cshake256 } from 'js-sha3'
 import blake2b from 'blake2b'
 import blake2s from 'blake2s'
 import { blake3 } from 'hash-wasm'
 import crc32 from 'crc-32'
 import murmurHash3 from 'murmurhash3js'
 import { sha512_224, sha512_256 } from 'js-sha512'
-import { createRIPEMD128, createRIPEMD256, createRIPEMD320 } from '../../services/ripemd';
-import { cityHash64, cityHash128, cityHash256 } from '../../services/cityhash';
+
 // 状态变量
 const { t } = useI18n()
 const inputMode = ref('text')
@@ -464,6 +463,13 @@ const hashAlgorithms = [
     security: t('tools.hash-calculator.algorithmDetails.sha3_256.security') 
   },
   { 
+    name: t('tools.hash-calculator.algorithmDetails.sha3_384.name'), 
+    value: 'sha3_384', 
+    description: t('tools.hash-calculator.algorithmDetails.sha3_384.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.sha3_384.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.sha3_384.security') 
+  },
+  { 
     name: t('tools.hash-calculator.algorithmDetails.sha3_512.name'), 
     value: 'sha3_512', 
     description: t('tools.hash-calculator.algorithmDetails.sha3_512.description'), 
@@ -527,32 +533,11 @@ const hashAlgorithms = [
     security: t('tools.hash-calculator.algorithmDetails.cshake256.security')
   },
   { 
-    name: t('tools.hash-calculator.algorithmDetails.ripemd128.name'), 
-    value: 'ripemd128', 
-    description: t('tools.hash-calculator.algorithmDetails.ripemd128.description'), 
-    usage: t('tools.hash-calculator.algorithmDetails.ripemd128.usage'), 
-    security: t('tools.hash-calculator.algorithmDetails.ripemd128.security') 
-  },
-  { 
     name: t('tools.hash-calculator.algorithmDetails.ripemd160.name'), 
     value: 'ripemd160', 
     description: t('tools.hash-calculator.algorithmDetails.ripemd160.description'), 
     usage: t('tools.hash-calculator.algorithmDetails.ripemd160.usage'), 
     security: t('tools.hash-calculator.algorithmDetails.ripemd160.security') 
-  },
-  { 
-    name: t('tools.hash-calculator.algorithmDetails.ripemd256.name'), 
-    value: 'ripemd256', 
-    description: t('tools.hash-calculator.algorithmDetails.ripemd256.description'), 
-    usage: t('tools.hash-calculator.algorithmDetails.ripemd256.usage'), 
-    security: t('tools.hash-calculator.algorithmDetails.ripemd256.security') 
-  },
-  { 
-    name: t('tools.hash-calculator.algorithmDetails.ripemd320.name'), 
-    value: 'ripemd320', 
-    description: t('tools.hash-calculator.algorithmDetails.ripemd320.description'), 
-    usage: t('tools.hash-calculator.algorithmDetails.ripemd320.usage'), 
-    security: t('tools.hash-calculator.algorithmDetails.ripemd320.security') 
   },
   {
     name: t('tools.hash-calculator.algorithmDetails.blake2b.name'),
@@ -583,39 +568,25 @@ const hashAlgorithms = [
     security: t('tools.hash-calculator.algorithmDetails.sm3.security') 
   },
   { 
-    name: t('tools.hash-calculator.algorithmDetails.murmur32.name'), 
-    value: 'murmur32', 
-    description: t('tools.hash-calculator.algorithmDetails.murmur32.description'), 
-    usage: t('tools.hash-calculator.algorithmDetails.murmur32.usage'), 
-    security: t('tools.hash-calculator.algorithmDetails.murmur32.security') 
+    name: t('tools.hash-calculator.algorithmDetails.murmur3_x86_32.name'), 
+    value: 'murmur3_x86_32', 
+    description: t('tools.hash-calculator.algorithmDetails.murmur3_x86_32.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.murmur3_x86_32.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.murmurx8632.security') 
   },
   { 
-    name: t('tools.hash-calculator.algorithmDetails.murmur128.name'), 
-    value: 'murmur128', 
-    description: t('tools.hash-calculator.algorithmDetails.murmur128.description'), 
-    usage: t('tools.hash-calculator.algorithmDetails.murmur128.usage'), 
-    security: t('tools.hash-calculator.algorithmDetails.murmur128.security') 
+    name: t('tools.hash-calculator.algorithmDetails.murmur3_x86_128.name'), 
+    value: 'murmur3_x86_128', 
+    description: t('tools.hash-calculator.algorithmDetails.murmur3_x86_128.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.murmur3_x86_128.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.murmur3_x86_128.security') 
   },
-  {
-    name: t('tools.hash-calculator.algorithmDetails.cityhash64.name'),
-    value: 'cityhash64',
-    description: t('tools.hash-calculator.algorithmDetails.cityhash64.description'),
-    usage: t('tools.hash-calculator.algorithmDetails.cityhash64.usage'),
-    security: t('tools.hash-calculator.algorithmDetails.cityhash64.security')
-  },
-  {
-    name: t('tools.hash-calculator.algorithmDetails.cityhash128.name'),
-    value: 'cityhash128',
-    description: t('tools.hash-calculator.algorithmDetails.cityhash128.description'),
-    usage: t('tools.hash-calculator.algorithmDetails.cityhash128.usage'),
-    security: t('tools.hash-calculator.algorithmDetails.cityhash128.security')
-  },
-  {
-    name: t('tools.hash-calculator.algorithmDetails.cityhash256.name'),
-    value: 'cityhash256',
-    description: t('tools.hash-calculator.algorithmDetails.cityhash256.description'),
-    usage: t('tools.hash-calculator.algorithmDetails.cityhash256.usage'),
-    security: t('tools.hash-calculator.algorithmDetails.cityhash256.security')
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.murmur3_x64_128.name'), 
+    value: 'murmur3_x64_128', 
+    description: t('tools.hash-calculator.algorithmDetails.murmur3_x64_128.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.murmur3_x64_128.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.murmur3_x64_128.security') 
   },
 ]
 
@@ -696,25 +667,25 @@ async function calculateTextHash(selectedHash, text) {
           base64: Buffer.from(sha512_256Result, 'hex').toString('base64')
         }
       case 'sha3_224':
-        const sha3_224Result = CryptoJS.SHA3(text, { outputLength: 224 }).toString(CryptoJS.enc.Hex)
+        const sha3_224Result = sha3_224(text)
         return {
           hex: sha3_224Result,
           base64: Buffer.from(sha3_224Result, 'hex').toString('base64')
         }
       case 'sha3_256':
-        const sha3_256Result = CryptoJS.SHA3(text, { outputLength: 256 }).toString(CryptoJS.enc.Hex)
+        const sha3_256Result = sha3_256(text)
         return {
           hex: sha3_256Result,
           base64: Buffer.from(sha3_256Result, 'hex').toString('base64')
         }
       case 'sha3_384':
-        const sha3_384Result = CryptoJS.SHA3(text, { outputLength: 384 }).toString(CryptoJS.enc.Hex)
+        const sha3_384Result = sha3_384(text)
         return {
           hex: sha3_384Result,
           base64: Buffer.from(sha3_384Result, 'hex').toString('base64')
         }
       case 'sha3_512':
-        const sha3_512Result = CryptoJS.SHA3(text, { outputLength: 512 }).toString(CryptoJS.enc.Hex)
+        const sha3_512Result = sha3_512(text)
         return {
           hex: sha3_512Result,
           base64: Buffer.from(sha3_512Result, 'hex').toString('base64')
@@ -760,7 +731,7 @@ async function calculateTextHash(selectedHash, text) {
           base64: Buffer.from(shake256Result, 'hex').toString('base64')
         }
       case 'cshake128':
-        const cshake128Output = cshake128.create(256, 'CustomizationString', 'FunctionName')
+        const cshake128Output = cshake128.create(128, '', '')
         cshake128Output.update(text)
         const cshake128Result = cshake128Output.hex()
         return {
@@ -768,39 +739,18 @@ async function calculateTextHash(selectedHash, text) {
           base64: Buffer.from(cshake128Result, 'hex').toString('base64')
         }
       case 'cshake256':
-        const cshake256Output = cshake256.create(512, 'CustomizationString', 'FunctionName')
+        const cshake256Output = cshake256.create(256, '', '')
         cshake256Output.update(text)
         const cshake256Result = cshake256Output.hex()
         return {
           hex: cshake256Result,
           base64: Buffer.from(cshake256Result, 'hex').toString('base64')
         }
-      case 'ripemd128':
-        const ripemd128 = createRIPEMD128()
-        const ripemd128Result = ripemd128.update(text).digest('hex')
-        return {
-          hex: ripemd128Result,
-          base64: Buffer.from(ripemd128Result, 'hex').toString('base64')
-        }
       case 'ripemd160':
         const ripemd160Result = CryptoJS.RIPEMD160(text).toString(CryptoJS.enc.Hex)
         return {
           hex: ripemd160Result,
           base64: Buffer.from(ripemd160Result, 'hex').toString('base64')
-        }
-      case 'ripemd256':
-        const ripemd256 = createRIPEMD256()
-        const ripemd256Result = ripemd256.update(text).digest('hex')
-        return {
-          hex: ripemd256Result,
-          base64: Buffer.from(ripemd256Result, 'hex').toString('base64')
-        }
-      case 'ripemd320':
-        const ripemd320 = createRIPEMD320()
-        const ripemd320Result = ripemd320.update(text).digest('hex')
-        return {
-          hex: ripemd320Result,
-          base64: Buffer.from(ripemd320Result, 'hex').toString('base64')
         }
       case 'blake2b':
         const blake2bOutput = blake2b(64)
@@ -830,35 +780,23 @@ async function calculateTextHash(selectedHash, text) {
           hex: sm3Result,
           base64: Buffer.from(sm3Result, 'hex').toString('base64')
         }
-      case 'murmur32':
-        const murmur32Result = murmurHash3.x86.hash32(text).toString(16).padStart(8, '0')
+      case 'murmur3_x86_32':
+        const murmur32Result = murmurHash3.x86.hash32(text).toString()
         return {
           hex: murmur32Result,
           base64: Buffer.from(murmur32Result, 'hex').toString('base64')
         }
-      case 'murmur128':
-        const murmur128Result = murmurHash3.x64.hash128(text)
+      case 'murmur3_x86_128':
+        const murmur128Result = murmurHash3.x86.hash128(text)
         return {
           hex: murmur128Result,
           base64: Buffer.from(murmur128Result, 'hex').toString('base64')
         }
-      case 'cityhash64':
-        const cityHash64Result = cityHash64(text)
+      case 'murmur3_x64_128':
+        const murmur64Result = murmurHash3.x64.hash128(text)
         return {
-          hex: cityHash64Result,
-          base64: Buffer.from(cityHash64Result, 'hex').toString('base64')
-        }
-      case 'cityhash128':
-        const cityHash128Result = cityHash128(text)
-        return {
-          hex: cityHash128Result,
-          base64: Buffer.from(cityHash128Result, 'hex').toString('base64')
-        }
-      case 'cityhash256':
-        const cityHash256Result = cityHash256(text)
-        return {
-          hex: cityHash256Result,
-          base64: Buffer.from(cityHash256Result, 'hex').toString('base64')
+          hex: murmur64Result,
+          base64: Buffer.from(murmur64Result, 'hex').toString('base64')
         }
       default:
         console.error(t('tools.hash-calculator.messages.algorithmError'));
@@ -985,37 +923,36 @@ function calculateFileHash(selectedHash) {
             return;
           
           case 'sha3_224':
-            const sha3_224Result = CryptoJS.SHA3(CryptoJS.lib.WordArray.create(fileData), { outputLength: 224 }).toString(CryptoJS.enc.Hex);
+            const sha3_224Result = sha3_224(fileData);
             resolve({
               hex: sha3_224Result,
               base64: Buffer.from(sha3_224Result, 'hex').toString('base64')
             });
             return;
           
-        case 'sha3_256':
-            const sha3_256Result = CryptoJS.SHA3(CryptoJS.lib.WordArray.create(fileData), { outputLength: 256 }).toString(CryptoJS.enc.Hex);
+          case 'sha3_256':
+            const sha3_256Result = sha3_256(fileData);
             resolve({
               hex: sha3_256Result,
               base64: Buffer.from(sha3_256Result, 'hex').toString('base64')
             });
             return;
-          
+
           case 'sha3_384':
-            const sha3_384Result = CryptoJS.SHA3(CryptoJS.lib.WordArray.create(fileData), { outputLength: 384 }).toString(CryptoJS.enc.Hex);
+            const sha3_384Result = sha3_384(fileData);
             resolve({
               hex: sha3_384Result,
               base64: Buffer.from(sha3_384Result, 'hex').toString('base64')
             });
             return;
-          
-        case 'sha3_512':
-            const sha3_512Result = CryptoJS.SHA3(CryptoJS.lib.WordArray.create(fileData), { outputLength: 512 }).toString(CryptoJS.enc.Hex);
+
+          case 'sha3_512':
+            const sha3_512Result = sha3_512(fileData);
             resolve({
               hex: sha3_512Result,
               base64: Buffer.from(sha3_512Result, 'hex').toString('base64')
             });
             return;
-          
           case 'keccak224':
             const keccak224Instance = keccak224.create();
             keccak224Instance.update(fileData);
@@ -1077,7 +1014,7 @@ function calculateFileHash(selectedHash) {
             return
           
           case 'cshake128':
-            const cshake128Instance = cshake128.create(256, 'CustomizationString', 'FunctionName');
+            const cshake128Instance = cshake128.create(128, '', '');
             cshake128Instance.update(new Uint8Array(fileData));
             const cshake128Result = cshake128Instance.hex();
             resolve({
@@ -1087,7 +1024,7 @@ function calculateFileHash(selectedHash) {
             return;
           
           case 'cshake256':
-            const cshake256Instance = cshake256.create(512, 'CustomizationString', 'FunctionName');
+            const cshake256Instance = cshake256.create(256, '', '');
             cshake256Instance.update(new Uint8Array(fileData));
             const cshake256Result = cshake256Instance.hex();
             resolve({
@@ -1096,38 +1033,11 @@ function calculateFileHash(selectedHash) {
             });
             return;
           
-          case 'ripemd128':
-            const ripemd128 = createRIPEMD128();
-            const ripemd128Result = ripemd128.update(fileData).digest('hex');
-            resolve({
-              hex: ripemd128Result,
-              base64: Buffer.from(ripemd128Result, 'hex').toString('base64')
-            });
-            return;
-          
           case 'ripemd160':
             const ripemd160Result = CryptoJS.RIPEMD160(CryptoJS.lib.WordArray.create(fileData)).toString(CryptoJS.enc.Hex);
             resolve({
               hex: ripemd160Result,
               base64: Buffer.from(ripemd160Result, 'hex').toString('base64')
-            });
-            return;
-          
-          case 'ripemd256':
-            const ripemd256 = createRIPEMD256();
-            const ripemd256Result = ripemd256.update(Buffer.from(fileData)).digest('hex');
-            resolve({
-              hex: ripemd256Result,
-              base64: Buffer.from(ripemd256Result, 'hex').toString('base64')
-            });
-            return;
-          
-          case 'ripemd320':
-            const ripemd320 = createRIPEMD320();
-            const ripemd320Result = ripemd320.update(Buffer.from(fileData)).digest('hex');
-            resolve({
-              hex: ripemd320Result,
-              base64: Buffer.from(ripemd320Result, 'hex').toString('base64')
             });
             return;
           
@@ -1167,49 +1077,28 @@ function calculateFileHash(selectedHash) {
             })
             return
           
-          case 'murmur32':
-            const murmur32Result = murmurHash3.x86.hash32(Buffer.from(fileData).toString('binary')).toString(16).padStart(8, '0');
+          case 'murmur3_x86_32':
+            const murmur32Result = murmurHash3.x86.hash32(Buffer.from(fileData).toString('binary')).toString();
             resolve({
               hex: murmur32Result,
               base64: Buffer.from(murmur32Result, 'hex').toString('base64')
             });
             return;
           
-          case 'murmur128':
-            const murmur128Result = murmurHash3.x64.hash128(Buffer.from(fileData).toString('binary'));
+          case 'murmur3_x86_128':
+            const murmur128Result = murmurHash3.x86.hash128(Buffer.from(fileData).toString('binary'));
             resolve({
               hex: murmur128Result,
               base64: Buffer.from(murmur128Result, 'hex').toString('base64')
             });
             return;
           
-          case 'cityhash64':
-            const cityHashData = new Uint8Array(fileData);
-            const cityHashResult = cityHash64(cityHashData);
+          case 'murmur3_x64_128':
+            const murmur64Result = murmurHash3.x64.hash128(Buffer.from(fileData).toString('binary'));
             resolve({
-              hex: cityHashResult,
-              base64: Buffer.from(cityHashResult, 'hex').toString('base64')
+              hex: murmur64Result,
+              base64: Buffer.from(murmur64Result, 'hex').toString('base64')
             });
-            return;
-          
-          case 'cityhash128':
-            const cityHash128Data = new Uint8Array(fileData);
-            const cityHash128Result = cityHash128(cityHash128Data);
-            resolve({
-              hex: cityHash128Result,
-              base64: Buffer.from(cityHash128Result, 'hex').toString('base64')
-            });
-            return;
-          
-          case 'cityhash256':
-            const cityHash256Data = new Uint8Array(fileData);
-            const cityHash256Result = cityHash256(cityHash256Data);
-            resolve({
-              hex: cityHash256Result,
-              base64: Buffer.from(cityHash256Result, 'hex').toString('base64')
-            });
-            return;
-          
           default:
             console.error(t('tools.hash-calculator.messages.algorithmError'));
             resolve({
@@ -1265,13 +1154,10 @@ async function calculateAllHashes() {
   allHashResults.value = {}
   
   try {
-    // 每批处理5个算法
-    const batchSize = 5
     const totalAlgorithms = hashAlgorithms.length
     
-    for (let i = 0; i < totalAlgorithms; i += batchSize) {
-      const batch = hashAlgorithms.slice(i, i + batchSize)
-      await Promise.all(batch.map(async (algorithm) => {
+    for (let i = 0; i < totalAlgorithms; i++) {
+      await Promise.all(hashAlgorithms.map(async (algorithm) => {
         try {
           let result
           

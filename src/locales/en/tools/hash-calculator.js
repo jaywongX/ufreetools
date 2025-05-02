@@ -242,29 +242,11 @@ export default {
       usage: 'Chinese commercial cryptographic applications, digital certificates, and e-government systems',
       security: 'Design similar to SHA-2 but optimized for attack resistance, widely used in China'
     },
-    ripemd128: {
-      name: 'RIPEMD-128 (128-bit)',
-      description: 'RIPEMD-128 is a variant of the RIPEMD hash family that generates a 128-bit (16-byte) hash value, being a shorter version of RIPEMD-160.',
-      usage: 'Data integrity verification, digital signature applications, lightweight cryptographic applications',
-      security: 'Provides better security than MD5 but weaker than RIPEMD-160, not recommended for high-security requirements'
-    },
     ripemd160: {
       name: 'RIPEMD-160 (160-bit)',
       description: 'RIPEMD-160 is a hash function developed by the European RIPE project, producing a 160-bit hash value.',
       usage: 'Bitcoin address generation, blockchain applications',
       security: 'More secure than SHA-1 of the same length but less commonly used.'
-    },
-    ripemd256: {
-      name: 'RIPEMD-256 (256-bit)',
-      description: 'RIPEMD-256 is the 256-bit version of the RIPEMD hash family, offering longer output and stronger security.',
-      usage: 'Data integrity verification requiring higher security levels, cryptographic systems, blockchain applications',
-      security: 'Provides stronger collision resistance than RIPEMD-128 and RIPEMD-160, suitable for medium security requirements'
-    },
-    ripemd320: {
-      name: 'RIPEMD-320 (320-bit)',
-      description: 'RIPEMD-320 is the longest variant in the RIPEMD hash family, producing a 320-bit (40-byte) hash value, offering the highest level of security.',
-      usage: 'Data integrity verification, digital signatures, and cryptographic protocols in high-security scenarios',
-      security: 'Offers the strongest security in the RIPEMD series, suitable for applications requiring long-term security assurance'
     },
     crc32: {
       name: 'CRC32 (32-bit)',
@@ -272,35 +254,23 @@ export default {
       usage: 'Data integrity verification, network communications, data transmission validation',
       security: 'Not suitable for cryptographic security purposes, primarily used for error detection rather than security protection'
     },
-    murmur32: {
+    murmur3_x86_32: {
       name: 'MurmurHash3 (32-bit)',
       description: 'MurmurHash3 is a non-encrypted hash function, renowned for its high performance and low collision rate. The 32-bit version is suitable for applications that require speed and space efficiency. ',
       usage: 'Hash table, Bloom Filter, Cache system, Data sharding',
       security: 'Non-encryption algorithm, not suitable for security applications, but performs well in performance-critical scenarios'
     },
-    murmur128: {
+    murmur3_x86_128: {
       name: 'MurmurHash3 (128 bits)',
       description: 'The 128-bit variant of MurmurHash3 offers a larger hash space and a lower collision probability, making it suitable for large-scale datasets. ',
       usage: 'Large hash tables, data deduplication, consistent hashing in distributed systems, content addressing storage',
       security: 'Like the 32-bit version, it is a non-encrypted algorithm, but has a lower collision probability and is suitable for application scenarios that require high uniqueness.'
     },
-    cityhash64: {
-      name: 'CityHash64 (64-bit)',
-      description: 'CityHash64 is a non-cryptographic hash function developed by Google, optimized for modern CPU architectures, producing a 64-bit output.',
-      usage: 'Large-scale data processing, hash tables, string comparison, network applications',
-      security: 'Designed for speed and good hash distribution, but does not guarantee cryptographic security. Suitable for non-security-critical applications.'
-    },
-    cityhash128: {
-      name: 'CityHash128 (128-bit)',
-      description: 'CityHash128 extends the CityHash algorithm to provide a 128-bit hash value, offering a larger hash space and lower collision probability.',
-      usage: 'Large hash tables, data deduplication, distributed systems, content addressing storage',
-      security: 'Like CityHash64, it is optimized for performance rather than security. The larger output size provides better collision resistance for large datasets.'
-    },
-    cityhash256: {
-      name: 'CityHash256 (256-bit)',
-      description: 'CityHash256 further extends the CityHash algorithm to provide a 256-bit hash value, offering the largest hash space in the CityHash family.',
-      usage: 'Applications requiring extremely low collision probability, content addressing in large-scale systems',
-      security: 'Provides the best collision resistance in the CityHash family, though still not designed for cryptographic security purposes.'
+    murmur3_x64_128: {
+      name: 'MurmurHash3 (128 bits)',
+      description: 'The 128-bit variant of MurmurHash3 offers a larger hash space and a lower collision probability, making it suitable for large-scale datasets. ',
+      usage: 'Large hash tables, data deduplication, consistent hashing in distributed systems, content addressing storage',
+      security: 'Like the 32-bit version, it is a non-encrypted algorithm, but has a lower collision probability and is suitable for application scenarios that require high uniqueness.'
     },
     keccak224: {
       name: 'Keccak-224 (224-bit)',
@@ -345,13 +315,13 @@ export default {
       security: 'Provides strong security and excellent performance, faster than MD5 while being cryptographically secure'
     },
     shake128: {
-      name: 'SHAKE128 (Variable Length)',
+      name: 'SHAKE128 (128-bit)',
       description: 'SHAKE128 is part of the SHA-3 family, capable of producing variable-length outputs, defaulting to 256-bit hashes.',
       usage: 'Cryptographic applications requiring variable-length outputs, key derivation functions',
       security: 'Provides good security, is a NIST-recognized secure hash algorithm'
     },
     shake256: {
-      name: 'SHAKE256 (Variable Length)',
+      name: 'SHAKE256 (256-bit)',
       description: 'SHAKE256 is part of the SHA-3 family, capable of producing variable-length outputs, defaulting to 512-bit hashes.',
       usage: 'High-security applications requiring longer hash outputs, key derivation functions',
       security: 'Provides stronger security than SHAKE128, suitable for sensitive data applications'

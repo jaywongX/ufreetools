@@ -244,29 +244,11 @@ export default {
       usage: '中国商用密码应用、数字证书和电子政务系统',
       security: '设计类似SHA-2但优化了抗攻击性能，在中国广泛应用'
     },
-    ripemd128: {
-      name: 'RIPEMD-128 (128位)',
-      description: 'RIPEMD-128是RIPEMD哈希族的一个变种，产生128位(16字节)的哈希值，是RIPEMD-160的较短版本。',
-      usage: '数据完整性验证、数字签名应用、轻量级加密应用',
-      security: '比MD5提供更好的安全性，但弱于RIPEMD-160，不建议用于高安全性要求的场合'
-    },
     ripemd160: {
       name: 'RIPEMD-160 (160位)',
       description: 'RIPEMD-160是由欧洲RIPE项目开发的哈希函数，产生160位哈希值。',
       usage: '比特币地址生成、区块链应用',
       security: '比同长度的SHA-1更安全，但使用较少。'
-    },
-    ripemd256: {
-      name: 'RIPEMD-256 (256位)',
-      description: 'RIPEMD-256是RIPEMD哈希族的256位版本，提供更长的输出和更强的安全性。',
-      usage: '需要较高安全级别的数据完整性验证、加密系统、区块链应用',
-      security: '提供比RIPEMD-128和RIPEMD-160更强的抗碰撞能力，适合中等安全需求'
-    },
-    ripemd320: {
-      name: 'RIPEMD-320 (320位)',
-      description: 'RIPEMD-320是RIPEMD哈希族中最长的变体，产生320位(40字节)的哈希值，提供最高级别的安全性。',
-      usage: '高安全性场景的数据完整性验证、数字签名和加密协议',
-      security: '在RIPEMD系列中提供最强的安全性，适用于需要长期安全保障的应用'
     },
     crc32: {
       name: 'CRC32 (32位)',
@@ -274,35 +256,23 @@ export default {
       usage: '数据完整性校验、网络通信、数据传输验证',
       security: '不适用于密码学安全场景，主要用于错误检测而非安全防护'
     },
-    murmur32: {
+    murmur3_x86_32: {
       name: 'MurmurHash3 (32位)',
       description: 'MurmurHash3是一种非加密哈希函数，以高性能和低碰撞率著称，32位版本适用于需要速度和空间效率的应用。',
       usage: '哈希表、布隆过滤器、缓存系统、数据分片',
       security: '非加密算法，不适合安全应用，但在性能关键场景表现优异'
     },
-    murmur128: {
+    murmur3_x86_128: {
       name: 'MurmurHash3 (128位)',
       description: 'MurmurHash3的128位变体，提供更大的哈希空间和更低的碰撞概率，适用于大规模数据集。',
       usage: '大型哈希表、数据去重、分布式系统中的一致性哈希、内容寻址存储',
       security: '与32位版本一样是非加密算法，但碰撞概率更低，适合需要高唯一性的应用场景'
     },
-    cityhash64: {
-      name: 'CityHash64 (64位)',
-      description: 'CityHash64是由Google开发的非加密哈希函数，针对现代CPU架构优化，产生64位输出。',
-      usage: '大规模数据处理、哈希表、字符串比较、网络应用',
-      security: '设计目标是速度和良好的哈希分布，但不保证加密安全性。适用于非安全关键型应用。'
-    },
-    cityhash128: {
-      name: 'CityHash128 (128位)',
-      description: 'CityHash128扩展了CityHash算法以提供128位哈希值，提供更大的哈希空间和更低的碰撞概率。',
-      usage: '大型哈希表、数据去重、分布式系统、内容寻址存储',
-      security: '与CityHash64一样，它更注重性能而非安全性。较大的输出尺寸为大型数据集提供了更好的碰撞抗性。'
-    },
-    cityhash256: {
-      name: 'CityHash256 (256位)',
-      description: 'CityHash256进一步扩展了CityHash算法以提供256位哈希值，在CityHash系列中提供最大的哈希空间。',
-      usage: '需要极低碰撞概率的应用、大规模系统中的内容寻址',
-      security: '在CityHash系列中提供最佳的碰撞抗性，但仍然不是为加密安全目的而设计的。'
+    murmur3_x64_128: {
+      name: 'MurmurHash3 (128位)',
+      description: 'MurmurHash3的128位变体，提供更大的哈希空间和更低的碰撞概率，适用于大规模数据集。',
+      usage: '大型哈希表、数据去重、分布式系统中的一致性哈希、内容寻址存储',
+      security: '与32位版本一样是非加密算法，但碰撞概率更低，适合需要高唯一性的应用场景'
     },
     blake2b: {
       name: 'BLAKE2b (512位)',
@@ -347,13 +317,13 @@ export default {
       security: '在Keccak系列中提供最高安全级别，适用于最敏感的数据'
     },
     shake128: {
-      name: 'SHAKE128 (可变长度)',
+      name: 'SHAKE128 (128位)',
       description: 'SHAKE128是SHA-3家族的一部分，能够产生可变长度的输出，默认生成256位哈希值。',
       usage: '需要可变长度输出的加密应用，密钥派生函数',
       security: '提供良好的安全性，是NIST认可的安全哈希算法'
     },
     shake256: {
-      name: 'SHAKE256 (可变长度)',
+      name: 'SHAKE256 (256位)',
       description: 'SHAKE256是SHA-3家族的一部分，能够产生可变长度的输出，默认生成512位哈希值。',
       usage: '需要较长哈希输出的高安全性应用',
       security: '提供比SHAKE128更强的安全保证，适合敏感数据应用'
