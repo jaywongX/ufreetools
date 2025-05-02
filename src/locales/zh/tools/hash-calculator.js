@@ -257,19 +257,19 @@ export default {
       security: '不适用于密码学安全场景，主要用于错误检测而非安全防护'
     },
     murmur3_x86_32: {
-      name: 'MurmurHash3 (32位)',
+      name: 'MurmurHash3 x86 (32位)',
       description: 'MurmurHash3是一种非加密哈希函数，以高性能和低碰撞率著称，32位版本适用于需要速度和空间效率的应用。',
       usage: '哈希表、布隆过滤器、缓存系统、数据分片',
       security: '非加密算法，不适合安全应用，但在性能关键场景表现优异'
     },
     murmur3_x86_128: {
-      name: 'MurmurHash3 (128位)',
+      name: 'MurmurHash3 x86 (128位)',
       description: 'MurmurHash3的128位变体，提供更大的哈希空间和更低的碰撞概率，适用于大规模数据集。',
       usage: '大型哈希表、数据去重、分布式系统中的一致性哈希、内容寻址存储',
       security: '与32位版本一样是非加密算法，但碰撞概率更低，适合需要高唯一性的应用场景'
     },
     murmur3_x64_128: {
-      name: 'MurmurHash3 (128位)',
+      name: 'MurmurHash3 x64 (128位)',
       description: 'MurmurHash3的128位变体，提供更大的哈希空间和更低的碰撞概率，适用于大规模数据集。',
       usage: '大型哈希表、数据去重、分布式系统中的一致性哈希、内容寻址存储',
       security: '与32位版本一样是非加密算法，但碰撞概率更低，适合需要高唯一性的应用场景'

@@ -344,6 +344,12 @@ import { blake3 } from 'hash-wasm'
 import crc32 from 'crc-32'
 import murmurHash3 from 'murmurhash3js'
 import { sha512_224, sha512_256 } from 'js-sha512'
+import { Buffer } from 'buffer'
+
+// Make Buffer globally available
+if (typeof window !== 'undefined') {
+  window.Buffer = Buffer;
+}
 
 // 状态变量
 const { t } = useI18n()

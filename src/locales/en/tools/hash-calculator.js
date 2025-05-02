@@ -255,19 +255,19 @@ export default {
       security: 'Not suitable for cryptographic security purposes, primarily used for error detection rather than security protection'
     },
     murmur3_x86_32: {
-      name: 'MurmurHash3 (32-bit)',
+      name: 'MurmurHash3 x86 (32-bit)',
       description: 'MurmurHash3 is a non-encrypted hash function, renowned for its high performance and low collision rate. The 32-bit version is suitable for applications that require speed and space efficiency. ',
       usage: 'Hash table, Bloom Filter, Cache system, Data sharding',
       security: 'Non-encryption algorithm, not suitable for security applications, but performs well in performance-critical scenarios'
     },
     murmur3_x86_128: {
-      name: 'MurmurHash3 (128 bits)',
+      name: 'MurmurHash3 x86 (128 bits)',
       description: 'The 128-bit variant of MurmurHash3 offers a larger hash space and a lower collision probability, making it suitable for large-scale datasets. ',
       usage: 'Large hash tables, data deduplication, consistent hashing in distributed systems, content addressing storage',
       security: 'Like the 32-bit version, it is a non-encrypted algorithm, but has a lower collision probability and is suitable for application scenarios that require high uniqueness.'
     },
     murmur3_x64_128: {
-      name: 'MurmurHash3 (128 bits)',
+      name: 'MurmurHash3 x64 (128 bits)',
       description: 'The 128-bit variant of MurmurHash3 offers a larger hash space and a lower collision probability, making it suitable for large-scale datasets. ',
       usage: 'Large hash tables, data deduplication, consistent hashing in distributed systems, content addressing storage',
       security: 'Like the 32-bit version, it is a non-encrypted algorithm, but has a lower collision probability and is suitable for application scenarios that require high uniqueness.'
