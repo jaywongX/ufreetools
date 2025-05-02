@@ -109,11 +109,22 @@
         </div>
       </div>
       
-      <div class="flex justify-end">
+      <div class="flex gap-4 items-center">
+        <div class="flex items-center">
+          <input type="checkbox" id="autoCalculate" v-model="autoCalculate" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+          <label for="autoCalculate" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">{{ $t('tools.hash-calculator.options.autoCalculate') }}</label>
+        </div>
+        
+        <div class="flex items-center">
+          <input type="checkbox" id="showAllHashes" v-model="showAllHashes" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+          <label for="showAllHashes" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">{{ $t('tools.hash-calculator.options.showAllHashes') }}</label>
+        </div>
+        
         <button 
           @click="calculateHash" 
           :disabled="isCalculating || (!inputText && inputMode === 'text') || (!selectedFile && inputMode === 'file')"
           class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50"
+          v-if="!autoCalculate"
         >
           <span v-if="isCalculating" class="inline-flex items-center">
             <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -201,6 +212,65 @@
       </div>
     </div>
     
+    <!-- 全部哈希值结果 -->
+    <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700 mb-6" v-if="showAllHashes && Object.keys(allHashResults).length > 0">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">{{ $t('tools.hash-calculator.results.allHashesTitle') }}</h3>
+        <div class="flex gap-2">
+          <button 
+            @click="allHashDisplayFormat = 'hex'" 
+            class="px-3 py-1 text-sm rounded-md border"
+            :class="allHashDisplayFormat === 'hex' ? 'bg-primary text-white border-primary' : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300'"
+          >
+            {{ $t('tools.hash-calculator.results.hexFormat') }}
+          </button>
+          <button 
+            @click="allHashDisplayFormat = 'base64'" 
+            class="px-3 py-1 text-sm rounded-md border"
+            :class="allHashDisplayFormat === 'base64' ? 'bg-primary text-white border-primary' : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300'"
+          >
+            Base64
+          </button>
+          <button 
+            @click="exportAllHashes" 
+            class="px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-650"
+          >
+            {{ $t('tools.hash-calculator.results.export') }}
+          </button>
+        </div>
+      </div>
+      
+      <div class="overflow-x-auto">
+        <table class="min-w-full table-auto">
+          <thead class="bg-gray-50 dark:bg-gray-700">
+            <tr>
+              <th class="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-300">{{ $t('tools.hash-calculator.results.algorithm') }}</th>
+              <th class="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-300">{{ $t('tools.hash-calculator.results.digest') }}</th>
+              <th class="px-4 py-2 w-10"></th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+            <tr v-for="(result, algorithm) in allHashResults" :key="algorithm" class="hover:bg-gray-50 dark:hover:bg-gray-750">
+              <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">{{ result.name }}</td>
+              <td class="px-4 py-3 text-sm text-gray-700 dark:text-gray-300 font-mono break-all">
+                {{ allHashDisplayFormat === 'hex' ? result.hex : result.base64 }}
+              </td>
+              <td class="px-4 py-3 text-right">
+                <button 
+                  @click="copyToClipboard(allHashDisplayFormat === 'hex' ? result.hex : result.base64)" 
+                  class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
     <!-- 哈希验证区域 -->
     <div class="bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700" v-if="hashResult">
       <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.hash-calculator.verification.title') }}</h3>
@@ -260,11 +330,22 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
-import CryptoJS from 'crypto-js'
+import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import HashCalculatorArticle from './HashCalculatorArticle.vue'
-
+import CryptoJS from 'crypto-js'
+import sm3 from 'sm-crypto'
+import md2 from 'js-md2'
+import md4 from 'js-md4'
+import { shake128, shake256, keccak224, keccak256, keccak384, keccak512, cshake128, cshake256 } from 'js-sha3'
+import blake2b from 'blake2b'
+import blake2s from 'blake2s'
+import { blake3 } from 'hash-wasm'
+import crc32 from 'crc-32'
+import murmurHash3 from 'murmurhash3js'
+import { sha512_224, sha512_256 } from 'js-sha512'
+import { createRIPEMD128, createRIPEMD256, createRIPEMD320 } from '../../services/ripemd';
+import { cityHash64, cityHash128, cityHash256 } from '../../services/cityhash';
 // 状态变量
 const { t } = useI18n()
 const inputMode = ref('text')
@@ -276,9 +357,35 @@ const hashResultBase64 = ref('')
 const verifyHash = ref('')
 const isCalculating = ref(false)
 const encoding = ref('utf8')
+const textChangeTimeout = ref(null)
+const autoCalculate = ref(true)
+const showAllHashes = ref(false)
+const allHashResults = ref({})
+const allHashDisplayFormat = ref('hex') // 默认显示十六进制格式
 
 // 可用的哈希算法
 const hashAlgorithms = [
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.crc32.name'), 
+    value: 'crc32', 
+    description: t('tools.hash-calculator.algorithmDetails.crc32.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.crc32.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.crc32.security') 
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.md2.name'), 
+    value: 'md2', 
+    description: t('tools.hash-calculator.algorithmDetails.md2.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.md2.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.md2.security') 
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.md4.name'), 
+    value: 'md4', 
+    description: t('tools.hash-calculator.algorithmDetails.md4.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.md4.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.md4.security') 
+  },
   { 
     name: t('tools.hash-calculator.algorithmDetails.md5.name'), 
     value: 'md5', 
@@ -294,11 +401,25 @@ const hashAlgorithms = [
     security: t('tools.hash-calculator.algorithmDetails.sha1.security') 
   },
   { 
+    name: t('tools.hash-calculator.algorithmDetails.sha224.name'), 
+    value: 'sha224', 
+    description: t('tools.hash-calculator.algorithmDetails.sha224.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.sha224.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.sha224.security') 
+  },
+  { 
     name: t('tools.hash-calculator.algorithmDetails.sha256.name'), 
     value: 'sha256', 
     description: t('tools.hash-calculator.algorithmDetails.sha256.description'), 
     usage: t('tools.hash-calculator.algorithmDetails.sha256.usage'), 
     security: t('tools.hash-calculator.algorithmDetails.sha256.security') 
+  },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.dsha256.name'),
+    value: 'dsha256',
+    description: t('tools.hash-calculator.algorithmDetails.dsha256.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.dsha256.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.dsha256.security')
   },
   { 
     name: t('tools.hash-calculator.algorithmDetails.sha384.name'), 
@@ -315,6 +436,27 @@ const hashAlgorithms = [
     security: t('tools.hash-calculator.algorithmDetails.sha512.security') 
   },
   { 
+    name: t('tools.hash-calculator.algorithmDetails.sha512_224.name'), 
+    value: 'sha512_224', 
+    description: t('tools.hash-calculator.algorithmDetails.sha512_224.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.sha512_224.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.sha512_224.security') 
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.sha512_256.name'), 
+    value: 'sha512_256', 
+    description: t('tools.hash-calculator.algorithmDetails.sha512_256.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.sha512_256.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.sha512_256.security') 
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.sha3_224.name'), 
+    value: 'sha3_224', 
+    description: t('tools.hash-calculator.algorithmDetails.sha3_224.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.sha3_224.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.sha3_224.security') 
+  },
+  { 
     name: t('tools.hash-calculator.algorithmDetails.sha3_256.name'), 
     value: 'sha3_256', 
     description: t('tools.hash-calculator.algorithmDetails.sha3_256.description'), 
@@ -328,14 +470,766 @@ const hashAlgorithms = [
     usage: t('tools.hash-calculator.algorithmDetails.sha3_512.usage'), 
     security: t('tools.hash-calculator.algorithmDetails.sha3_512.security') 
   },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.keccak224.name'),
+    value: 'keccak224',
+    description: t('tools.hash-calculator.algorithmDetails.keccak224.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.keccak224.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.keccak224.security')
+  },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.keccak256.name'),
+    value: 'keccak256',
+    description: t('tools.hash-calculator.algorithmDetails.keccak256.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.keccak256.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.keccak256.security')
+  },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.keccak384.name'),
+    value: 'keccak384',
+    description: t('tools.hash-calculator.algorithmDetails.keccak384.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.keccak384.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.keccak384.security')
+  },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.keccak512.name'),
+    value: 'keccak512',
+    description: t('tools.hash-calculator.algorithmDetails.keccak512.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.keccak512.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.keccak512.security')
+  },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.shake128.name'),
+    value: 'shake128',
+    description: t('tools.hash-calculator.algorithmDetails.shake128.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.shake128.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.shake128.security')
+  },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.shake256.name'),
+    value: 'shake256',
+    description: t('tools.hash-calculator.algorithmDetails.shake256.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.shake256.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.shake256.security')
+  },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.cshake128.name'),
+    value: 'cshake128',
+    description: t('tools.hash-calculator.algorithmDetails.cshake128.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.cshake128.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.cshake128.security')
+  },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.cshake256.name'),
+    value: 'cshake256',
+    description: t('tools.hash-calculator.algorithmDetails.cshake256.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.cshake256.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.cshake256.security')
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.ripemd128.name'), 
+    value: 'ripemd128', 
+    description: t('tools.hash-calculator.algorithmDetails.ripemd128.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.ripemd128.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.ripemd128.security') 
+  },
   { 
     name: t('tools.hash-calculator.algorithmDetails.ripemd160.name'), 
     value: 'ripemd160', 
     description: t('tools.hash-calculator.algorithmDetails.ripemd160.description'), 
     usage: t('tools.hash-calculator.algorithmDetails.ripemd160.usage'), 
     security: t('tools.hash-calculator.algorithmDetails.ripemd160.security') 
-  }
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.ripemd256.name'), 
+    value: 'ripemd256', 
+    description: t('tools.hash-calculator.algorithmDetails.ripemd256.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.ripemd256.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.ripemd256.security') 
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.ripemd320.name'), 
+    value: 'ripemd320', 
+    description: t('tools.hash-calculator.algorithmDetails.ripemd320.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.ripemd320.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.ripemd320.security') 
+  },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.blake2b.name'),
+    value: 'blake2b',
+    description: t('tools.hash-calculator.algorithmDetails.blake2b.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.blake2b.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.blake2b.security')
+  },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.blake2s.name'),
+    value: 'blake2s',
+    description: t('tools.hash-calculator.algorithmDetails.blake2s.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.blake2s.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.blake2s.security')
+  },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.blake3.name'),
+    value: 'blake3',
+    description: t('tools.hash-calculator.algorithmDetails.blake3.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.blake3.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.blake3.security')
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.sm3.name'), 
+    value: 'sm3', 
+    description: t('tools.hash-calculator.algorithmDetails.sm3.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.sm3.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.sm3.security') 
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.murmur32.name'), 
+    value: 'murmur32', 
+    description: t('tools.hash-calculator.algorithmDetails.murmur32.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.murmur32.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.murmur32.security') 
+  },
+  { 
+    name: t('tools.hash-calculator.algorithmDetails.murmur128.name'), 
+    value: 'murmur128', 
+    description: t('tools.hash-calculator.algorithmDetails.murmur128.description'), 
+    usage: t('tools.hash-calculator.algorithmDetails.murmur128.usage'), 
+    security: t('tools.hash-calculator.algorithmDetails.murmur128.security') 
+  },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.cityhash64.name'),
+    value: 'cityhash64',
+    description: t('tools.hash-calculator.algorithmDetails.cityhash64.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.cityhash64.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.cityhash64.security')
+  },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.cityhash128.name'),
+    value: 'cityhash128',
+    description: t('tools.hash-calculator.algorithmDetails.cityhash128.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.cityhash128.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.cityhash128.security')
+  },
+  {
+    name: t('tools.hash-calculator.algorithmDetails.cityhash256.name'),
+    value: 'cityhash256',
+    description: t('tools.hash-calculator.algorithmDetails.cityhash256.description'),
+    usage: t('tools.hash-calculator.algorithmDetails.cityhash256.usage'),
+    security: t('tools.hash-calculator.algorithmDetails.cityhash256.security')
+  },
 ]
+
+async function calculateTextHash(selectedHash, text) {
+  try {
+    switch (selectedHash) {
+      case 'crc32':
+        const crc32Result = (crc32.str(text) >>> 0).toString(16).padStart(8, '0');
+        return {
+          hex: crc32Result,
+          base64: Buffer.from(crc32Result, 'hex').toString('base64')
+        }
+      case 'md2':
+        const md2Result = md2(text);
+        return {
+          hex: md2Result,
+          base64: Buffer.from(md2Result, 'hex').toString('base64')
+        }
+      case 'md4':
+        const md4Result = md4(text);
+        return {
+          hex: md4Result,
+          base64: Buffer.from(md4Result, 'hex').toString('base64')
+        }
+      case 'md5':
+        const md5Result = CryptoJS.MD5(text).toString(CryptoJS.enc.Hex);
+        return {
+          hex: md5Result,
+          base64: Buffer.from(md5Result, 'hex').toString('base64')
+        }
+      case 'sha1':
+        const sha1Result = CryptoJS.SHA1(text).toString(CryptoJS.enc.Hex);
+        return {
+          hex: sha1Result,
+          base64: Buffer.from(sha1Result, 'hex').toString('base64')
+        }
+      case 'sha224':
+        const sha224Result = CryptoJS.SHA224(text).toString(CryptoJS.enc.Hex);
+        return {
+          hex: sha224Result,
+          base64: Buffer.from(sha224Result, 'hex').toString('base64')
+        }
+      case 'sha256':
+        const sha256Result = CryptoJS.SHA256(text).toString(CryptoJS.enc.Hex);
+        return {
+          hex: sha256Result,
+          base64: Buffer.from(sha256Result, 'hex').toString('base64')
+        }
+      case 'dsha256':
+        const firstHash = CryptoJS.SHA256(text).toString(CryptoJS.enc.Hex)
+        const dsha256Result = CryptoJS.SHA256(CryptoJS.enc.Hex.parse(firstHash)).toString(CryptoJS.enc.Hex)
+        return {
+          hex: dsha256Result,
+          base64: Buffer.from(dsha256Result, 'hex').toString('base64')
+        }
+      case 'sha384':
+        const sha384Result = CryptoJS.SHA384(text).toString(CryptoJS.enc.Hex);
+        return {
+          hex: sha384Result,
+          base64: Buffer.from(sha384Result, 'hex').toString('base64')
+        }
+      case 'sha512':
+        const sha512Result = CryptoJS.SHA512(text).toString(CryptoJS.enc.Hex);
+        return {
+          hex: sha512Result,
+          base64: Buffer.from(sha512Result, 'hex').toString('base64')
+        }
+      case 'sha512_224':
+        const sha512_224Result = sha512_224(text)
+        return {
+          hex: sha512_224Result,
+          base64: Buffer.from(sha512_224Result, 'hex').toString('base64')
+        }
+      case 'sha512_256':
+        const sha512_256Result = sha512_256(text)
+        return {
+          hex: sha512_256Result,
+          base64: Buffer.from(sha512_256Result, 'hex').toString('base64')
+        }
+      case 'sha3_224':
+        const sha3_224Result = CryptoJS.SHA3(text, { outputLength: 224 }).toString(CryptoJS.enc.Hex)
+        return {
+          hex: sha3_224Result,
+          base64: Buffer.from(sha3_224Result, 'hex').toString('base64')
+        }
+      case 'sha3_256':
+        const sha3_256Result = CryptoJS.SHA3(text, { outputLength: 256 }).toString(CryptoJS.enc.Hex)
+        return {
+          hex: sha3_256Result,
+          base64: Buffer.from(sha3_256Result, 'hex').toString('base64')
+        }
+      case 'sha3_384':
+        const sha3_384Result = CryptoJS.SHA3(text, { outputLength: 384 }).toString(CryptoJS.enc.Hex)
+        return {
+          hex: sha3_384Result,
+          base64: Buffer.from(sha3_384Result, 'hex').toString('base64')
+        }
+      case 'sha3_512':
+        const sha3_512Result = CryptoJS.SHA3(text, { outputLength: 512 }).toString(CryptoJS.enc.Hex)
+        return {
+          hex: sha3_512Result,
+          base64: Buffer.from(sha3_512Result, 'hex').toString('base64')
+        }
+      case 'keccak224':
+        const keccak224Result = keccak224(text)
+        return {
+          hex: keccak224Result,
+          base64: Buffer.from(keccak224Result, 'hex').toString('base64')
+        }
+      case 'keccak256':
+        const keccak256Result = keccak256(text)
+        return {
+          hex: keccak256Result,
+          base64: Buffer.from(keccak256Result, 'hex').toString('base64')
+        }
+      case 'keccak384':
+        const keccak384Result = keccak384(text)
+        return {
+          hex: keccak384Result,
+          base64: Buffer.from(keccak384Result, 'hex').toString('base64')
+        }
+      case 'keccak512':
+        const keccak512Result = keccak512(text)
+        return {
+          hex: keccak512Result,
+          base64: Buffer.from(keccak512Result, 'hex').toString('base64')
+        }
+      case 'shake128':
+        const shake128Instance = shake128.create(128)
+        shake128Instance.update(text)
+        const shake128Result = shake128Instance.hex()
+        return {
+          hex: shake128Result,
+          base64: Buffer.from(shake128Result, 'hex').toString('base64')
+        }
+      case 'shake256':
+        const shake256Instance = shake256.create(256)
+        shake256Instance.update(text)
+        const shake256Result = shake256Instance.hex()
+        return {
+          hex: shake256Result,
+          base64: Buffer.from(shake256Result, 'hex').toString('base64')
+        }
+      case 'cshake128':
+        const cshake128Output = cshake128.create(256, 'CustomizationString', 'FunctionName')
+        cshake128Output.update(text)
+        const cshake128Result = cshake128Output.hex()
+        return {
+          hex: cshake128Result,
+          base64: Buffer.from(cshake128Result, 'hex').toString('base64')
+        }
+      case 'cshake256':
+        const cshake256Output = cshake256.create(512, 'CustomizationString', 'FunctionName')
+        cshake256Output.update(text)
+        const cshake256Result = cshake256Output.hex()
+        return {
+          hex: cshake256Result,
+          base64: Buffer.from(cshake256Result, 'hex').toString('base64')
+        }
+      case 'ripemd128':
+        const ripemd128 = createRIPEMD128()
+        const ripemd128Result = ripemd128.update(text).digest('hex')
+        return {
+          hex: ripemd128Result,
+          base64: Buffer.from(ripemd128Result, 'hex').toString('base64')
+        }
+      case 'ripemd160':
+        const ripemd160Result = CryptoJS.RIPEMD160(text).toString(CryptoJS.enc.Hex)
+        return {
+          hex: ripemd160Result,
+          base64: Buffer.from(ripemd160Result, 'hex').toString('base64')
+        }
+      case 'ripemd256':
+        const ripemd256 = createRIPEMD256()
+        const ripemd256Result = ripemd256.update(text).digest('hex')
+        return {
+          hex: ripemd256Result,
+          base64: Buffer.from(ripemd256Result, 'hex').toString('base64')
+        }
+      case 'ripemd320':
+        const ripemd320 = createRIPEMD320()
+        const ripemd320Result = ripemd320.update(text).digest('hex')
+        return {
+          hex: ripemd320Result,
+          base64: Buffer.from(ripemd320Result, 'hex').toString('base64')
+        }
+      case 'blake2b':
+        const blake2bOutput = blake2b(64)
+        blake2bOutput.update(Buffer.from(text))
+        const blake2bResult = Buffer.from(blake2bOutput.digest()).toString('hex')
+        return {
+          hex: blake2bResult,
+          base64: Buffer.from(blake2bResult, 'hex').toString('base64')
+        }
+      case 'blake2s':
+        const blake2sOutput = blake2s(32)
+        blake2sOutput.update(Buffer.from(text))
+        const blake2sResult = Buffer.from(blake2sOutput.digest()).toString('hex')
+        return {
+          hex: blake2sResult,
+          base64: Buffer.from(blake2sResult, 'hex').toString('base64')
+        }
+      case 'blake3':
+        const blake3Result = await blake3(text)
+        return {
+          hex: blake3Result,
+          base64: Buffer.from(blake3Result, 'hex').toString('base64')
+        }
+      case 'sm3':
+        const sm3Result = sm3.sm3(text)
+        return {
+          hex: sm3Result,
+          base64: Buffer.from(sm3Result, 'hex').toString('base64')
+        }
+      case 'murmur32':
+        const murmur32Result = murmurHash3.x86.hash32(text).toString(16).padStart(8, '0')
+        return {
+          hex: murmur32Result,
+          base64: Buffer.from(murmur32Result, 'hex').toString('base64')
+        }
+      case 'murmur128':
+        const murmur128Result = murmurHash3.x64.hash128(text)
+        return {
+          hex: murmur128Result,
+          base64: Buffer.from(murmur128Result, 'hex').toString('base64')
+        }
+      case 'cityhash64':
+        const cityHash64Result = cityHash64(text)
+        return {
+          hex: cityHash64Result,
+          base64: Buffer.from(cityHash64Result, 'hex').toString('base64')
+        }
+      case 'cityhash128':
+        const cityHash128Result = cityHash128(text)
+        return {
+          hex: cityHash128Result,
+          base64: Buffer.from(cityHash128Result, 'hex').toString('base64')
+        }
+      case 'cityhash256':
+        const cityHash256Result = cityHash256(text)
+        return {
+          hex: cityHash256Result,
+          base64: Buffer.from(cityHash256Result, 'hex').toString('base64')
+        }
+      default:
+        console.error(t('tools.hash-calculator.messages.algorithmError'));
+    return {
+          hex: '',
+          base64: ''
+        }
+    }
+  } catch (error) {
+    return Promise.reject(new Error(`${t('tools.hash-calculator.messages.processingError')}: ${error.message}`))
+  }
+}
+
+// 计算文件的哈希值
+function calculateFileHash(selectedHash) {
+  return new Promise((resolve, reject) => {
+    if (!selectedFile.value) {
+      reject(new Error(t('tools.hash-calculator.messages.readError')))
+      return
+    }
+    
+    const reader = new FileReader()
+    
+    reader.onload = async function(event) {
+      try {
+        const fileData = new Uint8Array(event.target.result);
+        
+        switch (selectedHash) {
+          case 'crc32':
+            const crc32Result = (crc32.buf(fileData) >>> 0).toString(16).padStart(8, '0');
+            resolve({
+              hex: crc32Result,
+              base64: Buffer.from(crc32Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'md2':
+            const md2Result = md2(Buffer.from(fileData).toString('binary'));
+            resolve({
+              hex: md2Result,
+              base64: Buffer.from(md2Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'md4':
+            const md4Result = md4(Buffer.from(fileData).toString('binary'));
+            resolve({
+              hex: md4Result,
+              base64: Buffer.from(md4Result, 'hex').toString('base64')
+            });
+            return;
+          
+        case 'md5':
+            const md5Result = CryptoJS.MD5(CryptoJS.lib.WordArray.create(fileData)).toString(CryptoJS.enc.Hex);
+            resolve({
+              hex: md5Result,
+              base64: Buffer.from(md5Result, 'hex').toString('base64')
+            });
+            return;
+          
+        case 'sha1':
+            const sha1Result = CryptoJS.SHA1(CryptoJS.lib.WordArray.create(fileData)).toString(CryptoJS.enc.Hex);
+            resolve({
+              hex: sha1Result,
+              base64: Buffer.from(sha1Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'sha224':
+            const sha224Result = CryptoJS.SHA224(CryptoJS.lib.WordArray.create(fileData)).toString(CryptoJS.enc.Hex);
+            resolve({
+              hex: sha224Result,
+              base64: Buffer.from(sha224Result, 'hex').toString('base64')
+            });
+            return;
+          
+        case 'sha256':
+            const sha256Result = CryptoJS.SHA256(CryptoJS.lib.WordArray.create(fileData)).toString(CryptoJS.enc.Hex);
+            resolve({
+              hex: sha256Result,
+              base64: Buffer.from(sha256Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'dsha256':
+            const firstHashData = CryptoJS.SHA256(CryptoJS.lib.WordArray.create(fileData)).toString(CryptoJS.enc.Hex);
+            const dsha256Result = CryptoJS.SHA256(CryptoJS.enc.Hex.parse(firstHashData)).toString(CryptoJS.enc.Hex);
+            resolve({
+              hex: dsha256Result,
+              base64: Buffer.from(dsha256Result, 'hex').toString('base64')
+            });
+            return;
+          
+        case 'sha384':
+            const sha384Result = CryptoJS.SHA384(CryptoJS.lib.WordArray.create(fileData)).toString(CryptoJS.enc.Hex);
+            resolve({
+              hex: sha384Result,
+              base64: Buffer.from(sha384Result, 'hex').toString('base64')
+            });
+            return;
+          
+        case 'sha512':
+            const sha512Result = CryptoJS.SHA512(CryptoJS.lib.WordArray.create(fileData)).toString(CryptoJS.enc.Hex);
+            resolve({
+              hex: sha512Result,
+              base64: Buffer.from(sha512Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'sha512_224':
+            const sha512_224Result = sha512_224(fileData);
+            resolve({
+              hex: sha512_224Result,
+              base64: Buffer.from(sha512_224Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'sha512_256':
+            const sha512_256Result = sha512_256(fileData);
+            resolve({
+              hex: sha512_256Result,
+              base64: Buffer.from(sha512_256Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'sha3_224':
+            const sha3_224Result = CryptoJS.SHA3(CryptoJS.lib.WordArray.create(fileData), { outputLength: 224 }).toString(CryptoJS.enc.Hex);
+            resolve({
+              hex: sha3_224Result,
+              base64: Buffer.from(sha3_224Result, 'hex').toString('base64')
+            });
+            return;
+          
+        case 'sha3_256':
+            const sha3_256Result = CryptoJS.SHA3(CryptoJS.lib.WordArray.create(fileData), { outputLength: 256 }).toString(CryptoJS.enc.Hex);
+            resolve({
+              hex: sha3_256Result,
+              base64: Buffer.from(sha3_256Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'sha3_384':
+            const sha3_384Result = CryptoJS.SHA3(CryptoJS.lib.WordArray.create(fileData), { outputLength: 384 }).toString(CryptoJS.enc.Hex);
+            resolve({
+              hex: sha3_384Result,
+              base64: Buffer.from(sha3_384Result, 'hex').toString('base64')
+            });
+            return;
+          
+        case 'sha3_512':
+            const sha3_512Result = CryptoJS.SHA3(CryptoJS.lib.WordArray.create(fileData), { outputLength: 512 }).toString(CryptoJS.enc.Hex);
+            resolve({
+              hex: sha3_512Result,
+              base64: Buffer.from(sha3_512Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'keccak224':
+            const keccak224Instance = keccak224.create();
+            keccak224Instance.update(fileData);
+            const keccak224Result = keccak224Instance.hex();
+      resolve({
+              hex: keccak224Result,
+              base64: Buffer.from(keccak224Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'keccak256':
+            const keccak256Instance = keccak256.create();
+            keccak256Instance.update(fileData);
+            const keccak256Result = keccak256Instance.hex();
+            resolve({
+              hex: keccak256Result,
+              base64: Buffer.from(keccak256Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'keccak384':
+            const keccak384Instance = keccak384.create();
+            keccak384Instance.update(fileData);
+            const keccak384Result = keccak384Instance.hex();
+            resolve({
+              hex: keccak384Result,
+              base64: Buffer.from(keccak384Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'keccak512':
+            const keccak512Instance = keccak512.create();
+            keccak512Instance.update(fileData);
+            const keccak512Result = keccak512Instance.hex();
+            resolve({
+              hex: keccak512Result,
+              base64: Buffer.from(keccak512Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'shake128':
+            const shake128FileInstance = shake128.create(128)
+            shake128FileInstance.update(new Uint8Array(fileData))
+            const shake128FileResult = shake128FileInstance.hex()
+            resolve({
+              hex: shake128FileResult,
+              base64: Buffer.from(shake128FileResult, 'hex').toString('base64')
+            })
+            return
+          
+          case 'shake256':
+            const shake256FileInstance = shake256.create(256)
+            shake256FileInstance.update(new Uint8Array(fileData))
+            const shake256FileResult = shake256FileInstance.hex()
+            resolve({
+              hex: shake256FileResult,
+              base64: Buffer.from(shake256FileResult, 'hex').toString('base64')
+            })
+            return
+          
+          case 'cshake128':
+            const cshake128Instance = cshake128.create(256, 'CustomizationString', 'FunctionName');
+            cshake128Instance.update(new Uint8Array(fileData));
+            const cshake128Result = cshake128Instance.hex();
+            resolve({
+              hex: cshake128Result,
+              base64: Buffer.from(cshake128Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'cshake256':
+            const cshake256Instance = cshake256.create(512, 'CustomizationString', 'FunctionName');
+            cshake256Instance.update(new Uint8Array(fileData));
+            const cshake256Result = cshake256Instance.hex();
+            resolve({
+              hex: cshake256Result,
+              base64: Buffer.from(cshake256Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'ripemd128':
+            const ripemd128 = createRIPEMD128();
+            const ripemd128Result = ripemd128.update(fileData).digest('hex');
+            resolve({
+              hex: ripemd128Result,
+              base64: Buffer.from(ripemd128Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'ripemd160':
+            const ripemd160Result = CryptoJS.RIPEMD160(CryptoJS.lib.WordArray.create(fileData)).toString(CryptoJS.enc.Hex);
+            resolve({
+              hex: ripemd160Result,
+              base64: Buffer.from(ripemd160Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'ripemd256':
+            const ripemd256 = createRIPEMD256();
+            const ripemd256Result = ripemd256.update(Buffer.from(fileData)).digest('hex');
+            resolve({
+              hex: ripemd256Result,
+              base64: Buffer.from(ripemd256Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'ripemd320':
+            const ripemd320 = createRIPEMD320();
+            const ripemd320Result = ripemd320.update(Buffer.from(fileData)).digest('hex');
+            resolve({
+              hex: ripemd320Result,
+              base64: Buffer.from(ripemd320Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'blake2b':
+            const blake2bOutput = blake2b(64);
+            blake2bOutput.update(Buffer.from(fileData));
+            const blake2bResult = Buffer.from(blake2bOutput.digest()).toString('hex');
+            resolve({
+              hex: blake2bResult,
+              base64: Buffer.from(blake2bResult, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'blake2s':
+            const blake2sOutput = blake2s(32);
+            blake2sOutput.update(Buffer.from(fileData));
+            const blake2sResult = Buffer.from(blake2sOutput.digest()).toString('hex');
+            resolve({
+              hex: blake2sResult,
+              base64: Buffer.from(blake2sResult, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'blake3':
+            const blake3Result = await blake3(fileData);
+            resolve({
+              hex: blake3Result,
+              base64: Buffer.from(blake3Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'sm3':
+            const sm3FileResult = sm3.sm3(new Uint8Array(fileData))
+            resolve({
+              hex: sm3FileResult,
+              base64: Buffer.from(sm3FileResult, 'hex').toString('base64')
+            })
+            return
+          
+          case 'murmur32':
+            const murmur32Result = murmurHash3.x86.hash32(Buffer.from(fileData).toString('binary')).toString(16).padStart(8, '0');
+            resolve({
+              hex: murmur32Result,
+              base64: Buffer.from(murmur32Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'murmur128':
+            const murmur128Result = murmurHash3.x64.hash128(Buffer.from(fileData).toString('binary'));
+            resolve({
+              hex: murmur128Result,
+              base64: Buffer.from(murmur128Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'cityhash64':
+            const cityHashData = new Uint8Array(fileData);
+            const cityHashResult = cityHash64(cityHashData);
+            resolve({
+              hex: cityHashResult,
+              base64: Buffer.from(cityHashResult, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'cityhash128':
+            const cityHash128Data = new Uint8Array(fileData);
+            const cityHash128Result = cityHash128(cityHash128Data);
+            resolve({
+              hex: cityHash128Result,
+              base64: Buffer.from(cityHash128Result, 'hex').toString('base64')
+            });
+            return;
+          
+          case 'cityhash256':
+            const cityHash256Data = new Uint8Array(fileData);
+            const cityHash256Result = cityHash256(cityHash256Data);
+            resolve({
+              hex: cityHash256Result,
+              base64: Buffer.from(cityHash256Result, 'hex').toString('base64')
+            });
+            return;
+          
+          default:
+            console.error(t('tools.hash-calculator.messages.algorithmError'));
+            resolve({
+              hex: '',
+              base64: ''
+            });
+            return;
+        }
+      } catch (error) {
+        reject(new Error(`${t('tools.hash-calculator.messages.processingError')}: ${error.message}`));
+      }
+    }
+    
+    reader.onerror = function() {
+      reject(new Error(t('tools.hash-calculator.messages.readError')))
+    }
+    
+    reader.readAsArrayBuffer(selectedFile.value)
+  })
+}
 
 // 获取当前选择的算法名称
 function getSelectedAlgorithmName() {
@@ -361,133 +1255,58 @@ function getSelectedAlgorithmSecurity() {
   return algorithm ? algorithm.security : ''
 }
 
-// 格式化文件大小显示
-function formatFileSize(bytes) {
-  if (bytes === 0) return '0 Bytes'
-  
-  const k = 1024
-  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
-  const i = Math.floor(Math.log(bytes) / Math.log(k))
-  
-  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
-}
-
-// 处理文件上传
-function handleFileUpload(event) {
-  selectedFile.value = event.target.files[0]
-  hashResult.value = ''
-  hashResultBase64.value = ''
-  verifyHash.value = ''
-}
-
-// 使用Base64编码字节数组
-function arrayBufferToBase64(buffer) {
-  let binary = ''
-  const bytes = new Uint8Array(buffer)
-  for (let i = 0; i < bytes.byteLength; i++) {
-    binary += String.fromCharCode(bytes[i])
-  }
-  return btoa(binary)
-}
-
-// 计算文件的哈希值
-function calculateFileHash() {
-  return new Promise((resolve, reject) => {
-    if (!selectedFile.value) {
-      reject(new Error($t('tools.hash-calculator.messages.readError')))
-      return
-    }
-    
-    const reader = new FileReader()
-    
-    reader.onload = function(event) {
-      const wordArray = CryptoJS.lib.WordArray.create(event.target.result)
-      let hash
-
-      switch (selectedHash.value) {
-        case 'md5':
-          hash = CryptoJS.MD5(wordArray)
-          break
-        case 'sha1':
-          hash = CryptoJS.SHA1(wordArray)
-          break
-        case 'sha256':
-          hash = CryptoJS.SHA256(wordArray)
-          break
-        case 'sha384':
-          hash = CryptoJS.SHA384(wordArray)
-          break
-        case 'sha512':
-          hash = CryptoJS.SHA512(wordArray)
-          break
-        case 'sha3_256':
-          hash = CryptoJS.SHA3(wordArray, { outputLength: 256 })
-          break
-        case 'sha3_512':
-          hash = CryptoJS.SHA3(wordArray, { outputLength: 512 })
-          break
-        case 'ripemd160':
-          hash = CryptoJS.RIPEMD160(wordArray)
-          break
-        default:
-          hash = CryptoJS.SHA256(wordArray)
-      }
-
-      resolve({
-        hex: hash.toString(CryptoJS.enc.Hex),
-        base64: hash.toString(CryptoJS.enc.Base64)
-      })
-    }
-    
-    reader.onerror = function() {
-      reject(new Error(t('tools.hash-calculator.messages.readError')))
-    }
-    
-    reader.readAsArrayBuffer(selectedFile.value)
-  })
-}
-
-// 计算文本的哈希值
-function calculateTextHash() {
-  if (!inputText.value) {
-    return Promise.reject(new Error(t('tools.hash-calculator.messages.invalidInput')))
+// 计算所有哈希值
+async function calculateAllHashes() {
+  if(!showAllHashes.value){
+    return
   }
   
-  let hash
+  isCalculating.value = true
+  allHashResults.value = {}
   
-  switch (selectedHash.value) {
-    case 'md5':
-      hash = CryptoJS.MD5(inputText.value)
-      break
-    case 'sha1':
-      hash = CryptoJS.SHA1(inputText.value)
-      break
-    case 'sha256':
-      hash = CryptoJS.SHA256(inputText.value)
-      break
-    case 'sha384':
-      hash = CryptoJS.SHA384(inputText.value)
-      break
-    case 'sha512':
-      hash = CryptoJS.SHA512(inputText.value)
-      break
-    case 'sha3_256':
-      hash = CryptoJS.SHA3(inputText.value, { outputLength: 256 })
-      break
-    case 'sha3_512':
-      hash = CryptoJS.SHA3(inputText.value, { outputLength: 512 })
-      break
-    case 'ripemd160':
-      hash = CryptoJS.RIPEMD160(inputText.value)
-      break
-    default:
-      hash = CryptoJS.SHA256(inputText.value)
+  try {
+    // 每批处理5个算法
+    const batchSize = 5
+    const totalAlgorithms = hashAlgorithms.length
+    
+    for (let i = 0; i < totalAlgorithms; i += batchSize) {
+      const batch = hashAlgorithms.slice(i, i + batchSize)
+      await Promise.all(batch.map(async (algorithm) => {
+        try {
+          let result
+          
+          if (inputMode.value === 'text') {
+            if (!inputText.value) return
+            result = await calculateTextHash(algorithm.value, inputText.value)
+          } else {
+            if (!selectedFile.value) return
+            result = await calculateFileHash(algorithm.value)
+          }
+          
+          allHashResults.value[algorithm.value] = {
+            name: algorithm.name,
+            hex: result.hex,
+            base64: result.base64
+          }
+        } catch (error) {
+          console.error(`Error calculating ${algorithm.value}:`, error)
+          allHashResults.value[algorithm.value] = {
+            name: algorithm.name,
+            hex: t('tools.hash-calculator.messages.calculationError'),
+            base64: ''
+          }
+        }
+      }))
+      
+      // 给UI一点时间来更新，防止页面卡死
+      await new Promise(resolve => setTimeout(resolve, 10))
+    }
+  } catch (error) {
+    console.error(error)
+    alert(t('tools.hash-calculator.messages.processingError', {error: error.message}))
+  } finally {
+    isCalculating.value = false
   }
-  
-  return Promise.resolve({
-    hex: hash.toString(CryptoJS.enc.Hex),
-    base64: hash.toString(CryptoJS.enc.Base64)
-  })
 }
 
 // 计算哈希值
@@ -501,13 +1320,17 @@ async function calculateHash() {
     let result
     
     if (inputMode.value === 'text') {
-      result = await calculateTextHash()
+      if (!inputText.value) {
+        return Promise.reject(new Error(t('tools.hash-calculator.messages.invalidInput')))
+      }
+      result = await calculateTextHash(selectedHash.value, inputText.value)
     } else {
-      result = await calculateFileHash()
+      result = await calculateFileHash(selectedHash.value)
     }
     
     hashResult.value = result.hex
     hashResultBase64.value = result.base64
+    verifyHash.value = result.hex
   } catch (error) {
     alert(t('tools.hash-calculator.messages.processingError', {error: error.message}))
   } finally {
@@ -525,11 +1348,104 @@ function copyToClipboard(text) {
   })
 }
 
-// 页面加载时执行
-onMounted(() => {
-  // 如果用户访问的是来自不安全源的页面，提示安全风险
-  if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost') {
-    console.warn(t('tools.hash-calculator.security.warning'))
+// Add these watch functions after the component setup variables
+watch(inputText, () => {
+  if (autoCalculate.value && inputMode.value === 'text') {
+    if (textChangeTimeout.value) clearTimeout(textChangeTimeout.value)
+    textChangeTimeout.value = setTimeout(() => {
+      calculateHash()
+      calculateAllHashes()
+    }, 500) // Debounce for better performance
   }
 })
+
+watch(selectedHash, () => {
+  if (autoCalculate.value && ((inputText.value && inputMode.value === 'text') || 
+      (selectedFile.value && inputMode.value === 'file'))) {
+    calculateHash()
+  }
+})
+
+watch(selectedFile, () => {
+  if (autoCalculate.value && inputMode.value === 'file' && selectedFile.value) {
+    calculateHash()
+    calculateAllHashes()
+  }
+})
+
+watch(encoding, () => {
+  if (autoCalculate.value && inputMode.value === 'text' && inputText.value) {
+    calculateHash()
+    calculateAllHashes()
+  }
+})
+
+watch(inputMode, () => {
+  if (autoCalculate.value) {
+    if ((inputMode.value === 'text' && inputText.value) || 
+        (inputMode.value === 'file' && selectedFile.value)) {
+      calculateHash()
+    }
+  }
+})
+
+// Also define the handleFileUpload function if it's missing
+function handleFileUpload(event) {
+  const file = event.target.files[0]
+  if (file) {
+    selectedFile.value = file
+    if (autoCalculate.value) {
+      calculateHash()
+      calculateAllHashes()
+    }
+  }
+}
+
+// Add this to formatFileSize function if it's missing
+function formatFileSize(bytes) {
+  if (bytes === 0) return '0 Bytes'
+  const k = 1024
+  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
+  const i = Math.floor(Math.log(bytes) / Math.log(k))
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
+}
+
+// 在现有watch函数后添加对showAllHashes的监听
+watch(showAllHashes, (newValue) => {
+  if (newValue && ((inputText.value && inputMode.value === 'text') || 
+      (selectedFile.value && inputMode.value === 'file'))) {
+    if(showAllHashes.value){
+      calculateAllHashes()
+    }
+  }
+})
+
+// 添加导出所有哈希值功能
+function exportAllHashes() {
+  const format = allHashDisplayFormat.value
+  let csvContent = 'data:text/csv;charset=utf-8,'
+  
+  // 添加CSV头
+  csvContent += `Algorithm,${format === 'hex' ? 'Hex Hash' : 'Base64 Hash'}\n`
+  
+  // 添加每个算法的哈希值
+  Object.entries(allHashResults.value).forEach(([key, result]) => {
+    const hashValue = format === 'hex' ? result.hex : result.base64
+    csvContent += `${result.name},"${hashValue}"\n`
+  })
+  
+  // 创建下载链接
+  const encodedUri = encodeURI(csvContent)
+  const link = document.createElement('a')
+  link.setAttribute('href', encodedUri)
+  link.setAttribute('download', `hash_results_${format}_${new Date().toISOString().slice(0,10)}.csv`)
+  document.body.appendChild(link)
+  
+  // 触发下载
+  link.click()
+  
+  // 清理DOM
+  document.body.removeChild(link)
+}
+
 </script> 
