@@ -352,5 +352,22 @@ export default {
     other: 'Other Tags',
     sky: 'Sky Type Tags',
     violet: 'Violet Type Tags'
-  }
+  },
+
+  // Added from the code block
+  coordinate: 'Coordinate',
+  conversion: 'Conversion',
+  gis: 'GIS',
+  mapping: 'Mapping',
+  geodetic: 'Geodetic',
+  geography: 'Geography',
+  geolocation: 'Geolocation',
+  location: 'Location',
+  wgs84: 'WGS-84',
+  gcj02: 'GCJ-02',
+  bd09: 'BD-09',
+  utm: 'UTM',
+  mercator: 'Mercator',
+  projection: 'Projection',
+  geocoding: 'Geocoding',
 }

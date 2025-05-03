@@ -94,6 +94,8 @@ import hexadecimalCaseConverter from './tools/hexadecimal-case-converter.js';
 import jfifJpgConverter from './tools/jfif-jpg-converter.js';
 import jpgJfifConverter from './tools/jpg-jfif-converter.js';
 import sealGenerator from './tools/seal-generator.js';
+import coordinateConverter from './tools/coordinate-converter.js';
+
 export default {
     common: {
       tryNow: 'Try Now',
@@ -222,4 +224,5 @@ export default {
     'jfif-jpg-converter': jfifJpgConverter,
     'jpg-jfif-converter': jpgJfifConverter,
     'seal-generator': sealGenerator,
+    'coordinate-converter': coordinateConverter,
   }

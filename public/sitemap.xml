@@ -283,7 +283,7 @@
   </url>
   <url>
     <loc>https://www.ufreetools.com/en/tool/hash-calculator</loc>
-    <lastmod>2025-04-13</lastmod>
+    <lastmod>2025-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/hash-calculator" />
@@ -1051,7 +1051,7 @@
   </url>
   <url>
     <loc>https://www.ufreetools.com/zh/tool/hash-calculator</loc>
-    <lastmod>2025-04-13</lastmod>
+    <lastmod>2025-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/hash-calculator" />
@@ -1649,4 +1649,19 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/seal-generator" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/seal-generator" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/tool/coordinate-converter</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/coordinate-converter" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/coordinate-converter" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/coordinate-converter</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/coordinate-converter" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/coordinate-converter" />
 </urlset>
