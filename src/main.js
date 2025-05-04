@@ -85,6 +85,7 @@ const lazyComponentMap = {
   'GifFrameExtractor': () => import('./components/tools/GifFrameExtractor.vue'),
   'VerticalToHorizontalImage': () => import('./components/tools/VerticalToHorizontalImage.vue'),
   'HorizontalToVerticalImage': () => import('./components/tools/HorizontalToVerticalImage.vue'),
+  'InstagramPostGenerator': () => import('./components/tools/InstagramPostGenerator.vue'),
   'JfifJpgConverter': () => import('./components/tools/JfifJpgConverter.vue'),
   'JpgJfifConverter': () => import('./components/tools/JpgJfifConverter.vue'),
   'SealGenerator': () => import('./components/tools/SealGenerator.vue'),
@@ -142,9 +143,9 @@ const lazyComponentMap = {
   'NameGenerator': () => import('./components/tools/NameGenerator.vue'),
   'TravelBudgetPlanner': () => import('./components/tools/TravelBudgetPlanner.vue'),
   'PersonalAccountBook': () => import('./components/tools/PersonalAccountBook.vue'),
-  'InstagramPostGenerator': () => import('./components/tools/InstagramPostGenerator.vue'),
   'CashAppFeeCalculator': () => import('./components/tools/CashAppFeeCalculator.vue'),
   'HexadecimalCaseConverter': () => import('./components/tools/HexadecimalCaseConverter.vue'),
+  'CoordinateConverter': () => import('./components/tools/CoordinateConverter.vue'),
 }
 
 // 初始化Vercel Analytics

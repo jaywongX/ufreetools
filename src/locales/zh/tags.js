@@ -351,5 +351,22 @@ export default {
     other: '其他标签',
     sky: 'sky类标签',
     violet: 'violet类标签'
-  }
+  },
+
+  // Add these entries to the existing tags object:
+  coordinate: '坐标',
+  conversion: '转换',
+  gis: 'GIS',
+  mapping: '地图',
+  geodetic: '大地测量',
+  geography: '地理',
+  geolocation: '地理位置',
+  location: '位置',
+  wgs84: 'WGS-84',
+  gcj02: 'GCJ-02',
+  bd09: 'BD-09',
+  utm: 'UTM',
+  mercator: '墨卡托',
+  projection: '投影',
+  geocoding: '地理编码',
 }
