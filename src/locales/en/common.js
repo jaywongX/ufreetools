@@ -41,6 +41,7 @@ export default {
   backToHome: "Back to home",
   submit: 'Submit',
   submitting: 'Submitting...',
+  useTool: 'Use Tool',
   favorites: {
     title: 'My Favorites',
     description: 'View and manage your favorite tools',

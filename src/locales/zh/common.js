@@ -41,6 +41,7 @@ export default {
   backToHome: "返回首页",
   submit: '提交',
   submitting: '提交中...',
+  useTool: '使用工具',
   favorites: {
     title: '我的收藏',
     description: '查看和管理您收藏的工具',
