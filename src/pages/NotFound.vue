@@ -22,9 +22,13 @@
 <script setup>
 import { useHead } from '@vueuse/head'
 import { useInternationalizedRoute } from '../composables/useInternationalizedRoute'
+import { useI18n } from 'vue-i18n'
+import { onMounted } from 'vue'
 
 // 使用国际化路由辅助函数
 const { localizedRoute } = useInternationalizedRoute()
+
+const { t } = useI18n()
 
 // 设置页面元数据 - 确保状态码正确
 useHead({
@@ -33,4 +37,37 @@ useHead({
     { name: 'status-code', content: '404' }
   ]
 })
+
+onMounted(() => {
+  // 设置正确的HTTP状态码为404
+  document.title = t('notFound.pageTitle') || '404 - Page Not Found'
+  
+  // 这行是关键 - 告诉搜索引擎这是一个404页面
+  const meta = document.createElement('meta')
+  meta.name = 'prerender-status-code'
+  meta.content = '404'
+  document.head.appendChild(meta)
+  
+  // 为Netlify、Vercel等静态托管服务设置状态码
+  if (window.history && window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href)
+    // 尝试通知服务器这是404页面
+    if (typeof window.__NUXT__ !== 'undefined') {
+      // Nuxt支持
+      window.__NUXT__.state.statusCode = 404
+    }
+  }
+  
+  // 这也有助于一些预渲染服务识别该页面为404
+  document.documentElement.setAttribute('data-status', '404');
+})
 </script>
+
+<style scoped>
+.not-found-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+</style>

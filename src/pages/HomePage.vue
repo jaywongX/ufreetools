@@ -100,13 +100,158 @@
     </section>
   
     <!-- 最新添加部分 -->
-    <section v-if="selectedTags.length === 0">
+    <section v-if="selectedTags.length === 0" class="mb-10">
       <div class="flex justify-between items-center mb-6">
         <h2 class="text-xl font-bold">{{ $t('home.newToolsTitle') }}</h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <ToolCard 
           v-for="tool in newTools" 
+          :key="tool.id"
+          :tool="tool"
+          @tag-click="addTagToFilter"
+        />
+      </div>
+    </section>
+
+    <!-- 各个分类工具 -->
+    <!-- 开发工具 -->
+    <section v-if="selectedTags.length === 0" class="mb-10">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">{{ $t('categories.dev') }}</h2>
+        <router-link :to="localizedRoute('/category/dev')" class="text-primary dark:text-primary-light hover:underline text-sm">
+          {{ $t('common.home.viewAllFavorites') }}
+        </router-link>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <ToolCard 
+          v-for="tool in devTools" 
+          :key="tool.id"
+          :tool="tool"
+          @tag-click="addTagToFilter"
+        />
+      </div>
+    </section>
+
+    <!-- 设计工具 -->
+    <section v-if="selectedTags.length === 0" class="mb-10">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">{{ $t('categories.design') }}</h2>
+        <router-link :to="localizedRoute('/category/design')" class="text-primary dark:text-primary-light hover:underline text-sm">
+          {{ $t('common.home.viewAllFavorites') }}
+        </router-link>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <ToolCard 
+          v-for="tool in designTools" 
+          :key="tool.id"
+          :tool="tool"
+          @tag-click="addTagToFilter"
+        />
+      </div>
+    </section>
+
+    <!-- 转换工具 -->
+    <section v-if="selectedTags.length === 0" class="mb-10">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">{{ $t('categories.convert') }}</h2>
+        <router-link :to="localizedRoute('/category/convert')" class="text-primary dark:text-primary-light hover:underline text-sm">
+          {{ $t('common.home.viewAllFavorites') }}
+        </router-link>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <ToolCard 
+          v-for="tool in convertTools" 
+          :key="tool.id"
+          :tool="tool"
+          @tag-click="addTagToFilter"
+        />
+      </div>
+    </section>
+
+    <!-- 文本编辑 -->
+    <section v-if="selectedTags.length === 0" class="mb-10">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">{{ $t('categories.text') }}</h2>
+        <router-link :to="localizedRoute('/category/text')" class="text-primary dark:text-primary-light hover:underline text-sm">
+          {{ $t('common.home.viewAllFavorites') }}
+        </router-link>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <ToolCard 
+          v-for="tool in textTools" 
+          :key="tool.id"
+          :tool="tool"
+          @tag-click="addTagToFilter"
+        />
+      </div>
+    </section>
+
+    <!-- 图像处理 -->
+    <section v-if="selectedTags.length === 0" class="mb-10">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">{{ $t('categories.image') }}</h2>
+        <router-link :to="localizedRoute('/category/image')" class="text-primary dark:text-primary-light hover:underline text-sm">
+          {{ $t('common.home.viewAllFavorites') }}
+        </router-link>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <ToolCard 
+          v-for="tool in imageTools" 
+          :key="tool.id"
+          :tool="tool"
+          @tag-click="addTagToFilter"
+        />
+      </div>
+    </section>
+
+    <!-- 网络工具 -->
+    <section v-if="selectedTags.length === 0" class="mb-10">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">{{ $t('categories.network') }}</h2>
+        <router-link :to="localizedRoute('/category/network')" class="text-primary dark:text-primary-light hover:underline text-sm">
+          {{ $t('common.home.viewAllFavorites') }}
+        </router-link>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <ToolCard 
+          v-for="tool in networkTools" 
+          :key="tool.id"
+          :tool="tool"
+          @tag-click="addTagToFilter"
+        />
+      </div>
+    </section>
+
+    <!-- 密码安全 -->
+    <section v-if="selectedTags.length === 0" class="mb-10">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">{{ $t('categories.crypto') }}</h2>
+        <router-link :to="localizedRoute('/category/crypto')" class="text-primary dark:text-primary-light hover:underline text-sm">
+          {{ $t('common.home.viewAllFavorites') }}
+        </router-link>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <ToolCard 
+          v-for="tool in cryptoTools" 
+          :key="tool.id"
+          :tool="tool"
+          @tag-click="addTagToFilter"
+        />
+      </div>
+    </section>
+
+    <!-- 实用工具 -->
+    <section v-if="selectedTags.length === 0" class="mb-10">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">{{ $t('categories.utility') }}</h2>
+        <router-link :to="localizedRoute('/category/utility')" class="text-primary dark:text-primary-light hover:underline text-sm">
+          {{ $t('common.home.viewAllFavorites') }}
+        </router-link>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <ToolCard 
+          v-for="tool in utilityTools" 
           :key="tool.id"
           :tool="tool"
           @tag-click="addTagToFilter"
@@ -269,6 +414,39 @@ onMounted(() => {
 onUpdated(() => {
   updateMetaInfo()
 })
+
+// 各分类工具
+const devTools = computed(() => {
+  return toolsArray.value.filter(tool => tool.categoryId === 'dev').slice(0, 6);
+});
+
+const designTools = computed(() => {
+  return toolsArray.value.filter(tool => tool.categoryId === 'design').slice(0, 6);
+});
+
+const convertTools = computed(() => {
+  return toolsArray.value.filter(tool => tool.categoryId === 'convert').slice(0, 6);
+});
+
+const textTools = computed(() => {
+  return toolsArray.value.filter(tool => tool.categoryId === 'text').slice(0, 6);
+});
+
+const imageTools = computed(() => {
+  return toolsArray.value.filter(tool => tool.categoryId === 'image').slice(0, 6);
+});
+
+const networkTools = computed(() => {
+  return toolsArray.value.filter(tool => tool.categoryId === 'network').slice(0, 6);
+});
+
+const cryptoTools = computed(() => {
+  return toolsArray.value.filter(tool => tool.categoryId === 'crypto').slice(0, 6);
+});
+
+const utilityTools = computed(() => {
+  return toolsArray.value.filter(tool => tool.categoryId === 'utility').slice(0, 6);
+});
 </script>
 
 <style scoped>

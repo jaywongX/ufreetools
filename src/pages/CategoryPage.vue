@@ -7,7 +7,7 @@
     </div>
 
     <!-- 工具筛选 -->
-    <div class="mb-6 flex flex-wrap gap-3">
+    <!-- <div class="mb-6 flex flex-wrap gap-3">
       <button 
         class="px-3 py-1 text-sm rounded-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:border-primary dark:hover:border-primary-light"
       >
@@ -20,31 +20,15 @@
       >
         {{ tag }}
       </button>
-    </div>
+    </div> -->
 
     <!-- 工具列表 -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      <div 
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <ToolCard 
         v-for="tool in tools" 
         :key="tool.id"
-        class="tool-card flex flex-col"
-      >
-        <div class="flex items-start mb-3">
-          <div class="w-10 h-10 rounded bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="tool.icon" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-medium">{{ $t(`tools.${tool.id}.name`, tool.name) }}</h3>
-            <p class="text-xs text-gray-500 dark:text-gray-400">{{ $t(`categories.${tool.categoryId}`, tool.category) }}</p>
-          </div>
-        </div>
-        <p class="text-sm text-gray-600 dark:text-gray-300 mb-3 flex-grow">{{ $t(`tools.${tool.id}.description`, tool.description) }}</p>
-        <router-link :to="`/tool/${tool.id}`" class="text-sm text-primary dark:text-primary-light hover:underline">
-          {{ $t('common.useTool') }}
-        </router-link>
-      </div>
+        :tool="tool"
+      />
     </div>
 
     <!-- 无结果 -->
@@ -58,9 +42,12 @@
 import { ref, computed, onMounted, inject } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import ToolCard from '../components/ui/ToolCard.vue'
+import { useInternationalizedRoute } from '../composables/useInternationalizedRoute'
 
 const route = useRoute()
 const { t } = useI18n()
+const { localizedRoute } = useInternationalizedRoute()
 
 // 获取分类ID
 const categoryId = computed(() => route.params.id)
@@ -94,4 +81,5 @@ const tools = computed(() => {
   if (!categoryId.value) return []
   return allTools.value.filter(tool => tool.categoryId === categoryId.value)
 })
+
 </script> 

@@ -36,7 +36,8 @@
               </div>
             </router-link>
             
-            <router-link 
+            <!-- 还没想好标签的设计，暂时隐藏 -->
+            <!-- <router-link 
               :to="localizedRoute('/tags')" 
               class="block py-2 px-3 rounded-md mb-1 font-medium transition-colors"
               :class="isActive('/tags') ? 'bg-gray-100 dark:bg-gray-700 text-primary dark:text-primary-light' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'"
@@ -49,7 +50,7 @@
                 </div>
                 <span v-if="sidebarOpen" class="ml-2">{{ $t('tags.title') }}</span>
               </div>
-            </router-link>
+            </router-link> -->
 
             <!-- 收藏夹链接 -->
             <router-link 
@@ -127,11 +128,12 @@
 
 <script setup>
 import { inject, computed, ref, watch, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useInternationalizedRoute } from '../../composables/useInternationalizedRoute'
 import SideNavAd from '../common/SideNavAd.vue'
 
 const route = useRoute()
+const router = useRouter()
 const sidebarOpen = inject('sidebarOpen')
 const categories = inject('categories')
 const toolsByCategory = inject('toolsByCategory')
@@ -156,6 +158,9 @@ function handleCategoryClick(categoryId) {
     // 侧边栏已展开时，正常切换分类展开/折叠状态
     toggleCategory(categoryId)
   }
+  
+  // 导航到对应的分类页面
+  router.push(localizedRoute(`/category/${categoryId}`))
 }
 
 // 检查当前路由是否激活

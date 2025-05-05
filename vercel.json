@@ -1,12 +1,18 @@
 {
-  "headers": [
+  "routes": [
+    { "handle": "filesystem" },
     {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" }
-      ]
+      "src": "/(zh|en)/?(about|contact|terms|privacy-policy|category/.+|tool/.+|search|tag/.+|tags|feedback|submit-tool|favorites)?",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/?(about|contact|terms|privacy-policy|category/.+|tool/.+|search|tag/.+|tags|feedback|submit-tool|favorites)?",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/.*",
+      "status": 404,
+      "dest": "/404.html"
     }
   ]
 }
