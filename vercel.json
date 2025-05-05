@@ -2,16 +2,11 @@
   "routes": [
     { "handle": "filesystem" },
     {
-      "src": "/404",
-      "status": 404,
-      "dest": "/404.html"
-    },
-    {
-      "src": "/((?!api/).*)/(.*)",
+      "src": "/((?!api/).*)",
       "dest": "/index.html"
     },
     {
-      "src": "/(.*)",
+      "src": "/.*",
       "status": 404,
       "dest": "/404.html"
     }
