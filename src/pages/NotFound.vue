@@ -57,6 +57,9 @@ onMounted(() => {
       window.__NUXT__.state.statusCode = 404
     }
   }
+  
+  // 这也有助于一些预渲染服务识别该页面为404
+  document.documentElement.setAttribute('data-status', '404');
 })
 </script>
 

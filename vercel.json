@@ -7,7 +7,11 @@
       "dest": "/404.html"
     },
     {
-      "src": "/.*",
+      "src": "/((?!api/).*)/(.*)",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
       "status": 404,
       "dest": "/404.html"
     }
