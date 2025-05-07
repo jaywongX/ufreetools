@@ -26,6 +26,10 @@ export default {
   lineWidth: 'Line Thickness',
   defaultSealText: 'Company Name',
   defaultBottomText: 'Official Seal',
+  width: 'Width',
+  height: 'Height',
+  agingEffect: 'Aging Effect',
+  customColor: 'Custom Color',
   
 
   // Font options
@@ -34,7 +38,12 @@ export default {
     kaiti: 'KaiTi',
     simhei: 'SimHei',
     yahei: 'Microsoft YaHei',
-    arial: 'Arial'
+    stxingkai: 'STXingkai',
+    stzhongsong: 'STZhongsong',
+    stfangsong: 'STFangsong',
+    arial: 'Arial',
+    times: 'Times New Roman',
+    georgia: 'Georgia'
   },
   
   // Shape options
@@ -47,11 +56,18 @@ export default {
   // Color options
   colors: {
     red: 'Red',
+    darkRed: 'Dark Red',
     blue: 'Blue',
+    navy: 'Navy Blue',
     green: 'Green',
+    darkGreen: 'Dark Green',
     purple: 'Purple',
-    black: 'Black'
+    magenta: 'Magenta',
+    brown: 'Brown',
+    black: 'Black',
+    custom: 'Custom Color'
   },
+  colorHex: 'Hex Color Value',
   
   // How to use guide
   howToUse: 'How to Use',

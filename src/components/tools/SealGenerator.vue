@@ -68,7 +68,12 @@
               <option value="'KaiTi', serif">{{ $t('tools.seal-generator.fonts.kaiti') }}</option>
               <option value="'SimHei', sans-serif">{{ $t('tools.seal-generator.fonts.simhei') }}</option>
               <option value="'Microsoft YaHei', sans-serif">{{ $t('tools.seal-generator.fonts.yahei') }}</option>
+              <option value="'STXingkai', cursive">{{ $t('tools.seal-generator.fonts.stxingkai') }}</option>
+              <option value="'STZhongsong', serif">{{ $t('tools.seal-generator.fonts.stzhongsong') }}</option>
+              <option value="'STFangsong', serif">{{ $t('tools.seal-generator.fonts.stfangsong') }}</option>
               <option value="'Arial', sans-serif">{{ $t('tools.seal-generator.fonts.arial') }}</option>
+              <option value="'Times New Roman', serif">{{ $t('tools.seal-generator.fonts.times') }}</option>
+              <option value="'Georgia', serif">{{ $t('tools.seal-generator.fonts.georgia') }}</option>
             </select>
           </div>
 
@@ -111,31 +116,96 @@
           
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ $t('tools.seal-generator.size') }}</label>
-            <div class="flex items-center space-x-4">
-              <input 
-                v-model="sealSize" 
-                type="range" 
-                min="100" 
-                max="500" 
-                step="10"
-                class="w-full"
-              />
-              <span class="text-sm text-gray-600 dark:text-gray-400">{{ sealSize }}px</span>
+            <div class="flex flex-col md:flex-row gap-4">
+              <!-- 滑块控制 -->
+              <div class="flex items-center space-x-4 flex-1">
+                <input 
+                  v-model="sealSize" 
+                  type="range" 
+                  min="100" 
+                  max="500" 
+                  step="10"
+                  class="w-full"
+                  @input="updateSealDimensions"
+                />
+                <span class="text-sm text-gray-600 dark:text-gray-400">{{ sealSize }}px</span>
+              </div>
+              
+              <!-- 精确尺寸控制 -->
+              <div class="flex gap-2">
+                <div>
+                  <label class="text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.seal-generator.width') }}</label>
+                  <input 
+                    v-model.number="sealWidth" 
+                    type="number" 
+                    min="50" 
+                    max="1000" 
+                    class="w-20 px-2 py-1 border border-gray-300 dark:border-gray-600 rounded-md"
+                    @input="widthChanged = true"
+                    @change="updateSizeFromDimensions"
+                  />
+                </div>
+                <div v-if="sealShape !== 'circle'">
+                  <label class="text-xs text-gray-600 dark:text-gray-400">{{ $t('tools.seal-generator.height') }}</label>
+                  <input 
+                    v-model.number="sealHeight" 
+                    type="number" 
+                    min="50" 
+                    max="1000" 
+                    class="w-20 px-2 py-1 border border-gray-300 dark:border-gray-600 rounded-md"
+                    @input="heightChanged = true"
+                    @change="updateSizeFromDimensions"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ $t('tools.seal-generator.color') }}</label>
-            <div class="flex space-x-4">
-              <button 
-                v-for="color in colors" 
-                :key="color.value" 
-                @click="sealColor = color.value"
-                class="w-8 h-8 rounded-full border-2"
-                :class="sealColor === color.value ? 'border-primary' : 'border-transparent'"
-                :style="{ backgroundColor: color.value }"
-                :title="color.name"
-              ></button>
+            <div class="flex flex-col space-y-3">
+              <!-- 预设颜色面板 -->
+              <div class="flex flex-wrap gap-2">
+                <button 
+                  v-for="color in colors" 
+                  :key="color.value" 
+                  @click="sealColor = color.value"
+                  class="w-8 h-8 rounded-full border-2"
+                  :class="sealColor === color.value ? 'border-primary' : 'border-transparent'"
+                  :style="{ backgroundColor: color.value }"
+                  :title="color.name"
+                ></button>
+              </div>
+              
+              <!-- 增强的颜色选择器 -->
+              <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded-md">
+                <div class="flex flex-col space-y-2">
+                  <label class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.seal-generator.customColor') }}</label>
+                  
+                  <!-- 颜色选择器 -->
+                  <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="flex-1">
+                      <input 
+                        v-model="sealColor" 
+                        type="color" 
+                        class="w-full h-10 cursor-pointer rounded border-0"
+                      />
+                    </div>
+                    
+                    <!-- 十六进制输入 -->
+                    <div class="w-full sm:w-auto flex flex-col">
+                      <label class="text-xs text-gray-600 dark:text-gray-400 mb-1">{{ $t('tools.seal-generator.colorHex') }}</label>
+                      <input 
+                        v-model="sealColor" 
+                        type="text" 
+                        pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+                        class="px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md"
+                        maxlength="7"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -177,6 +247,21 @@
                 class="w-full"
               />
               <span class="text-sm text-gray-600 dark:text-gray-400">{{ lineWidth }}</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ $t('tools.seal-generator.agingEffect') }}</label>
+            <div class="flex items-center space-x-4">
+              <input 
+                v-model="agingEffect" 
+                type="range" 
+                min="0" 
+                max="100" 
+                step="1"
+                class="w-full"
+              />
+              <span class="text-sm text-gray-600 dark:text-gray-400">{{ agingEffect }}%</span>
             </div>
           </div>
         </div>
@@ -266,13 +351,24 @@ const centerImage = ref(null)
 const centerSymbolSize = ref(50) // 中心符号大小，百分比值
 const exportFormat = ref('png')  // 导出格式
 const lineWidth = ref(6) // 线条粗细
+const sealWidth = ref(300)
+const sealHeight = ref(300)
+const widthChanged = ref(false)
+const heightChanged = ref(false)
+const agingEffect = ref(0) // 做旧效果程度
+const showColorPicker = ref(false)
 
-// 可选颜色
+// 可选颜色 - 添加更多预设颜色
 const colors = reactive([
   { name: t('tools.seal-generator.colors.red'), value: '#c00' },
+  { name: t('tools.seal-generator.colors.darkRed'), value: '#8B0000' },
   { name: t('tools.seal-generator.colors.blue'), value: '#1664c0' },
+  { name: t('tools.seal-generator.colors.navy'), value: '#000080' },
   { name: t('tools.seal-generator.colors.green'), value: '#2e7d32' },
+  { name: t('tools.seal-generator.colors.darkGreen'), value: '#006400' },
   { name: t('tools.seal-generator.colors.purple'), value: '#6a1b9a' },
+  { name: t('tools.seal-generator.colors.magenta'), value: '#8B008B' },
+  { name: t('tools.seal-generator.colors.brown'), value: '#8B4513' },
   { name: t('tools.seal-generator.colors.black'), value: '#000' },
 ])
 
@@ -289,9 +385,9 @@ const generateSeal = () => {
   const canvas = sealCanvas.value
   const ctx = canvas.getContext('2d')
   
-  // 设置画布大小
-  canvas.width = sealSize.value
-  canvas.height = sealSize.value
+  // 设置画布大小为用户指定的宽高
+  canvas.width = sealWidth.value
+  canvas.height = sealHeight.value
   
   // 清除画布
   ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -299,37 +395,42 @@ const generateSeal = () => {
   // 设置绘图样式
   ctx.fillStyle = sealColor.value
   ctx.strokeStyle = sealColor.value
-  ctx.lineWidth = lineWidth.value // 使用用户设置的线条粗细
+  ctx.lineWidth = lineWidth.value
   
   const centerX = canvas.width / 2
   const centerY = canvas.height / 2
-  const radius = (Math.min(canvas.width, canvas.height) / 2) - 10
+  
+  // 根据形状计算半径
+  let radiusX, radiusY
+  if (sealShape.value === 'circle') {
+    radiusX = radiusY = (Math.min(canvas.width, canvas.height) / 2) - 10
+  } else if (sealShape.value === 'ellipse') {
+    radiusX = (canvas.width / 2) - 10
+    radiusY = (canvas.height / 2) - 10
+  } else {
+    // 方形不需要半径
+    radiusX = (canvas.width / 2) - 10
+    radiusY = (canvas.height / 2) - 10
+  }
   
   // 绘制印章外形
   if (sealShape.value === 'circle') {
-    // 圆形印章 - 只使用单线，移除双线效果
     ctx.beginPath()
-    ctx.arc(centerX, centerY, radius, 0, Math.PI * 2)
+    ctx.arc(centerX, centerY, radiusX, 0, Math.PI * 2)
     ctx.stroke()
   } else if (sealShape.value === 'ellipse') {
-    // 椭圆印章 - 只使用单线
-    const radiusX = radius
-    const radiusY = radius * 0.7
-    
     ctx.beginPath()
     ctx.ellipse(centerX, centerY, radiusX, radiusY, 0, 0, Math.PI * 2)
     ctx.stroke()
   } else {
-    // 方形印章 - 只使用单线
-    const side = radius * 2
-    
+    // 方形印章
     ctx.beginPath()
-    ctx.rect(centerX - radius, centerY - radius, side, side)
+    ctx.rect(centerX - radiusX, centerY - radiusY, radiusX * 2, radiusY * 2)
     ctx.stroke()
   }
   
   // 计算基于印章大小的动态文字大小
-  const textSize = Math.max(12, radius / 5); // 最小12px，确保小尺寸下仍然可见
+  const textSize = Math.max(12, radiusX / 5); // 最小12px，确保小尺寸下仍然可见
   
   // 绘制环绕文字
   if (sealText.value) {
@@ -337,7 +438,15 @@ const generateSeal = () => {
     ctx.textBaseline = 'middle'
     ctx.textAlign = 'center'
     
-    const textRadius = radius - 20
+    // 为椭圆形状调整文本半径，避免与边缘重叠
+    let textRadius
+    if (sealShape.value === 'ellipse') {
+      // 椭圆形状时，减小文本环绕的半径以避免与边缘重叠
+      textRadius = radiusX - (radiusX * 0.21)
+    } else {
+      textRadius = radiusX - 20
+    }
+    
     const characters = sealText.value.split('')
     
     // 10个文字作为半圆
@@ -354,10 +463,11 @@ const generateSeal = () => {
       let x, y;
       
       if (sealShape.value === 'ellipse') {
-        const radiusX = textRadius
-        const radiusY = textRadius * 0.7
-        x = centerX + radiusX * Math.cos(angle)
-        y = centerY + radiusY * Math.sin(angle)
+        // 椭圆形状特殊处理
+        const ellipseRadiusX = textRadius
+        const ellipseRadiusY = textRadius * 0.7
+        x = centerX + ellipseRadiusX * Math.cos(angle)
+        y = centerY + ellipseRadiusY * Math.sin(angle)
       } else {
         x = centerX + textRadius * Math.cos(angle)
         y = centerY + textRadius * Math.sin(angle)
@@ -367,7 +477,17 @@ const generateSeal = () => {
       ctx.translate(x, y)
       
       // 添加旋转使文字垂直于圆周，头朝外
-      ctx.rotate(angle + Math.PI/2)
+      // 椭圆形状需要特殊处理文字旋转角度
+      if (sealShape.value === 'ellipse') {
+        // 计算椭圆上点的切线方向
+        const tangentAngle = Math.atan2(
+          Math.sin(angle) * (textRadius * 0.7), 
+          Math.cos(angle) * textRadius
+        )
+        ctx.rotate(tangentAngle + Math.PI/2)
+      } else {
+        ctx.rotate(angle + Math.PI/2)
+      }
       
       ctx.fillText(char, 0, 0)
       ctx.restore()
@@ -376,17 +496,23 @@ const generateSeal = () => {
     // 绘制底部文字
     if (bottomText.value) {
       // 动态调整底部文字大小
-      const bottomTextSize = Math.max(10, radius / 6);
+      const bottomTextSize = Math.max(10, radiusX / 6);
       ctx.font = `bold ${bottomTextSize}px ${fontFamily.value}`
       ctx.textAlign = 'center'
-      ctx.fillText(bottomText.value, centerX, centerY + radius * 0.6)
+      
+      // 椭圆形状时，底部文字位置需要特殊处理
+      if (sealShape.value === 'ellipse') {
+        ctx.fillText(bottomText.value, centerX, centerY + radiusY * 0.55)
+      } else {
+        ctx.fillText(bottomText.value, centerX, centerY + radiusX * 0.6)
+      }
     }
   }
   
   // 绘制中心图片或文字
   if (centerImage.value) {
     // 计算合适的尺寸 - 使用centerSymbolSize作为百分比
-    const imgSize = radius * (centerSymbolSize.value / 100) * 2
+    const imgSize = radiusX * (centerSymbolSize.value / 100) * 2
     ctx.drawImage(
       centerImage.value, 
       centerX - imgSize/2, 
@@ -396,11 +522,16 @@ const generateSeal = () => {
     )
   } else if (centerText.value) {
     // 使用centerSymbolSize作为百分比调整中心符号大小
-    const symbolSize = radius * (centerSymbolSize.value / 100)
+    const symbolSize = radiusX * (centerSymbolSize.value / 100)
     ctx.font = `bold ${symbolSize}px ${fontFamily.value}`
     ctx.textBaseline = 'middle'
     ctx.textAlign = 'center'
     ctx.fillText(centerText.value, centerX, centerY)
+  }
+  
+  // 应用做旧效果
+  if (agingEffect.value > 0) {
+    applyAgingEffect(ctx, canvas.width, canvas.height)
   }
   
   canvasGenerated.value = true
@@ -503,6 +634,7 @@ const resetSettings = () => {
   sealColor.value = '#c00'
   bottomText.value = t('tools.seal-generator.defaultBottomText')
   selectedTemplate.value = 'none'
+  centerImage.value = null
   
   // 清除画布
   if (sealCanvas.value) {
@@ -530,16 +662,102 @@ const handleImageUpload = (event) => {
 
 // 监听设置变化，自动更新预览
 watch(
-  [sealText, centerText, fontFamily, sealShape, sealSize, sealColor, centerSymbolSize, bottomText, lineWidth],
+  [sealText, centerText, fontFamily, sealShape, sealSize, sealColor, centerSymbolSize, bottomText, lineWidth, agingEffect, sealWidth, sealHeight],
   () => {
+    // 当形状改变时，重置宽高标志
+    if (sealShape.value === 'circle') {
+      sealHeight.value = sealWidth.value
+      heightChanged.value = false
+    }
+    
+    // 更新尺寸
+    updateSealDimensions()
+    
     // 当任何设置变化时重新生成印章
     generateSeal()
   },
   { deep: true }
 )
 
+const updateSealDimensions = () => {
+  if (!widthChanged.value) {
+    sealWidth.value = sealSize.value
+  }
+  
+  if (!heightChanged.value) {
+    if (sealShape.value === 'ellipse') {
+      sealHeight.value = Math.round(sealSize.value * 0.7)
+    } else {
+      sealHeight.value = sealSize.value
+    }
+  }
+}
+
+const updateSizeFromDimensions = () => {
+  // 当手动输入尺寸时，以宽度为基准更新sealSize
+  if (widthChanged.value) {
+    sealSize.value = sealWidth.value
+  }
+  
+  // 确保椭圆和方形的高度可以独立设置
+  if (sealShape.value !== 'circle') {
+    if (heightChanged.value) {
+      // 高度已手动修改，不需要自动计算
+    } else if (sealShape.value === 'ellipse' && !heightChanged.value) {
+      // 椭圆形默认高度为宽度的0.7倍
+      sealHeight.value = Math.round(sealWidth.value * 0.7)
+    } else {
+      // 方形默认高度等于宽度
+      sealHeight.value = sealWidth.value
+    }
+  } else {
+    // 圆形时高度等于宽度
+    sealHeight.value = sealWidth.value
+  }
+}
+
+// 添加做旧效果的函数
+function applyAgingEffect(ctx, width, height) {
+  const intensity = agingEffect.value / 100
+  
+  // 1. 添加纹理噪点
+  const imageData = ctx.getImageData(0, 0, width, height)
+  const data = imageData.data
+  
+  for (let i = 0; i < data.length; i += 4) {
+    // 只处理有颜色的像素（非透明）
+    if (data[i+3] > 0) {
+      // 随机噪点
+      const noise = Math.random() * 0.3 * intensity
+      data[i] = Math.min(255, data[i] * (1 - noise))
+      data[i+1] = Math.min(255, data[i+1] * (1 - noise))
+      data[i+2] = Math.min(255, data[i+2] * (1 - noise))
+      
+      // 随机添加间隙（使印章看起来不完整）
+      if (Math.random() < 0.05 * intensity) {
+        data[i+3] = 0 // 完全透明
+      } else if (Math.random() < 0.2 * intensity) {
+        data[i+3] = data[i+3] * (1 - Math.random() * intensity) // 部分透明
+      }
+    }
+  }
+  
+  ctx.putImageData(imageData, 0, 0)
+  
+  // 2. 添加模糊效果
+  if (intensity > 0.3) {
+    ctx.filter = `blur(${intensity * 0.5}px)`
+    ctx.drawImage(sealCanvas.value, 0, 0)
+    ctx.filter = 'none'
+  }
+}
+
+const isPresetColor = (color) => {
+  return colors.some(c => c.value === color)
+}
+
 onMounted(() => {
-  // 组件挂载后生成初始印章
+  updateSealDimensions()
   generateSeal()
 })
 </script>
