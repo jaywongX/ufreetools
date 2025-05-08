@@ -26,14 +26,24 @@ export default {
   lineWidth: '线条粗细',
   defaultSealText: '某某某有限责任公司',
   defaultBottomText: '合同专用章',
-  
+  width: '宽度',
+  height: '高度',
+  agingEffect: '做旧效果',
+  colorHex: '十六进制颜色值',
+  customColor: '自定义颜色',
+
   // 字体选项
   fonts: {
     simsun: '宋体',
     kaiti: '楷体',
     simhei: '黑体',
     yahei: '微软雅黑',
-    arial: 'Arial'
+    stxingkai: '华文行楷',
+    stzhongsong: '华文中宋',
+    stfangsong: '华文仿宋',
+    arial: 'Arial',
+    times: 'Times New Roman',
+    georgia: 'Georgia'
   },
   
   // 形状选项
@@ -46,10 +56,16 @@ export default {
   // 颜色选项
   colors: {
     red: '红色',
+    darkRed: '深红色',
     blue: '蓝色',
+    navy: '海军蓝',
     green: '绿色',
+    darkGreen: '深绿色',
     purple: '紫色',
-    black: '黑色'
+    magenta: '品红色',
+    brown: '棕色',
+    black: '黑色',
+    custom: '自定义颜色'
   },
   
   // 使用指南
