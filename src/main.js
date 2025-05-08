@@ -146,6 +146,7 @@ const lazyComponentMap = {
   'CashAppFeeCalculator': () => import('./components/tools/CashAppFeeCalculator.vue'),
   'HexadecimalCaseConverter': () => import('./components/tools/HexadecimalCaseConverter.vue'),
   'CoordinateConverter': () => import('./components/tools/CoordinateConverter.vue'),
+  'X509CertificateDecoder': () => import('./components/tools/X509CertificateDecoder.vue'),
 }
 
 // 初始化Vercel Analytics

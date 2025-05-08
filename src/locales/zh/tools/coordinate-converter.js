@@ -1,8 +1,8 @@
 export default {
-  name: '坐标系转换工具',
+  name: '坐标系统转换器',
   description: '在不同坐标系统之间转换地理坐标，包括WGS-84、GCJ-02、BD-09、Web墨卡托和UTM',
-  title: '坐标系转换工具 - 在WGS84、GCJ02、BD09等坐标系之间转换',
-  metaDescription: '免费在线坐标转换工具，可在WGS-84、GCJ-02（火星坐标）、BD-09（百度坐标）、Web墨卡托和UTM坐标系统之间转换坐标。无需安装。',
+  title: '坐标系统转换器 - 在WGS84、GCJ02、BD09等坐标系之间转换',
+  metaDescription: '免费在线坐标系统转换器，可在WGS-84、GCJ-02（火星坐标）、BD-09（百度坐标）、Web墨卡托和UTM坐标系统之间转换坐标。无需安装。',
   
   seo: {
     title: '坐标系转换工具 | 地理坐标系统互转工具',

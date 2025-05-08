@@ -1664,4 +1664,21 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/coordinate-converter" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/coordinate-converter" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/x509-certificate-decoder</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/x509-certificate-decoder" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/x509-certificate-decoder" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/tool/x509-certificate-decoder</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/x509-certificate-decoder" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/x509-certificate-decoder" />
+  </url>
 </urlset>

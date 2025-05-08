@@ -95,6 +95,7 @@ import jfifJpgConverter from './tools/jfif-jpg-converter.js';
 import jpgJfifConverter from './tools/jpg-jfif-converter.js';
 import sealGenerator from './tools/seal-generator.js';
 import coordinateConverter from './tools/coordinate-converter.js';
+import x509CertificateDecoder from './tools/x509-certificate-decoder.js';
 
 export default {
     common: {
@@ -225,4 +226,5 @@ export default {
     'jpg-jfif-converter': jpgJfifConverter,
     'seal-generator': sealGenerator,
     'coordinate-converter': coordinateConverter,
+    'x509-certificate-decoder': x509CertificateDecoder,
   }
