@@ -370,4 +370,12 @@ export default {
   mercator: 'Mercator',
   projection: 'Projection',
   geocoding: 'Geocoding',
+
+  // Added to the existing tags object
+  certificate: 'Certificate',
+  x509: 'X.509',
+  ssl: 'SSL',
+  tls: 'TLS',
+  pki: 'PKI',
+  decoder: 'Decoder',
 }

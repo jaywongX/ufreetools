@@ -120,8 +120,8 @@ export default {
         3: 'Signatures don\'t encrypt the message, they only verify its origin and integrity. For privacy, encryption is needed too.'
       }
     },
-    signButton: 'Sign',
-    verifyButton: 'Verify',
+    sign: 'Sign',
+    verify: 'Verify',
     signatureValue: 'Signature Value',
     verificationResult: {
       success: 'Verification successful! The signature is valid, data is intact and from a trusted source.',

@@ -1,7 +1,7 @@
 export default {
-    name: 'Coordinate Converter Tool',
+    name: 'Coordinate System Converter',
     description: 'Convert geographic coordinates between different coordinate systems including WGS-84, GCJ-02, BD-09, Web Mercator, and UTM',
-    title: 'Coordinate System Conversion Tool - Convert Between WGS84, GCJ02, BD09, and More',
+    title: 'Coordinate System Converter - Convert Between WGS84, GCJ02, BD09, and More',
     metaDescription: 'Free online coordinate converter tool to transform coordinates between WGS-84, GCJ-02 (Mars), BD-09 (Baidu), Web Mercator, and UTM coordinate systems. No installation required.',
     
     seo: {

@@ -369,4 +369,12 @@ export default {
   mercator: '墨卡托',
   projection: '投影',
   geocoding: '地理编码',
+
+  // Add these to the existing tags object
+  certificate: '证书',
+  x509: 'X.509',
+  ssl: 'SSL',
+  tls: 'TLS',
+  pki: 'PKI',
+  decoder: '解码器',
 }

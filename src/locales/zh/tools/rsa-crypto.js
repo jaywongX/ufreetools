@@ -120,8 +120,8 @@ export default {
         3: '签名不对消息进行加密，仅用于验证其来源和完整性。要保护消息内容，还需要加密。'
       }
     },
-    signButton: '签名',
-    verifyButton: '验证签名',
+    sign: '签名',
+    verify: '验证签名',
     signatureValue: '签名值',
     verificationResult: {
       success: '验证成功！签名有效，数据完整且来源可信。',

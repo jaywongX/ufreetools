@@ -1150,6 +1150,17 @@ const allTools = computed(() => [
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['crypto', 'hash', 'security', 'generate']
   },
+  { 
+    id: 'x509-certificate-decoder', 
+    name: t('tools.x509-certificate-decoder.name'),
+    category: t(`categories.crypto`),
+    categoryId: 'crypto',
+    description: t('tools.x509-certificate-decoder.description'),
+    path: '/tools/x509-certificate-decoder',
+    component: 'X509CertificateDecoder',
+    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+    tags: ['crypto', 'security', 'certificate', 'x509', 'ssl', 'tls', 'pki', 'analyze', 'decoder']
+  },
 
   // 实用与效率
   { 

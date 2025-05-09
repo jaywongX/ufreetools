@@ -217,7 +217,7 @@
               </svg>
               {{ $t('tools.rsa-crypto.encryptDecrypt.processing') }}
             </span>
-            <span v-else>{{ operation === 'encrypt' ? $t('tools.rsa-crypto.encryptDecrypt.encryptButton') : $t('tools.rsa-crypto.encryptDecrypt.decryptButton') }}</span>
+            <span v-else>{{ operation === 'encrypt' ? $t('tools.rsa-crypto.encryptDecrypt.encrypt') : $t('tools.rsa-crypto.encryptDecrypt.decrypt') }}</span>
           </button>
         </div>
         
@@ -330,7 +330,7 @@
               </svg>
               {{ $t('tools.rsa-crypto.signVerify.processing') }}
             </span>
-            <span v-else>{{ signOperation === 'sign' ? $t('tools.rsa-crypto.signVerify.signButton') : $t('tools.rsa-crypto.signVerify.verifyButton') }}</span>
+            <span v-else>{{ signOperation === 'sign' ? $t('tools.rsa-crypto.signVerify.sign') : $t('tools.rsa-crypto.signVerify.verify') }}</span>
           </button>
         </div>
         
