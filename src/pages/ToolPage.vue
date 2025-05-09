@@ -12,7 +12,7 @@
       <!-- 分类和标签显示 -->
       <div v-if="category || validTags.length > 0" class="flex flex-wrap gap-1 mb-4">
         <span v-if="category" class="px-2 py-0.5 rounded-full text-xs bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-          {{ $t(`categories.${category.id}`) }}
+          {{ $t(`categories.${category.id}.title`) }}
         </span>
         
         <span 
@@ -58,6 +58,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { addToHistory } from '../services/historyService'
 import { useInternationalizedRoute } from '../composables/useInternationalizedRoute'
 import SeoHead from '../components/seo/SeoHead.vue'
+import { useI18n } from 'vue-i18n'
 
 const route = useRoute()
 const router = useRouter()
@@ -70,20 +71,23 @@ const error = ref(null)
 const componentLoading = ref(false)
 const componentError = ref(null)
 const resolvedComponent = ref(null)
+const { t } = useI18n()
+
 
 // 使用国际化路由辅助函数
 const { localizedRoute } = useInternationalizedRoute()
 
 // 定义分类数据（作为备份）
 const categoriesData = [
-  { id: 'dev', title: '开发工具', description: '为开发者提供的编程、调试和优化工具' },
-  { id: 'design', title: '设计工具', description: '辅助设计师创建和优化视觉作品的工具' },
-  { id: 'text', title: '文本与编辑', description: '处理、编辑和转换文本内容的工具' },
-  { id: 'image', title: '图像处理', description: '图像处理、优化和转换工具' },
-  { id: 'convert', title: '转换工具', description: '各种文件格式之间的转换工具' },
-  { id: 'utility', title: '实用效率', description: '各种实用的日常工具' },
-  { id: 'network', title: '网络与协议工具', description: '网络分析、调试和测试工具' },
-  { id: 'crypto', title: '密码安全', description: '密码生成、加密、解密与安全工具' }
+  { id: 'dev', title: t('categories.dev.title'), description: t('categories.dev.description') },
+  { id: 'design', title: t('categories.design.title'), description: t('categories.design.description') },
+  { id: 'text', title: t('categories.text.title'), description: t('categories.text.description') },
+  { id: 'image', title: t('categories.image.title'), description: t('categories.image.description') },
+  { id: 'convert', title: t('categories.convert.title'), description: t('categories.convert.description') },
+  { id: 'network', title: t('categories.network.title'), description: t('categories.network.description') },
+  { id: 'crypto', title: t('categories.crypto.title'), description: t('categories.crypto.description') },
+  { id: 'utility', title: t('categories.utility.title'), description: t('categories.utility.description') },
+  { id: 'surveying_and_mapping', title: t('categories.surveying_and_mapping.title'), description: t('categories.surveying_and_mapping.description') }
 ]
 
 // 安全地获取分类信息

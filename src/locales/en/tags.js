@@ -378,4 +378,7 @@ export default {
   tls: 'TLS',
   pki: 'PKI',
   decoder: 'Decoder',
+  rgb: 'RGB',
+  palette: 'Palette',
+  cors: 'CORS',
 }

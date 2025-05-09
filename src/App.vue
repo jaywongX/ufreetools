@@ -71,8 +71,8 @@ const categories = ref([
   },
   { 
     id: 'text', 
-    title: '文本与编辑', 
-    name: '文本与编辑',
+    title: '文本编辑', 
+    name: '文本编辑',
     description: '处理、编辑和转换文本内容的工具',
     icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'
   },
@@ -85,7 +85,7 @@ const categories = ref([
   },
   { 
     id: 'network', 
-    title: '网络与协议工具', 
+    title: '网络与协议', 
     name: '网络与协议',
     description: '网络分析、调试和测试工具',
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9'
@@ -103,6 +103,13 @@ const categories = ref([
     name: '实用效率',
     description: '各种实用的日常工具',
     icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z'
+  },
+  { 
+    id: 'surveying_and_mapping', 
+    title: '测绘工具', 
+    name: '测绘工具',
+    description: '各种测绘工具',
+    icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7'
   }
 ])
 provide('categories', categories.value)
@@ -518,7 +525,7 @@ const allTools = computed(() => [
   {
     id:'markdown-to-html',
     name:'Markdown转HTML',
-    category:'文本与编辑',
+    category:'文本编辑',
     categoryId:'text',
     description:'将Markdown文本转换为HTML代码',
     path:'/tools/markdown-to-html',
@@ -1306,11 +1313,13 @@ const allTools = computed(() => [
     icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     tags: ['utility', 'finance', 'cash', 'app', 'fee', 'calculator', 'money']
   },
+
+  // 测绘工具
   {
     id: 'coordinate-converter',
     name: t('tools.coordinate-converter.name'),
-    category: t(`categories.utility`),
-    categoryId: 'utility',
+    category: t(`categories.surveying_and_mapping`),
+    categoryId: 'surveying_and_mapping',
     description: t('tools.coordinate-converter.description'),
     path: '/tools/coordinate-converter',
     component: 'CoordinateConverter',

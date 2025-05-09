@@ -86,7 +86,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="category.icon" />
                   </svg>
                   <span v-if="sidebarOpen" class="ml-2 transition-opacity duration-300">
-                    {{ $t(`categories.${category.id}`) }}
+                    {{ $t(`categories.${category.id}.title`) }}
                   </span>
                 </div>
                 <!-- 展开/折叠按钮 -->
@@ -160,6 +160,8 @@ function handleCategoryClick(categoryId) {
   }
   
   // 导航到对应的分类页面
+  // 将下划线转换为连字符
+  categoryId = categoryId.replace(/_/g, '-')
   router.push(localizedRoute(`/category/${categoryId}`))
 }
 
