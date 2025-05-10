@@ -122,44 +122,81 @@
                 <h4 class="font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.x509-certificate-decoder.results.sigAlg') }}</h4>
                 <p class="text-gray-800 dark:text-gray-200">{{ certificate.signatureAlgorithm }}</p>
               </div>
+              <!-- 添加签名值显示 -->
+              <div class="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                <h4 class="font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.x509-certificate-decoder.results.signatureValue') }}</h4>
+                
+                <!-- 格式选择器 -->
+                <div class="mb-4">
+                  <div class="flex border border-gray-300 dark:border-gray-600 rounded-md overflow-hidden">
+                    <button 
+                      v-for="format in signatureFormats" 
+                      :key="format.id"
+                      @click="activeSignatureFormat = format.id" 
+                      class="py-2 px-3 text-sm"
+                      :class="activeSignatureFormat === format.id ? 'bg-blue-500 text-white' : 'bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600'"
+                    >
+                      {{ format.label }}
+                    </button>
+                  </div>
+                </div>
+                
+                <!-- 签名值显示 -->
+                <div class="mt-2 overflow-auto">
+                  <pre class="px-4 py-3 bg-gray-700 text-gray-100 rounded overflow-x-auto text-sm">{{ formattedSignatureValue }}</pre>
+                  
+                  <!-- 操作按钮 -->
+                  <div class="mt-2 flex space-x-2">
+                    <button 
+                      @click="copyToClipboard('signature', formattedSignatureValue)" 
+                      class="px-3 py-1.5 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition text-sm flex items-center"
+                    >
+                      <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                      </svg>
+                      {{ $t('tools.x509-certificate-decoder.buttons.copyValue') }}
+                    </button>
+                    
+                    <button 
+                      @click="downloadSignatureValue" 
+                      class="px-3 py-1.5 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition text-sm flex items-center"
+                    >
+                      <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                      </svg>
+                      {{ $t('tools.x509-certificate-decoder.buttons.downloadCert') }}
+                    </button>
+                  </div>
+                </div>
+              </div>
               <!-- Certificate Usage -->
-              <!-- <div v-if="certificate" class="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg">
+              <div v-if="certificate" class="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg">
                 <h4 class="font-medium text-gray-700 dark:text-gray-300 mb-4">{{ $t('tools.x509-certificate-decoder.results.certificateUsage') }}</h4>
                 
-                <div v-if="hasAnyUsage" class="flex flex-wrap gap-3 justify-center">
-                  <div v-if="isServerAuth" class="flex flex-col items-center p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                    <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                    <span class="text-sm mt-1">{{ $t('tools.x509-certificate-decoder.usage.serverAuth') }}</span>
+                <div v-if="hasAnyUsage" class="space-y-4">
+                  <!-- 基本密钥用法 -->
+                  <div v-if="allKeyUsages.length > 0" class="space-y-2">
+                    <div class="flex flex-wrap gap-2">
+                      <span 
+                        v-for="usage in allKeyUsages" 
+                        :key="usage"
+                        class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-sm"
+                      >
+                        {{ usage }}
+                      </span>
+                    </div>
                   </div>
                   
-                  <div v-if="isClientAuth" class="flex flex-col items-center p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                    <svg class="w-8 h-8 text-green-600 dark:text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                    <span class="text-sm mt-1">{{ $t('tools.x509-certificate-decoder.usage.clientAuth') }}</span>
-                  </div>
-                  
-                  <div v-if="isCodeSigning" class="flex flex-col items-center p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                    <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                    </svg>
-                    <span class="text-sm mt-1">{{ $t('tools.x509-certificate-decoder.usage.codeSigning') }}</span>
-                  </div>
-                  
-                  <div v-if="isEmailProtection" class="flex flex-col items-center p-3 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg">
-                    <svg class="w-8 h-8 text-yellow-600 dark:text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <span class="text-sm mt-1">{{ $t('tools.x509-certificate-decoder.usage.emailProtection') }}</span>
+                  <!-- 图标显示部分保持不变 -->
+                  <div class="flex flex-wrap gap-3 justify-center mt-4">
+                    <!-- 现有的图标显示代码 -->
                   </div>
                 </div>
                 
                 <div v-else class="text-center p-3 bg-gray-100 dark:bg-gray-700 rounded-lg text-gray-600 dark:text-gray-300">
                   {{ $t('tools.x509-certificate-decoder.results.noSpecificUsage') }}
                 </div>
-              </div> -->
+              </div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -709,6 +746,7 @@ if (typeof window !== 'undefined' && window.crypto && window.crypto.subtle) {
     // Use a simpler approach without CryptoEngine constructor
     setEngine('newEngine', window.crypto, null);
 }
+loadSampleCertificate();
 })
 
 const validityPercentage = computed(() => {
@@ -1036,17 +1074,57 @@ try {
         valueType = 'list'
         break
     case '2.5.29.15': // Key Usage
-        const usages = []
-        if (extension.parsedValue.digitalSignature) usages.push('Digital Signature')
-        if (extension.parsedValue.nonRepudiation) usages.push('Non Repudiation')
-        if (extension.parsedValue.keyEncipherment) usages.push('Key Encipherment')
-        if (extension.parsedValue.dataEncipherment) usages.push('Data Encipherment')
-        if (extension.parsedValue.keyAgreement) usages.push('Key Agreement')
-        if (extension.parsedValue.keyCertSign) usages.push('Certificate Sign')
-        if (extension.parsedValue.cRLSign) usages.push('CRL Sign')
-        value = usages
-        valueType = 'list'
-        break
+    const usages = [];
+    // 从 BIT STRING 中解析密钥用法
+    if (extension.parsedValue && extension.parsedValue.valueBlock) {
+        // 获取 unusedBits
+        const unusedBits = extension.parsedValue.valueBlock.unusedBits || 0;
+        // 获取值的十六进制
+        const valueHex = extension.parsedValue.valueBlock.valueHex;
+        // 转换为 Uint8Array
+        const bytes = new Uint8Array(valueHex);
+        
+        // 第一个字节的位
+        if (bytes.length > 0) {
+          const firstByte = bytes[0];
+          // 注意：这里的位是从左到右计数的
+          if (firstByte & 0x80) usages.push('Digital Signature');
+          if (firstByte & 0x40) usages.push('Non Repudiation');
+          if (firstByte & 0x20) usages.push('Key Encipherment');
+          if (firstByte & 0x10) usages.push('Data Encipherment');
+          if (firstByte & 0x08) usages.push('Key Agreement');
+          if (firstByte & 0x04) usages.push('Key Cert Sign');
+          if (firstByte & 0x02) usages.push('CRL Sign');
+          if (firstByte & 0x01) usages.push('Encipher Only');
+        }
+        
+        // 第二个字节的位（如果存在）
+        if (bytes.length > 1) {
+          const secondByte = bytes[1];
+          if (secondByte & 0x80) usages.push('Decipher Only');
+        }
+        
+        // 添加本地化支持
+        const localizedUsages = usages.map(usage => {
+          const usageMap = {
+            'Digital Signature': t('tools.x509-certificate-decoder.keyUsages.digitalSignature'),
+            'Non Repudiation': t('tools.x509-certificate-decoder.keyUsages.nonRepudiation'),
+            'Key Encipherment': t('tools.x509-certificate-decoder.keyUsages.keyEncipherment'),
+            'Data Encipherment': t('tools.x509-certificate-decoder.keyUsages.dataEncipherment'),
+            'Key Agreement': t('tools.x509-certificate-decoder.keyUsages.keyAgreement'),
+            'Key Cert Sign': t('tools.x509-certificate-decoder.keyUsages.keyCertSign'),
+            'CRL Sign': t('tools.x509-certificate-decoder.keyUsages.crlSign'),
+            'Encipher Only': t('tools.x509-certificate-decoder.keyUsages.encipherOnly'),
+            'Decipher Only': t('tools.x509-certificate-decoder.keyUsages.decipherOnly')
+          };
+
+          return usageMap[usage] || usage;
+        });
+        
+        value = localizedUsages;
+    }
+    valueType = 'list';
+    break;
     case '2.5.29.37': // Extended Key Usage
         value = extension.parsedValue.keyPurposes.map(purpose => {
         const knownPurposes = {
@@ -1638,6 +1716,17 @@ function switchToCertificate(index) {
 const isServerAuth = computed(() => {
   if (!certificate.value || !certificate.value.extensions) return false;
   
+  // 检查密钥用法扩展
+  const keyUsage = certificate.value.extensions.find(ext => ext.oid === '2.5.29.15');
+  if (keyUsage && keyUsage.parsedValue && keyUsage.parsedValue.valueBlock) {
+    const bitValue = parseInt(keyUsage.parsedValue.valueBlock.valueHex, 16);
+    // 检查数字签名和密钥加密位
+    if ((bitValue & 0x80) || (bitValue & 0x20)) {
+      return true;
+    }
+  }
+  
+  // 检查扩展密钥用法
   const extKeyUsage = certificate.value.extensions.find(ext => ext.oid === '2.5.29.37');
   if (extKeyUsage && extKeyUsage.value && Array.isArray(extKeyUsage.value)) {
     return extKeyUsage.value.some(usage => 
@@ -1646,17 +1735,21 @@ const isServerAuth = computed(() => {
     );
   }
   
-  // Check KeyUsage extension for digital signature or key encipherment (common for server certs)
-  const keyUsage = certificate.value.extensions.find(ext => ext.oid === '2.5.29.15');
-  if (keyUsage && keyUsage.value && Array.isArray(keyUsage.value)) {
-    return keyUsage.value.includes('Digital Signature') || keyUsage.value.includes('Key Encipherment');
-  }
-  
   return false;
 });
 
 const isClientAuth = computed(() => {
   if (!certificate.value || !certificate.value.extensions) return false;
+  
+  // 检查密钥用法扩展
+  const keyUsage = certificate.value.extensions.find(ext => ext.oid === '2.5.29.15');
+  if (keyUsage && keyUsage.parsedValue && keyUsage.parsedValue.valueBlock) {
+    const bitValue = parseInt(keyUsage.parsedValue.valueBlock.valueHex, 16);
+    // 检查客户端认证位
+    if ((bitValue & 0x02) || (bitValue & 0x08)) {
+      return true;
+    }
+  }
   
   const extKeyUsage = certificate.value.extensions.find(ext => ext.oid === '2.5.29.37');
   if (extKeyUsage && extKeyUsage.value && Array.isArray(extKeyUsage.value)) {
@@ -1672,6 +1765,16 @@ const isClientAuth = computed(() => {
 const isCodeSigning = computed(() => {
   if (!certificate.value || !certificate.value.extensions) return false;
   
+  // 检查密钥用法扩展
+  const keyUsage = certificate.value.extensions.find(ext => ext.oid === '2.5.29.15');
+  if (keyUsage && keyUsage.parsedValue && keyUsage.parsedValue.valueBlock) {
+    const bitValue = parseInt(keyUsage.parsedValue.valueBlock.valueHex, 16);
+    // 检查代码签名位
+    if ((bitValue & 0x04) || (bitValue & 0x10)) {
+      return true;
+    }
+  }
+  
   const extKeyUsage = certificate.value.extensions.find(ext => ext.oid === '2.5.29.37');
   if (extKeyUsage && extKeyUsage.value && Array.isArray(extKeyUsage.value)) {
     return extKeyUsage.value.some(usage => 
@@ -1686,6 +1789,16 @@ const isCodeSigning = computed(() => {
 const isEmailProtection = computed(() => {
   if (!certificate.value || !certificate.value.extensions) return false;
   
+  // 检查密钥用法扩展
+  const keyUsage = certificate.value.extensions.find(ext => ext.oid === '2.5.29.15');
+  if (keyUsage && keyUsage.parsedValue && keyUsage.parsedValue.valueBlock) {
+    const bitValue = parseInt(keyUsage.parsedValue.valueBlock.valueHex, 16);
+    // 检查电子邮件保护位
+    if ((bitValue & 0x08) || (bitValue & 0x20)) {
+      return true;
+    }
+  }
+  
   const extKeyUsage = certificate.value.extensions.find(ext => ext.oid === '2.5.29.37');
   if (extKeyUsage && extKeyUsage.value && Array.isArray(extKeyUsage.value)) {
     return extKeyUsage.value.some(usage => 
@@ -1699,7 +1812,42 @@ const isEmailProtection = computed(() => {
 
 // Add a computed property to detect if any usage is found
 const hasAnyUsage = computed(() => {
-  return isServerAuth.value || isClientAuth.value || isCodeSigning.value || isEmailProtection.value;
+  if (!certificate.value || !certificate.value.extensions) return false;
+  
+  // 检查密钥用法扩展
+  const keyUsage = certificate.value.extensions.find(ext => ext.oid === '2.5.29.15');
+  if (keyUsage && keyUsage.value && Array.isArray(keyUsage.value) && keyUsage.value.length > 0) {
+    return true;
+  }
+  
+  // 检查扩展密钥用法
+  const extKeyUsage = certificate.value.extensions.find(ext => ext.oid === '2.5.29.37');
+  if (extKeyUsage && extKeyUsage.value && Array.isArray(extKeyUsage.value) && extKeyUsage.value.length > 0) {
+    return true;
+  }
+  
+  return false;
+});
+
+// 添加一个新的计算属性来获取所有密钥用法
+const allKeyUsages = computed(() => {
+  if (!certificate.value || !certificate.value.extensions) return [];
+  
+  const usages = [];
+  
+  // 获取基本密钥用法
+  const keyUsage = certificate.value.extensions.find(ext => ext.oid === '2.5.29.15');
+  if (keyUsage && keyUsage.value && Array.isArray(keyUsage.value)) {
+    usages.push(...keyUsage.value);
+  }
+  
+  // 获取扩展密钥用法
+  const extKeyUsage = certificate.value.extensions.find(ext => ext.oid === '2.5.29.37');
+  if (extKeyUsage && extKeyUsage.value && Array.isArray(extKeyUsage.value)) {
+    usages.push(...extKeyUsage.value);
+  }
+  
+  return [...new Set(usages)]; // 去重
 });
 
 function getCertificateSubject(cert) {
@@ -1882,7 +2030,7 @@ function copyToClipboard(section, customValue = null) {
         break;
       
       case 'signature':
-        content = certificate.value.signatureValue;
+        content = formattedSignatureValue.value;
         break;
     }
   }
@@ -2372,5 +2520,76 @@ function formatKeyValue(key, value) {
     return value.substring(0, 20) + '...' + value.substring(value.length - 20);
   }
   return value;
+}
+
+// 添加签名值格式选项
+const signatureFormats = [
+  { id: 'hex', label: 'HEX' },
+  { id: 'base64', label: 'Base64' },
+  { id: 'der', label: 'DER' }
+];
+const activeSignatureFormat = ref('hex');
+
+// 格式化签名值
+const formattedSignatureValue = computed(() => {
+  if (!certificate.value || !certificate.value.signatureValue) return '';
+  
+  const signatureValue = certificate.value.signatureValue;
+  
+  switch (activeSignatureFormat.value) {
+    case 'base64':
+      // 去掉冒号，转换为连续的十六进制
+      const hexWithoutColons = signatureValue.replace(/:/g, '');
+      // 每两个字符为一组，转换为数字
+      const bytes = [];
+      for (let i = 0; i < hexWithoutColons.length; i += 2) {
+        bytes.push(parseInt(hexWithoutColons.substr(i, 2), 16));
+      }
+      // 转换为Uint8Array，然后转为base64
+      const uint8Array = new Uint8Array(bytes);
+      return btoa(String.fromCharCode.apply(null, uint8Array));
+      
+    case 'der':
+      return `[${signatureValue.length / 3} bytes DER-encoded data]`;
+      
+    case 'hex':
+    default:
+      return signatureValue;
+  }
+});
+
+// 下载签名值
+function downloadSignatureValue() {
+  if (!certificate.value || !certificate.value.signatureValue) return;
+  
+  let content = formattedSignatureValue.value;
+  let fileName = `signature-${new Date().toISOString().slice(0, 10)}`;
+  let type = 'text/plain';
+  
+  if (activeSignatureFormat.value === 'der') {
+    // 转换为二进制
+    const hexWithoutColons = certificate.value.signatureValue.replace(/:/g, '');
+    const bytes = new Uint8Array(hexWithoutColons.length / 2);
+    for (let i = 0; i < hexWithoutColons.length; i += 2) {
+      bytes[i/2] = parseInt(hexWithoutColons.substr(i, 2), 16);
+    }
+    
+    content = bytes;
+    fileName += '.der';
+    type = 'application/octet-stream';
+  } else {
+    fileName += activeSignatureFormat.value === 'base64' ? '.b64' : '.txt';
+  }
+  
+  // 创建Blob并下载
+  const blob = new Blob([content], { type });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 </script>

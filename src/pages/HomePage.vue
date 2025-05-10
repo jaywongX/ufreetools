@@ -118,7 +118,7 @@
     <!-- 开发工具 -->
     <section v-if="selectedTags.length === 0" class="mb-10">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">{{ $t('categories.dev') }}</h2>
+        <h2 class="text-xl font-bold">{{ $t('categories.dev.title') }}</h2>
         <router-link :to="localizedRoute('/category/dev')" class="text-primary dark:text-primary-light hover:underline text-sm">
           {{ $t('common.home.viewAllFavorites') }}
         </router-link>
@@ -136,7 +136,7 @@
     <!-- 设计工具 -->
     <section v-if="selectedTags.length === 0" class="mb-10">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">{{ $t('categories.design') }}</h2>
+        <h2 class="text-xl font-bold">{{ $t('categories.design.title') }}</h2>
         <router-link :to="localizedRoute('/category/design')" class="text-primary dark:text-primary-light hover:underline text-sm">
           {{ $t('common.home.viewAllFavorites') }}
         </router-link>
@@ -154,7 +154,7 @@
     <!-- 转换工具 -->
     <section v-if="selectedTags.length === 0" class="mb-10">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">{{ $t('categories.convert') }}</h2>
+        <h2 class="text-xl font-bold">{{ $t('categories.convert.title') }}</h2>
         <router-link :to="localizedRoute('/category/convert')" class="text-primary dark:text-primary-light hover:underline text-sm">
           {{ $t('common.home.viewAllFavorites') }}
         </router-link>
@@ -172,7 +172,7 @@
     <!-- 文本编辑 -->
     <section v-if="selectedTags.length === 0" class="mb-10">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">{{ $t('categories.text') }}</h2>
+        <h2 class="text-xl font-bold">{{ $t('categories.text.title') }}</h2>
         <router-link :to="localizedRoute('/category/text')" class="text-primary dark:text-primary-light hover:underline text-sm">
           {{ $t('common.home.viewAllFavorites') }}
         </router-link>
@@ -190,7 +190,7 @@
     <!-- 图像处理 -->
     <section v-if="selectedTags.length === 0" class="mb-10">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">{{ $t('categories.image') }}</h2>
+        <h2 class="text-xl font-bold">{{ $t('categories.image.title') }}</h2>
         <router-link :to="localizedRoute('/category/image')" class="text-primary dark:text-primary-light hover:underline text-sm">
           {{ $t('common.home.viewAllFavorites') }}
         </router-link>
@@ -208,7 +208,7 @@
     <!-- 网络工具 -->
     <section v-if="selectedTags.length === 0" class="mb-10">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">{{ $t('categories.network') }}</h2>
+        <h2 class="text-xl font-bold">{{ $t('categories.network.title') }}</h2>
         <router-link :to="localizedRoute('/category/network')" class="text-primary dark:text-primary-light hover:underline text-sm">
           {{ $t('common.home.viewAllFavorites') }}
         </router-link>
@@ -226,7 +226,7 @@
     <!-- 密码安全 -->
     <section v-if="selectedTags.length === 0" class="mb-10">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">{{ $t('categories.crypto') }}</h2>
+        <h2 class="text-xl font-bold">{{ $t('categories.crypto.title') }}</h2>
         <router-link :to="localizedRoute('/category/crypto')" class="text-primary dark:text-primary-light hover:underline text-sm">
           {{ $t('common.home.viewAllFavorites') }}
         </router-link>
@@ -244,7 +244,7 @@
     <!-- 实用工具 -->
     <section v-if="selectedTags.length === 0" class="mb-10">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">{{ $t('categories.utility') }}</h2>
+        <h2 class="text-xl font-bold">{{ $t('categories.utility.title') }}</h2>
         <router-link :to="localizedRoute('/category/utility')" class="text-primary dark:text-primary-light hover:underline text-sm">
           {{ $t('common.home.viewAllFavorites') }}
         </router-link>
@@ -252,6 +252,21 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <ToolCard 
           v-for="tool in utilityTools" 
+          :key="tool.id"
+          :tool="tool"
+          @tag-click="addTagToFilter"
+        />
+      </div>
+    </section>
+
+    <!-- 测绘工具 -->
+    <section v-if="selectedTags.length === 0" class="mb-10">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold">{{ $t('categories.surveying_and_mapping.title') }}</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <ToolCard 
+          v-for="tool in SAMTools" 
           :key="tool.id"
           :tool="tool"
           @tag-click="addTagToFilter"
@@ -447,6 +462,11 @@ const cryptoTools = computed(() => {
 const utilityTools = computed(() => {
   return toolsArray.value.filter(tool => tool.categoryId === 'utility').slice(0, 6);
 });
+
+const SAMTools = computed(() => {
+  return toolsArray.value.filter(tool => tool.categoryId === 'surveying_and_mapping').slice(0, 6);
+});
+
 </script>
 
 <style scoped>

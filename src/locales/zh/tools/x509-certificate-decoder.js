@@ -22,7 +22,8 @@ export default {
     copyAll: '复制全部信息',
     copyValue: '复制值',
     downloadKey: '下载密钥',
-    exportPem: '导出PEM'
+    exportPem: '导出PEM',
+    downloadCert: '下载证书',
   },
   input: {
     paste: '或粘贴证书数据：',
@@ -79,7 +80,6 @@ export default {
     critical: '关键',
     noExtensions: '此证书中未找到扩展信息。',
     validity: '证书有效期',
-    expired: '已过期 {days} 天',
     expiresIn: '将在 {days} 天后过期',
     visualization: '证书可视化',
     daysRemaining: '剩余天数',
@@ -159,6 +159,17 @@ export default {
     passwordPrompt: '请输入PKCS#12文件的密码',
     noPassword: '无密码'
   },
+  keyUsages: {
+    digitalSignature: '数字签名',
+    nonRepudiation: '防抵赖',
+    keyEncipherment: '密钥加密',
+    dataEncipherment: '数据加密',
+    keyAgreement: '密钥协商',
+    keyCertSign: '证书签名',
+    crlSign: 'CRL签名',
+    encipherOnly: '仅加密',
+    decipherOnly: '仅解密'
+  },
   article: {
     title: 'X.509证书解析器：分析和验证SSL/TLS证书',
     introduction: {
@@ -222,5 +233,5 @@ export default {
       title: '结论',
       content: '<strong>X.509证书解析器</strong>是任何使用数字证书和安全通信的人的必备工具。通过提供关于证书结构和有效性的清晰、详细的信息，我们的工具帮助您确保SSL/TLS实现安全无误。无论您是进行审计的安全专业人员，排除HTTPS问题的Web开发人员，还是管理证书部署的IT管理员，这个解析器都能简化证书分析并增强您的安全实践。'
     }
-  }
+  },
 } 

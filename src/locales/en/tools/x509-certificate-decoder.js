@@ -19,7 +19,11 @@ export default {
       downloadJson: 'Download JSON Report',
       copyBasic: 'Copy Basic Info',
       copySubject: 'Copy Subject/Issuer',
-      copyAll: 'Copy All Info'
+      copyAll: 'Copy All Info',
+      copyValue: 'Copy Value',
+      downloadKey: 'Download Key',
+      exportPem: 'Export PEM',
+      downloadCert: 'Download Certificate',
     },
     input: {
       paste: 'Or paste certificate data:',
@@ -34,7 +38,18 @@ export default {
       invalidDer: 'Invalid DER format certificate',
       invalidAsn1: 'Invalid certificate: cannot parse ASN.1 data',
       unsupportedType: 'Unsupported data type for certificate',
-      failedParse: 'Failed to parse certificate data'
+      failedParse: 'Failed to parse certificate data',
+      invalidP12: 'Invalid PKCS#12 file format',
+      invalidP12Password: 'Invalid PKCS#12 password',
+      noCertificatesInP12: 'No certificates found in PKCS#12 file',
+      unableToProcessP12: 'Unable to process PKCS#12 file'
+    },
+    guide: {
+      title: 'How to use this tool',
+      step1: 'Upload your X.509 certificate file (.crt, .cer, .pem, or .der) or paste the certificate data in the text area below.',
+      step2: 'The tool automatically detects the format (PEM or DER) and decodes it.',
+      step3: 'View detailed certificate information including subject, issuer, validity, extensions, and public key data.',
+      step4: 'You can download a report of the certificate details in PDF or TXT format using the buttons at the bottom.'
     },
     tabs: {
       basic: 'Basic Information',
@@ -65,11 +80,11 @@ export default {
       critical: 'Critical',
       noExtensions: 'No extensions found in this certificate.',
       validity: 'Certificate Validity',
-      expired: 'Expired {days} days ago',
       expiresIn: 'Expires in {days} days',
       visualization: 'Certificate Visualization',
       daysRemaining: 'days remaining',
       valid: 'Valid',
+      expired: 'Expired',
       expiringSoon: 'Expiring Soon',
       fieldDescriptions: 'Field Descriptions',
       certificateUsage: 'Certificate Usage',
@@ -93,13 +108,6 @@ export default {
     report: {
       title: 'X.509 Certificate Report',
       generatedOn: 'Generated on'
-    },
-    guide: {
-      title: 'How to use this tool',
-      step1: 'Upload your X.509 certificate file (.crt, .cer, .pem, or .der) or paste the certificate data in the text area below.',
-      step2: 'The tool automatically detects the format (PEM or DER) and decodes it.',
-      step3: 'View detailed certificate information including subject, issuer, validity, extensions, and public key data.',
-      step4: 'You can download a report of the certificate details in PDF or TXT format using the buttons at the bottom.'
     },
     extensions: {
       subjectKeyIdentifier: 'Subject Key Identifier',
@@ -151,6 +159,17 @@ export default {
       passwordPrompt: 'Please enter the password for the PKCS#12 file',
       noPassword: 'No password'
     },
+    keyUsages: {
+      digitalSignature: 'Digital Signature',
+      nonRepudiation: 'Non Repudiation',
+      keyEncipherment: 'Key Encipherment',
+      dataEncipherment: 'Data Encipherment',
+      keyAgreement: 'Key Agreement',
+      keyCertSign: 'Key Certificate Sign',
+      crlSign: 'CRL Sign',
+      encipherOnly: 'Encipher Only',
+      decipherOnly: 'Decipher Only'
+    },    
     article: {
       title: 'X.509 Certificate Decoder: Analyze and Validate SSL/TLS Certificates',
       introduction: {

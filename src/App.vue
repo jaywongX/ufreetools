@@ -71,8 +71,8 @@ const categories = ref([
   },
   { 
     id: 'text', 
-    title: '文本与编辑', 
-    name: '文本与编辑',
+    title: '文本编辑', 
+    name: '文本编辑',
     description: '处理、编辑和转换文本内容的工具',
     icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'
   },
@@ -85,7 +85,7 @@ const categories = ref([
   },
   { 
     id: 'network', 
-    title: '网络与协议工具', 
+    title: '网络与协议', 
     name: '网络与协议',
     description: '网络分析、调试和测试工具',
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9'
@@ -103,6 +103,13 @@ const categories = ref([
     name: '实用效率',
     description: '各种实用的日常工具',
     icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z'
+  },
+  { 
+    id: 'surveying_and_mapping', 
+    title: '测绘工具', 
+    name: '测绘工具',
+    description: '各种测绘工具',
+    icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7'
   }
 ])
 provide('categories', categories.value)
@@ -250,7 +257,7 @@ const allTools = computed(() => [
   { 
     id: 'json-formatter', 
     name: t('tools.json-formatter.name'),
-    category: t(`categories.dev`),
+    category: t(`categories.dev.title`),
     categoryId: 'dev',
     description: t('tools.json-formatter.description'),
     path: '/tools/json-formatter',
@@ -261,7 +268,7 @@ const allTools = computed(() => [
   { 
     id: 'regex-tester', 
     name: t('tools.regex-tester.name'),
-    category: t(`categories.dev`),
+    category: t(`categories.dev.title`),
     categoryId: 'dev',
     description: t('tools.regex-tester.description'),
     path: '/tools/regex-tester',
@@ -272,7 +279,7 @@ const allTools = computed(() => [
   // { 
   //   id: 'sql-formatter', 
   //   name: t('tools.sql-formatter.name'),
-  //   category: t(`categories.dev`),
+  //   category: t(`categories.dev.title`),
   //   categoryId: 'dev',
   //   description: t('tools.sql-formatter.description'),
   //   path: '/tools/sql-formatter',
@@ -283,7 +290,7 @@ const allTools = computed(() => [
   { 
     id: 'git-conflict-resolver', 
     name: t('tools.git-conflict-resolver.name'),
-    category: t(`categories.dev`),
+    category: t(`categories.dev.title`),
     categoryId: 'dev',
     description: t('tools.git-conflict-resolver.description'),
     path: '/tools/git-conflict-resolver',
@@ -294,7 +301,7 @@ const allTools = computed(() => [
   // { 
   //   id: 'javascript-formatter', 
   //   name: t('tools.javascript-formatter.name'),
-  //   category: t(`categories.dev`),
+  //   category: t(`categories.dev.title`),
   //   categoryId: 'dev',
   //   description: t('tools.javascript-formatter.description'),
   //   path: '/tools/javascript-formatter',
@@ -305,7 +312,7 @@ const allTools = computed(() => [
   // { 
   //   id: 'code-beautifier', 
   //   name: t('tools.code-beautifier.name'),
-  //   category: t(`categories.dev`),
+  //   category: t(`categories.dev.title`),
   //   categoryId: 'dev',
   //   description: t('tools.code-beautifier.description'),
   //   path: '/tools/code-beautifier',
@@ -316,7 +323,7 @@ const allTools = computed(() => [
   { 
     id: 'html-entity-encoder', 
     name: t('tools.html-entity-encoder.name'),
-    category: t(`categories.dev`),
+    category: t(`categories.dev.title`),
     categoryId: 'dev',
     description: t('tools.html-entity-encoder.description'),
     path: '/tools/html-entity-encoder',
@@ -327,7 +334,7 @@ const allTools = computed(() => [
   { 
     id: 'jwt-debugger', 
     name: t('tools.jwt-debugger.name'),
-    category: t(`categories.dev`),
+    category: t(`categories.dev.title`),
     categoryId: 'dev',
     description: t('tools.jwt-debugger.description'),
     path: '/tools/jwt-debugger',
@@ -338,7 +345,7 @@ const allTools = computed(() => [
   { 
     id: 'openapi-generator', 
     name: t('tools.openapi-generator.name'),
-    category: t(`categories.dev`),
+    category: t(`categories.dev.title`),
     categoryId: 'dev',
     description: t('tools.openapi-generator.description'),
     path: '/tools/openapi-generator',
@@ -349,7 +356,7 @@ const allTools = computed(() => [
   { 
     id: 'mock-api-generator', 
     name: t('tools.mock-api-generator.name'),
-    category: t(`categories.dev`),
+    category: t(`categories.dev.title`),
     categoryId: 'dev',
     description: t('tools.mock-api-generator.description'),
     path: '/tools/mock-api-generator',
@@ -360,7 +367,7 @@ const allTools = computed(() => [
   { 
     id: 'code-complexity-analyzer', 
     name: t('tools.code-complexity-analyzer.name'),
-    category: t(`categories.dev`),
+    category: t(`categories.dev.title`),
     categoryId: 'dev',
     description: t('tools.code-complexity-analyzer.description'),
     path: '/tools/code-complexity-analyzer',
@@ -371,7 +378,7 @@ const allTools = computed(() => [
   { 
     id: 'code-diff', 
     name: t('tools.code-diff.name'),
-    category: t(`categories.dev`),
+    category: t(`categories.dev.title`),
     categoryId: 'dev',
     description: t('tools.code-diff.description'),
     path: '/tools/code-diff',
@@ -382,7 +389,7 @@ const allTools = computed(() => [
   // { 
   //   id: 'code-formatter', 
   //   name: t('tools.code-formatter.name'),
-  //   category: t(`categories.dev`),
+  //   category: t(`categories.dev.title`),
   //   categoryId: 'dev',
   //   description: t('tools.code-formatter.description'),
   //   path: '/tools/code-formatter',
@@ -393,7 +400,7 @@ const allTools = computed(() => [
   { 
     id: 'code-obfuscator', 
     name: t('tools.code-obfuscator.name'),
-    category: t(`categories.dev`),
+    category: t(`categories.dev.title`),
     categoryId: 'dev',
     description: t('tools.code-obfuscator.description'),
     path: '/tools/code-obfuscator',
@@ -404,7 +411,7 @@ const allTools = computed(() => [
   {
      id: 'uuid-generator',
      name: t('tools.uuid-generator.name'),
-     category: t(`categories.dev`),
+     category: t(`categories.dev.title`),
      categoryId: 'dev',
      description: t('tools.uuid-generator.description'),
      path: '/tools/uuid-generator',
@@ -415,7 +422,7 @@ const allTools = computed(() => [
   {
      id: 'html-formatter',
      name: t('tools.html-formatter.name'),
-     category: t(`categories.dev`),
+     category: t(`categories.dev.title`),
      categoryId: 'dev',
      description: t('tools.html-formatter.description'),
      path: '/tools/html-formatter',
@@ -428,7 +435,7 @@ const allTools = computed(() => [
   { 
     id: 'qr-code-generator', 
     name: t('tools.qr-code-generator.name'),
-    category: t(`categories.design`),
+    category: t(`categories.design.title`),
     categoryId: 'design',
     description: t('tools.qr-code-generator.description'),
     path: '/tools/qr-code-generator',
@@ -439,7 +446,7 @@ const allTools = computed(() => [
   { 
     id: 'color-picker', 
     name: t('tools.color-picker.name'),
-    category: t(`categories.design`),
+    category: t(`categories.design.title`),
     categoryId: 'design',
     description: t('tools.color-picker.description'),
     path: '/tools/color-picker',
@@ -450,7 +457,7 @@ const allTools = computed(() => [
   { 
     id: 'color-scheme-generator', 
     name: t('tools.color-scheme-generator.name'),
-    category: t(`categories.design`),
+    category: t(`categories.design.title`),
     categoryId: 'design',
     description: t('tools.color-scheme-generator.description'),
     path: '/tools/color-scheme-generator',
@@ -461,7 +468,7 @@ const allTools = computed(() => [
   { 
     id: 'css-gradient-generator', 
     name: t('tools.css-gradient-generator.name'),
-    category: t(`categories.design`),
+    category: t(`categories.design.title`),
     categoryId: 'design',
     description: t('tools.css-gradient-generator.description'),
     path: '/tools/css-gradient-generator',
@@ -472,7 +479,7 @@ const allTools = computed(() => [
   {
     id: 'flowchart-generator',
     name: t('tools.flowchart-generator.name'),
-    category: t(`categories.design`),
+    category: t(`categories.design.title`),
     categoryId: 'design', 
     description: t('tools.flowchart-generator.description'),
     path: '/tools/flowchart-generator',
@@ -494,7 +501,7 @@ const allTools = computed(() => [
   { 
     id: 'drawing-board', 
     name: t('tools.drawing-board.name'),
-    category: t(`categories.design`),
+    category: t(`categories.design.title`),
     categoryId: 'design',
     description: t('tools.drawing-board.description'),
     path: '/tools/drawing-board',
@@ -507,7 +514,7 @@ const allTools = computed(() => [
   { 
     id: 'markdown-editor', 
     name: t('tools.markdown-editor.name'),
-    category: t(`categories.text`),
+    category: t(`categories.text.title`),
     categoryId: 'text',
     description: t('tools.markdown-editor.description'),
     path: '/tools/markdown-editor',
@@ -518,7 +525,7 @@ const allTools = computed(() => [
   {
     id:'markdown-to-html',
     name:'Markdown转HTML',
-    category:'文本与编辑',
+    category:'文本编辑',
     categoryId:'text',
     description:'将Markdown文本转换为HTML代码',
     path:'/tools/markdown-to-html',
@@ -540,7 +547,7 @@ const allTools = computed(() => [
   { 
     id: 'sensitive-word-filter', 
     name: t('tools.sensitive-word-filter.name'),
-    category: t(`categories.text`),
+    category: t(`categories.text.title`),
     categoryId: 'text',
     description: t('tools.sensitive-word-filter.description'),
     path: '/tools/sensitive-word-filter',
@@ -551,7 +558,7 @@ const allTools = computed(() => [
   {
     id: 'word-shuffler',
     name: t('tools.word-shuffler.name'),
-    category: t(`categories.text`),
+    category: t(`categories.text.title`),
     categoryId: 'text',
     description: t('tools.word-shuffler.description'),
     path: '/tools/word-shuffler',
@@ -564,7 +571,7 @@ const allTools = computed(() => [
   {
     id: 'image-compressor',
     name: t('tools.image-compressor.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.image-compressor.description'),
     path: '/tools/image-compressor',
@@ -575,7 +582,7 @@ const allTools = computed(() => [
   {
     id: 'image-batch-resizer',
     name: t('tools.image-batch-resizer.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.image-batch-resizer.description'),
     path: '/tools/image-batch-resizer',
@@ -586,7 +593,7 @@ const allTools = computed(() => [
   {
     id: 'image-color-extractor',
     name: t('tools.image-color-extractor.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.image-color-extractor.description'),
     path: '/tools/image-color-extractor',
@@ -597,7 +604,7 @@ const allTools = computed(() => [
   // {
   //   id: 'id-photo-maker',
   //   name: t('tools.id-photo-maker.name'),
-  //   category: t(`categories.image`),
+  //   category: t(`categories.image.title`),
   //   categoryId: 'image',
   //   description: t('tools.id-photo-maker.description'),
   //   path: '/tools/id-photo-maker',
@@ -608,7 +615,7 @@ const allTools = computed(() => [
   {
     id: 'image-watermark',
     name: t('tools.image-watermark.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.image-watermark.description'),
     path: '/tools/image-watermark',
@@ -619,7 +626,7 @@ const allTools = computed(() => [
   {
     id: 'image-cropper',
     name: t('tools.image-cropper.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.image-cropper.description'),
     path: '/tools/image-cropper',
@@ -630,7 +637,7 @@ const allTools = computed(() => [
   {
     id: 'gif-frame-extractor',
     name: t('tools.gif-frame-extractor.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.gif-frame-extractor.description'),
     path: '/tools/gif-frame-extractor',
@@ -641,7 +648,7 @@ const allTools = computed(() => [
   { 
     id: 'svg-optimizer', 
     name: t('tools.svg-optimizer.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.svg-optimizer.description'),
     path: '/tools/svg-optimizer',
@@ -652,7 +659,7 @@ const allTools = computed(() => [
   {
     id: 'image-filters',
     name: t('tools.image-filters.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.image-filters.description'),
     path: '/tools/image-filters',
@@ -663,7 +670,7 @@ const allTools = computed(() => [
   {
     id: 'image-exif-viewer',
     name: t('tools.image-exif-viewer.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.image-exif-viewer.description'),
     path: '/tools/image-exif-viewer',
@@ -674,7 +681,7 @@ const allTools = computed(() => [
   {
     id: 'image-to-ascii',
     name: t('tools.image-to-ascii.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.image-to-ascii.description'),
     path: '/tools/image-to-ascii',
@@ -685,7 +692,7 @@ const allTools = computed(() => [
   {
     id: 'image-mosaic-generator',
     name: t('tools.image-mosaic-generator.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.image-mosaic-generator.description'),
     path: '/tools/image-mosaic-generator',
@@ -696,7 +703,7 @@ const allTools = computed(() => [
   {
     id: 'image-pixelator',
     name: t('tools.image-pixelator.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.image-pixelator.description'),
     path: '/tools/image-pixelator',
@@ -707,7 +714,7 @@ const allTools = computed(() => [
   {
     id: 'vertical-to-horizontal-image',
     name: t('tools.vertical-to-horizontal-image.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.vertical-to-horizontal-image.description'),
     path: '/tools/vertical-to-horizontal-image',
@@ -718,7 +725,7 @@ const allTools = computed(() => [
   {
     id: 'horizontal-to-vertical-image',
     name: t('tools.horizontal-to-vertical-image.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.horizontal-to-vertical-image.description'),
     path: '/tools/horizontal-to-vertical-image',
@@ -729,7 +736,7 @@ const allTools = computed(() => [
   {
     id: 'instagram-post-generator',
     name: t('tools.instagram-post-generator.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.instagram-post-generator.description'),
     path: '/tools/instagram-post-generator',
@@ -740,7 +747,7 @@ const allTools = computed(() => [
   {
     id: 'jfif-jpg-converter',
     name: t('tools.jfif-jpg-converter.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.jfif-jpg-converter.description'),
     path: '/tools/jfif-jpg-converter',
@@ -751,7 +758,7 @@ const allTools = computed(() => [
   {
     id: 'jpg-jfif-converter',
     name: t('tools.jpg-jfif-converter.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.jpg-jfif-converter.description'),
     path: '/tools/jpg-jfif-converter',
@@ -762,7 +769,7 @@ const allTools = computed(() => [
   {
     id: 'seal-generator',
     name: t('tools.seal-generator.name'),
-    category: t(`categories.image`),
+    category: t(`categories.image.title`),
     categoryId: 'image',
     description: t('tools.seal-generator.description'),
     path: '/tools/seal-generator',
@@ -775,7 +782,7 @@ const allTools = computed(() => [
   {
     id:'base64-encoder-decoder',
     name: t('tools.base64-encoder-decoder.name'),
-    category: t(`categories.convert`),
+    category: t(`categories.convert.title`),
     categoryId: 'convert',
     description: t('tools.base64-encoder-decoder.description'),
     path: '/tools/base64-encoder-decoder',
@@ -786,7 +793,7 @@ const allTools = computed(() => [
   { 
     id: 'csv-json-converter', 
     name: t('tools.csv-json-converter.name'),
-    category: t(`categories.convert`),
+    category: t(`categories.convert.title`),
     categoryId: 'convert',
     description: t('tools.csv-json-converter.description'),
     path: '/tools/csv-json-converter',
@@ -797,7 +804,7 @@ const allTools = computed(() => [
   { 
     id: 'number-converter', 
     name: t('tools.number-converter.name'),
-    category: t(`categories.convert`),
+    category: t(`categories.convert.title`),
     categoryId: 'convert',
     description: t('tools.number-converter.description'),
     path: '/tools/number-converter',
@@ -808,7 +815,7 @@ const allTools = computed(() => [
   {
     id:'timestamp-converter',
     name: t('tools.timestamp-converter.name'),
-    category: t(`categories.convert`),
+    category: t(`categories.convert.title`),
     categoryId: 'convert',
     description: t('tools.timestamp-converter.description'),
     path: '/tools/timestamp-converter',
@@ -819,7 +826,7 @@ const allTools = computed(() => [
   {
     id:'url-encode-decode',
     name: t('tools.url-encode-decode.name'),
-    category: t(`categories.convert`),
+    category: t(`categories.convert.title`),
     categoryId: 'convert',
     description: t('tools.url-encode-decode.description'),
     path: '/tools/url-encode-decode',
@@ -830,7 +837,7 @@ const allTools = computed(() => [
   {
     id:'xml-json-converter',
     name: t('tools.xml-json-converter.name'),
-    category: t(`categories.convert`),
+    category: t(`categories.convert.title`),
     categoryId: 'convert',
     description: t('tools.xml-json-converter.description'),
     path: '/tools/xml-json-converter',
@@ -841,7 +848,7 @@ const allTools = computed(() => [
   {
     id:'xml-formatter',
     name: t('tools.xml-formatter.name'),
-    category:t(`categories.convert`),
+    category:t(`categories.convert.title`),
     categoryId:'convert',
     description: t('tools.xml-formatter.description'),
     path:'/tools/xml-formatter',
@@ -852,7 +859,7 @@ const allTools = computed(() => [
   {
     id:'yaml-json-converter',
     name: t('tools.yaml-json-converter.name'),
-    category: t(`categories.convert`),
+    category: t(`categories.convert.title`),
     categoryId: 'convert',
     description: t('tools.yaml-json-converter.description'),
     path: '/tools/yaml-json-converter',
@@ -863,7 +870,7 @@ const allTools = computed(() => [
   { 
     id: 'timezone-converter', 
     name: t('tools.timezone-converter.name'),
-    category: t(`categories.convert`),
+    category: t(`categories.convert.title`),
     categoryId: 'convert',
     description: t('tools.timezone-converter.description'),
     path: '/tools/timezone-converter',
@@ -874,7 +881,7 @@ const allTools = computed(() => [
   {
     id: 'hex-and-calculator',
     name: t('tools.hex-and-calculator.name'),
-    category: t(`categories.convert`),
+    category: t(`categories.convert.title`),
     categoryId: 'convert',
     description: t('tools.hex-and-calculator.description'),
     path: '/tools/hex-and-calculator',
@@ -885,7 +892,7 @@ const allTools = computed(() => [
   {
     id: 'hexadecimal-case-converter',
     name: t('tools.hexadecimal-case-converter.name'),
-    category: t(`categories.convert`),
+    category: t(`categories.convert.title`),
     categoryId: 'convert',
     description: t('tools.hexadecimal-case-converter.description'),
     path: '/tools/hexadecimal-case-converter',
@@ -898,7 +905,7 @@ const allTools = computed(() => [
   { 
     id: 'http-header-security-checker', 
     name: t('tools.http-header-security-checker.name'),
-    category: t(`categories.network`),
+    category: t(`categories.network.title`),
     categoryId: 'network',
     description: t('tools.http-header-security-checker.description'),
     path: '/tools/http-header-security-checker',
@@ -909,7 +916,7 @@ const allTools = computed(() => [
   { 
     id: 'request-header-editor', 
     name: t('tools.request-header-editor.name'),
-    category: t(`categories.network`),
+    category: t(`categories.network.title`),
     categoryId: 'network',
     description: t('tools.request-header-editor.description'),
     path: '/tools/request-header-editor',
@@ -920,7 +927,7 @@ const allTools = computed(() => [
   {
     id: 'cors-generator',
     name: t('tools.cors-generator.name'),
-    category: t(`categories.network`),
+    category: t(`categories.network.title`),
     categoryId: 'network',
     description: t('tools.cors-generator.description'),
     path: '/tools/cors-generator',
@@ -931,7 +938,7 @@ const allTools = computed(() => [
   {
     id: 'curl-converter',
     name: t('tools.curl-converter.name'),
-    category: t(`categories.network`),
+    category: t(`categories.network.title`),
     categoryId: 'network',
     description: t('tools.curl-converter.description'),
     path: '/tools/curl-converter',
@@ -942,7 +949,7 @@ const allTools = computed(() => [
   {
     id: 'grpc-debugger',
     name: t('tools.grpc-debugger.name'),
-    category: t(`categories.network`),
+    category: t(`categories.network.title`),
     categoryId: 'network',
     description: t('tools.grpc-debugger.description'),
     path: '/tools/grpc-debugger',
@@ -953,7 +960,7 @@ const allTools = computed(() => [
   // { 
   //   id: 'network-speed-test', 
   //   name: t('tools.network-speed-test.name'),
-  //   category: t(`categories.network`),
+  //   category: t(`categories.network.title`),
   //   categoryId: 'network',
   //   description: t('tools.network-speed-test.description'),
   //   path: '/tools/network-speed-test',
@@ -964,7 +971,7 @@ const allTools = computed(() => [
   // { 
   //   id: 'page-redirect-checker', 
   //   name: t('tools.page-redirect-checker.name'),
-  //   category: t(`categories.network`),
+  //   category: t(`categories.network.title`),
   //   categoryId: 'network',
   //   description: t('tools.page-redirect-checker.description'),
   //   path: '/tools/page-redirect-checker',
@@ -975,7 +982,7 @@ const allTools = computed(() => [
   { 
     id: 'http-proxy-detector', 
     name: t('tools.http-proxy-detector.name'),
-    category: t(`categories.network`),
+    category: t(`categories.network.title`),
     categoryId: 'network',
     description: t('tools.http-proxy-detector.description'),
     path: '/tools/http-proxy-detector',
@@ -986,7 +993,7 @@ const allTools = computed(() => [
   { 
     id: 'user-agent-generator', 
     name: t('tools.user-agent-generator.name'),
-    category: t(`categories.network`),
+    category: t(`categories.network.title`),
     categoryId: 'network',
     description: t('tools.user-agent-generator.description'),
     path: '/tools/user-agent-generator',
@@ -997,7 +1004,7 @@ const allTools = computed(() => [
   {
     id: 'user-agent-parser',
     name: t('tools.user-agent-parser.name'),
-    category: t(`categories.network`),
+    category: t(`categories.network.title`),
     categoryId: 'network',
     description: t('tools.user-agent-parser.description'),
     path: '/tools/user-agent-parser',
@@ -1008,7 +1015,7 @@ const allTools = computed(() => [
   { 
     id: 'url-params-parser', 
     name: t('tools.url-params-parser.name'),
-    category: t(`categories.network`),
+    category: t(`categories.network.title`),
     categoryId: 'network',
     description: t('tools.url-params-parser.description'),
     path: '/tools/url-params-parser',
@@ -1019,7 +1026,7 @@ const allTools = computed(() => [
   {
     id: 'http-status-code-lookup',
     name: t('tools.http-status-code-lookup.name'),
-    category: t(`categories.network`),
+    category: t(`categories.network.title`),
     categoryId: 'network',
     description: t('tools.http-status-code-lookup.description'),
     path: '/tools/http-status-code-lookup',
@@ -1030,7 +1037,7 @@ const allTools = computed(() => [
   {
     id: 'ip-lookup',
     name: t('tools.ip-lookup.name'),
-    category: t(`categories.network`),
+    category: t(`categories.network.title`),
     categoryId: 'network',
     description: t('tools.ip-lookup.description'),
     path: '/tools/ip-lookup',
@@ -1041,7 +1048,7 @@ const allTools = computed(() => [
   {
     id: 'mqtt-tester',
     name: t('tools.mqtt-tester.name'),
-    category: t(`categories.network`),
+    category: t(`categories.network.title`),
     categoryId: 'network',
     description: t('tools.mqtt-tester.description'),
     path: '/tools/mqtt-tester',
@@ -1052,7 +1059,7 @@ const allTools = computed(() => [
   {
     id: "websocket-tester",
     name: t('tools.websocket-tester.name'),
-    category: t(`categories.network`),
+    category: t(`categories.network.title`),
     categoryId: "network",
     description: t('tools.websocket-tester.description'),
     path: "/tools/websocket-tester",
@@ -1063,7 +1070,7 @@ const allTools = computed(() => [
   { 
     id: 'cookie-manager', 
     name: t('tools.cookie-manager.name'),
-    category: t(`categories.network`),
+    category: t(`categories.network.title`),
     categoryId: 'network',
     description: t('tools.cookie-manager.description'),
     path: '/tools/cookie-manager',
@@ -1076,7 +1083,7 @@ const allTools = computed(() => [
   {
     id:'password-generator',
     name: t('tools.password-generator.name'),
-    category: t(`categories.crypto`),
+    category: t(`categories.crypto.title`),
     categoryId: 'crypto',
     description: t('tools.password-generator.description'),
     path: '/tools/password-generator',
@@ -1087,7 +1094,7 @@ const allTools = computed(() => [
   {
     id:'password-strength-checker',
     name: t('tools.password-strength-checker.name'),
-    category: t(`categories.crypto`),
+    category: t(`categories.crypto.title`),
     categoryId: 'crypto',
     description: t('tools.password-strength-checker.description'),
     path: '/tools/password-strength-checker',
@@ -1098,7 +1105,7 @@ const allTools = computed(() => [
   {
     id:'hash-calculator',
     name: t('tools.hash-calculator.name'),
-    category: t(`categories.crypto`),
+    category: t(`categories.crypto.title`),
     categoryId: 'crypto',
     description: t('tools.hash-calculator.description'),
     path: '/tools/hash-calculator',
@@ -1109,7 +1116,7 @@ const allTools = computed(() => [
   {
     id:'rsa-crypto',
     name: t('tools.rsa-crypto.name'),
-    category: t(`categories.crypto`),
+    category: t(`categories.crypto.title`),
     categoryId: 'crypto',
     description: t('tools.rsa-crypto.description'),
     path: '/tools/rsa-crypto',
@@ -1120,7 +1127,7 @@ const allTools = computed(() => [
   {
     id:'sm2-crypto',
     name: t('tools.sm2-crypto.name'),
-    category: t(`categories.crypto`),
+    category: t(`categories.crypto.title`),
     categoryId: 'crypto',
     description: t('tools.sm2-crypto.description'),
     path: '/tools/sm2-crypto',
@@ -1131,7 +1138,7 @@ const allTools = computed(() => [
   {
     id:'symmetric-crypto',
     name: t('tools.symmetric-crypto.name'),
-    category: t(`categories.crypto`),
+    category: t(`categories.crypto.title`),
     categoryId: 'crypto',
     description: t('tools.symmetric-crypto.description'),
     path: '/tools/symmetric-crypto',
@@ -1142,7 +1149,7 @@ const allTools = computed(() => [
   { 
     id: 'hmac-calculator', 
     name: t('tools.hmac-calculator.name'),
-    category: t(`categories.crypto`),
+    category: t(`categories.crypto.title`),
     categoryId: 'crypto',
     description: t('tools.hmac-calculator.description'),
     path: '/tools/hmac-calculator',
@@ -1153,7 +1160,7 @@ const allTools = computed(() => [
   { 
     id: 'x509-certificate-decoder', 
     name: t('tools.x509-certificate-decoder.name'),
-    category: t(`categories.crypto`),
+    category: t(`categories.crypto.title`),
     categoryId: 'crypto',
     description: t('tools.x509-certificate-decoder.description'),
     path: '/tools/x509-certificate-decoder',
@@ -1166,7 +1173,7 @@ const allTools = computed(() => [
   { 
     id: 'latex-formula-generator', 
     name: t('tools.latex-formula-generator.name'),
-    category: t(`categories.text`),
+    category: t(`categories.text.title`),
     categoryId: 'utility',
     description: t('tools.latex-formula-generator.description'),
     path: '/tools/latex-formula-generator',
@@ -1177,7 +1184,7 @@ const allTools = computed(() => [
   { 
     id: 'countdown-generator', 
     name: t('tools.countdown-generator.name'),
-    category: t(`categories.utility`),
+    category: t(`categories.utility.title`),
     categoryId: 'utility',
     description: t('tools.countdown-generator.description'),
     path: '/tools/countdown-generator',
@@ -1188,7 +1195,7 @@ const allTools = computed(() => [
   { 
     id: 'pomodoro-timer', 
     name: t('tools.pomodoro-timer.name'),
-    category: t(`categories.utility`),
+    category: t(`categories.utility.title`),
     categoryId: 'utility',
     description: t('tools.pomodoro-timer.description'),
     path: '/tools/pomodoro-timer',
@@ -1199,7 +1206,7 @@ const allTools = computed(() => [
   { 
     id: 'loan-calculator', 
     name: t('tools.loan-calculator.name'),
-    category: t(`categories.utility`),
+    category: t(`categories.utility.title`),
     categoryId: 'utility',
     description: t('tools.loan-calculator.description'),
     path: '/tools/loan-calculator',
@@ -1210,7 +1217,7 @@ const allTools = computed(() => [
   { 
     id: 'income-tax-calculator', 
     name: t('tools.income-tax-calculator.name'),
-    category: t(`categories.utility`),
+    category: t(`categories.utility.title`),
     categoryId: 'utility',
     description: t('tools.income-tax-calculator.description'),
     path: '/tools/income-tax-calculator',
@@ -1221,7 +1228,7 @@ const allTools = computed(() => [
   { 
     id: 'bmi-calculator', 
     name: t('tools.bmi-calculator.name'),
-    category: t(`categories.utility`),
+    category: t(`categories.utility.title`),
     categoryId: 'utility',
     description: t('tools.bmi-calculator.description'),
     path: '/tools/bmi-calculator',
@@ -1232,7 +1239,7 @@ const allTools = computed(() => [
   { 
     id: 'holiday-calendar', 
     name: t('tools.holiday-calendar.name'),
-    category: t(`categories.utility`),
+    category: t(`categories.utility.title`),
     categoryId: 'utility',
     description: t('tools.holiday-calendar.description'),
     path: '/tools/holiday-calendar',
@@ -1243,7 +1250,7 @@ const allTools = computed(() => [
   { 
     id: 'todo-list', 
     name: t('tools.todo-list.name'),
-    category: t(`categories.utility`),
+    category: t(`categories.utility.title`),
     categoryId: 'utility',
     description: t('tools.todo-list.description'),
     path: '/tools/todo-list',
@@ -1254,7 +1261,7 @@ const allTools = computed(() => [
   { 
     id: 'currency-converter', 
     name: t('tools.currency-converter.name'),
-    category: t(`categories.utility`),
+    category: t(`categories.utility.title`),
     categoryId: 'utility',
     description: t('tools.currency-converter.description'),
     path: '/tools/currency-converter',
@@ -1265,7 +1272,7 @@ const allTools = computed(() => [
   { 
     id: 'name-generator', 
     name: t('tools.name-generator.name'),
-    category: t(`categories.utility`),
+    category: t(`categories.utility.title`),
     categoryId: 'utility',
     description: t('tools.name-generator.description'),
     path: '/tools/name-generator',
@@ -1276,7 +1283,7 @@ const allTools = computed(() => [
   { 
     id: 'travel-budget-planner', 
     name: t('tools.travel-budget-planner.name'),
-    category: t(`categories.utility`),
+    category: t(`categories.utility.title`),
     categoryId: 'utility',
     description: t('tools.travel-budget-planner.description'),
     path: '/tools/travel-budget-planner',
@@ -1287,7 +1294,7 @@ const allTools = computed(() => [
   {
     id: 'personal-account-book',
     name: t('tools.personal-account-book.name'),
-    category: t(`categories.utility`),
+    category: t(`categories.utility.title`),
     categoryId: 'utility',
     description: t('tools.personal-account-book.description'),
     path: '/tools/personal-account-book',
@@ -1298,7 +1305,7 @@ const allTools = computed(() => [
   {
     id: 'cash-app-fee-calculator',
     name: t('tools.cash-app-fee-calculator.name'),
-    category: t(`categories.utility`),
+    category: t(`categories.utility.title`),
     categoryId: 'utility',
     description: t('tools.cash-app-fee-calculator.description'),
     path: '/tools/cash-app-fee-calculator',
@@ -1306,16 +1313,29 @@ const allTools = computed(() => [
     icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     tags: ['utility', 'finance', 'cash', 'app', 'fee', 'calculator', 'money']
   },
+
+  // 测绘工具
   {
     id: 'coordinate-converter',
     name: t('tools.coordinate-converter.name'),
-    category: t(`categories.utility`),
-    categoryId: 'utility',
+    category: t(`categories.surveying_and_mapping.title`),
+    categoryId: 'surveying_and_mapping',
     description: t('tools.coordinate-converter.description'),
     path: '/tools/coordinate-converter',
     component: 'CoordinateConverter',
     icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',
     tags: ['coordinate', 'conversion', 'gis', 'mapping', 'location', 'utility', 'geography']
+  },
+  { 
+    id: 'gps-track-replay', 
+    name: t('tools.gps-track-replay.name'),
+    category: t(`categories.surveying_and_mapping.title`),
+    categoryId: 'surveying_and_mapping',
+    description: t('tools.gps-track-replay.description'),
+    path: '/tools/gps-track-replay',
+    component: 'GpsTrackReplay',
+    icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7',
+    tags: ['gps', 'track', 'map', 'navigation', 'location', 'geolocation', 'gpx', 'kml', 'geojson', 'visualization', 'replay', 'route', 'surveying_and_mapping']
   },
 ])
 provide('allTools', allTools)

@@ -148,7 +148,8 @@ const categoryDescriptions = {
   'converter': '多种格式转换工具，轻松在不同数据格式间切换',
   'network': '网络协议和API相关工具，帮助开发者调试和优化网络应用',
   'security': '加密、解密和安全相关工具，保护您的数据安全',
-  'utility': '各类实用小工具集合，解决日常工作中的各种问题'
+  'utility': '各类实用小工具集合，解决日常工作中的各种问题',
+  'surveying_and_mapping': '测绘工具，帮助测绘人员进行测绘工作'
 }
 
 // 使用内联SVG图标替代导入组件
@@ -184,6 +185,10 @@ const categoryIcons = {
   utility: `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>`,
+
+  surveying_and_mapping: `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
   </svg>`
 }
 
@@ -196,7 +201,8 @@ const categoryFeaturedTools = {
   'converter': ['Base64编解码', 'CSV转JSON', '进制转换', '时间戳转换', 'URL编解码'],
   'network': ['API请求工具', 'HTTP状态码查询', 'IP地址查询', 'WebSocket测试', 'CORS生成器'],
   'security': ['密码生成器', '密码强度检测', '哈希计算器', 'RSA加密', '对称加密'],
-  'utility': ['二维码生成', '随机数生成', '计算器', '日期计算', '单位换算']
+  'utility': ['二维码生成', '随机数生成', '计算器', '日期计算', '单位换算'],
+  'surveying_and_mapping': ['测绘工具', '地图绘制', '坐标转换', '距离测量', '面积计算']
 }
 
 // 构建带有统计数据的分类列表
