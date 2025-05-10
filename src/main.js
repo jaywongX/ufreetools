@@ -147,6 +147,7 @@ const lazyComponentMap = {
   'HexadecimalCaseConverter': () => import('./components/tools/HexadecimalCaseConverter.vue'),
   'CoordinateConverter': () => import('./components/tools/CoordinateConverter.vue'),
   'X509CertificateDecoder': () => import('./components/tools/X509CertificateDecoder.vue'),
+  'GpsTrackReplay': () => import('./components/tools/GpsTrackReplay.vue'),
 }
 
 // 初始化Vercel Analytics

@@ -1826,4 +1826,20 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/x509-certificate-decoder" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/x509-certificate-decoder" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/gps-track-replay</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/gps-track-replay" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/gps-track-replay" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/tool/gps-track-replay</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/gps-track-replay" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/gps-track-replay" />
+  </url>
 </urlset>

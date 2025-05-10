@@ -381,4 +381,17 @@ export default {
   rgb: 'RGB',
   palette: 'Palette',
   cors: 'CORS',
+
+  // Added from the code block
+  gps: 'GPS',
+  track: 'Track',
+  map: 'Map',
+  navigation: 'Navigation',
+  gpx: 'GPX',
+  kml: 'KML',
+  geojson: 'GeoJSON',
+  visualization: 'Visualization',
+  replay: 'Replay',
+  route: 'Route',
+  surveying_and_mapping: 'Surveying and Mapping',
 }

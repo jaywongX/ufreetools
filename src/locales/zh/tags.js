@@ -380,4 +380,18 @@ export default {
   rgb: 'RGB',
   palette: '调色板',
   cors: 'CORS',
+
+  // Add these entries to the existing tags object:
+  gps: 'GPS',
+  track: '轨迹',
+  map: '地图',
+  navigation: '导航',
+  geolocation: '地理定位',
+  gpx: 'GPX',
+  kml: 'KML',
+  geojson: 'GeoJSON',
+  visualization: '可视化',
+  replay: '回放',
+  route: '路线',
+  surveying_and_mapping: '测绘',
 }
