@@ -394,4 +394,6 @@ export default {
   replay: 'Replay',
   route: 'Route',
   surveying_and_mapping: 'Surveying and Mapping',
+  gauss: 'Gauss',
+  gaussian: 'Gaussian',
 }

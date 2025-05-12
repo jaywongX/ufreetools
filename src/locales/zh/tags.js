@@ -394,4 +394,6 @@ export default {
   replay: '回放',
   route: '路线',
   surveying_and_mapping: '测绘',
+  gauss: '高斯',
+  gaussian: '高斯',
 }
