@@ -98,6 +98,7 @@ import coordinateConverter from './tools/coordinate-converter.js';
 import x509CertificateDecoder from './tools/x509-certificate-decoder.js';
 import gpsTrackReplay from './tools/gps-track-replay.js';
 import gaussianProjection from './tools/gaussian-projection.js';
+import rsaEncryptDecrypt from './tools/rsa-encrypt-decrypt.js';
 
 export default {
   common: {
@@ -231,4 +232,5 @@ export default {
   'x509-certificate-decoder': x509CertificateDecoder,
   'gps-track-replay': gpsTrackReplay,
   'gaussian-projection': gaussianProjection,
+  'rsa-encrypt-decrypt': rsaEncryptDecrypt,
 };

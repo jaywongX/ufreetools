@@ -149,6 +149,7 @@ const lazyComponentMap = {
   'X509CertificateDecoder': () => import('./components/tools/X509CertificateDecoder.vue'),
   'GpsTrackReplay': () => import('./components/tools/GpsTrackReplay.vue'),
   'GaussianProjection': () => import('./components/tools/GaussianProjection.vue'),
+  'RsaEncryptDecrypt': () => import('./components/tools/RsaEncryptDecrypt.vue'),
 }
 
 // 初始化Vercel Analytics

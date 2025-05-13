@@ -396,4 +396,9 @@ export default {
   surveying_and_mapping: '测绘',
   gauss: '高斯',
   gaussian: '高斯',
+
+  // 已有标签下添加
+  pkcs: 'PKCS',
+  pem: 'PEM',
+  key: '密钥',
 }

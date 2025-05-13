@@ -782,7 +782,7 @@ async function calculateTextHash(selectedHash, text) {
         }
       case 'sm3':
         const sm3Result = sm3.sm3(text)
-        return {
+    return {
           hex: sm3Result,
           base64: Buffer.from(sm3Result, 'hex').toString('base64')
         }
@@ -936,7 +936,7 @@ function calculateFileHash(selectedHash) {
             });
             return;
           
-          case 'sha3_256':
+        case 'sha3_256':
             const sha3_256Result = sha3_256(fileData);
             resolve({
               hex: sha3_256Result,
@@ -952,7 +952,7 @@ function calculateFileHash(selectedHash) {
             });
             return;
 
-          case 'sha3_512':
+        case 'sha3_512':
             const sha3_512Result = sha3_512(fileData);
             resolve({
               hex: sha3_512Result,
@@ -973,7 +973,7 @@ function calculateFileHash(selectedHash) {
             const keccak256Instance = keccak256.create();
             keccak256Instance.update(fileData);
             const keccak256Result = keccak256Instance.hex();
-            resolve({
+      resolve({
               hex: keccak256Result,
               base64: Buffer.from(keccak256Result, 'hex').toString('base64')
             });
@@ -1006,7 +1006,7 @@ function calculateFileHash(selectedHash) {
             resolve({
               hex: shake128FileResult,
               base64: Buffer.from(shake128FileResult, 'hex').toString('base64')
-            })
+  })
             return
           
           case 'shake256':
