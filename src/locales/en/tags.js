@@ -394,4 +394,11 @@ export default {
   replay: 'Replay',
   route: 'Route',
   surveying_and_mapping: 'Surveying and Mapping',
+  gauss: 'Gauss',
+  gaussian: 'Gaussian',
+
+  // Added from the code block
+  pkcs: 'PKCS',
+  pem: 'PEM',
+  key: 'Key',
 }

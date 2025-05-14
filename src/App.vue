@@ -1168,6 +1168,17 @@ const allTools = computed(() => [
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['crypto', 'security', 'certificate', 'x509', 'ssl', 'tls', 'pki', 'analyze', 'decoder']
   },
+  { 
+    id: 'rsa-encrypt-decrypt', 
+    name: t('tools.rsa-encrypt-decrypt.name'),
+    category: t(`categories.crypto.title`),
+    categoryId: 'crypto',
+    description: t('tools.rsa-encrypt-decrypt.description'),
+    path: '/tools/rsa-encrypt-decrypt',
+    component: 'RsaEncryptDecrypt',
+    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+    tags: ['crypto', 'rsa', 'encrypt', 'decrypt', 'security', 'key', 'pkcs', 'pem', 'certificate']
+  },
 
   // 实用与效率
   { 
@@ -1336,6 +1347,17 @@ const allTools = computed(() => [
     component: 'GpsTrackReplay',
     icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7',
     tags: ['gps', 'track', 'map', 'navigation', 'location', 'geolocation', 'gpx', 'kml', 'geojson', 'visualization', 'replay', 'route', 'surveying_and_mapping']
+  },
+  {
+    id: 'gaussian-projection',
+    name: t('tools.gaussian-projection.name'),
+    category: t(`categories.surveying_and_mapping.title`),
+    categoryId: 'surveying_and_mapping',
+    description: t('tools.gaussian-projection.description'),
+    path: '/tools/gaussian-projection',
+    component: 'GaussianProjection',
+    icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7',
+    tags: ['coordinate', 'conversion', 'gis', 'mapping', 'geodetic', 'geography', 'geolocation', 'location', 'projection', 'surveying_and_mapping', 'gauss', 'gaussian']
   },
 ])
 provide('allTools', allTools)

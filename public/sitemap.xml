@@ -1842,4 +1842,36 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/gps-track-replay" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/gps-track-replay" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/gaussian-projection</loc>
+    <lastmod>2025-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/gaussian-projection" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/gaussian-projection" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/tool/gaussian-projection</loc>
+    <lastmod>2025-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/gaussian-projection" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/gaussian-projection" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/rsa-encrypt-decrypt</loc>
+    <lastmod>2025-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/rsa-encrypt-decrypt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/rsa-encrypt-decrypt" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/tool/rsa-encrypt-decrypt</loc>
+    <lastmod>2025-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/rsa-encrypt-decrypt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/rsa-encrypt-decrypt" />
+  </url>
 </urlset>
