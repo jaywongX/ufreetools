@@ -150,6 +150,7 @@ const lazyComponentMap = {
   'GpsTrackReplay': () => import('./components/tools/GpsTrackReplay.vue'),
   'GaussianProjection': () => import('./components/tools/GaussianProjection.vue'),
   'RsaEncryptDecrypt': () => import('./components/tools/RsaEncryptDecrypt.vue'),
+  'Sm2EncryptDecrypt': () => import('./components/tools/Sm2EncryptDecrypt.vue'),
 }
 
 // 初始化Vercel Analytics
