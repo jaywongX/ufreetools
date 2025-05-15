@@ -401,4 +401,9 @@ export default {
   pkcs: 'PKCS',
   pem: 'PEM',
   key: '密钥',
+  identity: '身份',
+  idCard: '身份证',
+  china: '中国',
+  test: '测试',
+  validation: '验证', 
 }

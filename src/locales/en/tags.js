@@ -401,4 +401,9 @@ export default {
   pkcs: 'PKCS',
   pem: 'PEM',
   key: 'Key',
+  identity: 'Identity',
+  idCard: 'ID Card',
+  china: 'China',
+  test: 'Test',
+  validation: 'Validation', 
 }

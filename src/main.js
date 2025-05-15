@@ -151,6 +151,7 @@ const lazyComponentMap = {
   'GaussianProjection': () => import('./components/tools/GaussianProjection.vue'),
   'RsaEncryptDecrypt': () => import('./components/tools/RsaEncryptDecrypt.vue'),
   'Sm2EncryptDecrypt': () => import('./components/tools/Sm2EncryptDecrypt.vue'),
+  'IdNumberGenerator': () => import('./components/tools/IdNumberGenerator.vue'),
 }
 
 // 初始化Vercel Analytics
