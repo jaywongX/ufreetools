@@ -7,12 +7,17 @@
       <!-- 站点标题和Logo -->
       <div class="h-16 flex items-center px-4 border-b border-gray-200 dark:border-gray-700">
         <router-link :to="localizedRoute('/')" class="flex items-center">
-          <!-- Logo图标始终显示 -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-          </svg>
-          <!-- 文字部分使用transition -->
-          <span v-if="sidebarOpen" class="font-bold text-xl text-primary ml-2 transition-opacity duration-300">UFreeTools</span>
+          <!-- 图标保持不变 -->
+          <img src="/favicon.png" alt="UFreeTools" class="h-8 w-8" />
+          
+          <!-- 文字部分添加过渡动画 -->
+          <div class="overflow-hidden" :class="{ 'w-0': !sidebarOpen, 'w-auto': sidebarOpen }">
+            <span class="font-bold text-xl ml-2 whitespace-nowrap transition-all duration-500 ease-in-out
+                  text-[#1E293B] dark:text-white"
+                  :class="{ 'opacity-0 translate-x-4': !sidebarOpen, 'opacity-100 translate-x-0': sidebarOpen }">
+              UFreeTools
+            </span>
+          </div>
         </router-link>
       </div>
       
