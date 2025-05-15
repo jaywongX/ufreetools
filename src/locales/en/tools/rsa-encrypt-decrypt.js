@@ -1,5 +1,5 @@
 export default {
-  name: 'RSA Encryption Tool',
+  name: 'RSA Encrypt/Decrypt',
   description: 'Encrypt and decrypt messages using RSA public/private key cryptography',
   keyManagement: 'Key Management',
   keySize: 'Key Size',

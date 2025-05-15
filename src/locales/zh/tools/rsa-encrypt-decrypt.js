@@ -1,5 +1,5 @@
 export default {
-  name: 'RSA 加解密工具',
+  name: 'RSA加解密',
   description: '使用 RSA 公钥/私钥密码学进行消息加密和解密',
   keyManagement: '密钥管理',
   keySize: '密钥长度',

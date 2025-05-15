@@ -1179,6 +1179,17 @@ const allTools = computed(() => [
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['crypto', 'rsa', 'encrypt', 'decrypt', 'security', 'key', 'pkcs', 'pem', 'certificate']
   },
+  { 
+    id: 'sm2-encrypt-decrypt', 
+    name: t('tools.sm2-encrypt-decrypt.name'),
+    category: t(`categories.crypto.title`),
+    categoryId: 'crypto',
+    description: t('tools.sm2-encrypt-decrypt.description'),
+    path: '/tools/sm2-encrypt-decrypt',
+    component: 'Sm2EncryptDecrypt',
+    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+    tags: ['crypto', 'sm2', 'encrypt', 'decrypt', 'security', 'key', 'pem', 'certificate']
+  },
 
   // 实用与效率
   { 
