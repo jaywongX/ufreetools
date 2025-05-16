@@ -1890,4 +1890,20 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/sm2-encrypt-decrypt" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/sm2-encrypt-decrypt" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/id-number-generator</loc>
+    <lastmod>2025-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/id-number-generator" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/id-number-generator" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/tool/id-number-generator</loc>
+    <lastmod>2025-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/id-number-generator" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/id-number-generator" />
+  </url>
 </urlset>

@@ -43,7 +43,7 @@
       >
         <!-- Drawer Header -->
         <div class="sticky top-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 py-3 px-4 flex justify-between items-center z-10">
-          <h3 class="font-medium">{{ activeCategoryId ? $t(`categories.${activeCategoryId}`) : '' }}</h3>
+          <h3 class="font-medium">{{ activeCategoryId ? $t(`categories.${activeCategoryId}.title`) : '' }}</h3>
           <button @click="closeDrawer" class="p-1 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />

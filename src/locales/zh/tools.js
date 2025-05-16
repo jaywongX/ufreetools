@@ -100,6 +100,8 @@ import gpsTrackReplay from './tools/gps-track-replay.js';
 import gaussianProjection from './tools/gaussian-projection.js';
 import rsaEncryptDecrypt from './tools/rsa-encrypt-decrypt.js';
 import sm2EncryptDecrypt from './tools/sm2-encrypt-decrypt.js';
+import idNumberGenerator from './tools/id-number-generator.js';
+
 export default {
   common: {
     tryNow: '立即使用',
@@ -234,4 +236,5 @@ export default {
   'gaussian-projection': gaussianProjection,
   'rsa-encrypt-decrypt': rsaEncryptDecrypt,
   'sm2-encrypt-decrypt': sm2EncryptDecrypt,
+  'id-number-generator': idNumberGenerator,
 };
