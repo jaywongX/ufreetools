@@ -406,4 +406,6 @@ export default {
   china: '中国',
   test: '测试',
   validation: '验证', 
+  business: '商业',
+  identifier: '识别码',
 }

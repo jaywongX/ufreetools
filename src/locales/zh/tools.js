@@ -101,6 +101,7 @@ import gaussianProjection from './tools/gaussian-projection.js';
 import rsaEncryptDecrypt from './tools/rsa-encrypt-decrypt.js';
 import sm2EncryptDecrypt from './tools/sm2-encrypt-decrypt.js';
 import idNumberGenerator from './tools/id-number-generator.js';
+import unifiedCreditCodeGenerator from './tools/unified-credit-code-generator.js';
 
 export default {
   common: {
@@ -237,4 +238,5 @@ export default {
   'rsa-encrypt-decrypt': rsaEncryptDecrypt,
   'sm2-encrypt-decrypt': sm2EncryptDecrypt,
   'id-number-generator': idNumberGenerator,
+  'unified-credit-code-generator': unifiedCreditCodeGenerator,
 };

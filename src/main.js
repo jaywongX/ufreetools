@@ -152,6 +152,7 @@ const lazyComponentMap = {
   'RsaEncryptDecrypt': () => import('./components/tools/RsaEncryptDecrypt.vue'),
   'Sm2EncryptDecrypt': () => import('./components/tools/Sm2EncryptDecrypt.vue'),
   'IdNumberGenerator': () => import('./components/tools/IdNumberGenerator.vue'),
+  'UnifiedCreditCodeGenerator': () => import('./components/tools/UnifiedCreditCodeGenerator.vue'),
 }
 
 // 初始化Vercel Analytics

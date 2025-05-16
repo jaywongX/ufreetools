@@ -1346,6 +1346,17 @@ const allTools = computed(() => [
     icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
     tags: ['utility', 'generator', 'identity', 'china', 'test', 'random']
   },
+  { 
+    id: 'unified-credit-code-generator', 
+    name: t('tools.unified-credit-code-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.unified-credit-code-generator.description'),
+    path: '/tools/unified-credit-code-generator',
+    component: 'UnifiedCreditCodeGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['utility', 'generator', 'china', 'business', 'test', 'validation', 'code', 'identifier']
+  },
 
   // 测绘工具
   {

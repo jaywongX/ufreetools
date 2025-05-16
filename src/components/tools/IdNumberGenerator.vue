@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">    
+  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
     <div class="mb-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
       <!-- 生成设置 -->
       <div class="space-y-4">
@@ -71,7 +71,7 @@
                   <option v-for="[city, code] in Object.entries(filteredCities)" :key="code" :value="city">
                     {{ $t(`tools.id-number-generator.regions.${city}`) }}
                   </option>
-                </select>
+          </select>
               </div>
             </div>
             
@@ -198,7 +198,7 @@
         
         <div v-else class="flex-grow flex items-center justify-center bg-gray-50 dark:bg-gray-700 rounded-md">
           <p class="text-center text-gray-500 dark:text-gray-400">
-            {{ $t('tools.id-number-generator.noResults') }}
+          {{ $t('tools.id-number-generator.noResults') }}
           </p>
         </div>
       </div>
