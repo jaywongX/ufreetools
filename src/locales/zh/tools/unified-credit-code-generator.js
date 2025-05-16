@@ -171,7 +171,7 @@ export default {
         relatedTool1Desc: "生成用于测试和开发目的的有效中国公民身份证号码。",
         relatedTool2Title: "哈希计算器",
         relatedTool2Desc: "计算各种哈希值，包括MD5、SHA-1、SHA-256等。",
-        relatedTool3Title: "随机字符串生成器",
-        relatedTool3Desc: "创建具有可自定义长度和字符集的随机字符串。"
+        relatedTool3Title: "密码生成器",
+        relatedTool3Desc: "生成安全、随机的密码，带有可自定义选项。"
     }
 }

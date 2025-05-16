@@ -1190,6 +1190,17 @@ const allTools = computed(() => [
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['crypto', 'sm2', 'encrypt', 'decrypt', 'security', 'key', 'pem', 'certificate']
   },
+  { 
+    id: 'rsa-key-pair-generator', 
+    name: t('tools.rsa-key-pair-generator.name'),
+    category: t(`categories.crypto.title`),
+    categoryId: 'crypto',
+    description: t('tools.rsa-key-pair-generator.description'),
+    path: '/tools/rsa-key-pair-generator',
+    component: 'RsaKeyPairGenerator',
+    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+    tags: ['rsa', 'crypto', 'security', 'key', 'encrypt', 'decrypt', 'generator', 'keypair']
+  },
 
   // 实用与效率
   { 

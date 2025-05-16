@@ -408,4 +408,5 @@ export default {
   validation: 'Validation', 
   business: 'Business',
   identifier: 'Identifier',
+  keypair: 'Key Pair',
 }

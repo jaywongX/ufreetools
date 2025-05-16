@@ -163,7 +163,7 @@
                         <p class="text-sm text-gray-600 dark:text-gray-400">{{
                             $t('tools.unified-credit-code-generator.article.relatedTool2Desc') }}</p>
                     </a>
-                    <a href="https://www.ufreetools.com/tool/random-string-generator" target="_blank"
+                    <a href="https://www.ufreetools.com/tool/password-generator" target="_blank"
                         class="block p-4 border rounded-lg hover:shadow-md dark:border-gray-700 transition duration-300">
                         <h3 class="font-medium mb-2">{{
                             $t('tools.unified-credit-code-generator.article.relatedTool3Title') }}</h3>

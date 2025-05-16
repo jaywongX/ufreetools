@@ -408,4 +408,5 @@ export default {
   validation: '验证', 
   business: '商业',
   identifier: '识别码',
+  keypair: '密钥对',
 }

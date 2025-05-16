@@ -1922,4 +1922,20 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/unified-credit-code-generator" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/unified-credit-code-generator" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/rsa-key-pair-generator</loc>
+    <lastmod>2025-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/rsa-key-pair-generator" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/rsa-key-pair-generator" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/tool/rsa-key-pair-generator</loc>
+    <lastmod>2025-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/rsa-key-pair-generator" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/rsa-key-pair-generator" />
+  </url>
 </urlset>

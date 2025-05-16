@@ -171,7 +171,7 @@ export default {
         relatedTool1Desc: "Generate valid Chinese citizen ID numbers (身份证号码) for testing and development purposes.",
         relatedTool2Title: "Hash Calculator",
         relatedTool2Desc: "Calculate various hash values including MD5, SHA-1, SHA-256, and more.",
-        relatedTool3Title: "Random String Generator",
-        relatedTool3Desc: "Create random strings with customizable length and character sets."
+        relatedTool3Title: "Password Generator",
+        relatedTool3Desc: "Generate secure, random passwords with customizable options."
     }
 }
