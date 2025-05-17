@@ -1201,6 +1201,17 @@ const allTools = computed(() => [
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['rsa', 'crypto', 'security', 'key', 'encrypt', 'decrypt', 'generator', 'keypair']
   },
+  { 
+    id: 'sm2-key-pair-generator', 
+    name: t('tools.sm2-key-pair-generator.name'),
+    category: t(`categories.crypto.title`),
+    categoryId: 'crypto',
+    description: t('tools.sm2-key-pair-generator.description'),
+    path: '/tools/sm2-key-pair-generator',
+    component: 'Sm2KeyPairGenerator',
+    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+    tags: ['sm2', 'crypto', 'security', 'key', 'encrypt', 'decrypt', 'generator', 'keypair']
+  },
 
   // 实用与效率
   { 
@@ -1511,8 +1522,56 @@ watch(() => route.params.lang, (newLang) => {
   }
 })
 
+// Function to get current tool based on route
+const getCurrentToolFromRoute = (route) => {
+  // Get the current path - handle both /tools/tool-id and /lang/tools/tool-id formats
+  const path = route.path
+  
+  // Case 1: Direct route like /tools/tool-id
+  if (path.startsWith('/tool/')) {
+    const toolId = path.split('/').pop()
+    return allTools.value.find(tool => tool.id === toolId)
+  }
+  
+  // Case 2: Language-prefixed route like /zh/tool/tool-id or /en/tool/tool-id
+  const matches = path.match(/^\/(zh|en)\/tool\/([^\/]+)$/)
+  if (matches && matches.length >= 3) {
+    const toolId = matches[2]
+    return allTools.value.find(tool => tool.id === toolId)
+  }
+  
+  // Handle category pages
+  if (path.includes('/category/')) {
+    const categoryId = path.split('/').pop()
+    const category = categories.value.find(cat => cat.id === categoryId)
+    if (category) {
+      return { name: t(`categories.${categoryId}.title`)}
+    }
+  }
+  
+  // Handle tag pages
+  if (path.includes('/tag/')) {
+    const tagId = path.split('/').pop()
+    const tag = allTags.value.find(t => t.id === tagId)
+    if (tag) {
+      return { name: tag.name}
+    }
+  }
+  
+  // Home page or other pages
+  return null
+}
+
 // 设置头部元数据
 useHead({
+  // title: computed(() => {
+  //   // Get current tool name from route or component
+  //   const currentTool = getCurrentToolFromRoute(route)
+  //   if (currentTool) {
+  //     return `${currentTool.name}`
+  //   }
+  //   return 'UFreeTools - Your Best Free Tools'
+  // }),
   link: computed(() => {
     const path = route.path
     const basePath = path.replace(/^\/(zh|en)/, '')

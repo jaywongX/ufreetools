@@ -103,6 +103,7 @@ import sm2EncryptDecrypt from './tools/sm2-encrypt-decrypt.js';
 import idNumberGenerator from './tools/id-number-generator.js';
 import unifiedCreditCodeGenerator from './tools/unified-credit-code-generator.js';
 import rsaKeyPairGenerator from './tools/rsa-key-pair-generator.js';
+import sm2KeyPairGenerator from './tools/sm2-key-pair-generator.js';
 export default {
     common: {
       tryNow: 'Try Now',
@@ -240,4 +241,5 @@ export default {
     'id-number-generator': idNumberGenerator,
     'unified-credit-code-generator': unifiedCreditCodeGenerator,
     'rsa-key-pair-generator': rsaKeyPairGenerator,
+    'sm2-key-pair-generator': sm2KeyPairGenerator,
   }

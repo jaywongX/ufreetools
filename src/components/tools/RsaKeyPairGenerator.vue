@@ -77,12 +77,29 @@
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 flex flex-col">
                 <h2 class="text-xl font-bold mb-4">{{ $t('tools.rsa-key-pair-generator.results') }}</h2>
 
+                <!-- Export all buttons -->
+                <div v-if="keyPairs.length > 0" class="mt-4 flex flex-wrap gap-2">
+                    <button @click="exportAllKeyPairs('pem')"
+                        class="flex-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 py-2 px-4 rounded-md transition duration-300">
+                        {{ $t('tools.rsa-key-pair-generator.exportAllAsPem') }}
+                    </button>
+                    <button @click="exportAllKeyPairs('pkcs8')"
+                        class="flex-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 py-2 px-4 rounded-md transition duration-300">
+                        {{ $t('tools.rsa-key-pair-generator.exportAllAsPkcs8') }}
+                    </button>
+                    <button @click="copyAllKeyPairs()"
+                        class="flex-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 py-2 px-4 rounded-md transition duration-300">
+                        {{ $t('tools.rsa-key-pair-generator.copyAll') }}
+                    </button>
+                </div>
+
                 <div v-if="keyPairs.length === 0"
                     class="flex-grow flex items-center justify-center text-gray-500 dark:text-gray-400">
                     {{ $t('tools.rsa-key-pair-generator.noResults') }}
                 </div>
 
-                <div v-else class="flex-grow overflow-auto">
+                <!-- <div v-else class="flex-grow overflow-auto"> -->
+                <div class="overflow-y-auto flex-grow" style="max-height: calc(100vh - 350px)">
                     <div v-for="(keyPair, index) in keyPairs" :key="index" class="mb-6">
                         <div class="flex justify-between items-center mb-2">
                             <h3 class="font-semibold">{{ $t('tools.rsa-key-pair-generator.keyPair') }} #{{ index + 1 }}
@@ -196,22 +213,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Export all buttons -->
-                <div v-if="keyPairs.length > 0" class="mt-4 flex flex-wrap gap-2">
-                    <button @click="exportAllKeyPairs('pem')"
-                        class="flex-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 py-2 px-4 rounded-md transition duration-300">
-                        {{ $t('tools.rsa-key-pair-generator.exportAllAsPem') }}
-                    </button>
-                    <button @click="exportAllKeyPairs('pkcs8')"
-                        class="flex-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 py-2 px-4 rounded-md transition duration-300">
-                        {{ $t('tools.rsa-key-pair-generator.exportAllAsPkcs8') }}
-                    </button>
-                    <button @click="copyAllKeyPairs()"
-                        class="flex-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 py-2 px-4 rounded-md transition duration-300">
-                        {{ $t('tools.rsa-key-pair-generator.copyAll') }}
-                    </button>
                 </div>
             </div>
         </div>

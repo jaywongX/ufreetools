@@ -1,0 +1,98 @@
+export default {
+    name: "SM2密钥对生成器",
+    description: "生成符合GB/T 32918-2016标准的SM2公私钥对，支持多种输出格式",
+    settings: "生成设置",
+    keyLength: "密钥长度",
+    bits: "位",
+    standardBits: "SM2标准使用256位密钥长度",
+    outputFormat: "输出格式",
+    keyPairCount: "密钥对数量",
+    maxKeysWarning: "一次最多生成10个密钥对",
+    generating: "生成中",
+    generate: "生成密钥对",
+    results: "生成结果",
+    generatingKeys: "正在生成密钥对...",
+    copyAll: "复制全部",
+    noKeysGenerated: "尚未生成密钥。配置设置并点击\"生成密钥对\"。",
+    keyPair: "密钥对",
+    copy: "复制",
+    publicKey: "公钥",
+    privateKey: "私钥",
+    keyComponents: "密钥组件",
+    invalidCount: "请输入1-10之间的数字",
+    generateFailed: "生成密钥对失败",
+    generateSuccess: "成功生成 {count} 个SM2密钥对",
+    copiedToClipboard: "已复制到剪贴板",
+    copyFailed: "复制失败",
+    downloadedAs: "已下载为 {filename}",
+    exportPem: "导出为PEM",
+    exportAllJson: "导出为JSON",
+    exportAllTxt: "导出为TXT",
+    exportTxt: "导出为TXT",
+    singleKeyDownloaded: "{type} 已下载为Pem",
+    allPemDownloaded: "全部密钥已下载为Pem",
+    keyPairCopied: "密钥对已复制到剪贴板",
+    allKeysCopied: "全部密钥对已复制到剪贴板",
+    componentsCopied: "密钥组件已复制到剪贴板",
+    componentsDownloaded: "密钥组件已下载为TXT文件",
+
+    // 文章内容
+    article: {
+        title: "SM2密钥对生成器：中国密码学标准完全指南",
+        introTitle: "什么是SM2密钥对生成器及其用途？",
+        introPara1: "<strong>SM2密钥对生成器</strong>是一种专门的密码工具，可根据中国国家标准密码算法（GB/T 32918-2016）创建安全的公钥和私钥对。与RSA或ECC等国际标准不同，SM2是由中国监管机构专门设计和批准的，这使得它对在中国监管框架内运营的组织至关重要。",
+        introPara2: "我们的<strong>SM2密钥生成工具</strong>允许用户轻松生成密码安全的SM2密钥对，而无需专门了解底层算法。该工具支持多种输出格式，包括PEM、HEX和Base64，使其在不同的开发和安全环境中具有多功能性。",
+        
+        useCaseTitle: "主要应用场景",
+        useCase1: "<strong>金融服务合规</strong>：在中国运营的银行和金融科技公司在保护金融交易和客户数据时需要使用SM2加密以符合监管要求。",
+        useCase2: "<strong>政府和企业信息系统</strong>：中国政府机构和大型企业必须实施SM2进行安全通信、文档签名和身份验证。",
+        useCase3: "<strong>跨境电子商务</strong>：与中国进行贸易的企业通常需要实施SM2密码技术以进行安全数据交换和符合监管要求。",
+        useCase4: "<strong>移动应用安全</strong>：为中国市场开发应用的开发者需要SM2密钥对来实现安全认证和数据保护机制。",
+        standardInfo: "SM2算法是商密（SM）密码算法套件的一部分，该套件包括SM2（公钥密码学）、SM3（哈希）和SM4（对称加密）。随着中国继续独立于国际标准开发自己的网络安全框架，这些标准变得越来越重要。",
+        
+        tutorialTitle: "如何使用SM2密钥对生成器",
+        tutorialIntro: "按照以下步骤指南将帮助您快速高效地生成安全的SM2密钥对。每个生成的密钥对都包括加密、解密、签名和验证操作所需的公钥和私钥组件。",
+        
+        step1Title: "步骤1：选择密钥参数",
+        step1Desc: "SM2标准使用固定的256位密钥长度，在提供强大安全性的同时保持良好性能。这在我们的工具中是预先选择的，不能更改，因为它遵循官方标准。",
+        
+        step2Title: "步骤2：选择输出格式",
+        step2Desc: "选择您喜欢的输出格式：<ul><li><strong>PEM</strong>：密码证书和密钥的标准格式，大多数系统和应用程序都能轻松识别。</li><li><strong>HEX</strong>：十六进制表示，适用于代码中的直接实现。</li><li><strong>Base64</strong>：紧凑的表示方式，常用于Web应用程序和API通信。</li></ul>",
+        
+        step3Title: "步骤3：指定密钥对数量",
+        step3Desc: "决定您需要多少个密钥对。这对于测试或设置多个安全通道特别有用。",
+        
+        step4Title: "步骤4：生成和管理密钥",
+        step4Desc: "点击\"生成密钥对\"按钮并等待过程完成。生成后，您可以查看、复制或导出密钥。确保安全存储您的私钥，切勿与未授权方共享。",
+        
+        relatedToolsTitle: "相关密码学工具",
+        relatedToolsDesc: "为了全面实施安全措施，您可能想要探索这些补充工具：",
+        relatedTool1: "RSA密钥对生成器 - 生成符合国际密码标准的RSA密钥",
+        relatedTool2: "哈希计算器 - 计算各种哈希值，包括用于数据完整性验证的SM3",
+        
+        faqTitle: "关于SM2密码学的常见问题",
+        faq1Question: "SM2与RSA等其他公钥密码算法有什么区别？",
+        faq1Answer: "SM2是由中国当局开发的基于椭圆曲线的公钥密码算法。与RSA相比，SM2提供了可比的安全性，但密钥长度更短（SM2为256位，而RSA为2048+位），从而带来更好的性能。主要区别在于，SM2专门用于在中国符合监管要求，而RSA在国际上使用更广泛。数学基础也不同：SM2基于椭圆曲线密码学，而RSA依赖于大素数因子分解的难度。",
+        
+        faq2Question: "SM2加密对国际商业应用安全吗？",
+        faq2Answer: "是的，SM2提供符合国际标准的强大密码安全性。凭借其256位密钥长度，它提供了相当于RSA 3072位密钥的安全性。SM2已经过中国当局的广泛密码分析，被认为能抵抗已知攻击。然而，对于国际互操作性，一些组织可能更喜欢广泛采用的国际标准，如RSA或ECDSA。选择通常取决于您的特定合规要求和应用程序部署的位置。",
+        
+        faq3Question: "如何验证我的SM2密钥对是否正常工作？",
+        faq3Answer: "要测试您的SM2密钥对，您可以执行简单的加密和解密测试：使用公钥加密测试消息，然后使用相应的私钥解密它。如果解密的消息与原始消息匹配，则您的密钥对工作正常。或者，您可以使用私钥签署消息，并使用公钥验证签名。我们的工具确保所有生成的密钥对根据SM2标准规范在数学上是有效的。",
+        
+        faq4Question: "SM2密钥可以用于标准SSL/TLS实现吗？",
+        faq4Answer: "SSL/TLS中的SM2支持取决于具体实现。中国开发了一种称为TLCP（传输层密码协议）的变体，它使用SM2/SM3/SM4算法代替国际标准。中国境内的主要浏览器通常支持这些标准。对于国际系统，您可能需要专门的库或配置来启用SM2支持。OpenSSL 1.1.1及更高版本包含对SM2密码学的支持，使许多系统的集成变得更加简单。",
+        
+        faq5Question: "SM2密钥对中的x、y和d组件代表什么？",
+        faq5Answer: "在SM2密钥对中，这些组件代表重要的数学值：<ul><li><strong>x和y</strong>：这些是椭圆曲线上代表您公钥的点的坐标。它们共同形成可以公开共享的完整公钥。</li><li><strong>d</strong>：这是您的私钥，一个必须保密的大随机数。它用于解密和签名操作。</li></ul>与RSA不同，RSA有多个组件如p、q、d、e、n，SM2私钥更简单，只有标量值d，而公钥由点坐标(x,y)组成。",
+        
+        resourcesTitle: "更多资源",
+        resourcesDesc: "要了解有关SM2密码学和中国密码标准的更多信息，以下权威来源提供了有价值的信息：",
+        resource1: "GB/T 32918-2016 - 官方SM2标准出版物（中文）",
+        resource2: "国家密码管理局 - 官方监管文件",
+        resource3: "ISO/IEC 14888-3:2018 - 引用SM2签名算法的国际标准",
+        
+        conclusionTitle: "结论",
+        conclusionPara: "<strong>SM2密钥对生成器</strong>提供了一种用户友好的方式来创建符合中国国家标准的密码安全密钥。无论您是为中国市场开发应用程序，实施安全通信通道，还是满足监管要求，我们的工具都简化了SM2密钥生成的复杂过程。通过支持多种输出格式并提供全面的密钥管理功能，这个<strong>SM2密码工具</strong>帮助组织实施强大的安全措施，同时保持与中国密码法规的合规性。"
+    }
+}
