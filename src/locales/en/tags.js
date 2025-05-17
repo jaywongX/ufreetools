@@ -406,4 +406,7 @@ export default {
   china: 'China',
   test: 'Test',
   validation: 'Validation', 
+  business: 'Business',
+  identifier: 'Identifier',
+  keypair: 'Key Pair',
 }

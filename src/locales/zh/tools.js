@@ -101,7 +101,9 @@ import gaussianProjection from './tools/gaussian-projection.js';
 import rsaEncryptDecrypt from './tools/rsa-encrypt-decrypt.js';
 import sm2EncryptDecrypt from './tools/sm2-encrypt-decrypt.js';
 import idNumberGenerator from './tools/id-number-generator.js';
-
+import unifiedCreditCodeGenerator from './tools/unified-credit-code-generator.js';
+import rsaKeyPairGenerator from './tools/rsa-key-pair-generator.js';
+import sm2KeyPairGenerator from './tools/sm2-key-pair-generator.js';
 export default {
   common: {
     tryNow: '立即使用',
@@ -237,4 +239,7 @@ export default {
   'rsa-encrypt-decrypt': rsaEncryptDecrypt,
   'sm2-encrypt-decrypt': sm2EncryptDecrypt,
   'id-number-generator': idNumberGenerator,
+  'unified-credit-code-generator': unifiedCreditCodeGenerator,
+  'rsa-key-pair-generator': rsaKeyPairGenerator,
+  'sm2-key-pair-generator': sm2KeyPairGenerator,
 };
