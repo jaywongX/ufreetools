@@ -409,4 +409,6 @@ export default {
   business: '商业',
   identifier: '识别码',
   keypair: '密钥对',
+  signature: '签名',
+  sign:'签名',
 }

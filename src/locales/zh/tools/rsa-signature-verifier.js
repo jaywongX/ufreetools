@@ -1,0 +1,156 @@
+export default {
+    name: "RSA签名和验签",
+    description: "使用RSA私钥对数据进行签名，并使用公钥验证签名，支持多种格式和算法",
+    keyInput: "密钥输入",
+    privateKey: "私钥（用于签名）",
+    publicKey: "公钥（用于验签）",
+    privateKeyPlaceholder: "请输入选定格式的RSA私钥",
+    publicKeyPlaceholder: "请输入选定格式的RSA公钥或证书",
+    generateKeyPair: "生成密钥对",
+    extractFromCert: "从证书提取",
+    clear: "清除",
+    keySize: "密钥长度",
+    hashAlgorithm: "哈希算法",
+    paddingScheme: "填充方式",
+    keyFormat: "密钥格式",
+    inputFormat: "输入格式",
+    processMode: "处理模式",
+    originalData: "原始数据",
+    preProcessed: "预哈希",
+    sign: "签名",
+    verify: "验签",
+    dataToSign: "待签名数据",
+    dataToSignPlaceholder: "输入要签名的文本或数据",
+    preProcessedDataToSign: "待签名哈希值",
+    preProcessedDataToSignPlaceholder: "输入十六进制格式的哈希值",
+    preprocessOnly: "仅预处理（获取哈希摘要）",
+    preprocessedData: "预处理数据",
+    hashDigest: "哈希摘要（步骤1）",
+    paddedData: "填充数据（步骤2）",
+    showDetailed: "显示详细信息",
+    showSimple: "显示简洁信息",
+    signButton: "签名数据",
+    signature: "签名结果",
+    dataToVerify: "待验证数据",
+    dataToVerifyPlaceholder: "输入原始已签名的文本或数据",
+    preProcessedDataToVerify: "待验证哈希值",
+    preProcessedDataToVerifyPlaceholder: "输入十六进制格式的哈希值",
+    signatureToVerify: "待验证签名",
+    signatureToVerifyPlaceholder: "输入要验证的签名（选定格式）",
+    verifyButton: "验证签名",
+    verificationResult: "验证结果",
+    notVerifiedYet: "尚未验证",
+    signatureValid: "签名有效 ✓",
+    signatureInvalid: "签名无效 ✗",
+    copy: "复制",
+    copied: "已复制到剪贴板",
+    copyFailed: "复制到剪贴板失败",
+    generatingKeys: "正在生成密钥...",
+    keysGenerated: "已生成{bits}位RSA密钥对，用时{time}秒",
+    keyGenerationFailed: "生成密钥对失败",
+    notValidCertificate: "输入的不是有效的X.509证书",
+    publicKeyExtracted: "已从证书中提取公钥",
+    extractionFailed: "从证书提取公钥失败",
+    preprocessingError: "预处理过程中出错",
+    paddingError: "应用填充时出错",
+    invalidPrivateKey: "无效的私钥格式",
+    invalidPublicKey: "无效的公钥格式",
+    invalidInputData: "无效的输入数据格式",
+    invalidSignature: "无效的签名格式",
+    invalidVerificationData: "无效的验证数据格式",
+    signatureCreated: "签名创建成功",
+    signingFailed: "创建签名失败",
+    verificationSuccess: "签名验证成功",
+    verificationFailed: "签名验证失败",
+    verificationError: "验证过程中出错",
+    noSignatureToExport: "没有可导出的签名",
+    signatureExported: "签名已导出为{format}文件",
+    signatureImported: "签名导入成功",
+    signatureImportFailed: "签名导入失败",
+    article:{
+        title: "RSA签名验证工具：保障数据完整性的安全数字签名",
+        
+        introduction: {
+            title: "什么是RSA签名验证？",
+            p1: "RSA签名验证是一种密码学过程，用于确保数字通信中的数据完整性、真实性和不可否认性。我们的RSA签名验证工具允许您使用RSA私钥对数据进行签名，并使用相应的公钥验证签名，提供一种安全的方式来验证信息在传输过程中没有被篡改。",
+            p2: "在数据安全至关重要的时代，RSA数字签名已成为保护电子文档、软件分发和安全通信的行业标准。该工具实现了PKCS#1 v1.5和PSS填充方案，支持包括SHA-1、SHA-256、SHA-384和SHA-512在内的各种哈希算法。",
+            p3: "无论您是测试密码学实现的开发人员，还是验证数字签名的安全专业人士，或是学习公钥密码学的学生，我们的RSA签名验证工具都提供了用户友好的界面和全面的功能，满足您所有的数字签名需求。",
+            p4: "RSA签名验证过程通过创建数据的密码学哈希值工作，该哈希值随后使用发送者的私钥加密。任何拥有相应公钥的人都可以验证签名，同时确认数据的完整性和发送者的身份。"
+        },
+        
+        useCases: {
+            title: "RSA签名验证的常见应用",
+            case1: "验证软件下载和更新的真实性，防止恶意软件分发",
+            case2: "在安全网络通信(HTTPS)中验证数字证书",
+            case3: "确保法律和商业环境中电子文档和合同的完整性",
+            case4: "在通信协议和应用程序中实现安全的消息认证"
+        },
+        
+        tutorial: {
+            title: "如何使用RSA签名验证工具",
+            step1: {
+            title: "步骤1：准备密钥",
+            description: "在签名或验证之前，您需要RSA密钥：",
+            option1: "通过点击\"生成密钥对\"按钮并选择所需的密钥大小（推荐2048位或更高以确保安全性），直接在工具中生成新的密钥对",
+            option2: "导入各种格式（PEM、DER、HEX或Base64）的现有密钥"
+            },
+            step2: {
+            title: "步骤2：配置签名设置",
+            description: "为您的签名操作选择适当的设置：",
+            option1: "哈希算法：从SHA-1、SHA-256、SHA-384或SHA-512中选择（推荐SHA-256或更高）",
+            option2: "填充方案：在PKCS#1 v1.5（最常见）或PSS（更现代和安全）之间选择",
+            option3: "输入格式：指定您的输入是纯文本、十六进制还是Base64编码"
+            },
+            step3: {
+            title: "步骤3：签名或验证数据",
+            description: "根据您的需求：",
+            option1: "签名：在签名部分输入您的数据，然后点击\"签名数据\"生成签名",
+            option2: "验证：在验证部分输入原始数据和签名，然后点击\"验证签名\""
+            },
+            step4: {
+            title: "步骤4：查看结果并导出（如需要）",
+            description: "签名后，您可以复制签名或以各种格式（Base64、HEX、DER、PEM）导出。对于验证，工具将显示签名是有效还是无效。"
+            },
+            note: "注意：对于高级用户，该工具还显示详细的预处理信息，包括哈希摘要和填充数据，帮助您了解RSA签名过程的每个步骤。"
+        },
+        
+        faq: {
+            title: "关于RSA签名的常见问题",
+            q1: "PKCS#1 v1.5和PSS填充方案有什么区别？",
+            a1: "PKCS#1 v1.5是RSA签名的传统填充方案，在各系统中广泛支持，但存在已知的理论漏洞。PSS（概率签名方案）是一种更现代的方法，具有可证明的安全性能和随机填充，使其对某些密码攻击更具抵抗力。对于大多数应用，当使用强哈希算法和适当的密钥长度时，两种方案都提供足够的安全性。",
+            
+            q2: "我应该使用哪种哈希算法进行RSA签名？",
+            a2: "对于现代应用，我们建议至少使用SHA-256以确保足够的安全性。SHA-1被认为在密码学上较弱，应仅用于遗留兼容性。对于高度敏感的应用或签名大量数据时，SHA-384或SHA-512提供额外的安全边际。",
+            
+            q3: "安全的RSA签名推荐使用什么密钥大小？",
+            a3: "截至2023年，RSA密钥推荐最小使用2048位，长期安全性首选3072或4096位。小于2048位的密钥被认为容易受到现代计算资源的因式分解攻击。请注意，更大的密钥大小将增加签名操作的处理时间。",
+            
+            q4: "我可以使用此工具处理预哈希数据吗？",
+            a4: "是的，我们的工具支持签名和验证预哈希数据。当您已经使用外部工具计算了哈希摘要，或处理大文件并希望单独计算哈希时，这非常有用。只需选择\"预哈希\"选项并以十六进制格式提供哈希值即可。",
+            
+            q5: "使用这个在线工具处理敏感签名安全吗？",
+            a5: "此工具完全在您的浏览器中处理所有数据 - 不会将任何信息发送到我们的服务器。但是，对于高度敏感或生产环境的密码操作，我们建议使用专用安全硬件（如HSM）或在受控环境中使用成熟的密码库。",
+            a5_extra: "对于教育目的、测试或非关键应用，此工具提供了一种便捷安全的方式来处理RSA签名。"
+        },
+        
+        resources: {
+            title: "相关工具和资源",
+            description: "使用这些补充工具增强您的密码学工作流程：",
+            tool1: "哈希生成器 - 使用各种算法创建哈希摘要",
+            tool2: "Base64编码器/解码器 - 在原始数据和Base64格式之间转换",
+            tool3: "JWT调试工具 - 解析、验证和调试JWT令牌的在线工具",
+            
+            external: {
+            title: "外部资源",
+            resource1: "RFC 8017 - PKCS #1：RSA密码学规范版本2.2",
+            resource2: "NIST FIPS 186-4 - 数字签名标准(DSS)"
+            }
+        },
+        
+        conclusion: {
+            title: "结论",
+            p1: "RSA签名验证仍然是现代密码安全的基石，为确保数据完整性和真实性提供了强大的机制。我们的RSA签名验证工具使这一强大技术对所有人都可访问，从密码学新手到安全专业人士。",
+            p2: "无论您是签名代码、验证文档真实性，还是学习公钥密码学，这个工具都在安全的基于浏览器的环境中提供了一套全面的功能来处理RSA签名。立即开始使用RSA签名验证工具，保护您的数字资产和通信。"
+        }
+    }
+}

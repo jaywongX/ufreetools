@@ -104,6 +104,7 @@ import idNumberGenerator from './tools/id-number-generator.js';
 import unifiedCreditCodeGenerator from './tools/unified-credit-code-generator.js';
 import rsaKeyPairGenerator from './tools/rsa-key-pair-generator.js';
 import sm2KeyPairGenerator from './tools/sm2-key-pair-generator.js';
+import rsaSignatureVerifier from './tools/rsa-signature-verifier.js';
 export default {
     common: {
       tryNow: 'Try Now',
@@ -242,4 +243,5 @@ export default {
     'unified-credit-code-generator': unifiedCreditCodeGenerator,
     'rsa-key-pair-generator': rsaKeyPairGenerator,
     'sm2-key-pair-generator': sm2KeyPairGenerator,
+    'rsa-signature-verifier': rsaSignatureVerifier,
   }

@@ -1113,28 +1113,28 @@ const allTools = computed(() => [
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags:['crypto','hash']
   },
-  {
-    id:'rsa-crypto',
-    name: t('tools.rsa-crypto.name'),
-    category: t(`categories.crypto.title`),
-    categoryId: 'crypto',
-    description: t('tools.rsa-crypto.description'),
-    path: '/tools/rsa-crypto',
-    component: 'RsaCrypto',
-    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
-    tags:['crypto','rsa','encrypt','decrypt']
-  },
-  {
-    id:'sm2-crypto',
-    name: t('tools.sm2-crypto.name'),
-    category: t(`categories.crypto.title`),
-    categoryId: 'crypto',
-    description: t('tools.sm2-crypto.description'),
-    path: '/tools/sm2-crypto',
-    component: 'Sm2Crypto',
-    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
-    tags:['crypto','sm2','encrypt','decrypt']
-  },
+  // {
+  //   id:'rsa-crypto',
+  //   name: t('tools.rsa-crypto.name'),
+  //   category: t(`categories.crypto.title`),
+  //   categoryId: 'crypto',
+  //   description: t('tools.rsa-crypto.description'),
+  //   path: '/tools/rsa-crypto',
+  //   component: 'RsaCrypto',
+  //   icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+  //   tags:['crypto','rsa','encrypt','decrypt']
+  // },
+  // {
+  //   id:'sm2-crypto',
+  //   name: t('tools.sm2-crypto.name'),
+  //   category: t(`categories.crypto.title`),
+  //   categoryId: 'crypto',
+  //   description: t('tools.sm2-crypto.description'),
+  //   path: '/tools/sm2-crypto',
+  //   component: 'Sm2Crypto',
+  //   icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+  //   tags:['crypto','sm2','encrypt','decrypt']
+  // },
   {
     id:'symmetric-crypto',
     name: t('tools.symmetric-crypto.name'),
@@ -1211,6 +1211,17 @@ const allTools = computed(() => [
     component: 'Sm2KeyPairGenerator',
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['sm2', 'crypto', 'security', 'key', 'encrypt', 'decrypt', 'generator', 'keypair']
+  },
+  { 
+    id: 'rsa-signature-verifier', 
+    name: t('tools.rsa-signature-verifier.name'),
+    category: t(`categories.crypto.title`),
+    categoryId: 'crypto',
+    description: t('tools.rsa-signature-verifier.description'),
+    path: '/tools/rsa-signature-verifier',
+    component: 'RsaSignatureVerifier',
+    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+    tags: ['rsa', 'crypto', 'security', 'signature', 'verify', 'sign', 'certificate', 'hash']
   },
 
   // 实用与效率
