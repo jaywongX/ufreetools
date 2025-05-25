@@ -409,4 +409,6 @@ export default {
   business: 'Business',
   identifier: 'Identifier',
   keypair: 'Key Pair',
+  signature: 'Signature',
+  sign:'Sign',
 }

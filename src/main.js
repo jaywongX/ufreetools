@@ -155,6 +155,7 @@ const lazyComponentMap = {
   'UnifiedCreditCodeGenerator': () => import('./components/tools/UnifiedCreditCodeGenerator.vue'),
   'RsaKeyPairGenerator': () => import('./components/tools/RsaKeyPairGenerator.vue'),
   'Sm2KeyPairGenerator': () => import('./components/tools/Sm2KeyPairGenerator.vue'),
+  'RsaSignatureVerifier': () => import('./components/tools/RsaSignatureVerifier.vue'),
 }
 
 // 初始化Vercel Analytics

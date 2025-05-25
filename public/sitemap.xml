@@ -1954,4 +1954,20 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/sm2-key-pair-generator" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/sm2-key-pair-generator" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/rsa-signature-verifier</loc>
+    <lastmod>2025-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/rsa-signature-verifier" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/rsa-signature-verifier" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/tool/rsa-signature-verifier</loc>
+    <lastmod>2025-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/rsa-signature-verifier" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/rsa-signature-verifier" />
+  </url>
 </urlset>
