@@ -105,6 +105,7 @@ import unifiedCreditCodeGenerator from './tools/unified-credit-code-generator.js
 import rsaKeyPairGenerator from './tools/rsa-key-pair-generator.js';
 import sm2KeyPairGenerator from './tools/sm2-key-pair-generator.js';
 import rsaSignatureVerifier from './tools/rsa-signature-verifier.js';
+import sm2SignatureVerifier from './tools/sm2-signature-verifier.js';
 export default {
   common: {
     tryNow: '立即使用',
@@ -244,4 +245,5 @@ export default {
   'rsa-key-pair-generator': rsaKeyPairGenerator,
   'sm2-key-pair-generator': sm2KeyPairGenerator,
   'rsa-signature-verifier': rsaSignatureVerifier,
+  'sm2-signature-verifier': sm2SignatureVerifier,
 };

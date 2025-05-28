@@ -156,6 +156,7 @@ const lazyComponentMap = {
   'RsaKeyPairGenerator': () => import('./components/tools/RsaKeyPairGenerator.vue'),
   'Sm2KeyPairGenerator': () => import('./components/tools/Sm2KeyPairGenerator.vue'),
   'RsaSignatureVerifier': () => import('./components/tools/RsaSignatureVerifier.vue'),
+  'Sm2SignatureVerifier': () => import('./components/tools/Sm2SignatureVerifier.vue'),
 }
 
 // 初始化Vercel Analytics
