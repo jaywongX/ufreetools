@@ -69,6 +69,10 @@
                 <button @click="generateKeyPair" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
                     {{ $t('tools.sm2-signature-verifier.generateKeyPair') }}
                 </button>
+                <label for="pfx-file-input" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 cursor-pointer">
+                    {{ $t('tools.sm2-signature-verifier.importPfx') }}
+                </label>
+                <input id="pfx-file-input" type="file" accept=".pfx,.p12" @change="handlePfxImport" class="hidden">
                 <button @click="clearKeys"
                     class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600">
                     {{ $t('tools.sm2-signature-verifier.clear') }}
@@ -376,6 +380,23 @@
         </div>
         <Sm2SignatureVerifierArticle />
     </div>
+
+    <!-- Add this modal for PIN input -->
+    <div v-if="showPinModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full">
+            <h3 class="text-lg font-medium mb-4">{{ $t('tools.sm2-signature-verifier.enterPin') }}</h3>
+            <input type="password" v-model="pfxPin" class="w-full p-2 border rounded mb-4 dark:bg-gray-700 dark:border-gray-600" 
+                   :placeholder="$t('tools.sm2-signature-verifier.pinPlaceholder')">
+            <div class="flex justify-end gap-2">
+                <button @click="cancelPfxImport" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600">
+                    {{ $t('tools.sm2-signature-verifier.cancel') }}
+                </button>
+                <button @click="processPfxWithPin" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                    {{ $t('tools.sm2-signature-verifier.confirm') }}
+                </button>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script setup>
@@ -427,6 +448,12 @@ const ECDSASignature = asn1.define('ECDSASignature', function () {
         this.key('s').int()
     );
 });
+
+// Add these new state variables
+const showPinModal = ref(false);
+const pfxPin = ref('');
+const pfxBuffer = ref(null);
+const pfxImportError = ref('');
 
 // Computed properties
 const canSign = computed(() => {
@@ -1071,6 +1098,428 @@ function verifySignature() {
         verificationResult.value = false;
         verifyError.value = error.message;
         console.error('Verification error:', error);
+    }
+}
+
+// Add these new functions for PFX handling
+function handlePfxImport(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        pfxBuffer.value = e.target.result;
+        showPinModal.value = true;
+    };
+    reader.onerror = (e) => {
+        pfxImportError.value = t('tools.sm2-signature-verifier.fileReadError');
+        showToast(t('tools.sm2-signature-verifier.fileReadError'), true);
+    };
+    reader.readAsArrayBuffer(file);
+    
+    // Reset file input so the same file can be selected again
+    event.target.value = '';
+}
+
+function cancelPfxImport() {
+    showPinModal.value = false;
+    pfxPin.value = '';
+    pfxBuffer.value = null;
+}
+
+function processPfxWithPin() {
+    if (!pfxBuffer.value) {
+        cancelPfxImport();
+        return;
+    }
+    
+    try {
+        // Convert ArrayBuffer to forge buffer
+        const pfxBytes = new Uint8Array(pfxBuffer.value);
+        
+        console.log('Processing PFX file, size:', pfxBytes.length);
+        
+        // Create a forge buffer from the bytes
+        const pfxForgeBuffer = forge.util.createBuffer(pfxBytes);
+        
+        // Parse the PKCS#12 ASN.1 structure
+        const pfxAsn1 = forge.asn1.fromDer(pfxForgeBuffer);
+        
+        // Parse the PKCS#12 structure with the provided PIN
+        const pfx = forge.pkcs12.pkcs12FromAsn1(pfxAsn1, pfxPin.value);
+        
+        console.log('PFX parsed successfully');
+        
+        // Extract private key and certificates
+        let privateKeyInfo = null;
+        let certBags = [];
+        
+        // Find private key bags - try all common bag types
+        const keyBagTypes = [
+            forge.pki.oids.pkcs8ShroudedKeyBag,
+            forge.pki.oids.keyBag,
+            forge.pki.oids.pkcs8EncryptedPrivateKeyInfo
+        ];
+        
+        for (const bagType of keyBagTypes) {
+            const bags = pfx.getBags({bagType: bagType});
+            if (bags[bagType] && bags[bagType].length > 0) {
+                privateKeyInfo = bags[bagType][0];
+                console.log(`Found private key in bag type: ${bagType}`);
+                break;
+            }
+        }
+        
+        // Find certificate bags
+        const certBagType = forge.pki.oids.certBag;
+        const certBagsObj = pfx.getBags({bagType: certBagType});
+        if (certBagsObj[certBagType]) {
+            certBags = certBagsObj[certBagType];
+            console.log(`Found ${certBags.length} certificates`);
+        }
+        
+        if (!privateKeyInfo) {
+            throw new Error(t('tools.sm2-signature-verifier.noPrivateKeyFound'));
+        }
+        
+        // Check if this is an RSA key
+        if (privateKeyInfo.key && privateKeyInfo.key.n && privateKeyInfo.key.e) {
+            // This is an RSA key
+            throw new Error(t('tools.sm2-signature-verifier.rsaKeyNotSupported'));
+        }
+        
+        // Check certificates for RSA
+        if (certBags.length > 0) {
+            const cert = certBags[0].cert;
+            if (cert && cert.publicKey && cert.publicKey.n && cert.publicKey.e) {
+                // This is an RSA certificate
+                throw new Error(t('tools.sm2-signature-verifier.rsaCertNotSupported'));
+            }
+        }
+        
+        // Extract SM2 private key
+        if (privateKeyInfo.key) {
+            console.log('Extracting private key');
+            
+            try {
+                // For SM2, we need to extract the raw private key value
+                const privateKeyHex = extractSM2PrivateKeyFromASN1(privateKeyInfo.key);
+                
+                if (privateKeyHex) {
+                    // Check if it's a valid SM2 private key (should be 32 bytes / 64 hex chars)
+                    if (privateKeyHex.length >= 64) {
+                        // Use the last 64 chars if longer
+                        privateKey.value = privateKeyHex.slice(-64);
+                    } else {
+                        privateKey.value = privateKeyHex;
+                    }
+                    privateKeyFormat.value = 'hex';
+                    
+                    console.log('Private key extracted successfully');
+                    
+                    // If we have certificates, try to extract the public key
+                    if (certBags.length > 0) {
+                        console.log('Extracting public key from certificate');
+                        const cert = certBags[0].cert;
+                        
+                        // Extract public key from certificate
+                        const publicKeyHex = extractSM2PublicKeyFromCert(cert);
+                        if (publicKeyHex) {
+                            publicKey.value = publicKeyHex;
+                            publicKeyFormat.value = 'hex';
+                            console.log('Public key extracted from certificate');
+                        } else {
+                            // If extraction fails, try to derive from private key
+                            try {
+                                console.log('Deriving public key from private key');
+                                const derivedPublicKey = sm2.getPublicKeyFromPrivateKey(privateKey.value);
+                                publicKey.value = derivedPublicKey;
+                                publicKeyFormat.value = 'hex';
+                                console.log('Public key derived from private key');
+                            } catch (e) {
+                                console.error('Failed to derive public key:', e);
+                                throw new Error(t('tools.sm2-signature-verifier.failedToDerivePublicKey') + ': ' + e.message);
+                            }
+                        }
+                    } else {
+                        // If no certificate, derive public key from private key
+                        try {
+                            console.log('Deriving public key from private key');
+                            const derivedPublicKey = sm2.getPublicKeyFromPrivateKey(privateKey.value);
+                            publicKey.value = derivedPublicKey;
+                            publicKeyFormat.value = 'hex';
+                            console.log('Public key derived from private key');
+                        } catch (e) {
+                            console.error('Failed to derive public key:', e);
+                            throw new Error(t('tools.sm2-signature-verifier.failedToDerivePublicKey') + ': ' + e.message);
+                        }
+                    }
+                    
+                    showToast(t('tools.sm2-signature-verifier.pfxImportSuccess'));
+                } else {
+                    throw new Error(t('tools.sm2-signature-verifier.invalidPrivateKeyFormat'));
+                }
+            } catch (error) {
+                if (error.message.includes('RSA') || error.message.includes('rsa')) {
+                    throw new Error(t('tools.sm2-signature-verifier.rsaKeyNotSupported'));
+                } else {
+                    throw error;
+                }
+            }
+        } else {
+            throw new Error(t('tools.sm2-signature-verifier.invalidPrivateKeyFormat'));
+        }
+    } catch (error) {
+        console.error('PFX import error:', error);
+        pfxImportError.value = error.message;
+        showToast(t('tools.sm2-signature-verifier.pfxImportError') + ': ' + error.message, true);
+    } finally {
+        cancelPfxImport();
+    }
+}
+
+function extractSM2PrivateKeyFromASN1(asn1Data) {
+    try {
+        // Log the ASN.1 structure to help with debugging
+        console.log('Private key ASN.1:', asn1Data);
+        
+        // Check if we have a forge key object with a special format
+        if (asn1Data && typeof asn1Data === 'object') {
+            // If it's a forge key object with direct access to the private key value
+            if (asn1Data.privateKeyHex) {
+                console.log('Found privateKeyHex property directly');
+                return asn1Data.privateKeyHex;
+            }
+            
+            // If it's a forge key object with direct access to the d value (private key)
+            if (asn1Data.d) {
+                console.log('Found d property (private key value)');
+                if (typeof asn1Data.d.toString === 'function') {
+                    return asn1Data.d.toString(16).padStart(64, '0');
+                }
+            }
+        }
+        
+        // Handle ASN.1 structure parsing
+        try {
+            // 1. Convert to DER if needed
+            let derBytes;
+            if (typeof asn1Data === 'object' && asn1Data.type !== undefined && asn1Data.value !== undefined) {
+                // It's already an ASN.1 object from forge
+                derBytes = forge.asn1.toDer(asn1Data).getBytes();
+            } else if (typeof asn1Data === 'string') {
+                // It's already DER encoded as string
+                derBytes = asn1Data;
+            } else {
+                // Assume it's already DER encoded in some format
+                derBytes = asn1Data;
+            }
+            
+            // 2. Parse the PKCS#8 or EC private key structure
+            const buffer = forge.util.createBuffer(derBytes);
+            
+            // Check if we have enough bytes to parse
+            if (buffer.length() < 2) {
+                throw new Error('Not enough bytes to parse DER structure');
+            }
+            
+            const asn1 = forge.asn1.fromDer(buffer);
+            
+            // Try different parsing strategies for different key formats
+            
+            // Strategy 1: Direct PKCS#8 structure
+            // PKCS#8 structure: PrivateKeyInfo ::= SEQUENCE {
+            //   version                   Version,
+            //   privateKeyAlgorithm       PrivateKeyAlgorithmIdentifier,
+            //   privateKey                PrivateKey,
+            //   attributes           [0]  IMPLICIT Attributes OPTIONAL }
+            if (asn1.value && asn1.value.length >= 3) {
+                const privateKeyObj = asn1.value[2];
+                
+                // Check if it's an OCTET STRING
+                if (privateKeyObj && privateKeyObj.type === forge.asn1.Type.OCTET_STRING) {
+                    const privateKeyBytes = privateKeyObj.value;
+                    
+                    // Try to parse the inner structure if it exists
+                    try {
+                        const innerBuffer = forge.util.createBuffer(privateKeyBytes);
+                        if (innerBuffer.length() >= 2) {
+                            const innerAsn1 = forge.asn1.fromDer(innerBuffer);
+                            
+                            // If it's a sequence, it might be an ECPrivateKey structure
+                            if (innerAsn1.type === forge.asn1.Type.SEQUENCE) {
+                                // ECPrivateKey ::= SEQUENCE {
+                                //   version        INTEGER { ecPrivkeyVer1(1) },
+                                //   privateKey     OCTET STRING,
+                                //   parameters [0] ECParameters OPTIONAL,
+                                //   publicKey  [1] BIT STRING OPTIONAL
+                                // }
+                                
+                                // The private key value is typically at position 1
+                                if (innerAsn1.value && innerAsn1.value.length >= 2) {
+                                    const innerKeyObj = innerAsn1.value[1];
+                                    if (innerKeyObj && innerKeyObj.type === forge.asn1.Type.OCTET_STRING) {
+                                        const rawKeyHex = forge.util.bytesToHex(innerKeyObj.value);
+                                        console.log('Found private key in nested ECPrivateKey structure');
+                                        return rawKeyHex;
+                                    }
+                                }
+                            }
+                        }
+                    } catch (e) {
+                        console.log('Failed to parse inner ASN.1 structure, using raw bytes');
+                    }
+                    
+                    // If inner parsing fails, use the raw bytes
+                    return forge.util.bytesToHex(privateKeyBytes);
+                }
+            }
+            
+            // Strategy 2: Direct ECPrivateKey structure (not wrapped in PKCS#8)
+            // ECPrivateKey ::= SEQUENCE {
+            //   version        INTEGER { ecPrivkeyVer1(1) },
+            //   privateKey     OCTET STRING,
+            //   parameters [0] ECParameters OPTIONAL,
+            //   publicKey  [1] BIT STRING OPTIONAL
+            // }
+            if (asn1.type === forge.asn1.Type.SEQUENCE && asn1.value && asn1.value.length >= 2) {
+                const versionObj = asn1.value[0];
+                const privateKeyObj = asn1.value[1];
+                
+                if (versionObj.type === forge.asn1.Type.INTEGER && 
+                    privateKeyObj && privateKeyObj.type === forge.asn1.Type.OCTET_STRING) {
+                    console.log('Found direct ECPrivateKey structure');
+                    return forge.util.bytesToHex(privateKeyObj.value);
+                }
+            }
+            
+            // Strategy 3: Just look for any OCTET STRING that might contain the private key
+            // This is a fallback approach
+            const findOctetString = (node) => {
+                if (!node) return null;
+                
+                if (node.type === forge.asn1.Type.OCTET_STRING) {
+                    return node.value;
+                }
+                
+                if (node.value && Array.isArray(node.value)) {
+                    for (const child of node.value) {
+                        const result = findOctetString(child);
+                        if (result) return result;
+                    }
+                }
+                
+                return null;
+            };
+            
+            const octetStringValue = findOctetString(asn1);
+            if (octetStringValue) {
+                console.log('Found OCTET STRING using fallback search');
+                return forge.util.bytesToHex(octetStringValue);
+            }
+            
+            // If we get here, we couldn't find the private key
+            throw new Error('Could not locate private key in ASN.1 structure');
+            
+        } catch (parseError) {
+            console.error('ASN.1 parsing error:', parseError);
+            
+            // Last resort: If asn1Data is a forge key object, try to access raw key data
+            if (asn1Data && typeof asn1Data === 'object') {
+                // Try to access any property that might contain the key
+                for (const prop of ['keyData', 'keyValue', 'rawKey', 'key', 'value']) {
+                    if (asn1Data[prop]) {
+                        console.log(`Found key data in property: ${prop}`);
+                        if (typeof asn1Data[prop] === 'string') {
+                            return asn1Data[prop];
+                        } else if (typeof asn1Data[prop] === 'object' && asn1Data[prop].data) {
+                            return forge.util.bytesToHex(asn1Data[prop].data);
+                        }
+                    }
+                }
+            }
+            
+            throw parseError;
+        }
+    } catch (error) {
+        console.error('Error extracting SM2 private key:', error);
+        throw new Error(t('tools.sm2-signature-verifier.privateKeyExtractionFailed') + ': ' + error.message);
+    }
+}
+
+function extractSM2PublicKeyFromCert(cert) {
+    try {
+        // Extract public key from X.509 certificate
+        console.log('Certificate:', cert);
+        
+        if (!cert || !cert.publicKey) {
+            throw new Error('Invalid certificate or missing public key');
+        }
+        
+        // For SM2, we need the raw public key point (x,y coordinates)
+        // First try to access the key data directly if available
+        if (cert.publicKey.n && cert.publicKey.e) {
+            // This is an RSA key, not SM2
+            throw new Error(t('tools.sm2-signature-verifier.rsaCertNotSupported'));
+        }
+        
+        // Try to get the raw public key
+        let publicKeyBytes;
+        
+        // If forge exposes the key point directly
+        if (cert.publicKey.data) {
+            publicKeyBytes = cert.publicKey.data;
+            return forge.util.bytesToHex(publicKeyBytes);
+        }
+        
+        // Otherwise, try to extract from ASN.1
+        const publicKeyAsn1 = cert.publicKey.toAsn1();
+        const publicKeyDer = forge.asn1.toDer(publicKeyAsn1).getBytes();
+        
+        // Parse the SubjectPublicKeyInfo structure
+        return extractSM2PublicKeyFromDER(forge.util.bytesToHex(publicKeyDer));
+    } catch (error) {
+        console.error('Error extracting public key from cert:', error);
+        return null;
+    }
+}
+
+function extractSM2PublicKeyFromDER(derHex) {
+    try {
+        console.log('Extracting SM2 public key from DER:', derHex);
+        
+        // Parse the SubjectPublicKeyInfo structure
+        const asn1 = forge.asn1.fromDer(forge.util.createBuffer(forge.util.hexToBytes(derHex)));
+        
+        // SubjectPublicKeyInfo ::= SEQUENCE {
+        //   algorithm        AlgorithmIdentifier,
+        //   subjectPublicKey BIT STRING
+        // }
+        
+        // The public key is in the BIT STRING at position 1
+        if (asn1.value && asn1.value.length >= 2) {
+            const publicKeyBitString = asn1.value[1];
+            
+            if (publicKeyBitString && publicKeyBitString.type === forge.asn1.Type.BIT_STRING) {
+                // Extract the raw key bytes from the BIT STRING
+                // For SM2, this is typically the uncompressed point format: 04 || x || y
+                const publicKeyBytes = publicKeyBitString.value;
+                const publicKeyHex = forge.util.bytesToHex(publicKeyBytes);
+                
+                // If the key starts with '04', it's already in the uncompressed format
+                if (publicKeyHex.startsWith('04')) {
+                    return publicKeyHex;
+                } else {
+                    // Otherwise, add the '04' prefix to indicate uncompressed format
+                    return '04' + publicKeyHex;
+                }
+            }
+        }
+        
+        throw new Error('Could not find public key in ASN.1 structure');
+    } catch (error) {
+        console.error('Error extracting SM2 public key from DER:', error);
+        return null;
     }
 }
 </script>
