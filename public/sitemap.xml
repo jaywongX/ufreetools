@@ -1986,4 +1986,20 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/sm2-signature-verifier" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/sm2-signature-verifier" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/base64-hex-converter</loc>
+    <lastmod>2025-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/base64-hex-converter" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/base64-hex-converter" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/tool/base64-hex-converter</loc>
+    <lastmod>2025-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/base64-hex-converter" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/base64-hex-converter" />
+  </url>
 </urlset>

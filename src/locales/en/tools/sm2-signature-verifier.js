@@ -70,6 +70,21 @@ export default {
   hideDetails: "Hide Details",
   zCalculationFailed: "Z value calculation failed",
   invalidPublicKeyFormat: "Invalid public key format",
+  importPfx: "Import PFX/P12",
+  enterPin: "Enter PIN/Password",
+  pinPlaceholder: "Enter password for PFX file",
+  cancel: "Cancel",
+  confirm: "Confirm",
+  fileReadError: "Error reading file",
+  pfxImportSuccess: "PFX file imported successfully",
+  pfxImportError: "Error importing PFX file",
+  noPrivateKeyFound: "No private key found in PFX file",
+  invalidPrivateKeyFormat: "Invalid private key format in PFX file",
+  privateKeyExtractionFailed: "Failed to extract private key",
+  pkcs8ParseError: "Error parsing PKCS#8 structure",
+  rsaKeyNotSupported: "RSA key detected. This tool only supports SM2 keys.",
+  rsaCertNotSupported: "RSA certificate detected. This tool only supports SM2 certificates.",
+  failedToDerivePublicKey: "Failed to derive public key from private key",
   article: {
     title: "SM2 Digital Signature Tool - Secure Online Signature Creation and Verification",
     introduction: {
@@ -149,5 +164,5 @@ export default {
         tool2: "<a href='https://www.ufreetools.com/tool/hash-calculator' target='_blank'>Hash Calculator</a> - Generate secure hash values using various algorithms including SM3.",
         tool3: "<a href='https://www.ufreetools.com/tool/x509-certificate-decoder' target='_blank'>Certificate Decoder</a> - Decode and examine X.509 certificates including those using SM2 cryptography."
     }
-  }
+  },
 } 
