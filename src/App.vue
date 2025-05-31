@@ -566,6 +566,17 @@ const allTools = computed(() => [
     icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
     tags: ['text', 'utility', 'random', 'word', 'shuffle', 'edit']
   },
+  {
+    id: 'asn1-structure-parser',
+    name: t('tools.asn1-structure-parser.name'),
+    category: t(`categories.text.title`),
+    categoryId: 'text',
+    description: t('tools.asn1-structure-parser.description'),
+    path: '/tools/asn1-structure-parser',
+    component: 'Asn1StructureParser', 
+    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+    tags: ['asn1', 'parser', 'structure', 'visualize', 'decode']
+  },
   
   // 图像与多媒体
   {

@@ -107,7 +107,7 @@ import sm2KeyPairGenerator from './tools/sm2-key-pair-generator.js';
 import rsaSignatureVerifier from './tools/rsa-signature-verifier.js';
 import sm2SignatureVerifier from './tools/sm2-signature-verifier.js';
 import base64HexConverter from './tools/base64-hex-converter.js';
-
+import asn1StructureParser from './tools/asn1-structure-parser.js';
 export default {
   common: {
     tryNow: '立即使用',
@@ -249,4 +249,5 @@ export default {
   'rsa-signature-verifier': rsaSignatureVerifier,
   'sm2-signature-verifier': sm2SignatureVerifier,
   'base64-hex-converter': base64HexConverter,
+  'asn1-structure-parser': asn1StructureParser,
 };
