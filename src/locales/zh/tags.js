@@ -205,7 +205,6 @@ export default {
   test: '测试',
   diagnose: '诊断',
   utility: '实用',
-  decode: '解码',
   encrypt: '加密',
   decrypt: '解密',
   remove: '去除',
@@ -411,4 +410,8 @@ export default {
   keypair: '密钥对',
   signature: '签名',
   sign:'签名',
+  asn1: 'ASN.1',
+  parser: '解析器',
+  structure: '结构',
+  visualize: '可视化',
 }

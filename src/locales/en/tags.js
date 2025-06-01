@@ -201,7 +201,6 @@ export default {
   test: 'Test',
   diagnose: 'Diagnose',
   utility: 'Utility',
-  decode: 'Decode',
   encrypt: 'Encrypt',
   decrypt: 'Decrypt',
   remove: 'Remove',
@@ -411,4 +410,8 @@ export default {
   keypair: 'Key Pair',
   signature: 'Signature',
   sign:'Sign',
+  asn1: 'ASN.1',
+  parser: 'Parser',
+  structure: 'Structure',
+  visualize: 'Visualize',
 }

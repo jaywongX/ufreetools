@@ -2002,4 +2002,20 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/base64-hex-converter" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/base64-hex-converter" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/asn1-structure-parser</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/asn1-structure-parser" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/asn1-structure-parser" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/tool/asn1-structure-parser</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/asn1-structure-parser" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/asn1-structure-parser" />
+  </url>
 </urlset>

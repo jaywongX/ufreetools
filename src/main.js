@@ -158,6 +158,7 @@ const lazyComponentMap = {
   'RsaSignatureVerifier': () => import('./components/tools/RsaSignatureVerifier.vue'),
   'Sm2SignatureVerifier': () => import('./components/tools/Sm2SignatureVerifier.vue'),
   'Base64HexConverter': () => import('./components/tools/Base64HexConverter.vue'),
+  'Asn1StructureParser': () => import('./components/tools/Asn1StructureParser.vue'),
 }
 
 // 初始化Vercel Analytics
