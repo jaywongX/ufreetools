@@ -34,7 +34,8 @@ const { t } = useI18n()
 useHead({
   title: '404 - Page Not Found',
   meta: [
-    { name: 'status-code', content: '404' }
+    { name: 'status-code', content: '404' },
+    { name: 'robots', content: 'noindex' }
   ]
 })
 
