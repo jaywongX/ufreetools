@@ -180,7 +180,7 @@ export default {
         },
         {
           question: "我可以分析查询字符串中的复杂嵌套参数或JSON吗？",
-          answer: "是的，我们的<strong>URL查询解析器</strong>处理高级参数格式：<br><br>1. <strong>数组形式的参数</strong>，如<code>colors[]=red&colors[]=blue</code>或<code>colors=red,blue</code><br><br>2. <strong>嵌套对象表示法</strong>，如<code>filter[price][min]=10&filter[price][max]=50</code><br><br>3. <strong>参数中的JSON编码值</strong>，如<code>data={\"name\":\"John\",\"age\":30}</code><br><br>该工具会自动检测这些复杂结构并为它们提供专门的视图。对于JSON值，它提供格式化视图选项，使嵌套数据更具可读性。这对于通过URL接受复杂过滤、排序或配置选项的API端点特别有用。"
+          answer: "是的，我们的<strong>URL查询解析器</strong>处理高级参数格式：<br><br>1. <strong>数组形式的参数</strong>，如<code>colors[]=red&colors[]=blue</code>或<code>colors=red,blue</code><br><br>2. <strong>嵌套对象表示法</strong>，如<code>filter[price][min]=10&filter[price][max]=50</code><br><br>3. <strong>参数中的JSON编码值</strong>，如<code>data=&#123;&quot;name&quot;:&quot;John&quot;,&quot;age&quot;:30&#125;</code><br><br>该工具会自动检测这些复杂结构并为它们提供专门的视图。对于JSON值，它提供格式化视图选项，使嵌套数据更具可读性。这对于通过URL接受复杂过滤、排序或配置选项的API端点特别有用。"
         },
         {
           question: "如何在我的应用程序中使用生成的代码片段？",
