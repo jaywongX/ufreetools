@@ -2,15 +2,15 @@ export default {
     title: 'Categories',
     all: 'All Categories',
     dev: {
-      title: 'Development Tools',
+      title: 'Development',
       description: 'Tools for developers'
     },
     design: {
-      title: 'Design Tools',
+      title: 'Design',
       description: 'Tools for designers'
     },
     convert: {
-      title: 'Conversion Tools',
+      title: 'Conversion',
       description: 'Tools for converting data'
     },
     text: {
@@ -22,7 +22,7 @@ export default {
       description: 'Tools for image processing'
     },
     network: {
-      title: 'Network Tools',
+      title: 'Network',
       description: 'Tools for network analysis'
     },
     crypto: {

@@ -11,6 +11,7 @@
         <TheHeader />
       </div>
       <main class="flex-1 p-1 md:p-6 overflow-auto">
+        <h1 class="sr-only">{{ $t('home.title') }}</h1>
         <router-view />
         <MainAreaFooterAd />
       </main>
@@ -1564,95 +1565,5 @@ watch(() => route.params.lang, (newLang) => {
     locale.value = newLang
     localStorage.setItem('userLanguage', newLang)
   }
-})
-
-// Function to get current tool based on route
-const getCurrentToolFromRoute = (route) => {
-  // Get the current path - handle both /tools/tool-id and /lang/tools/tool-id formats
-  const path = route.path
-  
-  // Case 1: Direct route like /tools/tool-id
-  if (path.startsWith('/tool/')) {
-    const toolId = path.split('/').pop()
-    return allTools.value.find(tool => tool.id === toolId)
-  }
-  
-  // Case 2: Language-prefixed route like /zh/tool/tool-id or /en/tool/tool-id
-  const matches = path.match(/^\/(zh|en)\/tool\/([^\/]+)$/)
-  if (matches && matches.length >= 3) {
-    const toolId = matches[2]
-    return allTools.value.find(tool => tool.id === toolId)
-  }
-  
-  // Handle category pages
-  if (path.includes('/category/')) {
-    const categoryId = path.split('/').pop()
-    const category = categories.value.find(cat => cat.id === categoryId)
-    if (category) {
-      return { name: t(`categories.${categoryId}.title`)}
-    }
-  }
-  
-  // Handle tag pages
-  if (path.includes('/tag/')) {
-    const tagId = path.split('/').pop()
-    const tag = allTags.value.find(t => t.id === tagId)
-    if (tag) {
-      return { name: tag.name}
-    }
-  }
-  
-  // Home page or other pages
-  return null
-}
-
-// 设置头部元数据
-useHead({
-  // title: computed(() => {
-  //   // Get current tool name from route or component
-  //   const currentTool = getCurrentToolFromRoute(route)
-  //   if (currentTool) {
-  //     return `${currentTool.name}`
-  //   }
-  //   return 'UFreeTools - Your Best Free Tools'
-  // }),
-  link: computed(() => {
-    const path = route.path
-    const basePath = path.replace(/^\/(zh|en)/, '')
-    const isZh = path.startsWith('/zh')
-    const isEn = path.startsWith('/en')
-    
-    const links = [
-      {
-        rel: 'canonical',
-        href: `https://www.ufreetools.com${path}`
-      }
-    ]
-    
-    // 添加hreflang标签
-    if (isZh || isEn) {
-      // 如果当前是语言页面，添加两种语言的替代版本
-      links.push({
-        rel: 'alternate',
-        hreflang: 'zh',
-        href: `https://www.ufreetools.com/zh${basePath}`
-      })
-      
-      links.push({
-        rel: 'alternate',
-        hreflang: 'en',
-        href: `https://www.ufreetools.com/en${basePath}`
-      })
-      
-      // 添加默认语言标记
-      links.push({
-        rel: 'alternate',
-        hreflang: 'x-default',
-        href: `https://www.ufreetools.com/en${basePath}`
-      })
-    }
-    
-    return links
-  })
 })
 </script>

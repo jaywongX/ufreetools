@@ -38,7 +38,7 @@ const pageDescription = computed(() =>
 );
 
 // 网站URL和默认图片
-const siteUrl = 'https://ufreetools.com';
+const siteUrl = 'https://www.ufreetools.com';
 const defaultImage = '/images/og-image.jpg';
 const pageImage = computed(() => props.image || `${siteUrl}${defaultImage}`);
 
@@ -93,7 +93,7 @@ function updateLanguageAlternates() {
     const link = document.createElement('link');
     link.rel = 'alternate';
     link.hreflang = lang;
-    link.href = `${window.location.origin}/${lang}${currentPath.value}`;
+    link.href = `${siteUrl}/${lang}${currentPath.value}`;
     document.head.appendChild(link);
   });
   
@@ -101,7 +101,7 @@ function updateLanguageAlternates() {
   const defaultLink = document.createElement('link');
   defaultLink.rel = 'alternate';
   defaultLink.hreflang = 'x-default';
-  defaultLink.href = `${window.location.origin}/zh${currentPath.value}`;  // 默认使用中文
+  defaultLink.href = `${siteUrl}/en${currentPath.value}`;
   document.head.appendChild(defaultLink);
   
   // 添加规范链接

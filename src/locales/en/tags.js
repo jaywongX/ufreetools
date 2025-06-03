@@ -241,7 +241,7 @@ export default {
   categories: {
     multimedia: 'Multimedia',
     document: 'Documents',
-    development: 'Development Tools',
+    development: 'Development',
     network: 'Network & Protocols',
     utility: 'Utilities',
     design: 'Design & Creative',
