@@ -31,7 +31,7 @@ export function useMetaInfo(titleKey, descriptionKey) {
   });
   
   const updateDocumentTitle = () => {
-    document.title = `${title.value} | UFreeTools`;
+    document.title = `${title.value}`;
   };
   
   const updateMetaInfo = () => {

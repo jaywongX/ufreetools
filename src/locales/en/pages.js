@@ -1,7 +1,7 @@
 export default {
   home: {
     title: 'UFreeTools - Your Best Free Tools',
-    description: 'UFreeTools is an online platform that integrates a variety of efficient and practical tools, offering a series of completely free online tools covering multiple fields such as development, design, text, images, networking, cryptography, and daily life.',
+    description: 'UFreeTools offers free online tools for developers, designers, covering coding, design, graphics, text editing, image, network, cryptography and more.',
     getStarted: 'Get Started',
     tagFilterTitle: 'Tag Filter',
     filterResultsTitle: 'Filter Results',
