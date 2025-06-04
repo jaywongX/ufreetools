@@ -108,8 +108,7 @@ import rsaSignatureVerifier from './tools/rsa-signature-verifier.js';
 import sm2SignatureVerifier from './tools/sm2-signature-verifier.js';
 import base64HexConverter from './tools/base64-hex-converter.js';
 import asn1StructureParser from './tools/asn1-structure-parser.js';
-
-
+import invertImageColors from './tools/invert-image-colors.js';
 export default {
     common: {
       tryNow: 'Try Now',
@@ -252,4 +251,5 @@ export default {
     'sm2-signature-verifier': sm2SignatureVerifier,
     'base64-hex-converter': base64HexConverter,
     'asn1-structure-parser': asn1StructureParser,
+    'invert-image-colors': invertImageColors,
   }

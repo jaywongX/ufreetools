@@ -89,6 +89,7 @@ const lazyComponentMap = {
   'JfifJpgConverter': () => import('./components/tools/JfifJpgConverter.vue'),
   'JpgJfifConverter': () => import('./components/tools/JpgJfifConverter.vue'),
   'SealGenerator': () => import('./components/tools/SealGenerator.vue'),
+  'InvertImageColors': () => import('./components/tools/InvertImageColors.vue'),
   
   // 转换工具
   'Base64EncoderDecoder': () => import('./components/tools/Base64EncoderDecoder.vue'),

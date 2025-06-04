@@ -789,6 +789,17 @@ const allTools = computed(() => [
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['image', 'seal', 'stamp', 'generator', 'creative', 'logo'],
   },
+  {
+    id: 'invert-image-colors',
+    name: t('tools.invert-image-colors.name'),
+    category: t(`categories.image.title`),
+    categoryId: 'image',
+    description: t('tools.invert-image-colors.description'),
+    path: '/tools/invert-image-colors',
+    component: 'InvertImageColors',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image', 'invert', 'color', 'edit', 'batch', 'utility']
+  },
   
   // 转换工具
   {
