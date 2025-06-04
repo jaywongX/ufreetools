@@ -1,5 +1,4 @@
 export default {
-  // UI Interface Text
   title: '标签',
   description: '按标签浏览工具',
   popular: '热门标签',
@@ -24,8 +23,6 @@ export default {
   toolsInPair: '个工具',
   showMore: '显示更多',
   collapse: '收起',
-  
-  // 开发类标签
   dev: '开发',
   frontend: '前端',
   backend: '后端',
@@ -37,16 +34,12 @@ export default {
   git: 'Git',
   curl: 'cURL',
   editor: '编辑器',
-  
-  // 设计类标签
   design: '设计',
   color: '颜色',
   typography: '排版',
   ui: '界面',
   icon: '图标',
   gradient: '渐变',
-  
-  // 网络类标签
   network: '网络',
   protocol: '协议',
   http: 'HTTP',
@@ -56,8 +49,6 @@ export default {
   ip: 'IP地址',
   hex: '十六进制',
   websocket: 'WebSocket',
-  
-  // 媒体类标签
   image: '图片',
   media: '媒体',
   compress: '压缩',
@@ -77,21 +68,15 @@ export default {
   portrait: "人像",
   rotate: "旋转",
   mosaic: "马赛克",
-  
-  // 文本类标签
   text: '文本',
   format: '格式化',
   convert: '转换',
   encode: '编码',
   decode: '解码',
-  
-  // 数据类标签
   json: 'JSON',
   xml: 'XML',
   csv: 'CSV',
   yaml: 'YAML',
-  
-  // 安全类标签
   security: '安全',
   crypto: '密码学',
   hash: '哈希',
@@ -100,26 +85,18 @@ export default {
   sm2: 'SM2',
   rsa: 'RSA',
   base64: 'Base64',
-  
-  // 实用工具类标签
   utility: '实用工具',
   calculator: '计算器',
   converter: '转换器',
   generator: '生成器',
   validator: '验证器',
-  
-  // 分析类标签
   analyze: '分析',
   optimize: '优化',
-  
-  // 格式类标签
   gif: 'GIF',
   svg: 'SVG',
   png: 'PNG',
   jpg: 'JPG',
   pdf: 'PDF',
-  
-  // 其他标签
   data: '数据',
   time: '时间',
   date: '日期',
@@ -141,52 +118,36 @@ export default {
   beautify: '美化',
   diff: '差异',
   compare: '比较',
-  
-  // 验证相关
   verify: '验证',
   validation: '验证',
   validate: '验证',
   check: '检查',
-  
-  // 多媒体类
   multimedia: '多媒体',
   audio: '音频',
   video: '视频',
   animation: '动画',
-  
-  // 文档相关
   document: '文档',
   file: '文件',
   docx: 'Word文档',
   xlsx: 'Excel表格',
   markdown: 'Markdown',
-  
-  // 开发工具
   cli: '命令行工具',
   ide: '开发环境',
   framework: '框架',
   library: '库',
-  
-  // 数据处理
   processing: '处理',
   extraction: '提取',
   transformation: '转换',
-  
-  // 常见标签对
   textconvert: '文本转换',
   imageprocess: '图像处理',
   formatconversion: '格式转换',
   encoding: '编码',
   decoding: '解码',
-  
-  // 特殊类型
   generate: '生成',
   detect: '检测',
   recognize: '识别',
   optimizing: '优化',
   example: '示例',
-  
-  // 其他常见标签
   code: '代码',
   optimization: '优化',
   recognize: '识别',
@@ -240,8 +201,6 @@ export default {
   planner: '计划',
   task: '任务',
   organization: '组织',
-
-  // 标签分类名称
   categories: {
     multimedia: '多媒体',
     document: '文档相关',
@@ -269,8 +228,6 @@ export default {
     emerald: '祖母绿标签',
     rose: '玫瑰色标签'
   },
-
-  // 添加新标签
   currency: '货币',
   exchange: '汇率',
   converter: '转换器',
@@ -292,28 +249,20 @@ export default {
   budget: '预算',
   planning: '规划',
   expense: '支出',
-
   accounting: '会计',
   tracker: '追踪',
   personal: '个人',
   account: '账户',
   book: '书籍',
-
-  // 添加以下标签
   instagram: 'Instagram',
   social: '社交媒体',
   'social-media': '社交媒体',
   post: '帖子',
-
-  // 添加新标签
   bitwise: '位运算',
   'bitwise-operations': '位运算',
   and: '与运算',
-
   word: '单词',
   shuffle: '洗牌',
-
-  // Add to the existing tags object:
   cashapp: 'Cash App',
   fee: '手续费',
   calculator: '计算器',
@@ -322,11 +271,8 @@ export default {
   finance: '金融',
   money: '资金',
   transaction: '交易',
-
   cash: '现金',
   app: '应用',
-
-  // Added from the code block
   hexadecimal: '十六进制',
   case: '大小写',
   jfif: 'JFIF',
@@ -334,8 +280,6 @@ export default {
   quality: '质量',
   seal: '印章',
   stamp: '图章',
-  
-  // 根据截图中的实际分类添加
   groupNames: {
     performance: '性能相关',
     compression: '压缩工具',
@@ -351,8 +295,6 @@ export default {
     sky: 'sky类标签',
     violet: 'violet类标签'
   },
-
-  // Add these entries to the existing tags object:
   coordinate: '坐标',
   conversion: '转换',
   gis: 'GIS',
@@ -368,8 +310,6 @@ export default {
   mercator: '墨卡托',
   projection: '投影',
   geocoding: '地理编码',
-
-  // Add these to the existing tags object
   certificate: '证书',
   x509: 'X.509',
   ssl: 'SSL',
@@ -379,8 +319,6 @@ export default {
   rgb: 'RGB',
   palette: '调色板',
   cors: 'CORS',
-
-  // Add these entries to the existing tags object:
   gps: 'GPS',
   track: '轨迹',
   map: '地图',
@@ -395,8 +333,6 @@ export default {
   surveying_and_mapping: '测绘',
   gauss: '高斯',
   gaussian: '高斯',
-
-  // 已有标签下添加
   pkcs: 'PKCS',
   pem: 'PEM',
   key: '密钥',
@@ -414,4 +350,7 @@ export default {
   parser: '解析器',
   structure: '结构',
   visualize: '可视化',
+  invert: '反转',
+  batch: '批量',
+  edit: '编辑',
 }

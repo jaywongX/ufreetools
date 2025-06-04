@@ -2018,4 +2018,20 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/asn1-structure-parser" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/asn1-structure-parser" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/invert-image-colors</loc>
+    <lastmod>2025-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/invert-image-colors" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/invert-image-colors" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/tool/invert-image-colors</loc>
+    <lastmod>2025-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/invert-image-colors" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/invert-image-colors" />
+  </url>
 </urlset>

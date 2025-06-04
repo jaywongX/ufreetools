@@ -1,5 +1,4 @@
 export default {
-  // UI Interface Text
   title: 'Tags',
   description: 'Browse all tool tags',
   popular: 'Popular Tags',
@@ -24,8 +23,6 @@ export default {
   toolsInPair: ' tools',
   showMore: 'Show more',
   collapse: 'Collapse',
-  
-  // Development Tags
   dev: 'Development',
   frontend: 'Frontend',
   database: 'Database',
@@ -36,16 +33,12 @@ export default {
   git: 'Git',
   curl: 'cURL',
   editor: 'Editor',
-  
-  // Design Tags
   design: 'Design',
   color: 'Color',
   typography: 'Typography',
   ui: 'UI',
   icon: 'Icon',
   gradient: 'Gradient',
-  
-  // Network Tags
   network: 'Network',
   protocol: 'Protocol',
   http: 'HTTP',
@@ -55,8 +48,6 @@ export default {
   ip: 'IP Address',
   hex: 'Hexadecimal',
   websocket: 'WebSocket',
-  
-  // Media Tags
   image: 'Image',
   media: 'Media',
   compression: 'Compression',
@@ -75,21 +66,15 @@ export default {
   frames: "Frames",
   portrait: "Portrait",
   rotate: "Rotate",
-
-  // Text Tags
   text: 'Text',
   format: 'Format',
   convert: 'Convert',
   encode: 'Encode',
   decode: 'Decode',
-  
-  // Data Tags
   json: 'JSON',
   xml: 'XML',
   csv: 'CSV',
   yaml: 'YAML',
-  
-  // Security Tags
   security: 'Security',
   crypto: 'Cryptography',
   hash: 'Hash',
@@ -98,26 +83,18 @@ export default {
   sm2: 'SM2',
   rsa: 'RSA',
   base64: 'Base64',
-  
-  // Utility Tags
   utility: 'Utility',
   calculator: 'Calculator',
   converter: 'Converter',
   generator: 'Generator',
   validator: 'Validator',
-  
-  // Analysis Tags
   analyze: 'Analysis',
   optimize: 'Optimization',
-  
-  // Format Tags
   gif: 'GIF',
   svg: 'SVG',
   png: 'PNG',
   jpg: 'JPG',
   pdf: 'PDF',
-  
-  // Other Tags
   data: 'Data',
   time: 'Time',
   date: 'Date',
@@ -138,52 +115,35 @@ export default {
   beautify: 'Beautify',
   diff: 'Diff',
   compare: 'Compare',
-  
-  // Validation Tags
   verify: 'Verify',
   validation: 'Validation',
   validate: 'Validate',
   check: 'Check',
-  
-  // Multimedia Tags
   multimedia: 'Multimedia',
   audio: 'Audio',
   video: 'Video',
   animation: 'Animation',
-  
-  // Document Tags
   file: 'File',
   docx: 'Word Document',
   xlsx: 'Excel Spreadsheet',
   markdown: 'Markdown',
-  
-  // Development Tool Tags
   cli: 'Command Line Tool',
   ide: 'Development Environment',
   framework: 'Framework',
   library: 'Library',
-  
-  // Data Processing Tags
   processing: 'Processing',
   extraction: 'Extraction',
   transformation: 'Transformation',
-  
-  // Text Conversion Tags
   textconvert: 'Text Conversion',
   formatconversion: 'Format Conversion',
   encoding: 'Encoding',
   decoding: 'Decoding',
-  
-  // Special type
   generate: 'Generate',
   detect: 'Detect',
   recognize: 'Recognize',
   optimizing: 'Optimizing',
   example: 'Example',
-  
-  // Code Tags
   code: 'Code',
-
   highlight: 'Highlight',
   optimization: 'Optimization',
   recognition: 'Recognition',
@@ -236,8 +196,6 @@ export default {
   planner: 'Planner',
   task: 'Task',
   organization: 'Organization',
-
-  // Tag Categories
   categories: {
     multimedia: 'Multimedia',
     document: 'Documents',
@@ -265,26 +223,18 @@ export default {
     emerald: 'Emerald Tags',
     rose: 'Rose Tags'
   },
-
-  // New tags
   currency: 'Currency',
   exchange: 'Exchange Rate',
   converter: 'Converter',
-
-  // New tags
   drawing: 'Drawing',
   sketch: 'Sketch',
   creative: 'Creative',
-
-  // New tags
   timezone: 'Timezone',
   world: 'World',
   clock: 'Clock',
   global: 'Global',
   international: 'International',
   travel: 'Travel',
-
-  // New tags
   name: 'Name',
   generator: 'Generator',
   random: 'Random',
@@ -292,43 +242,30 @@ export default {
   culture: 'Culture',
   writing: 'Writing',
   character: 'Character',
-
-  // New tags
   budget: 'Budget',
   planning: 'Planning',
   expense: 'Expense',
-
   accounting: 'Accounting',
   tracker: 'Tracker',
   personal: 'Personal',
   account: 'Account',
   book: 'Book',
-
-  // Added tags
   instagram: 'Instagram',
   social: 'Social Media',
   'social-media': 'Social Media',
   post: 'Post',
-
-  // 添加新标签
   bitwise: 'Bitwise',
   'bitwise-operations': 'Bitwise Operations',
   and: 'AND',
-
   word: 'Word',
   shuffle: 'Shuffle',
-
-  // Added from the code block
   cashapp: 'Cash App',
   fee: 'Fee',
   payment: 'Payment',
   transfer: 'Transfer',
   transaction: 'Transaction',
-
   cash: 'Cash',
   app: 'App',
-
-  // Added from the code block
   hexadecimal: 'Hexadecimal',
   case: 'Case',
   jfif: 'JFIF',
@@ -336,7 +273,6 @@ export default {
   quality: 'Quality',
   seal: 'Seal',
   stamp: 'Stamp',
-  // 英文版本的分类名称
   groupNames: {
     performance: 'Performance Related',
     compression: 'Compression Tools',
@@ -352,8 +288,6 @@ export default {
     sky: 'Sky Type Tags',
     violet: 'Violet Type Tags'
   },
-
-  // Added from the code block
   coordinate: 'Coordinate',
   conversion: 'Conversion',
   gis: 'GIS',
@@ -369,8 +303,6 @@ export default {
   mercator: 'Mercator',
   projection: 'Projection',
   geocoding: 'Geocoding',
-
-  // Added to the existing tags object
   certificate: 'Certificate',
   x509: 'X.509',
   ssl: 'SSL',
@@ -380,8 +312,6 @@ export default {
   rgb: 'RGB',
   palette: 'Palette',
   cors: 'CORS',
-
-  // Added from the code block
   gps: 'GPS',
   track: 'Track',
   map: 'Map',
@@ -395,8 +325,6 @@ export default {
   surveying_and_mapping: 'Surveying and Mapping',
   gauss: 'Gauss',
   gaussian: 'Gaussian',
-
-  // Added from the code block
   pkcs: 'PKCS',
   pem: 'PEM',
   key: 'Key',
@@ -414,4 +342,7 @@ export default {
   parser: 'Parser',
   structure: 'Structure',
   visualize: 'Visualize',
+  invert: 'Invert',
+  batch: 'Batch',
+  edit: 'Edit',
 }
