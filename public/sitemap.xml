@@ -2034,4 +2034,20 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/invert-image-colors" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/invert-image-colors" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/resize-to-1024x576-image</loc>
+    <lastmod>2025-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/resize-to-1024x576-image" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/resize-to-1024x576-image" />
+  </url>
+  <url>
+    <loc>https://www.ufreetools.com/zh/tool/resize-to-1024x576-image</loc>
+    <lastmod>2025-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/resize-to-1024x576-image" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/resize-to-1024x576-image" />
+  </url>
 </urlset>

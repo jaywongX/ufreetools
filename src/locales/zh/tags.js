@@ -353,4 +353,6 @@ export default {
   invert: '反转',
   batch: '批量',
   edit: '编辑',
+  youtube: 'YouTube',
+  thumbnail: '缩略图',
 }
