@@ -345,4 +345,6 @@ export default {
   invert: 'Invert',
   batch: 'Batch',
   edit: 'Edit',
+  youtube: 'YouTube',
+  thumbnail: 'Thumbnail',
 }
