@@ -359,4 +359,5 @@ export default {
   Quality: '质量',
   reduce: '减小',
   Batch: '批量',
+  compress: '压缩',
 }

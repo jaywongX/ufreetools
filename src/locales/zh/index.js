@@ -15,5 +15,5 @@ export default {
   categories,
   errors,
   tags,
-  feedback
+  feedback,
 }; 
