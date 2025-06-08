@@ -347,4 +347,8 @@ export default {
   edit: 'Edit',
   youtube: 'YouTube',
   thumbnail: 'Thumbnail',
+  Optimization: 'Optimization',
+  Quality: 'Quality',
+  reduce: 'Reduce',
+  Batch: 'Batch',
 }
