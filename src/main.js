@@ -161,6 +161,7 @@ const lazyComponentMap = {
   'Base64HexConverter': () => import('./components/tools/Base64HexConverter.vue'),
   'Asn1StructureParser': () => import('./components/tools/Asn1StructureParser.vue'),
   'ResizeTo1024x576Image': () => import('./components/tools/ResizeTo1024x576Image.vue'),
+  'ReduceImageSizeInKbMb': () => import('./components/tools/ReduceImageSizeInKbMb.vue'),
 }
 
 // 初始化Vercel Analytics

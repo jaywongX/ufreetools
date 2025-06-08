@@ -355,4 +355,8 @@ export default {
   edit: '编辑',
   youtube: 'YouTube',
   thumbnail: '缩略图',
+  Optimization: '优化',
+  Quality: '质量',
+  reduce: '减小',
+  Batch: '批量',
 }
