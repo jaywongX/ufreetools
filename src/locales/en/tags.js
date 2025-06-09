@@ -351,4 +351,5 @@ export default {
   Quality: 'Quality',
   reduce: 'Reduce',
   Batch: 'Batch',
+  compress: 'Compress',
 }

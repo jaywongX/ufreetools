@@ -14,19 +14,19 @@ export default {
       description: 'Tools for converting data'
     },
     text: {
-      title: 'Text Editing',
+      title: 'Text Edit',
       description: 'Tools for text editing'
     },
     image: {
-      title: 'Image Processing',
-      description: 'Tools for image processing'
+      title: 'Image',
+      description: 'Tools for image'
     },
     network: {
       title: 'Network',
       description: 'Tools for network analysis'
     },
     crypto: {
-      title: 'Cryptography & Security',
+      title: 'Crypto',
       description: 'Tools for cryptography and security'
     },
     utility: {
@@ -34,7 +34,7 @@ export default {
       description: 'Tools for utilities'
     },
     surveying_and_mapping: {
-      title: 'Surveying and Mapping',
+      title: 'Survey',
       description: 'Tools for surveying and mapping professionals'
     }
   }

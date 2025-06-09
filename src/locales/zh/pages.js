@@ -1,15 +1,24 @@
 export default {
   home: {
     title: 'UFreeTools - 你的最佳免费工具集',
-    description: 'UFUFreeTools 是一个集成了多种高效、实用工具的在线平台，提供一系列完全免费的在线工具，涵盖开发、设计、文本、图像、网络、密码和日常生活等多个领域。',
+    description: 'UFreeTools 是一个集成了多种高效、实用工具的在线平台，提供一系列完全免费的在线工具，涵盖开发、设计、文本、图像、网络、密码和日常生活等多个领域。',
     getStarted: '开始使用',
+    startUsing: '立即体验',
     tagFilterTitle: '标签筛选',
     filterResultsTitle: '筛选结果',
     noMatchingTools: '没有符合所选标签的工具',
     recentToolsTitle: '最近使用',
     popularToolsTitle: '热门工具',
     newToolsTitle: '最新添加',
-    moreTools: '查看更多'
+    moreTools: '查看更多',
+    totalTools: '免费工具',
+    totalToolsDesc: '满足多种需求',
+    categories: '工具分类',
+    categoriesDesc: '涵盖开发、设计等多个领域',
+    freeTools: '免费',
+    freeToolsDesc: '所有工具完全免费，无隐藏收费',
+    quickStart: '快速开始使用热门工具：',
+    browseByCategory: '浏览工具分类',
   },
   about: {
     title: '关于我们',
