@@ -1,0 +1,120 @@
+export default {
+  name: 'Generador de User-Agent',
+  description: 'Genera cadenas User-Agent para distintos navegadores y dispositivos para pruebas en sitios web, extracción de datos (web scraping) y desarrollo',
+  filters: {
+    title: 'Opciones de Filtro',
+    browser: 'Navegador',
+    os: 'Sistema Operativo',
+    deviceType: 'Tipo de Dispositivo'
+  },
+  browsers: {
+    all: 'Todos los Navegadores',
+    chrome: 'Chrome',
+    firefox: 'Firefox',
+    safari: 'Safari',
+    opera: 'Opera',
+    edge: 'Edge',
+    ie: 'Internet Explorer',
+    unknown: 'Navegador Desconocido'
+  },
+  operatingSystems: {
+    all: 'Todos los Sistemas Operativos',
+    windows: 'Windows',
+    macos: 'macOS',
+    linux: 'Linux',
+    android: 'Android',
+    ios: 'iOS',
+    unknown: 'Sistema Operativo Desconocido'
+  },
+  deviceTypes: {
+    all: 'Todos los Dispositivos',
+    desktop: 'Escritorio',
+    mobile: 'Móvil',
+    tablet: 'Tableta',
+    unknown: 'Dispositivo Desconocido'
+  },
+  generation: {
+    quantity: 'Cantidad',
+    generateRandom: 'Generar User-Agents Aleatorios',
+    clearResults: 'Limpiar Resultados'
+  },
+  results: {
+    title: 'Resultados',
+    copyAll: 'Copiar Todos',
+    empty: 'Haga clic en "Generar User-Agents Aleatorios" para obtener resultados'
+  },
+  messages: {
+    copied: '¡Copiado al portapapeles!',
+    allCopied: 'Todos los User-Agents copiados al portapapeles',
+    copyFailed: 'Fallo al copiar, por favor hágalo manualmente'
+  },
+  info: {
+    formatTitle: 'Guía del Formato de User-Agent',
+    formatDescription: 'Las cadenas User-Agent típicamente contienen información sobre el navegador, versión, sistema operativo y dispositivo, con un formato como:',
+    formatExample: 'Mozilla/5.0 (Información de Plataforma) Información del Motor Información del Navegador',
+    examplesTitle: 'Ejemplos Comunes de User-Agent:',
+    chromeWindows: 'Chrome (Windows):',
+    firefoxMac: 'Firefox (macOS):',
+    safariIOS: 'Safari (iOS):',
+    useCasesTitle: 'Casos de Uso:',
+    useCases: [
+      'Pruebas de compatibilidad de sitios web',
+      'Extracción de datos (web scraping)',
+      'Desarrollo y pruebas de APIs',
+      'Bypassing a la detección de navegador',
+      'Simular acceso desde distintos dispositivos'
+    ]
+  },
+  article: {
+    title: "Generador de User-Agent: Crear Cadenas de Identificación de Navegador",
+    features: {
+      title: "Entendiendo las Cadenas User-Agent y sus Aplicaciones",
+      description: "Nuestro <strong>generador de User-Agent</strong> es una herramienta especializada diseñada para crear cadenas de identificación de navegador para diversos propósitos de prueba y desarrollo. Estas cadenas, conocidas como <strong>cabeceras User-Agent</strong>, son enviadas por los navegadores a los sitios web e incluyen información crucial sobre el tipo de navegador, su versión, sistema operativo y características del dispositivo.<br><br>Este potente <strong>creador de cadena UA</strong> permite generar cadenas User-Agent precisas y realistas para todos los navegadores principales, incluyendo Chrome, Firefox, Safari, Edge y Opera, a través de diferentes sistemas operativos y tipos de dispositivos. Puede filtrar y personalizar las cadenas generadas según criterios específicos, asegurando así obtener exactamente las huellas digitales del navegador que necesite para cada caso práctico.<br><br>Ya sea probando compatibilidad de sitios web, desarrollando herramientas de extracción de datos o solucionando problemas específicos de plataforma, tener acceso a <strong>cadenas de identificación de navegador</strong> diversas y auténticas es esencial para obtener resultados precisos.",
+      useCases: {
+        title: "Aplicaciones Prácticas para la Generación de User-Agent",
+        items: [
+          "<strong>Prueba entre Navegadores</strong>: Los desarrolladores web usan la <strong>generación de cadenas UA</strong> para simular distintos entornos de navegación sin necesidad de instalar múltiples navegadores. Al enviar diferentes cadenas User-Agent en solicitudes HTTP, puede probar cómo se comporta su sitio web con varios navegadores y versiones, identificando inconsistencias en el renderizado o problemas de compatibilidad que puedan afectar segmentos específicos de su audiencia.",
+          "<strong>Desarrollo de Extracción de Datos (Web Scraping)</strong>: Científicos de datos y especialistas en automatización confían en la <strong>simulación de identificación de navegador</strong> cuando construyen herramientas de extracción web. Usar varias cadenas User-Agent ayuda a evitar la detección por parte de sitios web que bloquean accesos automatizados, permitiendo recopilar datos de forma más confiable al hacer que las solicitudes parezcan provenientes de distintos navegadores legítimos en lugar de una sola herramienta reconocible.",
+          "<strong>Prueba de Aplicaciones Móviles</strong>: Los desarrolladores utilizan la <strong>emulación de UA móvil</strong> para comprobar cómo responden servicios web a solicitudes desde aplicaciones móviles. Dado que muchos sistemas backend entregan contenido diferente basado en el dispositivo que hace la solicitud, tener cadenas User-Agent reales y representativas permite verificar que las API reconozcan correctamente las peticiones desde diversas plataformas móviles.",
+          "<strong>Análisis SEO</strong>: Los profesionales de marketing emplean la <strong>simulación de bots de búsqueda</strong> para comprender cómo ven los motores de búsqueda sus sitios web. Usando cadenas User-Agent que imitan Googlebot, Bingbot u otros rastreadores, los especialistas en SEO pueden aproximar cómo los motores de búsqueda interpretan su contenido, ayudando a optimizarlo para mejorar su visibilidad en los resultados.",
+          "<strong>Prueba de Geolocalización</strong>: Las empresas internacionales aprovechan las <strong>huellas de navegador regionales</strong> para probar funciones basadas en ubicación. Algunas cadenas User-Agent contienen indicadores sutiles de región o preferencias de idioma, lo que permite a los desarrolladores probar características geolocalizadas y asegurar que el contenido esté adecuadamente localizado para distintos mercados sin cambiar su ubicación física.",
+          "<strong>Investigación de Seguridad</strong>: Los profesionales de ciberseguridad usan el <strong>análisis y generación de cadenas UA</strong> para probar vulnerabilidades del sistema. Al examinar cómo aplicaciones manejan cadenas User-Agent inusuales o mal formateadas, los investigadores de seguridad pueden identificar posibles debilidades en la validación o procesamiento de entradas que podrían ser explotadas en ataques."
+        ]
+      }
+    },
+    faq: {
+      title: "Preguntas Frecuentes sobre la Generación de User-Agent",
+      items: [
+        {
+          question: "¿Qué es exactamente una cadena User-Agent y por qué es importante?",
+          answer: "Una <strong>cadena User-Agent</strong> es una identificación textual que los navegadores envían a los sitios web con cada solicitud, conteniendo detalles sobre:<br><br>• El nombre y versión del navegador (por ejemplo, Chrome 91)<br>• El sistema operativo (por ejemplo, Windows 10, macOS)<br>• Información del dispositivo (particularmente en dispositivos móviles)<br>• Detalles del motor de renderizado (por ejemplo, WebKit, Gecko)<br>• Opcionalmente información adicional de compatibilidad<br><br>Estas cadenas son importantes porque los sitios web frecuentemente las utilizan para:<br><br>• Entregar contenido apropiado al dispositivo<br>• Habilitar funciones específicas por navegador<br>• Recoger datos analíticos<br>• Implementar medidas de seguridad<br><br>Nuestro <strong>herramienta generadora de User-Agent</strong> crea cadenas auténticas que imitan con precisión las identificaciones de navegadores reales, permitiendo a desarrolladores y probadores simular distintos entornos de navegación sin necesidad de múltiples dispositivos físicos o instalaciones de navegador."
+        },
+        {
+          question: "¿Cómo puedo generar cadenas User-Agent para dispositivos móviles?",
+          answer: "Generar <strong>User-Agents para dispositivos móviles</strong> con nuestra herramienta es sencillo:<br><br>1. Seleccione 'Móvil' en el menú desplegable de Tipo de Dispositivo<br>2. Opcionalmente elija un sistema operativo específico (iOS o Android)<br>3. Opcionalmente seleccione un navegador móvil preferido<br>4. Haga clic en 'Generar Random User-Agents'<br><br>La herramienta creará identificadores móviles realistas que incluyen información específica relevante. Las cadenas User-Agent móviles normalmente contienen indicadores como 'Mobile' o 'Android', y a menudo incluyen detalles del modelo del dispositivo. Para dispositivos iOS, tendrán identificadores iPhone o iPad junto con la versión de iOS.<br><br>Estas cadenas móviles son particularmente valiosas para probar diseños responsivos, funcionalidades específicas de móvil o desarrollar aplicaciones que deban distinguir entre usuarios móviles y de escritorio mediante <strong>mecanismos de detección de dispositivo</strong>."
+        },
+        {
+          question: "¿Reconocen los sitios web como válidas las cadenas User-Agent generadas?",
+          answer: "Sí, nuestro <strong>generador de huella digital de navegador</strong> crea cadenas User-Agent válidas que los sitios web reconocen como procedentes de navegadores reales porque:<br><br>• Se basan en formatos reales de cadenas User-Agent de dispositivos genuinos<br>• Mantienen la sintaxis y estructura esperadas por los sitios web<br>• Incluyen numeración correcta de versiones e indicadores de plataforma<br>• Contienen tokens de compatibilidad que también usan navegadores reales<br><br>Los sitios web generalmente no pueden diferenciar entre nuestras cadenas generadas y las de navegadores reales, haciéndolas ideales para fines de prueba. Sin embargo, cabe destacar que algunos sitios web sofisticados emplean técnicas adicionales de fingerprinting más allá de la simple verificación del User-Agent. Esto podría incluir patrones de ejecución de JavaScript, fingerprinting de canvas o detección de fuentes que esta <strong>generación de identificación de navegador</strong> no aborda directamente.<br><br>No obstante, para la mayoría de escenarios de prueba, estas cadenas ofrecen una identificación de navegador suficientemente realista para activar el comportamiento correcto del sitio web."
+        },
+        {
+          question: "¿Con qué frecuencia debería actualizar las cadenas User-Agent que uso para pruebas?",
+          answer: "Debería actualizar regularmente sus <strong>cadenas de identificación de navegador</strong> porque:<br><br>• Los fabricantes de navegadores lanzan nuevas versiones aproximadamente cada 4-6 semanas<br>• Cambios en versiones mayores pueden alterar significativamente los formatos User-Agent<br>• Los sitios web cada vez dirigen características a navegadores nuevos<br>• Los identificadores de sistema operativo evolucionan con nuevas versiones<br><br>Como buena práctica:<br><br>• Para pruebas críticas de producción: Actualice mensualmente para seguir lanzamientos recientes de navegadores<br>• Para desarrollo general: Renueve trimestralmente para mantenerse razonablemente actualizado<br>• Para pruebas de compatibilidad hacia atrás: Mantenga colecciones actuales y históricas<br><br>Nuestro <strong>generador de User-Agent</strong> ayuda proporcionando cadenas realistas y actualizadas que reflejan las últimas versiones y formatos de navegador. Para pruebas especializadas con versiones muy específicas, quizás quiera generar y guardar una biblioteca de cadenas que representen su ecosistema objetivo, renovando periódicamente esta colección para mantener la precisión en sus pruebas."
+        },
+        {
+          question: "¿Es legal y ético cambiar la cadena User-Agent de mi navegador?",
+          answer: "Cambiar la <strong>identificación del navegador</strong> ocupa un espacio jurídico y ético matizado:<br><br><strong>Consideraciones Legales</strong>:<br>• Generalmente legal para pruebas, desarrollo e investigación<br>• Podría violar términos de servicio de sitios web específicos<br>• Posiblemente viole acuerdos contractuales con ciertos proveedores<br><br><strong>Pautas Éticas</strong>:<br>• Aceptable: Usar para desarrollo, pruebas de compatibilidad, investigación de seguridad, protección de privacidad<br>• Discutible: Bypassing a paredes de pago, acceso a contenido geo-restringido, evadir límites de uso<br>• No ético: Suplantar rastreadores de buscadores, burlar medidas de seguridad, extraer datos sin permiso<br><br>Mejores prácticas al usar nuestro <strong>generador de cadenas User-Agent</strong>:<br><br>1. Revise los términos de servicio de los sitios web objetivo<br>2. Solicite permiso al realizar pruebas de seguridad<br>3. Úselo responsablemente para propósitos legítimos de desarrollo<br>4. Considere la carga que sus pruebas imponen sobre infraestructuras ajenas<br><br>Recuerde que el <strong>fingerprinting del navegador</strong> es solo un aspecto de cómo los sitios web identifican a los usuarios, y modificar solo el User-Agent puede no lograr anonimato completo ni simular exitosamente todas las características de un navegador diferente."
+        }
+      ]
+    },
+    guide: {
+      title: "Cómo Usar el Generador de User-Agent: Guía Paso a Paso",
+      step1: "<strong>Seleccione sus criterios de filtro</strong>: Empiece eligiendo parámetros específicos para sus cadenas User-Agent. Use los menús desplegables para filtrar por tipo de navegador (Chrome, Firefox, Safari, etc.), sistema operativo (Windows, macOS, Android, iOS, etc.) y tipo de dispositivo (escritorio, móvil, tableta). Esta configuración garantiza que genere cadenas User-Agent relevantes para sus necesidades específicas de prueba o desarrollo.",
+      step2: "<strong>Especifique la cantidad requerida</strong>: Determine cuántas cadenas User-Agent quiere generar a la vez introduciendo un número en el campo de cantidad. La herramienta permite crear entre 1 y 100 cadenas en una sola operación, facilitando tanto ejemplos específicos como conjuntos grandes para escenarios de prueba más completos.",
+      step3: "<strong>Genere las cadenas User-Agent</strong>: Haga clic en el botón 'Generar User-Agents Aleatorios' para crear sus cadenas de identificación de navegador personalizadas. La herramienta producirá instantáneamente el número solicitado de User-Agents que coincidan con sus criterios especificados. Cada cadena generada será única y tendrá el formato estándar usado por navegadores reales.",
+      step4: "<strong>Revise y seleccione las cadenas</strong>: Examine las cadenas User-Agent generadas mostradas en la sección de resultados. Cada entrada muestra un resumen del tipo de navegador, sistema operativo y categoría de dispositivo para facilitar su identificación. Debajo de este resumen aparece la cadena User-Agent completa, permitiéndole verificar que contiene todos los elementos que necesita para su caso de uso específico.",
+      step5: "<strong>Copie e implemente las cadenas</strong>: Cuando encuentre cadenas User-Agent que cumplan con sus requisitos, puede copiar cadenas individuales haciendo clic en el icono de copia junto a cada una, o copiar todas las cadenas generadas simultáneamente usando el botón 'Copiar Todas' en la parte superior de la sección de resultados. Estas cadenas pueden implementarse entonces en sus herramientas de prueba, aplicaciones de extracción web, extensiones de navegador o solicitudes API."
+    },
+    conclusion: "Las cadenas User-Agent siguen siendo un componente fundamental de la arquitectura web, actuando como huellas digitales que identifican navegadores y dispositivos a través de internet. Si bien su propósito principal es ayudar a los sitios web a entregar contenido optimizado, han pasado a ser herramientas valiosas para desarrolladores, probadores e investigadores. Nuestro Generador de User-Agent ofrece una manera sencilla de crear estas cadenas de identificación para una amplia gama de navegadores, sistemas operativos y dispositivos, posibilitando procesos de desarrollo y prueba más completos. Ya sea construyendo sitios web responsivos, desarrollando aplicaciones multiplataforma o realizando investigación de compatibilidad, tener acceso a cadenas User-Agent precisas y variadas es esencial. A medida que la tecnología de navegadores sigue evolucionando, también lo harán los formatos y contenidos de estas cadenas, haciendo aún más valiosas herramientas confiables de generación para mantenerse actualizado con estándares web y expectativas de usuario."
+  }
+}

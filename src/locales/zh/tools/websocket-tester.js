@@ -119,7 +119,7 @@ export default {
         },
         {
           question: "如何为WebSocket通信正确格式化JSON消息？",
-          answer: "为WebSocket通信正确格式化JSON消息对于与大多数现代WebSocket API成功交互至关重要。以下是需要遵循的关键做法：<br><br>1. <strong>有效的JSON语法</strong>：确保您的消息遵循正确的JSON格式，包括带引号的键、适当使用数据类型和平衡的大括号。我们的WebSocket测试器的JSON格式选项在发送前自动验证您的JSON。<br><br>2. <strong>消息结构</strong>：大多数WebSocket API期望特定的消息结构，通常包括：<br>• 消息类型或动作字段（例如，\"type\": \"subscribe\"）<br>• 包含实际信息的数据负载<br>• 可选的元数据，如消息ID或时间戳<br><br>结构良好的消息示例：<br><pre>{<br>  \"type\": \"subscribe\",<br>  \"channel\": \"market_data\",<br>  \"symbols\": [\"BTC/USD\", \"ETH/USD\"],<br>  \"requestId\": \"12345\"<br>}</pre><br><br>3. <strong>转义特殊字符</strong>：在JSON字符串值中包含引号或反斜杠时，确保它们被正确转义。<br><br>4. <strong>使用适当的数据类型</strong>：发送数字作为数字（不带引号），布尔值作为true/false，数组使用方括号。<br><br>我们的WebSocket测试器提供了JSON模板选项，帮助您开始使用格式正确的消息。"
+          answer: "为WebSocket通信正确格式化JSON消息对于与大多数现代WebSocket API成功交互至关重要。以下是需要遵循的关键做法：<br><br>1. <strong>有效的JSON语法</strong>：确保您的消息遵循正确的JSON格式，包括带引号的键、适当使用数据类型和平衡的大括号。我们的WebSocket测试器的JSON格式选项在发送前自动验证您的JSON。<br><br>2. <strong>消息结构</strong>：大多数WebSocket API期望特定的消息结构，通常包括：<br>• 消息类型或动作字段（例如，\"type\": \"subscribe\"）<br>• 包含实际信息的数据负载<br>• 可选的元数据，如消息ID或时间戳<br><br>结构良好的消息示例：<br><pre>&#123;<br>  \"type\": \"subscribe\",<br>  \"channel\": \"market_data\",<br>  \"symbols\": [\"BTC/USD\", \"ETH/USD\"],<br>  \"requestId\": \"12345\"<br>&#125;</pre><br><br>3. <strong>转义特殊字符</strong>：在JSON字符串值中包含引号或反斜杠时，确保它们被正确转义。<br><br>4. <strong>使用适当的数据类型</strong>：发送数字作为数字（不带引号），布尔值作为true/false，数组使用方括号。<br><br>我们的WebSocket测试器提供了JSON模板选项，帮助您开始使用格式正确的消息。"
         },
         {
           question: "如何保存和重复使用WebSocket连接进行反复测试？",

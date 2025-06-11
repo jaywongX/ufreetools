@@ -1,0 +1,173 @@
+export default {
+  name: 'Extractor de Colores de Imágenes',
+  description: 'Extraer paletas de colores y colores dominantes a partir de imágenes',
+  input: {
+    title: 'Subir Imagen',
+    dropzone: 'Arrastre la imagen aquí o haga clic para cargarla',
+    formats: 'Formatos admitidos: JPG, PNG, GIF, WebP, SVG',
+    browse: 'Buscar Archivos',
+    selectImage: 'Seleccionar Imagen',
+    orText: 'o',
+    pasteUrl: 'Pegar URL de la imagen:',
+    loadUrl: 'Cargar desde URL',
+    urlPlaceholder: 'https://ejemplo.com/imagen.jpg',
+    unnamed: 'Imagen Sin Nombre'
+  },
+  options: {
+    title: 'Opciones de Extracción',
+    extractSettings: 'Ajustes de Extracción',
+    colorCount: 'Número de Colores',
+    paletteSize: 'Tamaño de la Paleta',
+    paletteMin: 'Mínimo (3)',
+    paletteMax: 'Máximo (20)',
+    colorSimilarity: 'Similitud de Color',
+    similiarityToggle: 'Permitir colores similares',
+    quality: 'Calidad de Extracción',
+    colorModel: 'Modelo de Color',
+    colorSpace: 'Espacio de Color',
+    colorFormat: 'Formato de Color',
+    sortBy: 'Ordenar Colores Por',
+    sortByPopularity: 'Por Frecuencia de Aparición',
+    sortByLuminance: 'Por Luminancia',
+    sortByHue: 'Por Tono',
+    sortBySaturation: 'Por Saturación',
+    ignoreWhite: 'Ignorar Blanco',
+    ignoreBlack: 'Ignorar Negro',
+    threshold: 'Umbral de Similitud'
+  },
+  colorModels: {
+    rgb: 'RGB',
+    hsl: 'HSL',
+    hsv: 'HSV',
+    cmyk: 'CMYK',
+    lab: 'LAB'
+  },
+  colorFormats: {
+    hex: 'Hexadecimal (#RRGGBB)',
+    rgb: 'RGB (0-255)',
+    rgba: 'RGBA con Transparencia',
+    hsl: 'HSL',
+    hsla: 'HSLA con Transparencia',
+    cssRgb: 'CSS RGB',
+    cssHsl: 'CSS HSL'
+  },
+  sortOptions: {
+    prevalence: 'Frecuencia de Aparición',
+    luminance: 'Luminancia',
+    hue: 'Tono',
+    saturation: 'Saturación',
+    original: 'Orden Original'
+  },
+  colorSpaces: {
+    srgb: 'sRGB',
+    p3: 'Display P3',
+    rec2020: 'Rec. 2020',
+    prophoto: 'ProPhoto RGB'
+  },
+  results: {
+    title: 'Colores Extraídos',
+    colorsFound: '{count} colores extraídos',
+    dominantColor: 'Color Dominante',
+    mainColor: 'Color Principal',
+    complementary: 'Color Complementario',
+    palette: 'Paleta de Colores',
+    colorPalette: 'Paleta de Colores',
+    palettePreview: 'Vista Previa de la Paleta',
+    usage: 'Uso del Color (%)',
+    percentage: 'Porcentaje: {value}%',
+    copyAll: 'Copiar Todos los Colores',
+    clickToCopy: 'Haga clic para copiar el color: {color}'
+  },
+  display: {
+    originalImage: 'Imagen Original',
+    colorPalette: 'Paleta de Colores',
+    uploadFirst: 'Por favor, suba una imagen primero',
+    clickExtract: 'Haga clic en el botón \"Extraer Colores\" para obtener la paleta de colores de la imagen'
+  },
+  actions: {
+    extract: 'Extraer Colores',
+    extracting: 'Procesando...',
+    download: 'Descargar Paleta',
+    copy: 'Copiar',
+    copyValue: 'Copiar Valor',
+    reset: 'Restablecer',
+    copyPalette: 'Copiar Paleta',
+    exportJson: 'Exportar como JSON',
+    exportCss: 'Exportar como Variables CSS',
+    exportSass: 'Exportar como Variables SASS',
+    exportSwatch: 'Exportar como ASE Swatch'
+  },
+  palette: {
+    title: 'Paleta Nombrada',
+    vibrant: 'Vibrante',
+    muted: 'Suave',
+    dark: 'Oscuro',
+    light: 'Claro',
+    custom: 'Personalizado'
+  },
+  messages: {
+    imageLoaded: 'Imagen cargada exitosamente',
+    processingImage: 'Procesando imagen...',
+    extractionComplete: 'Extracción de colores completada',
+    extractionFailed: 'La extracción de colores falló: {error}',
+    copied: 'Copiado al portapapeles',
+    copiedColor: 'Copiado: {color}',
+    copiedAll: 'Todos los colores copiados',
+    copyFailed: 'Fallo al copiar',
+    resetDone: 'Restablecimiento completado',
+    invalidImage: 'Archivo de imagen inválido',
+    noImageSelected: 'No se ha seleccionado ninguna imagen'
+  },
+  article: {
+    title: "Extractor de Colores de Imágenes: Identificar y Muestrear Colores de Cualquier Imagen",
+    features: {
+      title: "Entendiendo la Extracción de Colores de Imágenes y Sus Aplicaciones",
+      description: "El <strong>Extractor de Colores de Imágenes</strong> es una herramienta en línea poderosa diseñada para analizar imágenes e identificar sus colores clave. Esta utilidad emplea avanzados <strong>algoritmos de detección de colores</strong> para escanear las imágenes que usted carga, identificando tanto los colores dominantes que definen la paleta general como los colores de acento que añaden interés visual.<br><br>A diferencia de herramientas básicas de selección de color, nuestro <strong>generador de paletas de color</strong> agrupa inteligentemente colores similares, proporcionándole un conjunto cohesivo y útil de colores en lugar de simplemente muestrear píxeles individuales. La herramienta soporta varios formatos de imagen incluyendo JPEG, PNG, GIF y WebP, lo cual la hace versátil para diferentes casos de uso.<br><br>Las <strong>paletas de color</strong> extraídas están disponibles instantáneamente en múltiples formatos incluyendo HEX, RGB y HSL, permitiéndole incorporarlas fácilmente en sus proyectos de diseño, código o documentación sin conversión manual.",
+      useCases: {
+        title: "Aplicaciones Prácticas para la Extracción de Colores de Imágenes",
+        items: [
+          "<strong>Diseño y Desarrollo Web</strong>: Obtenga <strong>paletas de colores</strong> cohesionadas a partir de logotipos de clientes o imágenes de referencia para asegurar consistencia de marca en sitios web. Los colores extraídos pueden usarse directamente en hojas de estilo CSS, permitiendo a los diseñadores coincidir exactamente los colores a partir de imágenes inspiradoras o establecer un sistema de diseño consistente basado en activos visuales existentes.",
+          "<strong>Marketing Digital</strong>: Cree campañas de redes sociales visualmente armoniosas extrayendo y usando una <strong>paleta de colores</strong> consistente a partir de su fotografía de productos o imágenes corporativas. Los profesionales de marketing pueden asegurar que todo material promocional mantenga armonía visual basándose en datos de color extraídos de imágenes clave de marca.",
+          "<strong>Desarrollo de Identidad Corporativa</strong>: Analice <strong>colores corporativos</strong> de competidores o explore opciones de color extrayendo paletas de imágenes inspiradoras. Los estrategas de marca pueden usar la herramienta para entender tendencias de color en la industria, refinar guías de marca o establecer una identidad visual distintiva que destaque frente a la competencia.",
+          "<strong>Diseño UI/UX</strong>: Extraiga valores precisos de <strong>color</strong> a partir de maquetas o imágenes de inspiración para implementarlos en diseños de interfaces. Los diseñadores de interfaz pueden asegurar una coincidencia perfecta de color al pasar de arte conceptual a interfaces funcionales, manteniendo la experiencia visual prevista en todas las pantallas de aplicación.",
+          "<strong>Diseño Gráfico para Impresión</strong>: Identifique códigos exactos de <strong>color</strong> a partir de referencias digitales para garantizar reproducciones precisas en materiales impresos. Los diseñadores gráficos que trabajan en proyectos de impresión pueden extraer los colores precisos necesarios para conversiones CMYK exactas, asegurando que los materiales físicos coincidan con los diseños digitales.",
+          "<strong>Arte e Ilustración</strong>: Cree <strong>paletas de color digital</strong> personalizadas basadas en obras de arte o fotografías que le inspiren. Los artistas digitales pueden analizar relaciones de color en obras maestras o fotos de referencia, luego aplicar armonías de color similares en sus propias obras para mayor impacto visual."
+        ]
+      }
+    },
+    faq: {
+      title: "Preguntas Frecuentes sobre la Extracción de Colores de Imágenes",
+      items: [
+        {
+          question: "¿Qué tan precisa es la herramienta Extractor de Colores de Imágenes al identificar colores?",
+          answer: "El <strong>Extractor de Colores de Imágenes</strong> ofrece una identificación muy precisa de colores mediante sofisticados algoritmos que analizan datos de píxeles y agrupan colores similares. Factores clave que afectan la precisión incluyen:<br><br>• Calidad y resolución de la imagen - imágenes de alta calidad proporcionan una extracción más precisa<br>• Complejidad del espacio de color - imágenes con gradientes sutiles pueden mostrar ligeras variaciones en colores identificados<br>• Número de colores extraídos - el algoritmo prioriza los colores más significativos y dominantes<br><br>Para trabajo de diseño profesional que requiera coincidencia exacta de color, la herramienta proporciona valores precisos de <strong>HEX, RGB y HSL</strong> que pueden aplicarse directamente en software de diseño o código. En la mayoría de los casos, los usuarios reportan que la <strong>paleta de color</strong> extraída representa con precisión los colores esenciales de la imagen analizada."
+        },
+        {
+          question: "¿Qué formatos de imagen admite el extractor de colores?",
+          answer: "Nuestro <strong>Extractor de Colores de Imágenes</strong> admite todos los formatos de imagen principales utilizados en la web y la industria del diseño:<br><br>• JPEG/JPG - Ideal para fotografías e imágenes complejas<br>• PNG - Perfecto para gráficos con transparencia<br>• GIF - Admite animaciones simples y gráficos<br>• WebP - Formato moderno con excelente compresión<br>• SVG - Formato vectorial (se extraen colores a partir de la vista renderizada)<br><br>Hay un límite máximo de tamaño por archivo de 5MB para asegurar rendimiento óptimo. Para mejores resultados al extraer una <strong>paleta de colores</strong>, recomendamos usar imágenes claras, de alta calidad con áreas de color definidas. La <strong>detección de color</strong> funciona mejor en imágenes sin exceso de ruido o artefactos de compresión."
+        },
+        {
+          question: "¿Cuántos colores extraerá la herramienta de mi imagen?",
+          answer: "El <strong>Extractor de Colores de Imágenes</strong> ofrece opciones flexibles para la extracción de colores:<br><br>• Por defecto, la herramienta extrae entre 5 y 10 colores dominantes que mejor representan la <strong>paleta de color</strong> de la imagen<br>• Puede personalizar la extracción para obtener tan solo 1-2 colores clave o hasta 20+ colores<br>• El algoritmo equilibra inteligentemente entre colores dominantes (que cubren grandes áreas) y colores de acento (visualmente importantes pero menos predominantes)<br><br>Para fines de diseño, trabajar con 5-7 colores extraídos típicamente proporciona una <strong>paleta de colores</strong> óptima que captura la esencia de la imagen mientras permanece manejable para aplicarla en proyectos de diseño. Al extraer colores para análisis detallado o diseños complejos, puede aumentar el número de colores para obtener una paleta más completa."
+        },
+        {
+          question: "¿Puedo guardar o exportar las paletas de colores extraídas?",
+          answer: "Sí, el <strong>Extractor de Colores de Imágenes</strong> ofrece múltiples opciones para guardar y exportar sus <strong>paletas de colores</strong> extraídas:<br><br>• <strong>Copiar códigos de color individuales</strong> en formato HEX, RGB o HSL con un solo clic<br>• <strong>Exportar toda la paleta</strong> en diversos formatos compatibles con software de diseño<br>• <strong>Guardar paletas</strong> en el almacenamiento local de su navegador para futuras referencias<br>• <strong>Generar variables CSS</strong> para uso inmediato en desarrollo web<br><br>Para equipos de diseño que trabajan en múltiples proyectos, la capacidad de exportar <strong>paletas de color</strong> asegura consistencia y eficiencia. Muchos profesionales integran estas paletas extraídas en sus sistemas de diseño o guías de estilo para mantener coherencia visual en todos los puntos de contacto de marca."
+        },
+        {
+          question: "¿Cómo puedo usar los colores extraídos en mi software de diseño?",
+          answer: "Los valores de <strong>color</strong> extraídos por nuestra herramienta pueden transferirse fácilmente a cualquier software de diseño mediante varios métodos:<br><br>1. <strong>Copia y pega directa</strong> de códigos HEX (por ejemplo, #FF5733) en campos de entrada de color en Adobe Photoshop, Illustrator, Figma, Sketch, etc.<br>2. <strong>Valores RGB</strong> (por ejemplo, rgb(255, 87, 51)) pueden introducirse en los selector de color RGB de aplicaciones de diseño<br>3. El formato <strong>HSL</strong> es especialmente útil para ajustar claridad u opacidad manteniendo el mismo tono<br>4. Algunos softwares de diseño permiten <strong>importar paletas de color</strong> en formatos que nuestra herramienta puede exportar<br><br>Para diseñadores y desarrolladores web, la <strong>paleta de colores</strong> extraída puede implementarse directamente en CSS, ya sea como propiedades de color individuales o como un conjunto completo de variables personalizadas de CSS para un enfoque más sistemático de gestión de color."
+        }
+      ]
+    },
+    guide: {
+      title: "Cómo Usar el Extractor de Colores de Imágenes: Guía Paso a Paso",
+      step1: "<strong>Suba su imagen</strong>: Haga clic en el botón 'Seleccionar Imagen' o arrastre y suelte su imagen en el área de carga. El <strong>extractor de colores</strong> acepta formatos comunes de imagen incluyendo JPEG, PNG, WebP y GIF. Para resultados óptimos, elija imágenes con colores claros, definidos y suficiente resolución.",
+      step2: "<strong>Ajuste la configuración de extracción</strong>: Antes de procesar, puede personalizar los parámetros de extracción de colores. Establezca el número de colores que desea extraer (normalmente 5-10 proporciona una <strong>paleta de colores</strong> equilibrada), y elija si desea priorizar colores dominantes o incluir colores de acento. Estos ajustes ayudan a adaptar los resultados a sus necesidades específicas.",
+      step3: "<strong>Procese la imagen</strong>: Haga clic en el botón 'Extraer Colores' para iniciar el análisis. El <strong>algoritmo de detección de color</strong> escaneará su imagen, identificará los colores clave y agrupará tonos similares. Este proceso normalmente toma solo unos segundos, dependiendo del tamaño y complejidad de la imagen.",
+      step4: "<strong>Revise los colores extraídos</strong>: Tras el procesamiento, la herramienta muestra la <strong>paleta de colores</strong> con códigos precisos en su formato preferido (HEX, RGB o HSL). Cada color se presenta como una muestra con su correspondiente código para facilitar su referencia. Los colores se ordenan desde los más dominantes hasta los de acento, dándole una clara jerarquía visual.",
+      step5: "<strong>Guarde y exporte su paleta</strong>: Copie individualmente los <strong>códigos de color</strong> haciendo clic sobre ellos, o exporte toda la paleta utilizando las opciones de exportación. Puede guardar la paleta en su navegador para futuras referencias, descargarla en diversos formatos compatibles con software de diseño o generar variables CSS para uso inmediato en proyectos de desarrollo web."
+    },
+    conclusion: "El Extractor de Colores de Imágenes sirve como una herramienta invaluable para diseñadores, mercadólogos, desarrolladores y artistas que necesitan identificar, capturar e implementar colores específicos a partir de referencias visuales. Al cerrar la brecha entre inspiración visual y aplicación práctica, esta herramienta agiliza el proceso de selección de colores y asegura consistencia a través de proyectos digitales e impresos. Ya sea que esté desarrollando directrices de marca, diseñando un sitio web o creando arte digital, la capacidad de extraer paletas de colores precisas a partir de imágenes elimina la adivinanza y mejora la calidad de su producción creativa. A medida que el diseño continúa enfatizando sistemas de color cohesivos, las herramientas que ayudan a identificar e implementar paletas de manera precisa se convierten en recursos esenciales para profesionales de campos creativos y técnicos."
+  }
+}

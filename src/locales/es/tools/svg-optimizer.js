@@ -1,0 +1,164 @@
+export default {
+  name: 'Optimizador SVG',
+  description: 'Optimiza y limpia archivos SVG para mejorar el rendimiento y reducir el tamaño del archivo',
+  upload: {
+    title: 'Subir SVG',
+    dropzone: 'Arrastra un archivo SVG aquí o haz clic para seleccionar',
+    or: 'O',
+    pasteCode: 'Pegar código SVG',
+    maxSize: 'Tamaño máximo de archivo: 5MB',
+    onlySvg: 'Solo se admiten archivos SVG',
+    selected: 'Seleccionado',
+    changeFile: 'Cambiar archivo'
+  },
+  input: {
+    title: 'SVG de entrada',
+    pasteHere: 'Pega el código SVG aquí...',
+    loadExample: 'Cargar Ejemplo',
+    clear: 'Limpiar',
+    validate: 'Validar SVG'
+  },
+  output: {
+    title: 'Resultados de Optimización',
+    copyToClipboard: 'Copiar al Portapapeles',
+    download: 'Descargar SVG',
+    beforeSize: 'Tamaño Original',
+    afterSize: 'Tamaño Optimizado',
+    reduction: 'Reducción',
+    reductionBy: 'Reducido en',
+    svgCode: 'Código SVG'
+  },
+  options: {
+    title: 'Opciones de Optimización',
+    preset: 'Preajuste',
+    presets: {
+      default: 'Por Defecto',
+      light: 'Ligero',
+      aggressive: 'Agresivo',
+      custom: 'Personalizado'
+    },
+    removeComments: 'Eliminar Comentarios',
+    removeCommentsDesc: 'Eliminar comentarios y secciones CDATA',
+    removeHiddenElements: 'Eliminar Elementos Ocultos',
+    removeEmptyContainers: 'Eliminar Contenedores Vacíos',
+    removeUnusedDefs: 'Eliminar Definiciones No Utilizadas',
+    removeViewBox: 'Eliminar viewBox',
+    keepViewBox: 'Mantener viewBox',
+    keepViewBoxDesc: 'Mantener el atributo viewBox para asegurar la escalabilidad del SVG',
+    cleanupIDs: 'Limpiar IDs',
+    cleanupIDsDesc: 'Eliminar o acortar IDs no utilizados',
+    convertColors: 'Convertir Colores a Hexadecimal',
+    removeMetadata: 'Eliminar Metadatos',
+    removeMetadataDesc: 'Eliminar elementos <metadata>',
+    removeDoctype: 'Eliminar Doctype',
+    removeXMLProcInst: 'Eliminar Instrucciones XML',
+    removeEditorsNS: 'Eliminar Espacios de Nombres del Editor',
+    collapseGroups: 'Colapsar Grupos',
+    collapseGroupsDesc: 'Colapsar grupos sin atributos especiales',
+    convertPathData: 'Optimizar Datos de Ruta',
+    convertPathDataDesc: 'Convertir datos de ruta a coordenadas relativas, reducir decimales, etc.',
+    convertTransforms: 'Optimizar Transformaciones',
+    convertShapeToPath: 'Convertir Formas a Rutas',
+    convertShapeToPathDesc: 'Convertir formas básicas a elementos <path>',
+    removeUselessStrokeAndFill: 'Eliminar Trazo y Relleno Innecesarios',
+    moveElemsAttrsToGroup: 'Mover Atributos de Elementos al Grupo',
+    mergePaths: 'Fusionar Rutas',
+    minifyStyles: 'Minificar Estilos',
+    inlineStyles: 'Estilos en Línea',
+    inlineStylesDesc: 'Convertir estilos desde elementos <style> a estilos en línea',
+    cleanupNumericValues: 'Redondear Valores Numéricos',
+    precision: 'Precisión Numérica',
+    decimalPlaces: 'lugares decimales',
+    lowPrecision: 'Baja Precisión (tamaño menor)',
+    highPrecision: 'Alta Precisión (mejor calidad)',
+    removeDimensions: 'Eliminar Dimensiones',
+    removeDimensionsDesc: 'Eliminar atributos width/height, usar viewBox en su lugar',
+    sortAttrs: 'Ordenar Atributos',
+    sortAttrsDesc: 'Ordenar atributos de elementos alfabéticamente'
+  },
+  view: {
+    title: 'Vista Previa',
+    original: 'Original',
+    optimized: 'Optimizado',
+    showBorder: 'Mostrar Borde',
+    backgroundColor: 'Color de Fondo',
+    grid: 'Mostrar Cuadrícula',
+    zoom: 'Zoom',
+    toggleAnimation: 'Alternar Animación'
+  },
+  actions: {
+    optimize: 'Optimizar SVG',
+    optimizing: 'Optimizando...',
+    resetOptions: 'Restablecer Opciones',
+    download: 'Descargar SVG Optimizado',
+    copy: 'Copiar Código',
+    copyCode: 'Copiar Código',
+    viewCode: 'Ver Código',
+    viewPreview: 'Ver Vista Previa'
+  },
+  messages: {
+    optimizationSuccess: 'SVG optimizado correctamente',
+    optimizationFailed: 'Error al optimizar el SVG: {error}',
+    invalidSvg: 'Archivo o código SVG inválido',
+    copied: 'Copiado al portapapeles',
+    copyFailed: 'Error al copiar, por favor copie manualmente',
+    downloaded: 'SVG optimizado descargado',
+    emptyInput: 'Proporcione código o archivo SVG para optimizar',
+    onlySvgAllowed: '¡Por favor suba un archivo SVG!',
+    failedToLoadLibrary: 'No se pudo cargar la biblioteca SVGO'
+  },
+  article: {
+    title: "Optimizador SVG: Mejora el Rendimiento y Reduce el Tamaño de los Gráficos Vectoriales",
+    features: {
+      title: "Entendiendo la Optimización SVG y sus Beneficios",
+      description: "El <strong>Optimizador SVG</strong> es una herramienta especializada diseñada para simplificar y mejorar los archivos Scalable Vector Graphics (SVG). Los SVG son formatos de imagen vectorial basados en XML que mantienen claridad perfecta a cualquier escala, lo que los hace ideales para diseño web responsivo, logotipos, iconos e ilustraciones. Sin embargo, los archivos SVG suelen contener datos innecesarios que aumentan el tamaño del archivo sin añadir valor visual.<br><br>Nuestro <strong>herramienta de optimización SVG</strong> analiza inteligentemente y elimina información redundante de los archivos SVG mientras preserva su apariencia visual. Al eliminar metadatos, comentarios, grupos vacíos y definiciones no utilizadas, y optimizando los datos de las rutas, la herramienta reduce significativamente el tamaño del archivo — a menudo entre 30-70%. El resultado es un <strong>gráfico vectorial</strong> más limpio y eficiente que se carga más rápido y utiliza menos ancho de banda, mejorando directamente las métricas de rendimiento del sitio web y la experiencia del usuario.",
+      useCases: {
+        title: "Aplicaciones Prácticas para la Optimización SVG",
+        items: [
+          "<strong>Mejora del Rendimiento Web</strong>: Los desarrolladores y diseñadores web pueden utilizar el <strong>optimizador de archivos SVG</strong> para reducir el tamaño de gráficos vectoriales utilizados en todo un sitio web. Archivos SVG más pequeños se traducen en tiempos de carga más rápidos, menor consumo de ancho de banda y mejores puntuaciones en Core Web Vitals, lo cual puede impactar positivamente en los rankings de motores de búsqueda.",
+          "<strong>Desarrollo de Aplicaciones Móviles</strong>: Los desarrolladores de aplicaciones móviles se benefician de SVG optimizados que se cargan rápidamente y consumen menos memoria en dispositivos con recursos limitados. Nuestro <strong>optimizador de gráficos vectoriales</strong> asegura que los elementos de interfaz renderizados como SVG contribuyan a una experiencia de usuario rápida y receptiva sin sobrecarga innecesaria.",
+          "<strong>Mantenimiento de Bibliotecas de Iconos</strong>: Los gestores de sistemas de diseño y diseñadores UI/UX responsables de mantener bibliotecas de iconos pueden procesar lotes de iconos SVG para garantizar consistencia y rendimiento óptimo. El <strong>limpiador SVG</strong> ayuda a establecer un enfoque estandarizado para activos vectoriales a través de productos y plataformas.",
+          "<strong>Gráficos de Productos en E-commerce</strong>: Los dueños de tiendas en línea pueden optimizar gráficos vectoriales de productos para mejorar la velocidad de página y tasas de conversión. Imágenes de productos creadas con nuestro <strong>herramienta de compresión SVG</strong> ayudan a reducir las salidas del sitio y mejorar la experiencia de compra, especialmente en dispositivos móviles.",
+          "<strong>Campañas de Marketing por Email</strong>: Los mercadólogos pueden usar SVG optimizados en campañas de email para crear boletines visualmente atractativos que se carguen rápidamente en clientes de correo electrónico. Nuestra herramienta ayuda a crear <strong>ilustraciones vectoriales</strong> ligeras que se muestran correctamente a través de varias plataformas de email sin inflar el tamaño del mensaje.",
+          "<strong>Entrega de Activos de Diseño</strong>: Los diseñadores gráficos pueden optimizar archivos SVG antes de entregarlos a clientes o miembros del equipo, asegurando que los activos finales estén listos para producción. El <strong>limpiador de archivos SVG</strong> ayuda a mantener estándares profesionales produciendo código eficiente y limpio que es fácil de implementar para desarrolladores."
+        ]
+      }
+    },
+    faq: {
+      title: "Preguntas Frecuentes Sobre la Optimización SVG",
+      items: [
+        {
+          question: "¿Qué exactamente hace la optimización SVG a mis archivos?",
+          answer: "La optimización SVG es un proceso que reduce el tamaño del archivo manteniendo la calidad visual mediante varias técnicas:<br><br>• <strong>Eliminando metadatos</strong>: Elimina información no esencial como datos del editor, comentarios y elementos ocultos<br>• <strong>Limpieza de datos de ruta</strong>: Simplifica comandos y coordenadas de ruta, reduciendo la precisión decimal donde no afectará la apariencia<br>• <strong>Colapsando grupos</strong>: Elimina grupos y contenedores anidados innecesarios<br>• <strong>Minimizando atributos</strong>: Consolida y simplifica atributos de elementos<br>• <strong>Optimizando transformaciones</strong>: Simplifica matrices de transformación<br>• <strong>Eliminando definiciones no utilizadas</strong>: Elimina elementos no referenciados de la sección <defs><br><br>Nuestra <strong>herramienta optimizadora SVG</strong> aplica estas técnicas inteligentemente, asegurando que la salida visual permanezca idéntica mientras el tamaño del archivo se reduce sustancialmente."
+        },
+        {
+          question: "¿La optimización SVG afectará la calidad de mis gráficos?",
+          answer: "Cuando se configura adecuadamente, la optimización SVG no debería afectar notablemente la calidad visual de tus gráficos. Nuestro <strong>optimizador de gráficos vectoriales</strong> está diseñado para preservar la apariencia visual mientras elimina datos innecesarios.<br><br>El ajuste de precisión en nuestra herramienta te permite controlar el equilibrio entre tamaño de archivo y precisión. En configuraciones de alta precisión (5-8 lugares decimales), incluso las ilustraciones más complejas mantendrán su apariencia exacta. En configuraciones bajas (1-3 lugares decimales), lograrás mayor reducción de tamaño con diferencias visuales mínimas—muchas veces imperceptibles al ojo humano.<br><br>Para la mayoría de gráficos web, una precisión de 2-3 lugares decimales ofrece un excelente balance entre optimización y calidad. Siempre puedes previsualizar el <strong>imagen SVG</strong> optimizada lado a lado con la original para asegurar que los resultados cumplan con tus requisitos antes de descargarla."
+        },
+        {
+          question: "¿Puedo optimizar SVG con animaciones o interactividad?",
+          answer: "Sí, puedes optimizar SVG que contengan animaciones o elementos interactivos, pero requiere cuidado especial. Nuestra <strong>herramienta optimizadora SVG</strong> preserva elementos estructurales importantes mientras limpia datos innecesarios.<br><br>Para SVG con animaciones CSS, SMIL o interactividad JavaScript, recomendamos:<br><br>1. Mantener IDs referenciados en tus animaciones o scripts<br>2. Preservar nombres de clase usados para estilo o manejo de eventos<br>3. Usar un preajuste de optimización más conservador<br>4. Probar exhaustivamente el <strong>gráfico vectorial</strong> optimizado para asegurar que la funcionalidad se mantiene<br><br>Si estás optimizando SVG interactivos complejos, considera usar opciones personalizadas para deshabilitar optimizaciones específicas que podrían afectar tu animación o interactividad. Por ejemplo, querrías deshabilitar la limpieza de IDs si tu JavaScript referencia IDs específicos dentro del SVG."
+        },
+        {
+          question: "¿Cómo mejoran el rendimiento web los SVG optimizados?",
+          answer: "Los SVG optimizados mejoran el rendimiento web de varias maneras importantes:<br><br>• <strong>Tiempos de carga más rápidos</strong>: Tamaños de archivo más pequeños significan descargas más rápidas, especialmente importante para usuarios móviles en planes de datos limitados<br>• <strong>Reducción del uso de ancho de banda</strong>: <strong>Gráficos vectoriales</strong> optimizados consumen menos datos, reduciendo costos de alojamiento e impacto ambiental<br>• <strong>Velocidad de renderizado mejorada</strong>: Una estructura SVG más simple requiere menos procesamiento por parte del navegador<br>• <strong>Mejores métricas de Core Web Vitals</strong>: Contribuye a mejores puntuaciones de Largest Contentful Paint (LCP) y First Input Delay (FID)<br>• <strong>Menos uso de memoria</strong>: SVG más limpios usan menos memoria del navegador, particularmente importante en dispositivos móviles<br><br>Herramientas como Google PageSpeed Insights reflejarán estas mejoras, potencialmente contribuyendo a mejores rankings en motores de búsqueda. Una página con <strong>imágenes SVG</strong> eficientemente optimizadas puede puntuar significativamente mejor en métricas de rendimiento que una con gráficos hinchados y no optimizados."
+        },
+        {
+          question: "¿Cuál es la diferencia entre optimización SVG y compresión de imágenes raster?",
+          answer: "La optimización SVG y la compresión de imágenes raster (como JPEG o PNG) son enfoques fundamentalmente diferentes para reducir el tamaño de archivo:<br><br><strong>Optimización SVG:</strong><br>• Trabaja con gráficos vectoriales basados en caminos y formas matemáticas<br>• Preserva escalado perfecto a cualquier resolución<br>• Reduce el tamaño del archivo limpiando código y optimizando expresiones matemáticas<br>• No hay pérdida de calidad cuando se hace correctamente<br>• Ideal para logotipos, iconos, ilustraciones y elementos de interfaz<br>• La salida sigue siendo editable y puede modificarse posteriormente<br><br><strong>Compresión Raster:</strong><br>• Trabaja con imágenes basadas en píxeles<br>• La resolución es fija; el escalado reduce la calidad<br>• Reduce el tamaño del archivo descartando datos de píxeles o usando algoritmos matemáticos para representar patrones de píxeles<br>• A menudo implica alguna pérdida de calidad (compresión con pérdida)<br>• Mejor para fotografías e imágenes complejas con muchos colores<br>• Los archivos comprimidos generalmente no son editables<br><br>Nuestra <strong>herramienta optimizadora SVG</strong> específicamente apunta a la estructura única de gráficos vectoriales para reducir el tamaño del archivo mientras mantiene los beneficios de formatos vectoriales—escalado perfecto, editabilidad y apariencia nítida a cualquier tamaño."
+        }
+      ]
+    },
+    guide: {
+      title: "Cómo Usar el Optimizador SVG: Guía Paso a Paso",
+      step1: "<strong>Sube tu archivo SVG</strong>: Arrastra y suelta tu archivo SVG en el área de carga, o haz clic para navegar por tus archivos. Alternativamente, puedes pegar código SVG directamente en el campo de entrada si tienes el código en lugar de un archivo. Nuestra <strong>herramienta optimizadora SVG</strong> acepta archivos hasta 5MB de tamaño.",
+      step2: "<strong>Configura las opciones de optimización</strong>: Revisa la configuración predeterminada de optimización, que funciona bien para la mayoría de los SVG. Para necesidades específicas, puedes personalizar opciones tales como: <ul class='ml-5 list-disc'><li>Nivel de precisión (lugares decimales a preservar)</li><li>Si eliminar metadatos, comentarios y elementos vacíos</li><li>Configuración de optimización de datos de ruta</li><li>Manejo de IDs y atributos</li></ul> Las configuraciones predeterminadas equilibran buena reducción de tamaño con fidelidad visual para la mayoría de los <strong>gráficos vectoriales</strong>.",
+      step3: "<strong>Haz clic en el botón 'Optimizar SVG'</strong>: Inicia el proceso de optimización haciendo clic en el botón de optimizar. La herramienta procesará tu SVG usando las opciones seleccionadas, aplicando varias técnicas para reducir el tamaño del archivo mientras preserva la apariencia visual. Para archivos grandes o complejos, esto podría tomar unos segundos.",
+      step4: "<strong>Revisa los resultados de optimización</strong>: Después del procesamiento, verás estadísticas mostrando el tamaño original del archivo, el tamaño optimizado y el porcentaje de reducción logrado. Más importante aún, puedes comparar visualmente el original y el <strong>imágenes SVG</strong> optimizadas lado a lado para verificar que la apariencia ha sido preservada.",
+      step5: "<strong>Ajusta la configuración si es necesario</strong>: Si no estás satisfecho con los resultados—ya sea que la reducción de tamaño no sea suficiente o haya diferencias visuales que no deseas—puedes ajustar la configuración de optimización y probar nuevamente. Aumentar la precisión preservará más detalle visual pero resultará en archivos más grandes, mientras que disminuir la precisión producirá archivos más pequeños que podrían tener pequeñas diferencias visuales.",
+      step6: "<strong>Ve el código SVG optimizado</strong>: Examina el código SVG limpio para ver qué cambios se realizaron. La herramienta elimina elementos innecesarios, optimiza los datos de ruta y generalmente hace que el código sea más eficiente. Esto puede ser educativo y ayuda a entender cómo están estructurados tus <strong>gráficos vectoriales</strong>.",
+      step7: "<strong>Descarga o copia el SVG optimizado</strong>: Una vez que estés satisfecho con la optimización, puedes descargar el archivo SVG optimizado o copiar el código SVG a tu portapapeles. El archivo optimizado está listo para usar en tus proyectos web, sistemas de diseño u otras aplicaciones donde se necesiten <strong>gráficos vectoriales</strong> eficientes."
+    },
+    conclusion: "El Optimizador SVG hace fácil reducir el tamaño de archivos vectoriales sin comprometer la calidad visual. Al eliminar información redundante y optimizar la estructura de los archivos SVG, esta herramienta ayuda a mejorar el rendimiento del sitio web, reducir el uso de ancho de banda y mejorar la experiencia del usuario en todos los dispositivos. Ya seas un desarrollador web buscando cargas de página más rápidas, un diseñador manteniendo un sistema de iconos consistente o un mercadólogo creando campañas de email responsivas, optimizar SVG debe ser una parte estándar de tu flujo de trabajo de producción. Los minutos invertidos en optimizar tus activos vectoriales pueden traducirse en ganancias significativas de rendimiento y una experiencia más fluida para tus usuarios, especialmente en dispositivos móviles o conexiones lentas. A medida que los estándares web continúan evolucionando hacia un énfasis en rendimiento y experiencia del usuario, herramientas como nuestro Optimizador SVG se vuelven componentes esenciales en el kit de desarrollo web moderno."
+  }
+}

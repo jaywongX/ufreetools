@@ -318,7 +318,7 @@ export default {
         title: 'Step 2: Select Content Type and Add Content',
         description: 'Choose your preferred content format and add your creative elements:',
         step1: 'Select from three content types: "Text Only", "Image Only", or "Text & Image"',
-        step2: 'For text content: Write your caption in the text editor. Use the hashtag (#), mention (@), and emoji buttons to enhance your text',
+        step2: 'For text content: Write your caption in the text editor. Use the hashtag, mention, and emoji buttons to enhance your text',
         step3: 'For image content: Click the "Upload an image" button or drag and drop an image file into the upload area',
         step4: 'Click on any suggested hashtags that appear to quickly add them to your post',
         step5: 'Pay attention to the character count to ensure your text isn\'t too long'

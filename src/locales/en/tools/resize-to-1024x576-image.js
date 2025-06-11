@@ -14,7 +14,10 @@ export default {
   dragAndDrop: 'Drag and drop image files here',
   or: 'or',
   browseFiles: 'browse files',
+  processing: 'Processing...',
+  convertImages: 'Convert Images',
   
+
   // Article content
   article: {
     title: 'How to Resize Images to 1024x576 for YouTube Thumbnails',

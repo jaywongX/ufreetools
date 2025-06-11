@@ -135,10 +135,6 @@ export default {
       title: "Frequently Asked Questions about XML-JSON Conversion",
       items: [
         {
-          question: "How does the converter handle XML attributes when converting to JSON?",
-          answer: "When converting XML to JSON, our XML/JSON converter handles attributes by prefixing them with a special character (by default '@') to distinguish them from regular elements. For example, XML like '<book id=\"123\">Content</book>' becomes JSON like '{\"book\": {\"@id\": \"123\", \"#text\": \"Content\"}}'. This attribute prefix is customizable in the converter settings, allowing you to choose a notation that works best with your specific application requirements while maintaining clear separation between attributes and child elements in the resulting JSON structure."
-        },
-        {
           question: "Can the converter process complex nested structures in both formats?",
           answer: "Yes, our XML/JSON parser fully supports complex nested structures in both directions. The converter accurately maintains hierarchical relationships, handling arrays, objects, and mixed content. When converting from XML to JSON, nested elements become nested objects, and repeated elements automatically transform into arrays. Converting from JSON to XML preserves nested objects as child elements, and arrays are represented as repeated elements with the same tag name. This structure preservation is essential for working with sophisticated data models and configuration files in either format."
         },

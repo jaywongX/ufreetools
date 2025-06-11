@@ -969,7 +969,6 @@ R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp
         if (parseResult.value && parseResult.value.tree) {
             // 强制展开所有节点
             expandAllTreeNodes(parseResult.value.tree);
-            console.log("节点已全部展开");
         }
     });
 }

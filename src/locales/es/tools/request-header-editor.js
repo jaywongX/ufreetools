@@ -1,0 +1,173 @@
+export default {
+  name: 'Editor de Encabezados de Solicitud',
+  description: 'Cree, edite y pruebe encabezados de solicitud HTTP',
+  editor: {
+    title: 'Editor de Encabezados',
+    headers: 'Encabezados de Solicitud',
+    add: 'Añadir Encabezado',
+    bulk: 'Edición Masiva',
+    import: 'Importar Encabezados',
+    export: 'Exportar Encabezados',
+    clear: 'Limpiar Todo',
+    importError: 'Error de Importación'
+  },
+  header: {
+    name: 'Nombre del Encabezado',
+    value: 'Valor',
+    description: 'Descripción',
+    namePlaceholder: 'Ingrese el nombre del encabezado',
+    valuePlaceholder: 'Ingrese el valor del encabezado',
+    actions: 'Acciones',
+    enabled: 'Habilitado',
+    duplicate: 'Duplicar',
+    delete: 'Eliminar',
+    noHeaders: 'No hay encabezados, haga clic en "Añadir" o cargue una plantilla para comenzar',
+    bulkPlaceholder: 'Pegue encabezados, formato: \'nombre: valor\', uno por línea, o pegue texto de encabezados sin formato'
+  },
+  presets: {
+    title: 'Plantillas',
+    save: 'Guardar Actual',
+    load: 'Cargar Plantilla',
+    delete: 'Eliminar Plantilla',
+    presetName: 'Nombre de la Plantilla',
+    namePlaceholder: 'Ingrese el nombre de la plantilla',
+    confirmDelete: '¿Está seguro que desea eliminar esta plantilla?',
+    common: 'Encabezados Comunes',
+    custom: 'Plantillas Personalizadas'
+  },
+  common: {
+    userAgent: 'User-Agent',
+    contentType: 'Content-Type',
+    authorization: 'Authorization',
+    acceptLanguage: 'Accept-Language',
+    acceptEncoding: 'Accept-Encoding',
+    cacheControl: 'Cache-Control',
+    cookie: 'Cookie',
+    referer: 'Referer',
+    origin: 'Origin'
+  },
+  test: {
+    title: 'Probar Encabezados',
+    url: 'URL',
+    urlPlaceholder: 'Ingrese la URL para probar los encabezados',
+    method: 'Método',
+    send: 'Enviar Solicitud',
+    response: 'Respuesta'
+  },
+  response: {
+    title: 'Respuesta',
+    status: 'Estado',
+    headers: 'Encabezados de Respuesta',
+    body: 'Cuerpo',
+    time: 'Tiempo',
+    size: 'Tamaño',
+    loading: 'Cargando...',
+    noResponse: 'Añada encabezados para ver la vista previa',
+    headerCount: 'encabezados'
+  },
+  options: {
+    title: 'Opciones',
+    followRedirects: 'Seguir Redirecciones',
+    timeout: 'Tiempo de Espera (segundos)',
+    validateSSL: 'Validar Certificado SSL',
+    sendCredentials: 'Enviar Credenciales'
+  },
+  formats: {
+    title: 'Formato de Exportación',
+    raw: 'Texto Sin Formato',
+    json: 'JSON',
+    curl: 'Comando cURL',
+    javascript: 'JavaScript',
+    python: 'Python',
+    php: 'PHP',
+    fetch: 'Fetch API',
+    axios: 'Axios'
+  },
+  guides: {
+    title: 'Guías de Encabezados',
+    description: 'Aprenda sobre encabezados HTTP comunes y su uso',
+    securityHeaders: 'Encabezados de Seguridad',
+    cachingHeaders: 'Encabezados de Almacenamiento en Caché',
+    corsHeaders: 'Encabezados CORS',
+    authenticationHeaders: 'Encabezados de Autenticación',
+    commonValues: 'Valores Comunes'
+  },
+  actions: {
+    copy: 'Copiar',
+    format: 'Formatear',
+    validate: 'Validar',
+    clear: 'Limpiar'
+  },
+  messages: {
+    headerAdded: 'Encabezado añadido',
+    headerDeleted: 'Encabezado eliminado',
+    headersCleared: 'Todos los encabezados limpiados',
+    presetSaved: 'Plantilla guardada',
+    presetLoaded: 'Plantilla cargada',
+    presetDeleted: 'Plantilla eliminada',
+    requestSent: 'Solicitud enviada',
+    requestFailed: 'Fallo en la solicitud: {error}',
+    copied: '¡Copiado al portapapeles!',
+    importSuccess: 'Encabezados importados exitosamente',
+    exportSuccess: 'Encabezados exportados exitosamente',
+    invalidUrl: 'URL inválida',
+    pleaseEnterHeader: 'Por favor ingrese el texto del encabezado',
+    invalidHeader: 'No se pudieron analizar encabezados válidos, use el formato "nombre: valor"',
+    invalidHeaderName: 'Nombre de encabezado inválido: {error}',
+    copyFailed: 'Fallo al copiar, por favor copie manualmente'
+  },
+  article: {
+    title: "Editor de Encabezados HTTP: Guía Completa",
+    features: {
+      title: "Entendiendo los Encabezados HTTP y Su Importancia",
+      description: "El <strong>Editor de Encabezados de Solicitud HTTP</strong> es una herramienta poderosa diseñada para ayudar a desarrolladores, probadores y entusiastas de APIs a crear, modificar y validar encabezados HTTP para solicitudes web. Estos encabezados son componentes críticos de la comunicación HTTP que transportan información importante entre clientes y servidores, controlando aspectos como autenticación, negociación de contenido, comportamiento de caché y más.<br><br>Nuestra herramienta <strong>editora de encabezados</strong> proporciona una interfaz intuitiva que facilita construir conjuntos complejos de encabezados, probar diferentes configuraciones y exportar los resultados en varios formatos para implementarlos en sus aplicaciones. Ya sea que esté depurando problemas en una API, desarrollando nuevas integraciones o aprendiendo sobre protocolos web, esta herramienta agiliza el proceso de trabajar con encabezados HTTP.",
+      useCases: {
+        title: "Aplicaciones Prácticas para Edición de Encabezados",
+        items: [
+          "<strong>Pruebas de Autenticación en APIs</strong>: Cuando trabaje con APIs que requieran tokens o claves de autenticación en los encabezados (como OAuth, JWT o claves API), nuestra <strong>herramienta de construcción de encabezados</strong> le permitirá rápidamente construir y probar diferentes escenarios de autenticación sin modificar su código de aplicación.",
+          "<strong>Depuración de Cross-Origin Resource Sharing (CORS)</strong>: Para aplicaciones web que necesiten hacer solicitudes desde otro dominio, configurar y probar la combinación correcta de encabezados Origin, Access-Control y preflight es crucial. Esta <strong>herramienta de encabezados HTTP</strong> ayuda a identificar y resolver problemas de CORS permitiéndole experimentar con distintas configuraciones de encabezados.",
+          "<strong>Negociación de Contenido</strong>: Los servicios web modernos soportan múltiples tipos de contenido, idiomas y codificaciones. Usando encabezados como Accept, Accept-Language y Accept-Encoding puede probar cómo responde un servidor a diferentes preferencias del cliente y asegurar que su aplicación implemente correctamente la negociación de contenido.",
+          "<strong>Optimización del Control de Caché</strong>: Configurar correctamente los encabezados de caché puede mejorar dramáticamente el rendimiento de la aplicación. Con nuestra <strong>herramienta de gestión de encabezados</strong>, puede experimentar con varias directivas Cache-Control, configuraciones ETag y encabezados condicionales para encontrar la estrategia de caché óptima para sus recursos.",
+          "<strong>Configuración de Encabezados de Seguridad</strong>: Implementar encabezados de seguridad como Content-Security-Policy, Strict-Transport-Security y X-Content-Type-Options es esencial para aplicaciones web modernas. Esta herramienta permite construir y validar estos complejos encabezados de seguridad antes de implementarlos en producción.",
+          "<strong>Generación de Cliente API</strong>: Tras finalizar su conjunto de encabezados, puede exportar fragmentos de código listos para usar en múltiples lenguajes, lo que hace fácil implementar exactamente los mismos encabezados en su código de aplicación, comandos curl o herramientas de prueba de API."
+        ]
+      }
+    },
+    faq: {
+      title: "Preguntas Frecuentes sobre Encabezados HTTP",
+      items: [
+        {
+          question: "¿Qué son los encabezados de solicitud HTTP y por qué son importantes?",
+          answer: "Los encabezados de solicitud HTTP son pares clave-valor enviados desde un cliente (como un navegador o cliente API) hacia un servidor como parte de una solicitud HTTP. Proporcionan metadatos esenciales sobre la solicitud, las capacidades del cliente y sus preferencias.<br><br>Estos encabezados son importantes porque:<br><br>• Controlan mecanismos de <strong>autenticación y autorización</strong><br>• Gestionan el <strong>comportamiento del almacenamiento en caché</strong> para mejorar el rendimiento<br>• Permiten la <strong>negociación de contenido</strong> (formato, idioma, codificación)<br>• Configuran solicitudes <strong>cross-origin</strong> y políticas de seguridad<br>• Proveen <strong>información contextual del cliente</strong> como agente usuario e información de referente<br><br>Sin encabezados adecuados, muchas características web modernas no funcionarían correctamente, las APIs carecerían de controles de seguridad y el rendimiento web se vería significativamente afectado."
+        },
+        {
+          question: "¿Cuál es la diferencia entre encabezados comunes como Content-Type, Authorization y Accept?",
+          answer: "Estos tres encabezados tienen propósitos distintos en la comunicación HTTP:<br><br><strong>Content-Type</strong>: Especifica el tipo de medio del recurso en el cuerpo de la solicitud (cuando envía datos) o qué tipo de contenido el cliente puede entender (al solicitar datos). Valores comunes incluyen:<br>• <code>application/json</code> para datos JSON<br>• <code>application/x-www-form-urlencoded</code> para datos de formularios<br>• <code>multipart/form-data</code> para carga de archivos<br><br><strong>Authorization</strong>: Contiene credenciales para autenticar al cliente con el servidor. Formatos comunes incluyen:<br>• <code>Bearer eyJhbGc...</code> para tokens JWT/OAuth<br>• <code>Basic dXNlcm5hbWU6cGFzc3dvcmQ=</code> para autenticación básica<br>• <code>ApiKey 12345abcde...</code> para autenticación mediante clave API<br><br><strong>Accept</strong>: Indica qué tipos de contenido puede procesar el cliente en la respuesta. Esto permite a los servidores entregar el formato más apropiado cuando hay múltiples opciones disponibles. Ejemplos:<br>• <code>application/json</code> para recibir datos JSON<br>• <code>text/html</code> para recibir contenido HTML<br>• <code>*/*</code> para aceptar cualquier tipo de contenido<br><br>Usar correctamente estos encabezados asegura un intercambio de datos adecuado, autenticación segura y entrega óptima de contenido entre clientes y servidores."
+        },
+        {
+          question: "¿Cómo puedo probar si mis encabezados están funcionando correctamente?",
+          answer: "Probar encabezados HTTP efectivamente implica varios enfoques:<br><br>1. <strong>Use nuestra Herramienta Editora de Encabezados</strong> para construir su conjunto de encabezados y exportarlo como comando cURL o fragmento de código, que puede ejecutar directamente.<br><br>2. <strong>Herramientas de Desarrollador del Navegador</strong>: La mayoría de los navegadores incluyen herramientas de inspección de red que muestran todos los encabezados de solicitud y respuestas del servidor. Verifique que sus encabezados se envíen según lo esperado y examine cómo responde el servidor.<br><br>3. <strong>Servicios de Prueba de API</strong>: Herramientas como Postman o Insomnia permiten establecer encabezados personalizados y examinar el ciclo completo de solicitud/respuesta.<br><br>4. <strong>Servicios Echo</strong>: Use endpoints como httpbin.org que reflejan detalles de su solicitud, facilitando verificar la transmisión de encabezados.<br><br>5. <strong>Registros del Servidor</strong>: Si tiene acceso a registros del servidor, normalmente registran encabezados de solicitud entrantes, permitiendo verificar su recepción.<br><br>Al probar, esté atento a estos problemas comunes:<br>• Mayúsculas/minúsculas incorrectas en encabezados (aunque HTTP no distingue mayúsculas/minúsculas, algunas implementaciones pueden ser estrictas)<br>• Tokens de autorización faltantes o mal formateados<br>• Incongruencia entre Content-Type declarado y el formato real enviado<br>• Encabezados CORS no configurados correctamente para solicitudes cross-origin"
+        },
+        {
+          question: "¿Puedo guardar y reutilizar configuraciones de encabezados para distintos proyectos?",
+          answer: "Aunque nuestra herramienta online actual no implementa almacenamiento persistente por razones de privacidad, hay varias formas de guardar y reutilizar sus configuraciones de encabezados:<br><br>1. <strong>Exportar como Código</strong>: Use la función de exportación para generar fragmentos de código en su lenguaje preferido (JavaScript, Python, etc.). Estos fragmentos pueden guardarse en repositorios de proyecto o documentación.<br><br>2. <strong>Copiar como Texto Sin Formato</strong>: El formato de encabezados sin formato puede copiarse y guardarse en archivos de texto, sistemas de documentación o wikis del equipo para futuras referencias.<br><br>3. <strong>Extensiones de Navegador</strong>: Varias extensiones para Chrome, Firefox y otros navegadores permiten guardar y gestionar conjuntos de encabezados para distintos dominios y proyectos.<br><br>4. <strong>Plataformas de Gestión API</strong>: Herramientas como Postman o Insomnia ofrecen funciones de espacio de trabajo para organizar y guardar configuraciones de solicitud, incluyendo encabezados.<br><br>5. <strong>Variables de Entorno</strong>: En flujos de desarrollo, considere definir encabezados como variables de entorno en sus archivos .env o tuberías CI/CD.<br><br>Para equipos que trabajen con APIs o aplicaciones web complejas, recomendamos mantener un repositorio centralizado de configuraciones estándar de encabezados para distintos ambientes (desarrollo, pruebas, producción) para asegurar consistencia en todo su flujo de trabajo de desarrollo."
+        },
+        {
+          question: "¿Cuáles son los errores más comunes con encabezados HTTP que debo evitar?",
+          answer: "Al trabajar con encabezados HTTP, tenga cuidado con estos errores frecuentes:<br><br>1. <strong>Omisión de encabezados de seguridad</strong>: No incluir encabezados de seguridad críticos como Content-Security-Policy, X-Content-Type-Options y Strict-Transport-Security puede dejar aplicaciones vulnerables a ataques.<br><br>2. <strong>Content-Type incorrecto</strong>: Mismatch entre el encabezado Content-Type y el formato real de los datos provoca errores de análisis. Asegúrese siempre de que su encabezado refleje exactamente el formato de los datos que envía.<br><br>3. <strong>Fuga de encabezados de autenticación</strong>: Enviar tokens de autenticación a servicios terceros o registrarlos puede crear riesgos de seguridad. Sea cuidadoso sobre dónde se envían sus encabezados.<br><br>4. <strong>Encabezados CORS faltantes</strong>: Para aplicaciones que sirven recursos a orígenes distintos, fallar en configurar correctamente encabezados Access-Control-Allow-* hará fallar las solicitudes cross-origin.<br><br>5. <strong>Encabezados redundantes o contradictorios</strong>: Establecer múltiples encabezados que controlan el mismo comportamiento con valores distintos crea resultados impredecibles, ya que el comportamiento del servidor varía.<br><br>6. <strong>Problemas de mayúsculas/minúsculas</strong>: Aunque técnicamente los nombres de encabezados HTTP no distinguen mayúsculas/minúsculas, algunas implementaciones pueden manejarlas estrictamente. Mantenga mayúsculas/minúsculas consistentes en sus aplicaciones.<br><br>7. <strong>Encabezados excesivamente permisivos</strong>: Encabezados como Access-Control-Allow-Origin: * o directivas amplias de Content-Security-Policy pueden crear vulnerabilidades de seguridad si se usan inadecuadamente.<br><br>8. <strong>Ignorar límites de tamaño de encabezados</strong>: Algunos servidores restringen el tamaño total de encabezados HTTP (a menudo 8KB). Cookies muy grandes o tokens de autorización extensos pueden exceder estos límites."
+        }
+      ]
+    },
+    guide: {
+      title: "Cómo Usar el Editor de Encabezados HTTP: Guía Paso a Paso",
+      step1: "<strong>Añada encabezados a su colección</strong>: Haga clic en el botón \"Añadir Encabezado\" para crear una nueva entrada. Cada encabezado consta de un nombre (como \"Content-Type\" o \"Authorization\") y un valor. Puede añadir tantos encabezados como necesite para su solicitud. Para encabezados comunes, también puede usar el botón \"Encabezados Comunes\" para añadir rápidamente encabezados frecuentemente utilizados.",
+      step2: "<strong>Escriba nombres y valores de encabezados</strong>: Para cada encabezado, escriba el nombre y el valor apropiados. Los nombres deben seguir convenciones HTTP (como \"Content-Type\" o \"Authorization\") mientras que los valores variarán según el propósito del encabezado. La herramienta validará automáticamente sus entradas para asegurar que tengan el formato correcto.",
+      step3: "<strong>Use edición masiva para múltiples encabezados</strong>: Si necesita añadir varios encabezados a la vez, use el área de edición masiva en la parte inferior del panel de edición. Pegue encabezados en el formato \"nombre: valor\", con un encabezado por línea. Esto es especialmente útil al copiar encabezados desde otras herramientas o documentación.",
+      step4: "<strong>Consulte guías de encabezados para referencia</strong>: Si no está seguro de qué valores usar para encabezados comunes, consulte la sección \"Guías de Encabezados\" a la derecha de la herramienta. Haga clic en encabezados como Content-Type o Authorization para ver valores comunes y haga clic en ellos para añadirlos a su colección.",
+      step5: "<strong>Seleccione su formato de exportación preferido</strong>: Una vez configurados sus encabezados, seleccione el formato deseado de exportación desde el menú desplegable. Las opciones incluyen Texto Sin Formato para copiar simplemente, cURL para solicitudes desde línea de comandos y varios lenguajes de programación como JavaScript, Python, etc.",
+      step6: "<strong>Revise la salida formateada</strong>: La herramienta generará código o texto formateado basado en sus encabezados y el formato seleccionado. Esta salida está lista para usar en su código, herramientas de prueba API o documentación.",
+      step7: "<strong>Copie el resultado al portapapeles</strong>: Haga clic en el botón \"Copiar\" para copiar la salida formateada al portapapeles. Luego puede pegarla directamente en su editor de código, terminal o cualquier otra herramienta donde necesite implementar estos encabezados."
+    },
+    conclusion: "El Editor de Encabezados de Solicitud HTTP simplifica el complejo proceso de crear, probar e implementar encabezados HTTP para desarrolladores web y especialistas en integración API. Al proporcionar una interfaz intuitiva y soporte para múltiples formatos de exportación, conecta la brecha entre comprender conceptos de encabezados HTTP y aplicarlos correctamente en aplicaciones. A medida que evolucionan los requisitos de seguridad y rendimiento web, los encabezados configurados adecuadamente se vuelven cada vez más importantes. Esta herramienta ayuda a garantizar que sus aplicaciones sigan buenas prácticas de comunicación HTTP, seguridad y optimización de rendimiento."
+  }
+}

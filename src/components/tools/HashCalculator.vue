@@ -578,7 +578,7 @@ const hashAlgorithms = [
     value: 'murmur3_x86_32', 
     description: t('tools.hash-calculator.algorithmDetails.murmur3_x86_32.description'), 
     usage: t('tools.hash-calculator.algorithmDetails.murmur3_x86_32.usage'), 
-    security: t('tools.hash-calculator.algorithmDetails.murmurx8632.security') 
+    security: t('tools.hash-calculator.algorithmDetails.murmur3_x86_32.security') 
   },
   { 
     name: t('tools.hash-calculator.algorithmDetails.murmur3_x86_128.name'), 

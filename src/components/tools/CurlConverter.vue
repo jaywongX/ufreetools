@@ -619,9 +619,4 @@ function extractData(curl) {
   return dataMatch ? dataMatch[2] : null
 }
 
-// 组件加载时的初始化
-onMounted(() => {
-  // 初始化操作，例如加载curlconverter库
-  console.log('cURL转代码工具已加载')
-})
 </script> 

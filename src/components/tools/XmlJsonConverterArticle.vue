@@ -58,13 +58,6 @@
           </h4>
           <p>{{ $t('tools.xml-json-converter.article.faq.items.3.answer') }}</p>
         </div>
-        
-        <div class="mb-4">
-          <h4 class="text-lg font-medium text-gray-800 dark:text-gray-300">
-            {{ $t('tools.xml-json-converter.article.faq.items.4.question') }}
-          </h4>
-          <p>{{ $t('tools.xml-json-converter.article.faq.items.4.answer') }}</p>
-        </div>
       </section>
 
       <!-- 操作指南 -->

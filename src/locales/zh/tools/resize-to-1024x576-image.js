@@ -14,7 +14,8 @@ export default {
   dragAndDrop: '拖放图片文件到这里',
   or: '或',
   browseFiles: '浏览文件',
-  
+  processing: '处理中...',
+  convertImages: '转换图片',
   // Article content
   article: {
     title: '如何将图片调整为YouTube缩略图尺寸(1024x576)',

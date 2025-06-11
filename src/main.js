@@ -25,7 +25,6 @@ import messages from './locales'
 const i18n = createI18n({
   legacy: false, // 使用组合式API
   locale: 'en', // 默认语言
-  fallbackLocale: 'zh', // 回退语言
   messages
 })
 

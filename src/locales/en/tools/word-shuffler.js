@@ -134,7 +134,7 @@ export default {
         },
         {
           question: "What's the difference between the different shuffle modes?",
-          description: "Word mode shuffles individual words while keeping punctuation in place (if selected). Sentence mode keeps each sentence intact but randomizes their order. Line mode preserves each line but shuffles their sequence. Character mode randomizes individual characters for complete scrambling. Paragraph mode keeps paragraphs intact but reorders them."
+          answer: "Word mode shuffles individual words while keeping punctuation in place (if selected). Sentence mode keeps each sentence intact but randomizes their order. Line mode preserves each line but shuffles their sequence. Character mode randomizes individual characters for complete scrambling. Paragraph mode keeps paragraphs intact but reorders them."
         },
         {
           question: "Can I customize which characters are treated as word or sentence separators?",

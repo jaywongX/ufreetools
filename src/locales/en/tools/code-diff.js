@@ -20,7 +20,14 @@ export default {
       inline: 'Inline View'
     },
     context: 'Context Lines',
-    wrap: 'Wrap Text'
+    wrap: 'Wrap Text',
+    languages: {
+      plaintext: 'Plain Text',
+      html: 'HTML',
+      css: 'CSS',
+      javascript: 'JavaScript',
+      json: 'JSON'
+    }
   },
   inputs: {
     original: 'Original Code',
