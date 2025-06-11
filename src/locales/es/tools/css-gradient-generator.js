@@ -1,0 +1,146 @@
+export default {
+  name: 'Generador de Gradientes de Color',
+  description: 'Cree y personalice hermosos gradientes CSS con vista previa en tiempo real y copie el código a su proyecto',
+  gradientTypes: {
+    title: 'Tipo de Gradiente',
+    linear: 'Gradiente Lineal',
+    radial: 'Gradiente Radial',
+    conic: 'Gradiente Cónico'
+  },
+  controls: {
+    title: 'Controles de Color',
+    addColor: 'Añadir Color',
+    color: 'Color',
+    position: 'Posición (%)',
+    delete: 'Eliminar Color',
+    angle: 'Ángulo',
+    degrees: 'Grados',
+    shape: 'Forma',
+    circle: 'Círculo',
+    ellipse: 'Elipse',
+    positionX: 'Posición X (%)',
+    positionY: 'Posición Y (%)',
+    size: 'Tamaño',
+    closestSide: 'Lado Más Cercano',
+    closestCorner: 'Esquina Más Cercana',
+    farthestSide: 'Lado Más Lejano',
+    farthestCorner: 'Esquina Más Lejana',
+    fromAngle: 'Ángulo de Inicio'
+  },
+  output: {
+    title: 'Código CSS',
+    copyCode: 'Copiar Código',
+    preview: 'Área de Vista Previa',
+    copied: '¡Código CSS Copiado al Portapapeles!',
+    download: 'Descargar PNG'
+  },
+  presets: {
+    title: 'Preestablecidos de Gradiente',
+    apply: 'Aplicar Preestablecido',
+    sunnyMorning: 'Mañana Soleada',
+    winterNeva: 'Invierno en Neva',
+    rareWind: 'Viento Raro',
+    deepBlue: 'Azul Profundo',
+    perfect: 'Blanco Perfecto',
+    cloudyKnoxville: 'Knoxville Nublado',
+    greenBeach: 'Playa Verde',
+    plumBath: 'Baño de Ciruela',
+    everlasting: 'Cielo Eterno'
+  },
+  accessibility: {
+    colorPicker: 'Selector de Color',
+    deleteSwatch: 'Eliminar Punto de Color',
+    dragToReposition: 'Arrastrar para Reubicar Punto de Color'
+  },
+  actions: {
+    reset: 'Restablecer',
+    generateCSS: 'Generar CSS',
+    clickToCopy: 'Haga clic para Copiar Código',
+    completeEdit: 'Completar Edición'
+  },
+  messages: {
+    copied: '¡Código CSS Copiado al Portapapeles!',
+    noColors: 'Agregue al menos dos colores para crear un gradiente',
+    maxColors: 'Número máximo de puntos de color alcanzado (10)',
+    useKeyboard: 'Use la tecla Eliminar para eliminar el punto de color seleccionado',
+    invalidHex: 'Ingrese un código hexadecimal de color válido',
+    downloadError: 'Fallo al descargar PNG, intente nuevamente más tarde',
+    preview: 'Vista Previa'
+  },
+  anglePresets: {
+    top: 'Arriba',
+    topRight: 'Arriba Derecha',
+    right: 'Derecha',
+    bottomRight: 'Abajo Derecha',
+    bottom: 'Abajo',
+    bottomLeft: 'Abajo Izquierda',
+    left: 'Izquierda',
+    topLeft: 'Arriba Izquierda'
+  },
+  radialShapes: {
+    circle: 'Círculo',
+    ellipse: 'Elipse'
+  },
+  radialSizes: {
+    farthestCorner: 'Esquina Más Lejana',
+    closestCorner: 'Esquina Más Cercana',
+    farthestSide: 'Lado Más Lejano',
+    closestSide: 'Lado Más Cercano',
+  },
+  article: {
+    title: "Generador de Gradientes CSS: Guía Definitiva para Transiciones de Color Bellas",
+    features: {
+      title: "Entendiendo los Gradientes CSS y sus Potencias",
+      description: "El <strong>Generador de Gradientes CSS</strong> es una herramienta poderosa que le permite crear transiciones de color suaves, conocidas como <strong>gradientes</strong>, sin necesidad de escribir código CSS complejo manualmente. Esta herramienta admite tres tipos de gradientes principales: <strong>gradientes lineales</strong> (colores que fluyen en una línea recta), <strong>gradientes radiales</strong> (colores que radien desde un punto central) y <strong>gradientes cónicos</strong> (colores que giran alrededor de un punto central).<br><br>Con una interfaz intuitiva, puede agregar fácilmente múltiples <strong>puntos de color</strong>, ajustar sus posiciones, modificar ángulos o formas de gradiente y ver instantáneamente su creación. La herramienta genera automáticamente el código CSS correspondiente que puede copiar directamente en sus proyectos web. Además, puede exportar su gradiente como una imagen PNG para usarlo en aplicaciones de diseño gráfico o descargarla para compartir con otros. Ya sea que sea un desarrollador profesional o un entusiasta del diseño, este <strong>herramienta de creación de gradientes</strong> simplifica el proceso de crear transiciones de color visualmente atractivas para sus proyectos digitales.",
+      useCases: {
+        title: "Aplicaciones Prácticas para Gradientes CSS",
+        items: [
+          "<strong>Fondos de Sitios Web</strong>: Cree fondos visuales atractivos de página completa que transiten entre colores complementarios, agregando profundidad y dimensión a su sitio web sin usar imágenes pesadas. Estos <strong>fondos de gradiente</strong> cargan más rápido que las imágenes mientras ofrecen una apariencia moderna y elegante.",
+          "<strong>Estilo de Botones y Elementos de Interfaz de Usuario</strong>: Diseñe botones llamativos con <strong>efectos de gradiente</strong> que dirijan sutilmente la atención del usuario y aumenten las tasas de conversión. La calidad dimensional de los gradientes puede hacer que los elementos de la interfaz parezcan más táctiles e interactivos.",
+          "<strong>Separadores y Encabezados de Sección</strong>: Genere separadores visuales destacados entre secciones de contenido usando <strong>gradientes lineales</strong>, ayudando a organizar la información y guiar la mirada del usuario a través de su diseño de página mientras mantiene coherencia visual.",
+          "<strong>Elementos de Diseño Gráfico</strong>: Exporte sus gradientes como imágenes PNG para usarlos en materiales de marketing digital, publicaciones en redes sociales o diapositivas de presentación, creando una identidad visual consistente en diferentes plataformas con combinaciones de <strong>colores personalizados</strong>.",
+          "<strong>Visualización de Datos</strong>: Aplicar <strong>transiciones de color</strong> a gráficos, mapas y gráficos para representar rangos de datos de manera más intuitiva, ayudando a los usuarios a entender rápidamente las distribuciones de valores a través de intensidad de color o progresión de tono.",
+          "<strong>Animaciones de Carga Modernas</strong>: Diseñe animaciones de gradientes para pantallas de carga o indicadores de progreso que cambien de color mientras los usuarios esperan, creando una experiencia más atractiva durante los tiempos necesarios de carga con <strong>animaciones de gradiente</strong>."
+        ]
+      }
+    },
+    faq: {
+      title: "Preguntas Frecuentes sobre Gradientes CSS",
+      items: [
+        {
+          question: "¿Cuál es la diferencia entre gradientes lineales, radiales y cónicos?",
+          answer: "Estos tres tipos de gradientes crean efectos visuales distintos. Los gradientes lineales transitan colores a lo largo de una línea recta en una dirección especificada (definida por grados o palabras clave como 'hacia arriba' o 'hacia abajo a la derecha'). Son ideales para fondos simples, botones y transiciones horizontales o verticales de color. Los gradientes radiales comienzan desde un punto central y radien hacia afuera en un patrón circular o elíptico, creando efectos de foco o desvanecimiento ideales para destacar contenido o crear profundidad. Los gradientes cónicos barren colores alrededor de un punto central en un movimiento circular (como una rueda de colores), siendo excelentes para gráficos de pastel, seletores de color o efectos de resplandor solar. Nuestra herramienta admite los tres tipos con controles visuales para ayudarlo a lograr exactamente el aspecto que desea para su proyecto."
+        },
+        {
+          question: "¿Cómo puedo hacer que mis gradientes se vean suaves sin bandas visibles?",
+          answer: "Para crear gradientes suaves sin bandas visibles (los pasos notables entre colores), pruebe estas técnicas: 1) Agregar más puntos de color entre sus colores principales para crear una transición más gradual. Nuestra herramienta le permite agregar hasta 10 puntos de color para este propósito específico. 2) Mantener los colores adyacentes en su gradiente relativamente cercanos en tono y brillo, ya que los cambios drásticos son más propensos a mostrar bandas. 3) Agregar una textura de ruido sutil con opacidad baja para romper posibles bandas. 4) Considere usar transparencia ligeramente en sus colores de gradiente utilizando valores rgba(). 5) Para áreas muy grandes de gradiente, intente aumentar la longitud del gradiente en relación con su tamaño de visualización. Estas técnicas ayudan a crear transiciones de color profesionales sin el efecto molesto de bandas que pueden hacer que los gradientes parezcan poco profesionales."
+        },
+        {
+          question: "¿Funcionarán estos gradientes CSS en todos los navegadores?",
+          answer: "Los gradientes lineales y radiales básicos generados por nuestra herramienta tienen excelente compatibilidad con navegadores y funcionan de manera confiable en todos los navegadores modernos (Chrome, Firefox, Safari, Edge) sin prefijos. Los gradientes cónicos tienen un soporte ligeramente más limitado pero aún funcionan en todas las versiones actuales de los navegadores principales. Para navegadores antiguos (especialmente versiones antiguas de Internet Explorer), podría necesitar agregar prefijos o alternativas, aunque estos navegadores representan una pequeña porción de usuarios hoy en día. Nuestra herramienta genera código CSS estándar que sigue las especificaciones W3C, asegurando la mayor compatibilidad posible. Para aplicaciones críticas que busquen soporte para navegadores antiguos, puede modificar fácilmente el código generado para agregar prefijos o crear fondos alternativos para navegadores que no admitan ciertos tipos de gradientes."
+        },
+        {
+          question: "¿Cómo puedo usar el código de gradiente generado en mi proyecto?",
+          answer: "Usar el código de gradiente de nuestra herramienta es sencillo: 1) Cree y personalice su gradiente usando los controles visuales. 2) Haga clic en el botón 'Copiar Código' para copiar el CSS generado a su portapapeles. 3) Pegue el código en su archivo CSS o sección de estilo de su documento HTML. El código puede aplicarse a cualquier propiedad CSS que acepte valores de imagen, siendo la más común la propiedad 'background'. Por ejemplo, puede pegarlo directamente en una clase como '.my-element { background: linear-gradient(90deg, #3498db 0%, #9b59b6 100%); }'. También puede modificar el código copiado para agregar propiedades adicionales, cambiar el selector o combinarlo con otras reglas CSS. Si necesita el gradiente como imagen, use la función 'Descargar PNG' para guardarla como un archivo que se pueda importar en cualquier aplicación que acepte imágenes PNG."
+        },
+        {
+          question: "¿Puedo crear gradientes transparentes con esta herramienta?",
+          answer: "Sí, puede crear gradientes transparentes introduciendo manualmente colores con transparencia en el campo de entrada de color hex. Aunque nuestro selector de color no admite canales alpha directamente, puede escribir valores rgba() (como rgba(255,0,0,0.5) para rojo semitransparente) o códigos hex de 8 dígitos (como #FF000080) en el campo de entrada de color después de seleccionar un punto de color. Esto le permite crear gradientes que se desvanecen hacia la transparencia, lo cual es especialmente útil para superposiciones, sombras o elementos que necesitan mostrar parcialmente el contenido detrás de ellos. Estos gradientes transparentes funcionan perfectamente para crear efectos sutiles de superposición, viñetas alrededor de imágenes o áreas de contenido que se desvanecen en el fondo. Al usar gradientes transparentes sobre contenido, recuerde considerar el contraste y la legibilidad del texto que podría aparecer dentro o debajo del área del gradiente."
+        }
+      ]
+    },
+    guide: {
+      title: "Guía Paso a Paso para Usar el Generador de Gradientes CSS",
+      steps: [
+        "<strong>Seleccione un tipo de gradiente</strong>: Comience eligiendo entre gradientes lineales, radiales o cónicos desde la parte superior de la herramienta. Cada tipo crea un efecto diferente y es adecuado para necesidades de diseño específicas. Los gradientes lineales son los más comunes para fondos, mientras que los gradientes radiales y cónicos ofrecen efectos especializados.",
+        "<strong>Personalice los puntos de color</strong>: El gradiente se crea usando puntos de color que definen los puntos de transición. Haga clic en un marcador de punto de color existente en la barra de color para seleccionarlo, luego use el selector de color para cambiar su color. También puede ajustar la posición arrastrando el marcador o usando el control de posición debajo del selector de color.",
+        "<strong>Agregar más puntos de color</strong>: Haga clic en el botón 'Añadir Color' para crear transiciones de color adicionales en su gradiente. Se admiten hasta 10 puntos de color, permitiendo efectos complejos de múltiples colores. Para eliminar un punto de color, selecciónelo y haga clic en el botón 'Eliminar' (pero recuerde que necesita al menos dos colores para formar un gradiente).",
+        "<strong>Ajuste la dirección o forma del gradiente</strong>: Para gradientes lineales, use el control de ángulo para establecer la dirección del flujo de color (0-360 grados). Para gradientes radiales, seleccione la forma (círculo o elipse) y ajuste la posición del centro con los controles X y Y. Para gradientes cónicos, establezca el ángulo de inicio y la posición del centro para controlar precisamente el efecto.",
+        "<strong>Afinar con opciones de preestablecido</strong>: Experimente con los botones de preestablecido proporcionados para cada tipo de gradiente. Para gradientes lineales, pruebe direcciones comunes como arriba, derecha o abajo-izquierda. Para gradientes radiales, pruebe diferentes configuraciones de tamaño como 'esquina más lejana' o 'lado más cercano' para ver cómo afectan la propagación del gradiente.",
+        "<strong>Vista previa de su gradiente</strong>: Su creación se muestra en tiempo real en el gran área de vista previa. Haga clic en esta área para copiar instantáneamente el código CSS a su portapapeles para usarlo en sus proyectos. Puede continuar haciendo ajustes hasta que esté satisfecho con la apariencia.",
+        "<strong>Exportar o compartir su trabajo</strong>: Una vez que su gradiente se vea perfecto, copie el código CSS generado usando el botón 'Copiar Código' o descargue como imagen PNG con el botón 'Descargar PNG'. También puede explorar los gradientes preestablecidos en la parte inferior de la herramienta para obtener inspiración o puntos de partida rápidos."
+      ]
+    },
+    conclusion: "Los gradientes CSS ofrecen una forma poderosa de mejorar sus diseños web con transiciones de color suaves mientras mantiene sus proyectos ligeros y eficientes. A diferencia de las imágenes, los gradientes se escalan perfectamente a cualquier tamaño, cargan instantáneamente y se pueden modificar fácilmente con unos pocos cambios de código. Con nuestro Generador de Gradientes CSS, no necesita recordar sintaxis compleja ni pasar tiempo escribiendo código manualmente - simplemente cree visualmente, ajuste hasta la perfección y úselo con una sola operación de copiar y pegar. Ya sea que esté construyendo sitios web profesionales, diseñando componentes de interfaz de usuario o creando arte digital, dominar el uso de gradientes elevará significativamente la apariencia visual de su trabajo. Comience a experimentar con diferentes combinaciones de colores y tipos de gradientes hoy para descubrir las infinitas posibilidades creativas que ofrece esta herramienta."
+  }
+}

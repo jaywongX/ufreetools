@@ -770,11 +770,6 @@ function showToast(message) {
     }, 3000);
 }
 
-// 初始化
-onMounted(() => {
-    // 不需要动态加载库，因为我们已经通过npm导入
-    console.log('Using forge library from npm package');
-});
 </script>
 
 <style scoped>

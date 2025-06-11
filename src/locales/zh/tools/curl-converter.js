@@ -5,7 +5,7 @@ export default {
   subtitle: '将cURL命令转换为多种编程语言代码，方便快速集成HTTP请求到您的项目中',
   input: {
     title: 'cURL命令',
-    placeholder: '在此输入cURL命令，例如: curl -X POST https://api.example.com -H "Content-Type: application/json" -d "{"key":"value"}"',
+    placeholder: '在此输入cURL命令',
     parse: '解析cURL',
     clear: '清空',
     examples: '示例命令:',

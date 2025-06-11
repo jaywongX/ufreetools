@@ -20,7 +20,14 @@ export default {
       inline: '内联视图'
     },
     context: '上下文行数',
-    wrap: '自动换行'
+    wrap: '自动换行',
+    languages: {
+      plaintext: '纯文本',
+      html: 'HTML',
+      css: 'CSS',
+      javascript: 'JavaScript',
+      json: 'JSON'
+    }
   },
   inputs: {
     original: '原始代码',

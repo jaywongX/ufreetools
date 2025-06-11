@@ -5,7 +5,7 @@ export default {
   subtitle: 'Convert cURL commands into multiple programming language codes for quick integration of HTTP requests into your projects',
   input: {
     title: 'cURL Command',
-    placeholder: 'Enter a cURL command here, e.g.: curl -X POST https://api.example.com -H "Content-Type: application/json" -d "{"key":"value"}"',
+    placeholder: 'Enter a cURL command here',
     parse: 'Parse cURL',
     clear: 'Clear',
     examples: 'Example commands:',

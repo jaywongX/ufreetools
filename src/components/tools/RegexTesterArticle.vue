@@ -49,10 +49,6 @@
           <h4 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2" v-html="$t('tools.regex-tester.article.faq.items[3].question')"></h4>
           <div class="text-gray-600 dark:text-gray-400" v-html="$t('tools.regex-tester.article.faq.items[3].answer')"></div>
         </div>
-        <div class="border-b border-gray-200 dark:border-gray-700 pb-5">
-          <h4 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2" v-html="$t('tools.regex-tester.article.faq.items[4].question')"></h4>
-          <div class="text-gray-600 dark:text-gray-400" v-html="$t('tools.regex-tester.article.faq.items[4].answer')"></div>
-        </div>
       </div>
     </section>
 

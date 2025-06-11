@@ -34,7 +34,6 @@ import ButtomSideNav from './components/layout/ButtomSideNav.vue'
 // 移除不需要的导入
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import { useHead } from '@vueuse/head'
 
 const route = useRoute()
 const { locale, t } = useI18n()
@@ -1594,7 +1593,7 @@ watch(darkMode, (newValue) => {
 
 // 当路由变化时，根据路由参数更新语言
 watch(() => route.params.lang, (newLang) => {
-  if (newLang && locale.value !== newLang && ['zh', 'en'].includes(newLang)) {
+  if (newLang && locale.value !== newLang && supportedLanguages.includes(newLang)) {
     locale.value = newLang
     localStorage.setItem('userLanguage', newLang)
   }

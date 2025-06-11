@@ -303,12 +303,11 @@
             <a :href="$t('tools.jpg-jfif-converter.article.resources.list[2].url')" target="_blank" rel="noopener noreferrer" v-html="$t('tools.jpg-jfif-converter.article.resources.list[2].name')"></a> - 
             <span v-html="$t('tools.jpg-jfif-converter.article.resources.list[2].description')"></span>
           </li>
-          <!-- 添加更多外部资源 -->
-          <li v-if="$t('tools.jpg-jfif-converter.article.resources.list[3]')">
+          <li>
             <a :href="$t('tools.jpg-jfif-converter.article.resources.list[3].url')" target="_blank" rel="noopener noreferrer" v-html="$t('tools.jpg-jfif-converter.article.resources.list[3].name')"></a> - 
             <span v-html="$t('tools.jpg-jfif-converter.article.resources.list[3].description')"></span>
           </li>
-          <li v-if="$t('tools.jpg-jfif-converter.article.resources.list[4]')">
+          <li>
             <a :href="$t('tools.jpg-jfif-converter.article.resources.list[4].url')" target="_blank" rel="noopener noreferrer" v-html="$t('tools.jpg-jfif-converter.article.resources.list[4].name')"></a> - 
             <span v-html="$t('tools.jpg-jfif-converter.article.resources.list[4].description')"></span>
           </li>

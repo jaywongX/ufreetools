@@ -54,8 +54,7 @@ const currentPath = computed(() => {
   return pathWithoutLang || '/';  // 如果是首页，返回/
 });
 
-// 支持的语言列表
-const supportedLanguages = ['zh', 'en'];
+import { supportedLanguages } from '../../config/languages';
 
 // 更新文档元数据
 function updateMetaTags() {

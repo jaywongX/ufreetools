@@ -160,12 +160,195 @@ const examples = [
   { nameKey: 'classDiagram' }
 ]
 
-// 使用计算属性获取本地化的图表代码
+// 修改示例代码部分，直接在组件中定义硬编码的示例
+const exampleCodesByLocale = {
+  en: {
+    flowchart: `graph TD
+    A[Start] --> B{Is it correct?}
+    B -->|Yes| C[Correct Result]
+    B -->|No| D[Incorrect Result]
+    C --> E[End]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant Client
+    participant Server
+    Client->>Server: Request data
+    Server-->>Client: Respond with data
+    Client->>Server: Submit form
+    Server-->>Client: Confirm submission`,
+    gantt: `gantt
+    title Project Progress Schedule
+    dateFormat  YYYY-MM-DD
+    section Planning Phase
+    Requirement Collection           :a1, 2023-01-01, 30d
+    System Design                  :after a1, 20d
+    section Development Phase
+    Backend Development            :2023-02-20, 45d
+    Frontend Development           :2023-02-25, 40d
+    section Testing Phase
+    System Testing                :2023-04-05, 20d
+    User Testing                  :2023-04-20, 15d
+    section Deployment Phase
+    Deployment                    :2023-05-05, 10d`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> Editing
+    Editing --> Reviewing: Submit for review
+    Reviewing --> Rejected: Reject
+    Reviewing --> Published: Approve
+    Rejected --> Editing: Revise and resubmit
+    Published --> [*]`,
+    pieChart: `pie
+    title Website Traffic Sources Distribution
+    "Search Engines" : 42.7
+    "Direct Access" : 28.9
+    "Social Media" : 18.5
+    "Other Channels" : 9.9`,
+    classDiagram: `classDiagram
+    class Animal {
+        +String name
+        +int age
+        +makeSound() void
+    }
+    class Dog {
+        +String breed
+        +fetch() void
+    }
+    class Cat {
+        +String color
+        +climb() void
+    }
+    Animal <|-- Dog
+    Animal <|-- Cat`
+  },
+  zh: {
+    flowchart: `graph TD
+    A[开始] --> B{是否正确?}
+    B -->|是| C[结果正确]
+    B -->|否| D[结果错误]
+    C --> E[结束]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant 客户端
+    participant 服务器
+    客户端->>服务器: 请求数据
+    服务器-->>客户端: 响应数据
+    客户端->>服务器: 提交表单
+    服务器-->>客户端: 确认提交`,
+    gantt: `gantt
+    title 项目进度计划
+    dateFormat  YYYY-MM-DD
+    section 规划阶段
+    需求收集           :a1, 2023-01-01, 30d
+    系统设计           :after a1, 20d
+    section 开发阶段
+    后端开发           :2023-02-20, 45d
+    前端开发           :2023-02-25, 40d
+    section 测试阶段
+    系统测试           :2023-04-05, 20d
+    用户测试           :2023-04-20, 15d
+    section 上线阶段
+    部署上线           :2023-05-05, 10d`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> 编辑中
+    编辑中 --> 审核中: 提交审核
+    审核中 --> 已拒绝: 拒绝
+    审核中 --> 已发布: 通过
+    已拒绝 --> 编辑中: 修改后重新提交
+    已发布 --> [*]`,
+    pieChart: `pie
+    title 网站访问来源分布
+    "搜索引擎" : 42.7
+    "直接访问" : 28.9
+    "社交媒体" : 18.5
+    "其他渠道" : 9.9`,
+    classDiagram: `classDiagram
+    class Animal {
+        +String name
+        +int age
+        +makeSound() void
+    }
+    class Dog {
+        +String breed
+        +fetch() void
+    }
+    class Cat {
+        +String color
+        +climb() void
+    }
+    Animal <|-- Dog
+    Animal <|-- Cat`
+  },
+  es: {
+    flowchart: `graph TD
+    A[Inicio] --> B{¿Es correcto?}
+    B -->|Sí| C[Resultado Correcto]
+    B -->|No| D[Resultado Incorrecto]
+    C --> E[Fin]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant Cliente
+    participant Servidor
+    Cliente->>Servidor: Solicitar datos
+    Servidor-->>Cliente: Responder con datos
+    Cliente->>Servidor: Enviar formulario
+    Servidor-->>Cliente: Confirmar envío`,
+    gantt: `gantt
+    title Cronograma de Progreso del Proyecto
+    dateFormat  YYYY-MM-DD
+    section Fase de Planificación
+    Recopilación de Requisitos           :a1, 2023-01-01, 30d
+    Diseño del Sistema                  :after a1, 20d
+    section Fase de Desarrollo
+    Desarrollo del Backend            :2023-02-20, 45d
+    Desarrollo del Frontend           :2023-02-25, 40d
+    section Fase de Pruebas
+    Pruebas del Sistema                :2023-04-05, 20d
+    Pruebas del Usuario               :2023-04-20, 15d
+    section Fase de Implementación
+    Implementación                    :2023-05-05, 10d`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> Editando
+    Editando --> Revisión: Enviar para revisión
+    Revisión --> Rechazado: Rechazar
+    Revisión --> Publicado: Aprobar
+    Rechazado --> Editando: Revisar y reenviar
+    Publicado --> [*]`,
+    pieChart: `pie
+    title Distribución de Fuentes de Tráfico Web
+    "Motores de Búsqueda" : 42.7
+    "Acceso Directo" : 28.9
+    "Redes Sociales" : 18.5
+    "Otros Canales" : 9.9`,
+    classDiagram: `classDiagram
+    class Animal {
+        +String nombre
+        +int edad
+        +hacerSonido() void
+    }
+    class Perro {
+        +String raza
+        +buscar() void
+    }
+    class Gato {
+        +String color
+        +trepar() void
+    }
+    Animal <|-- Perro
+    Animal <|-- Gato`
+  }
+  // 可以添加更多语言...
+};
+
+// 替换原来的 localizedExamples 计算属性
+const { locale } = useI18n();
 const localizedExamples = computed(() => {
+  // 使用当前语言或回退到英语
+  const codesByLocale = exampleCodesByLocale[locale.value] || exampleCodesByLocale.en;
+
   return examples.map(example => {
     return {
       ...example,
-      code: t(`tools.flowchart-generator.exampleCodes.${example.nameKey}`)
+      code: codesByLocale[example.nameKey] || ''
     };
   });
 });

@@ -1,0 +1,238 @@
+export default {
+  name: 'Generador de Diagramas de Flujo',
+  description: 'Crear diagramas de flujo y diagramas utilizando una sintaxis basada en texto simple',
+  title: 'Generador de Diagramas y Flujogramas',
+  renderBtn: 'Dibujar Diagrama',
+  resetBtn: 'Restablecer',
+  downloadSvgBtn: 'Descargar SVG',
+  copySvgBtn: 'Copiar SVG',
+  input: {
+    title: 'Definición de Diagrama',
+    placeholder: 'Ingrese código de sintaxis Mermaid...',
+    loadExample: 'Cargar Ejemplo',
+    clear: 'Limpiar',
+    uploadFile: 'Subir Archivo'
+  },
+  output: {
+    title: 'Diagrama Generado',
+    downloadImage: 'Descargar Imagen',
+    downloadSVG: 'Descargar SVG',
+    copyImage: 'Copiar Imagen',
+    copySVG: 'Copiar SVG',
+    zoomIn: 'Acercar',
+    zoomOut: 'Alejar',
+    fitView: 'Ajustar Vista',
+    resetView: 'Restablecer Vista',
+    preview: 'Vista Previa',
+    code: 'Código Mermaid'
+  },
+  options: {
+    title: 'Opciones',
+    theme: 'Tema',
+    orientation: 'Orientación',
+    nodeShape: 'Forma del Nodo',
+    arrowStyle: 'Estilo de Flecha',
+    lineStyle: 'Estilo de Línea',
+    textPosition: 'Posición del Texto',
+    fontSize: 'Tamaño de Fuente',
+    fontFamily: 'Fuente',
+    showGrid: 'Mostrar Cuadrícula',
+    autoRender: 'Renderizar Automáticamente'
+  },
+  themes: {
+    default: 'Predeterminado',
+    simple: 'Simple',
+    forest: 'Bosque',
+    neutral: 'Neutro',
+    dark: 'Oscuro',
+    business: 'Empresarial',
+    base: 'Base',
+    custom: 'Personalizado'
+  },
+  orientations: {
+    topToBottom: 'De Arriba a Abajo',
+    bottomToTop: 'De Abajo a Arriba',
+    leftToRight: 'De Izquierda a Derecha',
+    rightToLeft: 'De Derecha a Izquierda'
+  },
+  nodeShapes: {
+    rectangle: 'Rectángulo',
+    roundedRectangle: 'Rectángulo Redondeado',
+    circle: 'Círculo',
+    diamond: 'Diamante',
+    hexagon: 'Hexágono',
+    parallelogram: 'Paralelogramo'
+  },
+  arrowStyles: {
+    arrow: 'Flecha',
+    open: 'Abierta',
+    filled: 'Llena',
+    diamond: 'Diamante',
+    circle: 'Círculo'
+  },
+  lineStyles: {
+    solid: 'Sólido',
+    dashed: 'Punteado',
+    dotted: 'Puntos',
+    curved: 'Curvado',
+    straight: 'Recto',
+    orthogonal: 'Ortogonal'
+  },
+  syntax: {
+    title: 'Ayuda de Sintaxis',
+    node: 'Nodo',
+    edge: 'Conexión',
+    subgraph: 'Subgrafo',
+    comment: 'Comentario',
+    styling: 'Estilo',
+    showMore: 'Mostrar Más'
+  },
+  actions: {
+    render: 'Dibujar Diagrama',
+    save: 'Guardar Diagrama',
+    export: 'Exportar',
+    share: 'Compartir'
+  },
+  messages: {
+    renderSuccess: 'Flujograma dibujado correctamente',
+    renderError: 'Error al dibujar el flujograma: {error}',
+    syntaxError: 'Error de sintaxis: {error}',
+    saved: 'El diagrama ha sido guardado',
+    copied: 'El código SVG ha sido copiado al portapapeles',
+    copyFailed: 'Error al copiar, por favor cópielo manualmente',
+    exported: 'El flujograma ha sido exportado',
+    emptyCode: 'Por favor ingrese código de sintaxis Mermaid',
+    rendering: 'Dibujando...',
+    errorTitle: 'Error de Dibujo'
+  },
+  examples: {
+    flowchart: 'Flujograma',
+    classDiagram: 'Diagrama de Clases',
+    sequenceDiagram: 'Diagrama de Secuencia',
+    entityRelationship: 'Diagrama de Relación de Entidades',
+    gantt: 'Gráfico de Gantt',
+    stateDiagram: 'Diagrama de Estados',
+    pieChart: 'Gráfico de Pastel',
+    userJourney: 'Mapa de Viaje del Usuario'
+  },
+  exampleCodes: {
+    flowchart: `graph TD
+    A[Inicio] --> B{¿Es correcto?}
+    B -->|Sí| C[Resultado Correcto]
+    B -->|No| D[Resultado Incorrecto]
+    C --> E[Fin]
+    D --> E
+`,
+    sequenceDiagram: `sequenceDiagram
+    participant Cliente
+    participant Servidor
+    Cliente->>Servidor: Solicitar datos
+    Servidor-->>Cliente: Responder con datos
+    Cliente->>Servidor: Enviar formulario
+    Servidor-->>Cliente: Confirmar envío
+`,
+    gantt: `gantt
+    title Cronograma de Progreso del Proyecto
+    dateFormat  YYYY-MM-DD
+    section Fase de Planificación
+    Recopilación de Requisitos           :a1, 2023-01-01, 30d
+    Diseño del Sistema                  :after a1, 20d
+    section Fase de Desarrollo
+    Desarrollo del Backend            :2023-02-20, 45d
+    Desarrollo del Frontend           :2023-02-25, 40d
+    section Fase de Pruebas
+    Pruebas del Sistema                :2023-04-05, 20d
+    Pruebas del Usuario               :2023-04-20, 15d
+    section Fase de Implementación
+    Implementación                    :2023-05-05, 10d
+`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> Editando
+    Editando --> Revisión: Enviar para revisión
+    Revisión --> Rechazado: Rechazar
+    Revisión --> Publicado: Aprobar
+    Rechazado --> Editando: Revisar y reenviar
+    Publicado --> [*]
+`,
+    pieChart: `pie
+    title Distribución de Fuentes de Tráfico Web
+    "Motores de Búsqueda" : 42.7
+    "Acceso Directo" : 28.9
+    "Redes Sociales" : 18.5
+    "Otros Canales" : 9.9
+`,
+    classDiagram: `classDiagram
+    class Animal {
+        +String nombre
+        +int edad
+        +hacerSonido() void
+    }
+    class Perro {
+        +String raza
+        +buscar() void
+    }
+    class Gato {
+        +String color
+        +trepar() void
+    }
+    Animal <|-- Perro
+    Animal <|-- Gato
+`
+  },
+  article: {
+    title: "Generador de Flujogramas: Visualice Procesos Complejos con Sintaxis de Texto Simple",
+    features: {
+      title: "Entendiendo el Poder de la Tecnología de Conversión de Texto a Diagramas",
+      description: "El <strong>Generador de Flujogramas</strong> es una herramienta versátil de diagramación que transforma sintaxis basada en texto en diagramas profesionales y visualmente atractivos. Utilizando la poderosa <strong>sintaxis Mermaid</strong>, esta herramienta le permite crear diversos tipos de diagramas sin necesidad de habilidades especializadas de diseño gráfico o software complejo.<br><br>En su núcleo, este <strong>herramienta de creación de diagramas</strong> convierte instrucciones de texto en visualizaciones estructuradas, permitiéndole representar procesos, flujos de trabajo, jerarquías y relaciones a través de diagramas intuitivos. El enfoque basado en texto significa que puede crear, editar y controlar versiones de sus diagramas junto con código o documentación. Ya sea que necesite crear <strong>flujogramas básicos</strong>, diagramas de <strong>secuencia</strong>, diagramas de <strong>clases</strong>, gráficos de <strong>Gantt</strong>, diagramas de <strong>estados</strong>, diagramas de <strong>pastel</strong> o mapas de <strong>viaje del usuario</strong>, esta herramienta ofrece una forma simplificada de generar visualizaciones profesionales desde descripciones de texto simples."
+    },
+    useCases: {
+      title: "Aplicaciones Prácticas para la Generación de Flujogramas",
+      items: [
+        "<strong>Documentación de Desarrollo de Software</strong>: Cree representaciones visuales claras de arquitectura de código, esquemas de bases de datos y flujos de aplicación directamente desde descripciones de texto. Los desarrolladores pueden usar el <strong>generador de flujogramas</strong> para documentar algoritmos complejos, jerarquías de clases y interacciones de sistema, haciendo más eficiente la onboarding de nuevos miembros del equipo y asegurando que las decisiones de arquitectura sean claramente comunicadas.",
+        "<strong>Visualización de Gestión de Proyectos</strong>: Genere gráficos de Gantt y flujos de procesos para mapear cronogramas de proyectos, dependencias y caminos críticos. Los gerentes de proyectos pueden usar estos <strong>mapas de procesos visuales</strong> para comunicar la estructura del proyecto a los stakeholders, identificar cuellos de botella y seguir el progreso contra actividades planeadas, mejorando tanto la planificación como las capacidades de informe.",
+        "<strong>Modelado de Procesos Empresariales</strong>: Documente flujos de trabajo organizacionales, procesos de aprobación y procedimientos operativos en un formato estándar visual. Los analistas empresariales pueden crear <strong>diagramas de procesos empresariales</strong> para analizar procesos existentes, identificar ineficiencias y modelar mejoras propuestas, haciendo que flujos operativos complejos sean accesibles para todos los stakeholders independientemente de su formación técnica.",
+        "<strong>Creación de Materiales Educativos</strong>: Desarrolle diagramas claros y didácticos para enseñar conceptos complejos, algoritmos o sistemas. Los educadores pueden usar el <strong>generador de diagramas en línea</strong> para crear apoyos visuales que mejoren la comprensión de los estudiantes sobre conceptos abstractos, procesos técnicos o marcos teóricos, mejorando la retención de conocimiento mediante principios de aprendizaje visual.",
+        "<strong>Documentación Técnica</strong>: Mejore manuales de usuarios, documentación de APIs y guías técnicas con diagramas ilustrativos generados directamente desde descripciones de texto que pueden mantenerse junto con el contenido escrito. Los escritores técnicos pueden integrar <strong>diagramas de secuencia</strong> que aclaren interacciones complejas o procesos, haciendo la documentación más accesible y reduciendo consultas de soporte.",
+        "<strong>Visualización de Árboles de Decisión</strong>: Mapee procesos de toma de decisiones complejos con lógica de ramificación y resultados condicionales. Analistas y tomadores de decisiones pueden generar <strong>diagramas de flujo de decisión</strong> para evaluar opciones, comunicar criterios de decisión a los stakeholders y documentar el razonamiento detrás de elecciones estratégicas, creando una referencia visual para puntos de decisión futuros."
+      ]
+    },
+    faq: {
+      title: "Preguntas Frecuentes sobre la Generación de Flujogramas",
+      items: [
+        {
+          question: "¿Qué es la sintaxis Mermaid y qué tan difícil es aprenderla?",
+          answer: "La sintaxis Mermaid es un lenguaje basado en texto para crear diagramas que se parece al markdown en su enfoque sencillo. Está especialmente diseñada para ser intuitiva y fácil de aprender, incluso para usuarios no técnicos. La mayoría de las personas pueden dominar los fundamentos en 15-30 minutos de práctica. La sintaxis sigue una estructura lógica donde primero se declara el tipo de diagrama (flujograma, diagrama de secuencia, etc.), luego se definen elementos y sus conexiones usando patrones de texto simples. Por ejemplo, una conexión de flujograma básica se escribe como 'A-->B' para mostrar que A se conecta a B. La curva de aprendizaje es suave porque la sintaxis es declarativa - describe lo que quiere en lugar de cómo dibujarlo. Nuestro generador de flujogramas incluye plantillas de ejemplo para tipos de diagramas comunes, permitiéndole comenzar modificando ejemplos existentes en lugar de escribir desde cero. Además, la retroalimentación visual inmediata ayuda a entender rápidamente cómo afectan los cambios en la sintaxis a su diagrama, haciendo el proceso de aprendizaje interactivo y eficiente."
+        },
+        {
+          question: "¿Puedo exportar mis diagramas para usarlos en otras aplicaciones?",
+          answer: "Sí, nuestro generador de flujogramas ofrece varias opciones de exportación para garantizar compatibilidad con diversas aplicaciones y casos de uso. El formato principal de exportación es SVG (Gráficos Vectoriales Escalables), que mantiene una resolución perfecta en cualquier tamaño y es ideal para uso web, presentaciones y documentación profesional. Los archivos SVG se pueden importar directamente en aplicaciones de diseño como Adobe Illustrator, Figma o Inkscape para personalización adicional. Para usuarios que necesitan formatos de mapa de bits, el SVG se puede convertir fácilmente a PNG o JPEG usando capacidades del navegador o herramientas externas. Además, como el diagrama se genera desde la sintaxis de texto, siempre puede almacenar y compartir el código fuente mismo - esto permite que otros no solo vean sino también modifiquen y regeneren el diagrama usando nuestra herramienta. Esta naturaleza basada en texto hace que los diagramas sean amigables para el control de versiones y fáciles de incrustar en sistemas de documentación como archivos Markdown, wikis o especificaciones técnicas. Para entornos de equipo, la capacidad de compartir tanto la salida visual como el código generador proporciona máxima flexibilidad para flujos de trabajo colaborativos de diagramación."
+        },
+        {
+          question: "¿Qué tipos de diagramas puedo crear con esta herramienta?",
+          answer: "Nuestro generador de flujogramas admite una amplia gama de tipos de diagramas para abordar diversas necesidades de visualización. Además de flujogramas básicos, puede crear diagramas de secuencia que ilustren cómo operan los procesos entre sí y en qué orden - perfecto para documentar interacciones de sistema o flujos de API. Diagramas de clases ayudan a visualizar estructuras orientadas a objetos, mostrando clases, atributos, métodos y relaciones entre ellos. Gráficos de Gantt proporcionan visualizaciones de cronogramas para programación de proyectos, con soporte para dependencias y hitos. Diagramas de estados ilustran los diferentes estados de un sistema y las transiciones entre ellos, ideal para modelar comportamientos de aplicaciones o procesos empresariales. Diagramas de Relación de Entidades (ERDs) ayudan a visualizar estructuras de bases de datos y relaciones. Gráficos de pastel permiten visualización de datos simple con divisiones porcentuales. Mapas de viaje del usuario ilustran los pasos que un usuario toma al interactuar con un producto o servicio. Cada tipo de diagrama usa una variante de sintaxis ligeramente diferente optimizada para sus necesidades específicas de visualización, pero todas siguen un enfoque lógico y basado en texto que hace que esta herramienta sea tan poderosa y flexible para requisitos de diagramación diversos."
+        },
+        {
+          question: "¿Cómo puedo personalizar la apariencia de mis diagramas?",
+          answer: "El generador de flujogramas ofrece varias formas de personalizar la apariencia de los diagramas mientras mantiene el enfoque basado en texto. Puede elegir entre varios temas predeterminados (predeterminado, bosque, oscuro, neutro, base) que afectan el esquema de colores y estilo general de sus diagramas. Para elementos individuales, puede especificar formas (rectángulos, círculos, rombos, etc.), estilos de borde, colores de relleno y formato de texto usando modificadores simples en su sintaxis. Por ejemplo, agregar una declaración de estilo como 'style A fill:#f9f,stroke:#333,stroke-width:2px' personaliza un nodo específico. Las líneas de conexión entre elementos se pueden personalizar con diferentes estilos de flechas, tipos de línea (sólida, punteada, discontinua), y direccionalidad. La posición y alineación del texto se pueden ajustar para mejorar la legibilidad. Los usuarios avanzados pueden incorporar clases CSS para estilos consistentes en múltiples elementos. El editor visual proporciona retroalimentación en tiempo real al ajustar estos elementos de estilo, permitiéndole afinar la estética de su diagrama mientras mantiene su claridad estructural. Estas opciones de personalización aseguran que sus diagramas no solo comuniquen información efectivamente, sino que también se alineen con su estilo de documentación o directrices de marca."
+        },
+        {
+          question: "¿Es posible crear estructuras complejas y anidadas en mis diagramas?",
+          answer: "Sí, nuestro generador de flujogramas admite completamente la creación de estructuras complejas y anidadas mediante subgrafos y capacidades de agrupamiento. Puede definir subgrafos o grupos para agrupar elementos relacionados, creando organizaciones jerárquicas dentro de sus diagramas. Esto es particularmente útil para representar procesos anidados, arquitecturas de componentes o estructuras organizativas. Por ejemplo, en un diagrama de arquitectura de sistema, podría crear subgrafos separados para componentes frontend, servicios backend y capas de base de datos, cada uno conteniendo sus elementos respectivos. Estos subgrafos se pueden estilizar de manera diferente para proporcionar distinción visual entre diferentes secciones o niveles de su diagrama. También puede crear flujos compuestos donde procesos cruzen entre diferentes subgrafos, representando con precisión cómo los componentes interactúan entre diferentes dominios o capas. La sintaxis para crear estas estructuras anidadas sigue el mismo enfoque lógico y basado en texto - típicamente usando indentación o notación de corchetes para definir el alcance de cada subgrafo. Esta capacidad para representar jerarquías complejas y relaciones hace que la herramienta sea adecuada para necesidades de diagramación a nivel empresarial mientras mantiene la simplicidad y mantenibilidad del enfoque basado en texto."
+        }
+      ]
+    },
+    guide: {
+      title: "Guía Paso a Paso para Usar el Generador de Flujogramas",
+      steps: [
+        "<strong>Elige un tipo de diagrama</strong>: Comience seleccionando el tipo de diagrama que mejor se adapte a sus necesidades. La herramienta admite flujogramas, diagramas de secuencia, diagramas de clases, gráficos de Gantt, diagramas de estados, gráficos de pastel y más. Puede cargar un ejemplo de cualquier tipo de diagrama haciendo clic en uno de los botones de ejemplo debajo del editor para comenzar rápidamente con la estructura de sintaxis correcta.",
+        "<strong>Escriba o edite el código del diagrama</strong>: En el panel izquierdo, ingrese el código de sintaxis Mermaid que describe su diagrama. Para un flujograma básico, comience con 'graph TD' (para arriba-abajo) o 'graph LR' (para izquierda-derecha), luego defina nodos y sus conexiones. Por ejemplo: 'A[Inicio] --> B&#123;Decisión&#125; --> C[Fin]' crea un flujograma de tres nodos. La sintaxis varía ligeramente para diferentes tipos de diagramas pero sigue un patrón coherente y lógico.",
+        "<strong>Previsualizar y validar</strong>: Haga clic en el botón 'Dibujar Diagrama' en la barra de herramientas para visualizar su diagrama en el panel derecho. La herramienta validará automáticamente su sintaxis y mostrará cualquier error. Si hay errores de sintaxis, aparecerá un mensaje de error que le ayudará a identificar y corregir problemas. Este bucle de retroalimentación inmediata le ayuda a corregir rápidamente errores y perfeccionar su diagrama.",
+        "<strong>Refinar y personalizar</strong>: Una vez que su diagrama básico funcione, perfecciónelo agregando más nodos, conexiones o detalles. Puede personalizar la apariencia seleccionando un tema diferente desde el menú desplegable de la barra de herramientas. Agregue estilo a elementos individuales usando declaraciones de estilo en línea, ajuste formas de nodos, colores o estilos de conexión para mejorar la claridad visual y atractivo estético.",
+        "<strong>Expandir con funciones avanzadas</strong>: Mejore su diagrama con funciones avanzadas como subgrafos para agrupar elementos relacionados, nodos clicables para diagramas interactivos, o estilo especial para destacar elementos. Para diagramas complejos, considere dividir procesos grandes en subgrafos lógicos para mejorar la legibilidad y organización. Agregue comentarios a su código (usando %% para líneas de comentario) para documentar la estructura de su diagrama para referencias futuras.",
+        "<strong>Exportar su diagrama</strong>: Cuando su diagrama esté completo, puede exportarlo como archivo SVG haciendo clic en el botón 'Descargar SVG' en la barra de herramientas. El formato SVG mantiene una resolución perfecta a cualquier escala y se puede usar en documentación, presentaciones o edición en software de diseño gráfico. Alternativamente, puede copiar el código SVG directamente en su portapapeles con el botón 'Copiar SVG' para uso inmediato en documentos HTML u otras aplicaciones.",
+        "<strong>Guardar su trabajo</strong>: Para preservar su diagrama para ediciones posteriores, guarde el código de sintaxis Mermaid mismo. Como el diagrama se genera desde este código, conservarlo le permite recargar y modificar su diagrama más tarde. Puede copiar el código desde el editor y guardarlo en un archivo de texto, incluirlo en su documentación de proyecto o almacenarlo en sistemas de control de versiones junto con código relacionado o documentación."
+      ]
+    },
+    conclusion: "El Generador de Flujogramas transforma la tarea tradicionalmente compleja de crear diagramas profesionales en un proceso accesible y eficiente para usuarios de todos los niveles técnicos. Al aprovechar el poder de la diagramación basada en texto, elimina la frustración de posicionar manualmente elementos y mantener consistencia visual que aflige a herramientas de dibujo tradicionales. Este enfoque no solo ahorra tiempo significativo, sino que se integra sin problemas con flujos de trabajo modernos, sistemas de documentación y procesos de control de versiones. A medida que la comunicación visual se vuelve cada vez más importante en nuestro entorno digital complejo, herramientas que simplifiquen la creación de diagramas claros y precisos son indispensables para la comunicación efectiva, documentación de procesos y comunicación técnica. Ya sea que sea un desarrollador que documenta la arquitectura de código, un gestor de proyectos que visualiza cronogramas, un analista empresarial que modela procesos, o un educador que explica conceptos complejos, el Generador de Flujogramas proporciona el equilibrio ideal entre simplicidad y potencia para llevar sus ideas a la vida visual sin la curva de aprendizaje pronunciada de software especializado de diagramación."
+  }
+};

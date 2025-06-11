@@ -1,0 +1,155 @@
+export default {
+  name: 'Selector de Colores',
+  description: 'Elige, convierte y genera esquemas de colores con herramientas avanzadas de color',
+  options: {
+    colorSpace: 'Espacio de Color',
+    paletteType: 'Tipo de Paleta',
+    includeAlpha: 'Incluir Canal Alpha',
+    colorNaming: 'Nombre del Color'
+  },
+  colorSpaces: {
+    rgb: 'RGB',
+    hex: 'HEX',
+    hsl: 'HSL',
+    hsv: 'HSV',
+    cmyk: 'CMYK',
+    lab: 'LAB',
+    named: 'Colores por Nombre'
+  },
+  palettes: {
+    monochromatic: 'Monocromático',
+    complementary: 'Complementario',
+    analogous: 'Análogo',
+    triadic: 'Triádico',
+    tetradic: 'Tetrádico',
+    split: 'Split Complementary (Complementario Dividido)'
+  },
+  actions: {
+    pickColor: 'Elegir Color',
+    randomColor: 'Generar Color Aleatorio',
+    generatePalette: 'Generar Paleta',
+    convert: 'Convertir',
+    copy: 'Copiar',
+    copyAll: 'Copiar Todo',
+    save: 'Guardar Color',
+    clear: 'Limpiar',
+    copyColor: 'Copiar el Color Actual',
+    reset: 'Restablecer'
+  },
+  formats: {
+    hex: 'HEX',
+    rgb: 'RGB',
+    hsl: 'HSL'
+  },
+  colorSchemes: {
+    title: 'Esquemas de Color',
+    complementary: 'Complementario',
+    triadic: 'Triádico',
+    analogous: 'Análogo',
+    monochromatic: 'Monocromático',
+    split: 'Split Complementary (Complementario Dividido)',
+    double: 'Doble Complementario',
+    square: 'Cuadrado',
+    compound: 'Compuesto'
+  },
+  colorAdjust: {
+    title: 'Ajuste de Color',
+    hue: 'Tono',
+    saturation: 'Saturación',
+    lightness: 'Brillo',
+    alpha: 'Transparencia'
+  },
+  colorInfo: {
+    title: 'Información del Color',
+    name: 'Nombre del Color',
+    format: 'Formato',
+    contrast: 'Contraste',
+    accessibility: {
+      title: 'Accesibilidad',
+      pass: 'Cumple WCAG',
+      fail: 'No cumple WCAG',
+      normal: 'Texto Normal',
+      large: 'Texto Grande'
+    }
+  },
+  messages: {
+    copied: 'Color copiado al portapapeles',
+    copyFailed: 'Fallo al copiar el color',
+    invalidColor: 'Formato de color inválido',
+    contrastWarning: 'Relación de contraste inadecuada',
+    saved: 'Color guardado',
+    contrast: 'Relación de contraste: {ratio}',
+    accessibility: {
+      AAA: 'Excelente contraste (AAA)',
+      AA: 'Buen contraste (AA)',
+      fail: 'Contraste bajo - no accesible'
+    },
+    preview: 'Vista previa',
+    colorValue: 'Color'
+  },
+  history: {
+    title: 'Historial de Colores',
+    empty: 'No hay colores en el historial',
+    clear: 'Limpiar Historial'
+  },
+  colorPalette: {
+    title: 'Paleta de Colores',
+    addToPalette: 'Agregar a la Paleta',
+    removeFromPalette: 'Eliminar de la Paleta',
+    exportPalette: 'Exportar Paleta',
+    importPalette: 'Importar Paleta',
+    clearPalette: 'Limpiar Paleta'
+  },
+  article: {
+    title: "Selector de Colores Avanzado: Elige, Convierte y Crea Esquemas de Color Perfectos",
+    features: {
+      title: "Entendiendo el Selector de Colores y sus Capacidades",
+      description: "Nuestro <strong>selector de colores avanzado</strong> es una herramienta completa diseñada para permitir una selección precisa de colores. A diferencia de los seleccionadores básicos, este <strong>herramienta profesional</strong> te ofrece completo control sobre el tono, saturación, brillo y opacidad de tus colores, lo que permite un trabajo de diseño exacto.<br><br>La herramienta opera en múltiples <strong>espacios de color</strong>, incluyendo RGB, HEX, HSL, HSV y CMYK, convirtiendo automáticamente entre estos formatos mientras se preservan los valores precisos. Esto elimina la necesidad de conversiones manuales o el uso de múltiples herramientas. Además, la función <strong>generadora de esquemas de color</strong> utiliza algoritmos basados en teoría del color para crear combinaciones armoniosas que siguen principios de diseño establecidos.<br><br>Para profesionales del diseño y desarrolladores, la capacidad de guardar colores, crear paletas y exportar en varios formatos agiliza el flujo de trabajo y garantiza consistencia en los proyectos, convirtiendo este <strong>selector de colores web</strong> en un recurso esencial para la creatividad digital.",
+      useCases: {
+        title: "Aplicaciones Prácticas del Selector de Colores",
+        items: [
+          "<strong>Diseño y Desarrollo Web</strong>: Selecciona códigos de color <strong>HEX</strong> y valores RGB precisos para hojas de estilo CSS y elementos visuales. Los desarrolladores frontend pueden asegurar consistencia de color en frameworks como React, Vue o Angular usando exactamente los mismos valores de color, evitando discrepancias provocadas por aproximación visual.",
+          "<strong>Diseño Gráfico</strong>: Crea paletas cohesivas de <strong>colores personalizados</strong> para logotipos, materiales promocionales y sistemas de identidad corporativa. Los diseñadores pueden experimentar con variaciones de color, examinar sus relaciones y ajustar tonos específicos hasta obtener el impacto visual deseado.",
+          "<strong>Pintura Digital e Ilustración</strong>: Elige y guarda <strong>muestras de color personalizadas</strong> para arte digital, manteniendo la coherencia a través de proyectos. Los artistas pueden crear paletas únicas que reflejen su estilo o requisitos artísticos, luego exportar estas colecciones para usarlas en software como Photoshop, Illustrator o Procreate.",
+          "<strong>Diseño UI/UX</strong>: Desarrolla esquemas de color accesibles que cumplan con las pautas WCAG para mejorar la usabilidad. Los diseñadores de interfaz pueden probar combinaciones de color contra estándares de accesibilidad en tiempo real, asegurando que sus diseños sean hermosos y utilizables por personas con discapacidades visuales.",
+          "<strong>Diseño para Impresión</strong>: Convierte entre valores de color <strong>RGB y CMYK</strong> para garantizar precisión de color en materiales impresos. Los especialistas en impresión pueden predecir cómo aparecerán los colores digitales en medios físicos, evitando el problema común de diferencias visuales entre pantalla e impresión.",
+          "<strong>Desarrollo de Identidad Corporativa</strong>: Establece y mantiene colores consistentes de marca a través de todos los puntos de contacto digitales y físicos. Los profesionales de marketing pueden documentar especificaciones de color exactas para las guías de marca, asegurando que todos los colaboradores usen exactamente los mismos colores en todo tipo de materiales."
+        ]
+      }
+    },
+    faq: {
+      title: "Preguntas Frecuentes sobre el Selector de Colores",
+      items: [
+        {
+          question: "¿Cuál es la diferencia entre RGB, HEX, HSL y otros formatos de color?",
+          answer: "Diferentes <strong>formatos de color</strong> representan los mismos colores empleando distintos sistemas numéricos y enfoques:<br><br>• <strong>Códigos HEX</strong> (p. ej., #FF5733) son valores hexadecimales de seis dígitos ampliamente usados en diseño web, representando los canales rojo, verde y azul en un formato compacto<br><br>• <strong>Valores RGB</strong> (p. ej., rgb(255, 87, 51)) especifican cantidades exactas de luz roja, verde y azul (0-255), resultando intuitivos para diseño digital<br><br>• <strong>HSL</strong> (tono, saturación, luminosidad) se alinea más con cómo percibimos los humanos el color, facilitando predecir relaciones entre colores y hacer ajustes<br><br>• <strong>CMYK</strong> usa porcentajes de cian, magenta, amarillo y negro, específicamente diseñado para producción impresa<br><br>Nuestra <strong>herramienta selectora de colores</strong> maneja la conversión automática entre estos formatos, permitiéndote trabajar en cualquiera de los sistemas según sea más apropiado para tu proyecto actual."
+        },
+        {
+          question: "¿Cómo creo un esquema de color armónico para mi proyecto?",
+          answer: "Crear combinaciones de <strong>colores armónicos</strong> se simplifica con nuestra herramienta mediante varios enfoques:<br><br>1. Usa la característica <strong>generadora de esquemas de color</strong> para crear automáticamente paletas complementarias, análogas, triádicas o monocromáticas basadas en tu color principal<br><br>2. Aplica principios establecidos de teoría del color mediante opciones preestablecidas como complementarios (opuestos en la rueda de colores) o análogos (adyacentes en la rueda de colores)<br><br>3. Ajusta los esquemas finamente cambiando saturación y luminosidad pero manteniendo los mismos tonos para crear paletas diversas pero cohesionadas<br><br>4. Evalúa tu <strong>armonía de colores</strong> en tiempo real, viendo cómo interactúan los cambios antes de confirmar tu selección<br><br>Gracias a la vista previa visual de la herramienta, es fácil evaluar cómo funcionan los colores juntos, permitiendo incluso a usuarios sin formación formal en diseño crear esquemas de color profesionales."
+        },
+        {
+          question: "¿Puedo guardar mis colores y paletas para uso posterior?",
+          answer: "Sí, nuestro <strong>selector de colores</strong> ofrece varias opciones para preservar tu trabajo:<br><br>• El <strong>historial de colores</strong> sigue automáticamente los últimos colores usados para acceso rápido<br>• Puedes crear y <strong>guardar paletas personalizadas</strong> con nombres descriptivos para distintos proyectos o clientes<br>• <strong>Exporta tus esquemas de color</strong> en formatos compatibles con software de diseño (Adobe ASE, GIMP, etc.)<br>• Genera <strong>variables de color en CSS</strong> que puedes copiar directamente en tus hojas de estilo<br>• Comparte enlaces de paletas con compañeros de equipo para diseño colaborativo<br><br>Estas funciones de archivo y compartición hacen que nuestro <strong>selector de colores</strong> sea valioso para mantener consistencia a través de proyectos complejos y equipos, asegurando que todos usen exactamente los mismos <strong>códigos de color</strong> durante el desarrollo y proceso de diseño."
+        },
+        {
+          question: "¿Cómo puedo asegurarme de que mis colores elegidos sean accesibles para todos los usuarios?",
+          answer: "Nuestro <strong>selector de colores</strong> incluye características de accesibilidad que te ayudan a crear diseños inclusivos:<br><br>• Calculadora de <strong>relación de contraste</strong> que automáticamente evalúa combinaciones de texto/fondo contra las pautas WCAG<br>• Indicadores visuales que muestran si las combinaciones pasan los estándares AA o AAA<br>• Sugerencias para mejorar el <strong>contraste de colores</strong> mientras mantienes estética de diseño<br>• Simulación de varios tipos de deficiencias visuales de color (protanopia, deuteranopia, etc.)<br><br>Al usar estas características, puedes asegurar que tus <strong>esquemas de color</strong> no solo sean atractivos visualmente sino también que proporcionen suficiente contraste para usuarios con discapacidades visuales. La herramienta te ayuda a equilibrar preferencias estéticas con requisitos de accesibilidad, creando diseños que funcionan para todos los usuarios."
+        },
+        {
+          question: "¿Cuál es la mejor forma de usar los resultados del selector de colores en mi software de diseño?",
+          answer: "Nuestro <strong>selector de colores</strong> se integra perfectamente con programas populares mediante varios métodos:<br><br>1. <strong>Copia códigos de color</strong> directamente en el formato que prefieras (HEX, RGB, HSL) con un solo clic<br>2. Exporta <strong>paletas de color</strong> en formato Adobe Swatch Exchange (.ase) para importarlas directamente en aplicaciones Creative Cloud<br>3. Genera variables CSS o mixins SCSS/LESS para entornos de desarrollo web<br>4. Toma capturas de referencia de <strong>esquemas completos</strong> con todos los valores etiquetados<br><br>Para un flujo de trabajo óptimo, recomendamos crear primero toda la paleta en nuestra herramienta, luego exportarla en el formato más adecuado para tu programa de diseño o entorno de código. Este enfoque asegura valores de <strong>color consistentes</strong> a través de tu proyecto mientras minimiza errores por entrada manual de datos."
+        }
+      ]
+    },
+    guide: {
+      title: "Cómo Usar el Selector de Colores Avanzado: Guía paso a paso",
+      step1: "<strong>Selecciona tu color base</strong>: Empieza eligiendo un color usando uno de varios métodos. Puedes hacer click y arrastrar sobre el campo de color grande para ajustar saturación y brillo, usar el control deslizante de tono para cambiar el color base, introducir específicamente códigos de color <strong>en el formato deseado</strong> (HEX, RGB, HSL), o seleccionar desde los colores recientes del historial. Esta flexibilidad te permite comenzar con una especificación exacta o explorar visualmente.",
+      step2: "<strong>Ajusta tu selección</strong>: Tras seleccionar un color base, usa controles precisos para hacer ajustes. Los deslizadores del <strong>selector de colores</strong> permiten modificar componentes individuales como tono (0-360°), saturación (0-100%) y brillo (0-100%). Las barras de transparencia (0-100%) también están disponibles para añadir opacidad. Estos controles granulares aseguran que puedas lograr exactamente el tono correcto, realizando ajustes sutiles que serían difíciles de conseguir en otras herramientas. Observa cómo el área de vista previa se actualiza en tiempo real conforme haces estos cambios.",
+      step3: "<strong>Genera esquemas de color</strong>: Haz click en la sección de esquemas de color para crear automáticamente <strong>combinaciones armónicas</strong> basadas en tu color seleccionado. Puedes elegir entre distintos tipos de esquemas, incluyendo complementario (opuesto en la rueda de colores), análogo (colores adyacentes), triádico (tres colores espaciados uniformemente), o monocromático (variaciones del mismo tono). Estos esquemas generados algorítmicamente siguen principios de teoría del color para asegurar resultados visualmente agradables.",
+      step4: "<strong>Convierte entre formatos</strong>: Cambia entre diferentes <strong>formatos de color</strong> usando los botones correspondientes. Tu color se convertirá automáticamente entre HEX (#FF5733), RGB (rgb(255, 87, 51)), HSL (hsl(14, 100%, 60%)) y más, mientras se mantiene exactamente el mismo color visual. Esto facilita obtener el código que necesitas para tu aplicación específica, ya seas diseñador web, artista digital o especialista en impresión.",
+      step5: "<strong>Guarda y exporta tus colores</strong>: Una vez perfeccionado tu color o paleta, guárdalos para uso futuro. Haz click en el botón de copiar para almacenar el <strong>código del color</strong> en el portapapeles, agrégalo a tu paleta guardada o exporta todo el esquema de color en diversos formatos. Para desarrolladores web, puedes generar variables CSS o conjuntos de color que implementarse directamente en tus hojas de estilo, asegurando valores de <strong>color consistentes</strong> a través de tu proyecto."
+    },
+    conclusion: "El Selector de Colores Avanzado representa una herramienta esencial en el kit moderno de cualquier diseñador o desarrollador, cerrando la brecha entre la selección artística de colores y su implementación técnica. Al ofrecer control preciso sobre los valores de color, conversión automática entre formatos y generación inteligente de esquemas, elimina gran parte del trabajo de prueba y error que era necesario anteriormente en diseño digital. Ya sea que estés creando un sistema de identidad de marca, diseñando una interfaz web o produciendo arte digital, la capacidad de seleccionar, manipular y organizar colores con precisión científica mientras aún respetas principios estéticos te da una ventaja significativa. A medida que el diseño continúa enfatizando tanto la belleza visual como la consistencia técnica, las herramientas que ayudan a traducir visión creativa en especificaciones exactas ganan cada vez más valor en todas las disciplinas creativas y técnicas."
+  }
+};

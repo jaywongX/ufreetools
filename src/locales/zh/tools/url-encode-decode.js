@@ -144,7 +144,7 @@ export default {
       a4: '虽然<strong>Base64 URL编码解码</strong>技术有时用于在URL中编码数据（特别是在JWT实现中），但Base64编码不是URL编码的替代品。Base64编码将二进制数据转换为ASCII字符，但可能会生成具有特殊含义的URL字符，如+、/和=。',
 
       q5: '如何处理URL编码在SQL查询中？',
-      a5: '在SQL Server中执行URL编码解码操作通常涉及使用内置函数或创建自定义函数。SQL Server没有内置的URL编码函数，但您可以：<br><br>1. 在应用程序代码中执行编码/解码操作，在构造SQL查询之前。<br>2. 在SQL中创建用户定义的函数：<pre><code>-- 在SQL Server中实现简单的URL解码函数\nCREATE FUNCTION dbo.UrlDecode(@url NVARCHAR(MAX))\nRETURNS NVARCHAR(MAX)\nAS\nBEGIN\n    -- 实现解码逻辑（实际实现会更复杂）\n    -- (Actual implementation would be more complex)\n    RETURN REPLACE(REPLACE(@url, \'%20\', \' \'), \'%26\', \'&\')\nEND</code></pre>为安全起见，通常最好在应用程序代码中使用适当的<strong>C# URL编码解码</strong>方法（用于.NET应用程序）或其他语言特定的实现，而不是在SQL中直接处理URL编码/解码。'
+      a5: '在SQL Server中执行URL编码解码操作通常涉及使用内置函数或创建自定义函数。SQL Server没有内置的URL编码函数，但您可以：<br><br>1. 在应用程序代码中执行编码/解码操作，在构造SQL查询之前。<br>2. 在SQL中创建用户定义的函数，为安全起见，通常最好在应用程序代码中使用适当的<strong>C# URL编码解码</strong>方法（用于.NET应用程序）或其他语言特定的实现，而不是在SQL中直接处理URL编码/解码。'
     },
     
     relatedTools: {
