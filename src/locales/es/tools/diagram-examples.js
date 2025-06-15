@@ -68,13 +68,13 @@ export default {
     A[Análisis de Requisitos] --> B[Diseño del Sistema]
     B --> C[Implementación de Código]
     C --> D[Pruebas Unitarias]
-    D --> E{¿Prueba Pasada?}
-    E -->|No| C
-    E -->|Sí| F[Integración del Sistema]
+    D --> E(¿Prueba Pasada?)
+    E -- No --> C
+    E -- Sí --> F[Integración del Sistema]
     F --> G[Pruebas del Sistema]
-    G --> H{¿Prueba Pasada?}
-    H -->|No| F
-    H -->|Sí| I[Despliegue]
+    G --> H(¿Prueba Pasada?)
+    H -- No --> F
+    H -- Sí --> I[Despliegue]
     I --> J[Mantenimiento y Actualizaciones]
     style A fill:#f9d5e5,stroke:#333,stroke-width:2px
     style E fill:#e3f0f7,stroke:#333,stroke-width:2px

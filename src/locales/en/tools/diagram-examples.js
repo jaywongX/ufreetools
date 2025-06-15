@@ -68,13 +68,13 @@ export default {
     A[Requirement Analysis] --> B[System Design]
     B --> C[Coding Implementation]
     C --> D[Unit Testing]
-    D --> E{Test Passed?}
-    E -->|No| C
-    E -->|Yes| F[System Integration]
+    D --> E(Test Passed?)
+    E -- No --> C 
+    E -- Yes --> F[System Integration]
     F --> G[System Testing]
-    G --> H{Test Passed?}
-    H -->|No| F
-    H -->|Yes| I[Deployment]
+    G --> H(Test Passed?)
+    H -- No --> F
+    H -- Yes --> I[Deployment]
     I --> J[Maintenance & Updates]
     
     style A fill:#f9d5e5,stroke:#333,stroke-width:2px
