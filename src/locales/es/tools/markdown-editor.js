@@ -46,10 +46,162 @@ export default {
     charCount: '{count} caracteres'
   },
   placeholder: 'Escriba su contenido Markdown aquí...',
+  placeholders: {
+    linkText: 'Texto del enlace',
+    imageAlt: 'Descripción de la imagen'
+  },
   templates: {
     title: 'Plantillas Rápidas',
     apply: 'Aplicar Plantilla',
-    confirm: 'Aplicar Plantilla'
+    confirm: 'Aplicar Plantilla',
+    simple: {
+      name: 'Documento Simple',
+      description: 'Incluye encabezados, listas, citas, etc.',
+      content: `# Título del Documento
+
+## Introducción
+Este es un ejemplo simple de un documento Markdown.
+
+## Características
+- Soporta encabezados y párrafos
+- Soporta texto en **negrita** y *cursiva*
+- Soporta listas ordenadas y no ordenadas
+
+> Esto es una cita, utilizada para citar la opinión de otra persona.
+
+## Conclusión
+Markdown es un lenguaje de marcado simple y fácil de usar.`
+    },
+    readme: {
+      name: 'README del Proyecto',
+      description: 'Estructura estándar para documentación de proyectos',
+      content: `# Nombre del Proyecto
+
+[![Licencia](https://img.shields.io/badge/licencia-MIT-blue.svg)](LICENSE)
+
+## Descripción del Proyecto
+Breve descripción de las funciones principales y el propósito del proyecto.
+
+## Características
+- Característica principal 1
+- Característica principal 2
+- Característica principal 3
+
+## Instalación
+\`\`\`bash
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
+npm run dev
+\`\`\`
+
+## Ejemplo de Uso
+\`\`\`javascript
+// Código de ejemplo
+const ejemplo = new Ejemplo();
+ejemplo.init();
+\`\`\`
+
+## Documentación
+Para documentación más detallada, consulte [Enlace a la Documentación](docs/README.md).
+
+## Guía de Contribución
+Las contribuciones son bienvenidas, consulte [Guía de Contribución](CONTRIBUTING.md).
+
+## Licencia
+Este proyecto se publica bajo la Licencia MIT, consulte [LICENSE](LICENSE) para más detalles.`
+    },
+    resume: {
+      name: 'Currículum',
+      description: 'Plantilla de currículum personal',
+      content: `# Currículum
+
+## Información Personal
+- **Nombre**: Juan Pérez
+- **Teléfono**: 123-456-7890
+- **Correo**: juanperez@email.com
+- **Objetivo Laboral**: Desarrollador Frontend
+
+## Educación
+**Universidad XYZ** | Ciencias de la Computación | Septiembre 2016 - Junio 2020
+
+## Experiencia Laboral
+### XYZ Tecnología S.A. | Desarrollador Frontend | Julio 2020 - Presente
+- Responsable del desarrollo frontend y mantenimiento de productos principales
+- Desarrollé sistema de gestión empresarial usando Vue.js, mejorando experiencia de usuario
+- Optimicé rendimiento frontend, reduciendo tiempo de carga de página en 30%
+
+### ABC Corp. | Pasante Frontend | Julio 2019 - Junio 2020
+- Participé en proyecto de rediseño del sitio web de la empresa
+- Asistí al equipo con refactorización y optimización de código
+
+## Habilidades Técnicas
+- **Frontend**: HTML, CSS, JavaScript, Vue.js, React
+- **Backend**: Node.js, Express
+- **Otras Herramientas**: Git, Webpack, Docker
+
+## Experiencia en Proyectos
+### Sistema de Gestión Empresarial
+- Desarrollado con Vue.js + Element UI
+- Implementé visualización de datos, características de gestión de permisos
+- Optimicé velocidad de respuesta del sistema, mejoré experiencia de usuario
+
+## Habilidades Lingüísticas
+- Español (Nativo)
+- Inglés (Avanzado)`
+    },
+    meeting: {
+      name: 'Acta de Reunión',
+      description: 'Plantilla de acta de reunión',
+      content: `# Acta de Reunión
+
+## Información de la Reunión
+- **Tema**: Discusión de Progreso del Proyecto
+- **Fecha**: 15 de Mayo de 2023
+- **Hora**: 14:00 - 16:00
+- **Ubicación**: Sala de Conferencias A
+- **Moderador**: Ana Gerente
+- **Tomador de Notas**: Juan Asistente
+
+## Asistentes
+- Ana Gerente (Departamento de Producto)
+- Miguel Ingeniero (Departamento de Desarrollo)
+- Sara Diseñadora (Departamento de Diseño)
+- Tomás Tester (Departamento de Pruebas)
+
+## Agenda
+1. Revisión de la finalización de tareas de la semana pasada
+2. Discusión del plan de trabajo de esta semana
+3. Resolución de problemas en el proyecto
+4. Determinación de próximos pasos
+
+## Contenido de la Discusión
+### 1. Revisión de Tareas de la Semana Pasada
+- Documento de requisitos de producto completado
+- Borrador de diseño completado al 60%
+- Desarrollo frontend completó configuración de marco básico
+
+### 2. Plan de Trabajo de Esta Semana
+- Departamento de diseño para completar borradores de diseño restantes
+- Departamento de desarrollo para comenzar desarrollo de funcionalidad principal
+- Departamento de pruebas para preparar casos de prueba
+
+### 3. Problemas y Soluciones
+- **Problema**: Diseño de interfaz de datos irrazonable
+- **Solución**: Miguel Ingeniero rediseñará interfaces y entregará el miércoles
+
+## Elementos de Acción
+| Tarea | Persona Responsable | Fecha Límite |
+|------|-------------------|---------|
+| Completar borradores de diseño | Sara Diseñadora | 17 de Mayo |
+| Rediseñar interfaces | Miguel Ingeniero | 18 de Mayo |
+| Preparar casos de prueba | Tomás Tester | 19 de Mayo |
+
+## Próxima Reunión
+- **Fecha**: 22 de Mayo de 2023
+- **Hora**: 14:00 - 15:00`
+    }
   },
   dialogs: {
     clear: {
@@ -115,6 +267,54 @@ export default {
         "Visualice su trabajo en tiempo real para ver cómo aparecerá el <strong>documento formateado</strong>, realizando ajustes según sea necesario antes de descargar o copiar el contenido final"
       ]
     },
-    conclusion: "El Editor Markdown simplifica el proceso de crear documentos bien formateados sin la complejidad de procesadores de texto tradicionales o la curva de aprendizaje de HTML. Proporcionando un entorno de escritura limpio y libre de distracciones con capacidades de formato poderosas, le permite enfocarse en su contenido manteniendo una presentación coherente y profesional. Ya sea que sea un desarrollador documentando código, un escritor creando entradas de blog, o un estudiante organizando notas, la sintaxis directa de Markdown combinada con la vista previa en tiempo real de nuestro editor hace que la creación de documentos sea más rápida e intuitiva. A medida que más plataformas adoptan soporte Markdown, dominar este formato versátil con nuestro editor le da una habilidad valiosa que se transfiere a numerosas aplicaciones y flujos de trabajo, ahorrando tiempo y mejorando la productividad para todas sus necesidades de documentación."
+    conclusion: "El Editor Markdown simplifica el proceso de crear documentos bien formateados sin la complejidad de procesadores de texto tradicionales o la curva de aprendizaje de HTML. Proporcionando un entorno de escritura limpio y libre de distracciones con capacidades de formato poderosas, le permite enfocarse en su contenido manteniendo una presentación coherente y profesional. Ya sea que sea un desarrollador documentando código, un escritor creando entradas de blog, o un estudiante organizando notas, la sintaxis directa de Markdown combinada con la vista previa en tiempo real de nuestro editor hace que la creación de documentos sea más rápida e intuitiva. A medida que más plataformas adoptan soporte Markdown, dominar este formato versátil con nuestro editor le da una habilidad valiosa que se transfiere a numerosas aplicaciones y flujos de trabajo, ahorrando tiempo y mejorando la productividad para todas sus necesidades de documentación.",
+    defaultContent: `# Bienvenido al Editor Markdown
+
+Este es un editor Markdown simple con vista previa en tiempo real y resaltado de sintaxis.
+
+## Sintaxis Básica
+
+### Encabezados
+Use símbolos # para indicar encabezados:
+# Encabezado 1
+## Encabezado 2
+### Encabezado 3
+
+### Énfasis
+**Negrita** o __Negrita__
+*Cursiva* o _Cursiva_
+~~Tachado~~
+
+### Listas
+Lista no ordenada:
+- Elemento 1
+- Elemento 2
+- Elemento 3
+
+Lista ordenada:
+1. Primer elemento
+2. Segundo elemento
+3. Tercer elemento
+
+### Enlaces e Imágenes
+[Texto del enlace](https://ejemplo.com)
+![Texto alternativo de imagen](https://ejemplo.com/imagen.jpg)
+
+### Código
+Código en línea: \`var ejemplo = "hola";\`
+
+### Citas
+> Esto es una cita.
+
+### Tablas
+| Encabezado 1 | Encabezado 2 | Encabezado 3 |
+|--------------|--------------|--------------|
+| Celda 1      | Celda 2      | Celda 3      |
+| Celda 4      | Celda 5      | Celda 6      |
+
+### Línea Horizontal
+---
+
+¡Comience a editar! Puede usar la barra de herramientas de arriba para insertar rápidamente varios elementos Markdown.`
   }
 }

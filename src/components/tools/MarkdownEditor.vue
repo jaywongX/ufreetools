@@ -533,12 +533,12 @@ const insertLink = () => {
       insertText(`[${selection}]`, '(https://)')
     }
   } else {
-    insertText('[链接文字](https://)')
+    insertText(`[${t('tools.markdown-editor.placeholders.linkText')}](https://)`, '')
   }
 }
 
 const insertImage = () => {
-  insertText('![图片描述](https://)')
+  insertText(`![${t('tools.markdown-editor.placeholders.imageAlt')}](https://)`, '')
 }
 
 const insertCodeInline = () => {
@@ -566,7 +566,106 @@ const insertQuote = () => {
 
 // 初始化模板
 const initTemplates = () => {
-  if (locale.value === 'en') {
+  if (locale.value === 'zh') {
+    // 中文模板
+    markdownTemplates.value = [
+      {
+        name: '简单文档',
+        description: '包含标题、列表、引用等',
+        content: `# 文档标题
+
+## 简介
+这是一个简单的Markdown文档示例。
+
+## 特性
+- 支持标题和段落
+- 支持**粗体**和*斜体*
+- 支持有序和无序列表
+
+> 这是一个引用块，用于引用他人的观点。
+
+## 结论
+Markdown是一种简单易用的标记语言。`
+      },
+      {
+        name: '项目README',
+        description: '项目文档标准结构',
+        content: `# 项目名称
+
+## 项目简介
+简短描述项目的主要功能和用途。
+
+## 功能特点
+- 主要功能点1
+- 主要功能点2
+- 主要功能点3
+
+## 安装说明
+\`\`\`
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+\`\`\`
+
+## 使用示例
+\`\`\`
+// 示例代码
+const example = new Example();
+example.init();
+\`\`\`
+
+## 文档
+更多详细文档请参考文档链接。
+
+## 贡献指南
+欢迎贡献代码，请参阅贡献指南。
+
+## 许可证
+本项目基于MIT许可证发布，详细信息请参阅LICENSE文件。`
+      },
+      {
+        name: '个人简历',
+        description: '个人简历模板',
+        content: `# 个人简历
+
+## 个人信息
+- 姓名：张三
+- 电话：138xxxx1234
+- 邮箱：zhangsan@example.com
+- 求职意向：前端开发工程师
+
+## 教育背景
+大学名称，计算机科学与技术，2016年9月至2020年6月
+
+## 工作经历
+### 科技公司，前端开发工程师，2020年7月至今
+- 负责公司核心产品的前端开发与维护
+- 使用Vue.js开发企业管理系统，提升用户体验
+- 优化前端性能，减少页面加载时间30%
+
+### 科技公司，前端开发实习生，2019年7月至2020年6月
+- 参与公司官网改版项目
+- 协助团队进行代码重构与优化
+
+## 技术技能
+- 前端开发：HTML, CSS, JavaScript, Vue.js, React
+- 后端开发：Node.js, Express
+- 其他工具：Git, Webpack, Docker
+
+## 项目经验
+### 企业管理系统
+- 使用Vue.js开发的企业内部管理系统
+- 实现了数据可视化、权限管理等功能
+- 优化了系统响应速度，提升用户体验
+
+## 语言能力
+- 英语（熟练）
+- 日语（基础）`
+      }
+    ];
+  } else if (locale.value === 'en') {
     // 英文模板
     markdownTemplates.value = [
       {
@@ -665,212 +764,577 @@ This project is released under the MIT License, see [LICENSE](LICENSE) for detai
 ## Language Skills
 - English (Fluent)
 - Spanish (Basic)`
-      },
-      {
-        name: 'Meeting Minutes',
-        description: 'Meeting minutes template',
-        content: `# Meeting Minutes
-
-## Meeting Information
-- **Topic**: Project Progress Discussion
-- **Date**: May 15, 2023
-- **Time**: 14:00 - 16:00
-- **Location**: Conference Room A
-- **Moderator**: Jane Manager
-- **Note Taker**: John Assistant
-
-## Attendees
-- Jane Manager (Product Department)
-- Mike Engineer (Development Department)
-- Sarah Designer (Design Department)
-- Tom Tester (Testing Department)
-
-## Agenda
-1. Review of last week's task completion
-2. Discussion of this week's work plan
-3. Resolution of issues in the project
-4. Determination of next steps
-
-## Discussion Content
-### 1. Last Week's Task Review
-- Product requirements document completed
-- Design draft 60% completed
-- Frontend development completed basic framework setup
-
-### 2. This Week's Work Plan
-- Design department to complete remaining design drafts
-- Development department to begin core functionality development
-- Testing department to prepare test cases
-
-### 3. Issues and Solutions
-- **Issue**: Data interface design unreasonable
-- **Solution**: Mike Engineer to redesign interfaces and submit by Wednesday
-
-## Action Items
-| Task | Responsible Person | Deadline |
-|------|-------------------|---------|
-| Complete design drafts | Sarah Designer | May 17 |
-| Redesign interfaces | Mike Engineer | May 18 |
-| Prepare test cases | Tom Tester | May 19 |
-
-## Next Meeting
-- **Date**: May 22, 2023
-- **Time**: 14:00 - 15:00`
       }
     ];
-  } else {
-    // 中文模板
+  } else if (locale.value === 'es') {
+    // 西班牙文模板
     markdownTemplates.value = [
       {
-        name: '简单文档',
-        description: '包含标题、列表、引用等',
-        content: `# 文档标题
+        name: 'Documento Simple',
+        description: 'Incluye encabezados, listas, citas, etc.',
+        content: `# Título del Documento
 
-## 简介
-这是一个简单的Markdown文档示例。
+## Introducción
+Este es un ejemplo simple de un documento Markdown.
 
-## 特性
-- 支持标题和段落
-- 支持**粗体**和*斜体*
-- 支持有序和无序列表
+## Características
+- Soporta encabezados y párrafos
+- Soporta texto en **negrita** y *cursiva*
+- Soporta listas ordenadas y no ordenadas
 
-> 这是一个引用块，用于引用他人的观点。
+> Esto es una cita, utilizada para citar la opinión de otra persona.
 
-## 结论
-Markdown是一种简单易用的标记语言。`
+## Conclusión
+Markdown es un lenguaje de marcado simple y fácil de usar.`
       },
       {
-        name: '项目README',
-        description: '项目文档标准结构',
-        content: `# 项目名称
+        name: 'README del Proyecto',
+        description: 'Estructura estándar para documentación de proyectos',
+        content: `# Nombre del Proyecto
 
-[![许可证](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Licencia](https://img.shields.io/badge/licencia-MIT-blue.svg)](LICENSE)
 
-## 项目简介
-简短描述项目的主要功能和用途。
+## Descripción del Proyecto
+Breve descripción de las funciones principales y el propósito del proyecto.
 
-## 功能特点
-- 主要功能点1
-- 主要功能点2
-- 主要功能点3
+## Características
+- Característica principal 1
+- Característica principal 2
+- Característica principal 3
 
-## 安装说明
+## Instalación
 \`\`\`bash
-# 安装依赖
+# Instalar dependencias
 npm install
 
-# 启动开发服务器
+# Iniciar servidor de desarrollo
 npm run dev
 \`\`\`
 
-## 使用示例
+## Ejemplo de Uso
 \`\`\`javascript
-// 示例代码
+// Código de ejemplo
+const ejemplo = new Ejemplo();
+ejemplo.init();
+\`\`\`
+
+## Documentación
+Para documentación más detallada, consulte [Enlace a la Documentación](docs/README.md).
+
+## Guía de Contribución
+Las contribuciones son bienvenidas, consulte [Guía de Contribución](CONTRIBUTING.md).
+
+## Licencia
+Este proyecto se publica bajo la Licencia MIT, consulte [LICENSE](LICENSE) para más detalles.`
+      },
+      {
+        name: 'Currículum',
+        description: 'Plantilla de currículum personal',
+        content: `# Currículum
+
+## Información Personal
+- **Nombre**: Juan Pérez
+- **Teléfono**: 123-456-7890
+- **Correo**: juanperez@email.com
+- **Objetivo Laboral**: Desarrollador Frontend
+
+## Educación
+**Universidad XYZ** | Ciencias de la Computación | Septiembre 2016 - Junio 2020
+
+## Experiencia Laboral
+### XYZ Tecnología S.A. | Desarrollador Frontend | Julio 2020 - Presente
+- Responsable del desarrollo frontend y mantenimiento de productos principales
+- Desarrollé sistema de gestión empresarial usando Vue.js, mejorando experiencia de usuario
+- Optimicé rendimiento frontend, reduciendo tiempo de carga de página en 30%
+
+### ABC Corp. | Pasante Frontend | Julio 2019 - Junio 2020
+- Participé en proyecto de rediseño del sitio web de la empresa
+- Asistí al equipo con refactorización y optimización de código
+
+## Habilidades Técnicas
+- **Frontend**: HTML, CSS, JavaScript, Vue.js, React
+- **Backend**: Node.js, Express
+- **Otras Herramientas**: Git, Webpack, Docker
+
+## Experiencia en Proyectos
+### Sistema de Gestión Empresarial
+- Desarrollado con Vue.js + Element UI
+- Implementé visualización de datos, características de gestión de permisos
+- Optimicé velocidad de respuesta del sistema, mejoré experiencia de usuario
+
+## Habilidades Lingüísticas
+- Español (Nativo)
+- Inglés (Avanzado)`
+      }
+    ];
+  } else if (locale.value === 'hi') {
+    // 印地语模板
+    markdownTemplates.value = [
+      {
+        name: 'सरल दस्तावेज़',
+        description: 'शीर्षक, सूचियां, उद्धरण आदि शामिल हैं',
+        content: `# दस्तावेज़ का शीर्षक
+
+## परिचय
+यह एक सरल मार्कडाउन दस्तावेज़ का उदाहरण है।
+
+## विशेषताएँ
+- शीर्षक और अनुच्छेदों का समर्थन करता है
+- **बोल्ड** और *इटैलिक* टेक्स्ट का समर्थन करता है
+- क्रमित और अक्रमित सूचियों का समर्थन करता है
+
+> यह एक ब्लॉकक्वोट है, जिसका उपयोग किसी अन्य व्यक्ति की राय का उद्धरण देने के लिए किया जाता है।
+
+## निष्कर्ष
+मार्कडाउन एक सरल और उपयोग में आसान मार्कअप भाषा है।`
+      },
+      {
+        name: 'प्रोजेक्ट README',
+        description: 'प्रोजेक्ट दस्तावेज़ीकरण के लिए मानक संरचना',
+        content: `# प्रोजेक्ट का नाम
+
+[![लाइसेंस](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+## प्रोजेक्ट का विवरण
+प्रोजेक्ट के मुख्य कार्यों और उद्देश्य का संक्षिप्त विवरण।
+
+## विशेषताएँ
+- मुख्य विशेषता 1
+- मुख्य विशेषता 2
+- मुख्य विशेषता 3
+
+## इंस्टॉलेशन
+\`\`\`bash
+# निर्भरताएँ इंस्टॉल करें
+npm install
+
+# विकास सर्वर शुरू करें
+npm run dev
+\`\`\`
+
+## उपयोग का उदाहरण
+\`\`\`javascript
+// उदाहरण कोड
 const example = new Example();
 example.init();
 \`\`\`
 
-## 文档
-更多详细文档请参考[文档链接](docs/README.md)。
+## दस्तावेज़ीकरण
+अधिक विस्तृत दस्तावेज़ीकरण के लिए, कृपया [दस्तावेज़ीकरण लिंक](docs/README.md) देखें।
 
-## 贡献指南
-欢迎贡献代码，请参阅[贡献指南](CONTRIBUTING.md)。
+## योगदान मार्गदर्शिका
+योगदान का स्वागत है, कृपया [योगदान मार्गदर्शिका](CONTRIBUTING.md) देखें।
 
-## 许可证
-本项目基于MIT许可证发布，详细信息请参阅[LICENSE](LICENSE)文件。`
+## लाइसेंस
+यह प्रोजेक्ट MIT लाइसेंस के तहत जारी किया गया है, विवरण के लिए [LICENSE](LICENSE) देखें।`
       },
       {
-        name: '个人简历',
-        description: '个人简历模板',
-        content: `# 个人简历
+        name: 'रिज्यूमे',
+        description: 'व्यक्तिगत रिज्यूमे टेम्पलेट',
+        content: `# रिज्यूमे
 
-## 个人信息
-- **姓名**：张三
-- **电话**：138-xxxx-xxxx
-- **邮箱**：example@email.com
-- **求职意向**：前端开发工程师
+## व्यक्तिगत जानकारी
+- **नाम**: राजेश शर्मा
+- **फोन**: 123-456-7890
+- **ईमेल**: rajesh@email.com
+- **नौकरी का उद्देश्य**: फ्रंटएंड डेवलपर
 
-## 教育背景
-**XX大学** | 计算机科学与技术 | 2016年9月 - 2020年6月
+## शिक्षा
+**XYZ विश्वविद्यालय** | कंप्यूटर साइंस | सितंबर 2016 - जून 2020
 
-## 工作经历
-### XX科技有限公司 | 前端开发工程师 | 2020年7月 - 至今
-- 负责公司核心产品的前端开发与维护
-- 使用Vue.js开发企业管理系统，提升用户体验
-- 优化前端性能，减少页面加载时间30%
+## कार्य अनुभव
+### XYZ टेक इंक. | फ्रंटएंड डेवलपर | जुलाई 2020 - वर्तमान
+- मुख्य उत्पादों के फ्रंटएंड विकास और रखरखाव के लिए जिम्मेदार
+- Vue.js का उपयोग करके एंटरप्राइज मैनेजमेंट सिस्टम विकसित किया, उपयोगकर्ता अनुभव में सुधार किया
+- फ्रंटएंड प्रदर्शन को अनुकूलित किया, पेज लोड समय को 30% कम किया
 
-### XX科技有限公司 | 前端开发实习生 | 2019年7月 - 2020年6月
-- 参与公司官网改版项目
-- 协助团队进行代码重构与优化
+### ABC कॉर्प. | फ्रंटएंड इंटर्न | जुलाई 2019 - जून 2020
+- कंपनी वेबसाइट रीडिज़ाइन प्रोजेक्ट में भाग लिया
+- कोड रिफैक्टरिंग और अनुकूलन में टीम की सहायता की
 
-## 技术技能
-- **前端开发**：HTML, CSS, JavaScript, Vue.js, React
-- **后端开发**：Node.js, Express
-- **其他工具**：Git, Webpack, Docker
+## तकनीकी कौशल
+- **फ्रंटएंड**: HTML, CSS, JavaScript, Vue.js, React
+- **बैकएंड**: Node.js, Express
+- **अन्य टूल्स**: Git, Webpack, Docker
 
-## 项目经验
-### 企业管理系统
-- 使用Vue.js + Element UI开发的企业内部管理系统
-- 实现了数据可视化、权限管理等功能
-- 优化了系统响应速度，提升用户体验
+## प्रोजेक्ट अनुभव
+### एंटरप्राइज मैनेजमेंट सिस्टम
+- Vue.js + Element UI के साथ विकसित
+- डेटा विज़ुअलाइज़ेशन, अनुमति प्रबंधन सुविधाएँ लागू की
+- सिस्टम प्रतिक्रिया गति को अनुकूलित किया, उपयोगकर्ता अनुभव में सुधार किया
 
-## 语言能力
-- 英语（熟练）
-- 日语（基础）`
-      },
-      {
-        name: '会议记录',
-        description: '会议记录模板',
-        content: `# 会议记录
-
-## 会议信息
-- **主题**：项目进度讨论
-- **日期**：2023年5月15日
-- **时间**：14:00 - 16:00
-- **地点**：公司会议室A
-- **主持人**：张经理
-- **记录人**：李助理
-
-## 参会人员
-- 张经理（产品部）
-- 王工程师（研发部）
-- 李设计师（设计部）
-- 赵测试（测试部）
-
-## 议程
-1. 回顾上周工作完成情况
-2. 讨论本周工作计划
-3. 解决项目中存在的问题
-4. 确定下一步工作方向
-
-## 讨论内容
-### 1. 上周工作回顾
-- 产品需求文档已完成
-- 设计稿已完成60%
-- 前端开发已完成基础框架搭建
-
-### 2. 本周工作计划
-- 设计部完成剩余设计稿
-- 研发部开始核心功能开发
-- 测试部准备测试用例
-
-### 3. 问题与解决方案
-- **问题**：数据接口设计不合理
-- **解决方案**：由王工程师重新设计接口，并在周三前提交
-
-## 行动项
-| 任务 | 负责人 | 截止日期 |
-|------|-------|---------|
-| 完成设计稿 | 李设计师 | 5月17日 |
-| 重新设计接口 | 王工程师 | 5月18日 |
-| 准备测试用例 | 赵测试 | 5月19日 |
-
-## 下次会议
-- **日期**：2023年5月22日
-- **时间**：14:00 - 15:00`
+## भाषा कौशल
+- हिंदी (मातृभाषा)
+- अंग्रेज़ी (प्रवाहपूर्ण)`
       }
     ];
+  } else if (locale.value === 'ja') {
+    // 日文模板
+    markdownTemplates.value = [
+      {
+        name: 'シンプル文書',
+        description: '見出し、リスト、引用などを含む',
+        content: `# 文書タイトル
+
+## はじめに
+これはMarkdown文書の簡単な例です。
+
+## 特徴
+- 見出しと段落をサポート
+- **太字**と*斜体*テキストをサポート
+- 順序付きリストと順序なしリストをサポート
+
+> これは引用ブロックで、他の人の意見を引用するために使用します。
+
+## 結論
+Markdownはシンプルで使いやすいマークアップ言語です。`
+      },
+      {
+        name: 'プロジェクトREADME',
+        description: 'プロジェクト文書の標準構造',
+        content: `# プロジェクト名
+
+[![ライセンス](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+## プロジェクト説明
+プロジェクトの主な機能と目的の簡単な説明。
+
+## 特徴
+- 主な特徴1
+- 主な特徴2
+- 主な特徴3
+
+## インストール
+\`\`\`bash
+# 依存関係をインストール
+npm install
+
+# 開発サーバーを起動
+npm run dev
+\`\`\`
+
+## 使用例
+\`\`\`javascript
+// サンプルコード
+const example = new Example();
+example.init();
+\`\`\`
+
+## ドキュメント
+より詳細なドキュメントについては、[ドキュメントリンク](docs/README.md)を参照してください。
+
+## 貢献ガイド
+貢献は歓迎します。[貢献ガイド](CONTRIBUTING.md)を参照してください。
+
+## ライセンス
+このプロジェクトはMITライセンスの下でリリースされています。詳細は[LICENSE](LICENSE)を参照してください。`
+      },
+      {
+        name: '履歴書',
+        description: '個人履歴書テンプレート',
+        content: `# 履歴書
+
+## 個人情報
+- **名前**: 山田太郎
+- **電話**: 123-456-7890
+- **メール**: yamada@email.com
+- **職務目標**: フロントエンド開発者
+
+## 学歴
+**XYZ大学** | コンピュータサイエンス | 2016年9月 - 2020年6月
+
+## 職歴
+### XYZテック株式会社 | フロントエンド開発者 | 2020年7月 - 現在
+- 主要製品のフロントエンド開発とメンテナンスを担当
+- Vue.jsを使用して企業管理システムを開発し、ユーザーエクスペリエンスを向上
+- フロントエンドのパフォーマンスを最適化し、ページ読み込み時間を30%削減
+
+### ABC株式会社 | フロントエンドインターン | 2019年7月 - 2020年6月
+- 会社のウェブサイトリデザインプロジェクトに参加
+- コードのリファクタリングと最適化でチームをサポート
+
+## 技術スキル
+- **フロントエンド**: HTML, CSS, JavaScript, Vue.js, React
+- **バックエンド**: Node.js, Express
+- **その他ツール**: Git, Webpack, Docker
+
+## プロジェクト経験
+### 企業管理システム
+- Vue.js + Element UIで開発
+- データ可視化、権限管理機能を実装
+- システム応答速度を最適化し、ユーザーエクスペリエンスを向上
+
+## 言語スキル
+- 日本語（ネイティブ）
+- 英語（ビジネスレベル）`
+      }
+    ];
+  } else {
+    console.error('Invalid locale:', locale.value);
+    throw new Error('Invalid locale');
   }
+};
+
+// 更新默认内容
+const updateDefaultContent = (locale) => {
+  // 直接在组件中定义默认内容，而不是通过i18n获取
+  const defaultContents = {
+    'zh': `# 欢迎使用Markdown编辑器
+
+这是一个简单的Markdown编辑器，支持实时预览和语法高亮。
+
+## 基本语法
+
+### 标题
+使用 # 符号表示标题，例如：
+# 一级标题
+## 二级标题
+### 三级标题
+
+### 强调
+**粗体** 或 __粗体__
+*斜体* 或 _斜体_
+~~删除线~~
+
+### 列表
+无序列表:
+- 项目1
+- 项目2
+- 项目3
+
+有序列表:
+1. 第一项
+2. 第二项
+3. 第三项
+
+### 链接和图片
+[链接文本](https://example.com)
+![图片描述](https://example.com/image.jpg)
+
+### 代码
+行内代码: \`var example = "hello";\`
+
+### 引用
+> 这是一个引用段落。
+
+### 表格
+| 表头1 | 表头2 | 表头3 |
+|-------|-------|-------|
+| 单元格1 | 单元格2 | 单元格3 |
+| 单元格4 | 单元格5 | 单元格6 |
+
+### 水平线
+---
+
+开始编辑吧！你可以使用上方的工具栏快速插入各种Markdown元素。`,
+
+    'en': `# Welcome to Markdown Editor
+
+This is a simple Markdown editor with real-time preview and syntax highlighting.
+
+## Basic Syntax
+
+### Headings
+Use # symbols to denote headings:
+# Heading 1
+## Heading 2
+### Heading 3
+
+### Emphasis
+**Bold** or __Bold__
+*Italic* or _Italic_
+~~Strikethrough~~
+
+### Lists
+Unordered list:
+- Item 1
+- Item 2
+- Item 3
+
+Ordered list:
+1. First item
+2. Second item
+3. Third item
+
+### Links and Images
+[Link text](https://example.com)
+![Image alt text](https://example.com/image.jpg)
+
+### Code
+Inline code: \`var example = "hello";\`
+
+### Blockquotes
+> This is a blockquote.
+
+### Tables
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Cell 1   | Cell 2   | Cell 3   |
+| Cell 4   | Cell 5   | Cell 6   |
+
+### Horizontal Line
+---
+
+Start editing! You can use the toolbar above to quickly insert various Markdown elements.`,
+
+    'es': `# Bienvenido al Editor Markdown
+
+Este es un editor Markdown simple con vista previa en tiempo real y resaltado de sintaxis.
+
+## Sintaxis Básica
+
+### Encabezados
+Use símbolos # para indicar encabezados:
+# Encabezado 1
+## Encabezado 2
+### Encabezado 3
+
+### Énfasis
+**Negrita** o __Negrita__
+*Cursiva* o _Cursiva_
+~~Tachado~~
+
+### Listas
+Lista no ordenada:
+- Elemento 1
+- Elemento 2
+- Elemento 3
+
+Lista ordenada:
+1. Primer elemento
+2. Segundo elemento
+3. Tercer elemento
+
+### Enlaces e Imágenes
+[Texto del enlace](https://ejemplo.com)
+![Texto alternativo de imagen](https://ejemplo.com/imagen.jpg)
+
+### Código
+Código en línea: \`var ejemplo = "hola";\`
+
+### Citas
+> Esto es una cita.
+
+### Tablas
+| Encabezado 1 | Encabezado 2 | Encabezado 3 |
+|--------------|--------------|--------------|
+| Celda 1      | Celda 2      | Celda 3      |
+| Celda 4      | Celda 5      | Celda 6      |
+
+### Línea Horizontal
+---
+
+¡Comience a editar! Puede usar la barra de herramientas de arriba para insertar rápidamente varios elementos Markdown.`,
+
+    'hi': `# मार्कडाउन संपादक में आपका स्वागत है
+
+यह एक सरल मार्कडाउन संपादक है जिसमें वास्तविक समय पूर्वावलोकन और सिंटैक्स हाइलाइटिंग है।
+
+## मूल सिंटैक्स
+
+### शीर्षक
+शीर्षक दर्शाने के लिए # प्रतीक का उपयोग करें:
+# शीर्षक 1
+## शीर्षक 2
+### शीर्षक 3
+
+### जोर
+**बोल्ड** या __बोल्ड__
+*इटैलिक* या _इटैलिक_
+~~स्ट्राइकथ्रू~~
+
+### सूचियां
+अक्रमित सूची:
+- आइटम 1
+- आइटम 2
+- आइटम 3
+
+क्रमित सूची:
+1. पहला आइटम
+2. दूसरा आइटम
+3. तीसरा आइटम
+
+### लिंक और छवियां
+[लिंक टेक्स्ट](https://example.com)
+![छवि alt टेक्स्ट](https://example.com/image.jpg)
+
+### कोड
+इनलाइन कोड: \`var example = "hello";\`
+
+### ब्लॉकक्वोट
+> यह एक ब्लॉकक्वोट है।
+
+### तालिकाएं
+| हेडर 1 | हेडर 2 | हेडर 3 |
+|--------|--------|--------|
+| सेल 1  | सेल 2  | सेल 3  |
+| सेल 4  | सेल 5  | सेल 6  |
+
+### क्षैतिज रेखा
+---
+
+संपादन शुरू करें! आप विभिन्न मार्कडाउन तत्वों को जल्दी से डालने के लिए ऊपर दिए गए टूलबार का उपयोग कर सकते हैं।`,
+
+    'ja': `# Markdownエディタへようこそ
+
+これはリアルタイムプレビューと構文ハイライトを備えたシンプルなMarkdownエディタです。
+
+## 基本構文
+
+### 見出し
+#記号を使用して見出しを示します：
+# 見出し1
+## 見出し2
+### 見出し3
+
+### 強調
+**太字** または __太字__
+*斜体* または _斜体_
+~~取り消し線~~
+
+### リスト
+順序なしリスト：
+- 項目1
+- 項目2
+- 項目3
+
+順序付きリスト：
+1. 最初の項目
+2. 2番目の項目
+3. 3番目の項目
+
+### リンクと画像
+[リンクテキスト](https://example.com)
+![画像の代替テキスト](https://example.com/image.jpg)
+
+### コード
+インラインコード： \`var example = "hello";\`
+
+### 引用
+> これは引用ブロックです。
+
+### 表
+| ヘッダー1 | ヘッダー2 | ヘッダー3 |
+|----------|----------|----------|
+| セル1    | セル2    | セル3    |
+| セル4    | セル5    | セル6    |
+
+### 水平線
+---
+
+編集を始めましょう！上のツールバーを使用して、さまざまなMarkdown要素を素早く挿入できます。`
+  };
+
+  // 根据当前语言设置内容
+  if (defaultContents[locale]) {
+    markdownContent.value = defaultContents[locale];
+  } else {
+    console.error('Invalid locale:', locale);
+    throw new Error('Invalid locale');
+  }
+  
+  // 更新预览
+  updatePreview();
 }
 
 // 监听语言变化并更新模板
@@ -914,128 +1378,6 @@ watch(locale, (newLocale) => {
     updateDefaultContent(newLocale)
   }
 })
-
-// 更新默认内容
-const updateDefaultContent = (locale) => {
-  if (locale === 'en') {
-    // 英文默认内容
-    markdownContent.value = `# Welcome to Markdown Editor
-
-This is a simple Markdown editor with real-time preview and syntax highlighting.
-
-## Basic Syntax
-
-### Headings
-Use # symbols to denote headings:
-# Heading 1
-## Heading 2
-### Heading 3
-
-### Emphasis
-**Bold** or __Bold__
-*Italic* or _Italic_
-~~Strikethrough~~
-
-### Lists
-Unordered list:
-- Item 1
-- Item 2
-- Item 3
-
-Ordered list:
-1. First item
-2. Second item
-3. Third item
-
-### Links and Images
-[Link text](https://example.com)
-![Image alt text](https://example.com/image.jpg)
-
-### Code
-Inline code: \`var example = "hello";\`
-
-Code block:
-\`\`\`javascript
-function example() {
-  console.log("Hello, world!");
-}
-\`\`\`
-
-### Blockquotes
-> This is a blockquote.
-
-### Tables
-| Header 1 | Header 2 | Header 3 |
-|----------|----------|----------|
-| Cell 1   | Cell 2   | Cell 3   |
-| Cell 4   | Cell 5   | Cell 6   |
-
-### Horizontal Line
----
-
-Start editing! You can use the toolbar above to quickly insert various Markdown elements.`
-  } else {
-    // 中文默认内容
-    markdownContent.value = `# 欢迎使用Markdown编辑器
-
-这是一个简单的Markdown编辑器，支持实时预览和语法高亮。
-
-## 基本语法
-
-### 标题
-使用 # 符号表示标题，例如：
-# 一级标题
-## 二级标题
-### 三级标题
-
-### 强调
-**粗体** 或 __粗体__
-*斜体* 或 _斜体_
-~~删除线~~
-
-### 列表
-无序列表:
-- 项目1
-- 项目2
-- 项目3
-
-有序列表:
-1. 第一项
-2. 第二项
-3. 第三项
-
-### 链接和图片
-[链接文本](https://example.com)
-![图片描述](https://example.com/image.jpg)
-
-### 代码
-行内代码: \`var example = "hello";\`
-
-代码块:
-\`\`\`javascript
-function example() {
-  console.log("Hello, world!");
-}
-\`\`\`
-
-### 引用
-> 这是一个引用段落。
-
-### 表格
-| 表头1 | 表头2 | 表头3 |
-|-------|-------|-------|
-| 单元格1 | 单元格2 | 单元格3 |
-| 单元格4 | 单元格5 | 单元格6 |
-
-### 水平线
----
-
-开始编辑吧！你可以使用上方的工具栏快速插入各种Markdown元素。`
-  }
-  
-  // 更新预览
-  updatePreview()
-}
 
 // 组件挂载后初始化
 onMounted(() => {
