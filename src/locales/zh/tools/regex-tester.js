@@ -42,8 +42,8 @@ export default {
     global: '全局匹配 (g)',
     caseInsensitive: '忽略大小写 (i)',
     multiline: '多行模式 (m)',
-    dotAll: '点匹配换行 (s)',
-    unicode: 'Unicode (u)',
+    dotAll: '点号匹配所有 (s)',
+    unicode: 'Unicode模式 (u)',
     sticky: '粘性匹配 (y)'
   },
   labels: {
@@ -114,5 +114,20 @@ export default {
       step7: "<strong>探索示例模式</strong>：如果您卡住或需要灵感，请点击'显示示例'按钮查看电子邮件、电话号码、日期等的常见正则表达式模式。您可以点击任何示例以将其加载到测试器中，然后根据特定要求对其进行修改。"
     },
     conclusion: "正则表达式测试器通过提供实时视觉反馈，分解每个匹配的组件，简化了创建和调试正则表达式模式的复杂过程。通过高亮显示实时匹配并分解每个匹配的组件，它弥合了抽象模式语法与实际文本处理应用程序之间的差距。无论您是验证用户输入、从文档中提取数据，还是第一次学习正则表达式，这个交互式工具都能帮助您建立信心和熟练度。随着文本处理继续成为开发、数据分析和内容管理中的基本任务，在视觉工具的帮助下掌握正则表达式成为技术专业人员越来越有价值的技能。"
-  }
+  },
+  match: '匹配',
+  position: '位置',
+  group: '组',
+  resultsWillAppearHere: '正则表达式匹配结果将显示在这里...',
+  regexError: '正则表达式错误: {message}',
+  emailAddress: '电子邮件',
+  phoneNumber: '手机号码(中国)',
+  ipAddress: 'IP地址',
+  dateFormat: '日期(yyyy-mm-dd)',
+  chineseCharacters: '中文字符',
+  phoneNumberExample: '联系方式：13912345678\n微信同号：18887654321\n座机：010-12345678',
+  urlExample: '访问 https://example.com\n或者 http://www.domain.org/path?query=value',
+  ipAddressExample: '服务器地址：192.168.1.1\nDNS：8.8.8.8, 114.114.114.114',
+  dateFormatExample: '开始日期：2023-01-15\n结束日期：2023-02-28\n无效日期：2023-13-45',
+  chineseCharactersExample: 'Hello世界！你好，World!'
 } 

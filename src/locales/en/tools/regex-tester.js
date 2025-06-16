@@ -83,7 +83,7 @@ export default {
         },
         {
           question: "Why isn't my regular expression matching as expected?",
-          answer: "Regular expression debugging can be challenging. Here are common issues and solutions:<br><br>1. <strong>Special characters</strong>: Characters like <code>. * + ? ^ $ ( ) [ ] { } | \\ /</code> have special meanings in regex. To match these literally, escape them with a backslash (\\).<br><br>2. <strong>Greediness</strong>: Quantifiers like <code>*</code> and <code>+</code> are greedy by default, matching as much as possible. Add <code>?</code> after them (<code>*?</code> or <code>+?</code>) to make them non-greedy.<br><br>3. <strong>Missing flags</strong>: Check if you need the global flag (g) to find all matches, or case-insensitive flag (i) for case-independent matching.<br><br>4. <strong>Whitespace and invisible characters</strong>: Be careful of spaces, tabs, newlines, and other invisible characters that might be in your test string.<br><br>5. <strong>Anchors misuse</strong>: <code>^</code> and <code>$</code> anchor the pattern to the start and end of the text (or line with the 'm' flag).<br><br>Our <strong>pattern matching tool</strong> helps identify these issues by providing real-time visual feedback, highlighting matches, and showing detailed match information."
+          answer: "Regular expression debugging can be challenging. Here are common issues and solutions:<br><br>1. <strong>Special characters</strong>: Characters like <code>. * + ? ^ $ ( ) [ ] | \\ /</code> have special meanings in regex. To match these literally, escape them with a backslash (\\).<br><br>2. <strong>Greediness</strong>: Quantifiers like <code>*</code> and <code>+</code> are greedy by default, matching as much as possible. Add <code>?</code> after them (<code>*?</code> or <code>+?</code>) to make them non-greedy.<br><br>3. <strong>Missing flags</strong>: Check if you need the global flag (g) to find all matches, or case-insensitive flag (i) for case-independent matching.<br><br>4. <strong>Whitespace and invisible characters</strong>: Be careful of spaces, tabs, newlines, and other invisible characters that might be in your test string.<br><br>5. <strong>Anchors misuse</strong>: <code>^</code> and <code>$</code> anchor the pattern to the start and end of the text (or line with the 'm' flag).<br><br>Our <strong>pattern matching tool</strong> helps identify these issues by providing real-time visual feedback, highlighting matches, and showing detailed match information."
         }
       ]
     },
@@ -98,5 +98,36 @@ export default {
       step7: "<strong>Explore example patterns</strong>: If you're stuck or need inspiration, click the 'Show Examples' button to see common regex patterns for emails, phone numbers, dates, and more. You can click on any example to load it into the tester, then modify it to fit your specific requirements."
     },
     conclusion: "The Regular Expression Tester simplifies the often complex process of creating and debugging regex patterns by providing immediate visual feedback on your expressions. By highlighting matches in real-time and breaking down the components of each match, it bridges the gap between abstract pattern syntax and practical text processing applications. Whether you're validating user input, extracting data from documents, or learning regex for the first time, this interactive tool helps you build confidence and proficiency with regular expressions. As text processing continues to be a fundamental task in development, data analysis, and content management, mastering regex with the help of visual tools becomes an increasingly valuable skill for technical professionals."
-  }
+  },
+  options: {
+    flags: 'Flags',
+    global: 'Global match (g)',
+    caseInsensitive: 'Case-insensitive (i)',
+    multiline: 'Multiline (m)',
+    dotAll: 'Dot all (s)',
+    unicode: 'Unicode (u)',
+    sticky: 'Sticky (y)'
+  },
+  labels: {
+    pattern: 'Regular Expression',
+    testString: 'Test String',
+    matches: 'Matches',
+    groups: 'Groups',
+    noMatches: 'No matches found'
+  },
+  match: 'Match',
+  position: 'Position',
+  group: 'Group',
+  resultsWillAppearHere: 'Regular expression match results will appear here...',
+  regexError: 'Regular expression error: {message}',
+  emailAddress: 'Email Address',
+  phoneNumber: 'Phone Number (China)',
+  ipAddress: 'IP Address',
+  dateFormat: 'Date (yyyy-mm-dd)',
+  chineseCharacters: 'Chinese Characters',
+  phoneNumberExample: 'Contact: 13912345678\nWeChat: 18887654321\nLandline: 010-12345678',
+  urlExample: 'Visit https://example.com\nOr http://www.domain.org/path?query=value',
+  ipAddressExample: 'Server address: 192.168.1.1\nDNS: 8.8.8.8, 114.114.114.114',
+  dateFormatExample: 'Start date: 2023-01-15\nEnd date: 2023-02-28\nInvalid date: 2023-13-45',
+  chineseCharactersExample: 'Hello世界！你好，World!'
 } 

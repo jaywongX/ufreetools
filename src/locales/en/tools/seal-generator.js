@@ -159,5 +159,7 @@ export default {
     company: 'Company Seal',
     contract: 'Contract Seal',
     finance: 'Finance Seal',
+    legal: 'Legal Seal',
+    personal: 'Personal Seal'
   }
 }; 

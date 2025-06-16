@@ -63,5 +63,8 @@ export default {
   tip2: 'Engage in at least 150 minutes of moderate-intensity aerobic activity per week',
   tip3: 'Avoid prolonged sitting and increase daily physical activity',
   tip4: 'Ensure adequate sleep and hydration',
-  tip5: 'If your BMI is abnormal, consider consulting a doctor or nutritionist for professional advice'
+  tip5: 'If your BMI is abnormal, consider consulting a doctor or nutritionist for professional advice',
+  
+  // 添加这一行
+  emptyStateMessage: 'Enter your height and weight, then click "Calculate BMI"'
 }; 

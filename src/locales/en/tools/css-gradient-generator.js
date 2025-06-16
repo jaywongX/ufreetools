@@ -132,7 +132,7 @@ export default {
         },
         {
           question: "How can I use the generated gradient code in my project?",
-          answer: "Using the gradient code from our tool is straightforward: 1) Create and customize your gradient using the visual controls. 2) Click the 'Copy Code' button to copy the generated CSS to your clipboard. 3) Paste the code into your CSS file or style section of your HTML document. The code can be applied to any CSS property that accepts image values, most commonly the 'background' property. For example, you can paste it directly into a class like '.my-element { background: linear-gradient(90deg, #3498db 0%, #9b59b6 100%); }'. You can also modify the copied code to add additional properties, change the selector, or combine it with other CSS rules. If you need the gradient as an image instead, use our 'Download PNG' feature to save it as a file that can be imported into any application that accepts PNG images."
+          answer: "Using the gradient code from our tool is straightforward: 1) Create and customize your gradient using the visual controls. 2) Click the 'Copy Code' button to copy the generated CSS to your clipboard. 3) Paste the code into your CSS file or style section of your HTML document. The code can be applied to any CSS property that accepts image values, most commonly the 'background' property. You can also modify the copied code to add additional properties, change the selector, or combine it with other CSS rules. If you need the gradient as an image instead, use our 'Download PNG' feature to save it as a file that can be imported into any application that accepts PNG images."
         },
         {
           question: "Can I create transparent gradients with this tool?",

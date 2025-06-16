@@ -5,6 +5,7 @@ export const languages = [
   { code: 'zh', name: '简体中文', chineseName: '简体中文', nativeName: '简体中文' },
   { code: 'en', name: 'English', chineseName: '英文', nativeName: 'English' },
   { code: 'es', name: 'Spanish', chineseName: '西班牙文', nativeName: 'Español' },
+  { code: 'hi', name: 'Hindi', chineseName: '印地文', nativeName: 'हिंदी' },
   // { code: 'fr', name: 'French', chineseName: '法文', nativeName: 'Français' },
   // { code: 'de', name: 'German', chineseName: '德文', nativeName: 'Deutsch' },
   // { code: 'it', name: 'Italian', chineseName: '意大利文', nativeName: 'Italiano' },
