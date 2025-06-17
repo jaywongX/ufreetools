@@ -9,88 +9,66 @@
           </label>
           <div class="space-y-2">
             <div class="flex items-center">
-              <input 
-                type="checkbox" 
-                id="realtime-preview" 
-                v-model="realtimePreview"
-                class="h-4 w-4 text-primary border-gray-300 rounded"
-              />
+              <input type="checkbox" id="realtime-preview" v-model="realtimePreview"
+                class="h-4 w-4 text-primary border-gray-300 rounded" />
               <label for="realtime-preview" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
                 {{ t('tools.markdown-to-html.options.realtimePreview') }}
               </label>
             </div>
             <div class="flex items-center">
-              <input 
-                type="checkbox" 
-                id="scroll-sync" 
-                v-model="scrollSync"
-                class="h-4 w-4 text-primary border-gray-300 rounded"
-              />
+              <input type="checkbox" id="scroll-sync" v-model="scrollSync"
+                class="h-4 w-4 text-primary border-gray-300 rounded" />
               <label for="scroll-sync" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
                 {{ t('tools.markdown-to-html.options.scrollSync') }}
               </label>
             </div>
           </div>
         </div>
-        
+
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             {{ t('tools.markdown-to-html.options.htmlOptions') }}
           </label>
           <div class="space-y-2">
             <div class="flex items-center">
-              <input 
-                type="checkbox" 
-                id="sanitize" 
-                v-model="sanitize"
-                class="h-4 w-4 text-primary border-gray-300 rounded"
-              />
+              <input type="checkbox" id="sanitize" v-model="sanitize"
+                class="h-4 w-4 text-primary border-gray-300 rounded" />
               <label for="sanitize" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
                 {{ t('tools.markdown-to-html.options.sanitize') }}
               </label>
             </div>
             <div class="flex items-center">
-              <input 
-                type="checkbox" 
-                id="include-css" 
-                v-model="includeCss"
-                class="h-4 w-4 text-primary border-gray-300 rounded"
-              />
+              <input type="checkbox" id="include-css" v-model="includeCss"
+                class="h-4 w-4 text-primary border-gray-300 rounded" />
               <label for="include-css" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
                 {{ t('tools.markdown-to-html.options.includeStyle') }}
               </label>
             </div>
           </div>
         </div>
-        
+
         <div>
           <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             {{ t('tools.markdown-to-html.input.loadSample') }}
           </label>
           <div class="flex flex-wrap gap-2">
-            <button 
-              @click="loadSample('basic')"
-              class="px-3 py-1 text-sm rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-            >
+            <button @click="loadSample('basic')"
+              class="px-3 py-1 text-sm rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">
               {{ t('tools.markdown-to-html.samples.basic') }}
             </button>
-            <button 
-              @click="loadSample('extended')"
-              class="px-3 py-1 text-sm rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-            >
+            <button @click="loadSample('extended')"
+              class="px-3 py-1 text-sm rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">
               {{ t('tools.markdown-to-html.samples.extended') }}
             </button>
-            <button 
-              @click="loadSample('article')"
-              class="px-3 py-1 text-sm rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-            >
+            <button @click="loadSample('article')"
+              class="px-3 py-1 text-sm rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">
               {{ t('tools.markdown-to-html.samples.article') }}
             </button>
           </div>
         </div>
       </div>
     </div>
-    
+
     <!-- 输入/输出区域 -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <!-- 左侧：Markdown输入区域 -->
@@ -99,35 +77,31 @@
           <div class="flex justify-between items-center p-3 border-b border-gray-200 dark:border-gray-700">
             <h3 class="font-medium">{{ t('tools.markdown-to-html.input.title') }}</h3>
             <div class="space-x-2">
-              <button 
-                @click="clearInput"
+              <button @click="clearInput"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-                :title="t('tools.markdown-to-html.input.clearInput')"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                :title="t('tools.markdown-to-html.input.clearInput')">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                 </svg>
               </button>
-              <button 
-                @click="pasteFromClipboard"
+              <button @click="pasteFromClipboard"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-                :title="t('tools.markdown-to-html.input.paste')"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                :title="t('tools.markdown-to-html.input.paste')">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
               </button>
             </div>
           </div>
           <div class="p-3">
-            <textarea 
-              ref="markdownInput"
-              v-model="markdownText" 
+            <textarea ref="markdownInput" v-model="markdownText"
               class="w-full h-80 p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono text-sm"
-              :placeholder="t('tools.markdown-to-html.input.placeholder')"
-              @input="onMarkdownChange"
-              @scroll="handleMarkdownScroll"
-            ></textarea>
+              :placeholder="t('tools.markdown-to-html.input.placeholder')" @input="onMarkdownChange"
+              @scroll="handleMarkdownScroll"></textarea>
           </div>
         </div>
         <div class="text-sm text-gray-600 dark:text-gray-400 flex justify-between">
@@ -135,85 +109,81 @@
           <span>{{ t('tools.markdown-to-html.input.lineCount') }}: {{ markdownText.split('\n').length }}</span>
         </div>
       </div>
-      
+
       <!-- 右侧：HTML预览区域 -->
       <div>
         <div class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 mb-2">
           <div class="flex justify-between items-center p-3 border-b border-gray-200 dark:border-gray-700">
             <div class="flex space-x-2">
-              <button 
-                @click="previewMode = 'preview'"
-                class="px-3 py-1 text-sm rounded"
-                :class="previewMode === 'preview' ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600'"
-              >
+              <button @click="previewMode = 'preview'" class="px-3 py-1 text-sm rounded"
+                :class="previewMode === 'preview' ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600'">
                 {{ t('tools.markdown-to-html.output.previewTab') }}
               </button>
-              <button 
-                @click="previewMode = 'html'"
-                class="px-3 py-1 text-sm rounded"
-                :class="previewMode === 'html' ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600'"
-              >
+              <button @click="previewMode = 'html'" class="px-3 py-1 text-sm rounded"
+                :class="previewMode === 'html' ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600'">
                 {{ t('tools.markdown-to-html.output.htmlTab') }}
               </button>
             </div>
             <div class="space-x-2">
-              <button 
-                @click="refreshPreview"
+              <button @click="refreshPreview"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-                :title="t('tools.markdown-to-html.actions.convert')"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                :title="t('tools.markdown-to-html.actions.convert')">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </button>
-              <button 
-                @click="copyOutput"
+              <button @click="copyOutput"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-                :title="t('tools.markdown-to-html.output.copyOutput')"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-8m-10 0h4l-5-5-5 5h4v8" />
+                :title="t('tools.markdown-to-html.output.copyOutput')">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-8m-10 0h4l-5-5-5 5h4v8" />
                 </svg>
               </button>
-              <button 
-                @click="downloadHtml"
+              <button @click="downloadHtml"
                 class="px-2 py-1 text-xs rounded bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
-                :title="t('tools.markdown-to-html.output.download')"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                :title="t('tools.markdown-to-html.output.download')">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </button>
             </div>
           </div>
           <div class="p-3 h-[21.5rem] overflow-auto" ref="previewContainer">
             <!-- 渲染HTML预览 -->
-            <div v-if="previewMode === 'preview'" class="prose dark:prose-invert max-w-none w-full markdown-content" v-html="htmlOutput" ref="htmlPreview"></div>
-            
+            <div v-if="previewMode === 'preview'" class="prose dark:prose-invert max-w-none w-full markdown-content"
+              v-html="htmlOutput" ref="htmlPreview"></div>
+
             <!-- 显示HTML代码 -->
-            <pre v-else class="text-sm w-full h-full p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono overflow-auto"><code>{{ htmlOutput }}</code></pre>
+            <pre v-else
+              class="text-sm w-full h-full p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-mono overflow-auto"><code>{{ htmlOutput }}</code></pre>
           </div>
         </div>
         <div class="text-sm text-gray-600 dark:text-gray-400">
-          {{ previewMode === 'preview' ? t('tools.markdown-to-html.output.previewMode') : t('tools.markdown-to-html.output.sourceMode') }}
+          {{ previewMode === 'preview' ? t('tools.markdown-to-html.output.previewMode') :
+            t('tools.markdown-to-html.output.sourceMode') }}
         </div>
       </div>
     </div>
-    
+
     <!-- 转换状态提示 -->
     <div class="mt-4 text-sm text-gray-600 dark:text-gray-400" v-if="lastConversionTime">
-      <p>{{ t('tools.markdown-to-html.status.lastConversion') }}: {{ new Date(lastConversionTime).toLocaleTimeString() }}</p>
+      <p>{{ t('tools.markdown-to-html.status.lastConversion') }}: {{ new Date(lastConversionTime).toLocaleTimeString()
+        }}</p>
     </div>
-    
+
     <!-- 复制成功提示 -->
-    <div 
-      v-if="copySuccess" 
+    <div v-if="copySuccess"
       class="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg transition-opacity duration-300"
-      :class="{'opacity-100': copySuccess, 'opacity-0': !copySuccess}"
-    >
+      :class="{ 'opacity-100': copySuccess, 'opacity-0': !copySuccess }">
       {{ t('tools.markdown-to-html.alerts.copied') }}
     </div>
-    
+
     <!-- 添加文章组件 -->
     <MarkdownToHtmlArticle />
   </div>
@@ -267,12 +237,12 @@ function convertMarkdownToHtml() {
   try {
     // 解析Markdown获取HTML
     let html = md.render(markdownText.value)
-    
+
     // 如果需要，对HTML进行消毒
     if (sanitize.value) {
       html = DOMPurify.sanitize(html)
     }
-    
+
     // 如果需要包含基础CSS样式
     if (includeCss.value && previewMode.value === 'html') {
       html = `<!DOCTYPE html>
@@ -353,7 +323,7 @@ ${html}
 </body>
 </html>`
     }
-    
+
     htmlOutput.value = html
     lastConversionTime.value = Date.now()
   } catch (error) {
@@ -403,13 +373,13 @@ async function copyOutput() {
 function downloadHtml() {
   const blob = new Blob([htmlOutput.value], { type: 'text/html' })
   const url = URL.createObjectURL(blob)
-  
+
   const a = document.createElement('a')
   a.href = url
   a.download = 'markdown-export.html'
   document.body.appendChild(a)
   a.click()
-  
+
   // 清理
   setTimeout(() => {
     document.body.removeChild(a)
@@ -422,17 +392,17 @@ function handleMarkdownScroll(e) {
   if (!scrollSync.value || isScrolling.value || !markdownInput.value || !previewContainer.value || previewMode.value !== 'preview') {
     return
   }
-  
+
   isScrolling.value = true
-  
+
   const sourceElement = markdownInput.value
   const targetElement = previewContainer.value
-  
+
   const percentage = sourceElement.scrollTop / (sourceElement.scrollHeight - sourceElement.clientHeight)
   const targetScrollTop = percentage * (targetElement.scrollHeight - targetElement.clientHeight)
-  
+
   targetElement.scrollTop = targetScrollTop
-  
+
   setTimeout(() => {
     isScrolling.value = false
   }, 100)
@@ -443,17 +413,17 @@ function handlePreviewScroll() {
   if (!scrollSync.value || isScrolling.value || !markdownInput.value || !previewContainer.value || previewMode.value !== 'preview') {
     return
   }
-  
+
   isScrolling.value = true
-  
+
   const sourceElement = previewContainer.value
   const targetElement = markdownInput.value
-  
+
   const percentage = sourceElement.scrollTop / (sourceElement.scrollHeight - sourceElement.clientHeight)
   const targetScrollTop = percentage * (targetElement.scrollHeight - targetElement.clientHeight)
-  
+
   targetElement.scrollTop = targetScrollTop
-  
+
   setTimeout(() => {
     isScrolling.value = false
   }, 100)
@@ -463,11 +433,11 @@ function handlePreviewScroll() {
 function loadSample(type) {
   // 记录当前加载的示例类型
   currentSampleType.value = type
-  
+
   // 使用 i18n 当前语言
   const currentLocale = locale.value;
-  
-  switch(type) {
+
+  switch (type) {
     case 'basic':
       if (currentLocale === 'en') {
         markdownText.value = `# Markdown Basic Syntax Example
@@ -544,7 +514,7 @@ console.log(greeting('World'));
 
 ***
 `
-      } else {
+      } else if (currentLocale === 'zh') {
         markdownText.value = `# Markdown基础语法示例
 
 ## 1. 标题
@@ -619,6 +589,246 @@ console.log(greeting('World'));
 
 ***
 `
+      } else if (currentLocale === 'es') {
+        markdownText.value = `# Ejemplo de Sintaxis Básica de Markdown
+
+## 1. Encabezados
+
+# Encabezado 1
+## Encabezado 2
+### Encabezado 3
+#### Encabezado 4
+##### Encabezado 5
+###### Encabezado 6
+
+## 2. Formato de Texto
+
+Texto plano
+
+**Texto en negrita**
+
+*Texto en cursiva*
+
+~~Texto tachado~~
+
+**_Negrita y cursiva_**
+
+## 3. Listas
+
+### Listas sin Orden
+- Elemento 1
+- Elemento 2
+  - Sub-elemento A
+  - Sub-elemento B
+
+### Listas Ordenadas
+1. Primer elemento
+2. Segundo elemento
+3. Tercer elemento
+
+## 4. Enlaces e Imágenes
+
+[Enlace a Google](https://www.google.com)
+
+![Ejemplo de imagen](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBmaWxsPSIjY2NjY2NjIiAvPgogICAgPHRleHQgeD0iNzUiIHk9Ijc1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZpbGw9IiM0NDQ0NDQiPjE1MHgxNTA8L3RleHQ+Cjwvc3ZnPg==)
+
+## 5. Citas
+
+> Esto es una cita
+> 
+> Las citas pueden abarcar múltiples líneas
+
+## 6. Código
+
+Código en línea: \`console.log('Hola Mundo')\`
+
+Bloque de código:
+\`\`\`javascript
+function saludo(nombre) {
+  return \`Hola, \${nombre}!\`;
+}
+console.log(saludo('Mundo'));
+\`\`\`
+
+## 7. Tablas
+
+| Nombre | Edad | Ocupación |
+| ------ | ---- | --------- |
+| Juan   | 25   | Ingeniero |
+| María  | 30   | Diseñadora |
+| Roberto | 28  | Gerente de Producto |
+
+## 8. Reglas Horizontales
+
+---
+
+***
+`
+      } else if (currentLocale === 'hi') {
+        markdownText.value = `# मार्कडाउन बेसिक सिंटैक्स उदाहरण
+
+## 1. शीर्षक
+
+# शीर्षक 1
+## शीर्षक 2
+### शीर्षक 3
+#### शीर्षक 4
+##### शीर्षक 5
+###### शीर्षक 6
+
+## 2. टेक्स्ट फॉर्मेटिंग
+
+सादा टेक्स्ट
+
+**बोल्ड टेक्स्ट**
+
+*इटैलिक टेक्स्ट*
+
+~~स्ट्राइकथ्रू टेक्स्ट~~
+
+**_बोल्ड और इटैलिक_**
+
+## 3. सूचियाँ
+
+### अनऑर्डर्ड सूचियाँ
+- आइटम 1
+- आइटम 2
+  - सब-आइटम A
+  - सब-आइटम B
+
+### ऑर्डर्ड सूचियाँ
+1. पहला आइटम
+2. दूसरा आइटम
+3. तीसरा आइटम
+
+## 4. लिंक और छवियाँ
+
+[गूगल पर जाएं](https://www.google.com)
+
+![छवि उदाहरण](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBmaWxsPSIjY2NjY2NjIiAvPgogICAgPHRleHQgeD0iNzUiIHk9Ijc1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZpbGw9IiM0NDQ0NDQiPjE1MHgxNTA8L3RleHQ+Cjwvc3ZnPg==)
+
+## 5. ब्लॉकक्वोट्स
+
+> यह एक ब्लॉकक्वोट है
+> 
+> ब्लॉकक्वोट्स कई पंक्तियों में हो सकते हैं
+
+## 6. कोड
+
+इनलाइन कोड: \`console.log('नमस्ते दुनिया')\`
+
+कोड ब्लॉक:
+\`\`\`javascript
+function नमस्कार(नाम) {
+  return \`नमस्ते, \${नाम}!\`;
+}
+console.log(नमस्कार('दुनिया'));
+\`\`\`
+
+## 7. तालिकाएँ
+
+| नाम | उम्र | व्यवसाय |
+| ---- | --- | ---------- |
+| राहुल | 25  | इंजीनियर   |
+| प्रिया | 30  | डिज़ाइनर   |
+| अमित  | 28  | प्रोडक्ट मैनेजर |
+
+## 8. क्षैतिज रेखाएँ
+
+---
+
+***
+`
+      } else if (currentLocale === 'ja') {
+        markdownText.value = `# Markdown：シンプルで強力なテキスト書式設定言語
+
+## はじめに
+
+デジタルコンテンツ作成の時代において、**Markdown**は技術文書、ブログ執筆、コンテンツ管理のための軽量マークアップ言語として好まれています。この記事ではMarkdownの歴史、基本構文、広範な応用について探ります。
+
+## Markdownの歴史と設計哲学
+
+Markdownは2004年にJohn GruberとAaron Swartzによって作成されました。その設計目標は、構造的に有効なHTMLに変換できる、読みやすく書きやすいプレーンテキスト形式で書けるようにすることでした。
+
+> 「Markdownの書式構文の最優先の設計目標は、できるだけ読みやすくすることです。Markdownでフォーマットされた文書は、タグや書式指示で装飾されているように見えることなく、そのままプレーンテキストとして公開できるべきだという考えです。」
+> — John Gruber
+
+この設計哲学がMarkdownを他のマークアップ言語と区別しています：**外観よりもコンテンツに焦点を当てています**。
+
+## Markdownの基本構文
+
+Markdownはシンプルな構文ルールのセットを提供します。以下にいくつかの基本要素を示します：
+
+### 1. 見出し
+
+Markdownでは#記号を使って見出しレベルを示します：
+
+\`\`\`markdown
+# 見出し1
+## 見出し2
+### 見出し3
+\`\`\`
+
+### 2. 書式付きテキスト
+
+- **太字**: \`**テキスト**\` または \`__テキスト__\`
+- *斜体*: \`*テキスト*\` または \`_テキスト_\`
+- ~~取り消し線~~: \`~~テキスト~~\`
+
+### 3. リスト
+
+順序なしリストはハイフン、プラス記号、またはアスタリスクをリストマーカーとして使用します：
+
+- 項目1
+- 項目2
+  - サブ項目A
+  - サブ項目B
+
+順序付きリストはピリオドの後に数字を使用します：
+
+1. 最初の項目
+2. 2番目の項目
+3. 3番目の項目
+
+### 4. リンクと画像
+
+リンク構文: \`[リンクテキスト](URL)\`  
+画像構文: \`![代替テキスト](画像URL)\`
+
+### 5. コードブロック
+
+\`\`\`javascript
+function helloWorld() {
+  console.log("こんにちは、世界！");
+}
+\`\`\`
+
+## Markdownの広範な応用
+
+Markdownはさまざまなプラットフォームやツールで広く使用されています：
+
+| プラットフォーム/ツール | 応用 |
+| ------------- | ----------- |
+| GitHub        | コード文書、Issues、Pull Requests |
+| Stack Overflow | 質問のフォーマット |
+| WordPress     | ブログ執筆 |
+| Discord/Slack | メッセージのフォーマット |
+| Notion        | ノートと知識管理 |
+
+## 結論
+
+シンプルさ、効率性、クロスプラットフォーム機能により、Markdownはコンテンツ作成者にとって貴重なツールとなっています。技術文書、ブログ投稿、または単純なメモを書く場合でも、Markdownは一貫性のある効率的な執筆体験を提供します。
+
+Markdownの学習は難しくありませんが、習得することでデジタル執筆の生産性が大幅に向上します。まだMarkdownを試していない場合は、今が始めるのに最適なタイミングです！
+
+---
+
+*著者：Markdown愛好家*  
+*公開日：2023年10月15日*
+`
+      } else {
+        console.error('Invalid locale:', currentLocale);
+        throw new Error('Invalid locale');
       }
       break;
     case 'extended':
@@ -699,7 +909,7 @@ graph TD;
 
 [TOC]
 `
-      } else {
+      } else if (currentLocale === 'zh') {
         markdownText.value = `# Markdown扩展语法
 
 ## 1. 任务列表
@@ -776,6 +986,240 @@ graph TD;
 
 [TOC]
 `
+      } else if (currentLocale === 'es') {
+        markdownText.value = `# Sintaxis Extendida de Markdown
+
+## 1. Listas de Tareas
+
+- [x] Tarea completada
+- [ ] Tarea pendiente
+- [x] Otra tarea completada
+
+## 2. Emojis
+
+Soporta emojis estilo GitHub como :smile: :heart: :thumbsup:
+
+## 3. Fórmulas Matemáticas (requiere extensión)
+
+Fórmula en línea: $E=mc^2$
+
+Fórmula en bloque:
+
+$$
+\\frac{n!}{k!(n-k)!} = \\binom{n}{k}
+$$
+
+## 4. Notas al Pie
+
+Aquí hay una referencia a nota al pie[^1]
+
+[^1]: Este es el contenido de la nota al pie.
+
+## 5. Listas de Definición
+
+Término 1
+: Definición 1
+
+Término 2
+: Definición 2a
+: Definición 2b
+
+## 6. Resaltado (requiere extensión)
+
+Este es un ==texto resaltado==
+
+## 7. Superíndice y Subíndice (requiere extensión)
+
+Superíndice: X^2^
+Subíndice: H~2~O
+
+## 8. Advertencias (requiere extensión)
+
+:::warning
+Este es un mensaje de advertencia
+:::
+
+:::info
+Este es un mensaje informativo
+:::
+
+## 9. Contenedores Personalizados (requiere extensión)
+
+::: details Haga clic para expandir detalles
+Aquí está el contenido detallado
+:::
+
+## 10. Diagramas de Flujo (requiere extensión)
+
+\`\`\`mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+\`\`\`
+
+## 11. Tabla de Contenidos (requiere extensión)
+
+[TOC]
+`
+      } else if (currentLocale === 'hi') {
+        markdownText.value = `# मार्कडाउन विस्तारित सिंटैक्स
+
+## 1. कार्य सूचियाँ
+
+- [x] पूर्ण किया गया कार्य
+- [ ] लंबित कार्य
+- [x] एक और पूर्ण किया गया कार्य
+
+## 2. इमोजी
+
+GitHub-शैली के इमोजी का समर्थन करता है जैसे :smile: :heart: :thumbsup:
+
+## 3. गणित सूत्र (एक्सटेंशन की आवश्यकता है)
+
+इनलाइन सूत्र: $E=mc^2$
+
+ब्लॉक सूत्र:
+
+$$
+\\frac{n!}{k!(n-k)!} = \\binom{n}{k}
+$$
+
+## 4. फुटनोट्स
+
+यहाँ एक फुटनोट संदर्भ है[^1]
+
+[^1]: यह फुटनोट सामग्री है।
+
+## 5. परिभाषा सूचियाँ
+
+शब्द 1
+: परिभाषा 1
+
+शब्द 2
+: परिभाषा 2a
+: परिभाषा 2b
+
+## 6. हाइलाइटिंग (एक्सटेंशन की आवश्यकता है)
+
+यह ==हाइलाइट किया गया टेक्स्ट== है
+
+## 7. सुपरस्क्रिप्ट और सबस्क्रिप्ट (एक्सटेंशन की आवश्यकता है)
+
+सुपरस्क्रिप्ट: X^2^
+सबस्क्रिप्ट: H~2~O
+
+## 8. चेतावनियाँ (एक्सटेंशन की आवश्यकता है)
+
+:::warning
+यह एक चेतावनी संदेश है
+:::
+
+:::info
+यह एक सूचनात्मक संदेश है
+:::
+
+## 9. कस्टम कंटेनर्स (एक्सटेंशन की आवश्यकता है)
+
+::: details विवरण देखने के लिए क्लिक करें
+यहाँ विस्तृत सामग्री है
+:::
+
+## 10. फ्लोचार्ट्स (एक्सटेंशन की आवश्यकता है)
+
+\`\`\`mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+\`\`\`
+
+## 11. विषय-सूची (एक्सटेंशन की आवश्यकता है)
+
+[TOC]
+`
+      } else if (currentLocale === 'ja') {
+        markdownText.value = `# Markdown拡張構文
+
+## 1. タスクリスト
+
+- [x] 完了したタスク
+- [ ] 保留中のタスク
+- [x] もう一つの完了したタスク
+
+## 2. 絵文字
+
+GitHub形式の絵文字をサポートします :smile: :heart: :thumbsup:
+
+## 3. 数式（拡張機能が必要）
+
+インライン数式: $E=mc^2$
+
+ブロック数式:
+
+$$
+\\frac{n!}{k!(n-k)!} = \\binom{n}{k}
+$$
+
+## 4. 脚注
+
+ここに脚注の参照があります[^1]
+
+[^1]: これは脚注の内容です。
+
+## 5. 定義リスト
+
+用語1
+: 定義1
+
+用語2
+: 定義2a
+: 定義2b
+
+## 6. ハイライト（拡張機能が必要）
+
+これは==ハイライトされたテキスト==です
+
+## 7. 上付き文字と下付き文字（拡張機能が必要）
+
+上付き文字: X^2^
+下付き文字: H~2~O
+
+## 8. 警告（拡張機能が必要）
+
+:::warning
+これは警告メッセージです
+:::
+
+:::info
+これは情報メッセージです
+:::
+
+## 9. カスタムコンテナ（拡張機能が必要）
+
+::: details クリックして詳細を表示
+ここに詳細な内容があります
+:::
+
+## 10. フローチャート（拡張機能が必要）
+
+\`\`\`mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+\`\`\`
+
+## 11. 目次（拡張機能が必要）
+
+[TOC]
+`
+      } else {
+        console.error('Invalid locale:', currentLocale);
+        throw new Error('Invalid locale');
       }
       break;
     case 'article':
@@ -866,7 +1310,7 @@ Learning Markdown isn't difficult, but mastering it will significantly enhance y
 *Author: Markdown Enthusiast*  
 *Published: October 15, 2023*
 `
-      } else {
+      } else if (currentLocale === 'zh') {
         markdownText.value = `# Markdown: 简单而强大的文本格式语言
 
 ## 引言
@@ -953,10 +1397,274 @@ Markdown凭借其简洁、高效和跨平台的特性，已经成为内容创作
 *文章作者: Markdown爱好者*  
 *发布日期: 2023年10月15日*
 `
+      } else if (currentLocale === 'es') {
+        markdownText.value = `# Markdown: Un Lenguaje de Formato de Texto Simple pero Poderoso
+
+## Introducción
+
+En la era de la creación de contenido digital, **Markdown** ha surgido como el lenguaje de marcado ligero preferido para documentación técnica, escritura de blogs y gestión de contenido. Este artículo explora la historia de Markdown, su sintaxis básica y sus amplias aplicaciones.
+
+## Historia y Filosofía de Diseño de Markdown
+
+Markdown fue creado por John Gruber y Aaron Swartz en 2004. Su objetivo de diseño era permitir que las personas escribieran en un formato de texto plano fácil de leer y escribir que pudiera convertirse en HTML estructuralmente válido.
+
+> "El objetivo principal de diseño para la sintaxis de formato de Markdown es hacerla lo más legible posible. La idea es que un documento con formato Markdown debería poder publicarse tal cual, como texto plano, sin parecer que ha sido marcado con etiquetas o instrucciones de formato."
+> — John Gruber
+
+Esta filosofía de diseño distingue a Markdown de otros lenguajes de marcado: **se centra en el contenido más que en la apariencia**.
+
+## Sintaxis Básica de Markdown
+
+Markdown ofrece un conjunto simple de reglas de sintaxis. Aquí hay algunos elementos básicos:
+
+### 1. Encabezados
+
+Markdown utiliza el símbolo # para denotar niveles de encabezado:
+
+\`\`\`markdown
+# Encabezado 1
+## Encabezado 2
+### Encabezado 3
+\`\`\`
+
+### 2. Texto Formateado
+
+- **Negrita**: \`**texto**\` o \`__texto__\`
+- *Cursiva*: \`*texto*\` o \`_texto_\`
+- ~~Tachado~~: \`~~texto~~\`
+
+### 3. Listas
+
+Las listas sin orden utilizan guiones, signos más o asteriscos como marcadores:
+
+- Elemento 1
+- Elemento 2
+  - Sub-elemento A
+  - Sub-elemento B
+
+Las listas ordenadas utilizan números seguidos de puntos:
+
+1. Primer elemento
+2. Segundo elemento
+3. Tercer elemento
+
+### 4. Enlaces e Imágenes
+
+Sintaxis de enlace: \`[texto del enlace](URL)\`  
+Sintaxis de imagen: \`![texto alternativo](URL de la imagen)\`
+
+### 5. Bloques de Código
+
+\`\`\`javascript
+function holaMundo() {
+  console.log("¡Hola, mundo!");
+}
+\`\`\`
+
+## Aplicaciones Generalizadas de Markdown
+
+Markdown se utiliza ampliamente en diversas plataformas y herramientas:
+
+| Plataforma/Herramienta | Aplicación |
+| ---------------------- | ---------- |
+| GitHub                 | Documentación de código, Issues, Pull Requests |
+| Stack Overflow         | Formato de preguntas |
+| WordPress              | Escritura de blogs |
+| Discord/Slack          | Formato de mensajes |
+| Notion                 | Notas y gestión de conocimiento |
+
+## Conclusión
+
+Con su simplicidad, eficiencia y capacidades multiplataforma, Markdown se ha convertido en una herramienta invaluable para creadores de contenido. Ya sea escribiendo documentación técnica, publicaciones de blog o simples notas, Markdown proporciona una experiencia de escritura consistente y eficiente.
+
+Aprender Markdown no es difícil, pero dominarlo mejorará significativamente su productividad en escritura digital. Si aún no ha probado Markdown, ¡ahora es el momento perfecto para empezar!
+
+---
+
+*Autor: Entusiasta de Markdown*  
+*Publicado: 15 de octubre de 2023*
+`
+      } else if (currentLocale === 'hi') {
+        markdownText.value = `# मार्कडाउन: एक सरल लेकिन शक्तिशाली टेक्स्ट फॉर्मेटिंग भाषा
+
+## परिचय
+
+डिजिटल सामग्री निर्माण के युग में, **मार्कडाउन** तकनीकी दस्तावेज़ीकरण, ब्लॉग लेखन और सामग्री प्रबंधन के लिए पसंदीदा हल्के मार्कअप भाषा के रूप में उभरा है। यह लेख मार्कडाउन के इतिहास, बुनियादी सिंटैक्स और व्यापक अनुप्रयोगों का पता लगाता है।
+
+## मार्कडाउन का इतिहास और डिज़ाइन दर्शन
+
+मार्कडाउन 2004 में जॉन ग्रूबर और एरन स्वार्ट्ज द्वारा बनाया गया था। इसका डिज़ाइन लक्ष्य लोगों को एक आसानी से पढ़ने योग्य, आसानी से लिखने योग्य सादा टेक्स्ट प्रारूप में लिखने में सक्षम बनाना था जिसे संरचनात्मक रूप से वैध HTML में परिवर्तित किया जा सकता था।
+
+> "मार्कडाउन के फॉर्मेटिंग सिंटैक्स के लिए अधिभावी डिज़ाइन लक्ष्य इसे जितना संभव हो उतना पठनीय बनाना है। विचार यह है कि मार्कडाउन-फॉर्मेटेड दस्तावेज़ जैसा है, सादे टेक्स्ट के रूप में प्रकाशित किया जाना चाहिए, बिना इस तरह दिखे कि इसे टैग या फॉर्मेटिंग निर्देशों के साथ चिह्नित किया गया है।"
+> — जॉन ग्रूबर
+
+यह डिज़ाइन दर्शन मार्कडाउन को अन्य मार्कअप भाषाओं से अलग करता है: **यह उपस्थिति के बजाय सामग्री पर केंद्रित है**।
+
+## बेसिक मार्कडाउन सिंटैक्स
+
+मार्कडाउन सिंटैक्स नियमों का एक सरल सेट प्रदान करता है। यहां कुछ बुनियादी तत्व हैं:
+
+### 1. शीर्षक
+
+मार्कडाउन शीर्षक स्तरों को दर्शाने के लिए # प्रतीक का उपयोग करता है:
+
+\`\`\`markdown
+# शीर्षक 1
+## शीर्षक 2
+### शीर्षक 3
+\`\`\`
+
+### 2. फॉर्मेटेड टेक्स्ट
+
+- **बोल्ड**: \`**टेक्स्ट**\` या \`__टेक्स्ट__\`
+- *इटैलिक*: \`*टेक्स्ट*\` या \`_टेक्स्ट_\`
+- ~~स्ट्राइकथ्रू~~: \`~~टेक्स्ट~~\`
+
+### 3. सूचियाँ
+
+अनऑर्डर्ड सूचियाँ हाइफन, प्लस चिह्न, या तारांकन को सूची मार्कर के रूप में उपयोग करती हैं:
+
+- आइटम 1
+- आइटम 2
+  - सब-आइटम A
+  - सब-आइटम B
+
+ऑर्डर्ड सूचियाँ अवधि के बाद संख्याओं का उपयोग करती हैं:
+
+1. पहला आइटम
+2. दूसरा आइटम
+3. तीसरा आइटम
+
+### 4. लिंक और छवियाँ
+
+लिंक सिंटैक्स: \`[लिंक टेक्स्ट](URL)\`  
+छवि सिंटैक्स: \`![वैकल्पिक टेक्स्ट](छवि URL)\`
+
+### 5. कोड ब्लॉक्स
+
+\`\`\`javascript
+function नमस्तेदुनिया() {
+  console.log("नमस्ते, दुनिया!");
+}
+\`\`\`
+
+## मार्कडाउन के व्यापक अनुप्रयोग
+
+मार्कडाउन का उपयोग विभिन्न प्लेटफॉर्म और टूल्स में व्यापक रूप से किया जाता है:
+
+| प्लेटफॉर्म/टूल | अनुप्रयोग |
+| ------------- | ----------- |
+| GitHub        | कोड दस्तावेज़ीकरण, इश्यूज़, पुल रिक्वेस्ट्स |
+| Stack Overflow | प्रश्न फॉर्मेटिंग |
+| WordPress     | ब्लॉग लेखन |
+| Discord/Slack | संदेश फॉर्मेटिंग |
+| Notion        | नोट्स और ज्ञान प्रबंधन |
+
+## निष्कर्ष
+
+अपनी सादगी, दक्षता और क्रॉस-प्लेटफॉर्म क्षमताओं के साथ, मार्कडाउन सामग्री निर्माताओं के लिए एक अमूल्य उपकरण बन गया है। चाहे तकनीकी दस्तावेज़ीकरण, ब्लॉग पोस्ट या सरल नोट्स लिख रहे हों, मार्कडाउन एक सुसंगत और कुशल लेखन अनुभव प्रदान करता है।
+
+मार्कडाउन सीखना मुश्किल नहीं है, लेकिन इसमें महारत हासिल करने से आपकी डिजिटल लेखन उत्पादकता में काफी वृद्धि होगी। अगर आपने अभी तक मार्कडाउन का प्रयास नहीं किया है, तो अब शुरू करने का एकदम सही समय है!
+
+---
+
+*लेखक: मार्कडाउन उत्साही*  
+*प्रकाशित: 15 अक्टूबर, 2023*
+`
+      } else if (currentLocale === 'ja') {
+        markdownText.value = `# Markdown：シンプルで強力なテキスト書式設定言語
+
+## はじめに
+
+デジタルコンテンツ作成の時代において、**Markdown**は技術文書、ブログ執筆、コンテンツ管理のための軽量マークアップ言語として好まれています。この記事ではMarkdownの歴史、基本構文、広範な応用について探ります。
+
+## Markdownの歴史と設計哲学
+
+Markdownは2004年にJohn GruberとAaron Swartzによって作成されました。その設計目標は、構造的に有効なHTMLに変換できる、読みやすく書きやすいプレーンテキスト形式で書けるようにすることでした。
+
+> 「Markdownの書式構文の最優先の設計目標は、できるだけ読みやすくすることです。Markdownでフォーマットされた文書は、タグや書式指示で装飾されているように見えることなく、そのままプレーンテキストとして公開できるべきだという考えです。」
+> — John Gruber
+
+この設計哲学がMarkdownを他のマークアップ言語と区別しています：**外観よりもコンテンツに焦点を当てています**。
+
+## Markdownの基本構文
+
+Markdownはシンプルな構文ルールのセットを提供します。以下にいくつかの基本要素を示します：
+
+### 1. 見出し
+
+Markdownでは#記号を使って見出しレベルを示します：
+
+\`\`\`markdown
+# 見出し1
+## 見出し2
+### 見出し3
+\`\`\`
+
+### 2. 書式付きテキスト
+
+- **太字**: \`**テキスト**\` または \`__テキスト__\`
+- *斜体*: \`*テキスト*\` または \`_テキスト_\`
+- ~~取り消し線~~: \`~~テキスト~~\`
+
+### 3. リスト
+
+順序なしリストはハイフン、プラス記号、またはアスタリスクをリストマーカーとして使用します：
+
+- 項目1
+- 項目2
+  - サブ項目A
+  - サブ項目B
+
+順序付きリストはピリオドの後に数字を使用します：
+
+1. 最初の項目
+2. 2番目の項目
+3. 3番目の項目
+
+### 4. リンクと画像
+
+リンク構文: \`[リンクテキスト](URL)\`  
+画像構文: \`![代替テキスト](画像URL)\`
+
+### 5. コードブロック
+
+\`\`\`javascript
+function helloWorld() {
+  console.log("こんにちは、世界！");
+}
+\`\`\`
+
+## Markdownの広範な応用
+
+Markdownはさまざまなプラットフォームやツールで広く使用されています：
+
+| プラットフォーム/ツール | 応用 |
+| ------------- | ----------- |
+| GitHub        | コード文書、Issues、Pull Requests |
+| Stack Overflow | 質問のフォーマット |
+| WordPress     | ブログ執筆 |
+| Discord/Slack | メッセージのフォーマット |
+| Notion        | ノートと知識管理 |
+
+## 結論
+
+シンプルさ、効率性、クロスプラットフォーム機能により、Markdownはコンテンツ作成者にとって貴重なツールとなっています。技術文書、ブログ投稿、または単純なメモを書く場合でも、Markdownは一貫性のある効率的な執筆体験を提供します。
+
+Markdownの学習は難しくありませんが、習得することでデジタル執筆の生産性が大幅に向上します。まだMarkdownを試していない場合は、今が始めるのに最適なタイミングです！
+
+---
+
+*著者：Markdown愛好家*  
+*公開日：2023年10月15日*
+`
+      } else {
+        console.error('Invalid locale:', currentLocale);
+        throw new Error('Invalid locale');
       }
       break;
   }
-  
+
   convertMarkdownToHtml()
 }
 
@@ -965,7 +1673,7 @@ onMounted(() => {
   if (previewContainer.value) {
     previewContainer.value.addEventListener('scroll', handlePreviewScroll)
   }
-  
+
   // 初始加载示例
   loadSample('basic')
 })
@@ -1016,77 +1724,93 @@ watch(locale, (newLocale) => {
   margin-top: 0.67em;
   margin-bottom: 0.67em;
 }
+
 .markdown-content h2 {
   font-size: 1.5em;
   margin-top: 0.83em;
   margin-bottom: 0.83em;
 }
+
 .markdown-content h3 {
   font-size: 1.17em;
   margin-top: 1em;
   margin-bottom: 1em;
 }
+
 .markdown-content h4 {
   font-size: 1em;
   margin-top: 1.33em;
   margin-bottom: 1.33em;
 }
+
 .markdown-content h5 {
   font-size: 0.83em;
   margin-top: 1.67em;
   margin-bottom: 1.67em;
 }
+
 .markdown-content h6 {
   font-size: 0.67em;
   margin-top: 2.33em;
   margin-bottom: 2.33em;
 }
+
 .markdown-content p {
   margin: 1em 0;
 }
+
 .markdown-content pre {
   background-color: #f6f8fa;
   padding: 16px;
   border-radius: 6px;
   overflow: auto;
 }
+
 .markdown-content code {
   background-color: rgba(175, 184, 193, 0.2);
   padding: 0.2em 0.4em;
   border-radius: 6px;
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
 }
+
 .markdown-content pre code {
   background-color: transparent;
   padding: 0;
 }
+
 .markdown-content blockquote {
   padding: 0 1em;
   color: #57606a;
   border-left: 0.25em solid #d0d7de;
   margin: 1em 0;
 }
+
 .markdown-content table {
   border-collapse: collapse;
   margin: 1em 0;
   overflow: auto;
   width: 100%;
 }
-.markdown-content table th, 
+
+.markdown-content table th,
 .markdown-content table td {
   border: 1px solid #d0d7de;
   padding: 6px 13px;
 }
+
 .markdown-content table tr {
   background-color: #ffffff;
   border-top: 1px solid #d0d7de;
 }
+
 .markdown-content table tr:nth-child(2n) {
   background-color: #f6f8fa;
 }
+
 .markdown-content img {
   max-width: 100%;
 }
+
 .markdown-content hr {
   height: 0.25em;
   padding: 0;
@@ -1094,9 +1818,10 @@ watch(locale, (newLocale) => {
   background-color: #d0d7de;
   border: 0;
 }
+
 .markdown-content ul,
 .markdown-content ol {
   padding-left: 2em;
   margin: 1em 0;
 }
-</style> 
+</style>

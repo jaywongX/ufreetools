@@ -94,5 +94,36 @@ export default {
       step7: "<strong>Explore patrones de ejemplo</strong>: Si se atasca o necesita inspiración, haga clic en el botón 'Mostrar Ejemplos' para ver patrones comunes de regex para correos electrónicos, números telefónicos, fechas y más. Puede hacer clic en cualquier ejemplo para cargarlo en el probador y luego modificarlo para que se ajuste a sus requisitos específicas."
     },
     conclusion: "El Probador de Expresiones Regulares simplifica el proceso a menudo complejo de crear y depurar patrones regex al proporcionar retroalimentación visual inmediata sobre sus expresiones. Resaltando coincidencias en tiempo real y desglosando los componentes de cada coincidencia, cierra la brecha entre sintaxis abstracta de patrones y aplicaciones prácticas de procesamiento de texto. Ya sea que esté validando entrada de usuario, extrayendo datos de documentos o aprendiendo regex por primera vez, esta herramienta interactiva le ayuda a construir confianza y competencia con expresiones regulares. A medida que el procesamiento de texto sigue siendo una tarea fundamental en desarrollo, análisis de datos y gestión de contenido, dominar regex con la ayuda de herramientas visuales se convierte en una habilidad técnicamente valiosa."
-  }
+  },
+  options: {
+    flags: 'Marcadores',
+    global: 'Coincidencia global (g)',
+    caseInsensitive: 'Ignorar mayúsculas/minúsculas (i)',
+    multiline: 'Multilínea (m)',
+    dotAll: 'Punto incluye saltos de línea (s)',
+    unicode: 'Unicode (u)',
+    sticky: 'Anclado (y)'
+  },
+  labels: {
+    pattern: 'Expresión Regular',
+    testString: 'Texto de Prueba',
+    matches: 'Coincidencias',
+    groups: 'Grupos',
+    noMatches: 'No se encontraron coincidencias'
+  },
+  match: 'Coincidencia',
+  position: 'Posición',
+  group: 'Grupo',
+  resultsWillAppearHere: 'Los resultados de coincidencia de expresiones regulares aparecerán aquí...',
+  regexError: 'Error de expresión regular: {message}',
+  emailAddress: 'Correo Electrónico',
+  phoneNumber: 'Número de Teléfono (China)',
+  ipAddress: 'Dirección IP',
+  dateFormat: 'Fecha (yyyy-mm-dd)',
+  chineseCharacters: 'Caracteres Chinos',
+  phoneNumberExample: 'Contacto: 13912345678\nWeChat: 18887654321\nFijo: 010-12345678',
+  urlExample: 'Visita https://example.com\nO http://www.domain.org/path?query=value',
+  ipAddressExample: 'Dirección del servidor: 192.168.1.1\nDNS: 8.8.8.8, 114.114.114.114',
+  dateFormatExample: 'Fecha de inicio: 2023-01-15\nFecha de fin: 2023-02-28\nFecha inválida: 2023-13-45',
+  chineseCharactersExample: 'Hello世界！你好，World!'
 }

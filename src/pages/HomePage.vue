@@ -326,7 +326,7 @@
       </div>
 
       <!-- 特色功能展示 -->
-      <div class="container mx-auto px-4 mb-12">
+      <div id="features-section">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
             class="feature-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 animate-fade-in-up"

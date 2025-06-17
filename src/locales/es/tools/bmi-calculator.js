@@ -63,5 +63,7 @@ export default {
   tip2: 'Realiza al menos 150 minutos de actividad aeróbica moderada por semana',
   tip3: 'Evita estar sentado durante mucho tiempo e incrementa la actividad física diaria',
   tip4: 'Asegúrate de dormir lo suficiente y mantenerte hidratado',
-  tip5: 'Si tu IMC es anormal, considera consultar con un médico o nutricionista para recibir consejos profesionales'
+  tip5: 'Si tu IMC es anormal, considera consultar con un médico o nutricionista para recibir consejos profesionales',
+
+  emptyStateMessage: 'Ingrese su altura y peso, luego haga clic en "Calcular IMC"'
 };

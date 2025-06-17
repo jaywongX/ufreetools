@@ -11,7 +11,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
-          测试
+          {{ $t('tools.regex-tester.actions.test') }}
         </button>
         <button 
           @click="clearAll" 
@@ -21,7 +21,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
           </svg>
-          清空
+          {{ $t('tools.regex-tester.actions.clear') }}
         </button>
       </div>
       <div class="flex space-x-2">
@@ -32,14 +32,14 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          {{ showExamples ? '隐藏示例' : '显示示例' }}
+          {{ showExamples ? $t('tools.regex-tester.actions.hideExamples') : $t('tools.regex-tester.actions.showExamples') }}
         </button>
       </div>
     </div>
     
     <!-- 常用正则示例 -->
     <div v-if="showExamples" class="p-4 bg-gray-50 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
-      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">常用正则表达式示例：</h3>
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ $t('tools.regex-tester.sections.examples') }}:</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
         <button 
           v-for="example in regexExamples" 
@@ -69,7 +69,7 @@
     <!-- 正则表达式输入 -->
     <div class="p-4 border-b border-gray-200 dark:border-gray-700">
       <div class="mb-2">
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">正则表达式</label>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ $t('tools.regex-tester.labels.pattern') }}</label>
         <div class="flex">
           <div class="w-8 text-center bg-gray-100 dark:bg-gray-700 flex items-center justify-center border border-r-0 border-gray-300 dark:border-gray-600 rounded-l">
             /
@@ -78,7 +78,7 @@
             type="text"
             v-model="regexPattern"
             class="flex-grow p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-mono text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
-            placeholder="在此输入正则表达式"
+            :placeholder="$t('tools.regex-tester.placeholders.pattern')"
             :class="{ 'border-red-500 dark:border-red-500': regexError }"
           />
           <div class="w-12 text-center bg-gray-100 dark:bg-gray-700 flex items-center justify-center border border-l-0 border-gray-300 dark:border-gray-600 rounded-r">
@@ -98,11 +98,11 @@
       
       <!-- 修饰符说明 -->
       <div class="flex flex-wrap gap-2 text-xs text-gray-500 dark:text-gray-400 mt-2">
-        <span class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">g (全局)</span>
-        <span class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">i (不区分大小写)</span>
-        <span class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">m (多行)</span>
-        <span class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">s (单行模式)</span>
-        <span class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">u (Unicode)</span>
+        <span class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">{{ $t('tools.regex-tester.flags.g') }}</span>
+        <span class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">{{ $t('tools.regex-tester.flags.i') }}</span>
+        <span class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">{{ $t('tools.regex-tester.flags.m') }}</span>
+        <span class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">{{ $t('tools.regex-tester.flags.s') }}</span>
+        <span class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">{{ $t('tools.regex-tester.flags.u') }}</span>
       </div>
     </div>
     
@@ -110,18 +110,18 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
       <!-- 输入区域 -->
       <div>
-        <div class="mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">测试文本</div>
+        <div class="mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.regex-tester.sections.input') }}</div>
         <textarea 
           v-model="testText" 
           class="w-full h-64 p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-mono text-sm resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
-          placeholder="在此输入要测试的文本..."
+          :placeholder="$t('tools.regex-tester.placeholders.testString')"
           :disabled="isProcessing"
         ></textarea>
       </div>
       
       <!-- 结果区域 -->
       <div>
-        <div class="mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">匹配结果</div>
+        <div class="mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t('tools.regex-tester.sections.results') }}</div>
         <div 
           class="w-full h-64 p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono text-sm overflow-auto"
         >
@@ -129,28 +129,28 @@
             <div v-html="highlightedText" class="whitespace-pre-wrap break-all mb-4"></div>
             
             <div v-if="matchResults.length > 0" class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-              <div class="text-sm font-medium mb-2">匹配详情:</div>
+              <div class="text-sm font-medium mb-2">{{ $t('tools.regex-tester.labels.matches') }}:</div>
               <div v-for="(match, index) in matchResults" :key="index" class="mb-2 p-2 bg-gray-100 dark:bg-gray-700 rounded">
-                <div class="text-xs">匹配 #{{ index + 1 }}: 位置 {{ match.index }}</div>
+                <div class="text-xs">{{ $t('match') }} #{{ index + 1 }}: {{ $t('position') }} {{ match.index }}</div>
                 <div class="font-medium text-primary dark:text-primary-light">{{ match.value }}</div>
                 <div v-if="match.groups && match.groups.length > 0" class="mt-1">
-                  <div class="text-xs text-gray-500 dark:text-gray-400">捕获组:</div>
+                  <div class="text-xs text-gray-500 dark:text-gray-400">{{ $t('tools.regex-tester.labels.groups') }}:</div>
                   <div 
                     v-for="(group, groupIndex) in match.groups" 
                     :key="`${index}-${groupIndex}`"
                     class="text-xs ml-2"
                   >
-                    组 {{ groupIndex }}: {{ group || '(空)' }}
+                    {{ $t('group') }} {{ groupIndex }}: {{ group || '(empty)' }}
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div v-else-if="hasRun" class="text-gray-500 dark:text-gray-400">
-            未找到匹配项
+            {{ $t('tools.regex-tester.labels.noMatches') }}
           </div>
           <div v-else class="text-gray-400 dark:text-gray-500">
-            正则表达式匹配结果将显示在这里...
+            {{ $t('tools.regex-tester.resultsWillAppearHere') }}
           </div>
         </div>
       </div>
@@ -163,7 +163,10 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
 import RegexTesterArticle from './RegexTesterArticle.vue';
+
+const { t } = useI18n();
 
 // 状态数据
 const regexPattern = ref('');
@@ -177,14 +180,44 @@ const regexError = ref('');
 const showExamples = ref(false);
 const hasRun = ref(false);
 
-// 常用正则表达式示例
+// 常用正则表达式示例 - 这些可以移到i18n文件中
 const regexExamples = [
-  { name: '电子邮件', pattern: '[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}', flags: 'g', text: 'test@example.com\nsupport@domain.co.uk\ninvalid-email' },
-  { name: '手机号码(中国)', pattern: '1[3-9]\\d{9}', flags: 'g', text: '联系方式：13912345678\n微信同号：18887654321\n座机：010-12345678' },
-  { name: 'URL', pattern: 'https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&//=]*)', flags: 'g', text: 'Visit https://example.com\nOr http://www.domain.org/path?query=value' },
-  { name: 'IP地址', pattern: '\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b', flags: 'g', text: '服务器地址：192.168.1.1\nDNS：8.8.8.8, 114.114.114.114' },
-  { name: '日期(yyyy-mm-dd)', pattern: '\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])', flags: 'g', text: '开始日期：2023-01-15\n结束日期：2023-02-28\n无效日期：2023-13-45' },
-  { name: '中文字符', pattern: '[\\u4e00-\\u9fa5]', flags: 'g', text: 'Hello世界！你好，World!' },
+  { 
+    name: t('tools.regex-tester.emailAddress'), 
+    pattern: '[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}', 
+    flags: 'g', 
+    text: 'test@example.com\nsupport@domain.co.uk\ninvalid-email' 
+  },
+  { 
+    name: t('tools.regex-tester.phoneNumber'), 
+    pattern: '1[3-9]\\d{9}', 
+    flags: 'g', 
+    text: t('tools.regex-tester.phoneNumberExample')
+  },
+  { 
+    name: 'URL', 
+    pattern: 'https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&//=]*)', 
+    flags: 'g', 
+    text: t('tools.regex-tester.urlExample')
+  },
+  { 
+    name: t('tools.regex-tester.ipAddress'), 
+    pattern: '\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b', 
+    flags: 'g', 
+    text: t('tools.regex-tester.ipAddressExample')
+  },
+  { 
+    name: t('tools.regex-tester.dateFormat'), 
+    pattern: '\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])', 
+    flags: 'g', 
+    text: t('tools.regex-tester.dateFormatExample')
+  },
+  { 
+    name: t('tools.regex-tester.chineseCharacters'), 
+    pattern: '[\\u4e00-\\u9fa5]', 
+    flags: 'g', 
+    text: t('tools.regex-tester.chineseCharactersExample')
+  },
 ];
 
 // 当正则表达式发生变化时，清除错误信息
@@ -233,12 +266,12 @@ const highlightedText = computed(() => {
 // 测试正则表达式
 const testRegex = () => {
   if (!regexPattern.value.trim()) {
-    showMessage('请输入正则表达式', 'error');
+    showMessage(t('tools.regex-tester.errors.emptyRegex'), 'error');
     return;
   }
   
   if (!testText.value.trim()) {
-    showMessage('请输入要测试的文本', 'error');
+    showMessage(t('tools.regex-tester.errors.emptyTestString'), 'error');
     return;
   }
   
@@ -275,13 +308,13 @@ const testRegex = () => {
     }
     
     if (matchResults.value.length > 0) {
-      showMessage(`找到 ${matchResults.value.length} 个匹配项`, 'success');
+      showMessage(t('tools.regex-tester.messages.matchesFound', { count: matchResults.value.length }), 'success');
     } else {
-      showMessage('未找到匹配项', 'info');
+      showMessage(t('tools.regex-tester.messages.noMatches'), 'info');
     }
   } catch (error) {
     regexError.value = error.message;
-    showMessage(`正则表达式错误: ${error.message}`, 'error');
+    showMessage(t('regexError', { message: error.message }), 'error');
   } finally {
     isProcessing.value = false;
   }
