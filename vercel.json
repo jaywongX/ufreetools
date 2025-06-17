@@ -2,7 +2,7 @@
   "routes": [
     { "handle": "filesystem" },
     {
-      "src": "/(zh|en)/?(about|contact|terms|privacy-policy|category/.+|tool/.+|search|tag/.+|tags|feedback|submit-tool|favorites)?",
+      "src": "/(zh|en|es|hi|ar|da|el|fi|hu|id|ms|nl|pt|ru|sv|zh-TW)/?(about|contact|terms|privacy-policy|category/.+|tool/.+|search|tag/.+|tags|feedback|submit-tool|favorites)?",
       "dest": "/index.html"
     },
     {
