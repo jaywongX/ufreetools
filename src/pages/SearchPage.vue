@@ -111,14 +111,14 @@ function navigateToTag(tagId) {
 // 监听路由变化更新标题
 watch(() => route.query.q, (newQuery) => {
   if (newQuery) {
-    document.title = `${t('search.pageTitle', { query: newQuery })} - ${t('site.name')}`
+    document.title = `${t('search.pageTitle', { query: newQuery })} - ${t('common.site.name')}`
   }
 })
 
 // 设置页面标题
 onMounted(() => {
   if (searchQuery.value) {
-    document.title = `${t('search.pageTitle', { query: searchQuery.value })} - ${t('site.name')}`
+    document.title = `${t('search.pageTitle', { query: searchQuery.value })} - ${t('common.site.name')}`
   }
 })
 </script>

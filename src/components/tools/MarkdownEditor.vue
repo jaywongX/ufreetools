@@ -4,268 +4,204 @@
     <div class="flex flex-wrap items-center p-2 border-b border-gray-200 dark:border-gray-700 overflow-x-auto">
       <!-- 标题 -->
       <div class="flex space-x-1 mr-3">
-        <button 
-          v-for="level in [1, 2, 3, 4, 5, 6]" 
-          :key="level"
-          @click="insertHeading(level)"
-          class="md-toolbar-btn"
-          :title="t('tools.markdown-editor.actions.heading') + ' ' + level"
-        >
+        <button v-for="level in [1, 2, 3, 4, 5, 6]" :key="level" @click="insertHeading(level)" class="md-toolbar-btn"
+          :title="t('tools.markdown-editor.actions.heading') + ' ' + level">
           H{{ level }}
         </button>
       </div>
-      
+
       <!-- 分隔线 -->
       <div class="h-6 w-px bg-gray-300 dark:bg-gray-600 mx-2"></div>
-      
+
       <!-- 文本格式 -->
       <div class="flex space-x-1 mr-3">
-        <button 
-          @click="insertBold"
-          class="md-toolbar-btn"
-          :title="t('tools.markdown-editor.actions.bold')"
-        >
+        <button @click="insertBold" class="md-toolbar-btn" :title="t('tools.markdown-editor.actions.bold')">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 10h8a2 2 0 002-2V6a2 2 0 00-2-2H6v4zm0 0v8h8a2 2 0 002-2v-2a2 2 0 00-2-2H6z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 10h8a2 2 0 002-2V6a2 2 0 00-2-2H6v4zm0 0v8h8a2 2 0 002-2v-2a2 2 0 00-2-2H6z" />
           </svg>
         </button>
-        <button 
-          @click="insertItalic"
-          class="md-toolbar-btn"
-          :title="t('tools.markdown-editor.actions.italic')"
-        >
+        <button @click="insertItalic" class="md-toolbar-btn" :title="t('tools.markdown-editor.actions.italic')">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </button>
-        <button 
-          @click="insertStrikethrough"
-          class="md-toolbar-btn"
-          :title="t('tools.markdown-editor.actions.strikethrough')"
-        >
+        <button @click="insertStrikethrough" class="md-toolbar-btn"
+          :title="t('tools.markdown-editor.actions.strikethrough')">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
           </svg>
         </button>
       </div>
-      
+
       <!-- 分隔线 -->
       <div class="h-6 w-px bg-gray-300 dark:bg-gray-600 mx-2"></div>
-      
+
       <!-- 列表 -->
       <div class="flex space-x-1 mr-3">
-        <button 
-          @click="insertUnorderedList"
-          class="md-toolbar-btn"
-          :title="t('tools.markdown-editor.actions.list')"
-        >
+        <button @click="insertUnorderedList" class="md-toolbar-btn" :title="t('tools.markdown-editor.actions.list')">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-        <button 
-          @click="insertOrderedList"
-          class="md-toolbar-btn"
-          :title="t('tools.markdown-editor.actions.list')"
-        >
+        <button @click="insertOrderedList" class="md-toolbar-btn" :title="t('tools.markdown-editor.actions.list')">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
           </svg>
         </button>
       </div>
-      
+
       <!-- 分隔线 -->
       <div class="h-6 w-px bg-gray-300 dark:bg-gray-600 mx-2"></div>
-      
+
       <!-- 链接和图片 -->
       <div class="flex space-x-1 mr-3">
-        <button 
-          @click="insertLink"
-          class="md-toolbar-btn"
-          :title="t('tools.markdown-editor.actions.link')"
-        >
+        <button @click="insertLink" class="md-toolbar-btn" :title="t('tools.markdown-editor.actions.link')">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
           </svg>
         </button>
-        <button 
-          @click="insertImage"
-          class="md-toolbar-btn"
-          :title="t('tools.markdown-editor.actions.image')"
-        >
+        <button @click="insertImage" class="md-toolbar-btn" :title="t('tools.markdown-editor.actions.image')">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
         </button>
       </div>
-      
+
       <!-- 分隔线 -->
       <div class="h-6 w-px bg-gray-300 dark:bg-gray-600 mx-2"></div>
-      
+
       <!-- 代码 -->
       <div class="flex space-x-1 mr-3">
-        <button 
-          @click="insertCodeInline"
-          class="md-toolbar-btn"
-          :title="t('tools.markdown-editor.actions.code')"
-        >
+        <button @click="insertCodeInline" class="md-toolbar-btn" :title="t('tools.markdown-editor.actions.code')">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
           </svg>
         </button>
-        <button 
-          @click="insertCodeBlock"
-          class="md-toolbar-btn"
-          :title="t('tools.markdown-editor.actions.code')"
-        >
+        <button @click="insertCodeBlock" class="md-toolbar-btn" :title="t('tools.markdown-editor.actions.code')">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
         </button>
       </div>
-      
+
       <!-- 分隔线 -->
       <div class="h-6 w-px bg-gray-300 dark:bg-gray-600 mx-2"></div>
-      
+
       <!-- 其他 -->
       <div class="flex space-x-1">
-        <button 
-          @click="insertHorizontalRule"
-          class="md-toolbar-btn"
-          :title="t('tools.markdown-editor.actions.hr')"
-        >
+        <button @click="insertHorizontalRule" class="md-toolbar-btn" :title="t('tools.markdown-editor.actions.hr')">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 18" />
           </svg>
         </button>
-        <button 
-          @click="insertQuote"
-          class="md-toolbar-btn"
-          :title="t('tools.markdown-editor.actions.quote')"
-        >
+        <button @click="insertQuote" class="md-toolbar-btn" :title="t('tools.markdown-editor.actions.quote')">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
           </svg>
         </button>
       </div>
-      
+
       <div class="flex-grow"></div>
-      
+
       <!-- 操作按钮 -->
       <div class="flex space-x-2">
-        <button 
-          @click="copyMarkdown" 
-          class="btn-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+        <button @click="copyMarkdown"
+          class="btn-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
           </svg>
           {{ t('tools.markdown-editor.actions.copy') }}
         </button>
-        <button 
-          @click="clearMarkdown" 
-          class="btn-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+        <button @click="clearMarkdown"
+          class="btn-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
           </svg>
           {{ t('tools.markdown-editor.actions.clear') }}
         </button>
       </div>
     </div>
-    
+
     <!-- 状态消息 -->
-    <div 
-      v-if="message" 
-      class="p-3 text-sm" 
-      :class="{ 
-        'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200': messageType === 'success',
-        'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200': messageType === 'error',
-      }"
-    >
+    <div v-if="message" class="p-3 text-sm" :class="{
+      'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200': messageType === 'success',
+      'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200': messageType === 'error',
+    }">
       {{ message }}
     </div>
-    
+
     <div class="p-4">
       <!-- 布局切换 -->
       <div class="mb-4 flex justify-end">
         <div class="flex p-1 bg-gray-100 dark:bg-gray-700 rounded-md">
-          <button 
-            @click="editorLayout = 'split'"
-            class="px-3 py-1 text-xs rounded"
-            :class="{
-              'bg-white dark:bg-gray-800 shadow': editorLayout === 'split',
-              'text-gray-600 dark:text-gray-300': editorLayout !== 'split'
-            }"
-          >
+          <button @click="editorLayout = 'split'" class="px-3 py-1 text-xs rounded" :class="{
+            'bg-white dark:bg-gray-800 shadow': editorLayout === 'split',
+            'text-gray-600 dark:text-gray-300': editorLayout !== 'split'
+          }">
             {{ t('tools.markdown-editor.modes.split') }}
           </button>
-          <button 
-            @click="editorLayout = 'edit'"
-            class="px-3 py-1 text-xs rounded"
-            :class="{
-              'bg-white dark:bg-gray-800 shadow': editorLayout === 'edit',
-              'text-gray-600 dark:text-gray-300': editorLayout !== 'edit'
-            }"
-          >
+          <button @click="editorLayout = 'edit'" class="px-3 py-1 text-xs rounded" :class="{
+            'bg-white dark:bg-gray-800 shadow': editorLayout === 'edit',
+            'text-gray-600 dark:text-gray-300': editorLayout !== 'edit'
+          }">
             {{ t('tools.markdown-editor.modes.edit') }}
           </button>
-          <button 
-            @click="editorLayout = 'preview'"
-            class="px-3 py-1 text-xs rounded"
-            :class="{
-              'bg-white dark:bg-gray-800 shadow': editorLayout === 'preview',
-              'text-gray-600 dark:text-gray-300': editorLayout !== 'preview'
-            }"
-          >
+          <button @click="editorLayout = 'preview'" class="px-3 py-1 text-xs rounded" :class="{
+            'bg-white dark:bg-gray-800 shadow': editorLayout === 'preview',
+            'text-gray-600 dark:text-gray-300': editorLayout !== 'preview'
+          }">
             {{ t('tools.markdown-editor.modes.preview') }}
           </button>
         </div>
       </div>
-      
+
       <!-- 编辑区域 -->
-      <div 
-        class="grid gap-4"
-        :class="{
-          'grid-cols-2': editorLayout === 'split',
-          'grid-cols-1': editorLayout !== 'split'
-        }"
-      >
+      <div class="grid gap-4" :class="{
+        'grid-cols-2': editorLayout === 'split',
+        'grid-cols-1': editorLayout !== 'split'
+      }">
         <!-- Markdown编辑器 -->
         <div v-if="editorLayout === 'split' || editorLayout === 'edit'" class="markdown-editor-container">
-          <div class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ t('tools.markdown-editor.modes.edit') }}</div>
-          <textarea
-            ref="markdownEditor"
-            v-model="markdownContent"
+          <div class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{
+            t('tools.markdown-editor.modes.edit') }}</div>
+          <textarea ref="markdownEditor" v-model="markdownContent"
             class="w-full h-96 p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-mono text-sm focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-            :placeholder="t('tools.markdown-editor.placeholder')"
-            @input="handleUserInput"
-            @keydown.tab.prevent="handleTabKey"
-          ></textarea>
+            :placeholder="t('tools.markdown-editor.placeholder')" @input="handleUserInput"
+            @keydown.tab.prevent="handleTabKey"></textarea>
         </div>
-        
+
         <!-- 预览区域 -->
         <div v-if="editorLayout === 'split' || editorLayout === 'preview'" class="markdown-preview-container">
-          <div class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ t('tools.markdown-editor.modes.preview') }}</div>
-          <div 
-            class="w-full h-96 p-4 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 overflow-auto"
-          >
+          <div class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{
+            t('tools.markdown-editor.modes.preview') }}</div>
+          <div
+            class="w-full h-96 p-4 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 overflow-auto">
             <div v-html="renderedContent" class="markdown-body"></div>
           </div>
         </div>
       </div>
     </div>
-    
+
     <!-- 快速模板 -->
     <div class="p-4 border-t border-gray-200 dark:border-gray-700">
-      <div class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ t('tools.markdown-editor.templates.title') }}</div>
+      <div class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{
+        t('tools.markdown-editor.templates.title') }}</div>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-        <button 
-          v-for="template in markdownTemplates" 
-          :key="template.name"
-          @click="applyTemplate(template)"
-          class="text-left p-2 border border-gray-200 dark:border-gray-700 rounded hover:bg-gray-50 dark:hover:bg-gray-750"
-        >
+        <button v-for="template in markdownTemplates" :key="template.name" @click="applyTemplate(template)"
+          class="text-left p-2 border border-gray-200 dark:border-gray-700 rounded hover:bg-gray-50 dark:hover:bg-gray-750">
           <div class="text-sm font-medium">{{ template.name }}</div>
           <div class="text-xs text-gray-500 dark:text-gray-400 truncate">{{ template.description }}</div>
         </button>
@@ -273,15 +209,8 @@
     </div>
 
     <!-- 确认对话框 -->
-    <ConfirmDialog
-      :title="dialogTitle"
-      :message="dialogMessage"
-      :confirm-text="dialogConfirmText"
-      :cancel-text="dialogCancelText"
-      :is-open="showDialog"
-      @confirm="onDialogConfirm"
-      @cancel="onDialogCancel"
-    />
+    <ConfirmDialog :title="dialogTitle" :message="dialogMessage" :confirm-text="dialogConfirmText"
+      :cancel-text="dialogCancelText" :is-open="showDialog" @confirm="onDialogConfirm" @cancel="onDialogCancel" />
 
     <!-- 在底部添加文章部分 -->
     <MarkdownEditorArticle />
@@ -330,13 +259,13 @@ const dialogParams = ref(null)
 
 // 初始化marked选项
 marked.setOptions({
-  highlight: function(code, lang) {
+  highlight: function (code, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
         return hljs.highlight(code, { language: lang }).value
-      } catch (err) {}
+      } catch (err) { }
     }
-    
+
     return hljs.highlightAuto(code).value
   },
   langPrefix: 'hljs language-',
@@ -360,7 +289,7 @@ const updatePreview = () => {
 const showMessage = (msg, type = 'success') => {
   message.value = msg
   messageType.value = type
-  
+
   setTimeout(() => {
     message.value = ''
   }, 3000)
@@ -419,10 +348,10 @@ const handleTabKey = (e) => {
   const textarea = e.target
   const start = textarea.selectionStart
   const end = textarea.selectionEnd
-  
+
   // 插入制表符（2个空格）
   markdownContent.value = markdownContent.value.substring(0, start) + '  ' + markdownContent.value.substring(end)
-  
+
   // 设置光标位置
   setTimeout(() => {
     textarea.selectionStart = textarea.selectionEnd = start + 2
@@ -435,23 +364,23 @@ const getSelection = () => {
   const start = textarea.selectionStart
   const end = textarea.selectionEnd
   const selection = markdownContent.value.substring(start, end)
-  
+
   return { start, end, selection }
 }
 
 const insertText = (before, after = '') => {
   const textarea = markdownEditor.value
   const { start, end, selection } = getSelection()
-  
-  markdownContent.value = markdownContent.value.substring(0, start) 
-    + before 
-    + selection 
-    + after 
+
+  markdownContent.value = markdownContent.value.substring(0, start)
+    + before
+    + selection
+    + after
     + markdownContent.value.substring(end)
-  
+
   // 更新预览
   updatePreview()
-  
+
   // 设置光标位置
   setTimeout(() => {
     textarea.focus()
@@ -467,22 +396,22 @@ const insertText = (before, after = '') => {
 // 工具栏按钮函数
 const insertHeading = (level) => {
   const hashes = '#'.repeat(level) + ' '
-  
+
   // 获取当前选中行
   const { start, selection } = getSelection()
   const text = markdownContent.value
   const lineStart = text.lastIndexOf('\n', start) + 1
   const lineEnd = text.indexOf('\n', start)
   const line = text.substring(lineStart, lineEnd > -1 ? lineEnd : text.length)
-  
+
   // 从行的开始位置插入标题
   const before = text.substring(0, lineStart)
   const middle = hashes + line.replace(/^#+\s/, '')
   const after = text.substring(lineEnd > -1 ? lineEnd : text.length)
-  
+
   markdownContent.value = before + middle + after
   updatePreview()
-  
+
   // 设置光标位置
   setTimeout(() => {
     markdownEditor.value.focus()
@@ -517,7 +446,7 @@ const insertOrderedList = () => {
   const { selection } = getSelection()
   if (selection) {
     const lines = selection.split('\n')
-    const formattedLines = lines.map((line, i) => `${i+1}. ${line}`).join('\n')
+    const formattedLines = lines.map((line, i) => `${i + 1}. ${line}`).join('\n')
     insertText(formattedLines, '')
   } else {
     insertText('1. ')
@@ -968,27 +897,9 @@ example.init();
 - अंग्रेज़ी (प्रवाहपूर्ण)`
       }
     ];
-  } else if (locale.value === 'ja') {
-    // 日文模板
+  } else if (locale.value === 'fr') {
+    // 法文模板
     markdownTemplates.value = [
-      {
-        name: 'シンプル文書',
-        description: '見出し、リスト、引用などを含む',
-        content: `# 文書タイトル
-
-## はじめに
-これはMarkdown文書の簡単な例です。
-
-## 特徴
-- 見出しと段落をサポート
-- **太字**と*斜体*テキストをサポート
-- 順序付きリストと順序なしリストをサポート
-
-> これは引用ブロックで、他の人の意見を引用するために使用します。
-
-## 結論
-Markdownはシンプルで使いやすいマークアップ言語です。`
-      },
       {
         name: 'プロジェクトREADME',
         description: 'プロジェクト文書の標準構造',
@@ -1067,9 +978,179 @@ example.init();
 ## 言語スキル
 - 日本語（ネイティブ）
 - 英語（ビジネスレベル）`
+      },
+      {
+        name: 'Bienvenue dans l\'Éditeur Markdown',
+        description: 'Incluye encabezados, listas, citas, etc.',
+        content: `# Bienvenue dans l'Éditeur Markdown
+
+Ceci est un éditeur Markdown simple avec aperçu en temps réel et coloration syntaxique.
+
+## Syntaxe de Base
+
+### Titres
+Utilisez les symboles # pour indiquer les titres :
+# Titre 1
+## Titre 2
+### Titre 3
+
+### Énfasis
+**Gras** ou __Gras__
+*Italique* ou _Italique_
+~~Barré~~
+
+### Listes
+Liste non ordonnée :
+- Élément 1
+- Élément 2
+- Élément 3
+
+Liste ordonnée :
+1. Premier élément
+2. Deuxième élément
+3. Troisième élément
+
+### Liens et Images
+[Texte du lien](https://exemple.com)
+![Texte alternatif de l'image](https://exemple.com/image.jpg)
+
+### Code
+Code en ligne : \`var exemple = "bonjour";\`
+
+### Citations
+> Ceci est une citation.
+
+### Tableaux
+| En-tête 1 | En-tête 2 | En-tête 3 |
+|-----------|-----------|-----------|
+| Cellule 1 | Cellule 2 | Cellule 3 |
+| Cellule 4 | Cellule 5 | Cellule 6 |
+
+### Ligne Horizontale
+---
+
+Commencez à éditer ! Vous pouvez utiliser la barre d'outils ci-dessus pour insérer rapidement divers éléments Markdown.`
+      },
+      {
+        name: 'README de Projet',
+        description: 'Structure standard pour la documentation de projet',
+        content: `# Nom du Projet
+
+[![Licence](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
+
+## Description du Projet
+Brève description des fonctions principales et de l'objectif du projet.
+
+## Caractéristiques
+- Caractéristique principale 1
+- Caractéristique principale 2
+- Caractéristique principale 3
+
+## Installation
+\`\`\`bash
+# Installer les dépendances
+npm install
+
+# Démarrer le serveur de développement
+npm run dev
+\`\`\`
+
+## Exemple d'Utilisation
+\`\`\`javascript
+// Code d'exemple
+const exemple = new Exemple();
+exemple.init();
+\`\`\`
+
+## Documentation
+Pour une documentation plus détaillée, veuillez consulter [Lien vers la Documentation](docs/README.md).
+
+## Guide de Contribution
+Les contributions sont les bienvenues, veuillez consulter [Guide de Contribution](CONTRIBUTING.md).
+
+## Licence
+Ce projet est publié sous la Licence MIT, voir [LICENSE](LICENSE) pour plus de détails.`
+      },
+      {
+        name: 'CV',
+        description: 'Modèle de CV personnel',
+        content: `# Curriculum Vitae
+
+## Informations Personnelles
+- **Nom**: Jean Dupont
+- **Téléphone**: 01 23 45 67 89
+- **Email**: jean.dupont@email.com
+- **Objectif Professionnel**: Développeur Frontend
+
+## Formation
+**Université XYZ** | Informatique | Septembre 2016 - Juin 2020
+
+## Expérience Professionnelle
+### XYZ Tech Inc. | Développeur Frontend | Juillet 2020 - Présent
+- Responsable du développement frontend et de la maintenance des produits principaux
+- Développement d'un système de gestion d'entreprise avec Vue.js, améliorant l'expérience utilisateur
+- Optimisation des performances frontend, réduisant le temps de chargement des pages de 30%
+
+### ABC Corp. | Stagiaire Frontend | Juillet 2019 - Juin 2020
+- Participation au projet de refonte du site web de l'entreprise
+- Assistance à l'équipe pour la refactorisation et l'optimisation du code
+
+## Compétences Techniques
+- **Frontend**: HTML, CSS, JavaScript, Vue.js, React
+- **Backend**: Node.js, Express
+- **Autres Outils**: Git, Webpack, Docker
+
+## Expérience de Projets
+### Système de Gestion d'Entreprise
+- Développé avec Vue.js + Element UI
+- Implémentation de la visualisation de données, fonctionnalités de gestion des permissions
+- Optimisation de la vitesse de réponse du système, amélioration de l'expérience utilisateur
+
+## Compétences Linguistiques
+- Français (Langue maternelle)
+- Anglais (Courant)`
       }
     ];
-  } else {
+  } else if (locale.value === 'ja') {
+    // 日文模板
+    markdownTemplates.value = [
+      {
+        name: 'シンプル文書',
+        description: '見出し、リスト、引用などを含む',
+        content: `# 文書タイトル
+
+## はじめに
+これはMarkdown文書の簡単な例です。
+
+## 特徴
+- 見出しと段落をサポート
+- **太字**と*斜体*テキストをサポート
+- 順序付きリストと順序なしリストをサポート
+
+> これは引用ブロックで、他の人の意見を引用するために使用します。
+
+## 結論
+Markdownはシンプルで使いやすいマークアップ言語です。`
+      },
+    ]
+  } else if (locale.value === 'ar') {
+    // 阿拉伯文模板
+    markdownTemplates.value = [
+      {
+        name: 'المستند البسيط',
+        description: 'يتضمن عناوين وقائمة واقتباسات',
+        content: `# المستند البسيط
+
+## المقدمة
+هذا مستند بسيط يستخدم لتجربة التحرير باستخدام Markdown.
+
+## الخصائص
+- يدعم العناوين والفقرات
+`
+      },
+    ]
+  }
+  else {
     console.error('Invalid locale:', locale.value);
     throw new Error('Invalid locale');
   }
@@ -1322,7 +1403,56 @@ Código en línea: \`var ejemplo = "hola";\`
 ### 水平線
 ---
 
-編集を始めましょう！上のツールバーを使用して、さまざまなMarkdown要素を素早く挿入できます。`
+編集を始めましょう！上のツールバーを使用して、さまざまなMarkdown要素を素早く挿入できます。`,
+
+    'fr': `# Bienvenue dans l'Éditeur Markdown
+
+Ceci est un éditeur Markdown simple avec aperçu en temps réel et coloration syntaxique.
+
+## Syntaxe de Base
+
+### Titres
+Utilisez les symboles # pour indiquer les titres :
+# Titre 1
+## Titre 2
+### Titre 3
+
+### Énfasis
+**Gras** ou __Gras__
+*Italique* ou _Italique_
+~~Barré~~
+
+### Listes
+Liste non ordonnée :
+- Élément 1
+- Élément 2
+- Élément 3
+
+Liste ordonnée :
+1. Premier élément
+2. Deuxième élément
+3. Troisième élément
+
+### Liens et Images
+[Texte du lien](https://exemple.com)
+![Texte alternatif de l'image](https://exemple.com/image.jpg)
+
+### Code
+Code en ligne : \`var exemple = "bonjour";\`
+
+### Citations
+> Ceci est une citation.
+
+### Tableaux
+| En-tête 1 | En-tête 2 | En-tête 3 |
+|-----------|-----------|-----------|
+| Cellule 1 | Cellule 2 | Cellule 3 |
+| Cellule 4 | Cellule 5 | Cellule 6 |
+
+### Ligne Horizontale
+---
+
+Commencez à éditer ! Vous pouvez utiliser la barre d'outils ci-dessus pour insérer rapidement divers éléments Markdown.`
   };
 
   // 根据当前语言设置内容
@@ -1332,7 +1462,7 @@ Código en línea: \`var ejemplo = "hola";\`
     console.error('Invalid locale:', locale);
     throw new Error('Invalid locale');
   }
-  
+
   // 更新预览
   updatePreview();
 }
@@ -1372,7 +1502,7 @@ const handleUserInput = () => {
 watch(locale, (newLocale) => {
   // 重新初始化模板
   initTemplates()
-  
+
   // 如果用户尚未编辑内容，则根据语言更新默认内容
   if (!userHasEdited.value) {
     updateDefaultContent(newLocale)
@@ -1383,10 +1513,10 @@ watch(locale, (newLocale) => {
 onMounted(() => {
   // 初始化模板
   initTemplates();
-  
+
   // 设置默认内容
   updateDefaultContent(locale.value);
-  
+
   // 初始化预览
   updatePreview();
 });
@@ -1461,7 +1591,7 @@ onMounted(() => {
   @apply font-mono text-xs;
 }
 
-.markdown-body :not(pre) > code {
+.markdown-body :not(pre)>code {
   @apply px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-red-600 dark:text-red-400;
 }
 
@@ -1487,4 +1617,4 @@ onMounted(() => {
 .markdown-body img {
   @apply max-w-full h-auto rounded;
 }
-</style> 
+</style>

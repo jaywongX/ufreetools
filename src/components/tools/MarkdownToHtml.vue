@@ -826,6 +826,156 @@ Markdownの学習は難しくありませんが、習得することでデジタ
 *著者：Markdown愛好家*  
 *公開日：2023年10月15日*
 `
+      } else if (currentLocale === 'fr') {
+        markdownText.value = `# Exemple de Syntaxe de Base Markdown
+
+## 1. Titres
+
+# Titre 1
+## Titre 2
+### Titre 3
+#### Titre 4
+##### Titre 5
+###### Titre 6
+
+## 2. Formatage de Texte
+
+Texte simple
+
+**Texte en gras**
+
+*Texte en italique*
+
+~~Texte barré~~
+
+**_Gras et italique_**
+
+## 3. Listes
+
+### Listes non ordonnées
+- Élément 1
+- Élément 2
+  - Sous-élément A
+  - Sous-élément B
+
+### Listes ordonnées
+1. Premier élément
+2. Deuxième élément
+3. Troisième élément
+
+## 4. Liens et Images
+
+[Lien vers Google](https://www.google.com)
+
+![Exemple d'image](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBmaWxsPSIjY2NjY2NjIiAvPgogICAgPHRleHQgeD0iNzUiIHk9Ijc1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZpbGw9IiM0NDQ0NDQiPjE1MHgxNTA8L3RleHQ+Cjwvc3ZnPg==)
+
+## 5. Citations
+
+> Ceci est une citation
+> 
+> Les citations peuvent s'étendre sur plusieurs lignes
+
+## 6. Code
+
+Code en ligne: \`console.log('Bonjour le Monde')\`
+
+Bloc de code:
+\`\`\`javascript
+function salutation(nom) {
+  return \`Bonjour, \${nom}!\`;
+}
+console.log(salutation('Monde'));
+\`\`\`
+
+## 7. Tableaux
+
+| Nom | Âge | Profession |
+| --- | --- | ---------- |
+| Jean | 25  | Ingénieur  |
+| Marie | 30  | Designer   |
+| Pierre | 28 | Chef de Produit |
+
+## 8. Règles Horizontales
+
+---
+
+***
+`
+      } else if (currentLocale === 'ar') {
+        markdownText.value = `# مثال على بناء جملة ماركداون الأساسي
+
+## 1. العناوين
+
+# عنوان 1
+## عنوان 2
+### عنوان 3
+#### عنوان 4
+##### عنوان 5
+###### عنوان 6
+
+## 2. تنسيق النص
+
+نص عادي
+
+**نص غامق**
+
+*نص مائل*
+
+~~نص مشطوب~~
+
+**_نص غامق ومائل_**
+
+## 3. القوائم
+
+### قوائم غير مرتبة
+- عنصر 1
+- عنصر 2
+  - عنصر فرعي أ
+  - عنصر فرعي ب
+
+### قوائم مرتبة
+1. العنصر الأول
+2. العنصر الثاني
+3. العنصر الثالث
+
+## 4. الروابط والصور
+
+[رابط إلى جوجل](https://www.google.com)
+
+![مثال صورة](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBmaWxsPSIjY2NjY2NjIiAvPgogICAgPHRleHQgeD0iNzUiIHk9Ijc1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZpbGw9IiM0NDQ0NDQiPjE1MHgxNTA8L3RleHQ+Cjwvc3ZnPg==)
+
+## 5. الاقتباسات
+
+> هذا اقتباس
+> 
+> يمكن أن تمتد الاقتباسات على عدة أسطر
+
+## 6. الكود
+
+كود ضمن السطر: \`console.log('مرحبا بالعالم')\`
+
+كتلة كود:
+\`\`\`javascript
+function تحية(اسم) {
+  return \`مرحبا، \${اسم}!\`;
+}
+console.log(تحية('العالم'));
+\`\`\`
+
+## 7. الجداول
+
+| الاسم | العمر | المهنة |
+| ----- | ----- | ------ |
+| محمد  | 25    | مهندس  |
+| سارة  | 30    | مصممة  |
+| أحمد  | 28    | مدير منتج |
+
+## 8. خطوط أفقية
+
+---
+
+***
+`
       } else {
         console.error('Invalid locale:', currentLocale);
         throw new Error('Invalid locale');
@@ -1217,6 +1367,83 @@ graph TD;
 
 [TOC]
 `
+      } else if (currentLocale === 'fr') {
+        markdownText.value = `# Syntaxe Étendue de Markdown
+
+## 1. Listes de Tâches
+
+- [x] Tâche terminée
+- [ ] Tâche en attente
+- [x] Autre tâche terminée
+
+## 2. Emoji
+
+Prend en charge les emoji de style GitHub comme :smile: :heart: :thumbsup:
+
+## 3. Formules Mathématiques (nécessite une extension)
+
+Formule en ligne: $E=mc^2$
+
+Formule en bloc:
+
+$$
+\\frac{n!}{k!(n-k)!} = \\binom{n}{k}
+$$
+
+## 4. Notes de Bas de Page
+
+Voici une référence à une note de bas de page[^1]
+
+[^1]: Ceci est le contenu de la note de bas de page.
+
+## 5. Listes de Définitions
+
+Terme 1
+: Définition 1
+
+Terme 2
+: Définition 2a
+: Définition 2b
+
+## 6. Surlignage (nécessite une extension)
+
+Ceci est un ==texte surligné==
+
+## 7. Exposants et Indices (nécessite une extension)
+
+Exposant: X^2^
+Indice: H~2~O
+
+## 8. Avertissements (nécessite une extension)
+
+:::warning
+Ceci est un message d'avertissement
+:::
+
+:::info
+Ceci est un message d'information
+:::
+
+## 9. Conteneurs Personnalisés (nécessite une extension)
+
+::: details Cliquez pour afficher les détails
+Voici le contenu détaillé
+:::
+
+## 10. Organigrammes (nécessite une extension)
+
+\`\`\`mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+\`\`\`
+
+## 11. Table des Matières (nécessite une extension)
+
+[TOC]
+`
       } else {
         console.error('Invalid locale:', currentLocale);
         throw new Error('Invalid locale');
@@ -1571,92 +1798,82 @@ function नमस्तेदुनिया() {
 *लेखक: मार्कडाउन उत्साही*  
 *प्रकाशित: 15 अक्टूबर, 2023*
 `
-      } else if (currentLocale === 'ja') {
-        markdownText.value = `# Markdown：シンプルで強力なテキスト書式設定言語
+      } else if (currentLocale === 'fr') {
+        markdownText.value = `# Syntaxe Étendue de Markdown
 
-## はじめに
+## 1. Listes de Tâches
 
-デジタルコンテンツ作成の時代において、**Markdown**は技術文書、ブログ執筆、コンテンツ管理のための軽量マークアップ言語として好まれています。この記事ではMarkdownの歴史、基本構文、広範な応用について探ります。
+- [x] Tâche terminée
+- [ ] Tâche en attente
+- [x] Autre tâche terminée
 
-## Markdownの歴史と設計哲学
+## 2. Emoji
 
-Markdownは2004年にJohn GruberとAaron Swartzによって作成されました。その設計目標は、構造的に有効なHTMLに変換できる、読みやすく書きやすいプレーンテキスト形式で書けるようにすることでした。
+Prend en charge les emoji de style GitHub comme :smile: :heart: :thumbsup:
 
-> 「Markdownの書式構文の最優先の設計目標は、できるだけ読みやすくすることです。Markdownでフォーマットされた文書は、タグや書式指示で装飾されているように見えることなく、そのままプレーンテキストとして公開できるべきだという考えです。」
-> — John Gruber
+## 3. Formules Mathématiques (nécessite une extension)
 
-この設計哲学がMarkdownを他のマークアップ言語と区別しています：**外観よりもコンテンツに焦点を当てています**。
+Formule en ligne: $E=mc^2$
 
-## Markdownの基本構文
+Formule en bloc:
 
-Markdownはシンプルな構文ルールのセットを提供します。以下にいくつかの基本要素を示します：
+$$
+\\frac{n!}{k!(n-k)!} = \\binom{n}{k}
+$$
 
-### 1. 見出し
+## 4. Notes de Bas de Page
 
-Markdownでは#記号を使って見出しレベルを示します：
+Voici une référence à une note de bas de page[^1]
 
-\`\`\`markdown
-# 見出し1
-## 見出し2
-### 見出し3
+[^1]: Ceci est le contenu de la note de bas de page.
+
+## 5. Listes de Définitions
+
+Terme 1
+: Définition 1
+
+Terme 2
+: Définition 2a
+: Définition 2b
+
+## 6. Surlignage (nécessite une extension)
+
+Ceci est un ==texte surligné==
+
+## 7. Exposants et Indices (nécessite une extension)
+
+Exposant: X^2^
+Indice: H~2~O
+
+## 8. Avertissements (nécessite une extension)
+
+:::warning
+Ceci est un message d'avertissement
+:::
+
+:::info
+Ceci est un message d'information
+:::
+
+## 9. Conteneurs Personnalisés (nécessite une extension)
+
+::: details Cliquez pour afficher les détails
+Voici le contenu détaillé
+:::
+
+## 10. Organigrammes (nécessite une extension)
+
+\`\`\`mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
 \`\`\`
 
-### 2. 書式付きテキスト
+## 11. Table des Matières (nécessite une extension)
 
-- **太字**: \`**テキスト**\` または \`__テキスト__\`
-- *斜体*: \`*テキスト*\` または \`_テキスト_\`
-- ~~取り消し線~~: \`~~テキスト~~\`
-
-### 3. リスト
-
-順序なしリストはハイフン、プラス記号、またはアスタリスクをリストマーカーとして使用します：
-
-- 項目1
-- 項目2
-  - サブ項目A
-  - サブ項目B
-
-順序付きリストはピリオドの後に数字を使用します：
-
-1. 最初の項目
-2. 2番目の項目
-3. 3番目の項目
-
-### 4. リンクと画像
-
-リンク構文: \`[リンクテキスト](URL)\`  
-画像構文: \`![代替テキスト](画像URL)\`
-
-### 5. コードブロック
-
-\`\`\`javascript
-function helloWorld() {
-  console.log("こんにちは、世界！");
-}
-\`\`\`
-
-## Markdownの広範な応用
-
-Markdownはさまざまなプラットフォームやツールで広く使用されています：
-
-| プラットフォーム/ツール | 応用 |
-| ------------- | ----------- |
-| GitHub        | コード文書、Issues、Pull Requests |
-| Stack Overflow | 質問のフォーマット |
-| WordPress     | ブログ執筆 |
-| Discord/Slack | メッセージのフォーマット |
-| Notion        | ノートと知識管理 |
-
-## 結論
-
-シンプルさ、効率性、クロスプラットフォーム機能により、Markdownはコンテンツ作成者にとって貴重なツールとなっています。技術文書、ブログ投稿、または単純なメモを書く場合でも、Markdownは一貫性のある効率的な執筆体験を提供します。
-
-Markdownの学習は難しくありませんが、習得することでデジタル執筆の生産性が大幅に向上します。まだMarkdownを試していない場合は、今が始めるのに最適なタイミングです！
-
----
-
-*著者：Markdown愛好家*  
-*公開日：2023年10月15日*
+[TOC]
 `
       } else {
         console.error('Invalid locale:', currentLocale);

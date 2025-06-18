@@ -6,7 +6,7 @@
         <!-- 合作伙伴/资源链接 -->
         <div class="flex flex-wrap justify-center gap-4">
           <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2 text-center">
-            {{ $t('footer.partners') || '合作伙伴' }} :
+            {{ $t('footer.partners') }} :
           </h4>
           <a 
             href="https://twelve.tools" 
@@ -30,6 +30,13 @@
           >
           Australia
           </a>
+          <a href="https://huzzler.so/products/lqftrD1alr/ufreetools?utm_source=huzzler_product_website&utm_medium=badge&utm_campaign=badge" target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light transition-colors"
+          >
+            Huzzler
+          </a>
+
           <!-- 可以在这里添加更多合作伙伴链接 -->
         </div>
       </div>
