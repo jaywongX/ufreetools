@@ -335,6 +335,180 @@ const exampleCodesByLocale = {
     }
     Animal <|-- Perro
     Animal <|-- Gato`
+  },
+  fr: {
+    flowchart: `graph TD
+    A[Début] --> B{Est-ce correct?}
+    B -->|Oui| C[Résultat Correct]
+    B -->|Non| D[Résultat Incorrect]
+    C --> E[Fin]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant Client
+    participant Serveur
+    Client->>Serveur: Demande de données
+    Serveur-->>Client: Réponse avec données
+    Client->>Serveur: Soumission du formulaire
+    Serveur-->>Client: Confirmation de soumission`,
+    gantt: `gantt
+    title Calendrier d'Avancement du Projet
+    dateFormat  YYYY-MM-DD
+    section Phase de Planification
+    Collecte des Besoins           :a1, 2023-01-01, 30d
+    Conception du Système          :after a1, 20d
+    section Phase de Développement
+    Développement Backend          :2023-02-20, 45d
+    Développement Frontend         :2023-02-25, 40d
+    section Phase de Test
+    Test du Système                :2023-04-05, 20d
+    Test Utilisateur               :2023-04-20, 15d
+    section Phase de Déploiement
+    Déploiement                    :2023-05-05, 10d`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> Édition
+    Édition --> Révision: Soumettre pour révision
+    Révision --> Rejeté: Rejeter
+    Révision --> Publié: Approuver
+    Rejeté --> Édition: Réviser et resoumettre
+    Publié --> [*]`,
+    pieChart: `pie
+    title Distribution des Sources de Trafic Web
+    "Moteurs de Recherche" : 42.7
+    "Accès Direct" : 28.9
+    "Médias Sociaux" : 18.5
+    "Autres Canaux" : 9.9`,
+    classDiagram: `classDiagram
+    class Animal {
+        +String nom
+        +int âge
+        +faireBruit() void
+    }
+    class Chien {
+        +String race
+        +rapporter() void
+    }
+    class Chat {
+        +String couleur
+        +grimper() void
+    }
+    Animal <|-- Chien
+    Animal <|-- Chat`
+  },
+  hi: {
+    flowchart: `graph TD
+    A[प्रारंभ] --> B{क्या यह सही है?}
+    B -->|हां| C[सही परिणाम]
+    B -->|नहीं| D[गलत परिणाम]
+    C --> E[समाप्त]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant क्लाइंट
+    participant सर्वर
+    क्लाइंट->>सर्वर: डेटा अनुरोध
+    सर्वर-->>क्लाइंट: डेटा के साथ प्रतिक्रिया
+    क्लाइंट->>सर्वर: फॉर्म सबमिट करें
+    सर्वर-->>क्लाइंट: सबमिशन की पुष्टि करें`,
+    gantt: `gantt
+    title परियोजना प्रगति अनुसूची
+    dateFormat  YYYY-MM-DD
+    section योजना चरण
+    आवश्यकता संग्रह           :a1, 2023-01-01, 30d
+    सिस्टम डिजाइन           :after a1, 20d
+    section विकास चरण
+    बैकएंड विकास           :2023-02-20, 45d
+    फ्रंटएंड विकास           :2023-02-25, 40d
+    section परीक्षण चरण
+    सिस्टम परीक्षण           :2023-04-05, 20d
+    उपयोगकर्ता परीक्षण           :2023-04-20, 15d
+    section तैनाती चरण
+    तैनाती           :2023-05-05, 10d`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> संपादन
+    संपादन --> समीक्षा: समीक्षा के लिए सबमिट करें
+    समीक्षा --> अस्वीकृत: अस्वीकार
+    समीक्षा --> प्रकाशित: स्वीकृत
+    अस्वीकृत --> संपादन: संशोधित करें और पुनः सबमिट करें
+    प्रकाशित --> [*]`,
+    pieChart: `pie
+    title वेबसाइट ट्रैफिक स्रोत वितरण
+    "खोज इंजन" : 42.7
+    "प्रत्यक्ष पहुंच" : 28.9
+    "सोशल मीडिया" : 18.5
+    "अन्य चैनल" : 9.9`,
+    classDiagram: `classDiagram
+    class जानवर {
+        +String नाम
+        +int उम्र
+        +आवाज() void
+    }
+    class कुत्ता {
+        +String नस्ल
+        +लाना() void
+    }
+    class बिल्ली {
+        +String रंग
+        +चढ़ना() void
+    }
+    जानवर <|-- कुत्ता
+    जानवर <|-- बिल्ली`
+  },
+  ar: {
+    flowchart: `graph TD
+    A[البداية] --> B{هل هذا صحيح؟}
+    B -->|نعم| C[نتيجة صحيحة]
+    B -->|لا| D[نتيجة خاطئة]
+    C --> E[النهاية]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant العميل
+    participant الخادم
+    العميل->>الخادم: طلب البيانات
+    الخادم-->>العميل: الرد بالبيانات
+    العميل->>الخادم: إرسال النموذج
+    الخادم-->>العميل: تأكيد الإرسال`,
+    gantt: `gantt
+    title جدول تقدم المشروع
+    dateFormat  YYYY-MM-DD
+    section مرحلة التخطيط
+    جمع المتطلبات           :a1, 2023-01-01, 30d
+    تصميم النظام           :after a1, 20d
+    section مرحلة التطوير
+    تطوير الواجهة الخلفية            :2023-02-20, 45d
+    تطوير الواجهة الأمامية           :2023-02-25, 40d
+    section مرحلة الاختبار
+    اختبار النظام                :2023-04-05, 20d
+    اختبار المستخدم                  :2023-04-20, 15d
+    section مرحلة النشر
+    النشر                    :2023-05-05, 10d`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> تحرير
+    تحرير --> مراجعة: إرسال للمراجعة
+    مراجعة --> مرفوض: رفض
+    مراجعة --> منشور: موافقة
+    مرفوض --> تحرير: تعديل وإعادة الإرسال
+    منشور --> [*]`,
+    pieChart: `pie
+    title توزيع مصادر حركة المرور للموقع
+    "محركات البحث" : 42.7
+    "وصول مباشر" : 28.9
+    "وسائل التواصل الاجتماعي" : 18.5
+    "قنوات أخرى" : 9.9`,
+    classDiagram: `classDiagram
+    class حيوان {
+        +String اسم
+        +int عمر
+        +إصدارصوت() void
+    }
+    class كلب {
+        +String سلالة
+        +إحضار() void
+    }
+    class قطة {
+        +String لون
+        +تسلق() void
+    }
+    حيوان <|-- كلب
+    حيوان <|-- قطة`
   }
   // 可以添加更多语言...
 };

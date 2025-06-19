@@ -525,7 +525,6 @@ watch([
 // 初始化画布函数
 const initCanvas = async () => {
   try {
-    console.log("开始初始化 Canvas");
     // 等待下一个 DOM 更新周期
     await nextTick();
 
@@ -546,7 +545,6 @@ const initCanvas = async () => {
     if (!fabricCanvas.value) {
       throw new Error("Fabric Canvas 初始化失败");
     }
-    console.log("Canvas 初始化成功");
 
     // 监听窗口大小变化
     window.addEventListener("resize", () => {
