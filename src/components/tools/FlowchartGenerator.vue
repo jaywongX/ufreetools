@@ -568,7 +568,64 @@ const exampleCodesByLocale = {
     Животное <|-- Собака
     Животное <|-- Кошка`
   },
-  // 可以添加更多语言...
+  fr: {
+    flowchart: `graph TD
+    A[Début] --> B{Est-ce correct?}
+    B -->|Oui| C[Résultat Correct]
+    B -->|Non| D[Résultat Incorrect]
+    C --> E[Fin]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant Client
+    participant Serveur
+    Client->>Serveur: Demande de données
+    Serveur-->>Client: Réponse avec données
+    Client->>Serveur: Soumettre le formulaire
+    Serveur-->>Client: Confirmer la soumission`,
+    gantt: `gantt
+    title Calendrier de Progression du Projet
+    dateFormat  YYYY-MM-DD
+    section Phase de Planification
+    Collecte des Besoins           :a1, 2023-01-01, 30d
+    Conception du Système          :after a1, 20d
+    section Phase de Développement
+    Développement Backend          :2023-02-20, 45d
+    Développement Frontend         :2023-02-25, 40d
+    section Phase de Test
+    Test du Système                :2023-04-05, 20d
+    Test Utilisateur               :2023-04-20, 15d
+    section Phase de Déploiement
+    Déploiement                    :2023-05-05, 10d`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> Édition
+    Édition --> Révision: Soumettre pour révision
+    Révision --> Rejeté: Rejeter
+    Révision --> Publié: Approuver
+    Rejeté --> Édition: Réviser et resoumettre
+    Publié --> [*]`,
+    pieChart: `pie
+    title Distribution des Sources de Trafic Web
+    "Moteurs de Recherche" : 42.7
+    "Accès Direct" : 28.9
+    "Médias Sociaux" : 18.5
+    "Autres Canaux" : 9.9`,
+    classDiagram: `classDiagram
+    class Animal {
+        +String nom
+        +int âge
+        +faireBruit() void
+    }
+    class Chien {
+        +String race
+        +rapporter() void
+    }
+    class Chat {
+        +String couleur
+        +grimper() void
+    }
+    Animal <|-- Chien
+    Animal <|-- Chat`
+  },// 可以添加更多语言...
 };
 
 // 替换原来的 localizedExamples 计算属性

@@ -1,0 +1,118 @@
+export default {
+    name: 'Formateur XML',
+    description: 'Formate, embellit et valide des documents XML',
+    options: {
+      indentSize: 'Taille d\'indentation',
+      useTabs: 'Utiliser des tabulations',
+      collapseContent: 'Réduire le contenu',
+      maxLineWidth: 'Largeur maximale de ligne',
+      indentAttributes: 'Indenter les attributs',
+      sortAttributes: 'Trier les attributs',
+      newlineAfterPI: 'Nouvelle ligne après instruction de traitement',
+      operationType: 'Type d\'opération',
+      indentSettings: 'Paramètres d\'indentation',
+      displayOptions: 'Options d\'affichage',
+      showLineNumbers: 'Afficher les numéros de ligne'
+    },
+    indentOptions: {
+      twoSpaces: '2 espaces',
+      fourSpaces: '4 espaces',
+      tabIndent: 'Tabulation'
+    },
+    actions: {
+      format: 'Formater XML',
+      minify: 'Minifier XML',
+      validate: 'Valider',
+      toJSON: 'Convertir en JSON',
+      copy: 'Copier',
+      clear: 'Effacer',
+      download: 'Télécharger',
+      upload: 'Importer XML',
+      beautify: 'Embellir',
+      copyCode: 'Copier le code'
+    },
+    messages: {
+      copied: 'Copié dans le presse-papiers !',
+      formatSuccess: 'Formatage XML réussi',
+      formatError: 'Erreur lors du formatage XML',
+      validXml: 'XML valide',
+      invalidXml: 'XML invalide : {0}',
+      lineCol: 'Ligne {line}, colonne {col}',
+      minifySuccess: 'Minification XML réussie',
+      conversionSuccess: 'Conversion réussie',
+      conversionError: 'Erreur lors de la conversion',
+      pleaseEnterXml: 'Veuillez saisir du contenu XML',
+      processingError: 'Erreur de traitement XML : {0}',
+      formatResult: 'Résultat du formatage',
+      characterCount: 'Nombre de caractères : {0}',
+      lineCount: 'Nombre de lignes : {0}',
+      characterAndLineCount: 'Caractères : {0} | Lignes : {1}'
+    },
+    input: {
+      xmlInput: 'Entrée XML',
+      placeholder: 'Collez ou saisissez du XML ici...'
+    },
+    examples: {
+      title: 'Exemples XML',
+      description: 'Cliquez pour charger un exemple :',
+      simpleXml: 'XML simple',
+      bookstore: 'Catalogue de librairie',
+      complexXml: 'XML complexe'
+    },
+    article: {
+      title: "Outil de formatage XML : Essentiel pour le traitement des données structurées",
+      features: {
+        title: "Comprendre le formatage XML et ses applications",
+        description: "Le <strong>formateur XML</strong> est un puissant utilitaire en ligne conçu pour transformer du code XML brut en un format bien structuré et facile à lire. Il permet d'embellir des documents XML désordonnés ou compressés, de valider leur syntaxe et de convertir facilement entre différentes représentations XML.<br><br>La fonction principale de cet <strong>outil d'embellissement XML</strong> est d'analyser la structure hiérarchique des données XML et d'appliquer une indentation cohérente, des sauts de ligne appropriés et une mise en forme organisée, rendant ainsi les documents XML complexes plus faciles à lire, éditer et comprendre. L'outil prend en charge à la fois l'embellissement (expansion et organisation du XML avec un espacement approprié) et la minification (compression du XML en supprimant les espaces inutiles), vous permettant d'optimiser le XML pour la lisibilité humaine ou pour le traitement et le stockage machine. Avec des fonctionnalités comme la validation syntaxique, la numérotation des lignes et une indentation personnalisable, ce <strong>formateur XML optimisé</strong> offre une solution complète pour traiter des documents XML de toute complexité.",
+        useCases: {
+          title: "Cas d'utilisation pratiques du formatage XML",
+          items: [
+            "<strong>Développement et test de services web</strong> : Lors de la création ou du débogage de services web SOAP, les développeurs peuvent utiliser le <strong>validateur XML</strong> pour vérifier les charges utiles de requêtes et réponses, s'assurant qu'elles se conforment au schéma attendu. L'outil de formatage aide à analyser des messages SOAP complexes en transformant des réponses denses sur une seule ligne en structures correctement indentées, facilitant l'identification des éléments de données et le dépannage des problèmes d'intégration entre services.",
+            "<strong>Gestion des fichiers de configuration</strong> : De nombreuses applications d'entreprise s'appuient sur XML pour les paramètres de configuration. Les administrateurs système peuvent utiliser l'<strong>outil de formatage structurel XML</strong> pour nettoyer et standardiser les fichiers de configuration avant déploiement, réduisant ainsi le risque d'erreurs de syntaxe pouvant entraîner des défaillances système. Lorsqu'une édition manuelle est nécessaire pour personnalisation, la fonction d'embellissement rend les structures de configuration complexes plus lisibles.",
+            "<strong>Traitement d'intégration de données</strong> : Les ingénieurs de données traitant des échanges de données basés sur XML peuvent utiliser cet outil pour vérifier et valider les fichiers XML avant traitement. Lors de la réception de sources de données provenant de systèmes externes, le <strong>formateur de code XML</strong> aide à identifier rapidement les problèmes structurels ou incohérences dans les données entrantes, assurant des opérations ETL (Extraction, Transformation, Chargement) plus fluides et réduisant les échecs dans les pipelines de données.",
+            "<strong>Documentation et développement d'API</strong> : Les développeurs d'API créant ou utilisant des API basées sur XML peuvent utiliser l'outil de formatage pour générer des exemples XML propres et correctement formatés à inclure dans la documentation technique. Les exemples embellis rendent les spécifications d'API plus accessibles aux autres développeurs, affichant la structure attendue des requêtes et réponses dans un format facile à comprendre et à reproduire.",
+            "<strong>Maintenance de systèmes hérités</strong> : Les développeurs maintenants des systèmes anciens utilisant XML pour le stockage de données ou les échanges peuvent utiliser l'<strong>outil d'indentation XML</strong> pour comprendre du code hérité non documenté ou mal formaté. En formatant correctement les artefacts XML de ces systèmes, les développeurs de maintenance peuvent comprendre plus rapidement les structures de données et relations, facilitant ainsi les mises à jour et intégrations.",
+            "<strong>Systèmes de gestion de contenu</strong> : Les auteurs de contenu et administrateurs de sites utilisant des plateformes CMS stockant le contenu ou traitant des modèles en XML peuvent utiliser l'<strong>outil de formatage syntaxique XML</strong> pour structurer correctement les modèles de contenu ou fichiers d'export. Cela assure une cohérence de formatage du contenu et aide à prévenir les erreurs de rendu dues à du XML mal formé lors de la publication sur différents canaux ou plateformes."
+          ]
+        }
+      },
+      faq: {
+        title: "Questions fréquentes sur le formatage XML",
+        items: [
+          {
+            question: "Quelle est la différence entre embellir et minifier du XML ?",
+            answer: "Embellir du XML consiste à transformer du XML compressé ou mal formaté en un format structuré et lisible par l'homme, en ajoutant une indentation appropriée, des sauts de ligne et un espacement cohérent. Ce processus rend le document plus facile à lire, comprendre et éditer, ce qui est particulièrement utile pour le développement, le débogage ou la documentation. Minifier du XML fait l'inverse - cela supprime tous les espaces inutiles, sauts de ligne et indentations, créant une version compacte sur une seule ligne du document. La minification réduit la taille du fichier, ce qui peut améliorer la vitesse de transmission et réduire les besoins de stockage, idéal pour les environnements de production où le XML n'est traité que par des machines. Notre outil de formatage XML propose ces deux options, vous permettant de basculer entre formats lisible et compact selon vos besoins spécifiques. Alors que le XML embelli peut augmenter la taille du fichier de 30 à 50 %, la lisibilité accrue pendant les phases de développement compense généralement ces considérations de taille."
+          },
+          {
+            question: "Comment fonctionne la validation XML et quelles erreurs peut-elle détecter ?",
+            answer: "La validation XML dans notre outil fonctionne en analysant la structure XML et en la vérifiant par rapport aux règles d'un XML bien formé. Elle valide que le document respecte les exigences syntaxiques de base comme : des éléments correctement imbriqués (chaque balise ouvrante doit avoir une balise fermante correspondante dans le bon ordre) ; des attributs correctement formés (toutes les valeurs d'attribut doivent être entre guillemets) ; une utilisation correcte des entités (les caractères spéciaux doivent être correctement échappés) ; et la présence d'un seul élément racine. Les erreurs couramment détectées incluent : des balises non fermées, des balises ouvrantes et fermantes non correspondantes, des guillemets manquants autour des valeurs d'attributs, une imbrication incorrecte des éléments, l'utilisation de caractères interdits et des attributs en double dans un même élément. Lorsque la validation échoue, notre outil de formatage XML fournit des messages d'erreur spécifiques indiquant la nature du problème et son emplacement dans le document (avec le numéro de ligne et de colonne lorsque possible), vous aidant à identifier et corriger rapidement les problèmes de syntaxe. Le validateur se concentre sur la correction structurelle plutôt que sur la validation par rapport à un DTD ou schéma XML spécifique, le rendant universellement applicable pour les vérifications de syntaxe XML de base."
+          },
+          {
+            question: "Cet outil peut-il gérer des fichiers XML volumineux ?",
+            answer: "Oui, notre outil de formatage XML peut traiter des fichiers XML de taille moyenne (jusqu'à quelques mégaoctets) directement dans le navigateur. Pour des performances optimales, l'outil utilise des algorithmes d'analyse efficaces et des techniques de manipulation DOM pour traiter le XML sans consommer excessivement la mémoire. Cependant, il existe des limites pratiques basées sur les capacités du navigateur et les ressources système disponibles. Pour des fichiers XML très volumineux (des dizaines ou centaines de mégaoctets), vous pourriez rencontrer une baisse de performances ou, dans des cas extrêmes, atteindre les limites du navigateur. Pour ces très gros fichiers, nous recommandons de les traiter par morceaux ou d'utiliser d'abord l'option de minification pour réduire l'utilisation mémoire pendant le traitement. L'outil est optimisé pour gérer efficacement les cas d'utilisation courants du XML, y compris les fichiers de configuration, les réponses d'API, les sources de données et la plupart des charges utiles de services web. Si vous traitez régulièrement des ensembles de données XML particulièrement volumineux, envisagez d'utiliser un outil d'édition XML dédié spécialement conçu pour les gros fichiers avec une gestion mémoire optimisée."
+          },
+          {
+            question: "Le formatage XML modifie-t-il son fonctionnement ou son traitement ?",
+            answer: "Non, un formatage XML correct ne modifie pas la signification fonctionnelle du XML ou la façon dont les applications le traitent. Les analyseurs XML ignorent les espaces supplémentaires et sauts de ligne entre éléments, se concentrant uniquement sur les données et structure réelles. Notre outil de formatage conserve tous les composants essentiels : les noms d'éléments, attributs, valeurs et leurs relations hiérarchiques restent exactement les mêmes. Les seuls changements sont cosmétiques - ajout ou suppression d'espaces, sauts de ligne et indentations. Ce principe explique pourquoi un même document XML peut être représenté à la fois sous forme embellie et minifiée tout en restant fonctionnellement équivalent. Cependant, notez que les espaces dans les nœuds texte (le contenu réel entre balises) sont conservés car cela peut avoir de l'importance selon votre application. Par exemple, dans du XML utilisé pour la mise en forme de documents ou texte, les espaces entre mots dans les nœuds de contenu peuvent avoir une importance sémantique. Soyez assuré que nos opérations de formatage sont conçues pour préserver l'intégrité sémantique du XML tout en améliorant sa présentation visuelle pour les lecteurs humains."
+          },
+          {
+            question: "Comment personnaliser le style de formatage pour mes documents XML ?",
+            answer: "Notre outil de formatage XML propose plusieurs options de personnalisation pour correspondre à votre style de codage préféré ou aux besoins du projet. Vous pouvez ajuster la taille d'indentation en choisissant 2 espaces, 4 espaces ou des tabulations, vous permettant d'aligner avec les standards de codage de votre équipe ou préférences personnelles. Pour une aide visuelle pendant l'édition, vous pouvez activer ou désactiver l'affichage des numéros de ligne, particulièrement utile lors du traitement de gros documents ou lorsqu'il faut référencer des positions spécifiques dans la structure XML. L'outil conserve vos réglages récents pour votre commodité pendant votre session. Bien que l'outil de formatage ne prenne pas actuellement en charge des options de style plus avancées comme le tri personnalisé des attributs ou un formatage spécialisé des balises, il suit les meilleures pratiques largement acceptées pour le formatage XML, le rendant adapté à la plupart des cas d'utilisation. Les paramètres par défaut créent une structure propre et cohérente qui équilibre lisibilité et utilisation efficace de l'espace, rendant vos documents XML accessibles à la fois aux parties prenantes techniques et non techniques."
+          }
+        ]
+      },
+      guide: {
+        title: "Guide étape par étape pour utiliser l'outil de formatage XML",
+        steps: [
+          "<strong>Saisissez votre contenu XML</strong> : Commencez par entrer vos données XML dans la zone de saisie. Vous pouvez soit saisir directement dans le champ texte, soit coller du code XML. Si vous débutez avec l'outil ou souhaitez expérimenter, cliquez sur l'un des boutons d'exemple sous la zone de saisie pour charger des structures XML exemples de complexités variées.",
+          "<strong>Sélectionnez le type d'opération</strong> : Choisissez si vous souhaitez embellir ou minifier votre XML en sélectionnant l'option appropriée dans la section « Type d'opération ». Embellir développera votre XML en ajoutant une indentation et des sauts de ligne appropriés pour améliorer la lisibilité, tandis que minifier supprimera les espaces inutiles pour réduire la taille du fichier.",
+          "<strong>Personnalisez les options de formatage</strong> : Si vous avez choisi d'embellir le XML, vous pouvez personnaliser le style d'indentation en sélectionnant votre option préférée dans le menu déroulant « Paramètres d'indentation ». Selon vos standards de codage ou préférences personnelles, choisissez 2 espaces, 4 espaces ou des tabulations. Vous pouvez aussi basculer l'option « Afficher les numéros de ligne » pour afficher ou masquer les numéros de ligne dans la vue de sortie.",
+          "<strong>Traitez votre XML</strong> : Cliquez sur le bouton « Embellir » ou « Minifier » (selon l'opération choisie) pour formater votre XML. L'outil traitera votre saisie, vérifiera les erreurs de syntaxe, et affichera le résultat formaté dans la zone de sortie ci-dessous. Si des erreurs de syntaxe XML sont détectées, un message d'erreur apparaîtra pour vous aider à identifier et corriger le problème.",
+          "<strong>Vérifiez la sortie formatée</strong> : Après traitement, examinez le XML formaté dans la zone de résultats. Si les numéros de ligne sont activés (si sélectionné), vous pouvez facilement référencer des sections spécifiques du document. Les informations de comptage de caractères et de lignes affichées sous la sortie vous aident à suivre la taille et complexité du document.",
+          "<strong>Copiez ou éditez davantage</strong> : Si vous êtes satisfait du résultat, cliquez sur « Copier le code » pour copier le XML formaté dans votre presse-papiers, pour utilisation dans vos applications, documentation ou éditions ultérieures. Si vous devez ajuster la saisie et retraiter, vous pouvez modifier le XML original et cliquer à nouveau sur le bouton de formatage.",
+          "<strong>Effacez et commencez à nouveau</strong> : Lorsque vous êtes prêt à traiter un autre document XML, cliquez sur « Effacer » pour réinitialiser les zones de saisie et de sortie. Vous pouvez alors commencer avec un nouveau contenu XML ou charger un autre exemple pour continuer à utiliser l'outil de formatage."
+        ]
+      },
+      conclusion: "L'outil de formatage XML est un élément indispensable de la boîte à outils du développeur moderne, comblant le fossé entre la représentation XML efficace pour les machines et le code lisible par l'homme. En transformant du XML dense et non formaté en documents clairement structurés - et vice versa - il réduit considérablement le temps et les efforts nécessaires pour travailler avec des données XML dans de nombreuses applications et industries. Qu'il s'agisse de développer des services web, gérer des configurations système, traiter des sources de données ou maintenir des systèmes hérités, un XML correctement formaté améliore la qualité du code, réduit les erreurs et renforce la collaboration entre membres d'équipe. Alors que XML continue de servir de format fondamental pour l'échange de données et la configuration dans les environnements d'entreprise, avoir accès à un outil de formatage fiable reste essentiel pour des flux de travail efficaces de développement et maintenance système. Cet outil de formatage XML en ligne élimine le besoin d'applications de bureau spécialisées tout en offrant des fonctionnalités de niveau professionnel accessibles depuis n'importe quel navigateur web moderne."
+    }
+  }

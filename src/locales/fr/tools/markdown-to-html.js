@@ -1,0 +1,159 @@
+export default {
+    name: 'Markdown vers HTML',
+    description: 'Convertir du texte Markdown en HTML avec des options personnalisables',
+    input: {
+      title: 'Saisie Markdown',
+      placeholder: 'Saisissez ou collez votre texte Markdown ici...',
+      loadSample: 'Charger un exemple',
+      clearInput: 'Effacer',
+      uploadFile: 'Importer un fichier Markdown',
+      paste: 'Coller depuis le presse-papiers',
+      charCount: 'Nombre de caractères',
+      lineCount: 'Nombre de lignes'
+    },
+    output: {
+      title: 'Sortie HTML',
+      copied: 'HTML copié dans le presse-papiers',
+      download: 'Télécharger HTML',
+      copyOutput: 'Copier HTML',
+      clearOutput: 'Effacer la sortie',
+      previewTab: 'Aperçu',
+      htmlTab: 'Code HTML',
+      previewMode: 'Mode aperçu',
+      sourceMode: 'Code source HTML'
+    },
+    options: {
+      title: 'Options de conversion',
+      headerIds: 'IDs automatiques pour titres',
+      gfm: 'Markdown style GitHub',
+      tables: 'Tableaux',
+      breaks: 'Sauts de ligne',
+      smartLists: 'Listes intelligentes',
+      smartypants: 'Ponctuation intelligente',
+      xhtml: 'XHTML',
+      highlight: 'Coloration syntaxique',
+      sanitize: 'Nettoyer HTML',
+      footnotes: 'Notes de bas de page',
+      taskLists: 'Listes de tâches',
+      emoji: 'Support des emojis',
+      includeStyle: 'Inclure CSS par défaut',
+      realtimePreview: 'Aperçu en temps réel',
+      scrollSync: 'Synchronisation du défilement',
+      htmlOptions: 'Options HTML'
+    },
+    styles: {
+      title: 'Options de style',
+      theme: 'Thème',
+      codeTheme: 'Thème de code',
+      customCSS: 'CSS personnalisé',
+      fontSize: 'Taille de police',
+      lineHeight: 'Hauteur de ligne',
+      enableCustom: 'Activer styles personnalisés'
+    },
+    themes: {
+      default: 'Par défaut',
+      github: 'GitHub',
+      bootstrap: 'Bootstrap',
+      bulma: 'Bulma',
+      medium: 'Medium',
+      solarized: 'Solarized',
+      dark: 'Mode sombre',
+      custom: 'Personnalisé'
+    },
+    codeThemes: {
+      default: 'Par défaut',
+      github: 'GitHub',
+      vscode: 'VS Code',
+      atom: 'Atom',
+      dracula: 'Dracula',
+      monokai: 'Monokai',
+      solarized: 'Solarized'
+    },
+    actions: {
+      convert: 'Convertir en HTML',
+      clearAll: 'Tout effacer',
+      copyHtml: 'Copier HTML',
+      saveAsHtml: 'Enregistrer en HTML',
+      generateToc: 'Générer sommaire'
+    },
+    messages: {
+      conversionSuccess: 'Conversion Markdown réussie',
+      conversionFailed: 'Échec de conversion Markdown : {error}',
+      emptyInput: 'Veuillez saisir du Markdown à convertir',
+      copied: 'HTML copié dans le presse-papiers',
+      tocGenerated: 'Sommaire généré'
+    },
+    alerts: {
+      copied: 'Copié dans le presse-papiers',
+      copyFailed: 'Échec de la copie',
+      pasteFailed: 'Échec du collage',
+      confirmClear: 'Confirmez-vous vouloir effacer le contenu ?'
+    },
+    status: {
+      lastConversion: 'Dernière conversion'
+    },
+    samples: {
+      basic: 'Exemple basique',
+      extended: 'Exemple étendu',
+      article: 'Exemple d\'article'
+    },
+    download: {
+      title: 'Export Markdown vers HTML'
+    },
+    
+    // Section article ajoutée
+    article: {
+      title: "Convertisseur Markdown vers HTML : Transformez du texte en contenu web formaté",
+      features: {
+        title: "Markdown vers HTML : Simplifiez la création de contenu",
+        description: "Le <strong>convertisseur Markdown vers HTML</strong> est un outil puissant conçu pour transformer la syntaxe légère du Markdown en code HTML formaté pour publication web. Ce <strong>outil de formatage de texte</strong> fait le pont entre l'écriture simple et la création de contenu web, permettant aux créateurs de se concentrer sur l'écriture sans se soucier des balises HTML complexes.<br><br>La simplicité du Markdown en fait un choix idéal pour la création de contenu, mais les navigateurs nécessitent du HTML pour afficher correctement le contenu formaté. Notre <strong>processeur Markdown</strong> gère automatiquement cette conversion, prenant en charge les fonctionnalités standard du Markdown incluant titres, listes, liens, images, tableaux, blocs de code, citations et formatage de texte, tout en offrant des options de personnalisation et d'aperçu.",
+        useCases: {
+          title: "Cas d'utilisation pratique de Markdown vers HTML",
+          items: [
+            "<strong>Rédaction d'articles de blog</strong> : Les rédacteurs peuvent rédiger des articles en Markdown facile à écrire, puis les convertir en HTML pour publication sur diverses plateformes de blog. Le <strong>parseur Markdown</strong> garantit un formatage approprié tout en maintenant une structure HTML propre, compatible avec les systèmes de gestion de contenu comme WordPress, Ghost ou Jekyll.",
+            "<strong>Développement de documentation</strong> : Les rédacteurs techniques utilisent Markdown pour écrire de la documentation logicielle, des guides utilisateurs et des manuels techniques, puis les convertissent en HTML pour des sites de documentation web. Le support de formatage de code et de coloration syntaxique en fait un choix idéal pour créer une <strong>documentation développeur</strong> incluant des exemples de code.",
+            "<strong>Fichiers README pour dépôts de code</strong> : Les développeurs documentant des dépôts GitHub, GitLab ou Bitbucket peuvent utiliser cet outil pour prévisualiser le rendu de leur Markdown et extraire du HTML propre pour d'autres plateformes ne supportant pas nativement Markdown.",
+            "<strong>Formatage de newsletters</strong> : Les marketeurs peuvent rédiger du contenu email en Markdown simple, puis le convertir en HTML pour des plateformes d'email marketing. Le <strong>générateur HTML</strong> produit un code propre fonctionnant bien sur divers clients email tout en maintenant une cohérence de formatage.",
+            "<strong>Contenu éducatif</strong> : Enseignants et formateurs créant du matériel pédagogique peuvent rédiger en Markdown et convertir en HTML pour des systèmes de gestion de l'apprentissage ou plateformes de cours en ligne, utilisant les fonctionnalités de formatage pour créer du <strong>contenu structuré</strong> avec titres, listes et mise en valeur.",
+            "<strong>Écriture collaborative</strong> : Les équipes travaillant sur des documents partagés peuvent utiliser Markdown pour simplifier le processus, puis convertir en HTML pour publication. Ce workflow simplifie l'édition tout en garantissant une sortie HTML propre et cohérente."
+          ]
+        }
+      },
+      faq: {
+        title: "Questions fréquentes sur la conversion Markdown vers HTML",
+        items: [
+          {
+            question: "Quelle est la différence entre Markdown et HTML ?",
+            answer: "Markdown et HTML servent des objectifs différents dans le flux de création de contenu. <strong>HTML (HyperText Markup Language)</strong> est le langage standard pour créer des pages web et applications. Il utilise des balises comme &lt;p&gt;, &lt;h1&gt; et &lt;ul&gt; pour définir structure et format. Bien que puissant, HTML peut être verbeux et difficile à écrire correctement pour les non-techniciens.<br><br>D'un autre côté, <strong>Markdown</strong> est un langage de balisage léger conçu pour maximiser lisibilité et facilité d'écriture. Il utilise des symboles simples comme # pour les titres, * pour les listes et ** pour le texte en gras. Cette simplicité fait de Markdown un choix idéal pour la création de contenu initial, surtout en se concentrant sur le texte plutôt que la mise en page.<br><br>Notre <strong>convertisseur Markdown vers HTML</strong> fait le pont entre ces deux mondes, vous permettant d'écrire en Markdown simple et de générer le HTML correct pour publication web. Vous bénéficiez ainsi des avantages des deux : la simplicité de Markdown pour écrire et le support universel d'HTML pour l'affichage."
+          },
+          {
+            question: "Pourquoi mes blocs de code apparaissent-ils différemment après conversion ?",
+            answer: "Les blocs de code dans la <strong>sortie HTML</strong> peuvent apparaître différents de votre Markdown pour plusieurs raisons :<br><br>1. <strong>Coloration syntaxique</strong> : Si activée, notre convertisseur applique un coloriage spécifique au langage à votre code, améliorant la lisibilité et l'attrait visuel. Ceci ajoute du HTML et CSS supplémentaires pour styliser différentes parties du code selon la syntaxe du langage.<br><br>2. <strong>Amélioration du formatage</strong> : Le convertisseur encapsule les blocs de code dans les éléments HTML appropriés (&lt;pre&gt; et &lt;code&gt;) et peut appliquer des styles comme couleurs de fond, numéros de ligne ou ajustements de police pour améliorer la lisibilité.<br><br>3. <strong>Échappement des caractères</strong> : Les caractères spéciaux dans le code doivent être correctement échappés en HTML pour s'afficher correctement. Par exemple, les chevrons des balises HTML dans les blocs de code seront convertis en entités &amp;lt; et &amp;gt;.<br><br>Ces conversions sont intentionnelles et aident à rendre votre code plus lisible dans les navigateurs tout en préservant l'intégrité fonctionnelle des exemples. Vous pouvez personnaliser ces aspects avec les options de style et formatage de l'outil."
+          },
+          {
+            question: "Puis-je personnaliser le style de la sortie HTML ?",
+            answer: "Oui, notre <strong>convertisseur Markdown</strong> offre plusieurs options pour personnaliser le style de la sortie HTML :<br><br>1. <strong>Inclure CSS par défaut</strong> : Activez cette option pour inclure un ensemble de styles CSS de base rendant votre HTML immédiatement plus attrayant visuellement. Ces styles incluent typographie, espacement et schémas de couleurs améliorant la lisibilité.<br><br>2. <strong>Options de style personnalisées</strong> : Selon vos besoins, vous pouvez sélectionner différents thèmes affectant l'affichage des titres, listes, citations et liens.<br><br>3. <strong>Thèmes pour blocs de code</strong> : Pour le contenu technique, choisissez différents thèmes de coloration syntaxique modifiant l'apparence des blocs de code dans la sortie.<br><br>4. <strong>Édition HTML directe</strong> : Après conversion, si vous avez besoin d'un formatage très spécifique, vous pouvez passer en vue HTML et ajouter manuellement des classes CSS personnalisées ou styles inline.<br><br>Ces options de personnalisation vous permettent de générer du <strong>HTML prêt pour le web</strong> correspondant à vos exigences de design, tout en préservant la structure claire offerte par le formatage Markdown. Le panneau d'aperçu montre précisément à quoi ressemblera votre contenu avec les options sélectionnées."
+          },
+          {
+            question: "Ce convertisseur préserve-t-il la structure de mon document ?",
+            answer: "Oui, le <strong>convertisseur Markdown vers HTML</strong> est spécialement conçu pour préserver l'intégrité structurelle du document pendant la conversion. Voici comment la structure est maintenue :<br><br>1. <strong>Hiérarchie des titres</strong> : Les titres Markdown (# à ######) sont correctement convertis en leurs équivalents HTML (&lt;h1&gt; à &lt;h6&gt;), préservant le plan logique et la hiérarchie des sections.<br><br>2. <strong>Structure des listes</strong> : Les listes ordonnées et non ordonnées, y compris les listes imbriquées, sont converties avec les balises HTML appropriées (&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;) tout en conservant leurs relations hiérarchiques.<br><br>3. <strong>Séparation des paragraphes</strong> : Les lignes vides séparant les paragraphes en Markdown sont correctement converties en éléments &lt;p&gt; distincts en HTML.<br><br>4. <strong>Éléments de bloc</strong> : Les blocs spéciaux comme citations, blocs de code et tableaux restent séparés du texte régulier dans le HTML généré.<br><br>5. <strong>Sauts de ligne et paragraphes</strong> : Le convertisseur gère intelligemment la différence entre les sauts de ligne dans un paragraphe et les séparations de paragraphes selon les conventions Markdown.<br><br>Cette préservation de la structure garantit que votre <strong>hiérarchie documentaire</strong> reste intacte, rendant le HTML converti sémantiquement correct et correctement organisé pour les navigateurs web, lecteurs d'écran et moteurs de recherche."
+          },
+          {
+            question: "Le HTML généré est-il propre et optimisé pour le SEO ?",
+            answer: "Oui, notre <strong>convertisseur Markdown</strong> génère du HTML propre et sémantiquement correct, très favorable au SEO. Voici pourquoi la sortie supporte un bon référencement :<br><br>1. <strong>Structure sémantique</strong> : Le HTML généré utilise correctement les éléments sémantiques (&lt;h1&gt;, &lt;h2&gt;, &lt;p&gt;, &lt;ul&gt; etc.), aidant les moteurs de recherche à comprendre la structure et l'importance des différentes parties du contenu.<br><br>2. <strong>Code propre</strong> : Le HTML généré est léger, sans balisage inutile ou styles inline pouvant alourdir la page. Ce code propre est plus facile à analyser et indexer par les moteurs de recherche.<br><br>3. <strong>Hiérarchie des titres appropriée</strong> : Les titres Markdown sont convertis en balises de titre HTML correspondantes, préservant le plan logique que les moteurs de recherche utilisent pour comprendre les relations et hiérarchie des sujets.<br><br>4. <strong>Contenu accessible</strong> : La sortie HTML suit les meilleures pratiques d'accessibilité, alignées avec les exigences SEO car toutes deux se concentrent sur une structure et sémantique documentaire appropriées.<br><br>5. <strong>Options de nettoyage</strong> : La fonction de nettoyage HTML supprime les éléments potentiellement dangereux tout en préservant l'intégrité structurelle du contenu, garantissant une sortie HTML sûre et propre.<br><br>Ce <strong>HTML optimisé SEO</strong> fournit une base solide pour votre contenu web, permettant aux moteurs de recherche de crawler, comprendre et indexer efficacement vos pages, potentiellement améliorant votre classement et visibilité dans les résultats de recherche."
+          }
+        ]
+      },
+      guide: {
+        title: "Comment utiliser le convertisseur Markdown vers HTML : Guide étape par étape",
+        step1: "<strong>Saisissez votre texte Markdown</strong> : Commencez par saisir ou coller votre contenu Markdown dans la zone de saisie à gauche du convertisseur. Si vous débutez avec Markdown ou avez besoin d'un point de départ, utilisez le bouton \"Charger un exemple\" pour voir des exemples de syntaxe de base, fonctionnalités avancées ou structure d'article complète.",
+        step2: "<strong>Sélectionnez les options de conversion</strong> : Utilisez les options en haut de l'outil pour configurer vos préférences. Vous pouvez activer \"Aperçu en temps réel\" pour voir immédiatement les changements, \"Synchronisation du défilement\" pour faire défiler ensemble les zones de saisie et de sortie, \"Nettoyer HTML\" pour supprimer les éléments potentiellement dangereux, et \"Inclure CSS par défaut\" pour ajouter des styles de base à la sortie HTML.",
+        step3: "<strong>Prévisualisez votre contenu</strong> : Pendant que vous saisissez ou collez du contenu, la zone d'aperçu à droite montre comment votre Markdown sera rendu en HTML. Basculer entre les modes \"Aperçu\" (résultat formaté) et \"Code HTML\" (balisage HTML généré).",
+        step4: "<strong>Affinez votre Markdown</strong> : Apportez les ajustements nécessaires à votre texte Markdown en vous référant à l'aperçu pour vérifier que le formatage s'affiche comme prévu. Si la conversion en temps réel est activée, le convertisseur se met à jour instantanément, vous permettant de voir immédiatement l'effet des changements.",
+        step5: "<strong>Formatez les blocs de code</strong> : Pour le contenu technique, utilisez trois accents graves (```) suivis du nom du langage pour créer des blocs de code avec coloration syntaxique. Par exemple, utiliser ```javascript avant et après votre code ajoutera la coloration appropriée pour le code JavaScript.",
+        step6: "<strong>Copiez le HTML généré</strong> : Une fois satisfait du résultat, cliquez sur le bouton \"Copier HTML\" (icône de flèche vers le haut) dans la zone de sortie pour copier le code HTML dans le presse-papiers. Vous pouvez ensuite le coller dans votre éditeur de site, CMS ou toute application acceptant le HTML.",
+        step7: "<strong>Téléchargez en fichier HTML</strong> : Si vous avez besoin de sauvegarder le document HTML complet, cliquez sur \"Télécharger HTML\" (icône de téléchargement) pour enregistrer le résultat converti sous forme de fichier HTML pouvant être ouvert dans n'importe quel navigateur web."
+      },
+      conclusion: "Le convertisseur Markdown vers HTML sert de pont crucial entre la simplicité d'écriture du Markdown et l'universalité d'affichage du HTML sur le web. En fournissant une interface intuitive, un aperçu en temps réel et des options de sortie personnalisables, cet outil simplifie le flux de création de contenu pour blogueurs, développeurs, rédacteurs techniques et gestionnaires de contenu. Que vous créiez de la documentation, des articles de blog ou des publications techniques, ce convertisseur vous aide à vous concentrer sur le contenu tout en garantissant qu'il est correctement formaté pour publication web. Alors que Markdown et HTML continuent d'être des langages fondamentaux dans l'écosystème du contenu numérique, la capacité à les convertir efficacement reste un atout inestimable pour les créateurs de contenu modernes."
+    }
+  }

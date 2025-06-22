@@ -897,242 +897,6 @@ example.init();
 - अंग्रेज़ी (प्रवाहपूर्ण)`
       }
     ];
-  } else if (locale.value === 'fr') {
-    // 法文模板
-    markdownTemplates.value = [
-      {
-        name: 'プロジェクトREADME',
-        description: 'プロジェクト文書の標準構造',
-        content: `# プロジェクト名
-
-[![ライセンス](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-
-## プロジェクト説明
-プロジェクトの主な機能と目的の簡単な説明。
-
-## 特徴
-- 主な特徴1
-- 主な特徴2
-- 主な特徴3
-
-## インストール
-\`\`\`bash
-# 依存関係をインストール
-npm install
-
-# 開発サーバーを起動
-npm run dev
-\`\`\`
-
-## 使用例
-\`\`\`javascript
-// サンプルコード
-const example = new Example();
-example.init();
-\`\`\`
-
-## ドキュメント
-より詳細なドキュメントについては、[ドキュメントリンク](docs/README.md)を参照してください。
-
-## 貢献ガイド
-貢献は歓迎します。[貢献ガイド](CONTRIBUTING.md)を参照してください。
-
-## ライセンス
-このプロジェクトはMITライセンスの下でリリースされています。詳細は[LICENSE](LICENSE)を参照してください。`
-      },
-      {
-        name: '履歴書',
-        description: '個人履歴書テンプレート',
-        content: `# 履歴書
-
-## 個人情報
-- **名前**: 山田太郎
-- **電話**: 123-456-7890
-- **メール**: yamada@email.com
-- **職務目標**: フロントエンド開発者
-
-## 学歴
-**XYZ大学** | コンピュータサイエンス | 2016年9月 - 2020年6月
-
-## 職歴
-### XYZテック株式会社 | フロントエンド開発者 | 2020年7月 - 現在
-- 主要製品のフロントエンド開発とメンテナンスを担当
-- Vue.jsを使用して企業管理システムを開発し、ユーザーエクスペリエンスを向上
-- フロントエンドのパフォーマンスを最適化し、ページ読み込み時間を30%削減
-
-### ABC株式会社 | フロントエンドインターン | 2019年7月 - 2020年6月
-- 会社のウェブサイトリデザインプロジェクトに参加
-- コードのリファクタリングと最適化でチームをサポート
-
-## 技術スキル
-- **フロントエンド**: HTML, CSS, JavaScript, Vue.js, React
-- **バックエンド**: Node.js, Express
-- **その他ツール**: Git, Webpack, Docker
-
-## プロジェクト経験
-### 企業管理システム
-- Vue.js + Element UIで開発
-- データ可視化、権限管理機能を実装
-- システム応答速度を最適化し、ユーザーエクスペリエンスを向上
-
-## 言語スキル
-- 日本語（ネイティブ）
-- 英語（ビジネスレベル）`
-      },
-      {
-        name: 'Bienvenue dans l\'Éditeur Markdown',
-        description: 'Incluye encabezados, listas, citas, etc.',
-        content: `# Bienvenue dans l'Éditeur Markdown
-
-Ceci est un éditeur Markdown simple avec aperçu en temps réel et coloration syntaxique.
-
-## Syntaxe de Base
-
-### Titres
-Utilisez les symboles # pour indiquer les titres :
-# Titre 1
-## Titre 2
-### Titre 3
-
-### Énfasis
-**Gras** ou __Gras__
-*Italique* ou _Italique_
-~~Barré~~
-
-### Listes
-Liste non ordonnée :
-- Élément 1
-- Élément 2
-- Élément 3
-
-Liste ordonnée :
-1. Premier élément
-2. Deuxième élément
-3. Troisième élément
-
-### Liens et Images
-[Texte du lien](https://exemple.com)
-![Texte alternatif de l'image](https://exemple.com/image.jpg)
-
-### Code
-Code en ligne : \`var exemple = "bonjour";\`
-
-### Citations
-> Ceci est une citation.
-
-### Tableaux
-| En-tête 1 | En-tête 2 | En-tête 3 |
-|-----------|-----------|-----------|
-| Cellule 1 | Cellule 2 | Cellule 3 |
-| Cellule 4 | Cellule 5 | Cellule 6 |
-
-### Ligne Horizontale
----
-
-Commencez à éditer ! Vous pouvez utiliser la barre d'outils ci-dessus pour insérer rapidement divers éléments Markdown.`
-      },
-      {
-        name: 'README de Projet',
-        description: 'Structure standard pour la documentation de projet',
-        content: `# Nom du Projet
-
-[![Licence](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
-
-## Description du Projet
-Brève description des fonctions principales et de l'objectif du projet.
-
-## Caractéristiques
-- Caractéristique principale 1
-- Caractéristique principale 2
-- Caractéristique principale 3
-
-## Installation
-\`\`\`bash
-# Installer les dépendances
-npm install
-
-# Démarrer le serveur de développement
-npm run dev
-\`\`\`
-
-## Exemple d'Utilisation
-\`\`\`javascript
-// Code d'exemple
-const exemple = new Exemple();
-exemple.init();
-\`\`\`
-
-## Documentation
-Pour une documentation plus détaillée, veuillez consulter [Lien vers la Documentation](docs/README.md).
-
-## Guide de Contribution
-Les contributions sont les bienvenues, veuillez consulter [Guide de Contribution](CONTRIBUTING.md).
-
-## Licence
-Ce projet est publié sous la Licence MIT, voir [LICENSE](LICENSE) pour plus de détails.`
-      },
-      {
-        name: 'CV',
-        description: 'Modèle de CV personnel',
-        content: `# Curriculum Vitae
-
-## Informations Personnelles
-- **Nom**: Jean Dupont
-- **Téléphone**: 01 23 45 67 89
-- **Email**: jean.dupont@email.com
-- **Objectif Professionnel**: Développeur Frontend
-
-## Formation
-**Université XYZ** | Informatique | Septembre 2016 - Juin 2020
-
-## Expérience Professionnelle
-### XYZ Tech Inc. | Développeur Frontend | Juillet 2020 - Présent
-- Responsable du développement frontend et de la maintenance des produits principaux
-- Développement d'un système de gestion d'entreprise avec Vue.js, améliorant l'expérience utilisateur
-- Optimisation des performances frontend, réduisant le temps de chargement des pages de 30%
-
-### ABC Corp. | Stagiaire Frontend | Juillet 2019 - Juin 2020
-- Participation au projet de refonte du site web de l'entreprise
-- Assistance à l'équipe pour la refactorisation et l'optimisation du code
-
-## Compétences Techniques
-- **Frontend**: HTML, CSS, JavaScript, Vue.js, React
-- **Backend**: Node.js, Express
-- **Autres Outils**: Git, Webpack, Docker
-
-## Expérience de Projets
-### Système de Gestion d'Entreprise
-- Développé avec Vue.js + Element UI
-- Implémentation de la visualisation de données, fonctionnalités de gestion des permissions
-- Optimisation de la vitesse de réponse du système, amélioration de l'expérience utilisateur
-
-## Compétences Linguistiques
-- Français (Langue maternelle)
-- Anglais (Courant)`
-      }
-    ];
-  } else if (locale.value === 'ja') {
-    // 日文模板
-    markdownTemplates.value = [
-      {
-        name: 'シンプル文書',
-        description: '見出し、リスト、引用などを含む',
-        content: `# 文書タイトル
-
-## はじめに
-これはMarkdown文書の簡単な例です。
-
-## 特徴
-- 見出しと段落をサポート
-- **太字**と*斜体*テキストをサポート
-- 順序付きリストと順序なしリストをサポート
-
-> これは引用ブロックで、他の人の意見を引用するために使用します。
-
-## 結論
-Markdownはシンプルで使いやすいマークアップ言語です。`
-      },
-    ]
   } else if (locale.value === 'ar') {
     // 阿拉伯文模板
     markdownTemplates.value = [
@@ -1149,7 +913,7 @@ Markdownはシンプルで使いやすいマークアップ言語です。`
 `
       },
     ]
-  }  else if (locale.value === 'ru') {
+  } else if (locale.value === 'ru') {
     // 俄语模板
     markdownTemplates.value = [
       {
@@ -1250,7 +1014,106 @@ example.init();
 - Английский (свободное владение)`
       }
     ];
-  }
+  } else if (locale.value === 'fr') {
+    // 法语模板
+    markdownTemplates.value = [
+      {
+        name: 'Document Simple',
+        description: 'Inclut titres, listes, citations, etc.',
+        content: `# Titre du Document
+
+## Introduction
+Ceci est un exemple simple de document Markdown.
+
+## Caractéristiques
+- Prend en charge les titres et paragraphes
+- Prend en charge le texte en **gras** et en *italique*
+- Prend en charge les listes ordonnées et non ordonnées
+
+> Ceci est un bloc de citation, utilisé pour citer l'opinion de quelqu'un d'autre.
+
+## Conclusion
+Markdown est un langage de balisage simple et facile à utiliser.`
+      },
+      {
+        name: 'README de Projet',
+        description: 'Structure standard pour documentation de projet',
+        content: `# Nom du Projet
+
+## Description du Projet
+Brève description des fonctions principales et de l'objectif du projet.
+
+## Fonctionnalités
+- Fonctionnalité principale 1
+- Fonctionnalité principale 2
+- Fonctionnalité principale 3
+
+## Installation
+\`\`\`
+# Installer les dépendances
+npm install
+
+# Démarrer le serveur de développement
+npm run dev
+\`\`\`
+
+## Exemple d'Utilisation
+\`\`\`
+// Code exemple
+const example = new Example();
+example.init();
+\`\`\`
+
+## Documentation
+Pour une documentation plus détaillée, veuillez consulter le lien de la documentation.
+
+## Guide de Contribution
+Les contributions sont les bienvenues, veuillez consulter le guide de contribution.
+
+## Licence
+Ce projet est publié sous la licence MIT, voir le fichier LICENSE pour plus de détails.`
+      },
+      {
+        name: 'CV Personnel',
+        description: 'Modèle de CV personnel',
+        content: `# Curriculum Vitae
+
+## Informations Personnelles
+- Nom : Jean Dupont
+- Téléphone : 06 12 34 56 78
+- Email : jean.dupont@example.com
+- Objectif Professionnel : Développeur Frontend
+
+## Formation
+Université XYZ, Informatique, Septembre 2016 - Juin 2020
+
+## Expérience Professionnelle
+### Entreprise Tech, Développeur Frontend, Juillet 2020 - Présent
+- Responsable du développement frontend et de la maintenance des produits principaux
+- Développement d'un système de gestion d'entreprise avec Vue.js, amélioration de l'expérience utilisateur
+- Optimisation des performances frontend, réduction du temps de chargement des pages de 30%
+
+### Entreprise ABC, Stagiaire Frontend, Juillet 2019 - Juin 2020
+- Participation au projet de refonte du site web de l'entreprise
+- Assistance à l'équipe pour la refactorisation et l'optimisation du code
+
+## Compétences Techniques
+- Développement Frontend : HTML, CSS, JavaScript, Vue.js, React
+- Développement Backend : Node.js, Express
+- Autres Outils : Git, Webpack, Docker
+
+## Expérience de Projets
+### Système de Gestion d'Entreprise
+- Développé avec Vue.js
+- Implémentation de visualisation de données, gestion des autorisations et autres fonctionnalités
+- Optimisation de la vitesse de réponse du système, amélioration de l'expérience utilisateur
+
+## Compétences Linguistiques
+- Français (Langue maternelle)
+- Anglais (Courant)`
+      }
+    ];
+  } 
   else {
     console.error('Invalid locale:', locale.value);
     throw new Error('Invalid locale');
@@ -1457,6 +1320,55 @@ Código en línea: \`var ejemplo = "hola";\`
 
 संपादन शुरू करें! आप विभिन्न मार्कडाउन तत्वों को जल्दी से डालने के लिए ऊपर दिए गए टूलबार का उपयोग कर सकते हैं।`,
 
+    'ru': `# Добро пожаловать в редактор Markdown
+
+Это простой редактор Markdown с предварительным просмотром в реальном времени и подсветкой синтаксиса.
+
+## Основной синтаксис
+
+### Заголовки
+Используйте символы # для обозначения заголовков:
+# Заголовок 1
+## Заголовок 2
+### Заголовок 3
+
+### Выделение
+**Жирный** или __Жирный__
+*Курсив* или _Курсив_
+~~Зачеркнутый~~
+
+### Списки
+Неупорядоченный список:
+- Пункт 1
+- Пункт 2
+- Пункт 3
+
+Упорядоченный список:
+1. Первый пункт
+2. Второй пункт
+3. Третий пункт
+
+### Ссылки и изображения
+[Текст ссылки](https://example.com)
+![Альтернативный текст изображения](https://example.com/image.jpg)
+
+### Код
+Встроенный код: \`var example = "hello";\`
+
+### Цитаты
+> Это блок цитаты.
+
+### Таблицы
+| Заголовок 1 | Заголовок 2 | Заголовок 3 |
+|------------|------------|------------|
+| Ячейка 1   | Ячейка 2   | Ячейка 3   |
+| Ячейка 4   | Ячейка 5   | Ячейка 6   |
+
+### Горизонтальная линия
+---
+
+Начните редактирование! Вы можете использовать панель инструментов выше для быстрой вставки различных элементов Markdown.`,
+  
     'ja': `# Markdownエディタへようこそ
 
 これはリアルタイムプレビューと構文ハイライトを備えたシンプルなMarkdownエディタです。
@@ -1554,56 +1466,7 @@ Code en ligne : \`var exemple = "bonjour";\`
 ---
 
 Commencez à éditer ! Vous pouvez utiliser la barre d'outils ci-dessus pour insérer rapidement divers éléments Markdown.`,
-
-    'ru': `# Добро пожаловать в редактор Markdown
-
-Это простой редактор Markdown с предварительным просмотром в реальном времени и подсветкой синтаксиса.
-
-## Основной синтаксис
-
-### Заголовки
-Используйте символы # для обозначения заголовков:
-# Заголовок 1
-## Заголовок 2
-### Заголовок 3
-
-### Выделение
-**Жирный** или __Жирный__
-*Курсив* или _Курсив_
-~~Зачеркнутый~~
-
-### Списки
-Неупорядоченный список:
-- Пункт 1
-- Пункт 2
-- Пункт 3
-
-Упорядоченный список:
-1. Первый пункт
-2. Второй пункт
-3. Третий пункт
-
-### Ссылки и изображения
-[Текст ссылки](https://example.com)
-![Альтернативный текст изображения](https://example.com/image.jpg)
-
-### Код
-Встроенный код: \`var example = "hello";\`
-
-### Цитаты
-> Это блок цитаты.
-
-### Таблицы
-| Заголовок 1 | Заголовок 2 | Заголовок 3 |
-|------------|------------|------------|
-| Ячейка 1   | Ячейка 2   | Ячейка 3   |
-| Ячейка 4   | Ячейка 5   | Ячейка 6   |
-
-### Горизонтальная линия
----
-
-Начните редактирование! Вы можете использовать панель инструментов выше для быстрой вставки различных элементов Markdown.`
-  };
+};
 
   // 根据当前语言设置内容
   if (defaultContents[locale]) {
