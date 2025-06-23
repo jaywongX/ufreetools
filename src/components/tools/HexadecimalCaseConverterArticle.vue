@@ -126,7 +126,6 @@
         <ul>
           <li v-html="$t('tools.hexadecimal-case-converter.article.resources.resource1')"></li>
           <li v-html="$t('tools.hexadecimal-case-converter.article.resources.resource2')"></li>
-          <li v-html="$t('tools.hexadecimal-case-converter.article.resources.resource3')"></li>
         </ul>
       </div>
     </section>
