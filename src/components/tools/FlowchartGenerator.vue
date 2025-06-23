@@ -625,6 +625,58 @@ const exampleCodesByLocale = {
     }
     Animal <|-- Chien
     Animal <|-- Chat`
+  },
+  
+  ja: {
+    flowchart: `graph TD
+    A[開始] --> B{正しいですか？}
+    B -->|はい| C[正しい結果]
+    B -->|いいえ| D[間違った結果]
+    C --> E[終了]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant クライアント
+    participant サーバー
+    クライアント->>サーバー: データ要求
+    サーバー-->>クライアント: データで応答
+    クライアント->>サーバー: フォーム送信
+    サーバー-->>クライアント: 送信確認`,
+    gantt: `gantt
+    title プロジェクト実行スケジュール
+    dateFormat  YYYY-MM-DD
+    section 設計
+    要件分析           :done,    des1, 2024-01-01, 2024-01-10
+    システム設計       :active,  des2, 2024-01-11, 2024-01-25
+    詳細設計           :         des3, 2024-01-26, 2024-02-10
+    section 開発
+    フロントエンド開発 :         dev1, 2024-02-11, 2024-03-15
+    バックエンド開発   :         dev2, 2024-02-11, 2024-03-20
+    テスト             :         test1, 2024-03-21, 2024-04-05`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> 待機
+    待機 --> 処理中: 開始処理
+    処理中 --> 完了: 処理成功
+    処理中 --> エラー: 処理失敗
+    完了 --> [*]
+    エラー --> 待機: 再試行`,
+    pieChart: `pie title 売上分布
+    "製品A" : 30
+    "製品B" : 25
+    "製品C" : 20
+    "製品D" : 15
+    "その他" : 10`,
+    classDiagram: `classDiagram
+    class ユーザー {
+        +String 名前
+        +String メール
+        +login()
+        +logout()
+    }
+    class 管理者 {
+        +String 権限
+        +manageUsers()
+    }
+    ユーザー <|-- 管理者`
   },// 可以添加更多语言...
 };
 

@@ -13,6 +13,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/</loc>
@@ -26,6 +27,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/about</loc>
@@ -39,6 +41,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/about" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/about" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/about" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//about" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tags</loc>
@@ -52,6 +55,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/tags" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/tags" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/tags" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//tags" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/privacy-policy</loc>
@@ -65,6 +69,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//privacy-policy" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/terms</loc>
@@ -78,6 +83,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/terms" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/terms" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/terms" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//terms" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/contact</loc>
@@ -91,6 +97,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/contact" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/contact" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//contact" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/feedback</loc>
@@ -104,6 +111,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/feedback" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/feedback" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/feedback" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//feedback" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/submit-tool</loc>
@@ -117,6 +125,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/submit-tool" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/submit-tool" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/submit-tool" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//submit-tool" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/category/dev</loc>
@@ -130,6 +139,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/dev" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/dev" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/dev" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//category/dev" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/category/design</loc>
@@ -141,10 +151,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/category/design" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/category/design" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/design" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/category/design" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/category/design" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/design" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/design" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja//category/design" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/category/convert</loc>
@@ -156,10 +166,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/category/convert" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/category/convert" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/convert" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/category/convert" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/category/convert" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/convert" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/convert" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja//category/convert" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/category/text</loc>
@@ -173,6 +183,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/text" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/text" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/text" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//category/text" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/category/image</loc>
@@ -186,6 +197,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/image" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/image" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/image" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//category/image" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/category/network</loc>
@@ -197,10 +209,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/category/network" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/category/network" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/network" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/category/network" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/category/network" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/network" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/network" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja//category/network" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/category/crypto</loc>
@@ -212,10 +224,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/category/crypto" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/category/crypto" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/crypto" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/category/crypto" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/category/crypto" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/crypto" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/crypto" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja//category/crypto" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/category/utility</loc>
@@ -227,10 +239,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/category/utility" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/category/utility" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/utility" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/category/utility" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/category/utility" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/utility" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/utility" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja//category/utility" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/category/surveying-and-mapping</loc>
@@ -251,6 +263,8 @@
       href="https://www.ufreetools.com/ru/category/surveying-and-mapping" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/category/surveying-and-mapping" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja//category/surveying-and-mapping" />
   </url>
 
   <url>
@@ -272,6 +286,8 @@
       href="https://www.ufreetools.com/ru/tool/base64-encoder-decoder" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/base64-encoder-decoder" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/base64-encoder-decoder" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/bmi-calculator</loc>
@@ -292,6 +308,8 @@
       href="https://www.ufreetools.com/ru/tool/bmi-calculator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/bmi-calculator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/bmi-calculator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/cash-app-fee-calculator</loc>
@@ -312,6 +330,8 @@
       href="https://www.ufreetools.com/ru/tool/cash-app-fee-calculator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/cash-app-fee-calculator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/cash-app-fee-calculator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/code-beautifier</loc>
@@ -332,6 +352,8 @@
       href="https://www.ufreetools.com/ru/tool/code-beautifier" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/code-beautifier" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/code-beautifier" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/code-complexity-analyzer</loc>
@@ -352,6 +374,8 @@
       href="https://www.ufreetools.com/ru/tool/code-complexity-analyzer" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/code-complexity-analyzer" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/code-complexity-analyzer" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/code-diff</loc>
@@ -365,6 +389,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/tool/code-diff" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/tool/code-diff" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/tool/code-diff" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/tool/code-diff" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/code-formatter</loc>
@@ -385,6 +410,8 @@
       href="https://www.ufreetools.com/ru/tool/code-formatter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/code-formatter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/code-formatter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/code-obfuscator</loc>
@@ -405,6 +432,8 @@
       href="https://www.ufreetools.com/ru/tool/code-obfuscator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/code-obfuscator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/code-obfuscator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/color-picker</loc>
@@ -416,10 +445,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/tool/color-picker" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/tool/color-picker" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/tool/color-picker" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/tool/color-picker" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/tool/color-picker" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/tool/color-picker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/tool/color-picker" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/color-picker" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/color-scheme-generator</loc>
@@ -440,6 +469,8 @@
       href="https://www.ufreetools.com/ru/tool/color-scheme-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/color-scheme-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/color-scheme-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/cookie-manager</loc>
@@ -460,6 +491,8 @@
       href="https://www.ufreetools.com/ru/tool/cookie-manager" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/cookie-manager" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/cookie-manager" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/cors-generator</loc>
@@ -480,6 +513,8 @@
       href="https://www.ufreetools.com/ru/tool/cors-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/cors-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/cors-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/countdown-generator</loc>
@@ -500,6 +535,8 @@
       href="https://www.ufreetools.com/ru/tool/countdown-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/countdown-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/countdown-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/css-formatter</loc>
@@ -520,6 +557,8 @@
       href="https://www.ufreetools.com/ru/tool/css-formatter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/css-formatter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/css-formatter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/css-gradient-generator</loc>
@@ -540,6 +579,8 @@
       href="https://www.ufreetools.com/ru/tool/css-gradient-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/css-gradient-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/css-gradient-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/csv-json-converter</loc>
@@ -560,6 +601,8 @@
       href="https://www.ufreetools.com/ru/tool/csv-json-converter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/csv-json-converter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/csv-json-converter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/curl-converter</loc>
@@ -580,6 +623,8 @@
       href="https://www.ufreetools.com/ru/tool/curl-converter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/curl-converter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/curl-converter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/currency-converter</loc>
@@ -600,6 +645,8 @@
       href="https://www.ufreetools.com/ru/tool/currency-converter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/currency-converter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/currency-converter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/diagram-examples</loc>
@@ -620,6 +667,8 @@
       href="https://www.ufreetools.com/ru/tool/diagram-examples" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/diagram-examples" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/diagram-examples" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/drawing-board</loc>
@@ -640,6 +689,8 @@
       href="https://www.ufreetools.com/ru/tool/drawing-board" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/drawing-board" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/drawing-board" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/flowchart-generator</loc>
@@ -660,6 +711,8 @@
       href="https://www.ufreetools.com/ru/tool/flowchart-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/flowchart-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/flowchart-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/gif-frame-extractor</loc>
@@ -680,6 +733,8 @@
       href="https://www.ufreetools.com/ru/tool/gif-frame-extractor" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/gif-frame-extractor" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/gif-frame-extractor" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/git-conflict-resolver</loc>
@@ -700,6 +755,8 @@
       href="https://www.ufreetools.com/ru/tool/git-conflict-resolver" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/git-conflict-resolver" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/git-conflict-resolver" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/grpc-debugger</loc>
@@ -720,6 +777,8 @@
       href="https://www.ufreetools.com/ru/tool/grpc-debugger" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/grpc-debugger" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/grpc-debugger" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/hash-calculator</loc>
@@ -740,6 +799,8 @@
       href="https://www.ufreetools.com/ru/tool/hash-calculator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/hash-calculator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/hash-calculator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/hex-and-calculator</loc>
@@ -760,6 +821,8 @@
       href="https://www.ufreetools.com/ru/tool/hex-and-calculator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/hex-and-calculator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/hex-and-calculator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/hmac-calculator</loc>
@@ -780,6 +843,8 @@
       href="https://www.ufreetools.com/ru/tool/hmac-calculator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/hmac-calculator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/hmac-calculator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/holiday-calendar</loc>
@@ -800,6 +865,8 @@
       href="https://www.ufreetools.com/ru/tool/holiday-calendar" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/holiday-calendar" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/holiday-calendar" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/horizontal-to-vertical-image</loc>
@@ -820,6 +887,8 @@
       href="https://www.ufreetools.com/ru/tool/horizontal-to-vertical-image" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/horizontal-to-vertical-image" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/horizontal-to-vertical-image" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/html-entity-encoder</loc>
@@ -840,6 +909,8 @@
       href="https://www.ufreetools.com/ru/tool/html-entity-encoder" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/html-entity-encoder" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/html-entity-encoder" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/html-formatter</loc>
@@ -860,6 +931,8 @@
       href="https://www.ufreetools.com/ru/tool/html-formatter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/html-formatter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/html-formatter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/http-header-security-checker</loc>
@@ -880,6 +953,8 @@
       href="https://www.ufreetools.com/ru/tool/http-header-security-checker" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/http-header-security-checker" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/http-header-security-checker" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/http-proxy-detector</loc>
@@ -900,6 +975,8 @@
       href="https://www.ufreetools.com/ru/tool/http-proxy-detector" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/http-proxy-detector" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/http-proxy-detector" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/http-status-code-lookup</loc>
@@ -920,6 +997,8 @@
       href="https://www.ufreetools.com/ru/tool/http-status-code-lookup" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/http-status-code-lookup" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/http-status-code-lookup" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/id-photo-maker</loc>
@@ -940,6 +1019,8 @@
       href="https://www.ufreetools.com/ru/tool/id-photo-maker" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/id-photo-maker" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/id-photo-maker" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/image-batch-resizer</loc>
@@ -960,6 +1041,8 @@
       href="https://www.ufreetools.com/ru/tool/image-batch-resizer" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/image-batch-resizer" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/image-batch-resizer" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/image-color-extractor</loc>
@@ -980,6 +1063,8 @@
       href="https://www.ufreetools.com/ru/tool/image-color-extractor" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/image-color-extractor" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/image-color-extractor" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/image-compressor</loc>
@@ -1000,6 +1085,8 @@
       href="https://www.ufreetools.com/ru/tool/image-compressor" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/image-compressor" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/image-compressor" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/image-cropper</loc>
@@ -1020,6 +1107,8 @@
       href="https://www.ufreetools.com/ru/tool/image-cropper" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/image-cropper" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/image-cropper" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/image-exif-viewer</loc>
@@ -1040,6 +1129,8 @@
       href="https://www.ufreetools.com/ru/tool/image-exif-viewer" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/image-exif-viewer" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/image-exif-viewer" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/image-filters</loc>
@@ -1060,6 +1151,8 @@
       href="https://www.ufreetools.com/ru/tool/image-filters" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/image-filters" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/image-filters" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/image-mosaic-generator</loc>
@@ -1080,6 +1173,8 @@
       href="https://www.ufreetools.com/ru/tool/image-mosaic-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/image-mosaic-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/image-mosaic-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/image-pixelator</loc>
@@ -1100,6 +1195,8 @@
       href="https://www.ufreetools.com/ru/tool/image-pixelator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/image-pixelator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/image-pixelator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/image-to-ascii</loc>
@@ -1120,6 +1217,8 @@
       href="https://www.ufreetools.com/ru/tool/image-to-ascii" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/image-to-ascii" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/image-to-ascii" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/image-watermark</loc>
@@ -1140,6 +1239,8 @@
       href="https://www.ufreetools.com/ru/tool/image-watermark" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/image-watermark" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/image-watermark" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/income-tax-calculator</loc>
@@ -1160,6 +1261,8 @@
       href="https://www.ufreetools.com/ru/tool/income-tax-calculator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/income-tax-calculator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/income-tax-calculator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/instagram-post-generator</loc>
@@ -1180,6 +1283,8 @@
       href="https://www.ufreetools.com/ru/tool/instagram-post-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/instagram-post-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/instagram-post-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/ip-lookup</loc>
@@ -1193,6 +1298,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/tool/ip-lookup" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/tool/ip-lookup" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/tool/ip-lookup" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/tool/ip-lookup" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/javascript-formatter</loc>
@@ -1213,6 +1319,8 @@
       href="https://www.ufreetools.com/ru/tool/javascript-formatter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/javascript-formatter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/javascript-formatter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/javascript-obfuscator</loc>
@@ -1233,6 +1341,8 @@
       href="https://www.ufreetools.com/ru/tool/javascript-obfuscator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/javascript-obfuscator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/javascript-obfuscator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/json-formatter</loc>
@@ -1253,6 +1363,8 @@
       href="https://www.ufreetools.com/ru/tool/json-formatter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/json-formatter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/json-formatter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/jwt-debugger</loc>
@@ -1264,10 +1376,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/tool/jwt-debugger" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/tool/jwt-debugger" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/tool/jwt-debugger" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/tool/jwt-debugger" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/tool/jwt-debugger" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/tool/jwt-debugger" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/tool/jwt-debugger" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/jwt-debugger" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/latex-formula-generator</loc>
@@ -1288,6 +1400,8 @@
       href="https://www.ufreetools.com/ru/tool/latex-formula-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/latex-formula-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/latex-formula-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/loan-calculator</loc>
@@ -1308,6 +1422,8 @@
       href="https://www.ufreetools.com/ru/tool/loan-calculator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/loan-calculator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/loan-calculator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/markdown-editor</loc>
@@ -1328,6 +1444,8 @@
       href="https://www.ufreetools.com/ru/tool/markdown-editor" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/markdown-editor" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/markdown-editor" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/markdown-to-html</loc>
@@ -1348,6 +1466,8 @@
       href="https://www.ufreetools.com/ru/tool/markdown-to-html" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/markdown-to-html" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/markdown-to-html" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/mock-api-generator</loc>
@@ -1368,6 +1488,8 @@
       href="https://www.ufreetools.com/ru/tool/mock-api-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/mock-api-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/mock-api-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/mqtt-tester</loc>
@@ -1379,10 +1501,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/tool/mqtt-tester" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/tool/mqtt-tester" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/tool/mqtt-tester" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/tool/mqtt-tester" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/tool/mqtt-tester" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/tool/mqtt-tester" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/tool/mqtt-tester" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/mqtt-tester" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/name-generator</loc>
@@ -1403,6 +1525,8 @@
       href="https://www.ufreetools.com/ru/tool/name-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/name-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/name-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/network-speed-test</loc>
@@ -1423,6 +1547,8 @@
       href="https://www.ufreetools.com/ru/tool/network-speed-test" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/network-speed-test" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/network-speed-test" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/number-converter</loc>
@@ -1443,6 +1569,8 @@
       href="https://www.ufreetools.com/ru/tool/number-converter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/number-converter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/number-converter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/personal-account-book</loc>
@@ -1463,6 +1591,8 @@
       href="https://www.ufreetools.com/ru/tool/personal-account-book" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/personal-account-book" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/personal-account-book" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/openapi-generator</loc>
@@ -1483,6 +1613,8 @@
       href="https://www.ufreetools.com/ru/tool/openapi-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/openapi-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/openapi-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/page-redirect-checker</loc>
@@ -1503,6 +1635,8 @@
       href="https://www.ufreetools.com/ru/tool/page-redirect-checker" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/page-redirect-checker" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/page-redirect-checker" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/password-generator</loc>
@@ -1523,6 +1657,8 @@
       href="https://www.ufreetools.com/ru/tool/password-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/password-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/password-strength-checker</loc>
@@ -1543,6 +1679,8 @@
       href="https://www.ufreetools.com/ru/tool/password-strength-checker" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/password-strength-checker" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/password-strength-checker" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/pomodoro-timer</loc>
@@ -1563,6 +1701,8 @@
       href="https://www.ufreetools.com/ru/tool/pomodoro-timer" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/pomodoro-timer" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/pomodoro-timer" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/qr-code-generator</loc>
@@ -1583,6 +1723,8 @@
       href="https://www.ufreetools.com/ru/tool/qr-code-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/qr-code-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/qr-code-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/regex-tester</loc>
@@ -1594,10 +1736,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/tool/regex-tester" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/tool/regex-tester" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/tool/regex-tester" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/tool/regex-tester" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/tool/regex-tester" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/tool/regex-tester" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/tool/regex-tester" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/regex-tester" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/request-header-editor</loc>
@@ -1618,6 +1760,8 @@
       href="https://www.ufreetools.com/ru/tool/request-header-editor" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/request-header-editor" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/request-header-editor" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/rsa-crypto</loc>
@@ -1629,10 +1773,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/tool/rsa-crypto" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/tool/rsa-crypto" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/tool/rsa-crypto" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/tool/rsa-crypto" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/tool/rsa-crypto" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/tool/rsa-crypto" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/tool/rsa-crypto" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/rsa-crypto" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/sensitive-word-filter</loc>
@@ -1653,6 +1797,8 @@
       href="https://www.ufreetools.com/ru/tool/sensitive-word-filter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/sensitive-word-filter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/sensitive-word-filter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/sm2-crypto</loc>
@@ -1664,10 +1810,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/tool/sm2-crypto" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/tool/sm2-crypto" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/tool/sm2-crypto" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/tool/sm2-crypto" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/tool/sm2-crypto" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/tool/sm2-crypto" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/tool/sm2-crypto" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/sm2-crypto" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/sql-formatter</loc>
@@ -1688,6 +1834,8 @@
       href="https://www.ufreetools.com/ru/tool/sql-formatter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/sql-formatter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/sql-formatter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/svg-optimizer</loc>
@@ -1708,6 +1856,8 @@
       href="https://www.ufreetools.com/ru/tool/svg-optimizer" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/svg-optimizer" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/svg-optimizer" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/symmetric-crypto</loc>
@@ -1728,6 +1878,8 @@
       href="https://www.ufreetools.com/ru/tool/symmetric-crypto" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/symmetric-crypto" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/symmetric-crypto" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/timestamp-converter</loc>
@@ -1748,6 +1900,8 @@
       href="https://www.ufreetools.com/ru/tool/timestamp-converter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/timestamp-converter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/timestamp-converter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/todo-list</loc>
@@ -1761,6 +1915,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/tool/todo-list" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/tool/todo-list" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/tool/todo-list" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/tool/todo-list" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/travel-budget-planner</loc>
@@ -1781,6 +1936,8 @@
       href="https://www.ufreetools.com/ru/tool/travel-budget-planner" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/travel-budget-planner" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/travel-budget-planner" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/url-encode-decode</loc>
@@ -1801,6 +1958,8 @@
       href="https://www.ufreetools.com/ru/tool/url-encode-decode" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/url-encode-decode" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/url-encode-decode" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/url-params-parser</loc>
@@ -1821,6 +1980,8 @@
       href="https://www.ufreetools.com/ru/tool/url-params-parser" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/url-params-parser" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/url-params-parser" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/user-agent-generator</loc>
@@ -1841,6 +2002,8 @@
       href="https://www.ufreetools.com/ru/tool/user-agent-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/user-agent-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/user-agent-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/user-agent-parser</loc>
@@ -1861,6 +2024,8 @@
       href="https://www.ufreetools.com/ru/tool/user-agent-parser" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/user-agent-parser" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/user-agent-parser" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/uuid-generator</loc>
@@ -1881,6 +2046,8 @@
       href="https://www.ufreetools.com/ru/tool/uuid-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/uuid-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/vertical-to-horizontal-image</loc>
@@ -1901,6 +2068,8 @@
       href="https://www.ufreetools.com/ru/tool/vertical-to-horizontal-image" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/vertical-to-horizontal-image" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/vertical-to-horizontal-image" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/websocket-tester</loc>
@@ -1921,6 +2090,8 @@
       href="https://www.ufreetools.com/ru/tool/websocket-tester" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/websocket-tester" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/websocket-tester" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/word-shuffler</loc>
@@ -1941,6 +2112,8 @@
       href="https://www.ufreetools.com/ru/tool/word-shuffler" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/word-shuffler" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/word-shuffler" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/xml-formatter</loc>
@@ -1961,6 +2134,8 @@
       href="https://www.ufreetools.com/ru/tool/xml-formatter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/xml-formatter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/xml-formatter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/xml-json-converter</loc>
@@ -1981,6 +2156,8 @@
       href="https://www.ufreetools.com/ru/tool/xml-json-converter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/xml-json-converter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/xml-json-converter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/yaml-json-converter</loc>
@@ -2001,6 +2178,8 @@
       href="https://www.ufreetools.com/ru/tool/yaml-json-converter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/yaml-json-converter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/yaml-json-converter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/hexadecimal-case-converter</loc>
@@ -2021,6 +2200,8 @@
       href="https://www.ufreetools.com/ru/tool/hexadecimal-case-converter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/hexadecimal-case-converter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/hexadecimal-case-converter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/jfif-jpg-converter</loc>
@@ -2041,6 +2222,8 @@
       href="https://www.ufreetools.com/ru/tool/jfif-jpg-converter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/jfif-jpg-converter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/jfif-jpg-converter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/jpg-jfif-converter</loc>
@@ -2061,6 +2244,8 @@
       href="https://www.ufreetools.com/ru/tool/jpg-jfif-converter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/jpg-jfif-converter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/jpg-jfif-converter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/favorites</loc>
@@ -2074,6 +2259,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/favorites" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/favorites" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/favorites" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//favorites" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/seal-generator</loc>
@@ -2094,6 +2280,8 @@
       href="https://www.ufreetools.com/ru/tool/seal-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/seal-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/seal-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/coordinate-converter</loc>
@@ -2114,6 +2302,8 @@
       href="https://www.ufreetools.com/ru/tool/coordinate-converter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/coordinate-converter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/coordinate-converter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/x509-certificate-decoder</loc>
@@ -2134,6 +2324,8 @@
       href="https://www.ufreetools.com/ru/tool/x509-certificate-decoder" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/x509-certificate-decoder" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/x509-certificate-decoder" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/gps-track-replay</loc>
@@ -2154,6 +2346,8 @@
       href="https://www.ufreetools.com/ru/tool/gps-track-replay" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/gps-track-replay" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/gps-track-replay" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/gaussian-projection</loc>
@@ -2174,6 +2368,8 @@
       href="https://www.ufreetools.com/ru/tool/gaussian-projection" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/gaussian-projection" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/gaussian-projection" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/rsa-encrypt-decrypt</loc>
@@ -2194,6 +2390,8 @@
       href="https://www.ufreetools.com/ru/tool/rsa-encrypt-decrypt" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/rsa-encrypt-decrypt" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/rsa-encrypt-decrypt" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/sm2-encrypt-decrypt</loc>
@@ -2214,6 +2412,8 @@
       href="https://www.ufreetools.com/ru/tool/sm2-encrypt-decrypt" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/sm2-encrypt-decrypt" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/sm2-encrypt-decrypt" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/id-number-generator</loc>
@@ -2234,6 +2434,8 @@
       href="https://www.ufreetools.com/ru/tool/id-number-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/id-number-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/id-number-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/unified-credit-code-generator</loc>
@@ -2254,6 +2456,8 @@
       href="https://www.ufreetools.com/ru/tool/unified-credit-code-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/unified-credit-code-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/unified-credit-code-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/rsa-key-pair-generator</loc>
@@ -2274,6 +2478,8 @@
       href="https://www.ufreetools.com/ru/tool/rsa-key-pair-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/rsa-key-pair-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/rsa-key-pair-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/sm2-key-pair-generator</loc>
@@ -2294,6 +2500,8 @@
       href="https://www.ufreetools.com/ru/tool/sm2-key-pair-generator" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/sm2-key-pair-generator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/sm2-key-pair-generator" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/rsa-signature-verifier</loc>
@@ -2314,6 +2522,8 @@
       href="https://www.ufreetools.com/ru/tool/rsa-signature-verifier" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/rsa-signature-verifier" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/rsa-signature-verifier" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/sm2-signature-verifier</loc>
@@ -2334,6 +2544,8 @@
       href="https://www.ufreetools.com/ru/tool/sm2-signature-verifier" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/sm2-signature-verifier" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/sm2-signature-verifier" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/base64-hex-converter</loc>
@@ -2354,6 +2566,8 @@
       href="https://www.ufreetools.com/ru/tool/base64-hex-converter" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/base64-hex-converter" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/base64-hex-converter" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/asn1-structure-parser</loc>
@@ -2374,6 +2588,8 @@
       href="https://www.ufreetools.com/ru/tool/asn1-structure-parser" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/asn1-structure-parser" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/asn1-structure-parser" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/invert-image-colors</loc>
@@ -2394,6 +2610,8 @@
       href="https://www.ufreetools.com/ru/tool/invert-image-colors" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/invert-image-colors" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/invert-image-colors" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/resize-to-1024x576-image</loc>
@@ -2414,6 +2632,8 @@
       href="https://www.ufreetools.com/ru/tool/resize-to-1024x576-image" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/resize-to-1024x576-image" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/resize-to-1024x576-image" />
   </url>
   <url>
     <loc>https://www.ufreetools.com/hi/tool/reduce-image-size-in-kb-mb</loc>
@@ -2434,5 +2654,7 @@
       href="https://www.ufreetools.com/ru/tool/reduce-image-size-in-kb-mb" />
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/tool/reduce-image-size-in-kb-mb" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/reduce-image-size-in-kb-mb" />
   </url>
 </urlset>

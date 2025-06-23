@@ -5,6 +5,7 @@ import hi from './hi';
 import ar from './ar';
 import ru from './ru';
 import fr from './fr';
+import ja from './ja';
 
 export default {
   en,
@@ -14,4 +15,5 @@ export default {
   ar,
   ru,
   fr,
+  ja,
 };

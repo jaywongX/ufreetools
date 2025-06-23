@@ -9,7 +9,7 @@ export const languages = [
   { code: 'ar', name: 'Arabic', chineseName: '阿拉伯文', nativeName: 'العربية' },
   { code: 'ru', name: 'Russian', chineseName: '俄文', nativeName: 'Русский язык' },
   { code: 'fr', name: 'French', chineseName: '法文', nativeName: 'Français' },
-  // { code: 'ja', name: 'Japanese', chineseName: '日文', nativeName: '日本語' },
+  { code: 'ja', name: 'Japanese', chineseName: '日文', nativeName: '日本語' },
   // { code: 'de', name: 'German', chineseName: '德文', nativeName: 'Deutsch' },
   // { code: 'it', name: 'Italian', chineseName: '意大利文', nativeName: 'Italiano' },
   // { code: 'ko', name: 'Korean', chineseName: '韩文', nativeName: '한국어' },
