@@ -1,0 +1,202 @@
+export default {
+    name: 'Redimensionador de Imagens em Lote',
+    description: 'Ajuste, converta e otimize várias imagens de uma só vez',
+    input: {
+      title: 'Imagens de Entrada',
+      dropzone: 'Arraste e solte imagens aqui ou clique para navegar',
+      addMore: 'Adicionar mais imagens',
+      selectImages: 'Selecionar imagens',
+      clearAll: 'Limpar tudo',
+      maxFiles: 'Máximo de {count} imagens',
+      maxSize: 'Tamanho máximo por imagem: {size}MB',
+      supportedFormats: 'Formatos suportados: {formats}'
+    },
+    options: {
+      title: 'Opções de Redimensionamento',
+      settingsTitle: 'Configurações de Ajuste',
+      resizeMode: 'Modo de Redimensionamento',
+      resizeMethod: 'Método de Redimensionamento',
+      pixelMode: 'Pixel',
+      percentageMode: 'Porcentagem',
+      maxDimensionMode: 'Dimensão Máxima',
+      outputFormat: 'Formato de Saída',
+      quality: 'Qualidade',
+      width: 'Largura',
+      height: 'Altura',
+      maintainAspectRatio: 'Manter proporção',
+      maxWidth: 'Largura máxima',
+      maxHeight: 'Altura máxima',
+      percentage: 'Porcentagem',
+      backgroundColor: 'Cor de fundo',
+      naming: 'Nomeação de Saída',
+      filenamePrefix: 'Prefixo do nome do arquivo',
+      filenameSuffix: 'Sufixo do nome do arquivo',
+      applyToAllImages: 'Aplicar a todas as imagens',
+      applyToAll: 'Aplicar a todas'
+    },
+    resizeModes: {
+      exact: 'Dimensões exatas',
+      maxDimensions: 'Dimensões máximas',
+      percentage: 'Redimensionar por porcentagem',
+      fit: 'Ajustar internamente',
+      cover: 'Cobrir',
+      crop: 'Recortar'
+    },
+    formats: {
+      original: 'Igual à origem',
+      jpg: 'JPG/JPEG',
+      png: 'PNG',
+      webp: 'WebP',
+      gif: 'GIF',
+      bmp: 'BMP',
+      tiff: 'TIFF',
+      svg: 'SVG',
+      ico: 'ICO'
+    },
+    namingOptions: {
+      original: 'Nome original',
+      dimensions: 'Original + dimensões',
+      format: 'Original + formato',
+      custom: 'Padrão personalizado',
+      random: 'String aleatória'
+    },
+    output: {
+      title: 'Imagens Redimensionadas',
+      downloadAll: 'Baixar tudo',
+      downloadAsZip: 'Baixar como ZIP',
+      processingStatus: 'Processando: {processed}/{total}',
+      originalSize: 'Tamanho original',
+      newSize: 'Novo tamanho',
+      reduction: 'Redução',
+      individualDownload: 'Baixar'
+    },
+    batch: {
+      title: 'Processamento em Lote',
+      process: 'Processar todas as imagens',
+      cancel: 'Cancelar processamento',
+      selectPreset: 'Selecionar predefinição',
+      savePreset: 'Salvar configurações atuais',
+      progress: 'Progresso do processamento'
+    },
+    watermark: {
+      title: 'Marca d\'água',
+      enable: 'Adicionar marca d\'água',
+      text: 'Texto da marca d\'água',
+      image: 'Imagem da marca d\'água',
+      position: 'Posição',
+      opacity: 'Opacidade',
+      rotation: 'Rotação',
+      size: 'Tamanho',
+      padding: 'Preenchimento'
+    },
+    positions: {
+      topLeft: 'Superior esquerdo',
+      topCenter: 'Superior centro',
+      topRight: 'Superior direito',
+      middleLeft: 'Meio esquerdo',
+      middleCenter: 'Centro',
+      middleRight: 'Meio direito',
+      bottomLeft: 'Inferior esquerdo',
+      bottomCenter: 'Inferior centro',
+      bottomRight: 'Inferior direito'
+    },
+    actions: {
+      resize: 'Redimensionar',
+      preview: 'Pré-visualizar',
+      processing: 'Processando...',
+      reset: 'Redefinir',
+      applySettings: 'Aplicar configurações',
+      resetSettings: 'Redefinir configurações',
+      cancel: 'Cancelar'
+    },
+    messages: {
+      resizeSuccess: 'Redimensionamento da imagem bem-sucedido',
+      resizeFailed: 'Falha ao redimensionar imagem: {error}',
+      invalidDimensions: 'Por favor, insira dimensões válidas',
+      invalidWidthHeight: 'Por favor, insira largura e altura válidas',
+      noImages: 'Por favor, adicione imagens para redimensionar',
+      noImagesToDownload: 'Nenhuma imagem para baixar',
+      processing: 'Processando imagens...',
+      processingComplete: 'Processamento concluído',
+      processingError: 'Erro ao processar imagem',
+      waitingForProcess: 'Aguardando processamento',
+      downloadStarted: 'Download iniciado',
+      allDownloaded: 'Todas as imagens foram baixadas',
+      presetSaved: 'Predefinição salva',
+      presetLoaded: 'Predefinição carregada',
+      zipCreated: 'Pacote ZIP criado com {count} imagens',
+      zipError: 'Erro ao criar pacote ZIP'
+    },
+    preview: {
+      title: 'Pré-visualização de Imagem ({count})',
+      selectImage: 'Selecione uma imagem',
+      batchSupport: 'Suporte para seleção múltipla de imagens para processamento em lote',
+      download: 'Baixar',
+      delete: 'Excluir'
+    },
+    qualityOptions: {
+      fast: 'Processamento rápido',
+      medium: 'Qualidade média',
+      high: 'Alta qualidade (recomendado)',
+      best: 'Melhor qualidade (mais lento)'
+    },
+    article: {
+      title: "Redimensionador de Imagens em Lote: Processe Várias Imagens de Forma Eficiente",
+      features: {
+        title: "Entenda o processamento de imagens em lote e seus benefícios",
+        description: "<strong>Redimensionador de Imagens em Lote</strong> é uma ferramenta online poderosa projetada para simplificar o processo de ajuste, conversão e otimização de várias imagens simultaneamente. Ao contrário do processamento individual em softwares de edição tradicionais, este <strong>processador de imagens em lote</strong> permite que você aplique os mesmos ajustes a dezenas ou até centenas de imagens com apenas alguns cliques.<br><br>Nossa ferramenta oferece opções abrangentes de <strong>redimensionamento de imagens</strong>, conversão de formato e otimização de qualidade, mantendo a integridade visual das fotos. Seja para reduzir o tamanho de arquivos para uso na web, preparar imagens para plataformas específicas ou manter tamanhos consistentes em coleções de imagens, o <strong>redimensionador em lote</strong> lida com essas tarefas de forma eficiente diretamente no seu navegador, sem necessidade de instalar software ou ter conhecimentos técnicos.",
+        useCases: {
+          title: "Aplicações práticas do redimensionamento de imagens em lote",
+          items: [
+            "<strong>Otimização de sites</strong>: Desenvolvedores web e administradores de conteúdo podem usar o <strong>redimensionador de imagens em lote</strong> para preparar rapidamente recursos visuais de sites. Ao reduzir dimensões e tamanhos de arquivo, você pode melhorar significativamente a velocidade de carregamento de páginas, crucial para experiência do usuário e rankeamento SEO. A capacidade de converter imagens em lotes para formatos otimizados como WebP aumenta ainda mais o desempenho do site.",
+            
+            "<strong>Fotografia de produtos para e-commerce</strong>: Vendedores online que lidam com grandes catálogos podem usar nosso <strong>redimensionador de fotos em lote</strong> para padronizar todas as imagens de produtos para os tamanhos específicos exigidos por marketplaces como Amazon, eBay ou Shopify, economizando horas de trabalho. Isso garante consistência e aparência profissional em todas as listagens, atendendo aos requisitos das plataformas.",
+            
+            "<strong>Criação de conteúdo para mídias sociais</strong>: Gerentes de mídia social que administram conteúdo em múltiplas plataformas podem redimensionar imagens em lote para atender aos requisitos de tamanho específicos de diferentes redes. Seja para posts no Instagram, capas no Facebook, cards no Twitter ou pins no Pinterest, nosso <strong>processador de imagens em lote</strong> ajuda a manter a melhor qualidade visual em todas as plataformas.",
+            
+            "<strong>Preparação de portfólios fotográficos</strong>: Fotógrafos profissionais podem preparar rapidamente imagens para sites de portfólio, entregas para clientes ou serviços de impressão. O <strong>redimensionador de múltiplas imagens</strong> permite ajustar para tamanhos específicos mantendo a proporção, garantindo consistência em toda a coleção de fotos sem edições individuais demoradas.",
+            
+            "<strong>Desenvolvimento de materiais educacionais</strong>: Professores e criadores de conteúdo educacional podem ajustar conjuntos de diagramas, gráficos ou fotos para tamanhos uniformes para inclusão em materiais de estudo, apresentações ou cursos online. A funcionalidade de processamento em lote torna prático manter a consistência visual em amplos recursos educacionais.",
+            
+            "<strong>Preparação de recursos para desenvolvimento de apps</strong>: Desenvolvedores de aplicativos móveis podem usar a ferramenta para gerar múltiplas versões da mesma imagem em diferentes resoluções (como 1x, 2x, 3x) para se adaptar a vários displays de dispositivos. O <strong>conversor de imagens em lote</strong> simplifica esse processo, garantindo que os recursos do app pareçam nítidos em todos os tipos de dispositivo, mantendo tamanhos de arquivo gerenciáveis."
+          ]
+        }
+      },
+      faq: {
+        title: "Perguntas frequentes sobre redimensionamento de imagens em lote",
+        items: [
+          {
+            question: "O redimensionador de imagens em lote reduz a qualidade das imagens?",
+            answer: "Nosso <strong>processador de imagens em lote</strong> mantém cuidadosamente a qualidade da imagem, mas alguns fatores devem ser considerados:<br><br>• Nossa ferramenta usa algoritmos especialmente projetados para alta qualidade, mantendo a fidelidade da imagem durante o redimensionamento<br>• Você tem controle sobre as configurações de qualidade, especialmente ao converter para formatos como JPEG ou WebP<br>• Reduzir imagens (torná-las menores) geralmente preserva melhor a qualidade do que ampliá-las<br>• Quanto mais altas as configurações de qualidade escolhidas, melhores os resultados, mas maiores os arquivos<br>• Para a maioria dos casos de uso, configurações de qualidade entre 80-90% oferecem um excelente equilíbrio<br><br>Para trabalhos profissionais que exigem a mais alta qualidade, recomendamos usar as configurações \"Alta qualidade\" ou \"Melhor qualidade\" nas opções do processador. O recurso de pré-visualização do <strong>redimensionador de fotos em lote</strong> permite verificar os resultados antes do download, garantindo que atendam aos seus padrões de qualidade."
+          },
+          {
+            question: "Quais formatos de imagem o redimensionador em lote suporta?",
+            answer: "Nosso <strong>conversor de imagens em lote</strong> suporta uma ampla variedade de formatos:<br><br><strong>Formatos de entrada:</strong><br>• JPEG/JPG - Formato comum para fotos<br>• PNG - Ideal para gráficos com transparência<br>• WebP - Formato moderno com excelente compressão<br>• GIF - Para animações simples<br>• BMP - Formato bitmap não comprimido<br>• TIFF - Formato de alta qualidade comum em fotografia<br><br><strong>Formatos de saída:</strong><br>• JPEG/JPG - Melhor para fotos e uso geral na web<br>• PNG - Preserva transparência sem perdas<br>• WebP - Oferece melhor compressão mantendo qualidade<br><br>O <strong>redimensionador de múltiplas imagens</strong> pode converter entre esses formatos durante o processamento em lote, permitindo que você padronize coleções de imagens para um único formato ou escolha o mais adequado para cada caso de uso."
+          },
+          {
+            question: "Quantas imagens o redimensionador em lote pode processar de uma vez?",
+            answer: "O <strong>redimensionador de imagens em lote</strong> foi projetado para lidar eficientemente com grandes quantidades de imagens:<br><br>• Você pode processar dezenas de imagens em um único lote (geralmente com limite de cerca de 100 imagens por lote)<br>• O tamanho máximo por arquivo de imagem é de 5MB para melhor desempenho<br>• O tempo total de processamento depende de vários fatores, incluindo:<br>  - Número e tamanho das imagens de entrada<br>  - Complexidade das operações de ajuste<br>  - Capacidade de processamento do seu dispositivo<br>  - Velocidade da sua conexão com a internet<br><br>O <strong>processador de imagens em lote</strong> usa processamento no lado do cliente, o que significa que as imagens nunca saem do seu computador, aumentando velocidade e privacidade. Para coleções muito grandes (centenas ou milhares de imagens), recomendamos dividi-las em lotes menores (20-50 imagens) para melhor experiência."
+          },
+          {
+            question: "É possível manter a proporção ao redimensionar imagens em lote?",
+            answer: "Sim, manter a proporção é um recurso essencial do nosso <strong>redimensionador de imagens em lote</strong>:<br><br>• A opção \"Manter proporção\" garante que as imagens não serão esticadas ou distorcidas<br>• Com esta opção ativada, você só precisa especificar largura ou altura, e a outra dimensão será calculada automaticamente<br>• Para tamanhos exatos (como requisitos de mídias sociais), você pode desativar esta opção<br>• O método \"Dimensão máxima\" é especialmente útil para manter proporções enquanto garante que nenhuma imagem exceda o tamanho especificado<br>• \"Redimensionar por porcentagem\" mantém perfeitamente a proporção original enquanto ajusta uniformemente todas as imagens<br><br>O <strong>redimensionador de fotos em lote</strong> oferece pré-visualização para cada imagem, permitindo que você confirme se a proporção foi mantida corretamente antes de baixar as imagens processadas."
+          },
+          {
+            question: "Como baixar todas as imagens após o redimensionamento em lote?",
+            answer: "O <strong>redimensionador de múltiplas imagens</strong> oferece opções convenientes para obter suas imagens processadas:<br><br>1. <strong>Download em lote como ZIP</strong>: Após o processamento, clique em \"Baixar tudo\" para obter todas as imagens redimensionadas em um único arquivo ZIP<br><br>2. <strong>Download individual</strong>: Se você só precisa de imagens específicas, cada imagem processada tem seu próprio botão de download<br><br>3. <strong>Nomenclatura automática de arquivos</strong>: As imagens processadas mantêm seus nomes originais com adição de identificação indicando que foram redimensionadas<br><br>4. <strong>Preservação de formato</strong>: Se você selecionou \"Igual à origem\" no formato de saída, cada imagem mantém seu formato original; caso contrário, todas serão convertidas para o formato escolhido<br><br>O <strong>conversor de imagens em lote</strong> armazena temporariamente todas as imagens processadas no seu navegador, então recomendamos baixar seus resultados antes de fechar a aba."
+          }
+        ]
+      },
+      guide: {
+        title: "Como usar o redimensionador de imagens em lote: Guia passo a passo",
+        step1: "<strong>Envie suas imagens</strong>: Clique no botão \"Selecionar imagens\" ou arraste e solte arquivos na área de upload. O <strong>processador de imagens em lote</strong> aceita formatos comuns como JPEG, PNG, WebP, GIF e outros. Você pode adicionar várias imagens de uma vez ou adicionar mais após a seleção inicial.",
+        step2: "<strong>Escolha o método de redimensionamento</strong>: Selecione entre três métodos poderosos:<ul class='ml-5 list-disc'><li>O modo \"Pixel\" permite especificar dimensões exatas em pixels</li><li>O modo \"Porcentagem\" redimensiona imagens proporcionalmente com base no tamanho original</li><li>O modo \"Dimensão máxima\" garante que nenhuma imagem exceda o tamanho especificado, mantendo proporções</li></ul>Essa flexibilidade torna nosso <strong>redimensionador de fotos em lote</strong> adequado para quase qualquer necessidade de processamento de imagens.",
+        step3: "<strong>Defina suas dimensões</strong>: Insira os valores desejados para largura e/ou altura de acordo com o método selecionado. Se você ativou \"Manter proporção\" (recomendado na maioria dos casos), só precisa especificar uma dimensão e o <strong>redimensionador de imagens em lote</strong> calculará automaticamente a outra para evitar distorções.",
+        step4: "<strong>Configure opções de saída</strong>: Escolha seu formato de saída preferido (JPEG, PNG ou WebP) e ajuste as configurações de qualidade conforme necessário. O <strong>conversor de imagens em lote</strong> permite equilibrar qualidade de imagem e tamanho de arquivo. Para formatos JPEG e WebP, você pode ajustar a porcentagem de qualidade - valores mais altos produzem imagens com melhor aparência, mas arquivos maiores.",
+        step5: "<strong>Processe suas imagens</strong>: Clique no botão \"Aplicar a todas\" para iniciar o processamento em lote. O <strong>redimensionador de múltiplas imagens</strong> mostrará um indicador de progresso enquanto processa seus arquivos. Cada imagem é processada com algoritmos de alta qualidade que alcançam as dimensões especificadas mantendo fidelidade visual.",
+        step6: "<strong>Revise os resultados</strong>: Após o processamento, verifique a pré-visualização de cada imagem para garantir que os resultados atendam às suas expectativas. O <strong>redimensionador de imagens em lote</strong> exibe informações úteis incluindo tamanhos originais e novos, permitindo confirmar se o redimensionamento foi executado corretamente.",
+        step7: "<strong>Baixe suas imagens processadas</strong>: Clique em \"Baixar tudo\" para obter um arquivo ZIP com todas as imagens redimensionadas, ou baixe imagens individuais conforme necessário. O <strong>processador de imagens em lote</strong> preserva seus arquivos originais e fornece versões processadas com nomes apropriados para distingui-las das originais."
+      },
+      conclusion: "O redimensionador de imagens em lote oferece uma solução prática para desafios comuns enfrentados por desenvolvedores web, fotógrafos, profissionais de marketing e criadores de conteúdo: processar múltiplas imagens de forma eficiente enquanto mantém qualidade e consistência. Ao eliminar a necessidade de softwares caros ou edições individuais demoradas, esta ferramenta simplifica fluxos de trabalho e ajuda a manter padrões visuais para ativos digitais. Seja preparando fotos de produtos para e-commerce, otimizando imagens para sites responsivos ou padronizando conteúdo visual para mídias sociais, a funcionalidade de processamento em lote economiza tempo valioso e garante resultados consistentes. Conforme o conteúdo digital continua enfatizando elementos visuais, ferramentas que ajudam a gerenciar e otimizar imagens em escala tornam-se recursos essenciais para profissionais em diversos setores."
+    }
+  }

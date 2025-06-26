@@ -1063,6 +1063,81 @@ Markdownの学習は難しくありませんが、習得することでデジタ
 *著者：Markdown愛好家*  
 *公開日：2023年10月15日*
 `
+      } else if (currentLocale === 'pt') {
+        markdownText.value = `# Exemplo de Sintaxe Básica Markdown
+
+## 1. Títulos
+
+# Título 1
+## Título 2
+### Título 3
+#### Título 4
+##### Título 5
+###### Título 6
+
+## 2. Formatação de Texto
+
+Texto simples
+
+**Texto em negrito**
+
+*Texto em itálico*
+
+~~Texto riscado~~
+
+**_Negrito e itálico_**
+
+## 3. Listas
+
+### Listas não ordenadas
+- Item 1
+- Item 2
+  - Sub-item A
+  - Sub-item B
+
+### Listas ordenadas
+1. Primeiro item
+2. Segundo item
+3. Terceiro item
+
+## 4. Links e Imagens
+
+[Link para Google](https://www.google.com)
+
+![Exemplo de imagem](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBmaWxsPSIjY2NjY2NjIiAvPgogICAgPHRleHQgeD0iNzUiIHk9Ijc1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZpbGw9IiM0NDQ0NDQiPjE1MHgxNTA8L3RleHQ+Cjwvc3ZnPg==)
+
+## 5. Citações
+
+> Esta é uma citação
+> 
+> As citações podem se estender por várias linhas
+
+## 6. Código
+
+Código em linha: \`console.log('Olá Mundo')\`
+
+Bloco de código:
+\`\`\`javascript
+function saudacao(nome) {
+  return \`Olá, \${nome}!\`;
+}
+console.log(saudacao('Mundo'));
+\`\`\`
+
+## 7. Tabelas
+
+| Nome | Idade | Profissão |
+| --- | --- | ---------- |
+| João | 25  | Engenheiro  |
+| Maria | 30  | Designer   |
+| Pedro | 28 | Gerente de Produto |
+
+## 8. Linhas Horizontais
+
+---
+
+***
+`
       } else {
         console.error('Invalid locale:', currentLocale);
         throw new Error('Invalid locale');
@@ -1682,6 +1757,83 @@ graph TD;
 \`\`\`
 
 ## 11. 目次（拡張機能が必要）
+
+[TOC]
+`
+      } else if (currentLocale === 'pt') {
+        markdownText.value = `# Sintaxe Estendida do Markdown
+
+## 1. Listas de Tarefas
+
+- [x] Tarefa concluída
+- [ ] Tarefa pendente
+- [x] Outra tarefa concluída
+
+## 2. Emoji
+
+Suporta emoji de estilo GitHub como :smile: :heart: :thumbsup:
+
+## 3. Fórmulas Matemáticas (requer extensão)
+
+Fórmula em linha: $E=mc^2$
+
+Fórmula em bloco:
+
+$$
+\\frac{n!}{k!(n-k)!} = \\binom{n}{k}
+$$
+
+## 4. Notas de Rodapé
+
+Aqui está uma referência a uma nota de rodapé[^1]
+
+[^1]: Este é o conteúdo da nota de rodapé.
+
+## 5. Listas de Definições
+
+Termo 1
+: Definição 1
+
+Termo 2
+: Definição 2a
+: Definição 2b
+
+## 6. Destaque (requer extensão)
+
+Este é ==texto destacado==
+
+## 7. Sobrescrito e Subscrito (requer extensão)
+
+Sobrescrito: X^2^
+Subscrito: H~2~O
+
+## 8. Advertências (requer extensão)
+
+:::warning
+Esta é uma mensagem de advertência
+:::
+
+:::info
+Esta é uma mensagem informativa
+:::
+
+## 9. Contêineres Personalizados (requer extensão)
+
+::: details Clique para expandir detalhes
+Aqui está o conteúdo detalhado
+:::
+
+## 10. Fluxogramas (requer extensão)
+
+\`\`\`mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+\`\`\`
+
+## 11. Índice (requer extensão)
 
 [TOC]
 `
@@ -2376,6 +2528,93 @@ Markdownの学習は難しくありませんが、習得することでデジタ
 
 *著者：Markdown愛好家*  
 *公開日：2023年10月15日*
+`
+      } else if (currentLocale === 'pt') {
+        markdownText.value = `# Markdown: Uma Linguagem de Formatação de Texto Simples mas Poderosa
+
+## Introdução
+
+Na era da criação de conteúdo digital, **Markdown** emergiu como a linguagem de marcação leve preferida para documentação técnica, escrita de blogs e gestão de conteúdo. Este artigo explora a história do Markdown, sua sintaxe básica e aplicações generalizadas.
+
+## História e Filosofia de Design do Markdown
+
+Markdown foi criado por John Gruber e Aaron Swartz em 2004. Seu objetivo de design era permitir que as pessoas escrevessem em um formato de texto simples fácil de ler e escrever que pudesse ser convertido em HTML estruturalmente válido.
+
+> "O objetivo de design primordial para a sintaxe de formatação do Markdown é torná-la o mais legível possível. A ideia é que um documento formatado em Markdown deve ser publicável como está, como texto simples, sem parecer que foi marcado com tags ou instruções de formatação."
+> — John Gruber
+
+Esta filosofia de design distingue o Markdown de outras linguagens de marcação: **ele foca no conteúdo em vez da aparência**.
+
+## Sintaxe Básica do Markdown
+
+Markdown oferece um conjunto simples de regras de sintaxe. Aqui estão alguns elementos básicos:
+
+### 1. Títulos
+
+Markdown usa o símbolo # para denotar níveis de título:
+
+\`\`\`markdown
+# Título 1
+## Título 2
+### Título 3
+\`\`\`
+
+### 2. Texto Formatado
+
+- **Negrito**: \`**texto**\` ou \`__texto__\`
+- *Itálico*: \`*texto*\` ou \`_texto_\`
+- ~~Riscado~~: \`~~texto~~\`
+
+### 3. Listas
+
+Listas não ordenadas usam hífens, sinais de mais ou asteriscos como marcadores de lista:
+
+- Item 1
+- Item 2
+  - Sub-item A
+  - Sub-item B
+
+Listas ordenadas usam números seguidos de pontos:
+
+1. Primeiro item
+2. Segundo item
+3. Terceiro item
+
+### 4. Links e Imagens
+
+Sintaxe de link: \`[texto do link](URL)\`  
+Sintaxe de imagem: \`![texto alternativo](URL da imagem)\`
+
+### 5. Blocos de Código
+
+\`\`\`javascript
+function oláMundo() {
+  console.log("Olá, mundo!");
+}
+\`\`\`
+
+## Aplicações Generalizadas do Markdown
+
+Markdown é amplamente usado em várias plataformas e ferramentas:
+
+| Plataforma/Ferramenta | Aplicação |
+| ------------- | ----------- |
+| GitHub        | Documentação de código, Issues, Pull Requests |
+| Stack Overflow | Formatação de perguntas |
+| WordPress     | Escrita de blogs |
+| Discord/Slack | Formatação de mensagens |
+| Notion        | Notas e gestão de conhecimento |
+
+## Conclusão
+
+Com sua simplicidade, eficiência e capacidades multiplataforma, Markdown tornou-se uma ferramenta inestimável para criadores de conteúdo. Seja escrevendo documentação técnica, posts de blog ou notas simples, Markdown fornece uma experiência de escrita consistente e eficiente.
+
+Aprender Markdown não é difícil, mas dominá-lo melhorará significativamente sua produtividade de escrita digital. Se você ainda não tentou Markdown, agora é o momento perfeito para começar!
+
+---
+
+*Autor: Entusiasta do Markdown*  
+*Publicado: 15 de outubro de 2023*
 `
       } else {
         console.error('Invalid locale:', currentLocale);
