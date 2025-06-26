@@ -1,0 +1,110 @@
+export default {
+    name: 'Analisador de User Agent',
+    description: 'Analisa e decodifica strings de User-Agent para identificar navegador, sistema operacional e informações do dispositivo',
+    input: {
+      label: 'String User-Agent',
+      placeholder: 'Cole ou digite uma string User-Agent...'
+    },
+    actions: {
+      parse: 'Analisar',
+      detect: 'Detectar navegador atual',
+      clear: 'Limpar'
+    },
+    results: {
+      title: 'Resultados da Análise',
+      summary: 'Resumo',
+      details: 'Detalhes',
+      originalUA: 'String User-Agent original'
+    },
+    sections: {
+      browser: 'Navegador',
+      os: 'Sistema Operacional',
+      device: 'Dispositivo',
+      other: 'Outras Informações'
+    },
+    deviceTypes: {
+      mobile: 'Dispositivo móvel',
+      tablet: 'Tablet',
+      desktop: 'Computador'
+    },
+    fields: {
+      name: 'Nome',
+      version: 'Versão',
+      engine: 'Motor',
+      platform: 'Plataforma',
+      type: 'Tipo',
+      vendor: 'Fabricante',
+      model: 'Modelo',
+      isMobile: 'É móvel',
+      isTablet: 'É tablet',
+      isDesktop: 'É desktop'
+    },
+    messages: {
+      parsingError: 'Erro ao analisar a string User-Agent',
+      emptyInput: 'Insira uma string User-Agent',
+      unknown: 'Desconhecido',
+      yes: 'Sim',
+      no: 'Não'
+    },
+    tips: {
+      description: 'User-Agent é a string de identificação que navegadores enviam aos servidores, contendo informações sobre navegador, sistema operacional e dispositivo.',
+      useCases: 'Usado em análise de sites, tratamento de compatibilidade e adaptação a dispositivos.'
+    },
+    article: {
+      title: "Analisador de User Agent: Entendendo strings de identificação de navegadores",
+      features: {
+        title: "O que são strings User-Agent e sua importância",
+        description: "Nosso <strong>Analisador de User Agent</strong> é uma ferramenta online especializada em decodificar e interpretar strings de identificação de navegadores. Cada vez que você acessa um site, seu navegador envia um texto chamado <strong>string User-Agent</strong> contendo detalhes sobre seu navegador, sistema operacional, tipo de dispositivo e mais.<br><br>Este poderoso <strong>decodificador de UA</strong> decompõe informações complexas em componentes fáceis de entender, revelando qual navegador você usa, sua versão, detalhes do sistema operacional e características do dispositivo. A ferramenta suporta todos os principais navegadores incluindo Chrome, Firefox, Safari, Edge e navegadores móveis, fornecendo identificação precisa em diferentes plataformas.<br><br>Entender strings User-Agent é crucial para desenvolvedores web, profissionais de TI e qualquer pessoa envolvida na criação ou manutenção de aplicações web que precisam oferecer experiências otimizadas em diferentes ambientes de navegação.",
+        useCases: {
+          title: "Aplicações práticas da análise de User-Agent",
+          items: [
+            "<strong>Desenvolvimento e testes web</strong>: Desenvolvedores usam <strong>análise de UA</strong> para identificar bugs e problemas de compatibilidade específicos de navegadores. Quando usuários reportam problemas, verificar seu User-Agent ajuda a reproduzir o ambiente exato onde ocorreu o erro, permitindo correções direcionadas em vez de adivinhar causas de problemas de renderização ou funcionalidade.",
+            
+            "<strong>Adaptação de conteúdo</strong>: Sites podem usar <strong>identificação de navegador</strong> para fornecer conteúdo otimizado baseado nas capacidades do visitante. Por exemplo, entregar imagens WebP para navegadores compatíveis enquanto fornece JPG para navegadores antigos, ou ajustar funcionalidades JavaScript conforme versões do navegador, garantindo compatibilidade sem sacrificar recursos para usuários de navegadores modernos.",
+            
+            "<strong>Análise de segurança</strong>: Profissionais de segurança analisam <strong>padrões de User-Agent</strong> para detectar comportamentos suspeitos. Strings de UA anormais ou inconsistentes frequentemente indicam atividades de scraping, bots ou potenciais ameaças de segurança. Ao analisar essas strings, sistemas de segurança podem identificar e bloquear agentes maliciosos tentando comprometer aplicações web.",
+            
+            "<strong>Análise e insights do usuário</strong>: Equipes de marketing usam <strong>dados de User-Agent</strong> para entender a demografia dos visitantes. Saber quais navegadores e dispositivos seu público usa ajuda a priorizar esforços de teste e otimização, garantindo recursos focados em melhorar a experiência nas configurações mais comuns entre seus usuários.",
+            
+            "<strong>Detecção de dispositivos móveis</strong>: Desenvolvedores usam <strong>identificação de dispositivo</strong> de User-Agents para implementar design responsivo. Enquanto media queries CSS lidam com a maioria dos comportamentos responsivos, analisar User-Agents pode fornecer contexto adicional sobre dispositivos móveis, permitindo ajustes finos em funcionalidades ou elementos de interface especificamente para usuários móveis.",
+            
+            "<strong>Detecção de recursos do navegador</strong>: Equipes técnicas avaliam capacidades do navegador através de <strong>interpretação de UA</strong>. Embora detecção moderna de recursos seja preferida, análise de User-Agent serve como método complementar para identificar navegadores que podem precisar de tratamento especial ou têm limitações conhecidas que requerem adaptações específicas no código."
+          ]
+        }
+      },
+      faq: {
+        title: "Perguntas frequentes sobre análise de User-Agent",
+        items: [
+          {
+            question: "Quais informações uma string User-Agent normalmente contém?",
+            answer: "<strong>Strings User-Agent</strong> geralmente contêm múltiplas informações organizadas em formato específico:<br><br>• <strong>Nome e versão do navegador</strong>: Identifica qual navegador está sendo usado (Chrome, Firefox, Safari etc.) e seu número de versão<br>• <strong>Motor de renderização</strong>: Mostra qual engine processa conteúdo web (Gecko, WebKit, Blink etc.)<br>• <strong>Sistema operacional</strong>: Indica o SO executando o navegador (Windows, macOS, Android, iOS etc.)<br>• <strong>Informações do dispositivo</strong>: Pode incluir detalhes de hardware, especialmente em dispositivos móveis<br>• <strong>Marcadores de compatibilidade</strong>: Frequentemente contém valores indicando compatibilidade com outros navegadores<br><br>Nosso <strong>analisador de User-Agent</strong> decodifica todos esses elementos em formato legível, permitindo entender facilmente detalhes técnicos de qualquer ambiente de navegação sem precisar interpretar manualmente strings complexas."
+          },
+          {
+            question: "Quão confiável é a identificação de navegadores via User-Agent?",
+            answer: "A confiabilidade da <strong>identificação de navegadores</strong> por User-Agent varia:<br><br>• <strong>Navegadores padrão</strong>: Chrome, Firefox e Safari geralmente são identificados com alta precisão<br>• <strong>Navegadores disfarçados</strong>: Alguns usuários ou aplicativos modificam intencionalmente suas strings User-Agent para parecerem outros navegadores, reduzindo confiabilidade<br>• <strong>Servidores proxy</strong>: Proxies de rede podem alterar informações de User-Agent, complicando identificação precisa<br>• <strong>Formatos em evolução</strong>: Fabricantes ocasionalmente mudam formatos de strings User-Agent, exigindo atualizações constantes nos algoritmos de análise<br><br>Embora nosso <strong>decodificador de UA</strong> use técnicas avançadas de reconhecimento de padrões para maximizar precisão, é melhor usar identificação por User-Agent como parte de uma estratégia mais ampla que inclua detecção de recursos críticos. Porém, para maioria dos propósitos, a confiabilidade é suficiente para orientar decisões de desenvolvimento e solução de problemas."
+          },
+          {
+            question: "Por que alguns User-Agents mencionam múltiplos navegadores?",
+            answer: "Devido a práticas históricas de <strong>compatibilidade entre navegadores</strong>, strings User-Agent frequentemente mencionam múltiplos navegadores:<br><br>• <strong>Referência Mozilla</strong>: A maioria dos navegadores inclui 'Mozilla', um legado da web antiga quando sites forneciam conteúdo diferente para navegadores Netscape (Mozilla)<br>• <strong>Referência WebKit</strong>: Navegadores baseados no Chrome incluem WebKit mesmo usando motor Blink, pois muitos sites otimizados para mobile verificam WebKit<br>• <strong>Compatibilidade competitiva</strong>: Navegadores frequentemente mencionam concorrentes para garantir que recebam o mesmo conteúdo otimizado<br><br>Essa prática chamada 'sniffing de User-Agent' criou strings cada vez mais complexas conforme cada navegador tenta se identificar enquanto evita ser excluído de conteúdos otimizados para outros. Nosso <strong>analisador de UA</strong> corta essa complexidade, focando no navegador e motor reais sob essas camadas de compatibilidade."
+          },
+          {
+            question: "Análise de User-Agent ajuda em design responsivo?",
+            answer: "Embora <strong>design responsivo</strong> dependa principalmente de media queries CSS em vez de detecção por User-Agent, <strong>análise de UA</strong> pode complementar abordagens responsivas em vários aspectos:<br><br>• <strong>Suporte a navegadores antigos</strong>: Identificar navegadores legados que podem precisar de estilos ou funcionalidades alternativas<br>• <strong>Otimizações específicas por dispositivo</strong>: Fazer ajustes direcionados para modelos específicos além do que CSS pode detectar<br>• <strong>Decisões de implementação</strong>: Informar quais funcionalidades implementar baseado nas capacidades dos navegadores da audiência<br>• <strong>Priorização de testes</strong>: Ajudar equipes a focar esforços de teste nas combinações navegador/dispositivo mais usadas pelos visitantes<br><br>Embora melhores práticas modernas de desenvolvimento web enfatizem detecção de recursos e técnicas responsivas que se adaptam a tamanhos de tela e capacidades em vez de navegadores específicos, <strong>análise de User-Agent</strong> ainda é valiosa para entender sua base de usuários e tomar decisões informadas sobre prioridades de suporte e otimização."
+          },
+          {
+            question: "Como usar dados de User-Agent para melhorar meu site?",
+            answer: "<strong>Dados de User-Agent</strong> podem melhorar seu site de várias formas práticas:<br><br>1. <strong>Correção de bugs específicos</strong>: Identificar e resolver problemas que afetam apenas certos navegadores ou versões<br>2. <strong>Otimização de performance</strong>: Fornecer recursos mais leves para dispositivos móveis ou navegadores antigos que podem ter dificuldade com conteúdo pesado<br>3. <strong>Lançamento de funcionalidades</strong>: Implementar aprimoramentos progressivos fornecendo recursos avançados apenas para navegadores compatíveis<br>4. <strong>Enriquecimento de análises</strong>: Combinar dados de User-Agent com outras análises para entender comportamento do usuário em contexto técnico<br>5. <strong>Melhorias de acessibilidade</strong>: Identificar e priorizar correções para navegadores comumente usados com tecnologias assistivas<br><br>Analisando logs de visitantes do seu site com nosso <strong>analisador de strings User-Agent</strong>, você obtém insights valiosos sobre o perfil técnico do público. Esses dados ajudam a priorizar esforços de desenvolvimento, garantindo que você crie a melhor experiência para usuários reais em vez de fazer suposições sobre seus ambientes de navegação."
+          }
+        ]
+      },
+      guide: {
+        title: "Como usar o Analisador de User-Agent: Guia passo a passo",
+        step1: "<strong>Insira a string User-Agent</strong>: Se você obteve uma string User-Agent de logs, ferramentas de análise ou outras fontes, pode inseri-la manualmente na área de texto. O <strong>analisador de UA</strong> aceita qualquer formato padrão, incluindo de navegadores desktop, dispositivos móveis, web crawlers e maioria das ferramentas automatizadas.",
+        step2: "<strong>Use a opção \"Detectar navegador atual\"</strong>: Se quiser analisar o User-Agent do seu próprio navegador, basta clicar em \"Detectar navegador atual\". Isso preenche automaticamente o campo com a string User-Agent do seu navegador atual, fornecendo uma forma rápida de ver como seu navegador se identifica para sites.",
+        step3: "<strong>Clique em \"Analisar\" para processar a string</strong>: Com uma string User-Agent no campo de entrada, clique em \"Analisar\" para ativar o processo de <strong>identificação de navegador</strong>. Nossa ferramenta processará a string e a decomporá em componentes, identificando informações-chave sobre navegador, sistema operacional e dispositivo.",
+        step4: "<strong>Veja o resumo</strong>: A seção superior dos resultados mostra um resumo rápido das informações mais importantes: nome e versão do navegador, sistema operacional e tipo de dispositivo. Isso dá uma compreensão imediata do ambiente básico representado pela string User-Agent.",
+        step5: "<strong>Examine a análise detalhada</strong>: Abaixo do resumo, você encontra uma tabela detalhada mostrando informações específicas de cada componente. Isso inclui números de versão exatos, detalhes do motor de renderização, informações do modelo do dispositivo (quando disponíveis) e outras especificações técnicas extraídas pelo <strong>decodificador de UA</strong>. Você pode usar essas informações para solução de problemas, decisões de desenvolvimento ou fins analíticos."
+      },
+      conclusion: "Entender strings User-Agent fornece insights valiosos sobre os diversos ambientes de navegação que acessam seu conteúdo web. Ao analisar e interpretar efetivamente essas impressões digitais técnicas, desenvolvedores e empresas podem tomar decisões informadas sobre compatibilidade, otimização e suporte a funcionalidades. Seja solucionando problemas específicos de navegadores, planejando prioridades de desenvolvimento ou coletando dados analíticos sobre seu público, nosso analisador de User-Agent oferece uma maneira simples de decodificar informações complexas contidas nessas strings de identificação. À medida que a web evolui com novos navegadores, dispositivos e plataformas, ter ferramentas confiáveis para interpretar dados de User-Agent permanece um aspecto crucial para fornecer excelentes experiências web que funcionem perfeitamente em toda a variedade de ambientes dos usuários."
+    }
+  }

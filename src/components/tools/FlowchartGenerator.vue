@@ -677,7 +677,59 @@ const exampleCodesByLocale = {
         +manageUsers()
     }
     ユーザー <|-- 管理者`
-  },// 可以添加更多语言...
+  },
+  
+  pt: {
+    flowchart: `graph TD
+    A[Início] --> B{Está correto?}
+    B -->|Sim| C[Resultado Correto]
+    B -->|Não| D[Resultado Incorreto]
+    C --> E[Fim]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant Cliente
+    participant Servidor
+    Cliente->>Servidor: Solicitar dados
+    Servidor-->>Cliente: Responder com dados
+    Cliente->>Servidor: Enviar formulário
+    Servidor-->>Cliente: Confirmar envio`,
+    gantt: `gantt
+    title Cronograma de Execução do Projeto
+    dateFormat  YYYY-MM-DD
+    section Design
+    Análise de Requisitos    :done,    des1, 2024-01-01, 2024-01-10
+    Design do Sistema        :active,  des2, 2024-01-11, 2024-01-25
+    Design Detalhado         :         des3, 2024-01-26, 2024-02-10
+    section Desenvolvimento
+    Desenvolvimento Frontend :         dev1, 2024-02-11, 2024-03-15
+    Desenvolvimento Backend  :         dev2, 2024-02-11, 2024-03-20
+    Testes                   :         test1, 2024-03-21, 2024-04-05`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> Aguardando
+    Aguardando --> Processando: Iniciar Processo
+    Processando --> Concluído: Processo Sucesso
+    Processando --> Erro: Processo Falha
+    Concluído --> [*]
+    Erro --> Aguardando: Tentar Novamente`,
+    pieChart: `pie title Distribuição de Vendas
+    "Produto A" : 30
+    "Produto B" : 25
+    "Produto C" : 20
+    "Produto D" : 15
+    "Outros" : 10`,
+    classDiagram: `classDiagram
+    class Usuário {
+        +String nome
+        +String email
+        +login()
+        +logout()
+    }
+    class Administrador {
+        +String permissões
+        +gerenciarUsuários()
+    }
+    Usuário <|-- Administrador`
+  },
 };
 
 // 替换原来的 localizedExamples 计算属性

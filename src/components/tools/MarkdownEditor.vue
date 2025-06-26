@@ -1212,6 +1212,105 @@ XYZ大学 コンピュータサイエンス学科 2016年4月〜2020年3月
 - 英語（ビジネスレベル）`
       }
     ];
+  } else if (locale.value === 'pt') {
+    // 葡萄牙语模板
+    markdownTemplates.value = [
+      {
+        name: 'Documento Simples',
+        description: 'Inclui títulos, listas, citações, etc.',
+        content: `# Título do Documento
+
+## Introdução
+Este é um exemplo simples de documento Markdown.
+
+## Características
+- Suporta títulos e parágrafos
+- Suporta texto **negrito** e *itálico*
+- Suporta listas ordenadas e não ordenadas
+
+> Este é um bloco de citação, usado para citar a opinião de outras pessoas.
+
+## Conclusão
+Markdown é uma linguagem de marcação simples e fácil de usar.`
+      },
+      {
+        name: 'README do Projeto',
+        description: 'Estrutura padrão para documentação de projetos',
+        content: `# Nome do Projeto
+
+## Descrição do Projeto
+Breve descrição das principais funções e propósito do projeto.
+
+## Funcionalidades
+- Funcionalidade principal 1
+- Funcionalidade principal 2
+- Funcionalidade principal 3
+
+## Instalação
+\`\`\`
+# Instalar dependências
+npm install
+
+# Iniciar servidor de desenvolvimento
+npm run dev
+\`\`\`
+
+## Exemplo de Uso
+\`\`\`javascript
+// Código de exemplo
+const example = new Example();
+example.init();
+\`\`\`
+
+## Documentação
+Para documentação mais detalhada, consulte o link da documentação.
+
+## Guia de Contribuição
+Contribuições são bem-vindas, consulte o guia de contribuição.
+
+## Licença
+Este projeto é publicado sob a licença MIT, veja o arquivo LICENSE para mais detalhes.`
+      },
+      {
+        name: 'Currículo',
+        description: 'Modelo de currículo pessoal',
+        content: `# Currículo
+
+## Informações Pessoais
+- Nome: João Silva
+- Telefone: (11) 99999-9999
+- Email: joao.silva@exemplo.com
+- Objetivo Profissional: Desenvolvedor Frontend
+
+## Educação
+Universidade XYZ, Ciência da Computação, Setembro 2016 - Junho 2020
+
+## Experiência Profissional
+### Empresa Tech | Desenvolvedor Frontend | Julho 2020 - Presente
+- Responsável pelo desenvolvimento frontend e manutenção dos produtos principais
+- Desenvolvimento de sistema de gestão empresarial com Vue.js, melhoria da experiência do usuário
+- Otimização do desempenho frontend, redução do tempo de carregamento das páginas em 30%
+
+### Empresa ABC | Estagiário Frontend | Julho 2019 - Junho 2020
+- Participação no projeto de redesign do site da empresa
+- Assistência à equipe na refatoração e otimização de código
+
+## Habilidades Técnicas
+- Desenvolvimento Frontend: HTML, CSS, JavaScript, Vue.js, React
+- Desenvolvimento Backend: Node.js, Express
+- Outras Ferramentas: Git, Webpack, Docker
+
+## Experiência em Projetos
+### Sistema de Gestão Empresarial
+- Desenvolvido com Vue.js
+- Implementação de visualização de dados, gestão de permissões e outras funcionalidades
+- Otimização da velocidade de resposta do sistema, melhoria da experiência do usuário
+
+## Habilidades Linguísticas
+- Português (Nativo)
+- Inglês (Fluente)`
+      }
+    ];
   } else {
     console.error('Invalid locale:', locale.value);
     throw new Error('Invalid locale');
@@ -1564,7 +1663,56 @@ Commencez à éditer ! Vous pouvez utiliser la barre d'outils ci-dessus pour ins
 ---
 
 編集を始めましょう！上のツールバーを使用して、さまざまなMarkdown要素を素早く挿入できます。`,
-};
+
+    'pt': `# Bem-vindo ao Editor Markdown
+
+Este é um editor Markdown simples com visualização em tempo real e destaque de sintaxe.
+
+## Sintaxe Básica
+
+### Títulos
+Use símbolos # para denotar títulos:
+# Título 1
+## Título 2
+### Título 3
+
+### Ênfase
+**Negrito** ou __Negrito__
+*Itálico* ou _Itálico_
+~~Tachado~~
+
+### Listas
+Lista não ordenada:
+- Item 1
+- Item 2
+- Item 3
+
+Lista ordenada:
+1. Primeiro item
+2. Segundo item
+3. Terceiro item
+
+### Links e Imagens
+[Texto do link](https://example.com)
+![Texto alternativo da imagem](https://example.com/image.jpg)
+
+### Código
+Código em linha: \`var exemplo = "olá";\`
+
+### Citações
+> Isto é um bloco de citação.
+
+### Tabelas
+| Cabeçalho 1 | Cabeçalho 2 | Cabeçalho 3 |
+|-------------|-------------|-------------|
+| Célula 1    | Célula 2    | Célula 3    |
+| Célula 4    | Célula 5    | Célula 6    |
+
+### Linha Horizontal
+---
+
+Comece a editar! Você pode usar a barra de ferramentas acima para inserir rapidamente vários elementos Markdown.`,
+  };
 
   // 根据当前语言设置内容
   if (defaultContents[locale]) {
