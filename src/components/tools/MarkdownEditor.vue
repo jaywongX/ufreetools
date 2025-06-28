@@ -1311,6 +1311,161 @@ Universidade XYZ, Ciência da Computação, Setembro 2016 - Junho 2020
 - Inglês (Fluente)`
       }
     ];
+  } else if (locale.value === 'de') {
+    // 德语模板
+    markdownTemplates.value = [
+      {
+        name: 'Einfaches Dokument',
+        description: 'Enthält Überschriften, Listen, Zitate usw.',
+        content: `# Dokumenttitel
+
+## Einführung
+Dies ist ein einfaches Beispiel für ein Markdown-Dokument.
+
+## Funktionen
+- Unterstützt Überschriften und Absätze
+- Unterstützt **fett** und *kursiv*
+- Unterstützt geordnete und ungeordnete Listen
+
+> Dies ist ein Zitatblock, der verwendet wird, um die Meinung anderer zu zitieren.
+
+## Fazit
+Markdown ist eine einfache und benutzerfreundliche Auszeichnungssprache.`
+      },
+      {
+        name: 'Projekt-README',
+        description: 'Standardstruktur für Projektdokumentation',
+        content: `# Projektname
+
+## Projektbeschreibung
+Kurze Beschreibung der Hauptfunktionen und des Zwecks des Projekts.
+
+## Funktionen
+- Hauptfunktion 1
+- Hauptfunktion 2
+- Hauptfunktion 3
+
+## Installation
+\`\`\`
+# Abhängigkeiten installieren
+npm install
+
+# Entwicklungsserver starten
+npm run dev
+\`\`\`
+
+## Verwendungsbeispiel
+\`\`\`javascript
+// Beispielcode
+const example = new Example();
+example.init();
+\`\`\`
+
+## Dokumentation
+Für detailliertere Dokumentation siehe Dokumentationslink.
+
+## Beitragsrichtlinien
+Beiträge sind willkommen, siehe Beitragsrichtlinien.
+
+## Lizenz
+Dieses Projekt wird unter der MIT-Lizenz veröffentlicht, siehe LICENSE-Datei für Details.`
+      },
+      {
+        name: 'Lebenslauf',
+        description: 'Persönliche Lebenslauf-Vorlage',
+        content: `# Lebenslauf
+
+## Persönliche Informationen
+- Name: Hans Müller
+- Telefon: 0123-456789
+- E-Mail: hans.mueller@beispiel.com
+- Berufsziel: Frontend-Entwickler
+
+## Ausbildung
+Universität XYZ, Informatik, September 2016 - Juni 2020
+
+## Berufserfahrung
+### Tech-Unternehmen | Frontend-Entwickler | Juli 2020 - Gegenwart
+- Verantwortlich für Frontend-Entwicklung und Wartung der Hauptprodukte
+- Entwicklung eines Unternehmensverwaltungssystems mit Vue.js, Verbesserung der Benutzererfahrung
+- Optimierung der Frontend-Leistung, Reduzierung der Seitenladezeit um 30%
+
+### ABC Corp. | Frontend-Praktikant | Juli 2019 - Juni 2020
+- Teilnahme am Unternehmenswebsite-Redesign-Projekt
+- Unterstützung des Teams bei Code-Refaktorierung und Optimierung
+
+## Technische Fähigkeiten
+- Frontend-Entwicklung: HTML, CSS, JavaScript, Vue.js, React
+- Backend-Entwicklung: Node.js, Express
+- Andere Tools: Git, Webpack, Docker
+
+## Projekterfahrung
+### Unternehmensverwaltungssystem
+- Entwickelt mit Vue.js
+- Implementierung von Datenvisualisierung, Berechtigungsverwaltung und anderen Funktionen
+- Optimierung der Systemantwortgeschwindigkeit, Verbesserung der Benutzererfahrung
+
+## Sprachkenntnisse
+- Deutsch (Muttersprache)
+- Englisch (Fließend)`
+      }
+    ];
+  } else if (locale.value === 'id') {
+    // 印度尼西亚语模板
+    markdownTemplates.value = [
+      {
+        name: 'Selamat Datang di Editor Markdown',
+        description: 'Ini adalah editor Markdown sederhana dengan pratinjau waktu nyata dan penyorotan sintaks.',
+        content: `# Selamat Datang di Editor Markdown
+
+Ini adalah editor Markdown sederhana dengan pratinjau waktu nyata dan penyorotan sintaks.
+
+## Sintaks Dasar
+
+### Judul
+Gunakan simbol # untuk menandai judul:
+# Judul 1
+## Judul 2
+### Judul 3
+
+### Penekanan
+**Tebal** atau __Tebal__
+*Miring* atau _Miring_
+~~Coret~~
+
+### Daftar
+Daftar tidak berurutan:
+- Item 1
+- Item 2
+- Item 3
+
+Daftar berurutan:
+1. Item pertama
+2. Item kedua
+3. Item ketiga
+
+### Tautan dan Gambar
+[Teks tautan](https://example.com)
+![Teks alternatif gambar](https://example.com/image.jpg)
+
+### Kode
+Kode sebaris: \`var contoh = "halo";\`
+
+### Kutipan
+> Ini adalah blok kutipan.
+
+### Tabel
+| Judul 1 | Judul 2 | Judul 3 |
+|---------|---------|---------|
+| Sel 1   | Sel 2   | Sel 3   |
+| Sel 4   | Sel 5   | Sel 6   |
+
+### Garis Horizontal
+---
+
+Mulailah mengedit! Anda dapat menggunakan toolbar di atas untuk dengan cepat memasukkan berbagai elemen Markdown.`
+      }
+    ];
   } else {
     console.error('Invalid locale:', locale.value);
     throw new Error('Invalid locale');
@@ -1712,6 +1867,104 @@ Código em linha: \`var exemplo = "olá";\`
 ---
 
 Comece a editar! Você pode usar a barra de ferramentas acima para inserir rapidamente vários elementos Markdown.`,
+
+    'id': `# Selamat Datang di Editor Markdown
+
+Ini adalah editor Markdown sederhana dengan pratinjau waktu nyata dan penyorotan sintaks.
+
+## Sintaks Dasar
+
+### Judul
+Gunakan simbol # untuk menandai judul:
+# Judul 1
+## Judul 2
+### Judul 3
+
+### Penekanan
+**Tebal** atau __Tebal__
+*Miring* atau _Miring_
+~~Coret~~
+
+### Daftar
+Daftar tidak berurutan:
+- Item 1
+- Item 2
+- Item 3
+
+Daftar berurutan:
+1. Item pertama
+2. Item kedua
+3. Item ketiga
+
+### Tautan dan Gambar
+[Teks tautan](https://example.com)
+![Teks alternatif gambar](https://example.com/image.jpg)
+
+### Kode
+Kode sebaris: \`var contoh = "halo";\`
+
+### Kutipan
+> Ini adalah blok kutipan.
+
+### Tabel
+| Judul 1 | Judul 2 | Judul 3 |
+|---------|---------|---------|
+| Sel 1   | Sel 2   | Sel 3   |
+| Sel 4   | Sel 5   | Sel 6   |
+
+### Garis Horizontal
+---
+
+Mulailah mengedit! Anda dapat menggunakan toolbar di atas untuk dengan cepat memasukkan berbagai elemen Markdown.`,
+
+    'de': `# Willkommen im Markdown-Editor
+
+Dies ist ein einfacher Markdown-Editor mit Echtzeit-Vorschau und Syntax-Hervorhebung.
+
+## Grundlegende Syntax
+
+### Überschriften
+Verwenden Sie #-Symbole für Überschriften:
+# Überschrift 1
+## Überschrift 2
+### Überschrift 3
+
+### Hervorhebungen
+**Fett** oder __Fett__
+*Kursiv* oder _Kursiv_
+~~Durchgestrichen~~
+
+### Listen
+Ungeordnete Liste:
+- Element 1
+- Element 2
+- Element 3
+
+Geordnete Liste:
+1. Erstes Element
+2. Zweites Element
+3. Drittes Element
+
+### Links und Bilder
+[Link-Text](https://example.com)
+![Alt-Text für Bild](https://example.com/image.jpg)
+
+### Code
+Inline-Code: \`var beispiel = "hallo";\`
+
+### Zitate
+> Dies ist ein Zitatblock.
+
+### Tabellen
+| Überschrift 1 | Überschrift 2 | Überschrift 3 |
+|---------------|---------------|---------------|
+| Zelle 1       | Zelle 2       | Zelle 3       |
+| Zelle 4       | Zelle 5       | Zelle 6       |
+
+### Horizontale Linie
+---
+
+Beginnen Sie mit dem Bearbeiten! Sie können die Symbolleiste oben verwenden, um schnell verschiedene Markdown-Elemente einzufügen.`,
   };
 
   // 根据当前语言设置内容

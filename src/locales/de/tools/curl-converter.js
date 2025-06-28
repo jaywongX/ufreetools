@@ -1,0 +1,188 @@
+export default {
+    name: 'cURL-Konverter',
+    description: 'Konvertiert cURL-Befehle in Code-Snippets verschiedener Programmiersprachen',
+    title: 'cURL zu Code',
+    subtitle: 'Konvertieren Sie cURL-Befehle in Code für verschiedene Sprachen, um HTTP-Anfragen einfach in Ihre Projekte zu integrieren',
+    
+    input: {
+      title: 'cURL-Befehl',
+      placeholder: 'cURL-Befehl hier einfügen',
+      parse: 'cURL parsen',
+      clear: 'Leeren',
+      examples: 'Beispielbefehle:',
+      options: 'Parser-Optionen',
+      validateCommand: 'Befehl validieren',
+      formatCurl: 'cURL formatieren'
+    },
+    
+    options: {
+      detectAuth: 'Authentifizierung automatisch erkennen',
+      resolveVariables: 'Umgebungsvariablen auflösen',
+      processContinuations: 'Zeilenfortsetzungen (\\) verarbeiten',
+      followRedirects: 'Weiterleitungen folgen',
+      preserveHeaders: 'Alle Header behalten',
+      ignoreErrors: 'Parsing-Fehler ignorieren',
+      noDuplicateHeaders: 'Keine doppelten Header (letzten verwenden)'
+    },
+    
+    output: {
+      title: 'Code-Ausgabe',
+      language: 'Zielsprache',
+      copy: 'Kopieren',
+      copyTooltip: 'In Zwischenablage kopieren',
+      download: 'Herunterladen',
+      beautify: 'Verschönern',
+      codeTitle: '{language} Code',
+      errorTitle: 'Konvertierungsfehler',
+      languages: {
+        python: 'Python (requests)',
+        pythonHttp: 'Python (http.client)',
+        node: 'Node.js (axios)',
+        nodeRequest: 'Node.js (request)',
+        nodeFetch: 'Node.js (fetch)',
+        java: 'Java (HttpClient)',
+        javaOkHttp: 'Java (OkHttp)',
+        php: 'PHP (cURL)',
+        phpGuzzle: 'PHP (Guzzle)',
+        go: 'Go',
+        rust: 'Rust',
+        swift: 'Swift',
+        csharp: 'C# (HttpClient)',
+        ruby: 'Ruby',
+        dart: 'Dart',
+        powershell: 'PowerShell',
+        browser: 'Browser (fetch)',
+        curl: 'cURL (formatiert)',
+        json: 'JSON (Anfrageobjekt)',
+        har: 'HAR (HTTP-Archiv)',
+        javascript: 'JavaScript (Fetch)'
+      }
+    },
+    
+    request: {
+      title: 'Anfragedetails',
+      method: 'Methode',
+      url: 'URL',
+      headers: 'Header',
+      body: 'Body',
+      auth: 'Authentifizierung',
+      options: 'Optionen',
+      cookie: 'Cookie',
+      queryParams: 'Query-Parameter',
+      formData: 'Formulardaten',
+      visualize: 'Visualisieren'
+    },
+    
+    visualization: {
+      title: 'Anfragevisualisierung',
+      request: 'Anfrage',
+      response: 'Antwort',
+      headers: 'Header',
+      body: 'Body',
+      timing: 'Timing',
+      raw: 'Rohdaten'
+    },
+    
+    analysis: {
+      title: 'Befehlsanalyse',
+      insecureWarning: 'Warnung: Dieser Befehl verwendet --insecure/-k (SSL-Überprüfung deaktiviert)',
+      verboseIgnored: 'Hinweis: Verbose-Modus (-v) wurde bei der Konvertierung ignoriert',
+      unsupportedOptions: 'Nicht unterstützte Optionen',
+      warnings: 'Warnungen',
+      info: 'Informationen'
+    },
+    
+    messages: {
+      parsing: 'cURL-Befehl wird geparst...',
+      parseFailed: 'cURL-Parsing fehlgeschlagen: {error}',
+      parseSuccess: 'cURL-Befehl erfolgreich geparst',
+      copied: 'Code in Zwischenablage kopiert',
+      downloaded: 'Code heruntergeladen',
+      invalidCurl: 'Ungültiger cURL-Befehl',
+      emptyCurl: 'Bitte cURL-Befehl eingeben',
+      validCurl: 'Gültiger cURL-Befehl',
+      unknownOption: 'Unbekannte Option: {option}',
+      unsupportedMethod: 'Warnung: Nicht alle Sprachen unterstützen HTTP-Methode {method}',
+      curlRequired: 'Befehl muss mit "curl" beginnen',
+      copyFailed: 'Kopieren fehlgeschlagen, bitte manuell kopieren'
+    },
+    
+    examples: {
+      title: 'cURL-Beispielbefehle',
+      basic: 'Einfache GET-Anfrage',
+      headers: 'Benutzerdefinierte Header',
+      post: 'POST mit JSON',
+      formData: 'Formulardaten senden',
+      auth: 'Basic-Authentifizierung',
+      complex: 'Komplexes Beispiel',
+      exampleCommands: {
+        getRequest: 'GET-Anfrage',
+        postJson: 'POST JSON',
+        postForm: 'POST-Formular',
+        withAuth: 'Mit Authentifizierung',
+        uploadFile: 'Datei hochladen'
+      }
+    },
+    
+    actions: {
+      convert: 'Konvertieren',
+      converting: 'Konvertierung läuft...'
+    },
+    
+    article: {
+      title: "cURL-Konverter: Befehlszeilenanfragen in Code umwandeln",
+      features: {
+        title: "cURL-Konvertierung und ihre Anwendungen",
+        description: "Der <strong>cURL-Konverter</strong> ist ein leistungsstarkes Tool, das cURL-Befehle in ausführbare Code-Snippets verschiedener Programmiersprachen umwandelt. Dieses Tool überbrückt die Lücke zwischen API-Dokumentation, Terminal-basierten Tests und der tatsächlichen Implementierung, sodass Entwickler HTTP-Anfragen schnell in ihre Projekte integrieren können, ohne die Syntax manuell umwandeln zu müssen.<br><br>Die Kernfunktion dieses <strong>cURL-zu-Code-Konverters</strong> besteht darin, die Befehlszeilensyntax von cURL (einschließlich Headern, Anfragemethoden, Authentifizierung, Daten-Payloads und anderen Optionen) zu parsen und äquivalenten Code zu generieren, der dieselbe HTTP-Anfrage in Ihrer bevorzugten Programmiersprache ausführt. Das Tool unterstützt beliebte Sprachen wie Python, JavaScript, PHP, Java, Ruby, Go und C# und ermöglicht Entwicklern einen nahtlosen Übergang vom Testen von APIs im Terminal zur Implementierung in Produktionscode. Egal, ob Sie mit RESTful-Diensten, GraphQL-Endpunkten oder traditionellen SOAP-APIs arbeiten – dieser <strong>HTTP-Anfrage-Generator</strong> übernimmt die Syntaxumwandlung und reduziert so die Entwicklungszeit erheblich und eliminiert Syntaxfehler.",
+        useCases: {
+          title: "Praktische Anwendungen der cURL-Konvertierung",
+          items: [
+            "<strong>Beschleunigte API-Integration</strong>: Bei der Integration von Drittanbieter-APIs testen Entwickler Endpunkte oft zunächst mit cURL-Befehlen aus der Dokumentation. Der <strong>cURL-Befehls-Parser</strong> ermöglicht es, diese Beispielanfragen direkt in die Programmiersprache Ihres Projekts umzuwandeln, beschleunigt die Integration und stellt sicher, dass das Anfrageformat aus der Dokumentation genau kopiert wird. Dies eliminiert potenzielle Fehler bei der manuellen Umwandlung von API-Aufrufspezifikationen und reduziert die Integrationszeit für komplexe APIs von Stunden auf Minuten.",
+            "<strong>Sprachübergreifende Entwicklung</strong>: Entwicklungsteams, die mit mehreren Tech-Stacks arbeiten, können mit dem <strong>HTTP-Anfrage-Code-Generator</strong> API-Interaktionsmuster teilen. Backend-Entwickler können API-Endpunkte mit cURL validieren und dann Frontend-Entwicklern fertigen JavaScript-Code für dieselben Anfragen bereitstellen, wodurch Konsistenz zwischen Systemkomponenten gewährleistet wird, während sprachspezifische Best Practices eingehalten werden.",
+            "<strong>API-Dokumentationserstellung</strong>: Technische Autoren und API-Entwickler können aus einem einzigen validierten cURL-Befehl konsistente Codebeispiele in mehreren Sprachen generieren. Dies stellt sicher, dass alle Codebeispiele in der Dokumentation dieselbe Anfrage ausführen, wobei die Konsistenz gewahrt bleibt, während gleichzeitig sprachspezifische Implementierungen bereitgestellt werden, die den idiomatischen Mustern und Best Practices jeder unterstützten Sprache folgen.",
+            "<strong>Modernisierung von Legacy-Systemen</strong>: Bei der Aktualisierung von Legacy-Anwendungen müssen Entwickler häufig bestehende HTTP-Interaktionen in modernen Codebasen replizieren. Indem sie mit Browser-Entwicklertools (die als cURL exportieren können) aktuelle API-Anfragen erfassen und dann in moderne Programmiersprachen umwandeln, hilft der <strong>cURL-Konverter</strong> bei der Migration von Funktionen, während präzise API-Kommunikationsmuster beibehalten werden.",
+            "<strong>Debugging und Fehlerbehebung</strong>: Wenn eine API-Anfrage in einer Anwendung fehlschlägt, können Entwickler die problematische Anfrage als cURL-Befehl extrahieren (oft aus Serverlogs oder über Monitoring-Tools), direkt im Terminal testen und modifizieren, bis sie ordnungsgemäß funktioniert, und dann den Konverter verwenden, um den korrigierten Code zu generieren, der das Problem im Anwendungscode behebt.",
+            "<strong>Lern- und Schulungstool</strong>: Programmierdozenten und Studenten können den <strong>Anfrage-Code-Generator</strong> verwenden, um die Struktur von HTTP-Anfragen in verschiedenen Programmiersprachen zu verstehen. Durch den Vergleich von generiertem Code für dieselbe Anfrage in mehreren Sprachen können Entwickler besser verstehen, wie HTTP-Clients in bestimmten Sprachen implementiert werden, und so neue Programmiersprachen anhand praktischer Beispiele erlernen."
+          ]
+        }
+      },
+      faq: {
+        title: "Häufige Fragen zur cURL-Konvertierung",
+        items: [
+          {
+            question: "Was ist cURL und warum sollte ich es in Code umwandeln?",
+            answer: "cURL (Client URL) ist ein Befehlszeilen-Tool und eine Bibliothek zum Übertragen von Daten mit URLs unter Verwendung verschiedener Protokolle. Entwickler verwenden cURL-Befehle häufig zum Testen von API-Endpunkten, Debuggen von HTTP-Anfragen und Dokumentieren von API-Interaktionen, aufgrund seiner Allgegenwärtigkeit und Einfachheit. Bei der Implementierung dieser Testanfragen in echter Anwendungssoftware muss die cURL-Syntax jedoch in die verwendete Programmiersprache umgewandelt werden. Der <strong>cURL-Konverter</strong> automatisiert diesen Umwandlungsprozess, eliminiert manuelle Syntaxfehler und spart erhebliche Entwicklungszeit. Anstatt zu verstehen, wie bestimmte cURL-Optionen (wie -H für Header oder -d für Daten) in sprachspezifische Konstrukte umgewandelt werden, übernimmt der Konverter diese Umwandlungen automatisch und stellt sicher, dass der generierte Code dieselbe HTTP-Anfrage ausführt, während er den Konventionen und Best Practices der jeweiligen Sprache folgt."
+          },
+          {
+            question: "Wie genau ist der generierte Code im Vergleich zum ursprünglichen cURL-Befehl?",
+            answer: "Der <strong>cURL-zu-Code-Konverter</strong> erzeugt hochgenaue Umwandlungsergebnisse, die den ursprünglichen cURL-Befehl funktional replizieren und gleichzeitig die Idiome der Zielsprache respektieren. Der Konverter behält alle grundlegenden Anfragekomponenten bei, einschließlich URL, HTTP-Methode, Header, Query-Parameter, Request-Body (verschiedene Formate), Authentifizierungsdaten sowie gängiger Optionen wie Redirect-Verfolgung und SSL-Überprüfung. Für unterstützte Sprachen bleibt die semantische Äquivalenz erhalten, was bedeutet, dass der generierte Code exakt dieselbe HTTP-Anfrage ausführt wie der ursprüngliche cURL-Befehl.<br><br>Das heißt, einige fortgeschrittene oder obskure cURL-Funktionen haben möglicherweise keine direkten Entsprechungen in allen Programmiersprachen. In diesen Randfällen implementiert der Konverter die nächstgelegene Funktionalität oder fügt Kommentare in den generierten Code ein, die etwaige Unterschiede erklären. Für kritische Produktionsimplementierungen wird empfohlen, den generierten Code durch tatsächliche Tests zu verifizieren, insbesondere wenn spezialisierte cURL-Optionen wie benutzerdefinierte SSL-Zertifikate, bestimmte Netzwerkkonfigurationen oder ungewöhnliche Authentifizierungsmechanismen verwendet werden."
+          },
+          {
+            question: "Welche Programmiersprachen unterstützt der Konverter?",
+            answer: "Der <strong>HTTP-Anfrage-Code-Generator</strong> unterstützt die Umwandlung in mehrere gängige Programmiersprachen und Bibliotheken, die häufig für API-Interaktionen verwendet werden. Derzeit unterstützte Ziele umfassen:<br><br>• <strong>Python</strong>: Beliebte requests-Bibliothek und standardmäßiges http.client<br>• <strong>JavaScript/Node.js</strong>: Mehrere Varianten, einschließlich Fetch API (Browser und Node.js), Axios und Request-Bibliothek<br>• <strong>PHP</strong>: Native cURL-Funktionen und Guzzle HTTP-Client<br>• <strong>Java</strong>: Java 11+ HttpClient und OkHttp-Bibliothek<br>• <strong>Go</strong>: Standardbibliothek HTTP-Client<br>• <strong>Ruby</strong>: Natives Net::HTTP<br>• <strong>C#</strong>: HttpClient-Implementierung<br>• <strong>PowerShell</strong>: Invoke-WebRequest<br>• <strong>Rust</strong>: reqwest-Client<br><br>Jede Sprachumwandlung ist optimiert, um idiomatischen Code zu erzeugen, der den Best Practices und Konventionen der Zielsprache und -bibliothek entspricht, anstatt nur eine wörtliche Syntaxübersetzung zu sein. Dieser Ansatz stellt sicher, dass der generierte Code nicht nur funktionsfähig, sondern auch wartbar ist und mit der Art übereinstimmt, wie erfahrene Entwickler in den jeweiligen Sprachökosystemen natürlicherweise HTTP-Client-Code schreiben würden."
+          },
+          {
+            question: "Kann der Konverter komplexe cURL-Befehle mit mehreren Optionen verarbeiten?",
+            answer: "Ja, der <strong>cURL-Befehls-Parser</strong> kann Befehle mit mehreren Optionen und komplexen Anfragestrukturen verarbeiten. Der Konverter unterstützt:<br><br>• <strong>Authentifizierungsmethoden</strong>: Einschließlich Basic-Authentifizierung, Bearer-Token, API-Schlüssel und OAuth-Implementierungen<br>• <strong>Benutzerdefinierte Header</strong>: Mehrere Header mit beliebigen Werten, einschließlich Content-Type-Spezifikationen<br>• <strong>Request-Body</strong>: JSON, Formulardaten, Multipart-Formulare, Binärdaten und Text-Payloads<br>• <strong>HTTP-Methoden</strong>: Alle Standardmethoden (GET, POST, PUT, DELETE, PATCH etc.)<br>• <strong>URL-Parameter</strong>: In der URL und als separate Parameter<br>• <strong>Datei-Uploads</strong>: Umwandlung der Datei-Upload-Syntax für unterstützte Sprachen<br>• <strong>SSL/TLS-Optionen</strong>: Zertifikatsüberprüfungseinstellungen<br>• <strong>Proxy-Konfiguration</strong>: Wenn von der Zielsprache unterstützt<br>• <strong>Cookies</strong>: Senden und Speichern von Cookies<br><br>Das Tool kann Befehle mit Zeilenfortsetzungen (Backslash), Anführungszeichen-Variationen und komplexen verschachtelten Strukturen (wie JSON-Payloads oder verschachtelte Formularfelder) verarbeiten. Selbst Befehle, die direkt aus Browser-Entwicklertools oder Tools wie Postman extrahiert werden – die oft sehr detaillierte cURL-Befehle mit vielen Optionen generieren – können erfolgreich in prägnanten, effizienten Code in der Zielsprache umgewandelt werden."
+          },
+          {
+            question: "Wie wird sichergestellt, dass der generierte Code den Best Practices meiner Sprache entspricht?",
+            answer: "Der <strong>Anfrage-Code-Generator</strong> ist darauf ausgelegt, nicht nur funktionalen, sondern auch idiomatischen Code zu erzeugen, der den Best Practices der jeweiligen Sprache folgt. Für jede unterstützte Sprache implementiert der Konverter mehrere Optimierungen:<br><br>• <strong>Bibliotheksauswahl</strong>: Verwendung der am besten geeigneten und weit verbreiteten HTTP-Client-Bibliothek für jede Sprache (z.B. requests für Python, Axios für Node.js)<br>• <strong>Fehlerbehandlung</strong>: Einschließlich sprachangemessener Fehlerprüfungen und Ausnahmebehandlungsmuster<br>• <strong>Ressourcenverwaltung</strong>: Korrektes Schließen von Verbindungen und Bereinigen von Ressourcen, wo anwendbar<br>• <strong>Moderne Syntax</strong>: Nutzung moderner Sprachfeatures, wo sinnvoll (async/await in JavaScript, try-with-resources in Java)<br>• <strong>Lesbarkeit</strong>: Formatierung des Codes mit korrekter Einrückung und aussagekräftigen Variablennamen<br>• <strong>Wartbarkeit</strong>: Strukturierung des generierten Codes, um Verständnis und Modifikation zu erleichtern<br><br>Während der generierte Code allgemeinen Best Practices folgt, möchten Sie möglicherweise kleine Anpassungen vornehmen, um Ihren projektspezifischen Codierungsstandards zu entsprechen oder die Integration in bestehende Codestrukturen zu erleichtern. Der Konverter bietet eine solide Grundlage, die HTTP-Anfragen korrekt implementiert und gleichzeitig Sprachkonventionen befolgt, sodass Sie sich auf die Integration der Funktionalität in Ihre Anwendung konzentrieren können, anstatt mit HTTP-Client-Syntax zu kämpfen."
+          }
+        ]
+      },
+      guide: {
+        title: "Schritt-für-Schritt-Anleitung zur Verwendung des cURL-Konverters",
+        steps: [
+          "<strong>Geben Sie Ihren cURL-Befehl ein</strong>: Fügen Sie Ihren cURL-Befehl zunächst in das Eingabefeld ein oder tippen Sie ihn ein. Sie können einen Befehl aus der API-Dokumentation, Browser-Entwicklertools, einem Postman-Export oder jedem anderen gültigen cURL-Befehl verwenden. Wenn Sie mit cURL nicht vertraut sind, können Sie auf einen Beispielbefehl unter dem Eingabebereich klicken, um Formate für verschiedene Anfragentypen zu sehen.",
+          "<strong>Wählen Sie die Zielsprache</strong>: Wählen Sie aus dem Sprachauswahl-Panel die Programmiersprache aus, in die Sie den cURL-Befehl umwandeln möchten. Das Tool unterstützt mehrere Sprachen und Bibliotheken, die häufig für API-Interaktionen verwendet werden, wie Python, JavaScript, PHP, Java usw. Wählen Sie die Sprache, die zu Ihrem Tech-Stack passt.",
+          "<strong>Klicken Sie auf die Konvertieren-Schaltfläche</strong>: Nach Eingabe des Befehls und Auswahl der Zielsprache klicken Sie auf 'Konvertieren', um den cURL-Befehl zu verarbeiten. Das Tool parst den Befehl, identifiziert alle Komponenten (Methode, URL, Header, Daten, Optionen) und generiert äquivalenten Code in Ihrer gewählten Sprache.",
+          "<strong>Überprüfen Sie den generierten Code</strong>: Sehen Sie sich die Ausgabe im Code-Anzeigebereich an. Der konvertierte Code enthält alle notwendigen Importe/Referenzen, geeignete HTTP-Client-Initialisierung, Anfragekonfiguration mit korrekten Headern und Body-Formatierung sowie grundlegende Antwortverarbeitung. Der Code ist zur besseren Lesbarkeit formatiert, mit korrekter Einrückung und aussagekräftigen Variablennamen.",
+          "<strong>Kopieren Sie den Code in Ihr Projekt</strong>: Wenn Sie mit dem generierten Code zufrieden sind, klicken Sie auf 'Kopieren', um ihn in die Zwischenablage zu kopieren. Sie können ihn dann direkt in Ihre Entwicklungsumgebung oder Ihren Code-Editor einfügen. Je nach Ihren spezifischen Projektanforderungen kann der Code direkt verwendet oder mit minimalen Anpassungen eingesetzt werden.",
+          "<strong>Passen Sie den Code an Ihre Anwendung an</strong>: Obwohl der generierte Code funktional vollständig ist, möchten Sie ihn möglicherweise in die Fehlerbehandlung, Protokollierung oder Datenverarbeitungssysteme Ihrer Anwendung integrieren. Ändern Sie Variablennamen, fügen Sie Kommentare hinzu oder kapseln Sie den Code in Funktionen/Methoden, die zur Architektur Ihrer Anwendung passen.",
+          "<strong>Testen Sie die implementierte Anfrage</strong>: Nach der Integration des Codes in Ihr Projekt, testen Sie die HTTP-Anfrage, um sicherzustellen, dass sie wie erwartet funktioniert. Der konvertierte Code sollte dieselbe Anfrage erzeugen und dieselbe Antwort erhalten wie der ursprüngliche cURL-Befehl, aber es ist immer gute Praxis, dies zu überprüfen, insbesondere bei geschäftskritischen API-Interaktionen."
+        ]
+      },
+      conclusion: "Der cURL-Konverter dient als wichtige Brücke zwischen API-Erkundung und Implementierung und vereinfacht den Entwicklungsprozess für Anwendungen, die mit Webdiensten interagieren, erheblich. Durch die automatische Umwandlung von Befehlszeilen-HTTP-Anfragen in prägnanten, idiomatischen Code in mehreren Programmiersprachen eliminiert es eine bedeutende Fehler- und Frustrationsquelle bei der API-Integration. Dieses Tool spart nicht nur wertvolle Entwicklungszeit, sondern stellt auch Konsistenz zwischen getesteten API-Aufrufen und deren Implementierung im Produktionscode sicher. Egal, ob Sie ein erfahrener Entwickler sind, der an einer komplexen Microservice-Architektur arbeitet, oder ein Anfänger, der lernt, mit Ihrer ersten REST-API zu interagieren – der cURL-Konverter bietet einen zuverlässigen Shortcut, der manuelle Syntaxumwandlung in einen einfachen Klick verwandelt und Ihnen ermöglicht, sich auf die Anwendungslogik zu konzentrieren, anstatt mit HTTP-Client-Syntax zu kämpfen."
+    }
+  }
