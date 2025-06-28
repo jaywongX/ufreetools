@@ -2,8 +2,8 @@
  * Supported languages configuration
  */
 export const languages = [
-  { code: 'zh', name: '简体中文', chineseName: '简体中文', nativeName: '简体中文' },
   { code: 'en', name: 'English', chineseName: '英文', nativeName: 'English' },
+  { code: 'zh', name: '简体中文', chineseName: '简体中文', nativeName: '简体中文' },
   { code: 'es', name: 'Spanish', chineseName: '西班牙文', nativeName: 'Español' },
   { code: 'hi', name: 'Hindi', chineseName: '印地文', nativeName: 'हिंदी' },
   { code: 'ar', name: 'Arabic', chineseName: '阿拉伯文', nativeName: 'العربية' },
@@ -11,7 +11,8 @@ export const languages = [
   { code: 'fr', name: 'French', chineseName: '法文', nativeName: 'Français' },
   { code: 'ja', name: 'Japanese', chineseName: '日文', nativeName: '日本語' },
   { code: 'pt', name: 'Portuguese', chineseName: '葡萄牙文', nativeName: 'Português' },
-  // { code: 'de', name: 'German', chineseName: '德文', nativeName: 'Deutsch' },
+  { code: 'de', name: 'German', chineseName: '德文', nativeName: 'Deutsch' },
+  // { code: 'id', name: 'Indonesian', chineseName: '印尼文', nativeName: 'Indonesia' },
   // { code: 'it', name: 'Italian', chineseName: '意大利文', nativeName: 'Italiano' },
   // { code: 'ko', name: 'Korean', chineseName: '韩文', nativeName: '한국어' },
   // { code: 'nl', name: 'Dutch', chineseName: '荷兰文', nativeName: 'Nederlands' },
@@ -21,7 +22,6 @@ export const languages = [
   // { code: 'el', name: 'Greek', chineseName: '希腊文', nativeName: 'Ελληνικά' },
   // { code: 'fi', name: 'Finnish', chineseName: '芬兰文', nativeName: 'Suomi' },
   // { code: 'hu', name: 'Hungarian', chineseName: '匈牙利文', nativeName: 'Magyar' },
-  // { code: 'id', name: 'Indonesian', chineseName: '印尼文', nativeName: 'Indonesia' },
   // { code: 'ms', name: 'Malay', chineseName: '马来文', nativeName: 'Melayu' },
 
 ];

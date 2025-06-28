@@ -568,64 +568,6 @@ const exampleCodesByLocale = {
     Животное <|-- Собака
     Животное <|-- Кошка`
   },
-  fr: {
-    flowchart: `graph TD
-    A[Début] --> B{Est-ce correct?}
-    B -->|Oui| C[Résultat Correct]
-    B -->|Non| D[Résultat Incorrect]
-    C --> E[Fin]
-    D --> E`,
-    sequenceDiagram: `sequenceDiagram
-    participant Client
-    participant Serveur
-    Client->>Serveur: Demande de données
-    Serveur-->>Client: Réponse avec données
-    Client->>Serveur: Soumettre le formulaire
-    Serveur-->>Client: Confirmer la soumission`,
-    gantt: `gantt
-    title Calendrier de Progression du Projet
-    dateFormat  YYYY-MM-DD
-    section Phase de Planification
-    Collecte des Besoins           :a1, 2023-01-01, 30d
-    Conception du Système          :after a1, 20d
-    section Phase de Développement
-    Développement Backend          :2023-02-20, 45d
-    Développement Frontend         :2023-02-25, 40d
-    section Phase de Test
-    Test du Système                :2023-04-05, 20d
-    Test Utilisateur               :2023-04-20, 15d
-    section Phase de Déploiement
-    Déploiement                    :2023-05-05, 10d`,
-    stateDiagram: `stateDiagram-v2
-    [*] --> Édition
-    Édition --> Révision: Soumettre pour révision
-    Révision --> Rejeté: Rejeter
-    Révision --> Publié: Approuver
-    Rejeté --> Édition: Réviser et resoumettre
-    Publié --> [*]`,
-    pieChart: `pie
-    title Distribution des Sources de Trafic Web
-    "Moteurs de Recherche" : 42.7
-    "Accès Direct" : 28.9
-    "Médias Sociaux" : 18.5
-    "Autres Canaux" : 9.9`,
-    classDiagram: `classDiagram
-    class Animal {
-        +String nom
-        +int âge
-        +faireBruit() void
-    }
-    class Chien {
-        +String race
-        +rapporter() void
-    }
-    class Chat {
-        +String couleur
-        +grimper() void
-    }
-    Animal <|-- Chien
-    Animal <|-- Chat`
-  },
   
   ja: {
     flowchart: `graph TD
@@ -729,6 +671,111 @@ const exampleCodesByLocale = {
         +gerenciarUsuários()
     }
     Usuário <|-- Administrador`
+  },
+  
+  de: {
+    flowchart: `graph TD
+    A[Start] --> B{Ist es richtig?}
+    B -->|Ja| C[Richtiges Ergebnis]
+    B -->|Nein| D[Falsches Ergebnis]
+    C --> E[Ende]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant Client
+    participant Server
+    Client->>Server: Daten anfordern
+    Server-->>Client: Mit Daten antworten
+    Client->>Server: Formular senden
+    Server-->>Client: Senden bestätigen`,
+    gantt: `gantt
+    title Projektausführungsplan
+    dateFormat  YYYY-MM-DD
+    section Design
+    Anforderungsanalyse    :done,    des1, 2024-01-01, 2024-01-10
+    Systemdesign           :active,  des2, 2024-01-11, 2024-01-25
+    Detaildesign           :         des3, 2024-01-26, 2024-02-10
+    section Entwicklung
+    Frontend-Entwicklung   :         dev1, 2024-02-11, 2024-03-15
+    Backend-Entwicklung    :         dev2, 2024-02-11, 2024-03-20
+    Tests                  :         test1, 2024-03-21, 2024-04-05`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> Warten
+    Warten --> Verarbeiten: Prozess starten
+    Verarbeiten --> Fertig: Prozess erfolgreich
+    Verarbeiten --> Fehler: Prozess fehlgeschlagen
+    Fertig --> [*]
+    Fehler --> Warten: Erneut versuchen`,
+    pieChart: `pie title Verkaufsverteilung
+    "Produkt A" : 30
+    "Produkt B" : 25
+    "Produkt C" : 20
+    "Produkt D" : 15
+    "Sonstige" : 10`,
+    classDiagram: `classDiagram
+    class Benutzer {
+        +String name
+        +String email
+        +login()
+        +logout()
+    }
+    class Administrator {
+        +String berechtigungen
+        +benutzerVerwalten()
+    }
+    Benutzer <|-- Administrator`
+  },
+
+  
+  id: {
+    flowchart: `graph TD
+    A[Mulai] --> B{Apakah benar?}
+    B -->|Ya| C[Hasil Benar]
+    B -->|Tidak| D[Hasil Salah]
+    C --> E[Selesai]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant Klien
+    participant Server
+    Klien->>Server: Meminta data
+    Server-->>Klien: Mengirim data
+    Klien->>Server: Mengirim formulir
+    Server-->>Klien: Konfirmasi pengiriman`,
+    gantt: `gantt
+    title Jadwal Pelaksanaan Proyek
+    dateFormat  YYYY-MM-DD
+    section Desain
+    Analisis Kebutuhan      :done,    des1, 2024-01-01, 2024-01-10
+    Desain Sistem           :active,  des2, 2024-01-11, 2024-01-25
+    Desain Detail           :         des3, 2024-01-26, 2024-02-10
+    section Pengembangan
+    Pengembangan Frontend   :         dev1, 2024-02-11, 2024-03-15
+    Pengembangan Backend    :         dev2, 2024-02-11, 2024-03-20
+    Pengujian               :         test1, 2024-03-21, 2024-04-05`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> Menunggu
+    Menunggu --> Memproses: Mulai Proses
+    Memproses --> Selesai: Proses Berhasil
+    Memproses --> Gagal: Proses Gagal
+    Selesai --> [*]
+    Gagal --> Menunggu: Coba Lagi`,
+    pieChart: `pie title Distribusi Penjualan
+    "Produk A" : 30
+    "Produk B" : 25
+    "Produk C" : 20
+    "Produk D" : 15
+    "Lainnya" : 10`,
+    classDiagram: `classDiagram
+    class Pengguna {
+        +String nama
+        +String email
+        +login()
+        +logout()
+    }
+    class Admin {
+        +String hakAkses
+        +kelolaPengguna()
+    }
+    Pengguna <|-- Admin`
   },
 };
 

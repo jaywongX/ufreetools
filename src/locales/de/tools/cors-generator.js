@@ -1,0 +1,296 @@
+export default {
+    name: 'CORS-Konfigurationsgenerator',
+    description: 'Schnelle Erstellung von Cross-Origin Resource Sharing (CORS)-Konfigurationen mit Unterstützung für verschiedene Serverumgebungen',
+    options: {
+        title: 'CORS-Optionen',
+        allowedOrigins: {
+            title: 'Erlaubte Ursprungsdomänen (Access-Control-Allow-Origin)',
+            allowAll: 'Alle Ursprünge erlauben (*) <span class="text-yellow-500 text-xs ml-1">(unsicher, unterstützt keine Credentials)</span>',
+            specific: 'Spezifische Domänen angeben (empfohlen)',
+            addOrigin: 'Ursprung hinzufügen',
+            placeholder: 'Ursprung eingeben (z.B. https://beispiel.de)',
+            wildcard: 'Subdomains erlauben (Wildcard)',
+            null: 'Null-Ursprung erlauben',
+            remove: 'Domäne entfernen'
+        },
+        allowedMethods: {
+            title: 'Erlaubte HTTP-Methoden (Access-Control-Allow-Methods)',
+            selectMethods: 'HTTP-Methoden auswählen',
+            get: 'GET',
+            post: 'POST',
+            put: 'PUT',
+            delete: 'DELETE',
+            patch: 'PATCH',
+            head: 'HEAD',
+            options: 'OPTIONS'
+        },
+        allowedHeaders: {
+            title: 'Erlaubte Header (Access-Control-Allow-Headers)',
+            all: 'Alle Header erlauben (*)',
+            specific: 'Nur bestimmte Header',
+            addHeader: 'Header hinzufügen',
+            headerPlaceholder: 'Header-Name eingeben',
+            common: 'Häufige Header',
+            custom: 'Benutzerdefinierte Header',
+            contentType: 'Content-Type',
+            accept: 'Accept',
+            authorization: 'Authorization',
+            origin: 'Origin',
+            xRequestedWith: 'X-Requested-With',
+            contentDisposition: 'Content-Disposition',
+            remove: 'Header entfernen'
+        },
+        exposedHeaders: {
+            title: 'Freigegebene Response-Header (Access-Control-Expose-Headers)',
+            description: 'Header, die für den Browser zugänglich sein sollen',
+            addHeader: 'Header hinzufügen',
+            headerPlaceholder: 'Header-Name eingeben'
+        },
+        credentials: {
+            title: 'Credentials erlauben (Access-Control-Allow-Credentials)',
+            description: 'Erlaubt die Verwendung von Cookies und Authentifizierungsheadern',
+            allow: 'Credentials erlauben',
+            warning: 'Kann nur mit spezifischen Ursprüngen verwendet werden, nicht mit Wildcard (*)'
+        },
+        maxAge: {
+            title: 'Preflight-Cache-Dauer (Access-Control-Max-Age)',
+            description: 'Cache-Dauer für Preflight-Requests in Sekunden',
+            seconds: 'Sekunden',
+            default: 'Standard: ',
+            recommended: 'Empfohlen: 3600 (1 Stunde)'
+        },
+        serverType: {
+            title: 'Server-Typ',
+            apache: 'Apache (.htaccess)',
+            nginx: 'Nginx',
+            express: 'Express.js',
+            springBoot: 'Spring Boot',
+            php: 'PHP',
+            flask: 'Flask (Python)',
+            django: 'Django',
+            rails: 'Ruby on Rails',
+            aws: 'AWS S3/CloudFront',
+            azure: 'Azure',
+            iis: 'IIS (web.config)',
+            jetty: 'Jetty',
+            headers: 'HTTP-Header'
+        }
+    },
+    output: {
+        title: 'Generierte Header',
+        instructions: 'Fügen Sie diese Header zu Ihren Server-Responses hinzu:',
+        copy: 'Header kopieren',
+        test: 'Header testen',
+        downloadConfig: 'Konfiguration herunterladen'
+    },
+    configs: {
+        title: 'Konfigurationsbeispiele',
+        nginx: 'Nginx',
+        apache: 'Apache (.htaccess)',
+        express: 'Express.js',
+        springBoot: 'Spring Boot',
+        php: 'PHP',
+        flask: 'Flask (Python)',
+        django: 'Django',
+        rails: 'Ruby on Rails',
+        aws: 'AWS S3/CloudFront',
+        azure: 'Azure',
+        iis: 'IIS Web.config'
+    },
+    testing: {
+        title: 'CORS-Test',
+        description: 'Testen Sie, ob Ihre CORS-Konfiguration korrekt funktioniert',
+        originUrl: 'Ursprungs-URL',
+        targetUrl: 'Ziel-URL',
+        method: 'Anfragemethode',
+        credentials: 'Credentials einschließen',
+        headers: 'Benutzerdefinierte Header',
+        addHeader: 'Header hinzufügen',
+        testButton: 'CORS testen',
+        results: 'Testergebnisse',
+        success: 'CORS-Test erfolgreich ✓',
+        failure: 'CORS-Test fehlgeschlagen ✗✗',
+        details: 'Response-Details',
+        response: 'Response',
+        logs: 'CORS-Protokolle',
+        errorDetails: 'Fehlerdetails'
+    },
+    presets: {
+        title: 'Voreinstellungen',
+        api: 'API-Server',
+        assets: 'Statische Ressourcen (CDN)',
+        auth: 'Authentifizierungsdienst',
+        publicAccess: 'Öffentlicher Zugriff',
+        restrictive: 'Restriktiv',
+        load: 'Voreinstellung laden',
+        save: 'Aktuelle als Voreinstellung speichern'
+    },
+    tips: {
+        title: 'CORS-Tipps',
+        tip1: 'Cross-Origin Resource Sharing (CORS) ist ein HTTP-Header-basierter Mechanismus, der es einem Server erlaubt, andere Ursprünge (Domänen, Protokolle oder Ports) als seinen eigenen anzugeben, von denen ein Browser Ressourcen laden darf.',
+        tip2: 'CORS-Schutz ist eine Sicherheitsfunktion moderner Browser, die verhindert, dass Webseiten Anfragen an Server stellen, die nicht dem gleichen Ursprung angehören, und so Nutzer vor Cross-Site-Request-Forgery-Angriffen schützt.',
+        usage: {
+            title: 'CORS-Anwendungsfälle:',
+            tip1: 'Erlaubt JavaScript-Frontends den Zugriff auf APIs verschiedener Domänen',
+            tip2: 'Unterstützt Cross-Origin-Ajax- oder Fetch-Anfragen',
+            tip3: 'Ermöglicht Cross-Origin-Zugriff auf Schriftarten, CSS oder andere Ressourcen',
+            tip4: 'Konfiguriert die Kommunikation zwischen Diensten in einer Microservice-Architektur',
+        },
+        safe: 'Sicherheitshinweis: Vermeiden Sie in der Regel die Verwendung des "*"-Wildcards für erlaubte Ursprünge und geben Sie stattdessen explizit die Domänen an, denen Sie vertrauen, um potenzielle Sicherheitsrisiken zu reduzieren.'
+    },
+    messages: {
+        copied: 'Header in die Zwischenablage kopiert',
+        configDownloaded: 'Konfiguration heruntergeladen',
+        testStarted: 'CORS-Test gestartet',
+        testSucceeded: 'CORS-Anfrage erfolgreich',
+        testFailed: 'CORS-Anfrage fehlgeschlagen: {error}',
+        presetSaved: 'Voreinstellung gespeichert',
+        presetLoaded: 'Voreinstellung geladen'
+    },
+    config: {
+        title: 'Konfiguration',
+        empty: 'Konfigurieren Sie Optionen, um CORS-Einstellungen zu generieren',
+        copied: 'Konfiguration in die Zwischenablage kopiert!',
+        copy: 'Kopieren'
+    },
+    comments: {
+        expressMiddleware: "// Express-Middleware verwenden",
+        applyGlobalCors: "// CORS-Middleware anwenden",
+        applySpecificRoute: "// Oder nur für bestimmte Routen anwenden",
+        applyRequest: "// Anfrage verarbeiten",
+        apacheAllowedOrigins: "# Erlaubte Domänen",
+        apacheAllowedMethods: "# Erlaubte HTTP-Methoden",
+        apacheAllowedHeaders: "# Erlaubte HTTP-Header",
+        apacheAllowedCredentials: "# Erlaubte Credentials",
+        preflightCacheDuration: "# Preflight-Cache-Dauer",
+        apacheExposeHeaders: '# Freigegebene Response-Header',
+        handlePreflightRequest: "# Preflight-Anfragen verarbeiten",
+        nginxConfiguration: "# CORS-Konfiguration\n# Fügen Sie diese Konfiguration zu Ihrem Server- oder Location-Block hinzu",
+        nginxAllowedOrigins: "# Erlaubte Domänen",
+        nginxAllowedMethods: "# Erlaubte HTTP-Methoden",
+        nginxAllowedHeaders: "# Erlaubte HTTP-Header",
+        nginxAllowedCredentials: "# Erlaubte Credentials",
+        nginxPreflightCacheDuration: "# Preflight-Cache-Dauer",
+        nginxExposeHeaders: '# Freigegebene Response-Header',
+        nginxHandlePreflight: "# Preflight-Anfragen verarbeiten",
+        httpHeadersConfiguration: "# CORS-HTTP-Header-Konfiguration",
+        httpAllowedOrigins: "# Erlaubte Domänen",
+        httpAllowedMethods: "# Erlaubte HTTP-Methoden",
+        httpAllowedHeaders: "# Erlaubte HTTP-Header",
+        httpAllowedCredentials: "# Erlaubte Credentials",
+        httpPreflightCacheDuration: "# Preflight-Cache-Dauer",
+        httpExposeHeaders: '# Freigegebene Response-Header',
+    },
+    article: {
+        title: "Umfassender Leitfaden zum CORS-Konfigurationsgenerator - Sichere Cross-Origin Resource Sharing-Einstellungen",
+        intro: {
+            title: "Verstehen Sie CORS-Konfigurationen und ihre entscheidende Rolle in der Netzwerksicherheit",
+            p1: "<b>Cross-Origin Resource Sharing (CORS)</b> ist ein grundlegender Sicherheitsmechanismus moderner Browser, der steuert, wie Webseiten einer Domäne mit Ressourcen interagieren können, die auf einer anderen Domäne gehostet werden. Unser CORS-Konfigurationsgenerator vereinfacht den komplexen Prozess der Erstellung geeigneter CORS-Header und Serverkonfigurationen, um sicherzustellen, dass Ihre Webanwendungen sicher zwischen verschiedenen Domänen kommunizieren können, während angemessene Sicherheitsgrenzen gewahrt bleiben. Durch die Generierung präziser CORS-Einstellungen hilft dieses Tool Entwicklern, geeignete Zugriffskontrollen zu implementieren, die legitime Cross-Origin-Funktionalität ermöglichen, während sensible Daten geschützt werden.",
+            p2: "<b>Korrekte CORS-Konfigurationen sind für moderne Webanwendungen unerlässlich</b>, insbesondere für solche, die verteilte Architekturen, Drittanbieter-APIs und Microservices nutzen. Ohne korrekte CORS-Einstellungen blockieren Browser standardmäßig Cross-Origin-Anfragen als Sicherheitsmaßnahme, was viele gängige Webanwendungsarchitekturen beeinträchtigt. Unser Generator erstellt standardisierte Konfigurationen für verschiedene Serverumgebungen, einschließlich Node.js/Express, Apache, Nginx und reiner HTTP-Header, sodass Entwickler konsistente CORS-Richtlinien implementieren können, unabhängig von ihrem Backend-Technologie-Stack. Dies vereinfacht Entwicklungsabläufe und reduziert Sicherheitsfehlkonfigurationen, die Anwendungen für Cross-Site-Request-Forgery (CSRF) und Datendiebstahl anfällig machen könnten.",
+            p3: "<b>CORS-Richtliniengenerierung erfordert sorgfältige Überlegung</b> verschiedener Sicherheitsparameter, einschließlich erlaubter Ursprünge, HTTP-Methoden, Header, Credential-Behandlung und Cache-Anweisungen. Manuelle Konfigurationen sind fehleranfällig und können zu entweder zu restriktiven Richtlinien führen, die Funktionen beeinträchtigen, oder gefährlich lockeren Einstellungen, die die Sicherheit gefährden. Unser Tool führt Benutzer mit klaren Erklärungen und sicheren Standardwerten durch jede Konfigurationsoption und hilft Entwicklern, fundierte Entscheidungen über ihre CORS-Implementierung zu treffen. Die generierten Konfigurationen balancieren Sicherheitsanforderungen und Cross-Origin-Funktionalitätsbedürfnisse und bieten sofortigen Wert für Frontend-Entwickler, API-Architekten und Sicherheitsexperten, die an modernen Webanwendungen arbeiten."
+        },
+        useCases: {
+            title: "Praktische Anwendungsfälle des CORS-Konfigurationsgenerators",
+            case1: "<b>API-Gateways und Microservice-Architekturen</b>: Organisationen, die verteilte Systeme mit API-Gateways und Microservices entwickeln, benötigen oft präzise CORS-Konfigurationen, um sichere Kommunikation zwischen Frontend-Anwendungen und Backend-Diensten zu gewährleisten. API-Architekten verwenden unseren CORS-Generator, um standardisierte Header-Konfigurationen zu entwickeln, die über mehrere Service-Endpunkte hinweg konsistent implementiert werden können. Dieser Ansatz ermöglicht es Microservices, angemessene Isolation beizubehalten, während gleichzeitig legitime Cross-Origin-Anfragen von autorisierten Client-Anwendungen zugelassen werden. Beispielsweise könnte ein Fintech-Unternehmen seine Zahlungsabwicklungs-API so konfigurieren, dass sie nur Anfragen von bestimmten Frontend-Domänen akzeptiert, während alle anderen Cross-Origin-Anfragen blockiert werden. Unser Generator erstellt Konfigurationen, die diese Sicherheitsgrenzen aufrechterhalten, ohne dass Entwickler für jeden Dienst manuell komplexe Header-Regeln schreiben müssen.",
+            case2: "<b>Drittanbieter-API-Integrationen und SaaS-Anwendungen</b>: Unternehmen, die API-Dienste und SaaS-Plattformen anbieten, müssen durch geeignete CORS-Konfigurationen Drittanbieter-Integrationen ermöglichen, während gleichzeitig Sicherheitsgrenzen gewahrt bleiben. Plattform-Ingenieure verwenden unseren Generator, um Konfigurationen zu erstellen, die Cross-Origin-Zugriff selektiv basierend auf Partnerdomänen und Abonnementstatus erlauben. Beispielsweise könnte eine Marketing-Analyse-Plattform ihre Daten-API so konfigurieren, dass sie Anfragen von Kundendomänen akzeptiert, während nicht autorisierter Zugriff verhindert wird. Der Generator hilft bei der Erstellung präziser, anpassbarer CORS-Richtlinien, die sich mit der Entwicklung von Kundenbeziehungen dynamisch anpassen lassen, um sicherzustellen, dass der API-Zugriff sicher und geschäftlich konsistent bleibt. Diese Funktionalität ist besonders in Partnerschaftsökosystemen wertvoll, wo API-Anbieter eine Balance zwischen Integrationsoffenheit und Sicherheitsanforderungen finden müssen.",
+            case3: "<b>Sichere Content Delivery Networks (CDNs) und Asset-Hosting</b>: Organisationen, die statische Assets wie Schriftarten, Stylesheets, Bilder und JavaScript-Bibliotheken auf dedizierten CDNs hosten, benötigen geeignete CORS-Einstellungen, um diese Ressourcen für ihre Webanwendungen zugänglich zu machen. DevOps-Ingenieure verwenden unseren Generator, um Konfigurationen zu erstellen, die bestimmten Anwendungen den Zugriff auf CDN-gehostete Ressourcen erlauben, während andere Domänen daran gehindert werden, diese unautorisiert zu nutzen. Beispielsweise könnte ein Verlagshaus, das Premium-Schriftarten hostet, CORS-Header so konfigurieren, dass nur die eigenen Websites auf diese Assets zugreifen können. Der Generator erstellt CDN-spezifische Konfigurationen, die durch die Einstellung geeigneter Cache-Anweisungen und Zugriffskontrollen Sicherheit und Leistung optimieren. Dies stellt sicher, dass statische Ressourcen geschützt bleiben, während sie gleichzeitig effizient an autorisierte Anwendungen ausgeliefert werden.",
+            case4: "<b>Entwicklungs- und Testumgebungen</b>: Softwareentwicklungsteams, die mit mehreren Umgebungen (Entwicklung, Staging, Produktion) arbeiten, benötigen flexible CORS-Konfigurationen, die unterschiedliche Sicherheitsanforderungen im Entwicklungslebenszyklus berücksichtigen. Frontend-Entwickler verwenden unseren Generator, um umgebungsspezifische Konfigurationen zu erstellen, die Cross-Origin-Zugriff während der Entwicklung und Tests ermöglichen, während in der Produktion strengere Kontrollen implementiert werden. Beispielsweise könnte eine Entwicklungsumgebung localhost-Ursprünge für lokale Tests zulassen, während die Produktionsumgebung nur auf verifizierte Produktionsdomänen beschränkt ist. Der Generator hilft bei der Erstellung dieser abgestuften Sicherheitsrichtlinien ohne umfangreiche manuelle Neukonfiguration, vereinfacht Entwicklungsabläufe und bewahrt gleichzeitig angemessene Sicherheitsgrenzen in jeder Phase. Dieser Ansatz verhindert, dass Sicherheitskompromisse aus der Entwicklungsphase in die Produktionsumgebung übernommen werden.",
+            case5: "<b>Multi-Regionale und internationale Webanwendungen</b>: Globale Organisationen, die Anwendungen in mehreren geografischen Regionen betreiben, stellen Dienste häufig auf regionsspezifischen Domänen und Subdomains bereit, die sicher miteinander kommunizieren müssen. Systemarchitekten verwenden unseren Generator, um CORS-Konfigurationen zu erstellen, die Cross-Origin-Anfragen zwischen verschiedenen regionalen Domänen der Organisation erlauben, während externe Anfragen blockiert werden. Beispielsweise könnte ein multinationales Unternehmen api.de.beispiel.de benötigen, um Anfragen von app.fr.beispiel.de zu akzeptieren. Der Generator erstellt präzise Ursprungsspezifikationen, die diese komplexen Domänenbeziehungen berücksichtigen, während gleichzeitig Sicherheitsgrenzen für externe Domänen aufrechterhalten werden. Diese Konfigurationen stellen sicher, dass geografisch verteilte Komponenten derselben Anwendung koordiniert arbeiten können, während sie gleichzeitig Schutz vor Cross-Origin-Bedrohungen von nicht autorisierten Quellen bieten."
+        },
+        tutorial: {
+            title: "So generieren Sie sichere CORS-Konfigurationen",
+            intro: "Befolgen Sie diese Schritt-für-Schritt-Anleitung, um sichere CORS-Konfigurationen zu erstellen, die auf Ihre spezifischen Anforderungen zugeschnitten sind:",
+            step1: {
+                title: "Schritt 1: Erlaubte Ursprünge konfigurieren",
+                description: "Beginnen Sie mit dem Abschnitt <b>Erlaubte Ursprünge</b>, um festzulegen, welche Domänen auf Ihre Ressourcen zugreifen dürfen. Für maximale Sicherheit vermeiden Sie die Wildcard-Option (*), die jeden Ursprung erlaubt. Wählen Sie stattdessen \"Spezifische Domänen angeben\" und fügen Sie jede vertrauenswürdige Domäne einzeln hinzu. Geben Sie beispielsweise \"https://ihre-vertrauenswürdige-app.de\" ein, um nur diese spezifische Domäne zuzulassen. Beachten Sie, dass Subdomains als unterschiedliche Ursprünge gelten (app.beispiel.de und api.beispiel.de sind unterschiedlich). Wenn Sie Entwicklungsumgebungen unterstützen müssen, können Sie Entwicklungsdomänen wie \"http://localhost:3000\" neben Ihren Produktionsdomänen hinzufügen. Überprüfen Sie nach dem Hinzufügen aller vertrauenswürdigen Domänen sorgfältig auf Tippfehler, da bereits kleine Fehler dazu führen können, dass Browser legitime Anfragen blockieren."
+            },
+            step2: {
+                title: "Schritt 2: Erlaubte HTTP-Methoden festlegen",
+                description: "Wählen Sie im Abschnitt <b>Erlaubte HTTP-Methoden</b> aus, welche HTTP-Methoden Ihre API oder Ressourcen von Cross-Origin-Anfragen akzeptieren sollen. Befolgen Sie das Prinzip der geringsten Rechte und aktivieren Sie nur die Methoden, die Ihre Anwendung tatsächlich benötigt. Für schreibgeschützte Ressourcen erwägen Sie die Beschränkung auf GET und OPTIONS (OPTIONS ist für Preflight-Anfragen erforderlich). Für Ressourcen, die Aktualisierungen akzeptieren, aktivieren Sie selektiv POST, PUT, PATCH oder DELETE entsprechend den tatsächlichen Anforderungen Ihrer API. Seien Sie besonders vorsichtig beim Aktivieren von Methoden, die Daten ändern (POST, PUT, PATCH, DELETE), da diese zusätzliche Sicherheitsüberlegungen erfordern. Die OPTIONS-Methode sollte in der Regel aktiviert bleiben, da Browser sie für Preflight-Anfragen verwenden, um Berechtigungen zu überprüfen, bevor sie tatsächliche Cross-Origin-Anfragen mit anderen Methoden stellen. Ihre Auswahl hier beeinflusst direkt, welche Aktionen Cross-Origin-Clients auf Ihren Ressourcen ausführen können."
+            },
+            step3: {
+                title: "Schritt 3: Header und Credentials konfigurieren",
+                description: "Im Abschnitt <b>Erlaubte Header</b> geben Sie die HTTP-Request-Header an, die in Cross-Origin-Anfragen erlaubt sein sollen. Aktivieren Sie gängige Header, die Ihre Anwendung benötigt, wie 'Content-Type' zur Angabe des Anfrageformats, 'Authorization' für Authentifizierungstokens und alle benutzerdefinierten Header Ihrer Anwendung. Für credential-basierte Authentifizierung (Cookies, HTTP-Authentifizierung oder Client-Zertifikate) konfigurieren Sie die Option <b>Credentials erlauben</b> entsprechend. Wichtig: Wenn Sie Credentials erlauben, können Sie keine Wildcard (*) für erlaubte Ursprünge verwenden - Sie müssen explizite Ursprünge angeben. Als Nächstes setzen Sie eine angemessene <b>Preflight-Cache-Dauer</b>, um die Anzahl der Preflight-Anfragen zu reduzieren. Der empfohlene Wert von 3600 Sekunden (eine Stunde) bietet einen guten Kompromiss zwischen Leistung und der Flexibilität, CORS-Richtlinien bei Bedarf zu aktualisieren. Wenn Ihre API benutzerdefinierte Header zurückgibt, auf die Client-Anwendungen zugreifen müssen, fügen Sie diese im Abschnitt <b>Freigegebene Header</b> hinzu."
+            },
+            step4: {
+                title: "Schritt 4: Serverkonfiguration generieren und implementieren",
+                description: "Nach der Konfiguration aller CORS-Parameter wählen Sie Ihre Zielserverumgebung aus den Formatoptionen (Node.js/Express, Apache, Nginx oder HTTP-Header). Überprüfen Sie den generierten Konfigurationscode, um sicherzustellen, dass er Ihren Anforderungen entspricht. Verwenden Sie die \"Kopieren\"-Schaltfläche, um die Konfiguration zu kopieren, und implementieren Sie sie gemäß der Dokumentation Ihrer Plattform in Ihrer Serverumgebung. Für Node.js-Anwendungen installieren Sie das 'cors'-Paket und wenden die Konfiguration auf Ihre Express-Anwendung an. Für Apache-Server fügen Sie die generierten Anweisungen zu Ihrer .htaccess-Datei oder Serverkonfiguration hinzu. Für Nginx nehmen Sie die Anweisungen in Ihren Server- oder Location-Block auf. Testen Sie nach der Implementierung Ihre CORS-Konfiguration gründlich mit Cross-Origin-Anfragen, um zu überprüfen, ob legitime Anfragen zugelassen und nicht autorisierte Ursprünge blockiert werden. Verwenden Sie die Entwicklertools Ihres Browsers, um die von Ihrem Server zurückgegebenen CORS-Header zu überprüfen und eventuelle Probleme zu beheben."
+            }
+        },
+        corsDetails: {
+            title: "Technische Details der CORS-Implementierung",
+            intro: "Das Verständnis der zugrunde liegenden CORS-Mechanismen hilft bei der Erstellung effektiverer und sicherer Konfigurationen:",
+            preflight: {
+                title: "Preflight-Anfragen und ihre Rolle",
+                description: "<b>Preflight-Anfragen sind ein zentraler Sicherheitsmechanismus des CORS-Protokolls</b>, den Browser verwenden, um zu überprüfen, ob sie berechtigt sind, bestimmte Cross-Origin-Anfragen zu stellen, bevor sie diese tatsächlich senden. Wenn eine Anfrage möglicherweise Serverdaten ändert (wie POST- oder PUT-Anfragen) oder nicht einfache Header verwendet, sendet der Browser automatisch zuerst eine OPTIONS-Anfrage an den Server. Diese Preflight-Anfrage enthält Header, die die HTTP-Methoden und Header angeben, die die tatsächliche Anfrage verwenden möchte. Der Server muss mit geeigneten Access-Control-Allow-*-Headern antworten, die angeben, ob die beabsichtigte Anfrage erlaubt ist. Dieser Preflight-Mechanismus bietet einen wichtigen Sicherheitskontrollpunkt, der verhindert, dass potenziell gefährliche Cross-Origin-Anfragen an Server gesendet werden, die diese nicht ausdrücklich empfangen möchten. Unser CORS-Konfigurationsgenerator erstellt automatisch die notwendige serverseitige Verarbeitung für diese Preflight-Anfragen für alle unterstützten Serverplattformen, um sicherzustellen, dass Ihr Server mit den von Ihnen festgelegten Berechtigungen korrekt auf diese Browser-Sicherheitsprüfungen antwortet."
+            },
+            security: {
+                title: "Sicherheitsauswirkungen von CORS-Einstellungen",
+                description: "<b>CORS-Konfigurationen beeinflussen direkt</b> den Sicherheitsstatus Ihrer Webanwendung, da sie steuern, welche externen Domänen mit Ihren API-Endpunkten und Ressourcen interagieren können. Zu lockere CORS-Einstellungen - insbesondere die Verwendung von Wildcard-Ursprüngen (*) - können Ihre Anwendung für Cross-Site-Request-Forgery-Angriffe anfällig machen, bei denen bösartige Websites unautorisierte Anfragen an Ihre API unter Verwendung der Authentifizierungssitzung des Benutzers stellen. Die Verwendung von Access-Control-Allow-Credentials: true mit Wildcard-Ursprüngen ist besonders problematisch (obwohl Browser diese spezifische Kombination blockieren, könnten falsch konfigurierte Proxys dies möglicherweise nicht). Das Prinzip der geringsten Rechte sollte Ihre CORS-Konfiguration leiten: Erlauben Sie nur die spezifischen Ursprünge, Methoden und Header, die Ihre Anwendung tatsächlich benötigt. Unser Generator fördert diese Sicherheitsbest Practices durch klare Warnungen zu potenziell unsicheren Konfigurationen und durch die Bereitstellung sicherer Standardwerte, die Ihre Ressourcen schützen, während gleichzeitig notwendige Cross-Origin-Funktionalität ermöglicht wird."
+            },
+            headers: {
+                title: "Grundlegende CORS-Header erklärt",
+                description: "<b>Jeder CORS-Header hat eine spezifische Sicherheitsfunktion</b> bei der Kontrolle des Cross-Origin-Zugriffs auf Ihre Ressourcen. Access-Control-Allow-Origin gibt an, welche Domänen auf Ihre Ressourcen zugreifen dürfen - dieser Header wird von Browsern strikt durchgesetzt. Access-Control-Allow-Methods deklariert, welche HTTP-Methoden externe Domänen bei Anfragen an Ihre Ressourcen verwenden dürfen, was es Ihnen ermöglicht, Cross-Origin-Anfragen auf schreibgeschützte Operationen zu beschränken, falls gewünscht. Access-Control-Allow-Headers steuert, welche HTTP-Header in Cross-Origin-Anfragen enthalten sein dürfen, sodass Sie Header wie Authorization erlauben können, während andere blockiert werden. Access-Control-Allow-Credentials bestimmt, ob Browser Cookies oder Authentifizierungsinformationen in Cross-Origin-Anfragen senden dürfen, was für die Aufrechterhaltung authentifizierter Sitzungen über Ursprünge hinweg entscheidend ist. Access-Control-Max-Age gibt an, wie lange Browser Preflight-Antworten zwischenspeichern sollen, was die Leistung durch die Reduzierung von Preflight-Anfragen optimiert. Access-Control-Expose-Headers ermöglicht es Ihnen, bestimmte Response-Header für Cross-Origin-Clients sichtbar zu machen, was notwendig ist, wenn Clients auf benutzerdefinierte Header in Ihren API-Antworten zugreifen müssen. Unser Generator erstellt die geeignete Kombination dieser Header basierend auf Ihren spezifischen Anforderungen, um eine vollständige und kohärente CORS-Konfiguration sicherzustellen."
+            }
+        },
+        faq: {
+            title: "Häufig gestellte Fragen zu CORS-Konfigurationen",
+            q1: "Was ist der Unterschied zwischen CORS und der traditionellen Same-Origin-Policy?",
+            a1: "<b>Same-Origin-Policy (SOP) und Cross-Origin Resource Sharing (CORS)</b> arbeiten zusammen, um eine sichere Web-Browsing-Umgebung zu schaffen, obwohl sie unterschiedliche Zwecke erfüllen. Die Same-Origin-Policy ist der standardmäßige Sicherheitsmechanismus in Browsern, der einschränkt, wie Dokumente oder Skripte eines Ursprungs mit Ressourcen eines anderen Ursprungs interagieren können. Sie stellt eine restriktive Baseline dar, die Cross-Origin-Anfragen standardmäßig blockiert. CORS ist dagegen eine kontrollierte Lockerung dieser Policy - es bietet eine strukturierte Möglichkeit für Server zu deklarieren, welche Ursprünge trotz der SOP-Einschränkungen Zugriff auf ihre Ressourcen erhalten sollten. Während SOP eine vom Browser durchgesetzte Beschränkung ist, wird CORS durch HTTP-Header implementiert, die der Server sendet, um dem Browser mitzuteilen, welche Cross-Origin-Anfragen als Ausnahme von der SOP erlaubt sein sollen. Unser CORS-Generator erstellt serverseitige Konfigurationen, die diese kontrollierten Ausnahmen von der Same-Origin-Policy ermöglichen. Ohne geeignete CORS-Header wird der Browser die SOP durchsetzen und Cross-Origin-Anfragen blockieren, selbst wenn Ihr Server technisch in der Lage wäre, sie zu verarbeiten. Deshalb sind CORS-Konfigurationen für moderne Webanwendungen, die Ressourcen über verschiedene Domänen hinweg teilen müssen, unerlässlich.",
+
+            q2: "Warum kann ich keine Wildcard (*) für den Ursprung verwenden, wenn Credentials erlaubt sind?",
+            a2: "<b>Browser verbieten strikt die Kombination von Wildcard-Ursprüngen mit Credentials</b>, was eine entscheidende Sicherheitsmaßnahme zur Verhinderung schwerwiegender Schwachstellen darstellt. Wenn Browser Access-Control-Allow-Origin: * mit Access-Control-Allow-Credentials: true kombinieren würden, würde dies ein gefährliches Szenario schaffen, in dem jede Website authentifizierte Anfragen an Ihre API mit den Credentials des Benutzers (Cookies, HTTP-Authentifizierung oder Client-Zertifikate) senden könnte. Dies würde effektiv den Schutz der Same-Origin-Policy gegen Cross-Site-Request-Forgery (CSRF)-Angriffe aufheben. Beispielsweise könnte eine bösartige Site mit einer solchen Konfiguration authentifizierte Anfragen an Ihre Banking-API senden, um Geldtransfers durchzuführen oder auf sensible Informationen zuzugreifen. Um diese Schwachstelle zu verhindern, erzwingen alle gängigen Browser eine strikte Regel: Wenn Access-Control-Allow-Credentials auf true gesetzt ist, muss der Access-Control-Allow-Origin-Header einen exakten Ursprung angeben und darf kein Wildcard sein. Unser CORS-Generator erzwingt diese Sicherheitsbeschränkung, indem er die Credential-Option deaktiviert, wenn ein Wildcard-Ursprung ausgewählt ist, und umgekehrt. Dadurch wird sichergestellt, dass Ihre generierten Konfigurationen immer dieser kritischen Browser-Sicherheitsanforderung entsprechen.",
+
+            q3: "Wie beeinflussen CORS-Preflight-Anfragen die API-Leistung?",
+            a3: "<b>CORS-Preflight-Anfragen können die API-Leistung erheblich beeinträchtigen</b>, da sie in vielen Cross-Origin-Szenarien eine zusätzliche HTTP-Anfrage (OPTIONS) vor der eigentlichen Datenanfrage hinzufügen. Jede Preflight-Anfrage erzeugt Latenz, da der Browser auf die OPTIONS-Antwort warten muss, bevor er mit der eigentlichen Anfrage fortfahren kann. Dies verdoppelt effektiv die Anzahl der HTTP-Anfragen und Server-Roundtrips für nicht-einfache Cross-Origin-Anfragen. Die Leistungsauswirkungen sind besonders spürbar in Anwendungen mit häufigen API-Aufrufen oder bei Verbindungen mit hoher Latenz. Um diese Leistungseinbußen zu mildern, ist der Access-Control-Max-Age-Header entscheidend - er weist den Browser an, Preflight-Ergebnisse für einen bestimmten Zeitraum (in Sekunden) zwischenzuspeichern, wodurch zusätzliche Preflight-Anfragen für dieselbe Ressource innerhalb dieses Zeitrahmens vermieden werden. Unser Generator empfiehlt einen Wert von 3600 Sekunden (eine Stunde) als vernünftigen Standardwert, der Leistungsoptimierung mit der Flexibilität, CORS-Richtlinien bei Bedarf zu aktualisieren, in Einklang bringt. Für hochfrequentierte Anwendungen können Sie erwägen, diesen Wert weiter zu erhöhen (bis zu 86400 Sekunden/24 Stunden, obwohl Browser möglicherweise eigene Obergrenzen erzwingen). Stellen Sie außerdem sicher, dass Ihr Server OPTIONS-Anfragen schnell beantwortet, und erwägen Sie die Implementierung spezieller optimierter Routen zur Handhabung von Preflight-Anfragen mit minimalem Verarbeitungsaufwand für maximale Leistung in Produktionsumgebungen.",
+
+            q4: "Wie teste ich richtig, ob meine CORS-Konfiguration korrekt funktioniert?",
+            a4: "<b>Das Testen von CORS-Konfigurationen erfordert eine methodische Vorgehensweise</b>, da fehlerhafte Konfigurationen oft als schwer zu diagnostizierende Browser-Fehlermeldungen auftreten. Die effektivste Teststrategie beinhaltet die Erstellung eines einfachen Cross-Origin-Testclients, der auf einer anderen Domäne als Ihre API gehostet wird. Dies könnte eine grundlegende HTML-Seite mit JavaScript sein, das verschiedene Arten von Anfragen an Ihre API-Endpunkte sendet. Verwenden Sie die Entwicklertools von Chrome oder Firefox (Network-Tab), um die Preflight-OPTIONS-Anfragen und die nachfolgenden tatsächlichen Anfragen zu beobachten. Verifizieren Sie, dass die OPTIONS-Anfragen eine 200- oder 204-Antwort mit den korrekten Access-Control-Allow-*-Headern erhalten. Testen Sie verschiedene Szenarien, einschließlich unterschiedlicher HTTP-Methoden, benutzerdefinierter Header und Anfragen mit Credentials, um sicherzustellen, dass Ihre Konfiguration alle Anforderungen Ihrer Anwendung handhabt. Häufige Testprobleme umfassen das Vergessen, dass localhost:3000 und localhost:8080 von Browsern als unterschiedliche Ursprünge betrachtet werden, oder das Übersehen von Protokollunterschieden (http vs. https). Wenn Sie CORS-Fehler sehen, überprüfen Sie, ob Ihre erlaubten Ursprünge exakt mit dem Ursprung der anfragenden Seite übereinstimmen (einschließlich Protokoll, Domäne und Port), verifizieren Sie, dass Ihr Server tatsächlich CORS-Header in seinen Antworten sendet (nicht nur in der Konfiguration), und stellen Sie sicher, dass Preflight-Anfragen korrekt behandelt werden. Unser Generator erstellt Konfigurationen für gängige Serverumgebungen, aber Sie müssen sie möglicherweise an Ihre spezifische Server-Einrichtung anpassen.",
+
+            q5: "Welche Sicherheitsrisiken bestehen bei zu lockeren CORS-Richtlinien?",
+            a5: "<b>Zu lockere CORS-Richtlinien können schwerwiegende Sicherheitslücken verursachen</b>, die den Schutz der Same-Origin-Policy gegen Cross-Site-Angriffe untergraben. Das bedeutendste Risiko ergibt sich aus der Konfiguration von Access-Control-Allow-Origin: * mit Access-Control-Allow-Credentials: true (obwohl Browser diese spezifische Kombination blockieren, könnten falsch konfigurierte Proxys dies möglicherweise nicht). Selbst ohne Credentials können übermäßig offene CORS-Richtlinien sensible APIs und Daten unbefugten Websites aussetzen. Beispielsweise könnte ein internes Admin-API, das jeden Ursprung erlaubt, von bösartigen Sites abgefragt werden, um möglicherweise auf sensible Daten zuzugreifen oder Operationen durchzuführen. Ein weiteres häufiges Risiko ist eine unzureichende Ursprungsvalidierung - etwa einfache String-Matching, die jeden Ursprung zulässt, der eine vertrauenswürdige Domäne enthält (z.B. attacker.com/evil.ihrefirma.de statt nur ihrefirma.de). Darüber hinaus können falsch konfigurierte CORS-Richtlinien Cross-Site-Request-Forgery-Angriffe ermöglichen, wenn die Richtlinie nicht vertrauenswürdigen Ursprüngen das Senden zustandsändernder Anfragen erlaubt. Um diese Risiken zu mindern, befolgen Sie das Prinzip der geringsten Rechte und erlauben Sie nur die spezifischen Ursprünge, Methoden und Header, die Ihre Anwendung tatsächlich benötigt. Verwenden Sie für interne APIs niemals Wildcard-Ursprünge. Führen Sie regelmäßige Überprüfungen Ihrer CORS-Konfigurationen als Teil von Sicherheitsaudits durch und erwägen Sie zusätzliche Authentifizierungsmechanismen für sensible Operationen. Unser Generator erstellt Konfigurationen, die diese Sicherheitsbest Practices fördern, während sie gleichzeitig notwendige Cross-Origin-Funktionalität ermöglichen."
+        },
+        relatedTools: {
+            title: "Verwandte Webentwicklungstools erkunden",
+            description: "Verbessern Sie Ihren Webentwicklungsworkflow mit diesen ergänzenden Tools:",
+            tool1: {
+                name: "JSON-Formatierer und Validator",
+                url: "https://www.ufreetools.com/tool/json-formatter",
+                description: "Formatieren, validieren und verschönern Sie JSON-Daten für Ihre API-Antworten und Anfragen."
+            },
+            tool2: {
+                name: "HTTP-Statuscode-Referenz",
+                url: "https://www.ufreetools.com/tool/http-status-code-lookup",
+                description: "Umfassender Leitfaden zu HTTP-Statuscodes für die korrekte API-Antwortverarbeitung."
+            },
+            tool3: {
+                name: "JWT-Debugger",
+                url: "https://www.ufreetools.com/tool/jwt-debugger",
+                description: "Analysieren, validieren und debuggen Sie JWT-Token online."
+            },
+            tool4: {
+                name: "URL-Encoder/Decoder",
+                url: "https://www.ufreetools.com/tool/url-encode-decode",
+                description: "Kodieren oder dekodieren Sie URL-Komponenten für die korrekte Handhabung von Sonderzeichen in Cross-Origin-Anfragen."
+            }
+        },
+        resources: {
+            title: "Autoritative Ressourcen zu CORS und Web-Sicherheit",
+            resource1: {
+                name: "MDN Web Docs: Cross-Origin Resource Sharing (CORS)",
+                url: "https://developer.mozilla.org/de/docs/Web/HTTP/CORS",
+                description: "Umfassender Leitfaden von Mozilla zum Verständnis und Implementieren von CORS, mit detaillierten Erklärungen aller Header und Browser-Verhaltensweisen."
+            },
+            resource2: {
+                name: "W3C CORS-Spezifikation",
+                url: "https://www.w3.org/TR/cors/",
+                description: "Offizielle W3C-Spezifikation, die den Cross-Origin Resource Sharing-Standard definiert, wie von Browsern implementiert."
+            },
+            resource3: {
+                name: "CORS-Misconfiguration Application Security Cheat Sheet",
+                url: "https://0xn3va.gitbook.io/cheat-sheets/web-application/cors-misconfiguration",
+                description: "Cross-Origin Resource Sharing (CORS) ist ein Browser-Mechanismus, der kontrollierten Zugriff auf Ressourcen ermöglicht, die sich außerhalb der Ursprungsdomäne befinden. Er erweitert und erhöht die Flexibilität der Same-Origin-Policy (SOP)."
+            }
+        }
+    }
+}

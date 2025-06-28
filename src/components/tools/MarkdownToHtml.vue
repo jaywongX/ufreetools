@@ -1138,6 +1138,156 @@ console.log(saudacao('Mundo'));
 
 ***
 `
+      } else if (currentLocale === 'id') {
+        markdownText.value = `# Contoh Sintaks Dasar Markdown
+
+## 1. Judul
+
+# Judul 1
+## Judul 2
+### Judul 3
+#### Judul 4
+##### Judul 5
+###### Judul 6
+
+## 2. Format Teks
+
+Teks biasa
+
+**Teks tebal**
+
+*Teks miring*
+
+~~Teks dicoret~~
+
+**_Tebal dan miring_**
+
+## 3. Daftar
+
+### Daftar Tidak Berurutan
+- Item 1
+- Item 2
+  - Sub-item A
+  - Sub-item B
+
+### Daftar Berurutan
+1. Item pertama
+2. Item kedua
+3. Item ketiga
+
+## 4. Tautan dan Gambar
+
+[Tautan ke Google](https://www.google.com)
+
+![Contoh gambar](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBmaWxsPSIjY2NjY2NjIiAvPgogICAgPHRleHQgeD0iNzUiIHk9Ijc1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZpbGw9IiM0NDQ0NDQiPjE1MHgxNTA8L3RleHQ+Cjwvc3ZnPg==)
+
+## 5. Kutipan
+
+> Ini adalah kutipan
+> 
+> Kutipan dapat terdiri dari beberapa baris
+
+## 6. Kode
+
+Kode sebaris: \`console.log('Halo Dunia')\`
+
+Blok kode:
+\`\`\`javascript
+function sapa(nama) {
+  return \`Halo, \${nama}!\`;
+}
+console.log(sapa('Dunia'));
+\`\`\`
+
+## 7. Tabel
+
+| Nama | Umur | Pekerjaan |
+| ---- | ---- | --------- |
+| Andi | 25   | Insinyur  |
+| Budi | 30   | Desainer  |
+| Citra| 28   | Manajer Produk |
+
+## 8. Garis Horizontal
+
+---
+
+***
+`
+      } else if (currentLocale === 'de') {
+        markdownText.value = `# Beispiel für grundlegende Markdown-Syntax
+
+## 1. Überschriften
+
+# Überschrift 1
+## Überschrift 2
+### Überschrift 3
+#### Überschrift 4
+##### Überschrift 5
+###### Überschrift 6
+
+## 2. Textformatierung
+
+Normaler Text
+
+**Fetter Text**
+
+*Kursiver Text*
+
+~~Durchgestrichener Text~~
+
+**_Fett und kursiv_**
+
+## 3. Listen
+
+### Ungeordnete Listen
+- Element 1
+- Element 2
+  - Unterelement A
+  - Unterelement B
+
+### Geordnete Listen
+1. Erstes Element
+2. Zweites Element
+3. Drittes Element
+
+## 4. Links und Bilder
+
+[Link zu Google](https://www.google.com)
+
+![Beispielbild](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBmaWxsPSIjY2NjY2NjIiAvPgogICAgPHRleHQgeD0iNzUiIHk9Ijc1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZpbGw9IiM0NDQ0NDQiPjE1MHgxNTA8L3RleHQ+Cjwvc3ZnPg==)
+
+## 5. Zitate
+
+> Dies ist ein Zitat
+> 
+> Zitate können sich über mehrere Zeilen erstrecken
+
+## 6. Code
+
+Inline-Code: \`console.log('Hallo Welt')\`
+
+Code-Block:
+\`\`\`javascript
+function grüßen(name) {
+  return \`Hallo, \${name}!\`;
+}
+console.log(grüßen('Welt'));
+\`\`\`
+
+## 7. Tabellen
+
+| Name | Alter | Beruf |
+| ---- | ----- | ----- |
+| Hans | 25    | Ingenieur |
+| Anna | 30    | Designer |
+| Max  | 28    | Produktmanager |
+
+## 8. Horizontale Linien
+
+---
+
+***
+`
       } else {
         console.error('Invalid locale:', currentLocale);
         throw new Error('Invalid locale');
@@ -1834,6 +1984,160 @@ graph TD;
 \`\`\`
 
 ## 11. Índice (requer extensão)
+
+[TOC]
+`
+      } else if (currentLocale === 'id') {
+  markdownText.value = `# Ekstensi Sintaks Markdown
+
+## 1. Daftar Tugas
+
+- [x] Tugas selesai
+- [ ] Tugas belum selesai
+- [x] Tugas selesai lainnya
+
+## 2. Emoji
+
+Mendukung emoji bergaya GitHub seperti :smile: :heart: :thumbsup:
+
+## 3. Rumus Matematika (memerlukan dukungan ekstensi)
+
+Rumus inline: $E=mc^2$
+
+Rumus blok:
+
+$$
+\\frac{n!}{k!(n-k)!} = \\binom{n}{k}
+$$
+
+## 4. Catatan Kaki
+
+Di sini ada catatan kaki[^1]
+
+[^1]: Ini adalah isi dari catatan kaki.
+
+## 5. Daftar Definisi
+
+Istilah 1
+: Definisi 1
+
+Istilah 2
+: Definisi 2a
+: Definisi 2b
+
+## 6. Penyorotan Teks (memerlukan dukungan ekstensi)
+
+Ini adalah contoh ==teks yang disorot==
+
+## 7. Teks Pangkat dan Subskrip (memerlukan dukungan ekstensi)
+
+Pangkat: X^2^
+Subskrip: H~2~O
+
+## 8. Blok Peringatan (memerlukan dukungan ekstensi)
+
+:::warning
+Ini adalah pesan peringatan
+:::
+
+:::info
+Ini adalah pesan informasi
+:::
+
+## 9. Kontainer Kustom (memerlukan dukungan ekstensi)
+
+::: details Klik untuk memperluas detail
+Ini adalah konten detail
+:::
+
+## 10. Diagram Alur (memerlukan dukungan ekstensi)
+
+\`\`\`mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+\`\`\`
+
+## 11. Daftar Isi (memerlukan dukungan ekstensi)
+
+[TOC]
+`
+      } else if (currentLocale === 'de') {
+    markdownText.value = `# Markdown-Erweiterungssyntax
+
+## 1. Aufgabenliste
+
+- [x] Abgeschlossene Aufgabe
+- [ ] Unvollendete Aufgabe
+- [x] Noch eine abgeschlossene Aufgabe
+
+## 2. Emojis
+
+Unterstützt GitHub-ähnliche Emojis wie :smile: :heart: :thumbsup:
+
+## 3. Mathematische Formeln (Erweiterung erforderlich)
+
+Inline-Formel: $E=mc^2$
+
+Blockformel:
+
+$$
+\\frac{n!}{k!(n-k)!} = \\binom{n}{k}
+$$
+
+## 4. Fußnoten
+
+Hier ist eine Fußnote[^1]
+
+[^1]: Dies ist der Inhalt der Fußnote.
+
+## 5. Definitionsliste
+
+Begriff 1
+: Definition 1
+
+Begriff 2
+: Definition 2a
+: Definition 2b
+
+## 6. Hervorhebung (Erweiterung erforderlich)
+
+Dies ist ein ==hervorgehobener Text==
+
+## 7. Hoch- und Tiefstellen (Erweiterung erforderlich)
+
+Hochgestellt: X^2^
+Tiefgestellt: H~2~O
+
+## 8. Warnblöcke (Erweiterung erforderlich)
+
+:::warning
+Dies ist eine Warnmeldung
+:::
+
+:::info
+Dies ist ein Hinweis
+:::
+
+## 9. Benutzerdefinierte Container (Erweiterung erforderlich)
+
+::: details Klicken, um Details anzuzeigen
+Dies ist der detaillierte Inhalt
+:::
+
+## 10. Flussdiagramme (Erweiterung erforderlich)
+
+\`\`\`mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+\`\`\`
+
+## 11. Inhaltsverzeichnis (Erweiterung erforderlich)
 
 [TOC]
 `
@@ -2616,6 +2920,178 @@ Aprender Markdown não é difícil, mas dominá-lo melhorará significativamente
 *Autor: Entusiasta do Markdown*  
 *Publicado: 15 de outubro de 2023*
 `
+      } else if (currentLocale === 'id') {
+  markdownText.value = `# Markdown: Bahasa Format Teks Sederhana Namun Kuat
+
+## Pendahuluan
+
+Di era pembuatan konten digital, **Markdown** sebagai bahasa markup ringan telah menjadi alat pilihan untuk penulisan dokumentasi teknis, blog, dan manajemen konten. Artikel ini akan membahas sejarah Markdown, sintaks dasarnya, dan berbagai skenario penggunaannya.
+
+## Sejarah dan Filosofi Desain Markdown
+
+Markdown dibuat oleh John Gruber dan Aaron Swartz pada tahun 2004. Tujuan utamanya adalah memungkinkan orang menulis dokumen dalam format teks biasa yang mudah dibaca dan ditulis, kemudian dikonversi menjadi HTML yang valid.
+
+> "Tujuan utama dalam desain Markdown adalah keterbacaan. Dokumen berformat Markdown harus dapat diterbitkan secara langsung sebagai teks biasa tanpa tampak seperti dibangun dengan tag atau instruksi format."
+> — John Gruber
+
+Filosofi desain ini membuat Markdown berbeda secara mendasar dari bahasa markup lainnya: **fokus pada isi itu sendiri, bukan pada tampilannya**.
+
+## Sintaks Dasar Markdown
+
+Markdown menyediakan seperangkat aturan sintaks yang sederhana. Berikut beberapa elemen dasarnya:
+
+### 1. Judul
+
+Markdown menggunakan simbol # untuk menandai tingkat judul:
+
+\`\`\`markdown
+# Judul Tingkat 1
+## Judul Tingkat 2
+### Judul Tingkat 3
+\`\`\`
+
+### 2. Pemformatan Teks
+
+- **Tebal**: \`**teks**\` atau \`__teks__\`
+- *Miring*: \`*teks*\` atau \`_teks_\`
+- ~~Coret~~: \`~~teks~~\`
+
+### 3. Daftar/List
+
+Daftar tidak berurutan menggunakan tanda minus, plus, atau bintang sebagai penanda item:
+
+- Item 1
+- Item 2
+  - Subitem A
+  - Subitem B
+
+Daftar berurutan menggunakan angka diikuti titik:
+
+1. Item pertama
+2. Item kedua
+3. Item ketiga
+
+### 4. Tautan dan Gambar
+
+Sintaks untuk tautan: \`[teks tautan](URL)\`  
+Sintaks untuk gambar: \`![teks alternatif](URL_gambar)\`
+
+### 5. Blok Kode
+
+\`\`\`javascript
+function helloWorld() {
+  console.log("Hello, world!");
+}
+\`\`\`
+
+## Penggunaan Luas Markdown
+
+Markdown telah banyak digunakan di berbagai platform dan alat:
+
+| Platform/Alat | Contoh Penggunaan |
+| ------------- | ------------------ |
+| GitHub        | Dokumentasi kode, Issues, Pull Requests |
+| Stack Overflow | Format tanya jawab |
+| WordPress     | Penulisan blog |
+| Discord/Slack | Format pesan |
+| Notion        | Catatan dan manajemen pengetahuan |
+
+## Penutup
+
+Dengan kelebihannya yang sederhana, efisien, dan mendukung lintas platform, Markdown telah menjadi asisten yang sangat berguna bagi para pembuat konten. Baik untuk menulis dokumentasi teknis, artikel blog, maupun sekadar mengorganisir catatan, Markdown memberikan pengalaman menulis yang konsisten dan produktif.
+
+Belajar Markdown tidaklah sulit, tetapi menguasainya akan memberikan peningkatan besar dalam produktivitas tulisan digital Anda. Jika Anda belum pernah mencoba Markdown, saat ini adalah waktu yang tepat untuk memulai!
+
+---
+
+*Penulis artikel: Pecinta Markdown*  
+*Tanggal publikasi: 15 Oktober 2023*`
+      } else if (currentLocale === 'de') {
+    markdownText.value = `# Markdown: Eine einfache und leistungsstarke Textformatierungssprache
+
+## Einleitung
+
+In der Ära der digitalen Inhaltsproduktion hat sich **Markdown** als eine leichte Auszeichnungssprache zum bevorzugten Werkzeug für die Erstellung von Technischen Dokumentationen, Blogs und Content-Management-Systemen entwickelt. In diesem Artikel werden wir die Geschichte von Markdown, die grundlegenden Syntaxregeln und breite Anwendungsbereiche betrachten.
+
+## Die Geschichte und das Designkonzept von Markdown
+
+Markdown wurde im Jahr 2004 von John Gruber und Aaron Swartz entwickelt. Das ursprüngliche Ziel war es, eine Sprache zu schaffen, mit der Benutzer einfach lesbare und schreibbare Dokumente im reinen Textformat erstellen konnten, die anschließend in gültiges HTML umgewandelt werden konnten.
+
+> "Das wichtigste Designziel von Markdown ist Lesbarkeit. Ein Dokument im Markdown-Format sollte so gestaltet sein, dass es direkt als reinen Text veröffentlichen lässt, ohne wie eine Ansammlung von Formatierungsanweisungen auszusehen."
+> — John Gruber
+
+Dieses Design unterscheidet Markdown fundamental von anderen Auszeichnungssprachen: **Der Fokus liegt auf dem Inhalt selbst, nicht auf der Darstellung.**
+
+## Grundlegende Markdown-Syntax
+
+Markdown bietet ein schlankes Satz an Syntaxregeln. Hier sind einige grundlegende Elemente:
+
+### 1. Überschriften
+
+Markdown verwendet das Nummernzeichen (#), um die Überschriftenebene festzulegen:
+
+\`\`\`markdown
+# H1 – Überschrift der ersten Ebene
+## H2 – Überschrift der zweiten Ebene
+### H3 – Überschrift der dritten Ebene
+\`\`\`
+
+### 2. Textformatierung
+
+- **Fettgedruckt**: \`**Text**\` oder \`__Text__\`
+- *Kursiv*: \`*Text*\` oder \`_Text_\`
+- ~~Durchgestrichen~~: \`~~Text~~\`
+
+### 3. Listen
+
+Ungeordnete Listen verwenden Minuszeichen, Pluszeichen oder Sternchen als Listenelemente:
+
+- Element 1
+- Element 2
+  - Unterelement A
+  - Unterelement B
+
+Geordnete Listen verwenden Zahlen gefolgt von einem Punkt:
+
+1. Erstes Element
+2. Zweites Element
+3. Drittes Element
+
+### 4. Links und Bilder
+
+Syntax für Links: \`[Linktext](URL)\`  
+Syntax für Bilder: \`![Alternativtext](Bild-URL)\`
+
+### 5. Codeblöcke
+
+\`\`\`javascript
+function halloWelt() {
+  console.log("Hallo Welt!");
+}
+\`\`\`
+
+## Die breite Anwendung von Markdown
+
+Markdown wird heute in zahlreichen Plattformen und Tools eingesetzt:
+
+| Plattform/Werkzeug | Anwendungsfall |
+|--------------------|----------------|
+| GitHub             | Code-Dokumentation, Issues, Pull Requests |
+| Stack Overflow     | Formatierung von Fragen und Antworten |
+| WordPress          | Blog-Artikel |
+| Discord/Slack      | Nachrichtenformatierung |
+| Notion             | Notizen und Wissensmanagement |
+
+## Abschluss
+
+Mit seiner Einfachheit, Effizienz und plattformübergreifenden Kompatibilität ist Markdown zu einem unverzichtbaren Begleiter für alle geworden, die digitale Inhalte erstellen. Ob technische Dokumentation, Blogartikel oder einfache Notizen – Markdown bietet stets ein konsistentes und effektives Schreib-Erlebnis.
+
+Der Einstieg in Markdown ist leicht, doch die Beherrschung dieser Sprache bringt eine erhebliche Steigerung der Produktivität im Umgang mit digitalem Schreiben mit sich. Wenn Sie es noch nicht ausprobiert haben, ist jetzt der perfekte Zeitpunkt, um anzufangen!
+
+---
+
+*Artikelautor: Ein Markdown-Fan*  
+*Veröffentlichungsdatum: 15. Oktober 2023*`
       } else {
         console.error('Invalid locale:', currentLocale);
         throw new Error('Invalid locale');
