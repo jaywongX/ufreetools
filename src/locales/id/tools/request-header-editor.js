@@ -1,0 +1,178 @@
+export default {
+  name: 'Editor Header Permintaan',
+  description: 'Buat, edit, dan uji header permintaan HTTP',
+  editor: {
+    title: 'Editor Header',
+    headers: 'Header Permintaan',
+    add: 'Tambah Header',
+    bulk: 'Edit Massal',
+    import: 'Impor Header',
+    export: 'Ekspor Header',
+    clear: 'Hapus Semua',
+    importError: 'Kesalahan Impor'
+  },
+  header: {
+    name: 'Nama Header',
+    value: 'Nilai',
+    description: 'Deskripsi',
+    namePlaceholder: 'Masukkan nama header',
+    valuePlaceholder: 'Masukkan nilai header',
+    actions: 'Aksi',
+    enabled: 'Aktif',
+    duplicate: 'Duplikat',
+    delete: 'Hapus',
+    noHeaders: 'Tidak ada header, klik tombol "Tambah" atau muat template untuk memulai',
+    bulkPlaceholder: 'Tempel header, format: \'Nama: Nilai\', satu per baris, atau tempel teks header mentah'
+  },
+  presets: {
+    title: 'Preset',
+    save: 'Simpan Sekarang',
+    load: 'Muat Preset',
+    delete: 'Hapus Preset',
+    presetName: 'Nama Preset',
+    namePlaceholder: 'Masukkan nama preset',
+    confirmDelete: 'Apakah Anda yakin ingin menghapus preset ini?',
+    common: 'Header Umum',
+    custom: 'Preset Kustom'
+  },
+  common: {
+    userAgent: 'User-Agent',
+    contentType: 'Content-Type',
+    authorization: 'Authorization',
+    acceptLanguage: 'Accept-Language',
+    acceptEncoding: 'Accept-Encoding',
+    cacheControl: 'Cache-Control',
+    cookie: 'Cookie',
+    referer: 'Referer',
+    origin: 'Origin'
+  },
+  test: {
+    title: 'Uji Header',
+    url: 'URL',
+    urlPlaceholder: 'Masukkan URL untuk menguji header',
+    method: 'Metode',
+    send: 'Kirim Permintaan',
+    response: 'Respons'
+  },
+  response: {
+    title: 'Respons',
+    status: 'Status',
+    headers: 'Header Respons',
+    body: 'Badan',
+    time: 'Waktu',
+    size: 'Ukuran',
+    loading: 'Memuat...',
+    noResponse: 'Tambahkan header untuk melihat pratinjau',
+    headerCount: 'header'
+  },
+  options: {
+    title: 'Opsi',
+    followRedirects: 'Ikuti Pengalihan',
+    timeout: 'Timeout (detik)',
+    validateSSL: 'Validasi Sertifikat SSL',
+    sendCredentials: 'Kirim Kredensial'
+  },
+  formats: {
+    title: 'Format Ekspor',
+    raw: 'Teks Mentah',
+    json: 'JSON',
+    curl: 'Perintah cURL',
+    javascript: 'JavaScript',
+    python: 'Python',
+    php: 'PHP',
+    fetch: 'Fetch API',
+    axios: 'Axios'
+  },
+  guides: {
+    title: 'Panduan Header',
+    description: 'Pelajari tentang header HTTP umum dan penggunaannya',
+    securityHeaders: 'Header Keamanan',
+    cachingHeaders: 'Header Cache',
+    corsHeaders: 'Header CORS',
+    authenticationHeaders: 'Header Autentikasi',
+    commonValues: 'Nilai Umum'
+  },
+  actions: {
+    copy: 'Salin',
+    format: 'Format',
+    validate: 'Validasi',
+    clear: 'Kosongkan'
+  },
+  messages: {
+    headerAdded: 'Header ditambahkan',
+    headerDeleted: 'Header dihapus',
+    headersCleared: 'Semua header dihapus',
+    presetSaved: 'Preset disimpan',
+    presetLoaded: 'Preset dimuat',
+    presetDeleted: 'Preset dihapus',
+    requestSent: 'Permintaan dikirim',
+    requestFailed: 'Permintaan gagal: {error}',
+    copied: 'Disalin ke clipboard',
+    importSuccess: 'Header berhasil diimpor',
+    exportSuccess: 'Header berhasil diekspor',
+    invalidUrl: 'URL tidak valid',
+    pleaseEnterHeader: 'Masukkan teks header',
+    invalidHeader: 'Tidak dapat mengurai header yang valid, gunakan format \'Nama: Nilai\'',
+    invalidHeaderName: 'Nama header tidak valid: {error}',
+    copyFailed: 'Gagal menyalin, salin secara manual'
+  },
+  article: {
+    title: "Editor Header Permintaan HTTP: Panduan Lengkap",
+    features: {
+      title: "Memahami Header HTTP dan Pentingnya",
+      description: "<strong>Editor Header Permintaan</strong> adalah alat yang kuat yang dirancang khusus untuk pengembang, penguji, dan penggemar API untuk membuat, memodifikasi, dan memvalidasi header HTTP untuk permintaan web. Header ini adalah komponen kunci dalam komunikasi HTTP yang mengirimkan metadata penting antara klien dan server, mengontrol autentikasi, negosiasi konten, perilaku cache, dan banyak lagi.<br><br><strong>Alat editor header</strong> kami menyediakan antarmuka intuitif yang memudahkan pembuatan kumpulan header kompleks, pengujian berbagai konfigurasi, dan ekspor hasil dalam berbagai format untuk diimplementasikan dalam aplikasi Anda. Baik Anda men-debug masalah API, mengembangkan integrasi baru, atau mempelajari protokol web, alat ini menyederhanakan proses penanganan header HTTP.",
+      useCases: {
+        title: "Aplikasi Praktis Editor Header HTTP",
+        items: [
+          "<strong>Pengujian Autentikasi API</strong>: Saat bekerja dengan API yang memerlukan token autentikasi atau kunci dalam header (seperti OAuth, JWT, atau kunci API), <strong>pembangun header permintaan</strong> kami memungkinkan Anda dengan cepat membangun dan menguji berbagai skenario autentikasi tanpa perlu memodifikasi kode aplikasi.",
+          
+          "<strong>Debugging Berbagi Sumber Lintas Asal (CORS)</strong>: Untuk aplikasi web yang perlu membuat permintaan lintas asal, mengonfigurasi dan menguji kombinasi header Origin, Access-Control, dan preflight yang benar sangat penting. <strong>Alat header HTTP</strong> ini membantu mengidentifikasi dan menyelesaikan masalah CORS dengan memungkinkan Anda mencoba berbagai konfigurasi header.",
+          
+          "<strong>Negosiasi Konten</strong>: Layanan web modern mendukung berbagai jenis konten, bahasa, dan pengkodean. Dengan menggunakan header seperti Accept, Accept-Language, dan Accept-Encoding, Anda dapat menguji bagaimana server merespons preferensi klien yang berbeda dan memastikan aplikasi Anda mengimplementasikan negosiasi konten dengan benar.",
+          
+          "<strong>Optimasi Kontrol Cache</strong>: Header cache yang dikonfigurasi dengan benar dapat secara signifikan meningkatkan kinerja aplikasi. Dengan <strong>alat manajemen header</strong> kami, Anda dapat mencoba berbagai arahan Cache-Control, konfigurasi ETag, dan header permintaan bersyarat untuk menemukan strategi cache yang optimal untuk sumber daya Anda.",
+          
+          "<strong>Konfigurasi Header Keamanan</strong>: Menerapkan header keamanan seperti Content-Security-Policy, Strict-Transport-Security, dan X-Content-Type-Options sangat penting untuk aplikasi web modern. Alat ini memungkinkan Anda membangun dan memvalidasi header keamanan kompleks ini sebelum menerapkannya di lingkungan produksi.",
+          
+          "<strong>Pembuatan Klien API</strong>: Setelah menyelesaikan kumpulan header, Anda dapat mengekspor cuplikan kode siap pakai dalam berbagai bahasa pemrograman, memudahkan implementasi header yang sama persis dalam kode aplikasi, perintah curl, atau alat pengujian API."
+        ]
+      }
+    },
+    faq: {
+      title: "Pertanyaan Umum tentang Header HTTP",
+      items: [
+        {
+          question: "Apa itu header permintaan HTTP dan mengapa mereka penting?",
+          answer: "Header permintaan HTTP adalah pasangan kunci-nilai yang dikirim sebagai bagian dari permintaan HTTP dari klien (seperti browser atau klien API) ke server. Mereka menyediakan metadata penting tentang permintaan, kemampuan klien, dan preferensi.<br><br>Header ini penting karena mereka:<br><br>• Mengontrol mekanisme <strong>autentikasi dan otorisasi</strong><br>• Mengelola <strong>perilaku cache</strong> untuk meningkatkan kinerja<br>• Memungkinkan <strong>negosiasi konten</strong> (format, bahasa, pengkodean)<br>• Mengonfigurasi <strong>permintaan lintas asal</strong> dan kebijakan keamanan<br>• Menyediakan <strong>konteks klien</strong> seperti informasi agen pengguna dan referer<br><br>Tanpa header yang tepat, banyak fungsi web modern tidak akan berfungsi dengan baik, API akan kekurangan kontrol keamanan, dan kinerja web akan menurun secara signifikan."
+        },
+        {
+          question: "Apa perbedaan antara header umum seperti Content-Type, Authorization, dan Accept?",
+          answer: "Ketiga header ini melayani tujuan berbeda dalam komunikasi HTTP:<br><br><strong>Content-Type</strong>: Menentukan jenis media sumber dalam badan permintaan (saat mengirim data) atau jenis konten yang dapat dipahami klien (saat meminta data). Nilai umum termasuk:<br>• <code>application/json</code> untuk data JSON<br>• <code>application/x-www-form-urlencoded</code> untuk data formulir<br>• <code>multipart/form-data</code> untuk unggahan file<br><br><strong>Authorization</strong>: Berisi kredensial yang digunakan untuk mengautentikasi klien ke server. Format umum meliputi:<br>• <code>Bearer eyJhbGc...</code> untuk token JWT/OAuth<br>• <code>Basic dXNlcm5hbWU6cGFzc3dvcmQ=</code> untuk autentikasi dasar<br>• <code>ApiKey 12345abcde...</code> untuk autentikasi kunci API<br><br><strong>Accept</strong>: Menunjukkan jenis konten respons yang dapat ditangani klien. Ini memungkinkan server menyediakan format yang paling sesuai ketika beberapa opsi tersedia. Contoh:<br>• <code>application/json</code> untuk menerima data JSON<br>• <code>text/html</code> untuk menerima konten HTML<br>• <code>*/*</code> untuk menerima jenis konten apa pun<br><br>Penggunaan header ini dengan benar memastikan pertukaran data yang tepat, autentikasi yang aman, dan pengiriman konten yang optimal antara klien dan server."
+        },
+        {
+          question: "Bagaimana cara menguji apakah header saya berfungsi dengan benar?",
+          answer: "Menguji header HTTP secara efektif melibatkan beberapa metode:<br><br>1. <strong>Gunakan alat editor header kami</strong> untuk membangun kumpulan header Anda dan mengekspornya sebagai perintah curl atau cuplikan kode yang dapat Anda jalankan langsung.<br><br>2. <strong>Alat pengembang browser</strong>: Sebagian besar browser menyertakan alat inspeksi jaringan yang menampilkan semua header permintaan dan respons server. Periksa apakah header Anda dikirim seperti yang diharapkan dan bagaimana server merespons.<br><br>3. <strong>Layanan pengujian API online</strong>: Alat seperti Postman atau Insomnia memungkinkan Anda mengatur header khusus dan memeriksa siklus permintaan/respons lengkap.<br><br>4. <strong>Layanan gema</strong>: Gunakan titik akhir seperti httpbin.org yang memantulkan detail permintaan Anda kembali kepada Anda, memudahkan verifikasi transmisi header.<br><br>5. <strong>Log server</strong>: Jika Anda memiliki akses ke log server, mereka biasanya mencatat header permintaan masuk, memungkinkan Anda memverifikasi penerimaan.<br><br>Saat menguji, perhatikan masalah umum ini:<br>• Kasus header yang tidak benar (meskipun header HTTP tidak peka huruf besar-kecil, beberapa implementasi mungkin ketat)<br>• Token otorisasi yang hilang atau salah format<br>• Content-Type yang Anda deklarasikan tidak cocok dengan konten yang Anda kirim<br>• Konfigurasi header CORS yang tidak benar untuk permintaan lintas asal"
+        },
+        {
+          question: "Bisakah saya menyimpan dan menggunakan kembali konfigurasi header untuk proyek yang berbeda?",
+          answer: "Meskipun alat online kami saat ini tidak mengimplementasikan penyimpanan persisten karena alasan privasi, ada beberapa cara untuk menyimpan dan menggunakan kembali konfigurasi header Anda:<br><br>1. <strong>Ekspor sebagai kode</strong>: Gunakan fitur ekspor untuk menghasilkan cuplikan kode dalam bahasa pilihan Anda (JavaScript, Python, curl, dll.). Cuplikan ini dapat disimpan dalam repositori proyek atau dokumentasi Anda.<br><br>2. <strong>Salin sebagai teks mentah</strong>: Format header mentah dapat disalin dan disimpan dalam file teks, sistem dokumen, atau wiki tim untuk referensi di masa mendatang.<br><br>3. <strong>Ekstensi browser</strong>: Beberapa ekstensi untuk Chrome, Firefox, dan browser lain memungkinkan penyimpanan dan pengelolaan kumpulan header untuk domain dan proyek yang berbeda.<br><br>4. <strong>Platform manajemen API</strong>: Alat seperti Postman atau Insomnia menyediakan fitur ruang kerja untuk mengatur dan menyimpan konfigurasi permintaan yang berbeda, termasuk header.<br><br>5. <strong>Variabel lingkungan</strong>: Untuk alur kerja pengembangan, pertimbangkan untuk mendefinisikan header sebagai variabel lingkungan dalam file .env atau pipa CI/CD.<br><br>Untuk tim yang berkomitmen pada API atau aplikasi web kompleks, kami merekomendasikan mempertahankan repositori pusat untuk konfigurasi header standar di berbagai lingkungan (pengembangan, pengujian, produksi) untuk memastikan konsistensi dalam alur kerja pengembangan."
+        },
+        {
+          question: "Kesalahan umum apa yang harus dihindari saat menggunakan header HTTP?",
+          answer: "Saat menangani header HTTP, waspadai jebakan umum ini:<br><br>1. <strong>Kelalaian header keamanan</strong>: Gagal menyertakan header keamanan kritis seperti Content-Security-Policy, X-Content-Type-Options, dan Strict-Transport-Security dapat membuat aplikasi rentan terhadap serangan.<br><br>2. <strong>Content-Type yang tidak benar</strong>: Header Content-Type yang tidak cocok dengan format konten sebenarnya dapat menyebabkan kesalahan penguraian. Selalu pastikan header Anda secara akurat mencerminkan format data yang Anda kirim.<br><br>3. <strong>Kebocoran header Authorization</strong>: Mengirim token autentikasi ke layanan pihak ketiga atau mencatatnya dapat menimbulkan risiko keamanan. Berhati-hatilah ke mana Anda mengirim header.<br><br>4. <strong>Kurangnya header CORS</strong>: Untuk aplikasi yang menyajikan sumber daya ke asal yang berbeda, kegagalan mengonfigurasi header Access-Control-Allow-* dengan benar akan menyebabkan permintaan lintas asal gagal.<br><br>5. <strong>Header berlebihan atau bertentangan</strong>: Menyetel beberapa header yang mengontrol perilaku yang sama tetapi dengan nilai yang berbeda dapat menghasilkan perilaku yang tidak dapat diprediksi karena server berperilaku berbeda.<br><br>6. <strong>Masalah sensitivitas huruf</strong>: Meskipun nama header HTTP secara teknis tidak peka huruf besar-kecil, beberapa implementasi mungkin menanganinya dengan ketat. Pertahankan konsistensi huruf dalam aplikasi Anda.<br><br>7. <strong>Header yang terlalu permisif</strong>: Header seperti Access-Control-Allow-Origin: * atau arahan Content-Security-Policy yang luas dapat menciptakan kerentanan keamanan jika digunakan secara tidak tepat.<br><br>8. <strong>Mengabaikan batas ukuran header</strong>: Beberapa server membatasi ukuran total header HTTP (biasanya 8KB). Cookie atau token otorisasi yang sangat besar mungkin melebihi batas ini."
+        }
+      ]
+    },
+    guide: {
+      title: "Cara Menggunakan Editor Header Permintaan HTTP: Panduan Langkah demi Langkah",
+      step1: "<strong>Tambahkan header ke koleksi Anda</strong>: Klik tombol \"Tambah Header\" untuk membuat entri header baru. Setiap header terdiri dari nama (seperti \"Content-Type\" atau \"Authorization\") dan nilai. Anda dapat menambahkan header sebanyak yang diperlukan untuk permintaan Anda. Untuk header umum, Anda juga dapat menggunakan tombol preset \"Header Umum\" untuk menambahkan header umum dengan cepat.",
+      step2: "<strong>Masukkan nama dan nilai header</strong>: Untuk setiap header, masukkan nama dan nilai yang sesuai. Nama header harus mengikuti konvensi HTTP (seperti \"Content-Type\" atau \"Authorization\"), sedangkan nilainya bervariasi tergantung pada tujuan header. Alat ini akan secara otomatis memvalidasi input Anda, memastikan mereka diformat dengan benar.",
+      step3: "<strong>Gunakan edit massal untuk menambahkan beberapa header</strong>: Jika Anda perlu menambahkan beberapa header sekaligus, gunakan area teks edit massal di bagian bawah panel editor",
+      step4: "<strong>Manfaatkan referensi panduan header</strong>: Jika Anda tidak yakin nilai apa yang akan digunakan, lihat bagian panduan header di sisi kanan alat. Klik nama header seperti \"Content-Type\" atau \"Authorization\" untuk melihat nilai umum, dan klik untuk menambahkannya ke koleksi Anda.",
+      step5: "<strong>Pilih format ekspor yang Anda sukai</strong>: Setelah mengonfigurasi header, pilih format ekspor yang diinginkan dari menu dropdown. Opsi termasuk teks mentah untuk penyalinan sederhana, curl untuk permintaan baris perintah, dan berbagai bahasa pemrograman seperti JavaScript, Python, dan lainnya.",
+      step6: "<strong>Tinjau output yang diformat</strong>: Alat akan menghasilkan kode atau teks yang diformat berdasarkan header dan format ekspor yang dipilih. Output ini siap digunakan dalam kode aplikasi, alat pengujian API, atau dokumentasi Anda.",
+      step7: "<strong>Salin hasil ke clipboard</strong>: Klik tombol \"Salin\" untuk menyalin output yang diformat ke clipboard. Anda dapat menempelkannya langsung ke editor kode, terminal, atau alat apa pun yang memerlukan implementasi header ini."
+    },
+    conclusion: "Editor Header Permintaan HTTP menyederhanakan proses kompleks pembuatan, pengujian, dan implementasi header HTTP, menyediakan antarmuka intuitif untuk pengembang web dan integrator API dengan dukungan untuk berbagai format ekspor. Seiring dengan berkembangnya persyaratan keamanan dan kinerja web, header yang dikonfigurasi dengan benar menjadi semakin penting. Alat ini membantu memastikan aplikasi Anda mengikuti praktik terbaik untuk komunikasi HTTP, keamanan, dan optimasi kinerja."
+  }
+}

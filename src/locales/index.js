@@ -8,6 +8,7 @@ import fr from './fr';
 import ja from './ja';
 import pt from './pt';
 import de from './de';
+import id from './id';
 
 export default {
   en,
@@ -20,4 +21,5 @@ export default {
   ja,
   pt,
   de,
+  id,
 };
