@@ -1466,6 +1466,204 @@ Kode sebaris: \`var contoh = "halo";\`
 Mulailah mengedit! Anda dapat menggunakan toolbar di atas untuk dengan cepat memasukkan berbagai elemen Markdown.`
       }
     ];
+  } else if (locale.value === 'ko') {
+    // 중국어 템플릿
+    markdownTemplates.value = [
+      {
+        name: '간단한 문서',
+        description: '제목, 목록, 인용문 등이 포함된 문서',
+        content: `# 문서 제목
+
+## 소개
+이것은 간단한 Markdown 문서 예제입니다.
+
+## 기능
+- 제목과 문단 지원
+- **굵게**와 *기울임* 지원
+- 순서 있는 목록과 순서 없는 목록 지원
+
+> 이것은 인용 블록으로, 다른 사람의 의견을 인용할 때 사용합니다.
+
+## 결론
+Markdown은 사용하기 쉬운 마크업 언어입니다.`
+      },
+      {
+        name: '프로젝트 README',
+        description: '프로젝트 문서 표준 구조',
+        content: `# 프로젝트 이름
+
+## 프로젝트 개요
+프로젝트의 주요 기능과 용도를 간략히 설명합니다.
+
+## 기능 특징
+- 주요 기능 1
+- 주요 기능 2
+- 주요 기능 3
+
+## 설치 방법
+\`\`\`
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
+npm run dev
+\`\`\`
+
+## 사용 예시
+\`\`\`
+// 예제 코드
+const example = new Example();
+example.init();
+\`\`\`
+
+## 문서
+더 자세한 문서는 문서 링크를 참조하세요.
+
+## 기여 가이드
+코드 기여를 환영합니다. 기여 가이드를 참조해 주세요.
+
+## 라이선스
+이 프로젝트는 MIT 라이선스로 배포됩니다. 자세한 내용은 LICENSE 파일을 참조하세요.`
+      },
+      {
+        name: '이력서',
+        description: '이력서 템플릿',
+        content: `# 이력서
+
+## 개인 정보
+- 이름: 장삼
+- 전화: 138xxxx1234
+- 이메일: zhangsan@example.com
+- 지원 직무: 프론트엔드 개발자
+
+## 학력
+대학교명, 컴퓨터과학과, 2016년 9월 ~ 2020년 6월
+
+## 경력
+### IT 회사, 프론트엔드 개발자, 2020년 7월 ~ 현재
+- 회사 핵심 제품의 프론트엔드 개발 및 유지보수 담당
+- Vue.js를 사용한 기업 관리 시스템 개발로 사용자 경험 향상
+- 프론트엔드 성능 최적화로 페이지 로딩 시간 30% 단축
+
+### IT 회사, 프론트엔드 개발 인턴, 2019년 7월 ~ 2020년 6월
+- 회사 웹사이트 개편 프로젝트 참여
+- 팀의 코드 리팩토링 및 최적화 지원
+
+## 기술 스킬
+- 프론트엔드: HTML, CSS, JavaScript, Vue.js, React
+- 백엔드: Node.js, Express
+- 기타 도구: Git, Webpack, Docker
+
+## 프로젝트 경험
+### 기업 관리 시스템
+- Vue.js로 개발한 내부 관리 시스템
+- 데이터 시각화, 권한 관리 기능 구현
+- 시스템 응답 속도 최적화로 사용자 경험 향상
+
+## 언어 능력
+- 영어(유창함)
+- 일본어(기초)`
+      }
+    ];
+  } else if (locale.value === 'it') {
+    // Template in italiano
+    markdownTemplates.value = [
+      {
+        name: 'Documento Semplice',
+        description: 'Include titoli, elenchi, citazioni, ecc.',
+        content: `# Titolo del Documento
+
+## Introduzione
+Questo è un semplice esempio di documento Markdown.
+
+## Caratteristiche
+- Supporta titoli e paragrafi
+- Supporta testo **grassetto** e *corsivo*
+- Supporta elenchi numerati e puntati
+
+> Questo è un blocco di citazione, usato per riportare opinioni altrui.
+
+## Conclusione
+Markdown è un linguaggio di markup semplice e intuitivo.`
+      },
+      {
+        name: 'README Progetto',
+        description: 'Struttura standard per documentazione di progetto',
+        content: `# Nome del Progetto
+
+## Descrizione
+Breve descrizione delle funzionalità principali e dello scopo del progetto.
+
+## Funzionalità
+- Funzionalità principale 1
+- Funzionalità principale 2
+- Funzionalità principale 3
+
+## Installazione
+\`\`\`
+# Installare le dipendenze
+npm install
+
+# Avviare il server di sviluppo
+npm run dev
+\`\`\`
+
+## Esempio d'uso
+\`\`\`
+// Codice d'esempio
+const example = new Example();
+example.init();
+\`\`\`
+
+## Documentazione
+Per documentazione più dettagliata, consultare il link alla documentazione.
+
+## Linee guida per i contributi
+I contributi sono benvenuti, si prega di consultare le linee guida.
+
+## Licenza
+Questo progetto è rilasciato sotto licenza MIT, per maggiori dettagli vedere il file LICENSE.`
+      },
+      {
+        name: 'Curriculum Vitae',
+        description: 'Modello per curriculum',
+        content: `# Curriculum Vitae
+
+## Informazioni personali
+- Nome: Mario Rossi
+- Telefono: 333xxxx1234
+- Email: mario.rossi@example.com
+- Obiettivo professionale: Sviluppatore Front-end
+
+## Formazione
+Nome Università, Informatica, Settembre 2016 - Giugno 2020
+
+## Esperienze lavorative
+### Azienda Tech, Sviluppatore Front-end, Luglio 2020 - Presente
+- Responsabile dello sviluppo e manutenzione front-end del prodotto principale
+- Sviluppo sistema di gestione aziendale con Vue.js, migliorando l'esperienza utente
+- Ottimizzazione prestazioni front-end, riduzione tempo di caricamento del 30%
+
+### Azienda Tech, Tirocinante Front-end, Luglio 2019 - Giugno 2020
+- Partecipazione al progetto di restyling del sito aziendale
+- Supporto al team in refactoring e ottimizzazione codice
+
+## Competenze tecniche
+- Front-end: HTML, CSS, JavaScript, Vue.js, React
+- Back-end: Node.js, Express
+- Altri strumenti: Git, Webpack, Docker
+
+## Esperienze progettuali
+### Sistema di Gestione Aziendale
+- Sviluppato con Vue.js per uso interno
+- Implementate funzionalità di data visualization e gestione permessi
+- Ottimizzata velocità di risposta del sistema, migliorando l'UX
+
+## Lingue
+- Inglese (fluente)
+- Giapponese (base)`
+      }
+    ];
   } else {
     console.error('Invalid locale:', locale.value);
     throw new Error('Invalid locale');
@@ -1965,6 +2163,104 @@ Inline-Code: \`var beispiel = "hallo";\`
 ---
 
 Beginnen Sie mit dem Bearbeiten! Sie können die Symbolleiste oben verwenden, um schnell verschiedene Markdown-Elemente einzufügen.`,
+
+    'ko': `# Markdown 편집기 사용 안내
+
+간편한 Markdown 편집기로 실시간 미리보기와 문법 강조 기능을 지원합니다.
+
+## 기본 문법
+
+### 제목
+# 기호로 제목을 표시합니다:
+# 1단계 제목
+## 2단계 제목
+### 3단계 제목
+
+### 강조
+**굵게** 또는 __굵게__
+*기울임* 또는 _기울임_
+~~취소선~~
+
+### 목록
+순서 없는 목록:
+- 항목1
+- 항목2
+- 항목3
+
+순서 있는 목록:
+1. 첫 번째 항목
+2. 두 번째 항목
+3. 세 번째 항목
+
+### 링크와 이미지
+[링크 텍스트](https://example.com)
+![이미지 설명](https://example.com/image.jpg)
+
+### 코드
+인라인 코드: \`var example = "hello";\`
+
+### 인용문
+> 이것은 인용문 단락입니다.
+
+### 표
+| 헤더1 | 헤더2 | 헤더3 |
+|-------|-------|-------|
+| 셀1 | 셀2 | 셀3 |
+| 셀4 | 셀5 | 셀6 |
+
+### 구분선
+---
+
+편집을 시작해보세요! 상단 툴바를 사용하여 다양한 Markdown 요소를 빠르게 삽입할 수 있습니다.`,
+
+'it': `# Benvenuto nell'Editor Markdown
+
+Un semplice editor Markdown con anteprima in tempo reale e syntax highlighting.
+
+## Sintassi Base
+
+### Titoli
+Usa il simbolo # per i titoli, es:
+# Titolo Livello 1
+## Titolo Livello 2
+### Titolo Livello 3
+
+### Enfasi
+**Grassetto** o __Grassetto__
+*Corsivo* o _Corsivo_
+~~Barrato~~
+
+### Elenchi
+Elenco puntato:
+- Voce 1
+- Voce 2
+- Voce 3
+
+Elenco numerato:
+1. Primo elemento
+2. Secondo elemento
+3. Terzo elemento
+
+### Link e Immagini
+[Testo del link](https://example.com)
+
+
+### Codice
+Codice inline: \`var esempio = "ciao";\`
+
+### Citazioni
+> Questo è un paragrafo citato.
+
+### Tabelle
+| Intestazione 1 | Intestazione 2 | Intestazione 3 |
+|----------------|----------------|----------------|
+| Cella 1        | Cella 2        | Cella 3        |
+| Cella 4        | Cella 5        | Cella 6        |
+
+### Linea orizzontale
+---
+
+Inizia a modificare! Puoi usare la barra degli strumenti in alto per inserire rapidamente elementi Markdown.`,
   };
 
   // 根据当前语言设置内容

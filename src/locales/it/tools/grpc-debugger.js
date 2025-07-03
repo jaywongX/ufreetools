@@ -1,0 +1,205 @@
+export default {
+  name: 'Debugger gRPC',
+  description: 'Testa e debugga servizi gRPC e messaggi protobuf',
+  title: 'Debugger gRPC Online',
+  intro: 'Debugga servizi gRPC direttamente dal browser, con supporto per analisi file proto e costruzione dinamica di form',
+  connection: {
+    title: 'Connessione',
+    server: 'Indirizzo server',
+    serverPlaceholder: 'Inserisci indirizzo server gRPC (es: localhost:50051)',
+    useTLS: 'Usa TLS/SSL',
+    tlsOptions: 'Opzioni TLS',
+    caCert: 'Certificato CA',
+    clientCert: 'Certificato client',
+    clientKey: 'Chiave client',
+    insecure: 'Salta verifica TLS (insicuro)',
+    timeout: 'Timeout (secondi)',
+    serverUrl: 'URL servizio gRPC',
+    serverUrlPlaceholder: 'https://tuo-server-grpc.com',
+    timeoutMs: 'Timeout richiesta (ms)',
+    timeoutPlaceholder: '30000',
+    defaultTimeout: 'Predefinito: 30000ms (30 secondi)',
+    corsNote: 'Nota: il server deve supportare protocollo gRPC-Web e CORS',
+    keepalive: 'Abilita Keepalive',
+    connect: 'Connetti',
+    disconnect: 'Disconnetti'
+  },
+  service: {
+    title: 'Servizio',
+    definition: 'Definizione servizio',
+    load: 'Carica file Proto',
+    paste: 'Incolla definizione Proto',
+    protoPath: 'Percorso file Proto',
+    importPath: 'Percorso importazione',
+    services: 'Servizi',
+    methods: 'Metodi',
+    selectService: 'Seleziona servizio',
+    selectMethod: 'Seleziona metodo',
+    methodType: 'Tipo metodo',
+    unary: 'Unario',
+    serverStreaming: 'Streaming server',
+    clientStreaming: 'Streaming client',
+    bidirectional: 'Bidirezionale',
+    protoDefinition: 'Definizione file Proto',
+    switchToText: 'Passa a input testo',
+    switchToFile: 'Passa a upload file',
+    dragDrop: 'Trascina file .proto qui o',
+    clickUpload: 'clicca per caricare',
+    onlyProto: 'Supporta solo file .proto',
+    loadExample: 'Carica esempio Proto',
+    formatProto: 'Formatta',
+    clear: 'Pulisci',
+    parse: 'Analizza definizione Proto',
+    parsing: 'Analisi in corso...'
+  },
+  request: {
+    title: 'Richiesta',
+    metadata: 'Metadati',
+    addMetadata: 'Aggiungi metadati',
+    key: 'Chiave',
+    value: 'Valore',
+    message: 'Messaggio',
+    jsonEditor: 'Editor JSON',
+    protoEditor: 'Editor Proto',
+    formEditor: 'Editor form',
+    send: 'Invia richiesta',
+    cancel: 'Annulla',
+    stream: 'Messaggi streaming',
+    endStream: 'Termina streaming',
+    exampleMessage: 'Messaggio di esempio',
+    validJson: 'JSON valido',
+    invalidJson: 'JSON non valido',
+    history: 'Cronologia richieste',
+    body: 'Corpo richiesta',
+    bodyPlaceholder: 'Inserisci corpo richiesta in formato JSON...',
+    runQuery: 'Esegui query',
+    requestSent: 'Inviata',
+    param: 'Parametro richiesta',
+    edit: 'Modifica',
+    sending: 'Invio in corso...',
+    time: 'Ora richiesta',
+  },
+  response: {
+    title: 'Risposta',
+    status: 'Stato',
+    metadata: 'Metadati',
+    message: 'Messaggio',
+    stream: 'Stream',
+    noResponse: 'Nessuna risposta ricevuta',
+    receivedAt: 'Ricevuto alle',
+    duration: 'Durata',
+    copy: 'Copia risposta',
+    download: 'Scarica',
+    clear: 'Pulisci',
+    streamClosed: 'Stream chiuso',
+    streamMessage: 'Messaggio stream #{number}',
+    stats: 'Statistiche',
+    messagesReceived: 'Messaggi ricevuti',
+    startTime: 'Ora inizio',
+    endTime: 'Ora fine',
+    time: 'Tempo risposta'
+  },
+  settings: {
+    title: 'Impostazioni',
+    theme: 'Tema',
+    light: 'Chiaro',
+    dark: 'Scuro',
+    language: 'Lingua',
+    maxResponseSize: 'Dimensione massima risposta',
+    timeoutMs: 'Timeout predefinito (ms)',
+    prettyPrint: 'Formattazione JSON',
+    saveDir: 'Directory salvataggio',
+    clearHistory: 'Cancella cronologia',
+    protoFormat: 'Formato Proto',
+    protobuf: 'Protobuf.js',
+    grpcTools: 'Strumenti gRPC',
+    reflection: 'Usa riflessione server'
+  },
+  messages: {
+    connecting: 'Connessione a {server}...',
+    connected: 'Connesso a {server}',
+    disconnected: 'Disconnesso dal server',
+    connectionError: 'Errore connessione: {error}',
+    requestSent: 'Richiesta inviata',
+    responseReceived: 'Risposta ricevuta',
+    streamingStarted: 'Streaming iniziato',
+    streamingEnded: 'Streaming terminato',
+    protoLoaded: 'File Proto caricato con successo',
+    protoError: 'Errore caricamento file Proto: {error}',
+    metadataAdded: 'Metadati aggiunti',
+    metadataError: 'Metadati non validi',
+    savedToFile: 'Risposta salvata su file',
+    parsingError: 'Errore analisi messaggio: {error}',
+    reflectionError: 'Errore riflessione server: {error}',
+    invalidProto: 'Definizione Proto non valida',
+    emptyUrl: 'Inserisci URL servizio',
+    selectServiceMethod: 'Seleziona servizio e metodo',
+    invalidJson: 'Corpo richiesta non è JSON valido: {error}',
+    copy: 'Copia',
+    copied: 'Risposta copiata negli appunti',
+    copyFailed: 'Copia fallita, copia manualmente'
+  },
+  errors: {
+    invalidArgument: 'ARGOMENTO_NON_VALIDO - Parametro non valido',
+    notFound: 'NON_TROVATO - Risorsa non trovata',
+    alreadyExists: 'ESISTE_GIA - Risorsa già esistente',
+    permissionDenied: 'PERMESSO_NEGATO - Permesso negato',
+    internal: 'INTERNO - Errore interno',
+    requestFailed: 'Richiesta fallita: {error}'
+  },
+  
+  article: {
+    title: "Debugger gRPC: strumento interattivo per testare chiamate remote",
+    features: {
+      title: "Scopri il debug gRPC e i test API",
+      description: "Il <strong>Debugger gRPC</strong> è uno strumento web completo progettato per testare, debuggare ed esplorare servizi gRPC direttamente dal browser. A differenza dei tradizionali client API REST, questo <strong>strumento per testare Protocol Buffers</strong> offre funzionalità specifiche per il protocollo binario gRPC e il formato messaggi Protocol Buffers (protobuf), permettendo agli sviluppatori di interagire con servizi gRPC senza scrivere codice client personalizzato.<br><br>Il nostro <strong>test client gRPC</strong> supporta funzionalità fondamentali come analisi file proto, scoperta servizi, costruzione richieste tramite form dinamici, gestione metadati e visualizzazione completa delle risposte. Lo rende uno strumento indispensabile per sviluppatori API che lavorano con architetture a microservizi moderne che sfruttano gRPC per comunicazioni efficienti, fortemente tipizzate e ad alte prestazioni tra servizi.",
+      useCases: {
+        title: "Casi d'uso pratici per test gRPC",
+        items: [
+          "<strong>Sviluppo API microservizi</strong>: nella costruzione di sistemi distribuiti basati su architetture a microservizi, lo <strong>strumento per testare gRPC</strong> permette agli sviluppatori di verificare endpoint servizi, validare formati messaggi e assicurare la corretta implementazione del contratto di servizio definito nei file proto. Questa verifica interattiva aiuta a identificare problemi presto, prima dell'integrazione dei servizi.",
+          "<strong>Test integrazione API</strong>: per applicazioni che usano servizi gRPC di terze parti o interni, il nostro debugger fornisce un modo per esplorare metodi disponibili, testare diversi parametri di input e comprendere i formati di risposta senza scrivere client di test. Gli ingegneri possono prototipare rapidamente codice di integrazione iniziando con test manuali per comprendere il comportamento atteso.",
+          "<strong>Risoluzione problemi produzione</strong>: quando si incontrano comportamenti inaspettati in sistemi di produzione che usano gRPC, il debugger permette a ingegneri di supporto e sviluppatori di replicare richieste specifiche in ambiente controllato, manipolare parametri e osservare risposte. Questo isolamento aiuta a determinare se i problemi derivano dall'implementazione client, dalla logica del servizio o dalla configurazione di rete.",
+          "<strong>Sviluppo schema Protocol Buffers</strong>: nella fase di progettazione API, la funzionalità di <strong>ispezione protobuf</strong> aiuta a validare definizioni di schema visualizzando come definizioni di messaggi astratti si traducono in strutture concrete di richiesta/risposta. Questo ciclo di feedback migliora il design dei file proto prima dell'implementazione su larga scala.",
+          "<strong>Analisi prestazioni</strong>: il debugger fornisce informazioni temporali sulle richieste, permettendo agli sviluppatori di fare benchmark delle prestazioni di servizi gRPC in diverse condizioni. Testando vari carichi e complessità, i team possono identificare potenziali colli di bottiglia nelle loro implementazioni di servizi.",
+          "<strong>Documentazione e condivisione conoscenza</strong>: l'interfaccia visiva dell'<strong>esploratore servizi gRPC</strong> rende più semplice mostrare funzionalità API a stakeholder non tecnici, nuovi membri del team o partner. Lo strumento funge da alternativa interattiva alla documentazione API statica, aiutando altri a comprendere le funzionalità del servizio attraverso esempi pratici."
+        ]
+      }
+    },
+    faq: {
+      title: "Domande frequenti sul debug gRPC",
+      items: [
+        {
+          question: "Quali sono le differenze tra gRPC e API REST?",
+          answer: "gRPC e REST rappresentano approcci diversi alla progettazione API, con caratteristiche distinte che influenzano quando usarli.<br><br><strong>gRPC</strong> è un framework RPC (Remote Procedure Call) ad alte prestazioni che usa Protocol Buffers per la serializzazione dei messaggi e opera su HTTP/2. I principali vantaggi includono:<br><br>• Approccio <strong>contratto-prima</strong> con interfacce fortemente tipizzate definite in file .proto<br>• <strong>Serializzazione binaria efficiente</strong> con dimensioni messaggi più piccole<br>• Supporto <strong>streaming nativo</strong> (unario, streaming server, streaming client e bidirezionale)<br>• <strong>Connessioni multiplexate</strong> tramite HTTP/2 per ridurre latenza<br>• <strong>Generazione codice</strong> in più linguaggi per sicurezza dei tipi<br><br><strong>REST</strong> (Representational State Transfer) è uno stile architetturale che tipicamente usa JSON su HTTP/1.1, offrendo:<br><br>• <strong>Semplicità e familiarità</strong> grazie all'adozione diffusa<br>• Formati <strong>leggibili da umani</strong> come JSON o XML<br>• Supporto <strong>nativo browser</strong> senza librerie aggiuntive<br>• <strong>Accoppiamento lasco</strong> tra client e server<br>• Ampio ecosistema di strumenti per test e documentazione<br><br>Il <strong>Debugger gRPC</strong> colma il gap strumentale per gRPC, fornendo funzionalità di esplorazione simili a REST per servizi gRPC che tradizionalmente richiedevano codice client personalizzato per essere testati."
+        },
+        {
+          question: "Come creare un file .proto per i test?",
+          answer: "Creare un <strong>file di definizione Protocol Buffer</strong> (.proto) è un passo fondamentale nello sviluppo gRPC. Ecco una guida per creare file di test con il nostro debugger:<br><br>1. <strong>Definisci versione sintassi</strong>: Inizia con `syntax = \"proto3\";` per usare l'ultima versione della sintassi proto.<br><br>2. <strong>Organizza con package</strong>: Usa `package` per raggruppare servizi e messaggi correlati, aiutando a evitare conflitti di nomi (es. `package ecommerce;`).<br><br>3. <strong>Definisci messaggi</strong>: Crea tipi messaggio che rappresentano le strutture dati:<br><pre>message Prodotto &#123;\n  string id = 1;\n  string nome = 2;\n  double prezzo = 3;\n  repeated string categorie = 4;\n&#125;</pre><br>4. <strong>Definisci servizi</strong>: Specifica interfacce di servizio e i loro metodi:<br><pre>service ServizioProdotto &#123;\n  rpc GetProdotto(GetProdottoRequest) returns (Prodotto);\n  rpc CercaProdotti(CercaRequest) returns (stream Prodotto);\n  rpc AggiornaProdotto(Prodotto) returns (AggiornaResponse);\n&#125;</pre><br>5. <strong>Importa altri proto</strong>: Usa `import \"percorso/altro.proto\";` per riferirsi a definizioni in altri file.<br><br>6. <strong>Aggiungi opzioni campo</strong>: Usa opzioni come `[deprecated=true]` o opzioni personalizzate per comportamenti specifici.<br><br>Quando testi con il nostro <strong>Debugger gRPC</strong>, puoi caricare direttamente questo file o incollarne il contenuto nell'area di input testo. Il debugger analizzerà il file e genererà l'interfaccia form appropriata per costruire richieste al tuo servizio."
+        },
+        {
+          question: "Questo strumento può connettersi a servizi gRPC sicuri (SSL/TLS)?",
+          answer: "Sì, il <strong>Debugger gRPC</strong> supporta connessioni a servizi gRPC protetti con SSL/TLS. Ecco come gestisce connessioni sicure:<br><br>1. <strong>Limitazioni browser</strong>: Essendo uno strumento web che opera nel browser, funziona entro i vincoli di sicurezza del browser. Può connettersi a:<br><br>• Servizi che supportano il protocollo <strong>gRPC-Web</strong> (leggermente diverso da gRPC standard)<br>• Servizi con intestazioni <strong>CORS (Cross-Origin Resource Sharing)</strong> configurate correttamente<br>• Servizi con certificati SSL validi (nella maggior parte dei casi non autofirmati)<br><br>2. <strong>Uso TLS</strong>: Quando ti connetti a servizi sicuri, assicurati di:<br><br>• Usare prefisso <strong>\"https://\"</strong> o abilitare esplicitamente l'opzione <strong>\"Usa TLS/SSL\"</strong><br>• Il servizio deve avere un certificato valido fidato dal browser<br>• Verificare se è richiesta autenticazione con certificato client (TLS mutuo)<br><br>3. <strong>Opzioni autenticazione</strong>: Per servizi che richiedono autenticazione, puoi aggiungere:<br><br>• <strong>API key</strong> o <strong>token di accesso</strong> via metadati<br>• Intestazione <strong>autenticazione base</strong><br>• Token <strong>OAuth</strong> nell'intestazione Authorization<br><br>4. <strong>Considerazioni proxy</strong>: In alcuni ambienti enterprise, potrebbe essere necessario un proxy gRPC-Web (come Envoy) tra il browser e il servizio gRPC effettivo.<br><br>Se il servizio interno che stai testando non soddisfa questi requisiti, considera di usare un client gRPC desktop o configurare un proxy locale per gestire i requisiti di sicurezza ed esporre un endpoint compatibile per il debugger."
+        },
+        {
+          question: "Perché è necessario analizzare il file proto prima di inviare richieste?",
+          answer: "Analizzare il file proto è un passo cruciale quando si usa il <strong>Debugger gRPC</strong>, per questi motivi:<br><br>1. <strong>Scoperta tipi e validazione</strong>: gRPC è un sistema fortemente tipizzato, dove client e server devono accordarsi sul formato esatto dei messaggi. Il file proto funge da contratto che definisce:<br><br>• Quali <strong>servizi e metodi</strong> sono disponibili<br>• I <strong>tipi di parametri</strong> attesi da ogni metodo<br>• I <strong>tipi di risposta</strong> restituiti da ogni metodo<br>• Qualsiasi <strong>struttura messaggio annidata</strong> o <strong>enumerazioni</strong> usate nell'API<br><br>2. <strong>Generazione interfaccia dinamica</strong>: Dopo l'analisi, il debugger può:<br><br>• Mostrare lista di servizi e metodi disponibili<br>• Costruire form di richiesta appropriati con campi corretti<br>• Fornire controlli input specifici per tipo (campi testo, input numerici, toggle per booleani, ecc.)<br>• Impostare valori predefiniti appropriati in base al tipo campo<br><br>3. <strong>Serializzazione binaria</strong>: gRPC usa Protocol Buffers come formato di trasporto binario. La definizione proto permette al debugger di:<br><br>• <strong>Serializzare</strong> il tuo input JSON nel formato binario protobuf corretto<br>• <strong>Deserializzare</strong> risposte binarie in JSON leggibile<br>• Assicurare che <strong>numeri campo e tipi</strong> corrispondano esattamente a ciò che si aspetta il server<br><br>4. <strong>Prevenzione errori</strong>: Senza un'analisi appropriata, potresti inviare richieste malformate che fallirebbero a livello di serializzazione prima ancora di raggiungere la logica del servizio.<br><br>Pensa al file proto come combinazione di documentazione API e schema di serializzazione. Il <strong>protocollo gRPC</strong> richiede fondamentalmente queste informazioni per funzionare correttamente, a differenza delle API REST dove potresti esplorare endpoint con poca conoscenza preliminare."
+        },
+        {
+          question: "Quali tipi di metodi gRPC posso testare con questo debugger?",
+          answer: "Questo <strong>Debugger gRPC</strong> supporta tutti e quattro i modelli di comunicazione definiti nella specifica gRPC, ognuno adatto a diversi scenari d'uso:<br><br>1. <strong>RPC unario</strong>: Il classico modello richiesta-risposta, dove il client invia una singola richiesta e riceve una singola risposta. Più simile a una chiamata API REST tradizionale, adatto per:<br><br>• Operazioni semplici di recupero dati<br>• Creazione, aggiornamento o eliminazione<br>• Richieste di autenticazione e validazione<br><br>Esempio: `rpc GetUser(GetUserRequest) returns (User);`<br><br>2. <strong>RPC streaming server</strong>: Il client invia una singola richiesta e riceve una serie di messaggi di risposta. Questo modello è utile per:<br><br>• Sorgenti dati in tempo reale<br>• Aggiornamenti di stato per operazioni lunghe<br>• Recupero di grandi dataset con caricamento progressivo<br><br>Esempio: `rpc ListProducts(ListRequest) returns (stream Product);`<br><br>3. <strong>RPC streaming client</strong>: Il client invia una serie di messaggi e riceve una singola risposta. Questo approccio funziona bene per:<br><br>• Upload di grandi dataset<br>• Trasmissione continua di dati da sensori<br>• Operazioni batch che producono un singolo risultato<br><br>Esempio: `rpc UploadData(stream DataChunk) returns (UploadSummary);`<br><br>4. <strong>RPC bidirezionale</strong>: Client e server possono inviare e ricevere più messaggi in qualsiasi ordine. Questo modello completamente asincrono supporta:<br><br>• Applicazioni di chat<br>• Giochi o collaborazione in tempo reale<br>• Flussi di lavoro complessi che richiedono comunicazione bidirezionale<br><br>Esempio: `rpc Chat(stream ChatMessage) returns (stream ChatMessage);`<br><br>Il nostro debugger fornisce elementi di interfaccia appropriati per ogni tipo, permettendoti di testare tutti i modelli di comunicazione, con feedback visivo per risposte in streaming e controlli adeguati per inviare messaggi in streaming dal client."
+        }
+      ]
+    },
+    guide: {
+      title: "Come usare il Debugger gRPC: guida passo-passo",
+      step1: "<strong>Definisci URL servizio gRPC</strong>: Nel campo URL, inserisci l'indirizzo del tuo servizio gRPC. Per test basati su browser, questo dovrebbe essere un servizio che supporta il protocollo gRPC-Web e ha intestazioni CORS abilitate correttamente. Se testi un servizio sicuro, assicurati di usare il protocollo HTTPS (es. https://tuo-servizio-grpc.com).",
+      step2: "<strong>Configura timeout e opzioni connessione</strong>: Imposta il timeout della richiesta in millisecondi in base al tempo di risposta atteso dal tuo servizio. Il valore predefinito di 30000ms (30 secondi) va bene per la maggior parte dei servizi, ma potrebbe essere necessario aumentarlo per operazioni lunghe o quando si testa su reti lente.",
+      step3: "<strong>Fornisci definizioni Protocol Buffer</strong>: Puoi caricare file .proto trascinandoli nell'area di upload o cliccando per selezionarli dal dispositivo, oppure usare l'interruttore per passare alla modalità input testo e incollare direttamente le tue definizioni Proto. Per principianti, l'opzione \"Carica esempio Proto\" fornisce un modello iniziale per comprendere il formato.",
+      step4: "<strong>Analizza definizioni Proto</strong>: Clicca il pulsante \"Analizza definizione Proto\" per elaborare il tuo file .proto. Questo analizzerà l'interfaccia del servizio, i tipi di messaggio e le definizioni dei campi, permettendo al debugger di generare i form di richiesta appropriati e serializzare/deserializzare correttamente i messaggi. Se ci sono errori di sintassi nel tuo file proto, riceverai un messaggio di errore per aiutarti a identificarli.",
+      step5: "<strong>Seleziona servizio e metodo</strong>: Dopo un'analisi riuscita, seleziona un servizio specifico dal menu a discesa (se il tuo file proto ne definisce più di uno). Poi scegli il metodo da testare dalla lista di metodi disponibili. Il tipo di metodo (unario, streaming server, streaming client o bidirezionale) sarà indicato per aiutarti a capire il modello di comunicazione atteso.",
+      step6: "<strong>Costruisci e personalizza la tua richiesta</strong>: Il debugger genera un template JSON per il tipo di richiesta del metodo selezionato. Modifica la struttura JSON fornita per includere i tuoi valori di test. L'editor formatta e valida automaticamente il tuo contenuto JSON, assicurandosi che corrisponda alla struttura del messaggio attesa. Se necessario, puoi usare il pulsante di formattazione per pulire il tuo JSON.",
+      step7: "<strong>Invia richiesta e analizza risposta</strong>: Clicca il pulsante \"Invia richiesta\" per trasmettere la tua chiamata gRPC al servizio. Per chiamate unarie, vedrai i dati di risposta visualizzati nella sezione risposta, insieme a informazioni sui tempi. Per chiamate in streaming, vedrai i messaggi di risposta apparire man mano che arrivano. Se si verificano errori, il debugger mostrerà dettagli per aiutarti a risolvere i problemi."
+    },
+    conclusion: "Il Debugger gRPC fornisce un'interfaccia intuitiva basata su browser per interagire con il potente ma complesso mondo dei servizi gRPC. Colmando il divario tra operatore umano e protocollo binario gRPC, questo strumento semplifica significativamente il processo di sviluppo, test e risoluzione problemi per servizi API moderni. Che tu stia progettando una nuova architettura a microservizi, integrando servizi gRPC esistenti o diagnosticando problemi in sistemi di produzione, l'approccio visuale offerto da questo debugger riduce la curva di apprendimento e accelera i flussi di lavoro di sviluppo. Con l'adozione crescente di gRPC da parte delle organizzazioni per i suoi vantaggi in prestazioni e strong typing, avere strumenti di test accessibili diventa sempre più prezioso per garantire qualità e affidabilità delle API."
+  }
+}

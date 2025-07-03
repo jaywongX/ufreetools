@@ -1288,6 +1288,156 @@ console.log(grüßen('Welt'));
 
 ***
 `
+      } else if (currentLocale === 'ko') {
+        markdownText.value = `# Markdown 기본 문법 예제
+
+## 1. 제목
+
+# 1단계 제목
+## 2단계 제목
+### 3단계 제목
+#### 4단계 제목
+##### 5단계 제목
+###### 6단계 제목
+
+## 2. 텍스트 서식
+
+일반 텍스트
+
+**굵은 텍스트**
+
+*기울임 텍스트*
+
+~~취소선~~
+
+**_굵은 기울임 텍스트_**
+
+## 3. 목록
+
+### 순서 없는 목록
+- 항목1
+- 항목2
+  - 하위 항목A
+  - 하위 항목B
+
+### 순서 있는 목록
+1. 첫 번째 항목
+2. 두 번째 항목
+3. 세 번째 항목
+
+## 4. 링크와 이미지
+
+[네이버로 이동](https://www.naver.com)
+
+![이미지 예시](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBmaWxsPSIjY2NjY2NjIiAvPgogICAgPHRleHQgeD0iNzUiIHk9Ijc1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZpbGw9IiM0NDQ0NDQiPjE1MHgxNTA8L3RleHQ+Cjwvc3ZnPg==)
+
+## 5. 인용문
+
+> 이것은 인용문입니다
+> 
+> 여러 줄로 작성할 수 있습니다
+
+## 6. 코드
+
+인라인 코드: \`console.log('Hello World')\`
+
+코드 블록:
+\`\`\`javascript
+function greeting(name) {
+  return \`Hello, \${name}!\`;
+}
+console.log(greeting('World'));
+\`\`\`
+
+## 7. 표
+
+| 이름 | 나이 | 직업 |
+| ---- | ---- | ---- |
+| 김철수 | 25   | 엔지니어 |
+| 이영희 | 30   | 디자이너 |
+| 박민수 | 28   | 제품 매니저 |
+
+## 8. 구분선
+
+---
+
+***
+`
+      } else if (currentLocale === 'it') {
+        markdownText.value = `# Esempio di Sintassi Base Markdown
+
+## 1. Titoli
+
+# Titolo Livello 1
+## Titolo Livello 2
+### Titolo Livello 3
+#### Titolo Livello 4
+##### Titolo Livello 5
+###### Titolo Livello 6
+
+## 2. Formattazione Testo
+
+Testo normale
+
+**Testo in grassetto**
+
+*Testo in corsivo*
+
+~~Testo barrato~~
+
+**_Testo in grassetto e corsivo_**
+
+## 3. Liste
+
+### Lista non ordinata
+- Elemento 1
+- Elemento 2
+  - Sottoelemento A
+  - Sottoelemento B
+
+### Lista ordinata
+1. Primo elemento
+2. Secondo elemento
+3. Terzo elemento
+
+## 4. Link e Immagini
+
+[Link a Google](https://www.google.com)
+
+
+
+## 5. Citazioni
+
+> Questo è un testo citato
+> 
+> Le citazioni possono avere più righe
+
+## 6. Codice
+
+Codice inline: \`console.log('Ciao Mondo')\`
+
+Blocco di codice:
+\`\`\`javascript
+function saluto(nome) {
+  return \`Ciao, \${nome}!\`;
+}
+console.log(saluto('Mondo'));
+\`\`\`
+
+## 7. Tabelle
+
+| Nome | Età | Professione |
+| ---- | --- | ----------- |
+| Mario | 25 | Ingegnere |
+| Luigi | 30 | Designer |
+| Anna | 28 | Product Manager |
+
+## 8. Linee divisorie
+
+---
+
+***
+`
       } else {
         console.error('Invalid locale:', currentLocale);
         throw new Error('Invalid locale');
@@ -2138,6 +2288,160 @@ graph TD;
 \`\`\`
 
 ## 11. Inhaltsverzeichnis (Erweiterung erforderlich)
+
+[TOC]
+`
+      } else if (currentLocale === 'ko') {
+        markdownText.value = `# Markdown 확장 문법
+
+## 1. 작업 목록
+
+- [x] 완료된 작업
+- [ ] 미완료 작업
+- [x] 또 다른 완료된 작업
+
+## 2. 이모지
+
+Github 스타일 이모지 지원 :smile: :heart: :thumbsup:
+
+## 3. 수학 공식 (확장 지원 필요)
+
+인라인 공식: $E=mc^2$
+
+블록 공식:
+
+$$
+\\frac{n!}{k!(n-k)!} = \\binom{n}{k}
+$$
+
+## 4. 각주
+
+여기에 각주가 있습니다[1](@ref)
+
+[1](@ref): 이곳에 각주 내용이 표시됩니다.
+
+## 5. 정의 목록
+
+용어 1
+: 정의 1
+
+용어 2
+: 정의 2a
+: 정의 2b
+
+## 6. 하이라이트 (확장 지원 필요)
+
+이것은 ==강조된 텍스트==입니다
+
+## 7. 위첨자와 아래첨자 (확장 지원 필요)
+
+위첨자: X^2^
+아래첨자: H~2~O
+
+## 8. 경고 블록 (확장 지원 필요)
+
+:::warning
+이것은 경고 메시지입니다
+:::
+
+:::info
+이것은 정보 메시지입니다
+:::
+
+## 9. 사용자 정의 컨테이너 (확장 지원 필요)
+
+::: details 클릭하여 상세 내용 보기
+여기에 상세 내용이 표시됩니다
+:::
+
+## 10. 플로우 차트 (확장 지원 필요)
+
+\`\`\`mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+\`\`\`
+
+## 11. 목차 (확장 지원 필요)
+
+[TOC]
+`
+      } else if (currentLocale === 'it') {
+        markdownText.value = `# Sintassi Estesa Markdown
+
+## 1. Liste di attività
+
+- [x] Attività completata
+- [ ] Attività da completare
+- [x] Altra attività completata
+
+## 2. Emoji
+
+Supporta emoji in stile GitHub come :smile: :heart: :thumbsup:
+
+## 3. Formule matematiche (richiede estensione)
+
+Formula inline: $E=mc^2$
+
+Formula in blocco:
+
+$$
+\\frac{n!}{k!(n-k)!} = \\binom{n}{k}
+$$
+
+## 4. Note a piè di pagina
+
+Qui c'è una nota[1](@ref)
+
+[1](@ref): Questo è il contenuto della nota.
+
+## 5. Liste di definizioni
+
+Termine 1
+: Definizione 1
+
+Termine 2
+: Definizione 2a
+: Definizione 2b
+
+## 6. Testo evidenziato (richiede estensione)
+
+Questo è un testo ==evidenziato==
+
+## 7. Apice e pedice (richiede estensione)
+
+Apice: X^2^
+Pedice: H~2~O
+
+## 8. Blocchi di avviso (richiede estensione)
+
+:::warning
+Questo è un messaggio di avviso
+:::
+
+:::info
+Questo è un messaggio informativo
+:::
+
+## 9. Contenitori personalizzati (richiede estensione)
+
+::: details Clicca per espandere
+Qui ci sono i dettagli
+:::
+
+## 10. Diagrammi (richiede estensione)
+
+\`\`\`mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+\`\`\`
+
+## 11. Indice (richiede estensione)
 
 [TOC]
 `
@@ -3092,6 +3396,180 @@ Der Einstieg in Markdown ist leicht, doch die Beherrschung dieser Sprache bringt
 
 *Artikelautor: Ein Markdown-Fan*  
 *Veröffentlichungsdatum: 15. Oktober 2023*`
+      } else if (currentLocale === 'ko') {
+        markdownText.value = `# Markdown: 간단하지만 강력한 텍스트 포맷 언어
+
+## 서론
+
+디지털 콘텐츠 제작 시대에서 **Markdown**은 경량 마크업 언어로 기술 문서, 블로그 작성 및 콘텐츠 관리의 필수 도구가 되었습니다. 본 문서는 Markdown의 역사, 기본 문법 및 다양한 적용 사례를 살펴봅니다.
+
+## Markdown의 역사와 디자인 철학
+
+Markdown은 John Gruber와 Aaron Swartz가 2004년에 개발했으며, 사람들이 읽고 쓰기 쉬운 순수 텍스트 형식으로 문서를 작성한 후 유효한 HTML 문서로 변환할 수 있도록 하는 것이 목표였습니다.
+
+> "Markdown의 주요 디자인 목표는 가독성이다. Markdown 형식의 문서는 마크업이나 서식 지정 명령으로 구성된 것처럼 보이지 않고 순수 텍스트로 직접 게시할 수 있어야 한다."
+> — John Gruber
+
+이러한 디자인 철학은 Markdown을 다른 마크업 언어와 근본적으로 차별화합니다: **형식보다는 콘텐츠 자체에 초점을 맞춥니다**.
+
+## Markdown 기본 문법
+
+Markdown은 간결한 문법 규칙을 제공하며, 다음은 몇 가지 기본 요소입니다:
+
+### 1. 제목
+
+Markdown은 # 기호를 사용하여 제목 수준을 표시합니다:
+
+\`\`\`markdown
+# 1단계 제목
+## 2단계 제목
+### 3단계 제목
+\`\`\`
+
+### 2. 텍스트 서식
+
+- **굵게**: \`**텍스트**\` 또는 \`__텍스트__\`
+- *기울임*: \`*텍스트*\` 또는 \`_텍스트_\`
+- ~~취소선~~: \`~~텍스트~~\`
+
+### 3. 목록
+
+순서 없는 목록은 빼기, 더하기 또는 별표를 사용합니다:
+
+- 항목1
+- 항목2
+  - 하위 항목A
+  - 하위 항목B
+
+순서 있는 목록은 숫자와 점을 사용합니다:
+
+1. 첫 번째 항목
+2. 두 번째 항목
+3. 세 번째 항목
+
+### 4. 링크와 이미지
+
+링크 문법: \`[링크 텍스트](URL)\`  
+이미지 문법: \`![대체 텍스트](이미지URL)\`
+
+### 5. 코드 블록
+
+\`\`\`javascript
+function helloWorld() {
+  console.log("Hello, world!");
+}
+\`\`\`
+
+## Markdown의 다양한 활용
+
+Markdown은 다양한 플랫폼과 도구에서 널리 사용됩니다:
+
+| 플랫폼/도구 | 적용 사례 |
+| --------- | -------- |
+| GitHub    | 코드 문서, Issues, Pull Requests |
+| Stack Overflow | 질문과 답변 포맷팅 |
+| WordPress | 블로그 작성 |
+| Discord/Slack | 메시지 포맷팅 |
+| Notion    | 노트와 지식 관리 |
+
+## 결론
+
+Markdown은 간결함, 효율성 및 크로스 플랫폼 특성으로 콘텐츠 제작자의 강력한 도구가 되었습니다. 기술 문서 작성, 블로그 글 작성 또는 간단한 노트 정리 등 어떤 작업이든 Markdown은 일관적이고 효율적인 작성 경험을 제공합니다.
+
+Markdown을 배우는 것은 어렵지 않지만, 마스터하면 디지털 작문에 큰 생산성 향상을 가져올 수 있습니다. 아직 Markdown을 사용해보지 않았다면, 지금이 가장 좋은 시기입니다!
+
+---
+
+*글쓴이: Markdown 애호가*  
+*게시일: 2023년 10월 15일*
+`
+      } else if (currentLocale === 'it') {
+        markdownText.value = `# Markdown: Linguaggio di Formattazione Testuale Semplice e Potente
+
+## Introduzione
+
+Nell'era della creazione di contenuti digitali, **Markdown** si è affermato come linguaggio di markup leggero preferito per documentazione tecnica, blogging e gestione dei contenuti. Questo articolo esplora la storia, la sintassi base e gli scenari di utilizzo diffusi di Markdown.
+
+## Storia e Filosofia Progettuale
+
+Markdown è stato creato da John Gruber e Aaron Swartz nel 2004 con l'obiettivo di permettere alle persone di scrivere documenti in formato testo semplice, facilmente leggibile e scrivibile, per poi convertirli in validi documenti HTML.
+
+> "L'obiettivo primario di Markdown è la leggibilità. Un documento formattato in Markdown dovrebbe essere pubblicabile così com'è, come testo semplice, senza sembrare marcato con tag o istruzioni di formattazione."
+> — John Gruber
+
+Questa filosofia distingue Markdown da altri linguaggi di markup: **si concentra sul contenuto stesso, non sulla presentazione**.
+
+## Sintassi Base di Markdown
+
+Markdown offre un set semplice di regole sintattiche. Ecco alcuni elementi fondamentali:
+
+### 1. Titoli
+
+Markdown utilizza il simbolo # per indicare i livelli dei titoli:
+
+\`\`\`markdown
+# Titolo Livello 1
+## Titolo Livello 2
+### Titolo Livello 3
+\`\`\`
+
+### 2. Formattazione Testo
+
+- **Grassetto**: \`**testo**\` o \`__testo__\`
+- *Corsivo*: \`*testo*\` o \`_testo_\`
+- ~~Barrato~~: \`~~testo~~\`
+
+### 3. Liste
+
+Le liste non ordinate usano trattini, più o asterischi:
+
+- Elemento 1
+- Elemento 2
+  - Sottoelemento A
+  - Sottoelemento B
+
+Le liste ordinate usano numeri seguiti da punto:
+
+1. Primo elemento
+2. Secondo elemento
+3. Terzo elemento
+
+### 4. Link e Immagini
+
+Sintassi link: \`[testo](URL)\`  
+Sintassi immagini: \`\`
+
+### 5. Blocchi di Codice
+
+\`\`\`javascript
+function ciaoMondo() {
+  console.log("Ciao, mondo!");
+}
+\`\`\`
+
+## Applicazioni Diffuse di Markdown
+
+Markdown è utilizzato in molte piattaforme e strumenti:
+
+| Piattaforma/Strumento | Scenario d'uso |
+| --------------------- | -------------- |
+| GitHub    | Documentazione, Issues, Pull Requests |
+| Stack Overflow | Formattazione domande/risposte |
+| WordPress | Scrittura blog |
+| Discord/Slack | Formattazione messaggi |
+| Notion    | Gestione note e conoscenza |
+
+## Conclusione
+
+Grazie alla sua semplicità, efficienza e natura cross-platform, Markdown è diventato lo strumento preferito per la creazione di contenuti. Che si tratti di documentazione tecnica, articoli o semplici appunti, Markdown offre un'esperienza di scrittura coerente ed efficiente.
+
+Imparare Markdown è facile, ma padroneggiarlo può aumentare significativamente la produttività nella scrittura digitale. Se non l'hai ancora provato, ora è il momento perfetto per iniziare!
+
+---
+
+*Autore: Appassionato di Markdown*  
+*Data pubblicazione: 15 Ottobre 2023*
+`
       } else {
         console.error('Invalid locale:', currentLocale);
         throw new Error('Invalid locale');

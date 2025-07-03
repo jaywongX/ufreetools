@@ -1,0 +1,207 @@
+export default {
+  name: 'Analizzatore di Parametri URL',
+  description: 'Analizza, esamina e manipola i parametri URL e le stringhe di query',
+  input: {
+    title: 'Input URL',
+    url: 'URL',
+    urlPlaceholder: 'https://example.com/path?param1=value1&param2=value2 oppure param1=value1&param2=value2',
+    parse: 'Usa URL corrente',
+    clear: 'Pulisci',
+    examples: 'Carica esempi',
+    parseFromClipboard: 'Incolla dagli appunti',
+    history: 'Cronologia'
+  },
+  params: {
+    title: 'Lista parametri',
+    name: 'Nome parametro',
+    value: 'Valore parametro',
+    decoded: 'Valore decodificato',
+    type: 'Tipo',
+    actions: 'Azioni',
+    add: 'Aggiungi parametro',
+    remove: 'Rimuovi',
+    edit: 'Modifica',
+    copy: 'Copia come testo',
+    sort: 'Ordinamento',
+    encode: 'Codifica',
+    decode: 'Decodifica',
+    noParams: 'Nessun parametro URL rilevato',
+    noMatchingParams: 'Nessun parametro corrispondente trovato',
+    modified: 'Modificato',
+    original: 'Originale',
+    search: 'Cerca parametri...'
+  },
+  results: {
+    title: 'Componenti URL',
+    parsed: 'Componenti URL',
+    protocol: 'Protocollo',
+    domain: 'Nome host',
+    port: 'Porta',
+    path: 'Percorso',
+    queryString: 'Stringa di query',
+    fragment: 'Frammento (hash)',
+    constructed: 'URL costruito',
+    copyUrl: 'Copia URL',
+    openUrl: 'Apri URL',
+    shareUrl: 'Condividi URL',
+    shortenUrl: 'Accorcia URL',
+    encoded: 'URL codificato',
+    decoded: 'URL decodificato'
+  },
+  tools: {
+    title: 'Strumenti',
+    buildQuery: 'Costruisci query',
+    compareUrls: 'Confronta URL',
+    validateUrl: 'Valida URL',
+    trackingRemoval: 'Rimuovi parametri di tracciamento',
+    convertToCode: 'Converti in codice',
+    diffTool: 'Differenze parametri',
+    baseConversion: 'Conversione base',
+    jsonToQuery: 'JSON a stringa di query',
+    queryToJson: 'Stringa di query a JSON'
+  },
+  visualization: {
+    title: 'Visualizzazione',
+    tree: 'Vista ad albero',
+    table: 'Tabella parametri',
+    json: 'Formato JSON',
+    raw: 'Vista grezza',
+    hierarchical: 'Vista gerarchica',
+    nested: 'Parametri annidati',
+    auto: 'Rilevamento automatico',
+    fullUrl: 'URL completo',
+    queryOnly: 'Solo stringa di query',
+    hideJson: 'Nascondi JSON',
+    viewAsJson: 'Visualizza come JSON'
+  },
+  types: {
+    string: 'Stringa',
+    number: 'Numero',
+    boolean: 'Booleano',
+    array: 'Array',
+    object: 'Oggetto',
+    date: 'Data',
+    email: 'Email',
+    ip: 'Indirizzo IP',
+    color: 'Colore',
+    unknown: 'Sconosciuto'
+  },
+  settings: {
+    title: 'Impostazioni',
+    detectTypes: 'Modalità analisi',
+    decodeAutomatically: 'Decodifica URL',
+    decodeAuto: 'Decodifica automatica',
+    decodeOnce: 'Decodifica una volta',
+    decodeTwice: 'Decodifica due volte',
+    noDecode: 'Non decodificare',
+    encodeAutomatically: 'Codifica caratteri speciali',
+    preserveCase: 'Mantieni maiuscole/minuscole',
+    sortAlphabetically: 'Ordina alfabeticamente',
+    sortDefault: 'Ordine predefinito',
+    sortNameAsc: 'Nome parametro crescente',
+    sortNameDesc: 'Nome parametro decrescente',
+    sortValueAsc: 'Valore parametro crescente',
+    sortValueDesc: 'Valore parametro decrescente',
+    arrayFormat: 'Formato array',
+    objectFormat: 'Formato oggetto',
+    emptyValues: 'Valori vuoti',
+    defaultProtocol: 'Protocollo predefinito'
+  },
+  codes: {
+    title: 'Opzioni esportazione',
+    javascript: 'JavaScript (URLSearchParams)',
+    python: 'Python',
+    php: 'PHP',
+    ruby: 'Ruby',
+    java: 'Java',
+    csharp: 'C#',
+    go: 'Go',
+    copyCode: 'Copia',
+    copyJson: 'Copia JSON',
+    jsComment1: 'Crea oggetto URLSearchParams',
+    jsComment2: 'Ottieni stringa di query',
+    jsComment3: 'Aggiungi a URL',
+    phpComment1: 'Array parametri',
+    phpComment2: 'Costruisci stringa di query',
+    phpComment3: 'URL completo',
+    pythonComment1: 'Usa urllib.parse',
+    pythonComment2: 'Dizionario parametri',
+    pythonComment3: 'Costruisci stringa di query',
+    pythonComment4: 'URL completo'
+  },
+  messages: {
+    parsed: 'URL analizzato con successo',
+    noUrl: 'Inserisci un URL',
+    invalidUrl: 'URL o stringa di query non valida',
+    copied: 'Copiato negli appunti',
+    paramAdded: 'Parametro aggiunto',
+    paramRemoved: 'Parametro rimosso',
+    trackingRemoved: 'Parametri di tracciamento rimossi',
+    urlOpened: 'URL aperto in nuova scheda',
+    urlShortened: 'URL accorciato',
+    error: 'Errore: {message}',
+    importSuccess: 'URL importato con successo',
+    exportSuccess: 'Dati esportati con successo',
+    clipboardError: 'Impossibile leggere dagli appunti. Assicurati di aver concesso i permessi o incolla manualmente.',
+    copyFailed: 'Copia fallita, copia manualmente'
+  },
+  article: {
+    title: "Analizzatore di Parametri URL: Guida Completa all'Analisi delle Stringhe di Query",
+    features: {
+      title: "Comprendere i Parametri URL e le Stringhe di Query",
+      description: "<strong>L'Analizzatore di Parametri URL</strong> è uno strumento completo progettato per decodificare, analizzare e manipolare stringhe di query e parametri URL. Le stringhe di query sono la parte dell'URL che segue il punto interrogativo (?), contenente dati in forma di coppie nome-valore, tipicamente utilizzati per trasferire informazioni tra pagine web o nelle richieste API.<br><br>Il nostro <strong>analizzatore di stringhe di query</strong> scompone URL complessi nei loro componenti, rileva e analizza automaticamente i parametri e offre molteplici formati di visualizzazione. Supporta sia l'analisi standard degli URL che quella specializzata delle stringhe di query, con funzionalità di estrazione parametri, verifica valori e generazione di codice per vari linguaggi di programmazione.",
+      useCases: {
+        title: "Applicazioni Pratiche dell'Analisi dei Parametri URL",
+        items: [
+          "<strong>Analisi web e tracciamento UTM</strong>: I professionisti del marketing digitale spesso utilizzano URL contenenti multipli parametri UTM (come utm_source, utm_medium, utm_campaign). Il nostro <strong>decodificatore di query URL</strong> rende semplice analizzare questi parametri di tracciamento, verificarne la corretta configurazione e risolvere problemi nei campaign.",
+          
+          "<strong>Debug e sviluppo API</strong>: Quando si lavora con API REST che utilizzano parametri nelle query, gli sviluppatori possono usare questo strumento per ispezionare gli URL delle richieste, verificare il formato dei parametri e assicurarsi che i caratteri speciali siano codificati correttamente. L'<strong>estrattore di parametri URL</strong> aiuta a isolare valori specifici che potrebbero causare errori o comportamenti inaspettati.",
+          
+          "<strong>Analisi SEO e ottimizzazione struttura URL</strong>: Gli esperti SEO possono esaminare la struttura degli URL per assicurarsi che seguano le best practice. Analizzando le stringhe di query, possono identificare potenziali problemi come parametri duplicati, eccesso di parametri o valori che potrebbero impedire ai motori di ricerca di indicizzare correttamente.",
+          
+          "<strong>Analisi filtri e ricerche e-commerce</strong>: I siti di e-commerce spesso utilizzano complesse stringhe di query per rappresentare filtri di prodotto, opzioni di ordinamento e criteri di ricerca. L'<strong>analizzatore di parametri di query</strong> aiuta sviluppatori e analisti a comprendere come questi parametri interagiscono e influenzano gli elenchi di prodotti.",
+          
+          "<strong>Test applicazioni web</strong>: Gli ingegneri QA possono utilizzare questo strumento per estrarre parametri da scenari di test, modificare valori per creare casi limite e generare nuovi URL da utilizzare nel testing sistematico di applicazioni web che dipendono da parametri nelle stringhe di query.",
+          
+          "<strong>Scopi educativi</strong>: Studenti e sviluppatori che stanno imparando la struttura degli URL e la comunicazione HTTP possono utilizzare visualizzazioni ed esempi di codice per comprendere meglio come i parametri vengono formattati, codificati e utilizzati in diversi contesti di programmazione."
+        ]
+      }
+    },
+    faq: {
+      title: "Domande Frequenti sui Parametri URL",
+      items: [
+        {
+          question: "Qual è la differenza tra parametri URL e stringhe di query?",
+          answer: "Sebbene questi termini siano spesso usati in modo intercambiabile, hanno sottili differenze:<br><br><strong>Stringa di query</strong>: L'intera parte dell'URL che segue il punto interrogativo (?) e contiene tutti i parametri. Ad esempio, in <code>https://example.com/search?q=coffee&page=2</code>, la stringa di query è <code>q=coffee&page=2</code>.<br><br><strong>Parametri URL</strong>: Le singole coppie nome-valore all'interno della stringa di query. Nell'esempio precedente, ci sono due parametri URL: <code>q=coffee</code> e <code>page=2</code>.<br><br>Il nostro <strong>Analizzatore di Parametri URL</strong> analizza sia la stringa di query completa che i singoli parametri, permettendoti di vedere sia il quadro generale che i dettagli."
+        },
+        {
+          question: "Perché alcuni parametri URL contengono simboli codificati come %20 o +?",
+          answer: "La codifica URL (nota anche come codifica percentuale) è necessaria perché gli URL possono contenere solo determinati caratteri ASCII. Caratteri speciali, spazi e caratteri non-ASCII devono essere codificati per poter essere inclusi in modo sicuro negli URL.<br><br>Esempi comuni di codifica URL:<br>• Spazio diventa <code>%20</code> o <code>+</code><br>• Punto interrogativo diventa <code>%3F</code><br>• E commerciale diventa <code>%26</code><br>• Uguale diventa <code>%3D</code><br><br>Il nostro <strong>Decodificatore URL</strong> gestisce automaticamente questa codifica, mostrando sia i valori originali che quelli decodificati, così puoi capire cosa viene effettivamente trasmesso. Quando i parametri contengono caratteri speciali come spazi, emoji o caratteri internazionali, la codifica URL previene che questi caratteri danneggino la struttura dell'URL."
+        },
+        {
+          question: "Posso analizzare parametri complessi annidati o JSON nelle stringhe di query?",
+          answer: "Sì, il nostro <strong>Analizzatore di Query URL</strong> gestisce formati avanzati di parametri:<br><br>1. <strong>Parametri in forma di array</strong>, come <code>colors[]=red&colors[]=blue</code> o <code>colors=red,blue</code><br><br>2. <strong>Notazione di oggetti annidati</strong>, come <code>filter[price][min]=10&filter[price][max]=50</code><br><br>3. <strong>Valori JSON codificati nei parametri</strong>, come <code>data=&#123;&quot;name&quot;:&quot;John&quot;,&quot;age&quot;:30&#125;</code><br><br>Lo strumento rileva automaticamente queste strutture complesse e fornisce visualizzazioni specializzate per esse. Per i valori JSON, offre opzioni di visualizzazione formattata che rendono i dati annidati più leggibili. Questo è particolarmente utile per endpoint API che accettano attraverso URL filtri complessi, ordinamenti o opzioni di configurazione."
+        },
+        {
+          question: "Come posso usare i frammenti di codice generati nella mia applicazione?",
+          answer: "La funzionalità di generazione codice fornisce frammenti pronti all'uso per lavorare con i parametri URL analizzati in diversi linguaggi di programmazione:<br><br>1. <strong>Sviluppo frontend</strong>: Usa il codice JavaScript (URLSearchParams) per estrarre o manipolare parametri in applicazioni basate su browser.<br><br>2. <strong>Elaborazione backend</strong>: Usa i frammenti in Python, PHP o altri linguaggi server-side per analizzare URL di richiesta in ingresso o costruire nuovi URL con la stessa struttura di parametri.<br><br>3. <strong>Integrazione API</strong>: Quando costruisci richieste API che richiedono la stessa struttura di parametri, usa i frammenti appropriati come punto di partenza.<br><br>Ogni frammento mostra il modo corretto di costruire, modificare ed estrarre parametri URL usando le librerie standard di vari linguaggi, seguendo le best practice per la gestione e codifica degli URL."
+        },
+        {
+          question: "Quali tipi di URL posso analizzare e ci sono limitazioni?",
+          answer: "Sebbene il nostro <strong>Analizzatore di Parametri URL</strong> sia progettato per gestire la maggior parte degli URL standard e stringhe di query, ci sono alcune limitazioni da considerare:<br><br>1. <strong>Lunghezza URL</strong>: URL estremamente lunghi (oltre 100.000 caratteri) potrebbero causare problemi di prestazioni, sebbene la maggior parte degli URL reali sia ben al di sotto di questo limite.<br><br>2. <strong>Formati non standard</strong>: Alcune applicazioni usano formati di parametri personalizzati che non seguono convenzioni standard. Lo strumento prova ad analizzare questi formati, ma potrebbe non visualizzarne al meglio la struttura.<br><br>3. <strong>Parametri basati su hash</strong>: I parametri nella parte di frammento/hash dell'URL (dopo #) vengono analizzati separatamente dai normali parametri di query.<br><br>4. <strong>Codifica multilivello</strong>: A volte, i parametri potrebbero essere codificati più volte. Lo strumento offre un'opzione \"decodifica due volte\" per questi casi, ma codifiche stratificate estremamente complesse potrebbero richiedere un trattamento speciale.<br><br>Per la maggior parte degli scopi di sviluppo web, marketing digitale e test API, queste limitazioni si presentano raramente e lo strumento può gestire i formati URL comuni utilizzati in tutto il web."
+        }
+      ]
+    },
+    guide: {
+      title: "Come Usare l'Analizzatore di Parametri URL: Guida Passo Passo",
+      step1: "<strong>Inserisci URL o stringa di query</strong>: Nel campo di input URL, incolla un URL completo (es. https://example.com/page?param=value) o solo la parte della stringa di query (param=value). Puoi anche cliccare \"Usa URL corrente\" per analizzare l'URL della pagina in cui ti trovi, o \"Incolla dagli appunti\" per inserire rapidamente il contenuto copiato.",
+      step2: "<strong>Scegli opzioni di analisi</strong>: Seleziona la modalità di analisi appropriata in base al tuo input. \"Rilevamento automatico\" funziona per la maggior parte dei casi, determinando automaticamente se hai inserito un URL completo o solo una stringa di query. Per la decodifica URL, puoi scegliere \"Decodifica una volta\" per URL standard, o \"Decodifica due volte\" per parametri codificati due volte.",
+      step3: "<strong>Visualizza i parametri estratti</strong>: Dopo l'analisi, lo strumento mostra tutti i parametri rilevati in una vista tabellare. Puoi vedere il nome e il valore di ogni parametro ed eseguire azioni come copiare. Usa il filtro di ricerca per trovare rapidamente parametri specifici in URL complessi.",
+      step4: "<strong>Esplora diverse opzioni di visualizzazione</strong>: Usa le schede nella sezione risultati per passare tra diverse viste. \"Tabella parametri\" mostra tutti i parametri in una lista strutturata, \"Formato JSON\" li visualizza come oggetto JSON, \"Componenti URL\" scompone l'intera struttura dell'URL, includendo protocollo, dominio, percorso e stringa di query.",
+      step5: "<strong>Analizza valori di parametri complessi</strong>: Per parametri che contengono JSON o dati strutturati, clicca \"Visualizza come JSON\" per vedere una rappresentazione formattata. Questo rende più facile comprendere strutture di dati annidate che potrebbero essere codificate in un singolo valore di parametro.",
+      step6: "<strong>Ordina e filtra i parametri</strong>: Usa le opzioni di ordinamento per disporre i parametri per nome o valore in ordine crescente o decrescente. Questo è particolarmente utile quando lavori con URL che contengono molti parametri, permettendoti di organizzarli logicamente.",
+      step7: "<strong>Esporta e usa i risultati</strong>: Nella scheda \"Opzioni esportazione\", puoi vedere e copiare frammenti di codice generati per JavaScript, Python, PHP e altri linguaggi. Questi frammenti mostrano come gestire a livello di codice gli stessi parametri, risparmiando tempo di sviluppo quando implementi funzionalità simili nelle tue applicazioni."
+    },
+    conclusion: "L'Analizzatore di Parametri URL semplifica il complesso compito di gestire stringhe di query e parametri URL, fornendo a sviluppatori, marketer e analisti un potente strumento per comprendere e manipolare gli indirizzi web. Scomponendo gli URL nei loro componenti e offrendo molteplici opzioni di visualizzazione, colma il divario tra URL grezzi e dati strutturati. Che tu stia debugando chiamate API complesse, analizzando parametri di campagne di marketing o imparando lo sviluppo web, questo strumento fornisce preziose informazioni su come i dati vengono trasmessi attraverso gli URL nell'ecosistema web moderno."
+  }
+}

@@ -725,7 +725,6 @@ const exampleCodesByLocale = {
     Benutzer <|-- Administrator`
   },
 
-  
   id: {
     flowchart: `graph TD
     A[Mulai] --> B{Apakah benar?}
@@ -776,6 +775,118 @@ const exampleCodesByLocale = {
         +kelolaPengguna()
     }
     Pengguna <|-- Admin`
+  },
+
+  ko: {
+    flowchart: `graph TD
+    A[시작] --> B{올바른가요?}
+    B -->|예| C[정답]
+    B -->|아니오| D[오답]
+    C --> E[종료]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant 클라이언트
+    participant 서버
+    클라이언트->>서버: 데이터 요청
+    서버-->>클라이언트: 데이터 응답
+    클라이언트->>서버: 폼 제출
+    서버-->>클라이언트: 제출 확인`,
+    gantt: `gantt
+    title 프로젝트 실행 일정
+    dateFormat  YYYY-MM-DD
+    section 설계
+    요구사항 분석      :done,    des1, 2024-01-01, 2024-01-10
+    시스템 설계        :active,  des2, 2024-01-11, 2024-01-25
+    상세 설계          :         des3, 2024-01-26, 2024-02-05
+    section 개발
+    프론트엔드 개발    :         dev1, 2024-02-06, 2024-02-20
+    백엔드 개발        :         dev2, 2024-02-06, 2024-02-25
+    section 테스트
+    통합 테스트        :         test1, 2024-02-26, 2024-03-05
+    배포               :         deploy, 2024-03-06, 2024-03-10`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> 준비
+    준비 --> 진행중 : 시작
+    진행중 --> 완료 : 완료 조건 충족
+    진행중 --> 실패 : 오류 발생
+    완료 --> [*]
+    실패 --> [*]`,
+    pieChart: `pie
+    title 작업 분포
+    "설계" : 20
+    "개발" : 50
+    "테스트" : 20
+    "배포" : 10`,
+    classDiagram: `classDiagram
+    class 사용자 {
+      +String 이름
+      +로그인()
+      +로그아웃()
+    }
+    class 관리자 {
+      +String 권한
+      +사용자관리()
+    }
+    사용자 <|-- 관리자 : 상속`
+  },
+
+  it: {
+    flowchart: `graph TD
+    A[Inizio] --> B{È corretto?}
+    B -->|Sì| C[Risultato corretto]
+    B -->|No| D[Risultato errato]
+    C --> E[Fine]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant Client
+    participant Server
+    Client->>Server: Richiesta dati
+    Server-->>Client: Risposta dati
+    Client->>Server: Invio modulo
+    Server-->>Client: Conferma invio`,
+    gantt: `gantt
+    title Piano di Progetto
+    dateFormat  YYYY-MM-DD
+    section Fase di Pianificazione
+    Raccolta requisiti       :a1, 2023-01-01, 30d
+    Progettazione sistema    :after a1, 20d
+    section Fase di Sviluppo
+    Sviluppo backend         :2023-02-20, 45d
+    Sviluppo frontend        :2023-02-25, 40d
+    section Fase di Test
+    Test sistema             :2023-04-05, 20d
+    Test utente              :2023-04-20, 15d
+    section Fase di Rilascio
+    Deployment               :2023-05-05, 10d`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> InModifica
+    InModifica --> InRevisione: Invia per revisione
+    InRevisione --> Rifiutato: Rifiuta
+    InRevisione --> Pubblicato: Approva
+    Rifiutato --> InModifica: Modifica e reinvia
+    Pubblicato --> [*]`,
+    pieChart: `pie
+    title Distribuzione fonti di traffico
+    "Motori di ricerca" : 42.7
+    "Accesso diretto" : 28.9
+    "Social media" : 18.5
+    "Altri canali" : 9.9`,
+    classDiagram: `classDiagram
+    class Animale {
+        +String nome
+        +int età
+        +emettiSuono() void
+    }
+    class Cane {
+        +String razza
+        +riporta() void
+    }
+    class Gatto {
+        +String colore
+        +arrampica() void
+    }
+    Animale <|-- Cane
+    Animale <|-- Gatto`
   },
 };
 
