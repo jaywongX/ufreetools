@@ -10,6 +10,7 @@ import pt from './pt';
 import de from './de';
 import id from './id';
 import ko from './ko';
+import it from './it';
 
 export default {
   en,
@@ -24,4 +25,5 @@ export default {
   de,
   id,
   ko,
+  it,
 };

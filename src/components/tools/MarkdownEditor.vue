@@ -1565,6 +1565,105 @@ example.init();
 - 일본어(기초)`
       }
     ];
+  } else if (locale.value === 'it') {
+    // Template in italiano
+    markdownTemplates.value = [
+      {
+        name: 'Documento Semplice',
+        description: 'Include titoli, elenchi, citazioni, ecc.',
+        content: `# Titolo del Documento
+
+## Introduzione
+Questo è un semplice esempio di documento Markdown.
+
+## Caratteristiche
+- Supporta titoli e paragrafi
+- Supporta testo **grassetto** e *corsivo*
+- Supporta elenchi numerati e puntati
+
+> Questo è un blocco di citazione, usato per riportare opinioni altrui.
+
+## Conclusione
+Markdown è un linguaggio di markup semplice e intuitivo.`
+      },
+      {
+        name: 'README Progetto',
+        description: 'Struttura standard per documentazione di progetto',
+        content: `# Nome del Progetto
+
+## Descrizione
+Breve descrizione delle funzionalità principali e dello scopo del progetto.
+
+## Funzionalità
+- Funzionalità principale 1
+- Funzionalità principale 2
+- Funzionalità principale 3
+
+## Installazione
+\`\`\`
+# Installare le dipendenze
+npm install
+
+# Avviare il server di sviluppo
+npm run dev
+\`\`\`
+
+## Esempio d'uso
+\`\`\`
+// Codice d'esempio
+const example = new Example();
+example.init();
+\`\`\`
+
+## Documentazione
+Per documentazione più dettagliata, consultare il link alla documentazione.
+
+## Linee guida per i contributi
+I contributi sono benvenuti, si prega di consultare le linee guida.
+
+## Licenza
+Questo progetto è rilasciato sotto licenza MIT, per maggiori dettagli vedere il file LICENSE.`
+      },
+      {
+        name: 'Curriculum Vitae',
+        description: 'Modello per curriculum',
+        content: `# Curriculum Vitae
+
+## Informazioni personali
+- Nome: Mario Rossi
+- Telefono: 333xxxx1234
+- Email: mario.rossi@example.com
+- Obiettivo professionale: Sviluppatore Front-end
+
+## Formazione
+Nome Università, Informatica, Settembre 2016 - Giugno 2020
+
+## Esperienze lavorative
+### Azienda Tech, Sviluppatore Front-end, Luglio 2020 - Presente
+- Responsabile dello sviluppo e manutenzione front-end del prodotto principale
+- Sviluppo sistema di gestione aziendale con Vue.js, migliorando l'esperienza utente
+- Ottimizzazione prestazioni front-end, riduzione tempo di caricamento del 30%
+
+### Azienda Tech, Tirocinante Front-end, Luglio 2019 - Giugno 2020
+- Partecipazione al progetto di restyling del sito aziendale
+- Supporto al team in refactoring e ottimizzazione codice
+
+## Competenze tecniche
+- Front-end: HTML, CSS, JavaScript, Vue.js, React
+- Back-end: Node.js, Express
+- Altri strumenti: Git, Webpack, Docker
+
+## Esperienze progettuali
+### Sistema di Gestione Aziendale
+- Sviluppato con Vue.js per uso interno
+- Implementate funzionalità di data visualization e gestione permessi
+- Ottimizzata velocità di risposta del sistema, migliorando l'UX
+
+## Lingue
+- Inglese (fluente)
+- Giapponese (base)`
+      }
+    ];
   } else {
     console.error('Invalid locale:', locale.value);
     throw new Error('Invalid locale');
@@ -2112,7 +2211,56 @@ Beginnen Sie mit dem Bearbeiten! Sie können die Symbolleiste oben verwenden, um
 ### 구분선
 ---
 
-편집을 시작해보세요! 상단 툴바를 사용하여 다양한 Markdown 요소를 빠르게 삽입할 수 있습니다.`
+편집을 시작해보세요! 상단 툴바를 사용하여 다양한 Markdown 요소를 빠르게 삽입할 수 있습니다.`,
+
+'it': `# Benvenuto nell'Editor Markdown
+
+Un semplice editor Markdown con anteprima in tempo reale e syntax highlighting.
+
+## Sintassi Base
+
+### Titoli
+Usa il simbolo # per i titoli, es:
+# Titolo Livello 1
+## Titolo Livello 2
+### Titolo Livello 3
+
+### Enfasi
+**Grassetto** o __Grassetto__
+*Corsivo* o _Corsivo_
+~~Barrato~~
+
+### Elenchi
+Elenco puntato:
+- Voce 1
+- Voce 2
+- Voce 3
+
+Elenco numerato:
+1. Primo elemento
+2. Secondo elemento
+3. Terzo elemento
+
+### Link e Immagini
+[Testo del link](https://example.com)
+
+
+### Codice
+Codice inline: \`var esempio = "ciao";\`
+
+### Citazioni
+> Questo è un paragrafo citato.
+
+### Tabelle
+| Intestazione 1 | Intestazione 2 | Intestazione 3 |
+|----------------|----------------|----------------|
+| Cella 1        | Cella 2        | Cella 3        |
+| Cella 4        | Cella 5        | Cella 6        |
+
+### Linea orizzontale
+---
+
+Inizia a modificare! Puoi usare la barra degli strumenti in alto per inserire rapidamente elementi Markdown.`,
   };
 
   // 根据当前语言设置内容

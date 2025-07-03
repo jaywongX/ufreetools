@@ -1363,6 +1363,81 @@ console.log(greeting('World'));
 
 ***
 `
+      } else if (currentLocale === 'it') {
+        markdownText.value = `# Esempio di Sintassi Base Markdown
+
+## 1. Titoli
+
+# Titolo Livello 1
+## Titolo Livello 2
+### Titolo Livello 3
+#### Titolo Livello 4
+##### Titolo Livello 5
+###### Titolo Livello 6
+
+## 2. Formattazione Testo
+
+Testo normale
+
+**Testo in grassetto**
+
+*Testo in corsivo*
+
+~~Testo barrato~~
+
+**_Testo in grassetto e corsivo_**
+
+## 3. Liste
+
+### Lista non ordinata
+- Elemento 1
+- Elemento 2
+  - Sottoelemento A
+  - Sottoelemento B
+
+### Lista ordinata
+1. Primo elemento
+2. Secondo elemento
+3. Terzo elemento
+
+## 4. Link e Immagini
+
+[Link a Google](https://www.google.com)
+
+
+
+## 5. Citazioni
+
+> Questo è un testo citato
+> 
+> Le citazioni possono avere più righe
+
+## 6. Codice
+
+Codice inline: \`console.log('Ciao Mondo')\`
+
+Blocco di codice:
+\`\`\`javascript
+function saluto(nome) {
+  return \`Ciao, \${nome}!\`;
+}
+console.log(saluto('Mondo'));
+\`\`\`
+
+## 7. Tabelle
+
+| Nome | Età | Professione |
+| ---- | --- | ----------- |
+| Mario | 25 | Ingegnere |
+| Luigi | 30 | Designer |
+| Anna | 28 | Product Manager |
+
+## 8. Linee divisorie
+
+---
+
+***
+`
       } else {
         console.error('Invalid locale:', currentLocale);
         throw new Error('Invalid locale');
@@ -2290,6 +2365,83 @@ graph TD;
 \`\`\`
 
 ## 11. 목차 (확장 지원 필요)
+
+[TOC]
+`
+      } else if (currentLocale === 'it') {
+        markdownText.value = `# Sintassi Estesa Markdown
+
+## 1. Liste di attività
+
+- [x] Attività completata
+- [ ] Attività da completare
+- [x] Altra attività completata
+
+## 2. Emoji
+
+Supporta emoji in stile GitHub come :smile: :heart: :thumbsup:
+
+## 3. Formule matematiche (richiede estensione)
+
+Formula inline: $E=mc^2$
+
+Formula in blocco:
+
+$$
+\\frac{n!}{k!(n-k)!} = \\binom{n}{k}
+$$
+
+## 4. Note a piè di pagina
+
+Qui c'è una nota[1](@ref)
+
+[1](@ref): Questo è il contenuto della nota.
+
+## 5. Liste di definizioni
+
+Termine 1
+: Definizione 1
+
+Termine 2
+: Definizione 2a
+: Definizione 2b
+
+## 6. Testo evidenziato (richiede estensione)
+
+Questo è un testo ==evidenziato==
+
+## 7. Apice e pedice (richiede estensione)
+
+Apice: X^2^
+Pedice: H~2~O
+
+## 8. Blocchi di avviso (richiede estensione)
+
+:::warning
+Questo è un messaggio di avviso
+:::
+
+:::info
+Questo è un messaggio informativo
+:::
+
+## 9. Contenitori personalizzati (richiede estensione)
+
+::: details Clicca per espandere
+Qui ci sono i dettagli
+:::
+
+## 10. Diagrammi (richiede estensione)
+
+\`\`\`mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+\`\`\`
+
+## 11. Indice (richiede estensione)
 
 [TOC]
 `
@@ -3330,6 +3482,93 @@ Markdown을 배우는 것은 어렵지 않지만, 마스터하면 디지털 작�
 
 *글쓴이: Markdown 애호가*  
 *게시일: 2023년 10월 15일*
+`
+      } else if (currentLocale === 'it') {
+        markdownText.value = `# Markdown: Linguaggio di Formattazione Testuale Semplice e Potente
+
+## Introduzione
+
+Nell'era della creazione di contenuti digitali, **Markdown** si è affermato come linguaggio di markup leggero preferito per documentazione tecnica, blogging e gestione dei contenuti. Questo articolo esplora la storia, la sintassi base e gli scenari di utilizzo diffusi di Markdown.
+
+## Storia e Filosofia Progettuale
+
+Markdown è stato creato da John Gruber e Aaron Swartz nel 2004 con l'obiettivo di permettere alle persone di scrivere documenti in formato testo semplice, facilmente leggibile e scrivibile, per poi convertirli in validi documenti HTML.
+
+> "L'obiettivo primario di Markdown è la leggibilità. Un documento formattato in Markdown dovrebbe essere pubblicabile così com'è, come testo semplice, senza sembrare marcato con tag o istruzioni di formattazione."
+> — John Gruber
+
+Questa filosofia distingue Markdown da altri linguaggi di markup: **si concentra sul contenuto stesso, non sulla presentazione**.
+
+## Sintassi Base di Markdown
+
+Markdown offre un set semplice di regole sintattiche. Ecco alcuni elementi fondamentali:
+
+### 1. Titoli
+
+Markdown utilizza il simbolo # per indicare i livelli dei titoli:
+
+\`\`\`markdown
+# Titolo Livello 1
+## Titolo Livello 2
+### Titolo Livello 3
+\`\`\`
+
+### 2. Formattazione Testo
+
+- **Grassetto**: \`**testo**\` o \`__testo__\`
+- *Corsivo*: \`*testo*\` o \`_testo_\`
+- ~~Barrato~~: \`~~testo~~\`
+
+### 3. Liste
+
+Le liste non ordinate usano trattini, più o asterischi:
+
+- Elemento 1
+- Elemento 2
+  - Sottoelemento A
+  - Sottoelemento B
+
+Le liste ordinate usano numeri seguiti da punto:
+
+1. Primo elemento
+2. Secondo elemento
+3. Terzo elemento
+
+### 4. Link e Immagini
+
+Sintassi link: \`[testo](URL)\`  
+Sintassi immagini: \`\`
+
+### 5. Blocchi di Codice
+
+\`\`\`javascript
+function ciaoMondo() {
+  console.log("Ciao, mondo!");
+}
+\`\`\`
+
+## Applicazioni Diffuse di Markdown
+
+Markdown è utilizzato in molte piattaforme e strumenti:
+
+| Piattaforma/Strumento | Scenario d'uso |
+| --------------------- | -------------- |
+| GitHub    | Documentazione, Issues, Pull Requests |
+| Stack Overflow | Formattazione domande/risposte |
+| WordPress | Scrittura blog |
+| Discord/Slack | Formattazione messaggi |
+| Notion    | Gestione note e conoscenza |
+
+## Conclusione
+
+Grazie alla sua semplicità, efficienza e natura cross-platform, Markdown è diventato lo strumento preferito per la creazione di contenuti. Che si tratti di documentazione tecnica, articoli o semplici appunti, Markdown offre un'esperienza di scrittura coerente ed efficiente.
+
+Imparare Markdown è facile, ma padroneggiarlo può aumentare significativamente la produttività nella scrittura digitale. Se non l'hai ancora provato, ora è il momento perfetto per iniziare!
+
+---
+
+*Autore: Appassionato di Markdown*  
+*Data pubblicazione: 15 Ottobre 2023*
 `
       } else {
         console.error('Invalid locale:', currentLocale);

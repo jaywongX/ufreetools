@@ -776,6 +776,7 @@ const exampleCodesByLocale = {
     }
     Pengguna <|-- Admin`
   },
+
   ko: {
     flowchart: `graph TD
     A[시작] --> B{올바른가요?}
@@ -827,6 +828,65 @@ const exampleCodesByLocale = {
       +사용자관리()
     }
     사용자 <|-- 관리자 : 상속`
+  },
+
+  it: {
+    flowchart: `graph TD
+    A[Inizio] --> B{È corretto?}
+    B -->|Sì| C[Risultato corretto]
+    B -->|No| D[Risultato errato]
+    C --> E[Fine]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant Client
+    participant Server
+    Client->>Server: Richiesta dati
+    Server-->>Client: Risposta dati
+    Client->>Server: Invio modulo
+    Server-->>Client: Conferma invio`,
+    gantt: `gantt
+    title Piano di Progetto
+    dateFormat  YYYY-MM-DD
+    section Fase di Pianificazione
+    Raccolta requisiti       :a1, 2023-01-01, 30d
+    Progettazione sistema    :after a1, 20d
+    section Fase di Sviluppo
+    Sviluppo backend         :2023-02-20, 45d
+    Sviluppo frontend        :2023-02-25, 40d
+    section Fase di Test
+    Test sistema             :2023-04-05, 20d
+    Test utente              :2023-04-20, 15d
+    section Fase di Rilascio
+    Deployment               :2023-05-05, 10d`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> InModifica
+    InModifica --> InRevisione: Invia per revisione
+    InRevisione --> Rifiutato: Rifiuta
+    InRevisione --> Pubblicato: Approva
+    Rifiutato --> InModifica: Modifica e reinvia
+    Pubblicato --> [*]`,
+    pieChart: `pie
+    title Distribuzione fonti di traffico
+    "Motori di ricerca" : 42.7
+    "Accesso diretto" : 28.9
+    "Social media" : 18.5
+    "Altri canali" : 9.9`,
+    classDiagram: `classDiagram
+    class Animale {
+        +String nome
+        +int età
+        +emettiSuono() void
+    }
+    class Cane {
+        +String razza
+        +riporta() void
+    }
+    class Gatto {
+        +String colore
+        +arrampica() void
+    }
+    Animale <|-- Cane
+    Animale <|-- Gatto`
   },
 };
 
