@@ -1,0 +1,178 @@
+export default {
+  name: 'HTTP 요청 헤더 편집기',
+  description: 'HTTP 요청 헤더 생성, 편집 및 테스트',
+  editor: {
+    title: '헤더 편집기',
+    headers: '요청 헤더',
+    add: '헤더 추가',
+    bulk: '일괄 편집',
+    import: '헤더 가져오기',
+    export: '헤더 내보내기',
+    clear: '모두 지우기',
+    importError: '가져오기 오류'
+  },
+  header: {
+    name: '헤더 이름',
+    value: '값',
+    description: '설명',
+    namePlaceholder: '헤더 이름 입력',
+    valuePlaceholder: '헤더 값 입력',
+    actions: '작업',
+    enabled: '활성화',
+    duplicate: '복제',
+    delete: '삭제',
+    noHeaders: '요청 헤더가 없습니다. "추가" 버튼을 클릭하거나 템플릿을 로드하세요',
+    bulkPlaceholder: '헤더를 붙여넣으세요. 형식: \'이름: 값\', 한 줄에 하나씩, 또는 원시 요청 헤더 텍스트 붙여넣기'
+  },
+  presets: {
+    title: '프리셋',
+    save: '현재 저장',
+    load: '프리셋 로드',
+    delete: '프리셋 삭제',
+    presetName: '프리셋 이름',
+    namePlaceholder: '프리셋 이름 입력',
+    confirmDelete: '이 프리셋을 삭제하시겠습니까?',
+    common: '일반 헤더',
+    custom: '사용자 정의 프리셋'
+  },
+  common: {
+    userAgent: 'User-Agent',
+    contentType: 'Content-Type',
+    authorization: 'Authorization',
+    acceptLanguage: 'Accept-Language',
+    acceptEncoding: 'Accept-Encoding',
+    cacheControl: 'Cache-Control',
+    cookie: 'Cookie',
+    referer: 'Referer',
+    origin: 'Origin'
+  },
+  test: {
+    title: '헤더 테스트',
+    url: 'URL',
+    urlPlaceholder: '헤더를 테스트할 URL 입력',
+    method: '메소드',
+    send: '요청 보내기',
+    response: '응답'
+  },
+  response: {
+    title: '응답',
+    status: '상태',
+    headers: '응답 헤더',
+    body: '본문',
+    time: '시간',
+    size: '크기',
+    loading: '로드 중...',
+    noResponse: '미리보기를 보려면 요청 헤더를 추가하세요',
+    headerCount: '개의 헤더'
+  },
+  options: {
+    title: '옵션',
+    followRedirects: '리디렉션 따르기',
+    timeout: '타임아웃(초)',
+    validateSSL: 'SSL 인증서 확인',
+    sendCredentials: '자격 증명 보내기'
+  },
+  formats: {
+    title: '내보내기 형식',
+    raw: '원시 텍스트',
+    json: 'JSON',
+    curl: 'cURL 명령',
+    javascript: 'JavaScript',
+    python: 'Python',
+    php: 'PHP',
+    fetch: 'Fetch API',
+    axios: 'Axios'
+  },
+  guides: {
+    title: '헤더 가이드',
+    description: '일반적인 HTTP 헤더 및 사용 방법 알아보기',
+    securityHeaders: '보안 헤더',
+    cachingHeaders: '캐싱 헤더',
+    corsHeaders: 'CORS 헤더',
+    authenticationHeaders: '인증 헤더',
+    commonValues: '일반적인 값'
+  },
+  actions: {
+    copy: '복사',
+    format: '포맷',
+    validate: '검증',
+    clear: '지우기'
+  },
+  messages: {
+    headerAdded: '헤더가 추가되었습니다',
+    headerDeleted: '헤더가 삭제되었습니다',
+    headersCleared: '모든 헤더가 지워졌습니다',
+    presetSaved: '프리셋이 저장되었습니다',
+    presetLoaded: '프리셋이 로드되었습니다',
+    presetDeleted: '프리셋이 삭제되었습니다',
+    requestSent: '요청이 전송되었습니다',
+    requestFailed: '요청 실패: {error}',
+    copied: '클립보드에 복사되었습니다',
+    importSuccess: '헤더 가져오기 성공',
+    exportSuccess: '헤더 내보내기 성공',
+    invalidUrl: '유효하지 않은 URL',
+    pleaseEnterHeader: '요청 헤더 텍스트를 입력하세요',
+    invalidHeader: '유효한 요청 헤더를 파싱할 수 없습니다. "이름: 값" 형식을 사용하세요',
+    invalidHeaderName: '유효하지 않은 헤더 이름: {error}',
+    copyFailed: '복사 실패, 수동으로 복사하세요'
+  },
+  article: {
+    title: "HTTP 요청 헤더 편집기: 완전 가이드",
+    features: {
+      title: "HTTP 요청 헤더와 그 중요성 이해",
+      description: "<strong>HTTP 요청 헤더 편집기</strong>는 개발자, 테스터 및 API 애호가를 위해 설계된 강력한 도구로, 웹 요청의 HTTP 헤더를 생성, 수정 및 검증합니다. 이러한 헤더는 HTTP 통신의 핵심 구성 요소로, 클라이언트와 서버 간에 인증, 콘텐츠 협상, 캐싱 동작 등을 제어하는 중요한 메타데이터를 전달합니다.<br><br>우리의 <strong>헤더 편집 도구</strong>는 직관적인 인터페이스를 제공하여 복잡한 헤더 모음을 구축하고, 다양한 구성을 테스트하며, 애플리케이션에서 구현할 수 있도록 다양한 형식으로 결과를 내보내는 과정을 단순화합니다. API 문제를 디버깅하든, 새로운 통합을 개발하든, 웹 프로토콜을 학습하든, 이 도구는 HTTP 헤더 처리 과정을 간소화합니다.",
+      useCases: {
+        title: "HTTP 헤더 편집의 실제 적용 사례",
+        items: [
+          "<strong>API 인증 테스트</strong>: OAuth, JWT 또는 API 키와 같이 헤더에서 인증 토큰이나 키가 필요한 API를 처리할 때, 우리의 <strong>요청 헤더 빌더</strong>를 사용하면 애플리케이션 코드를 수정하지 않고도 다양한 인증 시나리오를 빠르게 구성하고 테스트할 수 있습니다.",
+          
+          "<strong>교차 출처 리소스 공유(CORS) 디버깅</strong>: 다른 출처에 요청해야 하는 웹 애플리케이션의 경우, 올바른 Origin, Access-Control 및 사전 요청 헤더 조합을 구성하고 테스트하는 것이 중요합니다. 이 <strong>HTTP 헤더 도구</strong>는 다양한 헤더 구성을 시도하여 CORS 문제를 식별하고 해결하는 데 도움을 줍니다.",
+          
+          "<strong>콘텐츠 협상</strong>: 현대 웹 서비스는 다양한 콘텐츠 유형, 언어 및 인코딩을 지원합니다. Accept, Accept-Language 및 Accept-Encoding과 같은 헤더를 사용하여 서버가 다양한 클라이언트 선호도에 어떻게 응답하는지 테스트하고 애플리케이션이 콘텐츠 협상을 올바르게 구현하는지 확인할 수 있습니다.",
+          
+          "<strong>캐시 제어 최적화</strong>: 올바르게 구성된 캐싱 헤더는 애플리케이션 성능을 크게 향상시킬 수 있습니다. 우리의 <strong>헤더 관리 도구</strong>를 사용하면 다양한 Cache-Control 지시문, ETag 구성 및 조건부 요청 헤더를 시도하여 리소스에 대한 최적의 캐싱 전략을 찾을 수 있습니다.",
+          
+          "<strong>보안 헤더 구성</strong>: 현대 웹 애플리케이션을 위해 Content-Security-Policy, Strict-Transport-Security 및 X-Content-Type-Options와 같은 보안 헤더를 구현하는 것이 중요합니다. 이 도구를 사용하면 프로덕션 환경에 적용하기 전에 이러한 복잡한 보안 헤더를 구축하고 검증할 수 있습니다.",
+          
+          "<strong>API 클라이언트 생성</strong>: 헤더 모음을 완성한 후, 여러 프로그래밍 언어로 즉시 사용 가능한 코드 조각을 내보낼 수 있어 애플리케이션 코드, curl 명령 또는 API 테스트 도구에서 동일한 헤더를 쉽게 구현할 수 있습니다."
+        ]
+      }
+    },
+    faq: {
+      title: "HTTP 헤더에 관한 자주 묻는 질문",
+      items: [
+        {
+          question: "HTTP 요청 헤더란 무엇이며 왜 중요한가요?",
+          answer: "HTTP 요청 헤더는 클라이언트(예: 브라우저 또는 API 클라이언트)에서 서버로 HTTP 요청의 일부로 전송되는 키-값 쌍입니다. 이들은 요청, 클라이언트 기능 및 선호도에 대한 중요한 메타데이터를 제공합니다.<br><br>이러한 헤더는 다음과 같은 이유로 중요합니다:<br><br>• <strong>인증 및 권한 부여</strong> 메커니즘 제어<br>• 성능 향상을 위한 <strong>캐싱 동작</strong> 관리<br>• <strong>콘텐츠 협상</strong>(형식, 언어, 인코딩) 활성화<br>• <strong>교차 출처 요청</strong> 및 보안 정책 구성<br>• 사용자 에이전트 및 리퍼러 정보와 같은 <strong>클라이언트 컨텍스트</strong> 제공<br><br>적절한 헤더 없이는 많은 현대 웹 기능이 제대로 작동하지 않으며, API는 보안 제어가 부족하고 웹 성능이 크게 저하될 수 있습니다."
+        },
+        {
+          question: "Content-Type, Authorization 및 Accept와 같은 일반적인 헤더의 차이점은 무엇인가요?",
+          answer: "이 세 가지 헤더는 HTTP 통신에서 서로 다른 목적을 제공합니다:<br><br><strong>Content-Type</strong>: 요청 본문에서 리소스의 미디어 유형(데이터를 보낼 때) 또는 클라이언트가 이해할 수 있는 콘텐츠 유형(데이터를 요청할 때)을 지정합니다. 일반적인 값은 다음과 같습니다:<br>• <code>application/json</code> JSON 데이터용<br>• <code>application/x-www-form-urlencoded</code> 폼 데이터용<br>• <code>multipart/form-data</code> 파일 업로드용<br><br><strong>Authorization</strong>: 서버에 클라이언트를 인증하는 데 사용되는 자격 증명을 포함합니다. 일반적인 형식은 다음과 같습니다:<br>• <code>Bearer eyJhbGc...</code> JWT/OAuth 토큰용<br>• <code>Basic dXNlcm5hbWU6cGFzc3dvcmQ=</code> 기본 인증용<br>• <code>ApiKey 12345abcde...</code> API 키 인증용<br><br><strong>Accept</strong>: 클라이언트가 처리할 수 있는 응답 콘텐츠 유형을 나타냅니다. 이를 통해 서버는 여러 옵션이 사용 가능할 때 가장 적합한 형식을 제공할 수 있습니다. 예를 들어:<br>• <code>application/json</code> JSON 데이터 수신용<br>• <code>text/html</code> HTML 콘텐츠 수신용<br>• <code>*/*</code> 모든 콘텐츠 유형 수락용<br><br>이러한 헤더를 올바르게 사용하면 클라이언트와 서버 간의 적절한 데이터 교환, 안전한 인증 및 최적의 콘텐츠 전달이 보장됩니다."
+        },
+        {
+          question: "내 헤더가 올바르게 작동하는지 어떻게 테스트할 수 있나요?",
+          answer: "효과적인 HTTP 헤더 테스트에는 여러 가지 방법이 포함됩니다:<br><br>1. <strong>우리의 헤더 편집기 도구 사용</strong>: 헤더 모음을 구축하고 cURL 명령 또는 코드 조각으로 내보내 직접 실행할 수 있습니다.<br><br>2. <strong>브라우저 개발자 도구</strong>: 대부분의 브라우저에는 모든 요청 헤더와 서버 응답을 표시하는 네트워크 검사 도구가 포함되어 있습니다. 헤더가 예상대로 전송되는지 확인하고 서버가 어떻게 응답하는지 확인하세요.<br><br>3. <strong>온라인 API 테스트 서비스</strong>: Postman 또는 Insomnia와 같은 도구를 사용하면 사용자 정의 헤더를 설정하고 전체 요청/응답 주기를 확인할 수 있습니다.<br><br>4. <strong>에코 서비스</strong>: httpbin.org와 같은 엔드포인트를 사용하면 요청 세부 정보를 반사하여 헤더 전송을 쉽게 검증할 수 있습니다.<br><br>5. <strong>서버 로그</strong>: 서버 로그에 액세스할 수 있는 경우, 일반적으로 수신 요청 헤더를 기록하므로 수신 상황을 확인할 수 있습니다.<br><br>테스트할 때 다음 일반적인 문제에 유의하세요:<br>• 헤더 대소문자가 올바르지 않음(HTTP 헤더는 대소문자를 구분하지 않지만 일부 구현에서는 엄격할 수 있음)<br>• 누락되었거나 형식이 잘못된 인증 토큰<br>• 선언한 Content-Type과 전송한 콘텐츠가 일치하지 않음<br>• 교차 출처 요청에 대한 CORS 헤더 구성이 올바르지 않음"
+        },
+        {
+          question: "다른 프로젝트를 위해 헤더 구성을 저장하고 재사용할 수 있나요?",
+          answer: "현재 온라인 도구는 개인정보 보호를 위해 지속적인 저장소를 구현하지 않지만, 헤더 구성을 저장하고 재사용하는 몇 가지 방법이 있습니다:<br><br>1. <strong>코드로 내보내기</strong>: 내보내기 기능을 사용하여 선호하는 언어(JavaScript, Python, cURL 등)로 코드 조각을 생성합니다. 이러한 조각은 프로젝트 저장소 또는 문서에 저장할 수 있습니다.<br><br>2. <strong>원시 텍스트로 복사</strong>: 원시 헤더 형식을 복사하여 텍스트 파일, 문서 시스템 또는 팀 위키에 저장하여 나중에 참조할 수 있습니다.<br><br>3. <strong>브라우저 확장</strong>: Chrome, Firefox 및 기타 브라우저의 여러 확장 프로그램을 사용하면 다른 도메인 및 프로젝트에 대한 헤더 모음을 저장하고 관리할 수 있습니다.<br><br>4. <strong>API 관리 플랫폼</strong>: Postman 또는 Insomnia와 같은 도구는 헤더를 포함한 다양한 요청 구성을 구성하고 저장할 수 있는 작업 공간 기능을 제공합니다.<br><br>5. <strong>환경 변수</strong>: 개발 워크플로우의 경우 .env 파일 또는 CI/CD 파이프라인에서 헤더를 환경 변수로 정의하는 것을 고려하세요.<br><br>API 또는 복잡한 웹 애플리케이션에 전념하는 팀의 경우, 개발 워크플로우의 일관성을 보장하기 위해 다른 환경(개발, 테스트, 프로덕션)에 대한 표준 헤더 구성의 중앙 저장소를 유지하는 것이 좋습니다."
+        },
+        {
+          question: "HTTP 헤더 사용 시 피해야 할 일반적인 실수는 무엇인가요?",
+          answer: "HTTP 헤더를 처리할 때 다음 일반적인 함정에 유의하세요:<br><br>1. <strong>보안 헤더 누락</strong>: Content-Security-Policy, X-Content-Type-Options 및 Strict-Transport-Security와 같은 중요한 보안 헤더를 포함하지 않으면 애플리케이션이 공격에 취약해질 수 있습니다.<br><br>2. <strong>잘못된 Content-Type</strong>: Content-Type 헤더가 실제 콘텐츠 형식과 일치하지 않으면 파싱 오류가 발생할 수 있습니다. 항상 헤더가 전송하는 데이터 형식을 정확히 반영하는지 확인하세요.<br><br>3. <strong>Authorization 헤더 유출</strong>: 인증 토큰을 제3자 서비스로 보내거나 기록하면 보안 위험이 발생할 수 있습니다. 헤더를 어디로 보내는지 주의하세요.<br><br>4. <strong>CORS 헤더 누락</strong>: 다른 출처에 리소스를 제공하는 애플리케이션의 경우 Access-Control-Allow-* 헤더를 올바르게 구성하지 않으면 교차 출처 요청이 실패합니다.<br><br>5. <strong>중복되거나 모순되는 헤더</strong>: 동일한 동작을 제어하지만 다른 값을 가진 여러 헤더를 설정하면 서버 동작에 따라 예측할 수 없는 결과가 발생할 수 있습니다.<br><br>6. <strong>대소문자 민감성 문제</strong>: HTTP 헤더 이름은 기술적으로 대소문자를 구분하지 않지만 일부 구현에서는 엄격하게 처리할 수 있습니다. 애플리케이션에서 일관된 대소문자를 사용하세요.<br><br>7. <strong>너무 관대한 헤더</strong>: Access-Control-Allow-Origin: * 또는 광범위한 Content-Security-Policy 지시문과 같은 헤더는 부적절하게 사용될 경우 보안 취약점을 만들 수 있습니다.<br><br>8. <strong>헤더 크기 제한 무시</strong>: 일부 서버는 HTTP 헤더의 총 크기를 제한합니다(일반적으로 8KB). 매우 큰 쿠키 또는 인증 토큰은 이러한 제한을 초과할 수 있습니다."
+        }
+      ]
+    },
+    guide: {
+      title: "HTTP 요청 헤더 편집기 사용 방법: 단계별 가이드",
+      step1: "<strong>헤더를 모음에 추가</strong>: \"헤더 추가\" 버튼을 클릭하여 새 헤더 항목을 생성합니다. 각 헤더는 이름(예: \"Content-Type\" 또는 \"Authorization\")과 값으로 구성됩니다. 요청에 필요한 만큼 헤더를 추가할 수 있습니다. 일반적인 헤더의 경우 \"일반 헤더\" 프리셋 버튼을 사용하여 빠르게 추가할 수도 있습니다.",
+      step2: "<strong>헤더 이름과 값 입력</strong>: 각 헤더에 대해 적절한 이름과 값을 입력합니다. 헤더 이름은 HTTP 규칙(예: \"Content-Type\" 또는 \"Authorization\")을 따라야 하며, 값은 헤더의 용도에 따라 다릅니다. 도구는 입력 내용을 자동으로 검증하여 형식이 올바른지 확인합니다.",
+      step3: "<strong>일괄 편집을 사용하여 여러 헤더 추가</strong>: 한 번에 여러 헤더를 추가해야 하는 경우 편집기 패널 하단의 일괄 편집 텍스트 영역을 사용하세요",
+      step4: "<strong>헤더 가이드 참조 활용</strong>: 사용할 값이 확실하지 않은 경우 도구 오른쪽의 헤더 가이드 섹션을 참조하세요. \"Content-Type\" 또는 \"Authorization\"과 같은 헤더 이름을 클릭하여 일반적인 값을 확인하고 모음에 추가할 수 있습니다.",
+      step5: "<strong>선호하는 내보내기 형식 선택</strong>: 헤더를 구성한 후 드롭다운 메뉴에서 원하는 내보내기 형식을 선택합니다. 옵션에는 간단한 복사를 위한 원시 텍스트, 명령줄 요청을 위한 cURL 및 JavaScript, Python 등 다양한 프로그래밍 언어가 포함됩니다.",
+      step6: "<strong>포맷된 출력 확인</strong>: 도구는 헤더와 선택한 내보내기 형식에 따라 포맷된 코드 또는 텍스트를 생성합니다. 이 출력은 애플리케이션 코드, API 테스트 도구 또는 문서에서 사용할 준비가 되어 있습니다.",
+      step7: "<strong>결과를 클립보드에 복사</strong>: \"복사\" 버튼을 클릭하여 포맷된 출력을 클립보드에 복사합니다. 코드 편집기, 터미널 또는 이러한 헤더를 구현해야 하는 모든 도구에 직접 붙여넣을 수 있습니다."
+    },
+    conclusion: "HTTP 요청 헤더 편집기는 HTTP 헤더 생성, 테스트 및 구현의 복잡한 과정을 단순화하여 웹 개발자 및 API 통합자에게 직관적인 인터페이스와 다양한 내보내기 형식을 제공합니다. 웹 보안 및 성능 요구 사항이 계속 발전함에 따라 올바르게 구성된 헤더는 점점 더 중요해지고 있습니다. 이 도구는 애플리케이션이 HTTP 통신, 보안 및 성능 최적화에 대한 모범 사례를 준수하도록 보장하는 데 도움을 줍니다."
+  }
+}

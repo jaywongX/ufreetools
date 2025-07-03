@@ -1,0 +1,114 @@
+export default {
+  name: 'YAML-JSON 변환기',
+  description: 'YAML과 JSON 형식 간 변환, 사용자 정의 옵션 제공',
+  input: {
+    title: '입력',
+    yamlPlaceholder: 'YAML 입력...',
+    jsonPlaceholder: 'JSON 입력...',
+    loadSample: '예제 로드',
+    clearInput: '입력 지우기',
+    uploadFile: '파일 업로드'
+  },
+  output: {
+    title: '출력',
+    copyOutput: '출력 복사',
+    downloadOutput: '출력 다운로드',
+    clearOutput: '출력 지우기'
+  },
+  options: {
+    conversionMode: '변환 모드',
+    jsonToYaml: 'JSON → YAML',
+    yamlToJson: 'YAML → JSON',
+    formatOutput: '출력 포맷팅',
+    indentSize: '들여쓰기 크기',
+    quoteKeys: '객체 키에 따옴표 추가',
+    sortKeys: '알파벳 순으로 키 정렬',
+    flowStyle: 'YAML 흐름 스타일',
+    jsonCompatible: 'JSON 호환',
+    singleQuotes: '작은따옴표 사용',
+    includeSchema: '스키마 포함',
+    preserveKeyOrder: '키 순서 유지'
+  },
+  flowStyles: {
+    block: '블록 스타일',
+    flow: '흐름 스타일',
+    auto: '자동'
+  },
+  validation: {
+    validate: '변환 전 검증',
+    validInput: '유효한 {format}',
+    invalidInput: '잘못된 {format}: {error}',
+    checkSyntax: '구문 확인'
+  },
+  actions: {
+    convert: '변환',
+    swap: '형식 교체',
+    beautify: '정형화',
+    minify: '압축'
+  },
+  messages: {
+    conversionSuccess: '변환 성공',
+    conversionFailed: '변환 실패: {error}',
+    copySuccess: '클립보드에 복사됨',
+    downloadSuccess: '파일 다운로드 성공',
+    emptyInput: '변환할 내용을 입력하세요',
+    invalidYaml: '잘못된 YAML 구문',
+    invalidJson: '잘못된 JSON 구문'
+  },
+  article: {
+    title: "YAML-JSON 변환기: 데이터 형식 변환 간소화",
+    features: {
+      title: "YAML과 JSON 형식 이해",
+      description: "<strong>YAML-JSON 변환기</strong>는 두 가지 인기 있는 <strong>데이터 직렬화 형식</strong> 간 변환을 위한 전문 도구입니다: <strong>YAML</strong>(YAML Ain't Markup Language)과 <strong>JSON</strong>(JavaScript Object Notation). 이 양방향 <strong>형식 변환기</strong>는 데이터 구조와 무결성을 유지하면서 이 형식들 간의 원활한 변환을 지원합니다.<br><br>우리의 <strong>YAML에서 JSON으로</strong> 변환기는 사용자 정의 들여쓰기, 키 정렬 및 YAML 출력의 흐름 스타일 옵션과 같은 고급 기능을 지원합니다. <strong>JSON에서 YAML으로</strong> 변환을 처리하는 사용자를 위해 이 도구는 출력을 정형화하거나 간결한 표현을 유지하는 옵션을 제공합니다. 간단한 키-값 쌍이든 복잡한 중첩 구조든, 이 <strong>데이터 형식 변환기</strong>는 데이터의 계층 관계를 유지하면서 변환을 효율적으로 처리합니다.",
+      useCases: {
+        title: "YAML-JSON 변환의 일반적인 사용 사례",
+        items: [
+          "DevOps 엔지니어가 YAML(GitHub Actions, GitLab CI) 또는 JSON(CircleCI, AWS CodeBuild)을 필요로 하는 다른 CI/CD 파이프라인의 구성 파일 간 변환",
+          "백엔드 개발자가 JSON 페이로드를 받는 API를 처리하면서 더 읽기 쉬운 YAML 구성 파일 유지",
+          "클라우드 아키텍트가 AWS CloudFormation 템플릿(JSON)을 더 유지 관리하기 쉬운 YAML 형식으로 변환하거나 그 반대",
+          "데이터 과학자가 JSON을 선호하는 노트북 환경과 YAML 구성 파일 간에 데이터 구조 정의 변환",
+          "기술 문서 작성자가 동일한 데이터 구조를 YAML과 JSON 형식으로 다른 대상에게 표시해야 할 때",
+          "프론트엔드 개발자가 다른 구성 형식의 패키지 관리자 및 빌드 도구(package.json과 docker-compose.yml) 사용"
+        ]
+      }
+    },
+    faq: {
+      title: "YAML-JSON 변환에 관한 자주 묻는 질문",
+      items: [
+        {
+          question: "YAML과 JSON의 주요 차이점은 무엇인가요?",
+          answer: "YAML과 JSON은 모두 데이터 직렬화 형식이지만 구문과 기능에서 상당한 차이가 있습니다. JSON은 중괄호, 키 주변의 따옴표 및 요소 사이의 명시적 쉼표를 포함한 엄격한 구문을 사용합니다. YAML은 사람이 읽기 더 쉬우며 의미 있는 공백을 사용하며 따옴표나 괄호가 필요하지 않고 주석을 지원합니다. JSON은 더 컴팩트하며 웹 애플리케이션의 데이터 교환에 널리 사용되는 반면, YAML은 더 나은 가독성을 제공하며 복잡한 데이터 구조를 지원하며 일반적으로 구성 파일에 사용됩니다. 우리의 YAML-JSON 변환기는 이러한 구문 차이를 자동으로 처리하여 형식 간의 정확한 변환을 보장합니다."
+        },
+        {
+          question: "변환기는 복잡한 중첩 구조를 처리할 수 있나요?",
+          answer: "예, 우리의 YAML-JSON 변환기는 깊게 중첩된 객체, 배열 및 혼합 계층 구조를 포함한 복잡한 중첩 데이터 구조를 완벽하게 지원합니다. 변환 방향에 관계없이 변환기는 계층 관계를 유지하여 YAML의 중첩 맵, 시퀀스 및 스칼라가 JSON의 객체, 배열 및 원시 값에 정확하게 대응하도록 합니다. 이는 복잡한 구성 파일, API 스키마 및 다양한 데이터 유형을 가진 다단계 중첩 데이터 템플릿에 적합합니다."
+        },
+        {
+          question: "변환기는 YAML의 고급 기능을 지원하나요?",
+          answer: "YAML-JSON 변환기는 JSON 기능이 제한적인 상황에서 YAML의 많은 고급 기능을 지원합니다. YAML에서 JSON으로 변환할 때 주석 및 앵커(참조)와 같은 기능이 적절히 처리됩니다. 주석은 제거되고(JSON이 이를 지원하지 않음) 참조는 실제 값으로 해석됩니다. JSON에서 YAML으로 변환할 때 블록 스타일(더 읽기 쉬움) 또는 흐름 스타일(더 컴팩트함) YAML 출력 중에서 선택할 수 있습니다. 변환기는 각 형식의 기능에 적응하면서 데이터 무결성을 유지합니다."
+        },
+        {
+          question: "변환기는 다른 데이터 유형을 어떻게 처리하나요?",
+          answer: "YAML-JSON 변환기는 호환 가능한 형식 간의 데이터 유형을 변환 과정에서 보존합니다. 숫자, 문자열, 부울 값, null 값, 배열 및 객체는 양방향으로 정확하게 변환됩니다. YAML의 추가 데이터 유형(예: 날짜 및 이진 데이터)은 특별히 처리됩니다. 날짜는 일반적으로 JSON에서 ISO 문자열 형식으로 변환되고 이진 데이터는 base64 문자열로 변환됩니다. 변환기의 동적 유형 기능은 숫자 값이 문자열로 잘못 인식되지 않고 적절한 경우 정확하게 인식되도록 보장합니다."
+        },
+        {
+          question: "변환할 수 있는 파일의 크기 제한이 있나요?",
+          answer: "YAML-JSON 변환기는 완전히 브라우저에서 실행되므로 실제 크기 제한은 사용자 장치의 메모리 및 처리 능력에 따라 다릅니다. 최상의 성능을 위해 파일 크기를 5MB 이하로 유지하는 것이 좋지만 최신 브라우저는 일반적으로 더 큰 파일을 처리할 수 있습니다. 매우 큰 파일의 경우 처리 지연이 발생할 수 있습니다. 극도로 큰 데이터 세트를 처리하는 경우 더 작은 청크로 분할하거나 점진적으로 처리하여 더 나은 성능을 얻을 수 있습니다."
+        }
+      ]
+    },
+    guide: {
+      title: "YAML-JSON 변환기 사용 단계 안내",
+      steps: [
+        "도구 상단의 토글 버튼을 사용하여 변환 방향을 선택하세요: 'YAML에서 JSON으로'는 YAML 구문을 JSON 형식으로 변환하고, 'JSON에서 YAML으로'는 반대 과정을 수행합니다",
+        "설정 섹션에서 출력 형식 기본 설정을 구성하세요: JSON 출력의 경우 들여쓰기 크기 및 정형화 옵션을 선택할 수 있습니다. YAML 출력의 경우 블록 스타일 또는 흐름 스타일 중 선택하고 키 정렬을 활성화할 수 있습니다",
+        "왼쪽 입력 패널에 소스 데이터를 입력하거나 '붙여넣기' 버튼을 사용하여 클립보드에서 내용을 붙여넣으세요(또는 '간단한', '중첩된' 또는 '복잡한' 예제 버튼을 사용하여 예제 데이터를 로드하고 변환기가 어떻게 작동하는지 확인할 수 있습니다)",
+        "변환기는 입력 시 자동으로 처리하여 오른쪽 패널에 변환된 출력을 실시간으로 표시합니다",
+        "변환 결과를 검토하고 원하는 출력 형식을 얻기 위해 입력 또는 형식 설정을 필요한 대로 조정하세요",
+        "'결과 복사' 버튼을 클릭하여 변환된 출력을 클립보드에 복사하여 다른 애플리케이션에서 사용하세요",
+        "또는 '다운로드' 버튼을 사용하여 변환된 출력을 장치에 파일로 저장하여 나중에 사용하거나 프로젝트에 통합할 수 있습니다"
+      ]
+    },
+    conclusion: "YAML-JSON 변환기는 구조적 무결성 또는 데이터 정밀도를 잃지 않고 이 두 가지 인기 있는 직렬화 형식 간에 데이터를 변환하는 원활한 방법을 제공합니다. 구성 파일을 처리하는 개발자, 인프라 코드를 관리하는 DevOps 엔지니어 또는 다른 데이터 교환 형식을 처리하는 데이터 전문가든, 이 도구는 직관적인 인터페이스와 강력한 기능으로 변환 프로세스를 단순화합니다. 두 가지 변환 방향을 지원하고 사용자 정의 가능한 출력 옵션을 제공함으로써 다양한 사용 사례에 적응하며 수동 변환 오류의 위험을 줄이고 시간을 절약합니다."
+  }
+}
