@@ -1,0 +1,233 @@
+export default {
+  name: 'MQTT測試工具',
+  description: '測試和調試MQTT連接，發布消息和訂閱主題',
+  connection: {
+    title: '連接',
+    broker: '端口號',
+    url: '代理URL',
+    urlPlaceholder: '例如：mqtt://broker.example.com:1883',
+    clientId: '客戶端ID',
+    clientIdPlaceholder: '輸入客戶端ID或留空隨機生成',
+    username: '用戶名',
+    password: '密碼',
+    keepAlive: '保持連接',
+    cleanSession: '清除會話',
+    autoReconnect: '自動重連',
+    ssl: '使用SSL/TLS',
+    sslOptions: 'SSL/TLS選項',
+    protocol: '協議版本',
+    portInfo: '默認端口: MQTT(1883), WebSocket(8083)',
+    connect: '連接',
+    disconnect: '斷開連接',
+    status: '狀態',
+    connected: '已連接',
+    disconnected: '已斷開連接',
+    connecting: '連接中...'
+  },
+  publish: {
+    title: '發布',
+    topic: '主題',
+    topicPlaceholder: '輸入要發布的主題',
+    message: '消息',
+    messagePlaceholder: '輸入消息內容',
+    qos: '服務質量(QoS)',
+    retain: '保留',
+    format: '內容格式',
+    text: '文本',
+    json: 'JSON',
+    hex: '十六進制',
+    binary: '二進制',
+    send: '發布',
+    clear: '清除',
+    history: '歷史記錄',
+    addToFavorites: '添加到收藏',
+    validateJson: '驗證JSON'
+  },
+  subscribe: {
+    title: '訂閱',
+    topic: '主題',
+    topicPlaceholder: '輸入要訂閱的主題（支持通配符#和+）',
+    qos: '服務質量(QoS)',
+    subscribe: '訂閱',
+    unsubscribe: '取消訂閱',
+    unsubscribeAll: '取消所有訂閱',
+    subscriptions: '活動訂閱',
+    noSubscriptions: '沒有活動訂閱',
+    addSubscription: '添加訂閱',
+    topicPatterns: '主題模式',
+    systemTopics: '系統主題'
+  },
+  messages: {
+    title: '消息',
+    received: '接收的消息',
+    sent: '發送的消息',
+    topic: '主題',
+    payload: '負載',
+    qos: 'QoS',
+    retained: '保留',
+    time: '時間',
+    clear: '清除消息',
+    export: '導出消息',
+    filter: '篩選',
+    noMessages: '沒有消息',
+    view: '查看詳情',
+    copy: '複製負載',
+    duplicate: '複製為發布'
+  },
+  tools: {
+    title: '工具',
+    topicGenerator: '主題生成器',
+    payloadFormatter: '負載格式化器',
+    qosExplainer: 'QoS說明',
+    wildcardTester: '通配符測試器',
+    packetInspector: '數據包檢查器',
+    loadTest: '負載測試'
+  },
+  settings: {
+    title: '設置',
+    maxMessages: '最大消息數',
+    timeFormat: '時間格式',
+    theme: '主題',
+    autoExpand: '自動展開消息',
+    saveHistory: '保存歷史記錄',
+    clearOnDisconnect: '斷開連接時清除消息',
+    advanced: '高級設置',
+    lastWill: '遺囑消息'
+  },
+  lastWill: {
+    title: '遺囑',
+    enable: '啟用遺囑',
+    topic: '遺囑主題',
+    message: '遺囑消息',
+    qos: '遺囑QoS',
+    retain: '遺囑保留'
+  },
+  notifications: {
+    connectSuccess: '已連接到{broker}',
+    connectError: '連接錯誤：{error}',
+    disconnected: '已從代理斷開連接',
+    subscribeSuccess: '已訂閱{topic}',
+    subscribeError: '訂閱失敗：{error}',
+    unsubscribeSuccess: '已取消訂閱{topic}',
+    publishSuccess: '消息已發布到{topic}',
+    publishError: '發布失敗：{error}',
+    invalidJson: '無效的JSON負載',
+    packetReceived: '已接收{packets}個數據包'
+  },
+  article: {
+    title: "MQTT測試工具 - 物聯網消息協議測試全指南",
+    intro: {
+      title: "什麼是MQTT測試工具，為什麼需要它",
+      p1: "<b>MQTT（消息隊列遙測傳輸）</b>是為受限設備和低帶寬、高延遲網絡設計的輕量級消息協議，非常適合物聯網(IoT)應用。我們的MQTT測試工具提供了全面的測試、調試和優化MQTT連接的環境，使開發人員能夠高效可靠地驗證其物聯網通信基礎設施。",
+      p2: "<b>MQTT協議測試工具</b>是IoT設備開發與部署之間的重要橋樑，允許您在MQTT生態系統中同時模擬發布者和訂閱者。通過實現實時消息發布、主題訂閱和連接診斷，我們的工具有助於在問題影響生產環境之前識別潛在問題。這種主動方法顯著減少了調試時間，提高了物聯網應用的可靠性。",
+      p3: "使用我們的<b>在線MQTT客戶端</b>，您可以連接到任何MQTT代理，測試各種服務質量(QoS)級別，實現遺囑消息(LWT)，並驗證保留消息。無論您是開發智能家居系統、工業監控解決方案還是任何IoT應用，我們的MQTT測試工具都提供了確保消息傳遞基礎設施在各種網絡條件和使用場景下正常運行所需的功能。"
+    },
+    useCases: {
+      title: "MQTT測試的實際應用",
+      case1: "<b>IoT設備開發和調試</b>：硬件工程師和固件開發人員使用MQTT測試工具在完成設計前驗證設備通信。在開發新的IoT產品時，驗證消息發布模式、負載格式和訂閱響應的能力有助於在開發週期早期識別和修復通信問題，顯著縮短上市時間。",
+      case2: "<b>智能家居自動化集成</b>：構建智能家居系統的開發人員依靠MQTT測試確保恆溫器、照明系統和安全傳感器等各種設備之間的可靠通信。我們的MQTT測試工具通過模擬觸發器並分析設備響應，驗證自動化規則，確保您的智能家居生態系統無縫運行。",
+      case3: "<b>工業監控系統</b>：在工業IoT環境中，MQTT測試有助於驗證傳感器數據是否正確傳輸、處理和響應。系統集成商使用我們的工具模擬傳感器讀數，測試警報閾值，並驗證控制系統對不同操作場景的適當響應，提高工廠車間的可靠性。",
+      case4: "<b>MQTT代理配置和優化</b>：系統管理員使用MQTT測試工具在各種負載下對代理性能進行基準測試，測試認證機制，並優化服務質量設置。我們的測試工具允許同時模擬多個客戶端，幫助識別可能影響生產系統的潛在瓶頸和配置問題。",
+      case5: "<b>跨平台應用開發</b>：構建多平台IoT應用的開發人員需要確保跨Web、移動和桌面界面的一致消息行為。MQTT測試工具提供了標準參考實現，以驗證所有客戶端應用程序一致地解釋消息，減少特定平台的錯誤。"
+    },
+    tutorial: {
+      title: "如何使用我們的MQTT測試工具",
+      intro: "我們的MQTT測試工具設計直觀而強大。按照以下簡單步驟有效測試您的MQTT實現：",
+      step1: {
+        title: "步驟1：配置連接設置",
+        description: "首先在連接部分輸入您的<b>MQTT代理詳細信息</b>。輸入代理URL（例如，mqtt://broker.example.com:1883或ws://broker.example.com:8083用於WebSocket連接）。您可以選擇指定客戶端ID，或留空以獲取隨機ID。如果您的代理需要認證，請輸入用戶名和密碼。對於安全連接，啟用SSL/TLS選項。配置完成後，點擊\"連接\"按鈕與MQTT代理建立連接。"
+      },
+      step2: {
+        title: "步驟2：訂閱主題",
+        description: "成功連接到代理後，導航至<b>訂閱部分</b>以監聽消息。在主題字段中輸入您希望訂閱的主題。MQTT主題支持通配符 - 使用#匹配多個主題層級，使用+匹配單個層級（例如，home/+/temperature訂閱任何房間的溫度讀數）。選擇所需的服務質量(QoS)級別，然後點擊\"訂閱\"。工具現在將監聽發布到匹配主題的任何消息。"
+      },
+      step3: {
+        title: "步驟3：發布消息",
+        description: "要向代理發送消息，請使用工具的<b>發布部分</b>。輸入目標主題並撰寫您的消息負載。您可以將負載格式化為純文本、JSON（帶驗證）、十六進制或二進制數據。設置適當的QoS級別，並決定是否設置\"保留\"標誌，該標誌指示代理為未來的訂閱者存儲消息。點擊\"發布\"按鈕將您的消息發送到代理。"
+      },
+      step4: {
+        title: "步驟4：監控和分析消息",
+        description: "<b>消息部分</b>顯示所有接收和發送的通信。每條消息顯示主題、負載、QoS級別、保留狀態和時間戳。您可以按主題或內容過濾消息，以專注於特定的數據流。要進行詳細檢查，點擊任何消息查看其完整內容。使用\"複製負載\"按鈕提取消息數據以進行進一步分析，或使用\"複製為發布\"選項快速響應收到的消息。"
+      }
+    },
+    mqttBasics: {
+      title: "理解MQTT協議基礎",
+      intro: "要有效地使用MQTT測試工具，了解MQTT協議的這些關鍵概念會很有幫助：",
+      pubsub: {
+        title: "發布-訂閱模型",
+        description: "<b>MQTT使用發布-訂閱架構</b>，將消息發送者（發布者）與接收者（訂閱者）解耦。這種模型與傳統的客戶端-服務器通信不同，引入了管理消息分發的代理。發布者將消息發送到主題，而不知道誰（如果有的話）會接收它們，而訂閱者表達對主題的興趣，而不知道誰發布到這些主題。這種解耦提供了可擴展性和靈活性，允許一對多、多對一和多對多的通信模式。"
+      },
+      qos: {
+        title: "服務質量(QoS)級別",
+        description: "<b>MQTT提供三種服務質量級別</b>，平衡可靠性與效率：QoS 0（最多一次）不提供交付保證但開銷最小，非常適合頻繁、非關鍵數據，如溫度讀數。QoS 1（至少一次）確保消息到達接收者但可能傳遞重複，適用於可接受處理重複的重要消息。QoS 2（恰好一次）通過四部分握手保證單次交付，非常適合重複可能導致問題的關鍵命令或金融交易。"
+      },
+      retain: {
+        title: "保留消息",
+        description: "<b>保留消息</b>是代理為未來訂閱者存儲的特殊MQTT消息。當消息以retain標誌設置為true發布時，代理將其保存為該主題的最新值。任何新訂閱該主題的用戶都會立即收到最近的保留消息，即使他們在消息發布很久後才訂閱。這一功能對設備狀態信息、配置值或其他新訂閱者應在連接時接收的\"最後已知良好\"數據特別有用。"
+      },
+      lastwill: {
+        title: "遺囑消息(LWT)",
+        description: "<b>遺囑功能</b>為客戶端提供了一種機制，在連接期間向代理註冊\"遺囑\"消息。如果客戶端意外斷開連接（沒有發送適當的DISCONNECT消息），代理會自動將此遺囑消息發布到指定主題。這種通知系統允許IoT系統的其他部分被告知意外斷開連接並採取適當行動，如將設備標記為離線或觸發故障轉移機制。"
+      }
+    },
+    faq: {
+      title: "關於MQTT測試的常見問題",
+      q1: "MQTT和HTTP在物聯網應用中有什麼區別？",
+      a1: "<b>MQTT和HTTP代表了物聯網通信的不同方法</b>，每種方法在特定場景中都有其獨特優勢。MQTT專為受限環境設計，採用發布-訂閱模型，最小封包大小（小至2字節）和持久連接減少開銷。它在帶寬有限、網絡不可靠或電池供電的設備環境中表現出色。<br><br>相比之下，HTTP遵循請求-響應模型，要求客戶端發起所有通信。由於每次事務都需要建立連接和通常更大的消息大小，它的開銷更高。然而，HTTP受益於普遍支持、豐富的工具生態系統和與Web應用程序的直接集成。<br><br>對於需要雙向通信的實時應用，MQTT通常提供更好的性能，具有QoS級別、保留消息和遺囑功能等特性。我們的MQTT測試工具允許您驗證這些功能，並確定MQTT是否適合您特定的IoT用例。",
+      
+      q2: "如何保障MQTT通信安全？",
+      a2: "<b>保障MQTT通信安全</b>涉及多層保護，所有這些都可以用我們的工具進行測試：<br><br>1. <b>傳輸安全</b>：通過連接到安全端點（mqtts://或wss://）並配置適當的證書，啟用TLS/SSL加密。我們的測試工具支持加密和非加密連接，允許您驗證正確的TLS實現。<br><br>2. <b>認證</b>：實現用戶名/密碼認證或客戶端證書認證。您可以使用我們工具的連接設置測試這些憑據，確保您的代理正確執行認證策略。<br><br>3. <b>授權</b>：設置主題級別權限，控制哪些客戶端可以發布或訂閱特定主題。使用我們的工具驗證未授權的發布或訂閱嘗試是否被您的代理正確拒絕。<br><br>4. <b>負載加密</b>：為額外安全，在發布前加密消息負載。您可以使用我們的工具測試端到端加密，通過發布加密消息並驗證授權訂閱者是否能正確解密來實現。<br><br>記住，安全應深度實施，結合多種方法而不是僅依賴單一機制。",
+      
+      q3: "MQTT主題設計的最佳實踐是什麼？",
+      a3: "<b>有效的MQTT主題設計</b>對可擴展和可維護的IoT系統至關重要。以下是應遵循的關鍵原則：<br><br>1. <b>使用層次結構</b>，以正斜杠作為分隔符（例如，building/floor/room/device/measurement）。這種組織能夠通過通配符實現高效過濾，並反映系統的邏輯結構。<br><br>2. <b>避免以正斜杠開始主題</b>，因為這會創建不必要的空層級，並可能導致不同代理實現之間的主題匹配不一致。<br><br>3. <b>在主題中包含設備標識符</b>（例如，sensors/deviceID/temperature），確保每個設備有唯一主題並簡化消息路由。<br><br>4. <b>使用標準化主題命名空間</b>用於常見功能，如設備狀態（status/deviceID）、命令（commands/deviceID）和配置（config/deviceID）。<br><br>5. <b>考慮主題長度限制</b> - 雖然MQTT允許長主題，但保持簡潔可提高效率，特別是對受限設備。<br><br>我們的MQTT測試工具可以幫助驗證您的主題設計，允許您用通配符測試訂閱模式，並驗證消息傳遞到預期接收者。",
+      
+      q4: "如何排查MQTT連接問題？",
+      a4: "面對<b>MQTT連接問題</b>時，請遵循這一系統化的故障排除方法：<br><br>1. <b>驗證網絡連接</b>：確保設備可以到達代理的IP地址和端口。使用我們工具的連接狀態指示器確認基本網絡訪問。<br><br>2. <b>檢查代理地址和端口</b>：確認您使用的是正確的代理URL、端口號和協議（mqtt://用於TCP連接，ws://用於WebSocket連接）。常見端口有1883（MQTT），8883（MQTT over TLS），8083（WebSockets）和8084（安全WebSockets）。<br><br>3. <b>驗證憑據</b>：如果啟用了認證，確保用戶名和密碼正確。連接錯誤通常是由認證失敗引起的。<br><br>4. <b>檢查SSL/TLS設置</b>：對於安全連接，驗證證書配置，包括CA證書、客戶端證書和支持的TLS版本。<br><br>5. <b>檢查客戶端ID衝突</b>：MQTT代理通常不允許多個連接使用相同的客戶端ID。我們的測試工具可以幫助識別您的連接是否因ID衝突而被拒絕。<br><br>6. <b>查看代理日誌</b>：大多數MQTT代理提供詳細的連接日誌，可揭示連接失敗的具體原因。<br><br>我們的MQTT測試工具提供實時連接狀態和詳細錯誤消息，幫助精確定位連接問題的確切原因。",
+      
+      q5: "處理MQTT斷開連接和重新連接的最佳方法是什麼？",
+      a5: "實現強健的<b>MQTT斷開連接處理</b>對可靠的IoT應用至關重要：<br><br>1. <b>啟用自動重連</b>：配置您的MQTT客戶端在連接丟失時自動嘗試重新連接。我們的MQTT測試工具內置此功能，可幫助您測試應用程序在重新連接場景中的行為。<br><br>2. <b>實現指數退避</b>：不要以固定間隔嘗試重新連接，而是在重新連接嘗試之間使用漸進式更長的延遲，以防止在中斷期間過載代理。<br><br>3. <b>設置適當的遺囑消息</b>：配置LWT消息，在設備意外斷開連接時通知系統的其他部分。您可以在我們工具的高級連接設置中測試此功能。<br><br>4. <b>維護消息隊列</b>：對關鍵數據，實現斷開連接期間的客戶端消息排隊，然後在連接恢復時發送它們。<br><br>5. <b>使用持久會話</b>：在適當時啟用\"清除會話\"標誌，以在連接之間維護訂閱信息和排隊消息。<br><br>6. <b>監控連接狀態</b>：在生產環境中實現連接狀態監控和長時間斷開連接的警報。<br><br>我們的MQTT測試工具可以模擬各種斷開連接場景，幫助您驗證應用程序是否優雅地處理連接問題。"
+    },
+    relatedTools: {
+      title: "探索相關物聯網和網絡工具",
+      description: "使用這些補充工具增強您的物聯網開發工作流程：",
+      tool1: {
+        name: "WebSocket測試工具",
+        url: "https://www.ufreetools.com/tool/websocket-tester",
+        description: "測試WebSocket連接，具有實時消息發送和接收功能。"
+      },
+      tool2: {
+        name: "JSON格式化和驗證器",
+        url: "https://www.ufreetools.com/tool/json-formatter",
+        description: "格式化、驗證和美化MQTT負載中常用的JSON數據。"
+      },
+      tool3: {
+        name: "HTTP代理檢測器",
+        url: "https://www.ufreetools.com/tool/http-proxy-detector",
+        description: "檢測您的連接是否使用HTTP代理，並分析與代理相關的頭部進行安全驗證。"
+      },
+      tool4: {
+        name: "Base64編碼/解碼器",
+        url: "https://www.ufreetools.com/tool/base64-encoder-decoder",
+        description: "編碼和解碼MQTT消息中常用的Base64二進制負載數據。"
+      }
+    },
+    resources: {
+      title: "MQTT協議權威資源",
+      resource1: {
+        name: "MQTT.org - 官方MQTT文檔",
+        url: "https://mqtt.org/",
+        description: "由OASIS聯盟維護的官方MQTT協議文檔、規範和最佳實踐。"
+      },
+      resource2: {
+        name: "HiveMQ - MQTT基礎指南",
+        url: "https://www.hivemq.com/mqtt-essentials/",
+        description: "一系列全面的文章，實用地涵蓋MQTT協議的所有基本方面。"
+      },
+      resource3: {
+        name: "Eclipse Mosquitto - 開源MQTT代理",
+        url: "https://mosquitto.org/",
+        description: "流行的開源MQTT代理文檔，包括配置選項和安全最佳實踐。"
+      }
+    }
+  }
+}

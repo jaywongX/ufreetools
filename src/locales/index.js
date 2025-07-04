@@ -11,6 +11,7 @@ import de from './de';
 import id from './id';
 import ko from './ko';
 import it from './it';
+import zhTW from './zh-TW';
 
 export default {
   en,
@@ -26,4 +27,5 @@ export default {
   id,
   ko,
   it,
+  'zh-TW': zhTW
 };

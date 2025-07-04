@@ -1,0 +1,202 @@
+export default {
+  name: '圖像批次調整器',
+  description: '一次性調整、轉換和優化多張圖像',
+  input: {
+    title: '輸入圖像',
+    dropzone: '將圖像拖放到此處或點擊瀏覽',
+    addMore: '添加更多圖像',
+    selectImages: '選擇圖片',
+    clearAll: '清除全部',
+    maxFiles: '最多{count}張圖像',
+    maxSize: '每張圖像最大大小：{size}MB',
+    supportedFormats: '支援的格式：{formats}'
+  },
+  options: {
+    title: '調整選項',
+    settingsTitle: '調整設定',
+    resizeMode: '調整模式',
+    resizeMethod: '調整方式',
+    pixelMode: '像素',
+    percentageMode: '百分比',
+    maxDimensionMode: '最大尺寸',
+    outputFormat: '輸出格式',
+    quality: '質量',
+    width: '寬度',
+    height: '高度',
+    maintainAspectRatio: '保持寬高比',
+    maxWidth: '最大寬度',
+    maxHeight: '最大高度',
+    percentage: '百分比',
+    backgroundColor: '背景顏色',
+    naming: '輸出命名',
+    filenamePrefix: '文件名前綴',
+    filenameSuffix: '文件名後綴',
+    applyToAllImages: '應用到所有圖片',
+    applyToAll: '應用於所有圖像'
+  },
+  resizeModes: {
+    exact: '精確尺寸',
+    maxDimensions: '最大尺寸',
+    percentage: '百分比縮放',
+    fit: '適應內部',
+    cover: '覆蓋',
+    crop: '裁剪'
+  },
+  formats: {
+    original: '與源相同',
+    jpg: 'JPG/JPEG',
+    png: 'PNG',
+    webp: 'WebP',
+    gif: 'GIF',
+    bmp: 'BMP',
+    tiff: 'TIFF',
+    svg: 'SVG',
+    ico: 'ICO'
+  },
+  namingOptions: {
+    original: '原始文件名',
+    dimensions: '原始 + 尺寸',
+    format: '原始 + 格式',
+    custom: '自定義模式',
+    random: '隨機字符串'
+  },
+  output: {
+    title: '調整後的圖像',
+    downloadAll: '下載全部',
+    downloadAsZip: '下載為ZIP',
+    processingStatus: '處理中：{processed}/{total}',
+    originalSize: '原始大小',
+    newSize: '新大小',
+    reduction: '減少量',
+    individualDownload: '下載'
+  },
+  batch: {
+    title: '批次處理',
+    process: '處理所有圖像',
+    cancel: '取消處理',
+    selectPreset: '選擇預設',
+    savePreset: '保存當前設定',
+    progress: '處理進度'
+  },
+  watermark: {
+    title: '浮水印',
+    enable: '添加浮水印',
+    text: '浮水印文本',
+    image: '浮水印圖像',
+    position: '位置',
+    opacity: '透明度',
+    rotation: '旋轉',
+    size: '大小',
+    padding: '內邊距'
+  },
+  positions: {
+    topLeft: '左上',
+    topCenter: '頂部居中',
+    topRight: '右上',
+    middleLeft: '左中',
+    middleCenter: '居中',
+    middleRight: '右中',
+    bottomLeft: '左下',
+    bottomCenter: '底部居中',
+    bottomRight: '右下'
+  },
+  actions: {
+    resize: '調整大小',
+    preview: '預覽',
+    processing: '處理中...',
+    reset: '重置',
+    applySettings: '應用設定',
+    resetSettings: '重置設定',
+    cancel: '取消'
+  },
+  messages: {
+    resizeSuccess: '圖像調整大小成功',
+    resizeFailed: '調整圖像大小失敗：{error}',
+    invalidDimensions: '請輸入有效的尺寸',
+    invalidWidthHeight: '請輸入有效的寬度和高度',
+    noImages: '請添加要調整大小的圖像',
+    noImagesToDownload: '沒有可下載的圖片',
+    processing: '處理圖像中...',
+    processingComplete: '處理完成',
+    processingError: '處理圖片時出錯',
+    waitingForProcess: '等待處理',
+    downloadStarted: '下載已開始',
+    allDownloaded: '所有圖像已下載',
+    presetSaved: '預設已保存',
+    presetLoaded: '預設已加載',
+    zipCreated: '已創建包含{count}張圖片的壓縮包',
+    zipError: '創建壓縮包時出錯'
+  },
+  preview: {
+    title: '圖片預覽 ({count}張)',
+    selectImage: '請選擇圖片',
+    batchSupport: '支援批次選擇多張圖片一次性處理',
+    download: '下載',
+    delete: '刪除'
+  },
+  qualityOptions: {
+    fast: '快速處理',
+    medium: '一般質量',
+    high: '高質量 (推薦)',
+    best: '最佳質量 (較慢)'
+  },
+  article: {
+    title: "圖像批次調整器：高效一次處理多張圖片",
+    features: {
+      title: "了解批次圖像處理及其優勢",
+      description: "<strong>圖像批次調整器</strong>是一款功能強大的線上工具，旨在簡化同時調整、轉換和優化多張圖像的過程。與在傳統編輯軟體中逐一處理圖像不同，這款<strong>批次圖像處理器</strong>允許您只需點擊幾下，就能對數十甚至數百張圖像應用相同的調整。<br><br>我們的工具提供全面的<strong>圖像尺寸調整</strong>、格式轉換和質量優化選項，同時保持圖片的視覺完整性。無論您是需要減小文件大小以便網路使用，為特定平台準備圖像，還是在圖像集合中保持一致的尺寸，<strong>批次調整器</strong>都能在您的瀏覽器中高效處理這些任務，無需安裝任何軟體或具備技術專業知識。",
+      useCases: {
+        title: "批次圖像調整的實際應用",
+        items: [
+          "<strong>網站優化</strong>：Web開發人員和內容管理員可以使用<strong>批次圖像調整器</strong>快速準備網站的圖像資源。通過減小尺寸和文件大小，您可以顯著提高頁面加載速度，這對用戶體驗和SEO排名至關重要。該工具批次將圖像轉換為WebP等優化格式的能力進一步提升了網站性能。",
+          
+          "<strong>電子商務產品攝影</strong>：處理大型產品目錄的線上賣家可以使用我們的<strong>批次照片調整器</strong>將所有產品圖片標準化為亞馬遜、eBay或Shopify等市場要求的特定尺寸，從而節省數小時的工作時間。這確保了所有列表的一致、專業外觀，同時滿足平台要求。",
+          
+          "<strong>社交媒體內容創建</strong>：管理多個平台內容的社交媒體經理可以批次調整圖像大小，以滿足不同網路的特定尺寸要求。無論是Instagram帖子、Facebook封面、Twitter卡片還是Pinterest圖釘，我們的<strong>圖像批處理器</strong>都有助於在所有平台上保持最佳視覺質量。",
+          
+          "<strong>攝影作品集準備</strong>：專業攝影師可以快速準備作品集網站、客戶交付或打印服務的圖像。<strong>多圖像調整器</strong>允許在調整為特定尺寸的同時保持寬高比，確保整個照片集合的一致性，而無需進行耗時的個別編輯。",
+          
+          "<strong>教育材料開發</strong>：教師和教育內容創作者可以將一組圖表、圖表或照片調整為統一尺寸，以便包含在學習材料、演示文稿或線上課程中。批處理功能使在廣泛的教育資源中保持視覺一致性變得實用。",
+          
+          "<strong>應用開發資源準備</strong>：移動應用開發人員可以使用該工具生成同一圖像的多個版本，以不同分辨率（如1x、2x、3x）適應各種設備顯示。<strong>批次圖像轉換器</strong>簡化了這一過程，確保應用資源在所有設備類型上看起來清晰，同時保持可管理的文件大小。"
+        ]
+      }
+    },
+    faq: {
+      title: "關於批次圖像調整的常見問題",
+      items: [
+        {
+          question: "使用圖像批次調整器會降低圖像質量嗎？",
+          answer: "我們的<strong>批次圖像處理器</strong>會小心保持圖像質量，但需要考慮一些因素：<br><br>• 我們的工具使用專門設計的高質量算法，在調整大小過程中保持圖像保真度<br>• 您可以控制質量設置，特別是在轉換為JPEG或WebP等格式時<br>• 縮小圖像（使圖像變小）通常比放大圖像更能保持質量<br>• 您選擇的質量設置越高，結果越好，但文件會更大<br>• 批處理時，80-90%的質量設置為大多數使用場景提供了極佳的平衡<br><br>對於需要最高質量的專業工作，我們建議在處理器選項中使用\"高質量\"或\"最佳質量\"設置。<strong>批次照片調整器</strong>的預覽功能讓您可以在下載前檢查結果，確保它們符合您的質量標準。"
+        },
+        {
+          question: "圖像批次調整器支援哪些圖像格式？",
+          answer: "我們的<strong>批次圖像轉換器</strong>支援全面的圖像格式：<br><br><strong>輸入格式：</strong><br>• JPEG/JPG - 照片常用格式<br>• PNG - 適用於帶透明度的圖形<br>• WebP - 具有出色壓縮效果的現代格式<br>• GIF - 適用於簡單動畫<br>• BMP - 未壓縮的位圖格式<br>• TIFF - 攝影中常用的高質量格式<br><br><strong>輸出格式：</strong><br>• JPEG/JPG - 最適合照片和一般網路使用<br>• PNG - 保留透明度且無損<br>• WebP - 在保持質量的同時提供更好的壓縮<br><br><strong>多圖像調整器</strong>可以在批處理過程中在這些格式之間轉換，使您能夠將圖像集合標準化為單一格式，或為每種使用場景選擇最合適的格式。"
+        },
+        {
+          question: "圖像批次調整器一次可以處理多少張圖像？",
+          answer: "<strong>批次圖像調整器</strong>設計用於高效處理大批量圖像：<br><br>• 您可以在單個批次中處理數十張圖像（通常每批限制約為100張圖像）<br>• 單個圖像文件大小限制為每張5MB，以獲得最佳性能<br>• 總批處理時間取決於幾個因素，包括：<br>  - 輸入圖像的數量和大小<br>  - 調整操作的複雜性<br>  - 您設備的處理能力<br>  - 您的網路連接速度<br><br><strong>批次圖像處理器</strong>使用客戶端處理，這意味著圖像永遠不會離開您的計算機，從而提高速度和隱私。對於非常大的集合（數百或數千張圖像），我們建議將它們分成較小的批次（20-50張圖像）進行處理，以獲得最佳體驗。"
+        },
+        {
+          question: "批次調整圖像大小時能保持寬高比嗎？",
+          answer: "是的，保持寬高比是我們<strong>批次圖像調整器</strong>的關鍵功能：<br><br>• \"保持寬高比\"選項確保圖像不會被拉伸或扭曲<br>• 啟用此選項時，您只需指定寬度或高度，另一個維度將自動計算<br>• 對於精確尺寸（如社交媒體要求），您可以禁用此選項<br>• \"最大尺寸\"調整方法特別適用於維持寬高比，同時確保沒有圖像超過指定尺寸<br>• \"百分比縮放\"在完美保持原始比例的同時均勻調整所有圖像<br><br><strong>批次照片調整器</strong>提供每張圖像的預覽，使您能夠在下載處理後的圖像之前確認寬高比保持正確。"
+        },
+        {
+          question: "批次調整大小後如何下載所有處理過的圖像？",
+          answer: "<strong>多圖像調整器</strong>提供了獲取處理過的圖像的便捷選項：<br><br>1. <strong>批次下載為ZIP</strong>：處理完成後，點擊\"下載全部\"按鈕獲取單個ZIP存檔中的所有調整大小的圖像<br><br>2. <strong>單獨下載</strong>：如果您只需要特定圖像，每個處理過的圖像都有自己的下載按鈕<br><br>3. <strong>自動文件命名</strong>：處理過的圖像保留其原始文件名，並添加表明它們已被調整大小的標識<br><br>4. <strong>格式保留</strong>：如果您在輸出格式中選擇了\"與源相同\"，每個圖像都保持其原始格式；否則，所有圖像都將轉換為您選擇的格式<br><br><strong>批次圖像轉換器</strong>將所有處理過的圖像暫時存儲在您的瀏覽器中，所以我們建議在關閉瀏覽器標籤之前下載您的結果。"
+        }
+      ]
+    },
+    guide: {
+      title: "如何使用圖像批次調整器：分步指南",
+      step1: "<strong>上傳您的圖像</strong>：點擊\"選擇圖片\"按鈕或將文件拖放到上傳區域。<strong>批次圖像處理器</strong>接受常見圖像格式，包括JPEG、PNG、WebP、GIF等。您可以一次添加多張圖像，或在初次選擇後添加更多圖像。",
+      step2: "<strong>選擇調整方式</strong>：從三種強大的調整方法中選擇：<ul class='ml-5 list-disc'><li>\"像素\"模式讓您指定精確的像素尺寸</li><li>\"百分比\"模式根據原始尺寸按比例調整圖像</li><li>\"最大尺寸\"模式確保圖像不超過指定大小，同時保持比例</li></ul>這種靈活性使我們的<strong>批次照片調整器</strong>適用於幾乎任何圖像處理需求。",
+      step3: "<strong>設定您的尺寸</strong>：根據所選的調整方法輸入所需的寬度和/或高度值。如果您啟用了\"保持寬高比\"（大多數情況下推薦），您只需指定一個尺寸，<strong>批次圖像調整器</strong>將自動計算另一個尺寸，以防止圖像變形。",
+      step4: "<strong>配置輸出選項</strong>：選擇您偏好的輸出格式（JPEG、PNG或WebP）並根據需要調整質量設定。<strong>批次圖像轉換器</strong>允許您在圖像質量和文件大小之間取得平衡。對於JPEG和WebP格式，您可以調整質量百分比，較高的值會產生外觀更好的圖像，但文件大小更大。",
+      step5: "<strong>處理您的圖像</strong>：點擊\"應用到所有圖像\"按鈕開始批處理。<strong>多圖像調整器</strong>將顯示處理進度指示器，處理您的文件。每張圖像都使用高質量算法處理，在實現您指定尺寸的同時保持視覺保真度。",
+      step6: "<strong>查看結果</strong>：處理完成後，檢查每張圖像的預覽，確保結果符合您的期望。<strong>批次圖像調整器</strong>顯示有用信息，包括原始和新尺寸，讓您確認調整大小是否正確執行。",
+      step7: "<strong>下載您處理過的圖像</strong>：點擊\"下載全部\"獲取包含所有調整大小圖像的ZIP文件，或根據需要下載單獨圖像。<strong>批次圖像處理器</strong>保留您的原始文件，並提供帶有適當命名的處理版本，以區分它們與原始文件。"
+    },
+    conclusion: "圖像批次調整器為網頁開發人員、攝影師、行銷人員和內容創作者面臨的常見挑戰提供了實用解決方案：高效處理多張圖像，同時保持質量和一致性。通過消除對昂貴桌面軟體或耗時單獨編輯的需求，這個工具簡化了工作流程，並幫助維護數位資產的視覺標準。無論您是為電子商務平台準備產品照片，為響應式網站優化圖像，還是為社交媒體標準化視覺內容，批處理功能都能節省寶貴時間並確保一致的結果。隨著數位內容繼續強調視覺元素，幫助大規模管理和優化圖像的工具成為各行業專業人士的重要資源。"
+  }
+}

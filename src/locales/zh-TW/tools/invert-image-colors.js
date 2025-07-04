@@ -1,0 +1,151 @@
+export default {
+    name: '黑白圖像轉換器 - 線上圖片顏色反轉工具',
+    description: '免費線上工具，將黑色轉為白色並反轉圖片顏色。使用我們的黑白轉換器建立負片效果。支援PNG、JPG、WEBP格式',
+    inputTitle: '輸入圖片',
+    outputTitle: '反轉後的圖片',
+    dragTip: '拖放圖片到這裡或點擊上傳',
+    supported: '支援的格式: PNG, JPEG, BMP, WEBP',
+    invertBtn: '反轉顏色',
+    downloadBtn: '下載',
+    noOutput: '暫無輸出圖片',
+    loadSample: '載入範例圖片',
+    preview: '預覽圖片',
+    clearAll: '清除全部',
+    originalImage: '原始圖片',
+    deleteImage: '刪除圖片',
+    batchDownload: '批次下載 (ZIP)',
+    exportFormat: '匯出格式',
+    imageQuality: '圖片品質',
+    zoomIn: '放大',
+    zoomOut: '縮小',
+    resetView: '重置視圖',
+    fullscreen: '全螢幕預覽',
+    
+    // 文章內容
+    article: {
+        title: '圖像顏色反轉工具：線上黑白轉換器使用指南',
+        functionTitle: '什麼是圖像顏色反轉工具及其用途？',
+        intro: '我們的<strong>圖像顏色反轉工具</strong>是一款強大的線上應用，可以即時將圖片顏色進行反轉處理。這個過程會建立負片效果，使圖像中的暗區變亮，亮區變暗。該工具通過計算每個RGB顏色通道的相反值（255減去原始值）來實現，有效地建立出原始圖片的照片負片。使用我們的<strong>線上圖片反色工具</strong>，您可以同時處理多張圖片，並以PNG、JPG、WEBP和BMP等多種格式下載。',
+        
+        useCasesTitle: '圖像顏色反轉的常見應用場景',
+        useCases: [
+            '為攝影專案建立藝術性的負片效果',
+            '改善深色背景掃描文件的可讀性',
+            '在傳統攝影中準備列印底片',
+            '製作夜視風格圖像用於創意或設計目的',
+            '增強X光或醫學成像中的細節可見度',
+            '將暗模式設計轉換為亮模式（反之亦然）',
+            '為社交媒體內容建立視覺效果',
+            '為視力障礙用戶提高對比度'
+        ],
+        
+        tipTitle: '專業提示：',
+        tipContent: '當為文件或文字反轉顏色時，PNG格式通常能提供最佳效果，因為其無損壓縮可以保持文字邊緣的清晰度。',
+        
+        conclusion: '<strong>圖像反色處理</strong>工具對設計師、攝影師、醫療專業人員以及任何處理數位圖像的人特別有用。通過使用我們的顏色反轉器轉換圖像，您可以發現原始圖像中可能不明顯的細節，創造引人注目的藝術效果，或者簡單地使暗圖像在特定環境中更加清晰可見。我們的工具使這一過程變得簡單高效，無需安裝任何軟體。',
+        
+        faqTitle: '常見問題解答',
+        faqs: [
+            {
+                question: '當我反轉圖像顏色時會發生什麼？',
+                answer: '當您使用我們的<strong>網頁端圖像反轉器</strong>時，每個像素的顏色值都會通過從255（RGB中的最大值）中減去原值來反轉。黑色變成白色，白色變成黑色，紅色變成青色，綠色變成品紅色，藍色變成黃色。這會建立一個照片負片效果，所有顏色都被替換為它們的互補色。'
+            },
+            {
+                question: '反轉顏色會影響我的圖像品質嗎？',
+                answer: '不會，反轉過程本身不會降低圖像品質。我們的工具會保留圖像的原始解析度和細節。但是，最終品質將取決於您選擇的匯出格式。對於詳細的圖像或文字，我們建議使用PNG格式，它提供無損壓縮。'
+            },
+            {
+                question: '我可以專門轉換黑白PNG圖像嗎？',
+                answer: '是的，我們的<strong>黑白圖片轉換</strong>功能完全支援PNG格式。您可以上傳PNG圖像，反轉其顏色，然後再次將其下載為PNG文件。這對於帶有透明度的圖形特別有用，因為我們的工具在轉換過程中會保留alpha通道。'
+            },
+            {
+                question: '如何一次批次處理多張圖片？',
+                answer: '我們的工具支援批次處理。只需將多張圖片拖放到上傳區域，或使用文件瀏覽器選擇多個文件。上傳後，點擊"反轉顏色"按鈕同時處理所有圖片。然後，您可以單獨下載每張圖片，或使用"批次下載"選項將所有反轉後的圖片打包成一個ZIP文件。'
+            },
+            {
+                question: '我可以處理的圖像大小或數量有限制嗎？',
+                answer: '該工具設計為能夠高效處理大多數常見圖像大小。但是，非常大的圖像（超過20MB）可能會在某些瀏覽器中導致效能問題。對於圖像數量，您可以一次處理多個文件，但我們建議將批次處理大小保持在合理範圍內（不超過20張圖像）以獲得最佳效能。'
+            }
+        ],
+        
+        tutorialTitle: '如何使用圖像顏色反轉工具',
+        steps: [
+            {
+                title: '上傳您的圖片',
+                description: '首先上傳您想要反轉顏色的圖片。您可以直接將文件<strong>拖放</strong>到上傳區域，或點擊瀏覽並從您的設備中選擇文件。我們的工具支援JPG、PNG、BMP和WEBP格式。',
+                note: '您可以一次上傳多張圖片進行批次處理。'
+            },
+            {
+                title: '預覽和調整',
+                description: '上傳後，您將在預覽區域看到原始圖片的縮圖。在繼續之前，請檢查它們以確保您選擇了正確的文件。',
+                note: '如果需要刪除任何圖片，將滑鼠懸停在縮圖上並點擊刪除圖示。'
+            },
+            {
+                title: '反轉顏色',
+                description: '點擊<strong>"反轉顏色"</strong>按鈕處理您的圖片。該工具將把黑色轉換為白色，並反轉圖片中的所有其他顏色，建立負片效果。',
+                note: '對於大多數圖片，這個過程會立即完成，但非常大的文件可能需要一點時間來處理。'
+            },
+            {
+                title: '探索和互動',
+                description: '處理後，您的反轉圖片將出現在輸出部分。您可以使用縮放和平移控制項與每張圖片互動，查看細節。該工具允許您放大/縮小並在圖像中移動，以檢查特定區域。',
+                note: '點擊全螢幕按鈕在更大的模態視窗中查看圖像。'
+            },
+            {
+                title: '選擇匯出選項',
+                description: '對於每張反轉後的圖片，選擇您喜歡的匯出格式（PNG、JPG、WEBP或BMP）。如果選擇JPG，您還可以使用滑塊調整品質，在文件大小和圖像品質之間取得平衡。',
+                note: '對於包含文字或銳邊的圖像，建議使用PNG；而對於照片，JPG效果較好。'
+            },
+            {
+                title: '下載您的結果',
+                description: '點擊每張圖片下方的<strong>"下載"</strong>按鈕單獨保存，或使用輸出部分頂部的<strong>"批次下載"</strong>按鈕將所有反轉後的圖片作為ZIP文件下載。',
+                note: '所有處理都在您的瀏覽器中進行，因此您的圖片永遠不會上傳到任何伺服器，確保隱私和安全。'
+            }
+        ],
+        
+        successTitle: '恭喜！',
+        successContent: '您已成功學習如何使用我們的圖像顏色反轉工具。現在您可以輕鬆建立圖像的負片版本，用於各種創意和實用目的。',
+        
+        relatedToolsTitle: '您可能感興趣的相關工具',
+        relatedTools: [
+            {
+                name: '圖片壓縮器',
+                description: '在不明顯損失品質的情況下減小圖像文件大小。',
+                url: 'https://www.ufreetools.com/tool/image-compressor'
+            },
+            {
+                name: '圖片調整器',
+                description: '將圖像調整為特定尺寸或按百分比縮放。',
+                url: 'https://www.ufreetools.com/tool/image-batch-resizer'
+            },
+            {
+                name: '印章產生器',
+                description: '線上製作各類印章圖片，產生公司公章、私章等數位印章。',
+                url: 'https://www.ufreetools.com/tool/seal-generator'
+            },
+            {
+                name: 'QR碼產生器',
+                description: '為URL、文字、聯繫信息等建立自訂QR碼。',
+                url: 'https://www.ufreetools.com/tool/qr-code-generator'
+            }
+        ],
+        
+        referencesTitle: '參考資源',
+        references: [
+            {
+                name: '色彩理論基礎',
+                description: '了解互補色和顏色反轉原理',
+                url: 'https://www.colormatters.com/color-and-design/basic-color-theory'
+            },
+            {
+                name: '數位圖像處理技術',
+                description: '關於圖像處理算法的學術資源',
+                url: 'https://zh.wikipedia.org/wiki/數位圖像處理'
+            },
+            {
+                name: '網頁內容無障礙指南 (WCAG)',
+                description: '關於無障礙色彩對比度的指南',
+                url: 'https://www.w3.org/Translations/WCAG20-zh/'
+            }
+        ]
+    }
+}

@@ -1664,6 +1664,105 @@ Nome Università, Informatica, Settembre 2016 - Giugno 2020
 - Giapponese (base)`
       }
     ];
+  } else if (locale.value === 'zh-TW') {
+    // 中文繁體模板
+    markdownTemplates.value = [
+      {
+        name: '簡單文件',
+        description: '包含標題、清單、引用等',
+        content: `# 文件標題
+
+## 簡介
+這是一個簡單的Markdown文件範例。
+
+## 特性
+- 支援標題和段落
+- 支援**粗體**和*斜體*
+- 支援有序和無序清單
+
+> 這是一個引用區塊，用於引用他人的觀點。
+
+## 結論
+Markdown是一種簡單易用的標記語言。`
+      },
+      {
+        name: '專案README',
+        description: '專案文件標準結構',
+        content: `# 專案名稱
+
+## 專案簡介
+簡短描述專案的主要功能和用途。
+
+## 功能特點
+- 主要功能點1
+- 主要功能點2
+- 主要功能點3
+
+## 安裝說明
+\`\`\`
+# 安裝依賴
+npm install
+
+# 啟動開發伺服器
+npm run dev
+\`\`\`
+
+## 使用範例
+\`\`\`
+// 範例程式碼
+const example = new Example();
+example.init();
+\`\`\`
+
+## 文件
+更多詳細文件請參考文件連結。
+
+## 貢獻指南
+歡迎貢獻程式碼，請參閱貢獻指南。
+
+## 授權許可
+本專案基於MIT授權許可發布，詳細資訊請參閱LICENSE檔案。`
+      },
+      {
+        name: '個人履歷',
+        description: '個人履歷模板',
+        content: `# 個人履歷
+
+## 個人資訊
+- 姓名：張三
+- 電話：138xxxx1234
+- 電子郵件：zhangsan@example.com
+- 求職意向：前端開發工程師
+
+## 教育背景
+大學名稱，電腦科學與技術，2016年9月至2020年6月
+
+## 工作經歷
+### 科技公司，前端開發工程師，2020年7月至今
+- 負責公司核心產品的前端開發與維護
+- 使用Vue.js開發企業管理系統，提升使用者體驗
+- 最佳化前端效能，減少頁面載入時間30%
+
+### 科技公司，前端開發實習生，2019年7月至2020年6月
+- 參與公司官網改版專案
+- 協助團隊進行程式碼重構與最佳化
+
+## 技術技能
+- 前端開發：HTML, CSS, JavaScript, Vue.js, React
+- 後端開發：Node.js, Express
+- 其他工具：Git, Webpack, Docker
+
+## 專案經驗
+### 企業管理系統
+- 使用Vue.js開發的企業內部管理系統
+- 實現了資料視覺化、權限管理等功能
+- 最佳化了系統回應速度，提升使用者體驗
+
+## 語言能力
+- 英語（熟練）
+- 日語（基礎）`
+      }
+    ];
   } else {
     console.error('Invalid locale:', locale.value);
     throw new Error('Invalid locale');
@@ -2213,7 +2312,7 @@ Beginnen Sie mit dem Bearbeiten! Sie können die Symbolleiste oben verwenden, um
 
 편집을 시작해보세요! 상단 툴바를 사용하여 다양한 Markdown 요소를 빠르게 삽입할 수 있습니다.`,
 
-'it': `# Benvenuto nell'Editor Markdown
+    'it': `# Benvenuto nell'Editor Markdown
 
 Un semplice editor Markdown con anteprima in tempo reale e syntax highlighting.
 
@@ -2261,7 +2360,58 @@ Codice inline: \`var esempio = "ciao";\`
 ---
 
 Inizia a modificare! Puoi usare la barra degli strumenti in alto per inserire rapidamente elementi Markdown.`,
+
+    'zh-TW': `# 歡迎使用Markdown編輯器
+
+這是一個簡單的Markdown編輯器，支援即時預覽和語法高亮。
+
+## 基本語法
+
+### 標題
+使用 # 符號表示標題，例如：
+# 一級標題
+## 二級標題
+### 三級標題
+
+### 強調
+**粗體** 或 __粗體__
+*斜體* 或 _斜體_
+~~刪除線~~
+
+### 清單
+無序清單:
+- 項目1
+- 項目2
+- 項目3
+
+有序清單:
+1. 第一項
+2. 第二項
+3. 第三項
+
+### 連結和圖片
+[連結文字](https://example.com)
+
+
+### 程式碼
+行內程式碼: \`var example = "hello";\`
+
+### 引用
+> 這是一個引用段落。
+
+### 表格
+| 表頭1 | 表頭2 | 表頭3 |
+|-------|-------|-------|
+| 儲存格1 | 儲存格2 | 儲存格3 |
+| 儲存格4 | 儲存格5 | 儲存格6 |
+
+### 水平線
+---
+
+開始編輯吧！你可以使用上方的工具列快速插入各種Markdown元素。`
   };
+
+
 
   // 根据当前语言设置内容
   if (defaultContents[locale]) {
