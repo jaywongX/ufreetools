@@ -1438,6 +1438,81 @@ console.log(saluto('Mondo'));
 
 ***
 `
+      } else if (currentLocale === 'zh-TW') {
+        markdownText.value = `# Markdown基礎語法範例
+
+## 1. 標題
+
+# 一級標題
+## 二級標題
+### 三級標題
+#### 四級標題
+##### 五級標題
+###### 六級標題
+
+## 2. 文字格式
+
+普通文字
+
+**粗體文字**
+
+*斜體文字*
+
+~~刪除線~~
+
+**_粗斜體文字_**
+
+## 3. 清單
+
+### 無序清單
+- 項目1
+- 項目2
+  - 子項目A
+  - 子項目B
+
+### 有序清單
+1. 第一項
+2. 第二項
+3. 第三項
+
+## 4. 連結和圖片
+
+[連結到百度](https://www.baidu.com)
+
+
+
+## 5. 引用
+
+> 這是一段引用文字
+> 
+> 引用可以有多行
+
+## 6. 程式碼
+
+行內程式碼: \`console.log('Hello World')\`
+
+程式碼區塊:
+\`\`\`javascript
+function greeting(name) {
+  return \`Hello, \${name}!\`;
+}
+console.log(greeting('World'));
+\`\`\`
+
+## 7. 表格
+
+| 姓名 | 年齡 | 職業 |
+| ---- | ---- | ---- |
+| 張三 | 25   | 工程師 |
+| 李四 | 30   | 設計師 |
+| 王五 | 28   | 產品經理 |
+
+## 8. 分隔線
+
+---
+
+***
+`
       } else {
         console.error('Invalid locale:', currentLocale);
         throw new Error('Invalid locale');
@@ -2442,6 +2517,83 @@ graph TD;
 \`\`\`
 
 ## 11. Indice (richiede estensione)
+
+[TOC]
+`
+      } else if (currentLocale === 'zh-TW') {
+        markdownText.value = `# Markdown擴充語法
+
+## 1. 任務清單
+
+- [x] 已完成任務
+- [ ] 未完成任務
+- [x] 又一個已完成任務
+
+## 2. 表情符號
+
+支援 :smile: :heart: :thumbsup: 等Github風格的表情
+
+## 3. 數學公式 (需擴充支援)
+
+行內公式: $E=mc^2$
+
+區塊級公式:
+
+$$
+\\frac{n!}{k!(n-k)!} = \\binom{n}{k}
+$$
+
+## 4. 註腳
+
+這裡有一個註腳[1](@ref)
+
+[1](@ref): 這是註腳的內容。
+
+## 5. 定義清單
+
+術語 1
+: 定義 1
+
+術語 2
+: 定義 2a
+: 定義 2b
+
+## 6. 高亮標記 (需擴充支援)
+
+這是一段==高亮文字==
+
+## 7. 上標和下標 (需擴充支援)
+
+上標: X^2^
+下標: H~2~O
+
+## 8. 警告區塊 (需擴充支援)
+
+:::warning
+這是一個警告訊息
+:::
+
+:::info
+這是一條提示訊息
+:::
+
+## 9. 自訂容器 (需擴充支援)
+
+::: details 點擊展開詳情
+這裡是詳細內容
+:::
+
+## 10. 流程圖 (需擴充支援)
+
+\`\`\`mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+\`\`\`
+
+## 11. 目錄 (需擴充支援)
 
 [TOC]
 `
@@ -3569,6 +3721,93 @@ Imparare Markdown è facile, ma padroneggiarlo può aumentare significativamente
 
 *Autore: Appassionato di Markdown*  
 *Data pubblicazione: 15 Ottobre 2023*
+`
+      } else if (currentLocale === 'zh-TW') {
+        markdownText.value = `# Markdown: 簡單而強大的文字格式語言
+
+## 引言
+
+在數位化內容創作的時代，**Markdown** 作為一種輕量級標記語言，已經成為了技術文件、部落格寫作和內容管理的首選工具。本文將探討Markdown的歷史、基本語法和廣泛應用場景。
+
+## Markdown的歷史與設計理念
+
+Markdown由John Gruber和Aaron Swartz於2004年創建，其設計初衷是為了讓人們能夠使用易讀易寫的純文字格式編寫文件，然後轉換成有效的HTML文件。
+
+> "Markdown的首要設計目標是易讀性。一份Markdown格式的文件應該要能直接以純文字發布，而不會看起來像是被標記或格式化指令所構成。" 
+> — John Gruber
+
+這種設計理念使Markdown與其他標記語言有本質區別：**它注重的是內容本身，而不是表現形式**。
+
+## Markdown的基本語法
+
+Markdown提供了一套簡潔的語法規則，下面是一些基礎元素：
+
+### 1. 標題
+
+Markdown使用#符號來識別標題級別：
+
+\`\`\`markdown
+# 一級標題
+## 二級標題
+### 三級標題
+\`\`\`
+
+### 2. 格式化文字
+
+- **粗體**: \`**文字**\` 或 \`__文字__\`
+- *斜體*: \`*文字*\` 或 \`_文字_\`
+- ~~刪除線~~: \`~~文字~~\`
+
+### 3. 清單
+
+無序清單使用減號、加號或星號作為清單項標記：
+
+- 項目1
+- 項目2
+  - 子項目A
+  - 子項目B
+
+有序清單則使用數字加點：
+
+1. 第一項
+2. 第二項
+3. 第三項
+
+### 4. 連結和圖片
+
+連結語法: \`[連結文字](URL)\`  
+圖片語法: \`\`
+
+### 5. 程式碼區塊
+
+\`\`\`javascript
+function helloWorld() {
+  console.log("Hello, world!");
+}
+\`\`\`
+
+## Markdown的廣泛應用
+
+Markdown已被廣泛應用於各種平台和工具中：
+
+| 平台/工具 | 應用場景 |
+| --------- | -------- |
+| GitHub    | 程式碼文件、Issues、Pull Requests |
+| Stack Overflow | 問答格式化 |
+| WordPress | 部落格寫作 |
+| Discord/Slack | 訊息格式化 |
+| Notion    | 筆記和知識管理 |
+
+## 結語
+
+Markdown憑藉其簡潔、高效和跨平台的特性，已經成為內容創作者的得力助手。無論是撰寫技術文件、部落格文章，還是簡單的筆記整理，Markdown都能提供一致且高效的寫作體驗。
+
+學習Markdown並不困難，但掌握它將為您的數位寫作帶來巨大的生產力提升。如果您還沒有嘗試過Markdown，現在正是最好的時機！
+
+---
+
+*文章作者: Markdown愛好者*  
+*發布日期: 2023年10月15日*
 `
       } else {
         console.error('Invalid locale:', currentLocale);

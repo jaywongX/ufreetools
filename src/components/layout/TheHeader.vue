@@ -122,7 +122,7 @@ const sidebarOpen = inject('sidebarOpen')
 const darkMode = inject('darkMode')
 const allTools = inject('allTools', { value: [] })
 const allTags = inject('allTags', { value: [] })
-import { supportedLanguages, supportedLanguageCodesWithOr } from '../../config/languages';
+import { supportedLanguages, supportedLanguageCodes } from '../../config/languages';
 
 // 搜索状态
 const searchQuery = ref('')
@@ -271,10 +271,26 @@ function handleClickOutside(event) {
   }
 }
 
+function swapZhAndZhTW(arr) {
+  const newArray = [...arr];
+  const indexZh = newArray.indexOf('zh');
+  const indexZhTW = newArray.indexOf('zh-TW');
+
+  if (indexZh !== -1 && indexZhTW !== -1) {
+    [newArray[indexZh], newArray[indexZhTW]] = [newArray[indexZhTW], newArray[indexZh]];
+  }
+
+  return newArray;
+}
+
 function switchLanguage(langCode) {
   if (langCode === locale.value) return;
 
   const currentPath = route.path;
+
+  let codes = swapZhAndZhTW(supportedLanguageCodes) 
+  let supportedLanguageCodesWithOr = codes.join('|');
+  
   // 构建一个正则表达式，用于匹配以 /zh、/en、/es、/zh-TW 等开头的部分
   const langPrefixRegex = new RegExp(`^\\/(${supportedLanguageCodesWithOr})`);
 

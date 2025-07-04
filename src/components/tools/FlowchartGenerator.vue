@@ -888,6 +888,65 @@ const exampleCodesByLocale = {
     Animale <|-- Cane
     Animale <|-- Gatto`
   },
+
+  zh_TW: {
+    flowchart: `graph TD
+    A[開始] --> B{是否正確?}
+    B -->|是| C[結果正確]
+    B -->|否| D[結果錯誤]
+    C --> E[結束]
+    D --> E`,
+    sequenceDiagram: `sequenceDiagram
+    participant 客戶端
+    participant 伺服器
+    客戶端->>伺服器: 請求資料
+    伺服器-->>客戶端: 回應資料
+    客戶端->>伺服器: 提交表單
+    伺服器-->>客戶端: 確認提交`,
+    gantt: `gantt
+    title 專案進度計劃
+    dateFormat  YYYY-MM-DD
+    section 規劃階段
+    需求收集           :a1, 2023-01-01, 30d
+    系統設計           :after a1, 20d
+    section 開發階段
+    後端開發           :2023-02-20, 45d
+    前端開發           :2023-02-25, 40d
+    section 測試階段
+    系統測試           :2023-04-05, 20d
+    用戶測試           :2023-04-20, 15d
+    section 上線階段
+    部署上線           :2023-05-05, 10d`,
+    stateDiagram: `stateDiagram-v2
+    [*] --> 編輯中
+    編輯中 --> 審核中: 提交審核
+    審核中 --> 已拒絕: 拒絕
+    審核中 --> 已發布: 通過
+    已拒絕 --> 編輯中: 修改後重新提交
+    已發布 --> [*]`,
+    pieChart: `pie
+    title 網站訪問來源分佈
+    "搜尋引擎" : 42.7
+    "直接訪問" : 28.9
+    "社群媒體" : 18.5
+    "其他管道" : 9.9`,
+    classDiagram: `classDiagram
+    class Animal {
+        +String name
+        +int age
+        +makeSound() void
+    }
+    class Dog {
+        +String breed
+        +fetch() void
+    }
+    class Cat {
+        +String color
+        +climb() void
+    }
+    Animal <|-- Dog
+    Animal <|-- Cat`
+  },
 };
 
 // 替换原来的 localizedExamples 计算属性
