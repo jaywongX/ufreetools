@@ -24,18 +24,6 @@
               </button>
             </div>
 
-            <!-- 添加用户引导提示 -->
-            <!-- <div class="mt-8 flex flex-col gap-4">
-              <div class="text-sm text-gray-500 dark:text-gray-400">{{ $t('home.quickStart') }}</div>
-              <div class="flex flex-wrap gap-3">
-                <router-link v-for="tool in quickStartTools" :key="tool.id" :to="localizedRoute(`/tool/${tool.id}`)"
-                  class="inline-flex items-center px-3 py-1.5 bg-gray-100 dark:bg-gray-800 rounded-full text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                  <span class="w-2 h-2 rounded-full mr-2" :class="`bg-${tool.dotColor}`"></span>
-                  {{ tool.name }}
-                </router-link>
-              </div>
-            </div> -->
-
             <!-- 在"快速开始"部分下方添加 -->
             <div class="mt-6">
               <div class="text-sm text-gray-500 dark:text-gray-400 mb-3">{{ $t('home.browseByCategory') }}</div>
@@ -297,6 +285,8 @@
           </div>
         </div>
       </div>
+
+      <FeaturedIn />
 
       <!-- 工具总数展示 -->
       <div class="container mx-auto px-4 mb-12">
@@ -579,6 +569,7 @@ import { ref, inject, computed, onMounted, watch, onUpdated } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import TagBadge from '../components/ui/TagBadge.vue'
 import ToolCard from '../components/ui/ToolCard.vue'
+import FeaturedIn from '../components/ui/FeaturedIn.vue'
 import { getHistory } from '../services/historyService'
 import { useMetaInfo } from '../mixins/metaInfoMixin'
 import { useI18n } from 'vue-i18n'
@@ -1122,4 +1113,55 @@ function navigateToUrl(path) {
 .animate-ping-slow {
   animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
+
+.featured-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border-radius: 9999px;
+  padding: 0.25rem 1rem 0.25rem 0.25rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.featured-badge:hover, .featured-badge:focus {
+  box-shadow: 0 4px 16px 0 rgba(59,130,246,0.10);
+  background: #f0f4ff;
+  transform: translateY(-2px) scale(1.04);
+  color: #1d4ed8;
+}
+.icon-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  background: white;
+  box-shadow: 0 2px 8px 0 rgba(59,130,246,0.06);
+  margin-right: 0.25rem;
+}
+.featured-label {
+  white-space: nowrap;
+  font-size: 1rem;
+  color: #2563eb;
+  transition: color 0.2s;
+}
+.dark .featured-badge {
+  color: #60a5fa;
+}
+.dark .featured-badge:hover, .dark .featured-badge:focus {
+  background: #1e293b;
+  color: #3b82f6;
+}
+.dark .icon-bg {
+  background: #111827;
+}
+.dark .featured-label {
+  color: #60a5fa;
+}
+
 </style>
