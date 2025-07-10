@@ -2,26 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.ufreetools.com/</loc>
-    <lastmod>2025-06-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/" />
-    <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/" />
-  </url>
-  <url>
     <loc>https://www.ufreetools.com/pt/</loc>
     <lastmod>2025-06-26</lastmod>
     <changefreq>weekly</changefreq>
