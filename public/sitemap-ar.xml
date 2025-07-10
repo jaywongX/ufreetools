@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.ufreetools.com/</loc>
+    <loc>https://www.ufreetools.com/hi/</loc>
     <lastmod>2025-06-19</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/" />
@@ -22,26 +22,6 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/hi/</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/" />
-    <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/hi/" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/" />
-  </url>
-  <url>
     <loc>https://www.ufreetools.com/hi/about</loc>
     <lastmod>2025-06-19</lastmod>
     <changefreq>monthly</changefreq>
@@ -53,12 +33,12 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/about" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/about" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/about" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//about" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/about" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/about" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/about" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/about" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/about" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/hi/about" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/about" />
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/about" />
   </url>
   <url>
@@ -73,12 +53,12 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/tags" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/tags" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/tags" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//tags" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/tags" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/tags" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/tags" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/tags" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/tags" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/hi/tags" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/tags" />
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/tags" />
   </url>
   <url>
@@ -93,12 +73,12 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/privacy-policy" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/privacy-policy" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/hi/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="zh-TW"
       href="https://www.ufreetools.com/zh-TW/privacy-policy" />
   </url>
@@ -114,12 +94,12 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/terms" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/terms" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/terms" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//terms" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/terms" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/terms" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/terms" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/terms" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/terms" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/hi/terms" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/terms" />
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/terms" />
   </url>
   <url>
@@ -134,12 +114,12 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/contact" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/contact" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/contact" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//contact" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/contact" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/contact" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/contact" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/contact" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/contact" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/hi/contact" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/contact" />
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/contact" />
   </url>
   <url>
@@ -154,12 +134,12 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/feedback" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/feedback" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/feedback" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//feedback" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/feedback" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/feedback" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/feedback" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/feedback" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/feedback" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/hi/feedback" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/feedback" />
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/feedback" />
   </url>
   <url>
@@ -174,12 +154,12 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/submit-tool" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/submit-tool" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/submit-tool" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//submit-tool" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/submit-tool" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/submit-tool" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/submit-tool" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/submit-tool" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/submit-tool" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/hi/submit-tool" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/submit-tool" />
     <xhtml:link rel="alternate" hreflang="zh-TW"
       href="https://www.ufreetools.com/zh-TW/submit-tool" />
   </url>
@@ -195,12 +175,12 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/dev" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/dev" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/dev" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//category/dev" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/category/dev" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/category/dev" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/category/dev" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/category/dev" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/category/dev" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/hi/category/dev" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/category/dev" />
     <xhtml:link rel="alternate" hreflang="zh-TW"
       href="https://www.ufreetools.com/zh-TW/category/dev" />
   </url>
@@ -216,13 +196,13 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/design" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/design" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/design" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//category/design" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/category/design" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/category/design" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/category/design" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/category/design" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/category/design" />
     <xhtml:link rel="alternate" hreflang="it"
-      href="https://www.ufreetools.com/it/hi/category/design" />
+      href="https://www.ufreetools.com/it/category/design" />
     <xhtml:link rel="alternate" hreflang="zh-TW"
       href="https://www.ufreetools.com/zh-TW/category/design" />
   </url>
@@ -238,13 +218,13 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/convert" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/convert" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/convert" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//category/convert" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/category/convert" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/category/convert" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/category/convert" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/category/convert" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/category/convert" />
     <xhtml:link rel="alternate" hreflang="it"
-      href="https://www.ufreetools.com/it/hi/category/convert" />
+      href="https://www.ufreetools.com/it/category/convert" />
     <xhtml:link rel="alternate" hreflang="zh-TW"
       href="https://www.ufreetools.com/zh-TW/category/convert" />
   </url>
@@ -260,12 +240,12 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/text" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/text" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/text" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//category/text" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/category/text" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/category/text" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/category/text" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/category/text" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/category/text" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/hi/category/text" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/category/text" />
     <xhtml:link rel="alternate" hreflang="zh-TW"
       href="https://www.ufreetools.com/zh-TW/category/text" />
   </url>
@@ -281,12 +261,12 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/image" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/image" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/image" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//category/image" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/category/image" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/category/image" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/category/image" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/category/image" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/category/image" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/hi/category/image" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/category/image" />
     <xhtml:link rel="alternate" hreflang="zh-TW"
       href="https://www.ufreetools.com/zh-TW/category/image" />
   </url>
@@ -302,13 +282,13 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/network" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/network" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/network" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//category/network" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/category/network" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/category/network" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/category/network" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/category/network" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/category/network" />
     <xhtml:link rel="alternate" hreflang="it"
-      href="https://www.ufreetools.com/it/hi/category/network" />
+      href="https://www.ufreetools.com/it/category/network" />
     <xhtml:link rel="alternate" hreflang="zh-TW"
       href="https://www.ufreetools.com/zh-TW/category/network" />
   </url>
@@ -324,13 +304,13 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/crypto" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/crypto" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/crypto" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//category/crypto" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/category/crypto" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/category/crypto" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/category/crypto" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/category/crypto" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/category/crypto" />
     <xhtml:link rel="alternate" hreflang="it"
-      href="https://www.ufreetools.com/it/hi/category/crypto" />
+      href="https://www.ufreetools.com/it/category/crypto" />
     <xhtml:link rel="alternate" hreflang="zh-TW"
       href="https://www.ufreetools.com/zh-TW/category/crypto" />
   </url>
@@ -346,13 +326,13 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/category/utility" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/category/utility" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/category/utility" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//category/utility" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/category/utility" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/category/utility" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/category/utility" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/category/utility" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/category/utility" />
     <xhtml:link rel="alternate" hreflang="it"
-      href="https://www.ufreetools.com/it/hi/category/utility" />
+      href="https://www.ufreetools.com/it/category/utility" />
     <xhtml:link rel="alternate" hreflang="zh-TW"
       href="https://www.ufreetools.com/zh-TW/category/utility" />
   </url>
@@ -376,7 +356,7 @@
     <xhtml:link rel="alternate" hreflang="fr"
       href="https://www.ufreetools.com/fr/category/surveying-and-mapping" />
     <xhtml:link rel="alternate" hreflang="ja"
-      href="https://www.ufreetools.com/ja//category/surveying-and-mapping" />
+      href="https://www.ufreetools.com/ja/category/surveying-and-mapping" />
     <xhtml:link rel="alternate" hreflang="pt"
       href="https://www.ufreetools.com/pt/category/surveying-and-mapping" />
     <xhtml:link rel="alternate" hreflang="de"
@@ -386,7 +366,7 @@
     <xhtml:link rel="alternate" hreflang="ko"
       href="https://www.ufreetools.com/ko/category/surveying-and-mapping" />
     <xhtml:link rel="alternate" hreflang="it"
-      href="https://www.ufreetools.com/it/hi/category/surveying-and-mapping" />
+      href="https://www.ufreetools.com/it/category/surveying-and-mapping" />
     <xhtml:link rel="alternate" hreflang="zh-TW"
       href="https://www.ufreetools.com/zh-TW/category/surveying-and-mapping" />
   </url>
@@ -3406,12 +3386,12 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/favorites" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/favorites" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/favorites" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja//favorites" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/favorites" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/favorites" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/favorites" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/favorites" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/favorites" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/hi/favorites" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/favorites" />
     <xhtml:link rel="alternate" hreflang="zh-TW"
       href="https://www.ufreetools.com/zh-TW/favorites" />
   </url>
