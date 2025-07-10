@@ -1,7 +1,7 @@
 <template>
     <div class="w-full flex flex-col items-center py-6 mb-8">
         <div class="featured-scroll-outer">
-            <span class="featured-title">Featured in:</span>
+            <span class="featured-title">{{ t('common.featuredIn') }}</span>
             <div class="featured-scroll-inner" ref="scrollInner">
                 <!-- Product Hunt -->
                 <!-- <a href="https://www.producthunt.com/posts/ufreetools" target="_blank" rel="noopener"
@@ -263,6 +263,8 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 const scrollInner = ref(null)
 let animationFrame

@@ -34,6 +34,31 @@
                   {{ section.title }}
                 </button>
               </div>
+              <!-- 浏览器插件模块 -->
+            <div class="mt-6">
+              <div class="text-sm text-gray-500 dark:text-gray-400 mb-3">{{ $t('common.browserExtensionsDesc') }}
+              </div>
+              <div class="flex flex-wrap gap-4">
+                <!-- Chrome -->
+                <a href="https://chromewebstore.google.com/detail/ufreetools/helippppkokcmlcngkegfmdmodlihjid" target="_blank" rel="noopener"
+                  class="browser-ext-btn">
+                  <img src="/chrome-96x96.png" alt="Chrome" class="browser-ext-icon" />
+                  <span>{{ $t('common.addToChrome') }}</span>
+                </a>
+                <!-- Firefox -->
+                <a href="https://addons.mozilla.org/firefox/addon/ufreetools/" target="_blank" rel="noopener"
+                  class="browser-ext-btn">
+                  <img src="/Firefox_logo,_2019.png" alt="Firefox" class="browser-ext-icon" />
+                  <span>{{ $t('common.addToFireFox') }}</span>
+                </a>
+                <!-- Edge -->
+                <!-- <a href="https://microsoftedge.microsoft.com/addons/detail/插件ID" target="_blank" rel="noopener"
+                  class="browser-ext-btn">
+                  <img src="/Microsoft_Edge_logo_(2019).png" alt="Edge" class="browser-ext-icon" />
+                  <span>{{ $t('common.addToEdge') }}</span>
+                </a> -->
+              </div>
+            </div>
             </div>
           </div>
 
@@ -1127,12 +1152,15 @@ function navigateToUrl(path) {
   font-weight: 500;
   font-size: 1rem;
 }
-.featured-badge:hover, .featured-badge:focus {
-  box-shadow: 0 4px 16px 0 rgba(59,130,246,0.10);
+
+.featured-badge:hover,
+.featured-badge:focus {
+  box-shadow: 0 4px 16px 0 rgba(59, 130, 246, 0.10);
   background: #f0f4ff;
   transform: translateY(-2px) scale(1.04);
   color: #1d4ed8;
 }
+
 .icon-bg {
   display: flex;
   align-items: center;
@@ -1141,27 +1169,73 @@ function navigateToUrl(path) {
   height: 2.25rem;
   border-radius: 9999px;
   background: white;
-  box-shadow: 0 2px 8px 0 rgba(59,130,246,0.06);
+  box-shadow: 0 2px 8px 0 rgba(59, 130, 246, 0.06);
   margin-right: 0.25rem;
 }
+
 .featured-label {
   white-space: nowrap;
   font-size: 1rem;
   color: #2563eb;
   transition: color 0.2s;
 }
+
 .dark .featured-badge {
   color: #60a5fa;
 }
-.dark .featured-badge:hover, .dark .featured-badge:focus {
+
+.dark .featured-badge:hover,
+.dark .featured-badge:focus {
   background: #1e293b;
   color: #3b82f6;
 }
+
 .dark .icon-bg {
   background: #111827;
 }
+
 .dark .featured-label {
   color: #60a5fa;
 }
 
+.browser-ext-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  border: 1.5px solid #e0e7ef;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #3b4261;
+  box-shadow: 0 1px 4px 0 rgba(59, 130, 246, 0.04);
+  text-decoration: none;
+  transition: box-shadow 0.18s, border-color 0.18s, color 0.18s;
+}
+.browser-ext-btn:hover {
+  border-color: #b6c3e0;
+  box-shadow: 0 2px 8px 0 rgba(59, 130, 246, 0.10);
+  color: #2563eb;
+}
+.browser-ext-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  object-fit: contain;
+  box-shadow: 0 1px 2px rgba(59,130,246,0.06);
+}
+.dark .browser-ext-btn {
+  background: #232a3b;
+  border-color: #2d3748;
+  color: #bcd1f7;
+}
+.dark .browser-ext-btn:hover {
+  border-color: #3b82f6;
+  color: #60a5fa;
+}
+.dark .browser-ext-icon {
+  background: #232a3b;
+}
 </style>

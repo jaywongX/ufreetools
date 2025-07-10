@@ -128,5 +128,10 @@ export default {
   home: {
     favoritedToolsTitle: '我的收藏',
     viewAllFavorites: '查看全部',
-  }
+  },
+  featuredIn: "推荐于：",
+  browserExtensionsDesc: "只需点击一下获取所有工具通过扩展",
+  addToChrome: "使用Chrome",
+  addToFireFox: "使用FireFox",
+  addToEdge: "使用Edge"
 }; 

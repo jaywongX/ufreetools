@@ -128,5 +128,10 @@ export default {
   home: {
     favoritedToolsTitle: '내 즐겨찾기',
     viewAllFavorites: '모두 보기',
-  }
+  },
+  featuredIn: "추천:",
+  browserExtensionsDesc: "확장 프로그램으로 한 번의 클릭으로 모든 도구 얻기",
+  addToChrome: "Chrome 사용",
+  addToFireFox: "FireFox 사용",
+  addToEdge: "Edge 사용",
 };
