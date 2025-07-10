@@ -128,5 +128,10 @@ export default {
   home: {
     favoritedToolsTitle: 'お気に入り',
     viewAllFavorites: 'すべて表示',
-  }
+  },
+  featuredIn: "特集:",
+  browserExtensionsDesc: "拡張機能でワンクリックですべてのツールを取得",
+  addToChrome: "Chromeを使用",
+  addToFireFox: "FireFoxを使用",
+  addToEdge: "Edgeを使用",
 };

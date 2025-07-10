@@ -125,5 +125,10 @@ export default {
   home: {
     favoritedToolsTitle: 'Мои избранные',
     viewAllFavorites: 'Просмотреть все',
-  }
+  },
+  featuredIn: "Рекомендуется в:",
+  browserExtensionsDesc: "Получите все инструменты в один клик через расширение",
+  addToChrome: "Использовать Chrome",
+  addToFireFox: "Использовать FireFox",
+  addToEdge: "Использовать Edge",
 }; 

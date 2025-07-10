@@ -124,5 +124,10 @@ export default {
   home: {
     favoritedToolsTitle: 'Mis Favoritos',
     viewAllFavorites: 'Ver todo',
-  }
+  },
+  featuredIn: "Destacado en:",
+  browserExtensionsDesc: "Obtén todas las herramientas con un clic a través de la extensión",
+  addToChrome: "Usar Chrome",
+  addToFireFox: "Usar FireFox",
+  addToEdge: "Usar Edge",
 };

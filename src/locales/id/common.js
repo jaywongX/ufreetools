@@ -128,5 +128,10 @@ export default {
   home: {
     favoritedToolsTitle: 'Favorit Saya',
     viewAllFavorites: 'Lihat semua',
-  }
+  },
+  featuredIn: "Ditampilkan di:",
+  browserExtensionsDesc: "Dapatkan semua alat dengan satu klik melalui ekstensi",
+  addToChrome: "Gunakan Chrome",
+  addToFireFox: "Gunakan FireFox",
+  addToEdge: "Gunakan Edge",
 };
