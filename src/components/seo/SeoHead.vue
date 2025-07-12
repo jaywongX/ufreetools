@@ -91,8 +91,8 @@ function updateLanguageAlternates() {
   supportedLanguages.forEach(lang => {
     const link = document.createElement('link');
     link.rel = 'alternate';
-    link.hreflang = lang;
-    link.href = `${siteUrl}/${lang}${currentPath.value}`;
+    link.hreflang = lang.code;
+    link.href = `${siteUrl}/${lang.code}${currentPath.value}`;
     document.head.appendChild(link);
   });
   
@@ -100,7 +100,7 @@ function updateLanguageAlternates() {
   const defaultLink = document.createElement('link');
   defaultLink.rel = 'alternate';
   defaultLink.hreflang = 'x-default';
-  defaultLink.href = `${siteUrl}/en${currentPath.value}`;
+  defaultLink.href = `${siteUrl}${currentPath.value}`;
   document.head.appendChild(defaultLink);
   
   // 添加规范链接
