@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.ufreetools.com/ru/</loc>
+    <loc>https://www.ufreetools.com/zh-TW/</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -22,7 +22,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/about</loc>
+    <loc>https://www.ufreetools.com/zh-TW/about</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -42,7 +42,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/about" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tags</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tags</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -62,7 +62,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/tags" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/privacy-policy</loc>
+    <loc>https://www.ufreetools.com/zh-TW/privacy-policy</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -83,7 +83,7 @@
       href="https://www.ufreetools.com/zh-TW/privacy-policy" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/terms</loc>
+    <loc>https://www.ufreetools.com/zh-TW/terms</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -103,7 +103,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/terms" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/contact</loc>
+    <loc>https://www.ufreetools.com/zh-TW/contact</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -123,7 +123,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/contact" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/feedback</loc>
+    <loc>https://www.ufreetools.com/zh-TW/feedback</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -143,7 +143,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/feedback" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/submit-tool</loc>
+    <loc>https://www.ufreetools.com/zh-TW/submit-tool</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -163,7 +163,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/submit-tool" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/category/dev</loc>
+    <loc>https://www.ufreetools.com/zh-TW/category/dev</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -184,7 +184,7 @@
       href="https://www.ufreetools.com/zh-TW/category/dev" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/category/design</loc>
+    <loc>https://www.ufreetools.com/zh-TW/category/design</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -205,7 +205,7 @@
       href="https://www.ufreetools.com/zh-TW/category/design" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/category/convert</loc>
+    <loc>https://www.ufreetools.com/zh-TW/category/convert</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -226,7 +226,7 @@
       href="https://www.ufreetools.com/zh-TW/category/convert" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/category/text</loc>
+    <loc>https://www.ufreetools.com/zh-TW/category/text</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -247,7 +247,7 @@
       href="https://www.ufreetools.com/zh-TW/category/text" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/category/image</loc>
+    <loc>https://www.ufreetools.com/zh-TW/category/image</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -268,7 +268,7 @@
       href="https://www.ufreetools.com/zh-TW/category/image" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/category/network</loc>
+    <loc>https://www.ufreetools.com/zh-TW/category/network</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -289,7 +289,7 @@
       href="https://www.ufreetools.com/zh-TW/category/network" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/category/crypto</loc>
+    <loc>https://www.ufreetools.com/zh-TW/category/crypto</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -310,7 +310,7 @@
       href="https://www.ufreetools.com/zh-TW/category/crypto" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/category/utility</loc>
+    <loc>https://www.ufreetools.com/zh-TW/category/utility</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -331,7 +331,7 @@
       href="https://www.ufreetools.com/zh-TW/category/utility" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/category/surveying-and-mapping</loc>
+    <loc>https://www.ufreetools.com/zh-TW/category/surveying-and-mapping</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -366,7 +366,7 @@
   </url>
 
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/base64-encoder-decoder</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/base64-encoder-decoder</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -400,7 +400,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/base64-encoder-decoder" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/bmi-calculator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/bmi-calculator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -434,7 +434,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/bmi-calculator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/cash-app-fee-calculator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/cash-app-fee-calculator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -468,41 +468,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/cash-app-fee-calculator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/code-beautifier</loc>
-    <lastmod>2025-07-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh"
-      href="https://www.ufreetools.com/zh/tool/code-beautifier" />
-    <xhtml:link rel="alternate" hreflang="en"
-      href="https://www.ufreetools.com/en/tool/code-beautifier" />
-    <xhtml:link rel="alternate" hreflang="es"
-      href="https://www.ufreetools.com/es/tool/code-beautifier" />
-    <xhtml:link rel="alternate" hreflang="hi"
-      href="https://www.ufreetools.com/hi/tool/code-beautifier" />
-    <xhtml:link rel="alternate" hreflang="ar"
-      href="https://www.ufreetools.com/ar/tool/code-beautifier" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/tool/code-beautifier" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/tool/code-beautifier" />
-    <xhtml:link rel="alternate" hreflang="ja"
-      href="https://www.ufreetools.com/ja/tool/code-beautifier" />
-    <xhtml:link rel="alternate" hreflang="pt"
-      href="https://www.ufreetools.com/pt/tool/code-beautifier" />
-    <xhtml:link rel="alternate" hreflang="de"
-      href="https://www.ufreetools.com/de/tool/code-beautifier" />
-    <xhtml:link rel="alternate" hreflang="id"
-      href="https://www.ufreetools.com/id/tool/code-beautifier" />
-    <xhtml:link rel="alternate" hreflang="ko"
-      href="https://www.ufreetools.com/ko/tool/code-beautifier" />
-    <xhtml:link rel="alternate" hreflang="it"
-      href="https://www.ufreetools.com/it/tool/code-beautifier" />
-    <xhtml:link rel="alternate" hreflang="zh-TW"
-      href="https://www.ufreetools.com/zh-TW/tool/code-beautifier" />
-  </url>
-  <url>
-    <loc>https://www.ufreetools.com/ru/tool/code-complexity-analyzer</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/code-complexity-analyzer</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -536,7 +502,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/code-complexity-analyzer" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/code-diff</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/code-diff</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -557,41 +523,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/code-diff" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/code-formatter</loc>
-    <lastmod>2025-07-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh"
-      href="https://www.ufreetools.com/zh/tool/code-formatter" />
-    <xhtml:link rel="alternate" hreflang="en"
-      href="https://www.ufreetools.com/en/tool/code-formatter" />
-    <xhtml:link rel="alternate" hreflang="es"
-      href="https://www.ufreetools.com/es/tool/code-formatter" />
-    <xhtml:link rel="alternate" hreflang="hi"
-      href="https://www.ufreetools.com/hi/tool/code-formatter" />
-    <xhtml:link rel="alternate" hreflang="ar"
-      href="https://www.ufreetools.com/ar/tool/code-formatter" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/tool/code-formatter" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/tool/code-formatter" />
-    <xhtml:link rel="alternate" hreflang="ja"
-      href="https://www.ufreetools.com/ja/tool/code-formatter" />
-    <xhtml:link rel="alternate" hreflang="pt"
-      href="https://www.ufreetools.com/pt/tool/code-formatter" />
-    <xhtml:link rel="alternate" hreflang="de"
-      href="https://www.ufreetools.com/de/tool/code-formatter" />
-    <xhtml:link rel="alternate" hreflang="id"
-      href="https://www.ufreetools.com/id/tool/code-formatter" />
-    <xhtml:link rel="alternate" hreflang="ko"
-      href="https://www.ufreetools.com/ko/tool/code-formatter" />
-    <xhtml:link rel="alternate" hreflang="it"
-      href="https://www.ufreetools.com/it/tool/code-formatter" />
-    <xhtml:link rel="alternate" hreflang="zh-TW"
-      href="https://www.ufreetools.com/zh-TW/tool/code-formatter" />
-  </url>
-  <url>
-    <loc>https://www.ufreetools.com/ru/tool/code-obfuscator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/code-obfuscator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -625,7 +557,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/code-obfuscator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/color-picker</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/color-picker</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -646,7 +578,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/color-picker" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/color-scheme-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/color-scheme-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -680,7 +612,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/color-scheme-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/cookie-manager</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/cookie-manager</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -714,7 +646,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/cookie-manager" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/cors-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/cors-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -748,7 +680,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/cors-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/countdown-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/countdown-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -782,41 +714,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/countdown-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/css-formatter</loc>
-    <lastmod>2025-07-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh"
-      href="https://www.ufreetools.com/zh/tool/css-formatter" />
-    <xhtml:link rel="alternate" hreflang="en"
-      href="https://www.ufreetools.com/en/tool/css-formatter" />
-    <xhtml:link rel="alternate" hreflang="es"
-      href="https://www.ufreetools.com/es/tool/css-formatter" />
-    <xhtml:link rel="alternate" hreflang="hi"
-      href="https://www.ufreetools.com/hi/tool/css-formatter" />
-    <xhtml:link rel="alternate" hreflang="ar"
-      href="https://www.ufreetools.com/ar/tool/css-formatter" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/tool/css-formatter" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/tool/css-formatter" />
-    <xhtml:link rel="alternate" hreflang="ja"
-      href="https://www.ufreetools.com/ja/tool/css-formatter" />
-    <xhtml:link rel="alternate" hreflang="pt"
-      href="https://www.ufreetools.com/pt/tool/css-formatter" />
-    <xhtml:link rel="alternate" hreflang="de"
-      href="https://www.ufreetools.com/de/tool/css-formatter" />
-    <xhtml:link rel="alternate" hreflang="id"
-      href="https://www.ufreetools.com/id/tool/css-formatter" />
-    <xhtml:link rel="alternate" hreflang="ko"
-      href="https://www.ufreetools.com/ko/tool/css-formatter" />
-    <xhtml:link rel="alternate" hreflang="it"
-      href="https://www.ufreetools.com/it/tool/css-formatter" />
-    <xhtml:link rel="alternate" hreflang="zh-TW"
-      href="https://www.ufreetools.com/zh-TW/tool/css-formatter" />
-  </url>
-  <url>
-    <loc>https://www.ufreetools.com/ru/tool/css-gradient-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/css-gradient-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -850,7 +748,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/css-gradient-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/csv-json-converter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/csv-json-converter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -884,7 +782,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/csv-json-converter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/curl-converter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/curl-converter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -918,7 +816,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/curl-converter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/currency-converter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/currency-converter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -952,7 +850,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/currency-converter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/diagram-examples</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/diagram-examples</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -986,7 +884,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/diagram-examples" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/drawing-board</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/drawing-board</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1020,7 +918,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/drawing-board" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/flowchart-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/flowchart-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1054,7 +952,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/flowchart-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/gif-frame-extractor</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/gif-frame-extractor</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1088,7 +986,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/gif-frame-extractor" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/git-conflict-resolver</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/git-conflict-resolver</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1122,7 +1020,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/git-conflict-resolver" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/grpc-debugger</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/grpc-debugger</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1156,7 +1054,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/grpc-debugger" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/hash-calculator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/hash-calculator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1190,7 +1088,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/hash-calculator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/hex-and-calculator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/hex-and-calculator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1224,7 +1122,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/hex-and-calculator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/hmac-calculator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/hmac-calculator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1258,7 +1156,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/hmac-calculator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/holiday-calendar</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/holiday-calendar</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1292,7 +1190,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/holiday-calendar" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/horizontal-to-vertical-image</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/horizontal-to-vertical-image</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1326,7 +1224,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/horizontal-to-vertical-image" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/html-entity-encoder</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/html-entity-encoder</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1360,7 +1258,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/html-entity-encoder" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/html-formatter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/html-formatter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1394,7 +1292,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/html-formatter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/http-header-security-checker</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/http-header-security-checker</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1428,7 +1326,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/http-header-security-checker" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/http-proxy-detector</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/http-proxy-detector</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1462,7 +1360,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/http-proxy-detector" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/http-status-code-lookup</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/http-status-code-lookup</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1496,41 +1394,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/http-status-code-lookup" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/id-photo-maker</loc>
-    <lastmod>2025-07-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh"
-      href="https://www.ufreetools.com/zh/tool/id-photo-maker" />
-    <xhtml:link rel="alternate" hreflang="en"
-      href="https://www.ufreetools.com/en/tool/id-photo-maker" />
-    <xhtml:link rel="alternate" hreflang="es"
-      href="https://www.ufreetools.com/es/tool/id-photo-maker" />
-    <xhtml:link rel="alternate" hreflang="hi"
-      href="https://www.ufreetools.com/hi/tool/id-photo-maker" />
-    <xhtml:link rel="alternate" hreflang="ar"
-      href="https://www.ufreetools.com/ar/tool/id-photo-maker" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/tool/id-photo-maker" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/tool/id-photo-maker" />
-    <xhtml:link rel="alternate" hreflang="ja"
-      href="https://www.ufreetools.com/ja/tool/id-photo-maker" />
-    <xhtml:link rel="alternate" hreflang="pt"
-      href="https://www.ufreetools.com/pt/tool/id-photo-maker" />
-    <xhtml:link rel="alternate" hreflang="de"
-      href="https://www.ufreetools.com/de/tool/id-photo-maker" />
-    <xhtml:link rel="alternate" hreflang="id"
-      href="https://www.ufreetools.com/id/tool/id-photo-maker" />
-    <xhtml:link rel="alternate" hreflang="ko"
-      href="https://www.ufreetools.com/ko/tool/id-photo-maker" />
-    <xhtml:link rel="alternate" hreflang="it"
-      href="https://www.ufreetools.com/it/tool/id-photo-maker" />
-    <xhtml:link rel="alternate" hreflang="zh-TW"
-      href="https://www.ufreetools.com/zh-TW/tool/id-photo-maker" />
-  </url>
-  <url>
-    <loc>https://www.ufreetools.com/ru/tool/image-batch-resizer</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/image-batch-resizer</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1564,7 +1428,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/image-batch-resizer" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/image-color-extractor</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/image-color-extractor</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1598,7 +1462,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/image-color-extractor" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/image-compressor</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/image-compressor</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1632,7 +1496,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/image-compressor" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/image-cropper</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/image-cropper</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1666,7 +1530,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/image-cropper" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/image-exif-viewer</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/image-exif-viewer</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1700,7 +1564,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/image-exif-viewer" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/image-filters</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/image-filters</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1734,7 +1598,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/image-filters" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/image-mosaic-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/image-mosaic-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1768,7 +1632,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/image-mosaic-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/image-pixelator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/image-pixelator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1802,7 +1666,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/image-pixelator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/image-to-ascii</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/image-to-ascii</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1836,7 +1700,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/image-to-ascii" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/image-watermark</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/image-watermark</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1870,7 +1734,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/image-watermark" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/income-tax-calculator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/income-tax-calculator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1904,7 +1768,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/income-tax-calculator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/instagram-post-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/instagram-post-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1938,7 +1802,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/instagram-post-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/ip-lookup</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/ip-lookup</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1959,75 +1823,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/ip-lookup" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/javascript-formatter</loc>
-    <lastmod>2025-07-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh"
-      href="https://www.ufreetools.com/zh/tool/javascript-formatter" />
-    <xhtml:link rel="alternate" hreflang="en"
-      href="https://www.ufreetools.com/en/tool/javascript-formatter" />
-    <xhtml:link rel="alternate" hreflang="es"
-      href="https://www.ufreetools.com/es/tool/javascript-formatter" />
-    <xhtml:link rel="alternate" hreflang="hi"
-      href="https://www.ufreetools.com/hi/tool/javascript-formatter" />
-    <xhtml:link rel="alternate" hreflang="ar"
-      href="https://www.ufreetools.com/ar/tool/javascript-formatter" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/tool/javascript-formatter" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/tool/javascript-formatter" />
-    <xhtml:link rel="alternate" hreflang="ja"
-      href="https://www.ufreetools.com/ja/tool/javascript-formatter" />
-    <xhtml:link rel="alternate" hreflang="pt"
-      href="https://www.ufreetools.com/pt/tool/javascript-formatter" />
-    <xhtml:link rel="alternate" hreflang="de"
-      href="https://www.ufreetools.com/de/tool/javascript-formatter" />
-    <xhtml:link rel="alternate" hreflang="id"
-      href="https://www.ufreetools.com/id/tool/javascript-formatter" />
-    <xhtml:link rel="alternate" hreflang="ko"
-      href="https://www.ufreetools.com/ko/tool/javascript-formatter" />
-    <xhtml:link rel="alternate" hreflang="it"
-      href="https://www.ufreetools.com/it/tool/javascript-formatter" />
-    <xhtml:link rel="alternate" hreflang="zh-TW"
-      href="https://www.ufreetools.com/zh-TW/tool/javascript-formatter" />
-  </url>
-  <url>
-    <loc>https://www.ufreetools.com/ru/tool/javascript-obfuscator</loc>
-    <lastmod>2025-07-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh"
-      href="https://www.ufreetools.com/zh/tool/javascript-obfuscator" />
-    <xhtml:link rel="alternate" hreflang="en"
-      href="https://www.ufreetools.com/en/tool/javascript-obfuscator" />
-    <xhtml:link rel="alternate" hreflang="es"
-      href="https://www.ufreetools.com/es/tool/javascript-obfuscator" />
-    <xhtml:link rel="alternate" hreflang="hi"
-      href="https://www.ufreetools.com/hi/tool/javascript-obfuscator" />
-    <xhtml:link rel="alternate" hreflang="ar"
-      href="https://www.ufreetools.com/ar/tool/javascript-obfuscator" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/tool/javascript-obfuscator" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/tool/javascript-obfuscator" />
-    <xhtml:link rel="alternate" hreflang="ja"
-      href="https://www.ufreetools.com/ja/tool/javascript-obfuscator" />
-    <xhtml:link rel="alternate" hreflang="pt"
-      href="https://www.ufreetools.com/pt/tool/javascript-obfuscator" />
-    <xhtml:link rel="alternate" hreflang="de"
-      href="https://www.ufreetools.com/de/tool/javascript-obfuscator" />
-    <xhtml:link rel="alternate" hreflang="id"
-      href="https://www.ufreetools.com/id/tool/javascript-obfuscator" />
-    <xhtml:link rel="alternate" hreflang="ko"
-      href="https://www.ufreetools.com/ko/tool/javascript-obfuscator" />
-    <xhtml:link rel="alternate" hreflang="it"
-      href="https://www.ufreetools.com/it/tool/javascript-obfuscator" />
-    <xhtml:link rel="alternate" hreflang="zh-TW"
-      href="https://www.ufreetools.com/zh-TW/tool/javascript-obfuscator" />
-  </url>
-  <url>
-    <loc>https://www.ufreetools.com/ru/tool/json-formatter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/json-formatter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2061,7 +1857,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/json-formatter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/jwt-debugger</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/jwt-debugger</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2082,7 +1878,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/jwt-debugger" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/latex-formula-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/latex-formula-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2116,7 +1912,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/latex-formula-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/loan-calculator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/loan-calculator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2150,7 +1946,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/loan-calculator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/markdown-editor</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/markdown-editor</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2184,7 +1980,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/markdown-editor" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/markdown-to-html</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/markdown-to-html</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2218,7 +2014,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/markdown-to-html" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/mock-api-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/mock-api-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2252,7 +2048,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/mock-api-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/mqtt-tester</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/mqtt-tester</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2273,7 +2069,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/mqtt-tester" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/name-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/name-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2307,41 +2103,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/name-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/network-speed-test</loc>
-    <lastmod>2025-07-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh"
-      href="https://www.ufreetools.com/zh/tool/network-speed-test" />
-    <xhtml:link rel="alternate" hreflang="en"
-      href="https://www.ufreetools.com/en/tool/network-speed-test" />
-    <xhtml:link rel="alternate" hreflang="es"
-      href="https://www.ufreetools.com/es/tool/network-speed-test" />
-    <xhtml:link rel="alternate" hreflang="hi"
-      href="https://www.ufreetools.com/hi/tool/network-speed-test" />
-    <xhtml:link rel="alternate" hreflang="ar"
-      href="https://www.ufreetools.com/ar/tool/network-speed-test" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/tool/network-speed-test" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/tool/network-speed-test" />
-    <xhtml:link rel="alternate" hreflang="ja"
-      href="https://www.ufreetools.com/ja/tool/network-speed-test" />
-    <xhtml:link rel="alternate" hreflang="pt"
-      href="https://www.ufreetools.com/pt/tool/network-speed-test" />
-    <xhtml:link rel="alternate" hreflang="de"
-      href="https://www.ufreetools.com/de/tool/network-speed-test" />
-    <xhtml:link rel="alternate" hreflang="id"
-      href="https://www.ufreetools.com/id/tool/network-speed-test" />
-    <xhtml:link rel="alternate" hreflang="ko"
-      href="https://www.ufreetools.com/ko/tool/network-speed-test" />
-    <xhtml:link rel="alternate" hreflang="it"
-      href="https://www.ufreetools.com/it/tool/network-speed-test" />
-    <xhtml:link rel="alternate" hreflang="zh-TW"
-      href="https://www.ufreetools.com/zh-TW/tool/network-speed-test" />
-  </url>
-  <url>
-    <loc>https://www.ufreetools.com/ru/tool/number-converter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/number-converter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2375,7 +2137,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/number-converter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/personal-account-book</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/personal-account-book</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2409,7 +2171,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/personal-account-book" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/openapi-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/openapi-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2443,7 +2205,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/openapi-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/page-redirect-checker</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/page-redirect-checker</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2477,7 +2239,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/page-redirect-checker" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/password-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/password-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2511,7 +2273,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/password-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/password-strength-checker</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/password-strength-checker</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2545,7 +2307,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/password-strength-checker" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/pomodoro-timer</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/pomodoro-timer</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2579,7 +2341,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/pomodoro-timer" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/qr-code-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/qr-code-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2613,7 +2375,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/qr-code-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/regex-tester</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/regex-tester</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2634,7 +2396,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/regex-tester" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/request-header-editor</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/request-header-editor</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2668,7 +2430,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/request-header-editor" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/sensitive-word-filter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/sensitive-word-filter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2702,41 +2464,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/sensitive-word-filter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/sql-formatter</loc>
-    <lastmod>2025-07-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh"
-      href="https://www.ufreetools.com/zh/tool/sql-formatter" />
-    <xhtml:link rel="alternate" hreflang="en"
-      href="https://www.ufreetools.com/en/tool/sql-formatter" />
-    <xhtml:link rel="alternate" hreflang="es"
-      href="https://www.ufreetools.com/es/tool/sql-formatter" />
-    <xhtml:link rel="alternate" hreflang="hi"
-      href="https://www.ufreetools.com/hi/tool/sql-formatter" />
-    <xhtml:link rel="alternate" hreflang="ar"
-      href="https://www.ufreetools.com/ar/tool/sql-formatter" />
-    <xhtml:link rel="alternate" hreflang="ru"
-      href="https://www.ufreetools.com/ru/tool/sql-formatter" />
-    <xhtml:link rel="alternate" hreflang="fr"
-      href="https://www.ufreetools.com/fr/tool/sql-formatter" />
-    <xhtml:link rel="alternate" hreflang="ja"
-      href="https://www.ufreetools.com/ja/tool/sql-formatter" />
-    <xhtml:link rel="alternate" hreflang="pt"
-      href="https://www.ufreetools.com/pt/tool/sql-formatter" />
-    <xhtml:link rel="alternate" hreflang="de"
-      href="https://www.ufreetools.com/de/tool/sql-formatter" />
-    <xhtml:link rel="alternate" hreflang="id"
-      href="https://www.ufreetools.com/id/tool/sql-formatter" />
-    <xhtml:link rel="alternate" hreflang="ko"
-      href="https://www.ufreetools.com/ko/tool/sql-formatter" />
-    <xhtml:link rel="alternate" hreflang="it"
-      href="https://www.ufreetools.com/it/tool/sql-formatter" />
-    <xhtml:link rel="alternate" hreflang="zh-TW"
-      href="https://www.ufreetools.com/zh-TW/tool/sql-formatter" />
-  </url>
-  <url>
-    <loc>https://www.ufreetools.com/ru/tool/svg-optimizer</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/svg-optimizer</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2770,7 +2498,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/svg-optimizer" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/symmetric-crypto</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/symmetric-crypto</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2804,7 +2532,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/symmetric-crypto" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/timestamp-converter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/timestamp-converter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2838,7 +2566,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/timestamp-converter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/todo-list</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/todo-list</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2859,7 +2587,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/todo-list" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/travel-budget-planner</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/travel-budget-planner</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2893,7 +2621,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/travel-budget-planner" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/url-encode-decode</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/url-encode-decode</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2927,7 +2655,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/url-encode-decode" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/url-params-parser</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/url-params-parser</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2961,7 +2689,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/url-params-parser" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/user-agent-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/user-agent-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2995,7 +2723,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/user-agent-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/user-agent-parser</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/user-agent-parser</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3029,7 +2757,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/user-agent-parser" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/uuid-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/uuid-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3063,7 +2791,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/uuid-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/vertical-to-horizontal-image</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/vertical-to-horizontal-image</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3097,7 +2825,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/vertical-to-horizontal-image" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/websocket-tester</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/websocket-tester</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3131,7 +2859,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/websocket-tester" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/word-shuffler</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/word-shuffler</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3165,7 +2893,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/word-shuffler" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/xml-formatter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/xml-formatter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3199,7 +2927,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/xml-formatter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/xml-json-converter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/xml-json-converter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3233,7 +2961,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/xml-json-converter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/yaml-json-converter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/yaml-json-converter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3267,7 +2995,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/yaml-json-converter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/hexadecimal-case-converter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/hexadecimal-case-converter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3301,7 +3029,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/hexadecimal-case-converter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/jfif-jpg-converter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/jfif-jpg-converter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3335,7 +3063,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/jfif-jpg-converter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/jpg-jfif-converter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/jpg-jfif-converter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3369,7 +3097,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/jpg-jfif-converter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/favorites</loc>
+    <loc>https://www.ufreetools.com/zh-TW/favorites</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3389,7 +3117,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/favorites" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/seal-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/seal-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3423,7 +3151,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/seal-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/coordinate-converter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/coordinate-converter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3457,7 +3185,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/coordinate-converter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/x509-certificate-decoder</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/x509-certificate-decoder</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3491,7 +3219,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/x509-certificate-decoder" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/gps-track-replay</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/gps-track-replay</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3525,7 +3253,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/gps-track-replay" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/gaussian-projection</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/gaussian-projection</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3559,7 +3287,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/gaussian-projection" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/rsa-encrypt-decrypt</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/rsa-encrypt-decrypt</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3593,7 +3321,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/rsa-encrypt-decrypt" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/sm2-encrypt-decrypt</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/sm2-encrypt-decrypt</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3627,7 +3355,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/sm2-encrypt-decrypt" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/id-number-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/id-number-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3661,7 +3389,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/id-number-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/unified-credit-code-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/unified-credit-code-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3695,7 +3423,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/unified-credit-code-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/rsa-key-pair-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/rsa-key-pair-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3729,7 +3457,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/rsa-key-pair-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/sm2-key-pair-generator</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/sm2-key-pair-generator</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3763,7 +3491,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/sm2-key-pair-generator" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/rsa-signature-verifier</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/rsa-signature-verifier</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3797,7 +3525,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/rsa-signature-verifier" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/sm2-signature-verifier</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/sm2-signature-verifier</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3831,7 +3559,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/sm2-signature-verifier" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/base64-hex-converter</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/base64-hex-converter</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3865,7 +3593,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/base64-hex-converter" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/asn1-structure-parser</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/asn1-structure-parser</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3899,7 +3627,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/asn1-structure-parser" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/invert-image-colors</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/invert-image-colors</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3933,7 +3661,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/invert-image-colors" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/resize-to-1024x576-image</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/resize-to-1024x576-image</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -3967,7 +3695,7 @@
       href="https://www.ufreetools.com/zh-TW/tool/resize-to-1024x576-image" />
   </url>
   <url>
-    <loc>https://www.ufreetools.com/ru/tool/reduce-image-size-in-kb-mb</loc>
+    <loc>https://www.ufreetools.com/zh-TW/tool/reduce-image-size-in-kb-mb</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
