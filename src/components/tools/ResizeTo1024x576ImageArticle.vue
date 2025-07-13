@@ -3,9 +3,9 @@
 
         <!-- Article content -->
         <div class="prose max-w-none dark:prose-invert">
-            <h1 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800 dark:text-white">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800 dark:text-white">
                 {{ $t('tools.resize-to-1024x576-image.article.title') }}
-            </h1>
+            </h2>
 
             <!-- 工具功能介绍应用场景 -->
             <section class="mb-10">

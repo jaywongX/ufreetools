@@ -3,7 +3,6 @@
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-4 mb-6">
       <!-- 工具选择面板 - 减小宽度以留更多空间给画布 -->
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 lg:col-span-1">
-        <h2 class="text-lg font-bold mb-3">{{ t('tools.drawing-board.name') }}</h2>
         <div class="flex flex-wrap gap-2 mb-4">
           <button 
             @click="setTool('brush')" 

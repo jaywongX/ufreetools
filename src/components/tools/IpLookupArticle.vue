@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 mt-8 border border-gray-200 dark:border-gray-700">
     <article class="prose dark:prose-invert max-w-none">
-      <h1 class="text-2xl font-bold mb-4">{{ $t('tools.ip-lookup.article.title') }}</h1>
+      <h2 class="text-2xl font-bold mb-4">{{ $t('tools.ip-lookup.article.title') }}</h2>
       
       <!-- 功能介绍与应用场景 -->
       <h2 class="text-xl font-semibold mt-6 mb-3">{{ $t('tools.ip-lookup.article.intro.title') }}</h2>

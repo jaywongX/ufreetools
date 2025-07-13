@@ -1,6 +1,6 @@
 <template>
   <div class="article-container mt-6 p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
-    <h1 class="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">{{ $t('tools.image-cropper.article.title') }}</h1>
+    <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">{{ $t('tools.image-cropper.article.title') }}</h2>
     
     <!-- Introduction Section -->
     <section class="mb-8">

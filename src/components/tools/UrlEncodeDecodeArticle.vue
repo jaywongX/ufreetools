@@ -1,9 +1,9 @@
 <template>
     <div class="mt-8 bg-white dark:bg-gray-800 rounded-md p-6 border border-gray-200 dark:border-gray-700">
       <!-- 文章标题 -->
-      <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">
+      <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">
         {{ $t('tools.url-encode-decode.article.title') }}
-      </h1>
+      </h2>
       
       <!-- 功能介绍 -->
       <section class="mb-8">

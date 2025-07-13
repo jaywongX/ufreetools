@@ -3,7 +3,7 @@
 
     <!-- Article content -->
     <div class="prose max-w-none dark:prose-invert">
-      <h1 class="text-3xl font-bold mb-6">{{ $t('tools.rsa-key-pair-generator.article.title') }}</h1>
+      <h2 class="text-3xl font-bold mb-6">{{ $t('tools.rsa-key-pair-generator.article.title') }}</h2>
 
       <!-- Introduction -->
       <section>

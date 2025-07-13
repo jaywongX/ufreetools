@@ -2,10 +2,6 @@
   <div>
     <!-- 工具配置区域 -->
     <div class="mb-6 bg-white dark:bg-gray-800 rounded-md p-4 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">{{ $t('tools.curl-converter.name') }}</h2>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        {{ $t('tools.curl-converter.description') }}
-      </p>
       
       <!-- cURL输入区域 -->
       <div class="mb-4">

@@ -11,7 +11,6 @@
         <TheHeader />
       </div>
       <main class="flex-1 p-1 md:p-6 overflow-auto">
-        <h1 class="sr-only">{{ $t('home.title') }}</h1>
         <router-view />
         <MainAreaFooterAd />
       </main>

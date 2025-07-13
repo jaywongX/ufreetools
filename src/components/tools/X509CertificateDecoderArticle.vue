@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 mt-8 border border-gray-200 dark:border-gray-700">
     <!-- <div class="prose max-w-none dark:prose-invert"> -->
-      <h1 class="text-2xl font-bold mb-4">{{ $t('tools.x509-certificate-decoder.article.title') }}</h1>
+      <h2 class="text-2xl font-bold mb-4">{{ $t('tools.x509-certificate-decoder.article.title') }}</h2>
       
       <!-- Tool Introduction and Use Cases -->
       <section class="mb-8">

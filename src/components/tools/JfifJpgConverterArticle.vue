@@ -1,7 +1,7 @@
 <template>
   <div class="article-container">
     <div class="prose max-w-none">
-      <h1 id="jfif-to-jpg-converter">{{ $t('tools.jfif-jpg-converter.article.title') }}</h1>
+      <h2 id="jfif-to-jpg-converter">{{ $t('tools.jfif-jpg-converter.article.title') }}</h2>
       
       <!-- 工具功能介绍和应用场景 -->
       <section>

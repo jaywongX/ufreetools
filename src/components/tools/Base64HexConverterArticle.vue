@@ -2,7 +2,7 @@
     <div class="mt-12 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
         <article class="prose dark:prose-invert max-w-none">
             <!-- 文章标题 -->
-            <h1 class="text-3xl font-bold mb-6">{{ $t('tools.base64-hex-converter.article.title') }}</h1>
+            <h2 class="text-3xl font-bold mb-6">{{ $t('tools.base64-hex-converter.article.title') }}</h2>
 
             <!-- 工具功能介绍 -->
             <section class="mb-10">
