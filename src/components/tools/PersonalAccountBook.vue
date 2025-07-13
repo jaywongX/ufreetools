@@ -2,7 +2,7 @@
   <div class="personal-account-book-container">
     <!-- 工具栏 -->
     <div class="toolbar flex justify-between mb-4">
-      <h1 class="text-xl font-bold">{{ $t('tools.personal-account-book.name') }}</h1>
+      <h2 class="text-xl font-bold">{{ $t('tools.personal-account-book.name') }}</h2>
       <div class="flex space-x-2">
         <button 
           @click="exportData" 

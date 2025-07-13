@@ -1,6 +1,6 @@
 <template>
   <div class="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
-    <h3 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">{{ $t('tools.diagram-examples.title') }}</h3>
+    <h1 class="text-lg font-medium mb-4 text-gray-800 dark:text-gray-200">{{ $t('tools.diagram-examples.title') }}</h1>
 
     <div class="space-y-6">
       <!-- Software Development Example -->

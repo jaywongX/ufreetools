@@ -1,10 +1,5 @@
 <template>
   <div class="word-shuffler w-full">
-    <!-- 标题和简要说明 -->
-    <div class="mb-4 text-center">
-      <h1 class="text-2xl font-bold">{{ $t('tools.word-shuffler.name') }}</h1>
-      <p class="text-gray-600 dark:text-gray-400">{{ $t('tools.word-shuffler.tagline') }}</p>
-    </div>
 
     <!-- 主要内容区域 - 左右两栏布局 -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">

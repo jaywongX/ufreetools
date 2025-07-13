@@ -1,7 +1,7 @@
 <template>
     <div class="mt-8 bg-white dark:bg-gray-800 rounded-md p-6 border border-gray-200 dark:border-gray-700">
   
-      <h1 class="text-2xl sm:text-3xl font-bold mb-6">{{ $t('tools.rsa-signature-verifier.article.title') }}</h1>
+      <h2 class="text-2xl sm:text-3xl font-bold mb-6">{{ $t('tools.rsa-signature-verifier.article.title') }}</h2>
   
       <!-- 工具功能介绍与应用场景 -->
       <section class="mb-8">

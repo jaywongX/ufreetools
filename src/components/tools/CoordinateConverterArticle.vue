@@ -1,9 +1,9 @@
 <template>
   <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden my-6">
     <div class="p-6">
-      <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
         {{ t('tools.coordinate-converter.article.title') }}
-      </h1>
+      </h2>
       
       <p class="text-gray-700 dark:text-gray-300 mb-6">
         {{ t('tools.coordinate-converter.article.introduction') }}

@@ -1,8 +1,5 @@
 <template>
-    <div class="travel-budget-planner w-full max-w-none">
-      <!-- 页面标题 -->
-      <h1 class="text-2xl font-bold mb-6">{{ t('tools.travel-budget-planner.planYourTrip') }}</h1>
-      
+    <div class="travel-budget-planner w-full max-w-none">      
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
         <!-- 左侧：旅行基本信息 -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">

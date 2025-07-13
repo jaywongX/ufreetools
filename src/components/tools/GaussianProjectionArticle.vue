@@ -1,6 +1,6 @@
 <template>
   <div class="article-container prose dark:prose-invert max-w-none lg:mt-8 mt-6 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-    <h1 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">{{ $t('tools.gaussian-projection.article.title') }}</h1>
+    <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">{{ $t('tools.gaussian-projection.article.title') }}</h2>
 
     <!-- 工具说明（从原组件迁移过来） -->
     <div class="mb-8">

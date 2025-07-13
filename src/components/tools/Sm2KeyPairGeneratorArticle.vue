@@ -2,7 +2,7 @@
   <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 mt-8 border border-gray-200 dark:border-gray-700">
     <article class="prose prose-lg max-w-none dark:prose-invert">
       <!-- 工具标题 -->
-      <h1 class="text-3xl font-bold mb-6">{{ $t('tools.sm2-key-pair-generator.article.title') }}</h1>
+      <h2 class="text-3xl font-bold mb-6">{{ $t('tools.sm2-key-pair-generator.article.title') }}</h2>
       
       <!-- 功能介绍与应用场景 -->
       <section>

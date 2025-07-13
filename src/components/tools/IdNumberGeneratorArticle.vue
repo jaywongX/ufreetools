@@ -1,7 +1,7 @@
 <template>
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 mt-8 border border-gray-200 dark:border-gray-700">
         <article class="prose dark:prose-invert max-w-none">
-            <h1 class="text-2xl font-bold mb-4">{{ $t('tools.id-number-generator.article.introduction.title') }}</h1>
+            <h2 class="text-2xl font-bold mb-4">{{ $t('tools.id-number-generator.article.introduction.title') }}</h2>
             <section class="mb-12">
                 <p class="text-gray-700 dark:text-gray-300 mb-4">
                     {{ $t('tools.id-number-generator.article.introduction.p1') }}

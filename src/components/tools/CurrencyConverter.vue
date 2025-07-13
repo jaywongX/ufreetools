@@ -4,7 +4,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
       <!-- 转换表单 -->
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-        <h2 class="text-xl font-bold mb-4">{{ t('tools.currency-converter.name') }}</h2>
+        <h1 class="text-xl font-bold mb-4">{{ t('tools.currency-converter.name') }}</h1>
         
         <!-- 金额输入 -->
         <div class="mb-4">

@@ -1,6 +1,6 @@
 <template>
   <div class="mt-12 bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
-    <h1 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">{{ $t('tools.rsa-encrypt-decrypt.article.title') }}</h1>
+    <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">{{ $t('tools.rsa-encrypt-decrypt.article.title') }}</h2>
     
     <!-- 工具介绍 -->
     <section class="mb-10">
