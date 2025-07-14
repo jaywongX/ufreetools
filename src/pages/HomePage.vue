@@ -52,11 +52,11 @@
                   <span>{{ $t('common.addToFireFox') }}</span>
                 </a>
                 <!-- Edge -->
-                <!-- <a href="https://microsoftedge.microsoft.com/addons/detail/插件ID" target="_blank" rel="noopener"
+                <a href="https://microsoftedge.microsoft.com/addons/detail/ufreetools/bnacfmkhnhbpgkjkgkndoiakkpceigfb" target="_blank" rel="noopener"
                   class="browser-ext-btn">
                   <img src="/Microsoft_Edge_logo_(2019).png" alt="Edge" class="browser-ext-icon" />
                   <span>{{ $t('common.addToEdge') }}</span>
-                </a> -->
+                </a>
               </div>
             </div>
             </div>
