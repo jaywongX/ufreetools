@@ -6,7 +6,7 @@ export default function middleware(request: Request) {
     
     // 如果是百度蜘蛛（Baiduspider），直接放行（不重定向）
     if (userAgent.includes('Baiduspider')) {
-    return NextResponse.next();
+        return;
     }
   
     // 获取 Accept-Language 请求头
