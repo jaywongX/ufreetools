@@ -2,6 +2,12 @@
 
 export default function middleware(request: Request) {
     const url = new URL(request.url);
+    const userAgent = request.headers.get('user-agent') || '';
+    
+    // 如果是百度蜘蛛（Baiduspider），直接放行（不重定向）
+    if (userAgent.includes('Baiduspider')) {
+    return NextResponse.next();
+    }
   
     // 获取 Accept-Language 请求头
     const acceptLanguage = request.headers.get('accept-language') || 'en-US,en;q=0.9';
