@@ -18,33 +18,33 @@ export default function middleware(request: Request) {
   
     let redirectPath = '/en/';
   
-    if (lang.startsWith('zh-TW')) {
-      redirectPath = '/zh-TW/';
-    } else if (lang.startsWith('zh')) {
-      redirectPath = '/zh/';
-    } else if (lang.startsWith('es')) {
-      redirectPath = '/es/';
-    } else if (lang.startsWith('hi')) {
-      redirectPath = '/hi/';
-    } else if (lang.startsWith('ar')) {
-      redirectPath = '/ar/';
-    } else if (lang.startsWith('ru')) {
-      redirectPath = '/ru/';
-    } else if (lang.startsWith('fr')) {
-      redirectPath = '/fr/';
-    } else if (lang.startsWith('ja')) {
-      redirectPath = '/ja/';
-    } else if (lang.startsWith('pt')) {
-      redirectPath = '/pt/';
-    } else if (lang.startsWith('de')) {
-      redirectPath = '/de/';
-    } else if (lang.startsWith('id')) {
-      redirectPath = '/id/';
-    } else if (lang.startsWith('ko')) {
-      redirectPath = '/ko/';
-    } else if (lang.startsWith('it')) {
-      redirectPath = '/it/';
-    }
+    // if (lang.startsWith('zh-TW')) {
+    //   redirectPath = '/zh-TW/';
+    // } else if (lang.startsWith('zh')) {
+    //   redirectPath = '/zh/';
+    // } else if (lang.startsWith('es')) {
+    //   redirectPath = '/es/';
+    // } else if (lang.startsWith('hi')) {
+    //   redirectPath = '/hi/';
+    // } else if (lang.startsWith('ar')) {
+    //   redirectPath = '/ar/';
+    // } else if (lang.startsWith('ru')) {
+    //   redirectPath = '/ru/';
+    // } else if (lang.startsWith('fr')) {
+    //   redirectPath = '/fr/';
+    // } else if (lang.startsWith('ja')) {
+    //   redirectPath = '/ja/';
+    // } else if (lang.startsWith('pt')) {
+    //   redirectPath = '/pt/';
+    // } else if (lang.startsWith('de')) {
+    //   redirectPath = '/de/';
+    // } else if (lang.startsWith('id')) {
+    //   redirectPath = '/id/';
+    // } else if (lang.startsWith('ko')) {
+    //   redirectPath = '/ko/';
+    // } else if (lang.startsWith('it')) {
+    //   redirectPath = '/it/';
+    // }
   
     // 拼接完整路径（保留原始路径部分，如 /about）
     const pathname = url.pathname;
