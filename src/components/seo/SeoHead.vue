@@ -100,7 +100,7 @@ function updateLanguageAlternates() {
   const defaultLink = document.createElement('link');
   defaultLink.rel = 'alternate';
   defaultLink.hreflang = 'x-default';
-  defaultLink.href = `${siteUrl}${currentPath.value}`;
+  defaultLink.href = `${siteUrl}/en${currentPath.value}`;
   document.head.appendChild(defaultLink);
   
   // 添加规范链接
