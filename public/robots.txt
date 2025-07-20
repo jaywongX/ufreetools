@@ -1,7 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /[object%20Object]/
 Disallow: /[object%20object]/
 Disallow: /[object Object]/
+Disallow: /[object object]/
 Disallow: /tools/
 Disallow: /ru/hi/
 Disallow: /it/hi/
