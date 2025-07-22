@@ -6,7 +6,8 @@
         <!-- 汉堡菜单按钮 -->
         <button @click="toggleSidebar"
           class="p-2 rounded-md text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 focus:outline-none transition-transform duration-300 ease-in-out hidden md:block"
-          :class="{ 'rotate-90': !sidebarOpen }">
+          :class="{ 'rotate-90': !sidebarOpen }"
+          aria-label="sidebar button">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-all duration-300" fill="none"
             viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />

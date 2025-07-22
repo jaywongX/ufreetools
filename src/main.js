@@ -22,6 +22,7 @@ import { router, setupLanguageGuard } from './router'
 // import messages from './locales'
 
 const loadedLanguages = {}
+const defaultLocale = 'en'
 
 async function loadLocaleMessages(locale) {
   if (loadedLanguages[locale]) {
@@ -37,12 +38,11 @@ async function loadLocaleMessages(locale) {
 }
 
 // 配置i18n
-// 初始化时只加载默认语言
-const defaultLocale = 'en'
 const i18n = createI18n({
   legacy: false, // 使用组合式API
   locale: defaultLocale,
-  messages: { [defaultLocale]: await loadLocaleMessages(defaultLocale) }
+  // messages: { [defaultLocale]: await loadLocaleMessages(defaultLocale) }
+  messages: { [defaultLocale]: {} }
 })
 
 // 切换语言时动态加载
@@ -52,7 +52,6 @@ export async function setLanguage(locale) {
     i18n.global.setLocaleMessage(locale, messages)
   }
   localStorage.setItem('userLanguage', locale);
-  // 设置i18n语言
   i18n.global.locale.value = locale
   return Promise.resolve()
 }
@@ -192,49 +191,45 @@ const lazyComponentMap = {
   'ReduceImageSizeInKbMb': () => import('./components/tools/ReduceImageSizeInKbMb.vue'),
 }
 
-// 初始化Vercel Analytics
-inject()
+// 用异步 IIFE 启动应用
+;(async () => {
+  // 先加载默认语言包
+  const messages = await loadLocaleMessages(defaultLocale)
+  i18n.global.setLocaleMessage(defaultLocale, messages)
 
-// 创建应用
-const app = createApp(App)
-const head = createHead()
+  // 初始化Vercel Analytics
+  inject()
 
-app.use(router)
-app.use(i18n)
-app.use(head)
+  // 创建应用
+  const app = createApp(App)
+  const head = createHead()
 
-// 将组件懒加载映射添加到全局属性
-app.config.globalProperties.lazyComponentMap = lazyComponentMap
+  app.use(router)
+  app.use(i18n)
+  app.use(head)
 
-// 组件实例缓存，避免重复加载相同组件
-app.config.globalProperties.componentCache = {}
+  app.config.globalProperties.lazyComponentMap = lazyComponentMap
+  app.config.globalProperties.componentCache = {}
 
-// 注册一个函数用于获取或加载组件
-app.config.globalProperties.getComponent = async function(componentName) {
-  // 检查缓存
-  if (this.componentCache[componentName]) {
-    return this.componentCache[componentName]
+  app.config.globalProperties.getComponent = async function(componentName) {
+    if (this.componentCache[componentName]) {
+      return this.componentCache[componentName]
+    }
+    const lazyComponent = this.lazyComponentMap[componentName]
+    if (!lazyComponent) {
+      console.error(`组件 "${componentName}" 未在懒加载映射中定义`)
+      return null
+    }
+    try {
+      const module = await lazyComponent()
+      this.componentCache[componentName] = markRaw(module.default)
+      return this.componentCache[componentName]
+    } catch (error) {
+      console.error(`加载组件 "${componentName}" 失败:`, error)
+      return null
+    }
   }
-  
-  // 查找懒加载映射
-  const lazyComponent = this.lazyComponentMap[componentName]
-  if (!lazyComponent) {
-    console.error(`组件 "${componentName}" 未在懒加载映射中定义`)
-    return null
-  }
-  
-  try {
-    // 动态导入并缓存组件，使用 markRaw 标记组件
-    const module = await lazyComponent()
-    this.componentCache[componentName] = markRaw(module.default)
-    return this.componentCache[componentName]
-  } catch (error) {
-    console.error(`加载组件 "${componentName}" 失败:`, error)
-    return null
-  }
-}
 
-app.mount('#app')
-
-// 注册应用实例到全局，方便调试
-window.app = app
+  app.mount('#app')
+  window.app = app
+})()
