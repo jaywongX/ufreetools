@@ -42,19 +42,19 @@
                 <!-- Chrome -->
                 <a href="https://chromewebstore.google.com/detail/ufreetools/helippppkokcmlcngkegfmdmodlihjid" target="_blank" rel="noopener"
                   class="browser-ext-btn">
-                  <img src="/chrome-96x96.png" alt="Chrome" class="browser-ext-icon" />
+                  <img src="/chrome-96x96.webp" alt="Chrome" class="browser-ext-icon" />
                   <span>{{ $t('common.addToChrome') }}</span>
                 </a>
                 <!-- Firefox -->
                 <a href="https://addons.mozilla.org/firefox/addon/ufreetools/" target="_blank" rel="noopener"
                   class="browser-ext-btn">
-                  <img src="/Firefox_logo,_2019.png" alt="Firefox" class="browser-ext-icon" />
+                  <img src="/Firefox_logo,_2019.webp" alt="Firefox" class="browser-ext-icon" />
                   <span>{{ $t('common.addToFireFox') }}</span>
                 </a>
                 <!-- Edge -->
                 <a href="https://microsoftedge.microsoft.com/addons/detail/ufreetools/bnacfmkhnhbpgkjkgkndoiakkpceigfb" target="_blank" rel="noopener"
                   class="browser-ext-btn">
-                  <img src="/Microsoft_Edge_logo_(2019).png" alt="Edge" class="browser-ext-icon" />
+                  <img src="/Microsoft_Edge_logo_(2019).webp" alt="Edge" class="browser-ext-icon" />
                   <span>{{ $t('common.addToEdge') }}</span>
                 </a>
               </div>
