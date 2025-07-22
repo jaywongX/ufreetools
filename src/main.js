@@ -23,16 +23,18 @@ import { router, setupLanguageGuard } from './router'
 
 const loadedLanguages = {}
 const defaultLocale = 'en'
-
+// 用 Vite 的 glob 收集所有语言包
+const localeModules = import.meta.glob('./locales/*/index.js')
 async function loadLocaleMessages(locale) {
   if (loadedLanguages[locale]) {
     return loadedLanguages[locale]
   }
   // 动态导入
-  const messages = (await import(
-    /* @vite-ignore */
-    `./locales/${locale}/index.js`
-  )).default
+  const importFn = localeModules[`./locales/${locale}/index.js`]
+  if (!importFn) {
+    throw new Error(`Locale file for "${locale}" not found`)
+  }
+  const messages = (await importFn()).default
   loadedLanguages[locale] = messages
   return messages
 }
