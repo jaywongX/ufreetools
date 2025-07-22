@@ -47,7 +47,9 @@ export default {
     generalUsersDescription: '提供文本转换、图片压缩、密码生成等实用工具，解决日常数字生活中的各种问题。',
     contactFeedback: '联系与反馈',
     contactFeedbackDescription: '我们非常重视用户的反馈和建议。如果您有任何问题、建议或合作意向，欢迎随时与我们联系。',
-    sendEmail: '发送邮件'
+    sendEmail: '发送邮件',
+    multilingual: "多语言支持",
+    multilingualDescription: "支持 10+ 种语言，全球用户都能轻松使用。"
   },
   search: {
     title: '搜索结果',

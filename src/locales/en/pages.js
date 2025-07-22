@@ -47,7 +47,9 @@ export default {
     generalUsersDescription: 'Providing text conversion, image compression, password generation, and more to solve everyday digital life problems.',
     contactFeedback: 'Contact & Feedback',
     contactFeedbackDescription: 'We value user feedback and suggestions. If you have any questions, suggestions, or collaboration intentions, feel free to contact us.',
-    sendEmail: 'Send Email'
+    sendEmail: 'Send Email',
+    multilingual: "Multilingual Support",
+    multilingualDescription: "Supports 10+ languages for users worldwide.",
   },
   search: {
     title: 'Search Results',

@@ -47,7 +47,9 @@ export default {
     generalUsersDescription: 'Forniamo strumenti pratici come conversione testo, compressione immagini, generazione password per risolvere vari problemi della vita digitale quotidiana.',
     contactFeedback: 'Contatti e feedback',
     contactFeedbackDescription: 'Diamo grande importanza al feedback e ai suggerimenti degli utenti. Se hai domande, suggerimenti o proposte di collaborazione, non esitare a contattarci.',
-    sendEmail: 'Invia email'
+    sendEmail: 'Invia email',
+    multilingual: "Supporto multilingue",
+    multilingualDescription: "Supporta oltre 10 lingue per utenti in tutto il mondo.",
   },
   search: {
     title: 'Risultati di ricerca',

@@ -47,7 +47,9 @@ export default {
     generalUsersDescription: '提供文字轉換、圖片壓縮、密碼生成等實用工具，解決日常數位生活中的各種問題。',
     contactFeedback: '聯繫與反饋',
     contactFeedbackDescription: '我們非常重視用戶的反饋和建議。如果您有任何問題、建議或合作意向，歡迎隨時與我們聯繫。',
-    sendEmail: '發送郵件'
+    sendEmail: '發送郵件',
+    multilingual: "多語言支援",
+    multilingualDescription: "支援 10+ 種語言，全球用戶皆可輕鬆使用。",
   },
   search: {
     title: '搜尋結果',

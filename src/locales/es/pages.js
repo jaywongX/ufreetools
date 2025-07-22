@@ -47,7 +47,9 @@ export default {
     generalUsersDescription: 'Proporcionamos conversión de texto, compresión de imágenes, generación de contraseñas y más para resolver problemas cotidianos en la vida digital.',
     contactFeedback: 'Contacto y Retroalimentación',
     contactFeedbackDescription: 'Valoramos las sugerencias y comentarios de los usuarios. Si tienes preguntas, comentarios o deseas colaborar, no dudes en contactarnos.',
-    sendEmail: 'Enviar Correo Electrónico'
+    sendEmail: 'Enviar Correo Electrónico',
+    multilingual: "Soporte multilingüe",
+    multilingualDescription: "Compatible con más de 10 idiomas para usuarios de todo el mundo.",
   },
   search: {
     title: 'Resultados de Búsqueda',

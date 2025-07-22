@@ -2,10 +2,10 @@
   <div>
     <!-- 落地页部分 -->
     <section class="landing-section mb-16">
-      <div class="container mx-auto px-4 py-2 md:py-5">
+      <div class="w-full mx-auto px-4 py-2 md:py-5">
         <div class="flex flex-col md:flex-row items-center">
           <!-- 左侧文本内容 -->
-          <div class="w-full md:w-3/5 mb-8 md:mb-0 md:pr-8 animate-fade-in">
+          <div class="w-full mb-8 md:mb-0 md:pr-8 animate-fade-in">
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-800 dark:text-white">
               {{ $t('home.title') }}
             </h1>
@@ -35,286 +35,40 @@
                 </button>
               </div>
               <!-- 浏览器插件模块 -->
-            <div class="mt-6">
-              <div class="text-sm text-gray-500 dark:text-gray-400 mb-3">{{ $t('common.browserExtensionsDesc') }}
+              <div class="mt-6">
+                <div class="text-sm text-gray-500 dark:text-gray-400 mb-3">{{ $t('common.browserExtensionsDesc') }}
+                </div>
+                <div class="flex flex-wrap gap-4">
+                  <!-- Chrome -->
+                  <a href="https://chromewebstore.google.com/detail/ufreetools/helippppkokcmlcngkegfmdmodlihjid"
+                    target="_blank" rel="noopener" class="browser-ext-btn">
+                    <img src="/chrome-96x96.webp" alt="Chrome" class="browser-ext-icon" />
+                    <span>{{ $t('common.addToChrome') }}</span>
+                  </a>
+                  <!-- Firefox -->
+                  <a href="https://addons.mozilla.org/firefox/addon/ufreetools/" target="_blank" rel="noopener"
+                    class="browser-ext-btn">
+                    <img src="/Firefox_logo,_2019.webp" alt="Firefox" class="browser-ext-icon" />
+                    <span>{{ $t('common.addToFireFox') }}</span>
+                  </a>
+                  <!-- Edge -->
+                  <a href="https://microsoftedge.microsoft.com/addons/detail/ufreetools/bnacfmkhnhbpgkjkgkndoiakkpceigfb"
+                    target="_blank" rel="noopener" class="browser-ext-btn">
+                    <img src="/Microsoft_Edge_logo_(2019).webp" alt="Edge" class="browser-ext-icon" />
+                    <span>{{ $t('common.addToEdge') }}</span>
+                  </a>
+                </div>
               </div>
-              <div class="flex flex-wrap gap-4">
-                <!-- Chrome -->
-                <a href="https://chromewebstore.google.com/detail/ufreetools/helippppkokcmlcngkegfmdmodlihjid" target="_blank" rel="noopener"
-                  class="browser-ext-btn">
-                  <img src="/chrome-96x96.webp" alt="Chrome" class="browser-ext-icon" />
-                  <span>{{ $t('common.addToChrome') }}</span>
-                </a>
-                <!-- Firefox -->
-                <a href="https://addons.mozilla.org/firefox/addon/ufreetools/" target="_blank" rel="noopener"
-                  class="browser-ext-btn">
-                  <img src="/Firefox_logo,_2019.webp" alt="Firefox" class="browser-ext-icon" />
-                  <span>{{ $t('common.addToFireFox') }}</span>
-                </a>
-                <!-- Edge -->
-                <a href="https://microsoftedge.microsoft.com/addons/detail/ufreetools/bnacfmkhnhbpgkjkgkndoiakkpceigfb" target="_blank" rel="noopener"
-                  class="browser-ext-btn">
-                  <img src="/Microsoft_Edge_logo_(2019).webp" alt="Edge" class="browser-ext-icon" />
-                  <span>{{ $t('common.addToEdge') }}</span>
-                </a>
-              </div>
-            </div>
             </div>
           </div>
 
-          <!-- 右侧图片/插图 -->
-          <div class="w-full md:w-2/5 mb-8 md:mb-0 animate-slide-in-right">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" class="w-full h-auto">
-              <!-- 背景定义 -->
-              <defs>
-                <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#f0f9ff" class="dark:stop-color-gray-900" />
-                  <stop offset="100%" stop-color="#e0f2fe" class="dark:stop-color-gray-800" />
-                </linearGradient>
-                <linearGradient id="tool-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#3b82f6" />
-                  <stop offset="100%" stop-color="#2563eb" />
-                </linearGradient>
-                <linearGradient id="tool-gradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#10b981" />
-                  <stop offset="100%" stop-color="#059669" />
-                </linearGradient>
-                <linearGradient id="tool-gradient-3" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#8b5cf6" />
-                  <stop offset="100%" stop-color="#7c3aed" />
-                </linearGradient>
-                <linearGradient id="tool-gradient-4" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#f59e0b" />
-                  <stop offset="100%" stop-color="#d97706" />
-                </linearGradient>
-                <linearGradient id="tool-gradient-5" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#ef4444" />
-                  <stop offset="100%" stop-color="#dc2626" />
-                </linearGradient>
-                <linearGradient id="tool-gradient-6" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#06b6d4" />
-                  <stop offset="100%" stop-color="#0891b2" />
-                </linearGradient>
-                <linearGradient id="tool-gradient-7" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#ec4899" />
-                  <stop offset="100%" stop-color="#db2777" />
-                </linearGradient>
-                <linearGradient id="tool-gradient-8" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#6366f1" />
-                  <stop offset="100%" stop-color="#4f46e5" />
-                </linearGradient>
-              </defs>
-
-              <!-- 主背景 -->
-              <rect width="800" height="600" fill="url(#bg-gradient)" rx="20" class="dark:fill-gray-800" />
-
-              <!-- 中心平台 -->
-              <circle cx="400" cy="300" r="80" fill="white" stroke="#e5e7eb" stroke-width="8"
-                class="animate-pulse-slow dark:fill-gray-700 dark:stroke-gray-600" />
-              <circle cx="400" cy="300" r="60" fill="white" stroke="#e5e7eb" stroke-width="4"
-                class="dark:fill-gray-700 dark:stroke-gray-600" />
-
-              <!-- 平台Logo -->
-              <a @click="navigateToUrl('/')" cursor="pointer">
-                <g transform="translate(370, 270)">
-                  <rect width="60" height="60" rx="12" fill="#3b82f6" />
-                  <text x="30" y="38" font-family="Arial" font-size="24" font-weight="bold" fill="white"
-                    text-anchor="middle" id="center-u">U</text>
-                </g>
-              </a>
-
-              <!-- 各个类别工具均匀分布 -->
-              <!-- 开发工具 - 顶部 -->
-              <a @click="navigateToUrl('/category/dev')" cursor="pointer">
-                <g class="animate-float-slow" style="transform-origin: 400px 110px">
-                  <rect x="350" y="70" width="100" height="80" rx="10" fill="url(#tool-gradient-1)" />
-                  <text x="400" y="115" font-family="monospace" font-size="14" fill="white"
-                    text-anchor="middle">&lt;/&gt;</text>
-                  <text x="400" y="140" font-family="Arial" font-size="12" fill="white" text-anchor="middle">{{
-                    $t('categories.dev.title') }}</text>
-                </g>
-                <path d="M400 220 L400 150" stroke="#3b82f6" stroke-dasharray="6,4" stroke-width="3"
-                  stroke-linecap="round" />
-                <circle cx="400" cy="150" r="6" fill="#3b82f6" class="animate-pulse-slow" />
-              </a>
-
-              <!-- 设计工具 - 右上 -->
-              <a @click="navigateToUrl('/category/design')" cursor="pointer">
-                <g class="animate-float-slow" style="animation-delay: 0.5s; transform-origin: 560px 130px">
-                  <rect x="510" y="80" width="100" height="80" rx="10" fill="url(#tool-gradient-2)" />
-                  <circle cx="560" cy="110" r="15" fill="white" fill-opacity="0.7" />
-                  <circle cx="540" cy="130" r="10" fill="white" fill-opacity="0.5" />
-                  <circle cx="575" cy="125" r="8" fill="white" fill-opacity="0.6" />
-                  <text x="560" y="150" font-family="Arial" font-size="12" fill="white" text-anchor="middle">{{
-                    $t('categories.design.title') }}</text>
-                </g>
-                <path d="M450 250 L510 160" stroke="#10b981" stroke-dasharray="6,4" stroke-width="3"
-                  stroke-linecap="round" />
-                <circle cx="510" cy="160" r="6" fill="#10b981" class="animate-pulse-slow"
-                  style="animation-delay: 0.2s" />
-              </a>
-
-              <!-- 文本工具 - 右侧 -->
-              <a @click="navigateToUrl('/category/text')" cursor="pointer">
-                <g class="animate-float-slow" style="animation-delay: 0.7s; transform-origin: 600px 300px">
-                  <rect x="550" y="260" width="100" height="80" rx="10" fill="url(#tool-gradient-3)" />
-                  <g transform="translate(600, 290)">
-                    <path d="M-20,-10 L20,-10 M-20,0 L15,0 M-20,10 L10,10" stroke="white" stroke-width="3" />
-                  </g>
-                  <text x="600" y="325" font-family="Arial" font-size="12" fill="white" text-anchor="middle">{{
-                    $t('categories.text.title') }}</text>
-                </g>
-                <path d="M480 300 L550 300" stroke="#8b5cf6" stroke-dasharray="6,4" stroke-width="3"
-                  stroke-linecap="round" />
-                <circle cx="550" cy="300" r="6" fill="#8b5cf6" class="animate-pulse-slow"
-                  style="animation-delay: 0.4s" />
-              </a>
-
-              <!-- 图像工具 - 右下 -->
-              <a @click="navigateToUrl('/category/image')" cursor="pointer">
-                <g class="animate-float-slow" style="animation-delay: 0.3s; transform-origin: 560px 470px">
-                  <rect x="510" y="420" width="100" height="80" rx="10" fill="url(#tool-gradient-4)" />
-                  <g transform="translate(560, 450)">
-                    <rect x="-15" y="-10" width="30" height="25" rx="3" fill="white" fill-opacity="0.7" />
-                    <circle cx="-5" cy="-2" r="3" fill="#f59e0b" />
-                    <polyline points="-10,8 -2,4 5,10 12,0" stroke="#f59e0b" stroke-width="1.5" />
-                  </g>
-                  <text x="560" y="485" font-family="Arial" font-size="12" fill="white" text-anchor="middle">{{
-                    $t('categories.image.title') }}</text>
-                </g>
-                <path d="M450 350 L510 420" stroke="#f59e0b" stroke-dasharray="6,4" stroke-width="3"
-                  stroke-linecap="round" />
-                <circle cx="510" cy="420" r="6" fill="#f59e0b" class="animate-pulse-slow"
-                  style="animation-delay: 0.6s" />
-              </a>
-
-              <!-- 密码安全 - 底部 -->
-              <a @click="navigateToUrl('/category/crypto')" cursor="pointer">
-                <g class="animate-float-slow" style="animation-delay: 0.9s; transform-origin: 400px 490px">
-                  <rect x="350" y="440" width="100" height="80" rx="10" fill="url(#tool-gradient-5)" />
-                  <g transform="translate(400, 470)">
-                    <rect x="-12" y="-15" width="24" height="30" rx="3" fill="white" />
-                    <rect x="-8" y="-20" width="16" height="8" rx="2" fill="white" />
-                    <circle cx="0" cy="0" r="4" fill="#ef4444" />
-                  </g>
-                  <text x="400" y="505" font-family="Arial" font-size="12" fill="white" text-anchor="middle">{{
-                    $t('categories.crypto.title') }}</text>
-                </g>
-                <path d="M400 380 L400 440" stroke="#ef4444" stroke-dasharray="6,4" stroke-width="3"
-                  stroke-linecap="round" />
-                <circle cx="400" cy="440" r="6" fill="#ef4444" class="animate-pulse-slow"
-                  style="animation-delay: 0.8s" />
-              </a>
-
-              <!-- 网络工具 - 左下 -->
-              <a @click="navigateToUrl('/category/network')" cursor="pointer">
-                <g class="animate-float-slow" style="animation-delay: 0.6s; transform-origin: 240px 470px">
-                  <rect x="190" y="420" width="100" height="80" rx="10" fill="url(#tool-gradient-6)" />
-                  <g transform="translate(240, 450)">
-                    <circle cx="0" cy="0" r="15" fill="white" fill-opacity="0.6" />
-                    <circle cx="-8" cy="-8" r="4" fill="#06b6d4" />
-                    <circle cx="8" cy="-8" r="4" fill="#06b6d4" />
-                    <circle cx="8" cy="8" r="4" fill="#06b6d4" />
-                    <circle cx="-8" cy="8" r="4" fill="#06b6d4" />
-                    <path d="M-8,-8 L8,-8 M8,-8 L8,8 M8,8 L-8,8 M-8,8 L-8,-8" stroke="#06b6d4" stroke-width="1" />
-                  </g>
-                  <text x="240" y="485" font-family="Arial" font-size="12" fill="white" text-anchor="middle">{{
-                    $t('categories.network.title') }}</text>
-                </g>
-                <path d="M350 350 L290 420" stroke="#06b6d4" stroke-dasharray="6,4" stroke-width="3"
-                  stroke-linecap="round" />
-                <circle cx="290" cy="420" r="6" fill="#06b6d4" class="animate-pulse-slow" style="animation-delay: 1s" />
-              </a>
-
-              <!-- 转换工具 - 左侧 -->
-              <a @click="navigateToUrl('/category/convert')" cursor="pointer">
-                <g class="animate-float-slow" style="animation-delay: 0.4s; transform-origin: 200px 300px">
-                  <rect x="150" y="260" width="100" height="80" rx="10" fill="url(#tool-gradient-7)" />
-                  <g transform="translate(200, 290)">
-                    <path d="M-15 -10 L15 -10 M15 -10 L5 -15 M15 -10 L5 -5" stroke="white" stroke-width="2.5" />
-                    <path d="M15 10 L-15 10 M-15 10 L-5 5 M-15 10 L-5 15" stroke="white" stroke-width="2.5" />
-                  </g>
-                  <text x="200" y="325" font-family="Arial" font-size="12" fill="white" text-anchor="middle">{{
-                    $t('categories.convert.title') }}</text>
-                </g>
-                <path d="M320 300 L250 300" stroke="#ec4899" stroke-dasharray="6,4" stroke-width="3"
-                  stroke-linecap="round" />
-                <circle cx="250" cy="300" r="6" fill="#ec4899" class="animate-pulse-slow"
-                  style="animation-delay: 1.2s" />
-              </a>
-
-              <!-- 实用工具 - 左上 -->
-              <a @click="navigateToUrl('/category/utility')" cursor="pointer">
-                <g class="animate-float-slow" style="animation-delay: 0.2s; transform-origin: 240px 130px">
-                  <rect x="190" y="80" width="100" height="80" rx="10" fill="url(#tool-gradient-8)" />
-                  <g transform="translate(240, 110)">
-                    <path d="M-10,-10 L10,10 M-10,10 L10,-10" stroke="white" stroke-width="3" />
-                    <circle cx="0" cy="0" r="12" fill="none" stroke="white" stroke-width="2" />
-                  </g>
-                  <text x="240" y="150" font-family="Arial" font-size="12" fill="white" text-anchor="middle">{{
-                    $t('categories.utility.title') }}</text>
-                </g>
-                <path d="M350 250 L290 160" stroke="#6366f1" stroke-dasharray="6,4" stroke-width="3"
-                  stroke-linecap="round" />
-                <circle cx="290" cy="160" r="6" fill="#6366f1" class="animate-pulse-slow"
-                  style="animation-delay: 1.4s" />
-              </a>
-
-              <!-- 装饰元素 -->
-              <g class="animate-spin-slow" opacity="0.1" style="transform-origin: 400px 300px">
-                <circle cx="400" cy="300" r="180" stroke="#3b82f6" stroke-width="15" fill="none" />
-                <circle cx="400" cy="300" r="220" stroke="#10b981" stroke-width="8" fill="none" />
-                <circle cx="400" cy="300" r="260" stroke="#8b5cf6" stroke-width="5" fill="none" />
-              </g>
-
-              <!-- 漂浮粒子和数据流动效果部分保持不变 -->
-              <!-- 漂浮粒子 -->
-              <g class="animate-float-slow" style="animation-delay: 1s">
-                <circle cx="470" cy="200" r="4" fill="#3b82f6" />
-                <circle cx="330" cy="200" r="4" fill="#ef4444" />
-                <circle cx="470" cy="400" r="4" fill="#8b5cf6" />
-                <circle cx="330" cy="400" r="4" fill="#f59e0b" />
-              </g>
-              <g class="animate-float-slow">
-                <circle cx="500" cy="150" r="3" fill="#10b981" />
-                <circle cx="300" cy="150" r="3" fill="#6366f1" />
-                <circle cx="500" cy="450" r="3" fill="#ec4899" />
-                <circle cx="300" cy="450" r="3" fill="#06b6d4" />
-              </g>
-              <g class="animate-float-slow" style="animation-delay: 0.5s">
-                <circle cx="450" cy="250" r="5" fill="#3b82f6" />
-                <circle cx="350" cy="250" r="5" fill="#ef4444" />
-                <circle cx="450" cy="350" r="5" fill="#10b981" />
-                <circle cx="350" cy="350" r="5" fill="#f59e0b" />
-              </g>
-
-              <!-- 数据流动效果 -->
-              <g>
-                <circle cx="400" cy="200" r="3" fill="#3b82f6" class="animate-ping-slow" />
-                <circle cx="475" cy="225" r="3" fill="#10b981" class="animate-ping-slow"
-                  style="animation-delay: 0.3s" />
-                <circle cx="515" cy="300" r="3" fill="#8b5cf6" class="animate-ping-slow"
-                  style="animation-delay: 0.6s" />
-                <circle cx="475" cy="375" r="3" fill="#f59e0b" class="animate-ping-slow"
-                  style="animation-delay: 0.9s" />
-                <circle cx="400" cy="400" r="3" fill="#ef4444" class="animate-ping-slow"
-                  style="animation-delay: 1.2s" />
-                <circle cx="325" cy="375" r="3" fill="#06b6d4" class="animate-ping-slow"
-                  style="animation-delay: 1.5s" />
-                <circle cx="285" cy="300" r="3" fill="#ec4899" class="animate-ping-slow"
-                  style="animation-delay: 1.8s" />
-                <circle cx="325" cy="225" r="3" fill="#6366f1" class="animate-ping-slow"
-                  style="animation-delay: 2.1s" />
-              </g>
-            </svg>
-          </div>
         </div>
       </div>
 
       <FeaturedIn />
 
       <!-- 工具总数展示 -->
-      <div class="container mx-auto px-4 mb-12">
+      <!-- <div class="w-full mx-auto px-4 mb-12">
         <div
           class="bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-600 dark:to-purple-700 rounded-xl shadow-lg overflow-hidden">
           <div class="flex flex-col md:flex-row items-center justify-center p-8 text-white">
@@ -338,7 +92,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- 特色功能展示 -->
       <div id="features-section">
@@ -372,21 +126,6 @@
 
           <div
             class="feature-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 animate-fade-in-up"
-            style="animation-delay: 0.3s">
-            <div class="icon-wrapper bg-purple-100 dark:bg-purple-900 p-3 rounded-full inline-block mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600 dark:text-purple-300" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-            </div>
-            <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">{{ $t('about.updates') }}</h3>
-            <p class="text-gray-600 dark:text-gray-300">{{ $t('about.updatesDescription') }}</p>
-          </div>
-
-          <!-- 新增特色功能 - 仅在线 -->
-          <div
-            class="feature-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 animate-fade-in-up"
             style="animation-delay: 0.4s">
             <div class="icon-wrapper bg-amber-100 dark:bg-amber-900 p-3 rounded-full inline-block mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-600 dark:text-amber-300" fill="none"
@@ -399,7 +138,6 @@
             <p class="text-gray-600 dark:text-gray-300">{{ $t('about.onlineDescription') }}</p>
           </div>
 
-          <!-- 新增特色功能 - 注重隐私 -->
           <div
             class="feature-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 animate-fade-in-up"
             style="animation-delay: 0.5s">
@@ -413,6 +151,40 @@
             <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">{{ $t('about.privacy') }}</h3>
             <p class="text-gray-600 dark:text-gray-300">{{ $t('about.privacyDescription') }}</p>
           </div>
+
+          <!-- 新增特色功能 - 多语言支持 -->
+          <div
+            class="feature-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 animate-fade-in-up"
+            style="animation-delay: 0.6s">
+            <div class="icon-wrapper bg-cyan-100 dark:bg-cyan-900 p-3 rounded-full inline-block mb-4">
+              <!-- 地球/语言 SVG 图标 -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                <path d="M3.68 13.7a8 8 0 0 0 10.28 10.26 2.37 2.37 0 0 0-2.91-2.91A8 8 0 0 1 3.68 13.7z"></path>
+                <path
+                  d="M11.84 15.86a2.36 2.36 0 0 0 2.36 2.36 2.36 2.36 0 0 0 2.36-2.36 2.36 2.36 0 0 0-2.36-2.36 2.36 2.36 0 0 0-2.36 2.36z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">{{ $t('about.multilingual') }}</h3>
+            <p class="text-gray-600 dark:text-gray-300">{{ $t('about.multilingualDescription') }}</p>
+          </div>
+
+          <div
+            class="feature-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 animate-fade-in-up"
+            style="animation-delay: 0.3s">
+            <div class="icon-wrapper bg-purple-100 dark:bg-purple-900 p-3 rounded-full inline-block mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600 dark:text-purple-300" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">{{ $t('about.updates') }}</h3>
+            <p class="text-gray-600 dark:text-gray-300">{{ $t('about.updatesDescription') }}</p>
+          </div>
+
         </div>
       </div>
     </section>
@@ -1213,28 +985,33 @@ function navigateToUrl(path) {
   text-decoration: none;
   transition: box-shadow 0.18s, border-color 0.18s, color 0.18s;
 }
+
 .browser-ext-btn:hover {
   border-color: #b6c3e0;
   box-shadow: 0 2px 8px 0 rgba(59, 130, 246, 0.10);
   color: #2563eb;
 }
+
 .browser-ext-icon {
   width: 22px;
   height: 22px;
   border-radius: 50%;
   background: #fff;
   object-fit: contain;
-  box-shadow: 0 1px 2px rgba(59,130,246,0.06);
+  box-shadow: 0 1px 2px rgba(59, 130, 246, 0.06);
 }
+
 .dark .browser-ext-btn {
   background: #232a3b;
   border-color: #2d3748;
   color: #bcd1f7;
 }
+
 .dark .browser-ext-btn:hover {
   border-color: #3b82f6;
   color: #60a5fa;
 }
+
 .dark .browser-ext-icon {
   background: #232a3b;
 }
