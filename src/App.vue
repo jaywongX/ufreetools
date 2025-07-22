@@ -30,9 +30,9 @@ import LeftSideNav from './components/layout/LeftSideNav.vue'
 import SeoHead from './components/seo/SeoHead.vue'
 import MainAreaFooterAd from './components/common/MainAreaFooterAd.vue'
 import ButtomSideNav from './components/layout/ButtomSideNav.vue'
-// 移除不需要的导入
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { setLanguage } from './main';
 
 const route = useRoute()
 const { locale, t } = useI18n()
@@ -42,7 +42,7 @@ const sidebarOpen = ref(true)
 provide('sidebarOpen', sidebarOpen)
 
 // 暗黑模式状态
-const darkMode = ref(false)
+const darkMode = ref(true)
 provide('darkMode', darkMode)
 
 // 工具分类定义
@@ -1560,7 +1560,7 @@ onMounted(() => {
   const savedMode = localStorage.getItem('darkMode')
   
   // 设置初始模式
-  if (savedMode === 'true' || (savedMode === null && prefersDark)) {
+  if (savedMode === 'true' || (savedMode === null && prefersDark) || darkMode) {
     darkMode.value = true
     document.documentElement.classList.add('dark')
   }
@@ -1593,8 +1593,7 @@ watch(darkMode, (newValue) => {
 // 当路由变化时，根据路由参数更新语言
 watch(() => route.params.lang, (newLang) => {
   if (newLang && locale.value !== newLang && supportedLanguages.includes(newLang)) {
-    locale.value = newLang
-    localStorage.setItem('userLanguage', newLang)
+    setLanguage(newLang);
   }
 })
 </script>

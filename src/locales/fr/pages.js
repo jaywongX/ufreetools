@@ -47,7 +47,9 @@ export default {
     generalUsersDescription: 'Outils de conversion de texte, compression d\'images, génération de mots de passe, etc. pour résoudre divers problèmes de la vie numérique quotidienne.',
     contactFeedback: 'Contact et feedback',
     contactFeedbackDescription: 'Nous accordons une grande importance aux retours et suggestions des utilisateurs. Pour toute question, suggestion ou demande de collaboration, n\'hésitez pas à nous contacter.',
-    sendEmail: 'Envoyer un email'
+    sendEmail: 'Envoyer un email',
+    multilingual: "Support multilingue",
+    multilingualDescription: "Prend en charge plus de 10 langues pour les utilisateurs du monde entier.",
   },
   search: {
     title: 'Résultats de recherche',

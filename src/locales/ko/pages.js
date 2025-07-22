@@ -47,7 +47,9 @@ export default {
     generalUsersDescription: '텍스트 변환, 이미지 압축, 비밀번호 생성 등의 실용적인 도구를 제공하여 일상적인 디지털 생활의 다양한 문제를 해결합니다.',
     contactFeedback: '연락처 및 피드백',
     contactFeedbackDescription: '우리는 사용자의 피드백과 제안을 매우 중요하게 생각합니다. 질문, 제안 또는 협업 의향이 있으시면 언제든지 연락해 주세요.',
-    sendEmail: '이메일 보내기'
+    sendEmail: '이메일 보내기',
+    multilingual: "다국어 지원",
+    multilingualDescription: "전 세계 사용자를 위해 10개 이상의 언어를 지원합니다.",
   },
   search: {
     title: '검색 결과',

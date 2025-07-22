@@ -4,6 +4,7 @@
       class="donate-button flex items-center justify-center"
       @mouseenter="showMenu = true"
       @mouseleave="showMenu = false"
+      aria-label="donate button"
     >
       <span class="coffee-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">

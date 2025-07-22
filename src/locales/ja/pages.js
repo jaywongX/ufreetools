@@ -47,7 +47,9 @@ export default {
     generalUsersDescription: 'テキスト変換、画像圧縮、パスワード生成などの実用的なツールで、日常のデジタル生活におけるさまざまな問題を解決します。',
     contactFeedback: 'お問い合わせとフィードバック',
     contactFeedbackDescription: '私たちはユーザーからのフィードバックやご提案を大歓迎します。何かご質問、ご提案、または提携のご相談がある場合は、いつでもお気軽にお問い合わせください。',
-    sendEmail: 'メールを送る'
+    sendEmail: 'メールを送る',
+    multilingual: "多言語対応",
+    multilingualDescription: "世界中のユーザー向けに10以上の言語をサポートしています。",
   },
   search: {
     title: '検索結果',

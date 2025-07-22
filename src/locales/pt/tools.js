@@ -111,7 +111,6 @@ import asn1StructureParser from './tools/asn1-structure-parser.js';
 import invertImageColors from './tools/invert-image-colors.js';
 import resizeTo1024x576Image from './tools/resize-to-1024x576-image.js';
 import reduceImageSizeInKbMb from './tools/reduce-image-size-in-kb-mb.js';
-
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,

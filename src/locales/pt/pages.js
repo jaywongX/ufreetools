@@ -47,7 +47,9 @@ export default {
     generalUsersDescription: 'Ferramentas práticas como conversão de texto, compressão de imagens, geração de senhas para resolver vários problemas da vida digital cotidiana.',
     contactFeedback: 'Contato e feedback',
     contactFeedbackDescription: 'Valorizamos muito o feedback e sugestões dos usuários. Se tiver dúvidas, sugestões ou interesse em colaboração, sinta-se à vontade para nos contatar.',
-    sendEmail: 'Enviar email'
+    sendEmail: 'Enviar email',
+    multilingual: "Suporte multilíngue",
+    multilingualDescription: "Suporta mais de 10 idiomas para usuários em todo o mundo.",
   },
   search: {
     title: 'Resultados da busca',

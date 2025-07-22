@@ -1,6 +1,6 @@
 import { useRoute, useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
-import { computed } from 'vue';
+import { setLanguage } from '../main';
 
 export function useInternationalizedRoute() {
   const route = useRoute();
@@ -33,8 +33,7 @@ export function useInternationalizedRoute() {
     const currentPath = route.path;
     const pathWithoutLang = currentPath.replace(/^\/[^\/]+/, '');
     
-    locale.value = lang;
-    localStorage.setItem('userLanguage', lang);
+    setLanguage(lang);
     
     router.push(`/${lang}${pathWithoutLang}`);
   }
