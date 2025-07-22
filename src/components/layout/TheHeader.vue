@@ -110,8 +110,8 @@
 import { ref, inject, computed, watch, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import TagBadge from '../ui/TagBadge.vue'
 import DonateButton from '../common/DonateButton.vue'
+import { setLanguage } from '../../main';
 
 const router = useRouter()
 const route = useRoute()
@@ -283,7 +283,7 @@ function swapZhAndZhTW(arr) {
   return newArray;
 }
 
-function switchLanguage(langCode) {
+async function switchLanguage(langCode) {
   if (langCode === locale.value) return;
 
   const currentPath = route.path;
@@ -297,14 +297,11 @@ function switchLanguage(langCode) {
   // 使用这个正则替换掉路径中的语言部分
   const currentPathWithoutLang = currentPath.replace(langPrefixRegex, '');
 
-  // 设置i18n语言
-  locale.value = langCode;
+  // 等待语言包加载完成
+  await setLanguage(langCode);
 
   // 更新URL
   router.push(`/${langCode}${currentPathWithoutLang}`);
-
-  // 保存用户的语言选择
-  localStorage.setItem('userLanguage', langCode);
 
   // 关闭下拉菜单
   showLanguageDropdown.value = false;

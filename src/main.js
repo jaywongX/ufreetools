@@ -19,14 +19,43 @@ import { inject } from '@vercel/analytics'
 import { router, setupLanguageGuard } from './router'
 
 // 导入新的模块化国际化文件
-import messages from './locales'
+// import messages from './locales'
+
+const loadedLanguages = {}
+
+async function loadLocaleMessages(locale) {
+  if (loadedLanguages[locale]) {
+    return loadedLanguages[locale]
+  }
+  // 动态导入
+  const messages = (await import(
+    /* @vite-ignore */
+    `./locales/${locale}/index.js`
+  )).default
+  loadedLanguages[locale] = messages
+  return messages
+}
 
 // 配置i18n
+// 初始化时只加载默认语言
+const defaultLocale = 'en'
 const i18n = createI18n({
   legacy: false, // 使用组合式API
-  locale: 'en', // 默认语言
-  messages
+  locale: defaultLocale,
+  messages: { [defaultLocale]: await loadLocaleMessages(defaultLocale) }
 })
+
+// 切换语言时动态加载
+export async function setLanguage(locale) {
+  if (!i18n.global.availableLocales.includes(locale)) {
+    const messages = await loadLocaleMessages(locale)
+    i18n.global.setLocaleMessage(locale, messages)
+  }
+  localStorage.setItem('userLanguage', locale);
+  // 设置i18n语言
+  i18n.global.locale.value = locale
+  return Promise.resolve()
+}
 
 // 设置路由守卫处理语言
 setupLanguageGuard(i18n)

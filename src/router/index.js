@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { supportedLanguageCodes } from '../config/languages'
+import { setLanguage } from '../main';
 
 // 导入新的模块化国际化文件 (需要在 main.js 中配置 i18n)
 // 路由配置
@@ -219,15 +220,11 @@ const setupLanguageGuard = (i18n) => {
     // 1. 如果 URL 带语言前缀
     if (lang) {
       if (supportedLanguageCodes.includes(lang)) {
-        // 1.1 有效语言前缀
-        i18n.global.locale.value = lang;
-        localStorage.setItem('userLanguage', lang);
       } else {
-        // 1.2 无效语言前缀，重置为英语并记录
+        lang = 'en';
         console.warn(`Invalid language parameter: ${lang}. Defaulting to English.`);
-        i18n.global.locale.value = 'en';
-        localStorage.setItem('userLanguage', 'en');
       }
+      setLanguage(lang);
       next();
       return;
     }
@@ -241,9 +238,8 @@ const setupLanguageGuard = (i18n) => {
     const targetLang = (savedLang && supportedLanguageCodes.includes(savedLang))
       ? savedLang
       : defaultLang;
-
-    i18n.global.locale.value = targetLang;
-    localStorage.setItem('userLanguage', targetLang);
+    
+    setLanguage(targetLang);
 
     next();
   });
