@@ -42,19 +42,19 @@
                   <!-- Chrome -->
                   <a href="https://chromewebstore.google.com/detail/ufreetools/helippppkokcmlcngkegfmdmodlihjid"
                     target="_blank" rel="noopener" class="browser-ext-btn">
-                    <img src="/chrome-96x96.webp" alt="Chrome" class="browser-ext-icon" />
+                    <img src="/chrome-96x96.webp" sizes="32x32" alt="Chrome" class="browser-ext-icon" />
                     <span>{{ $t('common.addToChrome') }}</span>
                   </a>
                   <!-- Firefox -->
                   <a href="https://addons.mozilla.org/firefox/addon/ufreetools/" target="_blank" rel="noopener"
                     class="browser-ext-btn">
-                    <img src="/Firefox_logo,_2019.webp" alt="Firefox" class="browser-ext-icon" />
+                    <img src="/Firefox_logo,_2019.webp"  sizes="32x32"alt="Firefox" class="browser-ext-icon" />
                     <span>{{ $t('common.addToFireFox') }}</span>
                   </a>
                   <!-- Edge -->
                   <a href="https://microsoftedge.microsoft.com/addons/detail/ufreetools/bnacfmkhnhbpgkjkgkndoiakkpceigfb"
                     target="_blank" rel="noopener" class="browser-ext-btn">
-                    <img src="/Microsoft_Edge_logo_(2019).webp" alt="Edge" class="browser-ext-icon" />
+                    <img src="/Microsoft_Edge_logo_(2019).webp"  sizes="32x32"alt="Edge" class="browser-ext-icon" />
                     <span>{{ $t('common.addToEdge') }}</span>
                   </a>
                 </div>
@@ -747,14 +747,14 @@ function navigateToUrl(path) {
 
 /* 按钮样式 */
 .btn-primary {
-  background-color: var(--color-primary, #3b82f6);
+  background-color: var(--color-primary, #1d4ed8);
   color: white;
   transition: all 0.3s;
   box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-dark, #2563eb);
+  background-color: var(--color-primary-dark, #1e40af);
   box-shadow: 0 6px 10px rgba(59, 130, 246, 0.35);
   transform: translateY(-3px);
 }
