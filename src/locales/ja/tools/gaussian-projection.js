@@ -1,224 +1,168 @@
 export default {
-    name: 'ガウス投影変換',
-    title: 'ガウス投影変換',
-    description: 'ガウス投影座標と地理座標（経緯度）間の相互変換ツール',
-    calculationType: '計算タイプ',
-    forward: '正変換（経緯度→ガウス座標）',
-    inverse: '逆変換（ガウス座標→経緯度）',
-    ellipsoidParameters: '楕円体パラメータ',
-    ellipsoidType: '楕円体タイプ',
-    centralMeridian: '中央子午線（度）',
-    a: '長半径',
-    f: '扁平率',
-    projectionParameters: '投影帯パラメータ',
-    projectionType: '投影帯タイプ',
-    '3degree': '3度帯',
-    '6degree': '6度帯',
-    zoneNumber: '帯番号',
-    forwardInput: '経緯度入力',
-    latitude: '緯度',
-    longitude: '経度',
-    inverseInput: 'ガウス座標入力',
-    x: 'X座標（北向き）',
-    y: 'Y座標（東向き）',
-    calculate: '計算',
-    results: '計算結果',
-    dms: '度分秒形式',
-    batchProcessing: 'バッチ処理',
-    inputFormat: '入力形式',
-    batchForwardFormat: '1行に1組の経緯度、形式：緯度,経度',
-    batchInverseFormat: '1行に1組の座標、形式：X座標,Y座標',
-    processBatch: 'バッチ計算',
-    batchResults: 'バッチ結果',
-    copyAll: 'すべてコピー',
-    downloadCSV: 'CSVダウンロード',
-    copySuccess: 'コピー成功',
-    copyFailed: 'コピー失敗',
-    clear: 'クリア',
-    formula: '公式説明',
-    mapView: 'マップビュー',
-    dmsInput: '度分秒入力',
-    dmsInputPlaceholder: '40°26\'46"N 79°58\'56"W',
-    parse: '解析',
-    dmsParseError: '度分秒形式の解析エラー',
-    invalidLatitude: '無効な緯度',
-    invalidLongitude: '無効な経度',
-    invalidX: '無効なX座標',
-    invalidY: '無効なY座標',
-    copyToClipboard: 'クリップボードにコピー',
-    autoCalculate: '自動計算',
-    formulaExplanation: 'ガウス投影公式説明',
-    uploadCSV: 'CSVアップロード',
-    exportResults: '結果をエクスポート',
-    exportAsGeoJSON: 'GeoJSONとしてエクスポート',
-    exportAsKML: 'KMLとしてエクスポート',
-    exportAsTXT: 'TXTとしてエクスポート',
-    mapLayers: 'マップレイヤー',
-    standard: '標準',
-    satellite: '衛星',
-    terrain: '地形',
-    pointsOnMap: 'マップ上のポイント',
-    clearPoints: 'すべてのポイントをクリア',
-    unitSystem: '単位系',
+  name: 'ガウス投影変換',
+  title: 'ガウス投影変換',
+  description: 'ガウス投影座標と地理座標（経緯度）間の相互変換ツール',
+  calculationType: '計算タイプ',
+  forward: '正変換（経緯度→ガウス座標）',
+  inverse: '逆変換（ガウス座標→経緯度）',
+  ellipsoidParameters: '楕円体パラメータ',
+  ellipsoidType: '楕円体タイプ',
+  centralMeridian: '中央子午線（度）',
+  a: '長半径',
+  f: '扁平率',
+  projectionParameters: '投影帯パラメータ',
+  projectionType: '投影帯タイプ',
+  '3degree': '3度帯',
+  '6degree': '6度帯',
+  zoneNumber: '帯番号',
+  forwardInput: '経緯度入力',
+  latitude: '緯度',
+  longitude: '経度',
+  inverseInput: 'ガウス座標入力',
+  x: 'X座標（北向き）',
+  y: 'Y座標（東向き）',
+  calculate: '計算',
+  results: '計算結果',
+  dms: '度分秒形式',
+  batchProcessing: 'バッチ処理',
+  inputFormat: '入力形式',
+  batchForwardFormat: '1行に1組の経緯度、形式：緯度,経度',
+  batchInverseFormat: '1行に1組の座標、形式：X座標,Y座標',
+  processBatch: 'バッチ計算',
+  batchResults: 'バッチ結果',
+  copyAll: 'すべてコピー',
+  downloadCSV: 'CSVダウンロード',
+  copySuccess: 'コピー成功',
+  copyFailed: 'コピー失敗',
+  clear: 'クリア',
+  formula: '公式説明',
+  mapView: 'マップビュー',
+  dmsInput: '度分秒入力',
+  dmsInputPlaceholder: '40°26\'46"N 79°58\'56"W',
+  parse: '解析',
+  dmsParseError: '度分秒形式の解析エラー',
+  invalidLatitude: '無効な緯度',
+  invalidLongitude: '無効な経度',
+  invalidX: '無効なX座標',
+  invalidY: '無効なY座標',
+  copyToClipboard: 'クリップボードにコピー',
+  autoCalculate: '自動計算',
+  formulaExplanation: 'ガウス投影公式説明',
+  uploadCSV: 'CSVアップロード',
+  exportResults: '結果をエクスポート',
+  exportAsGeoJSON: 'GeoJSONとしてエクスポート',
+  exportAsKML: 'KMLとしてエクスポート',
+  exportAsTXT: 'TXTとしてエクスポート',
+  mapLayers: 'マップレイヤー',
+  standard: '標準',
+  satellite: '衛星',
+  terrain: '地形',
+  pointsOnMap: 'マップ上のポイント',
+  clearPoints: 'すべてのポイントをクリア',
+  unitSystem: '単位系',
+  metric: 'メートル (m)',
+  imperial: 'フィート (ft)',
+  customEllipsoid: 'カスタム楕円体',
+  saveCustomEllipsoid: 'カスタム楕円体を保存',
+
+  formulaContent: `
+    <p>ガウス投影は以下の主要な公式を使用します：</p>
+    <h4>正変換（経緯度→ガウス座標）</h4>
+    <p>地理座標を平面直角座標に変換：</p>
+    <ul>
+      <li>X = m + 補正項</li>
+      <li>Y = ν·cos(B)·l + 補正項</li>
+    </ul>
+    <h4>逆変換（ガウス座標→経緯度）</h4>
+    <p>平面直角座標を地理座標に変換：</p>
+    <ul>
+      <li>B = μ + 補正項</li>
+      <li>L = L₀ + 補正項</li>
+    </ul>
+    <p>ここで：</p>
+    <ul>
+      <li>B：緯度</li>
+      <li>L：経度</li>
+      <li>L₀：中央子午線</li>
+      <li>m：子午線弧長</li>
+      <li>ν：卯酉圏曲率半径</li>
+    </ul>
+  `,
+
+  close: '閉じる',
+
+  ellipsoids: {
+    WGS84: 'WGS84楕円体',
+    Krasovsky: 'クラソフスキー楕円体',
+    CGCS2000: 'CGCS2000楕円体',
+    GRS80: 'GRS80楕円体',
+    Beijing54: '北京54楕円体',
+    Xian80: '西安80楕円体',
+    Custom: 'カスタム楕円体'
+  },
+
+  about: {
+    title: 'ガウス投影について',
+    description: 'ガウス投影（Gauss Projection）は、保角横軸楕円柱投影の一種で、測量や地図作成に広く使用されています。地球の楕円体表面上の点を平面に投影するもので、大中縮尺の地形図によく使用される投影法です。',
+    forwardTitle: '正変換（経緯度→ガウス座標）',
+    forwardDescription: '正変換は、地理座標（経度、緯度）を平面直角座標（X、Y）に変換するプロセスです。X軸は北向き、Y軸は東向きで、原点は中央子午線と赤道の交点です。',
+    inverseTitle: '逆変換（ガウス座標→経緯度）',
+    inverseDescription: '逆変換は、平面直角座標（X、Y）を地理座標（経度、緯度）に戻すプロセスで、正変換の逆演算です。',
+    parametersTitle: 'パラメータ説明',
+    ellipsoidParam: '楕円体パラメータ',
+    ellipsoidDescription: '地球の形状を表す数学モデルで、異なる測地系では異なる楕円体パラメータを採用しています。一般的なものにはWGS84、北京54、西安80、CGCS2000などがあります。',
+    projectionParam: '投影帯パラメータ',
+    projectionDescription: 'ガウス投影は通常、3度帯と6度帯に分けられます。3度帯は大縮尺の地形図に適し、6度帯は中小縮尺の地形図に適しています。帯番号は中央子午線の位置を決定します。'
+  },
+
+  loadExample: '例を読み込む',
+  customEllipsoidSaved: 'カスタム楕円体が正常に保存されました',
+
+  guide: {
+    title: '操作ガイド',
+    forwardTitle: '正変換（経緯度→ガウス座標）',
+    step1: '上部で「正変換」計算タイプを選択',
+    step2: '適切な楕円体パラメータと投影帯を選択',
+    step3: '十進法形式の緯度と経度値を入力（例：39.9042, 116.4074）または度分秒入力を使用',
+    step4: '結果は自動的に更新されるか、「計算」ボタンをクリックして計算を実行',
+    
+    inverseTitle: '逆変換（ガウス座標→経緯度）',
+    step5: '上部で「逆変換」計算タイプを選択',
+    step6: 'XとY座標を入力（単位：メートル）',
+    step7: '十進法度と度分秒形式の経緯度結果を確認',
+    
+    batchTitle: 'バッチ処理',
+    step8: 'バッチ処理エリアに複数組の座標を入力（1行に1組）',
+    step9: '「バッチ計算」をクリックしてすべての座標を一度に計算',
+    step10: '結果をCSVとしてエクスポートするか、クリップボードにコピー',
+    
+    mapTitle: 'マップ操作',
+    step11: 'マップをクリックしてポイントを追加し、入力値を自動入力',
+    step12: 'ドロップダウンメニューを使用して異なるマップレイヤーを切り替え',
+    step13: 'ポイントをGeoJSON、KML、またはTXT形式でエクスポートして、他のアプリケーションで使用'
+  },
+
+  gaussianProjectionPoints: 'ガウス投影ポイント',
+  point: 'ポイント',
+  gaussianProjection: 'ガウス投影',
+  supportedFormats: '対応：CSV、TXT、Excel',
+  excelExportNotice: 'Excelエクスポートの準備ができました。このファイルをExcelで直接開くことができます。',
+  excelProcessNotice: 'Excel処理は完全にはサポートされていません。最良の結果を得るにはCSV形式を使用することをお勧めします。',
+  exportAsCSV: 'CSVとしてエクスポート',
+  exportAsExcel: 'Excelとしてエクスポート',
+  excelExportSuccess: 'Excelファイルのエクスポートに成功しました',
+  excelExportFailed: 'Excelエクスポートに失敗しました。CSV形式に戻りました',
+  excelImportSuccess: 'Excelファイルのインポートに成功しました',
+  excelImportFailed: 'Excelインポートに失敗しました。CSV形式を試してください',
+
+  units: {
     metric: 'メートル (m)',
+    km: 'キロメートル (km)',
     imperial: 'フィート (ft)',
-    customEllipsoid: 'カスタム楕円体',
-    saveCustomEllipsoid: 'カスタム楕円体を保存',
-    formulaContent: `
-      <p>ガウス投影は以下の主要な公式を使用します：</p>
-      <h4>正変換（経緯度→ガウス座標）</h4>
-      <p>地理座標を平面直角座標に変換：</p>
-      <ul>
-        <li>X = m + 補正項</li>
-        <li>Y = ν·cos(B)·l + 補正項</li>
-      </ul>
-      <h4>逆変換（ガウス座標→経緯度）</h4>
-      <p>平面直角座標を地理座標に変換：</p>
-      <ul>
-        <li>B = μ + 補正項</li>
-        <li>L = L₀ + 補正項</li>
-      </ul>
-      <p>ここで：</p>
-      <ul>
-        <li>B：緯度</li>
-        <li>L：経度</li>
-        <li>L₀：中央子午線</li>
-        <li>m：子午線弧長</li>
-        <li>ν：卯酉圏曲率半径</li>
-      </ul>
-    `,
-    close: '閉じる',
-    
-    ellipsoids: {
-      WGS84: 'WGS84楕円体',
-      Krasovsky: 'クラソフスキー楕円体',
-      CGCS2000: 'CGCS2000楕円体',
-      GRS80: 'GRS80楕円体',
-      Beijing54: '北京54楕円体',
-      Xian80: '西安80楕円体',
-      Custom: 'カスタム楕円体'
-    },
-    
-    about: {
-      title: 'ガウス投影について',
-      description: 'ガウス投影（Gauss Projection）は、保角横軸楕円柱投影の一種で、測量や地図作成に広く使用されています。地球の楕円体表面上の点を平面に投影するもので、大中縮尺の地形図によく使用される投影法です。',
-      forwardTitle: '正変換（経緯度→ガウス座標）',
-      forwardDescription: '正変換は、地理座標（経度、緯度）を平面直角座標（X、Y）に変換するプロセスです。X軸は北向き、Y軸は東向きで、原点は中央子午線と赤道の交点です。',
-      inverseTitle: '逆変換（ガウス座標→経緯度）',
-      inverseDescription: '逆変換は、平面直角座標（X、Y）を地理座標（経度、緯度）に戻すプロセスで、正変換の逆演算です。',
-      parametersTitle: 'パラメータ説明',
-      ellipsoidParam: '楕円体パラメータ',
-      ellipsoidDescription: '地球の形状を表す数学モデルで、異なる測地系では異なる楕円体パラメータを採用しています。一般的なものにはWGS84、北京54、西安80、CGCS2000などがあります。',
-      projectionParam: '投影帯パラメータ',
-      projectionDescription: 'ガウス投影は通常、3度帯と6度帯に分けられます。3度帯は大縮尺の地形図に適し、6度帯は中小縮尺の地形図に適しています。帯番号は中央子午線の位置を決定します。'
-    },
-    
-    loadExample: '例を読み込む',
-    customEllipsoidSaved: 'カスタム楕円体が正常に保存されました',
-    
-    guide: {
-      title: '操作ガイド',
-      forwardTitle: '正変換（経緯度→ガウス座標）',
-      step1: '上部で「正変換」計算タイプを選択',
-      step2: '適切な楕円体パラメータと投影帯を選択',
-      step3: '十進法形式の緯度と経度値を入力（例：39.9042, 116.4074）または度分秒入力を使用',
-      step4: '結果は自動的に更新されるか、「計算」ボタンをクリックして計算を実行',
-      
-      inverseTitle: '逆変換（ガウス座標→経緯度）',
-      step5: '上部で「逆変換」計算タイプを選択',
-      step6: 'XとY座標を入力（単位：メートル）',
-      step7: '十進法度と度分秒形式の経緯度結果を確認',
-      
-      batchTitle: 'バッチ処理',
-      step8: 'バッチ処理エリアに複数組の座標を入力（1行に1組）',
-      step9: '「バッチ計算」をクリックしてすべての座標を一度に計算',
-      step10: '結果をCSVとしてエクスポートするか、クリップボードにコピー',
-      
-      mapTitle: 'マップ操作',
-      step11: 'マップをクリックしてポイントを追加し、入力値を自動入力',
-      step12: 'ドロップダウンメニューを使用して異なるマップレイヤーを切り替え',
-      step13: 'ポイントをGeoJSON、KML、またはTXT形式でエクスポートして、他のアプリケーションで使用'
-    },
-    gaussianProjectionPoints: 'ガウス投影ポイント',
-    point: 'ポイント',
-    gaussianProjection: 'ガウス投影',
-    supportedFormats: '対応：CSV、TXT、Excel',
-    excelExportNotice: 'Excelエクスポートの準備ができました。このファイルをExcelで直接開くことができます。',
-    excelProcessNotice: 'Excel処理は完全にはサポートされていません。最良の結果を得るにはCSV形式を使用することをお勧めします。',
-    exportAsCSV: 'CSVとしてエクスポート',
-    exportAsExcel: 'Excelとしてエクスポート',
-    excelExportSuccess: 'Excelファイルのエクスポートに成功しました',
-    excelExportFailed: 'Excelエクスポートに失敗しました。CSV形式に戻りました',
-    excelImportSuccess: 'Excelファイルのインポートに成功しました',
-    excelImportFailed: 'Excelインポートに失敗しました。CSV形式を試してください',
-    units: {
-      metric: 'メートル (m)',
-      km: 'キロメートル (km)',
-      imperial: 'フィート (ft)',
-      miles: 'マイル (mi)'
-    },
-    resetView: 'マップビューをリセット',
-    pointsTotal: 'ポイント',
-    currentPoint: '現在の結果',
-    article: {
-      title: "ガウス投影計算機：地理座標と平面座標の相互変換ツール",
-      introTitle: "ガウス投影とは何か、なぜこのツールが必要なのか",
-      introPara1: "<strong>ガウス投影計算機</strong>（横軸メルカトル投影とも呼ばれる）は、測量技術者、地図作成の専門家、GIS専門家、および地理情報システムを扱うすべての人にとって不可欠なツールです。この強力な座標変換ツールを使用すると、ガウス投影法を用いて地理座標（緯度と経度）と平面直角座標（XとY）の間をシームレスに変換できます。",
-      introPara2: "私たちの<strong>ガウス投影変換ツール</strong>は、正変換（地理座標から平面座標へ）と逆変換（平面座標から地理座標へ）の計算を高精度で処理できます。WGS84、CGCS2000、クラソフスキー（北京54）などを含む複数の楕円体モデルをサポートしています。このツールは適切な数学公式と補正項を自動的に適用し、測量や地図作成プロジェクトの正確な座標変換を保証します。",
-      
-      scenariosTitle: "ガウス投影計算の実際の応用シナリオ",
-      scenario1: "<strong>測量と土地管理：</strong>測量士はガウス投影変換を使用して、GPS座標を地域の平面座標系に変換し、正確な土地測量、財産境界の決定、建設計画に利用します。",
-      scenario2: "<strong>地形図作成：</strong>地図製作者や地図専門家はガウス投影に依存して正確な地形図を作成し、角度関係を保持し、特定の地域の変形を最小限に抑えます。",
-      scenario3: "<strong>GISデータ統合：</strong>GIS分析者はガウス投影計算を使用して、異なるソースから異なる座標系を持つデータを空間分析のための統一された参照フレームワークに統合します。",
-      scenario4: "<strong>エンジニアリングプロジェクト：</strong>土木技術者や建設チームはガウス投影を採用して、道路、橋、トンネル、公共設備の既存の特徴に対する正確な位置決めを確保するためのインフラ設計を行います。",
-      scenario5: "<strong>軍事と防衛：</strong>軍事作戦はガウス投影座標を利用して、戦術計画、ナビゲーション、ターゲット位置特定を行い、精密な位置決めの要件を満たします。",
-      scenariosConclusion: "<strong>ガウス投影計算</strong>の多用途性により、正確な空間位置決めを必要とする多くの専門分野で不可欠なものとなっています。私たちのツールは、この複雑な数学的プロセスをシンプルで直感的なインターフェースに簡略化し、専門家にも初心者にも適しています。",
-      
-      faqTitle: "ガウス投影に関するよくある質問",
-      faq1q: "ガウス投影とUTMの違いは何ですか？",
-      faq1a: "ガウス投影は汎用横軸メルカトル（UTM）システムの数学的基礎です。主な違いは以下の通りです：<ul><li>UTMは標準化された帯システムを使用し、世界中で6度帯と特定のパラメータを採用しています</li><li>ガウス投影はより柔軟で、カスタム中央子午線と帯幅（3度帯または6度帯）を許可します</li><li>UTMには標準の500,000メートルの偽東偏移と0.9996のスケールファクターが含まれています</li><li>私たちの<strong>ガウス投影計算機</strong>は、典型的なUTM計算機よりも楕円体パラメータにおいてより多くのカスタマイズオプションを許可しています</li></ul>",
-      
-      faq2q: "ガウス投影計算にはどの楕円体モデルを選ぶべきですか？",
-      faq2a: "楕円体の選択は、地理的地域と使用する座標系標準によって異なります：<ul><li><strong>WGS84：</strong>GPSシステムと国際的な測量で世界的に使用されています</li><li><strong>CGCS2000：</strong>2000年以降の中国の公式座標系</li><li><strong>クラソフスキー/北京54：</strong>歴史的に中国と東ヨーロッパの一部で使用されていました</li><li><strong>西安80：</strong>CGCS2000以前に使用されていた中国の国家標準</li></ul>ほとんどの現代的なアプリケーションでは、異なる楕円体を必要とするレガシーデータを特に扱う場合を除いて、WGS84またはCGCS2000を推奨します。私たちの<strong>ガウス投影変換ツール</strong>はこれらすべてのモデルとさらに多くをサポートしています。",
-      
-      faq3q: "このツールが提供するガウス投影計算の精度はどの程度ですか？",
-      faq3a: "私たちの<strong>ガウス投影計算機</strong>は完全な数学モデルを実装し、高精度を確保するための適切な補正項を含んでいます。ほとんどの実用的なアプリケーションでは、このツールはサブミリメートルの精度を達成し、典型的な測量や地図作成プロジェクトの要件を超えています。精度は楕円体パラメータの正確な入力と正しい帯指定に依存します。非常に高精度の測地作業（サブミリメートル要件）の場合、追加の補正項を持つ専門的なソフトウェアが必要かもしれません。",
-      
-      faq4q: "このガウス投影ツールを使用してバッチ座標処理を行うことはできますか？",
-      faq4a: "はい、私たちの<strong>ガウス投影変換器</strong>には完全なバッチ処理機能が含まれています。以下のことができます：<ul><li>複数組の座標ペア（緯度/経度またはX/Y）を入力する</li><li>座標データを含むCSV、TXT、またはExcelファイルをアップロードする</li><li>数百または数千のポイントを同時に処理する</li><li>CSV、Excel、GeoJSON、KML、TXTなど様々な形式で結果をエクスポートする</li></ul>これにより、個別に処理すると非常に時間がかかる大規模なデータセットを扱うプロジェクトに最適なツールとなっています。",
-      
-      faq5q: "ガウス投影における3度帯と6度帯とは何ですか？",
-      faq5a: "ガウス投影は変形を最小限に抑えるために地球を経度帯に分割します：<ul><li><strong>3度帯：</strong>より狭い帯分けはより高い精度と少ない変形を提供し、通常は大縮尺の地図作成と詳細な測量に使用されます。帯番号は1から120までの範囲です。</li><li><strong>6度帯：</strong>より広い帯分けはより大きな地域をカバーし、エッジでの変形がやや大きくなります。地域の地図作成とUTM座標によく使用されます。帯番号は1から60までの範囲です。</li></ul>私たちの<strong>ガウス投影計算ツール</strong>はこれら両方の帯システムをサポートし、帯の選択に基づいて中央子午線を自動的に計算します。",
-      
-      tutorialTitle: "ガウス投影計算機の使用ステップバイステップガイド",
-      forwardCalcTitle: "正変換（地理座標からガウス座標へ）",
-      step1: "<strong>計算タイプを選択：</strong>ツールの上部にある計算タイプオプションから「正変換」を選択します。",
-      step2: "<strong>楕円体パラメータを選択：</strong>座標系の要件に応じて、ドロップダウンメニューから適切な楕円体タイプ（WGS84、CGCS2000、北京54など）を選択します。",
-      step3: "<strong>投影パラメータを設定：</strong>3度帯または6度帯を選択し、帯番号を入力します。中央子午線は自動的に計算されますが、必要に応じて手動で入力することもできます。",
-      step4: "<strong>地理座標を入力：</strong>十進法度で緯度と経度の値を入力します。また、DMS（度分秒）入力フィールドを使用して従来の表記で入力することもできます。",
-      
-      inverseCalcTitle: "逆変換（ガウス座標から地理座標へ）",
-      step5: "<strong>計算タイプを選択：</strong>「逆変換」計算タイプを選択します。",
-      step6: "<strong>楕円体と投影を設定：</strong>元の座標系と同じ楕円体パラメータと投影設定を選択します。",
-      step7: "<strong>平面座標を入力：</strong>メートル単位でX（北向き）とY（東向き）の値を入力します。",
-      step8: "<strong>結果を確認：</strong>計算された緯度と経度が十進法度とDMS形式の両方で表示され、参照しやすくなっています。",
-      
-      batchTitle: "複数組の座標のバッチ処理",
-      step9: "<strong>データを準備：</strong>座標ペアをフォーマットし、1行に1ペア（正変換の場合は緯度,経度、逆変換の場合はX,Y）を入力します。「CSVアップロード」ボタンを使用してファイルからデータをインポートすることもできます。",
-      step10: "<strong>バッチデータを処理：</strong>「バッチ計算」ボタンをクリックして、すべての座標を一度に変換します。",
-      step11: "<strong>結果をエクスポート：</strong>「すべてコピー」または「CSVダウンロード」ボタンを使用して変換結果を保存し、他のアプリケーションで使用できるようにします。",
-      
-      tutorialConclusion: "この<strong>ガウス投影計算機</strong>を使用すると、複雑な手動計算を行うことなく、地理座標と平面座標系の間で座標を迅速に変換できます。このツールの直感的なインターフェースにより、あらゆるレベルのユーザーが専門的な座標変換を簡単に行うことができます。",
-      
-      relatedToolsTitle: "関連座標ツール",
-      relatedTool1: "座標変換器",
-      relatedTool1Desc: "UTM、MGRS、および様々な国家グリッドを含む異なる座標系間で座標を変換します。",
-      relatedTool2: "GPSトラック再生",
-      relatedTool2Desc: "インタラクティブマップ上で座標データを含むGPSトラックを視覚化および分析します。",
-      
-      referencesTitle: "技術参考資料とリソース",
-      reference1: "世界測地系1984（WGS84）- 国家地理空間情報局",
-      reference2: "横軸メルカトル投影 - ウィキペディア",
-      reference3: "1983年平面座標系 - 国家測地局"
-    },
-}
+    miles: 'マイル (mi)'
+  },
+
+  resetView: 'マップビューをリセット',
+  pointsTotal: 'ポイント',
+  currentPoint: '現在の結果'
+};

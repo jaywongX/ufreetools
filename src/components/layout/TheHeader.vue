@@ -299,7 +299,7 @@ async function switchLanguage(langCode) {
   const currentPathWithoutLang = currentPath.replace(langPrefixRegex, '');
 
   // 等待语言包加载完成
-  await setLanguage(langCode);
+  await setLanguage(langCode, route.params.id);
 
   // 更新URL
   router.push(`/${langCode}${currentPathWithoutLang}`);

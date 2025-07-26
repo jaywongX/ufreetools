@@ -1,236 +1,198 @@
 export default {
-    name: 'Symmetrische Verschlüsselungsalgorithmen',
-    description: 'Sichere Verschlüsselung und Entschlüsselung von Texten und Dateien mit verschiedenen symmetrischen Algorithmen wie AES, DES und dem chinesischen Standard SM4',
-    encryption: {
-      title: 'Verschlüsselung/Entschlüsselung',
-      plaintext: 'Klartext',
-      plaintextPlaceholder: 'Text eingeben, der verschlüsselt werden soll',
-      ciphertext: 'Chiffretext',
-      ciphertextPlaceholder: 'Verschlüsselter Text wird hier angezeigt',
-      encrypt: 'Verschlüsseln',
-      decrypt: 'Entschlüsseln',
-      decrypted: 'Entschlüsselter Text',
-      decryptedPlaceholder: 'Entschlüsselter Text wird hier angezeigt',
-      encryptSuccess: 'Verschlüsselung erfolgreich',
-      decryptSuccess: 'Entschlüsselung erfolgreich',
-      encryptError: 'Verschlüsselung fehlgeschlagen: {error}',
-      decryptError: 'Entschlüsselung fehlgeschlagen: {error}'
+  name: 'Symmetrische Verschlüsselungsalgorithmen',
+  description: 'Sichere Verschlüsselung und Entschlüsselung von Texten und Dateien mit verschiedenen symmetrischen Algorithmen wie AES, DES und dem chinesischen Standard SM4',
+
+  encryption: {
+    title: 'Verschlüsselung/Entschlüsselung',
+    plaintext: 'Klartext',
+    plaintextPlaceholder: 'Text eingeben, der verschlüsselt werden soll',
+    ciphertext: 'Chiffretext',
+    ciphertextPlaceholder: 'Verschlüsselter Text wird hier angezeigt',
+    encrypt: 'Verschlüsseln',
+    decrypt: 'Entschlüsseln',
+    decrypted: 'Entschlüsselter Text',
+    decryptedPlaceholder: 'Entschlüsselter Text wird hier angezeigt',
+    encryptSuccess: 'Verschlüsselung erfolgreich',
+    decryptSuccess: 'Entschlüsselung erfolgreich',
+    encryptError: 'Verschlüsselung fehlgeschlagen: {error}',
+    decryptError: 'Entschlüsselung fehlgeschlagen: {error}'
+  },
+
+  algorithm: {
+    title: 'Algorithmus auswählen',
+    aes: 'AES',
+    des: 'DES',
+    tripledes: '3DES (Triple DES)',
+    sm4: 'SM4 (Chinesischer Standard)',
+    "3des": '3DES (Triple DES)'
+  },
+
+  mode: {
+    title: 'Betriebsmodus',
+    ecb: 'ECB - Electronic Codebook Mode',
+    cbc: 'CBC - Cipher Block Chaining Mode',
+    cfb: 'CFB - Cipher Feedback Mode',
+    ofb: 'OFB - Output Feedback Mode',
+    ctr: 'CTR - Counter Mode'
+  },
+
+  padding: {
+    title: 'Padding-Methode',
+    pkcs7: 'PKCS7',
+    zeroPadding: 'Null-Padding',
+    zeropadding: 'Null-Padding'
+  },
+
+  operation: {
+    title: 'Operationstyp',
+    encrypt: 'Verschlüsseln',
+    decrypt: 'Entschlüsseln'
+  },
+
+  key: {
+    title: 'Schlüssel',
+    label: 'Schlüssel',
+    placeholder: '{keySize}-Schlüssel eingeben',
+    placeholderString: '{keySize}-Schlüssel als Zeichenkette eingeben (automatische Auffüllung bei zu kurz)',
+    placeholderHex: '{keySize}-Schlüssel in Hex eingeben (automatische Auffüllung bei zu kurz)',
+    placeholderBase64: '{keySize}-Schlüssel in Base64 eingeben (automatische Auffüllung bei zu kurz)',
+    generateRandom: 'Zufällig generieren',
+    sizeHint: '{keySize}',
+    autoFillHint: 'Zu kurze Schlüssel werden mit Nullen aufgefüllt, zu lange werden abgeschnitten'
+  },
+
+  iv: {
+    title: 'Initialisierungsvektor (IV)',
+    label: 'Initialisierungsvektor (IV)',
+    placeholder: '{blockSize}-IV eingeben',
+    placeholderString: '{blockSize}-IV als Zeichenkette eingeben (automatische Auffüllung bei zu kurz)',
+    placeholderHex: '{blockSize}-IV in Hex eingeben (automatische Auffüllung bei zu kurz)',
+    placeholderBase64: '{blockSize}-IV in Base64 eingeben (automatische Auffüllung bei zu kurz)',
+    generateRandom: 'Zufällig generieren',
+    sizeHint: '{blockSize}',
+    autoFillHint: 'Zu kurze IVs werden mit Nullen aufgefüllt, zu lange werden abgeschnitten'
+  },
+
+  input: {
+    title: 'Zu verschlüsselnder Inhalt',
+    titleDecrypt: 'Zu entschlüsselnder Inhalt',
+    clear: 'Leeren',
+    placeholder: 'Text eingeben, der verschlüsselt werden soll',
+    placeholderDecrypt: 'Chiffretext im {format}-Format eingeben'
+  },
+
+  inputFormat: {
+    title: 'Eingabeformat',
+    string: 'Zeichenkette',
+    hex: 'HEX',
+    base64: 'Base64'
+  },
+
+  output: {
+    title: 'Verschlüsselungsergebnis',
+    titleDecrypt: 'Entschlüsselungsergebnis',
+    copyResult: 'Ergebnis kopieren',
+    copied: 'Kopiert'
+  },
+
+  outputFormat: {
+    title: 'Ausgabeformat',
+    string: 'Zeichenkette',
+    hex: 'HEX',
+    base64: 'Base64'
+  },
+
+  error: {
+    title: 'Fehler',
+    invalidHex: 'Schlüssel muss im HEX-Format sein',
+    invalidIvHex: 'IV muss im HEX-Format sein',
+    invalidHexInput: 'Ungültige HEX-Eingabe',
+    invalidBase64: 'Ungültige Base64-Eingabe',
+    unsupportedAlgorithm: 'Algorithmus nicht unterstützt',
+    decryptionFailed: 'Entschlüsselung fehlgeschlagen: {message}',
+    copyFailed: 'Kopieren fehlgeschlagen, bitte manuell kopieren',
+    unknownError: 'Ein Fehler ist aufgetreten',
+    invalidHexFormat: 'Ungültiges HEX-Format',
+    invalidBase64Format: 'Ungültiges Base64-Format',
+    emptyBase64: 'Ungültige Base64-Kodierung',
+    decryptFailed: 'Entschlüsselung fehlgeschlagen:'
+  },
+
+  info: {
+    title: 'Algorithmus-Informationen',
+    algorithms: {
+      aes: 'AES: Advanced Encryption Standard mit 128-, 192- oder 256-Bit-Schlüsseln',
+      des: 'DES: Data Encryption Standard mit 56-Bit-Schlüssel, geringe Sicherheit',
+      tripledes: '3DES: Triple DES mit drei 56-Bit-Schlüsseln für höhere Sicherheit',
+      sm4: 'SM4: Chinesischer Standard mit 128-Bit-Schlüsseln',
+      "3des": '3DES: Triple DES mit drei 56-Bit-Schlüsseln für höhere Sicherheit'
     },
-    algorithm: {
-      title: 'Algorithmus auswählen',
-      aes: 'AES',
-      des: 'DES',
-      tripledes: '3DES (Triple DES)',
-      sm4: 'SM4 (Chinesischer Standard)',
-      "3des": '3DES (Triple DES)'
-    },
-    mode: {
-      title: 'Betriebsmodus',
-      ecb: 'ECB - Electronic Codebook Mode',
-      cbc: 'CBC - Cipher Block Chaining Mode',
-      cfb: 'CFB - Cipher Feedback Mode',
-      ofb: 'OFB - Output Feedback Mode',
-      ctr: 'CTR - Counter Mode'
-    },
-    padding: {
-      title: 'Padding-Methode',
-      pkcs7: 'PKCS7',
-      zeroPadding: 'Null-Padding',
-      zeropadding: 'Null-Padding'
-    },
-    operation: {
-      title: 'Operationstyp',
-      encrypt: 'Verschlüsseln',
-      decrypt: 'Entschlüsseln'
-    },
-    key: {
-      title: 'Schlüssel',
-      label: 'Schlüssel',
-      placeholder: '{keySize}-Schlüssel eingeben',
-      placeholderString: '{keySize}-Schlüssel als Zeichenkette eingeben (automatische Auffüllung bei zu kurz)',
-      placeholderHex: '{keySize}-Schlüssel in Hex eingeben (automatische Auffüllung bei zu kurz)',
-      placeholderBase64: '{keySize}-Schlüssel in Base64 eingeben (automatische Auffüllung bei zu kurz)',
-      generateRandom: 'Zufällig generieren',
-      sizeHint: '{keySize}',
-      autoFillHint: 'Zu kurze Schlüssel werden mit Nullen aufgefüllt, zu lange werden abgeschnitten'
-    },
-    iv: {
-      title: 'Initialisierungsvektor (IV)',
-      label: 'Initialisierungsvektor (IV)',
-      placeholder: '{blockSize}-IV eingeben',
-      placeholderString: '{blockSize}-IV als Zeichenkette eingeben (automatische Auffüllung bei zu kurz)',
-      placeholderHex: '{blockSize}-IV in Hex eingeben (automatische Auffüllung bei zu kurz)',
-      placeholderBase64: '{blockSize}-IV in Base64 eingeben (automatische Auffüllung bei zu kurz)',
-      generateRandom: 'Zufällig generieren',
-      sizeHint: '{blockSize}',
-      autoFillHint: 'Zu kurze IVs werden mit Nullen aufgefüllt, zu lange werden abgeschnitten'
-    },
-    input: {
-      title: 'Zu verschlüsselnder Inhalt',
-      titleDecrypt: 'Zu entschlüsselnder Inhalt',
-      clear: 'Leeren',
-      placeholder: 'Text eingeben, der verschlüsselt werden soll',
-      placeholderDecrypt: 'Chiffretext im {format}-Format eingeben'
-    },
-    inputFormat: {
-      title: 'Eingabeformat',
-      string: 'Zeichenkette',
-      hex: 'HEX',
-      base64: 'Base64'
-    },
-    output: {
-      title: 'Verschlüsselungsergebnis',
-      titleDecrypt: 'Entschlüsselungsergebnis',
-      copyResult: 'Ergebnis kopieren',
-      copied: 'Kopiert'
-    },
-    outputFormat: {
-      title: 'Ausgabeformat',
-      string: 'Zeichenkette',
-      hex: 'HEX',
-      base64: 'Base64'
-    },
-    error: {
-      title: 'Fehler',
-      invalidHex: 'Schlüssel muss im HEX-Format sein',
-      invalidIvHex: 'IV muss im HEX-Format sein',
-      invalidHexInput: 'Ungültige HEX-Eingabe',
-      invalidBase64: 'Ungültige Base64-Eingabe',
-      unsupportedAlgorithm: 'Algorithmus nicht unterstützt',
-      decryptionFailed: 'Entschlüsselung fehlgeschlagen: {message}',
-      copyFailed: 'Kopieren fehlgeschlagen, bitte manuell kopieren',
-      unknownError: 'Ein Fehler ist aufgetreten',
-      invalidHexFormat: 'Ungültiges HEX-Format',
-      invalidBase64Format: 'Ungültiges Base64-Format',
-      emptyBase64: 'Ungültige Base64-Kodierung',
-      decryptFailed: 'Entschlüsselung fehlgeschlagen:'
-    },
-    info: {
-      title: 'Algorithmus-Informationen',
-      algorithms: {
-        aes: 'AES: Advanced Encryption Standard mit 128-, 192- oder 256-Bit-Schlüsseln',
-        des: 'DES: Data Encryption Standard mit 56-Bit-Schlüssel, geringe Sicherheit',
-        tripledes: '3DES: Triple DES mit drei 56-Bit-Schlüsseln für höhere Sicherheit',
-        sm4: 'SM4: Chinesischer Standard mit 128-Bit-Schlüsseln',
-        "3des": '3DES: Triple DES mit drei 56-Bit-Schlüsseln für höhere Sicherheit'
-      },
-      modes: {
-        title: 'Betriebsmodi erklärt',
-        ecb: 'ECB: Jeder Block wird unabhängig verschlüsselt, nicht für sensible Daten empfohlen',
-        cbc: 'CBC: Jeder Block hängt vom vorherigen ab, sicherer',
-        cfb: 'CFB: Wandelt Blockchiffre in Stromchiffre um',
-        ofb: 'OFB: Stromchiffre-Modus, gleiche Operation für Ver- und Entschlüsselung',
-        ctr: 'CTR: Zählermodus, ermöglicht parallele Verarbeitung'
-      }
-    },
-    buttons: {
-      process: 'Verschlüsseln',
-      processDecrypt: 'Entschlüsseln'
-    },
-    file: {
-      title: 'Dateiverschlüsselung',
-      select: 'Datei auswählen',
-      drop: 'Oder Datei hier ablegen',
-      encrypt: 'Datei verschlüsseln',
-      decrypt: 'Datei entschlüsseln',
-      download: 'Ergebnis herunterladen',
-      selected: 'Ausgewählt: {name}',
-      size: 'Größe: {size}',
-      maxSize: 'Maximale Größe: 100MB',
-      encryptingFile: 'Datei wird verschlüsselt...',
-      decryptingFile: 'Datei wird entschlüsselt...',
-      downloadReady: 'Bereit zum Herunterladen',
-      fileTooBig: 'Datei zu groß. Maximal 100MB erlaubt.'
-    },
-    options: {
-      title: 'Optionen',
-      autoDecrypt: 'Nach Verschlüsselung automatisch entschlüsseln',
-      includeMeta: 'Algorithmus-Metadaten in Ausgabe einbeziehen',
-      kdf: 'Schlüsselableitungsfunktion',
-      pbkdf2: 'PBKDF2',
-      scrypt: 'scrypt',
-      argon2: 'Argon2id',
-      salt: 'Salt (für Schlüsselableitung)',
-      saltPlaceholder: 'Salt in Hex eingeben oder leer lassen für zufällige Generierung',
-      autoClear: 'Sensible Daten automatisch löschen',
-      saveSettings: 'Einstellungen speichern'
-    },
-    security: {
-      title: 'Sicherheitsinformationen',
-      description: 'Über Verschlüsselungssicherheit',
-      warning: 'Warnung',
-      ecbInsecure: 'ECB-Modus wird für sichere Anwendungen nicht empfohlen, da er Datenmuster nicht gut verbirgt.',
-      useModern: 'Für sensible Daten AES-256 mit GCM oder CBC-Modus verwenden.',
-      keyWarning: 'Schützen Sie Ihre Verschlüsselungsschlüssel. Bei Verlust sind die Daten nicht wiederherstellbar.',
-      browserWarning: 'Browser-basierte Verschlüsselung ist praktisch, aber für hochsensible Daten möglicherweise nicht geeignet.',
-      learnMore: 'Mehr über Verschlüsselung erfahren'
-    },
-    messages: {
-      noAlgorithm: 'Bitte Verschlüsselungsalgorithmus auswählen',
-      noKey: 'Bitte Verschlüsselungsschlüssel oder Passwort eingeben',
-      invalidKeyLength: 'Ungültige Schlüssellänge für gewählten Algorithmus',
-      invalidIv: 'Ungültige IV-Länge für gewählten Algorithmus und Modus',
-      noData: 'Bitte zu verschlüsselnde/entschlüsselnde Daten eingeben',
-      padError: 'Padding-Fehler - Schlüssel oder Daten möglicherweise falsch',
-      fileSuccess: 'Datei erfolgreich verarbeitet',
-      fileError: 'Fehler bei Dateiverarbeitung: {error}',
-      clipboardError: 'Fehler beim Kopieren in Zwischenablage: {error}',
-      invalidFormat: 'Ungültiges Eingabeformat'
-    },
-    article: {
-      title: "Symmetrische Verschlüsselungsalgorithmen: Umfassendes Datensicherheits-Tool",
-      features: {
-        title: "Symmetrische Verschlüsselung und ihre Funktionen",
-        description: "Das <strong>symmetrische Verschlüsselungs</strong>-Tool ist ein leistungsstarkes <strong>kryptografisches Hilfsmittel</strong>, das sensible Daten mit verschiedenen Industriestandard-Algorithmen schützt. Im Gegensatz zur asymmetrischen Verschlüsselung mit Schlüsselpaaren verwendet die symmetrische Verschlüsselung einen einzelnen <strong>Schlüssel</strong> für Ver- und Entschlüsselung. Unser Tool unterstützt mehrere Algorithmen inklusive <strong>AES (Advanced Encryption Standard)</strong>, <strong>DES (Data Encryption Standard)</strong>, <strong>3DES (Triple DES)</strong> und <strong>SM4 (chinesischer Nationalstandard)</strong>.<br><br>Kernfunktionen umfassen Text- und Dateiverschlüsselung mit konfigurierbaren Optionen wie <strong>Verschlüsselungsmodi</strong> (CBC, ECB, CFB, OFB, CTR), <strong>Padding-Methoden</strong> und flexiblen Ein-/Ausgabeformaten. Dieses <strong>Datenverschlüsselungstool</strong> bietet eine benutzerfreundliche Oberfläche für starke Sicherheitsmaßnahmen ohne tiefgehende Kryptografiekenntnisse, wodurch fortgeschrittene Verschlüsselung für alle zugänglich wird, während hohe Sicherheitsstandards erhalten bleiben.",
-        useCases: {
-          title: "Praktische Anwendungsfälle für symmetrische Verschlüsselung",
-          items: [
-            "<strong>Sicherer Dateiaustausch</strong>: Verschlüsseln Sie sensible Dokumente, Tabellen oder Mediendateien vor der Übermittlung über potenziell unsichere Kanäle. Empfänger mit dem richtigen Schlüssel können die Inhalte leicht entschlüsseln, was Vertraulichkeit während der Übertragung gewährleistet.",
-            "<strong>Passwortspeicherung und -verwaltung</strong>: Erstellen Sie verschlüsselte Speicher für Passwörter und Zugangsdaten. Durch Verschlüsselung dieser sensiblen Informationen mit einem Hauptpasswort können Sie eine sichere Sammlung von Login-Daten pflegen, während Sie sich nur ein starkes Passwort merken müssen.",
-            "<strong>API-Authentifizierung</strong>: Generieren und validieren Sie verschlüsselte Tokens für API-Authentifizierungssysteme. Symmetrische Verschlüsselung bietet ein Gleichgewicht zwischen Sicherheit und Performance, ideal für die Handhabung von Authentifizierungstokens in Webanwendungen und Diensten.",
-            "<strong>Datenbankfeldverschlüsselung</strong>: Schützen Sie spezifische sensible Felder in Datenbanken ohne komplette Systemumgestaltung. <strong>Symmetrische Kryptografie</strong> ermöglicht selektive Verschlüsselung kritischer Informationen wie persönlicher Identifikatoren, finanzieller Details oder privater Nutzerdaten.",
-            "<strong>Konfigurationssicherheit</strong>: Verschlüsseln Sie Anwendungskonfigurationsdateien mit sensiblen Zugangsdaten wie Datenbankpasswörtern, API-Schlüsseln und Service-Tokens. Dies verhindert die versehentliche Offenlegung kritischer Zugangsinformationen, selbst wenn Konfigurationsdateien kompromittiert werden.",
-            "<strong>Sichere Kommunikationskanäle</strong>: Implementieren Sie Ende-zu-Ende-verschlüsselte Kommunikation durch Generierung symmetrischer Sitzungsschlüssel. Dieser Ansatz ermöglicht sichere Echtzeit-Nachrichtenübermittlung bei gleichbleibender Performance für bandbreitenbeschränkte Anwendungen."
-          ]
-        }
-      },
-      faq: {
-        title: "Häufige Fragen zur symmetrischen Verschlüsselung",
-        items: [
-          {
-            question: "Was sind die Unterschiede zwischen AES, DES, 3DES und SM4 Algorithmen?",
-            answer: "Dies sind verschiedene <strong>symmetrische Verschlüsselungsalgorithmen</strong> mit unterschiedlichen Sicherheitsniveaus und Performance-Eigenschaften. <strong>AES (Advanced Encryption Standard)</strong> ist der aktuelle globale Standard, bietet exzellente Sicherheit und Performance mit Schlüsselgrößen von 128, 192 oder 256 Bit. <strong>DES (Data Encryption Standard)</strong> ist ein älterer Algorithmus mit 56-Bit-Schlüsseln, der aufgrund seiner Anfälligkeit für Brute-Force-Angriffe für kritische Anwendungen als unsicher gilt. <strong>3DES</strong> verbessert die DES-Sicherheit durch dreimalige Anwendung des Algorithmus mit verschiedenen Schlüsseln, bietet stärkeren Schutz aber langsamere Performance. <strong>SM4</strong> ist ein chinesischer Nationalstandard-Blockchiffre mit 128-Bit-Schlüsseln, entworfen als Gegenstück zu AES mit vergleichbarer Sicherheit. Für die meisten modernen Anwendungen wird AES empfohlen, da es das beste Gleichgewicht zwischen starker Sicherheit und Effizienz bietet."
-          },
-          {
-            question: "Welchen Verschlüsselungsmodus sollte ich für meine Anwendung wählen?",
-            answer: "Der <strong>Verschlüsselungsmodus</strong> bestimmt, wie Blockchiffren Datenblöcke verarbeiten. <strong>ECB (Electronic Codebook)</strong> ist am einfachsten aber am wenigsten sicher, da identische Klartextblöcke zu identischen Chiffretextblöcken verschlüsselt werden, was Muster preisgeben kann. <strong>CBC (Cipher Block Chaining)</strong> erhöht die Sicherheit durch Abhängigkeit jedes verschlüsselten Blocks vom vorherigen Block und benötigt einen Initialisierungsvektor (IV). <strong>CFB (Cipher Feedback)</strong>, <strong>OFB (Output Feedback)</strong> und <strong>CTR (Counter)</strong> Modi wandeln Blockchiffren in Stromchiffren mit verschiedenen Eigenschaften um. Für allgemeine Verschlüsselung sensibler Daten bietet CBC mit korrekt implementiertem zufälligem IV gute Sicherheit und angemessene Performance. CTR-Modus eignet sich gut für parallelisierbare Implementierungen und vermeidet Padding-Anforderungen. Moderne Kryptosysteme bevorzugen oft authentifizierte Verschlüsselungsmodi wie GCM (nicht direkt in diesem Tool verfügbar), die sowohl Vertraulichkeit als auch Datenintegrität bieten."
-          },
-          {
-            question: "Ist dieses Online-Verschlüsselungstool für sensible Daten sicher?",
-            answer: "Dieses <strong>Browser-basierte Verschlüsselungstool</strong> verarbeitet alle Daten lokal im Browser ohne Übermittlung an externe Server, was ein grundlegendes Maß an Vertraulichkeit bietet. Für wirklich sensible Informationen sollten jedoch mehrere Faktoren bedacht werden: 1) Das Tool verwendet JavaScript-Implementierungen standardmäßiger <strong>Verschlüsselungsbibliotheken</strong>, die möglicherweise nicht die gleichen Sicherheitsgarantien bieten wie geprüfte native Implementierungen. 2) Browser-Umgebungen sind potenziellen Bedrohungen wie Erweiterungen, Malware oder Speicheruntersuchungen ausgesetzt. 3) Schlüsselverwaltung bleibt kritisch - bei Verlust des Verschlüsselungsschlüssels sind Daten unwiederbringlich verloren. Für hochsensible Daten oder Produktionssysteme empfehlen wir dedizierte Verschlüsselungssoftware oder -bibliotheken in kontrollierten Umgebungen mit angemessenen Schlüsselverwaltungspraktiken. Dieses Tool eignet sich am besten für Bildungszwecke, gelegentliche Nutzung oder Verschlüsselung mittel-sensibler Informationen."
-          },
-          {
-            question: "Wie behandle und teile ich Verschlüsselungsschlüssel sicher?",
-            answer: "Sicheres <strong>Schlüsselmanagement</strong> ist entscheidend für die Aufrechterhaltung der Verschlüsselungssicherheit. Teilen Sie Schlüssel niemals über denselben Kanal wie die verschlüsselten Daten - dies untergräbt den Zweck der Verschlüsselung, da jeder, der beides abfängt, Ihre Informationen entschlüsseln kann. Stattdessen: 1) Nutzen Sie separate sichere Kommunikationskanäle für Schlüsselaustausch. 2) Erwägen Sie Schlüsselaufteilung, wobei verschiedene Schlüsselteile über unterschiedliche Kanäle gesendet werden. 3) Verwenden Sie nach Möglichkeit sichere Schlüsselaustauschprotokolle. 4) Für kontinuierliche Kommunikation erwägen Sie asymmetrische Verschlüsselung zum sicheren Austausch symmetrischer Schlüssel. 5) Implementieren Sie Schlüsselrotationspraktiken für langfristige Sicherheit. 6) Speichern Sie Schlüssel sicher, niemals im Klartext, vorzugsweise mit spezialisierten Schlüsselverwaltungssystemen. 7) Für maximale Sicherheit kritischer Schlüssel erwägen Sie Hardware-Sicherheitsmodule (HSM) oder dedizierte Schlüsselverwaltungsdienste. Denken Sie daran, dass die Sicherheit Ihrer verschlüsselten Daten nur so stark ist wie Ihre Schlüsselverwaltungspraktiken."
-          },
-          {
-            question: "Wie stelle ich sicher, dass meine verschlüsselten Daten unverändert bleiben?",
-            answer: "Standard-<strong>symmetrische Verschlüsselung</strong> bietet Vertraulichkeit, garantiert aber selbst keine Datenintegrität. Um zu überprüfen, dass Ihre verschlüsselten Daten nicht modifiziert wurden: 1) Verwenden Sie nach Möglichkeit authentifizierte Verschlüsselungsmodi. Während dieses Tool hauptsächlich traditionelle Modi (CBC, ECB etc.) bietet, bevorzugen moderne Verschlüsselungssysteme authentifizierte Verschlüsselung wie AES-GCM, die sowohl Vertraulichkeit als auch Integritätsprüfung bietet. 2) Implementieren Sie separate Integritätsprüfungen durch Berechnung kryptografischer Hashes (z.B. SHA-256) oder HMACs der verschlüsselten Daten und sichere Speicherung dieser Werte. Vor der Entschlüsselung neu berechnen und vergleichen, um Manipulationen zu erkennen. 3) Für kritische Anwendungen erwägen Sie zusätzlich digitale Signaturen. 4) Überprüfen Sie immer Länge und Struktur des Chiffretexts vor der Entschlüsselung, um vollständige Übertragung sicherzustellen. 5) Wenn möglich, fügen Sie Versionsinformationen und andere Metadaten in Ihr Verschlüsselungsschema ein, um Downgrade-Angriffe zu verhindern. Diese Maßnahmen helfen, Vertraulichkeit und Integrität Ihrer sensiblen Informationen über potenziell unsichere Kanäle hinweg zu gewährleisten."
-          }
-        ]
-      },
-      guide: {
-        title: "Schritt-für-Schritt-Anleitung zur Nutzung des symmetrischen Verschlüsselungstools",
-        steps: [
-          "<strong>Verschlüsselungsalgorithmus wählen</strong>: Wählen Sie basierend auf Ihren Sicherheitsanforderungen und Kompatibilitätsbedürfnissen zwischen AES (empfohlen für die meisten Anwendungen), DES, 3DES oder SM4 (chinesischer Standard). AES bietet das beste Gleichgewicht zwischen Sicherheit und Performance für moderne Anwendungen.",
-          "<strong>Betriebsmodus auswählen</strong>: Wählen Sie einen <strong>Verschlüsselungsmodus</strong> aus den verfügbaren Optionen (CBC, ECB, CFB, OFB, CTR). Für allgemeine Sicherheitszwecke wird CBC-Modus empfohlen, da er bei Verwendung eines zufälligen Initialisierungsvektors (IV) gute Sicherheit bietet.",
-          "<strong>Padding-Methode konfigurieren</strong>: Wenn Ihr gewählter Modus Padding erfordert (wie CBC oder ECB), wählen Sie zwischen PKCS7 (Standard) oder Null-Padding. Diese Einstellung bestimmt, wie der letzte Block aufgefüllt wird, wenn die Datenlänge kein Vielfaches der Blockgröße ist.",
-          "<strong>Verschlüsselungsschlüssel eingeben oder generieren</strong>: Geben Sie einen benutzerdefinierten Schlüssel ein oder nutzen Sie den 'Zufällig generieren'-Button, um einen kryptografisch starken Schlüssel zu erstellen. Für AES beträgt die Schlüssellänge je nach gewünschter Stärke 16, 24 oder 32 Byte. Wählen Sie das passende Eingabeformat für Ihren Schlüssel (Zeichenkette, Hexadezimal oder Base64).",
-          "<strong>Initialisierungsvektor (IV) bereitstellen</strong>: Für Modi außer ECB benötigen Sie einen IV. Klicken Sie auf 'Zufällig generieren', um einen sicheren, zufälligen IV zu erstellen, oder geben Sie Ihren eigenen IV ein. Der IV muss nicht geheim bleiben, sollte aber für jede Verschlüsselungsoperation einzigartig sein.",
-          "<strong>Zu verschlüsselnde Daten eingeben</strong>: Geben Sie den zu verschlüsselnden Text in das Eingabefeld ein. Wählen Sie das passende Eingabeformat (Zeichenkette für normalen Text oder Hex/Base64 für bereits kodierte Daten). Für die Entschlüsselung geben Sie den Chiffretext im ursprünglichen Ausgabeformat (typischerweise Hex oder Base64) an.",
-          "<strong>Ergebnisse verarbeiten und nutzen</strong>: Klicken Sie auf 'Verschlüsseln' oder 'Entschlüsseln', um Ihre Daten zu verarbeiten. Die Ergebnisse werden im angegebenen Ausgabeformat angezeigt. Nutzen Sie die Kopierfunktion, um Ergebnisse einfach in andere Anwendungen oder Dokumente zu übertragen. Bei Verschlüsselung sichern Sie Schlüssel und IV (falls verwendet) sicher, da sie zur Entschlüsselung benötigt werden."
-        ]
-      },
-      conclusion: "Das symmetrische Verschlüsselungstool bietet eine leistungsstarke und benutzerfreundliche Möglichkeit, Ihre sensiblen Informationen mit Industriestandard-Verschlüsselungsalgorithmen zu schützen. Durch Befolgen angemessener Sicherheitspraktiken und Verständnis der verfügbaren Optionen können Sie effektiv starke Verschlüsselung für ein breites Anwendungsspektrum implementieren - vom Schutz persönlicher Dateien bis zur Umsetzung komplexerer Sicherheitssysteme. Während dieses browserbasierte Tool für viele Verschlüsselungsbedürfnisse Komfort und Flexibilität bietet, sollten Sie bedenken, dass sicherheitskritische Anwendungen möglicherweise dedizierte Verschlüsselungslösungen mit entsprechender Schlüsselverwaltungsinfrastruktur erfordern. Ob Sie persönlichen Daten zusätzliche Privatsphäre verleihen oder Verschlüsselungskonzepte erkunden möchten - dieses Tool bietet eine praktische Einführung in diese grundlegende Sicherheitstechnologie."
+    modes: {
+      title: 'Betriebsmodi erklärt',
+      ecb: 'ECB: Jeder Block wird unabhängig verschlüsselt, nicht für sensible Daten empfohlen',
+      cbc: 'CBC: Jeder Block hängt vom vorherigen ab, sicherer',
+      cfb: 'CFB: Wandelt Blockchiffre in Stromchiffre um',
+      ofb: 'OFB: Stromchiffre-Modus, gleiche Operation für Ver- und Entschlüsselung',
+      ctr: 'CTR: Zählermodus, ermöglicht parallele Verarbeitung'
     }
+  },
+
+  buttons: {
+    process: 'Verschlüsseln',
+    processDecrypt: 'Entschlüsseln'
+  },
+
+  file: {
+    title: 'Dateiverschlüsselung',
+    select: 'Datei auswählen',
+    drop: 'Oder Datei hier ablegen',
+    encrypt: 'Datei verschlüsseln',
+    decrypt: 'Datei entschlüsseln',
+    download: 'Ergebnis herunterladen',
+    selected: 'Ausgewählt: {name}',
+    size: 'Größe: {size}',
+    maxSize: 'Maximale Größe: 100MB',
+    encryptingFile: 'Datei wird verschlüsselt...',
+    decryptingFile: 'Datei wird entschlüsselt...',
+    downloadReady: 'Bereit zum Herunterladen',
+    fileTooBig: 'Datei zu groß. Maximal 100MB erlaubt.'
+  },
+
+  options: {
+    title: 'Optionen',
+    autoDecrypt: 'Nach Verschlüsselung automatisch entschlüsseln',
+    includeMeta: 'Algorithmus-Metadaten in Ausgabe einbeziehen',
+    kdf: 'Schlüsselableitungsfunktion',
+    pbkdf2: 'PBKDF2',
+    scrypt: 'scrypt',
+    argon2: 'Argon2id',
+    salt: 'Salt (für Schlüsselableitung)',
+    saltPlaceholder: 'Salt in Hex eingeben oder leer lassen für zufällige Generierung',
+    autoClear: 'Sensible Daten automatisch löschen',
+    saveSettings: 'Einstellungen speichern'
+  },
+
+  security: {
+    title: 'Sicherheitsinformationen',
+    description: 'Über Verschlüsselungssicherheit',
+    warning: 'Warnung',
+    ecbInsecure: 'ECB-Modus wird für sichere Anwendungen nicht empfohlen, da er Datenmuster nicht gut verbirgt.',
+    useModern: 'Für sensible Daten AES-256 mit GCM oder CBC-Modus verwenden.',
+    keyWarning: 'Schützen Sie Ihre Verschlüsselungsschlüssel. Bei Verlust sind die Daten nicht wiederherstellbar.',
+    browserWarning: 'Browser-basierte Verschlüsselung ist praktisch, aber für hochsensible Daten möglicherweise nicht geeignet.',
+    learnMore: 'Mehr über Verschlüsselung erfahren'
+  },
+
+  messages: {
+    noAlgorithm: 'Bitte Verschlüsselungsalgorithmus auswählen',
+    noKey: 'Bitte Verschlüsselungsschlüssel oder Passwort eingeben',
+    invalidKeyLength: 'Ungültige Schlüssellänge für gewählten Algorithmus',
+    invalidIv: 'Ungültige IV-Länge für gewählten Algorithmus und Modus',
+    noData: 'Bitte zu verschlüsselnde/entschlüsselnde Daten eingeben',
+    padError: 'Padding-Fehler - Schlüssel oder Daten möglicherweise falsch',
+    fileSuccess: 'Datei erfolgreich verarbeitet',
+    fileError: 'Fehler bei Dateiverarbeitung: {error}',
+    clipboardError: 'Fehler beim Kopieren in Zwischenablage: {error}',
+    invalidFormat: 'Ungültiges Eingabeformat'
   }
+};

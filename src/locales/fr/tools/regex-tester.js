@@ -1,133 +1,88 @@
 export default {
-    name: 'Testeur d\'expressions régulières',
-    description: 'Testez et déboguez des expressions régulières avec surbrillance et explications en temps réel',
-    actions: {
-      test: 'Tester',
-      clear: 'Effacer',
-      showExamples: 'Afficher les exemples',
-      hideExamples: 'Masquer les exemples',
-      copy: 'Copier'
-    },
-    sections: {
-      examples: 'Exemples courants d\'expressions régulières',
-      pattern: 'Modèle d\'expression régulière',
-      input: 'Chaîne de test',
-      results: 'Résultats de correspondance',
-      flags: 'Drapeaux'
-    },
-    flags: {
-      g: 'Correspondance globale (g)',
-      i: 'Insensible à la casse (i)',
-      m: 'Mode multiligne (m)',
-      s: 'Point correspond à tout (s)',
-      u: 'Mode Unicode (u)',
-      y: 'Correspondance adhésive (y)'
-    },
-    errors: {
-      emptyRegex: 'Veuillez saisir une expression régulière',
-      emptyTestString: 'Veuillez saisir du texte à tester',
-      invalidRegex: 'Expression régulière invalide'
-    },
-    messages: {
-      matchesFound: '{count} correspondances trouvées',
-      noMatches: 'Aucune correspondance trouvée',
-      copied: 'Copié dans le presse-papiers !'
-    },
-    placeholders: {
-      pattern: 'Saisissez un modèle d\'expression régulière',
-      testString: 'Saisissez du texte à tester'
-    },
-    options: {
-      flags: 'Drapeaux',
-      global: 'Correspondance globale (g)',
-      caseInsensitive: 'Insensible à la casse (i)',
-      multiline: 'Mode multiligne (m)',
-      dotAll: 'Point correspond à tout (s)',
-      unicode: 'Mode Unicode (u)',
-      sticky: 'Correspondance adhésive (y)'
-    },
-    labels: {
-      pattern: 'Expression régulière',
-      testString: 'Chaîne de test',
-      matches: 'Résultats',
-      groups: 'Groupes',
-      noMatches: 'Aucune correspondance'
-    },
-    tips: {
-      title: 'Conseils d\'utilisation',
-      pattern: 'Ne pas inclure les barres obliques entourant le modèle d\'expression régulière.',
-      flags: 'Utilisez les drapeaux pour modifier le comportement de correspondance (g : global, i : insensible à la casse, m : multiligne).',
-      examples: 'Cliquez sur "Afficher les exemples" pour voir des modèles d\'expressions régulières courants.',
-      testing: 'Après avoir saisi un modèle et une chaîne de test, cliquez sur "Tester" pour voir les correspondances.'
-    },
-    article: {
-      title: "Testeur d'expressions régulières : outil interactif de correspondance de motifs",
-      features: {
-        title: "Comprendre les expressions régulières et la correspondance de motifs",
-        description: "Le <strong>testeur d'expressions régulières</strong> est un outil interactif puissant conçu pour aider les développeurs, analystes de données et professionnels du traitement de texte à créer, tester et déboguer des expressions régulières (regex). Les expressions régulières sont des séquences de caractères spéciales qui définissent des modèles de recherche, permettant des opérations complexes de correspondance, d'extraction et de manipulation de texte.<br><br>Notre <strong>outil de test d'expressions régulières</strong> fournit un retour visuel en temps réel pendant que vous construisez vos motifs, mettant en évidence instantanément les correspondances dans le texte de test et affichant des détails sur les groupes capturants et les positions de correspondance. Cette boucle de feedback immédiat facilite la compréhension de l'interaction entre les motifs d'expressions régulières et différents textes d'entrée, vous aidant à identifier et corriger rapidement les problèmes dans vos expressions.",
-        useCases: {
-          title: "Applications pratiques des expressions régulières",
-          items: [
-            "<strong>Validation de formulaires</strong> : Les développeurs web peuvent utiliser ce <strong>testeur de motifs d'expressions régulières</strong> pour affiner les expressions utilisées pour valider des adresses email, numéros de téléphone, mots de passe et autres champs de saisie. En testant contre divers exemples valides et invalides, vous pouvez vous assurer que la logique de validation capture les formats incorrects tout en acceptant toutes les entrées valides.",
-            
-            "<strong>Extraction de données</strong> : Lors du traitement de données textuelles non structurées, les expressions régulières offrent un moyen puissant d'extraire des informations spécifiques. Notre <strong>outil de correspondance de motifs</strong> aide les analystes de données à développer des expressions pour extraire des dates, prix, codes produits ou autres données structurées à partir de documents textuels, journaux ou résultats de scraping web.",
-            
-            "<strong>Traitement et manipulation de texte</strong> : Les éditeurs de contenu et développeurs peuvent utiliser des motifs d'expressions régulières pour rechercher et remplacer des modèles textuels spécifiques dans plusieurs documents. Le <strong>validateur d'expressions régulières</strong> facilite la vérification que les modèles de recherche ne correspondent qu'au contenu que vous souhaitez modifier sans affecter d'autres éléments.",
-            
-            "<strong>Analyse de fichiers journaux</strong> : Les administrateurs systèmes et ingénieurs DevOps utilisent fréquemment des expressions régulières pour analyser des fichiers journaux. Ce <strong>testeur d'expressions</strong> aide à construire des motifs capables d'identifier avec précision des messages d'erreur, avertissements ou événements spécifiques dans de vastes ensembles de données de journaux.",
-            
-            "<strong>Développement de requêtes de recherche</strong> : Lors de la construction de fonctionnalités de recherche avancées, les expressions régulières peuvent prendre en charge des correspondances textuelles complexes. Notre outil aide les développeurs à tester et optimiser les motifs d'expressions régulières utilisés dans les moteurs de recherche, éditeurs de code ou requêtes de bases de données, garantissant des résultats précis.",
-            
-            "<strong>Objectifs éducatifs</strong> : Les étudiants et professionnels apprenant les expressions régulières peuvent utiliser ce <strong>outil interactif d'expressions régulières</strong> pour expérimenter différents motifs et voir immédiatement les résultats, accélérant le processus d'apprentissage et aidant à développer une compréhension intuitive du fonctionnement des différents composants d'expressions régulières."
-          ]
-        }
-      },
-      faq: {
-        title: "Questions fréquentes sur les expressions régulières",
-        items: [
-          {
-            question: "Que sont les expressions régulières et pourquoi sont-elles utiles ?",
-            answer: "Les expressions régulières (regex ou regexp) sont des chaînes textuelles spéciales définissant des modèles de recherche. Elles constituent essentiellement un micro-langage de programmation hautement spécialisé intégré dans de nombreux langages et outils.<br><br>Les expressions régulières sont extrêmement utiles car elles vous permettent de :<br><br>• <strong>Rechercher des modèles spécifiques</strong> dans du texte plutôt que des correspondances de chaînes exactes<br>• <strong>Valider des formats textuels</strong> comme des adresses email, numéros de téléphone ou dates<br>• <strong>Extraire des parties spécifiques</strong> de documents textuels<br>• <strong>Remplacer ou modifier du texte</strong> basé sur des correspondances de motifs<br>• <strong>Diviser du texte</strong> à des limites de motifs spécifiques<br><br>Leur puissance réside dans la combinaison de blocs de construction de motifs simples en expressions complexes capables d'identifier des structures textuelles très spécifiques. Notre <strong>testeur de motifs d'expressions régulières</strong> vous aide à exploiter cette puissance tout en évitant les frustrations du débogage d'expressions complexes."
-          },
-          {
-            question: "Que signifient les différents drapeaux d'expressions régulières (g, i, m, s, u, y) ?",
-            answer: "Les drapeaux d'expressions régulières modifient le comportement de correspondance :<br><br>• <strong>g (global)</strong> : Trouve toutes les correspondances au lieu de s'arrêter à la première. Sans ce drapeau, l'expression régulière ne retourne que la première correspondance.<br><br>• <strong>i (insensible à la casse)</strong> : Fait que le motif correspond à la fois aux majuscules et minuscules. Par exemple, /hello/i correspondra à 'hello', 'Hello', 'HELLO', etc.<br><br>• <strong>m (multiligne)</strong> : Change le comportement de ^ et $ pour qu'ils correspondent au début/fin de chaque ligne plutôt qu'au début/fin de toute la chaîne.<br><br>• <strong>s (dotAll)</strong> : Fait que le point (.) correspond aussi aux sauts de ligne (\\n). Normalement, le point correspond à tout caractère sauf les sauts de ligne.<br><br>• <strong>u (Unicode)</strong> : Traite le motif comme une séquence de points de code Unicode. Permet une correspondance correcte des caractères et propriétés Unicode.<br><br>• <strong>y (adhésif)</strong> : Ne correspond qu'à partir de la position indiquée par la propriété lastIndex de l'objet expression régulière (usage avancé).<br><br>Dans notre <strong>outil de test d'expressions régulières</strong>, vous pouvez basculer ces drapeaux pour voir comment ils affectent le comportement de correspondance."
-          },
-          {
-            question: "Comment fonctionnent les groupes de capture dans les expressions régulières ?",
-            answer: "Les groupes de capture vous permettent d'extraire des parties spécifiques du texte correspondant, définis par des parenthèses () dans le motif.<br><br>Par exemple, dans le motif <code>([A-Z]\\w+) (\\d{4})</code> :<br><br>• Le premier groupe <code>([A-Z]\\w+)</code> capture un mot commençant par une majuscule<br>• Le second groupe <code>(\\d{4})</code> capture 4 chiffres<br><br>Lorsqu'une correspondance est trouvée, la correspondance complète et chaque groupe capturant peuvent être utilisés séparément. Dans notre <strong>validateur d'expressions régulières</strong>, les groupes capturants sont affichés dans la section des détails de correspondance, montrant précisément le texte capturé par chaque groupe.<br><br>Les groupes capturants peuvent aussi être référencés dans le motif lui-même via des références arrière (\\1, \\2, etc.), utiles pour des opérations complexes de recherche/remplacement ou pour extraire des informations spécifiques de textes plus larges."
-          },
-          {
-            question: "Pourquoi mon expression régulière ne correspond pas comme prévu ?",
-            answer: "Le débogage d'expressions régulières peut être difficile. Voici des problèmes courants et solutions :<br><br>1. <strong>Caractères spéciaux</strong> : Pour les faire correspondre littéralement, échappez-les avec un antislash (\\).<br><br>2. <strong>Gourmandise</strong> : Par défaut, les quantificateurs comme <code>*</code> et <code>+</code> sont gourmands et correspondent à autant de caractères que possible. Ajoutez <code>?</code> après eux (<code>*?</code> ou <code>+?</code>) pour les rendre non gourmands.<br><br>3. <strong>Drapeaux manquants</strong> : Vérifiez si vous avez besoin du drapeau global (g) pour trouver toutes les correspondances, ou insensible à la casse (i) pour ignorer la casse.<br><br>4. <strong>Espaces et caractères invisibles</strong> : Faites attention aux espaces, tabulations, sauts de ligne et autres caractères invisibles dans votre chaîne de test.<br><br>5. <strong>Mauvaise utilisation des ancres</strong> : <code>^</code> et <code>$</code> ancrent le motif pour qu'il corresponde au début/fin du texte (ou avec le drapeau 'm', début/fin de chaque ligne).<br><br>Notre <strong>outil de correspondance de motifs</strong> aide à identifier ces problèmes en fournissant un feedback visuel en temps réel, mettant en évidence les correspondances et affichant des informations détaillées."
-          }
-        ]
-      },
-      guide: {
-        title: "Comment utiliser le testeur d'expressions régulières : guide étape par étape",
-        step1: "<strong>Saisissez un motif d'expression régulière</strong> : Dans le champ de saisie 'Expression régulière', entrez votre expression régulière. Vous n'avez pas besoin d'inclure les barres obliques entourantes - celles-ci sont ajoutées automatiquement dans l'interface.",
-        step2: "<strong>Sélectionnez les drapeaux appropriés</strong> : Choisissez les drapeaux modifiant le comportement du motif. Les choix courants incluent 'g' (global) pour trouver toutes les correspondances plutôt que juste la première, 'i' (insensible à la casse) pour ignorer les différences de casse, et 'm' (multiligne) si vous travaillez avec du texte s'étendant sur plusieurs lignes.",
-        step3: "<strong>Entrez du texte de test</strong> : Dans la zone 'Chaîne de test', entrez le texte sur lequel vous voulez tester votre expression régulière. Cela peut être des exemples de données, du texte contenant le motif que vous essayez de faire correspondre, ou du texte qui ne correspond pas comme prévu.",
-        step4: "<strong>Cliquez sur le bouton 'Tester'</strong> : Une fois le motif et le texte de test configurés, cliquez sur 'Tester' pour voir les résultats. L'outil traitera le motif d'expression régulière avec le texte de test et affichera toutes les correspondances trouvées.",
-        step5: "<strong>Analysez les résultats</strong> : La section des résultats mettra en évidence toutes les correspondances dans le texte de test, facilitant la confirmation visuelle que votre motif correspond à ce que vous attendiez. Pour chaque correspondance, vous verrez des détails incluant le texte exact correspondant, sa position dans la chaîne, et tout groupe capturant.",
-        step6: "<strong>Affinez votre motif</strong> : Selon les résultats, vous pourriez avoir besoin d'ajuster votre motif. S'il correspond à trop ou trop peu de texte, ou ne trouve pas les correspondances attendues, modifiez l'expression régulière et testez à nouveau. Ce processus itératif vous aide à déterminer le motif précis répondant à vos besoins.",
-        step7: "<strong>Explorez les exemples de motifs</strong> : Si vous êtes bloqué ou avez besoin d'inspiration, cliquez sur 'Afficher les exemples' pour voir des motifs d'expressions régulières courants pour emails, numéros de téléphone, dates, etc. Vous pouvez cliquer sur n'importe quel exemple pour le charger dans le testeur, puis le modifier selon vos besoins spécifiques."
-      },
-      conclusion: "Le testeur d'expressions régulières simplifie le processus complexe de création et débogage de motifs en fournissant un feedback visuel en temps réel, décomposant chaque composant de correspondance. En mettant en évidence les correspondances instantanément et en détaillant chaque élément correspondant, il comble le fossé entre la syntaxe abstraite des motifs et les applications pratiques de traitement de texte. Que vous validiez des saisies utilisateur, extrayiez des données de documents ou appreniez les expressions régulières pour la première fois, cet outil interactif vous aide à développer confiance et maîtrise. Alors que le traitement de texte reste une tâche fondamentale dans le développement, l'analyse de données et la gestion de contenu, maîtriser les expressions régulières avec l'aide d'outils visuels devient une compétence de plus en plus précieuse pour les professionnels techniques."
-    },
-    match: 'Correspondance',
-    position: 'Position',
-    group: 'Groupe',
-    resultsWillAppearHere: 'Les résultats de correspondance apparaîtront ici...',
-    regexError: 'Erreur d\'expression régulière : {message}',
-    emailAddress: 'Adresse email',
-    phoneNumber: 'Numéro de téléphone (Chine)',
-    ipAddress: 'Adresse IP',
-    dateFormat: 'Date (aaaa-mm-jj)',
-    chineseCharacters: 'Caractères chinois',
-    phoneNumberExample: 'Contact : 13912345678\nMême numéro WeChat : 18887654321\nTéléphone fixe : 010-12345678',
-    urlExample: 'Visitez https://example.com\nou http://www.domain.org/path?query=value',
-    ipAddressExample: 'Adresse serveur : 192.168.1.1\nDNS : 8.8.8.8, 114.114.114.114',
-    dateFormatExample: 'Date de début : 2023-01-15\nDate de fin : 2023-02-28\nDate invalide : 2023-13-45',
-    chineseCharactersExample: 'Hello世界！你好，World!'
-  }
+  name: 'Testeur d\'expressions régulières',
+  description: 'Testez et déboguez des expressions régulières avec surbrillance et explications en temps réel',
+
+  actions: {
+    test: 'Tester',
+    clear: 'Effacer',
+    showExamples: 'Afficher les exemples',
+    hideExamples: 'Masquer les exemples',
+    copy: 'Copier'
+  },
+
+  sections: {
+    examples: 'Exemples courants d\'expressions régulières',
+    pattern: 'Modèle d\'expression régulière',
+    input: 'Chaîne de test',
+    results: 'Résultats de correspondance',
+    flags: 'Drapeaux'
+  },
+
+  flags: {
+    g: 'Correspondance globale (g)',
+    i: 'Insensible à la casse (i)',
+    m: 'Mode multiligne (m)',
+    s: 'Point correspond à tout (s)',
+    u: 'Mode Unicode (u)',
+    y: 'Correspondance adhésive (y)'
+  },
+
+  errors: {
+    emptyRegex: 'Veuillez saisir une expression régulière',
+    emptyTestString: 'Veuillez saisir du texte à tester',
+    invalidRegex: 'Expression régulière invalide'
+  },
+
+  messages: {
+    matchesFound: '{count} correspondances trouvées',
+    noMatches: 'Aucune correspondance trouvée',
+    copied: 'Copié dans le presse-papiers !'
+  },
+
+  placeholders: {
+    pattern: 'Saisissez un modèle d\'expression régulière',
+    testString: 'Saisissez du texte à tester'
+  },
+
+  options: {
+    flags: 'Drapeaux',
+    global: 'Correspondance globale (g)',
+    caseInsensitive: 'Insensible à la casse (i)',
+    multiline: 'Mode multiligne (m)',
+    dotAll: 'Point correspond à tout (s)',
+    unicode: 'Mode Unicode (u)',
+    sticky: 'Correspondance adhésive (y)'
+  },
+
+  labels: {
+    pattern: 'Expression régulière',
+    testString: 'Chaîne de test',
+    matches: 'Résultats',
+    groups: 'Groupes',
+    noMatches: 'Aucune correspondance'
+  },
+
+  tips: {
+    title: 'Conseils d\'utilisation',
+    pattern: 'Ne pas inclure les barres obliques entourant le modèle d\'expression régulière.',
+    flags: 'Utilisez les drapeaux pour modifier le comportement de correspondance (g : global, i : insensible à la casse, m : multiligne).',
+    examples: 'Cliquez sur "Afficher les exemples" pour voir des modèles d\'expressions régulières courants.',
+    testing: 'Après avoir saisi un modèle et une chaîne de test, cliquez sur "Tester" pour voir les correspondances.'
+  },
+
+  match: 'Correspondance',
+  position: 'Position',
+  group: 'Groupe',
+  resultsWillAppearHere: 'Les résultats de correspondance apparaîtront ici...',
+  regexError: 'Erreur d\'expression régulière : {message}',
+  emailAddress: 'Adresse email',
+  phoneNumber: 'Numéro de téléphone (Chine)',
+  ipAddress: 'Adresse IP',
+  dateFormat: 'Date (aaaa-mm-jj)',
+  chineseCharacters: 'Caractères chinois',
+  phoneNumberExample: 'Contact : 13912345678\nMême numéro WeChat : 18887654321\nTéléphone fixe : 010-12345678',
+  urlExample: 'Visitez https://example.com\nou http://www.domain.org/path?query=value',
+  ipAddressExample: 'Adresse serveur : 192.168.1.1\nDNS : 8.8.8.8, 114.114.114.114',
+  dateFormatExample: 'Date de début : 2023-01-15\nDate de fin : 2023-02-28\nDate invalide : 2023-13-45',
+  chineseCharactersExample: 'Hello世界！你好，World!'
+};

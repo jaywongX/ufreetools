@@ -1,12 +1,14 @@
 export default {
   name: 'Pixelator Gambar',
   description: 'Ubah gambar menjadi seni piksel dengan resolusi dan efek yang dapat disesuaikan',
+
   upload: {
     title: 'Unggah Gambar',
     dropzone: 'Seret dan lepas gambar di sini atau klik untuk menelusuri',
     maxSize: 'Ukuran file maksimum: 10MB',
     supportedFormats: 'Format yang didukung: JPG, PNG, WEBP, GIF'
   },
+
   settings: {
     title: 'Pengaturan Pixelasi',
     pixelSize: 'Ukuran Piksel',
@@ -56,6 +58,7 @@ export default {
     low: 'Rendah (retro)',
     high:'Tinggi (warna asli)',
   },
+
   effects: {
     title: 'Efek',
     brightness: 'Kecerahan',
@@ -71,6 +74,7 @@ export default {
     sepia: 'Sepia',
     vignette: 'Vignette'
   },
+
   animation: {
     title: 'Pengaturan Animasi',
     animated: 'Proses sebagai Animasi',
@@ -79,6 +83,7 @@ export default {
     looping: 'Looping',
     loopCount: 'Jumlah Loop'
   },
+
   output: {
     title: 'Output',
     preview: 'Pratinjau',
@@ -100,6 +105,7 @@ export default {
     noImage: 'Silakan pilih gambar',
     processing: 'Memproses...'
   },
+
   presets: {
     title: 'Preset',
     save: 'Simpan pengaturan saat ini',
@@ -115,6 +121,7 @@ export default {
       blueprint: 'Cetak Biru'
     }
   },
+
   actions: {
     pixelate: 'Pixelasi Gambar',
     reset: 'Reset Pengaturan',
@@ -123,6 +130,7 @@ export default {
     downloadImage: 'Unduh Gambar',
     selectImage: 'Pilih Gambar'
   },
+
   messages: {
     processing: 'Memproses gambar...',
     success: 'Gambar berhasil dipixelasi',
@@ -138,117 +146,5 @@ export default {
     downloadFailed: 'Gagal mengunduh',
     resetSuccess: 'Berhasil direset',
     fileName: 'Nama File'
-  },
-  article: {
-    title: "Panduan Lengkap Pixelasi Gambar - Ubah Foto Menjadi Seni Piksel yang Menakjubkan",
-    intro: {
-      title: "Apa itu Alat Pixelasi Gambar dan Bagaimana Mengubah Foto Anda",
-      p1: "<b>Alat pixelasi gambar online</b> adalah alat digital khusus yang mengubah foto standar menjadi seni piksel bergaya dengan mengurangi resolusi dan kedalaman warna secara terkendali. Pixelator gambar gratis kami menawarkan opsi kustomisasi komprehensif yang memungkinkan pengguna mengubah foto apa pun menjadi seni piksel asli tanpa perlu menginstal perangkat lunak profesional atau memiliki keahlian teknis. Melalui manipulasi ukuran piksel, pemilihan bentuk, dan penyesuaian palet warna yang cermat, pixelator menciptakan efek transformasi visual yang kuat yang menangkap estetika unik dari gambar berbasis piksel.",
-      p2: "<b>Proses pixelasi foto</b> telah berkembang dari sekadar downsampling sederhana menjadi bentuk seni kompleks dengan banyak aplikasi kreatif. Generator seni piksel berbasis browser kami menjembatani kesenjangan antara kemampuan desain profesional dan fungsionalitas yang ramah pengguna, memungkinkan fotografer, seniman digital, pengembang game, dan pengguna biasa untuk mengalami tampilan pixelasi yang unik. Alat ini menawarkan berbagai opsi kustomisasi termasuk ukuran piksel yang bervariasi, bentuk piksel berbeda (kotak, lingkaran, berlian), kontrol pengurangan warna, dan efek khusus yang meningkatkan tampilan pixelasi akhir.",
-      p3: "<b>Mengubah gambar biasa menjadi seni piksel</b> memanfaatkan popularitas estetika retro sambil membuka aplikasi praktis di berbagai bidang kreatif. Baik Anda mendesain aset game, membuat konten media sosial bernostalgia, atau sekadar menjelajahi media seni baru, pixelator kami menyediakan platform intuitif untuk mengubah foto biasa menjadi karya piksel yang menarik. Panduan komprehensif ini akan membawa Anda melalui semua yang perlu Anda ketahui untuk membuat seni piksel yang menakjubkan menggunakan alat online inovatif kami."
-    },
-    useCases: {
-      title: "Aplikasi Praktis Pixelasi Gambar",
-      case1: "<b>Pengembangan Game dan Kreasi Seni Piksel</b>: Pengembang game indie menggunakan alat pixelasi gambar untuk dengan cepat mengubah foto referensi menjadi aset sprite yang siap digunakan untuk game. Desainer karakter mengubah konsep seni atau gambar referensi menjadi sprite karakter berbasis piksel, dengan kontrol tepat atas ukuran piksel dan batasan palet warna untuk mencocokkan mesin game mereka. Seniman latar belakang membuat ubin lingkungan yang konsisten dengan mempixelasi tekstur foto kemudian menyempurnakan hasilnya. Alur kerja pixelasi ini secara signifikan mempercepat proses pembuatan sprite untuk game bergaya retro, aplikasi seluler, dan proyek indie di mana estetika piksel asli diperlukan tetapi pembuatan piksel demi piksel manual akan memakan waktu terlalu lama.",
-      case2: "<b>Konten Media Sosial dan Pemasaran Digital</b>: Profesional kreatif memanfaatkan gambar pixelasi untuk mengembangkan konten visual unik yang menonjol di tengah banjir umpan media sosial. Manajer merek membuat versi pixelasi yang dapat dikenali dari gambar produk atau logo, memanfaatkan sentimen nostalgia game retro sambil mempertahankan pengenalan merek. Pembuat konten mengembangkan transformasi pixelasi \"sebelum dan sesudah\", meningkatkan tingkat keterlibatan melalui kontras visual yang menarik. Kampanye pemasaran memanfaatkan estetika piksel yang unik untuk membuat pengait visual yang tak terlupakan untuk produk yang menargetkan audiens milenial dan Gen Z yang memiliki hubungan kuat dengan budaya game melalui piksel. Aplikasi ini menunjukkan bagaimana pixelasi melampaui sekadar efek visual untuk menjadi alat strategis untuk konten digital yang menarik perhatian.",
-      case3: "<b>Proyek Pendidikan dan Pengajaran Seni Visual</b>: Pendidik menggunakan alat pixelasi untuk mengajarkan konsep dasar pencitraan digital dengan cara yang mudah dipahami dan menarik. Guru seni memanfaatkan proses pixelasi untuk mendemonstrasikan prinsip abstraksi, teori warna, dan penyederhanaan visual dalam format yang sesuai dengan siswa asli digital. Guru ilmu komputer menggunakan gambar pixelasi untuk mengilustrasikan konsep seperti resolusi, kedalaman warna, dan algoritma kompresi gambar melalui contoh visual daripada penjelasan abstrak. Proyek siswa yang melibatkan pixelasi berfungsi sebagai pengantar yang sangat baik untuk kreasi seni digital, mendorong ekspresi kreatif sambil membangun pemahaman tentang hubungan antara parameter teknis dan hasil artistik dalam media digital.",
-      case4: "<b>Perlindungan Privasi dan Penyembunyian Identitas</b>: Pengguna profesional dan pribadi menerapkan pixelasi strategis untuk melindungi informasi sensitif atau menyembunyikan identitas dalam gambar yang dibagikan. Fotografer mempixelasi area tertentu dari gambar untuk melindungi privasi subjek dalam fotografi jalanan atau karya dokumenter. Pengguna bisnis menyamarkan informasi rahasia dalam tangkapan layar atau presentasi melalui pixelasi yang ditargetkan sebelum berbagi online. Orang tua mempixelasi wajah anak-anak dalam foto yang dimaksudkan untuk dibagikan secara publik di platform media sosial untuk melindungi privasi mereka sambil tetap dapat berbagi momen keluarga. Aplikasi yang berfokus pada privasi ini menunjukkan utilitas pixelasi di luar tujuan estetika murni, memberikan solusi langsung untuk menyeimbangkan komunikasi visual dengan pertimbangan privasi.",
-      case5: "<b>Eksperimen Desain dan Seni</b>: Seniman visual profesional dan amatir mengeksplorasi pixelasi sebagai media kreatif unik dengan kemungkinan ekspresif yang berbeda. Seniman digital menciptakan efek pixelasi yang disengaja untuk membangkitkan nostalgia, tema teknologi, atau komentar tentang budaya digital dalam karya mereka. Desainer menerapkan elemen pixelasi pada desain situs web, pakaian, dan produk fisik untuk menciptakan identitas visual yang berbeda dari tren fotorealisme. Seniman eksperimental menggabungkan pixelasi dengan teknik lain seperti efek glitch atau manipulasi warna untuk mengembangkan arah estetika baru yang mencerminkan hubungan kita dengan media digital. Aplikasi kreatif ini menunjukkan bagaimana pixelasi telah berevolusi dari keterbatasan teknis menjadi pilihan gaya yang disengaja dengan potensi ekspresif yang kaya dalam berbagai konteks artistik."
-    },
-    tutorial: {
-      title: "Cara Menggunakan Pixelator Gambar Kami untuk Membuat Seni Piksel",
-      intro: "Membuat seni piksel yang menakjubkan dari foto dengan alat kami yang ramah pengguna sangat mudah. Ikuti langkah sederhana ini untuk mengubah gambar Anda menjadi karya pixelasi yang menarik:",
-      step1: {
-        title: "Langkah 1: Unggah Gambar Anda",
-        description: "Mulailah dengan mengklik tombol <b>\"Pilih Gambar\"</b> di bagian atas antarmuka alat. Pilih file gambar apa pun dari perangkat Anda - alat ini mendukung format umum termasuk JPG, PNG, WEBP, dan GIF. Untuk hasil terbaik, pilih gambar dengan subjek yang jelas dan kontras yang baik, karena karakteristik ini akan menerjemahkan dengan baik ke dalam format piksel yang disederhanakan. Setelah diunggah, gambar asli Anda akan muncul di panel pratinjau di sisi kiri antarmuka. Ini akan berfungsi sebagai titik referensi Anda selama proses pixelasi, memungkinkan Anda membandingkan gambar asli dengan hasil pixelasi saat Anda menyesuaikan pengaturan."
-      },
-      step2: {
-        title: "Langkah 2: Sesuaikan Ukuran dan Bentuk Piksel",
-        description: "Sekarang saatnya mengatur parameter dasar untuk seni piksel Anda. Gunakan slider <b>\"Ukuran Piksel\"</b> untuk mengontrol tingkat detail dalam kreasi Anda. Menggeser slider ke kanan akan meningkatkan ukuran piksel, menghasilkan tampilan yang lebih berbentuk blok dan lebih abstrak dengan detail yang lebih sedikit. Menggesernya ke kiri akan mengurangi ukuran piksel, mempertahankan lebih banyak detail dari gambar asli. Selanjutnya, pilih <b>bentuk piksel</b> yang Anda sukai dengan mengklik salah satu opsi bentuk: kotak (tampilan seni piksel klasik), lingkaran (tampilan berbentuk titik yang lebih lembut), atau berlian (efek geometris unik). Opsi bentuk ini menciptakan efek estetika yang sangat berbeda sambil mempertahankan esensi pixelasi. Bereksperimenlah dengan kombinasi yang berbeda untuk menemukan gaya yang paling sesuai dengan visi artistik Anda."
-      },
-      step3: {
-        title: "Langkah 3: Sempurnakan Pengaturan Warna dan Efek",
-        description: "Dengan struktur dasar seni piksel Anda ditetapkan, sekarang tingkatkan karakteristik visualnya melalui penyesuaian warna. Gunakan slider <b>\"Pengurangan Warna\"</b> untuk mengontrol jumlah warna berbeda dalam gambar pixelasi Anda. Pengaturan yang lebih rendah menciptakan tampilan palet terbatas yang lebih retro, sementara pengaturan yang lebih tinggi mempertahankan lebih banyak gradien warna asli. Selanjutnya, pilih gaya <b>palet warna</b> dari opsi seperti normal, retro, sepia, atau hitam putih untuk menerapkan perlakuan warna yang berbeda pada seni piksel Anda. Untuk efek artistik tambahan, sesuaikan slider <b>\"Peningkatan Tepi\"</b> untuk membuat batas piksel lebih menonjol, atau tambahkan sedikit <b>\"Noise\"</b> untuk menciptakan tekstur dan karakter. Setiap penyesuaian akan memperbarui pratinjau secara real-time, memungkinkan Anda bereksperimen sampai mencapai efek estetika yang diinginkan."
-      },
-      step4: {
-        title: "Langkah 4: Hasilkan dan Unduh Seni Piksel Anda",
-        description: "Ketika Anda puas dengan pengaturan, lihat hasil pixelasi di panel pratinjau di sisi kanan layar. Luangkan waktu untuk membandingkannya dengan gambar asli dan lakukan penyesuaian akhir apa pun untuk mencapai tampilan yang diinginkan. Ketika Anda senang dengan hasilnya, klik tombol <b>\"Unduh Gambar\"</b> untuk menyimpan kreasi seni piksel Anda ke perangkat Anda. Gambar yang diunduh akan mempertahankan semua pengaturan kustom Anda dalam kualitas tinggi, siap digunakan untuk game, media sosial, karya seni, atau aplikasi lainnya. Jika Anda ingin mencoba gaya pixelasi yang berbeda dengan gambar yang sama, cukup sesuaikan pengaturan - pratinjau akan segera diperbarui, memungkinkan eksperimen kreatif tanpa akhir."
-      }
-    },
-    pixelArtStyles: {
-      title: "Memahami Berbagai Gaya Seni Pixel",
-      intro: "Seni pixel mencakup berbagai pendekatan gaya, masing-masing dengan karakteristik visual dan persyaratan teknis yang unik:",
-      retro: {
-        title: "Seni Pixel Retro Klasik",
-        description: "<b>Seni pixel retro klasik</b> menciptakan kembali batasan visual unik dari sistem komputer dan video game awal dengan ketat mengikuti batasan teknis. Gaya ini biasanya memiliki palet warna yang sangat terbatas (sering 16-64 warna), penggunaan tepi pixel sempurna tanpa anti-aliasing yang disengaja, dan penempatan manual yang hati-hati dari setiap pixel individu untuk menciptakan bentuk yang dapat dikenali dengan detail minimal. Saat menggunakan pixelator kami untuk hasil gaya retro, pilih nilai langkah warna yang sangat terbatas (8-32 warna) dan terapkan opsi palet \"retro\" untuk keaslian. Pengaturan ini membantu menciptakan kembali estetika unik dari sistem seperti Nintendo Entertainment System, Commodore 64 atau grafik PC awal. Daya tarik seni pixel klasik terletak pada kemampuannya menyampaikan gambar yang dapat dikenali di bawah batasan ketat, mengharuskan penonton untuk secara mental \"mengisi\" detail, dan menciptakan daya tarik nostalgia yang unik yang beresonansi dengan penonton yang tumbuh dengan game digital awal."
-      },
-      modern: {
-        title: "Seni Pixel Kepadatan Tinggi Modern",
-        description: "<b>Seni pixel kepadatan tinggi modern</b> mempertahankan pendekatan berbasis pixel tetapi memeluk kemampuan teknis yang lebih besar yang memungkinkan pembuatan komposisi yang lebih detail. Tidak seperti batasan ketat seni pixel klasik, pendekatan modern sering menggabungkan teknik seperti anti-aliasing, dithering dan gradasi warna halus untuk menciptakan transisi yang lebih halus antara warna dan ilustrasi yang lebih detail. Untuk mencapai gaya ini dengan pixelator kami, pilih ukuran pixel yang lebih kecil, dikombinasikan dengan pengaturan kedalaman warna yang lebih tinggi (64-256 warna) dan palet \"normal\" atau \"cerah\". Kombinasi ini mempertahankan lebih banyak detail dari gambar asli sambil mempertahankan struktur pixelasi yang unik. Seni pixel modern menemukan aplikasinya dalam game indie kontemporer, ilustrasi digital dan desain web, menawarkan keseimbangan antara daya tarik nostalgia dari pixel yang terlihat dan kemampuan rendering detail teknologi saat ini. Pendekatan ini menarik baik bagi puris seni pixel maupun audiens yang lebih luas yang mencari estetika digital yang unik secara visual."
-      },
-      isometric: {
-        title: "Pixel Isometrik dan Gaya Khusus",
-        description: "<b>Pixel isometrik</b> mewakili pendekatan khusus yang menggabungkan gambar berbasis pixel dengan representasi ruang tiga dimensi melalui proyeksi isometrik (biasanya dengan rasio 2:1). Teknik ini menciptakan ilusi kedalaman sambil mempertahankan estetika karakteristik pixel. Meskipun pixelator kami tidak secara otomatis membuat proyeksi isometrik, Anda dapat menyiapkan tata letak isometrik untuk diproses, atau menerapkan opsi bentuk pixel berlian untuk meningkatkan estetika sudut yang sering terlihat dalam seni isometrik. Selain gaya isometrik, bentuk eksperimental seni pixel termasuk teknik pixel dithering (membuat tekstur melalui pola pixel bergantian), tantangan palet terbatas (membuat adegan kompleks menggunakan warna yang sangat terbatas) dan estetika glitch (secara sengaja menggabungkan cacat digital). Dengan menggabungkan berbagai pengaturan dalam pixelator kami - terutama melalui penggunaan kreatif opsi peningkatan tepi dan noise - Anda dapat mulai mengeksplorasi arah khusus seni pixel ini dan mengembangkan pendekatan unik Anda sendiri terhadap media ini."
-      }
-    },
-    faq: {
-      title: "Pertanyaan Umum tentang Pixelasi Gambar",
-      q1: "Apa perbedaan antara pixelasi dan hanya mengurangi resolusi gambar?",
-      a1: "<b>Pixelasi gambar adalah proses yang kompleks</b> yang jauh melampaui pengurangan resolusi dasar. Sementara pengurangan resolusi hanya membuat gambar lebih kecil, pixelasi yang tepat melibatkan pilihan artistik yang disengaja tentang bagaimana pengurangan itu dilakukan: Pengurangan resolusi standar biasanya menerapkan interpolasi dan anti-aliasing otomatis, menciptakan gambar yang lebih kecil yang mencoba mempertahankan tampilan aslinya, sering menghasilkan detail yang kabur. Sebaliknya, kreasi seni pixel sejati (yang difasilitasi oleh alat pixelasi kami) mencakup pengambilan sampel berbasis blok yang terkendali, kuantisasi warna yang tepat untuk mengurangi kedalaman warna, dan pertimbangan cermat terhadap bentuk dan pengaturan pixel. Alat kami mempertahankan batas pixel yang tajam tanpa mengaburkan, dan menawarkan kontrol artistik atas pembatasan palet, menciptakan seni pixel yang otentik daripada sekadar gambar yang lebih kecil. Selain itu, pixelasi profesional melibatkan pertimbangan gaya seperti ukuran pixel yang konsisten di seluruh gambar, penanganan tepi pixel yang hati-hati, dan efek opsional seperti dithering atau noise yang meningkatkan estetika unik dari seni pixel. Keputusan kreatif ini mengubah pixelasi dari pengurangan teknis menjadi interpretasi artistik dari gambar asli.",
-      
-      q2: "Bagaimana cara memilih ukuran pixel terbaik untuk gambar spesifik saya?",
-      a2: "<b>Memilih ukuran pixel yang ideal</b> tergantung pada beberapa faktor, termasuk konten gambar Anda, penggunaan yang dimaksudkan, dan preferensi gaya estetika. Untuk potret atau logo di mana pengenalan identitas sangat penting, mulailah dengan ukuran pixel yang lebih kecil (4-10px) untuk mempertahankan lebih banyak detail dari gambar asli. Untuk interpretasi abstrak atau artistik di mana representasi impresionis sudah cukup, ukuran pixel yang lebih besar (12-20px) menciptakan komposisi yang berani dan mencolok dengan tingkat abstraksi yang lebih besar. Pertimbangkan media output Anda: ukuran pixel yang lebih kecil lebih cocok untuk lingkungan tampilan kecil seperti avatar atau ikon, sementara ukuran pixel yang lebih besar menciptakan dampak yang lebih besar dalam format tampilan yang lebih besar seperti poster atau header media sosial. Subjek yang berbeda merespons pixelasi secara berbeda - lanskap dengan area warna yang luas biasanya cocok untuk pixel yang lebih besar, sementara subjek detail seperti wajah biasanya mendapat manfaat dari pixel yang lebih kecil untuk mempertahankan fitur yang dapat dikenali. Cara terbaik adalah bereksperimen dengan pratinjau langsung alat kami: mulai dengan pengaturan sedang (sekitar 8-12px) dan sesuaikan ke atas atau ke bawah saat Anda mengamati bagaimana berbagai elemen dalam gambar spesifik Anda merespons berbagai ukuran pixel.",
-      
-      q3: "Dapatkah gambar pixelasi dicetak dengan benar dalam format besar, atau hanya cocok untuk tampilan digital?",
-      a3: "<b>Gambar pixelasi pasti dapat dicetak secara efektif</b>, tetapi memerlukan pertimbangan khusus untuk memastikan hasil yang optimal. Saat menyiapkan gambar pixelasi untuk dicetak: Pilih pengaturan resolusi yang benar saat mengunduh - alat kami menawarkan opsi ekspor resolusi tinggi yang dirancang khusus untuk kualitas cetak. Untuk sebagian besar layanan pencetakan, targetkan output 300 DPI (titik per inci) untuk memastikan batas pixel yang jelas dan tajam. Pertimbangkan jarak pandang Anda - cetakan yang lebih besar yang dilihat dari jarak yang lebih jauh dapat menggunakan ukuran pixel yang lebih besar sambil mempertahankan efek visual yang diinginkan. Saat menentukan ukuran cetak, hitung berdasarkan ukuran pixel untuk memastikan pixel individu muncul seperti yang diharapkan - karya seni pixel 32x32 pixel yang dicetak seukuran 1 inci persegi akan menampilkan pixel yang jelas dan terlihat, sementara gambar yang sama dicetak seukuran 10 inci persegi mungkin terlihat seperti blok daripada pixelasi yang disengaja. Banyak seniman profesional telah berhasil memamerkan dan menjual cetakan seni pixel dengan mencocokkan ukuran pixel dengan ukuran cetak dan resolusi dengan hati-hati. Untuk hasil terbaik, diskusikan persyaratan spesifik Anda dengan layanan pencetakan Anda, tentukan bahwa Anda ingin reproduksi estetika pixelasi yang tepat, tanpa tambahan penghalusan atau interpolasi yang dapat merusak gaya unik seni pixel.",
-      
-      q4: "Jenis gambar dan gaya seni apa yang paling cocok dengan bentuk pixel yang berbeda?",
-      a4: "<b>Bentuk pixel yang berbeda menciptakan efek estetika yang unik</b>, melengkapi subjek dan niat artistik tertentu. Pixel persegi - bentuk seni pixel klasik - menawarkan estetika game retro yang paling otentik, sangat efektif untuk subjek arsitektur, ilustrasi teknis, dan gambar apa pun di mana Anda ingin menekankan sifat digital yang dibangun dari seni pixel. Pixel persegi menciptakan garis horizontal dan vertikal yang kuat yang memberikan struktur dan kejelasan. Pixel bulat memberikan kesan yang lebih lembut dan lebih organik, sering kali sangat cocok untuk potret, pemandangan alam, dan subjek dengan bentuk yang mengalir. Tepi bulat menciptakan penampilan berbintik yang unik yang mengingatkan pada teknik pointilis atau pencetakan half-tone, membuat bentuk ini ideal untuk interpretasi artistik di mana Anda ingin mengakui struktur pixel sambil melunakkan estetika kaku yang sering dikaitkan dengan seni pixel. Pixel berlian menciptakan penekanan diagonal yang dinamis dan energi visual, membuatnya sangat efektif untuk adegan aksi, komposisi abstrak, atau subjek apa pun di mana Anda ingin menyampaikan rasa gerakan atau energi. Bentuk berlian juga menciptakan pola yang saling mengunci yang menarik yang dapat meningkatkan desain tekstil atau komposisi berbasis pola. Kami merekomendasikan mencoba ketiga bentuk pada gambar spesifik Anda - konten subjek, distribusi warna, dan niat artistik Anda akan memandu Anda ke pilihan yang paling efektif.",
-      
-      q5: "Bagaimana cara menggunakan alat pixelasi untuk menciptakan estetika game retro yang otentik?",
-      a5: "<b>Menciptakan visual game retro yang otentik</b> membutuhkan perhatian pada batasan teknis spesifik yang menentukan era game yang berbeda. Untuk menciptakan kembali estetika 8-bit klasik (seperti NES atau Commodore 64): Atur pengurangan warna ke palet yang sangat terbatas (maksimal 16-32 warna) untuk mencocokkan batasan perangkat keras sistem awal. Terapkan opsi palet \"retro\", yang menekankan rentang warna khas dari platform ini. Pilih pixel persegi ukuran sedang hingga besar (10-16px) untuk menciptakan kembali batasan resolusi blocky dari tampilan awal. Untuk estetika era 16-bit (SNES, Sega Genesis): Sedikit tingkatkan palet (32-64 warna) sambil mempertahankan batasan yang disengaja. Pertahankan pixel persegi, tetapi sedikit perkecil ukurannya (6-10px) untuk mencerminkan kemampuan resolusi yang lebih tinggi dari sistem ini. Pertimbangkan untuk menambahkan noise minimal (5-10%) untuk meniru tekstur halus yang umum dalam grafik 16-bit. Untuk meningkatkan keaslian, pasangkan pengaturan teknis ini dengan pilihan komposisi yang khas dari era tersebut - seperti karakter sprite dengan siluet yang berbeda, elemen latar belakang yang disusun dalam pola seperti ubin, dan elemen antarmuka yang meniru konvensi HUD game retro. Pendekatan gabungan ini menciptakan efek visual yang memicu nostalgia dan terasa benar-benar terhubung dengan sejarah game, bukan sekadar gambar resolusi rendah modern."
-    },
-    relatedTools: {
-      title: "Jelajahi Alat Pengeditan Gambar Terkait",
-      description: "Tingkatkan kreativitas digital Anda dengan alat pelengkap ini:",
-      tool1: {
-        name: "Filter Gambar",
-        url: "https://www.ufreetools.com/tool/image-filters",
-        description: "Terapkan filter dan efek artistik pada gambar sebelum atau setelah pixelasi untuk efek kombinasi yang unik."
-      },
-      tool2: {
-        name: "Ekstraktor Warna Gambar",
-        url: "https://www.ufreetools.com/tool/image-color-extractor",
-        description: "Analisis dan ekstrak palet warna dari gambar untuk membuat skema warna kustom untuk seni pixel Anda."
-      },
-      tool3: {
-        name: "Generator Mosaik Gambar",
-        url: "https://www.ufreetools.com/tool/image-mosaic-generator",
-        description: "Buat mosaik gambar di mana banyak gambar kecil digabungkan untuk membentuk gambar yang lebih besar, bentuk transformasi visual lainnya."
-      },
-      tool4: {
-        name: "Pengubah Ukuran Gambar Batch",
-        url: "https://www.ufreetools.com/tool/image-batch-resizer",
-        description: "Ubah ukuran, konversi, dan optimalkan banyak gambar sekaligus."
-      }
-    },
-    resources: {
-      title: "Sumber Daya Otoritatif untuk Seni Pixel dan Pencitraan Digital",
-      resource1: {
-        name: "Akademi Seni Pixel - Panduan Komprehensif untuk Teknik Seni Pixel",
-        url: "https://pixelart.academy/",
-        description: "Sumber daya pendidikan mendalam yang menawarkan tutorial mendalam tentang dasar-dasar seni pixel, teknik lanjutan, dan konteks sejarah."
-      },
-      resource2: {
-        name: "Lospec - Database Palet Seni Pixel dan Alat",
-        url: "https://lospec.com/palette-list",
-        description: "Koleksi ekstensif palet yang akurat secara historis dan dibuat dengan cermat secara artistik, dirancang khusus untuk kreasi seni pixel."
-      },
-      resource3: {
-        name: "Jurnal Teknologi Grafis Komputer - Penyaringan Seni Pixel",
-        url: "http://jcgt.org/published/0008/03/01/",
-        description: "Penelitian akademis tentang algoritma penskalaan dan transformasi seni pixel, mengeksplorasi dasar teknis dari estetika seni pixel."
-      }
-    }
   }
-}
+};

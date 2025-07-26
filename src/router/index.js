@@ -8,7 +8,7 @@ const routes = [
   // Route with language parameter
   {
     path: '/:lang',
-    component: () => import('../components/layout/LanguageLayout.vue'),
+    // component: () => import('../components/layout/LanguageLayout.vue'),
     children: [
       {
         path: '',
@@ -100,7 +100,7 @@ const routes = [
   // Same routes but without language parameter (direct paths)
   {
     path: '/',
-    component: () => import('../components/layout/LanguageLayout.vue'),
+    // component: () => import('../components/layout/LanguageLayout.vue'),
     children: [
       {
         path: '',
@@ -216,6 +216,7 @@ const router = createRouter({
 const setupLanguageGuard = (i18n) => {
   router.beforeEach((to, from, next) => {
     const lang = to.params.lang;
+    const toolId = to.params.id || null // 工具页面才有 id
 
     // 1. 如果 URL 带语言前缀
     if (lang) {
@@ -224,7 +225,7 @@ const setupLanguageGuard = (i18n) => {
         lang = 'en';
         console.warn(`Invalid language parameter: ${lang}. Defaulting to English.`);
       }
-      setLanguage(lang);
+      setLanguage(lang, toolId);
       next();
       return;
     }
@@ -239,7 +240,7 @@ const setupLanguageGuard = (i18n) => {
       ? savedLang
       : defaultLang;
     
-    setLanguage(targetLang);
+    setLanguage(targetLang, toolId);
 
     next();
   });

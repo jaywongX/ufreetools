@@ -1,178 +1,131 @@
 export default {
-  "name": "cURL轉換器",
-  "description": "將cURL命令轉換為不同程式語言的代碼片段",
-  "title": "cURL轉代碼",
-  "subtitle": "將cURL命令轉換為多種程式語言代碼，方便快速整合HTTP請求到您的專案中",
-  "input": {
-    "title": "cURL命令",
-    "placeholder": "在此輸入cURL命令",
-    "parse": "解析cURL",
-    "clear": "清空",
-    "examples": "示例命令:",
-    "options": "解析器選項",
-    "validateCommand": "驗證命令",
-    "formatCurl": "格式化cURL"
+  name: "cURL轉換器",
+  description: "將cURL命令轉換為不同程式語言的代碼片段",
+  title: "cURL轉代碼",
+  subtitle: "將cURL命令轉換為多種程式語言代碼，方便快速整合HTTP請求到您的專案中",
+
+  input: {
+    title: "cURL命令",
+    placeholder: "在此輸入cURL命令",
+    parse: "解析cURL",
+    clear: "清空",
+    examples: "示例命令:",
+    options: "解析器選項",
+    validateCommand: "驗證命令",
+    formatCurl: "格式化cURL"
   },
-  "options": {
-    "detectAuth": "自動檢測授權",
-    "resolveVariables": "解析環境變數",
-    "processContinuations": "處理行繼續符(\\)",
-    "followRedirects": "跟隨重定向",
-    "preserveHeaders": "保留所有標頭",
-    "ignoreErrors": "忽略解析錯誤",
-    "noDuplicateHeaders": "無重複標頭（使用最後一個）"
+
+  options: {
+    detectAuth: "自動檢測授權",
+    resolveVariables: "解析環境變數",
+    processContinuations: "處理行繼續符(\\)",
+    followRedirects: "跟隨重定向",
+    preserveHeaders: "保留所有標頭",
+    ignoreErrors: "忽略解析錯誤",
+    noDuplicateHeaders: "無重複標頭（使用最後一個）"
   },
-  "output": {
-    "title": "代碼輸出",
-    "language": "目標語言",
-    "copy": "複製",
-    "copyTooltip": "複製到剪貼簿",
-    "download": "下載",
-    "beautify": "美化",
-    "codeTitle": "{language} 代碼",
-    "errorTitle": "轉換錯誤",
-    "languages": {
-      "python": "Python (requests)",
-      "pythonHttp": "Python (http.client)",
-      "node": "Node.js (axios)",
-      "nodeRequest": "Node.js (request)",
-      "nodeFetch": "Node.js (fetch)",
-      "java": "Java (HttpClient)",
-      "javaOkHttp": "Java (OkHttp)",
-      "php": "PHP (cURL)",
-      "phpGuzzle": "PHP (Guzzle)",
-      "go": "Go",
-      "rust": "Rust",
-      "swift": "Swift",
-      "csharp": "C# (HttpClient)",
-      "ruby": "Ruby",
-      "dart": "Dart",
-      "powershell": "PowerShell",
-      "browser": "瀏覽器 (fetch)",
-      "curl": "cURL (已格式化)",
-      "json": "JSON (請求對象)",
-      "har": "HAR (HTTP歸檔)",
-      "javascript": "JavaScript (Fetch)"
+
+  output: {
+    title: "代碼輸出",
+    language: "目標語言",
+    copy: "複製",
+    copyTooltip: "複製到剪貼簿",
+    download: "下載",
+    beautify: "美化",
+    codeTitle: "{language} 代碼",
+    errorTitle: "轉換錯誤",
+    languages: {
+      python: "Python (requests)",
+      pythonHttp: "Python (http.client)",
+      node: "Node.js (axios)",
+      nodeRequest: "Node.js (request)",
+      nodeFetch: "Node.js (fetch)",
+      java: "Java (HttpClient)",
+      javaOkHttp: "Java (OkHttp)",
+      php: "PHP (cURL)",
+      phpGuzzle: "PHP (Guzzle)",
+      go: "Go",
+      rust: "Rust",
+      swift: "Swift",
+      csharp: "C# (HttpClient)",
+      ruby: "Ruby",
+      dart: "Dart",
+      powershell: "PowerShell",
+      browser: "瀏覽器 (fetch)",
+      curl: "cURL (已格式化)",
+      json: "JSON (請求對象)",
+      har: "HAR (HTTP歸檔)",
+      javascript: "JavaScript (Fetch)"
     }
   },
-  "request": {
-    "title": "請求詳情",
-    "method": "方法",
-    "url": "URL",
-    "headers": "標頭",
-    "body": "正文",
-    "auth": "認證",
-    "options": "選項",
-    "cookie": "Cookie",
-    "queryParams": "查詢參數",
-    "formData": "表單數據",
-    "visualize": "可視化"
+
+  request: {
+    title: "請求詳情",
+    method: "方法",
+    url: "URL",
+    headers: "標頭",
+    body: "正文",
+    auth: "認證",
+    options: "選項",
+    cookie: "Cookie",
+    queryParams: "查詢參數",
+    formData: "表單數據",
+    visualize: "可視化"
   },
-  "visualization": {
-    "title": "請求可視化",
-    "request": "請求",
-    "response": "響應",
-    "headers": "標頭",
-    "body": "正文",
-    "timing": "時序",
-    "raw": "原始"
+
+  visualization: {
+    title: "請求可視化",
+    request: "請求",
+    response: "響應",
+    headers: "標頭",
+    body: "正文",
+    timing: "時序",
+    raw: "原始"
   },
-  "analysis": {
-    "title": "命令分析",
-    "insecureWarning": "警告：此命令使用了--insecure/-k（SSL驗證已禁用）",
-    "verboseIgnored": "注意：轉換中忽略了詳細模式(-v)",
-    "unsupportedOptions": "不支援的選項",
-    "warnings": "警告",
-    "info": "信息"
+
+  analysis: {
+    title: "命令分析",
+    insecureWarning: "警告：此命令使用了--insecure/-k（SSL驗證已禁用）",
+    verboseIgnored: "注意：轉換中忽略了詳細模式(-v)",
+    unsupportedOptions: "不支援的選項",
+    warnings: "警告",
+    info: "信息"
   },
-  "messages": {
-    "parsing": "正在解析cURL命令...",
-    "parseFailed": "解析cURL命令失敗：{error}",
-    "parseSuccess": "cURL命令解析成功",
-    "copied": "代碼已複製到剪貼簿",
-    "downloaded": "代碼已下載",
-    "invalidCurl": "無效的cURL命令",
-    "emptyCurl": "請輸入cURL命令",
-    "validCurl": "有效的cURL命令",
-    "unknownOption": "未知選項：{option}",
-    "unsupportedMethod": "警告：不是所有語言都支援HTTP方法{method}",
-    "curlRequired": "命令必須以 \"curl \" 開頭",
-    "copyFailed": "複製失敗，請手動複製"
+
+  messages: {
+    parsing: "正在解析cURL命令...",
+    parseFailed: "解析cURL命令失敗：{error}",
+    parseSuccess: "cURL命令解析成功",
+    copied: "代碼已複製到剪貼簿",
+    downloaded: "代碼已下載",
+    invalidCurl: "無效的cURL命令",
+    emptyCurl: "請輸入cURL命令",
+    validCurl: "有效的cURL命令",
+    unknownOption: "未知選項：{option}",
+    unsupportedMethod: "警告：不是所有語言都支援HTTP方法{method}",
+    curlRequired: "命令必須以 \"curl \" 開頭",
+    copyFailed: "複製失敗，請手動複製"
   },
-  "examples": {
-    "title": "示例cURL命令",
-    "basic": "基本GET請求",
-    "headers": "自定義標頭",
-    "post": "帶JSON的POST",
-    "formData": "表單數據提交",
-    "auth": "基本認證",
-    "complex": "複雜示例",
-    "exampleCommands": {
-      "getRequest": "GET請求",
-      "postJson": "POST JSON",
-      "postForm": "POST表單",
-      "withAuth": "帶認證",
-      "uploadFile": "上傳文件"
+
+  examples: {
+    title: "示例cURL命令",
+    basic: "基本GET請求",
+    headers: "自定義標頭",
+    post: "帶JSON的POST",
+    formData: "表單數據提交",
+    auth: "基本認證",
+    complex: "複雜示例",
+    exampleCommands: {
+      getRequest: "GET請求",
+      postJson: "POST JSON",
+      postForm: "POST表單",
+      withAuth: "帶認證",
+      uploadFile: "上傳文件"
     }
   },
-  "actions": {
-    "convert": "轉換",
-    "converting": "轉換中..."
-  },
-  "article": {
-    "title": "cURL轉換器：將命令行請求轉換為代碼",
-    "features": {
-      "title": "了解cURL轉換及其應用",
-      "description": "<strong>cURL轉換器</strong>是一款強大的工具，可將cURL命令轉換為多種程式語言的可執行代碼片段。該工具彌合了API文檔、基於終端的測試和實際實現之間的差距，使開發人員能夠快速將HTTP請求整合到他們的專案中，而無需手動轉換語法。<br><br>這款<strong>cURL到代碼轉換器</strong>的核心功能是解析cURL的命令行語法（包括標頭、請求方法、身份驗證、數據負載和其他選項），並生成在您首選的程式語言中執行相同HTTP請求的等效代碼。該工具支援流行的語言，包括Python、JavaScript、PHP、Java、Ruby、Go和C#，使開發人員能夠從在終端中測試API無縫過渡到在生產代碼中實現它們。無論您是使用RESTful服務、GraphQL端點還是傳統SOAP API，這款<strong>HTTP請求生成器</strong>都能處理語法轉換工作，顯著減少開發時間並消除語法錯誤。",
-      "useCases": {
-        "title": "cURL轉換的實際應用",
-        "items": [
-          "<strong>API整合加速</strong>：在整合第三方API時，開發人員通常首先使用文檔中提供的cURL命令測試端點。<strong>cURL命令解析器</strong>允許您將這些示例請求直接轉換為專案的程式語言，加速整合並確保準確複製文檔中的請求格式。這消除了手動轉換API調用規範中的潛在錯誤，並將複雜API的整合時間從數小時減少到幾分鐘。",
-          "<strong>跨語言開發</strong>：在多個技術棧上工作的開發團隊可以使用<strong>HTTP請求代碼生成器</strong>共享API交互模式。後端開發人員可以使用cURL驗證API端點，然後使用轉換器為前端開發人員提供現成的JavaScript代碼，執行相同的請求，確保系統組件之間的一致性，同時遵循特定語言的最佳實踐。",
-          "<strong>API文檔創建</strong>：技術作者和API開發人員可以從單個經過驗證的cURL命令生成多種語言的一致代碼示例。這確保文檔中的所有代碼示例執行相同的請求，保持一致性，同時提供遵循每種支援語言的慣用模式和最佳實踐的特定語言實現。",
-          "<strong>傳統系統現代化</strong>：在升級傳統應用程式時，開發人員經常需要在現代代碼庫中複製現有的HTTP交互。通過使用瀏覽器開發者工具（可以導出為cURL）捕獲當前API請求，然後轉換為現代程式語言，<strong>cURL轉換器</strong>有助於遷移功能，同時維持精確的API通信模式。",
-          "<strong>調試和故障排除</strong>：當應用程式中的API請求失敗時，開發人員可以將問題請求提取為cURL命令（通常在伺服器日誌或通過監控工具獲取），直接在終端中測試和修改直到正常工作，然後使用轉換器生成解決應用程式代碼庫中問題的修復代碼。",
-          "<strong>教育和學習工具</strong>：程式設計講師和學生可以使用<strong>請求代碼生成器</strong>了解HTTP請求在不同程式語言中的結構。通過比較多種語言中相同請求的生成代碼，開發人員可以更好地理解特定語言的HTTP客戶端實現，幫助他們通過實際示例學習新的程式語言。"
-        ]
-      }
-    },
-    "faq": {
-      "title": "關於cURL轉換的常見問題",
-      "items": [
-        {
-          "question": "什麼是cURL，為什麼我需要將它轉換為代碼？",
-          "answer": "cURL（Client URL）是一個用於使用各種協議通過URL傳輸數據的命令行工具和庫。開發人員經常使用cURL命令測試API端點、調試HTTP請求和記錄API交互，因為它的普遍性和簡單性。然而，在實際應用程式中實現這些測試請求時，cURL語法必須轉換為正在使用的程式語言。<strong>cURL轉換工具</strong>自動化了這個轉換過程，消除手動語法錯誤並節省大量開發時間。無需理解如何將cURL的特定選項（如用於標頭的-H或用於數據的-d）轉換為特定語言的構造，轉換器自動處理這些轉換，確保生成的代碼執行相同的HTTP請求，同時遵循特定語言的約定和最佳實踐。"
-        },
-        {
-          "question": "轉換後的代碼與原始cURL命令相比有多準確？",
-          "answer": "<strong>cURL到代碼轉換器</strong>產生高度準確的轉換結果，功能上複製原始cURL命令，同時尊重特定語言的習慣用法。轉換器保留所有基本請求組件，包括URL、HTTP方法、標頭、查詢參數、請求體（各種格式）、身份驗證憑據以及常見選項如重定向跟踪和SSL驗證。對於支援的語言，轉換保持語義等價性，這意味著生成的代碼將發出與原始cURL命令執行的完全相同的HTTP請求。<br><br>也就是說，某些高級或晦澀的cURL功能可能在所有程式語言中沒有直接等價物。在這些邊緣情況下，轉換器實現最接近的功能或在生成的代碼中提供註釋，說明任何差異。對於關鍵的生產實現，建議通過實際測試驗證生成的代碼，特別是在使用專門的cURL選項如自定義SSL證書、特定網絡配置或不尋常的身份驗證機制時。"
-        },
-        {
-          "question": "轉換器支援哪些程式語言？",
-          "answer": "<strong>HTTP請求代碼生成器</strong>支援轉換為多種常用於API交互的主流程式語言和庫。目前支援的目標包括：<br><br>• <strong>Python</strong>：流行的requests庫和標準的http.client<br>• <strong>JavaScript/Node.js</strong>：多種變體，包括Fetch API（瀏覽器和Node.js）、Axios和Request庫<br>• <strong>PHP</strong>：原生cURL函數和Guzzle HTTP客戶端<br>• <strong>Java</strong>：Java 11+ HttpClient和OkHttp庫<br>• <strong>Go</strong>：標準庫HTTP客戶端<br>• <strong>Ruby</strong>：原生Net::HTTP<br>• <strong>C#</strong>：HttpClient實現<br>• <strong>PowerShell</strong>：Invoke-WebRequest<br>• <strong>Rust</strong>：reqwest客戶端<br><br>每種語言轉換都經過優化，以產生符合目標語言和庫的最佳實踐和約定的習慣性代碼，而不僅僅是字面翻譯語法。這種方法確保生成的代碼不僅功能齊全，而且可維護，並與每個語言生態系統中經驗豐富的開發人員自然編寫HTTP客戶端代碼的方式保持一致。"
-        },
-        {
-          "question": "轉換器能否處理具有多個選項的複雜cURL命令？",
-          "answer": "是的，<strong>cURL命令解析器</strong>能夠處理具有多個選項和複雜請求結構的命令。轉換器支援：<br><br>• <strong>身份驗證方法</strong>：包括基本身份驗證、Bearer令牌、API密鑰和OAuth實現<br>• <strong>自定義標頭</strong>：具有任何值的多個標頭，包括內容類型規範<br>• <strong>請求體</strong>：JSON、表單數據、多部分表單、二進制數據和文本負載<br>• <strong>HTTP方法</strong>：所有標準方法（GET、POST、PUT、DELETE、PATCH等）<br>• <strong>URL參數</strong>：在URL中和作為單獨參數<br>• <strong>文件上傳</strong>：為支援的語言轉換文件上傳語法<br>• <strong>SSL/TLS選項</strong>：證書驗證設置<br>• <strong>代理配置</strong>：當目標語言支援時<br>• <strong>Cookie</strong>：發送和存儲cookie<br><br>該工具可以處理帶有行繼續符（反斜杠）、引號變化和複雜嵌套結構（如JSON負載或嵌套表單字段）的命令。即使是直接從瀏覽器開發者工具或Postman等工具提取的命令，這些工具通常生成帶有多個選項的非常詳細的cURL命令，也可以成功轉換為目標語言中的簡潔高效代碼。"
-        },
-        {
-          "question": "如何確保生成的代碼遵循我的語言的最佳實踐？",
-          "answer": "<strong>請求代碼生成器</strong>旨在生成不僅僅是功能性代碼，而且遵循特定語言習慣和最佳實踐的代碼。對於每種支援的語言，轉換器實現了幾種優化：<br><br>• <strong>庫選擇</strong>：為每種語言使用最合適和廣泛採用的HTTP客戶端庫（例如，Python的requests，Node.js的Axios）<br>• <strong>錯誤處理</strong>：包括語言適當的錯誤檢查和異常處理模式<br>• <strong>資源管理</strong>：在適用時正確處理連接關閉和資源清理<br>• <strong>現代語法</strong>：在適當情況下利用現代語言特性（JavaScript中的async/await，Java中的try-with-resources）<br>• <strong>可讀性</strong>：使用適當的縮進和有意義的變量名格式化代碼<br>• <strong>可維護性</strong>：構建生成的代碼，使其易於理解和修改<br><br>雖然生成的代碼遵循一般最佳實踐，但您可能需要進行小的調整，以符合您特定專案的編碼標準或與現有代碼結構整合。轉換器提供了一個堅實的基礎，正確實現HTTP請求，同時遵循語言約定，使您能夠專注於將功能整合到應用程式中，而不是與HTTP客戶端語法鬥爭。"
-        }
-      ]
-    },
-    "guide": {
-      "title": "使用cURL轉換器的步驟指南",
-      "steps": [
-        "<strong>輸入您的cURL命令</strong>：首先將您的cURL命令粘貼或輸入到輸入字段中。您可以使用來自API文檔、瀏覽器開發者工具、Postman導出或您創建的任何有效cURL命令。如果您不熟悉cURL，可以點擊輸入區域下方的一個示例命令，查看不同類型請求的格式。",
-        "<strong>選擇目標語言</strong>：從語言選擇面板中選擇您想要將cURL命令轉換為的程式語言。該工具支援多種常用於API交互的語言和庫，如Python、JavaScript、PHP、Java等。選擇與您專案技術棧匹配的語言。",
-        "<strong>點擊轉換按鈕</strong>：輸入命令並選擇目標語言後，點擊「轉換」按鈕處理cURL命令。該工具將解析命令，識別其所有組件（方法、URL、標頭、數據、選項），並在您選擇的語言中生成等效代碼。",
-        "<strong>查看生成的代碼</strong>：檢查代碼顯示區域中的輸出。轉換後的代碼將包括所有必要的導入/引用、適當的HTTP客戶端初始化、具有適當標頭和正文格式的請求配置，以及基本響應處理。代碼格式化為可讀性，具有適當的縮進和有意義的變量名。",
-        "<strong>將代碼複製到您的專案</strong>：對生成的代碼滿意後，點擊「複製」按鈕將其複製到剪貼簿。然後，您可以將其直接粘貼到開發環境或代碼編輯器中。根據您的特定專案要求，代碼可以直接使用或需要最少的修改。",
-        "<strong>根據應用需要修改</strong>：雖然生成的代碼在功能上是完整的，但您可能希望將其與應用程式的錯誤處理、日誌記錄或數據處理系統整合。隨意修改變量名、添加註釋或將代碼封裝在適合應用程式架構的函數/方法中。",
-        "<strong>測試實現的請求</strong>：將代碼整合到專案中後，測試HTTP請求以確保它按預期運行。轉換後的代碼應該產生與原始cURL命令相同的請求並接收相同的響應，但驗證總是好的做法，特別是對於業務關鍵型API交互。"
-      ]
-    },
-    "conclusion": "cURL轉換器作為API探索和實現之間的重要橋樑，顯著簡化了與Web服務交互的應用程式開發過程。通過自動將命令行HTTP請求轉換為多種程式語言中的簡潔、習慣性代碼，它消除了API整合工作中的重要錯誤和挫折來源。這個工具不僅節省了寶貴的開發時間，還確保了測試過的API調用與生產代碼中的實現之間的一致性。無論您是在複雜微服務架構中工作的資深開發人員，還是正在學習與第一個REST API交互的初學者，cURL轉換器都提供了一個可靠的捷徑，將手動語法轉換轉變為單擊操作，讓您專注於構建應用程式邏輯，而不是與HTTP客戶端語法鬥爭。"
+
+  actions: {
+    convert: "轉換",
+    converting: "轉換中..."
   }
-}
+};

@@ -9,50 +9,38 @@ window.os = browserOs
 window.global = window
 
 import { createApp, markRaw } from 'vue'
-import { createI18n } from 'vue-i18n'
 import { createHead } from '@vueuse/head'
 import App from './App.vue'
 import './assets/css/tailwind.css'
 import { inject } from '@vercel/analytics'
+import { loadLocaleMessages, defaultLocale, i18n } from './composables/useLazyLocales'
+import { loadToolArticle } from './composables/useLazyArticle'
 
 // 导入路由和路由守卫设置函数
 import { router, setupLanguageGuard } from './router'
 
-// 导入新的模块化国际化文件
-// import messages from './locales'
-
-const loadedLanguages = {}
-const defaultLocale = 'en'
-// 用 Vite 的 glob 收集所有语言包
-const localeModules = import.meta.glob('./locales/*/index.js')
-async function loadLocaleMessages(locale) {
-  if (loadedLanguages[locale]) {
-    return loadedLanguages[locale]
-  }
-  // 动态导入
-  const importFn = localeModules[`./locales/${locale}/index.js`]
-  if (!importFn) {
-    throw new Error(`Locale file for "${locale}" not found`)
-  }
-  const messages = (await importFn()).default
-  loadedLanguages[locale] = messages
-  return messages
-}
-
-// 配置i18n
-const i18n = createI18n({
-  legacy: false, // 使用组合式API
-  locale: defaultLocale,
-  // messages: { [defaultLocale]: await loadLocaleMessages(defaultLocale) }
-  messages: { [defaultLocale]: {} }
-})
-
 // 切换语言时动态加载
-export async function setLanguage(locale) {
-  if (!i18n.global.availableLocales.includes(locale)) {
+export async function setLanguage(locale, toolId) {
+  // if (!i18n.global.availableLocales.includes(locale)) {
     const messages = await loadLocaleMessages(locale)
+    
+    // 如果有 toolId，加载对应的 article
+    if (toolId) {
+      const article = await loadToolArticle(locale, toolId)
+      if (article) {
+        // 确保 tools 对象存在
+        if (!messages.tools) {
+          messages.tools = {}
+        }
+        if (!messages.tools[toolId]) {
+          messages.tools[toolId] = {}
+        }
+        messages.tools[toolId].article = article
+      }
+    }
+
     i18n.global.setLocaleMessage(locale, messages)
-  }
+  // }
   localStorage.setItem('userLanguage', locale);
   i18n.global.locale.value = locale
   return Promise.resolve()

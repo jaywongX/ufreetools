@@ -1,94 +1,43 @@
 export default {
-    name: 'JSON Formatierer',
-    description: 'Online JSON Formatierung und Validierungstool, unterstützt Komprimierung und Verschönerung',
-    options: {
-      indent: 'Einzug',
-      sort: 'Schlüssel sortieren',
-      compress: 'Komprimieren',
-      beautify: 'Verschönern'
-    },
-    actions: {
-      format: 'JSON formatieren',
-      compress: 'Komprimieren',
-      clear: 'Löschen',
-      copy: 'Kopieren',
-      download: 'Herunterladen',
-      transferMeaning: 'Escapen',
-      contraposition: 'Unescapen'
-    },
-    messages: {
-      invalidJson: 'Ungültige JSON-Syntax',
-      copied: 'In die Zwischenablage kopiert!',
-      empty: 'Bitte JSON-Inhalt eingeben',
-      formatTip: 'Nach Formatierung oder Komprimierung wird die Eigenschaftsliste angezeigt',
-      formatSuccess: 'JSON erfolgreich formatiert',
-      compressSuccess: 'JSON erfolgreich komprimiert',
-      escapeSuccess: 'JSON erfolgreich escaped',
-      unescapeSuccess: 'JSON erfolgreich unescaped',
-      copyFailed: 'Kopieren fehlgeschlagen, bitte manuell kopieren'
-    },
-    labels: {
-      jsonData: 'JSON-Daten',
-      propertyList: 'Eigenschaftsliste',
-      clickToCopy: '(Klicken zum Kopieren)'
-    },
-    placeholders: {
-      jsonInput: 'Fügen Sie Ihre JSON-Daten ein...'
-    },
-    article: {
-      title: "JSON Formatierer: Der ultimative Leitfaden zur Strukturierung von Daten",
-      features: {
-        title: "JSON Formatierung und ihre Vorteile",
-        description: "Dieser <strong>JSON Formatierer</strong> ist ein sorgfältig gestaltetes Online-Tool, das rohe JSON-Strings in organisierte, lesbare Strukturen umwandelt und gleichzeitig die Syntax korrekt validiert. Es bietet umfassende Funktionen wie <strong>JSON Verschönerung</strong>, Datenkomprimierung, Eigenschaftsvisualisierung sowie professionelle Escaping- und Unescaping-Operationen für Zeichenfolgen.<br><br>Im Kern ermöglicht das Tool die sofortige Umwandlung von komprimierten, unformatierten JSON-Texten in richtig eingerückte, visuell navigierbare Formate, die die hierarchischen Beziehungen zwischen Datenelementen hervorheben. Die <strong>JSON Validierung</strong> prüft automatisch auf Syntaxfehler wie fehlende Klammern, falsche Kommas oder falsch formatierte Werte und liefert klare Fehlermeldungen bei Problemen. Die Eigenschaftsansicht zeigt eine navigierbare Baumstruktur Ihrer Daten, mit der Sie einfach durch komplexe verschachtelte Objekte und Arrays navigieren können, wobei Datentypen visuell unterschieden werden. Egal ob Sie mit API-Antworten, Konfigurationsdateien oder Datenaustauschformaten arbeiten - dieser <strong>JSON Verschönerer</strong> vereinfacht den Umgang mit strukturierten Daten.",
-        useCases: {
-          title: "Praktische Anwendungsfälle für JSON Formatierung",
-          items: [
-            "<strong>API-Antwortanalyse</strong>: Bei der Arbeit mit externen APIs werden Antworten oft in komprimiertem JSON-Format zurückgegeben, um die Datenübertragungsgröße zu reduzieren. Ein <strong>JSON Verschönerer</strong> ermöglicht Entwicklern, diese kompakten Antworten sofort in ein lesbares Format umzuwandeln, um spezifische Datenfelder leichter zu finden, die Antwortstruktur zu verstehen und potenzielle Probleme in den zurückgegebenen Daten zu identifizieren.",
-            "<strong>Anwendungsdaten-Debugging</strong>: Während der Entwicklung ist die Überprüfung von JSON-Datenstrukturen für die Fehlerbehebung entscheidend. Der <strong>JSON Struktur Validierer</strong> hilft, Syntaxfehler in JSON-Objekten genau zu lokalisieren, indem er falsch formatierte Daten sofort hervorhebt, die zu Anwendungsfehlern führen könnten, was wertvolle Debug-Zeit spart. Die visuelle Darstellung macht es einfach, den Pfad zu verschachtelten Werten zu verfolgen, die Probleme verursachen könnten.",
-            "<strong>Konfigurationsdateiverwaltung</strong>: Moderne Anwendungen verwenden oft JSON-Dateien für Konfigurationseinstellungen. Der <strong>JSON Formatprüfer</strong> stellt sicher, dass diese kritischen Dateien eine gültige Syntax behalten, während die Verschönerungsfunktion komplexe Konfigurationsstrukturen bei manuellen Bearbeitungen verständlicher macht. Dies verhindert potenzielle Laufzeitfehler durch falsch formatierte Konfigurationsdaten.",
-            "<strong>Datenvorbereitung und -transformation</strong>: Vor dem Import von JSON-Daten in Datenbanken oder Analysetools ist oft eine Bereinigung und Validierung der Struktur erforderlich. Der <strong>Online JSON Parser</strong> ermöglicht Datenanalysten eine schnelle Validierung der Datenintegrität, das Verständnis des Schemas und die Vorbereitung von JSON-Datensätzen für die weitere Verarbeitung, was einen reibungslosen Betrieb in Datenpipelines gewährleistet.",
-            "<strong>Dokumentation und Wissensaustausch</strong>: Bei der Erstellung von API-Dokumentation oder beim Teilen von Datenmodellen mit Teammitgliedern verbessern formatierte JSON-Beispiele das Verständnis. Die <strong>JSON Formatierungsfunktion</strong> erstellt klare, konsistente Beispiele, die Datenstrukturen deutlich darstellen und technische Spezifikationen für andere Entwickler verständlicher machen.",
-            "<strong>Codegenerierungsvorbereitung</strong>: Viele Codegenerierungstools akzeptieren JSON-Schemadefinitionen als Eingabe. Der <strong>JSON Syntax Validierer</strong> stellt sicher, dass diese Schemadefinitionen fehlerfrei sind, bevor sie vom Codegenerator verarbeitet werden, was Build-Fehler verhindert und sicherstellt, dass der generierte Code das gewünschte Datenmodell genau widerspiegelt."
-          ]
-        }
-      },
-      faq: {
-        title: "Häufige Fragen zur JSON Formatierung",
-        items: [
-          {
-            question: "Was ist der Unterschied zwischen JSON formatieren und komprimieren?",
-            answer: "JSON formatieren (auch Verschönern oder Pretty Printing genannt) fügt geeignete Einrückungen, Zeilenumbrüche und Abstände hinzu, um die Struktur für Menschen lesbar zu machen - es erweitert JSON im Wesentlichen für eine bessere Visualisierung. Jedes Element erhält seine eigene Zeile mit passender Einrückung, die seine Ebene in der Hierarchie anzeigt, was ideal für Debugging, Entwicklung und Dokumentation ist. JSON komprimieren macht das Gegenteil - es entfernt alle unnötigen Leerzeichen, um eine kompakte, minimierte Version zu erstellen, die die Dateigröße für effiziente Speicherung und Übertragung reduziert. Während formatierter JSON für menschliche Lesbarkeit optimiert ist, ist komprimierter JSON für maschinelle Verarbeitung und reduzierte Bandbreitennutzung optimiert. Unser JSON Formatierer bietet beide Optionen, sodass Sie je nach Bedarf zwischen lesbarem und kompaktem Format wechseln können."
-          },
-          {
-            question: "Warum schlägt meine JSON Validierung fehl, obwohl sie korrekt aussieht?",
-            answer: "JSON Validierungsfehler stammen meist von subtilen Syntaxproblemen, die mit bloßem Auge schwer zu erkennen sind. Häufige Fehler sind: Nachgestellte Kommas nach dem letzten Eigenschaft in Objekten oder Arrays (im JSON-Standard nicht erlaubt); Verwendung von einfachen Anführungszeichen statt der erforderlichen doppelten Anführungszeichen für Strings; Nicht-escaped Sonderzeichen in Strings (Zeilenumbrüche, Tabulatoren, Anführungszeichen); Fehlende Kommas zwischen Eigenschaften; JavaScript-style Kommentare (JSON unterstützt keine Kommentare); Undefinierte oder NaN Werte (in JSON ungültig). Der JSON Formatierer hebt diese Fehler hervor und zeigt ihre Position an, um Ihnen bei der schnellen Identifizierung und Behebung zu helfen. Wenn Ihre Daten spezielle Werte oder Strukturen enthalten, die der JSON-Standard nicht unterstützt, nutzen Sie unsere Escape/Unescape-Funktionen, um diese Elemente korrekt zu kodieren und sicherzustellen, dass gültiger JSON in allen Plattformen und Sprachen erfolgreich geparst werden kann."
-          },
-          {
-            question: "Wie funktionieren JSON Escaping und Unescaping?",
-            answer: "JSON Escaping konvertiert Sonderzeichen in ihre Escape-Sequenz-Darstellung, um sicherzustellen, dass sie in JSON-Strings korrekt kodiert sind. Zum Beispiel werden Anführungszeichen zu \\\", Zeilenumbrüche zu \\n und Backslashes zu \\\\. Dieser Prozess ist entscheidend, wenn Ihre JSON-Daten Zeichen enthalten, die die JSON-Syntax stören könnten, wie Anführungszeichen in String-Werten oder Steuerzeichen. Unescaping führt die umgekehrte Operation aus und konvertiert Escape-Sequenzen zurück in ihre literalen Zeichendarstellungen. Dies ist besonders nützlich beim Analysieren von JSON, das mehrfach escaped wurde, oder wenn Sie den tatsächlichen Inhalt mit allen Sonderzeichen sehen müssen. Unser JSON Formatierer bietet beide Funktionen, sodass Sie entweder korrekt escapeden JSON für Übertragung oder Speicherung vorbereiten oder escapeden JSON zurück in eine besser lesbare Form für Analyse oder Debugging konvertieren können."
-          },
-          {
-            question: "Kann ich den JSON Formatierer für große Datendateien verwenden?",
-            answer: "Ja, unser JSON Formatierer ist für die Verarbeitung ziemlich großer JSON-Dateien ausgelegt, allerdings gibt es praktische Grenzen basierend auf Browser-Fähigkeiten. Für beste Performance empfehlen wir, Dateien mit maximal ein paar Megabyte zu verarbeiten. Bei sehr großen JSON-Datensätzen (Dutzende oder Hunderte von Megabyte) können Sie auf Verlangsamungen stoßen, da Browser Speicherbeschränkungen für JavaScript bei der Verarbeitung großer Texte haben. Für extrem große Dateien sollten Sie Desktop-basierte JSON-Tools mit speziellem Speichermanagement verwenden oder die Daten in kleineren Blöcken verarbeiten. Alternativ kann unsere Komprimierungsfunktion für große Dateien nützlich sein, da sie Leerzeichen entfernt, ohne die Datenstruktur zu ändern, was große Dateien besser handhabbar machen kann. Wenn Sie regelmäßig mit sehr großen JSON-Strukturen arbeiten, sollten Sie Server-seitige Verarbeitungstools oder spezialisierte JSON-Datenbanken für das Hochvolumen-Datenmanagement in Betracht ziehen."
-          },
-          {
-            question: "Wie finde ich bestimmte Werte in komplexen JSON-Strukturen?",
-            answer: "Mit der Eigenschaftslistenansicht unseres JSON Formatierers können Sie bestimmte Werte in komplexen JSON-Strukturen leichter finden. Nach der Formatierung zeigt das rechte Panel alle Eigenschaften als hierarchischen Baum an, in dem Sie verschachtelte Objekte und Arrays zum Durchsuchen der Struktur aufklappen können. Diese visuelle Darstellung macht es viel einfacher, den Pfad zu tief verschachtelten Werten nachzuverfolgen, als wenn Sie den Rohtext durchsuchen müssten. Jede Eigenschaft und jeder Wert hat einen Typ-Indikator und kann durch Klicken auf den Wert einzeln kopiert werden. Für spezifischere Suchen in großen JSON-Dokumenten können Sie nach der Formatierung die Browser-Suchfunktion (Strg+F/Cmd+F) nutzen, da die verschönerte Struktur mit richtiger Einrückung Muster leichter erkennbar macht. Die Eigenschaftsliste ist besonders hilfreich, um die Gesamtstruktur komplexer JSON-Daten zu verstehen und Beziehungen zwischen verschiedenen Teilen des Dokuments aufzudecken, die in der flachen Textansicht nicht sofort sichtbar wären."
-          }
-        ]
-      },
-      guide: {
-        title: "Schritt-für-Schritt-Anleitung zur Nutzung des JSON Formatierers",
-        steps: [
-          "<strong>Fügen Sie Ihre JSON-Daten ein</strong>: Kopieren Sie zunächst die rohen JSON-Daten aus der Quelle (API-Antwort, Datei etc.) und fügen Sie sie in den Eingabebereich links im Tool ein. Das Tool akzeptiert jeden gültigen JSON-String, egal ob bereits formatiert oder komprimiert.",
-          "<strong>JSON formatieren</strong>: Klicken Sie auf den 'JSON formatieren'-Button in der Toolbar, um Ihre eingefügten Daten zu verschönern. Dieser Prozess fügt passende Einrückungen und Zeilenumbrüche hinzu, macht die Struktur lesbar und validiert gleichzeitig die Syntax. Falls Ihr JSON Syntaxfehler enthält, erhalten Sie eine rote Fehlermeldung, die das Problem anzeigt.",
-          "<strong>Eigenschaftsliste durchsuchen</strong>: Nach der Formatierung prüfen Sie die Eigenschaftsliste, die im rechten Panel erscheint. Diese hierarchische Ansicht zeigt alle Objekte, Arrays und Werte Ihrer JSON-Struktur. Sie können verschachtelte Elemente durch Klicken auf die Pfeile neben Objekten und Arrays auf- und zuklappen, um komplexe Datenstrukturen zu durchsuchen.",
-          "<strong>Spezifische Werte kopieren</strong>: Wenn Sie bestimmte Teile der JSON-Daten extrahieren müssen, klicken Sie auf einen beliebigen Wert in der Eigenschaftsliste, um ihn in die Zwischenablage zu kopieren. Dies ist besonders nützlich, wenn Sie einzelne Werte oder Teilstrukturen aus größeren JSON-Dokumenten referenzieren müssen.",
-          "<strong>Weitere Operationen durchführen</strong>: Nutzen Sie je nach Bedarf die zusätzlichen Funktionsbuttons in der Toolbar: 'Komprimieren', um JSON durch Entfernen aller Leerzeichen zu minimieren (für reduzierte Dateigröße); 'Löschen', um alles zu entfernen und neu zu beginnen; 'Escapen', um Sonderzeichen in ihre Escape-Darstellung umzuwandeln; oder 'Unescapen', um den Escaping-Prozess rückgängig zu machen.",
-          "<strong>Verarbeitete Ergebnisse kopieren</strong>: Sobald Sie den JSON formatiert oder bearbeitet haben, klicken Sie auf den 'Kopieren'-Button oben rechts, um den gesamten verarbeiteten JSON-String in die Zwischenablage zu kopieren. So können Sie den formatierten oder modifizierten JSON leicht in Ihren Code-Editor, Dokumente oder andere Ziele einfügen.",
-          "<strong>Änderungen validieren</strong>: Falls Sie den JSON nach der Formatierung manuell bearbeiten, klicken Sie erneut auf 'JSON formatieren', um sicherzustellen, dass Ihre Änderungen eine gültige JSON-Syntax behalten. Dieser Validierungsschritt ist entscheidend, bevor Sie JSON in Anwendungen nutzen, da selbst kleine Syntaxfehler zum kompletten Scheitern des JSON-Parsings führen können."
-        ]
-      },
-      conclusion: "JSON hat sich als universelle Sprache für Datenaustausch in moderner Web- und App-Entwicklung etabliert, wodurch JSON Formatierungstools wie dieses für Entwickler, Datenanalysten und IT-Experten unverzichtbar geworden sind. Indem sie dichte, maschinenorientierte JSON-Strings in menschenlesbare Formate umwandeln, überbrücken diese Tools die Lücke zwischen computer-effizienter und menschlich-verständlicher Darstellung. Die Fähigkeit, JSON-Strukturen schnell zu validieren, formatieren und erkunden zu können, spart unzählige Debugging- und manuelle Formatierungsstunden und gewährleistet gleichzeitig Datenintegrität über Systeme hinweg. Egal ob Sie APIs integrieren, Anwendungen konfigurieren, Datenprobleme beheben oder Code-Beispiele teilen - der JSON Formatierer bietet die Visualisierungs- und Validierungsmöglichkeiten, die Sie für den Umgang mit komplexen Datenstrukturen benötigen. Da Web-Services und datengetriebene Anwendungen weiterhin die Technologielandschaft dominieren, bleibt ein zuverlässiges JSON-Verarbeitungstool eine grundlegende Anforderung für effektive Entwicklungs- und Wartungs-Workflows."
-    }
+  name: 'JSON Formatierer',
+  description: 'Online JSON Formatierung und Validierungstool, unterstützt Komprimierung und Verschönerung',
+
+  options: {
+    indent: 'Einzug',
+    sort: 'Schlüssel sortieren',
+    compress: 'Komprimieren',
+    beautify: 'Verschönern'
+  },
+
+  actions: {
+    format: 'JSON formatieren',
+    compress: 'Komprimieren',
+    clear: 'Löschen',
+    copy: 'Kopieren',
+    download: 'Herunterladen',
+    transferMeaning: 'Escapen',
+    contraposition: 'Unescapen'
+  },
+
+  messages: {
+    invalidJson: 'Ungültige JSON-Syntax',
+    copied: 'In die Zwischenablage kopiert!',
+    empty: 'Bitte JSON-Inhalt eingeben',
+    formatTip: 'Nach Formatierung oder Komprimierung wird die Eigenschaftsliste angezeigt',
+    formatSuccess: 'JSON erfolgreich formatiert',
+    compressSuccess: 'JSON erfolgreich komprimiert',
+    escapeSuccess: 'JSON erfolgreich escaped',
+    unescapeSuccess: 'JSON erfolgreich unescaped',
+    copyFailed: 'Kopieren fehlgeschlagen, bitte manuell kopieren'
+  },
+
+  labels: {
+    jsonData: 'JSON-Daten',
+    propertyList: 'Eigenschaftsliste',
+    clickToCopy: '(Klicken zum Kopieren)'
+  },
+
+  placeholders: {
+    jsonInput: 'Fügen Sie Ihre JSON-Daten ein...'
   }
+};

@@ -3,6 +3,7 @@ export default {
   description: '计算数据的HMAC（基于哈希的消息认证码）',
   title: 'HMAC 消息认证码计算工具',
   intro: '使用密钥生成消息认证码，支持多种哈希算法和输出格式',
+
   input: {
     title: '输入',
     message: '消息',
@@ -31,6 +32,7 @@ export default {
     calculating: '计算中...',
     clear: '清除全部'
   },
+
   algorithms: {
     title: '算法',
     label: '哈希算法',
@@ -43,6 +45,7 @@ export default {
     hmacRipemd160: 'HMAC-RIPEMD160',
     hmacSm3: 'HMAC-SM3'
   },
+
   result: {
     title: 'HMAC结果',
     digest: 'HMAC摘要',
@@ -55,6 +58,7 @@ export default {
     useExample: '使用实例',
     jsExample: 'JavaScript 示例：',
   },
+
   validation: {
     title: 'HMAC验证',
     hmacToVerify: '要验证的HMAC',
@@ -64,6 +68,7 @@ export default {
     invalid: 'HMAC无效',
     verifying: '验证中...'
   },
+
   options: {
     title: '选项',
     uppercase: '大写输出',
@@ -72,6 +77,7 @@ export default {
     truncate: '截断输出',
     truncateLength: '截断长度'
   },
+
   details: {
     title: '技术细节',
     algorithm: '算法',
@@ -81,6 +87,7 @@ export default {
     execution: '执行时间',
     ms: '毫秒'
   },
+
   messages: {
     noMessage: '请输入消息',
     noKey: '请输入密钥',
@@ -94,67 +101,12 @@ export default {
     invalidHex: '密钥不是有效的十六进制格式',
     invalidBase64: '密钥不是有效的Base64格式',
   },
+
   security: {
     title: '安全说明',
     keyStorage: '切勿共享您的密钥',
     keyStrength: '为每个应用程序使用强大且唯一的密钥',
     recommendation: '对于安全关键型应用，请至少使用HMAC-SHA256',
     warning: 'HMAC-MD5和HMAC-SHA1可能不适合高安全性应用'
-  },
-  article: {
-    title: "HMAC计算器：基于哈希的消息认证码生成工具",
-    features: {
-      title: "了解HMAC及其重要性",
-      description: "<strong>HMAC计算器</strong>是一种专门的<strong>密码学工具</strong>，设计用于生成基于哈希的消息认证码（HMACs），提供一种验证消息完整性和真实性的方法。与简单的哈希函数不同，HMAC将<strong>密钥</strong>融入哈希过程，创建一个<strong>带密钥的哈希值</strong>，只有拥有相同密钥的人才能重现。<br><br>这个<strong>HMAC生成器</strong>支持多种行业标准算法，包括SHA-256、SHA-512、MD5和SM3，允许用户根据特定需求选择适当的安全级别。该工具处理各种输入格式（明文、十六进制或Base64）并以您首选的编码格式生成输出。我们的<strong>消息认证码计算器</strong>为实施这一基本安全机制提供了简单直观的界面，无论您是测试API认证的开发人员还是验证消息完整性的安全专业人员。",
-      useCases: {
-        title: "HMAC的实际应用",
-        items: [
-          "<strong>API认证</strong>：通过实施基于HMAC的认证来保护您的API端点。<strong>HMAC签名过程</strong>允许服务器验证传入请求是合法的，且在传输过程中未被篡改。",
-          "<strong>数据完整性验证</strong>：通过计算<strong>HMAC校验和</strong>确保存储数据或传输文件的完整性。这允许您检测数据的任何未授权修改，提供超越简单哈希验证的额外安全层。",
-          "<strong>安全Cookie验证</strong>：通过合并<strong>HMAC签名</strong>保护Web应用程序Cookie不被篡改。这防止用户修改Cookie值并可能获得未授权的访问或权限。",
-          "<strong>密码存储</strong>：通过为每个用户使用带有唯一密钥的HMAC创建更安全的密码验证系统，创建比标准哈希函数提供更好保护的<strong>带密钥的密码摘要</strong>。",
-          "<strong>数字签名验证</strong>：实现简化的数字签名方案用于认证和不可否认性。<strong>HMAC认证</strong>过程提供了密码学证明，证明消息是由有权访问共享密钥的人创建的。",
-          "<strong>区块链交易验证</strong>：使用<strong>HMAC密码验证</strong>验证区块链交易和消息的真实性，确保只有授权方才能创建有效的交易签名。"
-        ]
-      }
-    },
-    faq: {
-      title: "关于HMAC的常见问题",
-      items: [
-        {
-          question: "HMAC与常规哈希函数有什么区别？",
-          answer: "常规哈希函数（如SHA-256或MD5）只提供数据完整性验证 - 确认数据没有改变。然而，HMAC（基于哈希的消息认证码）将密码哈希函数与密钥结合，提供数据完整性和身份验证。这意味着HMAC不仅验证消息没有被更改，还验证它是由拥有正确密钥的人创建的。这一额外的安全层使HMAC对各种密码攻击显著更具抵抗力，包括可能破坏常规哈希函数的碰撞和长度扩展攻击。我们的HMAC生成器工具实现了这种增强的安全方法，使其适用于需要验证消息真实性的应用。"
-        },
-        {
-          question: "我应该为我的应用选择哪种HMAC算法？",
-          answer: "对于大多数现代安全应用，HMAC-SHA256是推荐的标准选择，因为它提供了安全性和性能的良好平衡。对于具有更严格安全要求或长期安全需求的应用，考虑HMAC-SHA384或HMAC-SHA512，这些算法以略微降低性能为代价提供对未来攻击的增强抵抗力。避免在新应用中使用HMAC-MD5和HMAC-SHA1，因为这些底层哈希算法有已知漏洞。对于需要符合当地标准的中国市场应用，可以使用HMAC-SM3。最重要的因素是选择满足您特定安全要求的算法，同时考虑与其他系统的兼容性和性能约束。"
-        },
-        {
-          question: "使用这个在线HMAC计算器处理敏感数据安全吗？",
-          answer: "我们的HMAC计算器使用JavaScript直接在您的浏览器中执行所有密码操作，这意味着您的敏感数据和密钥永远不会离开您的设备或传输到我们的服务器。虽然这提供了基本的安全级别，但我们仍然建议主要将这个在线HMAC生成器用于测试、学习和非关键应用。对于生产环境或高度敏感的数据，我们建议使用已建立的密码库直接在应用程序代码中实现HMAC功能，在那里您可以完全控制密钥管理和数据处理。如果您必须使用此计算器处理敏感信息，请考虑在使用工具时断开互联网连接，并在之后清除浏览器历史记录。"
-        },
-        {
-          question: "如何管理用于HMAC的密钥？",
-          answer: "正确的密钥管理对HMAC安全至关重要。首先，生成具有足够长度的密码学强随机密钥（HMAC-SHA256至少32字节/256位）。安全存储这些密钥，在生产环境中使用专用密钥管理系统或安全密钥库。切勿在源代码或配置文件中硬编码密钥。实施密钥轮换策略定期更换密钥，并为不同的应用或环境建立单独的密钥。传输密钥时，始终使用具有适当加密的安全通道。记住，HMAC实施的安全性与您的密钥管理实践一样强大 - 即使是最安全的算法，如果密钥处理不当，也可能被破坏。"
-        },
-        {
-          question: "如何在我的编程项目中使用HMAC结果？",
-          answer: "大多数编程语言和框架都提供对HMAC计算的内置支持。使用我们的HMAC计算器验证预期结果后，您可以在代码中实现相同的功能。对于JavaScript/Node.js，使用crypto模块的createHmac函数。在Python中，利用hmac模块。Java开发人员可以使用javax.crypto中的Mac类。PHP提供hash_hmac函数。我们的工具提供代码示例，显示如何在JavaScript中重现相同的HMAC结果。实现HMAC认证时，通常您会在发送方和接收方使用共享密钥计算消息的HMAC，然后比较结果以验证真实性。具体实现细节将取决于您的特定应用需求和使用的编程语言。"
-        }
-      ]
-    },
-    guide: {
-      title: "使用HMAC计算器的分步指南",
-      steps: [
-        "<strong>选择哈希算法</strong>：为您的安全需求选择适当的<strong>HMAC算法</strong>。点击可用选项之一（SHA-256、SHA-1、SHA-384、SHA-512、MD5或SM3），对于大多数应用推荐使用SHA-256，因为它提供了安全性和性能的良好平衡。",
-        "<strong>输入您的密钥</strong>：在指定字段中输入<strong>密钥</strong>。根据密钥的格式，从下拉菜单中选择适当的输入编码格式（文本、十六进制或Base64）。对于安全应用，使用具有足够长度的强随机密钥。",
-        "<strong>提供消息</strong>：在消息输入区域输入您想要认证的消息。与密钥一样，选择与您的消息格式匹配的适当输入编码格式（文本、十六进制或Base64）。消息可以是您稍后想要验证的任何数据。",
-        "<strong>选择输出格式</strong>：为<strong>HMAC摘要</strong>选择您首选的输出格式。选项包括十六进制（最常见）、Base64（更紧凑）、Base64URL（网络安全）或二进制。这决定了最终哈希值的表示方式。",
-        "<strong>生成HMAC</strong>：点击'计算HMAC'按钮处理您的输入并生成<strong>消息认证码</strong>。系统将使用所选算法结合您的密钥和消息创建唯一的哈希值。",
-        "<strong>复制您的结果</strong>：计算完成后，结果区域将显示<strong>HMAC摘要</strong>。使用复制按钮将此值复制到剪贴板，以便在您的应用中使用。",
-        "<strong>在代码中实现</strong>：参考结果下方提供的JavaScript示例，了解如何在您自己的代码中实现相同的<strong>HMAC计算</strong>。此示例显示了以编程方式重现相同结果所需的确切代码。"
-      ]
-    },
-    conclusion: "HMAC计算器是寻求在系统中实施强大认证和数据完整性验证的开发人员和安全专业人员的重要工具。通过提供生成这些密码学代码的直观界面，它简化了测试和实施基于HMAC的安全措施的过程。无论您是保护API通信、验证数据完整性还是实施认证系统，理解和正确应用HMAC对于维护强大的安全实践至关重要。随着数字威胁的不断演变，使用如HMAC等适当的消息认证技术仍是现代安全架构的基本组成部分，有助于确保通信既私密又可验证真实。"
   }
-} 
+}; 

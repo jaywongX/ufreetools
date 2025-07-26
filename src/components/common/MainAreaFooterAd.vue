@@ -88,7 +88,7 @@ const recreateAdSlot = (slotRef) => {
   // 清空并重建广告元素
   slot.innerHTML = `
     <ins class="adsbygoogle"
-         style="display:block"
+         style="display:block min-height: 250px;"
          data-ad-client="${adClient}"
          data-ad-slot="${adSlotId}"
          data-ad-format="${adFormat}"

@@ -3,6 +3,7 @@ export default {
   description: 'Calcola l\'HMAC (Hash-based Message Authentication Code) dei dati',
   title: 'Strumento per il calcolo del codice di autenticazione del messaggio HMAC',
   intro: 'Genera codici di autenticazione del messaggio utilizzando una chiave segreta, supporta diversi algoritmi di hash e formati di output',
+
   input: {
     title: 'Input',
     message: 'Messaggio',
@@ -31,6 +32,7 @@ export default {
     calculating: 'Calcolo in corso...',
     clear: 'Pulisci tutto'
   },
+
   algorithms: {
     title: 'Algoritmi',
     label: 'Algoritmo di hash',
@@ -43,6 +45,7 @@ export default {
     hmacRipemd160: 'HMAC-RIPEMD160',
     hmacSm3: 'HMAC-SM3'
   },
+
   result: {
     title: 'Risultato HMAC',
     digest: 'Digest HMAC',
@@ -55,6 +58,7 @@ export default {
     useExample: 'Usa esempio',
     jsExample: 'Esempio JavaScript:',
   },
+
   validation: {
     title: 'Validazione HMAC',
     hmacToVerify: 'HMAC da verificare',
@@ -64,6 +68,7 @@ export default {
     invalid: 'HMAC non valido',
     verifying: 'Verifica in corso...'
   },
+
   options: {
     title: 'Opzioni',
     uppercase: 'Output in maiuscolo',
@@ -72,6 +77,7 @@ export default {
     truncate: 'Tronca output',
     truncateLength: 'Lunghezza troncamento'
   },
+
   details: {
     title: 'Dettagli tecnici',
     algorithm: 'Algoritmo',
@@ -81,6 +87,7 @@ export default {
     execution: 'Tempo esecuzione',
     ms: 'millisecondi'
   },
+
   messages: {
     noMessage: 'Inserisci un messaggio',
     noKey: 'Inserisci una chiave',
@@ -94,67 +101,12 @@ export default {
     invalidHex: 'La chiave non è in formato esadecimale valido',
     invalidBase64: 'La chiave non è in formato Base64 valido',
   },
+
   security: {
     title: 'Note di sicurezza',
     keyStorage: 'Non condividere mai la tua chiave',
     keyStrength: 'Usa chiavi forti e univoche per ogni applicazione',
     recommendation: 'Per applicazioni critiche, usa almeno HMAC-SHA256',
     warning: 'HMAC-MD5 e HMAC-SHA1 potrebbero non essere adatti per applicazioni ad alta sicurezza'
-  },
-  article: {
-    title: "Calcolatore HMAC: strumento per generare codici di autenticazione del messaggio basati su hash",
-    features: {
-      title: "Comprendere l'HMAC e la sua importanza",
-      description: "<strong>Il calcolatore HMAC</strong> è uno <strong>strumento crittografico</strong> specializzato progettato per generare codici di autenticazione del messaggio basati su hash (HMAC), fornendo un metodo per verificare l'integrità e l'autenticità dei messaggi. A differenza delle semplici funzioni hash, l'HMAC incorpora una <strong>chiave segreta</strong> nel processo di hashing, creando un <strong>valore hash con chiave</strong> che solo chi possiede la stessa chiave può riprodurre.<br><br>Questo <strong>generatore HMAC</strong> supporta diversi algoritmi standard del settore, tra cui SHA-256, SHA-512, MD5 e SM3, consentendo agli utenti di scegliere il livello di sicurezza appropriato alle proprie esigenze. Lo strumento elabora vari formati di input (testo semplice, esadecimale o Base64) e genera output nel formato di codifica preferito. Il nostro <strong>calcolatore di codici di autenticazione del messaggio</strong> fornisce un'interfaccia semplice e intuitiva per implementare questo meccanismo di sicurezza fondamentale, sia che tu sia uno sviluppatore che testa l'autenticazione API o un professionista della sicurezza che verifica l'integrità dei messaggi.",
-      useCases: {
-        title: "Applicazioni pratiche dell'HMAC",
-        items: [
-          "<strong>Autenticazione API</strong>: proteggi i tuoi endpoint API implementando l'autenticazione basata su HMAC. Il <strong>processo di firma HMAC</strong> consente al server di verificare che le richieste in arrivo siano legittime e non siano state modificate durante la trasmissione.",
-          "<strong>Verifica integrità dati</strong>: garantisci l'integrità dei dati archiviati o dei file trasmessi calcolando un <strong>checksum HMAC</strong>. Ciò ti permette di rilevare qualsiasi modifica non autorizzata ai dati, fornendo un ulteriore livello di sicurezza rispetto alla semplice verifica hash.",
-          "<strong>Validazione sicura dei cookie</strong>: proteggi i cookie delle applicazioni web incorporando una <strong>firma HMAC</strong> per prevenire manomissioni. Ciò impedisce agli utenti di modificare i valori dei cookie e potenzialmente ottenere accessi o privilegi non autorizzati.",
-          "<strong>Archiviazione password</strong>: crea un sistema di verifica delle password più sicuro utilizzando HMAC con una chiave unica per ogni utente, creando <strong>digest password con chiave</strong> che offrono una protezione migliore rispetto alle funzioni hash standard.",
-          "<strong>Verifica firme digitali</strong>: implementa uno schema semplificato di firma digitale per autenticazione e non ripudio. Il <strong>processo di autenticazione HMAC</strong> fornisce una prova crittografica che il messaggio è stato creato da qualcuno con accesso alla chiave condivisa.",
-          "<strong>Verifica transazioni blockchain</strong>: utilizza la <strong>verifica crittografica HMAC</strong> per autenticare transazioni e messaggi blockchain, assicurando che solo parti autorizzate possano creare firme di transazione valide."
-        ]
-      }
-    },
-    faq: {
-      title: "Domande frequenti sull'HMAC",
-      items: [
-        {
-          question: "Qual è la differenza tra HMAC e una normale funzione hash?",
-          answer: "Le normali funzioni hash (come SHA-256 o MD5) forniscono solo la verifica dell'integrità dei dati - confermano che i dati non sono stati modificati. Tuttavia, l'HMAC (Hash-based Message Authentication Code) combina una funzione hash crittografica con una chiave, fornendo sia integrità dei dati che autenticazione. Ciò significa che l'HMAC non solo verifica che il messaggio non sia stato alterato, ma anche che sia stato creato da qualcuno con la chiave corretta. Questo ulteriore livello di sicurezza rende l'HMAC significativamente più resistente a vari attacchi crittografici, inclusi attacchi di collisione e di estensione della lunghezza che potrebbero compromettere le normali funzioni hash. Il nostro strumento generatore HMAC implementa questo approccio di sicurezza avanzato, rendendolo adatto per applicazioni che richiedono la verifica dell'autenticità dei messaggi."
-        },
-        {
-          question: "Quale algoritmo HMAC dovrei scegliere per la mia applicazione?",
-          answer: "Per la maggior parte delle moderne applicazioni di sicurezza, HMAC-SHA256 è la scelta standard raccomandata, poiché offre un buon equilibrio tra sicurezza e prestazioni. Per applicazioni con requisiti di sicurezza più rigorosi o esigenze di sicurezza a lungo termine, considera HMAC-SHA384 o HMAC-SHA512, algoritmi che offrono una maggiore resistenza a futuri attacchi a scapito di una leggera riduzione delle prestazioni. Evita di usare HMAC-MD5 e HMAC-SHA1 in nuove applicazioni, poiché questi algoritmi hash sottostanti hanno vulnerabilità note. Per applicazioni sul mercato cinese che richiedono conformità agli standard locali, può essere utilizzato HMAC-SM3. Il fattore più importante è scegliere un algoritmo che soddisfi i tuoi specifici requisiti di sicurezza, considerando anche la compatibilità con altri sistemi e i vincoli prestazionali."
-        },
-        {
-          question: "È sicuro elaborare dati sensibili con questo calcolatore HMAC online?",
-          answer: "Il nostro calcolatore HMAC utilizza JavaScript per eseguire tutte le operazioni crittografiche direttamente nel tuo browser, il che significa che i tuoi dati sensibili e le tue chiavi non lasciano mai il tuo dispositivo o vengono trasmessi ai nostri server. Sebbene ciò fornisca un livello base di sicurezza, ti consigliamo comunque di utilizzare principalmente questo generatore HMAC online per test, apprendimento e applicazioni non critiche. Per ambienti di produzione o dati altamente sensibili, ti suggeriamo di utilizzare librerie crittografiche consolidate per implementare direttamente la funzionalità HMAC nel codice dell'applicazione, dove hai il controllo completo sulla gestione delle chiavi e sull'elaborazione dei dati. Se devi utilizzare questo strumento per informazioni sensibili, considera di disconnetterti da Internet durante l'uso e di cancellare la cronologia del browser in seguito."
-        },
-        {
-          question: "Come gestire le chiavi utilizzate per HMAC?",
-          answer: "Una corretta gestione delle chiavi è fondamentale per la sicurezza dell'HMAC. Innanzitutto, genera chiavi casuali crittograficamente forti con lunghezza sufficiente (almeno 32 byte/256 bit per HMAC-SHA256). Archivia queste chiavi in modo sicuro, utilizzando sistemi dedicati di gestione delle chiavi o key store sicuri negli ambienti di produzione. Non codificare mai le chiavi direttamente nel codice sorgente o nei file di configurazione. Implementa una strategia di rotazione delle chiavi per cambiarle periodicamente e stabilisci chiavi separate per diverse applicazioni o ambienti. Quando trasmetti le chiavi, utilizza sempre canali sicuri con crittografia appropriata. Ricorda che la sicurezza dell'implementazione HMAC è forte quanto le tue pratiche di gestione delle chiavi - anche l'algoritmo più sicuro può essere compromesso se le chiavi non vengono gestite correttamente."
-        },
-        {
-          question: "Come utilizzare i risultati HMAC nei miei progetti di programmazione?",
-          answer: "La maggior parte dei linguaggi di programmazione e framework fornisce supporto integrato per il calcolo HMAC. Dopo aver verificato i risultati attesi con il nostro calcolatore HMAC, puoi implementare la stessa funzionalità nel tuo codice. Per JavaScript/Node.js, utilizza la funzione createHmac del modulo crypto. In Python, sfrutta il modulo hmac. Gli sviluppatori Java possono usare la classe Mac in javax.crypto. PHP fornisce la funzione hash_hmac. Il nostro strumento fornisce esempi di codice che mostrano come riprodurre lo stesso risultato HMAC in JavaScript. Quando implementi l'autenticazione HMAC, tipicamente calcolerai l'HMAC di un messaggio sia sul mittente che sul destinatario utilizzando una chiave condivisa, quindi confronterai i risultati per verificarne l'autenticità. I dettagli implementativi specifici dipenderanno dalle esigenze della tua applicazione e dal linguaggio di programmazione utilizzato."
-        }
-      ]
-    },
-    guide: {
-      title: "Guida passo passo all'uso del calcolatore HMAC",
-      steps: [
-        "<strong>Seleziona l'algoritmo hash</strong>: scegli l'<strong>algoritmo HMAC</strong> appropriato per le tue esigenze di sicurezza. Fai clic su una delle opzioni disponibili (SHA-256, SHA-1, SHA-384, SHA-512, MD5 o SM3). Per la maggior parte delle applicazioni è consigliato SHA-256, che offre un buon equilibrio tra sicurezza e prestazioni.",
-        "<strong>Inserisci la tua chiave</strong>: inserisci la <strong>chiave segreta</strong> nel campo designato. In base al formato della chiave, seleziona il formato di codifica di input appropriato (testo, esadecimale o Base64) dal menu a discesa. Per applicazioni sicure, utilizza chiavi casuali forti con lunghezza sufficiente.",
-        "<strong>Fornisci il messaggio</strong>: inserisci il messaggio che desideri autenticare nell'area di input del messaggio. Come per la chiave, seleziona il formato di codifica di input che corrisponde al formato del tuo messaggio (testo, esadecimale o Base64). Il messaggio può essere qualsiasi dato che desideri verificare in seguito.",
-        "<strong>Seleziona il formato di output</strong>: scegli il formato di output preferito per il <strong>digest HMAC</strong>. Le opzioni includono esadecimale (il più comune), Base64 (più compatto), Base64URL (per il web) o binario. Questo determina come verrà rappresentato il valore hash finale.",
-        "<strong>Genera l'HMAC</strong>: fai clic sul pulsante 'Calcola HMAC' per elaborare i tuoi input e generare il <strong>codice di autenticazione del messaggio</strong>. Il sistema creerà un valore hash univoco utilizzando l'algoritmo selezionato combinato con la tua chiave e il messaggio.",
-        "<strong>Copia il risultato</strong>: una volta completato il calcolo, l'area dei risultati mostrerà il <strong>digest HMAC</strong>. Usa il pulsante copia per copiare questo valore negli appunti, pronto per l'uso nella tua applicazione.",
-        "<strong>Implementa nel codice</strong>: fai riferimento all'esempio JavaScript fornito sotto il risultato per vedere come implementare lo stesso <strong>calcolo HMAC</strong> nel tuo codice. Questo esempio mostra il codice esatto necessario per riprodurre lo stesso risultato a livello di programmazione."
-      ]
-    },
-    conclusion: "Il calcolatore HMAC è uno strumento essenziale per sviluppatori e professionisti della sicurezza che cercano di implementare robusti meccanismi di autenticazione e verifica dell'integrità dei dati nei loro sistemi. Fornendo un'interfaccia intuitiva per generare questi codici crittografici, semplifica il processo di test e implementazione delle misure di sicurezza basate su HMAC. Che tu stia proteggendo comunicazioni API, verificando l'integrità dei dati o implementando sistemi di autenticazione, comprendere e applicare correttamente l'HMAC è fondamentale per mantenere solide pratiche di sicurezza. Con l'evoluzione continua delle minacce digitali, l'uso di tecnologie appropriate di autenticazione dei messaggi come HMAC rimane un componente fondamentale dell'architettura di sicurezza moderna, aiutando a garantire che le comunicazioni siano sia private che verificabili nella loro autenticità."
   }
-}
+};

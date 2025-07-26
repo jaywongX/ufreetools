@@ -1,12 +1,14 @@
 export default {
   name: 'Pemilih Warna',
   description: 'Gunakan alat warna canggih untuk memilih, mengonversi, dan menghasilkan skema warna',
+
   options: {
     colorSpace: 'Ruang Warna',
     paletteType: 'Jenis Palet',
     includeAlpha: 'Sertakan Transparansi',
     colorNaming: 'Penamaan Warna'
   },
+
   colorSpaces: {
     rgb: 'RGB',
     hex: 'HEX',
@@ -16,6 +18,7 @@ export default {
     lab: 'LAB',
     named: 'Warna Bernama'
   },
+
   palettes: {
     monochromatic: 'Monokromatik',
     complementary: 'Komplementer',
@@ -24,6 +27,7 @@ export default {
     tetradic: 'Tetradik',
     split: 'Split Komplementer'
   },
+
   actions: {
     pickColor: 'Pilih Warna',
     randomColor: 'Warna Acak',
@@ -35,11 +39,13 @@ export default {
     reset: 'Reset',
     clear: 'Hapus'
   },
+
   formats: {
     hex: 'HEX',
     rgb: 'RGB',
     hsl: 'HSL'
   },
+
   colorSchemes: {
     title: 'Skema Warna',
     complementary: 'Komplementer',
@@ -51,6 +57,7 @@ export default {
     square: 'Square',
     compound: 'Compound'
   },
+
   colorAdjust: {
     title: 'Penyesuaian Warna',
     hue: 'Hue',
@@ -58,6 +65,7 @@ export default {
     lightness: 'Kecerahan',
     alpha: 'Transparansi'
   },
+
   colorInfo: {
     title: 'Informasi Warna',
     name: 'Nama Warna',
@@ -71,6 +79,7 @@ export default {
       large: 'Teks Besar'
     }
   },
+
   messages: {
     copied: 'Warna telah disalin ke clipboard',
     copyFailed: 'Gagal menyalin warna',
@@ -86,11 +95,13 @@ export default {
     preview: 'Pratinjau',
     colorValue: 'Nilai Warna',
   },
+
   history: {
     title: 'Riwayat Warna',
     empty: 'Belum ada riwayat warna',
     clear: 'Hapus Riwayat'
   },
+
   colorPalette: {
     title: 'Palet Warna',
     addToPalette: 'Tambahkan ke Palet',
@@ -98,62 +109,5 @@ export default {
     exportPalette: 'Ekspor Palet',
     importPalette: 'Impor Palet',
     clearPalette: 'Hapus Palet'
-  },
-  article: {
-    title: "Pemilih Warna Tingkat Lanjut: Memilih, Mengonversi, dan Membuat Skema Warna Sempurna",
-    features: {
-      title: "Memahami Alat Pemilih Warna dan Fungsinya",
-      description: "<strong>Pemilih warna tingkat lanjut</strong> kami adalah alat online komprehensif yang dirancang untuk pemilihan dan manipulasi warna yang presisi. Tidak seperti pemilih warna dasar, <strong>alat pemilih warna</strong> profesional ini memberi Anda kendali penuh atas hue, saturasi, kecerahan, dan transparansi warna, memungkinkan pekerjaan desain dengan presisi piksel.<br><br>Alat ini beroperasi di berbagai <strong>ruang warna</strong> termasuk RGB, HEX, HSL, HSV, dan CMYK, secara otomatis mengonversi antar format sambil mempertahankan nilai warna yang akurat. Ini menghilangkan kebutuhan konversi manual atau penggunaan berbagai alat. Selain itu, fitur <strong>pembuat skema warna</strong> menggunakan algoritma teori warna untuk menciptakan kombinasi harmonis yang mengikuti prinsip desain mapan.<br><br>Bagi profesional desain dan pengembang, kemampuan untuk menyimpan warna, membuat palet, dan mengekspor dalam berbagai format menyederhanakan alur kerja, memastikan konsistensi warna antar proyek, menjadikan <strong>pemilih warna web</strong> ini sebagai sumber daya penting bagi kreator digital.",
-      useCases: {
-        title: "Aplikasi Praktis Alat Pemilih Warna",
-        items: [
-          "<strong>Desain dan Pengembangan Web</strong>: Memilih <strong>kode warna HEX</strong> dan nilai RGB yang tepat untuk stylesheet CSS dan elemen desain. Pengembang front-end dapat memastikan konsistensi warna di seluruh framework seperti React, Vue, atau Angular dengan menggunakan nilai warna yang sama persis di seluruh basis kode, menghilangkan variasi yang disebabkan oleh perkiraan visual.",
-          
-          "<strong>Desain Grafis</strong>: Membuat <strong>palet warna</strong> yang koheren untuk logo, materi pemasaran, dan sistem identitas merek. Desainer profesional dapat bereksperimen dengan variasi warna, memeriksa hubungan warna, dan menyempurnakan nuansa tertentu hingga mencapai tampilan visual yang sempurna untuk konsep desain mereka.",
-          
-          "<strong>Lukisan Digital dan Ilustrasi</strong>: Memilih dan menyimpan <strong>sampel warna</strong> kustom untuk karya seni digital, memastikan konsistensi antar proyek. Seniman dapat membuat palet kustom yang mencerminkan gaya pribadi atau persyaratan artistik tertentu, lalu mengekspor koleksi ini untuk digunakan dalam perangkat lunak seperti Photoshop, Illustrator, atau Procreate.",
-          
-          "<strong>Desain UI/UX</strong>: Mengembangkan <strong>skema warna</strong> yang memenuhi persyaratan kontras WCAG untuk aksesibilitas, meningkatkan kegunaan. Desainer antarmuka dapat menguji berbagai kombinasi warna secara real-time terhadap standar aksesibilitas, memastikan desain mereka tidak hanya menarik secara estetika tetapi juga dapat digunakan oleh mereka dengan gangguan penglihatan.",
-          
-          "<strong>Desain Cetak</strong>: Mengonversi antara nilai warna RGB dan <strong>CMYK</strong> untuk memastikan akurasi warna pada materi cetak. Spesialis cetak dapat memprediksi bagaimana warna digital akan diterjemahkan ke media fisik, menghindari masalah umum di mana warna muncul berbeda saat dicetak daripada di layar.",
-          
-          "<strong>Pengembangan Identitas Merek</strong>: Membangun dan mempertahankan <strong>warna merek</strong> yang konsisten di semua titik kontak digital dan fisik. Profesional pemasaran dapat mendokumentasikan spesifikasi warna yang tepat untuk panduan merek, memastikan semua yang menggunakan merek tersebut menggunakan warna yang sama persis di semua materi."
-        ]
-      }
-    },
-    faq: {
-      title: "Pertanyaan Umum tentang Pemilih Warna",
-      items: [
-        {
-          question: "Apa perbedaan antara format RGB, HEX, HSL, dan lainnya?",
-          answer: "Berbagai <strong>format warna</strong> menggunakan sistem numerik dan pendekatan berbeda untuk merepresentasikan warna yang sama:<br><br>• <strong>Kode HEX</strong> (contoh #FF5733) adalah nilai heksadesimal enam digit yang banyak digunakan dalam desain web untuk merepresentasikan saluran merah, hijau, dan biru dalam format ringkas<br><br>• <strong>Nilai RGB</strong> (contoh rgb(255, 87, 51)) menentukan jumlah tepat cahaya merah, hijau, dan biru (0-255), membuatnya intuitif dalam desain digital<br><br>• <strong>HSL</strong> (hue, saturation, lightness) lebih sesuai dengan cara manusia mempersepsikan warna, membuat prediksi hubungan warna dan penyesuaian lebih mudah<br><br>• <strong>CMYK</strong> menggunakan persentase cyan, magenta, yellow, dan black, dirancang khusus untuk produksi cetak<br><br><strong>Alat pemilih warna</strong> kami menangani konversi otomatis antar format ini, memungkinkan Anda bekerja dalam sistem yang paling sesuai untuk proyek saat ini."
-        },
-        {
-          question: "Bagaimana cara membuat skema warna yang harmonis untuk proyek saya?",
-          answer: "Dengan alat kami, membuat <strong>kombinasi warna</strong> yang harmonis disederhanakan melalui beberapa metode:<br><br>1. Gunakan fitur <strong>pembuat skema warna</strong> untuk membuat palet komplementer, analog, triadik, atau monokromatik secara otomatis berdasarkan warna utama Anda<br><br>2. Terapkan prinsip teori warna mapan melalui opsi preset, seperti warna komplementer (warna yang berlawanan di roda warna) atau warna analog (warna yang berdekatan di roda warna)<br><br>3. Sempurnakan skema dengan menyesuaikan saturasi dan kecerahan sambil mempertahankan hue yang sama, menciptakan palet yang beragam namun koheren<br><br>4. Uji <strong>harmoni warna</strong> Anda secara real-time, memahami bagaimana warna berbeda berinteraksi sebelum menyelesaikan pilihan<br><br>Pratinjau visual alat ini memudahkan mengevaluasi bagaimana warna bekerja sama, memungkinkan bahkan mereka tanpa pelatihan desain formal untuk membuat <strong>skema warna</strong> yang terlihat profesional."
-        },
-        {
-          question: "Bisakah saya menyimpan warna dan palet saya untuk penggunaan selanjutnya?",
-          answer: "Ya, <strong>pemilih warna</strong> kami menawarkan beberapa opsi untuk menyimpan pekerjaan warna Anda:<br><br>• <strong>Riwayat warna</strong> secara otomatis melacak warna yang baru digunakan untuk akses cepat<br>• Buat dan <strong>simpan palet kustom</strong> untuk proyek atau klien berbeda, lengkap dengan nama deskriptif<br>• <strong>Ekspor skema warna</strong> dalam berbagai format yang kompatibel dengan perangkat lunak desain (Adobe ASE, GIMP, dll.)<br>• Hasilkan <strong>variabel warna CSS</strong> yang dapat langsung disalin ke stylesheet<br>• Bagikan tautan palet dengan anggota tim untuk pekerjaan desain kolaboratif<br><br>Fitur penyimpanan dan berbagi ini membuat <strong>alat pemilih warna</strong> kami berharga dalam mempertahankan konsistensi di seluruh proyek kompleks dan di antara tim, memastikan semua orang menggunakan <strong>kode warna</strong> yang sama persis di seluruh proses desain dan pengembangan."
-        },
-        {
-          question: "Bagaimana cara memastikan warna yang saya pilih dapat diakses oleh semua pengguna?",
-          answer: "<strong>Pemilih warna</strong> kami mencakup fitur aksesibilitas untuk membantu Anda membuat desain inklusif:<br><br>• <strong>Kalkulator rasio kontras</strong> secara otomatis mengevaluasi kombinasi teks/latar belakang terhadap pedoman WCAG<br>• Indikator visual menunjukkan apakah kombinasi warna memenuhi standar aksesibilitas AA atau AAA<br>• Rekomendasi untuk meningkatkan <strong>kontras warna</strong> sambil mempertahankan estetika desain<br>• Simulasi berbagai jenis gangguan penglihatan warna (protanopia, deuteranopia, dll.)<br><br>Dengan menggunakan fitur ini, Anda dapat memastikan <strong>skema warna</strong> Anda tidak hanya terlihat menarik, tetapi juga memberikan kontras yang cukup bagi pengguna dengan gangguan penglihatan. Alat ini membantu Anda menyeimbangkan preferensi estetika dan persyaratan aksesibilitas, menciptakan desain yang cocok untuk semua pengguna."
-        },
-        {
-          question: "Apa cara terbaik menggunakan hasil pemilih warna dalam perangkat lunak desain saya?",
-          answer: "<strong>Alat pemilih warna</strong> kami terintegrasi secara mulus dengan perangkat lunak desain populer melalui beberapa metode:<br><br>1. <strong>Salin kode warna</strong> langsung dalam format pilihan Anda (HEX, RGB, HSL) dengan satu klik<br>2. Ekspor <strong>palet warna</strong> dalam format Adobe Swatch Exchange (.ase) untuk diimpor langsung ke aplikasi Creative Cloud<br>3. Hasilkan variabel CSS atau SCSS/LESS mixin untuk framework pengembangan web<br>4. Ambil tangkapan layar dari <strong>skema warna</strong> lengkap dengan semua nilai yang diberi label<br><br>Untuk alur kerja terbaik, kami sarankan membuat palet lengkap di alat kami terlebih dahulu, lalu mengekspor dalam format yang paling sesuai dengan perangkat lunak desain atau lingkungan pengkodean Anda. Pendekatan ini memastikan konsistensi <strong>nilai warna</strong> di seluruh proyek sambil meminimalkan kesalahan input manual."
-        }
-      ]
-    },
-    guide: {
-      title: "Cara Menggunakan Pemilih Warna Tingkat Lanjut: Panduan Langkah demi Langkah",
-      step1: "<strong>Pilih Warna Dasar</strong>: Mulailah dengan memilih warna menggunakan salah satu dari beberapa metode. Anda dapat mengklik dan menyerap di area warna besar untuk menyesuaikan saturasi dan kecerahan, menggunakan slider hue untuk mengubah warna dasar, memasukkan <strong>kode warna</strong> spesifik dalam format pilihan Anda (HEX, RGB, HSL), atau memilih dari warna yang baru digunakan di bagian riwayat. Fleksibilitas ini memungkinkan Anda memulai dari spesifikasi warna yang tepat atau melakukan eksplorasi visual.",
-      step2: "<strong>Sempurnakan Pilihan Anda</strong>: Setelah memilih warna dasar, gunakan kontrol presisi untuk penyesuaian. Slider <strong>pemilih warna</strong> memungkinkan Anda memodifikasi komponen individual seperti hue (0-360°), saturasi (0-100%), kecerahan (0-100%), dan transparansi (0-100%). Kontrol granular ini memastikan Anda dapat mencapai nuansa yang tepat, membuat penyesuaian halus yang mungkin sulit dilakukan di alat lain. Saat Anda membuat perubahan ini, saksikan pembaruan di area pratinjau secara real-time.",
-      step3: "<strong>Buat Skema Warna</strong>: Klik bagian skema warna untuk membuat <strong>kombinasi warna</strong> harmonis secara otomatis berdasarkan warna yang Anda pilih. Pilih dari berbagai jenis skema termasuk komplementer (warna berlawanan di roda warna), analog (warna yang berdekatan), triadik (tiga warna yang terdistribusi merata), atau monokromatik (variasi dari hue yang sama). Skema yang dihasilkan algoritma ini mengikuti prinsip teori warna, memastikan hasil yang menyenangkan secara visual.",
-      step4: "<strong>Konversi Antar Format</strong>: Gunakan tombol format untuk beralih di antara berbagai <strong>format warna</strong>. Warna Anda akan dikonversi secara otomatis antara HEX (#FF5733), RGB (rgb(255, 87, 51)), HSL (hsl(14, 100%, 60%)), dan lainnya sambil mempertahankan warna visual yang sama persis. Ini memungkinkan Anda dengan mudah mendapatkan kode yang diperlukan untuk aplikasi spesifik, apakah Anda bekerja pada desain web, seni digital, atau materi cetak.",
-      step5: "<strong>Simpan dan Ekspor Warna Anda</strong>: Setelah menyempurnakan warna atau palet, simpan untuk penggunaan di masa mendatang. Klik tombol salin untuk menyalin <strong>kode warna</strong> saat ini ke clipboard, tambahkan ke palet yang disimpan, atau ekspor seluruh skema warna dalam berbagai format. Bagi pengembang web, Anda dapat menghasilkan variabel CSS atau set warna yang dapat langsung diimplementasikan dalam stylesheet, memastikan konsistensi <strong>nilai warna</strong> di seluruh proyek."
-    },
-    conclusion: "Pemilih warna tingkat lanjut adalah alat penting dalam toolkit desainer dan pengembang modern, menjembatani kesenjangan antara pemilihan warna artistik dan implementasi teknis. Dengan memberikan kontrol presisi atas nilai warna, konversi format otomatis, dan pembuatan skema cerdas, alat ini menghilangkan banyak tebakan dan perhitungan manual yang sebelumnya diperlukan dalam pekerjaan warna digital. Apakah Anda membuat sistem identitas merek, merancang antarmuka situs web, atau mengembangkan karya seni digital, kemampuan untuk memilih, memanipulasi, dan mengatur warna dengan presisi ilmiah sambil tetap mengikuti prinsip estetika memberi Anda keunggulan signifikan. Seiring desain yang terus menekankan daya tarik visual dan konsistensi teknis, alat yang membantu menerjemahkan visi kreatif menjadi spesifikasi yang tepat menjadi semakin berharga di semua disiplin kreatif dan teknis."
   }
-}
+};

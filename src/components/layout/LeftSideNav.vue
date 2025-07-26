@@ -8,7 +8,7 @@
       <div class="h-16 flex items-center px-4 border-b border-gray-200 dark:border-gray-700">
         <router-link :to="localizedRoute('/')" class="flex items-center">
           <!-- 图标保持不变 -->
-          <img src="/favicon-32x32.png" alt="UFreeTools" class="h-8 w-8" />
+          <img src="/favicon-32x32.png" sizes="32x32" alt="UFreeTools" class="h-8 w-8" />
           
           <!-- 文字部分添加过渡动画 -->
           <div class="overflow-hidden" :class="{ 'w-0': !sidebarOpen, 'w-auto': sidebarOpen }">

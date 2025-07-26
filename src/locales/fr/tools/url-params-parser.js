@@ -1,207 +1,157 @@
 export default {
-    name: 'Analyseur de paramètres URL',
-    description: 'Analyse, examine et manipule les paramètres URL et les chaînes de requête',
-    input: {
-      title: 'Entrée URL',
-      url: 'URL',
-      urlPlaceholder: 'https://exemple.com/chemin?param1=valeur1&param2=valeur2 ou param1=valeur1&param2=valeur2',
-      parse: 'Utiliser l\'URL actuelle',
-      clear: 'Effacer',
-      examples: 'Charger des exemples',
-      parseFromClipboard: 'Coller depuis le presse-papiers',
-      history: 'Historique'
-    },
-    params: {
-      title: 'Liste des paramètres',
-      name: 'Nom du paramètre',
-      value: 'Valeur du paramètre',
-      decoded: 'Valeur décodée',
-      type: 'Type',
-      actions: 'Actions',
-      add: 'Ajouter un paramètre',
-      remove: 'Supprimer',
-      edit: 'Modifier',
-      copy: 'Copier comme texte',
-      sort: 'Trier par',
-      encode: 'Encoder',
-      decode: 'Décoder',
-      noParams: 'Aucun paramètre URL détecté',
-      noMatchingParams: 'Aucun paramètre correspondant trouvé',
-      modified: 'Modifié',
-      original: 'Original',
-      search: 'Rechercher des paramètres...'
-    },
-    results: {
-      title: 'Composants URL',
-      parsed: 'Composants URL analysés',
-      protocol: 'Protocole',
-      domain: 'Nom de domaine',
-      port: 'Port',
-      path: 'Chemin',
-      queryString: 'Chaîne de requête',
-      fragment: 'Ancre (hash)',
-      constructed: 'URL construite',
-      copyUrl: 'Copier l\'URL',
-      openUrl: 'Ouvrir l\'URL',
-      shareUrl: 'Partager l\'URL',
-      shortenUrl: 'Raccourcir l\'URL',
-      encoded: 'URL encodée',
-      decoded: 'URL décodée'
-    },
-    tools: {
-      title: 'Outils',
-      buildQuery: 'Construire une requête',
-      compareUrls: 'Comparer des URLs',
-      validateUrl: 'Valider l\'URL',
-      trackingRemoval: 'Supprimer les paramètres de suivi',
-      convertToCode: 'Convertir en code',
-      diffTool: 'Différence de paramètres',
-      baseConversion: 'Conversion de base',
-      jsonToQuery: 'JSON vers chaîne de requête',
-      queryToJson: 'Chaîne de requête vers JSON'
-    },
-    visualization: {
-      title: 'Visualisation',
-      tree: 'Vue arborescente',
-      table: 'Tableau des paramètres',
-      json: 'Format JSON',
-      raw: 'Vue brute',
-      hierarchical: 'Vue hiérarchique',
-      nested: 'Paramètres imbriqués',
-      auto: 'Détection automatique',
-      fullUrl: 'URL complète',
-      queryOnly: 'Chaîne de requête seule',
-      hideJson: 'Réduire JSON',
-      viewAsJson: 'Voir comme JSON'
-    },
-    types: {
-      string: 'Chaîne',
-      number: 'Nombre',
-      boolean: 'Booléen',
-      array: 'Tableau',
-      object: 'Objet',
-      date: 'Date',
-      email: 'Email',
-      ip: 'Adresse IP',
-      color: 'Couleur',
-      unknown: 'Inconnu'
-    },
-    settings: {
-      title: 'Paramètres',
-      detectTypes: 'Mode d\'analyse',
-      decodeAutomatically: 'Décodage URL',
-      decodeAuto: 'Décodage automatique',
-      decodeOnce: 'Décoder une fois',
-      decodeTwice: 'Décoder deux fois',
-      noDecode: 'Ne pas décoder',
-      encodeAutomatically: 'Encoder les caractères spéciaux',
-      preserveCase: 'Conserver la casse des paramètres',
-      sortAlphabetically: 'Trier les paramètres par ordre alphabétique',
-      sortDefault: 'Ordre par défaut',
-      sortNameAsc: 'Nom du paramètre (A-Z)',
-      sortNameDesc: 'Nom du paramètre (Z-A)',
-      sortValueAsc: 'Valeur du paramètre (croissant)',
-      sortValueDesc: 'Valeur du paramètre (décroissant)',
-      arrayFormat: 'Format de tableau',
-      objectFormat: 'Format d\'objet',
-      emptyValues: 'Valeurs vides',
-      defaultProtocol: 'Protocole par défaut'
-    },
-    codes: {
-      title: 'Options d\'exportation',
-      javascript: 'JavaScript (URLSearchParams)',
-      python: 'Python',
-      php: 'PHP',
-      ruby: 'Ruby',
-      java: 'Java',
-      csharp: 'C#',
-      go: 'Go',
-      copyCode: 'Copier',
-      copyJson: 'Copier JSON',
-      jsComment1: 'Créer un objet URLSearchParams',
-      jsComment2: 'Obtenir la chaîne de requête',
-      jsComment3: 'Ajouter à l\'URL',
-      phpComment1: 'Tableau de paramètres',
-      phpComment2: 'Construire la chaîne de requête',
-      phpComment3: 'URL complète',
-      pythonComment1: 'Utiliser urllib.parse',
-      pythonComment2: 'Dictionnaire de paramètres',
-      pythonComment3: 'Construire la chaîne de requête',
-      pythonComment4: 'URL complète'
-    },
-    messages: {
-      parsed: 'URL analysée avec succès',
-      noUrl: 'Veuillez entrer une URL',
-      invalidUrl: 'URL ou chaîne de requête invalide',
-      copied: 'Copié dans le presse-papiers',
-      paramAdded: 'Paramètre ajouté',
-      paramRemoved: 'Paramètre supprimé',
-      trackingRemoved: 'Paramètres de suivi supprimés',
-      urlOpened: 'URL ouverte dans un nouvel onglet',
-      urlShortened: 'URL raccourcie',
-      error: 'Erreur : {message}',
-      importSuccess: 'URL importée avec succès',
-      exportSuccess: 'Données exportées avec succès',
-      clipboardError: 'Impossible de lire le contenu du presse-papiers. Veuillez vérifier que vous avez accordé les permissions ou coller manuellement le contenu.',
-      copyFailed: 'Échec de la copie, veuillez copier manuellement'
-    },
-    article: {
-      title: "Analyseur de paramètres URL : Guide complet d'analyse des chaînes de requête",
-      features: {
-        title: "Comprendre les paramètres URL et les chaînes de requête",
-        description: "L'<strong>Analyseur de paramètres URL</strong> est un outil complet conçu pour décoder, analyser et manipuler les chaînes de requête URL et les paramètres. La chaîne de requête est la partie située après le point d'interrogation (?) dans une URL, contenant des données sous forme de paires nom-valeur, généralement utilisées pour transmettre des informations entre pages web ou dans les requêtes API.<br><br>Notre <strong>analyseur de chaîne de requête</strong> décompose les URL complexes en leurs composants, détecte et analyse automatiquement les paramètres, et propose plusieurs formats de visualisation. Il prend en charge à la fois l'analyse URL standard et l'analyse spécialisée des chaînes de requête, avec extraction de paramètres, vérification des valeurs et génération de code pour divers langages de programmation.",
-        useCases: {
-          title: "Applications pratiques de l'analyse des paramètres URL",
-          items: [
-            "<strong>Analyse web et suivi UTM</strong> : Les spécialistes du marketing numérique utilisent souvent des URL contenant plusieurs paramètres UTM (comme utm_source, utm_medium, utm_campaign). Notre <strong>décodeur de requête URL</strong> facilite l'analyse de ces paramètres de suivi, vérifie leur configuration correcte et résout les problèmes de suivi des campagnes.",
-            
-            "<strong>Débogage et développement d'API</strong> : Lors de l'utilisation d'API REST avec paramètres de requête, les développeurs peuvent utiliser cet outil pour inspecter les URL de requête, vérifier le format des paramètres et s'assurer que les caractères spéciaux sont correctement encodés. L'<strong>extracteur de paramètres URL</strong> aide à isoler des valeurs spécifiques pouvant causer des erreurs ou des comportements inattendus.",
-            
-            "<strong>Analyse SEO et optimisation de la structure URL</strong> : Les professionnels du référencement peuvent examiner la structure des URL pour s'assurer qu'elles suivent les meilleures pratiques. En analysant les chaînes de requête, ils peuvent identifier des problèmes potentiels comme des paramètres dupliqués, un nombre excessif de paramètres ou des valeurs pouvant empêcher l'indexation correcte par les moteurs de recherche.",
-            
-            "<strong>Analyse des filtres e-commerce et des recherches</strong> : Les sites de commerce électronique utilisent souvent des chaînes de requête complexes pour représenter les filtres de produits, options de tri et critères de recherche. L'<strong>analyseur de paramètres de requête</strong> aide les développeurs et analystes à comprendre comment ces paramètres interagissent et influencent les listes de produits.",
-            
-            "<strong>Tests d'applications web</strong> : Les ingénieurs QA peuvent utiliser cet outil pour extraire des paramètres à partir de scénarios de test, modifier des valeurs pour créer des cas limites et générer de nouvelles URL pour tester systématiquement des applications web dépendant des paramètres de chaîne de requête.",
-            
-            "<strong>Objectifs éducatifs</strong> : Les étudiants et développeurs apprenant la structure des URL et la communication HTTP peuvent utiliser les visualisations et exemples de code pour mieux comprendre comment les paramètres sont formatés, encodés et utilisés dans différents contextes de programmation."
-          ]
-        }
-      },
-      faq: {
-        title: "Questions fréquentes sur les paramètres URL",
-        items: [
-          {
-            question: "Quelle est la différence entre paramètres URL et chaîne de requête ?",
-            answer: "Bien que ces termes soient souvent utilisés de manière interchangeable, ils présentent des différences subtiles :<br><br><strong>Chaîne de requête</strong> : La partie entière après le point d'interrogation (?) dans une URL contenant tous les paramètres. Par exemple, dans <code>https://exemple.com/recherche?q=café&page=2</code>, la chaîne de requête est <code>q=café&page=2</code>.<br><br><strong>Paramètres URL</strong> : Les paires nom-valeur individuelles à l'intérieur de la chaîne de requête. Dans l'exemple ci-dessus, il y a deux paramètres URL : <code>q=café</code> et <code>page=2</code>.<br><br>Notre <strong>analyseur de paramètres URL</strong> analyse à la fois la chaîne de requête complète et la décompose en paramètres individuels, vous permettant de voir à la fois la vue d'ensemble et les détails."
-          },
-          {
-            question: "Pourquoi certains paramètres URL contiennent-ils des symboles %20 ou + encodés ?",
-            answer: "L'encodage URL (également appelé encodage pourcentage) est nécessaire car les URL ne peuvent contenir que certains caractères ASCII. Les caractères spéciaux, espaces et caractères non-ASCII doivent être encodés pour être inclus en toute sécurité dans une URL.<br><br>Exemples courants d'encodage URL :<br>• Les espaces deviennent <code>%20</code> ou <code>+</code><br>• Les points d'interrogation deviennent <code>%3F</code><br>• Les esperluettes deviennent <code>%26</code><br>• Les signes égal deviennent <code>%3D</code><br><br>Notre <strong>décodeur URL</strong> gère automatiquement cet encodage, affichant les valeurs originales et décodées pour que vous compreniez ce qui est réellement transmis. Lorsque les paramètres contiennent des caractères spéciaux (espaces, emojis ou caractères internationaux), l'encodage URL empêche qu'ils ne perturbent la structure de l'URL."
-          },
-          {
-            question: "Puis-je analyser des paramètres imbriqués complexes ou du JSON dans une chaîne de requête ?",
-            answer: "Oui, notre <strong>analyseur de requête URL</strong> gère les formats de paramètres avancés :<br><br>1. <strong>Paramètres sous forme de tableau</strong>, comme <code>couleurs[]=rouge&couleurs[]=bleu</code> ou <code>couleurs=rouge,bleu</code><br><br>2. <strong>Notation d'objet imbriqué</strong>, comme <code>filter[price][min]=10&filter[price][max]=50</code><br><br>3. <strong>Valeurs encodées en JSON dans les paramètres</strong>, comme <code>data=&#123;&quot;nom&quot;:&quot;Jean&quot;,&quot;âge&quot;:30&#125;</code><br><br>L'outil détecte automatiquement ces structures complexes et fournit des vues spécialisées pour elles. Pour les valeurs JSON, il offre des options de mise en forme rendant les données imbriquées plus lisibles. Ceci est particulièrement utile pour les points de terminaison API acceptant des options complexes de filtrage, tri ou configuration via l'URL."
-          },
-          {
-            question: "Comment utiliser les extraits de code générés dans mon application ?",
-            answer: "La fonction de génération de code fournit des extraits prêts à l'emploi pour utiliser les paramètres URL analysés dans différents langages de programmation :<br><br>1. <strong>Développement front-end</strong> : Utilisez le code JavaScript (URLSearchParams) pour extraire ou manipuler des paramètres dans des applications basées sur navigateur.<br><br>2. <strong>Traitement back-end</strong> : Utilisez les extraits Python, PHP ou autres langages côté serveur pour analyser les URL de requête entrantes ou construire de nouvelles URL avec la même structure de paramètres.<br><br>3. <strong>Intégration d'API</strong> : Lors de la construction de requêtes API nécessitant la même structure de paramètres, utilisez l'extrait approprié comme point de départ.<br><br>Chaque extrait montre la manière correcte de construire, modifier et extraire des paramètres URL en utilisant les bibliothèques standard de chaque langage, suivant les meilleures pratiques de traitement et d'encodage URL."
-          },
-          {
-            question: "Quels types d'URL puis-je analyser, et quelles sont les limites ?",
-            answer: "Bien que notre <strong>analyseur de paramètres URL</strong> soit conçu pour gérer la plupart des URL et chaînes de requête standard, quelques limites sont à noter :<br><br>1. <strong>Longueur d'URL</strong> : Les URL extrêmement longues (dépassant 100 000 caractères) peuvent causer des problèmes de performance, bien que la plupart des URL réelles soient bien en dessous de cette limite.<br><br>2. <strong>Formats non standard</strong> : Certaines applications utilisent des formats de paramètres personnalisés ne suivant pas les conventions standards. L'outil tente d'analyser ces formats mais peut ne pas les visualiser de manière optimale.<br><br>3. <strong>Paramètres basés sur hash</strong> : Les paramètres dans la partie fragment/ancre (#) sont analysés séparément des paramètres de requête standard.<br><br>4. <strong>Encodage multicouche</strong> : Parfois, les paramètres peuvent être encodés plusieurs fois. L'outil propose une option \"décoder deux fois\" pour ces cas, mais un encodage multicouche extrêmement complexe peut nécessiter un traitement spécialisé.<br><br>Pour la plupart des besoins en développement web, marketing numérique et tests API, ces limites apparaissent rarement, et l'outil gère les formats d'URL couramment utilisés sur le web."
-          }
-        ]
-      },
-      guide: {
-        title: "Comment utiliser l'analyseur de paramètres URL : guide étape par étape",
-        step1: "<strong>Entrer une URL ou chaîne de requête</strong> : Dans le champ d'entrée URL, collez une URL complète (comme https://exemple.com/page?param=valeur) ou juste la partie chaîne de requête (param=valeur). Vous pouvez aussi cliquer \"Utiliser l'URL actuelle\" pour analyser l'URL de la page où vous êtes, ou \"Coller depuis le presse-papiers\" pour insérer rapidement du contenu copié.",
-        step2: "<strong>Choisir les options d'analyse</strong> : Sélectionnez le mode d'analyse approprié selon votre entrée. \"Détection automatique\" convient à la plupart des cas, déterminant automatiquement si vous avez entré une URL complète ou juste une chaîne de requête. Pour le décodage URL, vous pouvez choisir \"Décoder une fois\" pour les URL standard, ou \"Décoder deux fois\" pour les paramètres doublement encodés.",
-        step3: "<strong>Voir les paramètres extraits</strong> : Après analyse, l'outil affiche tous les paramètres détectés dans une vue tabulaire. Vous pouvez voir le nom et la valeur de chaque paramètre, et effectuer des actions comme copier. Utilisez le filtre de recherche pour trouver rapidement des paramètres spécifiques dans des URL complexes.",
-        step4: "<strong>Explorer différentes options de visualisation</strong> : Utilisez les onglets sous la section des résultats pour basculer entre différentes vues. \"Tableau des paramètres\" montre tous les paramètres dans une liste structurée, \"Format JSON\" affiche les paramètres comme un objet JSON, \"Composants URL\" décompose la structure complète de l'URL, incluant protocole, domaine, chemin et chaîne de requête.",
-        step5: "<strong>Analyser des valeurs de paramètres complexes</strong> : Pour les paramètres contenant des données JSON ou structurées, cliquez \"Voir comme JSON\" pour une représentation formatée. Ceci facilite la compréhension des structures de données imbriquées pouvant être encodées dans une seule valeur de paramètre.",
-        step6: "<strong>Trier et filtrer les paramètres</strong> : Utilisez les options de tri pour organiser les paramètres par nom ou valeur, par ordre croissant ou décroissant. Ceci est particulièrement utile lors du traitement d'URL avec de nombreux paramètres, permettant une organisation logique.",
-        step7: "<strong>Exporter et utiliser les résultats</strong> : Dans l'onglet \"Options d'exportation\", vous pouvez voir et copier des extraits de code générés pour JavaScript, Python, PHP et autres langages. Ces extraits montrent comment traiter programmatiquement les mêmes paramètres, économisant du temps de développement lors de l'implémentation de fonctionnalités similaires dans vos applications."
-      },
-      conclusion: "L'analyseur de paramètres URL simplifie la tâche complexe de manipulation des chaînes de requête et paramètres URL, fournissant aux développeurs, marketeurs et analystes un outil puissant pour comprendre et manipuler les adresses web. En décomposant les URL en leurs composants et offrant plusieurs options de visualisation, il comble le fossé entre les URL brutes et les données structurées. Que vous déboguiez des appels API complexes, analysiez des paramètres de campagne marketing ou appreniez le développement web, cet outil fournit des insights précieux sur la transmission de données via les URL dans l'écosystème web moderne."
-    }
+  name: 'Analyseur de paramètres URL',
+  description: 'Analyse, examine et manipule les paramètres URL et les chaînes de requête',
+
+  input: {
+    title: 'Entrée URL',
+    url: 'URL',
+    urlPlaceholder: 'https://exemple.com/chemin?param1=valeur1&param2=valeur2 ou param1=valeur1&param2=valeur2',
+    parse: 'Utiliser l\'URL actuelle',
+    clear: 'Effacer',
+    examples: 'Charger des exemples',
+    parseFromClipboard: 'Coller depuis le presse-papiers',
+    history: 'Historique'
+  },
+
+  params: {
+    title: 'Liste des paramètres',
+    name: 'Nom du paramètre',
+    value: 'Valeur du paramètre',
+    decoded: 'Valeur décodée',
+    type: 'Type',
+    actions: 'Actions',
+    add: 'Ajouter un paramètre',
+    remove: 'Supprimer',
+    edit: 'Modifier',
+    copy: 'Copier comme texte',
+    sort: 'Trier par',
+    encode: 'Encoder',
+    decode: 'Décoder',
+    noParams: 'Aucun paramètre URL détecté',
+    noMatchingParams: 'Aucun paramètre correspondant trouvé',
+    modified: 'Modifié',
+    original: 'Original',
+    search: 'Rechercher des paramètres...'
+  },
+
+  results: {
+    title: 'Composants URL',
+    parsed: 'Composants URL analysés',
+    protocol: 'Protocole',
+    domain: 'Nom de domaine',
+    port: 'Port',
+    path: 'Chemin',
+    queryString: 'Chaîne de requête',
+    fragment: 'Ancre (hash)',
+    constructed: 'URL construite',
+    copyUrl: 'Copier l\'URL',
+    openUrl: 'Ouvrir l\'URL',
+    shareUrl: 'Partager l\'URL',
+    shortenUrl: 'Raccourcir l\'URL',
+    encoded: 'URL encodée',
+    decoded: 'URL décodée'
+  },
+
+  tools: {
+    title: 'Outils',
+    buildQuery: 'Construire une requête',
+    compareUrls: 'Comparer des URLs',
+    validateUrl: 'Valider l\'URL',
+    trackingRemoval: 'Supprimer les paramètres de suivi',
+    convertToCode: 'Convertir en code',
+    diffTool: 'Différence de paramètres',
+    baseConversion: 'Conversion de base',
+    jsonToQuery: 'JSON vers chaîne de requête',
+    queryToJson: 'Chaîne de requête vers JSON'
+  },
+
+  visualization: {
+    title: 'Visualisation',
+    tree: 'Vue arborescente',
+    table: 'Tableau des paramètres',
+    json: 'Format JSON',
+    raw: 'Vue brute',
+    hierarchical: 'Vue hiérarchique',
+    nested: 'Paramètres imbriqués',
+    auto: 'Détection automatique',
+    fullUrl: 'URL complète',
+    queryOnly: 'Chaîne de requête seule',
+    hideJson: 'Réduire JSON',
+    viewAsJson: 'Voir comme JSON'
+  },
+
+  types: {
+    string: 'Chaîne',
+    number: 'Nombre',
+    boolean: 'Booléen',
+    array: 'Tableau',
+    object: 'Objet',
+    date: 'Date',
+    email: 'Email',
+    ip: 'Adresse IP',
+    color: 'Couleur',
+    unknown: 'Inconnu'
+  },
+
+  settings: {
+    title: 'Paramètres',
+    detectTypes: 'Mode d\'analyse',
+    decodeAutomatically: 'Décodage URL',
+    decodeAuto: 'Décodage automatique',
+    decodeOnce: 'Décoder une fois',
+    decodeTwice: 'Décoder deux fois',
+    noDecode: 'Ne pas décoder',
+    encodeAutomatically: 'Encoder les caractères spéciaux',
+    preserveCase: 'Conserver la casse des paramètres',
+    sortAlphabetically: 'Trier les paramètres par ordre alphabétique',
+    sortDefault: 'Ordre par défaut',
+    sortNameAsc: 'Nom du paramètre (A-Z)',
+    sortNameDesc: 'Nom du paramètre (Z-A)',
+    sortValueAsc: 'Valeur du paramètre (croissant)',
+    sortValueDesc: 'Valeur du paramètre (décroissant)',
+    arrayFormat: 'Format de tableau',
+    objectFormat: 'Format d\'objet',
+    emptyValues: 'Valeurs vides',
+    defaultProtocol: 'Protocole par défaut'
+  },
+
+  codes: {
+    title: 'Options d\'exportation',
+    javascript: 'JavaScript (URLSearchParams)',
+    python: 'Python',
+    php: 'PHP',
+    ruby: 'Ruby',
+    java: 'Java',
+    csharp: 'C#',
+    go: 'Go',
+    copyCode: 'Copier',
+    copyJson: 'Copier JSON',
+    jsComment1: 'Créer un objet URLSearchParams',
+    jsComment2: 'Obtenir la chaîne de requête',
+    jsComment3: 'Ajouter à l\'URL',
+    phpComment1: 'Tableau de paramètres',
+    phpComment2: 'Construire la chaîne de requête',
+    phpComment3: 'URL complète',
+    pythonComment1: 'Utiliser urllib.parse',
+    pythonComment2: 'Dictionnaire de paramètres',
+    pythonComment3: 'Construire la chaîne de requête',
+    pythonComment4: 'URL complète'
+  },
+
+  messages: {
+    parsed: 'URL analysée avec succès',
+    noUrl: 'Veuillez entrer une URL',
+    invalidUrl: 'URL ou chaîne de requête invalide',
+    copied: 'Copié dans le presse-papiers',
+    paramAdded: 'Paramètre ajouté',
+    paramRemoved: 'Paramètre supprimé',
+    trackingRemoved: 'Paramètres de suivi supprimés',
+    urlOpened: 'URL ouverte dans un nouvel onglet',
+    urlShortened: 'URL raccourcie',
+    error: 'Erreur : {message}',
+    importSuccess: 'URL importée avec succès',
+    exportSuccess: 'Données exportées avec succès',
+    clipboardError: 'Impossible de lire le contenu du presse-papiers. Veuillez vérifier que vous avez accordé les permissions ou coller manuellement le contenu.',
+    copyFailed: 'Échec de la copie, veuillez copier manuellement'
   }
+};

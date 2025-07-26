@@ -1,133 +1,95 @@
 export default {
-  "name": "豎圖轉橫圖",
-  "description": "將垂直肖像圖像轉換為橫向景觀格式，提供多種轉換選項",
-  
-  "upload": {
-    "title": "上傳圖片",
-    "dropzone": "拖放圖片到這裡",
-    "maxSize": "最大檔案大小：10MB",
-    "supportedFormats": "支援的格式：JPG、PNG、WEBP、GIF"
-  },
-  
-  "settings": {
-    "title": "轉換設定",
-    "presets": "快速預設",
-    "conversionMode": "轉換模式",
-    "modes": {
-      "rotate": "旋轉",
-      "fill": "填充背景",
-      "blur": "模糊背景",
-      "stretch": "拉伸邊緣",
-      "dualColor": "雙色背景"
-    },
-    "rotationAngle": "旋轉角度",
-    "fillColor": "背景顏色",
-    "blurRadius": "模糊程度",
-    "stretchEdges": "拉伸程度",
-    "leftColor": "左側顏色",
-    "rightColor": "右側顏色",
-    "sizeOption": "尺寸設定",
-    "sizeModes": {
-      "auto": "自動尺寸",
-      "preset": "常用尺寸",
-      "custom": "自訂尺寸"
-    },
-    "sizePresets": "尺寸預設",
-    "outputSize": "輸出尺寸",
-    "width": "寬度",
-    "height": "高度",
-    "dimensionsHint": "以像素為單位輸入尺寸",
-    "autoSize": "自動計算尺寸",
-    "outputFormat": "輸出格式",
-    "quality": "圖像品質",
-    "advancedOptions": "進階選項",
-    "preserveRatio": "保持寬高比",
-    "sharpen": "銳化",
-    "addWatermark": "添加浮水印",
-    "watermarkPlaceholder": "輸入浮水印文字",
-    "watermarkColor": "浮水印顏色"
-  },
-  
-  "output": {
-    "preview": "結果預覽",
-    "dimensions": "尺寸",
-    "before": "轉換前",
-    "after": "轉換後"
-  },
-  
-  "actions": {
-    "selectImage": "選擇圖片",
-    "convert": "轉換圖片",
-    "download": "下載圖片",
-    "reset": "移除",
-    "showSideBySide": "顯示對比",
-    "hideComparison": "隱藏對比",
-    "hideSideBySide": "關閉"
-  },
-  
-  "messages": {
-    "processing": "處理圖片中...",
-    "convertPrompt": "轉換圖片後結果將顯示在這裡",
-    "error": "處理圖片時發生錯誤",
-    "success": "轉換成功完成！"
+  name: "豎圖轉橫圖",
+  description: "將垂直肖像圖像轉換為橫向景觀格式，提供多種轉換選項",
+
+  upload: {
+    title: "上傳圖片",
+    dropzone: "拖放圖片到這裡",
+    maxSize: "最大檔案大小：10MB",
+    supportedFormats: "支援的格式：JPG、PNG、WEBP、GIF"
   },
 
-  "examples": {
-    "title": "使用技巧",
-    "social": "非常適合社群媒體貼文，橫向圖像表現更好",
-    "socialTip": "使用模糊模式獲得最佳社群媒體效果",
-    "website": "為網站和部落格建立橫幅圖像",
-    "websiteTip": "雙色模式非常適合網頁橫幅"
+  settings: {
+    title: "轉換設定",
+    presets: "快速預設",
+    conversionMode: "轉換模式",
+    modes: {
+      rotate: "旋轉",
+      fill: "填充背景",
+      blur: "模糊背景",
+      stretch: "拉伸邊緣",
+      dualColor: "雙色背景"
+    },
+    rotationAngle: "旋轉角度",
+    fillColor: "背景顏色",
+    blurRadius: "模糊程度",
+    stretchEdges: "拉伸程度",
+    leftColor: "左側顏色",
+    rightColor: "右側顏色",
+    sizeOption: "尺寸設定",
+    sizeModes: {
+      auto: "自動尺寸",
+      preset: "常用尺寸",
+      custom: "自訂尺寸"
+    },
+    sizePresets: "尺寸預設",
+    outputSize: "輸出尺寸",
+    width: "寬度",
+    height: "高度",
+    dimensionsHint: "以像素為單位輸入尺寸",
+    autoSize: "自動計算尺寸",
+    outputFormat: "輸出格式",
+    quality: "圖像品質",
+    advancedOptions: "進階選項",
+    preserveRatio: "保持寬高比",
+    sharpen: "銳化",
+    addWatermark: "添加浮水印",
+    watermarkPlaceholder: "輸入浮水印文字",
+    watermarkColor: "浮水印顏色"
   },
 
-  "help": {
-    "title": "如何使用此工具",
-    "description": "此工具可讓您使用各種方法將垂直（肖像）圖像轉換為水平（景觀）格式，同時保持視覺品質和效果。",
-    "example1": {
-      "title": "社群媒體貼文",
-      "description": "將肖像照片轉換為社群媒體友好的橫向格式，帶模糊背景"
-    },
-    "example2": {
-      "title": "網站橫幅",
-      "description": "使用顏色填充背景，從垂直圖像建立網站頭部和橫幅"
-    }
+  output: {
+    preview: "結果預覽",
+    dimensions: "尺寸",
+    before: "轉換前",
+    after: "轉換後"
   },
 
-  "article": {
-    "title": "豎圖轉橫圖：完整指南",
-    
-    "intro": {
-      "title": "工具功能和應用場景",
-      "content": "<p>我們的<strong>豎圖轉橫圖轉換工具</strong>可將肖像（豎向）圖像轉換為風景（橫向）格式，同時保持視覺品質。這個強大的工具提供多種轉換方法，包括模糊背景、純色填充、雙色漸變、邊緣拉伸和旋轉調整。</p><p>主要功能：</p><ul><li><strong>多種轉換模式</strong>，適合不同的視覺風格和用途</li><li><strong>社群媒體優化</strong>，為各種平台提供預設尺寸</li><li><strong>專業自訂選項</strong>，包括銳化和浮水印等進階設定</li><li><strong>高品質輸出</strong>，支援多種格式（JPEG、PNG、WebP）</li></ul><h4>常見應用場景：</h4><p><strong>社群媒體內容</strong>：將豎直的智慧型手機照片轉換為橫向貼文，用於Facebook、Twitter、LinkedIn和YouTube等橫向格式表現更佳的平台。</p><p><strong>網站橫幅</strong>：從豎直產品照片或人像建立寬幅頭圖和橫幅，用於電子商務網站、部落格和行銷材料。</p><p><strong>數位行銷</strong>：將豎直產品圖像調整為橫向廣告格式，適用於各廣告平台和電子郵件行銷活動。</p><p><strong>影片縮圖</strong>：將豎直影片截圖轉換為橫向縮圖，用於YouTube、Vimeo和其他影片平台。</p><p><strong>簡報幻燈片</strong>：將豎直圖像轉換為適合PowerPoint、Google幻燈片和其他簡報軟體的橫向格式。</p>"
+  actions: {
+    selectImage: "選擇圖片",
+    convert: "轉換圖片",
+    download: "下載圖片",
+    reset: "移除",
+    showSideBySide: "顯示對比",
+    hideComparison: "隱藏對比",
+    hideSideBySide: "關閉"
+  },
+
+  messages: {
+    processing: "處理圖片中...",
+    convertPrompt: "轉換圖片後結果將顯示在這裡",
+    error: "處理圖片時發生錯誤",
+    success: "轉換成功完成！"
+  },
+
+  examples: {
+    title: "使用技巧",
+    social: "非常適合社群媒體貼文，橫向圖像表現更好",
+    socialTip: "使用模糊模式獲得最佳社群媒體效果",
+    website: "為網站和部落格建立橫幅圖像",
+    websiteTip: "雙色模式非常適合網頁橫幅"
+  },
+
+  help: {
+    title: "如何使用此工具",
+    description: "此工具可讓您使用各種方法將垂直（肖像）圖像轉換為水平（景觀）格式，同時保持視覺品質和效果。",
+    example1: {
+      title: "社群媒體貼文",
+      description: "將肖像照片轉換為社群媒體友好的橫向格式，帶模糊背景"
     },
-    
-    "faq": {
-      "title": "常見問題解答",
-      "q1": "為什麼我應該將豎圖轉換為橫圖？",
-      "a1": "橫向圖像在許多平台上更受歡迎，包括社群媒體資訊流、網站、簡報和行銷材料。它們通常獲得更高的互動率，並在各種設備上有更好的顯示效果。",
-      "q2": "豎圖轉換為橫圖時會失去品質嗎？",
-      "a2": "不會，我們的工具在轉換過程中保持圖像品質。我們使用模糊、顏色填充和邊緣拉伸等進階技術，而不是簡單的裁剪，以保留原始圖像的內容。",
-      "q3": "社群媒體應該選擇哪種轉換模式？",
-      "a3": "對於社群媒體，模糊背景模式通常效果最佳，因為它可以保持主體居中，同時用原始圖像的美觀模糊版本水平延伸圖像。",
-      "q4": "橫向圖像的最佳尺寸是多少？",
-      "a4": "常見的橫向比例包括16:9（寬螢幕）、3:2（標準橫向），以及特定平台比例，如Facebook的1200×630像素或YouTube的1280×720。我們的預設選項可以為您處理這些計算。",
-      "q5": "我可以添加浮水印來保護轉換後的圖像嗎？",
-      "a5": "是的，我們的工具在進階選項中包含浮水印功能。您可以添加自訂文字並調整顏色，幫助保護您的知識產權。",
-      "q6": "這個工具可以在行動裝置上使用嗎？",
-      "a6": "當然可以！我們的豎圖轉橫圖轉換工具完全響應式，可在任何使用現代瀏覽器的智慧型手機、平板電腦和桌上型電腦上使用。"
-    },
-    
-    "tutorial": {
-      "title": "步驟指南",
-      "step1": "通過將豎圖拖放到上傳區域或點擊\"選擇圖片\"按鈕來上傳您的豎圖。",
-      "step2": "根據您的需求選擇轉換模式：模糊、填充、雙色、拉伸或旋轉。",
-      "step3": "調整特定模式的設定（模糊程度、背景顏色等）以自訂外觀。",
-      "step4": "選擇尺寸選項：自動（推薦）、特定平台的預設尺寸或自訂尺寸。",
-      "step5": "對於進階需求，展開進階選項部分以訪問銳化、縱橫比控制和浮水印功能。",
-      "step6": "點擊\"轉換圖片\"將您的豎圖處理為橫圖格式。",
-      "step7": "預覽結果，並使用對比視圖查看轉換前後的變化。",
-      "step8": "如有需要，調整設定並再次轉換，直到您對結果滿意為止。",
-      "step9": "以您首選的格式（JPEG、PNG或WebP）下載橫向圖像。"
+    example2: {
+      title: "網站橫幅",
+      description: "使用顏色填充背景，從垂直圖像建立網站頭部和橫幅"
     }
   }
-}
+};

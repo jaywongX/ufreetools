@@ -43,66 +43,6 @@ export default {
   invalidFormat: 'Invalid format for the operation',
   import: 'Import',
   export: 'Export',
-  article: {
-    title: "RSA Encryption & Decryption Tool Guide: Secure Your Data with Public Key Cryptography",
-    introTitle: "Understanding RSA Encryption",
-    intro1: "RSA encryption is a powerful asymmetric cryptography algorithm that uses a pair of keys—public and private—to secure sensitive data. Our <strong>RSA encryption tool</strong> provides a user-friendly interface to perform RSA encryption and decryption operations directly in your browser, without sending your data to any server.",
-    intro2: "Unlike symmetric encryption methods that use a single key, RSA cryptography uses mathematically related key pairs, where data encrypted with a public key can only be decrypted with the corresponding private key. This makes RSA ideal for secure communication and digital signatures in various applications.",
-    intro3: "Our tool supports key generation with various bit lengths (1024, 2048, 3072, and 4096 bits), different padding methods (PKCS#1 v1.5 and OAEP), and multiple input/output formats (text, Base64, and hexadecimal). This flexibility makes it suitable for both educational purposes and practical cryptographic needs.",
-    
-    useCasesTitle: "Practical Applications of RSA Encryption",
-    useCase1: "<strong>Secure Communication</strong>: Exchange confidential messages by encrypting them with the recipient's public key, ensuring only the intended recipient with the private key can decrypt the message.",
-    useCase2: "<strong>Certificate Verification</strong>: Generate key pairs for testing digital certificate implementations, PKI infrastructures, or SSL/TLS configurations.",
-    useCase3: "<strong>Data Protection</strong>: Encrypt sensitive files before storing them in cloud services or transmitting them over unsecured networks, maintaining confidentiality even if the encrypted data is intercepted.",
-    useCase4: "<strong>Educational Purposes</strong>: Learn and demonstrate the principles of public key cryptography, exploring how RSA encryption works in practice with different key sizes and padding methods.",
-    
-    faqTitle: "Frequently Asked Questions",
-    
-    faq1q: "What's the difference between RSA and other encryption algorithms?",
-    faq1a: "RSA is an <strong>asymmetric encryption algorithm</strong> that uses a public-private key pair, whereas symmetric algorithms like AES use a single shared key. This key pair approach allows RSA to provide secure key exchange and digital signatures, which symmetric algorithms cannot. However, RSA is computationally more intensive and typically used for encrypting small amounts of data or for key exchange, while symmetric algorithms are faster and used for bulk data encryption.",
-    
-    faq2q: "Which RSA key size should I choose for best security?",
-    faq2a: "For modern security requirements, we recommend at least 2048-bit RSA keys. The 1024-bit keys are considered vulnerable to well-funded attackers and should be avoided for sensitive data. The 3072-bit keys provide security roughly equivalent to 128-bit symmetric encryption (recommended by NIST for protection beyond 2030), while 4096-bit keys offer an additional security margin for highly sensitive applications. However, larger key sizes require more computational resources for both key generation and encryption/decryption operations.",
-    
-    faq3q: "What's the difference between PKCS#1 v1.5 and OAEP padding?",
-    faq3a: "PKCS#1 v1.5 is an older padding scheme that, while widely supported, has known vulnerabilities to certain types of attacks (like Bleichenbacher's attack). <strong>OAEP (Optimal Asymmetric Encryption Padding)</strong> is a newer, more secure padding scheme designed to provide semantic security against adaptive chosen-ciphertext attacks. For new applications, we recommend using OAEP padding whenever possible, but PKCS#1 v1.5 remains available for compatibility with legacy systems.",
-    
-    faq4q: "How can I safely store and share my RSA keys?",
-    faq4a: "For <strong>private RSA keys</strong>, always store them securely with strong access controls and, ideally, encryption. Never share private keys or store them in plaintext on unsecured systems. For <strong>public RSA keys</strong>, while they're designed to be shared, verify the authenticity of public keys you receive from others to prevent man-in-the-middle attacks. Our tool allows you to export keys in standard PEM format, which can be imported into most cryptographic applications and libraries.",
-    
-    faq5q: "What are the limitations of browser-based RSA encryption?",
-    faq5a: "Browser-based tools like ours have certain limitations: (1) <strong>Performance constraints</strong> - key generation and encryption/decryption of large files may be slower than native applications; (2) <strong>Memory limitations</strong> - browsers restrict the amount of memory that can be used, potentially affecting very large operations; (3) <strong>Cryptographic library restrictions</strong> - we use industry-standard libraries (Forge), but browser implementations may vary slightly. For critical security applications requiring high performance or handling very large files, consider using dedicated cryptographic software.",
-    
-    tutorialTitle: "Step-by-Step Guide to Using the RSA Encryption Tool",
-    tutorialIntro: "Follow this comprehensive guide to effectively use our RSA encryption and decryption tool for securing your sensitive data:",
-    
-    step1Title: "Step 1: Generate or Import RSA Key Pair",
-    step1: "Start by generating a new RSA key pair or importing existing keys. To generate new keys, select your desired key size (2048-bit or higher recommended for security) and click the <strong>Generate Key Pair</strong> button. The tool will create both public and private keys in PEM format. Alternatively, you can import existing keys by clicking the Import button or using the drag-and-drop area for either public or private key fields.",
-    
-    step2Title: "Step 2: Encrypt Data Using the Public Key",
-    step2: "To encrypt data, ensure you have a public key in the corresponding field. Select <strong>Encrypt</strong> mode, choose your preferred padding method (OAEP recommended for security), and select your input format. Enter the plaintext message you want to encrypt in the input field. You can also import plaintext from a file using the import button or drag-and-drop area. Click the <strong>Encrypt</strong> button to process your data. The encrypted output will appear in Base64 format by default, but you can switch to Hex format using the output format options.",
-    
-    step3Title: "Step 3: Decrypt Data Using the Private Key",
-    step3: "To decrypt previously encrypted data, ensure you have the correct private key in the private key field. Select <strong>Decrypt</strong> mode, choose the same padding method that was used for encryption, and select the appropriate input format (usually Base64 for encrypted data). Paste the encrypted text in the input field or import it from a file. Click the <strong>Decrypt</strong> button to recover the original plaintext. The decrypted output will display in the output field and can be copied or downloaded as needed.",
-    
-    step4Title: "Step 4: Export and Manage Keys",
-    step4: "After generating or importing keys, you can export them for future use by clicking the <strong>Export</strong> button next to each key field. This saves the key in standard PEM format, which is compatible with most cryptographic applications and libraries. Remember to store your private key securely and never share it with unauthorized parties. The public key, however, can be freely distributed to anyone who needs to encrypt data for you.",
-    
-    relatedToolsTitle: "Related Cryptographic Tools",
-    relatedTool1: "Hash Calculator",
-    relatedTool1Desc: "Generate secure hash values using various algorithms like SHA-256, SHA-512, and more.",
-    relatedTool2: "Password Generator",
-    relatedTool2Desc: "Create strong, random passwords for enhancing your online security.",
-    relatedTool3: "Symmetric Encryption Tool",
-    relatedTool3Desc: "Encrypt data using symmetric algorithms like AES for faster processing of larger files.",
-    relatedTool4: "Base64 Encoder/Decoder",
-    relatedTool4Desc: "Convert binary data to Base64 format and vice versa for safe transmission.",
-    
-    resourcesTitle: "Additional Resources",
-    resource1: "NIST FIPS 186-4: Digital Signature Standard (DSS)",
-    resource2: "RFC 8017: PKCS #1: RSA Cryptography Specifications Version 2.2",
-    resource3: "NIST SP 800-57: Recommendation for Key Management"
-  },
   noPadding: 'No Padding',
   noPaddingWarning: '<strong>Warning:</strong> No padding mode is insecure for most applications. Only use it if you know what you\'re doing.',
   maxLength: 'Maximum input length',
@@ -111,4 +51,4 @@ export default {
   maxAllowed: 'Maximum allowed: {max} bytes, Current: {current} bytes',
   noPaddingLengthError: 'With no padding, input length must exactly match key size',
   invalidInputFormat: 'Invalid input format for decryption. Data must be Base64 encoded for text input.'
-} 
+}; 

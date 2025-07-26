@@ -85,17 +85,16 @@
                     </span>
                     <span class="featured-label">BetaList</span>
                 </a>
-                <!-- Tweet -->
-                <a href="https://twitter.com/search?q=ufreetools" target="_blank" rel="noopener"
+                <!-- X (Twitter) -->
+                <a href="https://x.com/ufreetools" target="_blank" rel="noopener"
                     class="featured-badge group">
                     <span class="icon-bg">
                         <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-                            <circle cx="16" cy="16" r="16" fill="#1DA1F2" />
-                            <text x="16" y="22" text-anchor="middle" font-size="16" font-family="Arial" fill="white"
-                                font-weight="bold">t</text>
+                            <rect width="32" height="32" rx="16" fill="#000000" />
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="white"/>
                         </svg>
                     </span>
-                    <span class="featured-label">Tweet</span>
+                    <span class="featured-label">X (Twitter)</span>
                 </a>
                 <!-- Huzzler -->
                 <a href="https://huzzler.so/products/lqftrD1alr/ufreetools" target="_blank" rel="noopener"

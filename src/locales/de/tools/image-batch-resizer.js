@@ -1,202 +1,156 @@
 export default {
-    name: 'Bild-Batch-Anpassungstool',
-    description: 'Mehrere Bilder gleichzeitig anpassen, konvertieren und optimieren',
-    input: {
-      title: 'Eingabebilder',
-      dropzone: 'Bilder hierher ziehen und ablegen oder zum Durchsuchen klicken',
-      addMore: 'Weitere Bilder hinzufügen',
-      selectImages: 'Bilder auswählen',
-      clearAll: 'Alle löschen',
-      maxFiles: 'Maximal {count} Bilder',
-      maxSize: 'Maximale Größe pro Bild: {size}MB',
-      supportedFormats: 'Unterstützte Formate: {formats}'
-    },
-    options: {
-      title: 'Anpassungsoptionen',
-      settingsTitle: 'Anpassungseinstellungen',
-      resizeMode: 'Größenänderungsmodus',
-      resizeMethod: 'Größenänderungsmethode',
-      pixelMode: 'Pixel',
-      percentageMode: 'Prozent',
-      maxDimensionMode: 'Maximale Abmessung',
-      outputFormat: 'Ausgabeformat',
-      quality: 'Qualität',
-      width: 'Breite',
-      height: 'Höhe',
-      maintainAspectRatio: 'Seitenverhältnis beibehalten',
-      maxWidth: 'Maximale Breite',
-      maxHeight: 'Maximale Höhe',
-      percentage: 'Prozent',
-      backgroundColor: 'Hintergrundfarbe',
-      naming: 'Ausgabename',
-      filenamePrefix: 'Dateinamenpräfix',
-      filenameSuffix: 'Dateinamensuffix',
-      applyToAllImages: 'Auf alle Bilder anwenden',
-      applyToAll: 'Auf alle Bilder anwenden'
-    },
-    resizeModes: {
-      exact: 'Exakte Größe',
-      maxDimensions: 'Maximale Abmessungen',
-      percentage: 'Prozentuale Skalierung',
-      fit: 'Einpassen',
-      cover: 'Abdecken',
-      crop: 'Zuschneiden'
-    },
-    formats: {
-      original: 'Wie Original',
-      jpg: 'JPG/JPEG',
-      png: 'PNG',
-      webp: 'WebP',
-      gif: 'GIF',
-      bmp: 'BMP',
-      tiff: 'TIFF',
-      svg: 'SVG',
-      ico: 'ICO'
-    },
-    namingOptions: {
-      original: 'Originaler Dateiname',
-      dimensions: 'Original + Abmessungen',
-      format: 'Original + Format',
-      custom: 'Benutzerdefiniertes Muster',
-      random: 'Zufällige Zeichenfolge'
-    },
-    output: {
-      title: 'Angepasste Bilder',
-      downloadAll: 'Alle herunterladen',
-      downloadAsZip: 'Als ZIP herunterladen',
-      processingStatus: 'In Bearbeitung: {processed}/{total}',
-      originalSize: 'Originalgröße',
-      newSize: 'Neue Größe',
-      reduction: 'Reduzierung',
-      individualDownload: 'Herunterladen'
-    },
-    batch: {
-      title: 'Stapelverarbeitung',
-      process: 'Alle Bilder verarbeiten',
-      cancel: 'Verarbeitung abbrechen',
-      selectPreset: 'Voreinstellung auswählen',
-      savePreset: 'Aktuelle Einstellungen speichern',
-      progress: 'Verarbeitungsfortschritt'
-    },
-    watermark: {
-      title: 'Wasserzeichen',
-      enable: 'Wasserzeichen hinzufügen',
-      text: 'Wasserzeichentext',
-      image: 'Wasserzeichenbild',
-      position: 'Position',
-      opacity: 'Deckkraft',
-      rotation: 'Rotation',
-      size: 'Größe',
-      padding: 'Abstand'
-    },
-    positions: {
-      topLeft: 'Oben links',
-      topCenter: 'Oben Mitte',
-      topRight: 'Oben rechts',
-      middleLeft: 'Mitte links',
-      middleCenter: 'Mitte',
-      middleRight: 'Mitte rechts',
-      bottomLeft: 'Unten links',
-      bottomCenter: 'Unten Mitte',
-      bottomRight: 'Unten rechts'
-    },
-    actions: {
-      resize: 'Größe ändern',
-      preview: 'Vorschau',
-      processing: 'In Bearbeitung...',
-      reset: 'Zurücksetzen',
-      applySettings: 'Einstellungen anwenden',
-      resetSettings: 'Einstellungen zurücksetzen',
-      cancel: 'Abbrechen'
-    },
-    messages: {
-      resizeSuccess: 'Bildgröße erfolgreich geändert',
-      resizeFailed: 'Größenänderung fehlgeschlagen: {error}',
-      invalidDimensions: 'Bitte gültige Abmessungen eingeben',
-      invalidWidthHeight: 'Bitte gültige Breite und Höhe eingeben',
-      noImages: 'Bitte Bilder zum Anpassen hinzufügen',
-      noImagesToDownload: 'Keine Bilder zum Herunterladen',
-      processing: 'Bilder werden verarbeitet...',
-      processingComplete: 'Verarbeitung abgeschlossen',
-      processingError: 'Fehler bei der Bildverarbeitung',
-      waitingForProcess: 'Warte auf Verarbeitung',
-      downloadStarted: 'Download gestartet',
-      allDownloaded: 'Alle Bilder heruntergeladen',
-      presetSaved: 'Voreinstellung gespeichert',
-      presetLoaded: 'Voreinstellung geladen',
-      zipCreated: 'ZIP-Archiv mit {count} Bildern erstellt',
-      zipError: 'Fehler beim Erstellen des ZIP-Archivs'
-    },
-    preview: {
-      title: 'Bildvorschau ({count} Bilder)',
-      selectImage: 'Bitte Bild auswählen',
-      batchSupport: 'Unterstützt die Stapelverarbeitung mehrerer Bilder',
-      download: 'Herunterladen',
-      delete: 'Löschen'
-    },
-    qualityOptions: {
-      fast: 'Schnelle Verarbeitung',
-      medium: 'Mittlere Qualität',
-      high: 'Hohe Qualität (empfohlen)',
-      best: 'Beste Qualität (langsamer)'
-    },
-    article: {
-      title: "Bild-Batch-Anpassungstool: Effiziente Verarbeitung mehrerer Bilder auf einmal",
-      features: {
-        title: "Erfahren Sie mehr über die Stapelverarbeitung von Bildern und ihre Vorteile",
-        description: "<strong>Bild-Batch-Anpassungstool</strong> ist ein leistungsstarkes Online-Tool, das den Prozess der gleichzeitigen Anpassung, Konvertierung und Optimierung mehrerer Bilder vereinfacht. Im Gegensatz zur Bearbeitung einzelner Bilder in herkömmlicher Bearbeitungssoftware ermöglicht dieser <strong>Bild-Stapelverarbeiter</strong> die Anwendung derselben Anpassungen auf Dutzende oder sogar Hunderte von Bildern mit nur wenigen Klicks.<br><br>Unser Tool bietet umfassende Optionen für <strong>Bildgrößenanpassung</strong>, Formatkonvertierung und Qualitätsoptimierung, während die visuelle Integrität der Bilder erhalten bleibt. Egal, ob Sie die Dateigröße für die Webnutzung verringern, Bilder für bestimmte Plattformen vorbereiten oder eine einheitliche Größe für eine Bildersammlung benötigen - das <strong>Batch-Anpassungstool</strong> erledigt diese Aufgaben effizient in Ihrem Browser, ohne dass Softwareinstallationen oder technische Fachkenntnisse erforderlich sind.",
-        useCases: {
-          title: "Praktische Anwendungen für die Stapelverarbeitung von Bildern",
-          items: [
-            "<strong>Webseitenoptimierung</strong>: Webentwickler und Content-Manager können mit dem <strong>Bild-Batch-Anpassungstool</strong> schnell Bildressourcen für Webseiten vorbereiten. Durch die Verringerung der Größe und Dateigröße können Sie die Ladezeiten von Seiten erheblich verbessern, was für Benutzererfahrung und SEO-Ranking entscheidend ist. Die Fähigkeit des Tools, Bilder stapelweise in optimierte Formate wie WebP zu konvertieren, verbessert die Webseitenleistung weiter.",
-            
-            "<strong>E-Commerce-Produktfotografie</strong>: Online-Händler, die große Produktkataloge verarbeiten, können mit unserem <strong>Foto-Stapelverarbeiter</strong> alle Produktbilder auf die von Marktplätzen wie Amazon, eBay oder Shopify geforderten spezifischen Größen standardisieren und so Stunden an Arbeitszeit sparen. Dies gewährleistet ein einheitliches, professionelles Erscheinungsbild aller Listings und erfüllt gleichzeitig die Plattformanforderungen.",
-            
-            "<strong>Erstellung von Social-Media-Inhalten</strong>: Social-Media-Manager, die Inhalte für mehrere Plattformen verwalten, können die Bildgröße stapelweise an die spezifischen Größenanforderungen verschiedener Netzwerke anpassen. Egal, ob es sich um Instagram-Posts, Facebook-Cover, Twitter-Karten oder Pinterest-Pins handelt - unser <strong>Bild-Stapelverarbeiter</strong> hilft dabei, die beste visuelle Qualität auf allen Plattformen zu erhalten.",
-            
-            "<strong>Vorbereitung von Fotoportfolios</strong>: Professionelle Fotografen können schnell Bilder für Portfolio-Websites, Kundenlieferungen oder Druckdienste vorbereiten. Der <strong>Mehrfachbild-Anpasser</strong> ermöglicht die Anpassung an bestimmte Größen bei Beibehaltung des Seitenverhältnisses und gewährleistet so die Konsistenz der gesamten Fotosammlung, ohne zeitaufwändige Einzelbearbeitungen.",
-            
-            "<strong>Entwicklung von Bildungsmaterialien</strong>: Lehrer und Bildungsinhaltsersteller können eine Reihe von Diagrammen, Grafiken oder Fotos auf eine einheitliche Größe anpassen, um sie in Lernmaterialien, Präsentationen oder Online-Kursen zu verwenden. Die Stapelverarbeitungsfunktion macht die visuelle Konsistenz in umfangreichen Bildungsressourcen praktikabel.",
-            
-            "<strong>Vorbereitung von App-Entwicklungsressourcen</strong>: Mobile App-Entwickler können mit diesem Tool mehrere Versionen desselben Bildes in verschiedenen Auflösungen (z.B. 1x, 2x, 3x) für verschiedene Gerätedisplays generieren. Der <strong>Bild-Stapelkonverter</strong> vereinfacht diesen Prozess und stellt sicher, dass die App-Ressourcen auf allen Gerätetypen scharf aussehen, während die Dateigröße überschaubar bleibt."
-          ]
-        }
-      },
-      faq: {
-        title: "Häufig gestellte Fragen zur Stapelverarbeitung von Bildern",
-        items: [
-          {
-            question: "Beeinträchtigt das Bild-Batch-Anpassungstool die Bildqualität?",
-            answer: "Unser <strong>Bild-Stapelverarbeiter</strong> achtet sorgfältig auf die Erhaltung der Bildqualität, aber einige Faktoren sind zu beachten:<br><br>• Unser Tool verwendet speziell entwickelte hochwertige Algorithmen, um die Bildtreue während der Größenänderung zu erhalten<br>• Sie haben die Kontrolle über die Qualitätseinstellungen, insbesondere bei der Konvertierung in Formate wie JPEG oder WebP<br>• Das Verkleinern von Bildern (Bilder kleiner machen) erhält in der Regel die Qualität besser als das Vergrößern<br>• Je höher die gewählten Qualitätseinstellungen, desto besser das Ergebnis, aber die Dateien werden größer<br>• Für die meisten Anwendungsfälle bieten 80-90% Qualität eine hervorragende Balance<br><br>Für professionelle Arbeiten, die höchste Qualität erfordern, empfehlen wir die Verwendung der Einstellungen \"Hohe Qualität\" oder \"Beste Qualität\" in den Prozessoroptionen. Die Vorschaufunktion des <strong>Foto-Stapelverarbeiters</strong> ermöglicht die Überprüfung der Ergebnisse vor dem Download, um sicherzustellen, dass sie Ihren Qualitätsstandards entsprechen."
-          },
-          {
-            question: "Welche Bildformate unterstützt das Bild-Batch-Anpassungstool?",
-            answer: "Unser <strong>Bild-Stapelkonverter</strong> unterstützt eine breite Palette von Bildformaten:<br><br><strong>Eingabeformate:</strong><br>• JPEG/JPG - Häufig für Fotos verwendet<br>• PNG - Ideal für Grafiken mit Transparenz<br>• WebP - Modernes Format mit hervorragender Kompression<br>• GIF - Für einfache Animationen<br>• BMP - Unkomprimiertes Bitmap-Format<br>• TIFF - Hochwertiges Format, häufig in der Fotografie verwendet<br><br><strong>Ausgabeformate:</strong><br>• JPEG/JPG - Am besten für Fotos und allgemeine Webnutzung<br>• PNG - Behält Transparenz bei und ist verlustfrei<br>• WebP - Bietet bessere Kompression bei gleicher Qualität<br><br>Der <strong>Mehrfachbild-Anpasser</strong> kann während der Stapelverarbeitung zwischen diesen Formaten konvertieren, sodass Sie Ihre Bildersammlung in ein einheitliches Format standardisieren oder für jeden Verwendungszweck das am besten geeignete Format auswählen können."
-          },
-          {
-            question: "Wie viele Bilder kann das Bild-Batch-Anpassungstool auf einmal verarbeiten?",
-            answer: "Der <strong>Bild-Batch-Anpasser</strong> ist für die effiziente Verarbeitung großer Mengen von Bildern ausgelegt:<br><br>• Sie können Dutzende von Bildern in einem einzigen Durchgang verarbeiten (typischerweise etwa 100 Bilder pro Batch)<br>• Die maximale Dateigröße pro Bild beträgt 5MB für optimale Leistung<br>• Die gesamte Batch-Verarbeitungszeit hängt von mehreren Faktoren ab, einschließlich:<br>  - Anzahl und Größe der Eingabebilder<br>  - Komplexität der Anpassungsoperationen<br>  - Verarbeitungsleistung Ihres Geräts<br>  - Ihrer Internetverbindungsgeschwindigkeit<br><br>Der <strong>Bild-Stapelverarbeiter</strong> verwendet clientseitige Verarbeitung, was bedeutet, dass die Bilder Ihren Computer nie verlassen, was Geschwindigkeit und Datenschutz erhöht. Für sehr große Sammlungen (Hunderte oder Tausende von Bildern) empfehlen wir, sie in kleinere Batches (20-50 Bilder) aufzuteilen, um die beste Erfahrung zu erhalten."
-          },
-          {
-            question: "Kann das Seitenverhältnis bei der Stapelverarbeitung von Bildern beibehalten werden?",
-            answer: "Ja, die Beibehaltung des Seitenverhältnisses ist eine Schlüsselfunktion unseres <strong>Bild-Batch-Anpassers</strong>:<br><br>• Die Option \"Seitenverhältnis beibehalten\" stellt sicher, dass Bilder nicht gestreckt oder verzerrt werden<br>• Wenn diese Option aktiviert ist, müssen Sie nur die Breite oder Höhe angeben, die andere Dimension wird automatisch berechnet<br>• Für exakte Größen (wie Social-Media-Anforderungen) können Sie diese Option deaktivieren<br>• Die Methode \"Maximale Abmessung\" eignet sich besonders gut, um das Seitenverhältnis beizubehalten und gleichzeitig sicherzustellen, dass kein Bild die angegebenen Abmessungen überschreitet<br>• Die \"Prozentuale Skalierung\" passt alle Bilder gleichmäßig an, während das ursprüngliche Verhältnis perfekt erhalten bleibt<br><br>Der <strong>Foto-Stapelverarbeiter</strong> bietet eine Vorschau für jedes Bild, sodass Sie bestätigen können, dass das Seitenverhältnis korrekt beibehalten wurde, bevor Sie die verarbeiteten Bilder herunterladen."
-          },
-          {
-            question: "Wie kann ich alle verarbeiteten Bilder nach der Stapelverarbeitung herunterladen?",
-            answer: "Der <strong>Mehrfachbild-Anpasser</strong> bietet praktische Optionen zum Erhalt der verarbeiteten Bilder:<br><br>1. <strong>Stapeldownload als ZIP</strong>: Nach Abschluss der Verarbeitung klicken Sie auf \"Alle herunterladen\", um alle angepassten Bilder in einem einzigen ZIP-Archiv zu erhalten<br><br>2. <strong>Einzelner Download</strong>: Wenn Sie nur bestimmte Bilder benötigen, hat jedes verarbeitete Bild seinen eigenen Download-Button<br><br>3. <strong>Automatische Dateibenennung</strong>: Verarbeitete Bilder behalten ihren ursprünglichen Dateinamen, ergänzt um einen Hinweis, dass sie angepasst wurden<br><br>4. <strong>Formatbeibehaltung</strong>: Wenn Sie im Ausgabeformat \"Wie Original\" gewählt haben, behält jedes Bild sein ursprüngliches Format; andernfalls werden alle Bilder in das von Ihnen gewählte Format konvertiert<br><br>Der <strong>Bild-Stapelkonverter</strong> speichert alle verarbeiteten Bilder vorübergehend in Ihrem Browser, daher empfehlen wir, Ihre Ergebnisse herunterzuladen, bevor Sie den Browser-Tab schließen."
-          }
-        ]
-      },
-      guide: {
-        title: "So verwenden Sie das Bild-Batch-Anpassungstool: Schritt-für-Schritt-Anleitung",
-        step1: "<strong>Laden Sie Ihre Bilder hoch</strong>: Klicken Sie auf \"Bilder auswählen\" oder ziehen Sie Dateien in den Upload-Bereich. Der <strong>Bild-Stapelverarbeiter</strong> akzeptiert gängige Bildformate, einschließlich JPEG, PNG, WebP, GIF und mehr. Sie können mehrere Bilder auf einmal hinzufügen oder nach der ersten Auswahl weitere Bilder ergänzen.",
-        step2: "<strong>Wählen Sie die Größenänderungsmethode</strong>: Wählen Sie aus drei leistungsstarken Anpassungsmethoden:<ul class='ml-5 list-disc'><li>Der \"Pixel\"-Modus ermöglicht die Angabe exakter Pixelgrößen</li><li>Der \"Prozent\"-Modus skaliert Bilder proportional zu ihren Originalgrößen</li><li>Der \"Maximale Abmessung\"-Modus stellt sicher, dass Bilder eine bestimmte Größe nicht überschreiten, während das Verhältnis beibehalten wird</li></ul>Diese Flexibilität macht unseren <strong>Foto-Stapelverarbeiter</strong> für nahezu jeden Bildverarbeitungsbedarf geeignet.",
-        step3: "<strong>Legen Sie Ihre Größen fest</strong>: Geben Sie je nach gewählter Anpassungsmethode die gewünschten Werte für Breite und/oder Höhe ein. Wenn Sie \"Seitenverhältnis beibehalten\" aktiviert haben (in den meisten Fällen empfohlen), müssen Sie nur eine Größe angeben, und der <strong>Bild-Batch-Anpasser</strong> berechnet automatisch die andere Größe, um Bildverzerrungen zu vermeiden.",
-        step4: "<strong>Konfigurieren Sie die Ausgabeoptionen</strong>: Wählen Sie Ihr bevorzugtes Ausgabeformat (JPEG, PNG oder WebP) und passen Sie bei Bedarf die Qualitätseinstellungen an. Der <strong>Bild-Stapelkonverter</strong> ermöglicht Ihnen, die Balance zwischen Bildqualität und Dateigröße zu finden. Für JPEG- und WebP-Formate können Sie den Qualitätsprozentsatz anpassen - höhere Werte ergeben besser aussehende Bilder, aber größere Dateien.",
-        step5: "<strong>Verarbeiten Sie Ihre Bilder</strong>: Klicken Sie auf \"Auf alle Bilder anwenden\", um die Stapelverarbeitung zu starten. Der <strong>Mehrfachbild-Anpasser</strong> zeigt einen Fortschrittsbalken an, während Ihre Dateien verarbeitet werden. Jedes Bild wird mit hochwertigen Algorithmen verarbeitet, um die von Ihnen angegebenen Größen bei gleichzeitiger Wahrung der visuellen Treue zu erreichen.",
-        step6: "<strong>Überprüfen Sie die Ergebnisse</strong>: Nach Abschluss der Verarbeitung überprüfen Sie die Vorschau jedes Bildes, um sicherzustellen, dass die Ergebnisse Ihren Erwartungen entsprechen. Der <strong>Bild-Batch-Anpasser</strong> zeigt nützliche Informationen an, einschließlich Original- und neuer Größe, damit Sie bestätigen können, dass die Größenänderung korrekt durchgeführt wurde.",
-        step7: "<strong>Laden Sie Ihre verarbeiteten Bilder herunter</strong>: Klicken Sie auf \"Alle herunterladen\", um eine ZIP-Datei mit allen angepassten Bildern zu erhalten, oder laden Sie einzelne Bilder nach Bedarf herunter. Der <strong>Bild-Stapelverarbeiter</strong> behält Ihre Originaldateien bei und bietet verarbeitete Versionen mit geeigneten Namen, um sie von den Originalen zu unterscheiden."
-      },
-      conclusion: "Das Bild-Batch-Anpassungstool bietet eine praktische Lösung für häufige Herausforderungen, mit denen Webentwickler, Fotografen, Vermarkter und Inhaltsersteller konfrontiert sind: die effiziente Verarbeitung mehrerer Bilder bei gleichzeitiger Wahrung von Qualität und Konsistenz. Indem es die Notwendigkeit teurer Desktop-Software oder zeitaufwändiger Einzelbearbeitungen beseitigt, vereinfacht dieses Tool Arbeitsabläufe und hilft bei der Aufrechterhaltung visueller Standards für digitale Assets. Egal, ob Sie Produktfotos für E-Commerce-Plattformen vorbereiten, Bilder für responsive Websites optimieren oder visuelle Inhalte für soziale Medien standardisieren - die Stapelverarbeitungsfunktion spart wertvolle Zeit und gewährleistet konsistente Ergebnisse. Da digitale Inhalte weiterhin visuelle Elemente betonen, werden Tools, die bei der Verwaltung und Optimierung von Bildern in großem Maßstab helfen, zu einer wichtigen Ressource für Fachleute in verschiedenen Branchen."
-    }
+  name: 'Bild-Batch-Anpassungstool',
+  description: 'Mehrere Bilder gleichzeitig anpassen, konvertieren und optimieren',
+
+  input: {
+    title: 'Eingabebilder',
+    dropzone: 'Bilder hierher ziehen und ablegen oder zum Durchsuchen klicken',
+    addMore: 'Weitere Bilder hinzufügen',
+    selectImages: 'Bilder auswählen',
+    clearAll: 'Alle löschen',
+    maxFiles: 'Maximal {count} Bilder',
+    maxSize: 'Maximale Größe pro Bild: {size}MB',
+    supportedFormats: 'Unterstützte Formate: {formats}'
+  },
+
+  options: {
+    title: 'Anpassungsoptionen',
+    settingsTitle: 'Anpassungseinstellungen',
+    resizeMode: 'Größenänderungsmodus',
+    resizeMethod: 'Größenänderungsmethode',
+    pixelMode: 'Pixel',
+    percentageMode: 'Prozent',
+    maxDimensionMode: 'Maximale Abmessung',
+    outputFormat: 'Ausgabeformat',
+    quality: 'Qualität',
+    width: 'Breite',
+    height: 'Höhe',
+    maintainAspectRatio: 'Seitenverhältnis beibehalten',
+    maxWidth: 'Maximale Breite',
+    maxHeight: 'Maximale Höhe',
+    percentage: 'Prozent',
+    backgroundColor: 'Hintergrundfarbe',
+    naming: 'Ausgabename',
+    filenamePrefix: 'Dateinamenpräfix',
+    filenameSuffix: 'Dateinamensuffix',
+    applyToAllImages: 'Auf alle Bilder anwenden',
+    applyToAll: 'Auf alle Bilder anwenden'
+  },
+
+  resizeModes: {
+    exact: 'Exakte Größe',
+    maxDimensions: 'Maximale Abmessungen',
+    percentage: 'Prozentuale Skalierung',
+    fit: 'Einpassen',
+    cover: 'Abdecken',
+    crop: 'Zuschneiden'
+  },
+
+  formats: {
+    original: 'Wie Original',
+    jpg: 'JPG/JPEG',
+    png: 'PNG',
+    webp: 'WebP',
+    gif: 'GIF',
+    bmp: 'BMP',
+    tiff: 'TIFF',
+    svg: 'SVG',
+    ico: 'ICO'
+  },
+
+  namingOptions: {
+    original: 'Originaler Dateiname',
+    dimensions: 'Original + Abmessungen',
+    format: 'Original + Format',
+    custom: 'Benutzerdefiniertes Muster',
+    random: 'Zufällige Zeichenfolge'
+  },
+
+  output: {
+    title: 'Angepasste Bilder',
+    downloadAll: 'Alle herunterladen',
+    downloadAsZip: 'Als ZIP herunterladen',
+    processingStatus: 'In Bearbeitung: {processed}/{total}',
+    originalSize: 'Originalgröße',
+    newSize: 'Neue Größe',
+    reduction: 'Reduzierung',
+    individualDownload: 'Herunterladen'
+  },
+
+  batch: {
+    title: 'Stapelverarbeitung',
+    process: 'Alle Bilder verarbeiten',
+    cancel: 'Verarbeitung abbrechen',
+    selectPreset: 'Voreinstellung auswählen',
+    savePreset: 'Aktuelle Einstellungen speichern',
+    progress: 'Verarbeitungsfortschritt'
+  },
+
+  watermark: {
+    title: 'Wasserzeichen',
+    enable: 'Wasserzeichen hinzufügen',
+    text: 'Wasserzeichentext',
+    image: 'Wasserzeichenbild',
+    position: 'Position',
+    opacity: 'Deckkraft',
+    rotation: 'Rotation',
+    size: 'Größe',
+    padding: 'Abstand'
+  },
+
+  positions: {
+    topLeft: 'Oben links',
+    topCenter: 'Oben Mitte',
+    topRight: 'Oben rechts',
+    middleLeft: 'Mitte links',
+    middleCenter: 'Mitte',
+    middleRight: 'Mitte rechts',
+    bottomLeft: 'Unten links',
+    bottomCenter: 'Unten Mitte',
+    bottomRight: 'Unten rechts'
+  },
+
+  actions: {
+    resize: 'Größe ändern',
+    preview: 'Vorschau',
+    processing: 'In Bearbeitung...',
+    reset: 'Zurücksetzen',
+    applySettings: 'Einstellungen anwenden',
+    resetSettings: 'Einstellungen zurücksetzen',
+    cancel: 'Abbrechen'
+  },
+
+  messages: {
+    resizeSuccess: 'Bildgröße erfolgreich geändert',
+    resizeFailed: 'Größenänderung fehlgeschlagen: {error}',
+    invalidDimensions: 'Bitte gültige Abmessungen eingeben',
+    invalidWidthHeight: 'Bitte gültige Breite und Höhe eingeben',
+    noImages: 'Bitte Bilder zum Anpassen hinzufügen',
+    noImagesToDownload: 'Keine Bilder zum Herunterladen',
+    processing: 'Bilder werden verarbeitet...',
+    processingComplete: 'Verarbeitung abgeschlossen',
+    processingError: 'Fehler bei der Bildverarbeitung',
+    waitingForProcess: 'Warte auf Verarbeitung',
+    downloadStarted: 'Download gestartet',
+    allDownloaded: 'Alle Bilder heruntergeladen',
+    presetSaved: 'Voreinstellung gespeichert',
+    presetLoaded: 'Voreinstellung geladen',
+    zipCreated: 'ZIP-Archiv mit {count} Bildern erstellt',
+    zipError: 'Fehler beim Erstellen des ZIP-Archivs'
+  },
+
+  preview: {
+    title: 'Bildvorschau ({count} Bilder)',
+    selectImage: 'Bitte Bild auswählen',
+    batchSupport: 'Unterstützt die Stapelverarbeitung mehrerer Bilder',
+    download: 'Herunterladen',
+    delete: 'Löschen'
+  },
+
+  qualityOptions: {
+    fast: 'Schnelle Verarbeitung',
+    medium: 'Mittlere Qualität',
+    high: 'Hohe Qualität (empfohlen)',
+    best: 'Beste Qualität (langsamer)'
   }
+};

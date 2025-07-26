@@ -1,0 +1,78 @@
+export default {
+  title: 'Crittografia SM2: guida completa',
+  introduction: {
+    title: 'Cos\'è la cifratura SM2 e come funziona?',
+    p1: 'La cifratura SM2 è una componente fondamentale degli standard crittografici commerciali cinesi, un potente algoritmo a chiave pubblica. Creato dall\'Ufficio cinese per la gestione della crittografia commerciale, SM2 offre una sicurezza paragonabile a RSA-2048 ma con lunghezze di chiave più brevi e prestazioni migliori, ideale per comunicazioni digitali sicure e protezione dei dati.',
+    p2: 'A differenza dei metodi di cifratura simmetrici, SM2 utilizza una coppia di chiavi: una chiave pubblica che può essere condivisa liberamente per cifrare i dati e una chiave privata che deve essere mantenuta segreta per decifrare. Questo approccio asimmetrico risolve i problemi di distribuzione delle chiavi dei metodi crittografici tradizionali, permettendo alle parti di comunicare in sicurezza senza condividere preventivamente una chiave.',
+    p3: 'Il nostro strumento SM2 offre un\'interfaccia user-friendly per generare coppie di chiavi, cifrare informazioni sensibili e decifrare messaggi SM2 senza bisogno di conoscenze crittografiche specialistiche. Questo rende accessibile la tecnologia crittografica avanzata a professionisti della sicurezza informatica e privati interessati alla privacy dei dati.'
+  },
+  useCases: {
+    title: 'Casi d\'uso della cifratura SM2',
+    item1: 'Comunicazioni sicure nei sistemi bancari e finanziari, specialmente nelle regioni dove SM2 è standard regolamentare',
+    item2: 'Protezione delle comunicazioni sensibili di governo e militari',
+    item3: 'Sistemi di firma digitale per autenticazione documenti e non ripudio',
+    item4: 'Protezione dei dati in transito per piattaforme e-commerce e servizi online',
+    item5: 'Autenticazione in sistemi di certificati digitali e infrastrutture PKI'
+  },
+  guide: {
+    title: 'Come usare lo strumento di cifratura SM2',
+    step1: {
+      title: 'Passo 1: Gestione chiavi',
+      description: 'Inizia configurando le chiavi crittografiche. Hai tre opzioni:',
+      option1: 'Clicca "Genera nuova coppia di chiavi" per creare una nuova coppia SM2',
+      option2: 'Importa chiavi esistenti cliccando il pulsante "Importa chiave"',
+      option3: 'Clicca "Carica esempio" per provare lo strumento con chiavi pre-generate'
+    },
+    step2: {
+      title: 'Passo 2: Prepara i dati',
+      description: 'Per cifrare o decifrare, devi inserire i dati:',
+      option1: 'Seleziona il formato di input (testo, esadecimale, Base64 o file)',
+      option2: 'Per cifrare, inserisci il tuo testo in chiaro nel campo di input',
+      option3: 'Per decifrare, inserisci il testo cifrato che vuoi decifrare',
+      option4: 'In modalità file, trascina il file o clicca per selezionarlo'
+    },
+    step3: {
+      title: 'Passo 3: Configura le impostazioni di cifratura',
+      description: 'Prima di elaborare i dati, configura queste importanti impostazioni:',
+      option1: 'Seleziona il formato del testo cifrato (C1C2C3 o C1C3C2) - in Cina si usa tipicamente C1C3C2',
+      option2: 'Seleziona il formato di output preferito (testo, esadecimale o Base64)'
+    },
+    step4: {
+      title: 'Passo 4: Elabora e ottieni i risultati',
+      description: 'Clicca i pulsanti "Cifra" o "Decifra" per elaborare i tuoi dati. Al termine, puoi copiare il risultato negli appunti, scaricarlo come file o, nel caso della cifratura, vedere i componenti dettagliati del testo cifrato (parti C1, C2 e C3).'
+    }
+  },
+  faq: {
+    title: 'Domande frequenti sulla cifratura SM2',
+    q1: 'Quali vantaggi offre SM2 rispetto ad altri algoritmi crittografici?',
+    a1: 'SM2 offre diversi vantaggi: lunghezze di chiave più brevi (256 bit) ma sicurezza equivalente a RSA-2048, tempi di elaborazione più veloci per operazioni di cifratura/decifratura, e conformità agli standard regolatori cinesi. È anche progettato per resistere ad attacchi quantistici, rendendolo una soluzione crittografica futuristica.',
+    q2: 'Qual è la differenza tra i formati C1C2C3 e C1C3C2?',
+    a2: 'Entrambi i formati contengono gli stessi tre componenti ma in ordine diverso. C1 rappresenta un punto su curva ellittica, C2 sono i dati cifrati effettivi, C3 è un valore hash per verifica integrità. C1C2C3 è il formato standard originale, mentre C1C3C2 è più comune nelle applicazioni e sistemi cinesi. Il nostro strumento supporta entrambi per massima compatibilità.',
+    q3: 'SM2 è adatto per dati personali o aziendali sensibili?',
+    a3: 'Sì, SM2 è adatto a proteggere dati sensibili grazie alla sua solida sicurezza crittografica. Tuttavia, per applicazioni aziendali altamente sensibili, raccomandiamo l\'uso di sistemi di gestione chiavi appropriati e implementazioni SM2 con protocolli sicuri. Sebbene il nostro strumento online sia comodo, ambienti di produzione sensibili dovrebbero usare librerie crittografiche installate localmente e archivi chiave sicuri.',
+    q4: 'Come verifico che la mia cifratura SM2 funzioni correttamente?',
+    a4: 'Puoi verificare la tua implementazione SM2 cifrando un messaggio di esempio e poi decifrandolo per confermare di ottenere il testo originale. Il nostro strumento offre l\'opzione "Carica esempio" che dimostra automaticamente questo processo. Per sistemi di produzione, considera l\'uso dei vettori di test dai documenti standard SM2 per validare la tua implementazione.',
+    q5: 'È possibile decifrare dati SM2 senza la chiave privata?',
+    a5: 'No, dati cifrati con SM2 correttamente implementato non possono essere decifrati senza la corrispondente chiave privata. La sicurezza di SM2 si basa sul problema del logaritmo discreto su curve ellittiche, computazionalmente intrattabile con le tecnologie attuali. Ecco perché è cruciale mantenere la chiave privata sicura e non condividerla mai con parti non autorizzate.'
+  },
+  comparison: {
+    title: 'Confronto tra SM2 e altri algoritmi crittografici',
+    p1: 'SM2 appartiene alla famiglia degli algoritmi di crittografia a curve ellittiche (ECC), simili a ECDSA ma con parametri specifici definiti dallo standard cinese. Rispetto a RSA, SM2 offre sicurezza equivalente (una chiave SM2 a 256 bit equivale a una chiave RSA a 2048 bit) con lunghezze di chiave significativamente più brevi, risultando in operazioni più veloci e minori requisiti di risorse.',
+    p2: 'Per applicazioni che richiedono conformità agli standard crittografici cinesi, SM2 è preferibile ad algoritmi internazionali come RSA o ECDSA. I suoi vantaggi prestazionali lo rendono particolarmente adatto ad ambienti con risorse limitate come smart card, dispositivi IoT e applicazioni mobili dove capacità di elaborazione e memoria sono limitate.',
+    p3: 'Sebbene SM2 stia guadagnando riconoscimento internazionale, RSA rimane più ampiamente supportato in software e hardware globali. Per un confronto con un altro popolare metodo di cifratura asimmetrica, consulta il nostro',
+    linkText: 'Strumento di cifratura RSA'
+  },
+  references: {
+    title: 'Riferimenti e letture approfondite',
+    link1: 'Wikipedia-SM2',
+    link2: 'Algoritmo a chiave pubblica SM2 su curve ellittiche',
+    link3: 'Parametri raccomandati per l\'algoritmo SM2 su curve ellittiche',
+  },
+  relatedTools: {
+    title: 'Strumenti crittografici correlati',
+    tool1: 'Strumento di cifratura RSA',
+    tool2: 'Calcolatore di hash',
+    tool3: 'Strumento di cifratura simmetrica',
+    tool4: 'Generatore di password sicure'
+  }
+}

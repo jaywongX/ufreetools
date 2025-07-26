@@ -1,6 +1,7 @@
 export default {
   name: 'Formatter XML',
   description: 'Format, rapikan, dan validasi dokumen XML',
+
   options: {
     indentSize: 'Ukuran indentasi',
     useTabs: 'Gunakan tab',
@@ -14,11 +15,13 @@ export default {
     displayOptions: 'Opsi tampilan',
     showLineNumbers: 'Tampilkan nomor baris'
   },
+
   indentOptions: {
     twoSpaces: '2 spasi',
     fourSpaces: '4 spasi',
     tabIndent: 'Indentasi tab'
   },
+
   actions: {
     format: 'Format XML',
     minify: 'Minifikasi XML',
@@ -31,6 +34,7 @@ export default {
     beautify: 'Rapikan',
     copyCode: 'Salin kode'
   },
+
   messages: {
     copied: 'Tersalin ke clipboard!',
     formatSuccess: 'Berhasil memformat XML',
@@ -48,71 +52,17 @@ export default {
     lineCount: 'Jumlah baris: {0}',
     characterAndLineCount: 'Jumlah karakter: {0} | Jumlah baris: {1}'
   },
+
   input: {
     xmlInput: 'Input XML',
     placeholder: 'Tempel atau ketik XML di sini...'
   },
+
   examples: {
     title: 'Contoh XML',
     description: 'Klik untuk memuat contoh:',
     simpleXml: 'XML sederhana',
     bookstore: 'Katalog toko buku',
     complexXml: 'XML kompleks'
-  },
-  article: {
-    title: "Alat Format XML: Alat Penting untuk Pengolahan Data Terstruktur",
-    features: {
-      title: "Memahami Format XML dan Aplikasinya",
-      description: "<strong>Alat Format XML</strong> adalah utilitas online yang kuat untuk mengubah kode XML mentah menjadi format yang terstruktur dan mudah dibaca. Alat ini memungkinkan pengguna merapikan dokumen XML yang berantakan atau terkompresi, memvalidasi sintaks yang benar, dan dengan mudah mengkonversi antara berbagai representasi XML.<br><br>Fitur inti dari <strong>alat perapian XML</strong> ini adalah menganalisis struktur hierarkis data XML dan menerapkan indentasi yang konsisten, baris baru yang tepat, dan format yang terorganisir, membuat dokumen XML kompleks lebih mudah dibaca, diedit, dan dipahami. Alat ini mendukung baik perapian (memperluas dan mengatur XML dengan spasi yang tepat) maupun kompresi (menghapus spasi yang tidak perlu untuk mengompres XML), memungkinkan Anda mengoptimalkan XML untuk keterbacaan manusia atau efisiensi pemrosesan dan penyimpanan mesin. Dengan fitur validasi sintaks, penomoran baris, dan indentasi yang dapat disesuaikan, <strong>alat pencetakan optimal XML</strong> ini memberikan solusi komprehensif untuk menangani dokumen XML dengan tingkat kompleksitas apa pun.",
-      useCases: {
-        title: "Aplikasi Praktis Format XML",
-        items: [
-          "<strong>Pengembangan dan pengujian layanan web</strong>: Saat membangun atau men-debug layanan web SOAP, pengembang dapat menggunakan <strong>validator XML</strong> untuk memvalidasi muatan permintaan dan respons, memastikannya sesuai dengan skema yang diharapkan. Alat pemformatan membantu menganalisis pesan SOAP kompleks dengan mengubah respons satu baris yang padat menjadi struktur yang diindentasi dengan tepat, memudahkan identifikasi elemen data dan pemecahan masalah integrasi antar layanan.",
-          "<strong>Manajemen file konfigurasi</strong>: Banyak aplikasi perusahaan mengandalkan XML untuk pengaturan konfigurasi. Administrator sistem dapat menggunakan <strong>alat pemformatan struktur XML</strong> untuk membersihkan dan menstandarisasi file konfigurasi sebelum penyebaran, mengurangi risiko kesalahan sintaks yang dapat menyebabkan kegagalan sistem. Ketika pengeditan manual diperlukan untuk penyesuaian, fitur perapian membuat struktur konfigurasi kompleks lebih mudah dibaca.",
-          "<strong>Pengolahan integrasi data</strong>: Insinyur data yang menangani pertukaran data berbasis XML dapat menggunakan alat ini untuk memeriksa dan memvalidasi file XML sebelum pemrosesan. Saat menerima sumber data dari sistem eksternal, <strong>alat pemformatan kode XML</strong> membantu mengidentifikasi masalah struktural atau ketidakkonsistenan dalam data masuk dengan cepat, memastikan operasi ETL (Ekstraksi, Transformasi, Pemuatan) yang lebih lancar dan mengurangi kegagalan dalam pipa data.",
-          "<strong>Dokumentasi dan pengembangan API</strong>: Pengembang API yang membuat atau menggunakan API berbasis XML dapat menggunakan alat pemformatan untuk menghasilkan contoh XML yang bersih dan diformat dengan benar untuk dimasukkan dalam dokumentasi teknis. Contoh yang dirapikan membuat spesifikasi API lebih mudah diakses oleh pengembang lain, menampilkan struktur permintaan dan respons yang diharapkan dalam format yang mudah dipahami dan ditiru.",
-          "<strong>Pemeliharaan sistem warisan</strong>: Pengembang yang memelihara sistem lama yang menggunakan XML untuk penyimpanan data atau pertukaran dapat menggunakan <strong>alat indentasi XML</strong> untuk memahami kode warisan yang tidak terdokumentasi atau tidak diformat dengan baik. Dengan memformat artefak XML dari sistem ini dengan benar, pengembang pemeliharaan dapat memahami struktur data dan hubungannya lebih cepat, memfasilitasi pembaruan dan integrasi yang lebih efisien.",
-          "<strong>Sistem manajemen konten</strong>: Penulis konten dan administrator situs yang menggunakan platform CMS dengan penyimpanan XML atau pemrosesan template dapat menggunakan <strong>alat pemformatan sintaks XML</strong> untuk menyusun template konten atau file ekspor dengan benar. Ini memastikan konsistensi format konten dan membantu mencegah kesalahan rendering yang disebabkan oleh XML yang tidak diformat dengan benar saat konten diterbitkan di berbagai saluran atau platform."
-        ]
-      }
-    },
-    faq: {
-      title: "Pertanyaan Umum tentang Format XML",
-      items: [
-        {
-          question: "Apa perbedaan antara merapikan dan mengompresi XML?",
-          answer: "Merapikan XML adalah mengubah XML yang terkompresi atau tidak diformat dengan baik menjadi format terstruktur yang mudah dibaca manusia, dengan menambahkan indentasi yang tepat, baris baru, dan spasi yang konsisten. Proses ini membuat dokumen lebih mudah dibaca, dipahami, dan diedit, yang sangat berharga untuk pengembangan, debugging, atau dokumentasi. Mengompresi XML adalah kebalikannya - menghapus semua spasi yang tidak perlu, baris baru, dan indentasi, membuat versi dokumen yang ringkas dan satu baris. Kompresi mengurangi ukuran file, yang dapat meningkatkan kecepatan transfer dan mengurangi kebutuhan penyimpanan, ideal untuk lingkungan produksi di mana XML hanya diproses oleh mesin. Alat pemformatan XML kami menyediakan kedua opsi ini, memungkinkan Anda beralih antara format yang mudah dibaca dan yang ringkas sesuai kebutuhan spesifik. Meskipun XML yang dirapikan mungkin meningkatkan ukuran file sebesar 30-50%, manfaat keterbacaan selama fase pengembangan biasanya lebih penting daripada pertimbangan ukuran."
-        },
-        {
-          question: "Bagaimana validasi XML bekerja dan kesalahan apa yang dapat dideteksi?",
-          answer: "Validasi XML dalam alat kami bekerja dengan mengurai struktur XML dan memeriksanya terhadap aturan XML yang diformat dengan baik. Ini memverifikasi bahwa dokumen mengikuti persyaratan sintaks dasar seperti: elemen yang bersarang dengan benar (setiap tag pembuka harus memiliki tag penutup yang sesuai, dalam urutan yang benar); atribut yang terbentuk dengan benar (semua nilai atribut harus diberi tanda kutip); penggunaan entitas yang benar (karakter khusus harus di-escape dengan benar); dan keberadaan elemen root tunggal. Kesalahan umum yang terdeteksi termasuk: tag yang tidak ditutup, tag pembuka dan penutup yang tidak cocok, tanda kutip yang hilang di sekitar nilai atribut, penempatan elemen yang tidak tepat, penggunaan karakter ilegal, dan atribut duplikat dalam elemen yang sama. Ketika validasi gagal, alat pemformatan XML kami memberikan pesan kesalahan spesifik yang menunjukkan sifat masalah dan lokasinya dalam dokumen (menampilkan nomor baris dan kolom jika memungkinkan), membantu Anda mengidentifikasi dan memperbaiki masalah sintaks dengan cepat. Validator berfokus pada kebenaran struktural, bukan validasi terhadap DTD atau skema XML tertentu, membuatnya berlaku secara universal untuk pemeriksaan sintaks XML dasar."
-        },
-        {
-          question: "Bisakah alat ini menangani file XML besar?",
-          answer: "Ya, alat pemformatan XML kami dapat menangani file XML berukuran sedang (hingga beberapa megabyte) langsung di browser. Untuk kinerja terbaik, alat ini menggunakan algoritma penguraian yang efisien dan teknik manipulasi DOM untuk memproses XML tanpa memakan banyak memori. Namun, ada batasan praktis berdasarkan kemampuan browser dan sumber daya sistem yang tersedia. Untuk file XML yang sangat besar (puluhan atau ratusan megabyte), Anda mungkin mengalami beberapa penurunan kinerja, atau dalam kasus ekstrim, mencapai batasan browser. Untuk file besar seperti itu, kami sarankan memprosesnya dalam potongan yang lebih kecil, atau menggunakan opsi kompresi terlebih dahulu untuk mengurangi penggunaan memori selama pemrosesan. Alat ini dioptimalkan untuk menangani kasus penggunaan XML umum dengan efisien, termasuk file konfigurasi, respons API, sumber data, dan sebagian besar muatan layanan web. Jika Anda sering bekerja dengan set data XML yang sangat besar, pertimbangkan untuk menggunakan alat pengeditan XML desktop khusus yang dirancang untuk menangani file besar dengan manajemen memori yang dioptimalkan."
-        },
-        {
-          question: "Apakah memformat XML mengubah fungsionalitas atau cara pemrosesannya?",
-          answer: "Tidak, pemformatan XML yang benar tidak mengubah makna fungsional XML atau cara aplikasi memprosesnya. Parser XML mengabaikan spasi tambahan dan baris baru di antara elemen, hanya berfokus pada data dan struktur aktual. Alat pemformatan kami mempertahankan semua komponen dasar: nama elemen, atribut, nilai, dan hubungan hierarkisnya tetap persis sama. Satu-satunya perubahan adalah dalam penampilan - menambah atau menghapus spasi, baris baru, dan indentasi. Prinsip inilah yang memungkinkan dokumen XML yang sama direpresentasikan dalam bentuk yang dirapikan dan dikompresi, sementara tetap setara secara fungsional. Namun, penting untuk dicatat bahwa spasi dalam node teks (konten aktual di antara tag) dipertahankan, karena ini mungkin penting untuk aplikasi Anda. Misalnya, dalam XML yang digunakan untuk pemformatan dokumen atau teks, spasi antar kata dalam node konten mungkin penting secara semantik. Anda dapat yakin bahwa operasi pemformatan kami dirancang untuk mempertahankan integritas semantik XML sambil meningkatkan presentasi visualnya untuk pembaca manusia."
-        },
-        {
-          question: "Bagaimana cara menyesuaikan gaya pemformatan untuk dokumen XML saya?",
-          answer: "Alat pemformatan XML kami menyediakan beberapa opsi penyesuaian untuk mencocokkan gaya pengkodean yang Anda sukai atau kebutuhan proyek. Anda dapat menyesuaikan ukuran indentasi dengan memilih 2 spasi, 4 spasi, atau tab, memungkinkan Anda selaras dengan standar pengkodean tim atau preferensi pribadi. Untuk bantuan visual selama pengeditan, Anda dapat mengaktifkan atau menonaktifkan tampilan nomor baris, yang sangat berguna saat bekerja dengan dokumen yang lebih besar atau ketika perlu merujuk ke lokasi spesifik dalam struktur XML. Alat ini akan menyimpan pengaturan terbaru Anda selama sesi untuk kenyamanan. Meskipun alat pemformatan saat ini tidak mendukung opsi gaya yang lebih canggih seperti pengurutan atribut khusus atau pemformatan tag khusus, alat ini mengikuti praktik terbaik pemformatan XML yang diterima secara luas, cocok untuk sebagian besar kasus penggunaan. Pengaturan default menciptakan struktur yang bersih dan konsisten, menyeimbangkan keterbacaan dan penggunaan ruang yang efektif, membuat dokumen XML Anda mudah diakses oleh pemangku kepentingan teknis dan non-teknis."
-        }
-      ]
-    },
-    guide: {
-      title: "Panduan Langkah demi Langkah untuk Menggunakan Alat Format XML",
-      steps: [
-        "<strong>Masukkan konten XML Anda</strong>: Pertama, masukkan data XML Anda ke area input. Anda dapat langsung mengetik atau menempelkan kode XML di bidang teks. Jika Anda baru menggunakan alat ini atau ingin bereksperimen, klik salah satu tombol contoh di bawah area input untuk memuat contoh struktur XML dengan berbagai tingkat kompleksitas.",
-        "<strong>Pilih jenis operasi</strong>: Pilih apakah Anda ingin merapikan atau mengompresi XML Anda dengan memilih opsi yang sesuai di bagian 'Jenis Operasi'. Merapikan akan memperluas XML Anda, menambahkan indentasi dan baris baru yang tepat untuk meningkatkan keterbacaan, sementara mengompres akan menghapus spasi yang tidak perlu untuk memperkecil ukuran file.",
-        "<strong>Sesuaikan opsi pemformatan</strong>: Jika Anda memilih untuk merapikan XML, Anda dapat menyesuaikan gaya indentasi dengan memilih opsi yang Anda sukai dari dropdown 'Pengaturan Indentasi'. Pilih 2 spasi, 4 spasi, atau tab, tergantung pada standar pengkodean tim atau preferensi pribadi Anda. Anda juga dapat mengaktifkan opsi 'Tampilkan Nomor Baris' untuk menampilkan atau menyembunyikan nomor baris di tampilan output.",
-        "<strong>Proses XML Anda</strong>: Klik tombol 'Rapikan' atau 'Kompres' (tergantung pada operasi yang Anda pilih) untuk memformat XML Anda. Alat akan memproses input Anda, memeriksa kesalahan sintaks, dan menampilkan hasil pemformatan di area output di bawah. Jika ada kesalahan sintaks XML, pesan kesalahan akan muncul, membantu Anda mengidentifikasi dan memperbaiki masalah.",
-        "<strong>Tinjau output yang diformat</strong>: Setelah pemrosesan selesai, periksa XML yang diformat di area hasil. Jika nomor baris diaktifkan (jika dipilih), Anda dapat dengan mudah merujuk ke bagian spesifik dokumen. Informasi jumlah karakter dan baris yang ditampilkan di bawah output membantu Anda melacak ukuran dan kompleksitas dokumen.",
-        "<strong>Salin atau edit lebih lanjut</strong>: Jika Anda puas dengan hasilnya, klik tombol 'Salin Kode' untuk menyalin XML yang diformat ke clipboard, untuk digunakan dalam aplikasi, dokumentasi, atau pengeditan lebih lanjut. Jika Anda perlu menyesuaikan input dan memproses ulang, Anda dapat memodifikasi XML asli dan mengklik tombol pemformatan lagi.",
-        "<strong>Bersihkan dan mulai baru</strong>: Ketika Anda siap untuk memproses dokumen XML yang berbeda, klik tombol 'Bersihkan' untuk mengatur ulang area input dan output. Kemudian Anda dapat mulai dengan konten XML baru atau memuat contoh lain untuk melanjutkan menggunakan alat pemformatan."
-      ]
-    },
-    conclusion: "Alat Format XML, sebagai alat yang sangat diperlukan dalam kotak peralatan pengembang modern, menjembatani kesenjangan antara representasi XML yang efisien untuk mesin dan kode yang mudah dibaca manusia. Dengan mengubah XML padat yang tidak diformat menjadi dokumen terstruktur yang jelas - dan sebaliknya - alat ini secara signifikan mengurangi waktu dan usaha yang diperlukan untuk menangani data XML di berbagai aplikasi dan industri. Baik mengembangkan layanan web, mengelola konfigurasi sistem, memproses sumber data, atau memelihara sistem warisan, XML yang diformat dengan benar meningkatkan kualitas kode, mengurangi kesalahan, dan meningkatkan kolaborasi antara anggota tim. Karena XML terus menjadi format dasar untuk pertukaran data dan konfigurasi di lingkungan perusahaan, memiliki akses ke alat pemformatan yang andal tetap penting untuk alur kerja pengembangan dan pemeliharaan sistem yang efektif. Alat pemformatan XML online ini menghilangkan kebutuhan akan aplikasi desktop khusus, sambil menyediakan fungsionalitas tingkat profesional yang dapat diakses dari browser web modern mana pun."
   }
-}
+};

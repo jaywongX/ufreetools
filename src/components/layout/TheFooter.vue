@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-auto">
-    <div class="py-6 px-4">
+    <div class="py-6 px-4 h-[130px]">
       
       <div class="flex flex-col md:flex-row justify-between items-center">
         <!-- 合作伙伴/资源链接 -->

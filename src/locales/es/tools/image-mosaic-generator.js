@@ -1,12 +1,14 @@
 export default {
   name: 'Generador de Mosaicos de Imagen',
   description: 'Crea arte de mosaico combinando pequeñas imágenes en una imagen más grande',
+
   upload: {
     title: 'Subir Imagen Principal',
     dropzone: 'Arrastra y suelta tu imagen principal aquí o haz clic para navegar',
     maxSize: 'Tamaño máximo del archivo: 15MB',
     supportedFormats: 'Formatos compatibles: JPG, PNG, WEBP'
   },
+
   tiles: {
     title: 'Imágenes de Mosaico',
     uploadTiles: 'Subir Imágenes de Mosaico',
@@ -22,6 +24,7 @@ export default {
     animals: 'Animales',
     clearAll: 'Limpiar Todas las Imágenes'
   },
+
   settings: {
     title: 'Configuración del Mosaico',
     tileSize: 'Tamaño del Mosaico',
@@ -59,6 +62,7 @@ export default {
     random: 'Variación Aleatoria',
     shuffle: 'Barajar Mosaicos'
   },
+
   advanced: {
     title: 'Opciones Avanzadas',
     algorithm: 'Algoritmo de Coincidencia',
@@ -80,6 +84,7 @@ export default {
     borderColor: 'Color del Borde',
     backgroundColor: 'Color de Fondo'
   },
+
   output: {
     fileName: 'Nombre del Archivo',
     title: 'Salida',
@@ -101,6 +106,7 @@ export default {
     pleaseSelectImage: 'Por favor selecciona una imagen',
     pleaseSelectImageAndAdjustSettings: 'Por favor selecciona una imagen y ajusta la configuración'
   },
+
   actions: {
     generate: 'Generar Mosaico',
     regenerate: 'Regenerar',
@@ -110,6 +116,7 @@ export default {
     saveSettings: 'Guardar Configuración',
     loadSettings: 'Cargar Configuración'
   },
+
   messages: {
     generating: 'Generando mosaico... Esto puede tomar algo de tiempo.',
     generationComplete: '¡Generación del mosaico exitosa!',
@@ -123,113 +130,5 @@ export default {
     faceDetectionFailed: 'Fallo al detectar rostros',
     reset: 'La configuración ha sido restablecida',
     error: 'Error: {message}'
-  },
-  article: {
-    title: "Guía Completa del Generador de Mosaicos de Imagen - Crea Mosaicos Fotográficos Impresionantes",
-    intro: {
-      title: "¿Qué es un Generador de Mosaicos de Imagen y Por Qué lo Necesitas?",
-      p1: "<b>Los generadores de mosaicos de imagen</b> son poderosas herramientas digitales que transforman fotos ordinarias en composiciones artísticas extraordinarias combinando múltiples imágenes pequeñas en una imagen más grande cohesiva. Nuestro generador de mosaicos en línea gratuito permite a los usuarios crear impresionantes mosaicos visuales sin necesidad de instalar software especializado o tener conocimientos técnicos avanzados. Al organizar inteligentemente numerosas imágenes pequeñas (mosaicos) que coinciden con las características de color y patrón de diferentes regiones, el generador produce una imagen compuesta más grande que revela una nueva dimensión artística cuando se ve desde lejos.",
-      p2: "<b>Crear arte de mosaico fotográfico</b> tradicionalmente ha requerido habilidades profesionales de diseño gráfico o software especializado costoso. Nuestra herramienta web basada en mosaicos democratiza esta forma de arte, permitiendo a fotógrafos, artistas digitales, educadores y usuarios casuales convertir sus imágenes en composiciones de mosaico fascinantes con solo unos pocos clics. La herramienta ofrece varias opciones de personalización incluyendo tamaño de mosaico, selección de forma, intensidad de coincidencia de color y diferentes estilos de mosaico, dándole poder a los usuarios para lograr precisamente el efecto estético deseado.",
-      p3: "<b>Los generadores de imágenes de mosaico en línea</b> están revolucionando cómo las personas abordan la creatividad visual, permitiendo la transformación de fotografías ordinarias en obras de arte que llaman la atención. Ya sea que desees crear un regalo único, desarrollar materiales promocionales destacados o simplemente explorar un nuevo medio artístico, nuestro generador proporciona el equilibrio perfecto entre funciones potentes y controles fáciles de usar. Esta guía completa te explicará todo lo que necesitas saber sobre la creación de mosaicos de imagen cautivadores usando nuestra innovadora herramienta en línea."
-    },
-    useCases: {
-      title: "Aplicaciones Prácticas del Generador de Mosaicos de Imagen",
-      case1: "<b>Creación de Regalos Personalizados</b>: Los generadores de mosaicos ofrecen una forma única de transformar fotos significativas en regalos personalizados con impacto emocional. Los retratos familiares pueden convertirse en obras de arte de mosaico usando pequeñas fotos de eventos familiares como mosaicos, creando una pieza de memoria multi-capas que revela nuevos detalles al inspeccionarla de cerca. Los fotógrafos de bodas usan la generación de mosaicos para crear regalos conmemorativos que incorporan cientos de fotos de recepción en un solo retrato de la pareja. Estas creaciones de mosaico personalizadas hacen regalos reflexivos para vacaciones, cumpleaños o aniversarios que sobresalen de los regalos fotográficos convencionales al integrar múltiples recuerdos en una sola pieza artística.",
-      case2: "<b>Materiales de Marketing y Promoción</b>: Las empresas aprovechan la tecnología de mosaico fotográfico para crear contenido visual llamativo que capte la atención del público en múltiples puntos de contacto. Los gerentes de marca crean imágenes de productos compuestas de fotos de clientes, mostrando simultáneamente el producto y su comunidad de usuarios. Los organizadores de eventos generan carteles promocionales donde la imagen principal está compuesta de fotos de eventos anteriores, creando una conexión visual inmediata con asistentes pasados. Estas aplicaciones de marketing de imágenes de mosaico son particularmente efectivas en plataformas sociales donde el contenido visual distintivo impulsa mayores tasas de compromiso y comportamiento de compartir.",
-      case3: "<b>Proyectos Educativos y Actividades en Clase</b>: Profesores e instituciones educativas utilizan herramientas de generación de mosaicos para crear experiencias de aprendizaje atractivas en varias materias. Los docentes de historia crean retratos de figuras históricas compuestos de imágenes relevantes de eventos históricos, combinando aprendizaje visual con contexto histórico. Los profesores de ciencia desarrollan exhibiciones educativas donde las imágenes de animales o plantas están compuestas de fotografías que muestran sus hábitats, comportamientos o estructuras microscópicas. Estos mosaicos educativos sirven como poderosos recursos visuales que mejoran la retención de información mientras desarrollan en los estudiantes una apreciación por la interconexión de conceptos dentro de un área temática.",
-      case4: "<b>Instalaciones Artísticas y Exposiciones</b>: Tanto artistas profesionales como aficionados usan técnicas de generación de mosaicos para crear instalaciones a gran escala y piezas expositoras convincentes. Artistas de galerías crean retratos compuestos de imágenes más pequeñas relacionadas temáticamente que invitan a los espectadores a experimentar la obra de arte de manera diferente a distintas distancias de observación. Proyectos artísticos comunitarios recolectan fotografías de residentes locales para crear instalaciones de mosaico público que representan la identidad o valores compartidos de la comunidad. Estas aplicaciones demuestran cómo las herramientas digitales de mosaico han expandido las posibilidades para el arte participativo y la narración visual multi-capas en espacios artísticos contemporáneos.",
-      case5: "<b>Contenido en Redes Sociales y Narración Digital</b>: Los creadores de contenido y gestores de redes sociales utilizan la generación de mosaicos para desarrollar publicaciones visualmente distintivas que capten atención en feeds saturados. Influencers crean imágenes de marca personal compuestas de fotos de productos, estilo de vida o viajes que representan sus temas de contenido, resumiendo efectivamente su marca personal en una sola imagen. Organizaciones sin fines de lucro desarrollan imágenes de concienciación social donde símbolos icónicos están compuestos de fotos que representan su impacto o misión. Estas aplicaciones demuestran la efectividad de las imágenes de mosaico para condensar narrativas complejas o identidades de marca en activos visuales individuales compartibles que impulsan compromiso y reconocimiento."
-    },
-    tutorial: {
-      title: "Cómo Crear un Mosaico de Imagen Usando Nuestra Herramienta",
-      intro: "Crear mosaicos fotográficos impresionantes es sencillo con nuestra herramienta amigable. Sigue estos simples pasos para transformar tus imágenes en arte de mosaico cautivador:",
-      step1: {
-        title: "Paso 1: Sube Tu Imagen Principal",
-        description: "Comienza haciendo clic en el botón <b>\"Subir Imagen Principal\"</b> en la parte superior de la interfaz de la herramienta. Selecciona la imagen que servirá como composición general de tu mosaico—esto podría ser un retrato, paisaje, logotipo u cualquier imagen con elementos visuales distintivos. La herramienta admite formatos comunes incluyendo archivos JPG, PNG y WEBP hasta 15MB de tamaño. Para mejores resultados, elige una imagen con buen contraste y características reconocibles cuando se ven a diferentes escalas. Después de cargarla, tu imagen principal aparecerá en el panel de vista previa, y estarás listo para pasar al siguiente paso."
-      },
-      step2: {
-        title: "Paso 2: Añade Imágenes de Mosaico",
-        description: "A continuación, deberás proporcionar las <b>imágenes de mosaico</b> que formarán tu composición. Haz clic en \"Subir Imágenes de Mosaico\" para seleccionar múltiples imágenes desde tu dispositivo, o arrastra y suelta directamente en el área designada. Alternativamente, puedes usar uno de nuestros conjuntos de muestra seleccionando desde las opciones \"Conjuntos de Mosaicos de Muestra\" debajo del área de carga. Para mosaicos personalizados, considera usar imágenes relacionadas (como fotos familiares, de viaje o colecciones temáticas). Cuantas más imágenes de mosaico proporciones, más detallado e interesante visualmente será tu mosaico final. Nuestra herramienta acepta hasta 200 imágenes de mosaico para óptima variedad y precisión en el emparejamiento."
-      },
-      step3: {
-        title: "Paso 3: Ajusta Configuración del Mosaico",
-        description: "Una vez cargada tu imagen principal y las imágenes de mosaico, es momento de <b>personalizar la configuración de tu mosaico</b>. Usa los controles en el panel de configuración para ajustar:  <ul><li><b>Tamaño del Mosaico</b>: Elige entre pequeño (más detalle pero requiere más imágenes), mediano o grande (menos detalle pero funciona con menos mosaicos)</li><li><b>Forma del Mosaico</b>: Selecciona cuadrado, círculo u otras formas geométricas para tus piezas de mosaico</li><li><b>Coincidencia de Color</b>: Ajusta la intensidad del emparejamiento de color entre tus mosaicos y la imagen principal</li><li><b>Modo de Aplicación</b>: Elige aplicar el mosaico a toda la imagen o seleccionar regiones específicas</li></ul> Experimenta con diferentes combinaciones de estas configuraciones para lograr el efecto estético deseado. La vista previa en tiempo real se actualizará a medida que ajustes la configuración, permitiéndote visualizar los cambios antes de generar el mosaico final."
-      },
-      step4: {
-        title: "Paso 4: Genera y Descarga Tu Mosaico",
-        description: "Cuando estés satisfecho con tu configuración, haz clic en el botón <b>\"Generar Mosaico\"</b> para crear tu composición. El proceso de generación puede tomar algunos momentos dependiendo de la complejidad de tu configuración y número de imágenes de mosaico. Una vez completado el procesamiento, tu mosaico se mostrará en el panel de salida donde podrás examinar los detalles. ¡Tómate tiempo para apreciar cómo las imágenes individuales se combinan para formar la imagen más grande! Si deseas hacer ajustes, simplemente modifica tu configuración y haz clic en \"Regenerar.\" Cuando estés contento con el resultado final, haz clic en \"Descargar Mosaico\" para guardar tu creación en tu dispositivo. Puedes elegir entre formatos JPG y PNG, con opciones para diferentes salidas de resolución dependiendo de tus necesidades."
-      }
-    },
-    mosaicTypes: {
-      title: "Entendiendo los Diferentes Tipos de Mosaicos de Imagen",
-      intro: "Los mosaicos de imagen vienen en varias formas distintas, cada una con cualidades estéticas y enfoques técnicos únicos:",
-      photomosaic: {
-        title: "Photomosaico (Mosaico de Fotos)",
-        description: "<b>Los photomosaicos son la forma clásica</b> del arte de mosaico de imagen, donde una colección de fotografías sirve como los mosaicos en una composición más grande. Esta técnica analiza las características de color de cada región en la imagen principal y la reemplaza con una pequeña fotografía cuyo color general coincida con esa región. Cuando se ve desde lejos, la disposición de estos mosaicos fotográficos crea la ilusión de la imagen principal, mientras que una inspección más cercana revela el contenido detallado de cada foto individual. Nuestra herramienta destaca en crear auténticos photomosaicos al emparejar e integrar inteligentemente tu colección de imágenes de mosaico para representar mejor la imagen objetivo. Este estilo es particularmente efectivo para proyectos conmemorativos, eventos y situaciones donde el contenido de los mosaicos individuales tiene relevancia significativa respecto a la imagen principal."
-      },
-      pixelated: {
-        title: "Mosaicos Pixelados",
-        description: "<b>Los mosaicos pixelados transforman imágenes</b> en composiciones basadas en rejillas donde cada celda contiene un color sólido derivado del área correspondiente de la imagen original. A diferencia de los photomosaicos que usan fotografías reales como mosaicos, los mosaicos pixelados usan formas geométricas simples (típicamente cuadrados) rellenos con colores sólidos. Este estilo crea un característico aspecto retro reminiscente de la imagery digital temprana y arte pixelado. Nuestra herramienta de generación de mosaicos puede crear mosaicos pixelados ajustando el tamaño del mosaico y configuración de coincidencia de color para enfatizar la estructura tipo rejilla. Este estilo de mosaico funciona particularmente bien para logotipos, retratos simples e imágenes con fuertes contrastes. Los mosaicos pixelados requieren menos potencia de procesamiento y menos recursos de mosaico que los photomosaicos, haciéndolos una opción rápida para crear imágenes estilizadas distintivas."
-      },
-      geometric: {
-        title: "Mosaicos de Patrón Geométrico",
-        description: "<b>Los mosaicos de patrón geométrico</b> llevan el concepto de mosaico más allá de los cuadrados y rectángulos simples al incorporar varias formas poligonales como mosaicos. Estas pueden incluir triángulos, hexágonos, círculos y otras formas geométricas arregladas para representar colectivamente la imagen principal. Cada mosaico geométrico está coloreado basándose en el área correspondiente de la imagen fuente, creando un característico estilo contemporáneo que equilibra abstracción con reconocibilidad. Nuestra herramienta de generación de mosaicos ofrece varias opciones de forma de mosaico, permitiendo a los usuarios crear interpretaciones modernas del arte de mosaico tradicional. Este estilo funciona excepcionalmente bien para proyectos artísticos, trabajo de diseño y situaciones donde quieres mantener la reconocibilidad de la imagen principal mientras añades una capa estilística distintiva. Los mosaicos geométricos ofrecen un excelente equilibrio entre interés visual y fidelidad de imagen."
-      }
-    },
-    faq: {
-      title: "Preguntas Frecuentes Sobre la Generación de Mosaicos de Imagen",
-      q1: "¿Cuántas imágenes de mosaico necesito para un mosaico de buena calidad?",
-      a1: "<b>El número de imágenes de mosaico</b> requerido depende de varios factores incluyendo el tamaño de mosaico deseado, las dimensiones de tu imagen principal y tu tolerancia para repetición de mosaico. Como orientación general: para tamaños de mosaico pequeños (mosaicos altamente detallados), recomendamos al menos 100-200 imágenes de mosaico únicas para asegurar variedad adecuada y precisión en el emparejamiento. Para tamaños de mosaico medianos, 50-100 imágenes únicas deben dar buenos resultados. Para tamaños de mosaico grandes o efectos artísticos donde el emparejamiento exacto es menos crítico, incluso 20-30 imágenes diversas pueden crear resultados interesantes. Nuestra herramienta ofrece la opción de permitir reutilización de mosaicos, lo cual puede ayudar cuando trabajas con colecciones limitadas. Sin embargo, incluir más mosaicos únicos siempre mejorará la riqueza visual de tu mosaico final, especialmente cuando se inspecciona de cerca. Para resultados de calidad profesional o impresión en formato grande, sugerimos usar tantas imágenes de mosaico únicas como sea posible—idealmente varias centenas para las composiciones más detalladas.",
-      q2: "¿Funcionará el generador de mosaicos de imagen con cualquier tipo de imagen principal?",
-      a2: "<b>Nuestro generador de mosaicos funciona con la mayoría de los tipos de imagen</b>, pero ciertas características hacen que algunas imágenes sean más adecuadas que otras. Las imágenes con sujetos claros, buen contraste y características reconocibles típicamente producen los mosaicos más exitosos. Los retratos, paisajes con elementos distintivos, logotipos e imágenes con composiciones simples generalmente funcionan extremadamente bien. Las imágenes que pueden ser desafiantes incluyen aquellas con gradientes muy sutiles, detalles extremadamente finos que necesitan preservarse, o fotografías de bajo contraste donde las diferencias entre áreas son mínimas. Para mejores resultados, recomendamos usar imágenes fuente de alta resolución (al menos 1000×1000 píxeles) con buena iluminación y contraste. Si tu imagen original carece de contraste o claridad, considera mejorarla con edición básica antes de subirla. Además, las imágenes con significado emocional o contextual fuerte a menudo hacen los mosaicos más impactantes, independientemente de sus características técnicas—especialmente cuando las imágenes de mosaico se relacionan temáticamente con el tema principal.",
-      q3: "¿Cómo puedo crear un mosaico donde las imágenes de mosaico estén relacionadas con el tema de la imagen principal?",
-      a3: "<b>Crear mosaicos cohesionados temáticamente</b> donde los mosaicos se relacionen conceptualmente con la imagen principal crea composiciones multi-capas poderosas. Para lograr este efecto: Primero, identifica claramente el tema o sujeto de tu imagen principal. Luego, cura una colección de imágenes de mosaico que se relacionen conceptualmente con este tema—por ejemplo, si creas un retrato de una mascota, recolecta fotos de juguetes, golosinas y momentos memorables con tu mascota como mosaicos. Nuestra herramienta permite subir colecciones personalizadas de mosaico en lugar de usar muestras aleatorias, habilitando completo control temático. Considera organizar tus imágenes de mosaico en carpetas por predominancia de color para ayudar con el emparejamiento visual mientras mantienes relevancia temática. Para eventos o tributos, las redes sociales pueden ser una excelente fuente de imágenes temáticamente relevantes—podrías solicitar contribuciones de amigos o familiares. Recuerda que la relación contextual entre tu imagen principal y los mosaicos crea un nivel más profundo de involucramiento con los espectadores que descubren estas conexiones al inspeccionarlas de cerca.",
-      q4: "¿Cuál es la diferencia entre los algoritmos de coincidencia de color y cuándo debería usar cada uno?",
-      a4: "<b>Nuestra herramienta de generación de mosaicos ofrece varios algoritmos</b> que determinan cómo se seleccionan las imágenes de mosaico para representar diferentes áreas de tu imagen principal. El algoritmo de Color Promedio compara el color general promedio de cada mosaico con la región objetivo, creando mosaicos balanceados y generalmente precisos ideales para la mayoría de los proyectos. El algoritmo de Color Dominante prioriza el color más prominente en cada mosaico en lugar del promedio, lo cual puede crear mosaicos más vibrantes que mantienen una fuerte fidelidad de color a la original—excelente para sujetos coloridos con áreas distintivas. El algoritmo de Histograma de Color realiza un análisis sofisticado de distribución de colores en cada mosaico, ofreciendo la coincidencia de color más precisa pero requiriendo más tiempo de procesamiento—ideal para proyectos detallados donde la reproducción precisa de color es crítica. El algoritmo de Coincidencia de Patrón va más allá del color considerando texturas y patrones dentro de los mosaicos, creando mosaicos que preservan más detalle de la imagen principal—ideal para retratos o imágenes donde mantener características reconocibles es importante. Recomendamos experimentar con diferentes algoritmos para tu combinación específica de imagen, ya que los resultados varían dependiendo de tu colección de mosaicos y características de la imagen principal.",
-      q5: "¿Puedo imprimir mi mosaico terminado en formato grande para exhibición?",
-      a5: "<b>La impresión de alta calidad en formato grande</b> de tus creaciones de mosaico definitivamente es posible con preparación adecuada. Nuestra herramienta ofrece opciones de exportación de alta resolución específicamente diseñadas para impresión. Al prepararte para imprimir: Selecciona la opción \"Alta Resolución\" al descargar tu mosaico, lo cual aumenta la resolución de salida para mantener calidad a tamaños más grandes. Elige el formato PNG para calidad sin pérdida si tu mosaico contiene texto o bordes afilados, o JPG para mosaicos fotográficos donde el tamaño del archivo pueda ser una preocupación. Para servicios de impresión profesional, la mayoría requiere 150-300 DPI (puntos por pulgada) para óptima calidad—considera la distancia de visualización al determinar la resolución necesaria (distancias de visualización más grandes requieren menos DPI). Para formatos extremadamente grandes como murales o piezas de exhibición, contacta al servicio de impresión con anticipación para discutir requisitos técnicos. Recuerda que la calidad de tus imágenes originales afecta los resultados de impresión—si planeas para impresión en formato grande desde el principio, usa la imagen principal y las imágenes de mosaico de mayor resolución disponibles para ti. Muchos usuarios han creado exitosamente mosaicos impresos impresionantes para decoración hogareña, fondos de eventos y exhibiciones en galerías usando nuestra herramienta."
-    },
-    relatedTools: {
-      title: "Explora Herramientas Relacionadas de Mejora de Imagen",
-      description: "Mejora tu flujo de trabajo de imagen digital con estas herramientas complementarias:",
-      tool1: {
-        name: "Filtros de Imagen",
-        url: "https://www.ufreetools.com/tool/image-filters",
-        description: "Aplica filtros y efectos artísticos para mejorar tus imágenes antes o después de crear mosaicos."
-      },
-      tool2: {
-        name: "Visor EXIF de Imagen",
-        url: "https://www.ufreetools.com/tool/image-exif-viewer",
-        description: "Visualiza y analiza metadatos en tus fotos antes y después de aplicar filtros."
-      },
-      tool3: {
-        name: "Redimensionador por Lotes de Imagen",
-        url: "https://www.ufreetools.com/tool/image-batch-resizer",
-        description: "Redimensiona múltiples imágenes al mismo tiempo para ahorrar tiempo y mantener dimensiones consistentes."
-      },
-      tool4: {
-        name: "Extractor de Color de Imagen",
-        url: "https://www.ufreetools.com/tool/image-color-extractor",
-        description: "Analiza y extrae paletas de color de imágenes para entender mejor la coincidencia de color para mosaicos."
-      }
-    },
-    resources: {
-      title: "Recursos Profesionales para Arte de Mosaico y Procesamiento Digital de Imagen",
-      resource1: {
-        name: "El Origen, Desarrollo y Aplicación del Arte de Mosaico",
-        url: "https://www.fanwen118.com/info_73/fw_7817664.html",
-        description: "Una introducción detallada al origen, desarrollo y aplicación del arte de mosaico en arquitectura y decoración[^7^]."
-      },
-      resource2: {
-        name: "Generación de Imágenes de Mosaico en Línea Usando Imágenes Temáticamente Relacionadas",
-        url: "http://www.patent.com/CN104091357A",
-        description: "Introduce un método para generar imágenes de mosaico en línea usando imágenes temáticamente relacionadas, incluyendo segmentación de imagen, extracción de características y pasos de emparejamiento [[2]]."
-      },
-      resource3: {
-        name: "ACM Transactions on Graphics: Mosaicos de Imagen",
-        url: "https://dl.acm.org/doi/10.1145/3306346.3323017",
-        description: "Un recurso técnico sobre algoritmos y técnicas avanzadas para mosaicos digitales de imagen."
-      }
-    }
   }
-}
+};

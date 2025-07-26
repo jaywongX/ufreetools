@@ -1,157 +1,100 @@
 export default {
-    name: 'Farbverlaufs-Generator',
-    description: 'Erstellen und passen Sie schöne CSS-Farbverläufe an, mit Live-Vorschau und Code zum Kopieren für Ihr Projekt',
-    
-    gradientTypes: {
-      title: 'Farbverlaufs-Typ',
-      linear: 'Linearer Verlauf',
-      radial: 'Radialer Verlauf',
-      conic: 'Konischer Verlauf'
-    },
-    
-    controls: {
-      title: 'Farbsteuerung',
-      addColor: 'Farbe hinzufügen',
-      color: 'Farbe',
-      position: 'Position (%)',
-      delete: 'Farbe entfernen',
-      angle: 'Winkel',
-      degrees: 'Grad',
-      shape: 'Form',
-      circle: 'Kreis',
-      ellipse: 'Ellipse',
-      positionX: 'Position X (%)',
-      positionY: 'Position Y (%)',
-      size: 'Größe',
-      closestSide: 'Nächste Seite',
-      closestCorner: 'Nächste Ecke',
-      farthestSide: 'Entfernteste Seite',
-      farthestCorner: 'Entfernteste Ecke',
-      fromAngle: 'Startwinkel'
-    },
-    
-    output: {
-      title: 'CSS-Code',
-      copyCode: 'Code kopieren',
-      preview: 'Vorschaubereich',
-      copied: 'CSS-Code in die Zwischenablage kopiert!',
-      download: 'PNG herunterladen'
-    },
-    
-    presets: {
-      title: 'Farbverlaufs-Voreinstellungen',
-      apply: 'Voreinstellung anwenden',
-      sunnyMorning: 'Sonniger Morgen',
-      winterNeva: 'Winterliche Newa',
-      rareWind: 'Seltener Wind',
-      deepBlue: 'Tiefblau',
-      perfect: 'Perfektes Weiß',
-      cloudyKnoxville: 'Bewölktes Knoxville',
-      greenBeach: 'Grüner Strand',
-      plumBath: 'Pflaumenbad',
-      everlasting: 'Ewiger Himmel'
-    },
-  
-    accessibility: {
-      colorPicker: 'Farbauswahl',
-      deleteSwatch: 'Farbstopp entfernen',
-      dragToReposition: 'Zum Positionieren ziehen'
-    },
-    
-    actions: {
-      reset: 'Zurücksetzen',
-      generateCSS: 'CSS generieren',
-      clickToCopy: 'Zum Kopieren klicken',
-      completeEdit: 'Bearbeitung abschließen'
-    },
-    
-    messages: {
-      copied: 'CSS-Code in die Zwischenablage kopiert!',
-      noColors: 'Mindestens zwei Farben für einen Verlauf benötigt',
-      maxColors: 'Maximale Anzahl an Farbstopps erreicht (10)',
-      useKeyboard: 'Entf-Taste zum Löschen ausgewählter Farbstopps',
-      invalidHex: 'Ungültiger Hex-Farbcode',
-      downloadError: 'PNG-Download fehlgeschlagen, bitte erneut versuchen',
-      preview: 'Vorschau'
-    },
-    
-    anglePresets: {
-      top: 'Oben',
-      topRight: 'Oben rechts',
-      right: 'Rechts',
-      bottomRight: 'Unten rechts',
-      bottom: 'Unten',
-      bottomLeft: 'Unten links',
-      left: 'Links',
-      topLeft: 'Oben links'
-    },
-  
-    radialShapes: {
-      circle: 'Kreis',
-      ellipse: 'Ellipse'
-    },
-  
-    radialSizes: {
-      farthestCorner: 'Entfernteste Ecke',
-      closestCorner: 'Nächste Ecke',
-      farthestSide: 'Entfernteste Seite',
-      closestSide: 'Nächste Seite',
-    },
-  
-    article: {
-      title: "CSS-Farbverlaufs-Generator: Der ultimative Leitfaden für schöne Farbübergänge",
-      features: {
-        title: "Entdecken Sie CSS-Farbverläufe und ihre Möglichkeiten",
-        description: "<strong>Der CSS-Farbverlaufs-Generator</strong> ist ein leistungsstarkes visuelles Tool, mit dem Sie sanfte Farbübergänge (sogenannte <strong>Farbverläufe</strong>) erstellen können, ohne komplexen CSS-Code manuell schreiben zu müssen. Das Tool unterstützt drei grundlegende Verlaufsarten: <strong>Lineare Verläufe</strong> (Farben verlaufen entlang einer geraden Linie), <strong>radiale Verläufe</strong> (Farben strahlen von einem Mittelpunkt aus) und <strong>konische Verläufe</strong> (Farben drehen sich um einen Mittelpunkt).<br><br>Mit der intuitiven Oberfläche können Sie einfach mehrere <strong>Farbstopps</strong> hinzufügen, deren Position anpassen, den Verlaufswinkel oder die Form ändern und sofort das Ergebnis Ihrer Kreation sehen. Das Tool generiert automatisch den entsprechenden CSS-Code, den Sie direkt in Ihr Webprojekt kopieren können. Zusätzlich können Sie den Verlauf als PNG-Bild exportieren, um es in Grafikdesign-Anwendungen zu verwenden oder mit anderen zu teilen. Egal, ob Sie professioneller Entwickler oder Design-Enthusiast sind - dieses <strong>Verlaufs-Tool</strong> vereinfacht den Prozess der Erstellung visuell ansprechender Farbübergänge für Ihre digitalen Projekte.",
-        useCases: {
-          title: "Praktische Anwendungsfälle für CSS-Farbverläufe",
-          items: [
-            "<strong>Website-Hintergründe</strong>: Erstellen Sie visuell ansprechende Ganzseiten-Hintergründe mit Übergängen zwischen komplementären Farben, die Ihrer Website Tiefe und Dimension verleihen - ohne ressourcenintensive Bilder. Diese <strong>Verlaufshintergründe</strong> laden schneller als Bilder und bieten ein modernes, fließendes Aussehen.",
-            "<strong>Button- und UI-Elemente</strong>: Gestalten Sie auffällige Call-to-Action-Buttons mit <strong>Verlaufseffekten</strong>, die die Aufmerksamkeit der Nutzer gezielt lenken und die Konversionsrate erhöhen. Die plastische Wirkung von Verläufen kann UI-Elementen ein greifbareres und interaktiveres Aussehen verleihen.",
-            "<strong>Inhaltstrenner und Header</strong>: Verwenden Sie <strong>lineare Verläufe</strong>, um markante visuelle Trennlinien für Inhaltsblöcke zu erzeugen, die Informationen strukturieren und den Blick der Nutzer durch Ihr Seitenlayout führen, während die visuelle Kohärenz erhalten bleibt.",
-            "<strong>Grafikdesign-Elemente</strong>: Exportieren Sie Ihre Verläufe als PNG-Bilder für digitale Marketingmaterialien, Social-Media-Posts oder Präsentationsfolien, um mit benutzerdefinierten <strong>Farbmischungen</strong> eine konsistente visuelle Identität über verschiedene Plattformen hinweg zu schaffen.",
-            "<strong>Datenvisualisierung</strong>: Wenden Sie <strong>Farbübergänge</strong> auf Diagramme, Graphen und Karten an, um Datenbereiche intuitiver darzustellen und Betrachtern zu helfen, Werteverteilungen durch Farbintensität oder -verlauf unmittelbar zu verstehen.",
-            "<strong>Moderne Ladeanimationen</strong>: Entwerfen Sie animierte Verläufe für Ladebildschirme oder Fortschrittsanzeigen, die ihre Farben während der Wartezeit des Nutzers ändern, und schaffen Sie so mit <strong>animierten Verläufen</strong> ein ansprechenderes Erlebnis während notwendiger Ladezeiten."
-          ]
-        }
-      },
-      faq: {
-        title: "Häufige Fragen zu CSS-Farbverläufen",
-        items: [
-          {
-            question: "Was ist der Unterschied zwischen linearen, radialen und konischen Verläufen?",
-            answer: "Diese drei Verlaufsarten erzeugen deutlich unterschiedliche visuelle Effekte. Lineare Verläufe lassen Farben entlang einer geraden Linie in einer bestimmten Richtung verlaufen (definiert durch Gradzahlen oder Schlüsselwörter wie 'to top' oder 'to bottom right'). Sie eignen sich ideal für einfache Hintergründe, Buttons sowie horizontale oder vertikale Farbübergänge. Radiale Verläufe strahlen von einem Mittelpunkt aus in kreis- oder ellipsenförmigen Mustern nach außen und erzeugen Spotlight- oder Ausblendeffekte, perfekt um Inhalte hervorzuheben oder Tiefe zu suggerieren. Konische Verläufe rotieren Farben in kreisförmiger Bewegung um einen Mittelpunkt (wie ein Farbrad), was sie ideal für Tortendiagramme, Farbwähler oder Sonneneffekte macht. Unser Tool unterstützt alle drei Typen und bietet visuelle Steuerelemente, um genau das gewünschte Aussehen für Ihr Projekt zu erreichen."
-          },
-          {
-            question: "Wie mache ich meinen Verlauf glatt ohne sichtbare Farbbänder?",
-            answer: "Um einen glatten Verlauf ohne sichtbare Farbbänder (deutliche Stufen zwischen Farben) zu erstellen, probieren Sie folgende Techniken: 1) Fügen Sie zwischen Hauptfarben zusätzliche Farbstopps hinzu, um graduellere Übergänge zu schaffen. Unser Tool erlaubt bis zu 10 Farbstopps genau für diesen Zweck. 2) Halten Sie benachbarte Farben im Verlauf in Ton und Helligkeit relativ ähnlich, da starke Kontraste Farbbänder deutlicher zeigen. 3) Fügen Sie eine subtile Rauschtextur mit geringer Deckkraft hinzu (nicht direkt im Tool, sondern in Ihrem CSS), um potenzielle Farbbänder zu brechen. 4) Erwägen Sie leichte Transparenz in Ihren Verlaufsfarben mit rgba()-Werten. 5) Bei sehr großen Verlaufsflächen versuchen Sie, die Verlaufslänge relativ zur Anzeigegröße zu erhöhen. Diese Techniken helfen, professionell aussehende Farbübergänge zu erstellen und vermeiden ablenkende Farbbandeffekte, die unprofessionell wirken."
-          },
-          {
-            question: "Funktionieren diese CSS-Farbverläufe in allen Browsern?",
-            answer: "Die grundlegenden linearen und radialen Verläufe, die unser Tool generiert, haben exzellente Browserkompatibilität und funktionieren zuverlässig in allen modernen Browsern (Chrome, Firefox, Safari, Edge) ohne Präfixe. Konische Verläufe haben etwas eingeschränktere Unterstützung, werden aber von allen aktuellen Hauptbrowser-Versionen unterstützt. Für ältere Browser (insbesondere ältere Internet Explorer-Versionen) müssen Sie möglicherweise Vendor-Präfixe oder Fallback-Lösungen hinzufügen, obwohl diese Browser heute nur einen geringen Nutzeranteil repräsentieren. Unser Tool generiert standardkonformen CSS-Code nach W3C-Spezifikationen für maximale Kompatibilität. Für kritische Anwendungen, die ältere Browser ansprechen müssen, können Sie den generierten Code leicht modifizieren, um Präfixe hinzuzufügen oder einfache Fallback-Hintergründe für Browser zu erstellen, die bestimmte Verlaufsarten nicht unterstützen."
-          },
-          {
-            question: "Wie verwende ich den generierten Verlaufs-Code in meinem Projekt?",
-            answer: "Die Verwendung des von unserem Tool generierten Verlaufs-Codes ist einfach: 1) Erstellen und passen Sie Ihren Verlauf mit den visuellen Steuerelementen an. 2) Klicken Sie auf 'Code kopieren', um den generierten CSS-Code in die Zwischenablage zu kopieren. 3) Fügen Sie den Code in Ihre CSS-Datei oder den Style-Bereich Ihres HTML-Dokuments ein. Der Code kann auf jede CSS-Eigenschaft angewendet werden, die Bildwerte akzeptiert, am häufigsten die 'background'-Eigenschaft. Sie können den kopierten Code auch modifizieren, um zusätzliche Eigenschaften hinzuzufügen, Selektoren zu ändern oder ihn mit anderen CSS-Regeln zu kombinieren. Wenn Sie den Verlauf als Bild benötigen, verwenden Sie unsere 'PNG herunterladen'-Funktion, um ihn als Datei zu speichern, die Sie in jede Anwendung importieren können, die PNG-Bilder akzeptiert."
-          },
-          {
-            question: "Kann ich mit diesem Tool transparente Verläufe erstellen?",
-            answer: "Ja, Sie können transparente Verläufe erstellen, indem Sie manuell Farben mit Transparenz im Hex-Farbcode-Eingabefeld eingeben. Obwohl unser Farbwähler Alpha-Kanäle nicht direkt unterstützt, können Sie nach Auswahl eines Farbstopps rgba()-Werte (z.B. rgba(255,0,0,0.5) für halbtransparentes Rot) oder 8-stellige Hex-Codes (wie #FF000080) in das Farbfeld eingeben. Dies ermöglicht Verläufe zu Transparenz, besonders nützlich für Überlagerungen, Schatten oder Elemente, die darunterliegende Inhalte teilweise durchscheinen lassen sollen. Diese transparenten Verläufe eignen sich ideal für subtile Überlagerungseffekte, Vignetten um Bilder oder um Inhaltsbereiche sanft in den Hintergrund übergehen zu lassen. Beachten Sie bei Verwendung transparenter Verläufe über Inhalten den Kontrast und die Lesbarkeit von Text, der innerhalb des Verlaufsbereichs oder darunter erscheinen könnte."
-          }
-        ]
-      },
-      guide: {
-        title: "Schritt-für-Schritt-Anleitung zur Verwendung des CSS-Farbverlaufs-Generators",
-        steps: [
-          "<strong>Wählen Sie den Verlaufs-Typ</strong>: Beginnen Sie mit der Auswahl zwischen linearem, radialem oder konischem Verlauf im oberen Bereich des Tools. Jeder Typ erzeugt unterschiedliche Effekte für verschiedene Designanforderungen. Lineare Verläufe sind die häufigste Wahl für Hintergründe, während radiale und konische Verläufe speziellere Effekte bieten.",
-          "<strong>Passen Sie Farbstopps an</strong>: Verläufe werden mit Farbstopps erstellt, die Übergangspunkte definieren. Klicken Sie auf vorhandene Farbstopp-Markierungen in der Farbleiste zur Auswahl und ändern Sie dann die Farbe mit dem Farbwähler. Sie können die Position auch durch Ziehen der Markierung oder mit dem Positions-Schieberegler unter dem Farbwähler anpassen.",
-          "<strong>Fügen Sie weitere Farbstopps hinzu</strong>: Klicken Sie auf 'Farbe hinzufügen', um zusätzliche Farbübergänge im Verlauf zu erstellen. Bis zu 10 Farbstopps werden unterstützt, was komplexe Mehrfarbeneffekte ermöglicht. Zum Entfernen eines Farbstopps wählen Sie ihn aus und klicken auf 'Entfernen' (denken Sie daran, dass Sie mindestens zwei Farben für einen Verlauf benötigen).",
-          "<strong>Passen Sie Verlaufsrichtung oder -form an</strong>: Für lineare Verläufe nutzen Sie die Winkelsteuerung, um die Flussrichtung der Farben einzustellen (0-360 Grad). Bei radialen Verläufen wählen Sie die Form (Kreis oder Ellipse) und passen die Mittelpunktposition mit X- und Y-Steuerungen an. Für konische Verläufe setzen Sie Startwinkel und Mittelpunkt, um den Effekt präzise zu kontrollieren.",
-          "<strong>Feinabstimmung mit Voreinstellungen</strong>: Probieren Sie die für jeden Verlaufs-Typ bereitgestellten Voreinstellungs-Buttons aus. Für lineare Verläufe testen Sie gängige Richtungen wie oben, rechts oder unten links. Bei radialen Verläufen experimentieren Sie mit verschiedenen Größeneinstellungen wie 'entfernteste Ecke' oder 'nächste Seite', um zu sehen, wie sie die Verlaufsausbreitung beeinflussen.",
-          "<strong>Vorschau Ihres Verlaufs</strong>: Ihre Kreation wird in Echtzeit im großen Vorschaubereich angezeigt. Klicken Sie auf diesen Bereich, um den CSS-Code sofort in die Zwischenablage zu kopieren und in Ihrem Projekt zu verwenden. Sie können weitere Anpassungen vornehmen, bis Sie mit dem Aussehen zufrieden sind.",
-          "<strong>Exportieren oder teilen Sie Ihr Werk</strong>: Sobald Ihr Verlauf perfekt aussieht, verwenden Sie 'Code kopieren', um den generierten CSS-Code zu kopieren, oder 'PNG herunterladen', um ihn als PNG-Bild zu speichern. Sie können auch die vordefinierten Verläufe am Ende des Tools durchstöbern, um schnelle Inspiration oder Ausgangspunkte zu finden."
-        ]
-      },
-      conclusion: "CSS-Farbverläufe bieten eine leistungsstarke Möglichkeit, Ihre Webdesigns mit sanften Farbübergängen visuell aufzuwerten, während Projekte leichtgewichtig und hochperformant bleiben. Anders als Bilder skalieren Verläufe perfekt auf jede Größe, laden sofort und lassen sich mit wenigen Code-Änderungen leicht anpassen. Mit unserem CSS-Farbverlaufs-Generator müssen Sie keine komplexe Syntax auswendig lernen oder Zeit mit manuellem Codieren verbringen - kreieren Sie einfach intuitiv, verfeinern Sie bis zur Perfektion und implementieren Sie mit einem einzigen Kopiervorgang. Egal, ob Sie eine professionelle Website bauen, UI-Komponenten gestalten oder digitale Kunst erschaffen - die Beherrschung von Verläufen wird die visuelle Anziehungskraft Ihrer Arbeiten deutlich steigern. Beginnen Sie jetzt mit dem Experimentieren verschiedener Farbkombinationen und Verlaufs-Typen, um die unendlichen kreativen Möglichkeiten zu erkunden, die dieses Tool bietet."
-    }
+  name: 'Farbverlaufs-Generator',
+  description: 'Erstellen und passen Sie schöne CSS-Farbverläufe an, mit Live-Vorschau und Code zum Kopieren für Ihr Projekt',
+
+  gradientTypes: {
+    title: 'Farbverlaufs-Typ',
+    linear: 'Linearer Verlauf',
+    radial: 'Radialer Verlauf',
+    conic: 'Konischer Verlauf'
+  },
+
+  controls: {
+    title: 'Farbsteuerung',
+    addColor: 'Farbe hinzufügen',
+    color: 'Farbe',
+    position: 'Position (%)',
+    delete: 'Farbe entfernen',
+    angle: 'Winkel',
+    degrees: 'Grad',
+    shape: 'Form',
+    circle: 'Kreis',
+    ellipse: 'Ellipse',
+    positionX: 'Position X (%)',
+    positionY: 'Position Y (%)',
+    size: 'Größe',
+    closestSide: 'Nächste Seite',
+    closestCorner: 'Nächste Ecke',
+    farthestSide: 'Entfernteste Seite',
+    farthestCorner: 'Entfernteste Ecke',
+    fromAngle: 'Startwinkel'
+  },
+
+  output: {
+    title: 'CSS-Code',
+    copyCode: 'Code kopieren',
+    preview: 'Vorschaubereich',
+    copied: 'CSS-Code in die Zwischenablage kopiert!',
+    download: 'PNG herunterladen'
+  },
+
+  presets: {
+    title: 'Farbverlaufs-Voreinstellungen',
+    apply: 'Voreinstellung anwenden',
+    sunnyMorning: 'Sonniger Morgen',
+    winterNeva: 'Winterliche Newa',
+    rareWind: 'Seltener Wind',
+    deepBlue: 'Tiefblau',
+    perfect: 'Perfektes Weiß',
+    cloudyKnoxville: 'Bewölktes Knoxville',
+    greenBeach: 'Grüner Strand',
+    plumBath: 'Pflaumenbad',
+    everlasting: 'Ewiger Himmel'
+  },
+
+  accessibility: {
+    colorPicker: 'Farbauswahl',
+    deleteSwatch: 'Farbstopp entfernen',
+    dragToReposition: 'Zum Positionieren ziehen'
+  },
+
+  actions: {
+    reset: 'Zurücksetzen',
+    generateCSS: 'CSS generieren',
+    clickToCopy: 'Zum Kopieren klicken',
+    completeEdit: 'Bearbeitung abschließen'
+  },
+
+  messages: {
+    copied: 'CSS-Code in die Zwischenablage kopiert!',
+    noColors: 'Mindestens zwei Farben für einen Verlauf benötigt',
+    maxColors: 'Maximale Anzahl an Farbstopps erreicht (10)',
+    useKeyboard: 'Entf-Taste zum Löschen ausgewählter Farbstopps',
+    invalidHex: 'Ungültiger Hex-Farbcode',
+    downloadError: 'PNG-Download fehlgeschlagen, bitte erneut versuchen',
+    preview: 'Vorschau'
+  },
+
+  anglePresets: {
+    top: 'Oben',
+    topRight: 'Oben rechts',
+    right: 'Rechts',
+    bottomRight: 'Unten rechts',
+    bottom: 'Unten',
+    bottomLeft: 'Unten links',
+    left: 'Links',
+    topLeft: 'Oben links'
+  },
+
+  radialShapes: {
+    circle: 'Kreis',
+    ellipse: 'Ellipse'
+  },
+
+  radialSizes: {
+    farthestCorner: 'Entfernteste Ecke',
+    closestCorner: 'Nächste Ecke',
+    farthestSide: 'Entfernteste Seite',
+    closestSide: 'Nächste Seite',
   }
+};
