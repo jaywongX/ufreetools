@@ -85,8 +85,8 @@
                     </span>
                     <span class="featured-label">BetaList</span>
                 </a>
-                <!-- Tweet -->
-                <a href="https://twitter.com/search?q=ufreetools" target="_blank" rel="noopener"
+                <!-- X (Twitter) -->
+                <a href="https://x.com/ufreetools" target="_blank" rel="noopener"
                     class="featured-badge group">
                     <span class="icon-bg">
                         <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
