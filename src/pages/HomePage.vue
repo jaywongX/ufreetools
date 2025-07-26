@@ -42,24 +42,29 @@
                   <!-- Chrome -->
                   <a href="https://chromewebstore.google.com/detail/ufreetools/helippppkokcmlcngkegfmdmodlihjid"
                     target="_blank" rel="noopener" class="browser-ext-btn">
-                    <img src="/chrome-96x96.webp" sizes="32x32" alt="Chrome" class="browser-ext-icon" />
+                    <img src="/chrome-96x96.webp" sizes="32x32" alt="Chrome Browser Plugin" class="browser-ext-icon" />
                     <span>{{ $t('common.addToChrome') }}</span>
                   </a>
                   <!-- Firefox -->
                   <a href="https://addons.mozilla.org/firefox/addon/ufreetools/" target="_blank" rel="noopener"
                     class="browser-ext-btn">
-                    <img src="/Firefox_logo,_2019.webp"  sizes="32x32"alt="Firefox" class="browser-ext-icon" />
+                    <img src="/Firefox_logo,_2019.webp"  sizes="32x32"alt="Firefox Browser Plugin" class="browser-ext-icon" />
                     <span>{{ $t('common.addToFireFox') }}</span>
                   </a>
                   <!-- Edge -->
                   <a href="https://microsoftedge.microsoft.com/addons/detail/ufreetools/bnacfmkhnhbpgkjkgkndoiakkpceigfb"
                     target="_blank" rel="noopener" class="browser-ext-btn">
-                    <img src="/Microsoft_Edge_logo_(2019).webp"  sizes="32x32"alt="Edge" class="browser-ext-icon" />
+                    <img src="/Microsoft_Edge_logo_(2019).webp"  sizes="32x32"alt="Edge Browser Plugin" class="browser-ext-icon" />
                     <span>{{ $t('common.addToEdge') }}</span>
                   </a>
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- 右侧插图 -->
+          <div class="w-full md:w-1/2 mt-8 md:mt-0">
+            <img src="/landing-illustration.png" alt="Landing Page Illustration" class="w-full h-auto" />
           </div>
 
         </div>
