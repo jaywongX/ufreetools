@@ -59,6 +59,7 @@ import { addToHistory } from '../services/historyService'
 import { useInternationalizedRoute } from '../composables/useInternationalizedRoute'
 import SeoHead from '../components/seo/SeoHead.vue'
 import { useI18n } from 'vue-i18n'
+import { loadToolArticleAndInject } from '../composables/useLazyArticle'
 
 const route = useRoute()
 const router = useRouter()
@@ -72,7 +73,7 @@ const componentLoading = ref(false)
 const componentError = ref(null)
 const resolvedComponent = ref(null)
 const { t } = useI18n()
-
+const i18n = useI18n()
 
 // 使用国际化路由辅助函数
 const { localizedRoute } = useInternationalizedRoute()
@@ -225,6 +226,13 @@ onMounted(() => {
 watch(() => route.params.id, (newId) => {
   if (newId) {
     loadTool()
+  }
+})
+
+// 监听 tool 变化，自动调用 loadToolArticleAndInject
+watch(() => tool.value?.id, (toolId) => {
+  if (toolId) {
+    loadToolArticleAndInject(i18n, toolId)
   }
 })
 

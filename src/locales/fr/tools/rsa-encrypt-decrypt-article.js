@@ -1,0 +1,60 @@
+export default {
+    title: "Guide de l'outil de chiffrement RSA : Protégez vos données avec la cryptographie à clé publique",
+    introTitle: "Comprendre le chiffrement RSA",
+    intro1: "Le chiffrement RSA est un puissant algorithme cryptographique asymétrique qui utilise une paire de clés - une clé publique et une clé privée - pour protéger des données sensibles. Notre <strong>outil de chiffrement RSA</strong> fournit une interface conviviale permettant d'effectuer des opérations de chiffrement et déchiffrement RSA directement dans votre navigateur, sans envoyer vos données à aucun serveur.",
+    intro2: "Contrairement aux méthodes de chiffrement symétrique qui utilisent une seule clé, la cryptographie RSA utilise des paires de clés mathématiquement liées, où les données chiffrées avec la clé publique ne peuvent être déchiffrées qu'avec la clé privée correspondante. Cela fait de RSA un choix idéal pour diverses applications de communication sécurisée et de signature numérique.",
+    intro3: "Notre outil prend en charge la génération de clés de différentes longueurs (1024, 2048, 3072 et 4096 bits), différentes méthodes de remplissage (PKCS#1 v1.5 et OAEP), et plusieurs formats d'entrée/sortie (texte, Base64 et hexadécimal). Cette flexibilité le rend utile à la fois pour des fins éducatives et pour des besoins cryptographiques pratiques.",
+
+    useCasesTitle: "Applications pratiques du chiffrement RSA",
+    useCase1: "<strong>Communication sécurisée</strong> : En utilisant la clé publique du destinataire pour chiffrer des messages confidentiels, vous assurez que seul le détenteur de la clé privée pourra les déchiffrer.",
+    useCase2: "<strong>Vérification de certificats</strong> : Générez des paires de clés pour tester des implémentations de certificats numériques, des infrastructures PKI ou des configurations SSL/TLS.",
+    useCase3: "<strong>Protection des données</strong> : Chiffrez des fichiers sensibles avant de les stocker sur des services cloud ou de les transmettre sur des réseaux non sécurisés, maintenant leur confidentialité même si les données chiffrées sont interceptées.",
+    useCase4: "<strong>Fins éducatives</strong> : Apprenez et démontrez les principes de la cryptographie à clé publique en explorant comment fonctionne le chiffrement RSA en pratique avec différentes tailles de clés et méthodes de remplissage.",
+
+    faqTitle: "Questions fréquemment posées",
+
+    faq1q: "En quoi RSA diffère-t-il des autres algorithmes de chiffrement ?",
+    faq1a: "RSA est un <strong>algorithme de chiffrement asymétrique</strong> utilisant une paire clé publique-clé privée, alors que des algorithmes symétriques comme AES utilisent une seule clé partagée. Cette approche par paire de clés permet à RSA de fournir des échanges de clés sécurisés et des signatures numériques, ce que les algorithmes symétriques ne peuvent offrir. Cependant, RSA est plus gourmand en calculs et est généralement utilisé pour chiffrer de petites quantités de données ou pour des échanges de clés, alors que les algorithmes symétriques sont plus rapides pour le chiffrement en masse.",
+
+    faq2q: "Quelle taille de clé RSA dois-je choisir pour une sécurité optimale ?",
+    faq2a: "Pour des exigences de sécurité modernes, nous recommandons d'utiliser au moins une clé RSA de 2048 bits. Les clés de 1024 bits sont considérées vulnérables à des attaques bien financées et doivent être évitées pour des données sensibles. Les clés de 3072 bits offrent une sécurité approximativement équivalente à un chiffrement symétrique de 128 bits (recommandé par le NIST pour une protection au-delà de 2030), tandis que les clés de 4096 bits offrent une marge de sécurité supplémentaire pour des applications hautement sensibles. Cependant, des clés plus grandes nécessitent plus de ressources de calcul pour leur génération et les opérations de chiffrement/déchiffrement.",
+
+    faq3q: "Quelle est la différence entre les remplissages PKCS#1 v1.5 et OAEP ?",
+    faq3a: "PKCS#1 v1.5 est un schéma de remplissage plus ancien, largement supporté mais présentant des vulnérabilités connues à certains types d'attaques (comme celle de Bleichenbacher). <strong>OAEP (Optimal Asymmetric Encryption Padding)</strong> est un schéma plus récent et plus sécurisé, conçu pour fournir une sécurité sémantique contre les attaques à chiffrés choisis adaptatives. Pour les nouvelles applications, nous recommandons d'utiliser OAEP lorsque possible, mais PKCS#1 v1.5 reste utile pour la compatibilité avec des systèmes plus anciens.",
+
+    faq4q: "Comment stocker et partager mes clés RSA de manière sécurisée ?",
+    faq4a: "Pour les <strong>clés privées RSA</strong>, utilisez toujours des contrôles d'accès stricts, idéalement avec chiffrement, et stockez-les en lieu sûr. Ne partagez jamais les clés privées ou ne les stockez pas en clair sur des systèmes non sécurisés. Pour les <strong>clés publiques RSA</strong>, bien qu'elles soient conçues pour être partagées, vérifiez l'authenticité des clés publiques que vous recevez d'autrui pour prévenir les attaques de l'homme du milieu. Notre outil vous permet d'exporter les clés au format PEM standard, qui peut être importé dans la plupart des applications et bibliothèques cryptographiques.",
+
+    faq5q: "Quelles sont les limitations du chiffrement RSA basé sur navigateur ?",
+    faq5a: "Les outils basés sur navigateur comme le nôtre ont certaines limitations : (1) <strong>Contraintes de performance</strong> - La génération de clés et le chiffrement/déchiffrement de gros fichiers peuvent être plus lents qu'avec des applications locales ; (2) <strong>Limitations mémoire</strong> - Les navigateurs limitent la quantité de mémoire utilisable, ce qui peut affecter les opérations très volumineuses ; (3) <strong>Limitations des bibliothèques cryptographiques</strong> - Nous utilisons des bibliothèques standard (Forge), mais les implémentations navigateur peuvent différer légèrement. Pour des applications critiques nécessitant des performances élevées ou traitant de très gros fichiers, envisagez d'utiliser des logiciels cryptographiques dédiés.",
+
+    tutorialTitle: "Guide étape par étape pour utiliser l'outil de chiffrement RSA",
+    tutorialIntro: "Suivez ce guide complet pour utiliser efficacement notre outil de chiffrement et déchiffrement RSA afin de protéger vos données sensibles :",
+
+    step1Title: "Étape 1 : Générer ou importer une paire de clés RSA",
+    step1: "Commencez par générer une nouvelle paire de clés RSA ou importez une paire existante. Pour générer une nouvelle clé, sélectionnez la taille souhaitée (2048 bits ou plus pour la sécurité) et cliquez sur le bouton <strong>Générer une paire de clés</strong>. L'outil créera des clés publique et privée au format PEM. Alternativement, vous pouvez importer des clés existantes en cliquant sur le bouton d'importation ou en utilisant les zones de glisser-déposer des champs de clé publique ou privée.",
+
+    step2Title: "Étape 2 : Chiffrer des données avec la clé publique",
+    step2: "Pour chiffrer des données, assurez-vous d'avoir une clé publique dans le champ correspondant. Sélectionnez le mode <strong>Chiffrer</strong>, choisissez votre méthode de remplissage préférée (OAEP recommandé pour la sécurité), et sélectionnez votre format d'entrée. Entrez le message en clair que vous souhaitez chiffrer dans le champ de saisie. Vous pouvez également utiliser le bouton d'importation ou la zone de glisser-déposer pour importer du texte clair depuis un fichier. Cliquez sur le bouton <strong>Chiffrer</strong> pour traiter vos données. Le résultat chiffré s'affichera par défaut en format Base64, mais vous pouvez utiliser les options de format de sortie pour basculer vers le format Hex.",
+
+    step3Title: "Étape 3 : Déchiffrer des données avec la clé privée",
+    step3: "Pour déchiffrer des données précédemment chiffrées, assurez-vous d'avoir la bonne clé privée dans le champ correspondant. Sélectionnez le mode <strong>Déchiffrer</strong>, choisissez la même méthode de remplissage que celle utilisée pour le chiffrement, et sélectionnez le format d'entrée approprié (généralement Base64 pour les données chiffrées). Collez le texte chiffré dans le champ de saisie ou importez-le depuis un fichier. Cliquez sur le bouton <strong>Déchiffrer</strong> pour retrouver le texte clair original. Le résultat déchiffré s'affichera dans le champ de sortie et pourra être copié ou téléchargé selon vos",
+
+    step4Title: "Étape 4 : Exporter et gérer les clés",
+    step4: "Après avoir généré ou importé des clés, vous pouvez les exporter pour une utilisation future en cliquant sur le bouton <strong>Exporter</strong> à côté de chaque champ de clé. Cela sauvegardera les clés au format PEM standard, compatible avec la plupart des applications et bibliothèques cryptographiques. N'oubliez pas de stocker vos clés privées en sécurité et ne les partagez jamais avec des parties non autorisées. En revanche, les clés publiques peuvent être librement distribuées à toute personne ayant besoin de chiffrer des données pour vous.",
+
+    relatedToolsTitle: "Outils cryptographiques associés",
+    relatedTool1: "Calculateur de hachage",
+    relatedTool1Desc: "Génère des valeurs de hachage sécurisées en utilisant divers algorithmes comme SHA-256, SHA-512, etc.",
+    relatedTool2: "Générateur de mots de passe",
+    relatedTool2Desc: "Crée des mots de passe forts et aléatoires pour renforcer votre sécurité en ligne.",
+    relatedTool3: "Outil de chiffrement symétrique",
+    relatedTool3Desc: "Chiffre des données avec des algorithmes symétriques comme AES pour un traitement plus rapide des gros fichiers.",
+    relatedTool4: "Encodeur/Décodeur Base64",
+    relatedTool4Desc: "Convertit des données binaires au format Base64 et vice versa pour une transmission sécurisée.",
+
+    resourcesTitle: "Ressources supplémentaires",
+    resource1: "NIST FIPS 186-4 : Standard de signature numérique (DSS)",
+    resource2: "RFC 8017 : PKCS #1 : Spécifications cryptographiques RSA version 2.2",
+    resource3: "NIST SP 800-57 : Recommandations pour la gestion des clés"
+}

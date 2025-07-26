@@ -1,7 +1,7 @@
 export default {
   name: 'Generator Kode QR',
   description: 'Buat kode QR yang dapat disesuaikan untuk URL, teks, dan lainnya',
-  
+
   // Opsi
   options: {
     content: 'Konten Kode QR',
@@ -15,7 +15,7 @@ export default {
     logoSize: 'Ukuran Logo',
     cornerRadius: 'Sudut Melengkung'
   },
-  
+
   // Jenis konten
   contentTypes: {
     url: 'URL',
@@ -27,7 +27,7 @@ export default {
     vcard: 'Kartu Virtual (vCard)',
     mecard: 'Kartu Virtual (MeCard)'
   },
-  
+
   // Tingkat koreksi kesalahan
   errorLevels: {
     L: 'Rendah (7%)',
@@ -35,7 +35,7 @@ export default {
     Q: 'Tinggi (25%)',
     H: 'Tertinggi (30%)'
   },
-  
+
   // Aksi
   actions: {
     generate: 'Buat Kode QR',
@@ -46,7 +46,7 @@ export default {
     clear: 'Reset',
     uploadLogo: 'Unggah Logo'
   },
-  
+
   // Template
   templates: {
     title: 'Template Cepat',
@@ -76,12 +76,12 @@ export default {
       name: 'Lokasi Geografis'
     }
   },
-  
+
   // Tampilan
   appearance: {
     title: 'Pengaturan Tampilan'
   },
-  
+
   // Pratinjau
   preview: {
     title: 'Pratinjau',
@@ -89,14 +89,14 @@ export default {
     clickGenerateButton: 'Klik tombol "Buat Kode QR"',
     clickToDownload: 'Klik untuk mengunduh kode QR'
   },
-  
+
   // Tips
   tips: {
     title: 'Tips',
     saveToPrint: 'Kode QR yang dibuat dapat disimpan sebagai gambar untuk dicetak atau dibagikan.',
     errorCorrection: 'Tingkat koreksi kesalahan menunjukkan seberapa baik kode QR dapat dibaca jika sebagian tertutup atau rusak. Level L memiliki toleransi terendah, level H tertinggi tetapi membuat kode lebih kompleks.'
   },
-  
+
   // WiFi
   wifi: {
     ssid: 'Nama Jaringan (SSID)',
@@ -104,16 +104,17 @@ export default {
     encryption: 'Enkripsi',
     hidden: 'Jaringan Tersembunyi'
   },
-  
+
   // Placeholder
   placeholders: {
     content: 'Masukkan teks, tautan, atau konten lainnya...'
   },
-  
+
   // Karakter
   characters: 'karakter',
+
   maxChars: 'Disarankan tidak lebih dari 300 karakter',
-  
+
   // Pesan
   messages: {
     copied: 'Tersalin ke clipboard!',
@@ -128,66 +129,12 @@ export default {
     invalidPhone: 'Masukkan nomor telepon yang valid',
     logoTooBig: 'File logo terlalu besar, ukuran maksimal 1MB'
   },
-  
+
   // Error
   errors: {
     canvasNotReady: 'Elemen Canvas belum siap',
     generationError: 'Gagal membuat kode QR',
     generationErrorWithMessage: 'Gagal membuat kode QR: {message}',
     downloadError: 'Gagal mengunduh kode QR: {message}'
-  },
-  
-  // Artikel
-  article: {
-    title: "Generator Kode QR: Buat dan Sesuaikan Kode Respons Cepat",
-    features: {
-      title: "Memahami Kode QR dan Aplikasinya",
-      description: "<strong>Generator Kode QR</strong> kami adalah alat online serbaguna untuk membuat kode QR yang dapat disesuaikan untuk berbagai jenis informasi. Berbeda dengan barcode tradisional, <strong>kode QR</strong> dapat menyimpan banyak data dalam format yang ringkas dan mudah dibaca oleh mesin, yang dapat dipindai dengan cepat menggunakan smartphone atau pemindai khusus.<br><br>Alat <strong>pembuat kode QR</strong> tingkat lanjut ini mendukung berbagai jenis konten termasuk URL, teks biasa, informasi kontak, kredensial WiFi, dan koordinat geografis. Setiap kode yang dibuat dapat sepenuhnya disesuaikan dengan opsi ukuran, warna, tingkat koreksi kesalahan, dan bahkan menambahkan logo atau mengubah tampilan kode sambil mempertahankan kemampuan pemindaian.<br><br><strong>Pembuat kode QR</strong> menghasilkan kode resolusi tinggi yang dapat diunduh dalam format PNG atau SVG, membuatnya cocok untuk penggunaan digital maupun pencetakan fisik pada materi pemasaran, kemasan produk, atau tanda.",
-      useCases: {
-        title: "Aplikasi Praktis Kode QR",
-        items: [
-          "<strong>Pemasaran Bisnis</strong>: Buat <strong>kode QR khusus</strong> untuk kartu nama, brosur, dan materi promosi yang menghubungkan prospek ke situs web, penawaran khusus, atau informasi kontak Anda. Perusahaan dapat menggunakan kode QR bergaya unik yang menggabungkan warna merek dan logo, meningkatkan pengenalan merek sambil memberikan cara mudah bagi pelanggan untuk mengakses konten digital.",
-          "<strong>Pembayaran Tanpa Kontak</strong>: Hasilkan <strong>kode QR pembayaran</strong> yang terhubung langsung ke platform pembayaran atau berisi informasi dompet kripto, memungkinkan transaksi cepat dan tanpa kontak. Ini semakin penting bagi usaha kecil dan pedagang kaki lima yang dapat menerima pembayaran digital tanpa memerlukan terminal point-of-sale yang mahal.",
-          "<strong>Menu Restoran</strong>: Kembangkan <strong>kode QR yang dapat dipindai</strong> untuk akses menu tanpa kontak, memungkinkan pengunjung melihat menu di ponsel mereka tanpa menyentuh menu fisik. Restoran dapat memperbarui menu digital secara instan tanpa mencetak ulang, bahkan menyertakan foto, deskripsi rinci, atau informasi diet yang tidak cocok untuk menu tradisional.",
-          "<strong>Manajemen Acara</strong>: Buat <strong>tiket kode QR</strong> dan kredensial pendaftaran untuk konferensi, konser, atau pameran yang dapat dipindai dengan cepat untuk verifikasi. Penyelenggara acara dapat melacak kehadiran secara real-time, mengurangi pemalsuan, dan menyederhanakan proses pendaftaran sambil meminimalkan kontak fisik.",
-          "<strong>Kemasan Produk</strong>: Sertakan <strong>label kode QR</strong> pada produk yang terhubung ke manual pengguna, instruksi pengaturan, pendaftaran garansi, atau verifikasi sertifikasi. Produsen dapat memberikan informasi produk yang luas, video tutorial, dan sumber daya dukungan tanpa menambah ukuran kemasan atau biaya pencetakan.",
-          "<strong>Sumber Daya Pendidikan</strong>: Hasilkan <strong>kode QR pendidikan</strong> yang menghubungkan siswa ke materi pembelajaran tambahan, kuis interaktif, atau demonstrasi video. Guru dapat menempatkan kode ini pada handout atau presentasi, menjembatani lingkungan belajar fisik dan digital sambil melacak interaksi dengan sumber daya tertentu."
-        ]
-      }
-    },
-    faq: {
-      title: "Pertanyaan Umum tentang Kode QR",
-      items: [
-        {
-          question: "Apa perbedaan antara berbagai tingkat koreksi kesalahan kode QR?",
-          answer: "Tingkat koreksi kesalahan dalam <strong>kode QR</strong> menentukan seberapa banyak kerusakan yang dapat ditoleransi kode sementara tetap dapat dipindai:<br><br>• <strong>Level L (Rendah)</strong>: Memulihkan hingga 7% kerusakan, membuat kode paling ringkas, cocok untuk lingkungan terkendali<br>• <strong>Level M (Sedang)</strong>: Menangani hingga 15% kerusakan, memberikan keseimbangan yang baik untuk sebagian besar aplikasi standar<br>• <strong>Level Q (Kuartil)</strong>: Bertahan hingga 25% kerusakan, direkomendasikan untuk penggunaan industri atau tampilan luar ruangan<br>• <strong>Level H (Tinggi)</strong>: Toleransi hingga 30% kerusakan, paling cocok untuk lingkungan yang keras atau saat menambahkan logo<br><br>Tingkat koreksi kesalahan yang lebih tinggi membuat <strong>pola kode QR</strong> yang lebih kompleks dengan redundansi tambahan, yang membuat kode sedikit lebih besar tetapi jauh lebih andal dalam kondisi menantang atau dengan warna atau logo khusus."
-        },
-        {
-          question: "Bisakah saya menambahkan logo tanpa merusak fungsi kode QR?",
-          answer: "Ya, Anda dapat menambahkan logo ke <strong>kode QR</strong> sambil mempertahankan kemampuan pemindaian dengan mengikuti panduan ini:<br><br>1. Gunakan tingkat koreksi kesalahan yang lebih tinggi (sebaiknya Level H) saat membuat <strong>kode QR khusus dengan logo</strong><br>2. Pertahankan logo relatif kecil, idealnya menutupi tidak lebih dari 30% area tengah<br>3. Pastikan logo memiliki kontras yang cukup dengan warna kode QR<br>4. Hindari menempatkan logo pada tiga pola deteksi posisi (kotak di sudut)<br><br><strong>Generator kode QR</strong> kami secara otomatis menyesuaikan kepadatan data kode saat Anda menambahkan logo, memastikan kode yang dihasilkan tetap berfungsi penuh. Setelah menambahkan logo, pastikan untuk menguji kode QR Anda dengan beberapa perangkat untuk memverifikasi bahwa kode dipindai dengan benar dalam berbagai kondisi."
-        },
-        {
-          question: "Informasi apa saja yang dapat saya kodekan dalam kode QR?",
-          answer: "Kode QR dapat mengkodekan berbagai jenis informasi, membuatnya sangat serbaguna:<br><br>• <strong>URL situs web</strong>: Mengarahkan pemindai ke halaman web, laman arahan, atau sumber daya online tertentu<br>• <strong>Teks biasa</strong>: Menyimpan pesan, pengidentifikasi, atau informasi alfanumerik apa pun (hingga sekitar 4.000 karakter)<br>• <strong>Informasi kontak (vCard/meCard)</strong>: Berbagi detail kontak lengkap yang dapat langsung disimpan ke kontak telepon<br>• <strong>Kredensial jaringan WiFi</strong>: Terhubung ke jaringan WiFi secara instan tanpa memasukkan kata sandi<br>• <strong>Nomor telepon</strong>: Memulai panggilan saat dipindai<br>• <strong>Pesan SMS</strong>: Membuka pesan teks yang sudah diisi sebelumnya<br>• <strong>Alamat email</strong>: Memulai email baru ke penerima yang ditentukan<br>• <strong>Lokasi geografis</strong>: Membuka aplikasi peta ke koordinat tertentu<br><br><strong>Alat pembuat kode QR</strong> kami menyediakan template khusus untuk setiap jenis konten, secara otomatis memformat data dengan benar untuk memastikan kompatibilitas dengan sebagian besar aplikasi pemindaian."
-        },
-        {
-          question: "Seberapa besar kode QR yang harus saya cetak untuk hasil pemindaian terbaik?",
-          answer: "Ukuran optimal untuk mencetak <strong>kode QR</strong> tergantung pada jarak pemindaian:<br><br>• <strong>Ukuran minimum</strong>: 2 × 2 cm (0,8 × 0,8 inci) untuk pemindaian jarak dekat<br>• <strong>Rekomendasi standar</strong>: 3 × 3 cm (1,2 × 1,2 inci) untuk skenario penggunaan biasa<br>• <strong>Pemindaian dari jarak 1-2 meter</strong>: 10 × 10 cm (4 × 4 inci) atau lebih besar<br>• <strong>Papan reklame atau pemindaian jarak jauh</strong>: Setidaknya 30 × 30 cm (12 × 12 inci)<br><br>Aturan praktisnya adalah <strong>kode QR yang dicetak</strong> harus setidaknya 1/10 dari jarak pemindaian. Selain itu, selalu sertakan area tenang (margin kosong) di sekitar kode, yang berukuran setidaknya empat kali lebar modul tunggal (kotak terkecil dalam kode).<br><br><strong>Generator kode QR</strong> kami menghasilkan file SVG resolusi tinggi yang dapat diskalakan ke ukuran apa pun tanpa kehilangan kualitas, memastikan kode Anda tetap jelas dan dapat dipindai berapa pun ukuran cetaknya."
-        },
-        {
-          question: "Bagaimana cara melacak berapa kali kode QR saya dipindai?",
-          answer: "Untuk melacak berapa kali <strong>kode QR</strong> dipindai dan mengumpulkan data analitik, Anda dapat:<br><br>1. Menggunakan <strong>pemendek URL</strong> dengan pelacakan (seperti Bit.ly, TinyURL, atau Rebrandly) sebagai tujuan kode QR, yang menyediakan metrik pemindaian<br>2. Mengarahkan kode QR ke laman arahan tertentu di situs web Anda dan memantaunya melalui Google Analytics atau alat serupa<br>3. Menggunakan layanan <strong>kode QR dinamis</strong> profesional yang menawarkan analitik bawaan, memungkinkan Anda mengubah URL target tanpa membuat kode baru<br>4. Membuat parameter UTM unik untuk setiap kode QR untuk membedakan sumber lalu lintas dalam analitik<br><br>Meskipun <strong>generator kode QR</strong> kami membuat kode statis, Anda dapat dengan mudah menerapkan strategi pelacakan ini dengan mengkodekan URL pelacakan yang sesuai. Untuk aplikasi tingkat perusahaan yang memerlukan analitik pemindaian komprehensif (termasuk data lokasi, informasi perangkat, dan waktu pemindaian), pertimbangkan untuk menggunakan platform pemasaran kode QR khusus."
-        }
-      ]
-    },
-    guide: {
-      title: "Cara Membuat Kode QR: Panduan Langkah demi Langkah",
-      step1: "<strong>Pilih Jenis Konten</strong>: Pertama, putuskan informasi apa yang ingin Anda kodekan dalam kode QR. Pilih dari opsi seperti URL situs web, teks biasa, informasi kontak, atau kredensial WiFi. Untuk kemudahan, Anda dapat menggunakan salah satu template yang disediakan oleh <strong>generator kode QR</strong> kami, yang akan secara otomatis memformat data Anda dengan benar berdasarkan jenis konten.",
-      step2: "<strong>Masukkan Informasi Anda</strong>: Isi detail yang diperlukan di bidang konten. Untuk URL, pastikan untuk menyertakan alamat web lengkap, dimulai dengan 'http://' atau 'https://'. Untuk jaringan WiFi, berikan nama jaringan (SSID), kata sandi, dan jenis enkripsi. <strong>Alat pembuat kode QR</strong> akan memvalidasi masukan Anda untuk memastikannya dapat dikodekan dan dipindai dengan benar.",
-      step3: "<strong>Sesuaikan Tampilan</strong>: Personalisasi kode QR Anda dengan menyesuaikan pengaturan seperti ukuran, warna, dan tingkat koreksi kesalahan. Anda dapat memilih berbagai warna depan dan latar belakang untuk mencocokkan merek Anda, menyesuaikan sudut melengkung untuk tampilan yang lebih lembut, dan bahkan menambahkan logo di tengah kode Anda. <strong>Pembuat kode QR</strong> kami secara otomatis memastikan penyesuaian ini tetap dapat dipindai dengan menyesuaikan tingkat koreksi kesalahan sesuai kebutuhan.",
-      step4: "<strong>Buat dan Uji Kode QR Anda</strong>: Klik tombol \"Buat Kode QR\" untuk membuat kode Anda berdasarkan informasi yang diberikan dan opsi desain yang dipilih. Setelah dibuat, uji kode QR Anda menggunakan kamera smartphone atau aplikasi pemindai kode QR khusus untuk memverifikasi bahwa kode menampilkan atau melakukan tindakan yang diharapkan dengan benar. Pengujian sangat penting jika Anda telah menyesuaikan tampilan atau menambahkan logo.",
-      step5: "<strong>Unduh dan Gunakan Kode QR Anda</strong>: Setelah memverifikasi bahwa kode QR Anda berfungsi dengan baik, unduh dalam format pilihan Anda (PNG untuk penggunaan digital atau SVG untuk materi cetak yang dapat diskalakan). Kemudian, Anda dapat mengintegrasikan <strong>gambar kode QR</strong> ke dalam materi pemasaran, situs web, kemasan produk, atau di mana pun Anda perlu memberikan akses cepat ke informasi Anda. Ingatlah bahwa untuk materi cetak, format SVG lebih disukai karena mempertahankan kualitas pada ukuran berapa pun."
-    },
-    conclusion: "Kode QR telah mengubah cara kita menghubungkan dunia fisik dan digital, memberikan metode yang mulus untuk berbagi informasi dan melibatkan pengguna. Dengan adopsi yang semakin meluas di berbagai industri, menciptakan kode QR yang efektif dan dapat dipindai telah menjadi keterampilan penting bagi pemasar, bisnis, pendidik, dan individu. Generator kode QR kami menyederhanakan proses ini, menyediakan alat untuk membuat kode khusus yang mencerminkan identitas merek Anda sambil mempertahankan fungsionalitas sempurna. Baik Anda menghubungkan ke konten web canggih, menyederhanakan alur pembayaran, atau meningkatkan materi pendidikan, kode QR menawarkan solusi serbaguna yang menggabungkan kenyamanan dengan efisiensi teknologi. Seiring dengan terus berkembangnya teknologi seluler, pentingnya dan aplikasi kode QR ini hanya akan semakin besar, menjadikannya aset yang semakin berharga di dunia yang saling terhubung kita."
   }
-}
+};

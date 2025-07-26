@@ -1,12 +1,14 @@
 export default {
   name: 'Pixelizador de Imagen',
   description: 'Convierte imágenes en arte pixelado con resolución y efectos personalizables',
+
   upload: {
     title: 'Subir Imagen',
     dropzone: 'Arrastra y suelta tu imagen aquí o haz clic para navegar',
     maxSize: 'Tamaño máximo del archivo: 10MB',
     supportedFormats: 'Formatos compatibles: JPG, PNG, WEBP, GIF'
   },
+
   settings: {
     title: 'Ajustes de Pixelización',
     pixelSize: 'Tamaño del Píxel',
@@ -56,6 +58,7 @@ export default {
     low: 'Bajo (Retro)',
     high: 'Alto (Color Verdadero)'
   },
+
   effects: {
     title: 'Efectos',
     brightness: 'Brillo',
@@ -71,6 +74,7 @@ export default {
     sepia: 'Sepia',
     vignette: 'Viñeta'
   },
+
   animation: {
     title: 'Ajustes de Animación',
     animated: 'Procesar como Animación',
@@ -79,6 +83,7 @@ export default {
     looping: 'Repetición',
     loopCount: 'Número de Repeticiones'
   },
+
   output: {
     title: 'Salida',
     preview: 'Vista Previa',
@@ -100,6 +105,7 @@ export default {
     noImage: 'Por favor selecciona una imagen',
     processing: 'Procesando...'
   },
+
   presets: {
     title: 'Preestablecidos',
     save: 'Guardar Ajustes Actuales',
@@ -115,6 +121,7 @@ export default {
       blueprint: 'Plano'
     }
   },
+
   actions: {
     pixelate: 'Pixelizar Imagen',
     reset: 'Restablecer Ajustes',
@@ -123,6 +130,7 @@ export default {
     downloadImage: 'Descargar Imagen',
     selectImage: 'Seleccionar Imagen'
   },
+
   messages: {
     processing: 'Procesando la imagen...',
     success: 'Pixelización de imagen exitosa',
@@ -138,113 +146,5 @@ export default {
     downloadFailed: 'Fallo al descargar',
     resetSuccess: 'Los ajustes han sido restablecidos',
     fileName: 'Nombre del Archivo'
-  },
-  article: {
-    title: "Guía Completa de Pixelización de Imagen - Crea Arte Pixelado Increíble a Partir de Fotos",
-    intro: {
-      title: "¿Qué es un Pixelador de Imagen y Cómo Transforma Tus Fotos",
-      p1: "<b>Herramientas de pixelización de imagen online</b> son utilidades digitales especializadas que transforman fotografías estándar en arte pixelado estilizado reduciendo la resolución y profundidad de color de manera controlada. Nuestro pixelador de imagen gratuito ofrece una suite completa de opciones de personalización que permiten a los usuarios convertir cualquier foto en auténtico arte pixelado sin necesidad de instalar software especializado ni contar con experiencia técnica. A través de una manipulación cuidadosa del tamaño de píxel, selección de forma y ajustes de paleta de color, el pixelador crea transformaciones visualmente llamativas que abrazan el estilo distintivo de las imágenes basadas en píxeles.",
-      p2: "<b>El proceso de pixelar fotos</b> ha evolucionado significativamente desde el simple submuestreo hasta convertirse en una forma de arte sofisticada con numerosas aplicaciones creativas. Nuestro generador de arte pixelado basado en navegador cierra la brecha entre capacidades profesionales de diseño y funcionalidad amigable para el usuario, permitiendo a fotógrafos, artistas digitales, desarrolladores de juegos y usuarios casuales experimentar con el aspecto pixelado distintivo. La herramienta ofrece opciones extensas de personalización incluyendo tamaños variables de píxel, diferentes formas de píxel (cuadrado, círculo, diamante), controles de reducción de color y efectos especiales que mejoran la apariencia final pixelada.",
-      p3: "<b>Convertir imágenes normales a arte pixelado</b> aprovecha la creciente popularidad de los estilos retro mientras abre aplicaciones prácticas a través de diversos campos creativos. Ya sea diseñando activos para juegos, creando contenido nostálgico para redes sociales o simplemente explorando un nuevo medio artístico, nuestro pixelador provee una plataforma intuitiva para transformar fotografías ordinarias en composiciones pixeladas convincentes. Esta guía completa te explicará todo lo que necesitas saber sobre crear arte pixelado cautivador usando nuestra innovadora herramienta online."
-    },
-    useCases: {
-      title: "Aplicaciones Prácticas de la Pixelización de Imagen",
-      case1: "<b>Desarrollo de Juegos y Creación de Arte Pixelado</b>: Desarrolladores de juegos independientes utilizan herramientas de pixelización de imagen para rápidamente transformar fotos de referencia en activos listos para juego. Diseñadores de personajes convierten arte conceptual o imágenes de referencia en sprites de personaje pixelados con control preciso sobre tamaño de píxel y limitaciones de paleta de color que coinciden con los requisitos de su motor de juego. Artistas de fondos crean mosaicos ambientales consistentes pixelizando texturas fotográficas y luego refinando los resultados. Estos flujos de trabajo de pixelización aceleran significativamente el proceso de creación de sprites para juegos estilo retro, aplicaciones móviles y proyectos indie donde se desea el estilo auténtico de píxel pero crear manualmente píxel por píxel sería prohibitivamente laborioso.",
-      case2: "<b>Contenido para Redes Sociales y Marketing Digital</b>: Profesionales creativos aprovechan imágenes pixeladas para desarrollar contenido visual distintivo que destaca en feeds sociales saturados. Gerentes de marca crean versiones pixeladas reconocibles de imágenes de producto o logotipos que recuerdan la nostalgia de los juegos retro mientras mantienen reconocimiento de marca. Creadores de contenido desarrollan transformaciones pixeladas \"antes y después\" que impulsan compromiso mediante el contraste visual dramático. Campañas de marketing usan el estilo pixelado distintivo para crear ganchos visuales memorables para productos dirigidos a millennials y audiencias Gen Z quienes tienen fuertes asociaciones con arte pixelado a través de la cultura gaming. Estas aplicaciones demuestran cómo la pixelización trasciende el simple efecto visual para convertirse en una herramienta estratégica para contenido digital llamativo.",
-      case3: "<b>Proyectos Educativos y Enseñanza de Artes Visuales</b>: Educadores emplean herramientas de pixelización para enseñar conceptos fundamentales sobre imágenes digitales de maneras accesibles y atractivas. Profesores de arte usan el proceso de pixelización para demostrar principios de abstracción, teoría del color y simplificación visual en un formato que resuena con estudiantes nativos digitales. Instructores de ciencias computacionales utilizan imágenes pixeladas para ilustrar conceptos como resolución, profundidad de color y algoritmos de compresión de imagen a través de ejemplos visuales más que explicaciones abstractas. Proyectos estudiantiles involucrando pixelización sirven como excelentes introducciones a la creación de arte digital, fomentando expresión creativa mientras construyen comprensión de la relación entre parámetros técnicos y resultados artísticos en medios digitales.",
-      case4: "<b>Protección de Privacidad y Ocultamiento de Identidad</b>: Usuarios profesionales y personales aplican pixelización estratégica para proteger información sensible u ocultar identidades en imágenes compartidas. Fotógrafos pixelan regiones específicas de imágenes para proteger privacidad de sujetos en fotografía callejera o documental. Usuarios empresariales oscurecen información confidencial en capturas de pantalla o presentaciones mediante pixelización dirigida antes de compartir online. Padres pixelan rostros de niños en fotografías destinadas a compartir públicamente en plataformas sociales para proteger su privacidad mientras aún comparten momentos familiares. Estas aplicaciones enfocadas en privacidad demuestran la utilidad práctica de la pixelización más allá de propósitos puramente estéticos, ofreciendo solución directa para equilibrar comunicación visual con preocupaciones de privacidad.",
-      case5: "<b>Diseño y Experimentación Artística</b>: Artistas profesionales y aficionados exploran pixelización como medio creativo distinto con posibilidades expresivas únicas. Artistas digitales crean efectos pixelados deliberados para evocar nostalgia, temas tecnológicos o comentarios sobre cultura digital en su obra. Diseñadores aplican elementos pixelados a diseños contemporáneos para sitios web, vestimenta y productos físicos para crear identidades visuales distintivas que se destacan frente a tendencias realistas fotográficas. Artistas experimentales combinan pixelización con otras técnicas como efectos glitch o manipulación de color para desarrollar nuevas direcciones estéticas que reflejan nuestra relación con medios digitales. Estas aplicaciones creativas muestran cómo la pixelización ha evolucionado desde una limitación técnica hasta convertirse en elección estilística deliberada con rico potencial expresivo a través de múltiples contextos artísticos."
-    },
-    tutorial: {
-      title: "Cómo Crear Arte Pixelado con Nuestro Pixelador de Imagen",
-      intro: "Crear arte pixelado impresionante desde tus fotos es sencillo con nuestra herramienta amigable. Sigue estos pasos simples para transformar tus imágenes en composiciones pixeladas llamativas:",
-      step1: {
-        title: "Paso 1: Sube Tu Imagen",
-        description: "Comienza haciendo clic en el botón <b>\"Seleccionar Imagen\"</b> en la parte superior de la interfaz de la herramienta. Elige cualquier archivo de imagen desde tu dispositivo, con soporte para formatos comunes incluyendo JPG, PNG, WEBP y GIF. Para mejores resultados, selecciona imágenes con sujetos claros y buen contraste, ya que estas características se traducen bien al formato pixelado simplificado. Después de cargarla, tu imagen original aparecerá en el panel de vista previa del lado izquierdo de la interfaz. Esto servirá como punto de referencia durante todo el proceso de pixelización, permitiéndote comparar tu imagen original con el resultado pixelado a medida que hagas ajustes."
-      },
-      step2: {
-        title: "Paso 2: Ajusta Tamaño y Forma del Píxel",
-        description: "Ahora es momento de establecer los parámetros fundamentales para tu arte pixelado. Usa el deslizador <b>\"Tamaño del Píxel\"</b> para controlar el nivel de detalle en tu creación. Moviendo el deslizador a la derecha aumenta el tamaño del píxel, resultando en un look más cuadriculado y abstracto con menos detalles. Moviendo el deslizador a la izquierda disminuye el tamaño del píxel, preservando más detalles desde la imagen original. Luego, selecciona tu <b>forma de píxel preferida</b> haciendo clic en una de las opciones de forma: Cuadrado (look clásico de arte pixelado), Círculo (para una apariencia más suave y punteada) o Rombo (para un efecto geométrico distintivo). Estas opciones de forma crean resultados estéticos dramáticamente diferentes manteniendo la esencia de la pixelización. Experimenta con diferentes combinaciones para encontrar el estilo que mejor se adapte a tu visión artística."
-      },
-      step3: {
-        title: "Paso 3: Ajusta Configuraciones de Color y Efectos",
-        description: "Con la estructura básica de tu arte pixelado establecida, ahora mejora su carácter visual mediante ajustes de color. Usa el deslizador <b>\"Reducción de Color\"</b> para controlar el número de colores distintos en tu imagen pixelada. Valores bajos crean un look más retro con paletas limitadas de color, mientras valores altos preservan más gradientes originales de color. Luego, selecciona un estilo de <b>paleta de color</b> desde opciones como Normal, Retro, Sepia o Negro & Blanco para aplicar diferentes tratamientos de color a tu arte pixelado. Para efectos artísticos adicionales, ajusta el deslizador de <b>Realce de Borde</b> para hacer más prominentes los límites de píxel, o agrega algo de <b>Ruido</b> para crear textura y carácter. Cada ajuste se actualiza en tiempo real, permitiéndote experimentar hasta lograr el estilo deseado."
-      },
-      step4: {
-        title: "Paso 4: Genera y Descarga Tu Arte Pixelado",
-        description: "Una vez satisfecho con tus ajustes, observa el resultado pixelado en el panel de vista previa del lado derecho de la pantalla. Tómate tiempo para compararlo con tu imagen original y realiza cualquier ajuste final para lograr tu estilo deseado. Cuando estés contento con el resultado, haz clic en el botón <b>\"Descargar Imagen\"</b> para guardar tu creación de arte pixelado en tu dispositivo. La imagen descargada preservará todas tus personalizaciones en alta calidad, lista para usar en juegos, redes sociales, arte o cualquier otra aplicación. Si deseas probar diferentes estilos pixelados con la misma imagen, simplemente ajusta los parámetros y la vista previa se actualizará instantáneamente, permitiendo infinita experimentación creativa."
-      }
-    },
-    pixelArtStyles: {
-      title: "Entendiendo Diferentes Estilos y Técnicas de Arte Pixelado",
-      intro: "El arte pixelado abarca varios enfoques estilísticos, cada uno con características visuales y requerimientos técnicos distintos:",
-      retro: {
-        title: "Arte Pixelado Retro Clásico",
-        description: "<b>El arte pixelado retro clásico</b> recrea la apariencia visual distintiva de los primeros sistemas informáticos y videoconsolas mediante estricto apego a limitaciones técnicas. Este estilo típicamente presenta paletas de color extremadamente limitadas (a menudo 16-64 colores), uso deliberado de bordes perfectamente alineados a píxel sin anti-aliasing y colocación manual cuidadosa de píxeles individuales para crear formas reconocibles con mínimo detalle. Al usar nuestro pixelador para resultados estilo retro, selecciona valores pequeños de paso de color (8-32 colores) y aplica la opción de paleta 'Retro' para autenticidad. Estos ajustes ayudan a recrear el estilo distintivo de sistemas como Nintendo Entertainment System, Commodore 64 o gráficos tempranos de PC. La atracción del arte pixelado clásico radica en su capacidad de transmitir imágenes reconocibles dentro de limitaciones estrictas, requiriendo que los espectadores mentalmente \"rellenen\" detalles y creando un encanto nostálgico distintivo que resuena con audiencias que crecieron con los juegos digitales tempranos."
-      },
-      modern: {
-        title: "Arte Pixelado de Alta Densidad Moderno",
-        description: "<b>El arte pixelado moderno de alta densidad</b> mantiene el enfoque basado en píxel pero abraza mayores capacidades técnicas, permitiendo composiciones más detalladas con paletas expandidas de color. A diferencia de las estrictas limitaciones del arte pixelado clásico, enfoques modernos frecuentemente incorporan técnicas como anti-aliasing, dithering y gradientes sutiles para crear transiciones más suaves entre colores y representaciones más detalladas. Para lograr este estilo con nuestro pixelador, selecciona tamaños de píxel más pequeños combinados con configuraciones de mayor profundidad de color (64-256 colores) y la paleta 'Normal' o 'Brillante'. Esta combinación preserva más detalle desde tu imagen original mientras mantiene la estructura pixelada distintiva. El arte pixelado moderno encuentra aplicaciones en juegos indie contemporáneos, ilustraciones digitales y diseño web, ofreciendo un balance entre el atractivo nostálgico de píxeles visibles y las capacidades detalladas de renderizado actuales. Este enfoque atrae tanto a puristas del arte pixelado como a audiencias más amplias buscando estética digital distintiva."
-      },
-      isometric: {
-        title: "Estilos Pixelados Isométricos y Especializados",
-        description: "<b>El arte pixelado isométrico</b> representa un enfoque especializado que combina imágenes basadas en píxel con representación espacial tridimensional a través de una proyección isométrica (típicamente en una proporción 2:1). Esta técnica crea la ilusión de profundidad manteniendo el característico estilo pixelado. Aunque nuestro pixelador no crea automáticamente proyecciones isométricas, puedes preparar diseños isométricos para pixelar o aplicar la opción de forma de píxel 'Rombo' para mejorar el estilo angular común en arte isométrico. Más allá de estilos isométricos, formas experimentales de arte pixelado incluyen técnicas como dithering pixelado (creando textura mediante patrones alternantes de píxeles), desafíos de paleta limitada (creando escenas complejas con colores extremadamente restringidos) y estética glitch (incorporando deliberadamente artefactos digitales). Combinando varias configuraciones en nuestro pixelador—particularmente mediante uso creativo de las opciones de Realce de Borde y Ruido—puedes comenzar a explorar estas direcciones especializadas de arte pixelado y desarrollar tu propio enfoque único al medio."
-      }
-    },
-    faq: {
-      title: "Preguntas Frecuentes Sobre Pixelización de Imagen",
-      q1: "¿Cuál es la diferencia entre pixelización y simplemente reducir la resolución de imagen?",
-      a1: "<b>La pixelización de imagen es un proceso sofisticado</b> que va mucho más allá de la simple reducción de resolución. Mientras reducir resolución simplemente hace la imagen más pequeña, la pixelización verdadera implica decisiones artísticas deliberadas sobre cómo ocurre esa reducción: La reducción de resolución estándar típicamente aplica interpolación automática y anti-aliasing para crear imágenes más pequeñas que intentan preservar la apariencia original, a menudo resultando en detalles borrosos. En contraste, la creación de arte pixelado verdadero—asistida por nuestra herramienta de pixelador—involucra muestreo bloqueado controlado, cuantificación precisa de color para reducir profundidad de color y consideración cuidadosa de formas y disposiciones de píxel. Nuestra herramienta mantiene límites de píxel nítidos sin difuminado y ofrece control artístico sobre limitaciones de paleta de color, creando arte pixelado auténtico en lugar de simplemente imágenes más pequeñas. Además, la pixelización profesional incorpora consideraciones estilísticas como tamaño consistente de píxel a través de toda la imagen, manejo cuidadoso de bordes de píxel y efectos opcionales como dithering o ruido que mejoran el estilo distintivo del arte pixelado. Estas decisiones creativas transforman la pixelización desde una reducción técnica hasta una interpretación artística de la imagen original.",
-      q2: "¿Cómo elijo el tamaño óptimo de píxel para mi imagen específica?",
-      a2: "<b>Seleccionar el tamaño ideal de píxel</b> depende de varios factores incluyendo tu contenido de imagen, uso previsto y estilo estético preferido. Para retratos o logotipos reconocibles donde mantener identidad es crucial, comienza con tamaños de píxel pequeños (4-10px) para preservar más detalles desde la imagen original. Para interpretaciones abstractas o artísticas donde es suficiente representación impresionista, tamaños de píxel más grandes (12-20px) crean composiciones audaces y llamativas con mayor abstracción. Considera tu medio de salida: tamaños de píxel pequeños funcionan mejor para contextos de visualización pequeños como avatares o iconos, mientras tamaños de píxel más grandes crean mayor impacto en formatos de visualización grandes como carteles o cabeceras de redes sociales. Diferentes tipos de sujeto también responden diferente a la pixelización—paisajes con áreas de color amplias frecuentemente trabajan bien con píxeles más grandes, mientras sujetos detallados como caras generalmente se benefician de píxeles más pequeños para mantener características reconocibles. El mejor enfoque es experimentar con la vista previa en tiempo real de nuestra herramienta: comienza con una configuración media (alrededor de 8-12px) y ajusta hacia arriba o abajo observando cómo diferentes elementos en tu imagen específica responden a varios tamaños de píxel.",
-      q3: "¿Las imágenes pixeladas pueden imprimirse correctamente, o solo son adecuadas para visualización digital?",
-      a3: "<b>Las imágenes pixeladas definitivamente pueden imprimirse eficazmente</b>, pero requieren consideraciones específicas para asegurar resultados óptimos. Al preparar imágenes pixeladas para impresión: Elige la configuración correcta de resolución cuando descargues—nuestra herramienta ofrece opciones de exportación de alta resolución específicamente diseñadas para calidad de impresión. Para la mayoría de servicios de impresión, apunta a 300 DPI (puntos por pulgada) para asegurar píxeles nítidos y claros. Considera tu distancia de visualización—impresiones más grandes vistas desde distancia mayor pueden usar tamaños de píxel más grandes manteniendo el efecto visual deseado. Al determinar tamaño de impresión, calcula basado en tus dimensiones de píxel para asegurar que los píxeles individuales aparezcan como se pretende—una pieza de arte pixelado 32x32 impresa en 1 pulgada cuadrada mostrará píxeles nítidos y visibles, mientras la misma imagen impresa en 10 pulgadas cuadradas podría parecer cuadriculada más que intencionadamente pixelada. Muchos artistas profesionales exhiben y venden exitosamente arte pixelado impreso cuidadosamente emparejando dimensiones de píxel con tamaño de impresión. Para mejores resultados, discute tus requisitos específicos con tu servicio de impresión, especificando que quieres reproducción precisa del estilo pixelado sin suavizado adicional que podría socavar el estilo distintivo de arte pixelado.",
-      q4: "¿Qué forma de píxel funciona mejor para diferentes tipos de imágenes y estilos artísticos?",
-      a4: "<b>Diferentes formas de píxel crean efectos estéticos distintivos</b> que complementan particular materia de sujeto y propósito artístico. Los píxeles cuadrados—la forma clásica de arte pixelado—proveen el estilo retro gaming más auténtico y funcionan excepcionalmente bien para sujetos arquitectónicos, ilustraciones técnicas y cualquier imagen donde quieras enfatizar la naturaleza digital, construida del arte pixelado. Los píxeles cuadrados crean líneas horizontales y verticales fuertes que proveen estructura y claridad. Los píxeles circulares ofrecen una sensación más suave y orgánica que frecuentemente funciona bellamente para retratos, paisajes naturales y sujetos con formas fluidas. Las esquinas redondeadas crean una apariencia punteada distintiva recordatoria de puntillismo o técnicas de impresión halftone, haciéndola excelente para interpretaciones artísticas donde quieres reconocer la estructura de píxel mientras suavizas el estilo rígido típico del arte pixelado. Los píxeles rombo crean énfasis diagonal dinámico y energía visual, siendo particularmente efectivos para escenas de acción, composiciones abstractas o cualquier tema donde quieras introducir sensación de movimiento o energía. La forma de diamante también crea patrones entrelazados interesantes que pueden mejorar diseños textiles o composiciones basadas en patrón. Recomendamos experimentar con todas tres formas en tu imagen específica—la materia de sujeto, distribución de color y tu intención artística te guiarán hacia la elección más efectiva.",
-      q5: "¿Cómo puedo crear estéticas auténticas de juegos retro con la herramienta pixeladora?",
-      a5: "<b>Crear visuals auténticos de juegos retro</b> requiere atención a las limitaciones técnicas específicas que definieron diferentes eras de juegos. Para recrear estética 8-bit clásica (como NES o Commodore 64): Establece la reducción de color a paletas extremadamente limitadas (16-32 colores máximo) para coincidir con las restricciones de hardware de sistemas tempranos. Aplica la opción de paleta 'Retro' que enfatiza rangos de color distintivos típicos de estas plataformas. Elige píxeles cuadrados de tamaño medio a grande (10-16px) para recrear las limitaciones de resolución granulosa de pantallas tempranas. Para estética de era 16-bit (SNES, Sega Genesis): Incrementa ligeramente la paleta de color (32-64 colores) manteniendo limitaciones deliberadas. Mantén píxeles cuadrados pero reduce su tamaño ligeramente (6-10px) para reflejar capacidades de resolución más alta de estos sistemas. Considera añadir ruido mínimo (5-10%) para simular la textura sutil a menudo presente en gráficos 16-bit. Para mejorar autenticidad, combina estos ajustes técnicos con elecciones compositivas típicas de la era—como sprites de personaje con siluetas distintivas, elementos de fondo organizados en patrones tipo mosaico y elementos de interfaz que imitan convenciones HUD (display heads-up) de juegos retro. Estas aproximaciones combinadas crean visuals disparadores de nostalgia que se sienten auténticamente conectados a la historia de juegos más que simplemente imágenes modernas de baja resolución."
-    },
-    relatedTools: {
-      title: "Explora Herramientas Relacionadas de Edición de Imagen",
-      description: "Mejora tu creatividad digital con estas herramientas complementarias:",
-      tool1: {
-        name: "Filtros de Imagen",
-        url: "https://www.ufreetools.com/tool/image-filters",
-        description: "Aplica filtros y efectos artísticos a tus imágenes antes o después de pixelarlas para resultados combinados únicos."
-      },
-      tool2: {
-        name: "Extractor de Color de Imagen",
-        url: "https://www.ufreetools.com/tool/image-color-extractor",
-        description: "Analiza y extrae paletas de color desde imágenes para crear esquemas de color personalizados para tu arte pixelado."
-      },
-      tool3: {
-        name: "Generador de Mosaicos de Imagen",
-        url: "https://www.ufreetools.com/tool/image-mosaic-generator",
-        description: "Crea mosaicos de imagen donde muchas imágenes pequeñas se combinan para formar una imagen más grande, otra forma de transformación visual."
-      },
-      tool4: {
-        name: "Redimensionador por Lotes de Imagen",
-        url: "https://www.ufreetools.com/tool/image-batch-resizer",
-        description: "Redimensiona múltiples imágenes al mismo tiempo para ahorrar tiempo y mantener dimensiones consistentes."
-      }
-    },
-    resources: {
-      title: "Recursos Autoritativos sobre Arte Pixelado y Procesamiento Digital de Imagen",
-      resource1: {
-        name: "Pixel Art Academy - Guía Completa de Técnicas de Arte Pixelado",
-        url: "https://pixelart.academy/",
-        description: "Un recurso educativo detallado ofreciendo tutoriales exhaustivos sobre fundamentos de arte pixelado, técnicas avanzadas y contexto histórico."
-      },
-      resource2: {
-        name: "Lospec - Base de Datos y Herramientas de Paletas de Arte Pixelado",
-        url: "https://lospec.com/palette-list",
-        description: "Una colección extensa de paletas históricamente precisas y artísticamente creadas especialmente diseñadas para creación de arte pixelado."
-      },
-      resource3: {
-        name: "Revista de Técnicas de Gráficos por Computadora - Filtrado de Arte Pixelado",
-        url: "http://jcgt.org/published/0008/03/01/",
-        description: "Investigación académica sobre algoritmos y técnicas para escalado y transformación de arte pixelado, explorando fundamentos técnicos del estilo estético del arte pixelado."
-      }
-    }
   }
-}
+};

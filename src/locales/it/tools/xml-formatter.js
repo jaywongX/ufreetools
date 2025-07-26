@@ -1,6 +1,7 @@
 export default {
   name: 'Formattatore XML',
   description: 'Formatta, abbellisci e convalida documenti XML',
+
   options: {
     indentSize: 'Dimensione indentazione',
     useTabs: 'Usa tabulazioni',
@@ -14,11 +15,13 @@ export default {
     displayOptions: 'Opzioni visualizzazione',
     showLineNumbers: 'Mostra numeri riga'
   },
+
   indentOptions: {
     twoSpaces: '2 spazi',
     fourSpaces: '4 spazi',
     tabIndent: 'Indentazione con tab'
   },
+
   actions: {
     format: 'Formatta XML',
     minify: 'Comprimi XML',
@@ -31,6 +34,7 @@ export default {
     beautify: 'Abbellisci',
     copyCode: 'Copia codice'
   },
+
   messages: {
     copied: 'Copiato negli appunti!',
     formatSuccess: 'XML formattato con successo',
@@ -48,71 +52,17 @@ export default {
     lineCount: 'Righe: {0}',
     characterAndLineCount: 'Caratteri: {0} | Righe: {1}'
   },
+
   input: {
     xmlInput: 'Input XML',
     placeholder: 'Incolla o digita XML qui...'
   },
+
   examples: {
     title: 'Esempi XML',
     description: 'Clicca per caricare esempio:',
     simpleXml: 'XML semplice',
     bookstore: 'Catalogo libreria',
     complexXml: 'XML complesso'
-  },
-  article: {
-    title: "Strumento di formattazione XML: essenziale per l'elaborazione di dati strutturati",
-    features: {
-      title: "Scopri la formattazione XML e le sue applicazioni",
-      description: "<strong>Il formattatore XML</strong> è un potente strumento online progettato per trasformare codice XML grezzo in un formato ben strutturato e leggibile. Permette di abbellire documenti XML caotici o compressi, convalidarne la sintassi e convertirli facilmente tra diverse rappresentazioni.<br><br>La funzionalità principale di questo <strong>abbellitore XML</strong> è analizzare la struttura gerarchica dei dati XML e applicare un'identazione coerente, interruzioni di riga appropriate e una formattazione organizzata, rendendo i documenti XML complessi più facili da leggere, modificare e comprendere. Lo strumento supporta sia l'abbellimento (espandendo e organizzando l'XML con spaziature adeguate) che la compressione (riducendo l'XML rimuovendo spazi bianchi non necessari), permettendoti di ottimizzare l'XML per la leggibilità umana o l'efficienza di elaborazione e archiviazione delle macchine. Grazie a funzioni come convalida sintattica, numerazione delle righe e indentazione personalizzabile, questo <strong>formattatore XML avanzato</strong> offre una soluzione completa per gestire documenti XML di qualsiasi livello di complessità.",
-      useCases: {
-        title: "Casi d'uso pratici della formattazione XML",
-        items: [
-          "<strong>Sviluppo e test di servizi web</strong>: Durante la creazione o il debug di servizi web SOAP, gli sviluppatori possono usare il <strong>validatore XML</strong> per verificare payload di richiesta e risposta, assicurandosi che siano conformi allo schema previsto. Lo strumento di formattazione aiuta ad analizzare messaggi SOAP complessi convertendo risposte a riga singola in strutture indentate, facilitando l'identificazione degli elementi dati e la risoluzione dei problemi di integrazione tra servizi.",
-          "<strong>Gestione file di configurazione</strong>: Molte applicazioni aziendali usano XML per le impostazioni di configurazione. Gli amministratori di sistema possono usare il <strong>formattatore strutturale XML</strong> per ripulire e standardizzare i file di configurazione prima della distribuzione, riducendo il rischio di errori sintattici che potrebbero causare malfunzionamenti. Quando sono necessarie modifiche manuali per personalizzazioni, la funzione di abbellimento rende le strutture di configurazione complesse più leggibili.",
-          "<strong>Elaborazione dati integrati</strong>: Gli ingegneri dati che lavorano con scambi di dati basati su XML possono usare questo strumento per verificare e convalidare file XML prima dell'elaborazione. Quando si ricevono dati da sistemi esterni, il <strong>formattatore di codice XML</strong> aiuta a identificare rapidamente problemi strutturali o incongruenze nei dati in ingresso, assicurando operazioni ETL (estrazione, trasformazione, caricamento) più fluide e riducendo i guasti nelle pipeline dati.",
-          "<strong>Sviluppo e documentazione API</strong>: Gli sviluppatori che creano o usano API basate su XML possono usare lo strumento di formattazione per generare esempi XML puliti e correttamente formattati da includere nella documentazione tecnica. Gli esempi abbelliti rendono le specifiche API più accessibili ad altri sviluppatori, mostrando la struttura prevista di richieste e risposte in un formato facile da comprendere e replicare.",
-          "<strong>Manutenzione sistemi legacy</strong>: Gli sviluppatori che mantengono sistemi legacy che usano XML per l'archiviazione dati o lo scambio possono usare il <strong>strumento di indentazione XML</strong> per comprendere codice legacy non documentato o mal formattato. Formattando correttamente gli artefatti XML di questi sistemi, gli sviluppatori possono capire più rapidamente strutture dati e relazioni, facilitando aggiornamenti e integrazioni più efficienti.",
-          "<strong>Sistemi di gestione contenuti</strong>: Autori e amministratori di siti che usano piattaforme CMS con archiviazione contenuti o elaborazione template in XML possono usare il <strong>formattatore sintattico XML</strong> per strutturare correttamente template di contenuto o file di esportazione. Ciò garantisce coerenza nel formato dei contenuti e aiuta a prevenire errori di rendering causati da XML malformato quando i contenuti vengono pubblicati su diversi canali o piattaforme."
-        ]
-      }
-    },
-    faq: {
-      title: "Domande frequenti sulla formattazione XML",
-      items: [
-        {
-          question: "Qual è la differenza tra abbellire e comprimere XML?",
-          answer: "Abbellire XML significa convertire XML compresso o mal formattato in un formato strutturato e leggibile, aggiungendo indentazione appropriata, interruzioni di riga e spaziatura coerente. Questo processo rende il documento più facile da leggere, comprendere e modificare, ed è particolarmente utile per sviluppo, debug e documentazione. Comprimere XML fa l'opposto - rimuove tutti gli spazi bianchi non necessari, le interruzioni di riga e l'indentazione, creando una versione compatta su singola riga del documento. La compressione riduce le dimensioni del file, può migliorare la velocità di trasmissione e ridurre i requisiti di archiviazione, ideale per ambienti di produzione dove l'XML viene elaborato solo da macchine. Il nostro formattatore XML offre entrambe le opzioni, permettendoti di passare tra formato leggibile e compatto in base alle esigenze. Mentre l'XML abbellito può aumentare le dimensioni del file del 30-50%, nella fase di sviluppo i benefici in leggibilità superano generalmente le considerazioni sulle dimensioni."
-        },
-        {
-          question: "Come funziona la convalida XML e quali errori può rilevare?",
-          answer: "La convalida XML nel nostro strumento funziona analizzando la struttura XML e verificandola rispetto alle regole dell'XML ben formato. Controlla che il documento rispetti i requisiti sintattici di base come: elementi annidati correttamente (ogni tag di apertura deve avere un tag di chiusura corrispondente, nell'ordine giusto); attributi formati correttamente (tutti i valori degli attributi devono essere tra virgolette); uso corretto delle entità (i caratteri speciali devono essere opportunamente escapati); e presenza di un singolo elemento radice. Gli errori comuni rilevati includono: tag non chiusi, tag di apertura e chiusura non corrispondenti, virgolette mancanti attorno ai valori degli attributi, annidamento improprio degli elementi, uso di caratteri illegali e attributi duplicati all'interno dello stesso elemento. Quando la convalida fallisce, il nostro formattatore XML fornisce messaggi di errore specifici che indicano la natura del problema e la sua posizione nel documento (mostrando numero di riga e colonna quando possibile), aiutandoti a identificare e correggere rapidamente i problemi sintattici. Il validatore si concentra sulla correttezza strutturale, non sulla convalida rispetto a specifici DTD o schemi XML, rendendolo universalmente applicabile per i controlli di sintassi XML di base."
-        },
-        {
-          question: "Questo strumento può gestire file XML di grandi dimensioni?",
-          answer: "Sì, il nostro formattatore XML può elaborare file XML di medie dimensioni (fino a qualche megabyte) direttamente nel browser. Per garantire prestazioni ottimali, lo strumento utilizza algoritmi di parsing efficienti e tecniche di manipolazione DOM che elaborano l'XML senza consumare eccessivamente la memoria. Tuttavia, esistono limiti pratici basati sulle capacità del browser e sulle risorse di sistema disponibili. Per file XML molto grandi (decine o centinaia di megabyte), potresti riscontrare un calo delle prestazioni o, in casi estremi, raggiungere i limiti del browser. Per questi file di grandi dimensioni, ti consigliamo di elaborarli in blocchi più piccoli o di utilizzare prima l'opzione di compressione per ridurre l'utilizzo della memoria durante l'elaborazione. Lo strumento è ottimizzato per gestire in modo efficiente i casi d'uso comuni dell'XML, inclusi file di configurazione, risposte API, sorgenti dati e la maggior parte dei carichi di servizi web. Se lavori regolarmente con set di dati XML particolarmente grandi, considera l'uso di strumenti di editing XML desktop specializzati, progettati per gestire file di grandi dimensioni con una gestione ottimizzata della memoria."
-        },
-        {
-          question: "La formattazione XML ne altera la funzionalità o l'elaborazione?",
-          answer: "No, una corretta formattazione XML non altera il significato funzionale dell'XML o il modo in cui viene elaborato dalle applicazioni. I parser XML ignorano gli spazi bianchi e le interruzioni di riga aggiuntivi tra gli elementi, concentrandosi solo sui dati e sulla struttura effettivi. Il nostro strumento di formattazione conserva tutti i componenti essenziali: i nomi degli elementi, gli attributi, i valori e le loro relazioni gerarchiche rimangono esattamente gli stessi. L'unico cambiamento è estetico - l'aggiunta o la rimozione di spazi bianchi, interruzioni di riga e indentazione. Questo principio spiega perché lo stesso documento XML può essere rappresentato sia in forma abbellita che compressa, rimanendo funzionalmente equivalente. È importante notare che gli spazi bianchi all'interno dei nodi di testo (il contenuto effettivo tra i tag) vengono preservati, poiché potrebbero essere significativi a seconda dell'applicazione. Ad esempio, nell'XML utilizzato per la formattazione di documenti o testo, gli spazi tra parole nei nodi di contenuto potrebbero essere semanticamente importanti. Sii certo che le nostre operazioni di formattazione sono progettate per preservare l'integrità semantica dell'XML, migliorandone allo stesso tempo la presentazione visiva per i lettori umani."
-        },
-        {
-          question: "Come posso personalizzare lo stile di formattazione per i miei documenti XML?",
-          answer: "Il nostro formattatore XML offre diverse opzioni di personalizzazione per adattarsi al tuo stile di codifica preferito o alle esigenze del progetto. Puoi regolare la dimensione dell'indentazione scegliendo tra 2 spazi, 4 spazi o tabulazioni, permettendoti di allinearti agli standard di codifica del tuo team o alle preferenze personali. Per un supporto visivo durante la modifica, puoi attivare o disattivare la visualizzazione dei numeri di riga, particolarmente utile quando lavori con documenti di grandi dimensioni o devi fare riferimento a posizioni specifiche nella struttura XML. Lo strumento conserva le impostazioni più recenti per comodità durante la tua sessione. Sebbene il formattatore attualmente non supporti opzioni di stile più avanzate come l'ordinamento personalizzato degli attributi o la formattazione specializzata dei tag, segue le migliori pratiche di formattazione XML ampiamente accettate, adatte alla maggior parte dei casi d'uso. Le impostazioni predefinite creano una struttura pulita e coerente che bilancia leggibilità e uso efficiente dello spazio, rendendo i tuoi documenti XML accessibili sia a parti interessate tecniche che non tecniche."
-        }
-      ]
-    },
-    guide: {
-      title: "Guida passo passo all'uso dello strumento di formattazione XML",
-      steps: [
-        "<strong>Inserisci il tuo contenuto XML</strong>: Per iniziare, inserisci i tuoi dati XML nell'area di input. Puoi digitare o incollare direttamente il codice XML nel campo di testo. Se sei nuovo allo strumento o vuoi sperimentare, clicca uno dei pulsanti di esempio sotto l'area di input per caricare strutture XML di esempio con diversi livelli di complessità.",
-        "<strong>Seleziona il tipo di operazione</strong>: Nella sezione «Tipo operazione», scegli se vuoi abbellire o comprimere il tuo XML. L'abbellimento espanderà il tuo XML, aggiungendo indentazione e interruzioni di riga appropriate per migliorare la leggibilità, mentre la compressione lo ridurrà rimuovendo spazi bianchi non necessari per ridurre le dimensioni del file.",
-        "<strong>Personalizza le opzioni di formattazione</strong>: Se hai scelto di abbellire l'XML, puoi personalizzare lo stile di indentazione selezionando l'opzione preferita dal menu a discesa «Impostazioni indentazione». Scegli tra 2 spazi, 4 spazi o tabulazioni in base ai tuoi standard di codifica o preferenze personali. Puoi anche attivare l'opzione «Mostra numeri riga» per visualizzare o nascondere i numeri di riga nella vista di output.",
-        "<strong>Elabora il tuo XML</strong>: Clicca il pulsante «Abbellisci» o «Comprimi» (a seconda dell'operazione selezionata) per formattare il tuo XML. Lo strumento elaborerà il tuo input, verificherà eventuali errori sintattici e mostrerà il risultato formattato nell'area di output sottostante. Se sono presenti errori di sintassi XML, apparirà un messaggio di errore per aiutarti a identificare e risolvere il problema.",
-        "<strong>Esamina l'output formattato</strong>: Al termine dell'elaborazione, controlla l'XML formattato nell'area dei risultati. Se hai abilitato i numeri di riga (se selezionato), puoi facilmente fare riferimento a sezioni specifiche del documento. Le informazioni sul conteggio dei caratteri e delle righe visualizzate sotto l'output ti aiutano a tenere traccia delle dimensioni e della complessità del documento.",
-        "<strong>Copia o modifica ulteriormente</strong>: Se sei soddisfatto del risultato, clicca il pulsante «Copia codice» per copiare l'XML formattato negli appunti, da usare nella tua applicazione, documentazione o per ulteriori modifiche. Se devi modificare l'XML originale e rielaborarlo, puoi aggiornare l'XML di input e cliccare nuovamente il pulsante di formattazione.",
-        "<strong>Pulisci e inizia nuovo</strong>: Quando sei pronto a elaborare un diverso documento XML, clicca il pulsante «Pulisci» per reimpostare le aree di input e output. Puoi quindi iniziare con nuovi contenuti XML o caricare un altro esempio per continuare a usare lo strumento di formattazione."
-      ]
-    },
-    conclusion: "Il formattatore XML si rivela uno strumento indispensabile nel toolkit dello sviluppatore moderno, colmando il divario tra la rappresentazione XML efficiente per le macchine e il codice leggibile per gli umani. Convertendo XML denso e non formattato in documenti strutturati in modo chiaro - e viceversa - riduce significativamente il tempo e lo sforzo necessari per lavorare con dati XML in numerose applicazioni e settori. Che si tratti di sviluppare servizi web, gestire configurazioni di sistema, elaborare sorgenti dati o mantenere sistemi legacy, un XML correttamente formattato migliora la qualità del codice, riduce gli errori e migliora la collaborazione tra membri del team. Con l'XML che continua a essere un formato fondamentale per lo scambio di dati e la configurazione negli ambienti aziendali, poter accedere a uno strumento di formattazione affidabile rimane essenziale per flussi di lavoro efficaci di sviluppo e manutenzione dei sistemi. Questo strumento online di formattazione XML elimina la necessità di applicazioni desktop specializzate, fornendo al contempo funzionalità di livello professionale accessibili da qualsiasi browser web moderno."
   }
-}
+};

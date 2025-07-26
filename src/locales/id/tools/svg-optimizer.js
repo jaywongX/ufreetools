@@ -1,6 +1,7 @@
 export default {
   name: 'Pengoptimal SVG',
   description: 'Optimalkan dan bersihkan file SVG untuk meningkatkan performa dan mengurangi ukuran file',
+
   upload: {
     title: 'Unggah SVG',
     dropzone: 'Seret dan lepas file SVG di sini atau klik untuk mengunggah',
@@ -11,6 +12,7 @@ export default {
     selected: 'Terpilih',
     changeFile: 'Ganti file'
   },
+
   input: {
     title: 'Input SVG',
     pasteHere: 'Tempel kode SVG di sini...',
@@ -18,6 +20,7 @@ export default {
     clear: 'Hapus',
     validate: 'Validasi SVG'
   },
+
   output: {
     title: 'Hasil Optimasi',
     copyToClipboard: 'Salin ke clipboard',
@@ -28,6 +31,7 @@ export default {
     reductionBy: 'Berkurang sebesar',
     svgCode: 'Kode SVG'
   },
+
   options: {
     title: 'Opsi Optimasi',
     preset: 'Preset',
@@ -76,6 +80,7 @@ export default {
     sortAttrs: 'Urutkan atribut',
     sortAttrsDesc: 'Susun atribut elemen secara alfabetis'
   },
+
   view: {
     title: 'Pratinjau',
     original: 'Asli',
@@ -86,6 +91,7 @@ export default {
     zoom: 'Zoom',
     toggleAnimation: 'Toggle animasi'
   },
+
   actions: {
     optimize: 'Mulai optimasi',
     optimizing: 'Mengoptimasi...',
@@ -96,6 +102,7 @@ export default {
     viewCode: 'Lihat kode',
     viewPreview: 'Lihat pratinjau'
   },
+
   messages: {
     optimizationSuccess: 'Optimasi SVG berhasil',
     optimizationFailed: 'Gagal mengoptimasi SVG: {error}',
@@ -106,64 +113,5 @@ export default {
     emptyInput: 'Harap berikan kode SVG atau file untuk dioptimasi',
     onlySvgAllowed: 'Harap unggah file format SVG!',
     failedToLoadLibrary: 'Gagal memuat library SVGO'
-  },
-  article: {
-    title: "Pengoptimal SVG: Meningkatkan Performa Grafik Vektor dan Mengurangi Ukuran File",
-    features: {
-      title: "Memahami Optimasi SVG dan Manfaatnya",
-      description: "<strong>Pengoptimal SVG</strong> adalah alat yang dirancang khusus untuk menyederhanakan dan meningkatkan file Scalable Vector Graphics (SVG). SVG adalah format gambar vektor berbasis XML yang mempertahankan kejelasan sempurna pada level zoom apa pun, menjadikannya ideal untuk desain web responsif, logo, ikon, dan ilustrasi. Namun, file SVG sering berisi data tidak perlu yang menambah ukuran file tanpa memberikan nilai visual.<br><br><strong>Alat optimasi SVG</strong> kami secara cerdas menganalisis dan menghapus informasi berlebihan dari file SVG sambil mempertahankan tampilan visualnya. Dengan menghapus metadata, komentar, grup kosong, definisi tidak terpakai, dan mengoptimasi data path, alat ini secara signifikan mengurangi ukuran file - biasanya 30-70%. Hasilnya adalah <strong>grafik vektor</strong> yang lebih bersih dan efisien, memuat lebih cepat, menggunakan lebih sedikit bandwidth, dan secara langsung meningkatkan metrik performa situs dan pengalaman pengguna.",
-      useCases: {
-        title: "Aplikasi Praktis Optimasi SVG",
-        items: [
-          "<strong>Peningkatan Performa Situs</strong>: Pengembang web dan desainer dapat menggunakan <strong>pengoptimal file SVG</strong> untuk mengurangi ukuran grafik vektor yang digunakan di seluruh situs. File SVG yang lebih kecil berarti waktu pemuatan halaman lebih cepat, konsumsi bandwidth lebih rendah, dan peningkatan skor Core Web Metrics yang dapat berdampak positif pada peringkat mesin pencari.",
-          
-          "<strong>Pengembangan Aplikasi Mobile</strong>: Pengembang aplikasi mobile mendapat manfaat dari SVG yang dioptimasi yang dapat dimuat dengan cepat di perangkat dengan sumber daya terbatas dan menggunakan lebih sedikit memori. <strong>Pengoptimal grafik vektor</strong> kami memastikan elemen UI yang dirender sebagai SVG memberikan pengalaman pengguna yang halus dan responsif tanpa overhead yang tidak perlu.",
-          
-          "<strong>Pemeliharaan Library Ikon</strong>: Administrator sistem desain dan desainer UI/UX yang bertanggung jawab atas pemeliharaan library ikon dapat memproses ikon SVG secara massal untuk memastikan konsistensi dan performa optimal. <strong>Alat pembersih SVG</strong> membantu membangun pendekatan standar untuk aset vektor di berbagai produk dan platform.",
-          
-          "<strong>Grafik Produk E-commerce</strong>: Pemilik toko online dapat mengoptimalkan grafik vektor produk untuk meningkatkan kecepatan halaman dan konversi. Gambar produk yang dimuat lebih cepat dibuat dengan <strong>alat kompresi SVG</strong> kami membantu mengurangi bounce rate dan meningkatkan pengalaman belanja, terutama di perangkat mobile.",
-          
-          "<strong>Kampanye Pemasaran Email</strong>: Pemasaran dapat menggunakan SVG yang dioptimasi dalam kampanye email untuk membuat buletin yang menarik secara visual dan cepat dimuat di klien email. Alat kami membantu membuat <strong>ilustrasi vektor</strong> ringan yang ditampilkan dengan benar di berbagai platform email tanpa menambah ukuran pesan.",
-          
-          "<strong>Pengiriman Aset Desain</strong>: Desainer grafis dapat mengoptimalkan file SVG sebelum mengirimkannya ke klien atau anggota tim, memastikan aset akhir siap untuk produksi. <strong>Pembersih file SVG</strong> membantu mempertahankan standar profesional dengan menghasilkan kode yang efisien dan bersih yang mudah diterapkan oleh pengembang."
-        ]
-      }
-    },
-    faq: {
-      title: "Pertanyaan Umum tentang Optimasi SVG",
-      items: [
-        {
-          question: "Apa sebenarnya yang dilakukan optimasi SVG pada file saya?",
-          answer: "Optimasi SVG adalah proses mengurangi ukuran file sambil mempertahankan kualitas visual, dicapai melalui beberapa teknik:<br><br>• <strong>Menghapus metadata</strong>: Menghilangkan informasi tidak perlu seperti data editor, komentar, dan elemen tersembunyi<br>• <strong>Membersihkan data path</strong>: Menyederhanakan perintah path dan koordinat, mengurangi presisi desimal yang tidak memengaruhi tampilan<br>• <strong>Menggabungkan grup</strong>: Menghapus grup dan kontainer bersarang yang tidak perlu<br>• <strong>Meminimalkan atribut</strong>: Menggabungkan dan menyederhanakan atribut elemen<br>• <strong>Mengoptimasi transformasi</strong>: Menyederhanakan matriks transformasi<br>• <strong>Menghapus definisi tidak terpakai</strong>: Menghapus elemen yang tidak dirujuk dari bagian &lt;defs&gt;<br><br><strong>Alat optimasi SVG</strong> kami secara cerdas menerapkan teknik-teknik ini, memastikan output visual tetap sama sementara ukuran file berkurang secara signifikan."
-        },
-        {
-          question: "Apakah optimasi SVG memengaruhi kualitas grafik saya?",
-          answer: "Jika dikonfigurasi dengan benar, optimasi SVG seharusnya tidak secara nyata memengaruhi kualitas visual grafik. <strong>Pengoptimal grafik vektor</strong> kami dirancang untuk mempertahankan tampilan visual sambil menghapus data yang tidak perlu.<br><br>Pengaturan presisi dalam alat kami memungkinkan Anda mengontrol trade-off antara ukuran file dan presisi. Pada pengaturan presisi lebih tinggi (5-8 digit desimal), bahkan ilustrasi paling kompleks akan mempertahankan penampilan tepatnya. Pada pengaturan lebih rendah (1-3 digit desimal), Anda akan mencapai pengurangan ukuran file lebih besar dengan perbedaan visual minimal - biasanya tidak terlihat oleh mata manusia.<br><br>Untuk sebagian besar grafik web, presisi 2-3 digit desimal memberikan keseimbangan sangat baik antara optimasi dan kualitas. Anda selalu dapat melihat pratinjau <strong>gambar SVG</strong> yang dioptimasi berdampingan dengan aslinya sebelum mengunduh untuk memastikan hasilnya memenuhi kebutuhan Anda."
-        },
-        {
-          question: "Bisakah saya mengoptimasi SVG dengan animasi atau interaktivitas?",
-          answer: "Ya, Anda dapat mengoptimasi SVG yang berisi elemen animasi atau interaktif, tetapi perlu perhatian khusus. <strong>Pengoptimal file SVG</strong> kami membersihkan data yang tidak perlu sambil mempertahankan elemen struktur penting.<br><br>Untuk SVG dengan animasi CSS, animasi SMIL, atau interaktivitas JavaScript, kami merekomendasikan:<br><br>1. Mempertahankan ID yang dirujuk dalam animasi atau skrip<br>2. Mempertahankan nama kelas yang digunakan untuk gaya atau penanganan event<br>3. Menggunakan preset optimasi yang lebih konservatif<br>4. Menguji secara menyeluruh <strong>grafik vektor</strong> yang dioptimasi untuk memastikan fungsionalitas dipertahankan<br><br>Jika Anda mengoptimasi SVG interaktif yang kompleks, pertimbangkan untuk menggunakan opsi kustom untuk menonaktifkan optimasi spesifik yang mungkin memengaruhi animasi atau interaktivitas. Misalnya, jika JavaScript Anda merujuk ID elemen spesifik dalam SVG, Anda mungkin ingin menonaktifkan pembersihan ID."
-        },
-        {
-          question: "Bagaimana SVG yang dioptimasi meningkatkan performa situs?",
-          answer: "SVG yang dioptimasi meningkatkan performa situs dalam beberapa cara penting:<br><br>• <strong>Waktu pemuatan lebih cepat</strong>: Ukuran file lebih kecil berarti pengunduhan lebih cepat, terutama penting untuk pengguna mobile dengan paket data terbatas<br>• <strong>Penggunaan bandwidth berkurang</strong>: <strong>Grafik vektor</strong> yang dioptimasi mengonsumsi lebih sedikit data, mengurangi biaya hosting dan dampak lingkungan<br>• <strong>Peningkatan kecepatan rendering</strong>: Struktur SVG yang lebih sederhana membutuhkan lebih sedikit pemrosesan oleh browser<br>• <strong>Peningkatan Core Web Metrics</strong>: Membantu meningkatkan skor Largest Contentful Paint (LCP) dan First Input Delay (FID)<br>• <strong>Penggunaan memori lebih rendah</strong>: SVG yang lebih bersih menggunakan lebih sedikit memori browser, terutama penting di perangkat mobile<br><br>Google's PageSpeed Insights dan alat pengukuran performa lainnya akan mencerminkan peningkatan ini, yang mungkin membantu mendapatkan peringkat mesin pencari lebih baik. Halaman yang menggunakan <strong>gambar SVG</strong> yang dioptimasi secara efisien dapat mencetak skor secara signifikan lebih tinggi dalam metrik performa dibandingkan dengan halaman yang menggunakan grafik besar dan tidak dioptimasi."
-        },
-        {
-          question: "Apa perbedaan antara optimasi SVG dan kompresi gambar raster?",
-          answer: "Optimasi SVG dan kompresi gambar raster (seperti JPEG atau PNG) berbeda secara fundamental dalam cara mengurangi ukuran file:<br><br><strong>Optimasi SVG:</strong><br>• Berlaku untuk grafik berbasis vektor yang menggunakan path dan bentuk matematis<br>• Mempertahankan penskalaan sempurna pada resolusi apa pun<br>• Mengurangi ukuran file dengan membersihkan kode dan mengoptimasi ekspresi matematis<br>• Ketika dilakukan dengan benar, tidak menyebabkan kehilangan kualitas<br>• Cocok untuk logo, ikon, ilustrasi, dan elemen UI<br>• Output tetap dapat diedit dan dimodifikasi lebih lanjut<br><br><strong>Kompresi Raster:</strong><br>• Berlaku untuk gambar berbasis piksel<br>• Resolusi tetap; penskalaan akan mengurangi kualitas<br>• Mengurangi ukuran file dengan membuang data piksel atau menggunakan algoritma matematis untuk merepresentasikan pola piksel<br>• Biasanya melibatkan beberapa kehilangan kualitas (kompresi lossy)<br>• Lebih cocok untuk foto dan gambar kompleks dengan banyak warna<br>• File terkompresi biasanya tidak dapat diedit<br><br><strong>Alat optimasi SVG</strong> kami secara khusus menargetkan struktur unik grafik vektor, mengurangi ukuran file sambil mempertahankan keunggulan format vektor - penskalaan sempurna, kemampuan edit, dan penampilan tajam pada ukuran apa pun."
-        }
-      ]
-    },
-    guide: {
-      title: "Cara Menggunakan Pengoptimal SVG: Panduan Langkah demi Langkah",
-      step1: "<strong>Unggah file SVG Anda</strong>: Seret dan lepas file SVG ke area unggah, atau klik untuk menelusuri file Anda. Atau, jika Anda memiliki kode bukan file, Anda dapat langsung menempelkan kode SVG ke field input. <strong>Alat optimasi SVG</strong> kami menerima file hingga 5MB.",
-      step2: "<strong>Konfigurasikan opsi optimasi</strong>: Tinjau pengaturan optimasi default, yang bekerja baik untuk sebagian besar SVG. Untuk kebutuhan spesifik, Anda dapat menyesuaikan opsi seperti:<ul class='ml-5 list-disc'><li>Level presisi (jumlah digit desimal yang dipertahankan)</li><li>Apakah akan menghapus metadata, komentar, dan elemen kosong</li><li>Pengaturan optimasi data path</li><li>Penanganan ID dan atribut</li></ul>Pengaturan default memberikan keseimbangan baik antara pengurangan ukuran file dan kesetiaan visual untuk sebagian besar <strong>grafik vektor</strong>.",
-      step3: "<strong>Klik tombol \"Mulai optimasi\"</strong>: Mulailah proses optimasi dengan mengklik tombol optimasi. Alat akan memproses SVG Anda dengan opsi yang dipilih, menerapkan berbagai teknik untuk mengurangi ukuran file sambil mempertahankan tampilan visual. Untuk file besar atau kompleks, ini mungkin membutuhkan beberapa detik.",
-      step4: "<strong>Tinjau hasil optimasi</strong>: Setelah diproses, Anda akan melihat statistik yang menampilkan ukuran file asli, ukuran setelah optimasi, dan persentase pengurangan yang dicapai. Lebih penting lagi, Anda dapat membandingkan secara visual <strong>gambar SVG</strong> asli dan yang dioptimasi secara berdampingan untuk memverifikasi bahwa penampilan dipertahankan.",
-      step5: "<strong>Sesuaikan pengaturan jika perlu</strong>: Jika Anda tidak puas dengan hasilnya - apakah pengurangan ukuran file tidak cukup signifikan, atau ada perbedaan visual yang tidak Anda inginkan - Anda dapat menyesuaikan pengaturan optimasi dan mencoba lagi. Meningkatkan presisi akan mempertahankan lebih banyak detail visual tetapi menghasilkan file lebih besar, sementara mengurangi presisi akan menghasilkan file lebih kecil dengan perbedaan visual yang mungkin sedikit.",
-      step6: "<strong>Tinjau kode SVG yang dioptimasi</strong>: Periksa kode SVG yang telah dibersihkan untuk melihat perubahan apa yang dibuat. Alat menghapus elemen tidak perlu, mengoptimasi data path, dan umumnya membuat kode lebih efisien. Ini bersifat edukatif dan membantu Anda memahami struktur <strong>grafik vektor</strong>.",
-      step7: "<strong>Unduh atau salin SVG yang dioptimasi</strong>: Ketika Anda puas dengan optimasi, Anda dapat mengunduh file SVG yang dioptimasi atau menyalin kode SVG ke clipboard. File yang dioptimasi dapat digunakan dalam proyek web Anda, sistem desain, atau aplikasi lain yang membutuhkan <strong>grafik vektor</strong> yang efisien."
-    },
-    conclusion: "Alat Pengoptimal SVG membuat pengurangan ukuran file grafik vektor tanpa mengorbankan kualitas visual menjadi sederhana. Dengan menghilangkan informasi berlebihan dan mengoptimasi struktur file SVG, alat ini membantu meningkatkan performa situs, mengurangi penggunaan bandwidth, dan meningkatkan pengalaman pengguna di berbagai perangkat. Apakah Anda seorang pengembang web yang mengejar pemuatan halaman lebih cepat, desainer yang memelihara sistem ikon yang konsisten, atau pemasar yang membuat kampanye email responsif, mengoptimasi SVG harus menjadi bagian standar dari alur kerja produksi Anda. Beberapa menit yang dihabiskan untuk mengoptimasi aset vektor dapat diterjemahkan ke dalam peningkatan performa yang signifikan dan pengalaman pengguna yang lebih mulus, terutama di perangkat mobile atau koneksi yang lebih lambat. Seiring standar web terus berkembang yang condong ke arah performa dan pengalaman pengguna, alat seperti Pengoptimal SVG kami menjadi komponen penting dalam toolkit pengembangan web modern."
   }
-}
+};

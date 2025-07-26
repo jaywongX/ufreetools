@@ -1,6 +1,7 @@
 export default {
   name: 'Probador de WebSocket',
   description: 'Conectarse a servidores WebSocket, enviar mensajes y ver respuestas',
+
   connection: {
     url: 'URL del WebSocket',
     urlPlaceholder: 'Ej. ws://echo.websocket.org',
@@ -15,10 +16,12 @@ export default {
     autoReconnect: 'Volver a Conectar Automáticamente',
     reconnectMessage: 'Intentará reconectar en {0} segundos...'
   },
+
   options: {
     title: 'Opciones',
     autoScroll: 'Auto desplazar Registros'
   },
+
   messages: {
     send: 'Enviar Mensajes',
     logs: 'Registro de Mensajes',
@@ -46,6 +49,7 @@ export default {
       info: 'Información'
     }
   },
+
   savedConnections: {
     title: 'Conexiones Guardadas',
     empty: 'Sin conexiones guardadas',
@@ -56,6 +60,7 @@ export default {
     delete: 'Eliminar',
     cancel: 'Cancelar'
   },
+
   testServers: {
     title: 'Servidores de Prueba',
     description: 'Aquí hay algunos servidores WebSocket públicos disponibles para pruebas:',
@@ -71,6 +76,7 @@ export default {
       }
     }
   },
+
   logs: {
     connectingTo: 'Conectando a {0}...',
     connectionSuccess: 'Conexión exitosa',
@@ -84,61 +90,5 @@ export default {
     copyFailed: 'Fallo al copiar: {0}',
     serverSelected: 'Servidor seleccionado: {0}',
     binaryData: '[Datos binarios]'
-  },
-  article: {
-    title: "Probador de WebSocket: Herramienta para Pruebas de Comunicación en Tiempo Real",
-    features: {
-      title: "Entendiendo la Tecnología WebSocket y Sus Aplicaciones",
-      description: "El <strong>Probador de WebSocket</strong> es una herramienta completa diseñada para probar, depurar y explorar la comunicación en tiempo real entre clientes y servidores utilizando el protocolo WebSocket. A diferencia de las conexiones HTTP tradicionales que requieren nuevas solicitudes para cada interacción, los WebSockets proporcionan canales de comunicación bidireccional persistentes que permanecen abiertos hasta que se cierren explícitamente por cualquiera de las partes.<br><br>Este <strong>cliente WebSocket</strong> permite a los desarrolladores establecer conexiones con servidores WebSocket, enviar mensajes personalizados en varios formatos (texto, JSON o binario) y ver las respuestas en tiempo real. Con características como gestión de conexiones, registro de mensajes y validación de formatos, este <strong>probador de comunicación en tiempo real</strong> ofrece todo lo necesario para desarrollar y depurar implementaciones WebSocket en diferentes plataformas y entornos.",
-      useCases: {
-        title: "Aplicaciones Prácticas para la Prueba de WebSocket",
-        items: [
-          "<strong>Desarrollo y Depuración de API</strong>: Al desarrollar APIs basadas en WebSocket, el <strong>herramienta de depuración WebSocket</strong> permite conectarse a sus puntos finales de desarrollo, enviar mensajes de prueba y verificar que el servidor responda correctamente a distintos formatos de solicitud y casos extremos. Este enfoque interactivo ayuda a identificar problemas desde las primeras etapas del ciclo de desarrollo, mucho antes de que los clientes intenten conectarse a su servicio.",
-          "<strong>Prueba de Aplicaciones en Tiempo Real</strong>: Para aplicaciones como sistemas de chat, paneles en vivo o plataformas colaborativas que dependen de <strong>transmisión de datos en tiempo real</strong>, esta herramienta le permite simular conexiones de cliente y verificar que la entrega de mensajes, difusión de eventos y sincronización de estados funcionen según lo esperado. Puede probar la latencia de entrega de mensajes, notificaciones push del servidor y mecanismos de suscripción del cliente.",
-          "<strong>Comunicación de Dispositivos IoT</strong>: Los dispositivos de Internet de las Cosas suelen usar WebSockets para <strong>conexiones persistentes ligeras</strong> hacia servidores centrales o plataformas en la nube. El Probador de WebSocket puede simular patrones de comunicación de dispositivos IoT, ayudándole a probar el registro de dispositivos, transmisión de comandos, reporte de telemetría y otros flujos esenciales de comunicación IoT sin necesidad de desplegar hardware físico.",
-          "<strong>Interacción con Servidores de Juegos</strong>: Los juegos multijugador en línea frecuentemente dependen de WebSockets para <strong>interacciones en tiempo real entre jugadores</strong> y actualizaciones del estado del juego. Los desarrolladores de juegos pueden utilizar esta herramienta para probar las respuestas del servidor ante acciones de jugador, verificar la sincronización del estado del juego y medir características de rendimiento como el volumen de mensajes y latencia bajo distintas condiciones.",
-          "<strong>Transmisión de Datos Financieros</strong>: Las plataformas de trading y servicios financieros utilizan WebSockets para <strong>fuentes de datos de mercado en tiempo real</strong> y procesamiento de transacciones. El Probador de WebSocket permite a desarrolladores de aplicaciones financieras verificar la suscripción a flujos de datos, probar el manejo de eventos del mercado y garantizar un procesamiento confiable de información financiera sensible al tiempo.",
-          "<strong>Solución de Problemas en Producción</strong>: Al enfrentar problemas de conectividad o mensajería en entornos de producción, ingenieros de soporte pueden usar el <strong>probador de conexión WebSocket</strong> para replicar escenarios de usuario, verificar disponibilidad del servidor y diagnosticar problemas de formato de mensajes o protocolo sin modificar el código de la aplicación en producción."
-        ]
-      }
-    },
-    faq: {
-      title: "Preguntas Frecuentes sobre la Prueba de WebSocket",
-      items: [
-        {
-          question: "¿Cuál es la diferencia entre WebSockets y HTTP?",
-          answer: "WebSockets y HTTP atienden diferentes necesidades de comunicación en aplicaciones web. HTTP es un protocolo solicitud-respuesta donde cada interacción requiere una nueva conexión iniciada por el cliente. El cliente envía una solicitud, el servidor responde y la conexión se cierra. Este modelo funciona bien para navegación web tradicional pero genera sobrecarga significativa para aplicaciones en tiempo real.<br><br>Por otro lado, WebSockets establecen una <strong>conexión persistente</strong> entre cliente y servidor que permanece abierta hasta que se cierra explícitamente. Tras el handshake inicial (realizado sobre HTTP), la conexión se actualiza al protocolo WebSocket, permitiendo que tanto cliente como servidor envíen mensajes en cualquier momento sin sobrecarga adicional de conexión. Esta <strong>comunicación dúplex completa</strong> permite aplicaciones verdaderamente en tiempo real con menor latencia y uso de ancho de banda comparado con enfoques basados en polling HTTP. Nuestra herramienta Probador de WebSocket le ayuda a explorar estas diferencias de forma práctica permitiéndole establecer conexiones WebSocket y experimentar las capacidades de intercambio de mensajes bidireccional."
-        },
-        {
-          question: "¿Por qué mis conexiones WebSocket se desconectan tras un periodo de inactividad?",
-          answer: "Las conexiones WebSocket pueden desconectarse durante periodos de inactividad debido a varios factores en la ruta de red entre cliente y servidor. Las causas más comunes incluyen:<br><br>• <strong>Tiempos de espera de proxies</strong>: Proxies corporativos, balanceadores de carga o puertas de enlace de red suelen tener tiempos de espera para conexiones inactivas que las cierran para conservar recursos.<br>• <strong>Configuraciones de firewall</strong>: Los firewalls de red pueden tener políticas de tiempo de espera para sesiones que terminan conexiones de larga duración sin actividad reciente.<br>• <strong>Tiempos de espera del servidor</strong>: Muchos servidores WebSocket implementan sus propios tiempos de espera de inactividad para gestionar recursos.<br>• <strong>Cambios de red del cliente</strong>: Dispositivos móviles cambiando entre redes o entrando en modo suspensión pueden interrumpir conexiones.<br><br>Para mantener conexiones WebSocket persistentes, implemente un <strong>mecanismo de corazón</strong> donde pequeños mensajes ping/pong se intercambien periódicamente (típicamente cada 30-45 segundos). Esto mantiene activa la conexión y evita que componentes intermedios de red la cierren. Nuestra herramienta Probador de WebSocket incluye una característica de reconexión automática que puede ayudarle a probar la resiliencia y estrategias de recuperación de la conexión."
-        },
-        {
-          question: "¿Puedo usar el Probador de WebSocket con conexiones seguras (WSS)?",
-          answer: "Sí, el <strong>Probador de WebSocket</strong> soporta completamente conexiones WebSocket seguras (WSS) que operan sobre TLS/SSL, similar a cómo HTTPS funciona para tráfico web regular. Al conectarse a un endpoint WSS (URLs que empiezan con \"wss://\"), nuestra herramienta maneja automáticamente el handshake TLS y proceso de validación de certificados.<br><br>Los WebSockets seguros son esenciales para:<br><br>• Proteger datos sensibles transmitidos entre cliente y servidor<br>• Cumplir requisitos de cumplimiento para comunicación segura<br>• Conectarse a servicios alojados en dominios HTTPS (debido a restricciones modernas de navegadores sobre contenido mixto)<br>• Prevenir ataques man-in-the-middle y alteración de mensajes<br><br>La herramienta funciona perfectamente con endpoints seguros (WSS) y no seguros (WS), permitiéndole probar contra servidores locales de desarrollo o servicios seguros profesionales. Al probar con certificados autofirmados durante el desarrollo, tenga en cuenta que aunque nuestra herramienta web debe respetar políticas de seguridad del navegador, aún puede establecer conexiones a servidores WebSocket seguros correctamente configurados."
-        },
-        {
-          question: "¿Cómo formateo correctamente mensajes JSON para comunicación WebSocket?",
-          answer: "Formatear correctamente mensajes JSON para comunicación WebSocket es esencial para una interacción exitosa con la mayoría de APIs WebSocket modernas. Aquí están las prácticas clave a seguir:<br><br>1. <strong>Sintaxis JSON válida</strong>: Asegúrese de que su mensaje siga el formato JSON correcto con claves entre comillas, uso apropiado de tipos de datos y llaves equilibradas. La opción de formato JSON de nuestro Probador de WebSocket valida automáticamente su JSON antes de enviarlo.<br><br>2. <strong>Estructura del mensaje</strong>: La mayoría de APIs WebSocket esperan una estructura específica de mensaje, típicamente incluyendo:<br>• Un campo de tipo de mensaje o acción (ej. \"type\": \"subscribe\")<br>• Una carga útil con los datos reales<br>• Metadatos opcionales como IDs de mensaje o marcas de tiempo<br><br>Ejemplo de mensaje estructurado correctamente:<br><pre>&#123;<br>  \"type\": \"subscribe\",<br>  \"channel\": \"market_data\",<br>  \"symbols\": [\"BTC/USD\", \"ETH/USD\"],<br>  \"requestId\": \"12345\"<br>&#125;</pre><br><br>3. <strong>Escapar caracteres especiales</strong>: Al incluir comillas o barras invertidas dentro de valores de cadena JSON, asegúrese de escaparlos correctamente.<br><br>4. <strong>Usar tipos de datos apropiados</strong>: Envíe números como números (sin comillas), booleanos como true/false, y arreglos con corchetes.<br><br>Nuestro Probador de WebSocket proporciona una opción de plantilla JSON para ayudarle a comenzar con mensajes correctamente formateados."
-        },
-        {
-          question: "¿Cómo puedo guardar y reutilizar conexiones WebSocket para pruebas repetidas?",
-          answer: "El <strong>Probador de WebSocket</strong> proporciona varias características para ayudarle a guardar y reutilizar configuraciones de conexión para una prueba eficiente repetida:<br><br>1. <strong>Gestión de conexiones</strong>: La herramienta le permite guardar sus conexiones WebSocket con nombres personalizados para fácil identificación. Cada configuración guardada almacena la URL del WebSocket y subprotocolos opcionales.<br><br>2. <strong>Reconexión con un clic</strong>: Las conexiones guardadas pueden cargarse y conectarse con un solo clic, eliminando la necesidad de escribir repetidamente detalles de conexión durante sesiones de prueba.<br><br>3. <strong>Almacenamiento persistente</strong>: Sus conexiones guardadas se almacenan en el almacenamiento local del navegador, lo que significa que permanecerán disponibles a través de sesiones y reinicios del navegador.<br><br>4. <strong>Plantillas de mensajes de prueba</strong>: Más allá de simplemente guardar conexiones, puede probar eficientemente con patrones de mensaje comunes usando las plantillas JSON y texto proporcionadas.<br><br>5. <strong>Accesos directos a servidores de prueba</strong>: Para pruebas rápidas sin su propio servidor, la herramienta incluye accesos directos a servidores WebSocket públicos y confiables para eco.<br><br>Este completo <strong>sistema de gestión de conexiones</strong> es particularmente valioso para desarrolladores que trabajan con múltiples endpoints WebSocket a través de diferentes entornos (desarrollo, staging, producción) o aquellos que rutinariamente prueban diversas operaciones API que requieren diferentes parámetros de conexión."
-        }
-      ]
-    },
-    guide: {
-      title: "Guía Paso a Paso para Usar el Probador de WebSocket",
-      steps: [
-        "<strong>Introduzca una URL WebSocket</strong>: Comience introduciendo la dirección del servidor WebSocket en el campo URL. Las URLs WebSocket comienzan con 'ws://' para conexiones estándar o 'wss://' para conexiones seguras (similar a http:// y https://). Si no tiene un servidor WebSocket para probar, puede seleccionar uno de los servidores de prueba proporcionados en la sección 'Servidores de Prueba' en la parte inferior de la herramienta.",
-        "<strong>Configure opciones de conexión</strong>: Si su servidor WebSocket requiere subprotocolos específicos, ingréselos en el campo 'Subprotocolo' como lista separada por comas. También puede habilitar 'Volver a Conectar Automáticamente' si desea que la herramienta intente reconectar automáticamente si la conexión se cae inesperadamente. La opción 'Auto desplazar Registros' mantiene el registro de mensajes desplazado hacia los mensajes más recientes.",
-        "<strong>Establezca una conexión</strong>: Haga clic en el botón 'Conectar' para iniciar la conexión WebSocket. El indicador de estado mostrará 'Conectando' durante el proceso de handshake, luego cambiará a 'Conectado' si tiene éxito o 'Desconectado' si falla el intento de conexión. Cualquier evento o error de conexión aparecerá en el área de registro de mensajes.",
-        "<strong>Prepare su mensaje</strong>: Una vez conectado, puede ingresar el mensaje que desea enviar en el área de texto 'Enviar Mensajes'. Seleccione el formato apropiado para su mensaje usando el menú desplegable: 'Texto Plano' para mensajes simples, 'JSON' si está enviando datos estructurados (la herramienta validará el formato JSON) o 'Binario' para enviar datos binarios.",
-        "<strong>Envíe y supervise mensajes</strong>: Haga clic en el botón 'Enviar' para transmitir su mensaje al servidor WebSocket. El mensaje enviado aparecerá en el área 'Registro de Mensajes' con una marca de tiempo y etiqueta 'Enviado'. Cuando el servidor responda, los mensajes entrantes se mostrarán con una etiqueta 'Recibido'. Puede limpiar el campo de entrada de mensajes o registros cuando sea necesario usando los respectivos botones de limpieza.",
-        "<strong>Guarde conexiones para uso futuro</strong>: Si va a probar este endpoint WebSocket frecuentemente, haga clic en 'Guardar Conexión Actual' para almacenar los detalles de la conexión. Se le pedirá que proporcione un nombre para esta conexión. Las conexiones guardadas aparecen en el panel 'Conexiones Guardadas' para acceso rápido en futuras sesiones de prueba.",
-        "<strong>Analice patrones de comunicación</strong>: Use el registro cronológico de mensajes para analizar la secuencia y temporización de mensajes entre cliente y servidor. Esto ayuda a identificar problemas con manejo de mensajes, tiempos de respuesta o protocolos de comunicación. Para propósitos de depuración, puede copiar todo el registro para compartir con miembros del equipo o documentarlo en informes de errores."
-      ]
-    },
-    conclusion: "El Probador de WebSocket representa una herramienta esencial para desarrolladores que trabajan con aplicaciones en tiempo real, permitiendo una prueba y depuración eficiente de conexiones WebSocket sin necesidad de implementaciones cliente personalizadas. Proporcionando una interfaz visual para establecer conexiones, enviar mensajes en diversos formatos y monitorear comunicación bidireccional, acelera significativamente el flujo de trabajo de desarrollo para aplicaciones basadas en WebSocket. Ya sea que esté construyendo sistemas de chat, paneles en vivo, plataformas IoT o juegos multijugador, este probador ofrece las capacidades necesarias para asegurar que su implementación WebSocket entregue comunicaciones confiables en tiempo real. A medida que las aplicaciones web continúan evolucionando hacia experiencias más interactivas y en tiempo real, contar con una herramienta dedicada para probar esta capa crítica de comunicación se vuelve cada vez más valioso para mantener altas experiencias de usuario a través de diversas condiciones de red y plataformas cliente."
   }
-}
+};

@@ -1,7 +1,7 @@
 export default {
   name: 'CSV-JSON 변환 도구',
   description: '사용자 정의 옵션으로 CSV 데이터를 JSON 형식으로 변환',
-  
+
   options: {
     delimiter: '구분자',
     quote: '따옴표 문자',
@@ -16,7 +16,7 @@ export default {
     newline: '줄 바꿈 문자',
     title: '변환 옵션'
   },
-  
+
   delimiters: {
     comma: '쉼표 (,)',
     semicolon: '세미콜론 (;)',
@@ -24,14 +24,14 @@ export default {
     pipe: '파이프 (|)',
     custom: '사용자 정의'
   },
-  
+
   formats: {
     array: '객체 배열',
     arrayOfArrays: '배열의 배열',
     keyed: '키-값 객체',
     nested: '중첩 객체'
   },
-  
+
   preview: {
     input: '입력...',
     output: '출력...',
@@ -41,7 +41,7 @@ export default {
     firstRows: '처음 {count} 행',
     showAll: '전체 보기'
   },
-  
+
   actions: {
     convert: '변환',
     copy: 'JSON 복사',
@@ -59,7 +59,7 @@ export default {
     hideOptions: '옵션 숨기기',
     uploadJson: 'JSON 업로드'
   },
-  
+
   results: {
     rowsProcessed: '{count} 행 처리됨',
     conversionComplete: '변환 완료',
@@ -67,7 +67,7 @@ export default {
     downloaded: '다운로드 완료',
     error: '오류'
   },
-  
+
   errors: {
     noData: '변환할 CSV 데이터 없음',
     invalidCsv: '잘못된 CSV 형식',
@@ -80,7 +80,7 @@ export default {
     pasteError: '클립보드에서 붙여넣기 실패',
     conversionFailed: '변환 실패'
   },
-  
+
   conversion: {
     title: '변환 방향',
     csvToJson: {
@@ -103,7 +103,7 @@ export default {
       convertButton: 'JSON을 CSV로 변환'
     }
   },
-  
+
   stats: {
     processed: '처리된 데이터 행 수',
     fields: '필드/열 수',
@@ -111,75 +111,18 @@ export default {
     outputSize: '변환 후 크기',
     title: '통계'
   },
-  
+
   messages: {
     copied: '클립보드에 복사됨',
     download: '다운로드 완료',
     error: '오류'
   },
-  
+
   formatBytes: {
     bytes: '바이트',
     kb: 'KB',
     mb: 'MB',
     gb: 'GB',
     tb: 'TB'
-  },
-  
-  article: {
-    title: "CSV-JSON 변환 도구: 데이터 형식 변환 간소화",
-    features: {
-      title: "CSV와 JSON 변환 도구 소개",
-      description: "<strong>CSV-JSON 변환기</strong>는 <strong>CSV 형식</strong>(쉼표로 구분된 값)과 <strong>JSON 형식</strong>(JavaScript 객체 표기법) 간의 데이터 변환을 위해 설계된 강력한 도구입니다. 이 양방향 <strong>데이터 변환기</strong>는 테이블 형식 데이터를 구조화된 JSON 객체로 또는 그 반대로 원활하게 변환할 수 있습니다.<br><br>우리의 <strong>CSV JSON 도구</strong>는 다양한 <strong>데이터 형식</strong>을 처리하기 위한 사용자 정의 옵션을 제공합니다. 여기에는 다른 구분자(쉼표, 세미콜론, 탭, 파이프), 헤더 행 관리 및 스마트 <strong>데이터 유형 감지</strong>가 포함됩니다. 복잡한 JSON 구조의 경우 이 도구는 중첩 객체를 평탄화하거나 문자열로 변환하는 옵션을 제공하여 다양한 애플리케이션과 워크플로우에 대한 <strong>데이터 변환</strong> 작업을 위한 다목적 솔루션입니다.",
-      useCases: {
-        title: "CSV-JSON 변환의 일반적인 사용 사례",
-        items: [
-          "데이터 분석가가 데이터 시각화 도구나 API용으로 스프레드시트 내보내기를 JSON으로 변환",
-          "개발자가 JSON 데이터 구조가 필요한 웹 애플리케이션을 위한 데이터 준비",
-          "데이터베이스 관리자가 다른 형식 요구 사항이 있는 시스템 간에 데이터 마이그레이션",
-          "API 개발자가 RESTful API용으로 CSV 데이터 내보내기를 JSON 형식으로 변환",
-          "데이터 과학자가 실험 결과를 스프레드시트 형식과 코드 친화적인 JSON 구조 간에 변환",
-          "비즈니스 분석가가 회계 또는 CRM 시스템에서 JSON을 사용하는 웹 대시보드용 CSV 보고서 준비"
-        ]
-      }
-    },
-    faq: {
-      title: "CSV-JSON 변환에 관한 자주 묻는 질문",
-      items: [
-        {
-          question: "CSV와 JSON 형식의 차이점은 무엇인가요?",
-          answer: "CSV(쉼표로 구분된 값)는 데이터가 행과 열로 구성된 간단한 테이블 형식으로, 구분자(일반적으로 쉼표)로 구분됩니다. 평평하고 가벼우며 스프레드시트에 일반적으로 사용됩니다. JSON(JavaScript 객체 표기법)은 중첩 객체와 배열을 지원하는 계층적 구조화된 데이터 형식입니다. JSON은 더 복잡한 데이터 관계를 나타낼 수 있으며 웹 API 및 JavaScript 애플리케이션의 표준 형식입니다."
-        },
-        {
-          question: "CSV로 변환할 때 도구는 중첩된 JSON을 어떻게 처리하나요?",
-          answer: "우리의 CSV-JSON 변환기는 중첩 JSON 객체를 처리하기 위한 세 가지 옵션을 제공합니다: '평탄화 처리'는 중첩 속성을 점 표기법 열 이름(예: 'user.name')으로 변환하고, '문자열로 변환'은 전체 중첩 객체를 문자열 표현으로 변환하며, '무시'는 변환에서 중첩 객체를 제외합니다. 이러한 옵션은 특정 데이터 변환 요구 사항에 따라 유연성을 제공합니다."
-        },
-        {
-          question: "CSV-JSON 변환기는 CSV 파일에서 다른 구분자를 처리할 수 있나요?",
-          answer: "예, 우리의 데이터 변환기는 쉼표, 세미콜론, 탭 및 파이프 문자를 포함한 다양한 구분자 옵션을 지원합니다. 이러한 유연성을 통해 다양한 시스템 또는 지역의 다양한 CSV 형식 변형을 처리할 수 있습니다. 변환 전에 옵션 패널에서 적절한 구분자를 선택하기만 하면 됩니다."
-        },
-        {
-          question: "CSV-JSON 변환에서 동적 유형은 어떻게 작동하나요?",
-          answer: "동적 유형은 CSV의 데이터 유형을 자동으로 감지하고 변환합니다. 활성화되면 숫자처럼 보이는 문자열 값(예: '42')은 실제 숫자 유형으로 변환되고, 'true'/'false' 문자열은 불리언 값이 되며, 빈 필드는 null 값으로 변환될 수 있습니다. 이렇게 하면 모든 것을 문자열로 처리하는 대신 올바른 데이터 유형을 가진 더 사용 가능한 JSON 데이터가 생성됩니다."
-        },
-        {
-          question: "이 변환기는 얼마나 큰 CSV 또는 JSON 파일을 처리할 수 있나요?",
-          answer: "CSV-JSON 변환기는 데이터를 브라우저에서 직접 처리하므로 파일 크기 제한은 장치의 메모리에 따라 다릅니다. 최상의 성능을 위해 5MB 미만의 파일을 사용하는 것이 좋지만 최신 브라우저는 더 큰 파일도 처리할 수 있습니다. 매우 큰 데이터 세트의 경우 파일을 더 작은 청크로 분할하거나 서버 기반 변환 도구를 사용하는 것을 고려하세요."
-        }
-      ]
-    },
-    guide: {
-      title: "CSV-JSON 도구 사용 방법",
-      steps: [
-        "변환 방향 선택: 소스 데이터 형식에 따라 'CSV → JSON' 또는 'JSON → CSV' 선택",
-        "'옵션 표시'를 클릭하여 구분자, 헤더 행 및 특수 처리 규칙과 같은 변환 설정 구성",
-        "CSV → JSON의 경우 적절한 구분자(쉼표, 세미콜론, 탭 등)를 선택하고 CSV에 열 헤더가 포함된 경우 '첫 행을 헤더로' 확인",
-        "JSON → CSV의 경우 중첩 객체 처리 방법(평탄화, 문자열 변환 또는 무시) 및 모든 필드 값에 따옴표를 추가할지 여부 구성",
-        "데이터를 입력 필드에 붙여넣거나 '예제 로드'를 클릭하여 변환기가 예제 데이터를 처리하는 방법 확인",
-        "'변환' 버튼을 클릭하여 CSV와 JSON 형식 간 데이터 변환 실행",
-        "변환 통계 및 출력 결과를 검토한 후 '결과 복사' 또는 '결과 다운로드' 버튼을 사용하여 변환된 데이터 저장"
-      ]
-    },
-    conclusion: "CSV-JSON 변환기는 다양한 데이터 형식을 자주 처리하는 데이터 전문가에게 필수적인 도구입니다. 테이블 형식 CSV 데이터와 구조화된 JSON 객체 간의 변환 프로세스를 간소화함으로써 이 도구는 시간을 절약하고 데이터 처리 워크플로우에서 오류를 줄입니다. API 통합을 위한 데이터 준비, 스프레드시트 애플리케이션에서 내보내기 변환 또는 다른 시스템의 형식 요구 사항 간 변환 여부에 관계없이 이 변환기는 데이터 변환 요구 사항을 위한 유연한 브라우저 기반 솔루션을 제공합니다."
   }
-}
+};

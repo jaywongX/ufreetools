@@ -1,154 +1,113 @@
 export default {
-  "name": "顏色選擇器",
-  "description": "使用高級顏色工具選取、轉換和生成配色方案",
-  "options": {
-    "colorSpace": "顏色空間",
-    "paletteType": "調色板類型",
-    "includeAlpha": "包含透明度",
-    "colorNaming": "顏色命名"
+  name: "顏色選擇器",
+  description: "使用高級顏色工具選取、轉換和生成配色方案",
+
+  options: {
+    colorSpace: "顏色空間",
+    paletteType: "調色板類型",
+    includeAlpha: "包含透明度",
+    colorNaming: "顏色命名"
   },
-  "colorSpaces": {
-    "rgb": "RGB",
-    "hex": "HEX",
-    "hsl": "HSL",
-    "hsv": "HSV",
-    "cmyk": "CMYK",
-    "lab": "LAB",
-    "named": "命名顏色"
+
+  colorSpaces: {
+    rgb: "RGB",
+    hex: "HEX",
+    hsl: "HSL",
+    hsv: "HSV",
+    cmyk: "CMYK",
+    lab: "LAB",
+    named: "命名顏色"
   },
-  "palettes": {
-    "monochromatic": "單色調",
-    "complementary": "互補色",
-    "analogous": "類似色",
-    "triadic": "三色組",
-    "tetradic": "四色組",
-    "split": "分裂互補色"
+
+  palettes: {
+    monochromatic: "單色調",
+    complementary: "互補色",
+    analogous: "類似色",
+    triadic: "三色組",
+    tetradic: "四色組",
+    split: "分裂互補色"
   },
-  "actions": {
-    "pickColor": "選擇顏色",
-    "randomColor": "隨機顏色",
-    "generatePalette": "生成調色板",
-    "convert": "轉換",
-    "copyColor": "複製當前顏色",
-    "copyAll": "複製全部",
-    "save": "保存顏色",
-    "reset": "重置",
-    "clear": "清除"
+
+  actions: {
+    pickColor: "選擇顏色",
+    randomColor: "隨機顏色",
+    generatePalette: "生成調色板",
+    convert: "轉換",
+    copyColor: "複製當前顏色",
+    copyAll: "複製全部",
+    save: "保存顏色",
+    reset: "重置",
+    clear: "清除"
   },
-  "formats": {
-    "hex": "HEX",
-    "rgb": "RGB",
-    "hsl": "HSL"
+
+  formats: {
+    hex: "HEX",
+    rgb: "RGB",
+    hsl: "HSL"
   },
-  "colorSchemes": {
-    "title": "配色方案",
-    "complementary": "互補色",
-    "triadic": "三元色",
-    "analogous": "類似色",
-    "monochromatic": "單色系",
-    "split": "分裂互補色",
-    "double": "雙互補色",
-    "square": "方形色",
-    "compound": "複合色"
+
+  colorSchemes: {
+    title: "配色方案",
+    complementary: "互補色",
+    triadic: "三元色",
+    analogous: "類似色",
+    monochromatic: "單色系",
+    split: "分裂互補色",
+    double: "雙互補色",
+    square: "方形色",
+    compound: "複合色"
   },
-  "colorAdjust": {
-    "title": "顏色調整",
-    "hue": "色相",
-    "saturation": "飽和度",
-    "lightness": "亮度",
-    "alpha": "透明度"
+
+  colorAdjust: {
+    title: "顏色調整",
+    hue: "色相",
+    saturation: "飽和度",
+    lightness: "亮度",
+    alpha: "透明度"
   },
-  "colorInfo": {
-    "title": "顏色信息",
-    "name": "顏色名稱",
-    "format": "格式",
-    "contrast": "對比度",
-    "accessibility": {
-      "title": "可訪問性",
-      "pass": "通過WCAG標準",
-      "fail": "未通過WCAG標準",
-      "normal": "普通文本",
-      "large": "大號文本"
+
+  colorInfo: {
+    title: "顏色信息",
+    name: "顏色名稱",
+    format: "格式",
+    contrast: "對比度",
+    accessibility: {
+      title: "可訪問性",
+      pass: "通過WCAG標準",
+      fail: "未通過WCAG標準",
+      normal: "普通文本",
+      large: "大號文本"
     }
   },
-  "messages": {
-    "copied": "顏色已複製到剪貼板",
-    "copyFailed": "複製顏色失敗",
-    "invalidColor": "無效的顏色格式",
-    "contrastWarning": "對比度較低",
-    "saved": "顏色已保存",
-    "contrast": "對比度: {ratio}",
-    "accessibility": {
-      "AAA": "極佳對比度 (AAA)",
-      "AA": "良好對比度 (AA)",
-      "fail": "對比度不足 - 不符合無障礙標準"
+
+  messages: {
+    copied: "顏色已複製到剪貼板",
+    copyFailed: "複製顏色失敗",
+    invalidColor: "無效的顏色格式",
+    contrastWarning: "對比度較低",
+    saved: "顏色已保存",
+    contrast: "對比度: {ratio}",
+    accessibility: {
+      AAA: "極佳對比度 (AAA)",
+      AA: "良好對比度 (AA)",
+      fail: "對比度不足 - 不符合無障礙標準"
     },
-    "preview": "預覽",
-    "colorValue": "顏色值"
+    preview: "預覽",
+    colorValue: "顏色值"
   },
-  "history": {
-    "title": "顏色歷史",
-    "empty": "暫無顏色歷史",
-    "clear": "清空歷史"
+
+  history: {
+    title: "顏色歷史",
+    empty: "暫無顏色歷史",
+    clear: "清空歷史"
   },
-  "colorPalette": {
-    "title": "調色板",
-    "addToPalette": "添加到調色板",
-    "removeFromPalette": "從調色板移除",
-    "exportPalette": "導出調色板",
-    "importPalette": "導入調色板",
-    "clearPalette": "清空調色板"
-  },
-  "article": {
-    "title": "高級顏色選擇器：選擇、轉換和創建完美配色方案",
-    "features": {
-      "title": "了解顏色選擇器工具及其功能",
-      "description": "我們的<strong>高級顏色選擇器</strong>是一款全面的在線工具，專為精確的顏色選擇和操作而設計。與基本的顏色選擇器不同，這款專業級<strong>顏色選擇工具</strong>讓您可以完全控制顏色的色相、飽和度、亮度和不透明度，實現像素級精確的設計工作。<br><br>該工具跨多個<strong>色彩空間</strong>運行，包括RGB、HEX、HSL、HSV和CMYK，在保持精確顏色值的同時自動在格式之間轉換。這消除了手動轉換或使用多種工具的需要。此外，<strong>配色方案生成器</strong>功能使用色彩理論算法創建遵循既定設計原則的和諧組合。<br><br>對於設計專業人士和開發人員，保存顏色、創建調色板和以各種格式導出的能力簡化了工作流程，確保了項目間的顏色一致性，使這款<strong>網頁顏色選擇器</strong>成為數字創意的重要資源。",
-      "useCases": {
-        "title": "顏色選擇器工具的實際應用",
-        "items": [
-          "<strong>網頁設計與開發</strong>：為CSS樣式表和設計元素選擇精確的<strong>HEX顏色代碼</strong>和RGB值。前端開發人員可以通過在整個代碼庫中使用相同的精確顏色值，確保React、Vue或Angular等框架之間的顏色一致性，消除由視覺近似帶來的差異。",
-          "<strong>平面設計</strong>：為標誌、營銷材料和品牌標識系統創建連貫的<strong>顏色調色板</strong>。專業設計師可以嘗試顏色變化，檢查顏色關係，並微調特定色調，直到為他們的設計概念達到完美的視覺效果。",
-          "<strong>數字繪畫和插圖</strong>：為數字藝術作品選擇和保存自定義<strong>顏色樣本</strong>，確保項目間的一致性。藝術家可以創建反映其個人風格或特定藝術要求的自定義調色板，然後導出這些集合，在Photoshop、Illustrator或Procreate等軟件中使用。",
-          "<strong>UI/UX設計</strong>：開發符合WCAG對比度要求的無障礙<strong>配色方案</strong>，提高可用性。界面設計師可以實時測試不同的顏色組合是否符合無障礙標準，確保他們的設計在美觀的同時，也能被視覺障礙人士使用。",
-          "<strong>印刷設計</strong>：在RGB和<strong>CMYK顏色值</strong>之間轉換，確保印刷材料的顏色準確性。印刷專家可以預測數字顏色如何轉化為物理媒體，避免顏色在印刷時與屏幕上顯示不同的常見問題。",
-          "<strong>品牌標識開發</strong>：在所有數字和物理接觸點建立和維護一致的<strong>品牌顏色</strong>。營銷專業人員可以為品牌指南記錄確切的顏色規格，確保所有使用該品牌的人在所有材料中使用完全相同的顏色。"
-        ]
-      }
-    },
-    "faq": {
-      "title": "關於顏色選擇器的常見問題",
-      "items": [
-        {
-          "question": "RGB、HEX、HSL和其他顏色格式之間有什麼區別？",
-          "answer": "不同的<strong>顏色格式</strong>使用不同的數字系統和方法表示相同的顏色：<br><br>• <strong>HEX代碼</strong>（例如#FF5733）是六位十六進制值，廣泛用於網頁設計，以緊湊的格式表示紅、綠、藍通道<br><br>• <strong>RGB值</strong>（例如rgb(255, 87, 51)）指定紅、綠、藍光的精確數量（0-255），使其在數字設計中直觀<br><br>• <strong>HSL</strong>（色相、飽和度、亮度）更符合人類感知顏色的方式，使預測顏色關係和進行調整更容易<br><br>• <strong>CMYK</strong>使用青色、品紅色、黃色和黑色百分比，專為印刷生產設計<br><br>我們的<strong>顏色選擇工具</strong>處理這些格式之間的自動轉換，允許您在最適合當前項目的系統中工作。"
-        },
-        {
-          "question": "如何為我的項目創建和諧的配色方案？",
-          "answer": "通過我們的工具，創建和諧的<strong>顏色組合</strong>通過幾種方法得到簡化：<br><br>1. 使用<strong>配色方案生成器</strong>功能，基於您的主要顏色自動創建互補、類似、三元或單色調色板<br><br>2. 通過預設選項應用既定的色彩理論原則，如互補色（色輪上的對面顏色）或類似色（色輪上相鄰的顏色）<br><br>3. 通過調整飽和度和亮度而保持相同的色相，微調方案，創建多樣但連貫的調色板<br><br>4. 實時測試您的<strong>顏色和諧性</strong>，在最終確定選擇之前了解不同顏色如何相互作用<br><br>該工具的視覺預覽使評估顏色如何協同工作變得容易，讓即使沒有正式設計培訓的人也能創建專業外觀的<strong>配色方案</strong>。"
-        },
-        {
-          "question": "我可以保存我的顏色和調色板以供後續使用嗎？",
-          "answer": "是的，我們的<strong>顏色選擇器</strong>提供多種選項來保存您的顏色工作：<br><br>• <strong>顏色歷史</strong>自動跟踪最近使用的顏色，以便快速訪問<br>• 為不同的項目或客戶創建並<strong>保存自定義調色板</strong>，並附上描述性名稱<br>• 以與設計軟件（Adobe ASE、GIMP等）兼容的各種格式<strong>導出配色方案</strong><br>• 生成可直接複製到樣式表中的<strong>CSS顏色變量</strong><br>• 與團隊成員共享調色板鏈接，進行協作設計工作<br><br>這些保存和共享功能使我們的<strong>顏色選擇工具</strong>在維護複雜項目和團隊之間的一致性方面變得有價值，確保每個人在整個設計和開發過程中使用完全相同的<strong>顏色代碼</strong>。"
-        },
-        {
-          "question": "如何確保我選擇的顏色對所有用戶都可訪問？",
-          "answer": "我們的<strong>顏色選擇器</strong>包括無障礙功能，幫助您創建包容性設計：<br><br>• <strong>對比度比計算器</strong>自動根據WCAG指南評估文本/背景組合<br>• 視覺指標顯示顏色組合是否通過AA或AAA無障礙標準<br>• 在保持設計美學的同時提高<strong>顏色對比度</strong>的建議<br>• 模擬不同類型的色覺缺陷（紅色盲、綠色盲等）<br><br>通過使用這些功能，您可以確保您的<strong>配色方案</strong>不僅看起來吸引人，而且為視力障礙用戶提供足夠的對比度。該工具幫助您平衡美學偏好和無障礙要求，創建適合所有用戶的設計。"
-        },
-        {
-          "question": "在我的設計軟件中使用顏色選擇器結果的最佳方式是什麼？",
-          "answer": "我們的<strong>顏色選擇工具</strong>通過幾種方法與流行的設計軟件無縫集成：<br><br>1. 單擊一下即可直接以您偏好的格式（HEX、RGB、HSL）<strong>複製顏色代碼</strong><br>2. 以Adobe Swatch Exchange (.ase)格式導出<strong>顏色調色板</strong>，直接導入Creative Cloud應用程序<br>3. 為Web開發框架生成CSS變量或SCSS/LESS混合器<br>4. 截取完整<strong>配色方案</strong>的屏幕截圖，並標註所有值<br><br>為獲得最佳工作流程，我們建議先在我們的工具中創建完整的調色板，然後以最適合您的設計軟件或編碼環境的格式導出。這種方法確保了整個項目的<strong>顏色值</strong>一致性，同時最小化手動數據輸入錯誤。"
-        }
-      ]
-    },
-    "guide": {
-      "title": "如何使用高級顏色選擇器：分步指南",
-      "step1": "<strong>選擇基礎顏色</strong>：使用幾種方法之一開始選擇顏色。您可以在大型顏色區域中點擊並拖動來調整飽和度和亮度，使用色相滑塊改變基本顏色，以您偏好的格式（HEX、RGB、HSL）輸入特定的<strong>顏色代碼</strong>，或從歷史部分選擇您最近使用的顏色。這種靈活性允許您從精確的顏色規格開始，或進行視覺探索。",
-      "step2": "<strong>微調您的選擇</strong>：選擇基礎顏色後，使用精確控制進行調整。<strong>顏色選擇器</strong>的滑塊允許您修改單個組件，如色相（0-360°）、飽和度（0-100%）、亮度（0-100%）和不透明度（0-100%）。這些細粒度控制確保您能夠實現準確的色調，進行在其他工具中可能難以實現的微妙調整。當您進行這些更改時，實時觀察預覽區域的更新。",
-      "step3": "<strong>生成配色方案</strong>：點擊配色方案部分，基於您選擇的顏色自動創建和諧的<strong>顏色組合</strong>。從不同的方案類型中選擇，包括互補色（色輪上的對面顏色）、類似色（相鄰顏色）、三元色（三個均勻分布的顏色）或單色（同一色相的變化）。這些算法生成的方案遵循色彩理論原則，確保視覺上令人愉悅的結果。",
-      "step4": "<strong>在格式之間轉換</strong>：使用格式按鈕在不同的<strong>顏色格式</strong>之間切換。您的顏色將在HEX（#FF5733）、RGB（rgb(255, 87, 51)）、HSL（hsl(14, 100%, 60%)）等之間自動轉換，同時保持完全相同的視覺顏色。這使您能夠輕鬆獲取特定應用所需的代碼，無論您是在進行網頁設計、數字藝術還是印刷材料。",
-      "step5": "<strong>保存和導出您的顏色</strong>：一旦您完善了顏色或調色板，將其保存以供將來使用。點擊複製按鈕將當前<strong>顏色代碼</strong>複製到剪貼板，將其添加到已保存的調色板，或以各種格式導出整個配色方案。對於Web開發人員，您可以生成可直接在樣式表中實現的CSS變量或顏色集，確保整個項目中的<strong>顏色值</strong>一致。"
-    },
-    "conclusion": "高級顏色選擇器是現代設計師和開發人員工具包中的重要工具，彌合了藝術顏色選擇和技術實現之間的差距。通過提供對顏色值的精確控制、自動格式轉換和智能方案生成，它消除了數字顏色工作中以前需要的大部分猜測和手動計算。無論您是創建品牌標識系統、設計網站界面還是開發數字藝術作品，以科學精度選擇、操作和組織顏色的同時仍然遵循美學原則的能力，都給您帶來了顯著優勢。隨著設計繼續強調視覺吸引力和技術一致性，幫助將創意願景轉化為確切規格的工具在所有創意和技術學科中變得越來越有價值。"
+
+  colorPalette: {
+    title: "調色板",
+    addToPalette: "添加到調色板",
+    removeFromPalette: "從調色板移除",
+    exportPalette: "導出調色板",
+    importPalette: "導入調色板",
+    clearPalette: "清空調色板"
   }
-}
+};

@@ -1,6 +1,7 @@
 export default {
   name: 'OpenAPI → TypeScript 클라이언트 생성기',
   description: 'OpenAPI 스펙을 기반으로 TypeScript 인터페이스 및 클라이언트 코드 자동 생성, 프론트엔드-백엔드 협업 효율성 향상',
+
   options: {
     exportSchemas: '모든 모델 정의 내보내기',
     generateClient: 'API 클라이언트 코드 생성',
@@ -10,19 +11,23 @@ export default {
     operationType: '작업 유형',
     displayOptions: '표시 옵션'
   },
+
   inputMode: {
     toggleToFile: '파일 업로드로 전환',
     toggleToText: '텍스트 입력으로 전환',
     loadExample: '예제 로드'
   },
+
   fileUpload: {
     dragAndDrop: 'OpenAPI 파일을 여기에 드래그 앤 드롭하거나 클릭하여 업로드',
     supportedFormats: '.json, .yaml 및 .yml 파일 형식 지원',
     fileSelected: '선택됨: {0} ({1})'
   },
+
   textInput: {
     placeholder: 'OpenAPI 스펙(JSON 또는 YAML)을 여기에 붙여넣기...'
   },
+
   actions: {
     generate: 'TypeScript 코드 생성',
     processing: '처리 중...',
@@ -30,146 +35,17 @@ export default {
     copy: '코드 복사',
     download: '코드 다운로드'
   },
+
   results: {
     generatedCode: '생성된 TypeScript 코드',
     copied: '클립보드에 복사됨',
     error: '오류',
     characterCount: '문자 수: {0}'
   },
+
   errors: {
     parseError: 'OpenAPI 스펙을 파싱할 수 없습니다. 유효한 JSON 또는 YAML 형식인지 확인하세요.',
     invalidSpec: '잘못된 OpenAPI 스펙. openapi 또는 swagger 버전 식별자를 찾을 수 없음.',
     processingError: 'OpenAPI 스펙 처리 중 오류 발생: {0}'
-  },
-  article: {
-    title: "OpenAPI에서 TypeScript로: 자동화된 API 클라이언트 생성",
-    overview: {
-      title: "OpenAPI to TypeScript 생성기 이해",
-      content: "<strong>OpenAPI to TypeScript 클라이언트 생성기</strong>는 OpenAPI 스펙(이전에는 Swagger로 알려짐)을 TypeScript 인터페이스와 완전한 기능의 API 클라이언트 코드로 자동 변환하는 특수 도구입니다. 이 변환은 타입 안전성을 보장하고 API 통합 코드를 수동으로 작성할 필요를 없애 프론트엔드 개발 프로세스를 간소화합니다.<br><br>OpenAPI 스펙은 프론트엔드와 백엔드 서비스 간의 표준화된 계약 역할을 하며, 사용 가능한 엔드포인트, 요청 매개변수, 응답 구조 및 데이터 모델을 설명합니다. 이 생성기를 활용하면 개발자는 API 통합 코드 유지 관리보다 기능 구축에 집중할 수 있으며, 컴파일 타임에 잠재적 오류를 포착하는 TypeScript의 강력한 타입 시스템의 이점을 누릴 수 있습니다."
-    },
-    useCases: {
-      title: "OpenAPI to TypeScript 생성의 일반적인 사용 사례",
-      items: [
-        {
-          title: "복잡한 API를 위한 프론트엔드 개발",
-          description: "대규모 또는 복잡한 백엔드 API를 다룰 때 수동으로 클라이언트 인터페이스를 코딩하는 것은 시간이 많이 걸리고 오류가 발생하기 쉽습니다. 이 생성기는 API 스펙과 완벽하게 일치하는 정확한 TypeScript 인터페이스와 클라이언트 코드를 생성하여 프론트엔드와 백엔드 간의 일관성을 보장합니다."
-        },
-        {
-          title: "마이크로서비스 아키텍처",
-          description: "여러 API 서비스가 있는 마이크로서비스 환경에서 생성기는 각 서비스와의 빠른 통합을 용이하게 합니다. 서비스가 발전함에 따라 업데이트된 OpenAPI 스펙에서 TypeScript 클라이언트를 다시 생성하기만 하면 동기화 상태를 유지할 수 있습니다."
-        },
-        {
-          title: "API 버전 마이그레이션",
-          description: "새 API 버전으로 업그레이드할 때 두 버전에 대한 TypeScript 클라이언트를 생성하여 주요 변경 사항을 식별하고 프론트엔드 코드에서 원활한 마이그레이션 전략을 구현할 수 있습니다."
-        },
-        {
-          title: "개발자 온보딩",
-          description: "새 팀 구성원은 생성된 TypeScript 인터페이스를 검사하여 API 기능을 빠르게 이해할 수 있으며, 이 인터페이스는 완전한 타입 정보를 갖춘 포괄적인 문서 역할을 합니다."
-        },
-        {
-          title: "프로토타이핑",
-          description: "빠른 프로토타이핑 중에 초안 OpenAPI 스펙에서 TypeScript 클라이언트를 생성하면 백엔드 구현이 완료되기 전에도 실제 데이터 구조로 UI 구성 요소 구축을 즉시 시작할 수 있습니다."
-        }
-      ]
-    },
-    guide: {
-      title: "OpenAPI to TypeScript 생성기 사용 단계별 가이드",
-      intro: "다음 단계에 따라 OpenAPI 스펙을 TypeScript 인터페이스 및 클라이언트 코드로 효과적으로 변환하세요:",
-      steps: [
-        {
-          title: "OpenAPI 스펙 준비",
-          description: "유효한 JSON 또는 YAML 형식의 OpenAPI 스펙이 있는지 확인하세요. 스펙은 API 엔드포인트, 요청 매개변수, 응답 구조 및 데이터 모델을 정의해야 합니다. 파일을 업로드하거나 내용을 직접 텍스트 영역에 붙여넣을 수 있습니다."
-        },
-        {
-          title: "생성 옵션 선택",
-          description: "요구 사항에 따라 생성 옵션을 구성하세요: '모든 모델 정의 내보내기'는 모든 데이터 모델에 대한 TypeScript 인터페이스를 생성하고, 'API 클라이언트 코드 생성'은 API 클라이언트 메서드를 생성하며, '주석 및 문서 설명 추가'는 생성된 코드에 문서를 포함하고, 'TypeScript 열거형 사용'은 문자열 리터럴 유니온에 대한 TypeScript 열거형을 생성합니다."
-        },
-        {
-          title: "TypeScript 코드 생성",
-          description: "'TypeScript 코드 생성' 버튼을 클릭하여 OpenAPI 스펙을 처리하세요. 도구는 스펙을 분석하고 선택한 옵션에 따라 TypeScript 인터페이스 및 클라이언트 코드를 생성합니다."
-        },
-        {
-          title: "생성된 코드 검토",
-          description: "출력이 기대에 부합하는지 확인하세요. 생성된 코드에는 요청/응답 유형에 대한 인터페이스와 각 API 엔드포인트 메서드가 있는 클라이언트 클래스가 포함됩니다."
-        },
-        {
-          title: "결과 복사 또는 다운로드",
-          description: "'코드 복사' 버튼을 사용하여 생성된 TypeScript를 클립보드에 복사하거나 '코드 다운로드'를 사용하여 .ts 파일로 저장하세요. 그런 다음 이 코드를 TypeScript 프로젝트에 통합할 수 있습니다."
-        },
-        {
-          title: "프로젝트와 통합",
-          description: "애플리케이션 코드에서 생성된 클라이언트를 가져오세요. API 기본 URL과 필요한 헤더로 클라이언트를 초기화한 다음 강력한 타입의 메서드를 사용하여 API 호출을 수행하세요."
-        },
-        {
-          title: "API 변경 시 업데이트",
-          description: "API 스펙이 변경될 때마다 TypeScript 코드를 다시 생성하고 코드베이스를 업데이트하여 프론트엔드가 백엔드 API와 동기화 상태를 유지하도록 하세요."
-        }
-      ]
-    },
-    bestPractices: {
-      title: "OpenAPI 스펙을 위한 모범 사례",
-      intro: "고품질 OpenAPI 스펙을 생성하여 최상의 TypeScript 코드를 생성하려면 다음 모범 사례를 따르세요:",
-      items: [
-        "생성된 클라이언트에서 의미 있는 메서드 이름을 생성하기 위해 각 엔드포인트에 설명적인 작업 ID 사용",
-        "유용한 TypeScript 주석을 생성하기 위해 스키마, 속성, 매개변수 및 응답에 대한 자세한 설명 제공",
-        "예측 가능한 TypeScript 인터페이스를 생성하기 위해 스키마 및 속성에 일관된 명명 규칙 사용",
-        "중복을 방지하고 코드 재사용을 촉진하기 위해 'components' 섹션에서 재사용 가능한 구성 요소 정의",
-        "정확한 TypeScript 유형을 생성하기 위해 모든 속성에 정확한 데이터 유형 지정",
-        "예상 데이터 구조를 이해하는 데 도움이 되도록 OpenAPI 스펙에 예제 포함",
-        "TypeScript 열거형 또는 유니온 유형을 생성하기 위해 고정된 가능 값 집합이 있는 속성에 열거형 값 사용",
-        "적절한 태그를 사용하여 관련 작업을 그룹화하여 엔드포인트를 논리적으로 구성",
-        "프론트엔드 마이그레이션 전략을 용이하게 하기 위해 API 버전 관리 및 주요 변경 사항 명확히 표시",
-        "TypeScript 코드 생성 전에 린트 도구 또는 검증기를 사용하여 OpenAPI 스펙 검증"
-      ]
-    },
-    faq: {
-      title: "OpenAPI to TypeScript 생성에 관한 자주 묻는 질문",
-      items: [
-        {
-          question: "OpenAPI와 Swagger의 차이점은 무엇인가요?",
-          answer: "OpenAPI는 현재 사양 표준의 이름이며 Swagger는 원래 이름입니다. OpenAPI 3.0+는 이전에 Swagger 2.0으로 알려진 현대적인 진화입니다. 이 생성기는 OpenAPI 3.x 및 Swagger 2.0 사양을 지원하지만 향상된 기능과 더 나은 TypeScript 코드 생성을 위해 OpenAPI 3.x를 사용하는 것이 좋습니다."
-        },
-        {
-          question: "생성된 TypeScript 코드를 사용자 정의할 수 있나요?",
-          answer: "예, 생성기는 몇 가지 사용자 정의 옵션을 제공합니다: 모델 정의만 내보내거나 클라이언트 코드를 생성하거나 문서 주석을 추가하거나 문자열 유니온 대신 TypeScript 열거형을 사용할 수 있습니다. 더 광범위한 사용자 정의를 위해서는 생성된 코드를 수동으로 수정할 수 있지만 다시 생성하면 이러한 변경 사항이 덮어쓰여질 것에 유의하세요."
-        },
-        {
-          question: "생성된 클라이언트에서 인증을 어떻게 처리하나요?",
-          answer: "생성된 클라이언트는 생성자에서 사용자 정의 헤더를 허용하며 여기에서 인증 토큰을 제공할 수 있습니다. OAuth와 같은 더 복잡한 인증 흐름의 경우 생성된 클라이언트를 추가 로직으로 확장하거나 토큰 갱신 및 기타 인증 문제를 처리하는 래퍼를 생성해야 할 수 있습니다."
-        },
-        {
-          question: "React, Vue, Angular 또는 기타 프레임워크와 함께 사용할 수 있나요?",
-          answer: "예, 생성된 TypeScript 클라이언트는 프레임워크에 구애받지 않으며 모든 JavaScript 또는 TypeScript 프레임워크와 함께 사용할 수 있습니다. React에서는 클라이언트를 사용자 정의 훅으로 래핑할 수 있습니다. Vue에서는 컴포저블 함수를 생성할 수 있습니다. Angular에서는 클라이언트를 주입 가능한 서비스로 확장할 수 있습니다."
-        },
-        {
-          question: "생성된 클라이언트로 파일 업로드를 어떻게 처리하나요?",
-          answer: "OpenAPI 스펙에 정의된 파일 업로드(콘텐츠 유형 'multipart/form-data' 사용)의 경우 생성기는 적절한 메서드 시그니처를 생성합니다. 이러한 메서드를 호출할 때 요청 본문에 대한 FormData 객체를 구성해야 합니다. OpenAPI 스펙이 파일 업로드 작업을 올바르게 정의하는지 확인하세요."
-        },
-        {
-          question: "OpenAPI 스펙에 오류가 있으면 어떻게 되나요?",
-          answer: "생성기는 스펙에서 일반적인 문제를 식별하고 그에 따라 오류 메시지를 제공하려고 시도합니다. 생성 전에 전용 검증기를 사용하여 OpenAPI 문서를 검증하는 것이 좋습니다. 스펙의 오류로 인해 잘못되었거나 불완전한 TypeScript 코드가 발생할 수 있습니다."
-        },
-        {
-          question: "TypeScript 클라이언트를 API 변경 사항과 어떻게 동기화하나요?",
-          answer: "API가 변경되고 OpenAPI 스펙이 업데이트될 때마다 TypeScript 클라이언트를 다시 생성하고 프로젝트에서 업데이트하세요. 프론트엔드가 항상 최신 API 클라이언트 코드를 사용하도록 이 프로세스를 빌드 파이프라인의 일부로 자동화하는 것을 고려하세요."
-        }
-      ]
-    },
-    integrationTips: {
-      title: "생성된 TypeScript 클라이언트 통합을 위한 팁",
-      intro: "TypeScript 클라이언트를 생성한 후 프로젝트와 원활하게 통합하려면 다음 권장 사항을 고려하세요:",
-      items: [
-        "모든 사용자 정의 구성과 함께 생성된 클라이언트를 다시 내보내는 프로젝트에 전용 API 클라이언트 모듈 생성",
-        "테스트를 위해 모의하기 쉽도록 애플리케이션 전체에 API 클라이언트를 제공하는 종속성 주입 패턴 사용",
-        "오류 처리, 로깅 및 인증과 같은 일반적인 문제에 대한 요청/응답 인터셉터 구현 고려",
-        "특정 오류 상황을 처리하거나 애플리케이션 요구 사항에 맞게 데이터를 변환하는 사용자 정의 함수로 생성된 클라이언트 메서드 래핑",
-        "프론트엔드와 백엔드가 동기화 상태를 유지하도록 TypeScript 클라이언트의 자동 생성을 CI/CD 파이프라인의 일부로 설정",
-        "개발, 스테이징, 프로덕션과 같은 다양한 환경에 대한 API 기본 URL을 지정하기 위해 환경 변수 또는 구성 파일 사용",
-        "일시적인 장애에 대한 재시도 논리를 추가하기 위해 생성된 클라이언트 메서드를 재시도 기능으로 래핑",
-        "성능을 향상시키고 API 호출을 줄이기 위해 자주 액세스하는 데이터에 대한 요청 캐싱 구현",
-        "Redux, MobX 또는 Vuex와 같은 상태 관리 라이브러리와 생성된 유형을 결합하여 타입 안전 애플리케이션 상태 달성",
-        "많은 작은 요청을 수행하는 경우 API 호출을 최적화하기 위해 요청 일괄 처리 또는 GraphQL 구현 고려"
-      ]
-    }
   }
-}
+};

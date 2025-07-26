@@ -1,6 +1,7 @@
 export default {
   name: 'Ekstraktor Warna Gambar',
   description: 'Ekstrak palet warna dan warna dominan dari gambar',
+
   input: {
     title: 'Unggah Gambar',
     dropzone: 'Seret dan lepas gambar di sini atau klik untuk mengunggah',
@@ -13,6 +14,7 @@ export default {
     urlPlaceholder: 'https://contoh.com/gambar.jpg',
     unnamed: 'Gambar Tanpa Nama'
   },
+
   options: {
     title: 'Opsi Ekstraksi',
     extractSettings: 'Pengaturan Ekstraksi',
@@ -35,6 +37,7 @@ export default {
     ignoreBlack: 'Abaikan Hitam',
     threshold: 'Ambang Kesamaan'
   },
+
   colorModels: {
     rgb: 'RGB',
     hsl: 'HSL',
@@ -42,6 +45,7 @@ export default {
     cmyk: 'CMYK',
     lab: 'LAB'
   },
+
   colorFormats: {
     hex: 'Heksadesimal (#RRGGBB)',
     rgb: 'RGB (0-255)',
@@ -51,6 +55,7 @@ export default {
     cssRgb: 'CSS RGB',
     cssHsl: 'CSS HSL'
   },
+
   sortOptions: {
     prevalence: 'Frekuensi',
     luminance: 'Luminansi',
@@ -58,12 +63,14 @@ export default {
     saturation: 'Saturasi',
     original: 'Urutan Asli'
   },
+
   colorSpaces: {
     srgb: 'sRGB',
     p3: 'Display P3',
     rec2020: 'Rec. 2020',
     prophoto: 'ProPhoto RGB'
   },
+
   results: {
     title: 'Warna yang Diekstrak',
     colorsFound: '{count} warna ditemukan',
@@ -79,12 +86,14 @@ export default {
     clickToCopy: 'Klik untuk menyalin: {color}',
     downloading: 'Mengunduh palet...'
   },
+
   display: {
     originalImage: 'Gambar Asli',
     colorPalette: 'Palet Warna',
     uploadFirst: 'Silakan unggah gambar terlebih dahulu',
     clickExtract: 'Klik tombol "Ekstrak Warna" untuk mendapatkan palet warna gambar',
   },
+
   actions: {
     extract: 'Ekstrak Warna',
     extracting: 'Memproses...',
@@ -98,6 +107,7 @@ export default {
     exportSass: 'Ekspor ke Variabel SASS',
     exportSwatch: 'Ekspor ke Swatch ASE'
   },
+
   palette: {
     title: 'Palet Bernama',
     vibrant: 'Vibrant',
@@ -106,6 +116,7 @@ export default {
     light: 'Terang',
     custom: 'Kustom'
   },
+
   messages: {
     imageLoaded: 'Gambar berhasil dimuat',
     processingImage: 'Memproses gambar...',
@@ -118,62 +129,5 @@ export default {
     resetDone: 'Reset selesai',
     invalidImage: 'File gambar tidak valid',
     noImageSelected: 'Tidak ada gambar yang dipilih'
-  },
-  article: {
-    title: "Ekstraktor Warna Gambar: Identifikasi dan Ekstrak Warna dari Gambar Apapun",
-    features: {
-      title: "Memahami Ekstraksi Warna Gambar dan Aplikasinya",
-      description: "<strong>Ekstraktor Warna Gambar</strong> adalah alat online canggih yang dirancang untuk menganalisis gambar dan mengidentifikasi warna-warna kuncinya. Alat praktis ini menggunakan <strong>algoritma deteksi warna</strong> yang canggih untuk memindai gambar yang Anda unggah, mengidentifikasi warna-warna utama yang mendefinisikan palet keseluruhan dan warna aksen yang menambah minat visual.<br><br>Berbeda dengan alat pipet dasar, <strong>pembuat palet</strong> kami secara cerdas mengelompokkan warna-warna serupa, memberikan Anda koleksi warna yang koheren dan praktis, bukan hanya pengambilan sampel piksel individual. Alat ini mendukung berbagai format gambar termasuk JPEG, PNG, GIF dan WebP, membuatnya cocok untuk berbagai skenario penggunaan.<br><br><strong>Skema warna</strong> yang diekstrak segera tersedia dalam berbagai format termasuk HEX, RGB dan HSL, memungkinkan Anda dengan mudah mengintegrasikannya ke dalam proyek desain, kode atau dokumen Anda tanpa konversi manual.",
-      useCases: {
-        title: "Aplikasi Praktis Ekstraksi Warna Gambar",
-        items: [
-          "<strong>Desain & Pengembangan Web</strong>: Ekstrak <strong>palet</strong> yang koheren dari logo klien atau gambar referensi untuk memastikan konsistensi merek di situs web. Warna yang diekstrak dapat langsung digunakan dalam stylesheet CSS, memungkinkan desainer mencocokkan warna yang tepat dari gambar inspirasi atau membangun sistem desain yang konsisten berdasarkan aset visual yang ada.",
-          
-          "<strong>Pemasaran Digital</strong>: Ciptakan kampanye media sosial yang harmonis secara visual dengan mengekstrak dan menggunakan <strong>skema warna</strong> yang konsisten dari foto produk atau gambar merek. Profesional pemasaran dapat memastikan semua materi promosi mempertahankan harmoni warna dengan mendasarkan pilihan warna pada data warna yang diekstrak dari gambar merek kunci.",
-          
-          "<strong>Pengembangan Identitas Merek</strong>: Analisis <strong>warna merek</strong> pesaing atau eksplorasi opsi warna dengan mengekstrak palet dari gambar inspirasi. Strategi merek dapat menggunakan alat ini untuk memahami tren warna industri, menyempurnakan panduan merek atau membangun identitas visual yang unik yang membedakan dari pesaing.",
-          
-          "<strong>Desain UI/UX</strong>: Ekstrak <strong>nilai warna</strong> yang tepat dari mockup atau gambar inspirasi untuk diimplementasikan dalam desain antarmuka pengguna. Desainer UI dapat memastikan pencocokan warna yang sempurna saat beralih dari seni konsep ke antarmuka fungsional, mempertahankan pengalaman visual yang diharapkan di seluruh antarmuka aplikasi.",
-          
-          "<strong>Desain Cetak</strong>: Identifikasi <strong>kode warna</strong> yang tepat dari referensi digital untuk memastikan reproduksi yang akurat dalam materi cetak. Desainer grafis yang mengerjakan proyek cetak dapat mengekstrak warna yang tepat untuk konversi CMYK yang akurat, memastikan materi fisik cocok dengan desain digital.",
-          
-          "<strong>Seni & Ilustrasi</strong>: Bangun <strong>palet digital</strong> kustom berdasarkan karya seni atau foto yang menginspirasi Anda. Seniman digital dapat menganalisis hubungan warna dalam karya masterpiece atau foto referensi, kemudian menerapkan harmoni warna serupa dalam karya mereka sendiri untuk dampak visual yang lebih besar."
-        ]
-      }
-    },
-    faq: {
-      title: "Pertanyaan Umum tentang Ekstraksi Warna Gambar",
-      items: [
-        {
-          question: "Seberapa akurat Ekstraktor Warna Gambar dalam mengidentifikasi warna?",
-          answer: "<strong>Ekstraktor Warna Gambar</strong> memberikan identifikasi warna yang sangat akurat melalui algoritma canggih yang menganalisis data piksel dan mengelompokkan warna serupa. Faktor kunci yang memengaruhi akurasi meliputi:<br><br>• Kualitas dan resolusi gambar - Gambar berkualitas tinggi memberikan ekstraksi warna yang lebih akurat<br>• Kompleksitas ruang warna - Gambar dengan gradasi halus mungkin memiliki variasi kecil dalam identifikasi warna<br>• Jumlah warna yang diekstrak - Algoritma memprioritaskan warna yang paling penting dan dominan<br><br>Untuk pekerjaan desain profesional yang membutuhkan pencocokan warna yang tepat, alat ini menyediakan <strong>nilai HEX, RGB dan HSL</strong> yang tepat yang dapat langsung diterapkan pada perangkat lunak desain atau kode. Dalam kebanyakan kasus, pengguna melaporkan bahwa <strong>palet</strong> yang diekstrak secara akurat mewakili warna-warna dasar dari gambar yang dianalisis."
-        },
-        {
-          question: "Format gambar apa yang didukung oleh ekstraktor warna?",
-          answer: "<strong>Ekstraktor Warna Gambar</strong> kami mendukung semua format gambar utama yang digunakan dalam industri web dan desain:<br><br>• JPEG/JPG - Untuk foto dan gambar kompleks<br>• PNG - Untuk grafik dengan transparansi<br>• GIF - Untuk animasi sederhana dan grafik<br>• WebP - Format modern dengan kompresi yang sangat baik<br>• SVG - Format grafik vektor (ekstraksi warna dari tampilan yang dirender)<br><br>Ukuran file maksimum untuk setiap gambar dibatasi hingga 5MB untuk memastikan kinerja optimal. Untuk hasil terbaik dalam mengekstrak <strong>skema warna</strong>, kami merekomendasikan penggunaan gambar yang jelas dan berkualitas tinggi dengan area warna yang jelas. <strong>Deteksi warna</strong> bekerja paling baik pada gambar tanpa noise berlebihan atau artefak kompresi."
-        },
-        {
-          question: "Berapa banyak warna yang akan diekstrak alat ini dari gambar saya?",
-          answer: "<strong>Ekstraktor Warna Gambar</strong> menyediakan opsi ekstraksi warna yang fleksibel:<br><br>• Secara default, alat ini mengekstrak 5-10 warna utama yang paling mewakili <strong>palet</strong> gambar<br>• Anda dapat menyesuaikan ekstraksi untuk mengambil sedikitnya 1-2 warna kunci atau sebanyak 20+ warna<br>• Algoritma secara cerdas menyeimbangkan warna utama (yang mencakup area besar) dengan warna aksen (yang penting secara visual tetapi kurang umum)<br><br>Untuk tujuan desain, menggunakan 5-7 warna yang diekstrak biasanya memberikan <strong>skema warna</strong> terbaik yang menangkap esensi gambar sekaligus mudah diterapkan dalam proyek desain. Saat mengekstrak warna untuk analisis mendetail atau desain kompleks, Anda dapat menambah jumlah warna untuk mendapatkan palet yang lebih komprehensif."
-        },
-        {
-          question: "Bisakah saya menyimpan atau mengekspor palet yang diekstrak?",
-          answer: "Ya, <strong>Ekstraktor Warna Gambar</strong> menyediakan berbagai opsi untuk menyimpan dan mengekspor <strong>palet</strong> yang diekstrak:<br><br>• <strong>Salin kode warna individual</strong> dengan sekali klik dalam format HEX, RGB atau HSL<br>• <strong>Ekspor seluruh palet</strong> dalam berbagai format yang kompatibel dengan perangkat lunak desain<br>• <strong>Simpan</strong> palet ke penyimpanan lokal browser untuk referensi masa depan<br>• <strong>Buat Variabel CSS</strong> untuk segera digunakan dalam pengembangan web<br><br>Untuk tim desain yang bekerja pada beberapa proyek, kemampuan mengekspor <strong>skema warna</strong> memastikan konsistensi dan efisiensi. Banyak profesional mengintegrasikan palet yang diekstrak ini ke dalam sistem desain atau panduan gaya mereka untuk mempertahankan koherensi visual di semua titik kontak merek."
-        },
-        {
-          question: "Bagaimana cara menggunakan warna yang diekstrak di perangkat lunak desain saya?",
-          answer: "<strong>Nilai warna</strong> yang diekstrak oleh alat kami dapat dengan mudah ditransfer ke perangkat lunak desain apa pun dengan beberapa metode:<br><br>1. <strong>Salin-tempel langsung</strong> kode HEX (misalnya #FF5733) ke bidang input warna di Adobe Photoshop, Illustrator, Figma, Sketch, dan perangkat lunak desain lainnya<br>2. <strong>Nilai RGB</strong> (misalnya rgb(255, 87, 51)) dapat dimasukkan ke dalam pemilih warna RGB aplikasi desain<br>3. <strong>Format HSL</strong> sangat berguna untuk menyesuaikan kecerahan atau saturasi sambil mempertahankan rona yang sama<br>4. Beberapa perangkat lunak desain memungkinkan <strong>impor palet dalam format yang dapat diekspor oleh alat kami</strong><br><br>Untuk desainer dan pengembang web, <strong>skema warna</strong> yang diekstrak dapat langsung diimplementasikan dalam CSS, baik sebagai properti warna individual maupun sebagai serangkaian properti CSS kustom (variabel) yang komprehensif untuk mengelola warna secara lebih sistematis."
-        }
-      ]
-    },
-    guide: {
-      title: "Cara Menggunakan Ekstraktor Warna Gambar: Panduan Langkah demi Langkah",
-      step1: "<strong>Unggah Gambar Anda</strong>: Klik tombol \"Pilih Gambar\" atau seret dan lepas file ke area unggahan. <strong>Ekstraktor Warna</strong> menerima format gambar umum termasuk JPEG, PNG, WebP dan GIF. Untuk hasil terbaik, pilih gambar dengan warna yang jelas dan menonjol serta resolusi yang memadai.",
-      step2: "<strong>Sesuaikan Pengaturan Ekstraksi</strong>: Sebelum memproses, Anda dapat menyesuaikan parameter ekstraksi warna. Tetapkan jumlah warna yang ingin Anda ekstrak (biasanya 5-10 memberikan <strong>palet</strong> yang seimbang), dan pilih apakah akan memprioritaskan warna utama atau menyertakan warna aksen. Pengaturan ini membantu menyesuaikan hasil sesuai kebutuhan spesifik Anda.",
-      step3: "<strong>Proses Gambar</strong>: Klik tombol \"Ekstrak Warna\" untuk memulai analisis. <strong>Algoritma deteksi warna</strong> akan memindai gambar Anda, mengidentifikasi warna-warna kunci dan mengelompokkan rona yang serupa. Proses ini biasanya hanya membutuhkan beberapa detik, tergantung pada ukuran dan kompleksitas gambar.",
-      step4: "<strong>Tinjau Warna yang Diekstrak</strong>: Setelah diproses, alat akan menampilkan <strong>skema warna</strong> yang diekstrak dan kode warna yang tepat dalam format pilihan Anda (HEX, RGB atau HSL). Setiap warna ditampilkan sebagai swatch disertai dengan kode yang sesuai untuk referensi mudah. Warna diurutkan dari yang paling dominan ke aksen, memberi Anda hierarki visual yang jelas.",
-      step5: "<strong>Simpan dan Ekspor Palet Anda</strong>: Salin <strong>kode warna</strong> individual dengan mengekliknya, atau gunakan opsi ekspor untuk mengekspor seluruh palet. Anda dapat menyimpan palet ke browser untuk referensi masa depan, mengunduh dalam berbagai format yang kompatibel dengan perangkat lunak desain, atau menghasilkan variabel CSS untuk segera digunakan dalam proyek pengembangan web."
-    },
-    conclusion: "Ekstraktor Warna Gambar adalah alat yang berharga bagi desainer, pemasar, pengembang, dan seniman yang perlu mengidentifikasi, menangkap, dan menerapkan warna spesifik dari referensi visual. Dengan menjembatani kesenjangan antara inspirasi visual dan aplikasi praktis, alat ini menyederhanakan proses pemilihan warna dan memastikan konsistensi dalam proyek digital dan cetak. Baik Anda merancang panduan merek, mendesain situs web, atau membuat karya seni digital, kemampuan mengekstrak palet yang tepat dari gambar menghilangkan pekerjaan tebak-tebakan dan meningkatkan kualitas output kreatif. Seiring desain yang terus menekankan sistem warna yang koheren, alat yang dapat secara akurat mengidentifikasi dan menerapkan skema warna menjadi sumber daya penting bagi para profesional di berbagai bidang kreatif dan teknis."
   }
-}
+};

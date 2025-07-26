@@ -1,178 +1,131 @@
 export default {
-    name: 'Conversor de cURL',
-    description: 'Converta comandos cURL em snippets de código para várias linguagens de programação',
-    title: 'cURL para Código',
-    subtitle: 'Transforme comandos cURL em código em múltiplas linguagens para fácil integração de requisições HTTP em seus projetos',
-    input: {
-      title: 'Comando cURL',
-      placeholder: 'Insira o comando cURL aqui',
-      parse: 'Analisar cURL',
-      clear: 'Limpar',
-      examples: 'Exemplos de comandos:',
-      options: 'Opções do analisador',
-      validateCommand: 'Validar comando',
-      formatCurl: 'Formatar cURL'
-    },
-    options: {
-      detectAuth: 'Detectar autenticação automaticamente',
-      resolveVariables: 'Resolver variáveis de ambiente',
-      processContinuations: 'Processar continuadores de linha (\\)',
-      followRedirects: 'Seguir redirecionamentos',
-      preserveHeaders: 'Manter todos os cabeçalhos',
-      ignoreErrors: 'Ignorar erros de análise',
-      noDuplicateHeaders: 'Sem cabeçalhos duplicados (usar o último)'
-    },
-    output: {
-      title: 'Saída de código',
-      language: 'Linguagem alvo',
-      copy: 'Copiar',
-      copyTooltip: 'Copiar para área de transferência',
-      download: 'Baixar',
-      beautify: 'Formatar',
-      codeTitle: 'Código {language}',
-      errorTitle: 'Erro de conversão',
-      languages: {
-        python: 'Python (requests)',
-        pythonHttp: 'Python (http.client)',
-        node: 'Node.js (axios)',
-        nodeRequest: 'Node.js (request)',
-        nodeFetch: 'Node.js (fetch)',
-        java: 'Java (HttpClient)',
-        javaOkHttp: 'Java (OkHttp)',
-        php: 'PHP (cURL)',
-        phpGuzzle: 'PHP (Guzzle)',
-        go: 'Go',
-        rust: 'Rust',
-        swift: 'Swift',
-        csharp: 'C# (HttpClient)',
-        ruby: 'Ruby',
-        dart: 'Dart',
-        powershell: 'PowerShell',
-        browser: 'Navegador (fetch)',
-        curl: 'cURL (formatado)',
-        json: 'JSON (objeto de requisição)',
-        har: 'HAR (arquivo HTTP)',
-        javascript: 'JavaScript (Fetch)'
-      }
-    },
-    request: {
-      title: 'Detalhes da requisição',
-      method: 'Método',
-      url: 'URL',
-      headers: 'Cabeçalhos',
-      body: 'Corpo',
-      auth: 'Autenticação',
-      options: 'Opções',
-      cookie: 'Cookie',
-      queryParams: 'Parâmetros de consulta',
-      formData: 'Dados de formulário',
-      visualize: 'Visualizar'
-    },
-    visualization: {
-      title: 'Visualização da requisição',
-      request: 'Requisição',
-      response: 'Resposta',
-      headers: 'Cabeçalhos',
-      body: 'Corpo',
-      timing: 'Tempo',
-      raw: 'Bruto'
-    },
-    analysis: {
-      title: 'Análise do comando',
-      insecureWarning: 'Aviso: Este comando usa --insecure/-k (verificação SSL desativada)',
-      verboseIgnored: 'Nota: Modo verbose (-v) ignorado na conversão',
-      unsupportedOptions: 'Opções não suportadas',
-      warnings: 'Avisos',
-      info: 'Informações'
-    },
-    messages: {
-      parsing: 'Analisando comando cURL...',
-      parseFailed: 'Falha ao analisar comando cURL: {error}',
-      parseSuccess: 'Comando cURL analisado com sucesso',
-      copied: 'Código copiado para área de transferência',
-      downloaded: 'Código baixado',
-      invalidCurl: 'Comando cURL inválido',
-      emptyCurl: 'Por favor, insira um comando cURL',
-      validCurl: 'Comando cURL válido',
-      unknownOption: 'Opção desconhecida: {option}',
-      unsupportedMethod: 'Aviso: Nem todas as linguagens suportam o método HTTP {method}',
-      curlRequired: 'O comando deve começar com "curl "',
-      copyFailed: 'Falha ao copiar, copie manualmente'
-    },
-    examples: {
-      title: 'Exemplos de comandos cURL',
-      basic: 'Requisição GET básica',
-      headers: 'Cabeçalhos personalizados',
-      post: 'POST com JSON',
-      formData: 'Envio de formulário',
-      auth: 'Autenticação básica',
-      complex: 'Exemplo complexo',
-      exampleCommands: {
-        getRequest: 'Requisição GET',
-        postJson: 'POST JSON',
-        postForm: 'POST formulário',
-        withAuth: 'Com autenticação',
-        uploadFile: 'Upload de arquivo'
-      }
-    },
-    actions: {
-      convert: 'Converter',
-      converting: 'Convertendo...'
-    },
-    article: {
-      title: "Conversor de cURL: Transforme requisições de linha de comando em código",
-      features: {
-        title: "Entenda a conversão de cURL e suas aplicações",
-        description: "<strong>O Conversor de cURL</strong> é uma ferramenta poderosa que transforma comandos cURL em snippets de código executável em várias linguagens de programação. Esta ferramenta preenche a lacuna entre documentação de API, testes via terminal e implementação real, permitindo que desenvolvedores integrem rapidamente requisições HTTP em seus projetos sem conversão manual de sintaxe.<br><br>A função principal deste <strong>conversor de cURL para código</strong> é analisar a sintaxe de linha de comando do cURL (incluindo cabeçalhos, métodos de requisição, autenticação, payloads de dados e outras opções) e gerar código equivalente que executa a mesma requisição HTTP na sua linguagem de programação preferida. A ferramenta suporta linguagens populares como Python, JavaScript, PHP, Java, Ruby, Go e C#, permitindo que desenvolvedores façam a transição suave entre testar APIs no terminal e implementá-las no código de produção. Seja trabalhando com serviços RESTful, endpoints GraphQL ou APIs SOAP tradicionais, este <strong>gerador de requisições HTTP</strong> cuida do trabalho de conversão de sintaxe, reduzindo significativamente o tempo de desenvolvimento e eliminando erros de sintaxe.",
-        useCases: {
-          title: "Aplicações práticas do conversor de cURL",
-          items: [
-            "<strong>Aceleração de integração de APIs</strong>: Ao integrar APIs de terceiros, desenvolvedores frequentemente começam testando endpoints com comandos cURL fornecidos na documentação. O <strong>analisador de comandos cURL</strong> permite converter esses exemplos diretamente para a linguagem do projeto, acelerando a integração e garantindo que o formato da requisição da documentação seja replicado com precisão. Isso elimina erros potenciais na conversão manual de especificações de chamadas de API e reduz o tempo de integração de APIs complexas de horas para minutos.",
-            "<strong>Desenvolvimento multiplataforma</strong>: Equipes que trabalham com múltiplas stacks tecnológicas podem usar o <strong>gerador de código de requisições HTTP</strong> para compartilhar padrões de interação com APIs. Desenvolvedores backend podem validar endpoints de API com cURL e então usar o conversor para fornecer aos desenvolvedores frontend código pronto em JavaScript que executa a mesma requisição, garantindo consistência entre componentes do sistema enquanto segue as melhores práticas específicas de cada linguagem.",
-            "<strong>Criação de documentação de API</strong>: Autores técnicos e desenvolvedores de API podem gerar exemplos de código consistentes em múltiplas linguagens a partir de um único comando cURL verificado. Isso garante que todos os exemplos de código na documentação executem a mesma requisição, mantendo consistência enquanto fornece implementações específicas para cada linguagem que seguem padrões idiomáticos e melhores práticas das linguagens suportadas.",
-            "<strong>Modernização de sistemas legados</strong>: Ao atualizar aplicações legadas, desenvolvedores frequentemente precisam replicar interações HTTP existentes em bases de código modernas. Capturando requisições de API atuais através de ferramentas de desenvolvedor do navegador (que podem ser exportadas como cURL) e convertendo-as para linguagens de programação modernas, o <strong>conversor de cURL</strong> ajuda na migração de funcionalidades enquanto mantém padrões precisos de comunicação com APIs.",
-            "<strong>Depuração e solução de problemas</strong>: Quando uma requisição de API falha em uma aplicação, desenvolvedores podem extrair a requisição problemática como um comando cURL (normalmente obtido de logs de servidor ou ferramentas de monitoramento), testar e modificar diretamente no terminal até funcionar corretamente, e então usar o conversor para gerar o código corrigido que resolve o problema na base de código da aplicação.",
-            "<strong>Ferramenta educacional</strong>: Instrutores e estudantes de programação podem usar o <strong>gerador de código de requisições</strong> para entender a estrutura de requisições HTTP em diferentes linguagens. Comparando o código gerado para a mesma requisição em múltiplas linguagens, desenvolvedores podem entender melhor as implementações de clientes HTTP específicas de cada linguagem, ajudando-os a aprender novas linguagens através de exemplos práticos."
-          ]
-        }
-      },
-      faq: {
-        title: "Perguntas frequentes sobre conversão de cURL",
-        items: [
-          {
-            question: "O que é cURL e por que preciso convertê-lo para código?",
-            answer: "cURL (Client URL) é uma ferramenta de linha de comando e biblioteca para transferir dados usando vários protocolos via URL. Desenvolvedores frequentemente usam comandos cURL para testar endpoints de API, depurar requisições HTTP e documentar interações com APIs devido à sua ubiquidade e simplicidade. No entanto, ao implementar essas requisições de teste em aplicações reais, a sintaxe cURL precisa ser convertida para a linguagem de programação em uso. A <strong>ferramenta de conversão de cURL</strong> automatiza esse processo de conversão, eliminando erros de sintaxe manual e economizando tempo significativo de desenvolvimento. Em vez de entender como opções específicas do cURL (como -H para cabeçalhos ou -d para dados) são convertidas para construções de linguagem específicas, o conversor lida com essas conversões automaticamente, garantindo que o código gerado execute a mesma requisição HTTP enquanto segue convenções e melhores práticas específicas da linguagem."
-          },
-          {
-            question: "Quão preciso é o código convertido em relação ao comando cURL original?",
-            answer: "O <strong>conversor de cURL para código</strong> produz resultados altamente precisos, replicando funcionalmente o comando cURL original enquanto respeita os idiomas específicos de cada linguagem. O conversor preserva todos os componentes essenciais da requisição, incluindo URL, método HTTP, cabeçalhos, parâmetros de consulta, corpo da requisição (em vários formatos), credenciais de autenticação e opções comuns como rastreamento de redirecionamentos e verificação SSL. Para linguagens suportadas, a conversão mantém equivalência semântica, significando que o código gerado fará exatamente a mesma requisição HTTP que o comando cURL original executaria.<br><br>Dito isso, alguns recursos avançados ou obscuros do cURL podem não ter equivalentes diretos em todas as linguagens. Nestes casos extremos, o conversor implementa a funcionalidade mais próxima ou fornece comentários no código gerado explicando quaisquer diferenças. Para implementações críticas em produção, recomenda-se validar o código gerado através de testes reais, especialmente quando usando opções especializadas do cURL como certificados SSL personalizados, configurações de rede específicas ou mecanismos de autenticação incomuns."
-          },
-          {
-            question: "Quais linguagens de programação são suportadas pelo conversor?",
-            answer: "O <strong>gerador de código de requisições HTTP</strong> suporta conversão para várias linguagens e bibliotecas principais comumente usadas em interações com API. Atualmente, os alvos suportados incluem:<br><br>• <strong>Python</strong>: A popular biblioteca requests e o http.client padrão<br>• <strong>JavaScript/Node.js</strong>: Várias variantes, incluindo Fetch API (navegador e Node.js), Axios e a biblioteca Request<br>• <strong>PHP</strong>: Funções nativas cURL e cliente HTTP Guzzle<br>• <strong>Java</strong>: HttpClient Java 11+ e biblioteca OkHttp<br>• <strong>Go</strong>: Cliente HTTP da biblioteca padrão<br>• <strong>Ruby</strong>: Net::HTTP nativo<br>• <strong>C#</strong>: Implementação HttpClient<br>• <strong>PowerShell</strong>: Invoke-WebRequest<br>• <strong>Rust</strong>: Cliente reqwest<br><br>Cada conversão de linguagem é otimizada para produzir código idiomático que segue as melhores práticas e convenções da linguagem e biblioteca alvo, não sendo apenas uma tradução literal da sintaxe. Essa abordagem garante que o código gerado não apenas seja funcional, mas também mantenha-se e alinhe-se com a forma como desenvolvedores experientes em cada ecossistema escreveriam naturalmente código de cliente HTTP."
-          },
-          {
-            question: "O conversor pode lidar com comandos cURL complexos com múltiplas opções?",
-            answer: "Sim, o <strong>analisador de comandos cURL</strong> é capaz de processar comandos com múltiplas opções e estruturas de requisição complexas. O conversor suporta:<br><br>• <strong>Métodos de autenticação</strong>: Incluindo autenticação básica, tokens Bearer, chaves de API e implementações OAuth<br>• <strong>Cabeçalhos personalizados</strong>: Múltiplos cabeçalhos com quaisquer valores, incluindo especificações de tipo de conteúdo<br>• <strong>Corpo da requisição</strong>: JSON, dados de formulário, formulário multipart, dados binários e payloads de texto<br>• <strong>Métodos HTTP</strong>: Todos os métodos padrão (GET, POST, PUT, DELETE, PATCH etc.)<br>• <strong>Parâmetros de URL</strong>: Tanto na URL quanto como parâmetros separados<br>• <strong>Upload de arquivos</strong>: Conversão de sintaxe de upload para linguagens suportadas<br>• <strong>Opções SSL/TLS</strong>: Configurações de verificação de certificado<br>• <strong>Configuração de proxy</strong>: Quando suportado pela linguagem alvo<br>• <strong>Cookies</strong>: Envio e armazenamento de cookies<br><br>A ferramenta pode processar comandos com continuadores de linha (barra invertida), variações de aspas e estruturas aninhadas complexas como payloads JSON ou campos de formulário aninhados. Mesmo comandos extraídos diretamente de ferramentas de desenvolvedor de navegador ou ferramentas como Postman, que normalmente geram comandos cURL muito detalhados com múltiplas opções, podem ser convertidos com sucesso em código conciso e eficiente na linguagem alvo."
-          },
-          {
-            question: "Como garantir que o código gerado siga as melhores práticas da minha linguagem?",
-            answer: "O <strong>gerador de código de requisições</strong> foi projetado para produzir não apenas código funcional, mas que siga idiomas e melhores práticas específicas de cada linguagem. Para cada linguagem suportada, o conversor implementa várias otimizações:<br><br>• <strong>Seleção de biblioteca</strong>: Usando a biblioteca cliente HTTP mais apropriada e amplamente adotada para cada linguagem (por exemplo, requests para Python, Axios para Node.js)<br>• <strong>Tratamento de erros</strong>: Incluindo padrões apropriados de verificação de erros e tratamento de exceções específicos da linguagem<br>• <strong>Gerenciamento de recursos</strong>: Fechando conexões e limpando recursos corretamente quando aplicável<br>• <strong>Sintaxe moderna</strong>: Aproveitando características modernas da linguagem quando apropriado (async/await em JavaScript, try-with-resources em Java)<br>• <strong>Legibilidade</strong>: Formatando o código com indentação apropriada e nomes de variáveis significativos<br>• <strong>Facilidade de manutenção</strong>: Construindo o código gerado para ser facilmente compreendido e modificado<br><br>Embora o código gerado siga melhores práticas gerais, você pode precisar fazer pequenos ajustes para alinhar com os padrões de codificação específicos do seu projeto ou para integrar com estruturas de código existentes. O conversor fornece uma base sólida que implementa corretamente a requisição HTTP enquanto segue convenções da linguagem, permitindo que você foque em integrar a funcionalidade na aplicação em vez de lutar com sintaxe de cliente HTTP."
-          }
-        ]
-      },
-      guide: {
-        title: "Guia passo a passo para usar o conversor de cURL",
-        steps: [
-          "<strong>Insira seu comando cURL</strong>: Primeiro cole ou digite seu comando cURL no campo de entrada. Você pode usar comandos de documentação de API, ferramentas de desenvolvedor de navegador, exportações do Postman ou qualquer comando cURL válido que você criou. Se você é novo em cURL, pode clicar em um dos comandos de exemplo abaixo da área de entrada para ver o formato de diferentes tipos de requisições.",
-          "<strong>Selecione a linguagem alvo</strong>: No painel de seleção de linguagem, escolha para qual linguagem de programação você deseja converter o comando cURL. A ferramenta suporta várias linguagens e bibliotecas comumente usadas em interações com API, como Python, JavaScript, PHP, Java etc. Selecione a linguagem que corresponde à sua stack tecnológica.",
-          "<strong>Clique no botão Converter</strong>: Com o comando inserido e a linguagem alvo selecionada, clique no botão \"Converter\" para processar o comando cURL. A ferramenta analisará o comando, identificará todos seus componentes (método, URL, cabeçalhos, dados, opções) e gerará código equivalente na linguagem que você escolheu.",
-          "<strong>Revise o código gerado</strong>: Examine a saída na área de exibição de código. O código convertido incluirá todos os imports/referências necessários, inicialização apropriada do cliente HTTP, configuração da requisição com cabeçalhos e formato de corpo adequados, e tratamento básico de resposta. O código é formatado para legibilidade, com indentação apropriada e nomes de variáveis significativos.",
-          "<strong>Copie o código para seu projeto</strong>: Satisfeito com o código gerado, clique no botão \"Copiar\" para copiá-lo para a área de transferência. Você pode então colá-lo diretamente em seu ambiente de desenvolvimento ou editor de código. Dependendo dos requisitos específicos do seu projeto, o código pode ser usado diretamente ou precisar de modificações mínimas.",
-          "<strong>Modifique conforme necessário</strong>: Embora o código gerado seja funcionalmente completo, você pode querer integrá-lo com sistemas de tratamento de erros, logging ou processamento de dados da sua aplicação. Sinta-se livre para modificar nomes de variáveis, adicionar comentários ou encapsular o código em funções/métodos que se encaixem na arquitetura da sua aplicação.",
-          "<strong>Teste a requisição implementada</strong>: Após integrar o código ao projeto, teste a requisição HTTP para garantir que funciona como esperado. O código convertido deve produzir a mesma requisição e receber a mesma resposta que o comando cURL original, mas sempre é boa prática validar, especialmente para interações críticas com APIs de negócios."
-        ]
-      },
-      conclusion: "O Conversor de cURL serve como uma ponte crucial entre a exploração de APIs e sua implementação, simplificando significativamente o processo de desenvolvimento de aplicações que interagem com serviços web. Ao converter automaticamente requisições HTTP de linha de comando em código limpo e idiomático em várias linguagens, ele elimina uma grande fonte de erros e frustrações no trabalho de integração de APIs. Esta ferramenta não apenas economiza tempo valioso de desenvolvimento, mas também garante consistência entre chamadas de API testadas e suas implementações em código de produção. Seja você um desenvolvedor experiente trabalhando em arquiteturas complexas de microsserviços ou um iniciante aprendendo a interagir com sua primeira API REST, o Conversor de cURL fornece um atalho confiável que transforma conversões manuais de sintaxe em operações de um clique, permitindo que você foque na construção da lógica da aplicação em vez de lutar com sintaxe de clientes HTTP."
+  name: 'Conversor de cURL',
+  description: 'Converta comandos cURL em snippets de código para várias linguagens de programação',
+  title: 'cURL para Código',
+  subtitle: 'Transforme comandos cURL em código em múltiplas linguagens para fácil integração de requisições HTTP em seus projetos',
+
+  input: {
+    title: 'Comando cURL',
+    placeholder: 'Insira o comando cURL aqui',
+    parse: 'Analisar cURL',
+    clear: 'Limpar',
+    examples: 'Exemplos de comandos:',
+    options: 'Opções do analisador',
+    validateCommand: 'Validar comando',
+    formatCurl: 'Formatar cURL'
+  },
+
+  options: {
+    detectAuth: 'Detectar autenticação automaticamente',
+    resolveVariables: 'Resolver variáveis de ambiente',
+    processContinuations: 'Processar continuadores de linha (\\)',
+    followRedirects: 'Seguir redirecionamentos',
+    preserveHeaders: 'Manter todos os cabeçalhos',
+    ignoreErrors: 'Ignorar erros de análise',
+    noDuplicateHeaders: 'Sem cabeçalhos duplicados (usar o último)'
+  },
+
+  output: {
+    title: 'Saída de código',
+    language: 'Linguagem alvo',
+    copy: 'Copiar',
+    copyTooltip: 'Copiar para área de transferência',
+    download: 'Baixar',
+    beautify: 'Formatar',
+    codeTitle: 'Código {language}',
+    errorTitle: 'Erro de conversão',
+    languages: {
+      python: 'Python (requests)',
+      pythonHttp: 'Python (http.client)',
+      node: 'Node.js (axios)',
+      nodeRequest: 'Node.js (request)',
+      nodeFetch: 'Node.js (fetch)',
+      java: 'Java (HttpClient)',
+      javaOkHttp: 'Java (OkHttp)',
+      php: 'PHP (cURL)',
+      phpGuzzle: 'PHP (Guzzle)',
+      go: 'Go',
+      rust: 'Rust',
+      swift: 'Swift',
+      csharp: 'C# (HttpClient)',
+      ruby: 'Ruby',
+      dart: 'Dart',
+      powershell: 'PowerShell',
+      browser: 'Navegador (fetch)',
+      curl: 'cURL (formatado)',
+      json: 'JSON (objeto de requisição)',
+      har: 'HAR (arquivo HTTP)',
+      javascript: 'JavaScript (Fetch)'
     }
+  },
+
+  request: {
+    title: 'Detalhes da requisição',
+    method: 'Método',
+    url: 'URL',
+    headers: 'Cabeçalhos',
+    body: 'Corpo',
+    auth: 'Autenticação',
+    options: 'Opções',
+    cookie: 'Cookie',
+    queryParams: 'Parâmetros de consulta',
+    formData: 'Dados de formulário',
+    visualize: 'Visualizar'
+  },
+
+  visualization: {
+    title: 'Visualização da requisição',
+    request: 'Requisição',
+    response: 'Resposta',
+    headers: 'Cabeçalhos',
+    body: 'Corpo',
+    timing: 'Tempo',
+    raw: 'Bruto'
+  },
+
+  analysis: {
+    title: 'Análise do comando',
+    insecureWarning: 'Aviso: Este comando usa --insecure/-k (verificação SSL desativada)',
+    verboseIgnored: 'Nota: Modo verbose (-v) ignorado na conversão',
+    unsupportedOptions: 'Opções não suportadas',
+    warnings: 'Avisos',
+    info: 'Informações'
+  },
+
+  messages: {
+    parsing: 'Analisando comando cURL...',
+    parseFailed: 'Falha ao analisar comando cURL: {error}',
+    parseSuccess: 'Comando cURL analisado com sucesso',
+    copied: 'Código copiado para área de transferência',
+    downloaded: 'Código baixado',
+    invalidCurl: 'Comando cURL inválido',
+    emptyCurl: 'Por favor, insira um comando cURL',
+    validCurl: 'Comando cURL válido',
+    unknownOption: 'Opção desconhecida: {option}',
+    unsupportedMethod: 'Aviso: Nem todas as linguagens suportam o método HTTP {method}',
+    curlRequired: 'O comando deve começar com "curl "',
+    copyFailed: 'Falha ao copiar, copie manualmente'
+  },
+
+  examples: {
+    title: 'Exemplos de comandos cURL',
+    basic: 'Requisição GET básica',
+    headers: 'Cabeçalhos personalizados',
+    post: 'POST com JSON',
+    formData: 'Envio de formulário',
+    auth: 'Autenticação básica',
+    complex: 'Exemplo complexo',
+    exampleCommands: {
+      getRequest: 'Requisição GET',
+      postJson: 'POST JSON',
+      postForm: 'POST formulário',
+      withAuth: 'Com autenticação',
+      uploadFile: 'Upload de arquivo'
+    }
+  },
+
+  actions: {
+    convert: 'Converter',
+    converting: 'Convertendo...'
   }
+};

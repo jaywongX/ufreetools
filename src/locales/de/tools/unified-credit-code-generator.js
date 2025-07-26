@@ -34,6 +34,7 @@ export default {
     orgCodeDesc: "Abgeleitet vom Organisationscode, die ersten 8 Stellen sind der Hauptcode, die 9. Stelle ist die Prüfziffer",
     checksumTitle: "Prüfziffer (18. Stelle)",
     checksumDesc: "Berechnet aus den ersten 17 Stellen gemäß dem in GB 32100-2015 festgelegten Algorithmus",
+
     registrationAuthorityTypes: {
         '1': 'Organisationsstruktur',
         '2': 'Auswärtige Angelegenheiten',
@@ -44,36 +45,38 @@ export default {
         '7': 'Religion',
         '8': 'Industrie und Handel',
         '9': 'Steuern',
-        'A': 'Arzneimittelaufsicht',
-        'B': 'Qualitätskontrolle',
-        'C': 'Bildung',
-        'D': 'Öffentliche Sicherheit',
-        'E': 'Zivilluftfahrt',
-        'F': 'Finanzen',
-        'G': 'Versicherung',
-        'H': 'Eisenbahn',
-        'J': 'Zoll',
-        'K': 'Landwirtschaft',
-        'L': 'Wasserwirtschaft',
-        'M': 'Gesundheitswesen',
-        'N': 'Umweltschutz',
-        'O': 'Verkehr',
-        'P': 'Sport',
-        'Q': 'Statistik',
-        'R': 'Schifffahrt',
-        'S': 'Reserven',
-        'T': 'Politik',
-        'U': 'Sozialversicherung',
-        'V': 'Rechnungswesen',
-        'W': 'Disziplinaraufsicht',
-        'X': 'Sonstige'
+        A: 'Arzneimittelaufsicht',
+        B: 'Qualitätskontrolle',
+        C: 'Bildung',
+        D: 'Öffentliche Sicherheit',
+        E: 'Zivilluftfahrt',
+        F: 'Finanzen',
+        G: 'Versicherung',
+        H: 'Eisenbahn',
+        J: 'Zoll',
+        K: 'Landwirtschaft',
+        L: 'Wasserwirtschaft',
+        M: 'Gesundheitswesen',
+        N: 'Umweltschutz',
+        O: 'Verkehr',
+        P: 'Sport',
+        Q: 'Statistik',
+        R: 'Schifffahrt',
+        S: 'Reserven',
+        T: 'Politik',
+        U: 'Sozialversicherung',
+        V: 'Rechnungswesen',
+        W: 'Disziplinaraufsicht',
+        X: 'Sonstige'
     },
+
     entityTypes: {
         '1': 'Unternehmen',
         '2': 'Einzelunternehmen',
         '3': 'Landwirtschaftliche Genossenschaften',
         '9': 'Sonstige'
     },
+
     regionCodes: {
         '110000': 'Peking',
         '120000': 'Tianjin',
@@ -110,68 +113,6 @@ export default {
         '810000': 'Hongkong',
         '820000': 'Macau'
     },
-    clearResults: "Ergebnisse löschen",
-    
-    // Artikelinhalt
-    article: {
-        title: "Einheitlicher Sozialkreditcode-Generator - Vollständige Anleitung",
-        introTitle: "Was ist ein einheitlicher Sozialkreditcode-Generator?",
-        introPara1: "<strong>Der einheitliche Sozialkreditcode-Generator</strong> ist ein speziell entwickeltes Tool zur automatischen Generierung gültiger chinesischer einheitlicher Sozialkreditcodes gemäß dem nationalen Standard GB 32107-2015. Diese 18-stelligen Codes dienen als eindeutige Kennung für Unternehmen, Organisationen und andere juristische Personen, die in China tätig sind, ähnlich wie die US-amerikanische Arbeitgeber-Identifikationsnummer (EIN) oder Geschäftsnummern in anderen Ländern.",
-        introPara2: "Unser Generator erstellt Codes, die vollständig den von chinesischen Aufsichtsbehörden geforderten Spezifikationen entsprechen, einschließlich korrekter Registrierungsbehördencodes, Entitätstypkennungen, regionaler Codes und gültiger Prüfsummen, die mit dem ISO 7064:1983 MOD 11-2-Algorithmus berechnet werden. Egal, ob Sie Testdaten für die Softwareentwicklung benötigen, Datenbanken füllen oder einfach die Struktur dieser wichtigen Geschäftskennungen verstehen möchten - dieses Tool bietet eine zuverlässige Lösung zur Generierung realistisch aussehender, strukturell gültiger einheitlicher Sozialkreditcodes.",
-        
-        scenariosTitle: "Anwendungsfälle für die Generierung einheitlicher Sozialkreditcodes",
-        scenariosPara: "Der einheitliche Sozialkreditcode-Generator bietet praktische Lösungen für verschiedene professionelle und technische Szenarien:",
-        scenario1: "<strong>Softwareentwicklung und -tests</strong>: Generieren Sie gültige Testdaten für Anwendungen, die mit chinesischen Unternehmensregistrierungen, Steuererklärungen oder regulatorischen Compliance-Systemen arbeiten, um sicherzustellen, dass Ihre Software einheitliche Sozialkreditcodes korrekt verarbeitet, ohne echte Geschäftskennungen zu verwenden.",
-        scenario2: "<strong>Datenbanktests und Qualitätssicherung</strong>: Füllen Sie Testdatenbanken mit realistischen einheitlichen Sozialkreditcodes für umfassende Qualitätstests, um sicherzustellen, dass Systeme mit tatsächlichen chinesischen Unternehmenskennungen umgehen können, ohne echte Daten preiszugeben.",
-        scenario3: "<strong>Ausbildung und Schulung</strong>: Bieten Sie praktische Beispiele für Schulungen zur chinesischen Unternehmensregistrierung, Compliance oder internationalen Handel, um Studenten die Struktur und Validierungsanforderungen einheitlicher Sozialkreditcodes zu vermitteln.",
-        scenario4: "<strong>Datenmigrationsvalidierung</strong>: Testen Sie Datenmigrationsprozesse, die chinesische Geschäftseinheiten betreffen, durch Generierung gültiger strukturierter Kennungen, die dem erwarteten Format und Validierungsregeln entsprechen.",
-        scenario5: "<strong>Geschäftsprozesssimulation</strong>: Erstellen Sie realistische Simulationsdaten für Geschäftsprozess-Workflows, die regulatorische Dokumente, Unternehmensregistrierungen oder Steuercompliance für multinationale Unternehmen in China betreffen.",
-        
-        tutorialTitle: "So verwenden Sie den einheitlichen Sozialkreditcode-Generator",
-        step1Title: "Schritt 1: Registrierungsbehörde konfigurieren",
-        step1Content: "Wählen Sie den entsprechenden Registrierungsbehördencode aus der Liste. Dies repräsentiert die Regierungsbehörde, die die Entität registriert. Für die meisten Geschäftseinheiten ist der Code für Industrie und Handel (8) die häufigste Wahl, aber Sie können je nach spezifischen Anforderungen andere Codes auswählen.",
-        
-        step2Title: "Schritt 2: Einrichtungstyp auswählen",
-        step2Content: "Wählen Sie den Einrichtungstyp, der Ihren Anforderungen entspricht. Optionen umfassen Unternehmen (1), Einzelunternehmen (2), landwirtschaftliche Genossenschaften (3) oder Sonstige (9). Diese Auswahl bestimmt das zweite Zeichen im generierten Code.",
-        
-        step3Title: "Schritt 3: Regionalcode auswählen",
-        step3Content: "Wählen Sie eine bestimmte Region aus der Liste oder wählen Sie \"Zufällige Auswahl\", damit der Generator einen gültigen Regionalcode zufällig zuweist. Der Regionalcode repräsentiert den geografischen Standort, an dem die Entität registriert ist.",
-        
-        step4Title: "Schritt 4: Menge festlegen und generieren",
-        step4Content: "Geben Sie die Anzahl der zu generierenden einheitlichen Sozialkreditcodes an (von 1 bis 1000) und klicken Sie dann auf die Schaltfläche \"Code generieren\". Das Tool erstellt sofort gültige Codes, die einzeln kopiert, alle auf einmal kopiert oder im TXT-, CSV- oder Excel-Format exportiert werden können, um Ihre Nutzung zu erleichtern.",
-        
-        tipTitle: "Professioneller Tipp:",
-        tipContent: "Bei der Verwendung generierter einheitlicher Sozialkreditcodes für Tests ist es oft hilfreich, spezifische Regionalcodes zu generieren, die Ihrem Testszenario entsprechen. Wenn Sie beispielsweise ein System für Unternehmen in Peking testen, erstellt die Auswahl des Pekinger Regionalcodes (110000) realistischere Testdaten für Ihren spezifischen Anwendungsfall.",
-        
-        faqTitle: "Häufig gestellte Fragen zu einheitlichen Sozialkreditcodes",
-        
-        faq1Question: "Was ist der Unterschied zwischen einem einheitlichen Sozialkreditcode und einem Organisationscode?",
-        faq1Answer: "<strong>Der einheitliche Sozialkreditcode</strong> ist ein 18-stelliger Code, der im Rahmen der chinesischen Regulierungsvereinfachungsinitiative mehrere frühere Geschäftskennungen ersetzt hat. Der Organisationscode war eine frühere 9-stellige Kennung für Unternehmen und ist jetzt Teil des einheitlichen Codes (Zeichen 9-17). Der einheitliche Code kombiniert Informationen, die früher auf Geschäftslizenznummern, Steuerregistrierungszertifikaten, Organisationscodes und Sozialversicherungsregistrierungen verteilt waren, zu einer einzigen Kennung, die dem GB 32107-2015-Standard entspricht.",
-        
-        faq2Question: "Können die mit diesem Tool generierten einheitlichen Sozialkreditcodes für die tatsächliche Unternehmensregistrierung verwendet werden?",
-        faq2Answer: "Nein. Die mit diesem Tool generierten Codes sind strukturell gültig und bestehen Formatvalidierungsprüfungen, aber sie werden <strong>nur zu Test- und Schulungszwecken zufällig generiert</strong>. Die Verwendung dieser generierten Codes für tatsächliche Unternehmensregistrierungen, Steuererklärungen oder regulatorische Dokumente würde Betrug darstellen. In China können legale einheitliche Sozialkreditcodes nur nach ordnungsgemäßem Unternehmensregistrierungsverfahren von autorisierten Regierungsbehörden ausgestellt werden.",
-        
-        faq3Question: "Wie kann ich überprüfen, ob ein einheitlicher Sozialkreditcode gültig ist?",
-        faq3Answer: "Um die Gültigkeit eines einheitlichen Sozialkreditcodes zu überprüfen, können Sie sein Format und seine Prüfsumme validieren:<ol><li>Stellen Sie sicher, dass er genau 18 Zeichen enthält</li><li>Bestätigen Sie, dass er nur Zahlen und Großbuchstaben enthält (ohne I, O, S, V, Z)</li><li>Validieren Sie die Prüfsumme (18. Zeichen) mit dem ISO 7064:1983 MOD 11-2-Algorithmus basierend auf den ersten 17 Zeichen</li><li>Überprüfen Sie, ob der Regionalcode (Zeichen 3-8) einer gültigen chinesischen Verwaltungsregion entspricht</li></ol>Für die offizielle Validierung registrierter Unternehmen sollten Sie das nationale Unternehmensinformationssystem unter <a href='https://www.gsxt.gov.cn' target='_blank' rel='noopener noreferrer'>www.gsxt.gov.cn</a> konsultieren.",
-        
-        faq4Question: "Was bedeuten die verschiedenen Teile des einheitlichen Sozialkreditcodes?",
-        faq4Answer: "Der 18-stellige einheitliche Sozialkreditcode enthält mehrere verschiedene Teile:<ul><li><strong>1. Stelle</strong>: Registrierungsbehördencode (gibt an, welche Regierungsbehörde die Entität registriert hat)</li><li><strong>2. Stelle</strong>: Einrichtungstypecode (gibt an, ob es sich um ein Unternehmen, Einzelunternehmen usw. handelt)</li><li><strong>3.-8. Stelle</strong>: Regionalcode (basierend auf GB/T 2260)</li><li><strong>9.-17. Stelle</strong>: Organisationscode (ähnlich dem früheren 9-stelligen Organisationscodesystem)</li><li><strong>18. Stelle</strong>: Prüfziffer (berechnet mit dem ISO 7064:1983 MOD 11-2-Algorithmus)</li></ul>Jeder Teil liefert spezifische Informationen über die registrierte Entität und bildet ein umfassendes Identifikationssystem.",
-        
-        faq5Question: "Wann hat China das einheitliche Sozialkreditcode-System eingeführt?",
-        faq5Answer: "Das einheitliche Sozialkreditcode-System wurde mit der Veröffentlichung des nationalen Standards GB 32107-2015 im Oktober 2015 in China offiziell eingeführt. Dieses System ist Teil der umfassenderen Reform der Unternehmensregistrierung und des Aufbaus des sozialen Kreditsystems in China. In der Übergangsphase von 2015 bis 2017 mussten bestehende Unternehmen ihre Registrierungsinformationen aktualisieren, um neue einheitliche Codes zu erhalten. Seit 2018 müssen alle legal registrierten Einheiten in China einen einheitlichen Sozialkreditcode als primäre Kennung für alle staatlichen Interaktionen, Steuererklärungen und regulatorischen Compliance-Anforderungen besitzen.",
-        
-        standardsTitle: "Relevante Standards und Referenzen",
-        standardsPara: "Das einheitliche Sozialkreditcode-System basiert auf mehreren chinesischen nationalen Standards:",
-        standard1: "<strong>GB 32107-2015</strong>: Der Kernstandard, der die Codestruktur, den Zeichensatz und die grundlegenden Formatregeln definiert.<a href='https://www.samr.gov.cn' target='_blank' rel='noopener noreferrer'>Quelle: Staatliche Verwaltung für Marktregulierung</a>",
-        standard2: "<strong>GB/T 2260</strong>: Standard für regionale Codes in der Volksrepublik China, definiert die in den Stellen 3-8 verwendeten Regionalcodes.<a href='http://www.stats.gov.cn' target='_blank' rel='noopener noreferrer'>Quelle: Nationales Statistikamt</a>",
-        standard3: "<strong>ISO 7064:1983</strong>: Internationaler Standard, der den MOD 11-2-Algorithmus für die Berechnung von Prüfzeichen spezifiziert.",
-        
-        relatedToolsTitle: "Verwandte Tools, die Sie interessieren könnten",
-        relatedTool1Title: "Personalausweisnummern-Generator",
-        relatedTool1Desc: "Generiert gültige chinesische Personalausweisnummern für Test- und Entwicklungszwecke.",
-        relatedTool2Title: "Hash-Rechner",
-        relatedTool2Desc: "Berechnet verschiedene Hash-Werte, einschließlich MD5, SHA-1, SHA-256 usw.",
-        relatedTool3Title: "Passwort-Generator",
-        relatedTool3Desc: "Generiert sichere, zufällige Passwörter mit anpassbaren Optionen."
-    }
-}
+
+    clearResults: "Ergebnisse löschen"
+};

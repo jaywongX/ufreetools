@@ -1,202 +1,156 @@
 export default {
-    name: 'Outil de traitement par lot d\'images',
-    description: 'Redimensionner, convertir et optimiser plusieurs images en une seule opération',
-    input: {
-      title: 'Images en entrée',
-      dropzone: 'Glissez-déposez des images ici ou cliquez pour parcourir',
-      addMore: 'Ajouter plus d\'images',
-      selectImages: 'Sélectionner des images',
-      clearAll: 'Tout effacer',
-      maxFiles: 'Maximum {count} images',
-      maxSize: 'Taille maximale par image : {size}MB',
-      supportedFormats: 'Formats supportés : {formats}'
-    },
-    options: {
-      title: 'Options de réglage',
-      settingsTitle: 'Paramètres de réglage',
-      resizeMode: 'Mode de redimensionnement',
-      resizeMethod: 'Méthode de redimensionnement',
-      pixelMode: 'Pixels',
-      percentageMode: 'Pourcentage',
-      maxDimensionMode: 'Dimensions maximales',
-      outputFormat: 'Format de sortie',
-      quality: 'Qualité',
-      width: 'Largeur',
-      height: 'Hauteur',
-      maintainAspectRatio: 'Conserver le ratio',
-      maxWidth: 'Largeur maximale',
-      maxHeight: 'Hauteur maximale',
-      percentage: 'Pourcentage',
-      backgroundColor: 'Couleur de fond',
-      naming: 'Nommage des fichiers',
-      filenamePrefix: 'Préfixe du nom de fichier',
-      filenameSuffix: 'Suffixe du nom de fichier',
-      applyToAllImages: 'Appliquer à toutes les images',
-      applyToAll: 'Appliquer à toutes'
-    },
-    resizeModes: {
-      exact: 'Dimensions exactes',
-      maxDimensions: 'Dimensions maximales',
-      percentage: 'Redimensionnement en pourcentage',
-      fit: 'Ajuster à l\'intérieur',
-      cover: 'Couvrir',
-      crop: 'Recadrer'
-    },
-    formats: {
-      original: 'Identique à la source',
-      jpg: 'JPG/JPEG',
-      png: 'PNG',
-      webp: 'WebP',
-      gif: 'GIF',
-      bmp: 'BMP',
-      tiff: 'TIFF',
-      svg: 'SVG',
-      ico: 'ICO'
-    },
-    namingOptions: {
-      original: 'Nom original',
-      dimensions: 'Original + dimensions',
-      format: 'Original + format',
-      custom: 'Modèle personnalisé',
-      random: 'Chaîne aléatoire'
-    },
-    output: {
-      title: 'Images ajustées',
-      downloadAll: 'Tout télécharger',
-      downloadAsZip: 'Télécharger en ZIP',
-      processingStatus: 'Traitement : {processed}/{total}',
-      originalSize: 'Taille originale',
-      newSize: 'Nouvelle taille',
-      reduction: 'Réduction',
-      individualDownload: 'Télécharger'
-    },
-    batch: {
-      title: 'Traitement par lot',
-      process: 'Traiter toutes les images',
-      cancel: 'Annuler le traitement',
-      selectPreset: 'Sélectionner un préréglage',
-      savePreset: 'Sauvegarder les paramètres actuels',
-      progress: 'Progression du traitement'
-    },
-    watermark: {
-      title: 'Filigrane',
-      enable: 'Ajouter un filigrane',
-      text: 'Texte du filigrane',
-      image: 'Image du filigrane',
-      position: 'Position',
-      opacity: 'Opacité',
-      rotation: 'Rotation',
-      size: 'Taille',
-      padding: 'Marge intérieure'
-    },
-    positions: {
-      topLeft: 'Haut gauche',
-      topCenter: 'Haut centre',
-      topRight: 'Haut droit',
-      middleLeft: 'Milieu gauche',
-      middleCenter: 'Centré',
-      middleRight: 'Milieu droit',
-      bottomLeft: 'Bas gauche',
-      bottomCenter: 'Bas centre',
-      bottomRight: 'Bas droit'
-    },
-    actions: {
-      resize: 'Redimensionner',
-      preview: 'Aperçu',
-      processing: 'Traitement en cours...',
-      reset: 'Réinitialiser',
-      applySettings: 'Appliquer les paramètres',
-      resetSettings: 'Réinitialiser les paramètres',
-      cancel: 'Annuler'
-    },
-    messages: {
-      resizeSuccess: 'Redimensionnement réussi',
-      resizeFailed: 'Échec du redimensionnement : {error}',
-      invalidDimensions: 'Veuillez entrer des dimensions valides',
-      invalidWidthHeight: 'Veuillez entrer une largeur et hauteur valides',
-      noImages: 'Veuillez ajouter des images à redimensionner',
-      noImagesToDownload: 'Aucune image à télécharger',
-      processing: 'Traitement des images...',
-      processingComplete: 'Traitement terminé',
-      processingError: 'Erreur lors du traitement',
-      waitingForProcess: 'En attente de traitement',
-      downloadStarted: 'Téléchargement démarré',
-      allDownloaded: 'Toutes les images téléchargées',
-      presetSaved: 'Préréglage sauvegardé',
-      presetLoaded: 'Préréglage chargé',
-      zipCreated: 'Archive ZIP créée avec {count} images',
-      zipError: 'Erreur lors de la création du ZIP'
-    },
-    preview: {
-      title: 'Aperçu des images ({count})',
-      selectImage: 'Sélectionnez une image',
-      batchSupport: 'Supporte le traitement par lot de plusieurs images',
-      download: 'Télécharger',
-      delete: 'Supprimer'
-    },
-    qualityOptions: {
-      fast: 'Traitement rapide',
-      medium: 'Qualité moyenne',
-      high: 'Haute qualité (recommandé)',
-      best: 'Meilleure qualité (plus lent)'
-    },
-    article: {
-      title: "Outil de traitement par lot d'images : Traitez efficacement plusieurs images en une seule fois",
-      features: {
-        title: "Découvrez le traitement par lot d'images et ses avantages",
-        description: "L'<strong>Outil de traitement par lot d'images</strong> est une solution puissante conçue pour simplifier le processus de redimensionnement, conversion et optimisation simultanés de plusieurs images. Contrairement aux logiciels de retouche traditionnels où chaque image doit être traitée individuellement, ce <strong>processeur d'images par lot</strong> vous permet d'appliquer les mêmes ajustements à des dizaines voire des centaines d'images en quelques clics.<br><br>Notre outil offre des options complètes de <strong>redimensionnement d'images</strong>, conversion de format et optimisation de qualité tout en préservant l'intégrité visuelle. Que vous ayez besoin de réduire la taille des fichiers pour le web, de préparer des images pour des plateformes spécifiques ou de maintenir une cohérence dimensionnelle dans une collection, le <strong>processeur par lot</strong> effectue ces tâches efficacement dans votre navigateur, sans nécessiter d'installation logicielle ou d'expertise technique.",
-        useCases: {
-          title: "Applications pratiques du traitement par lot d'images",
-          items: [
-            "<strong>Optimisation web</strong> : Les développeurs et administrateurs de contenu peuvent utiliser l'<strong>outil de traitement par lot</strong> pour préparer rapidement les ressources visuelles d'un site. En réduisant les dimensions et tailles de fichiers, vous améliorez significativement les temps de chargement, cruciaux pour l'expérience utilisateur et le référencement. La capacité à convertir en masse vers des formats optimisés comme WebP améliore encore les performances.",
-            
-            "<strong>Photographie produit e-commerce</strong> : Les vendeurs en ligne gérant de larges catalogues peuvent utiliser notre <strong>outil de traitement photo par lot</strong> pour standardiser toutes les images produits selon les exigences de marketplaces comme Amazon, eBay ou Shopify, économisant ainsi des heures de travail. Cela garantit une apparence professionnelle et cohérente pour tous les listings tout en respectant les requis des plateformes.",
-            
-            "<strong>Création de contenu pour réseaux sociaux</strong> : Les community managers peuvent redimensionner en masse des images pour répondre aux spécifications dimensionnelles des différents réseaux. Que ce soit pour des posts Instagram, des couvertures Facebook, des cartes Twitter ou des épingles Pinterest, notre <strong>processeur d'images par lot</strong> aide à maintenir une qualité visuelle optimale sur toutes les plateformes.",
-            
-            "<strong>Préparation de portfolios photo</strong> : Les photographes professionnels peuvent rapidement préparer des images pour des sites portfolios, des livraisons clients ou des impressions. Le <strong>redimensionneur multi-images</strong> permet d'ajuster aux dimensions cibles tout en conservant les proportions, assurant une cohérence visuelle sans nécessiter d'édition individuelle fastidieuse.",
-            
-            "<strong>Développement de matériel éducatif</strong> : Les enseignants et créateurs de contenu pédagogique peuvent adapter des ensembles de diagrammes, graphiques ou photos à des dimensions uniformes pour inclusion dans du matériel d'apprentissage, présentations ou cours en ligne. La fonction de traitement par lot rend pratique le maintien d'une cohérence visuelle à travers de vastes ressources éducatives.",
-            
-            "<strong>Préparation de ressources pour développement d'applications</strong> : Les développeurs mobiles peuvent utiliser l'outil pour générer plusieurs versions d'une même image à différentes résolutions (1x, 2x, 3x) adaptées à divers écrans. Le <strong>convertisseur d'images par lot</strong> simplifie ce processus, assurant que les ressources s'affichent parfaitement sur tous les types d'appareils tout en conservant des tailles de fichiers gérables."
-          ]
-        }
-      },
-      faq: {
-        title: "Questions fréquentes sur le traitement par lot d'images",
-        items: [
-          {
-            question: "L'outil de traitement par lot dégrade-t-il la qualité des images ?",
-            answer: "Notre <strong>processeur d'images par lot</strong> préserve soigneusement la qualité, mais plusieurs facteurs sont à considérer :<br><br>• L'outil utilise des algorithmes haute qualité spécialement conçus pour maintenir la fidélité des images lors du redimensionnement<br>• Vous contrôlez les paramètres de qualité, particulièrement lors de conversions vers des formats comme JPEG ou WebP<br>• Réduire les dimensions (diminuer la taille) préserve généralement mieux la qualité que l'agrandissement<br>• Plus les paramètres de qualité sélectionnés sont élevés, meilleur est le résultat, mais plus le fichier est volumineux<br>• Pour le traitement par lot, un réglage de qualité de 80-90% offre un excellent équilibre pour la plupart des cas d'usage<br><br>Pour les travaux professionnels nécessitant une qualité maximale, nous recommandons d'utiliser les paramètres \"Haute qualité\" ou \"Meilleure qualité\". La fonction d'aperçu du <strong>processeur photo par lot</strong> permet de vérifier les résultats avant téléchargement, assurant qu'ils répondent à vos standards."
-          },
-          {
-            question: "Quels formats d'image sont supportés par l'outil ?",
-            answer: "Notre <strong>convertisseur d'images par lot</strong> prend en charge un large éventail de formats :<br><br><strong>Formats d'entrée :</strong><br>• JPEG/JPG - Format courant pour les photos<br>• PNG - Idéal pour les graphiques avec transparence<br>• WebP - Format moderne offrant une excellente compression<br>• GIF - Adapté aux animations simples<br>• BMP - Format bitmap non compressé<br>• TIFF - Format haute qualité couramment utilisé en photographie<br><br><strong>Formats de sortie :</strong><br>• JPEG/JPG - Optimal pour photos et usage web général<br>• PNG - Préserve la transparence sans perte<br>• WebP - Offre une meilleure compression tout en maintenant la qualité<br><br>Le <strong>redimensionneur multi-images</strong> peut convertir entre ces formats lors du traitement par lot, vous permettant soit de standardiser une collection vers un format unique, soit de choisir le format le plus adapté à chaque usage."
-          },
-          {
-            question: "Combien d'images peut-on traiter en une seule opération ?",
-            answer: "Le <strong>processeur d'images par lot</strong> est conçu pour gérer efficacement de grands volumes :<br><br>• Vous pouvez traiter des dizaines d'images en une seule fois (généralement limité à ~100 images par lot)<br>• La taille maximale par fichier est de 5MB pour des performances optimales<br>• Le temps total dépend de plusieurs facteurs :<br>  - Le nombre et la taille des images en entrée<br>  - La complexité des opérations de redimensionnement<br>  - La puissance de traitement de votre appareil<br>  - La vitesse de votre connexion internet<br><br>Le <strong>processeur d'images par lot</strong> utilise un traitement côté client, ce qui signifie que les images ne quittent jamais votre ordinateur, améliorant ainsi vitesse et confidentialité. Pour les très grandes collections (centaines ou milliers d'images), nous recommandons de les diviser en lots plus petits (20-50 images) pour une expérience optimale."
-          },
-          {
-            question: "Peut-on conserver les proportions lors du redimensionnement par lot ?",
-            answer: "Oui, le maintien des proportions est une fonction clé de notre <strong>processeur d'images par lot</strong> :<br><br>• L'option \"Conserver les proportions\" empêche tout étirement ou distorsion des images<br>• Lorsqu'activée, vous ne spécifiez que la largeur ou la hauteur, l'autre dimension étant calculée automatiquement<br>• Pour des dimensions précises (comme les exigences des réseaux sociaux), vous pouvez désactiver cette option<br>• La méthode \"Dimensions maximales\" est particulièrement adaptée au maintien des proportions tout en garantissant qu'aucune image ne dépasse la taille spécifiée<br>• Le \"Redimensionnement en pourcentage\" ajuste uniformément toutes les images tout en préservant parfaitement les proportions originales<br><br>Le <strong>processeur photo par lot</strong> fournit un aperçu par image, vous permettant de confirmer que les proportions sont correctement maintenues avant le téléchargement."
-          },
-          {
-            question: "Comment télécharger toutes les images après traitement ?",
-            answer: "Le <strong>redimensionneur multi-images</strong> offre des options pratiques pour récupérer vos résultats :<br><br>1. <strong>Téléchargement groupé en ZIP</strong> : Après traitement, cliquez sur \"Tout télécharger\" pour obtenir toutes les images redimensionnées dans une archive ZIP unique<br><br>2. <strong>Téléchargements individuels</strong> : Si vous n'avez besoin que de certaines images, chacune dispose de son propre bouton de téléchargement<br><br>3. <strong>Nommage automatique</strong> : Les images traitées conservent leur nom original avec un identifiant indiquant leur redimensionnement<br><br>4. <strong>Conservation du format</strong> : Si vous avez sélectionné \"Identique à la source\" comme format de sortie, chaque image conserve son format d'origine ; sinon, toutes sont converties vers le format choisi<br><br>Le <strong>convertisseur d'images par lot</strong> stocke temporairement toutes les images traitées dans votre navigateur, nous recommandons donc de télécharger vos résultats avant de fermer l'onglet."
-          }
-        ]
-      },
-      guide: {
-        title: "Comment utiliser l'outil de traitement par lot d'images : Guide étape par étape",
-        step1: "<strong>Chargez vos images</strong> : Cliquez sur \"Sélectionner des images\" ou glissez-déposez des fichiers dans la zone dédiée. Le <strong>processeur d'images par lot</strong> accepte les formats courants (JPEG, PNG, WebP, GIF, etc.). Vous pouvez ajouter plusieurs images en une fois ou compléter votre sélection ultérieurement.",
-        step2: "<strong>Choisissez la méthode de redimensionnement</strong> : Sélectionnez parmi trois méthodes puissantes :<ul class='ml-5 list-disc'><li>Le mode \"Pixels\" permet de spécifier des dimensions précises en pixels</li><li>Le mode \"Pourcentage\" ajuste les images proportionnellement à leur taille originale</li><li>Le mode \"Dimensions maximales\" garantit qu'aucune image ne dépasse la taille spécifiée tout en conservant ses proportions</li></ul>Cette flexibilité rend notre <strong>processeur photo par lot</strong> adapté à quasiment tous les besoins de traitement d'images.",
-        step3: "<strong>Définissez vos dimensions</strong> : Selon la méthode choisie, saisissez les valeurs de largeur et/ou hauteur souhaitées. Si vous activez \"Conserver les proportions\" (recommandé dans la plupart des cas), vous ne spécifiez qu'une dimension et le <strong>processeur d'images par lot</strong> calcule automatiquement l'autre pour éviter toute déformation.",
-        step4: "<strong>Configurez les options de sortie</strong> : Sélectionnez votre format de sortie préféré (JPEG, PNG ou WebP) et ajustez les paramètres qualité si nécessaire. Le <strong>convertisseur d'images par lot</strong> vous permet de trouver le bon équilibre entre qualité visuelle et taille de fichier. Pour les formats JPEG et WebP, vous pouvez ajuster le pourcentage de qualité - des valeurs plus élevées produisent des images de meilleure apparence mais plus volumineuses.",
-        step5: "<strong>Traitez vos images</strong> : Cliquez sur \"Appliquer à toutes les images\" pour lancer le traitement par lot. Le <strong>redimensionneur multi-images</strong> affiche une barre de progression pendant le traitement de vos fichiers. Chaque image est traitée avec des algorithmes haute qualité qui préservent la fidélité visuelle tout en atteignant les dimensions spécifiées.",
-        step6: "<strong>Vérifiez les résultats</strong> : Une fois le traitement terminé, examinez l'aperçu de chaque image pour vous assurer que les résultats correspondent à vos attentes. Le <strong>processeur d'images par lot</strong> affiche des informations utiles incluant les dimensions originales et nouvelles, vous permettant de confirmer que le redimensionnement a été correctement effectué.",
-        step7: "<strong>Téléchargez vos images traitées</strong> : Cliquez sur \"Tout télécharger\" pour obtenir un fichier ZIP contenant toutes les images redimensionnées, ou téléchargez individuellement selon vos besoins. Le <strong>processeur d'images par lot</strong> conserve vos fichiers originaux et fournit des versions traitées avec une nomenclature appropriée pour les distinguer."
-      },
-      conclusion: "L'outil de traitement par lot d'images apporte une solution pratique aux défis courants rencontrés par les développeurs web, photographes, marketeurs et créateurs de contenu : traiter efficacement plusieurs images tout en maintenant qualité et cohérence. En éliminant le besoin de logiciels coûteux ou d'éditions individuelles chronophages, cet outil simplifie les workflows et aide à maintenir des standards visuels pour les actifs numériques. Que vous prépariez des photos produits pour des plateformes e-commerce, optimisiez des images pour des sites web responsives ou standardisiez du contenu visuel pour les réseaux sociaux, les fonctionnalités de traitement par lot permettent d'économiser un temps précieux tout en garantissant des résultats cohérents. Alors que le contenu numérique continue de mettre l'accent sur les éléments visuels, les outils facilitant la gestion et l'optimisation d'images à grande échelle deviennent des ressources essentielles pour les professionnels de tous secteurs."
-    }
+  name: 'Outil de traitement par lot d\'images',
+  description: 'Redimensionner, convertir et optimiser plusieurs images en une seule opération',
+
+  input: {
+    title: 'Images en entrée',
+    dropzone: 'Glissez-déposez des images ici ou cliquez pour parcourir',
+    addMore: 'Ajouter plus d\'images',
+    selectImages: 'Sélectionner des images',
+    clearAll: 'Tout effacer',
+    maxFiles: 'Maximum {count} images',
+    maxSize: 'Taille maximale par image : {size}MB',
+    supportedFormats: 'Formats supportés : {formats}'
+  },
+
+  options: {
+    title: 'Options de réglage',
+    settingsTitle: 'Paramètres de réglage',
+    resizeMode: 'Mode de redimensionnement',
+    resizeMethod: 'Méthode de redimensionnement',
+    pixelMode: 'Pixels',
+    percentageMode: 'Pourcentage',
+    maxDimensionMode: 'Dimensions maximales',
+    outputFormat: 'Format de sortie',
+    quality: 'Qualité',
+    width: 'Largeur',
+    height: 'Hauteur',
+    maintainAspectRatio: 'Conserver le ratio',
+    maxWidth: 'Largeur maximale',
+    maxHeight: 'Hauteur maximale',
+    percentage: 'Pourcentage',
+    backgroundColor: 'Couleur de fond',
+    naming: 'Nommage des fichiers',
+    filenamePrefix: 'Préfixe du nom de fichier',
+    filenameSuffix: 'Suffixe du nom de fichier',
+    applyToAllImages: 'Appliquer à toutes les images',
+    applyToAll: 'Appliquer à toutes'
+  },
+
+  resizeModes: {
+    exact: 'Dimensions exactes',
+    maxDimensions: 'Dimensions maximales',
+    percentage: 'Redimensionnement en pourcentage',
+    fit: 'Ajuster à l\'intérieur',
+    cover: 'Couvrir',
+    crop: 'Recadrer'
+  },
+
+  formats: {
+    original: 'Identique à la source',
+    jpg: 'JPG/JPEG',
+    png: 'PNG',
+    webp: 'WebP',
+    gif: 'GIF',
+    bmp: 'BMP',
+    tiff: 'TIFF',
+    svg: 'SVG',
+    ico: 'ICO'
+  },
+
+  namingOptions: {
+    original: 'Nom original',
+    dimensions: 'Original + dimensions',
+    format: 'Original + format',
+    custom: 'Modèle personnalisé',
+    random: 'Chaîne aléatoire'
+  },
+
+  output: {
+    title: 'Images ajustées',
+    downloadAll: 'Tout télécharger',
+    downloadAsZip: 'Télécharger en ZIP',
+    processingStatus: 'Traitement : {processed}/{total}',
+    originalSize: 'Taille originale',
+    newSize: 'Nouvelle taille',
+    reduction: 'Réduction',
+    individualDownload: 'Télécharger'
+  },
+
+  batch: {
+    title: 'Traitement par lot',
+    process: 'Traiter toutes les images',
+    cancel: 'Annuler le traitement',
+    selectPreset: 'Sélectionner un préréglage',
+    savePreset: 'Sauvegarder les paramètres actuels',
+    progress: 'Progression du traitement'
+  },
+
+  watermark: {
+    title: 'Filigrane',
+    enable: 'Ajouter un filigrane',
+    text: 'Texte du filigrane',
+    image: 'Image du filigrane',
+    position: 'Position',
+    opacity: 'Opacité',
+    rotation: 'Rotation',
+    size: 'Taille',
+    padding: 'Marge intérieure'
+  },
+
+  positions: {
+    topLeft: 'Haut gauche',
+    topCenter: 'Haut centre',
+    topRight: 'Haut droit',
+    middleLeft: 'Milieu gauche',
+    middleCenter: 'Centré',
+    middleRight: 'Milieu droit',
+    bottomLeft: 'Bas gauche',
+    bottomCenter: 'Bas centre',
+    bottomRight: 'Bas droit'
+  },
+
+  actions: {
+    resize: 'Redimensionner',
+    preview: 'Aperçu',
+    processing: 'Traitement en cours...',
+    reset: 'Réinitialiser',
+    applySettings: 'Appliquer les paramètres',
+    resetSettings: 'Réinitialiser les paramètres',
+    cancel: 'Annuler'
+  },
+
+  messages: {
+    resizeSuccess: 'Redimensionnement réussi',
+    resizeFailed: 'Échec du redimensionnement : {error}',
+    invalidDimensions: 'Veuillez entrer des dimensions valides',
+    invalidWidthHeight: 'Veuillez entrer une largeur et hauteur valides',
+    noImages: 'Veuillez ajouter des images à redimensionner',
+    noImagesToDownload: 'Aucune image à télécharger',
+    processing: 'Traitement des images...',
+    processingComplete: 'Traitement terminé',
+    processingError: 'Erreur lors du traitement',
+    waitingForProcess: 'En attente de traitement',
+    downloadStarted: 'Téléchargement démarré',
+    allDownloaded: 'Toutes les images téléchargées',
+    presetSaved: 'Préréglage sauvegardé',
+    presetLoaded: 'Préréglage chargé',
+    zipCreated: 'Archive ZIP créée avec {count} images',
+    zipError: 'Erreur lors de la création du ZIP'
+  },
+
+  preview: {
+    title: 'Aperçu des images ({count})',
+    selectImage: 'Sélectionnez une image',
+    batchSupport: 'Supporte le traitement par lot de plusieurs images',
+    download: 'Télécharger',
+    delete: 'Supprimer'
+  },
+
+  qualityOptions: {
+    fast: 'Traitement rapide',
+    medium: 'Qualité moyenne',
+    high: 'Haute qualité (recommandé)',
+    best: 'Meilleure qualité (plus lent)'
   }
+};

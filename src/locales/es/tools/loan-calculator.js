@@ -1,8 +1,10 @@
 export default {
   name: 'Calculadora de Préstamos',
   description: 'Calcule pagos mensuales, intereses totales y cronograma de pagos para préstamos hipotecarios, de automóviles y personales',
+
   // Interfaz principal
   loanType: 'Tipo de Préstamo',
+
   housingLoan: 'Préstamo Hipotecario',
   carLoan: 'Préstamo de Automóvil',
   personalLoan: 'Préstamo Personal',
@@ -23,16 +25,20 @@ export default {
   EUR: 'EUR (€)',
   JPY: 'JPY (¥)',
   GBP: 'GBP (£)',
+
   // Resultados
   results: 'Resultados',
+
   monthlyPayment: 'Pago Mensual',
   firstMonthPayment: 'Primer Pago Mensual',
   lastMonthPayment: 'Último Pago Mensual',
   totalInterest: 'Intereses Totales',
   totalPayment: 'Pago Total',
   interestRatio: 'Relación de Interés',
+
   // Cronograma de Pagos
   paymentSchedule: 'Cronograma de Pagos',
+
   downloadExcel: 'Exportar a Excel',
   paymentNo: 'N.º',
   paymentDate: 'Fecha de Pago',
@@ -40,12 +46,16 @@ export default {
   interest: 'Interés',
   payment: 'Pago',
   remainingPrincipal: 'Capital Restante',
+
   // Gráficos
   paymentChart: 'Análisis de Pago',
+
   principalAndInterest: 'Capital vs Interés',
   monthlyPaymentTrend: 'Tendencia de Pago Mensual',
+
   // Introducción a la herramienta
   aboutTitle: 'Acerca de la Calculadora de Préstamos',
+
   aboutDescription: 'La Calculadora de Préstamos es una herramienta que le ayuda a calcular los detalles de varios tipos de préstamos, incluidos préstamos hipotecarios, de automóviles y personales, brindándole una comprensión clara del costo del préstamo.',
   featuresTitle: 'Características Principales',
   feature1: 'Soporte para métodos de pago equitativo y cuota principal igual',
@@ -67,69 +77,7 @@ export default {
   tip2: 'El método de cuota principal igual genera menos intereses totales que el pago equitativo, pero implica pagos iniciales más altos',
   tip3: 'El pago anticipado reduce los gastos por intereses, especialmente en las primeras etapas del préstamo',
   tip4: 'Use esta herramienta para comparar diferentes opciones de préstamo y elegir la que mejor se ajuste a su situación financiera',
-  article: {
-    title: "Guía Completa sobre el Cálculo de Préstamos: Entienda sus Opciones de Préstamo Hipotecario, Automotriz y Personal",
-    intro: {
-      title: "Entendiendo las Herramientas Modernas de Cálculo de Préstamos",
-      p1: "<b>Las calculadoras de préstamos</b> se han convertido en herramientas esenciales de planificación financiera en el complejo panorama actual de endeudamiento. Nuestra completa calculadora de préstamos simplifica el proceso de comprensión del verdadero costo del préstamo, ya sea que esté planeando adquirir una vivienda, financiar un vehículo o solicitar un préstamo personal. Al proporcionar cronogramas detallados de pagos, desgloses de intereses y análisis de costos totales, esta herramienta empodera a los prestatarios para tomar decisiones financieras informadas antes de comprometerse con acuerdos de préstamo que podrían afectar sus finanzas durante años o incluso décadas.",
-      p2: "<b>La transparencia financiera</b> es fundamental al evaluar opciones de préstamo, y nuestra calculadora ofrece exactamente eso al mostrar no solo sus pagos mensuales, sino también el cronograma completo de amortización, los costos totales de interés y la proporción entre interés y capital. Este nivel de detalle ayuda a revelar cómo diferentes plazos, tasas de interés y métodos de reembolso afectan su compromiso financiero a lo largo del tiempo. Ya sea que esté comparando ofertas de diferentes prestamistas, evaluando opciones de refinanciación o simplemente planificando su presupuesto, tener cálculos precisos de préstamos al alcance de la mano puede ahorrarle miles en pagos por intereses y ayudar a evitar problemas financieros.",
-      p3: "<b>Los pagos hipotecarios, el financiamiento automotriz,</b> y el préstamo personal tienen cada uno consideraciones particulares y plazos típicos. Nuestra calculadora multifuncional maneja los tres tipos de préstamo, adaptándose automáticamente a parámetros comunes mientras permite una personalización completa basada en sus ofertas específicas de préstamo. Al visualizar el impacto a largo plazo de sus decisiones de préstamo, puede seleccionar estratégicamente los términos que se alineen con sus objetivos financieros, ya sea minimizando los intereses totales pagados, reduciendo la presión de los pagos mensuales o equilibrando ambos aspectos para lograr una salud financiera óptima."
-    },
-    useCases: {
-      title: "Aplicaciones Prácticas de la Calculadora de Préstamos",
-      case1: "<h3>Planificación y Comparación de Préstamos Hipotecarios</h3><p><b>La planificación de préstamos hipotecarios</b> es quizás la aplicación más crítica de nuestra calculadora, ya que las viviendas representan la compra más importante que muchas personas realizarán en su vida. Al evaluar opciones hipotecarias, los futuros propietarios pueden usar la calculadora para comparar cómo diferentes montos de pago inicial alteran su relación préstamo-valor y obligaciones mensuales. La herramienta permite un análisis comparativo de hipotecas a 15 años frente a hipotecas a 30 años, mostrando no solo la diferencia en los pagos mensuales, sino también la variación dramática en los intereses totales pagados a lo largo de la vida del préstamo. Para propietarios existentes, la calculadora resulta invaluable cuando se consideran opciones de refinanciación, demostrando claramente si las reducciones en la tasa justifican los costos de refinanciación, o cuando se evalúa el impacto de realizar pagos adicionales de capital para acelerar el pago del préstamo y reducir los intereses totales.</p>",
-      case2: "<h3>Optimización del Financiamiento Automotriz</h3><p><b>Los cálculos de préstamos para automóviles</b> ayudan a los consumidores a navegar el mundo confuso del financiamiento automotriz, donde los concesionarios y prestamistas a menudo enfatizan los pagos mensuales mientras oscurecen los costos totales. Nuestra calculadora brinda transparencia a este proceso, permitiendo a los compradores entender cómo los plazos extendidos (cada vez más comunes en el financiamiento automotriz) aumentan drásticamente los pagos totales por intereses a pesar de ofrecer pagos mensuales más bajos. Los usuarios pueden evaluar si el financiamiento especial del concesionario con tasas de interés más bajas pero menos margen para negociar el precio ofrece un mejor valor que el financiamiento externo con posiblemente más flexibilidad en el precio de compra. La calculadora también ayuda a determinar el monto óptimo del pago inicial para préstamos automotrices, equilibrando el desembolso inmediato de efectivo contra los ahorros a largo plazo por intereses y la posición de patrimonio en un activo que se deprecia.</p>",
-      case3: "<h3>Gestión y Planificación de Préstamos Personales</h3><p><b>La planificación de préstamos personales</b> requiere una consideración cuidadosa de cómo las nuevas obligaciones de deuda se ajustarán a los presupuestos existentes. Nuestra calculadora ayuda a los usuarios a determinar montos de préstamo asequibles según su capacidad de pago mensual deseada, en lugar de aceptar simplemente el monto que los prestamistas están dispuestos a ofrecer. Para consolidación de deudas, la herramienta permite comparaciones precisas entre arreglos de pago múltiple actuales y posibles préstamos de consolidación, verificando si la opción consolidada realmente ofrece ahorros. La calculadora también ayuda en la planificación de gastos importantes como renovaciones del hogar, bodas o costos educativos, ayudando a los usuarios a entender cómo diferentes montos y plazos de préstamo impactan su flujo de caja mensual y salud financiera general antes de comprometerse con nuevas obligaciones financieras.</p>",
-      case4: "<h3>Educación Financiera y Desarrollo de Alfabetización Financiera</h3><p><b>La educación sobre pagos de préstamos</b> es un componente crítico de la alfabetización financiera, y nuestra calculadora sirve como una herramienta didáctica eficaz para entender cómo el interés compuesto y la amortización impactan los costos de préstamo. Educadores y consejeros financieros utilizan calculadoras como la nuestra para demostrar cómo las estrategias de pago anticipado pueden reducir significativamente los intereses totales pagados, o ilustrar la diferencia dramática en el costo total entre préstamos similares con incluso pequeñas variaciones en las tasas de interés. Para adultos jóvenes que aprenden sobre finanzas personales, la representación visual de los cronogramas de pago ayuda a consolidar la comprensión de que los préstamos no son solo sobre la asequibilidad mensual, sino sobre el costo total en el tiempo. La calculadora transforma conceptos financieros abstractos en números concretos basados en escenarios reales, haciendo que la educación financiera sea más relevante e impactante.</p>",
-      case5: "<h3>Análisis de Inversión Comercial y Financiación</h3><p><b>La evaluación de préstamos comerciales</b> para pequeñas empresas y emprendedores requiere sopesar los costos de financiación contra los rendimientos esperados de inversión. Nuestra calculadora ayuda a dueños de negocios a analizar si asumir deuda para compras de equipos, expansión o inventario tiene sentido financiero comparando el costo total de préstamo contra la generación esperada de ingresos o ahorros en costos. Para inversores inmobiliarios, la herramienta permite un análisis rápido de opciones de financiación de propiedades para determinar implicaciones de flujo de caja y rentabilidad general de inversiones potenciales. Los dueños de negocios también pueden usar la calculadora para entender cómo diferentes estrategias de reembolso afectan el flujo de caja de su empresa, ayudando a mantener liquidez operativa mientras gestionan eficazmente obligaciones de deuda. Este enfoque analítico al préstamo comercial apoya decisiones de inversión sólidas y estrategias de crecimiento sostenible.</p>"
-    },
-    loanMethods: {
-      title: "Entendiendo Diferentes Métodos de Reembolso de Préstamos",
-      method1: {
-        title: "Método de Pago Equitativo (Amortización)",
-        description: "<p>El <b>método de pago equitativo</b>, también conocido como amortización o capital e interés iguales, estructura el reembolso del préstamo de manera que cada pago mensual permanezca igual durante todo el plazo del préstamo. Esta consistencia hace que la planificación del presupuesto sea sencilla para los prestatarios, ya que pueden contar con el mismo monto de pago cada mes. Sin embargo, lo que cambia dentro de estos pagos iguales es la proporción de capital versus interés.</p><p>En los primeros años del préstamo, la mayor parte de cada pago va hacia intereses, con solo una pequeña parte reduciendo el saldo del capital. A medida que avanza el préstamo, esta proporción cambia gradualmente, con una cantidad creciente destinada a la reducción del capital y menos a intereses. Esto ocurre porque los intereses se calculan basándose en el saldo del capital restante, que disminuye con el tiempo.</p><p>Este método es particularmente común para hipotecas y préstamos a largo plazo, ya que proporciona estabilidad en los pagos asegurando que el préstamo se pague completamente al final del plazo. La fórmula matemática para calcular el pago mensual bajo este método es:</p><p class='text-center my-3'><code>Pago Mensual = Capital × [r(1+r)ⁿ] ÷ [(1+r)ⁿ-1]</code></p><p>Donde r es la tasa de interés mensual (tasa anual dividida por 12) y n es el número total de pagos (plazo en años multiplicado por 12).</p>"
-      },
-      method2: {
-        title: "Método de Cuota Principal Igual",
-        description: "<p>El <b>método de reembolso de cuota principal igual</b> toma un enfoque diferente dividiendo el monto total del capital equitativamente entre todos los pagos. Esto significa que cada pago incluye la misma cantidad de reducción de capital, pero la parte de interés varía y disminuye con el tiempo. En consecuencia, el pago total mensual disminuye gradualmente a lo largo del plazo del préstamo.</p><p>Con este método, los prestatarios pagan más en las primeras etapas del préstamo pero se benefician de pagos decrecientes a medida que avanza el préstamo. Los pagos iniciales más altos resultan en una reducción más rápida del capital, lo que lleva a menos intereses totales pagados durante la vida del préstamo comparado con el método de pago equitativo.</p><p>Esta estructura de reembolso a menudo se usa para préstamos comerciales y algunos tipos de hipotecas, particularmente en ciertos mercados internacionales. Ofrece la ventaja de reducir la carga total de interés pero requiere que los prestatarios administren pagos iniciales más altos. El cálculo para este método es más sencillo:</p><p class='text-center my-3'><code>Pago Mensual de Capital = Capital Total ÷ Número de Pagos</code><br><code>Interés Mensual = Capital Restante × Tasa de Interés Mensual</code><br><code>Pago Mensual Total = Pago Mensual de Capital + Interés Mensual</code></p><p>A medida que el capital restante disminuye cada mes, también lo hace el componente de interés, resultando en pagos mensuales decrecientes.</p>"
-      }
-    },
-    tutorial: {
-      title: "Guía Paso a Paso para Usar Nuestra Calculadora de Préstamos",
-      intro: "Siga estas instrucciones para sacar el máximo provecho de nuestra calculadora de préstamos y entender claramente sus opciones de préstamo:",
-      step1: {
-        title: "Paso 1: Seleccione Su Tipo de Préstamo y Moneda",
-        description: "Comience seleccionando el tipo de préstamo apropiado de las opciones proporcionadas: préstamo hipotecario, préstamo de automóvil o préstamo personal. Aunque la calculadora funciona igual para todos los tipos, esta selección ayuda a contextualizar sus resultados y puede afectar valores predeterminados. Luego, elija su moneda preferida del menú desplegable. La calculadora admite monedas principales incluyendo CNY, USD, EUR, JPY y GBP, haciéndola útil para prestatarios internacionales o aquellos que comparan préstamos en diferentes mercados. La selección de moneda afecta solo el formato de visualización de los valores monetarios y no impacta los cálculos reales."
-      },
-      step2: {
-        title: "Paso 2: Ingrese Sus Detalles de Préstamo",
-        description: "Ahora, ingrese los detalles específicos de su préstamo. Empiece con el monto del préstamo, introduciendo el monto principal que planea pedir sin comas ni símbolos monetarios. Luego, especifique el plazo del préstamo, ya sea en años o meses seleccionando la unidad adecuada del menú desplegable. Para hipotecas, los plazos normalmente oscilan entre 15 y 30 años, mientras que los préstamos para automóviles suelen durar entre 3 y 7 años, y los préstamos personales generalmente van de 1 a 5 años. Finalmente, ingrese la tasa de interés anual como porcentaje (por ejemplo, 4.5 para el 4.5%). Asegúrese de utilizar la tasa porcentual anual real (APR) ofrecida por su prestamista para garantizar cálculos precisos."
-      },
-      step3: {
-        title: "Paso 3: Elija Su Método de Reembolso",
-        description: "Seleccione su método de reembolso preferido: pago equitativo (capital e interés iguales) o cuota principal igual. El método de pago equitativo proporciona pagos mensuales consistentes durante todo el plazo del préstamo, lo que facilita la planificación del presupuesto pero resulta en más intereses totales pagados. El método de cuota principal igual divide el capital equitativamente entre todos los pagos, resultando en pagos iniciales más altos que disminuyen gradualmente con el tiempo. Este método reduce los intereses totales pagados pero requiere más flexibilidad financiera en los primeros años del préstamo. Su selección aquí afectará significativamente tanto su estructura de pago mensual como los intereses totales pagados durante la vida del préstamo."
-      },
-      step4: {
-        title: "Paso 4: Analice Sus Resultados y Cronograma de Pago",
-        description: "Después de hacer clic en el botón \"Calcular\", revise los resultados completos mostrados. Para préstamos con pago equitativo, verá el monto fijo del pago mensual. Para préstamos con cuota principal igual, se mostrarán tanto el primer (más alto) como el último (más bajo) pago mensual. Todos los cálculos incluyen los intereses totales pagados durante la vida del préstamo, el pago total (capital más interés) y la proporción de interés (porcentaje del pago total destinado a interés). Desplácese hacia abajo para examinar el cronograma detallado de pago, que desglosa cada pago en componentes de capital e interés y muestra el saldo restante después de cada pago. Este cronograma puede exportarse a Excel para un análisis posterior o registro. Use los gráficos visuales para comprender mejor la distribución entre pagos de capital e interés a lo largo del tiempo."
-      }
-    },
-    faq: {
-      title: "Preguntas Frecuentes Sobre el Cálculo de Préstamos",
-      q1: "¿Cómo afecta el cambio en el plazo del préstamo a mis intereses totales pagados?",
-      a1: "<b>Los ajustes en el plazo del préstamo impactan significativamente sus costos totales por intereses</b>. Extender el plazo del préstamo (por ejemplo, elegir una hipoteca a 30 años en lugar de una a 15 años) reduce el monto de su pago mensual pero aumenta considerablemente los intereses totales pagados durante la vida del préstamo. Esto ocurre porque está pidiendo dinero prestado durante un período más largo, resultando en más acumulación de intereses. Por ejemplo, en una hipoteca de $300,000 al 4% de interés, un plazo de 30 años podría requerir pagos mensuales alrededor de $1,432 con intereses totales aproximados de $215,609, mientras que un plazo de 15 años tendría pagos mensuales más altos de aproximadamente $2,219 pero intereses totales de solo $99,431—un ahorro de más de $116,000. Este principio se aplica a todos los tipos de préstamo, haciendo que los plazos más cortos sean financieramente ventajosos si puede pagar los pagos mensuales más altos. Nuestra calculadora de préstamos visualiza claramente esta relación, permitiéndole encontrar el equilibrio óptimo entre pagos mensuales asequibles y costos totales razonables.",
-      q2: "¿Qué método de reembolso me ahorrará más dinero: pago equitativo o cuota principal igual?",
-      a2: "<b>El reembolso mediante cuota principal igual generalmente resulta en menores costos totales por intereses</b> comparado con el método de pago equitativo (amortización). Esto ocurre porque el método de cuota principal igual reduce el balance del préstamo más agresivamente en los primeros años del préstamo, cuando el balance es más alto. Dado que los intereses se calculan basándose en el capital restante, una reducción más rápida del capital significa menos intereses acumulados a lo largo del tiempo. Para un préstamo de $200,000 al 4.5% de interés durante 20 años, el método de cuota principal igual podría ahorrar alrededor de $9,000-$15,000 en intereses totales comparado con el pago equitativo. Sin embargo, este ahorro en intereses viene con un intercambio: los pagos iniciales mediante el método de cuota principal igual son más altos y disminuyen gradualmente, mientras que los pagos mediante el método de pago equitativo permanecen constantes durante todo el plazo del préstamo. Su elección óptima depende de su situación financiera—el pago equitativo ofrece una planificación presupuestaria predecible, mientras que la cuota principal igual proporciona ahorros por intereses para quienes pueden manejar pagos iniciales más altos.",
-      q3: "¿Cuánto puedo ahorrar realizando pagos adicionales de capital en mi préstamo?",
-      a3: "<b>Realizar pagos adicionales de capital puede reducir drásticamente su costo total de préstamo</b> y acortar su plazo. El impacto es más significativo cuando estos pagos adicionales se realizan temprano en el plazo del préstamo, cuando una mayor parte de cada pago típicamente va hacia intereses en lugar de reducción de capital. Por ejemplo, en una hipoteca de 30 años por $300,000 al 4% de interés, pagar $200 adicionales por mes desde el inicio podría ahorrar aproximadamente $62,000 en intereses y acortar el préstamo en casi 8 años. Incluso pagos modestos únicos pueden marcar una diferencia—un pago adicional único de $1,000 en el segundo año de la misma hipoteca ahorraría aproximadamente $2,700 en intereses totales y acortaría el préstamo en 3 meses. Los ahorros son proporcionalmente mayores para préstamos de alto interés como préstamos personales o tarjetas de crédito. Nuestra calculadora de préstamos puede ayudarle a entender estos beneficios recalculando su cronograma de préstamo con pagos adicionales proyectados, ya sea que esté planificando pagos regulares adicionales o sumas únicas ocasionales. Recuerde que algunos préstamos pueden tener penalizaciones por prepago, así que revise los términos de su préstamo antes de implementar esta estrategia."
-      ,
-      q4: "¿Cómo debo interpretar el cronograma de amortización proporcionado por la calculadora?",
-      a4: "<b>El cronograma de amortización del préstamo proporciona un desglose detallado de cada pago</b> durante toda la vida de su préstamo, ofreciendo valiosas perspectivas sobre cómo su deuda se reduce con el tiempo. Cada fila en el cronograma representa un período de pago (típicamente mensual) e incluye varias piezas clave de información: el número de pago, fecha, monto de capital pagado, monto de interés pagado, monto total de pago y saldo de capital restante después de ese pago. Al examinar este cronograma, puede observar cómo cambia la proporción de capital versus interés con el tiempo—generalmente, más de su pago va hacia intereses al inicio del préstamo, con esta proporción cambiando gradualmente hacia una mayor reducción de capital a medida que el préstamo madura. El cronograma también le permite identificar puntos específicos en su plazo de préstamo, como cuándo alcanzará ciertos umbrales de patrimonio o cuándo cruzará el punto medio en el pago de su préstamo. Para fines de planificación, puede usar el cronograma para determinar el impacto de pagos adicionales o para ver su saldo de préstamo proyectado en cualquier fecha futura, lo cual es particularmente útil cuando considere opciones de refinanciación o planifique cambios financieros importantes."
-      ,
-      q5: "¿Qué factores debería considerar al comparar diferentes ofertas de préstamo?",
-      a5: "<b>Una comparación efectiva de préstamos requiere analizar múltiples factores además de la tasa de interés</b>. Mientras que la tasa porcentual anual (APR) es importante ya que directamente afecta su costo de préstamo, también debe evaluar cuidadosamente el plazo del préstamo (longitud), ya que plazos más largos reducen los pagos mensuales pero aumentan significativamente los intereses totales pagados. Preste atención al tipo de tasa de interés ofrecida—tasas fijas proporcionan estabilidad en los pagos, mientras que tasas variables pueden comenzar más bajas pero con incertidumbre futura. Considere si hay tarifas de origen, tarifas de solicitud o puntos que efectivamente aumentan sus costos de préstamo, e incorpórelos en su comparación usando los resultados totales de pago de la calculadora. Para hipotecas específicamente, evalúe los requisitos para seguro hipotecario privado (PMI) y cuánto tiempo necesitará pagarlo. También es importante conocer las penalizaciones por prepago que podrían restringir su capacidad de realizar pagos adicionales o refinanciar, y cualquier requisito de pago residual que pueda crear futuros desafíos financieros. Nuestra calculadora de préstamos le ayuda a estandarizar estas variables para una comparación justa—ingrese los diferentes escenarios de préstamo con todos los costos asociados para ver qué opción ofrece la mejor combinación de asequibilidad mensual y costo total a lo largo del tiempo. Recuerde que el préstamo \"más barato\" no siempre es el que tiene el menor pago mensual, sino aquel que minimiza su costo total mientras cumple sus necesidades de flujo de caja."
-    }
-  },
+
   relatedTools: {
     title: "Explore Herramientas Financieras Relacionadas",
     description: "Mejore su planificación financiera con estas calculadoras y recursos complementarios:",
@@ -154,6 +102,7 @@ export default {
       description: "Planifique su futuro estimando sus ahorros y necesidades de jubilación."
     }
   },
+
   resources: {
     title: "Recursos Autoritativos sobre Planificación de Préstamos",
     resource1: {

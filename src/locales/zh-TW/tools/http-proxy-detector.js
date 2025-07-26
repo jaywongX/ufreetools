@@ -3,6 +3,7 @@ export default {
   description: '檢測和分析連接中的HTTP代理和中間設備',
   title: '前端代理檢測器',
   intro: '檢測您的網路連接是否使用了代理，分析X-Forwarded-For和其他代理相關的HTTP頭信息',
+
   detection: {
     title: '代理檢測',
     start: '開始檢測',
@@ -12,6 +13,7 @@ export default {
     noProxies: '未檢測到代理',
     proxiesFound: '檢測到的代理：{count}'
   },
+
   options: {
     title: '檢測選項',
     testUrl: '測試URL',
@@ -32,11 +34,13 @@ export default {
     advanced: '進階選項',
     apiSelection: '選擇API'
   },
+
   apis: {
     ipify: 'ipify API',
     ipapi: 'IP-API',
     httpbin: 'httpbin'
   },
+
   results: {
     title: '檢測結果',
     summary: '代理摘要',
@@ -69,6 +73,7 @@ export default {
     server: '伺服器',
     notSet: '未設置'
   },
+
   types: {
     forward: '正向代理',
     reverse: '反向代理',
@@ -82,6 +87,7 @@ export default {
     corporate: '企業代理',
     unknown: '未知類型'
   },
+
   headers: {
     title: '頭部分析',
     original: '原始頭部',
@@ -96,6 +102,7 @@ export default {
     all: '所有HTTP請求頭',
     notFound: '未發現此頭信息'
   },
+
   details: {
     title: '代理詳情',
     software: '軟體',
@@ -106,6 +113,7 @@ export default {
     security: '安全影響',
     recommendations: '建議'
   },
+
   map: {
     title: '連接圖',
     client: '您的客戶端',
@@ -115,10 +123,12 @@ export default {
     proxied: '代理連接',
     unknown: '未知路徑'
   },
+
   actions: {
     copyHeaders: '複製請求頭',
     copyToClipboard: '複製到剪貼板'
   },
+
   messages: {
     startDetection: '開始代理檢測...',
     detectionComplete: '代理檢測完成',
@@ -135,9 +145,11 @@ export default {
     copyFailed: '複製失敗，請手動複製',
     unknown: '未知錯誤'
   },
+
   info: {
     description: 'HTTP代理是位於客戶端和伺服器之間的中間伺服器，它可以出於各種目的處理HTTP請求。代理可以由網路提供商、組織、公司或個人設置。'
   },
+
   xff: {
     title: '什麼是X-Forwarded-For?',
     description: 'X-Forwarded-For (XFF) 是一個HTTP頭字段，用於識別通過HTTP代理或負載平衡器連接到Web伺服器的客戶端的原始IP地址。當請求經過代理時，伺服器通常只能看到代理伺服器的IP地址，而XFF頭提供了一個追溯原始客戶端IP的方法。',
@@ -165,128 +177,10 @@ export default {
       description: '需要注意的是，X-Forwarded-For頭可以被客戶端偽造。在高安全性要求的環境中，應該僅信任來自已知代理伺服器添加的XFF信息，或使用其他方法驗證客戶端IP。'
     }
   },
+
   privacy: {
     title: '隱私提示',
     description: '檢測過程中，您的IP地址和HTTP頭信息將被發送到第三方API服務用於分析。這些服務可能會收集並存儲這些信息以提供服務。',
     suggestion: '如有隱私顧慮，請選擇不同的API提供商或考慮使用VPN服務。'
-  },
-  article: {
-    title: "HTTP代理檢測器 - 識別和分析網路代理",
-    intro: {
-      title: "什麼是HTTP代理檢測？",
-      p1: "<b>HTTP代理檢測</b>是確定您的互聯網連接是否通過一個或多個被稱為代理的中間伺服器的過程。我們的HTTP代理檢測工具通過檢查HTTP頭（如X-Forwarded-For、Via等指示符）來分析您的網路請求，以識別連接路徑中代理的存在。",
-      p2: "代理是位於您的設備和您訪問的網站之間的中間伺服器。它們可用於各種合法目的，如通過快取提高性能、實施訪問控制或提供匿名性。然而，在未經您知情或同意的情況下使用代理也可能帶來安全隱患。我們的<b>代理檢測工具</b>幫助您識別網路中的隱藏代理，提高安全意識並協助故障排除。",
-      p3: "當您通過<b>HTTP代理伺服器</b>連接時，有關您瀏覽活動的某些信息可能對代理運營商可見。這個線上代理檢測工具使您了解您的連接是直接的還是通過一個或多個代理層，讓您對線上隱私和安全有更大的控制權。"
-    },
-    useCases: {
-      title: "代理檢測的實際應用",
-      case1: "<b>網路故障排除</b>：當遇到連接問題時，檢測代理可以幫助確定是否是中間伺服器導致問題。IT專業人員經常需要驗證代理配置以診斷網路問題。",
-      case2: "<b>安全驗證</b>：確保您的私人瀏覽不會通過可能監控或修改您流量的未授權代理伺服器。組織可以使用代理檢測來驗證公司安全策略是否正確實施。",
-      case3: "<b>網站開發人員</b>：網站開發人員需要了解他們的內容如何傳遞給用戶，尤其是在使用充當代理的內容分發網路(CDN)或負載平衡器時。測試正確的頭部處理對安全和分析至關重要。",
-      case4: "<b>地理限制驗證</b>：檢查您的VPN或代理服務是否正確掩蓋您的位置以訪問地區限制內容。我們的工具幫助驗證地理位置繞過措施是否正常運行。",
-      case5: "<b>企業環境檢查</b>：對於在企業環境中工作的員工，驗證可能影響您的互聯網訪問或應用程序功能的公司代理的存在和配置。在排查應用程序連接問題時，這一點尤為重要。"
-    },
-    tutorial: {
-      title: "如何檢測連接中的HTTP代理",
-      intro: "按照以下步驟指南有效使用我們的HTTP代理檢測工具並了解您的網路配置：",
-      step1: {
-        title: "步驟1：啟動檢測過程",
-        description: "點擊工具界面上的<b>\"開始檢測\"</b>按鈕開始。檢測器將通過向專門的API端點發出請求立即開始分析您的連接。預設情況下，該工具會自動選擇最可靠的檢測方法，但您可以使用下拉選擇器選擇不同的API進行更全面的測試。"
-      },
-      step2: {
-        title: "步驟2：查看摘要結果",
-        description: "檢測完成後，<b>\"代理摘要\"</b>選項卡將顯示您的連接中是否檢測到代理。尋找表示直接連接的綠色對勾標記或顯示發現代理的黃色警告圖標。摘要還將顯示您檢測到的IP地址和位置信息，這可以幫助驗證您的實際位置是否被掩蓋。"
-      },
-      step3: {
-        title: "步驟3：詳細檢查代理頭",
-        description: "點擊<b>\"完整請求頭\"</b>選項卡查看請求中的所有HTTP頭。特別注意X-Forwarded-For、Via和Forwarded等表示代理使用的頭。X-Forwarded-For頭特別重要，因為它包含一系列IP地址，顯示您的請求通過各種代理的路徑。您可以使用此部分底部的按鈕將所有頭複製到剪貼板進行進一步分析。"
-      },
-      step4: {
-        title: "步驟4：理解代理信息",
-        description: "要更深入地了解檢測到的頭的含義，請訪問<b>\"代理信息解釋\"</b>選項卡。本節解釋了不同代理相關頭的目的及其對連接安全的影響。使用這些知識確定檢測到的代理是預期的（如您的企業網路代理）還是潛在的不需要的中間人。"
-      }
-    },
-    techniques: {
-      title: "了解HTTP代理檢測技術",
-      intro: "我們的工具使用多種方法準確檢測網路連接中的代理。以下是所使用的關鍵技術概述：",
-      method1: {
-        title: "頭部分析",
-        description: "最常見的檢測方法是檢查通常由代理伺服器添加的HTTP頭，如X-Forwarded-For、Via和Forwarded。這些頭通常包含有關客戶端原始IP地址和代理鏈的信息。"
-      },
-      method2: {
-        title: "IP比較",
-        description: "我們的工具將伺服器看到的IP地址與預期的客戶端IP進行比較。這些IP之間的差異通常表示存在代理。這種方法特別適用於檢測透明代理。"
-      },
-      method3: {
-        title: "響應時間分析",
-        description: "通過分析響應時間，我們有時可以檢測到代理，因為它們通常會增加網路請求的延遲。快取代理可能會根據內容是否被快取而顯示不一致的時間模式。"
-      },
-      method4: {
-        title: "伺服器端檢測",
-        description: "我們的API執行伺服器端檢查，可以根據端口掃描、已知代理IP數據庫和HTTP請求中的行為模式識別某些類型的代理。"
-      }
-    },
-    faq: {
-      title: "關於HTTP代理檢測的常見問題",
-      q1: "為什麼我應該檢查我的連接是否使用代理？",
-      a1: "檢查代理很重要，原因有幾個：<b>安全意識</b>（了解您的流量是否被監控），<b>隱私關注</b>（了解誰可能訪問您的瀏覽數據），<b>排除網路問題</b>（確定代理是否導致連接問題），以及<b>驗證VPN功能</b>（確保您的隱私工具正常工作）。定期進行代理檢測有助於保持對網路安全狀況的意識。",
-      
-      q2: "HTTP代理檢測工具能否識別所有類型的代理？",
-      a2: "雖然我們的HTTP代理檢測器通過頭部分析能有效識別常規代理，但某些高級代理類型可能更難檢測。<b>透明代理</b>不修改頭部，有時可以通過IP差異識別。設計用於隱藏其存在的<b>匿名代理</b>可能通過時間分析或伺服器端技術檢測。然而，專門設計用於避免檢測的<b>高匿名代理</b>可能無法通過客戶端工具識別。為了更全面的檢測，我們建議在我們的工具中使用多個API選項。",
-      
-      q3: "使用代理是否違法或對我的計算機有害？",
-      a3: "在大多數國家使用代理通常是合法的，對計算機也無害。代理有許多合法用途，包括通過快取<b>提高互聯網性能</b>，通過掩蓋IP地址<b>增強隱私</b>，<b>訪問地區限制內容</b>，以及在企業環境中<b>實施安全策略</b>。但是，合法性取決於代理的使用方式——通過代理繞過版權限制或違反服務條款可能會有點問題。請確保您在遵守當地法律和服務條款的情況下使用代理。",
-      
-      q4: "代理和VPN之間有什麼區別？",
-      a4: "雖然代理和VPN都通過中間伺服器路由您的流量，但它們在幾個方面有顯著差異：<b>VPN加密所有流量</b>（您的設備和VPN伺服器之間），而大多數代理不提供加密。VPN通常會路由您設備的<b>所有互聯網流量</b>，而代理通常只處理特定應用程序或協議的流量。與標準代理相比，VPN通常提供<b>更好的隱私保護</b>和安全功能。由於這兩種技術都修改了您的連接路徑，我們的代理檢測器可能會將您的VPN連接識別為代理。",
-      
-      q5: "為什麼我的公司使用代理伺服器，我應該擔心嗎？",
-      a5: "公司出於幾個合法原因實施代理伺服器：<b>內容過濾</b>（限制訪問某些網站），<b>頻寬優化</b>（快取經常訪問的內容），<b>增強安全性</b>（掃描惡意軟體或漏洞），<b>監控員工活動</b>（確保遵守可接受的使用政策），以及<b>提供遠程訪問</b>內部資源。雖然企業代理通常不是隱私問題，但重要的是要記住，您在公司網路上的線上活動可能會被監控。如果我們的代理檢測器識別出企業代理，這通常是企業環境中的正常情況。",
-      
-      q6: "內容分發網路(CDN)與代理有什麼關係？",
-      a6: "內容分發網路(CDN)的功能類似於<b>反向代理</b>，可能會被我們的工具檢測到。CDN通過全球伺服器網路分發網站內容，以提高加載速度和可靠性。當您使用CDN訪問網站時，您的請求通常會被路由到最近的CDN伺服器，而不是原始伺服器。這在您的連接中顯示為代理，因為CDN伺服器充當中介。與從隱私角度可能令人擔憂的傳統代理不同，CDN由網站所有者實施，以改善用戶體驗，是現代網路基礎設施的正常部分。"
-    },
-    relatedTools: {
-      title: "相關網路分析工具",
-      description: "探索這些額外工具，獲取有關您的網路配置和安全性的更多見解：",
-      tool1: {
-        name: "HTTP頭部安全檢查器",
-        url: "https://www.ufreetools.com/tool/http-header-security-checker",
-        description: "分析網站的HTTP響應頭，檢測CSP、HSTS等安全配置，並提供改進建議"
-      },
-      tool2: {
-        name: "請求頭編輯器",
-        url: "https://www.ufreetools.com/tool/request-header-editor",
-        description: "創建、編輯和測試HTTP請求頭"
-      },
-      tool3: {
-        name: "HTTP狀態碼查詢",
-        url: "https://www.ufreetools.com/tool/http-status-code-lookup",
-        description: "查詢和理解HTTP響應狀態碼和消息"
-      },
-      tool4: {
-        name: "URL參數解析器",
-        url: "https://www.ufreetools.com/tool/url-params-parser",
-        description: "解析、分析和操作URL參數和查詢字符串"
-      }
-    },
-    resources: {
-      title: "了解更多關於代理和網路安全",
-      resource1: {
-        name: "OWASP測試指南",
-        url: "https://owasp.org/www-project-web-security-testing-guide/assets/archive/OWASP_Testing_Guide_v4.pdf",
-        description: "OWASP是一個全球性的免費和開放的社區，專注於提高應用軟體的安全性。"
-      },
-      resource2: {
-        name: "HTTP頭 - MDN Web文檔",
-        url: "https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers",
-        description: "Mozilla開發者網路關於HTTP頭的詳細文檔，包括與代理和轉發相關的內容。"
-      },
-      resource3: {
-        name: "互聯網工程任務組(IETF) - HTTP Forwarded頭",
-        url: "https://tools.ietf.org/html/rfc7239",
-        description: "定義Forwarded HTTP頭的官方RFC 7239文檔，該頭標準化了代理添加的信息。"
-      }
-    }
   }
-}
+};

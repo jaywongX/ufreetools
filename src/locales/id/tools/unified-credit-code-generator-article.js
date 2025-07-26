@@ -1,0 +1,61 @@
+export default {
+    title: "Generator Kode Kredit Sosial Terpadu - Panduan Lengkap",
+    introTitle: "Apa itu Generator Kode Kredit Sosial Terpadu?",
+    introPara1: "<strong>Generator Kode Kredit Sosial Terpadu</strong> adalah alat yang dirancang khusus untuk secara otomatis menghasilkan Kode Kredit Sosial Terpadu China yang valid sesuai dengan standar nasional GB 32107-2015. Kode 18 karakter ini berfungsi sebagai pengidentifikasi unik untuk perusahaan, organisasi, dan entitas hukum lainnya yang beroperasi di China, mirip dengan Nomor Identifikasi Pemberi Kerja (EIN) di AS atau nomor bisnis di negara lain.",
+    introPara2: "Generator kami menghasilkan kode yang sepenuhnya mematuhi spesifikasi yang diperlukan oleh regulator China, termasuk kode otoritas pendaftaran yang benar, pengidentifikasi jenis entitas, kode wilayah administratif, dan checksum yang valid yang dihitung menggunakan algoritma ISO 7064:1983 MOD 11-2. Baik Anda membutuhkan data pengujian untuk pengembangan perangkat lunak, pengisian database, atau sekadar memahami struktur pengidentifikasi bisnis penting ini, alat ini memberikan solusi yang dapat diandalkan untuk menghasilkan kode yang terlihat asli dan secara struktural valid.",
+    
+    scenariosTitle: "Aplikasi Generator Kode Kredit Sosial Terpadu",
+    scenariosPara: "Alat ini menyediakan solusi praktis untuk berbagai skenario profesional dan teknis:",
+    scenario1: "<strong>Pengembangan dan Pengujian Perangkat Lunak</strong>: Menghasilkan data pengujian yang valid untuk aplikasi yang menangani pendaftaran bisnis China, pengajuan pajak, atau sistem kepatuhan peraturan, memastikan perangkat lunak Anda dapat memproses validasi Kode Kredit Sosial Terpadu dengan benar tanpa menggunakan pengidentifikasi bisnis nyata.",
+    scenario2: "<strong>Pengujian Database dan Jaminan Kualitas</strong>: Mengisi database pengujian dengan kode yang realistis untuk pengujian jaminan kualitas yang komprehensif, memastikan sistem dapat menangani pengidentifikasi bisnis China aktual tanpa membocorkan data nyata.",
+    scenario3: "<strong>Pendidikan dan Pelatihan</strong>: Memberikan contoh nyata untuk kursus pelatihan pendaftaran bisnis, kepatuhan, atau perdagangan internasional di China, membantu siswa memahami struktur dan persyaratan validasi Kode Kredit Sosial Terpadu.",
+    scenario4: "<strong>Validasi Migrasi Data</strong>: Menguji proses migrasi data yang melibatkan entitas bisnis China dengan menghasilkan pengidentifikasi terstruktur yang valid yang memenuhi format dan aturan validasi yang diharapkan.",
+    scenario5: "<strong>Simulasi Proses Bisnis</strong>: Membuat data simulasi yang realistis untuk alur kerja proses bisnis yang melibatkan dokumen peraturan, pendaftaran bisnis, atau kepatuhan pajak untuk perusahaan multinasional yang beroperasi di China.",
+    
+    tutorialTitle: "Cara Menggunakan Generator Kode Kredit Sosial Terpadu",
+    step1Title: "Langkah 1: Konfigurasi Otoritas Pendaftaran",
+    step1Content: "Pilih kode otoritas pendaftaran yang sesuai dari daftar. Ini mewakili departemen pemerintah yang bertanggung jawab untuk mendaftarkan entitas. Untuk sebagian besar entitas bisnis, kode Industri dan Perdagangan (8) adalah pilihan paling umum, tetapi Anda dapat memilih kode lain sesuai kebutuhan spesifik.",
+    
+    step2Title: "Langkah 2: Pilih Jenis Entitas",
+    step2Content: "Pilih kategori entitas yang sesuai dengan kebutuhan Anda. Pilihan termasuk Perusahaan (1), Bisnis Individu (2), Koperasi Pertanian (3), atau Lainnya (9). Pilihan ini menentukan karakter kedua dalam kode yang dihasilkan.",
+    
+    step3Title: "Langkah 3: Pilih Kode Wilayah Administratif",
+    step3Content: "Pilih wilayah spesifik dari daftar, atau pilih \"Pilih Secara Acak\" untuk membiarkan generator secara acak menetapkan kode wilayah yang valid. Kode wilayah mewakili lokasi geografis tempat entitas terdaftar.",
+    
+    step4Title: "Langkah 4: Atur Jumlah dan Hasilkan",
+    step4Content: "Tentukan jumlah Kode Kredit Sosial Terpadu yang ingin dihasilkan (dari 1 hingga 1000), lalu klik tombol \"Hasilkan Kode\". Alat akan segera membuat kode yang valid yang dapat disalin satu per satu, disalin sekaligus, atau diekspor dalam format TXT, CSV, atau Excel untuk kemudahan penggunaan Anda.",
+    
+    tipTitle: "Tip Profesional:",
+    tipContent: "Saat menggunakan kode yang dihasilkan untuk pengujian, sering kali membantu untuk menghasilkan kode wilayah spesifik yang sesuai dengan skenario pengujian Anda. Misalnya, jika menguji sistem untuk perusahaan Beijing, memilih kode wilayah Beijing (110000) akan membuat data pengujian yang lebih realistis untuk kasus penggunaan spesifik Anda.",
+    
+    faqTitle: "Pertanyaan Umum tentang Kode Kredit Sosial Terpadu",
+    
+    faq1Question: "Apa perbedaan antara Kode Kredit Sosial Terpadu dan Kode Organisasi?",
+    faq1Answer: "<strong>Kode Kredit Sosial Terpadu</strong> adalah kode 18 digit yang menggantikan beberapa pengidentifikasi bisnis sebelumnya sebagai bagian dari inisiatif penyederhanaan regulasi China. Kode Organisasi adalah pengidentifikasi 9 digit yang sebelumnya digunakan untuk bisnis, sekarang menjadi bagian dari kode terpadu (karakter ke-9-17). Kode terpadu menggabungkan informasi yang sebelumnya tersebar di nomor izin bisnis, sertifikat pendaftaran pajak, kode organisasi, dan pendaftaran asuransi sosial ke dalam satu pengidentifikasi yang mengikuti standar GB 32107-2015.",
+    
+    faq2Question: "Bisakah kode yang dihasilkan alat ini digunakan untuk pendaftaran bisnis aktual?",
+    faq2Answer: "Tidak bisa. Kode yang dihasilkan alat ini secara struktural valid dan akan lulus pemeriksaan validasi format, tetapi mereka <strong>hanya dihasilkan secara acak untuk tujuan pengujian dan pendidikan</strong>. Menggunakan kode yang dihasilkan untuk pendaftaran bisnis aktual, pengajuan pajak, atau dokumen regulasi akan menjadi penipuan. Di China, Kode Kredit Sosial Terpadu yang sah hanya dapat dikeluarkan oleh lembaga pemerintah yang berwenang setelah prosedur pendaftaran bisnis yang tepat.",
+    
+    faq3Question: "Bagaimana cara memverifikasi apakah Kode Kredit Sosial Terpadu valid?",
+    faq3Answer: "Untuk memverifikasi Kode Kredit Sosial Terpadu, Anda dapat memeriksa format dan validitas checksum-nya: <ol><li>Pastikan terdiri dari tepat 18 karakter</li><li>Konfirmasi hanya berisi angka dan huruf besar (tidak termasuk I, O, S, V, Z)</li><li>Verifikasi checksum (karakter ke-18) menggunakan algoritma ISO 7064:1983 MOD 11-2 berdasarkan 17 karakter pertama</li><li>Periksa apakah kode wilayah (karakter ke-3-8) sesuai dengan wilayah administratif China yang valid</li></ol>Untuk verifikasi resmi perusahaan terdaftar, Anda harus berkonsultasi dengan Sistem Pengumuman Informasi Kredit Perusahaan Nasional di <a href='https://www.gsxt.gov.cn' target='_blank' rel='noopener noreferrer'>www.gsxt.gov.cn</a>.",
+    
+    faq4Question: "Apa arti dari berbagai bagian Kode Kredit Sosial Terpadu?",
+    faq4Answer: "Kode 18 digit terdiri dari beberapa bagian berbeda: <ul><li><strong>Karakter ke-1</strong>: Kode otoritas pendaftaran (menunjukkan departemen pemerintah mana yang mendaftarkan entitas)</li><li><strong>Karakter ke-2</strong>: Kode jenis entitas (menunjukkan apakah itu perusahaan, bisnis individu, dll.)</li><li><strong>Karakter ke-3-8</strong>: Kode wilayah administratif (berdasarkan GB/T 2260)</li><li><strong>Karakter ke-9-17</strong>: Kode organisasi (mirip dengan sistem kode organisasi 9 digit sebelumnya)</li><li><strong>Karakter ke-18</strong>: Kode checksum (dihitung menggunakan algoritma ISO 7064:1983 MOD 11-2)</li></ul>Setiap bagian memberikan informasi spesifik tentang entitas terdaftar, membentuk sistem identifikasi yang komprehensif.",
+    
+    faq5Question: "Kapan China menerapkan sistem Kode Kredit Sosial Terpadu?",
+    faq5Answer: "Sistem Kode Kredit Sosial Terpadu secara resmi diterapkan di China pada tahun 2015 dengan dirilisnya Standar Nasional GB 32107-2015. Sistem ini merupakan bagian dari reformasi pendaftaran bisnis yang lebih luas dan pembangunan sistem kredit sosial. Antara 2015 hingga 2017, perusahaan yang ada perlu memperbarui informasi pendaftaran mereka untuk mendapatkan kode baru, yang merupakan masa transisi. Sejak 2018, semua entitas yang terdaftar secara hukum di China harus memiliki Kode Kredit Sosial Terpadu sebagai pengidentifikasi utama untuk semua interaksi pemerintah, pengajuan pajak, dan kepatuhan regulasi.",
+    
+    standardsTitle: "Standar dan Referensi Terkait",
+    standardsPara: "Sistem Kode Kredit Sosial Terpadu didasarkan pada beberapa standar nasional China:",
+    standard1: "<strong>GB 32107-2015</strong>: Standar inti yang mendefinisikan struktur kode, set karakter, dan aturan format dasar. <a href='https://www.samr.gov.cn' target='_blank' rel='noopener noreferrer'>Sumber: Administrasi Pasar Nasional</a>",
+    standard2: "<strong>GB/T 2260</strong>: Standar Kode Wilayah Administratif Republik Rakyat China, mendefinisikan kode wilayah yang digunakan pada karakter ke-3-8. <a href='http://www.stats.gov.cn' target='_blank' rel='noopener noreferrer'>Sumber: Biro Statistik Nasional</a>",
+    standard3: "<strong>ISO 7064:1983</strong>: Standar internasional yang menentukan algoritma MOD 11-2 yang digunakan untuk menghitung karakter checksum.",
+    
+    relatedToolsTitle: "Alat Terkait yang Mungkin Anda Minati",
+    relatedTool1Title: "Generator Nomor KTP",
+    relatedTool1Desc: "Menghasilkan nomor KTP China yang valid untuk tujuan pengujian dan pengembangan.",
+    relatedTool2Title: "Kalkulator Hash",
+    relatedTool2Desc: "Menghitung berbagai nilai hash termasuk MD5, SHA-1, SHA-256, dll.",
+    relatedTool3Title: "Generator Kata Sandi",
+    relatedTool3Desc: "Menghasilkan kata sandi acak yang aman dengan opsi yang dapat disesuaikan."
+}

@@ -2,13 +2,13 @@ export default {
   name: 'XML/JSON 轉換器',
   title: 'XML ↔ JSON 轉換',
   description: '在 XML 和 JSON 格式之間進行雙向轉換，支援進階選項和自定義設定',
-  
+
   conversion: {
     direction: '轉換方向',
     xmlToJson: 'XML 轉 JSON',
     jsonToXml: 'JSON 轉 XML'
   },
-  
+
   options: {
     title: '轉換選項',
     show: '顯示選項',
@@ -43,14 +43,14 @@ export default {
       attributePrefixHint: '用於識別JSON中的XML屬性的前綴，預設為at符號'
     }
   },
-  
+
   buttons: {
     convert: '轉換',
     swap: '交換內容',
     clear: '清空',
     loadExample: '載入範例'
   },
-  
+
   input: {
     xmlInput: 'XML 輸入',
     jsonInput: 'JSON 輸入',
@@ -59,13 +59,13 @@ export default {
       json: '輸入JSON...'
     }
   },
-  
+
   output: {
     xmlResult: 'XML 結果',
     jsonResult: 'JSON 結果',
     copy: '複製'
   },
-  
+
   stats: {
     title: '轉換統計',
     inputSize: '輸入大小',
@@ -73,7 +73,7 @@ export default {
     sizeChange: '大小變化',
     conversionTime: '轉換耗時'
   },
-  
+
   help: {
     title: '使用幫助',
     show: '顯示幫助',
@@ -101,7 +101,7 @@ export default {
       ]
     }
   },
-  
+
   errors: {
     xmlParse: 'XML 解析錯誤: {0}',
     jsonParse: 'JSON 解析錯誤: {0}',
@@ -109,61 +109,8 @@ export default {
     emptyObject: 'JSON 物件為空或無效',
     conversion: '轉換錯誤: {0}'
   },
-  
+
   alerts: {
     copied: '已複製到剪貼簿'
-  },
-  
-  article: {
-    title: "XML/JSON轉換器: 無縫轉換您的資料結構",
-    features: {
-      title: "理解XML和JSON資料轉換",
-      description: "<strong>XML/JSON轉換器</strong>是一種強大的工具，旨在促進Web開發和系統整合中兩種最廣泛使用的<strong>資料交換格式</strong>之間的轉換。這種雙向<strong>格式轉換器</strong>允許您在保持資料結構完整性的同時，進行<strong>XML轉JSON</strong>和<strong>JSON轉XML</strong>的轉換。<br><br>我們的<strong>XML/JSON解析器</strong>為處理屬性、宣告和巢狀資料結構提供了廣泛的自定義選項。對於<strong>XML到JSON的轉換</strong>，您可以配置屬性前綴、控制標籤值的解析方式以及確定如何處理空白。執行<strong>JSON到XML的轉換</strong>時，您可以指定格式化偏好、新增XML宣告併為結構良好的輸出定義根元素名稱。這個<strong>資料格式轉換器</strong>確保在兩種格式之間準確表示複雜的層次資料。",
-      useCases: {
-        title: "XML-JSON轉換的常見應用場景",
-        items: [
-          "API開發人員在基於XML的SOAP Web服務和基於JSON的REST API之間進行轉換，以確保不同整合點之間的相容性",
-          "前端開發人員將XML設定檔轉換為JSON，以便在JavaScript應用程式和現代框架中更輕鬆地使用",
-          "後端工程師處理使用XML的遺留系統，同時實現需要JSON格式的新服務",
-          "資料整合專家在ETL（提取、轉換、載入）過程中對映不同的系統格式",
-          "提取XML資料（如RSS源）並需要將其轉換為JSON以進行儲存或分析的Web抓取應用程式",
-          "行動應用開發人員從企業系統中使用XML資料，並將其轉換為JSON以實現更高效的客戶端處理"
-        ]
-      }
-    },
-    faq: {
-      title: "關於XML-JSON轉換的常見問題",
-      items: [
-        {
-          question: "轉換器能否處理兩種格式中的複雜巢狀結構？",
-          answer: "是的，我們的XML/JSON解析器完全支援兩個方向的複雜巢狀結構。轉換器準確維護層次關係，處理陣列、物件和混合內容。從XML轉換為JSON時，巢狀元素變成巢狀物件，重複元素自動轉換為陣列。從JSON轉換為XML時，巢狀物件被保留為子元素，陣列表示為具有相同標籤名的重複元素。這種結構儲存對於在任一格式中處理複雜的資料模型和設定檔都至關重要。"
-        },
-        {
-          question: "該工具如何處理特殊字元和編碼？",
-          answer: "XML/JSON轉換器自動管理兩個方向的特殊字元和編碼問題。處理XML時，它正確解碼XML實體（如&amp;表示&，&lt;表示<）並處理CDATA部分以保留格式。在JSON到XML轉換期間，該工具將特殊字元編碼為適當的XML實體，以確保有效的XML輸出。轉換器在整個過程中保持UTF-8相容性，正確處理兩種格式中的國際字元、符號和表情符號，使其適用於多語言內容和全球應用。"
-        },
-        {
-          question: "XML註解在轉換為JSON期間會發生什麼？",
-          answer: "由於JSON本身不支援註解，XML註解通常在XML到JSON轉換期間被刪除。但是，如果您需要保留此資訊，我們的XML/JSON轉換器提供了一個可選設定，通過將註解轉換為特殊JSON屬性（例如作為\"__comment\"欄位）來保留註解。這為需要保留包含重要文件或處理指令的註解的場景提供了靈活性，即使在格式之間轉換時也是如此。您可以通過轉換器介面中的進階選項面板自定義此行爲。"
-        },
-        {
-          question: "如何在轉換過程中處理XML命名空間？",
-          answer: "XML/JSON轉換器提供了在轉換過程中處理XML命名空間的選項。預設情況下，當轉換為JSON時，命名空間及其前綴包含在元素名稱中。例如，'<ns:element xmlns:ns=\"namespace\">value</ns:element>'將轉換為JSON，並保留命名空間前綴。您可以通過轉換器選項自定義此行爲，選擇完全忽略命名空間，以特定格式保留它們，或將它們作為單獨的屬性保留在生成的JSON結構中，以滿足您特定的整合需求。"
-        }
-      ]
-    },
-    guide: {
-      title: "使用XML/JSON轉換器的步驟指南",
-      steps: [
-        "使用工具頂部的單選按鈕選擇所需的轉換方向：選擇'XML轉JSON'將XML標記轉換為JSON格式，或選擇'JSON轉XML'進行相反的過程",
-        "點擊'顯示選項'存取進階設定，自定義轉換過程：對於XML轉JSON，配置屬性處理和解析選項；對於JSON轉XML，設定格式化偏好和XML宣告選項",
-        "在轉換器左側的輸入欄位中輸入您的來源資料，或使用'載入範例'按鈕檢視工具如何處理預定義資料",
-        "點擊'轉換'按鈕處理您的資料 - 轉換器將轉換您的輸入並在右側的輸出欄位中顯示結果",
-        "檢視轉換輸出，如有必要，調整您的轉換設定以根據您的特定需求微調結果",
-        "點擊輸出欄位旁邊的'複製'按鈕，將轉換後的結果複製到剪貼簿，以便在您的應用程式或文件中使用",
-        "您還可以使用'交換內容'按鈕反轉過程，將當前輸出設定為輸入，以便在相反方向進行轉換"
-      ]
-    },
-    conclusion: "XML/JSON轉換器為在現代計算中這兩種基礎格式之間轉換資料提供了強大的解決方案。無論您是整合不同系統、現代化遺留應用程式，還是最佳化資料以進行客戶端處理，這個工具都能幫您避免手動轉換的複雜性和潛在錯誤。通過其用於處理屬性、格式化和結構元素的綜合選項，您可以確保您的資料在跨越格式邊界時保持其完整性和含義。通過簡化XML和JSON之間的轉換，這個轉換器有助於彌合不同技術和標準之間的差距，實現更靈活和可互操作的軟體系統。"
   }
-}
+};

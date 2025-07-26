@@ -1,147 +1,40 @@
 export default {
-    name: 'LaTeX Formel-Generator',
-    description: 'Echtzeit-Generierung und Export von LaTeX-Mathematikformeln',
-    
-    // UI-Texte
-    input: 'LaTeX-Code eingeben',
-    output: 'Vorschau-Ergebnis',
-    renderButton: 'Formel rendern',
-    exportButton: 'Als Bild exportieren',
-    copyButton: 'LaTeX-Code kopieren',
-    
-    // Einstellungen
-    settings: {
-      title: 'Einstellungen',
-      fontSize: 'Schriftgröße',
-      textColor: 'Textfarbe',
-      backgroundColor: 'Hintergrundfarbe',
-      displayMode: 'Anzeigemodus',
-      displayModeInline: 'Inline-Modus',
-      displayModeBlock: 'Block-Modus'
-    },
-    
-    // Beispiele
-    examples: {
-      title: 'Beispiele',
-      basic: 'Grundlegende Formeln',
-      fraction: 'Brüche',
-      superscript: 'Hoch-/Tiefstellungen',
-      integral: 'Integrale',
-      matrix: 'Matrizen',
-      more: 'Weitere Beispiele'
-    },
-    
-    // Nachrichten
-    copied: 'In die Zwischenablage kopiert',
-    errorTitle: 'Rendering-Fehler',
-    errorMessage: 'Bitte überprüfen Sie Ihre LaTeX-Syntax',
-    
-    article: {
-      title: "LaTeX Formel-Generator Komplettleitfaden - Erstellen Sie perfekte mathematische Gleichungen",
-      intro: {
-        title: "Entdecken Sie die Leistungsfähigkeit der LaTeX-Formelgenerierung",
-        p1: "<b>Der LaTeX Formel-Generator</b> ist ein unverzichtbares Werkzeug zum Erstellen professioneller mathematischer Gleichungen und Formeln für wissenschaftliche Arbeiten, Lehrmaterialien und technische Dokumentation. Im Gegensatz zu Standard-Texteditoren stellt unser LaTeX-Generator komplexe mathematische Ausdrücke präzise dar, wobei Symbolausrichtung, Abstände und Formatierung den in wissenschaftlichen Publikationen etablierten Satzstandards folgen. Dieses Online-Tool ermöglicht die Erstellung von druckfertigen Formeln ohne Installation spezieller Software oder das Erlernen komplexer LaTeX-Programmierung - durch eine einfache, intuitive Oberfläche wird LaTeX-Code sofort in perfekt dargestellte Gleichungen umgewandelt.",
-        p2: "<b>LaTeX-Mathematiksymbole</b> sind seit ihrer Entwicklung durch Donald Knuth in den 1970er Jahren der Goldstandard für die Vorbereitung wissenschaftlicher und mathematischer Dokumente. Der LaTeX Formel-Generator macht dieses leistungsstarke Satzsystem für jeden zugänglich, unabhängig vom technischen Hintergrund, und ermöglicht Studenten, Lehrern, Forschern und Fachleuten die Generierung visuell einwandfreier Gleichungen für Arbeiten, Forschungsberichte, Vorlesungsskripte oder Präsentationen. Das Tool verarbeitet alles von grundlegenden algebraischen Ausdrücken bis hin zu höherer Analysis, Matrizen und statistischen Formeln und bewahrt dabei einen einheitlichen Stil und professionelles Erscheinungsbild für alle mathematischen Inhalte.",
-        p3: "<b>Echtzeit-Formelrendering</b> ist einer der Hauptvorteile unseres LaTeX-Generators, da Sie Ihre Gleichungen während der Eingabe sofort visualisieren können. Dieses sofortige Feedback erleichtert das Erlernen der LaTeX-Syntax und beschleunigt den Formelerstellungsprozess. Darüber hinaus ermöglicht die Funktion zum Exportieren von Formeln als hochauflösende Bilder die einfache Integration in beliebige Dokumente, Präsentationen oder Webseiten ohne Kompatibilitätsprobleme. Mit anpassbaren Anzeigeoptionen wie Schriftgröße, Farbschema und Anzeigemodus passt sich der LaTeX Formel-Generator Ihren spezifischen Bedürfnissen an, während er die Präzision und Eleganz bewahrt, die LaTeX zur bevorzugten Wahl für mathematische Dokumente macht."
-      },
-      useCases: {
-        title: "Praktische Anwendungen des LaTeX Formel-Generators",
-        case1: "<h3>Akademische Forschung und wissenschaftliche Veröffentlichungen</h3><p><b>LaTeX-Formelgenerierung</b> ist für Forscher, die Arbeiten für wissenschaftliche Zeitschriften und Konferenzen vorbereiten, unverzichtbar. Akademische Disziplinen wie Physik, Mathematik, Ingenieurwesen und Informatik erfordern die präzise Darstellung komplexer Gleichungen, die nur LaTeX bieten kann. Unser Generator hilft Forschern, mühelos Gleichungen für Quantenmechanik, statistische Modelle, Algorithmen-Komplexitätsanalysen und theoretische Beweise zu erstellen, ohne sich mit der steilen Lernkurve von LaTeX auseinandersetzen zu müssen. Durch die Generierung hochwertiger mathematischer Notationen, die Publikationsstandards entsprechen, können sich Forscher auf ihre Inhalte konzentrieren statt auf Formatierungsherausforderungen. Beispielsweise kann ein Doktorand der theoretischen Physik schnell Schrödinger-Gleichungen, Tensoranalysis oder Relativitätsformeln generieren, ohne zahlreiche LaTeX-Befehle auswendig lernen zu müssen, und dabei sicherstellen, dass seine Arbeit stets professionelle Qualität aufweist.</p>",
-        case2: "<h3>Lehrmaterialien und Online-Kurse</h3><p><b>Mathematiklehrer und Online-Kursersteller</b> verlassen sich auf den LaTeX Formel-Generator, um klare, konsistente Lehrunterlagen zu entwickeln. Lehrer, die Unterrichtspläne, Arbeitsblätter, Prüfungen oder digitale Lernressourcen vorbereiten, benötigen eine zuverlässige Methode zur Darstellung mathematischer Konzepte mit korrekter Notation. Unser Tool ermöglicht es Pädagogen, professionelle Algebra-Aufgaben, geometrische Beweise, Analysis-Demonstrationen und statistische Beispiele zu erstellen, die auf verschiedenen Geräten und Plattformen korrekt dargestellt werden. Dies ist besonders wertvoll für die Entwicklung von Online-Kursen, bei denen mathematische Inhalte in Lernmanagementsystemen korrekt angezeigt werden müssen. Beispielsweise kann ein Analysis-Lehrer Integralformeln, Differentialgleichungen und Grenzwertausdrücke generieren, die genauso aussehen wie auf der Klassenraum-Tafel, und so das Verständnis der Schüler durch visuelle Klarheit und mathematische Präzision verbessern.</p>",
-        case3: "<h3>Technische Dokumentation und Ingenieurspezifikationen</h3><p><b>Ingenieure und technische Redakteure</b> nutzen die LaTeX-Formelgenerierung, um präzise Dokumente mit mathematischen Ausdrücken, physikalischen Konstanten und wissenschaftlichen Symbolen zu erstellen. Branchen wie Luft- und Raumfahrt, Elektronik, Telekommunikation und Softwareentwicklung erfordern Dokumente, die komplexe Formeln enthalten, die für Spezifikationen, Benutzerhandbücher und technische Berichte korrekt dargestellt werden müssen. Unser LaTeX-Generator vereinfacht diesen Prozess, indem er Ingenieuren ermöglicht, Gleichungen für Signalverarbeitungsalgorithmen, Steuerungssysteme, elektromagnetische Feldberechnungen oder Softwarealgorithmen zu erstellen, ohne umfangreiche LaTeX-Kenntnisse zu benötigen. Beispielsweise kann ein Telekommunikationsingenieur effizient Maxwell-Gleichungen oder Fourier-Transformationsformeln für technische Spezifikationsdokumente generieren und so sicherstellen, dass mathematische Konzepte klar und genau an Fertigungsteams oder Aufsichtsbehörden kommuniziert werden.</p>",
-        case4: "<h3>Data Science und statistische Analyseberichte</h3><p><b>Datenwissenschaftler und Statistiker</b> verlassen sich auf den LaTeX Formel-Generator bei der Erstellung von Berichten, die komplexe mathematische Notationen für statistische Methoden, Machine-Learning-Algorithmen und Wahrscheinlichkeitsmodelle erfordern. Professionelle Datenanalysen enthalten oft komplizierte Formeln für Regressionsmodelle, Hypothesentests, Wahrscheinlichkeitsverteilungen und Algorithmen-Komplexität. Unser Tool hilft Datenexperten, visuell konsistente Gleichungen für Konfidenzintervalle, Signifikanztests, Bayes'sche Inferenz oder neuronale Netzwerkarchitekturen zu erstellen, was die Glaubwürdigkeit und Lesbarkeit ihrer Ergebnisse erhöht. Beispielsweise kann ein Marktforschungsanalyst unseren LaTeX-Generator verwenden, um komplexe statistische Formeln in Kundenberichten korrekt zu formatieren und so komplizierte Methoden für nicht-technische Stakeholder verständlicher zu machen, während die mathematische Präzision erhalten bleibt.</p>",
-        case5: "<h3>Interaktive Lernmaterialien und Bildungstechnologie</h3><p><b>Entwickler von Bildungstechnologie</b> integrieren den LaTeX Formel-Generator in interaktive Lernanwendungen, um mathematische Inhalte dynamisch anzuzeigen. Auf Mathematik spezialisierte Bildungswebsites, mobile Lern-Apps und interaktive Lehrbücher erfordern eine korrekte Darstellung von Gleichungen auf verschiedenen Gerätetypen und Bildschirmgrößen. Die mit unserem LaTeX-Generator erstellten Formeln können als Bilder exportiert oder direkt in Webanwendungen gerendert werden, was ein einheitliches Erscheinungsbild unabhängig vom Gerät oder Browser des Benutzers gewährleistet. Beispielsweise können Entwickler einer Algebra-Lern-App unser Tool verwenden, um Formeln zu generieren, die auf Smartphones und Tablets korrekt angezeigt werden, und so interaktive Problemlösungsübungen mit korrekt formatierter mathematischer Notation erstellen, die das Lernerlebnis durch visuelle Klarheit und mathematische Präzision verbessern.</p>"
-      },
-      tutorial: {
-        title: "Anleitung zur Erstellung perfekter mathematischer Formeln mit dem LaTeX-Generator",
-        intro: "Folgen Sie diesen Schritten, um mit unserem LaTeX Formel-Generator professionelle mathematische Formeln zu erstellen:",
-        step1: {
-          title: "Schritt 1: Geben Sie Ihren LaTeX-Code ein",
-          description: "Geben Sie zunächst Ihren mathematischen LaTeX-Ausdruck in das Eingabefeld auf der linken Seite des Bildschirms ein. Wenn Sie mit der LaTeX-Syntax nicht vertraut sind, können Sie über die Schaltflächen unter dem Vorschaubereich mit unseren Beispielen beginnen. Für grundlegende mathematische Operationen verwenden Sie Standardoperatoren wie <code>+</code>, <code>-</code>, <code>*</code> und <code>/</code>. Für Brüche verwenden Sie die Struktur <code>\\frac{Zähler}{Nenner}</code>. Hochstellungen werden mit dem Caret-Zeichen <code>^</code> erstellt, Tiefstellungen mit dem Unterstrich <code>_</code>. Um beispielsweise die quadratische Gleichungsformel zu erstellen, müssen Sie eingeben: <code>\\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}</code>. Das Tool rendert Ihre Formel in Echtzeit während der Eingabe und gibt Ihnen sofort visuelles Feedback."
-        },
-        step2: {
-          title: "Schritt 2: Passen Sie das Erscheinungsbild der Formel an",
-          description: "Nach der Eingabe des LaTeX-Codes können Sie mit dem Einstellungsbereich das Erscheinungsbild der Formel anpassen. Stellen Sie den Schriftgrößen-Regler ein, um die Formel nach Bedarf größer oder kleiner zu machen. Verwenden Sie die Farbauswahl, um die Textfarbe und Hintergrundfarbe der Formel zu ändern. Dies ist besonders nützlich, wenn Sie das Aussehen der Formel an den Stil eines vorhandenen Dokuments oder Präsentationsthemas anpassen möchten. Wählen Sie dann Ihren bevorzugten Anzeigemodus. Der Inline-Modus (Standard) eignet sich für Formeln, die im Text erscheinen, während der Block-Modus eigenständige, zentrierte Gleichungen mit größeren Abständen erstellt, die sich für wichtige, hervorzuhebende Formeln eignen."
-        },
-        step3: {
-          title: "Schritt 3: Vorschau und Verfeinerung Ihrer Formel",
-          description: "Überprüfen Sie Ihre Formel im Vorschaubereich auf der rechten Seite des Bildschirms. Achten Sie auf Fehler oder Formatierungsprobleme, die behoben werden müssen. Wenn Sie Probleme feststellen, kehren Sie zum Eingabefeld zurück und verfeinern Sie Ihren LaTeX-Code. Häufige Probleme sind fehlende geschweifte Klammern, nicht übereinstimmende Trennzeichen oder falsche Befehlssyntax. Wenn Sie unter der Formel eine Fehlermeldung sehen, liefert diese normalerweise nützliche Informationen über die Ursache des Problems. Nutzen Sie das Echtzeit-Rendering für iterative Verbesserungen, bis Ihre Formel genau Ihren Anforderungen entspricht. Bei komplexen Formeln empfiehlt es sich, sie schrittweise aufzubauen, nach jedem neuen Element die Vorschau zu überprüfen, um Probleme leichter zu identifizieren und zu beheben."
-        },
-        step4: {
-          title: "Schritt 4: Exportieren oder Kopieren Ihrer Formel",
-          description: "Wenn Sie mit Ihrer Formel zufrieden sind, können Sie sie als Bild exportieren oder den LaTeX-Code zur Verwendung an anderer Stelle kopieren. Klicken Sie auf die Schaltfläche \"Als Bild exportieren\", um die Formel als PNG-Bilddatei mit transparentem Hintergrund zu speichern, das sich leicht in Dokumente, Präsentationen, Websites oder Lehrmaterialien einfügen lässt. Das Bild behält Ihre angewendeten benutzerdefinierten Einstellungen wie Schriftgröße und Farbe bei. Alternativ können Sie auf die Schaltfläche \"LaTeX-Code kopieren\" klicken, um den LaTeX-Code der Formel in die Zwischenablage zu kopieren und in LaTeX-Dokumenten oder anderen LaTeX-kompatiblen Systemen zu verwenden. Dies ist besonders nützlich, wenn Sie die Formel in einer vollständigen LaTeX-Umgebung weiter anpassen oder in wissenschaftlichen Arbeiten oder technischen Dokumenten verwenden möchten."
-        }
-      },
-      syntaxReference: {
-        title: "Referenz zur grundlegenden LaTeX-Mathematiksyntax",
-        intro: "Um Ihnen bei der effizienteren Erstellung von Formeln zu helfen, finden Sie hier eine Referenzanleitung für gängige LaTeX-Mathematiksymbole:",
-        basic: {
-          title: "Grundlegende Symbole und Operatoren",
-          description: "<p>Die LaTeX-Mathematiksyntax verwendet spezielle Befehle, die mit einem Backslash (\\) beginnen, um verschiedene Symbole und Strukturen zu erstellen. Hier sind die am häufigsten verwendeten grundlegenden Symbole:</p><ul><li><b>Brüche:</b> <code>\\frac{Zähler}{Nenner}</code> erstellt einen Bruch.</li><li><b>Exponenten/Hochstellungen:</b> <code>x^2</code> erzeugt x².</li><li><b>Tiefstellungen:</b> <code>x_i</code> erzeugt x mit Index i.</li><li><b>Quadratwurzel:</b> <code>\\sqrt{x}</code> erstellt √x.</li><li><b>n-te Wurzel:</b> <code>\\sqrt[n]{x}</code> erstellt die n-te Wurzel von x.</li><li><b>Griechische Buchstaben:</b> <code>\\alpha</code>, <code>\\beta</code>, <code>\\gamma</code>, <code>\\pi</code> usw.</li><li><b>Unendlich-Symbol:</b> <code>\\infty</code></li><li><b>Summen:</b> <code>\\sum_{i=1}^{n}</code> erstellt eine Summe mit unterer Grenze i=1 und oberer Grenze n.</li><li><b>Produkte:</b> <code>\\prod_{i=1}^{n}</code> erstellt ein Produktsymbol.</li><li><b>Grenzwerte:</b> <code>\\lim_{x \\to 0}</code> erstellt den Grenzwert für x gegen 0.</li><li><b>Integrale:</b> <code>\\int_{a}^{b}</code> erstellt ein Integral mit unterer Grenze a und oberer Grenze b.</li></ul>"
-        },
-        advanced: {
-          title: "Fortgeschrittene mathematische Strukturen",
-          description: "<p>Für komplexere mathematische Ausdrücke bietet LaTeX ein leistungsfähiges Symbolsystem:</p><ul><li><b>Matrizen:</b> Verwenden Sie <code>\\begin{matrix}...\\end{matrix}</code>, trennen Sie Spalten mit kaufmännischen Und-Zeichen (&) und Zeilen mit doppelten Backslashes (\\\\). Für Matrizen mit Klammern verwenden Sie <code>pmatrix</code>, <code>bmatrix</code>, <code>vmatrix</code> oder <code>Vmatrix</code>.</li><li><b>Stückweise Funktionen:</b> <code>\\begin{cases}...\\end{cases}</code>, trennen Sie Ausdrücke und Bedingungen mit &.</li><li><b>Ausgerichtete Gleichungen:</b> <code>\\begin{align}...\\end{align}</code> für mehrere Gleichungen mit Ausrichtungspunkten.</li><li><b>Ableitungssymbole:</b> <code>\\frac{d}{dx}</code> für Ableitungen oder <code>\\frac{\\partial f}{\\partial x}</code> für partielle Ableitungen.</li><li><b>Vektorsymbole:</b> <code>\\vec{v}</code> oder <code>\\overrightarrow{AB}</code></li><li><b>Dach-/Akzentsymbole:</b> <code>\\hat{x}</code> für geschätzte Variablen oder <code>\\bar{x}</code> für Durchschnittswerte.</li><li><b>Mengensymbole:</b> <code>\\{x \\in \\mathbb{R} : x > 0\\}</code>, verwenden Sie <code>\\mathbb{}</code> für Zahlenmengen.</li><li><b>Logische Symbole:</b> <code>\\forall</code> (für alle), <code>\\exists</code> (es existiert), <code>\\implies</code> (impliziert), <code>\\iff</code> (genau dann wenn).</li></ul>"
-        }
-      },
-      faq: {
-        title: "Häufig gestellte Fragen zum LaTeX Formel-Generator",
-        q1: "Welche Vorteile bietet der LaTeX Formel-Generator gegenüber Standard-Gleichungseditoren?",
-        a1: "<b>Der LaTeX Formel-Generator bietet mehrere deutliche Vorteile</b> gegenüber herkömmlichen Gleichungseditoren in Textverarbeitungsprogrammen. Erstens folgt er den präzisen Satzstandards, die in wissenschaftlichen Publikationen etabliert sind, und gewährleistet so korrekte Symbolabstände, Ausrichtungen und Skalierungen, die mathematischen Konventionen entsprechen. Im Gegensatz zu einfachen Gleichungseditoren, die oft inkonsistente Abstände oder falsch ausgerichtete Brüche produzieren, bewahrt LaTeX die professionelle Qualität, die in akademischen Publikationen erwartet wird. Zweitens bietet unser Generator durch das Echtzeit-Rendering sofortiges visuelles Feedback während der Eingabe, was den Lernprozess der LaTeX-Syntax beschleunigt. Drittens ermöglicht die Funktion zum Exportieren hochauflösender Bilder mit transparentem Hintergrund die nahtlose Integration in beliebige Dokumenttypen, unabhängig von der verwendeten Software. Schließlich bietet LaTeX eine umfassendere Symbolbibliothek und Strukturierungsmöglichkeiten für komplexe mathematische Konstrukte, die einfache Gleichungseditoren nicht bewältigen können, wie kommutative Diagramme, stückweise Funktionen und mehrzeilige Gleichungsarrays.",
-        
-        q2: "Muss ich LaTeX-Programmierung beherrschen, um diesen Formel-Generator zu nutzen?",
-        a2: "<b>Keine vorherigen LaTeX-Kenntnisse erforderlich</b> für die effektive Nutzung unseres Formel-Generators, obwohl grundlegende Vertrautheit mit mathematischer Notation natürlich hilfreich ist. Das Tool ist für Benutzerfreundlichkeit konzipiert, mit einer einfachen Oberfläche, bei der das Echtzeit-Vorschau-Feedback das Erlernen der LaTeX-Syntax intuitiv macht. Wir bieten verschiedene Beispielformeln, die Sie per Klick direkt in den Editor laden können, um deren Struktur zu studieren und für Ihre Bedürfnisse anzupassen. Dies bietet eine ausgezeichnete Lernmöglichkeit, die LaTeX-Syntax anhand praktischer Beispiele zu verstehen. Die häufigsten mathematischen Konstrukte wie Brüche, Exponenten, Wurzeln und Integrale erfordern nur wenige einfache Befehle, die Sie sich durch regelmäßige Nutzung schnell einprägen werden. Für komplexere Gleichungen können Sie diese schrittweise aufbauen und nach jedem hinzugefügten Element die Vorschau überprüfen, um die korrekte Formatierung sicherzustellen. Mit diesen Funktionen können selbst absolute Anfänger innerhalb weniger Minuten beginnen, professionelle mathematische Formeln zu erstellen, während sie durch praktische Erfahrung ihr LaTeX-Wissen allmählich erweitern.",
-        
-        q3: "Wie füge ich generierte Formeln in meine Dokumente und Präsentationen ein?",
-        a3: "<b>Das Einfügen von Formeln in verschiedene Dokumenttypen</b> ist dank unserer Exportoptionen denkbar einfach. Die vielseitigste Methode ist die Verwendung der Schaltfläche \"Als Bild exportieren\", die die Formel als hochauflösende PNG-Datei mit transparentem Hintergrund speichert. Dieses Bild kann in beliebige Dokumenttypen eingefügt werden: Microsoft Word-Dokumente, PowerPoint-Präsentationen, Google Docs, Webseiten oder Lernmanagementsysteme. Beim Platzieren des exportierten Bildes sollten Sie dessen Größe an die Textgröße des Dokuments anpassen, um visuelle Konsistenz zu wahren. Für LaTeX-Dokumente, wissenschaftliche Arbeiten oder technische Manuskripte können Sie die Schaltfläche \"LaTeX-Code kopieren\" verwenden, um den ursprünglichen LaTeX-Code in die Zwischenablage zu kopieren und direkt in Ihre LaTeX-Dokumentumgebung einzufügen. Dies ist besonders nützlich für akademische Veröffentlichungen, die LaTeX-Einreichungen erfordern. Für Webentwickler können die exportierten Bilder in HTML-Inhalte eingebettet werden, wobei geeigneter Alternativtext für bessere Barrierefreiheit hinzugefügt werden sollte. Die meisten modernen Dokumenteneditoren unterstützen auch Drag-and-Drop, sodass Sie exportierte Bilder direkt aus dem Download-Ordner in Dokumente ziehen können, was eine schnelle Einfügung ermöglicht.",
-        
-        q4: "Können generierte Formeln in Online-Lernplattformen und Bildungstechnologie verwendet werden?",
-        a4: "<b>Ja, mit unserem Generator erstellte Formeln eignen sich perfekt für führende Bildungstechnologie-Plattformen</b>. PNG-Exportdateien mit transparentem Hintergrund integrieren sich nahtlos in Lernmanagementsysteme wie Canvas, Blackboard, Moodle und Google Classroom. Für Online-Bewertungssysteme können Sie Formelbilder in Fragen, Multiple-Choice-Antworten oder Lösungsbeschreibungen einbinden. Bei der Erstellung von Kursinhalten oder Lehrvideos erhöhen diese hochwertigen Formelbilder die visuelle Klarheit und bewahren auf verschiedenen Bildschirmgrößen und Geräten ein professionelles Erscheinungsbild. Web-basierte Bildungsanwendungen können diese Formelbilder direkt in HTML-Inhalte einbetten und mit geeignetem Alternativtext für bessere Barrierefreiheit versehen. Für interaktives Lernmaterial können Sie Formeln für verschiedene Zustände oder Schritte im Problemlösungsprozess generieren und so schrittweise visuelle Erklärungen erstellen. Diese Vielseitigkeit macht unseren LaTeX-Generator besonders wertvoll für Pädagogen, die zwischen Präsenz- und Online-Lehrformaten wechseln, da dieselben hochwertigen mathematischen Inhalte in allen Unterrichtsformaten konsistent verwendet werden können. Bildungsinhaltsersteller schätzen besonders, wie dies visuelle Konsistenz in ihren Materialien bewahrt und die professionelle Qualität ihres Unterrichtsdesigns steigert.",
-        
-        q5: "Was sind die Best Practices für das Erstellen komplexer mathematischer Ausdrücke in LaTeX?",
-        a5: "<b>Das Erstellen komplexer mathematischer Ausdrücke in LaTeX wird handhabbar</b>, wenn Sie diese Best Practices befolgen. Bauen Sie zunächst komplexe Formeln schrittweise auf - beginnen Sie mit der Grundstruktur und fügen Sie jeweils eine Komponente hinzu, wobei Sie nach jedem Schritt die Vorschau überprüfen, um Fehler frühzeitig zu erkennen. Bei mehrschichtigen Ausdrücken wie verschachtelten Brüchen oder komplexen Integralen arbeiten Sie von innen nach außen und stellen sicher, dass jedes innere Element korrekt ist, bevor Sie äußere Strukturen hinzufügen. Bei Matrizen oder ausgerichteten Gleichungen skizzieren Sie die Struktur zunächst auf Papier, um die benötigten LaTeX-Umgebungen und Ausrichtungspunkte zu visualisieren. Verwenden Sie geschweifte Klammern strategisch zur Gruppierung, um den Gültigkeitsbereich von Operationen zu steuern, insbesondere bei Exponenten, Indizes und Brüchen. Bei langen Ausdrücken erwägen Sie deren Aufteilung in semantisch sinnvolle Abschnitte mit geeigneten Abstandsbefehlen wie \\quad oder Ausrichtungsumgebungen. Beim Debuggen von Formelfehlern überprüfen Sie sorgfältig ausgeglichene Trennzeichen (runde, eckige und geschweifte Klammern) und korrekte Befehlssyntax - fehlende oder falsch platzierte Zeichen sind die häufigsten Fehlerquellen. Schließlich bewahren Sie konsistente Notationen in zusammenhängenden Formeln, insbesondere für Variablen, die dieselben Größen repräsentieren, um die Lesbarkeit und das professionelle Erscheinungsbild in wissenschaftlichen und Bildungsumgebungen zu verbessern."
-      },
-      relatedTools: {
-        title: "Entdecken Sie verwandte Mathematik- und Dokumenten-Tools",
-        description: "Erweitern Sie Ihren technischen Dokumentenerstellungs-Workflow mit diesen ergänzenden Tools:",
-        tool1: {
-          name: "Markdown-Editor",
-          url: "https://www.ufreetools.com/tool/markdown-editor",
-          description: "Erstellen Sie formatierte Textdokumente mit eingebetteten LaTeX-Gleichungen in Markdown-Syntax."
-        },
-        tool2: {
-          name: "Bild-zu-ASCII-Konverter",
-          url: "https://www.ufreetools.com/tool/image-to-ascii",
-          description: "Wandeln Sie Bilder mit anpassbaren Optionen in ASCII-Kunst um."
-        },
-        tool3: {
-          name: "Farbauswahl und -konverter",
-          url: "https://www.ufreetools.com/tool/color-picker",
-          description: "Wählen Sie die perfekten Farben für individuelle LaTeX-Formeln und Dokumentthemen."
-        },
-        tool4: {
-          name: "Bildkompressor",
-          url: "https://www.ufreetools.com/tool/image-compressor",
-          description: "Optimieren Sie exportierte Formelbilder für das Web bei Erhalt von Klarheit und Qualität."
-        }
-      },
-      resources: {
-        title: "Autoritative Ressourcen zu LaTeX und mathematischem Satz",
-        resource1: {
-          name: "Umfassende LaTeX-Symbolliste",
-          url: "https://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf",
-          description: "Vollständiges Referenzdokument mit allen in LaTeX verfügbaren Symbolen und ihren Befehlen."
-        },
-        resource2: {
-          name: "Overleaf LaTeX-Dokumentation",
-          url: "https://www.overleaf.com/learn",
-          description: "Umfassende Tutorials und Anleitungen zum Erlernen von LaTeX-Mathematiksymbolen und Dokumentenvorbereitung."
-        },
-        resource3: {
-          name: "American Mathematical Society - Ressourcen für mathematische Veröffentlichungen",
-          url: "https://www.ams.org/publications/authors/tex/tex",
-          description: "Professionelle Richtlinien und Ressourcen für mathematischen Satz in akademischen Publikationen."
-        }
-      }
-    }
-  };
+  name: 'LaTeX Formel-Generator',
+  description: 'Echtzeit-Generierung und Export von LaTeX-Mathematikformeln',
+
+  // UI-Texte
+  input: 'LaTeX-Code eingeben',
+
+  output: 'Vorschau-Ergebnis',
+  renderButton: 'Formel rendern',
+  exportButton: 'Als Bild exportieren',
+  copyButton: 'LaTeX-Code kopieren',
+
+  // Einstellungen
+  settings: {
+    title: 'Einstellungen',
+    fontSize: 'Schriftgröße',
+    textColor: 'Textfarbe',
+    backgroundColor: 'Hintergrundfarbe',
+    displayMode: 'Anzeigemodus',
+    displayModeInline: 'Inline-Modus',
+    displayModeBlock: 'Block-Modus'
+  },
+
+  // Beispiele
+  examples: {
+    title: 'Beispiele',
+    basic: 'Grundlegende Formeln',
+    fraction: 'Brüche',
+    superscript: 'Hoch-/Tiefstellungen',
+    integral: 'Integrale',
+    matrix: 'Matrizen',
+    more: 'Weitere Beispiele'
+  },
+
+  // Nachrichten
+  copied: 'In die Zwischenablage kopiert',
+
+  errorTitle: 'Rendering-Fehler',
+  errorMessage: 'Bitte überprüfen Sie Ihre LaTeX-Syntax'
+};

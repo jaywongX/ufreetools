@@ -33,6 +33,7 @@ import ButtomSideNav from './components/layout/ButtomSideNav.vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { setLanguage } from './main';
+import { supportedLanguages } from './config/languages';
 
 const route = useRoute()
 const { locale, t } = useI18n()
@@ -1593,7 +1594,7 @@ watch(darkMode, (newValue) => {
 // 当路由变化时，根据路由参数更新语言
 watch(() => route.params.lang, (newLang) => {
   if (newLang && locale.value !== newLang && supportedLanguages.includes(newLang)) {
-    setLanguage(newLang);
+    setLanguage(newLang, route.params.id);
   }
 })
 </script>
