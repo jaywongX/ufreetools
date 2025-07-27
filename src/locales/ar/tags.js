@@ -335,4 +335,6 @@ export default {
   Quality: 'جودة',
   reduce: 'تقليل',
   Batch: 'دفعة',
+  ai: 'ذكاء اصطناعي',
+  background: 'خلفية',
 }

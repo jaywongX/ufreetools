@@ -80,6 +80,7 @@ const { localizedRoute } = useInternationalizedRoute()
 
 // 定义分类数据（作为备份）
 const categoriesData = [
+  { id: 'ai', title: t('categories.ai.title'), description: t('categories.ai.description') },
   { id: 'dev', title: t('categories.dev.title'), description: t('categories.dev.description') },
   { id: 'design', title: t('categories.design.title'), description: t('categories.design.description') },
   { id: 'text', title: t('categories.text.title'), description: t('categories.text.description') },

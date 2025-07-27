@@ -360,4 +360,6 @@ export default {
   reduce: '減小',
   Batch: '批量',
   compress: '壓縮',
+  ai: 'AI',
+  background: '背景',
 }

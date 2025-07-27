@@ -359,5 +359,7 @@ export default {
   Quality: 'Qualidade',
   reduce: 'Reduzir',
   Batch: 'Por lotes',
-  compress: 'Compactar'
+  compress: 'Compactar',
+  ai: 'IA',
+  background: 'Plano de fundo',
 }

@@ -360,4 +360,6 @@ export default {
   reduce: 'Riduci',
   Batch: 'Batch',
   compress: 'Comprimi',
+  ai: 'IA',
+  background: 'Sfondo',
 }

@@ -36,5 +36,9 @@ export default {
     surveying_and_mapping: {
       title: 'Vermessungstools',
       description: 'Vermessungswerkzeuge für Vermessungsfachleute'
-    }
+    },
+    ai: {
+      title: 'KI-Tools',
+      description: 'Intelligente Tools und Dienstleistungen basierend auf künstlicher Intelligenz-Technologie'
+    },
   };

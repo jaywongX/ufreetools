@@ -36,5 +36,9 @@ export default {
   surveying_and_mapping: {
     title: '測繪工具',
     description: '測繪工具，幫助測繪人員進行測繪工作'
-  }
+  },
+  ai: {
+    title: 'AI工具',
+    description: '基於人工智能技術的智能工具和服務'
+  },
 };

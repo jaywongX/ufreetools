@@ -165,5 +165,4 @@ export default {
   resetView: 'Reset Map View',
   pointsTotal: 'Points',
   currentPoint: 'Current Result',
-  name: 'Name'
 }; 
