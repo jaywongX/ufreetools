@@ -165,5 +165,4 @@ export default {
   resetView: 'मानचित्र दृश्य रीसेट करें',
   pointsTotal: 'बिंदु',
   currentPoint: 'वर्तमान परिणाम',
-  name: 'नाम'
 };
