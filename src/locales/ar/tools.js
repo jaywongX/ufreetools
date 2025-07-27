@@ -111,7 +111,7 @@ import asn1StructureParser from './tools/asn1-structure-parser.js';
 import invertImageColors from './tools/invert-image-colors.js';
 import resizeTo1024x576Image from './tools/resize-to-1024x576-image.js';
 import reduceImageSizeInKbMb from './tools/reduce-image-size-in-kb-mb.js';
-
+import imglyRemoveImageBackground from './tools/imgly-remove-image-background.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -149,13 +149,13 @@ export default {
   'sensitive-word-filter': sensitiveWordFilter,
   'image-batch-resizer': imageBatchResizer,
   'image-color-extractor': imageColorExtractor,
-  'code-diff': codeDiff,
-  'code-obfuscator': codeObfuscator,
-  'user-agent-generator': userAgentGenerator,
-  'user-agent-parser': userAgentParser,
-  'number-converter': numberConverter,
-  'yaml-json-converter': yamlJsonConverter,
-  'color-scheme-generator': colorSchemeGenerator,
+  'code-diff':codeDiff,
+  'code-obfuscator':codeObfuscator,
+  'user-agent-generator':userAgentGenerator,
+  'user-agent-parser':userAgentParser,
+  'number-converter':numberConverter,
+  'yaml-json-converter':yamlJsonConverter,
+  'color-scheme-generator':colorSchemeGenerator,
   'id-photo-maker': idPhotoMaker,
   'image-watermark': imageWatermark,
   'image-cropper': imageCropper,
@@ -226,5 +226,6 @@ export default {
   'asn1-structure-parser': asn1StructureParser,
   'invert-image-colors': invertImageColors,
   'resize-to-1024x576-image': resizeTo1024x576Image,
-  'reduce-image-size-in-kb-mb': reduceImageSizeInKbMb
-}; 
+  'reduce-image-size-in-kb-mb': reduceImageSizeInKbMb,
+  'imgly-remove-image-background': imglyRemoveImageBackground,
+};

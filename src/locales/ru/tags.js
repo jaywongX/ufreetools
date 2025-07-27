@@ -337,4 +337,6 @@ export default {
   reduce: 'Уменьшение',
   Batch: 'Пакетная',
   compress: 'Сжатие',
+  ai: 'ИИ',
+  background: 'Фон',
 }

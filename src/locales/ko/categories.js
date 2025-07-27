@@ -36,5 +36,9 @@ export default {
   surveying_and_mapping: {
     title: '측량 도구',
     description: '측량 작업을 돕는 측량 도구'
-  }
+  },
+  ai: {
+    title: 'AI 도구',
+    description: '인공 지능 기술 기반의 지능형 도구 및 서비스'
+  },
 };

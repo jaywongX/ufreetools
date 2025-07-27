@@ -336,4 +336,6 @@ export default {
   Quality: 'गुणवत्ता',
   reduce: 'कम करें',
   Batch: 'बैच',
+  ai: 'कृत्रिम बुद्धिमत्ता',
+  background: 'पृष्ठभूमि',
 }

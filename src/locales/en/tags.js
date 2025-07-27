@@ -332,12 +332,12 @@ export default {
   idCard: 'ID Card',
   china: 'China',
   test: 'Test',
-  validation: 'Validation', 
+  validation: 'Validation',
   business: 'Business',
   identifier: 'Identifier',
   keypair: 'Key Pair',
   signature: 'Signature',
-  sign:'Sign',
+  sign: 'Sign',
   asn1: 'ASN.1',
   parser: 'Parser',
   structure: 'Structure',
@@ -352,4 +352,6 @@ export default {
   reduce: 'Reduce',
   Batch: 'Batch',
   compress: 'Compress',
+  ai: 'AI',
+  background: 'Background'
 }

@@ -36,5 +36,9 @@ export default {
   surveying_and_mapping: {
     title: 'Strumenti topografici',
     description: 'Strumenti per professionisti della topografia'
-  }
+  },
+  ai: {
+    title: 'Strumenti AI',
+    description: 'Strumenti e servizi intelligenti basati sulla tecnologia dell\'intelligenza artificiale'
+  },
 };

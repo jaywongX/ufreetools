@@ -36,5 +36,9 @@ export default {
   surveying_and_mapping: {
     title: 'Alat Survei dan Pemetaan',
     description: 'Alat survei untuk membantu pekerja survei dalam melakukan pekerjaan pemetaan'
-  }
+  },
+  ai: {
+    title: 'Alat AI',
+    description: 'Alat dan layanan cerdas berbasis teknologi kecerdasan buatan'
+  },
 };

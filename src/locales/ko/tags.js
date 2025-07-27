@@ -335,4 +335,6 @@ export default {
   Quality: '품질',
   reduce: '줄이기',
   Batch: '일괄',
+  ai: 'AI',
+  background: '배경',
 }

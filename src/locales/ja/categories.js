@@ -36,5 +36,9 @@ export default {
   surveying_and_mapping: {
     title: '測量ツール',
     description: '測量作業を支援する測量ツール'
-  }
+  },
+  ai: {
+    title: 'AIツール',
+    description: '人工知能技術に基づくインテリジェントツールとサービス'
+  },
 };

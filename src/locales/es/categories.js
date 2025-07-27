@@ -36,5 +36,9 @@ export default {
   surveying_and_mapping: {
     title: 'Herramientas de Topografía',
     description: 'Herramientas para profesionales de topografía y cartografía'
-  }
+  },
+  ai: {
+    title: 'Herramientas de IA',
+    description: 'Herramientas y servicios inteligentes basados en tecnología de inteligencia artificial'
+  },
 }

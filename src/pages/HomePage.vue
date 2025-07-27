@@ -64,7 +64,7 @@
 
           <!-- 右侧插图 -->
           <div class="w-full md:w-1/2 mt-8 md:mt-0">
-            <img src="/landing-illustration.png" alt="Landing Page Illustration" class="w-full h-auto" />
+            <img src="/landing-illustration.webp" alt="Landing Page Illustration" class="w-full h-auto" />
           </div>
 
         </div>

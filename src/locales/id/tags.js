@@ -329,5 +329,7 @@ export default {
   youtube: 'YouTube',
   thumbnail: 'Thumbnail',
   reduce: 'Pengurangan',
-  Batch: 'Batch'
+  Batch: 'Batch',
+  ai: 'AI',
+  background: 'Latar belakang',
 }

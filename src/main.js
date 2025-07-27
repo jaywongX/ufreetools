@@ -82,10 +82,23 @@ const lazyComponentMap = {
   // 文本与编辑
   'MarkdownEditor': () => import('./components/tools/MarkdownEditor.vue'),
   'MarkdownToHtml': () => import('./components/tools/MarkdownToHtml.vue'),
-  'XmlFormatter': () => import('./components/tools/XmlFormatter.vue'),
-  'CssFormatter': () => import('./components/tools/CssFormatter.vue'),
   'SensitiveWordFilter': () => import('./components/tools/SensitiveWordFilter.vue'),
   'WordShuffler': () => import('./components/tools/WordShuffler.vue'),
+  'Asn1StructureParser': () => import('./components/tools/Asn1StructureParser.vue'),
+  
+  // 转换工具
+  'Base64EncoderDecoder': () => import('./components/tools/Base64EncoderDecoder.vue'),
+  'CsvJsonConverter': () => import('./components/tools/CsvJsonConverter.vue'),
+  'NumberConverter': () => import('./components/tools/NumberConverter.vue'),
+  'TimestampConverter': () => import('./components/tools/TimestampConverter.vue'),
+  'UrlEncodeDecode': () => import('./components/tools/UrlEncodeDecode.vue'),
+  'XmlJsonConverter': () => import('./components/tools/XmlJsonConverter.vue'),
+  'XmlFormatter': () => import('./components/tools/XmlFormatter.vue'),
+  'YamlJsonConverter': () => import('./components/tools/YamlJsonConverter.vue'),
+  'TimezoneConverter': () => import('./components/tools/TimezoneConverter.vue'),
+  'HexAndCalculator': () => import('./components/tools/HexAndCalculator.vue'),
+  'HexadecimalCaseConverter': () => import('./components/tools/HexadecimalCaseConverter.vue'),
+  'Base64HexConverter': () => import('./components/tools/Base64HexConverter.vue'),
   
   // 图像与多媒体
   'IdPhotoMaker': () => import('./components/tools/IdPhotoMaker.vue'),
@@ -107,15 +120,8 @@ const lazyComponentMap = {
   'JpgJfifConverter': () => import('./components/tools/JpgJfifConverter.vue'),
   'SealGenerator': () => import('./components/tools/SealGenerator.vue'),
   'InvertImageColors': () => import('./components/tools/InvertImageColors.vue'),
-  
-  // 转换工具
-  'Base64EncoderDecoder': () => import('./components/tools/Base64EncoderDecoder.vue'),
-  'CsvJsonConverter': () => import('./components/tools/CsvJsonConverter.vue'),
-  'NumberConverter': () => import('./components/tools/NumberConverter.vue'),
-  'TimestampConverter': () => import('./components/tools/TimestampConverter.vue'),
-  'UrlEncodeDecode': () => import('./components/tools/UrlEncodeDecode.vue'),
-  'XmlJsonConverter': () => import('./components/tools/XmlJsonConverter.vue'),
-  'YamlJsonConverter': () => import('./components/tools/YamlJsonConverter.vue'),
+  'ResizeTo1024x576Image': () => import('./components/tools/ResizeTo1024x576Image.vue'),
+  'ReduceImageSizeInKbMb': () => import('./components/tools/ReduceImageSizeInKbMb.vue'),
   
   // 网络与协议
   'ApiRequestTool': () => import('./components/tools/ApiRequestTool.vue'),
@@ -143,6 +149,13 @@ const lazyComponentMap = {
   'Sm2Crypto': () => import('./components/tools/Sm2Crypto.vue'),
   'SymmetricCrypto': () => import('./components/tools/SymmetricCrypto.vue'),
   'HmacCalculator': () => import('./components/tools/HmacCalculator.vue'),
+  'X509CertificateDecoder': () => import('./components/tools/X509CertificateDecoder.vue'),
+  'RsaEncryptDecrypt': () => import('./components/tools/RsaEncryptDecrypt.vue'),
+  'Sm2EncryptDecrypt': () => import('./components/tools/Sm2EncryptDecrypt.vue'),
+  'RsaKeyPairGenerator': () => import('./components/tools/RsaKeyPairGenerator.vue'),
+  'Sm2KeyPairGenerator': () => import('./components/tools/Sm2KeyPairGenerator.vue'),
+  'RsaSignatureVerifier': () => import('./components/tools/RsaSignatureVerifier.vue'),
+  'Sm2SignatureVerifier': () => import('./components/tools/Sm2SignatureVerifier.vue'),
   
   // 实用效率
   'UuidGenerator': () => import('./components/tools/UuidGenerator.vue'),
@@ -156,29 +169,21 @@ const lazyComponentMap = {
   'TodoList': () => import('./components/tools/TodoList.vue'),
   'CurrencyConverter': () => import('./components/tools/CurrencyConverter.vue'),
   'DrawingBoard': () => import('./components/tools/DrawingBoard.vue'),
-  'TimezoneConverter': () => import('./components/tools/TimezoneConverter.vue'),
-  'HexAndCalculator': () => import('./components/tools/HexAndCalculator.vue'),
   'NameGenerator': () => import('./components/tools/NameGenerator.vue'),
   'TravelBudgetPlanner': () => import('./components/tools/TravelBudgetPlanner.vue'),
   'PersonalAccountBook': () => import('./components/tools/PersonalAccountBook.vue'),
   'CashAppFeeCalculator': () => import('./components/tools/CashAppFeeCalculator.vue'),
-  'HexadecimalCaseConverter': () => import('./components/tools/HexadecimalCaseConverter.vue'),
-  'CoordinateConverter': () => import('./components/tools/CoordinateConverter.vue'),
-  'X509CertificateDecoder': () => import('./components/tools/X509CertificateDecoder.vue'),
-  'GpsTrackReplay': () => import('./components/tools/GpsTrackReplay.vue'),
-  'GaussianProjection': () => import('./components/tools/GaussianProjection.vue'),
-  'RsaEncryptDecrypt': () => import('./components/tools/RsaEncryptDecrypt.vue'),
-  'Sm2EncryptDecrypt': () => import('./components/tools/Sm2EncryptDecrypt.vue'),
   'IdNumberGenerator': () => import('./components/tools/IdNumberGenerator.vue'),
   'UnifiedCreditCodeGenerator': () => import('./components/tools/UnifiedCreditCodeGenerator.vue'),
-  'RsaKeyPairGenerator': () => import('./components/tools/RsaKeyPairGenerator.vue'),
-  'Sm2KeyPairGenerator': () => import('./components/tools/Sm2KeyPairGenerator.vue'),
-  'RsaSignatureVerifier': () => import('./components/tools/RsaSignatureVerifier.vue'),
-  'Sm2SignatureVerifier': () => import('./components/tools/Sm2SignatureVerifier.vue'),
-  'Base64HexConverter': () => import('./components/tools/Base64HexConverter.vue'),
-  'Asn1StructureParser': () => import('./components/tools/Asn1StructureParser.vue'),
-  'ResizeTo1024x576Image': () => import('./components/tools/ResizeTo1024x576Image.vue'),
-  'ReduceImageSizeInKbMb': () => import('./components/tools/ReduceImageSizeInKbMb.vue'),
+  
+  // 测绘
+  'CoordinateConverter': () => import('./components/tools/CoordinateConverter.vue'),
+  'GpsTrackReplay': () => import('./components/tools/GpsTrackReplay.vue'),
+  'GaussianProjection': () => import('./components/tools/GaussianProjection.vue'),
+
+  // AI
+  'ImglyRemoveImageBackground': () => import('./components/tools/ImglyRemoveImageBackground.vue'),
+
 }
 
 // 用异步 IIFE 启动应用
