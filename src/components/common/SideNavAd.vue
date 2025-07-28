@@ -11,15 +11,43 @@
 </template>
 
 <script setup>
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, ref, watch, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 
 const adContainer = ref(null)
 const route = useRoute()
 
+// 检查容器是否可见且有尺寸
+const isContainerReady = () => {
+  if (!adContainer.value) return false;
+  
+  const rect = adContainer.value.getBoundingClientRect();
+  const isVisible = rect.width > 0 && rect.height > 0;
+  const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+  
+  return isVisible && isInViewport;
+};
+
+// 等待容器准备就绪
+const waitForContainer = () => {
+  return new Promise((resolve) => {
+    const check = () => {
+      if (isContainerReady()) {
+        resolve();
+      } else {
+        setTimeout(check, 100);
+      }
+    };
+    check();
+  });
+};
+
 // 初始化广告的函数
-const initAd = () => {
+const initAd = async () => {
   try {
+    // 等待容器准备就绪
+    await waitForContainer();
+    
     const adElement = adContainer.value.querySelector('.adsbygoogle')
     
     // 清除现有广告
@@ -44,9 +72,22 @@ const initAd = () => {
              data-full-width-responsive="${responsive}"></ins>
       `
       
+      // 等待DOM更新
+      await nextTick();
+      
+      // 再次检查容器状态
+      if (!isContainerReady()) {
+        console.warn('Ad container not ready, skipping ad initialization');
+        return;
+      }
+      
       // 初始化新广告
       setTimeout(() => {
-        (window.adsbygoogle = window.adsbygoogle || []).push({})
+        try {
+          (window.adsbygoogle = window.adsbygoogle || []).push({})
+        } catch (error) {
+          console.warn('Failed to push ad:', error);
+        }
       }, 50)
     }
   } catch (error) {
@@ -64,7 +105,10 @@ watch(() => route.fullPath, (newPath, oldPath) => {
 })
 
 onMounted(() => {
-  initAd()
+  // 延迟初始化，确保页面完全加载
+  setTimeout(() => {
+    initAd()
+  }, 1000)
 })
 </script>
 
