@@ -8,7 +8,7 @@
       "status": 301
     },
     {
-      "src": "/%5Bobject%20Object%5D/(.*)",
+      "src": "/\\[object%20Object\\]/(.*)",
       "dest": "/en/$1",
       "status": 301
     },
