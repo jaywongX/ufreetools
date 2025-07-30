@@ -1,6 +1,20 @@
 {
   "routes": [
     { "handle": "filesystem" },
+    
+    // 重定向错误的URL
+    {
+      "src": "/ru/hi/(.*)",
+      "dest": "/ru/$1",
+      "status": 301
+    },
+    {
+      "src": "/%5Bobject%20Object%5D/(.*)",
+      "dest": "/en/$1",
+      "status": 301
+    },
+    
+    // 原有路由
     {
       "src": "/(zh|en|es|hi|ar|ru|fr|ja|pt|de|id|ko|it|zh-TW|da|el|fi|hu|ms|nl|sv)/?(about|contact|terms|privacy-policy|category/.+|tool/.+|search|tag/.+|tags|feedback|submit-tool|favorites)?",
       "dest": "/index.html"
