@@ -362,4 +362,7 @@ export default {
   compress: 'Compactar',
   ai: 'IA',
   background: 'Plano de fundo',
+  colorizer: 'Colorizador',
+  black: 'Preto',
+  retouch: 'Retocar',
 }

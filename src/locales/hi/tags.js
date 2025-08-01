@@ -338,4 +338,7 @@ export default {
   Batch: 'बैच',
   ai: 'कृत्रिम बुद्धिमत्ता',
   background: 'पृष्ठभूमि',
+  colorizer: 'रंगहीन',
+  black: 'काला',
+  retouch: 'रिटूच',
 }

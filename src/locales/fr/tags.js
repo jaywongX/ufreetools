@@ -362,4 +362,7 @@ export default {
   compress: 'Compresser',
   ai: 'IA',
   background: 'Arrière-plan',
+  colorizer: 'Colorisateur',
+  black: 'Noir',
+  retouch: 'Retouche',
 }

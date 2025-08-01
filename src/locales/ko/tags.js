@@ -337,4 +337,7 @@ export default {
   Batch: '일괄',
   ai: 'AI',
   background: '배경',
+  colorizer: '색상화',
+  black: '검정',
+  retouch: '수정',
 }

@@ -361,5 +361,8 @@ export default {
   Batch: '批量',
   compress: '压缩',
   ai: 'AI',
-  background: '背景'
+  background: '背景',
+  colorizer: '颜色化',
+  black: '黑',
+  retouch: '修图',
 }

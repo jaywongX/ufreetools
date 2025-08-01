@@ -353,5 +353,8 @@ export default {
   Batch: 'Batch',
   compress: 'Compress',
   ai: 'AI',
-  background: 'Background'
+  background: 'Background',
+  colorizer: 'Colorizer',
+  black: 'Black',
+  retouch: 'Retouch',
 }

@@ -112,6 +112,7 @@ import invertImageColors from './tools/invert-image-colors.js';
 import resizeTo1024x576Image from './tools/resize-to-1024x576-image.js';
 import reduceImageSizeInKbMb from './tools/reduce-image-size-in-kb-mb.js';
 import imglyRemoveImageBackground from './tools/imgly-remove-image-background.js';
+import aiProfilePhotoAnalyzer from './tools/ai-profile-photo-analyzer.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -228,4 +229,5 @@ export default {
   'resize-to-1024x576-image': resizeTo1024x576Image,
   'reduce-image-size-in-kb-mb': reduceImageSizeInKbMb,
   'imgly-remove-image-background': imglyRemoveImageBackground,
+      'ai-profile-photo-analyzer': aiProfilePhotoAnalyzer,
 };

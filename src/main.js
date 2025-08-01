@@ -183,7 +183,7 @@ const lazyComponentMap = {
 
   // AI
   'ImglyRemoveImageBackground': () => import('./components/tools/ImglyRemoveImageBackground.vue'),
-
+  'AIProfilePhotoAnalyzer': () => import('./components/tools/AIProfilePhotoAnalyzer.vue'),
 }
 
 // 用异步 IIFE 启动应用

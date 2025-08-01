@@ -362,4 +362,7 @@ export default {
   compress: '壓縮',
   ai: 'AI',
   background: '背景',
+  colorizer: '顏色化',
+  black: '黑',
+  retouch: '修圖',
 }
