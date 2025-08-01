@@ -343,4 +343,7 @@ export default {
   conversion: 'Konvertierungswerkzeuge',
   ai: 'Künstliche Intelligenz',
   background: 'Hintergrund',
+  colorizer: 'Farbgebung',
+  black: 'Schwarz',
+  retouch: 'Retuschierung',
 }

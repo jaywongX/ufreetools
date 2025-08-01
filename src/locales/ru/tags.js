@@ -339,4 +339,7 @@ export default {
   compress: 'Сжатие',
   ai: 'ИИ',
   background: 'Фон',
+  colorizer: 'Цветовая гамма',
+  black: 'Черный',
+  retouch: 'Ретушь',
 }

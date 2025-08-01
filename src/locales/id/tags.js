@@ -332,4 +332,7 @@ export default {
   Batch: 'Batch',
   ai: 'AI',
   background: 'Latar belakang',
+  colorizer: 'Pewarna',
+  black: 'Hitam',
+  retouch: 'Pewarna',
 }

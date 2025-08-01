@@ -337,4 +337,7 @@ export default {
   Batch: 'دفعة',
   ai: 'ذكاء اصطناعي',
   background: 'خلفية',
+  colorizer: 'تلوين',
+  black: 'أسود',
+  retouch: 'تصحيح',
 }
