@@ -342,4 +342,12 @@ export default {
   colorizer: 'Цветовая гамма',
   black: 'Черный',
   retouch: 'Ретушь',
+  age: 'Возраст',
+  gender: 'Пол',
+  estimator: 'Оценщик',
+  face: 'Лицо',
+  recognition: 'Распознавание',
+  photo: 'Фото',
+  retouch: 'Ретушь фото',
+  photo: 'Фото',
 }

@@ -335,4 +335,12 @@ export default {
   colorizer: 'Pewarna',
   black: 'Hitam',
   retouch: 'Pewarna',
+  age: 'Usia',
+  gender: 'Jenis Kelamin',
+  estimator: 'Estimator',
+  face: 'Wajah',
+  recognition: 'Pengenalan',
+  photo: 'Foto',
+  retouch: 'Retouch Foto',
+  photo: 'Foto',
 }

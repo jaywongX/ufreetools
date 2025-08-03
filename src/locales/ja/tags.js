@@ -365,4 +365,12 @@ export default {
   colorizer: 'カラー化',
   black: '黒',
   retouch: 'リトゥッチ',
+  age: '年齢',
+  gender: '性別',
+  estimator: '推定器',
+  face: '顔',
+  recognition: '認識',
+  photo: '写真',
+  retouch: '写真のレタッチ',
+  photo: '写真',
 }

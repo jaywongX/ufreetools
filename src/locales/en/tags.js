@@ -357,4 +357,12 @@ export default {
   colorizer: 'Colorizer',
   black: 'Black',
   retouch: 'Retouch',
+  age: 'Age',
+  gender: 'Gender',
+  estimator: 'Estimator',
+  face: 'Face',
+  recognition: 'Recognition',
+  photo: 'Photo',
+  retouch: 'Photo Retouching',
+  photo: 'Photo',
 }

@@ -365,4 +365,12 @@ export default {
   colorizer: '颜色化',
   black: '黑',
   retouch: '修图',
+  age: '年龄',
+  gender: '性别',
+  estimator: '估计器',
+  face: '面部',
+  recognition: '识别',
+  photo: '照片',
+  retouch: '修图',
+  photo: '照片',
 }

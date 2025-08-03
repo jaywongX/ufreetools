@@ -346,4 +346,12 @@ export default {
   colorizer: 'Farbgebung',
   black: 'Schwarz',
   retouch: 'Retuschierung',
+  age: 'Alter',
+  gender: 'Geschlecht',
+  estimator: 'Schätzer',
+  face: 'Gesicht',
+  recognition: 'Erkennung',
+  photo: 'Foto',
+  retouch: 'Fotoretusche',
+  photo: 'Foto',
 }
