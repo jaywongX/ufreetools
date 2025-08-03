@@ -340,4 +340,12 @@ export default {
   colorizer: 'تلوين',
   black: 'أسود',
   retouch: 'تصحيح',
+  age: 'العمر',
+  gender: 'الجنس',
+  estimator: 'المقدّر',
+  face: 'الوجه',
+  recognition: 'التعرف',
+  photo: 'صورة',
+  retouch: 'تحسين الصورة',
+  photo: 'صورة',
 }

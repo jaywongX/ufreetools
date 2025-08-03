@@ -341,4 +341,12 @@ export default {
   colorizer: 'रंगहीन',
   black: 'काला',
   retouch: 'रिटूच',
+  age: 'आयु',
+  gender: 'लिंग',
+  estimator: 'आकलनकर्ता',
+  face: 'चेहरा',
+  recognition: 'पहचान',
+  photo: 'फोटो',
+  retouch: 'फोटो रीटच',
+  photo: 'फोटो',
 }

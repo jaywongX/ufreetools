@@ -340,4 +340,12 @@ export default {
   colorizer: '색상화',
   black: '검정',
   retouch: '수정',
+  age: '나이',
+  gender: '성별',
+  estimator: '추정기',
+  face: '얼굴',
+  recognition: '인식',
+  photo: '사진',
+  retouch: '사진 리터치',
+  photo: '사진',
 }

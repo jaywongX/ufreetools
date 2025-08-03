@@ -365,4 +365,12 @@ export default {
   colorizer: 'Colorizador',
   black: 'Negro',
   retouch: 'Retocar',
+  age: 'Edad',
+  gender: 'Género',
+  estimator: 'Estimador',
+  face: 'Cara',
+  recognition: 'Reconocimiento',
+  photo: 'Foto',
+  retouch: 'Retoque fotográfico',
+  photo: 'Foto',
 }
