@@ -185,6 +185,7 @@ const lazyComponentMap = {
   'ImglyRemoveImageBackground': () => import('./components/tools/ImglyRemoveImageBackground.vue'),
   'AIProfilePhotoAnalyzer': () => import('./components/tools/AIProfilePhotoAnalyzer.vue'),
   'AIAgeGenderEstimator': () => import('./components/tools/AIAgeGenderEstimator.vue'),
+  'AIMultiFaceTagger': () => import('./components/tools/AIMultiFaceTagger.vue'),
 }
 
 // 用异步 IIFE 启动应用
