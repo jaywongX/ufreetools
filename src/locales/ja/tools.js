@@ -114,6 +114,7 @@ import reduceImageSizeInKbMb from './tools/reduce-image-size-in-kb-mb.js';
 import imglyRemoveImageBackground from './tools/imgly-remove-image-background.js';
 import aiProfilePhotoAnalyzer from './tools/ai-profile-photo-analyzer.js';
 import aiAgeGenderEstimator from './tools/ai-age-gender-estimator.js';
+import aiMultiFaceTagger from './tools/ai-multi-face-tagger.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -232,4 +233,5 @@ export default {
   'imgly-remove-image-background': imglyRemoveImageBackground,
   'ai-profile-photo-analyzer': aiProfilePhotoAnalyzer,
   'ai-age-gender-estimator': aiAgeGenderEstimator,
+  'ai-multi-face-tagger': aiMultiFaceTagger,
 };
