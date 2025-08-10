@@ -186,6 +186,7 @@ const lazyComponentMap = {
   'AIProfilePhotoAnalyzer': () => import('./components/tools/AIProfilePhotoAnalyzer.vue'),
   'AIAgeGenderEstimator': () => import('./components/tools/AIAgeGenderEstimator.vue'),
   'AIMultiFaceTagger': () => import('./components/tools/AIMultiFaceTagger.vue'),
+  'AIFaceLandmarkPainter': () => import('./components/tools/AIFaceLandmarkPainter.vue'),
 }
 
 // 用异步 IIFE 启动应用

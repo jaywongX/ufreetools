@@ -1543,7 +1543,18 @@ const allTools = computed(() => [
     component: 'AIMultiFaceTagger',
     icon: 'M12 4.5C7 4.5 3 8 3 12s4 7.5 9 7.5 9-3.5 9-7.5S17 4.5 12 4.5zM12 15a3 3 0 100-6 3 3 0 000 6z',
     tags: ['ai', 'image', 'face', 'recognition', 'photo', 'retouch']
-  }
+  },
+  {
+    id: 'ai-face-landmark-painter',
+    name: t('tools.ai-face-landmark-painter.name'),
+    category: t(`categories.ai.title`),
+    categoryId: 'ai',
+    description: t('tools.ai-face-landmark-painter.description'),
+    path: '/tools/ai-face-landmark-painter',
+    component: 'AIFaceLandmarkPainter',
+    icon: 'M12 4.5C7 4.5 3 8 3 12s4 7.5 9 7.5 9-3.5 9-7.5S17 4.5 12 4.5zM12 15a3 3 0 100-6 3 3 0 000 6z',
+    tags: ['ai', 'image', 'face', 'recognition', 'photo', 'retouch']
+  },
 ])
 provide('allTools', allTools)
 
