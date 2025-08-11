@@ -67,6 +67,7 @@ const initAds = () => {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
       });
       
+      console.log('Ads reinitialized on route change');
     }, 50);
   } catch (error) {
     console.error('AdSense error:', error);
@@ -88,7 +89,7 @@ const recreateAdSlot = (slotRef) => {
   // 清空并重建广告元素
   slot.innerHTML = `
     <ins class="adsbygoogle"
-         style="display:block min-height: 250px;"
+         style="display:block"
          data-ad-client="${adClient}"
          data-ad-slot="${adSlotId}"
          data-ad-format="${adFormat}"
@@ -124,7 +125,7 @@ onMounted(() => {
 .ad-flex-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  /* gap: 20px; */
   justify-content: space-between;
 }
 
