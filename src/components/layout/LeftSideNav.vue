@@ -99,6 +99,7 @@
                   v-if="sidebarOpen && toolsByCategory[category.id]?.length > 0"
                   class="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none transition-opacity duration-300"
                   :aria-label="expandedCategories[category.id] ? $t('common.collapse') : $t('common.expand')"
+                  @click.stop="toggleCategory(category.id)"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-300" :class="{ 'rotate-180': expandedCategories[category.id] }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -153,21 +154,8 @@ function toggleCategory(categoryId) {
 
 // 处理分类点击事件
 function handleCategoryClick(categoryId) {
-  if (!sidebarOpen.value) {
-    // 如果侧边栏是折叠状态，点击分类图标时展开侧边栏
-    sidebarOpen.value = true
-    
-    // 确保该分类的工具列表展开
-    expandedCategories.value[categoryId] = true
-  } else {
-    // 侧边栏已展开时，正常切换分类展开/折叠状态
-    toggleCategory(categoryId)
-  }
-  
-  // 导航到对应的分类页面
-  // 将下划线转换为连字符
-  categoryId = categoryId.replace(/_/g, '-')
-  router.push(localizedRoute(`/category/${categoryId}`))
+  const slug = categoryId.replace(/_/g, '-')
+  router.push(localizedRoute(`/category/${slug}`))
 }
 
 // 检查当前路由是否激活
