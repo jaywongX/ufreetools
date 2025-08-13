@@ -1,13 +1,16 @@
 {
   "routes": [
     { "handle": "filesystem" },
-    
     {
       "src": "/ru/hi/(.*)",
       "dest": "/ru/$1",
-      "status": 301
+      "status": 308
     },
-    
+    {
+      "src": "^/\\[object%20Object\\]/(.*)$",
+      "dest": "/en/$1",
+      "status": 308
+    },
     {
       "src": "/(zh|en|es|hi|ar|ru|fr|ja|pt|de|id|ko|it|zh-TW|da|el|fi|hu|ms|nl|sv)/?(about|contact|terms|privacy-policy|category/.+|tool/.+|search|tag/.+|tags|feedback|submit-tool|favorites)?",
       "dest": "/index.html"
