@@ -373,4 +373,6 @@ export default {
   photo: 'Photo',
   retouch: 'Retouche photo',
   photo: 'Photo',
+  heatmap: 'Heatmap',
+  visualizer: 'Visualisateur',
 }

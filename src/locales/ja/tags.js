@@ -373,4 +373,6 @@ export default {
   photo: '写真',
   retouch: '写真のレタッチ',
   photo: '写真',
+  heatmap: 'ヒートマップ',
+  visualizer: 'ビジュアライザー',
 }

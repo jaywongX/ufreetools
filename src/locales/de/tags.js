@@ -354,4 +354,6 @@ export default {
   photo: 'Foto',
   retouch: 'Fotoretusche',
   photo: 'Foto',
+  heatmap: 'Wärmebild',
+  visualizer: 'Visualisierung',
 }
