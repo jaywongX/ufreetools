@@ -348,4 +348,6 @@ export default {
   photo: '사진',
   retouch: '사진 리터치',
   photo: '사진',
+  heatmap: '히트맵',
+  visualizer: '시각화',
 }

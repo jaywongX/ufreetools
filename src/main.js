@@ -188,6 +188,7 @@ const lazyComponentMap = {
   'AIMultiFaceTagger': () => import('./components/tools/AIMultiFaceTagger.vue'),
   'AIFaceLandmarkPainter': () => import('./components/tools/AIFaceLandmarkPainter.vue'),
   'AIFaceMorphBlend': () => import('./components/tools/AIFaceMorphBlend.vue'),
+  'AIFacialHeatmapVisualizer': () => import('./components/tools/AIFacialHeatmapVisualizer.vue'),
 }
 
 // 用异步 IIFE 启动应用

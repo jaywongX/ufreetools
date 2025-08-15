@@ -373,4 +373,6 @@ export default {
   photo: '照片',
   retouch: '修图',
   photo: '照片',
+  heatmap: '热力图',
+  visualizer: '可视化',
 }

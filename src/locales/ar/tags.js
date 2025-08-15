@@ -348,4 +348,6 @@ export default {
   photo: 'صورة',
   retouch: 'تحسين الصورة',
   photo: 'صورة',
+  heatmap: 'خريطة الحرارة',
+  visualizer: 'معاينة',
 }

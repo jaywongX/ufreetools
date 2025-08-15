@@ -350,4 +350,6 @@ export default {
   photo: 'Фото',
   retouch: 'Ретушь фото',
   photo: 'Фото',
+  heatmap: 'Карта тепла',
+  visualizer: 'Визуализатор',
 }

@@ -117,6 +117,7 @@ import aiAgeGenderEstimator from './tools/ai-age-gender-estimator.js';
 import aiMultiFaceTagger from './tools/ai-multi-face-tagger.js';
 import aiFaceLandmarkPainter from './tools/ai-face-landmark-painter.js';
 import aiFaceMorphBlend from './tools/ai-face-morph-blend.js';
+import aiFacialHeatmapVisualizer from './tools/ai-facial-heatmap-visualizer.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -238,4 +239,5 @@ export default {
   'ai-multi-face-tagger': aiMultiFaceTagger,
   'ai-face-landmark-painter': aiFaceLandmarkPainter,
   'ai-face-morph-blend': aiFaceMorphBlend,
+  'ai-facial-heatmap-visualizer': aiFacialHeatmapVisualizer,
 };
