@@ -1577,6 +1577,17 @@ const allTools = computed(() => [
     icon: 'M12 4.5C7 4.5 3 8 3 12s4 7.5 9 7.5 9-3.5 9-7.5S17 4.5 12 4.5zM12 15a3 3 0 100-6 3 3 0 000 6z',
     tags: ['ai', 'image', 'face', 'heatmap', 'visualizer', 'photo']
   },
+  {
+    id: 'ai-facial-focus-zoomer',
+    name: t('tools.ai-facial-focus-zoomer.name'),
+    category: t(`categories.ai.title`),
+    categoryId: 'ai',
+    description: t('tools.ai-facial-focus-zoomer.description'),
+    path: '/tools/ai-facial-focus-zoomer',
+    component: 'AIFacialFocusZoomer',
+    icon: 'M12 4.5C7 4.5 3 8 3 12s4 7.5 9 7.5 9-3.5 9-7.5S17 4.5 12 4.5zM12 15a3 3 0 100-6 3 3 0 000 6z',
+    tags: ['ai', 'image', 'face', 'heatmap', 'visualizer', 'photo']
+  },
 ])
 provide('allTools', allTools)
 

@@ -140,9 +140,9 @@
           <div class="bg-gray-50 dark:bg-gray-750 p-3 rounded-md overflow-x-auto">
             <pre class="text-gray-800 dark:text-gray-200 font-mono text-sm whitespace-pre-wrap break-all">{{ formattedResults.binary }}</pre>
           </div>
-          <div class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+          <!-- <div class="mt-1 text-xs text-gray-500 dark:text-gray-400">
             长度: {{ results.binary.replace(/\s/g, '').length }} 位
-          </div>
+          </div> -->
         </div>
         
         <!-- 八进制结果 -->
