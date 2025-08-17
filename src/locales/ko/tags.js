@@ -350,4 +350,7 @@ export default {
   photo: '사진',
   heatmap: '히트맵',
   visualizer: '시각화',
+  round: '둥근 모서리',
+  corner: '모서리',
+  radius: '반지름',
 }

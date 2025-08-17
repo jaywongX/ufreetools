@@ -352,4 +352,7 @@ export default {
   photo: 'Фото',
   heatmap: 'Карта тепла',
   visualizer: 'Визуализатор',
+  round: 'Закругление',
+  corner: 'Угол',
+  radius: 'Радиус',
 }

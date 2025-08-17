@@ -122,6 +122,7 @@ const lazyComponentMap = {
   'InvertImageColors': () => import('./components/tools/InvertImageColors.vue'),
   'ResizeTo1024x576Image': () => import('./components/tools/ResizeTo1024x576Image.vue'),
   'ReduceImageSizeInKbMb': () => import('./components/tools/ReduceImageSizeInKbMb.vue'),
+  'RoundCornersImage': () => import('./components/tools/RoundCornersImage.vue'),
   
   // 网络与协议
   'ApiRequestTool': () => import('./components/tools/ApiRequestTool.vue'),

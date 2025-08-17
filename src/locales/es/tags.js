@@ -375,4 +375,7 @@ export default {
   photo: 'Foto',
   heatmap: 'Mapa de calor',
   visualizer: 'Visualizador',
+  round: 'Redondeo',
+  corner: 'Esquina',
+  radius: 'Radio',
 }

@@ -350,4 +350,7 @@ export default {
   photo: 'صورة',
   heatmap: 'خريطة الحرارة',
   visualizer: 'معاينة',
+  round: 'دوري',
+  corner: 'زاوية',
+  radius: 'نصف قطر',
 }

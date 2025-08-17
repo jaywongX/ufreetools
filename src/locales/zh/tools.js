@@ -119,6 +119,7 @@ import aiFaceLandmarkPainter from './tools/ai-face-landmark-painter.js';
 import aiFaceMorphBlend from './tools/ai-face-morph-blend.js';
 import aiFacialHeatmapVisualizer from './tools/ai-facial-heatmap-visualizer.js';
 import aiFacialFocusZoomer from './tools/ai-facial-focus-zoomer.js';
+import roundCornersImage from './tools/round-corners-image.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -242,4 +243,5 @@ export default {
   'ai-face-morph-blend': aiFaceMorphBlend,
   'ai-facial-heatmap-visualizer': aiFacialHeatmapVisualizer,
   'ai-facial-focus-zoomer': aiFacialFocusZoomer,
+  'round-corners-image': roundCornersImage,
 };

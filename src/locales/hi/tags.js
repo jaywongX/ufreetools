@@ -351,4 +351,7 @@ export default {
   photo: 'फोटो',
   heatmap: 'हीटमैप',
   visualizer: 'विज़ुअलाइज़र',
+  round: 'गोल',
+  corner: 'कोना',
+  radius: 'त्रिज्या',
 }

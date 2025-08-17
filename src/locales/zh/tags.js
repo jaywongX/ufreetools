@@ -375,4 +375,7 @@ export default {
   photo: '照片',
   heatmap: '热力图',
   visualizer: '可视化',
+  round: '圆角',
+  corner: '边角',
+  radius: '半径',
 }

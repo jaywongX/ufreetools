@@ -345,4 +345,7 @@ export default {
   photo: 'Foto',
   heatmap: 'Heatmap',
   visualizer: 'Visualisator',
+  round: 'Bulat',
+  corner: 'Sudut',
+  radius: 'Jari-jari',
 }
