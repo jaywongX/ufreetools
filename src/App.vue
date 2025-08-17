@@ -828,6 +828,17 @@ const allTools = computed(() => [
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['image', 'compress', 'optimize', 'resize', 'photo', 'quality', 'reduce', 'batch', 'utility']
   },
+  {
+    id: 'round-corners-image',
+    name: t('tools.round-corners-image.name'),
+    category: t(`categories.image.title`),
+    categoryId: 'image',
+    description: t('tools.round-corners-image.description'),
+    path: '/tools/round-corners-image',
+    component: 'RoundCornersImage',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image', 'round', 'corner', 'radius', 'edit', 'photo', 'utility']
+  },
 
   // 转换工具
   {
@@ -1587,7 +1598,7 @@ const allTools = computed(() => [
     component: 'AIFacialFocusZoomer',
     icon: 'M12 4.5C7 4.5 3 8 3 12s4 7.5 9 7.5 9-3.5 9-7.5S17 4.5 12 4.5zM12 15a3 3 0 100-6 3 3 0 000 6z',
     tags: ['ai', 'image', 'face', 'heatmap', 'visualizer', 'photo']
-  },
+  }
 ])
 provide('allTools', allTools)
 

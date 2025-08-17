@@ -375,4 +375,7 @@ export default {
   photo: 'Foto',
   heatmap: 'Heatmap',
   visualizer: 'Visualizador',
+  round: 'Arredondamento',
+  corner: 'Canto',
+  radius: 'Raio',
 }

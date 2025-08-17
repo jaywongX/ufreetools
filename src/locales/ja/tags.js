@@ -375,4 +375,7 @@ export default {
   photo: '写真',
   heatmap: 'ヒートマップ',
   visualizer: 'ビジュアライザー',
+  round: '丸み',
+  corner: '角',
+  radius: '半径',
 }

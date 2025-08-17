@@ -356,4 +356,7 @@ export default {
   photo: 'Foto',
   heatmap: 'Wärmebild',
   visualizer: 'Visualisierung',
+  round: 'Rund',
+  corner: 'Ecke',
+  radius: 'Radius',
 }
