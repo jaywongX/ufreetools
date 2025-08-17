@@ -9,6 +9,7 @@ export default {
   navigation: 'Navigation',
   expand: 'Expand',
   collapse: 'Collapse',
+  
   languageDetector: {
     detected: 'We detected your browser language is {lang}',
     switchQuestion: 'Would you like to switch to this language?',
@@ -134,4 +135,24 @@ export default {
   addToChrome: "Use Chrome",
   addToFireFox: "Use FireFox",
   addToEdge: "Use Edge",
+  
+  // Social media sharing
+  share: 'Share',
+  shareTo: 'Share to',
+  like: 'Like',
+  tweet: 'Tweet',
+  copyLink: 'Copy Link',
+  copied: 'Copied',
+  freeTools: 'FreeTools',
+  telegram: 'Telegram',
+  youtube: 'YouTube',
+  line: 'Line',
+  qq: 'QQ',
+  weibo: 'Weibo',
+  defaultTitle: 'UFreeTools - Free Online Tools Collection',
+  defaultDescription: 'Discover powerful free online tools collection to improve work efficiency! Including image processing, text tools, development tools and many other practical features.',
+  toolShareDescription: 'I am using {toolName} tool, which is a free online tool that helps solve various problems. Powerful features, clean interface, completely free to use! Come and try it!',
+  categoryShareDescription: 'Explore practical tools in the {categoryName} category, all free to use! Including various professional tools to improve work efficiency.',
+  homeShareDescription: 'UFreeTools - Free online tools collection, including image processing, text tools, development tools, design tools and many other practical features. All tools are completely free, no registration required!',
+  searchShareDescription: 'Search results for "{searchQuery}" in UFreeTools, discover practical free online tools!',
 };
