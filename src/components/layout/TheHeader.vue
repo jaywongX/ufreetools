@@ -30,6 +30,9 @@
 
       <!-- 右侧操作区域 -->
       <div class="flex items-center space-x-4">
+        <!-- 社交媒体分享按钮 -->
+        <SocialShare />
+
         <!-- 主题切换按钮 -->
         <button @click="toggleDarkMode"
           class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none" aria-label="切换主题">
@@ -113,6 +116,7 @@ import { useRouter, useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import DonateButton from '../common/DonateButton.vue'
 import { setLanguage } from '../../main';
+import SocialShare from '../common/SocialShare.vue'
 
 const router = useRouter()
 const route = useRoute()

@@ -9,6 +9,7 @@ export default {
   navigation: '导航',
   expand: '展开',
   collapse: '折叠',
+  
   languageDetector: {
     detected: '我们检测到您的浏览器语言是 {lang}',
     switchQuestion: '您想切换到这种语言吗？',
@@ -133,5 +134,24 @@ export default {
   browserExtensionsDesc: "只需点击一下获取所有工具通过扩展",
   addToChrome: "使用Chrome",
   addToFireFox: "使用FireFox",
-  addToEdge: "使用Edge"
+  addToEdge: "使用Edge",
+  
+  share: '分享',
+  shareTo: '分享到',
+  like: '点赞',
+  tweet: '推文',
+  copyLink: '复制链接',
+  copied: '已复制',
+  freeTools: '免费工具',
+  telegram: 'Telegram',
+  youtube: 'YouTube',
+  line: 'Line',
+  qq: 'QQ',
+  weibo: '微博',
+  defaultTitle: 'UFreeTools - 免费在线工具集合',
+  defaultDescription: '发现强大的免费在线工具集合，提升工作效率！包含图像处理、文本工具、开发工具等多种实用功能。',
+  toolShareDescription: '我正在使用 {toolName} 工具，这是一个免费的在线工具，帮助解决各种问题。功能强大，界面简洁，完全免费使用！快来试试吧！',
+  categoryShareDescription: '探索 {categoryName} 分类下的实用工具，全部免费使用！包含多种专业工具，提升工作效率。',
+  homeShareDescription: 'UFreeTools - 免费在线工具集合，包含图像处理、文本工具、开发工具、设计工具等多种实用功能。所有工具完全免费，无需注册即可使用！',
+  searchShareDescription: '在 UFreeTools 中搜索 "{searchQuery}" 的结果，发现实用的免费在线工具！',
 }; 
