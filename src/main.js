@@ -181,6 +181,7 @@ const lazyComponentMap = {
   'CoordinateConverter': () => import('./components/tools/CoordinateConverter.vue'),
   'GpsTrackReplay': () => import('./components/tools/GpsTrackReplay.vue'),
   'GaussianProjection': () => import('./components/tools/GaussianProjection.vue'),
+  'LidarPointCloudViewer': () => import('./components/tools/LidarPointCloudViewer.vue'),
 
   // AI
   'ImglyRemoveImageBackground': () => import('./components/tools/ImglyRemoveImageBackground.vue'),

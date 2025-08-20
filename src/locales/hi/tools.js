@@ -120,6 +120,7 @@ import aiFaceMorphBlend from './tools/ai-face-morph-blend.js';
 import aiFacialHeatmapVisualizer from './tools/ai-facial-heatmap-visualizer.js';
 import aiFacialFocusZoomer from './tools/ai-facial-focus-zoomer.js';
 import roundCornersImage from './tools/round-corners-image.js';
+import lidarPointCloudViewer from './tools/lidar-point-cloud-viewer.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -244,4 +245,5 @@ export default {
   'ai-facial-heatmap-visualizer': aiFacialHeatmapVisualizer,
   'ai-facial-focus-zoomer': aiFacialFocusZoomer,
   'round-corners-image': roundCornersImage,
+  'lidar-point-cloud-viewer': lidarPointCloudViewer,
 };
