@@ -121,6 +121,7 @@ import aiFacialHeatmapVisualizer from './tools/ai-facial-heatmap-visualizer.js';
 import aiFacialFocusZoomer from './tools/ai-facial-focus-zoomer.js';
 import roundCornersImage from './tools/round-corners-image.js';
 import lidarPointCloudViewer from './tools/lidar-point-cloud-viewer.js';
+import JsonDiffChecker from './tools/json-diff-checker.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -158,13 +159,13 @@ export default {
   'sensitive-word-filter': sensitiveWordFilter,
   'image-batch-resizer': imageBatchResizer,
   'image-color-extractor': imageColorExtractor,
-  'code-diff':codeDiff,
-  'code-obfuscator':codeObfuscator,
-  'user-agent-generator':userAgentGenerator,
-  'user-agent-parser':userAgentParser,
-  'number-converter':numberConverter,
-  'yaml-json-converter':yamlJsonConverter,
-  'color-scheme-generator':colorSchemeGenerator,
+  'code-diff': codeDiff,
+  'code-obfuscator': codeObfuscator,
+  'user-agent-generator': userAgentGenerator,
+  'user-agent-parser': userAgentParser,
+  'number-converter': numberConverter,
+  'yaml-json-converter': yamlJsonConverter,
+  'color-scheme-generator': colorSchemeGenerator,
   'id-photo-maker': idPhotoMaker,
   'image-watermark': imageWatermark,
   'image-cropper': imageCropper,
@@ -246,4 +247,5 @@ export default {
   'ai-facial-focus-zoomer': aiFacialFocusZoomer,
   'round-corners-image': roundCornersImage,
   'lidar-point-cloud-viewer': lidarPointCloudViewer,
+  'json-diff-checker': JsonDiffChecker,
 };

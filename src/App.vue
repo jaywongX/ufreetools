@@ -283,17 +283,6 @@ const allTools = computed(() => [
     icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
     tags: ['regex', 'test', 'dev', 'validate']
   },
-  // { 
-  //   id: 'sql-formatter', 
-  //   name: t('tools.sql-formatter.name'),
-  //   category: t(`categories.dev.title`),
-  //   categoryId: 'dev',
-  //   description: t('tools.sql-formatter.description'),
-  //   path: '/tools/sql-formatter',
-  //   component: 'SQLFormatter',
-  //   icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-  //   tags: ['sql','format','dev','validate']
-  // },
   { 
     id: 'git-conflict-resolver', 
     name: t('tools.git-conflict-resolver.name'),
@@ -305,28 +294,6 @@ const allTools = computed(() => [
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['git', 'code', 'dev', 'utility']
   },
-  // { 
-  //   id: 'javascript-formatter', 
-  //   name: t('tools.javascript-formatter.name'),
-  //   category: t(`categories.dev.title`),
-  //   categoryId: 'dev',
-  //   description: t('tools.javascript-formatter.description'),
-  //   path: '/tools/javascript-formatter',
-  //   component: 'JavaScriptFormatter',
-  //   icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
-  //   tags: ['javascript','format','dev','validate']
-  // },
-  // { 
-  //   id: 'code-beautifier', 
-  //   name: t('tools.code-beautifier.name'),
-  //   category: t(`categories.dev.title`),
-  //   categoryId: 'dev',
-  //   description: t('tools.code-beautifier.description'),
-  //   path: '/tools/code-beautifier',
-  //   component: 'CodeBeautifier',
-  //   icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-  //   tags: ['code','dev','highlight']
-  // },
   { 
     id: 'html-entity-encoder', 
     name: t('tools.html-entity-encoder.name'),
@@ -393,17 +360,6 @@ const allTools = computed(() => [
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['code', 'utility', 'dev']
   },
-  // { 
-  //   id: 'code-formatter', 
-  //   name: t('tools.code-formatter.name'),
-  //   category: t(`categories.dev.title`),
-  //   categoryId: 'dev',
-  //   description: t('tools.code-formatter.description'),
-  //   path: '/tools/code-formatter',
-  //   component: 'CodeFormatter',
-  //   icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
-  //   tags: ['code','format','dev','validate']
-  // },
   { 
     id: 'code-obfuscator', 
     name: t('tools.code-obfuscator.name'),
@@ -436,6 +392,17 @@ const allTools = computed(() => [
      component: 'HtmlFormatter',
      icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
      tags: ['html','dev','format']
+   },
+  {
+     id: 'json-diff-checker',
+     name: t('tools.json-diff-checker.name'),
+     category: t(`categories.dev.title`),
+     categoryId: 'dev',
+     description: t('tools.json-diff-checker.description'),
+     path: '/tools/json-diff-checker',
+     component: 'JsonDiffChecker',
+     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+     tags: ['json','dev','check']
    },
 
   // 设计工具

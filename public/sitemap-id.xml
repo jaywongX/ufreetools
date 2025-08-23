@@ -4102,4 +4102,38 @@
     <xhtml:link rel="alternate" hreflang="zh-TW"
       href="https://www.ufreetools.com/zh-TW/tool/lidar-point-cloud-viewer" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/id/tool/json-diff-checker</loc>
+    <lastmod>2025-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh"
+      href="https://www.ufreetools.com/zh/tool/json-diff-checker" />
+    <xhtml:link rel="alternate" hreflang="en"
+      href="https://www.ufreetools.com/en/tool/json-diff-checker" />
+    <xhtml:link rel="alternate" hreflang="es"
+      href="https://www.ufreetools.com/es/tool/json-diff-checker" />
+    <xhtml:link rel="alternate" hreflang="hi"
+      href="https://www.ufreetools.com/hi/tool/json-diff-checker" />
+    <xhtml:link rel="alternate" hreflang="ar"
+      href="https://www.ufreetools.com/ar/tool/json-diff-checker" />
+    <xhtml:link rel="alternate" hreflang="ru"
+      href="https://www.ufreetools.com/ru/tool/json-diff-checker" />
+    <xhtml:link rel="alternate" hreflang="fr"
+      href="https://www.ufreetools.com/fr/tool/json-diff-checker" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/json-diff-checker" />
+    <xhtml:link rel="alternate" hreflang="pt"
+      href="https://www.ufreetools.com/pt/tool/json-diff-checker" />
+    <xhtml:link rel="alternate" hreflang="de"
+      href="https://www.ufreetools.com/de/tool/json-diff-checker" />
+    <xhtml:link rel="alternate" hreflang="id"
+      href="https://www.ufreetools.com/id/tool/json-diff-checker" />
+    <xhtml:link rel="alternate" hreflang="ko"
+      href="https://www.ufreetools.com/ko/tool/json-diff-checker" />
+    <xhtml:link rel="alternate" hreflang="it"
+      href="https://www.ufreetools.com/it/tool/json-diff-checker" />
+    <xhtml:link rel="alternate" hreflang="zh-TW"
+      href="https://www.ufreetools.com/zh-TW/tool/json-diff-checker" />
+  </url>
 </urlset>
