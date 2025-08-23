@@ -1,5 +1,5 @@
 export default {
-    name: 'JSON 차이점 검사기 - 온라인 JSON 파일 비교 도구',
+    name: 'JSON 차이점 검사기',
     description: '무료 온라인 JSON 차이점 비교 도구, 두 JSON 파일을 빠르게 비교합니다. 구문 검증, 포맷팅, 차이점 강조 표시를 지원하여 개발자가 JSON 데이터 변경 사항을 빠르게 찾을 수 있도록 도와줍니다',
     inputTitle: 'JSON 데이터 입력',
     outputTitle: '비교 결과',

@@ -1,5 +1,5 @@
 export default {
-    name: 'Strumento di confronto JSON - Comparatore online di file JSON',
+    name: 'Strumento di confronto JSON',
     description: 'Strumento gratuito online per confrontare le differenze JSON, confronta rapidamente due file JSON. Supporta la validazione della sintassi, la formattazione, l\'evidenziazione delle differenze, aiutando gli sviluppatori a individuare rapidamente le modifiche nei dati JSON',
     inputTitle: 'Inserisci dati JSON',
     outputTitle: 'Risultati del confronto',

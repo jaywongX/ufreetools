@@ -1,5 +1,5 @@
 export default {
-    name: 'Vérificateur de différences JSON - Outil de comparaison de fichiers JSON en ligne',
+    name: 'Vérificateur de différences JSON',
     description: 'Outil gratuit en ligne de comparaison des différences JSON, compare rapidement deux fichiers JSON. Prend en charge la validation de syntaxe, le formatage, la mise en évidence des différences, aidant les développeurs à localiser rapidement les changements de données JSON',
     inputTitle: 'Saisir les données JSON',
     outputTitle: 'Résultats de comparaison',

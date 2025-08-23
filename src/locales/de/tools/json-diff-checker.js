@@ -1,5 +1,5 @@
 export default {
-    name: 'JSON-Diff-Checker - Online JSON-Datei-Vergleichstool',
+    name: 'JSON-Diff-Checker',
     description: 'Kostenloses Online-JSON-Unterschiede-Vergleichstool, vergleicht schnell zwei JSON-Dateien. Unterstützt Syntaxvalidierung, Formatierung, Unterschiede-Hervorhebung und hilft Entwicklern, JSON-Datenänderungen schnell zu lokalisieren',
     inputTitle: 'JSON-Daten eingeben',
     outputTitle: 'Vergleichsergebnisse',

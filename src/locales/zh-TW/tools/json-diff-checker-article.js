@@ -1,5 +1,5 @@
 export default {
-    title: 'JSON差異對比工具：線上JSON檔案比較檢查器使用指南',
+    title: 'JSON差異對比工具',
     functionTitle: '什麼是JSON差異對比工具及其核心功能？',
     intro: '我們的<strong>JSON差異對比工具</strong>是一款專業的線上JSON檔案比較檢查器，能夠快速識別和高亮顯示兩個JSON檔案之間的差異。這款<strong>線上JSON比較工具</strong>通過智能演算法分析JSON資料結構，準確檢測新增、刪除、修改的欄位和值，為開發者提供直觀的差異可視化介面。使用我們的<strong>JSON檔案差異檢查器</strong>，您可以輕鬆進行API回應對比、配置檔案變更檢測、資料遷移驗證等工作，大幅提升開發效率和程式碼品質。',
     

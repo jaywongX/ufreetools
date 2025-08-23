@@ -1,5 +1,5 @@
 export default {
-    name: 'JSON差分チェッカー - オンラインJSONファイル比較ツール',
+    name: 'JSON差分チェッカー',
     description: '無料のオンラインJSON差分比較ツール、2つのJSONファイルを素早く比較します。構文検証、フォーマット、差分ハイライト表示をサポートし、開発者がJSONデータの変更を素早く特定するのに役立ちます',
     inputTitle: 'JSONデータ入力',
     outputTitle: '比較結果',

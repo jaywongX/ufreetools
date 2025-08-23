@@ -1,5 +1,5 @@
 export default {
-    name: 'Pemeriksa Perbedaan JSON - Alat Perbandingan File JSON Online',
+    name: 'Pemeriksa Perbedaan JSON',
     description: 'Alat perbandingan perbedaan JSON online gratis, membandingkan dua file JSON dengan cepat. Mendukung validasi sintaks, pemformatan, penyorotan perbedaan, membantu pengembang menemukan perubahan data JSON dengan cepat',
     inputTitle: 'Masukkan Data JSON',
     outputTitle: 'Hasil Perbandingan',
