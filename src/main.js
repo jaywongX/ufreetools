@@ -69,6 +69,7 @@ const lazyComponentMap = {
   'RegexTester': () => import('./components/tools/RegexTester.vue'),
   'SQLFormatter': () => import('./components/tools/SQLFormatter.vue'),
   'UserAgentGenerator': () => import('./components/tools/UserAgentGenerator.vue'),
+  'JsonDiffChecker': () => import('./components/tools/JsonDiffChecker.vue'),
   
   // 设计工具
   'CssGradientGenerator': () => import('./components/tools/CssGradientGenerator.vue'),
