@@ -122,6 +122,7 @@ import aiFacialFocusZoomer from './tools/ai-facial-focus-zoomer.js';
 import roundCornersImage from './tools/round-corners-image.js';
 import lidarPointCloudViewer from './tools/lidar-point-cloud-viewer.js';
 import JsonDiffChecker from './tools/json-diff-checker.js';
+import CodeToImageConverter from './tools/code-to-image-converter.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -248,4 +249,5 @@ export default {
   'round-corners-image': roundCornersImage,
   'lidar-point-cloud-viewer': lidarPointCloudViewer,
   'json-diff-checker': JsonDiffChecker,
+  'code-to-image-converter': CodeToImageConverter,
 };
