@@ -940,6 +940,17 @@ const allTools = computed(() => [
     icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
     tags: ['convert', 'base64', 'hex', 'encode', 'decode', 'utility']
   },
+  {
+    id: 'code-to-image-converter',
+    name: t('tools.code-to-image-converter.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'convert',
+    description: t('tools.code-to-image-converter.description'),
+    path: '/tools/code-to-image-converter',
+    component: 'CodeToImageConverter',
+    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
+    tags: ['convert', 'image', 'code']
+  },
   
   // 网络与协议
   { 

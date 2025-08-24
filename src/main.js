@@ -100,6 +100,7 @@ const lazyComponentMap = {
   'HexAndCalculator': () => import('./components/tools/HexAndCalculator.vue'),
   'HexadecimalCaseConverter': () => import('./components/tools/HexadecimalCaseConverter.vue'),
   'Base64HexConverter': () => import('./components/tools/Base64HexConverter.vue'),
+  'CodeToImageConverter': () => import('./components/tools/CodeToImageConverter.vue'),
   
   // 图像与多媒体
   'IdPhotoMaker': () => import('./components/tools/IdPhotoMaker.vue'),
