@@ -951,6 +951,17 @@ const allTools = computed(() => [
     icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
     tags: ['convert', 'image', 'code']
   },
+  {
+    id: 'text-to-handwriting-converter',
+    name: t('tools.text-to-handwriting-converter.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'convert',
+    description: t('tools.text-to-handwriting-converter.description'),
+    path: '/tools/text-to-handwriting-converter',
+    component: 'TextToHandwritingConverter',
+    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
+    tags: ['convert', 'image', 'text']
+  },
   
   // 网络与协议
   { 
