@@ -124,6 +124,7 @@ import lidarPointCloudViewer from './tools/lidar-point-cloud-viewer.js';
 import JsonDiffChecker from './tools/json-diff-checker.js';
 import CodeToImageConverter from './tools/code-to-image-converter.js';
 import TextToHandwritingConverter from './tools/text-to-handwriting-converter.js';
+import NumbersToWordsConverter from './tools/numbers-to-words-converter.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -252,4 +253,5 @@ export default {
   'json-diff-checker': JsonDiffChecker,
   'code-to-image-converter': CodeToImageConverter,
   'text-to-handwriting-converter': TextToHandwritingConverter,
+  'numbers-to-words-converter': NumbersToWordsConverter,
 };

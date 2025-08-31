@@ -102,6 +102,7 @@ const lazyComponentMap = {
   'Base64HexConverter': () => import('./components/tools/Base64HexConverter.vue'),
   'CodeToImageConverter': () => import('./components/tools/CodeToImageConverter.vue'),
   'TextToHandwritingConverter': () => import('./components/tools/TextToHandwritingConverter.vue'),
+  'NumbersToWordsConverter': () => import('./components/tools/NumbersToWordsConverter.vue'),
   
   // 图像与多媒体
   'IdPhotoMaker': () => import('./components/tools/IdPhotoMaker.vue'),
