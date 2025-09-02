@@ -353,4 +353,6 @@ export default {
   round: '둥근 모서리',
   corner: '모서리',
   radius: '반지름',
+  bionic: '바이오닉',
+  reading: '읽기',
 }

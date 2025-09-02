@@ -378,4 +378,6 @@ export default {
   round: 'Arrotondato',
   corner: 'Angolo',
   radius: 'Raggio',
+  bionic: 'Bionico',
+  reading: 'Lettura',
 }

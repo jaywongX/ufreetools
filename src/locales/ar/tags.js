@@ -353,4 +353,6 @@ export default {
   round: 'دوري',
   corner: 'زاوية',
   radius: 'نصف قطر',
+  bionic: 'بيوني',
+  reading: 'قراءة',
 }

@@ -370,4 +370,6 @@ export default {
   round: 'Round',
   corner: 'Corner',
   radius: 'Radius',
+  bionic: 'Bionic',
+  reading: 'Reading'
 }

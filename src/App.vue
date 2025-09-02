@@ -42,7 +42,6 @@ const { locale, t } = useI18n()
 const sidebarOpen = ref(true)
 provide('sidebarOpen', sidebarOpen)
 
-// 暗黑模式状态
 const darkMode = ref(true)
 provide('darkMode', darkMode)
 
@@ -973,6 +972,17 @@ const allTools = computed(() => [
     icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
     tags: ['convert', 'number', 'word']
   },
+  {
+    id: 'bionic-reading-converter',
+    name: t('tools.bionic-reading-converter.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'convert',
+    description: t('tools.bionic-reading-converter.description'),
+    path: '/tools/bionic-reading-converter',
+    component: 'BionicReadingConverter',
+    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
+    tags: ['convert', 'bionic', 'reading']
+  },
   
   // 网络与协议
   { 
@@ -1673,17 +1683,15 @@ provide('toolsByCategory', toolsByCategory)
 
 // 在组件挂载时检查本地存储中的暗黑模式设置
 onMounted(() => {
-  // 检查是否支持暗黑模式
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-  
-  // 从本地存储获取用户设置
-  const savedMode = localStorage.getItem('darkMode')
-  
-  // 设置初始模式
-  if (savedMode === 'true' || (savedMode === null && prefersDark) || darkMode) {
-    darkMode.value = true
-    document.documentElement.classList.add('dark')
+  const savedMode = localStorage.getItem('darkMode');
+  const darkMode = savedMode === null ? true : savedMode === 'true';
+
+  if (darkMode) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
   }
+
   
   // 监听窗口尺寸变化，在小屏幕上自动折叠导航
   const handleResize = () => {
@@ -1699,15 +1707,6 @@ onMounted(() => {
   
   // 添加事件监听
   window.addEventListener('resize', handleResize)
-})
-
-// 监听暗黑模式变化
-watch(darkMode, (newValue) => {
-  if (newValue) {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }
 })
 
 // 当路由变化时，根据路由参数更新语言

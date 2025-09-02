@@ -150,18 +150,22 @@ function toggleSidebar() {
 
 // 切换暗黑模式
 function toggleDarkMode() {
-  darkMode.value = !darkMode.value
+  // 1. 检查当前 <html> 是否有 'dark' 类，判断当前是否为暗色模式
+  const isDark = document.documentElement.classList.contains('dark');
 
-  // 保存到 localStorage
-  localStorage.setItem('darkMode', darkMode.value ? 'true' : 'false')
-
-  // 更新 HTML 元素的 class
-  if (darkMode.value) {
-    document.documentElement.classList.add('dark')
+  // 2. 切换状态：如果有就移除，没有就添加
+  if (isDark) {
+    document.documentElement.classList.remove('dark');
   } else {
-    document.documentElement.classList.remove('dark')
+    document.documentElement.classList.add('dark');
   }
+
+  // 3. 将当前状态（true/false）以字符串形式存入 localStorage
+  const newMode = !isDark; // 新的状态
+  darkMode.value = isDark;
+  localStorage.setItem('darkMode', String(newMode));
 }
+
 
 // 处理键盘事件
 const handleKeyDown = (event) => {

@@ -355,4 +355,6 @@ export default {
   round: 'Закругление',
   corner: 'Угол',
   radius: 'Радиус',
+  bionic: 'Бионика',
+  reading: 'Чтение',
 }

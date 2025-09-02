@@ -359,4 +359,6 @@ export default {
   round: 'Rund',
   corner: 'Ecke',
   radius: 'Radius',
+  bionic: 'Bionisch',
+  reading: 'Lesen',
 }
