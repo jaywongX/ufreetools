@@ -103,6 +103,7 @@ const lazyComponentMap = {
   'CodeToImageConverter': () => import('./components/tools/CodeToImageConverter.vue'),
   'TextToHandwritingConverter': () => import('./components/tools/TextToHandwritingConverter.vue'),
   'NumbersToWordsConverter': () => import('./components/tools/NumbersToWordsConverter.vue'),
+  'BionicReadingConverter': () => import('./components/tools/BionicReadingConverter.vue'),
   
   // 图像与多媒体
   'IdPhotoMaker': () => import('./components/tools/IdPhotoMaker.vue'),

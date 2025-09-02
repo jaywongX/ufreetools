@@ -378,4 +378,6 @@ export default {
   round: 'Arrondi',
   corner: 'Coin',
   radius: 'Rayon',
+  bionic: 'Bionique',
+  reading: 'Lecture',
 }

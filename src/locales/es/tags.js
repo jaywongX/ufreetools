@@ -378,4 +378,6 @@ export default {
   round: 'Redondeo',
   corner: 'Esquina',
   radius: 'Radio',
+  bionic: 'Biónico',
+  reading: 'Lectura'
 }

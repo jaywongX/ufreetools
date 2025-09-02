@@ -378,4 +378,6 @@ export default {
   round: '圓角',
   corner: '邊角',
   radius: '半徑',
+  bionic: '仿生',
+  reading: '閱讀'
 }

@@ -354,4 +354,6 @@ export default {
   round: 'गोल',
   corner: 'कोना',
   radius: 'त्रिज्या',
+  bionic: 'बायोनिक',
+  reading: 'पठन',
 }

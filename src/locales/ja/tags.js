@@ -378,4 +378,6 @@ export default {
   round: '丸み',
   corner: '角',
   radius: '半径',
+  bionic: 'バイオニック',
+  reading: '読書',
 }

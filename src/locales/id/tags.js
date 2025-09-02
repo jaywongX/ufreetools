@@ -348,4 +348,6 @@ export default {
   round: 'Bulat',
   corner: 'Sudut',
   radius: 'Jari-jari',
+  bionic: 'Bionik',
+  reading: 'Bacaan',
 }
