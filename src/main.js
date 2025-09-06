@@ -188,6 +188,7 @@ const lazyComponentMap = {
   'GaussianProjection': () => import('./components/tools/GaussianProjection.vue'),
   'LidarPointCloudViewer': () => import('./components/tools/LidarPointCloudViewer.vue'),
   'CoordinatePickerAndLatitudeLongitudeQueryTool': () => import('./components/tools/CoordinatePickerAndLatitudeLongitudeQueryTool.vue'),
+  'GeodeticMeasurementCalculator': () => import('./components/tools/GeodeticMeasurementCalculator.vue'),
 
   // AI
   'ImglyRemoveImageBackground': () => import('./components/tools/ImglyRemoveImageBackground.vue'),

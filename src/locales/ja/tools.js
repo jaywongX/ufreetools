@@ -127,6 +127,7 @@ import TextToHandwritingConverter from './tools/text-to-handwriting-converter.js
 import NumbersToWordsConverter from './tools/numbers-to-words-converter.js';
 import BionicReadingConverter from './tools/bionic-reading-converter.js';
 import CoordinatePickerAndLatitudeLongitudeQueryTool from './tools/coordinate-picker-and-latitude-longitude-query-tool.js';
+import GeodeticMeasurementCalculator from './tools/geodetic-measurement-calculator.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -258,4 +259,5 @@ export default {
   'numbers-to-words-converter': NumbersToWordsConverter,
   'bionic-reading-converter': BionicReadingConverter,
   'coordinate-picker-and-latitude-longitude-query-tool': CoordinatePickerAndLatitudeLongitudeQueryTool,
+  'geodetic-measurement-calculator': GeodeticMeasurementCalculator,
 };
