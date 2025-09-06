@@ -4306,4 +4306,38 @@
     <xhtml:link rel="alternate" hreflang="zh-TW"
       href="https://www.ufreetools.com/zh-TW/tool/coordinate-picker-and-latitude-longitude-query-tool" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/geodetic-measurement-calculator</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh"
+      href="https://www.ufreetools.com/zh/tool/geodetic-measurement-calculator" />
+    <xhtml:link rel="alternate" hreflang="en"
+      href="https://www.ufreetools.com/en/tool/geodetic-measurement-calculator" />
+    <xhtml:link rel="alternate" hreflang="es"
+      href="https://www.ufreetools.com/es/tool/geodetic-measurement-calculator" />
+    <xhtml:link rel="alternate" hreflang="hi"
+      href="https://www.ufreetools.com/hi/tool/geodetic-measurement-calculator" />
+    <xhtml:link rel="alternate" hreflang="ar"
+      href="https://www.ufreetools.com/ar/tool/geodetic-measurement-calculator" />
+    <xhtml:link rel="alternate" hreflang="ru"
+      href="https://www.ufreetools.com/ru/tool/geodetic-measurement-calculator" />
+    <xhtml:link rel="alternate" hreflang="fr"
+      href="https://www.ufreetools.com/fr/tool/geodetic-measurement-calculator" />
+    <xhtml:link rel="alternate" hreflang="ja"
+      href="https://www.ufreetools.com/ja/tool/geodetic-measurement-calculator" />
+    <xhtml:link rel="alternate" hreflang="pt"
+      href="https://www.ufreetools.com/pt/tool/geodetic-measurement-calculator" />
+    <xhtml:link rel="alternate" hreflang="de"
+      href="https://www.ufreetools.com/de/tool/geodetic-measurement-calculator" />
+    <xhtml:link rel="alternate" hreflang="id"
+      href="https://www.ufreetools.com/id/tool/geodetic-measurement-calculator" />
+    <xhtml:link rel="alternate" hreflang="ko"
+      href="https://www.ufreetools.com/ko/tool/geodetic-measurement-calculator" />
+    <xhtml:link rel="alternate" hreflang="it"
+      href="https://www.ufreetools.com/it/tool/geodetic-measurement-calculator" />
+    <xhtml:link rel="alternate" hreflang="zh-TW"
+      href="https://www.ufreetools.com/zh-TW/tool/geodetic-measurement-calculator" />
+  </url>
 </urlset>
