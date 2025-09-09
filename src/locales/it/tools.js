@@ -129,6 +129,7 @@ import BionicReadingConverter from './tools/bionic-reading-converter.js';
 import CoordinatePickerAndLatitudeLongitudeQueryTool from './tools/coordinate-picker-and-latitude-longitude-query-tool.js';
 import GeodeticMeasurementCalculator from './tools/geodetic-measurement-calculator.js';
 import ElevationContourGenerator from './tools/elevation-contour-generator.js';
+import SheetDividerCalculator from './tools/sheet-divider-calculator.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -262,4 +263,5 @@ export default {
   'coordinate-picker-and-latitude-longitude-query-tool': CoordinatePickerAndLatitudeLongitudeQueryTool,
   'geodetic-measurement-calculator': GeodeticMeasurementCalculator,
   'elevation-contour-generator': ElevationContourGenerator,
+  'sheet-divider-calculator': SheetDividerCalculator,
 };
