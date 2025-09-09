@@ -190,6 +190,7 @@ const lazyComponentMap = {
   'CoordinatePickerAndLatitudeLongitudeQueryTool': () => import('./components/tools/CoordinatePickerAndLatitudeLongitudeQueryTool.vue'),
   'GeodeticMeasurementCalculator': () => import('./components/tools/GeodeticMeasurementCalculator.vue'),
   'ElevationContourGenerator': () => import('./components/tools/ElevationContourGenerator.vue'),
+  'SheetDividerCalculator': () => import('./components/tools/SheetDividerCalculator.vue'),
 
   // AI
   'ImglyRemoveImageBackground': () => import('./components/tools/ImglyRemoveImageBackground.vue'),
