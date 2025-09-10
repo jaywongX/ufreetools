@@ -191,6 +191,7 @@ const lazyComponentMap = {
   'GeodeticMeasurementCalculator': () => import('./components/tools/GeodeticMeasurementCalculator.vue'),
   'ElevationContourGenerator': () => import('./components/tools/ElevationContourGenerator.vue'),
   'SheetDividerCalculator': () => import('./components/tools/SheetDividerCalculator.vue'),
+  'GnssTimeConverter': () => import('./components/tools/GnssTimeConverter.vue'),
 
   // AI
   'ImglyRemoveImageBackground': () => import('./components/tools/ImglyRemoveImageBackground.vue'),
