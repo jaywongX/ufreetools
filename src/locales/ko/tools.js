@@ -130,6 +130,7 @@ import CoordinatePickerAndLatitudeLongitudeQueryTool from './tools/coordinate-pi
 import GeodeticMeasurementCalculator from './tools/geodetic-measurement-calculator.js';
 import ElevationContourGenerator from './tools/elevation-contour-generator.js';
 import SheetDividerCalculator from './tools/sheet-divider-calculator.js';
+import GnssTimeConverter from './tools/gnss-time-converter.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -264,4 +265,5 @@ export default {
   'geodetic-measurement-calculator': GeodeticMeasurementCalculator,
   'elevation-contour-generator': ElevationContourGenerator,
   'sheet-divider-calculator': SheetDividerCalculator,
+  'gnss-time-converter': GnssTimeConverter,
 };
