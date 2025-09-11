@@ -192,6 +192,7 @@ const lazyComponentMap = {
   'ElevationContourGenerator': () => import('./components/tools/ElevationContourGenerator.vue'),
   'SheetDividerCalculator': () => import('./components/tools/SheetDividerCalculator.vue'),
   'GnssTimeConverter': () => import('./components/tools/GnssTimeConverter.vue'),
+  'BaselineCalculator': () => import('./components/tools/BaselineCalculator.vue'),
 
   // AI
   'ImglyRemoveImageBackground': () => import('./components/tools/ImglyRemoveImageBackground.vue'),
