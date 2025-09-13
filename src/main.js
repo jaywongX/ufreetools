@@ -194,6 +194,7 @@ const lazyComponentMap = {
   'GnssTimeConverter': () => import('./components/tools/GnssTimeConverter.vue'),
   'BaselineCalculator': () => import('./components/tools/BaselineCalculator.vue'),
   'AreaPerimeterCalculator': () => import('./components/tools/AreaPerimeterCalculator.vue'),
+  'CoordinateFormatConverter': () => import('./components/tools/CoordinateFormatConverter.vue'),
 
   // AI
   'ImglyRemoveImageBackground': () => import('./components/tools/ImglyRemoveImageBackground.vue'),
