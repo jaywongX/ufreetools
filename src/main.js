@@ -193,6 +193,7 @@ const lazyComponentMap = {
   'SheetDividerCalculator': () => import('./components/tools/SheetDividerCalculator.vue'),
   'GnssTimeConverter': () => import('./components/tools/GnssTimeConverter.vue'),
   'BaselineCalculator': () => import('./components/tools/BaselineCalculator.vue'),
+  'AreaPerimeterCalculator': () => import('./components/tools/AreaPerimeterCalculator.vue'),
 
   // AI
   'ImglyRemoveImageBackground': () => import('./components/tools/ImglyRemoveImageBackground.vue'),
