@@ -132,6 +132,7 @@ import ElevationContourGenerator from './tools/elevation-contour-generator.js';
 import SheetDividerCalculator from './tools/sheet-divider-calculator.js';
 import GnssTimeConverter from './tools/gnss-time-converter.js';
 import BaselineCalculator from './tools/baseline-calculator.js';
+import AreaPerimeterCalculator from './tools/area-perimeter-calculator.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -268,4 +269,5 @@ export default {
   'sheet-divider-calculator': SheetDividerCalculator,
   'gnss-time-converter': GnssTimeConverter,
   'baseline-calculator': BaselineCalculator,
+  'area-perimeter-calculator': AreaPerimeterCalculator,
 };
