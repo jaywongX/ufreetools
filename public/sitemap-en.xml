@@ -4488,4 +4488,24 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/tool/coordinate-format-converter" />
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/tool/coordinate-format-converter" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/en/tool/projection-zone-finder</loc>
+    <lastmod>2025-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/projection-zone-finder" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/projection-zone-finder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/tool/projection-zone-finder" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/tool/projection-zone-finder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/tool/projection-zone-finder" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/tool/projection-zone-finder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/tool/projection-zone-finder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/tool/projection-zone-finder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/tool/projection-zone-finder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/tool/projection-zone-finder" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/tool/projection-zone-finder" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/tool/projection-zone-finder" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/tool/projection-zone-finder" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/tool/projection-zone-finder" />
+  </url>
 </urlset>

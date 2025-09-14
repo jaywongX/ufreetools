@@ -134,6 +134,7 @@ import GnssTimeConverter from './tools/gnss-time-converter.js';
 import BaselineCalculator from './tools/baseline-calculator.js';
 import AreaPerimeterCalculator from './tools/area-perimeter-calculator.js';
 import CoordinateFormatConverter from './tools/coordinate-format-converter.js';
+import ProjectionZoneFinder from './tools/projection-zone-finder.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -272,4 +273,5 @@ export default {
   'baseline-calculator': BaselineCalculator,
   'area-perimeter-calculator': AreaPerimeterCalculator,
   'coordinate-format-converter': CoordinateFormatConverter,
+  'projection-zone-finder': ProjectionZoneFinder,
 };

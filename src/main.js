@@ -195,7 +195,8 @@ const lazyComponentMap = {
   'BaselineCalculator': () => import('./components/tools/BaselineCalculator.vue'),
   'AreaPerimeterCalculator': () => import('./components/tools/AreaPerimeterCalculator.vue'),
   'CoordinateFormatConverter': () => import('./components/tools/CoordinateFormatConverter.vue'),
-
+  'ProjectionZoneFinder': () => import('./components/tools/ProjectionZoneFinder.vue'),
+  
   // AI
   'ImglyRemoveImageBackground': () => import('./components/tools/ImglyRemoveImageBackground.vue'),
   'AIProfilePhotoAnalyzer': () => import('./components/tools/AIProfilePhotoAnalyzer.vue'),
