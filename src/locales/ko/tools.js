@@ -135,6 +135,7 @@ import BaselineCalculator from './tools/baseline-calculator.js';
 import AreaPerimeterCalculator from './tools/area-perimeter-calculator.js';
 import CoordinateFormatConverter from './tools/coordinate-format-converter.js';
 import ProjectionZoneFinder from './tools/projection-zone-finder.js';
+import CoordinateTrajectoryComparator from './tools/coordinate-trajectory-comparator.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -274,4 +275,5 @@ export default {
   'area-perimeter-calculator': AreaPerimeterCalculator,
   'coordinate-format-converter': CoordinateFormatConverter,
   'projection-zone-finder': ProjectionZoneFinder,
+  'coordinate-trajectory-comparator': CoordinateTrajectoryComparator,
 };

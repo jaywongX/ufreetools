@@ -4474,4 +4474,24 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/tool/projection-zone-finder" />
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/tool/projection-zone-finder" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/TW/tool/coordinate-trajectory-comparator</loc>
+    <lastmod>2025-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/coordinate-trajectory-comparator" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/coordinate-trajectory-comparator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/tool/coordinate-trajectory-comparator" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/tool/coordinate-trajectory-comparator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/tool/coordinate-trajectory-comparator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/tool/coordinate-trajectory-comparator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/tool/coordinate-trajectory-comparator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/tool/coordinate-trajectory-comparator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/tool/coordinate-trajectory-comparator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/tool/coordinate-trajectory-comparator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/tool/coordinate-trajectory-comparator" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/tool/coordinate-trajectory-comparator" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/tool/coordinate-trajectory-comparator" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/tool/coordinate-trajectory-comparator" />
+  </url>
 </urlset>
