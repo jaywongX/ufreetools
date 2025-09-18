@@ -41,4 +41,8 @@ export default {
     title: 'AI 도구',
     description: '인공 지능 기술 기반의 지능형 도구 및 서비스'
   },
+  pdf: {
+    title: 'PDF 도구',
+    description: 'PDF 파일 생성, 편집, 변환 및 최적화 도구'
+  },
 };

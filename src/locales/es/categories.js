@@ -41,4 +41,8 @@ export default {
     title: 'Herramientas de IA',
     description: 'Herramientas y servicios inteligentes basados en tecnología de inteligencia artificial'
   },
-}
+  pdf: {
+    title: 'Herramientas PDF',
+    description: 'Herramientas para crear, editar, convertir y optimizar archivos PDF'
+  },
+};

@@ -41,4 +41,8 @@ export default {
     title: 'AI Tools',
     description: 'Intelligent tools and services based on artificial intelligence technology'
   },
-}
+  pdf: {
+    title: 'PDF Tools',
+    description: 'Tools for creating, editing, converting and optimizing PDF files'
+  },
+};

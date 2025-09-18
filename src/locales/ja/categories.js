@@ -41,4 +41,8 @@ export default {
     title: 'AIツール',
     description: '人工知能技術に基づくインテリジェントツールとサービス'
   },
+  pdf: {
+    title: 'PDFツール',
+    description: 'PDFファイルの作成、編集、変換、最適化ツール'
+  },
 };

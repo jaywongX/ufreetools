@@ -4,7 +4,7 @@
     <SeoHead />
     <!-- PC端 左侧导航栏 - 只在中等屏幕及以上显示 -->
     <LeftSideNav class="hidden md:block" />
-      
+
     <!-- 右侧内容区域 -->
     <div class="flex-1 flex flex-col">
       <div class="relative">
@@ -16,7 +16,7 @@
       </main>
       <TheFooter />
     </div>
-    
+
     <!-- 移动端 底部导航栏 - 只在中等屏幕以下显示 -->
     <ButtomSideNav class="md:hidden" />
   </div>
@@ -54,68 +54,75 @@ const categories = ref([
     description: '基于人工智能技术的智能工具和服务',
     icon: 'M12 4.5C7 4.5 3 8 3 12s4 7.5 9 7.5 9-3.5 9-7.5S17 4.5 12 4.5zM12 15a3 3 0 100-6 3 3 0 000 6z'
   },
-  { 
-    id: 'dev', 
-    title: '开发工具', 
+  {
+    id: 'dev',
+    title: '开发工具',
     name: '开发工具',
     description: '为开发者提供的编程、调试和优化工具',
     icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4'
   },
-  { 
-    id: 'design', 
-    title: '设计工具', 
+  {
+    id: 'design',
+    title: '设计工具',
     name: '设计工具',
     description: '辅助设计师创建和优化视觉作品的工具',
     icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01'
   },
-  { 
-    id: 'convert', 
-    title: '转换工具', 
+  {
+    id: 'convert',
+    title: '转换工具',
     name: '转换工具',
     description: '各种文件格式之间的转换工具',
     icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
   },
-  { 
-    id: 'text', 
-    title: '文本编辑', 
+  {
+    id: 'text',
+    title: '文本编辑',
     name: '文本编辑',
     description: '处理、编辑和转换文本内容的工具',
     icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'
   },
-  { 
-    id: 'image', 
-    title: '图像处理', 
+  {
+    id: 'image',
+    title: '图像处理',
     name: '图像处理',
     description: '图像处理、优化和转换工具',
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z'
   },
-  { 
-    id: 'network', 
-    title: '网络与协议', 
+  {
+    id: 'network',
+    title: '网络与协议',
     name: '网络与协议',
     description: '网络分析、调试和测试工具',
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9'
   },
-  { 
-    id: 'crypto', 
-    title: '密码安全', 
+  {
+    id: 'crypto',
+    title: '密码安全',
     name: '密码安全',
     description: '密码生成、加密、解密与安全工具',
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z'
   },
-  { 
-    id: 'utility', 
-    title: '实用效率', 
+  {
+    id: 'utility',
+    title: '实用效率',
     name: '实用效率',
     description: '各种实用的日常工具',
     icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z'
   },
-  { 
-    id: 'surveying_and_mapping', 
-    title: '测绘工具', 
+  {
+    id: 'surveying_and_mapping',
+    title: '测绘工具',
     name: '测绘工具',
     description: '各种测绘工具',
     icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7'
+  },
+  {
+    id: 'pdf',
+    title: 'PDF工具',
+    name: 'PDF工具',
+    description: 'PDF文件的创建、编辑、转换与优化工具',
+    icon: 'M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm3 3h2v2H7V9zm0 3h2v2H7v-2zm0 3h2v2H7v-2zm5-6h2v2h-2V9zm0 3h2v2h-2v-2zm0 3h2v2h-2v-2z'
   }
 ])
 provide('categories', categories.value)
@@ -132,12 +139,12 @@ const allTags = ref([
   { id: 'debug', name: '调试', color: 'orange' },
   { id: 'test', name: '测试', color: 'blue' },
   { id: 'grpc', name: 'gRPC', color: 'orange' },
-  
+
   // 格式化/转换相关
   { id: 'format', name: '格式化', color: 'green' },
   { id: 'convert', name: '转换', color: 'yellow' },
   { id: 'compress', name: '压缩', color: 'emerald' },
-  
+
   // 设计相关
   { id: 'color', name: '颜色', color: 'purple' },
   { id: 'design', name: '设计', color: 'cyan' },
@@ -145,7 +152,7 @@ const allTags = ref([
   { id: 'gradient', name: '渐变', color: 'pink' },
   { id: 'image', name: '图像', color: 'pink' },
   { id: 'svg', name: 'SVG', color: 'purple' },
-  
+
   // 文本相关
   { id: 'text', name: '文本', color: 'lime' },
   { id: 'markdown', name: 'Markdown', color: 'lime' },
@@ -164,7 +171,7 @@ const allTags = ref([
   { id: 'animation', name: '动画', color: 'emerald' },
   { id: 'frames', name: '帧', color: 'lime' },
   { id: 'csv', name: 'CSV', color: 'lime' },
-  
+
   // 安全相关
   { id: 'crypto', name: '加密', color: 'indigo' },
   { id: 'security', name: '安全', color: 'amber' },
@@ -176,7 +183,7 @@ const allTags = ref([
   { id: 'encrypt', name: '加密', color: 'rose' },
   { id: 'decrypt', name: '解密', color: 'teal' },
   { id: 'check', name: '检查', color: 'teal' },
-  
+
   // 网络相关
   { id: 'network', name: '网络', color: 'teal' },
   { id: 'http', name: 'HTTP', color: 'rose' },
@@ -185,7 +192,7 @@ const allTags = ref([
   { id: 'status', name: '状态', color: 'amber' },
   { id: 'ip', name: 'IP', color: 'pink' },
   { id: 'html', name: 'HTML', color: 'pink' },
-  
+
   // 通用功能
   { id: 'generate', name: '生成', color: 'rose' },
   { id: 'analyze', name: '分析', color: 'amber' },
@@ -260,8 +267,8 @@ provide('allTags', allTags)
 // const allTools = ref([
 const allTools = computed(() => [
   // 开发工具
-  { 
-    id: 'json-formatter', 
+  {
+    id: 'json-formatter',
     name: t('tools.json-formatter.name'),
     category: t(`categories.dev.title`),
     categoryId: 'dev',
@@ -271,8 +278,8 @@ const allTools = computed(() => [
     icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
     tags: ['json', 'format', 'dev', 'validate']
   },
-  { 
-    id: 'regex-tester', 
+  {
+    id: 'regex-tester',
     name: t('tools.regex-tester.name'),
     category: t(`categories.dev.title`),
     categoryId: 'dev',
@@ -282,8 +289,8 @@ const allTools = computed(() => [
     icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
     tags: ['regex', 'test', 'dev', 'validate']
   },
-  { 
-    id: 'git-conflict-resolver', 
+  {
+    id: 'git-conflict-resolver',
     name: t('tools.git-conflict-resolver.name'),
     category: t(`categories.dev.title`),
     categoryId: 'dev',
@@ -293,8 +300,8 @@ const allTools = computed(() => [
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['git', 'code', 'dev', 'utility']
   },
-  { 
-    id: 'html-entity-encoder', 
+  {
+    id: 'html-entity-encoder',
     name: t('tools.html-entity-encoder.name'),
     category: t(`categories.dev.title`),
     categoryId: 'dev',
@@ -302,10 +309,10 @@ const allTools = computed(() => [
     path: '/tools/html-entity-encoder',
     component: 'HtmlEntityEncoder',
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['html','dev','encode']
+    tags: ['html', 'dev', 'encode']
   },
-  { 
-    id: 'jwt-debugger', 
+  {
+    id: 'jwt-debugger',
     name: t('tools.jwt-debugger.name'),
     category: t(`categories.dev.title`),
     categoryId: 'dev',
@@ -315,8 +322,8 @@ const allTools = computed(() => [
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
     tags: ['jwt', 'security', 'debug', 'dev']
   },
-  { 
-    id: 'openapi-generator', 
+  {
+    id: 'openapi-generator',
     name: t('tools.openapi-generator.name'),
     category: t(`categories.dev.title`),
     categoryId: 'dev',
@@ -326,8 +333,8 @@ const allTools = computed(() => [
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['api', 'dev', 'frontend', 'generate']
   },
-  { 
-    id: 'mock-api-generator', 
+  {
+    id: 'mock-api-generator',
     name: t('tools.mock-api-generator.name'),
     category: t(`categories.dev.title`),
     categoryId: 'dev',
@@ -335,10 +342,10 @@ const allTools = computed(() => [
     path: '/tools/mock-api-generator',
     component: 'MockAPIGenerator',
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags: ['api','dev','mock']
+    tags: ['api', 'dev', 'mock']
   },
-  { 
-    id: 'code-complexity-analyzer', 
+  {
+    id: 'code-complexity-analyzer',
     name: t('tools.code-complexity-analyzer.name'),
     category: t(`categories.dev.title`),
     categoryId: 'dev',
@@ -348,8 +355,8 @@ const allTools = computed(() => [
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['code', 'analyze', 'performance', 'dev']
   },
-  { 
-    id: 'code-diff', 
+  {
+    id: 'code-diff',
     name: t('tools.code-diff.name'),
     category: t(`categories.dev.title`),
     categoryId: 'dev',
@@ -359,8 +366,8 @@ const allTools = computed(() => [
     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['code', 'utility', 'dev']
   },
-  { 
-    id: 'code-obfuscator', 
+  {
+    id: 'code-obfuscator',
     name: t('tools.code-obfuscator.name'),
     category: t(`categories.dev.title`),
     categoryId: 'dev',
@@ -371,42 +378,42 @@ const allTools = computed(() => [
     tags: ['code', 'security', 'frontend', 'optimize']
   },
   {
-     id: 'uuid-generator',
-     name: t('tools.uuid-generator.name'),
-     category: t(`categories.dev.title`),
-     categoryId: 'dev',
-     description: t('tools.uuid-generator.description'),
-     path: '/tools/uuid-generator',
-     component: 'UuidGenerator',
-     icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
-     tags: ['dev', 'generate']
-   },
+    id: 'uuid-generator',
+    name: t('tools.uuid-generator.name'),
+    category: t(`categories.dev.title`),
+    categoryId: 'dev',
+    description: t('tools.uuid-generator.description'),
+    path: '/tools/uuid-generator',
+    component: 'UuidGenerator',
+    icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
+    tags: ['dev', 'generate']
+  },
   {
-     id: 'html-formatter',
-     name: t('tools.html-formatter.name'),
-     category: t(`categories.dev.title`),
-     categoryId: 'dev',
-     description: t('tools.html-formatter.description'),
-     path: '/tools/html-formatter',
-     component: 'HtmlFormatter',
-     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-     tags: ['html','dev','format']
-   },
+    id: 'html-formatter',
+    name: t('tools.html-formatter.name'),
+    category: t(`categories.dev.title`),
+    categoryId: 'dev',
+    description: t('tools.html-formatter.description'),
+    path: '/tools/html-formatter',
+    component: 'HtmlFormatter',
+    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['html', 'dev', 'format']
+  },
   {
-     id: 'json-diff-checker',
-     name: t('tools.json-diff-checker.name'),
-     category: t(`categories.dev.title`),
-     categoryId: 'dev',
-     description: t('tools.json-diff-checker.description'),
-     path: '/tools/json-diff-checker',
-     component: 'JsonDiffChecker',
-     icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-     tags: ['json','dev','check']
-   },
+    id: 'json-diff-checker',
+    name: t('tools.json-diff-checker.name'),
+    category: t(`categories.dev.title`),
+    categoryId: 'dev',
+    description: t('tools.json-diff-checker.description'),
+    path: '/tools/json-diff-checker',
+    component: 'JsonDiffChecker',
+    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['json', 'dev', 'check']
+  },
 
   // 设计工具
-  { 
-    id: 'qr-code-generator', 
+  {
+    id: 'qr-code-generator',
     name: t('tools.qr-code-generator.name'),
     category: t(`categories.design.title`),
     categoryId: 'design',
@@ -416,8 +423,8 @@ const allTools = computed(() => [
     icon: 'M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z',
     tags: ['generate', 'image', 'utility']
   },
-  { 
-    id: 'color-picker', 
+  {
+    id: 'color-picker',
     name: t('tools.color-picker.name'),
     category: t(`categories.design.title`),
     categoryId: 'design',
@@ -427,8 +434,8 @@ const allTools = computed(() => [
     icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
     tags: ['color', 'design', 'ui', 'hex', 'rgb']
   },
-  { 
-    id: 'color-scheme-generator', 
+  {
+    id: 'color-scheme-generator',
     name: t('tools.color-scheme-generator.name'),
     category: t(`categories.design.title`),
     categoryId: 'design',
@@ -438,8 +445,8 @@ const allTools = computed(() => [
     icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
     tags: ['color', 'design', 'generate']
   },
-  { 
-    id: 'css-gradient-generator', 
+  {
+    id: 'css-gradient-generator',
     name: t('tools.css-gradient-generator.name'),
     category: t(`categories.design.title`),
     categoryId: 'design',
@@ -453,7 +460,7 @@ const allTools = computed(() => [
     id: 'flowchart-generator',
     name: t('tools.flowchart-generator.name'),
     category: t(`categories.design.title`),
-    categoryId: 'design', 
+    categoryId: 'design',
     description: t('tools.flowchart-generator.description'),
     path: '/tools/flowchart-generator',
     component: 'FlowchartGenerator',
@@ -461,18 +468,18 @@ const allTools = computed(() => [
     tags: ['design', 'diagram', 'flowchart', 'visualization', 'dev']
   },
   {
-    id:'diagram-examples',
-    name:'图表示例',
-    category:'设计工具',
-    categoryId:'design',
-    description:'展示各种图表示例，包括流程图、时序图、甘特图等',
-    path:'/tools/diagram-examples',
-    component:'DiagramExamples',
-    icon:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
-    tags:['design','diagram','example','visualization']
+    id: 'diagram-examples',
+    name: '图表示例',
+    category: '设计工具',
+    categoryId: 'design',
+    description: '展示各种图表示例，包括流程图、时序图、甘特图等',
+    path: '/tools/diagram-examples',
+    component: 'DiagramExamples',
+    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
+    tags: ['design', 'diagram', 'example', 'visualization']
   },
-  { 
-    id: 'drawing-board', 
+  {
+    id: 'drawing-board',
     name: t('tools.drawing-board.name'),
     category: t(`categories.design.title`),
     categoryId: 'design',
@@ -484,8 +491,8 @@ const allTools = computed(() => [
   },
 
   // 文本与编辑
-  { 
-    id: 'markdown-editor', 
+  {
+    id: 'markdown-editor',
     name: t('tools.markdown-editor.name'),
     category: t(`categories.text.title`),
     categoryId: 'text',
@@ -496,15 +503,15 @@ const allTools = computed(() => [
     tags: ['markdown', 'text', 'editor']
   },
   {
-    id:'markdown-to-html',
-    name:'Markdown转HTML',
-    category:'文本编辑',
-    categoryId:'text',
-    description:'将Markdown文本转换为HTML代码',
-    path:'/tools/markdown-to-html',
-    component:'MarkdownToHtml',
-    icon:'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
-    tags:['markdown','text','editor']
+    id: 'markdown-to-html',
+    name: 'Markdown转HTML',
+    category: '文本编辑',
+    categoryId: 'text',
+    description: '将Markdown文本转换为HTML代码',
+    path: '/tools/markdown-to-html',
+    component: 'MarkdownToHtml',
+    icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
+    tags: ['markdown', 'text', 'editor']
   },
   // {
   //   id:'css-formatter',
@@ -517,8 +524,8 @@ const allTools = computed(() => [
   //   icon:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
   //   tags:['css','text','format']
   // },
-  { 
-    id: 'sensitive-word-filter', 
+  {
+    id: 'sensitive-word-filter',
     name: t('tools.sensitive-word-filter.name'),
     category: t(`categories.text.title`),
     categoryId: 'text',
@@ -546,11 +553,11 @@ const allTools = computed(() => [
     categoryId: 'text',
     description: t('tools.asn1-structure-parser.description'),
     path: '/tools/asn1-structure-parser',
-    component: 'Asn1StructureParser', 
+    component: 'Asn1StructureParser',
     icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
     tags: ['asn1', 'parser', 'structure', 'visualize', 'decode']
   },
-  
+
   // 图像与多媒体
   {
     id: 'image-compressor',
@@ -629,8 +636,8 @@ const allTools = computed(() => [
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['image', 'gif', 'animation', 'frames', 'convert']
   },
-  { 
-    id: 'svg-optimizer', 
+  {
+    id: 'svg-optimizer',
     name: t('tools.svg-optimizer.name'),
     category: t(`categories.image.title`),
     categoryId: 'image',
@@ -808,7 +815,7 @@ const allTools = computed(() => [
 
   // 转换工具
   {
-    id:'base64-encoder-decoder',
+    id: 'base64-encoder-decoder',
     name: t('tools.base64-encoder-decoder.name'),
     category: t(`categories.convert.title`),
     categoryId: 'convert',
@@ -816,10 +823,10 @@ const allTools = computed(() => [
     path: '/tools/base64-encoder-decoder',
     component: 'Base64EncoderDecoder',
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags:['convert','base64','encode','decode']
+    tags: ['convert', 'base64', 'encode', 'decode']
   },
-  { 
-    id: 'csv-json-converter', 
+  {
+    id: 'csv-json-converter',
     name: t('tools.csv-json-converter.name'),
     category: t(`categories.convert.title`),
     categoryId: 'convert',
@@ -829,8 +836,8 @@ const allTools = computed(() => [
     icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
     tags: ['convert', 'json', 'csv', 'data']
   },
-  { 
-    id: 'number-converter', 
+  {
+    id: 'number-converter',
     name: t('tools.number-converter.name'),
     category: t(`categories.convert.title`),
     categoryId: 'convert',
@@ -841,62 +848,62 @@ const allTools = computed(() => [
     tags: ['convert', 'number', 'utility']
   },
   {
-    id:'timestamp-converter',
+    id: 'timestamp-converter',
     name: t('tools.timestamp-converter.name'),
     category: t(`categories.convert.title`),
     categoryId: 'convert',
     description: t('tools.timestamp-converter.description'),
     path: '/tools/timestamp-converter',
     component: 'TimestampConverter',
-    icon:'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags:['convert','timestamp','date','time']
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['convert', 'timestamp', 'date', 'time']
   },
   {
-    id:'url-encode-decode',
+    id: 'url-encode-decode',
     name: t('tools.url-encode-decode.name'),
     category: t(`categories.convert.title`),
     categoryId: 'convert',
     description: t('tools.url-encode-decode.description'),
     path: '/tools/url-encode-decode',
     component: 'UrlEncodeDecode',
-    icon:'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags:['convert','url','encode','decode']
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['convert', 'url', 'encode', 'decode']
   },
   {
-    id:'xml-json-converter',
+    id: 'xml-json-converter',
     name: t('tools.xml-json-converter.name'),
     category: t(`categories.convert.title`),
     categoryId: 'convert',
     description: t('tools.xml-json-converter.description'),
     path: '/tools/xml-json-converter',
     component: 'XmlJsonConverter',
-    icon:'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags:['convert','xml','json','data']
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['convert', 'xml', 'json', 'data']
   },
   {
-    id:'xml-formatter',
+    id: 'xml-formatter',
     name: t('tools.xml-formatter.name'),
-    category:t(`categories.convert.title`),
-    categoryId:'convert',
+    category: t(`categories.convert.title`),
+    categoryId: 'convert',
     description: t('tools.xml-formatter.description'),
-    path:'/tools/xml-formatter',
-    component:'XmlFormatter',
-    icon:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
-    tags:['xml','text','format']
+    path: '/tools/xml-formatter',
+    component: 'XmlFormatter',
+    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
+    tags: ['xml', 'text', 'format']
   },
   {
-    id:'yaml-json-converter',
+    id: 'yaml-json-converter',
     name: t('tools.yaml-json-converter.name'),
     category: t(`categories.convert.title`),
     categoryId: 'convert',
     description: t('tools.yaml-json-converter.description'),
     path: '/tools/yaml-json-converter',
     component: 'YamlJsonConverter',
-    icon:'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags:['convert','yaml','json','data']
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['convert', 'yaml', 'json', 'data']
   },
-  { 
-    id: 'timezone-converter', 
+  {
+    id: 'timezone-converter',
     name: t('tools.timezone-converter.name'),
     category: t(`categories.convert.title`),
     categoryId: 'convert',
@@ -983,10 +990,10 @@ const allTools = computed(() => [
     icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
     tags: ['convert', 'bionic', 'reading']
   },
-  
+
   // 网络与协议
-  { 
-    id: 'http-header-security-checker', 
+  {
+    id: 'http-header-security-checker',
     name: t('tools.http-header-security-checker.name'),
     category: t(`categories.network.title`),
     categoryId: 'network',
@@ -996,8 +1003,8 @@ const allTools = computed(() => [
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
     tags: ['security', 'http', 'network', 'analyze']
   },
-  { 
-    id: 'request-header-editor', 
+  {
+    id: 'request-header-editor',
     name: t('tools.request-header-editor.name'),
     category: t(`categories.network.title`),
     categoryId: 'network',
@@ -1062,8 +1069,8 @@ const allTools = computed(() => [
   //   icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm12 0a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z',
   //   tags: ['network', 'analyze', 'http']
   // },
-  { 
-    id: 'http-proxy-detector', 
+  {
+    id: 'http-proxy-detector',
     name: t('tools.http-proxy-detector.name'),
     category: t(`categories.network.title`),
     categoryId: 'network',
@@ -1073,8 +1080,8 @@ const allTools = computed(() => [
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
     tags: ['network', 'http', 'security', 'analyze']
   },
-  { 
-    id: 'user-agent-generator', 
+  {
+    id: 'user-agent-generator',
     name: t('tools.user-agent-generator.name'),
     category: t(`categories.network.title`),
     categoryId: 'network',
@@ -1095,8 +1102,8 @@ const allTools = computed(() => [
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
     tags: ['network', 'user-agent', 'parser']
   },
-  { 
-    id: 'url-params-parser', 
+  {
+    id: 'url-params-parser',
     name: t('tools.url-params-parser.name'),
     category: t(`categories.network.title`),
     categoryId: 'network',
@@ -1150,8 +1157,8 @@ const allTools = computed(() => [
     icon: "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z",
     tags: ['network', 'websocket', 'test']
   },
-  { 
-    id: 'cookie-manager', 
+  {
+    id: 'cookie-manager',
     name: t('tools.cookie-manager.name'),
     category: t(`categories.network.title`),
     categoryId: 'network',
@@ -1161,10 +1168,10 @@ const allTools = computed(() => [
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
     tags: ['network', 'http', 'browser', 'cookie', 'privacy', 'security']
   },
-  
+
   // 加密安全工具
   {
-    id:'password-generator',
+    id: 'password-generator',
     name: t('tools.password-generator.name'),
     category: t(`categories.crypto.title`),
     categoryId: 'crypto',
@@ -1172,10 +1179,10 @@ const allTools = computed(() => [
     path: '/tools/password-generator',
     component: 'PasswordGenerator',
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags:['crypto','password','generate']
+    tags: ['crypto', 'password', 'generate']
   },
   {
-    id:'password-strength-checker',
+    id: 'password-strength-checker',
     name: t('tools.password-strength-checker.name'),
     category: t(`categories.crypto.title`),
     categoryId: 'crypto',
@@ -1183,10 +1190,10 @@ const allTools = computed(() => [
     path: '/tools/password-strength-checker',
     component: 'PasswordStrengthChecker',
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
-    tags:['crypto','password','check']
+    tags: ['crypto', 'password', 'check']
   },
   {
-    id:'hash-calculator',
+    id: 'hash-calculator',
     name: t('tools.hash-calculator.name'),
     category: t(`categories.crypto.title`),
     categoryId: 'crypto',
@@ -1194,7 +1201,7 @@ const allTools = computed(() => [
     path: '/tools/hash-calculator',
     component: 'HashCalculator',
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
-    tags:['crypto','hash']
+    tags: ['crypto', 'hash']
   },
   // {
   //   id:'rsa-crypto',
@@ -1219,7 +1226,7 @@ const allTools = computed(() => [
   //   tags:['crypto','sm2','encrypt','decrypt']
   // },
   {
-    id:'symmetric-crypto',
+    id: 'symmetric-crypto',
     name: t('tools.symmetric-crypto.name'),
     category: t(`categories.crypto.title`),
     categoryId: 'crypto',
@@ -1227,10 +1234,10 @@ const allTools = computed(() => [
     path: '/tools/symmetric-crypto',
     component: 'SymmetricCrypto',
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
-    tags:['crypto','encrypt','decrypt']
+    tags: ['crypto', 'encrypt', 'decrypt']
   },
-  { 
-    id: 'hmac-calculator', 
+  {
+    id: 'hmac-calculator',
     name: t('tools.hmac-calculator.name'),
     category: t(`categories.crypto.title`),
     categoryId: 'crypto',
@@ -1240,8 +1247,8 @@ const allTools = computed(() => [
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['crypto', 'hash', 'security', 'generate']
   },
-  { 
-    id: 'x509-certificate-decoder', 
+  {
+    id: 'x509-certificate-decoder',
     name: t('tools.x509-certificate-decoder.name'),
     category: t(`categories.crypto.title`),
     categoryId: 'crypto',
@@ -1251,8 +1258,8 @@ const allTools = computed(() => [
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['crypto', 'security', 'certificate', 'x509', 'ssl', 'tls', 'pki', 'analyze', 'decoder']
   },
-  { 
-    id: 'rsa-encrypt-decrypt', 
+  {
+    id: 'rsa-encrypt-decrypt',
     name: t('tools.rsa-encrypt-decrypt.name'),
     category: t(`categories.crypto.title`),
     categoryId: 'crypto',
@@ -1262,8 +1269,8 @@ const allTools = computed(() => [
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['crypto', 'rsa', 'encrypt', 'decrypt', 'security', 'key', 'pkcs', 'pem', 'certificate']
   },
-  { 
-    id: 'sm2-encrypt-decrypt', 
+  {
+    id: 'sm2-encrypt-decrypt',
     name: t('tools.sm2-encrypt-decrypt.name'),
     category: t(`categories.crypto.title`),
     categoryId: 'crypto',
@@ -1273,8 +1280,8 @@ const allTools = computed(() => [
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['crypto', 'sm2', 'encrypt', 'decrypt', 'security', 'key', 'pem', 'certificate']
   },
-  { 
-    id: 'rsa-key-pair-generator', 
+  {
+    id: 'rsa-key-pair-generator',
     name: t('tools.rsa-key-pair-generator.name'),
     category: t(`categories.crypto.title`),
     categoryId: 'crypto',
@@ -1284,8 +1291,8 @@ const allTools = computed(() => [
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['rsa', 'crypto', 'security', 'key', 'encrypt', 'decrypt', 'generator', 'keypair']
   },
-  { 
-    id: 'sm2-key-pair-generator', 
+  {
+    id: 'sm2-key-pair-generator',
     name: t('tools.sm2-key-pair-generator.name'),
     category: t(`categories.crypto.title`),
     categoryId: 'crypto',
@@ -1295,8 +1302,8 @@ const allTools = computed(() => [
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['sm2', 'crypto', 'security', 'key', 'encrypt', 'decrypt', 'generator', 'keypair']
   },
-  { 
-    id: 'rsa-signature-verifier', 
+  {
+    id: 'rsa-signature-verifier',
     name: t('tools.rsa-signature-verifier.name'),
     category: t(`categories.crypto.title`),
     categoryId: 'crypto',
@@ -1306,8 +1313,8 @@ const allTools = computed(() => [
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
     tags: ['rsa', 'crypto', 'security', 'signature', 'verify', 'sign', 'certificate', 'hash']
   },
-  { 
-    id: 'sm2-signature-verifier', 
+  {
+    id: 'sm2-signature-verifier',
     name: t('tools.sm2-signature-verifier.name'),
     category: t(`categories.crypto.title`),
     categoryId: 'crypto',
@@ -1319,8 +1326,8 @@ const allTools = computed(() => [
   },
 
   // 实用与效率
-  { 
-    id: 'latex-formula-generator', 
+  {
+    id: 'latex-formula-generator',
     name: t('tools.latex-formula-generator.name'),
     category: t(`categories.text.title`),
     categoryId: 'utility',
@@ -1330,8 +1337,8 @@ const allTools = computed(() => [
     icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
     tags: ['text', 'latex', 'math', 'formula', 'editor']
   },
-  { 
-    id: 'countdown-generator', 
+  {
+    id: 'countdown-generator',
     name: t('tools.countdown-generator.name'),
     category: t(`categories.utility.title`),
     categoryId: 'utility',
@@ -1341,8 +1348,8 @@ const allTools = computed(() => [
     icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['utility', 'time', 'date', 'countdown']
   },
-  { 
-    id: 'pomodoro-timer', 
+  {
+    id: 'pomodoro-timer',
     name: t('tools.pomodoro-timer.name'),
     category: t(`categories.utility.title`),
     categoryId: 'utility',
@@ -1352,8 +1359,8 @@ const allTools = computed(() => [
     icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
     tags: ['utility', 'time', 'productivity', 'timer', 'pomodoro']
   },
-  { 
-    id: 'loan-calculator', 
+  {
+    id: 'loan-calculator',
     name: t('tools.loan-calculator.name'),
     category: t(`categories.utility.title`),
     categoryId: 'utility',
@@ -1363,8 +1370,8 @@ const allTools = computed(() => [
     icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     tags: ['utility', 'calculator', 'finance', 'loan', 'money']
   },
-  { 
-    id: 'income-tax-calculator', 
+  {
+    id: 'income-tax-calculator',
     name: t('tools.income-tax-calculator.name'),
     category: t(`categories.utility.title`),
     categoryId: 'utility',
@@ -1374,8 +1381,8 @@ const allTools = computed(() => [
     icon: 'M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z',
     tags: ['utility', 'calculator', 'finance', 'tax', 'salary', 'money']
   },
-  { 
-    id: 'bmi-calculator', 
+  {
+    id: 'bmi-calculator',
     name: t('tools.bmi-calculator.name'),
     category: t(`categories.utility.title`),
     categoryId: 'utility',
@@ -1385,8 +1392,8 @@ const allTools = computed(() => [
     icon: 'M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z',
     tags: ['utility', 'calculator', 'health', 'fitness']
   },
-  { 
-    id: 'holiday-calendar', 
+  {
+    id: 'holiday-calendar',
     name: t('tools.holiday-calendar.name'),
     category: t(`categories.utility.title`),
     categoryId: 'utility',
@@ -1396,8 +1403,8 @@ const allTools = computed(() => [
     icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['utility', 'calendar', 'holiday', 'date']
   },
-  { 
-    id: 'todo-list', 
+  {
+    id: 'todo-list',
     name: t('tools.todo-list.name'),
     category: t(`categories.utility.title`),
     categoryId: 'utility',
@@ -1407,8 +1414,8 @@ const allTools = computed(() => [
     icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
     tags: ['utility', 'productivity', 'planner', 'task', 'organization']
   },
-  { 
-    id: 'currency-converter', 
+  {
+    id: 'currency-converter',
     name: t('tools.currency-converter.name'),
     category: t(`categories.utility.title`),
     categoryId: 'utility',
@@ -1418,8 +1425,8 @@ const allTools = computed(() => [
     icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     tags: ['utility', 'finance', 'currency', 'converter', 'exchange', 'calculator', 'money']
   },
-  { 
-    id: 'name-generator', 
+  {
+    id: 'name-generator',
     name: t('tools.name-generator.name'),
     category: t(`categories.utility.title`),
     categoryId: 'utility',
@@ -1429,8 +1436,8 @@ const allTools = computed(() => [
     icon: 'M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z',
     tags: ['utility', 'creative', 'name', 'generator', 'random', 'culture', 'writing', 'character']
   },
-  { 
-    id: 'travel-budget-planner', 
+  {
+    id: 'travel-budget-planner',
     name: t('tools.travel-budget-planner.name'),
     category: t(`categories.utility.title`),
     categoryId: 'utility',
@@ -1462,8 +1469,8 @@ const allTools = computed(() => [
     icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     tags: ['utility', 'finance', 'cash', 'app', 'fee', 'calculator', 'money']
   },
-  { 
-    id: 'id-number-generator', 
+  {
+    id: 'id-number-generator',
     name: t('tools.id-number-generator.name'),
     category: t(`categories.utility.title`),
     categoryId: 'utility',
@@ -1473,8 +1480,8 @@ const allTools = computed(() => [
     icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
     tags: ['utility', 'generator', 'identity', 'china', 'test', 'random']
   },
-  { 
-    id: 'unified-credit-code-generator', 
+  {
+    id: 'unified-credit-code-generator',
     name: t('tools.unified-credit-code-generator.name'),
     category: t(`categories.utility.title`),
     categoryId: 'utility',
@@ -1497,8 +1504,8 @@ const allTools = computed(() => [
     icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',
     tags: ['coordinate', 'conversion', 'gis', 'mapping', 'location', 'utility', 'geography']
   },
-  { 
-    id: 'gps-track-replay', 
+  {
+    id: 'gps-track-replay',
     name: t('tools.gps-track-replay.name'),
     category: t(`categories.surveying_and_mapping.title`),
     categoryId: 'surveying_and_mapping',
@@ -1730,7 +1737,20 @@ const allTools = computed(() => [
     component: 'AIFacialFocusZoomer',
     icon: 'M12 4.5C7 4.5 3 8 3 12s4 7.5 9 7.5 9-3.5 9-7.5S17 4.5 12 4.5zM12 15a3 3 0 100-6 3 3 0 000 6z',
     tags: ['ai', 'image', 'face', 'heatmap', 'visualizer', 'photo']
-  }
+  },
+
+  // PDF工具
+  {
+    id: 'pdf-to-word-converter',
+    name: t('tools.pdf-to-word-converter.name'),
+    category: t(`categories.pdf.title`),
+    categoryId: 'pdf',
+    description: t('tools.pdf-to-word-converter.description'),
+    path: '/tools/pdf-to-word-converter',
+    component: 'PDFToWordConverter',
+    icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',
+    tags: ['coordinate', 'conversion', 'gis', 'mapping', 'location', 'utility', 'geography']
+  },
 ])
 provide('allTools', allTools)
 
@@ -1739,13 +1759,13 @@ allTools.value.forEach(tool => {
   if (!tool.path) {
     tool.path = `/tools/${tool.id}`
   }
-  
+
   if (!tool.component && tool.name) {
     // 根据工具名称生成组件名称，移除空格
     const componentName = tool.name.replace(/\s+/g, '')
     tool.component = componentName
   }
-  
+
   // 标记工具对象为非响应式
   markRaw(tool)
 })
@@ -1753,21 +1773,21 @@ allTools.value.forEach(tool => {
 // 按标签分组的工具
 const toolsByTag = computed(() => {
   const result = {}
-  
+
   // 初始化每个标签的空数组
   allTags.value.forEach(tag => {
     result[tag.id] = []
   })
-  
+
   // 根据标签分组工具
   allTools.value.forEach(tool => {
     tool.tags.forEach(tagId => {
       if (result[tagId]) {
-        result[tagId].push(markRaw({...tool}))
+        result[tagId].push(markRaw({ ...tool }))
       }
     })
   })
-  
+
   return markRaw(result)
 })
 provide('toolsByTag', toolsByTag)
@@ -1775,19 +1795,19 @@ provide('toolsByTag', toolsByTag)
 // 按分类分组的工具
 const toolsByCategory = computed(() => {
   const result = {}
-  
+
   // 初始化每个分类的空数组
   categories.value.forEach(category => {
     result[category.id] = []
   })
-  
+
   // 根据分类分组工具
   allTools.value.forEach(tool => {
     if (result[tool.categoryId]) {
-      result[tool.categoryId].push(markRaw({...tool}))
+      result[tool.categoryId].push(markRaw({ ...tool }))
     }
   })
-  
+
   return markRaw(result)
 })
 provide('toolsByCategory', toolsByCategory)
@@ -1803,7 +1823,7 @@ onMounted(() => {
     document.documentElement.classList.remove('dark');
   }
 
-  
+
   // 监听窗口尺寸变化，在小屏幕上自动折叠导航
   const handleResize = () => {
     if (window.innerWidth < 768) {
@@ -1812,10 +1832,10 @@ onMounted(() => {
       sidebarOpen.value = true
     }
   }
-  
+
   // 初始化
   handleResize()
-  
+
   // 添加事件监听
   window.addEventListener('resize', handleResize)
 })

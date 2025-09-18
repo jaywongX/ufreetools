@@ -41,4 +41,8 @@ export default {
     title: 'Outils IA',
     description: 'Outils et services intelligents basés sur la technologie de l\'intelligence artificielle'
   },
+  pdf: {
+    title: 'Outils PDF',
+    description: 'Outils pour créer, éditer, convertir et optimiser des fichiers PDF'
+  },
 };
