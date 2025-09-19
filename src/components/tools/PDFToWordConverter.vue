@@ -85,7 +85,7 @@
                                 <p class="text-xs truncate">{{ pdf.name }}</p>
                                 <p class="text-xs text-gray-500">{{ pdf.pages }} {{
                                     $t('tools.pdf-to-word-converter.pages')
-                                    }}</p>
+                                }}</p>
                             </div>
                             <div
                                 class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -222,7 +222,9 @@
 import { ref, reactive, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
+import { Buffer } from 'buffer';
 import PDFToWordConverterArticle from './PDFToWordConverterArticle.vue'
+window.Buffer = Buffer;
 
 // PDF.js and DOCX libraries - 完全本地化
 let pdfjsLib = null
@@ -245,9 +247,15 @@ async function initializeLibraries() {
         // 动态导入 PDF.js
         const pdfjsModule = await import('pdfjs-dist')
         pdfjsLib = pdfjsModule
-        
+
         // 使用正确的 worker 路径
         pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.mjs`
+
+        // 添加Buffer polyfill
+        if (typeof window !== 'undefined' && !window.Buffer) {
+            const { Buffer } = await import('buffer/');
+            window.Buffer = Buffer;
+        }
 
         // 动态导入 DOCX
         const docxModule = await import('docx')
@@ -390,7 +398,7 @@ async function convertPDFToWord(pdfFile, index) {
 
         // 处理 PDF 文件
         const arrayBuffer = await pdfFile.file.arrayBuffer()
-        const pdf = await pdfjsLib.getDocument({ 
+        const pdf = await pdfjsLib.getDocument({
             data: arrayBuffer,
             verbosity: 0
         }).promise
@@ -410,7 +418,7 @@ async function convertPDFToWord(pdfFile, index) {
         for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
             const page = await pdf.getPage(pageNum)
             const textContent = await page.getTextContent()
-            
+
             // 提取文本项并按位置排序
             const textItems = textContent.items
                 .filter(item => item.str && item.str.trim())
@@ -430,7 +438,7 @@ async function convertPDFToWord(pdfFile, index) {
 
                 for (const item of textItems) {
                     const currentY = item.transform[5]
-                    
+
                     // 如果 Y 坐标差异较大，开始新段落
                     if (lastY !== null && Math.abs(currentY - lastY) > 10) {
                         if (currentParagraph.length > 0) {
@@ -490,7 +498,7 @@ async function convertPDFToWord(pdfFile, index) {
 
         // 生成 blob
         const blob = await docx.Packer.toBlob(doc)
-        
+
         // 添加到结果列表
         wordFiles.push({
             blob,
