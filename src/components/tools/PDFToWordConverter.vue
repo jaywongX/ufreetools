@@ -219,12 +219,21 @@
 </template>
 
 <script setup>
+
+import { Buffer } from 'buffer';
+// 确保在任何库导入之前设置全局Buffer
+if (typeof window !== 'undefined') {
+    window.Buffer = Buffer;
+    // 添加这一行，因为某些库可能检查global.Buffer
+    if (typeof global === 'undefined') {
+        window.global = window;
+    }
+}
+
 import { ref, reactive, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
-import { Buffer } from 'buffer';
 import PDFToWordConverterArticle from './PDFToWordConverterArticle.vue'
-window.Buffer = Buffer;
 
 // PDF.js and DOCX libraries - 完全本地化
 let pdfjsLib = null
@@ -250,12 +259,6 @@ async function initializeLibraries() {
 
         // 使用正确的 worker 路径
         pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.mjs`
-
-        // 添加Buffer polyfill
-        if (typeof window !== 'undefined' && !window.Buffer) {
-            const { Buffer } = await import('buffer/');
-            window.Buffer = Buffer;
-        }
 
         // 动态导入 DOCX
         const docxModule = await import('docx')
@@ -534,9 +537,12 @@ async function downloadAll() {
         const zip = new JSZip()
 
         for (let i = 0; i < wordFiles.length; i++) {
-            const wordFile = wordFiles[i]
-            zip.file(wordFile.name, wordFile.blob)
+            const wordFile = wordFiles[i];
+            // 使用arrayBuffer而不是直接使用blob
+            const arrayBuffer = await wordFile.blob.arrayBuffer();
+            zip.file(wordFile.name, arrayBuffer, { binary: true });
         }
+
 
         const content = await zip.generateAsync({
             type: 'blob',
