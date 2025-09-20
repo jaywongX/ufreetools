@@ -85,7 +85,7 @@
                                 <p class="text-xs truncate">{{ pdf.name }}</p>
                                 <p class="text-xs text-gray-500">{{ pdf.pages }} {{
                                     $t('tools.pdf-to-word-converter.pages')
-                                    }}</p>
+                                }}</p>
                             </div>
                             <div
                                 class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
