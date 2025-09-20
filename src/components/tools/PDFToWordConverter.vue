@@ -220,7 +220,7 @@
 
 <script setup>
 
-import { Buffer } from 'buffer';
+import { Buffer } from 'buffer/';
 // 确保在任何库导入之前设置全局Buffer
 if (typeof window !== 'undefined') {
     window.Buffer = Buffer;
