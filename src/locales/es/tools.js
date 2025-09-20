@@ -136,6 +136,7 @@ import AreaPerimeterCalculator from './tools/area-perimeter-calculator.js';
 import CoordinateFormatConverter from './tools/coordinate-format-converter.js';
 import ProjectionZoneFinder from './tools/projection-zone-finder.js';
 import CoordinateTrajectoryComparator from './tools/coordinate-trajectory-comparator.js';
+import PDFToWordConverter from './tools/pdf-to-word-converter.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -276,4 +277,5 @@ export default {
   'coordinate-format-converter': CoordinateFormatConverter,
   'projection-zone-finder': ProjectionZoneFinder,
   'coordinate-trajectory-comparator': CoordinateTrajectoryComparator,
+  'pdf-to-word-converter': PDFToWordConverter,
 };

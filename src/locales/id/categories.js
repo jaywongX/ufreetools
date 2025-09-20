@@ -41,4 +41,8 @@ export default {
     title: 'Alat AI',
     description: 'Alat dan layanan cerdas berbasis teknologi kecerdasan buatan'
   },
+  pdf: {
+    title: 'Alat PDF',
+    description: 'Alat untuk membuat, mengedit, mengkonversi, dan mengoptimalkan file PDF'
+  },
 };

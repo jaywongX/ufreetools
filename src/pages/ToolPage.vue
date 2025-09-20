@@ -89,7 +89,8 @@ const categoriesData = [
   { id: 'network', title: t('categories.network.title'), description: t('categories.network.description') },
   { id: 'crypto', title: t('categories.crypto.title'), description: t('categories.crypto.description') },
   { id: 'utility', title: t('categories.utility.title'), description: t('categories.utility.description') },
-  { id: 'surveying_and_mapping', title: t('categories.surveying_and_mapping.title'), description: t('categories.surveying_and_mapping.description') }
+  { id: 'surveying_and_mapping', title: t('categories.surveying_and_mapping.title'), description: t('categories.surveying_and_mapping.description') },
+  { id: 'pdf', title: t('categories.pdf.title'), description: t('categories.pdf.description') }
 ]
 
 // 安全地获取分类信息

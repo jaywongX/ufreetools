@@ -41,4 +41,8 @@ export default {
       title: 'KI-Tools',
       description: 'Intelligente Tools und Dienstleistungen basierend auf künstlicher Intelligenz-Technologie'
     },
-  };
+  pdf: {
+    title: 'PDF-Tools',
+    description: 'Tools zum Erstellen, Bearbeiten, Konvertieren und Optimieren von PDF-Dateien'
+  },
+};

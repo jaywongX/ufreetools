@@ -41,4 +41,8 @@ export default {
     title: 'Strumenti AI',
     description: 'Strumenti e servizi intelligenti basati sulla tecnologia dell\'intelligenza artificiale'
   },
+  pdf: {
+    title: 'Strumenti PDF',
+    description: 'Strumenti per creare, modificare, convertire e ottimizzare file PDF'
+  },
 };

@@ -41,4 +41,8 @@ export default {
     title: 'AI工具',
     description: '基于人工智能技术的智能工具和服务'
   },
+  pdf: {
+    title: 'PDF工具',
+    description: 'PDF文件的创建、编辑、转换与优化工具'
+  },
 }; 

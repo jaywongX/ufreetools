@@ -207,6 +207,9 @@ const lazyComponentMap = {
   'AIFaceMorphBlend': () => import('./components/tools/AIFaceMorphBlend.vue'),
   'AIFacialHeatmapVisualizer': () => import('./components/tools/AIFacialHeatmapVisualizer.vue'),
   'AIFacialFocusZoomer': () => import('./components/tools/AIFacialFocusZoomer.vue'),
+
+  // PDF
+  'PDFToWordConverter': () => import('./components/tools/PDFToWordConverter.vue'),
 }
 
 // 用异步 IIFE 启动应用
