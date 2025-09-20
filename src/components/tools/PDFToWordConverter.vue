@@ -500,7 +500,11 @@ async function convertPDFToWord(pdfFile, index) {
         })
 
         // 生成 blob
-        const blob = await docx.Packer.toBlob(doc)
+        // const blob = await docx.Packer.toBlob(doc)
+        const base64 = await docx.Packer.toBase64String(doc);
+        const blob = await fetch(
+            `data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,${base64}`
+        ).then(res => res.blob());
 
         // 添加到结果列表
         wordFiles.push({
