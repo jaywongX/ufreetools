@@ -220,21 +220,15 @@
 
 <script setup>
 
-import { Buffer } from 'buffer/';
-
-// if (typeof window !== 'undefined') {
-//     window.Buffer = Buffer;
-//     if (!window.global) {
-//         window.global = window;
-//     }
-
-//     // 手动补上 isBuffer
-//     if (typeof Buffer.isBuffer !== 'function') {
-//         Buffer.isBuffer = function (obj) {
-//             return obj instanceof Buffer;
-//         };
-//     }
-// }
+import { Buffer } from 'buffer';
+// 确保在任何库导入之前设置全局Buffer
+if (typeof window !== 'undefined') {
+    window.Buffer = Buffer;
+    // 添加这一行，因为某些库可能检查global.Buffer
+    if (typeof global === 'undefined') {
+        window.global = window;
+    }
+}
 
 import { ref, reactive, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -256,52 +250,9 @@ const conversionProgress = ref(0)
 const errorMessage = ref('')
 const isLibrariesLoaded = ref(false)
 
-// 放在文件最顶端，确保在任何会导入 docx 的代码之前执行
-async function ensureBrowserBuffer() {
-    if (typeof window === 'undefined') return;
-
-    // 如果已存在且完整，直接返回
-    if (window.Buffer && typeof window.Buffer.isBuffer === 'function') {
-        // debug
-        console.log('Buffer already exists and has isBuffer');
-        return;
-    }
-
-    // 动态导入 buffer 的完整实现（注意使用 'buffer/'）
-    const bufferModule = await import('buffer/'); // <- 关键：'buffer/' 而不是 'buffer'
-    const BufferLib = bufferModule?.Buffer ?? bufferModule?.default?.Buffer ?? bufferModule;
-
-    if (!BufferLib) {
-        console.warn('buffer polyfill import failed', bufferModule);
-        return;
-    }
-
-    // 挂到全局
-    window.Buffer = BufferLib;
-    globalThis.Buffer = BufferLib;
-    if (typeof global === 'undefined') {
-        // 某些库检查 global
-        window.global = window;
-    }
-
-    // 严格保证 isBuffer 存在
-    if (typeof BufferLib.isBuffer !== 'function') {
-        BufferLib.isBuffer = function (obj) {
-            // 常见的检测方式：已标记 _isBuffer 或构造名为 Buffer
-            return !!obj && (obj._isBuffer === true || (obj.constructor && obj.constructor.name === 'Buffer'));
-        };
-    }
-
-    // 小诊断
-    console.log('Patched Buffer.isBuffer:', typeof BufferLib.isBuffer, BufferLib.isBuffer(BufferLib.from('a')));
-}
-
-
 // 初始化库
 async function initializeLibraries() {
     try {
-        await ensureBrowserBuffer();
-
         // 动态导入 PDF.js
         const pdfjsModule = await import('pdfjs-dist')
         pdfjsLib = pdfjsModule
@@ -550,10 +501,6 @@ async function convertPDFToWord(pdfFile, index) {
 
         // 生成 blob
         const blob = await docx.Packer.toBlob(doc)
-        // const base64 = await docx.Packer.toBase64String(doc);
-        // const blob = await fetch(
-        //     `data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,${base64}`
-        // ).then(res => res.blob());
 
         // 添加到结果列表
         wordFiles.push({
