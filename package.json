@@ -51,6 +51,8 @@
     "fast-xml-parser": "^4.3.4",
     "file-saver": "^2.0.5",
     "gif-frames": "^1.0.1",
+    "gif.js": "^0.2.0",
+    "gifuct-js": "^2.1.2",
     "grpc-web": "^1.4.2",
     "hash-wasm": "^4.12.0",
     "html-minifier-terser": "^7.2.0",
@@ -105,6 +107,7 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "@rollup/plugin-inject": "^5.0.5",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitest/coverage-c8": "^0.33.0",
     "@vue/test-utils": "^2.4.6",
