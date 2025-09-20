@@ -219,21 +219,11 @@
 </template>
 
 <script setup>
-
-import { Buffer } from 'buffer';
-// 确保在任何库导入之前设置全局Buffer
-if (typeof window !== 'undefined') {
-    window.Buffer = Buffer;
-    // 添加这一行，因为某些库可能检查global.Buffer
-    if (typeof global === 'undefined') {
-        window.global = window;
-    }
-}
-
 import { ref, reactive, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
 import PDFToWordConverterArticle from './PDFToWordConverterArticle.vue'
+import { Buffer } from 'buffer'
 
 // PDF.js and DOCX libraries - 完全本地化
 let pdfjsLib = null
@@ -250,7 +240,6 @@ const conversionProgress = ref(0)
 const errorMessage = ref('')
 const isLibrariesLoaded = ref(false)
 
-// 初始化库
 async function initializeLibraries() {
     try {
         // 动态导入 PDF.js
@@ -258,9 +247,27 @@ async function initializeLibraries() {
         pdfjsLib = pdfjsModule
 
         // 使用正确的 worker 路径
-        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.mjs`
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+            `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.mjs`
 
-        // 动态导入 DOCX
+        // 先打补丁，再导入 docx
+        if (typeof window !== 'undefined') {
+            window.Buffer = Buffer
+            if (typeof global === 'undefined') {
+                window.global = window
+            }
+            if (typeof Buffer.isBuffer !== 'function') {
+                Buffer.isBuffer = function (obj) {
+                    return obj != null && (
+                        obj instanceof Buffer ||
+                        (obj.constructor && obj.constructor.isBuffer && obj.constructor.isBuffer(obj)) ||
+                        (obj._isBuffer === true)
+                    )
+                }
+            }
+        }
+
+        // 动态导入 DOCX（此时 Buffer 已经准备好）
         const docxModule = await import('docx')
         docx = docxModule
 
