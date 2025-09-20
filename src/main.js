@@ -128,6 +128,7 @@ const lazyComponentMap = {
   'ResizeTo1024x576Image': () => import('./components/tools/ResizeTo1024x576Image.vue'),
   'ReduceImageSizeInKbMb': () => import('./components/tools/ReduceImageSizeInKbMb.vue'),
   'RoundCornersImage': () => import('./components/tools/RoundCornersImage.vue'),
+  'AddTextToGIF': () => import('./components/tools/AddTextToGIF.vue'),
   
   // 网络与协议
   'ApiRequestTool': () => import('./components/tools/ApiRequestTool.vue'),
