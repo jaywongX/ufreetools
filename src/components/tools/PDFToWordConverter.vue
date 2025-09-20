@@ -85,7 +85,7 @@
                                 <p class="text-xs truncate">{{ pdf.name }}</p>
                                 <p class="text-xs text-gray-500">{{ pdf.pages }} {{
                                     $t('tools.pdf-to-word-converter.pages')
-                                }}</p>
+                                    }}</p>
                             </div>
                             <div
                                 class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -240,6 +240,17 @@ const conversionProgress = ref(0)
 const errorMessage = ref('')
 const isLibrariesLoaded = ref(false)
 
+async function loadDocxFromCDN() {
+    return new Promise((resolve, reject) => {
+        if (window.docx) return resolve(window.docx) // 已经加载过
+        const script = document.createElement('script')
+        script.src = 'https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js'
+        script.onload = () => resolve(window.docx)
+        script.onerror = () => reject(new Error('Failed to load docx from CDN'))
+        document.head.appendChild(script)
+    })
+}
+
 async function initializeLibraries() {
     try {
         // 动态导入 PDF.js
@@ -267,9 +278,8 @@ async function initializeLibraries() {
             }
         }
 
-        // 动态导入 DOCX（此时 Buffer 已经准备好）
-        const docxModule = await import('docx')
-        docx = docxModule
+        // 动态加载 docx
+        docx = await loadDocxFromCDN()
 
         isLibrariesLoaded.value = true
         console.log('PDF.js and DOCX libraries loaded successfully')
