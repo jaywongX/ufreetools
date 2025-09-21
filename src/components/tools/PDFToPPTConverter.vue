@@ -205,6 +205,25 @@ const samplePDFs = [
     }
 ]
 
+async function loadPptxGenJS() {
+    if (window.PptxGenJS) return window.PptxGenJS;
+
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js';
+        script.async = true;
+        script.onload = () => {
+            if (window.PptxGenJS) {
+                resolve(window.PptxGenJS); // 成功挂载
+            } else {
+                reject(new Error('PptxGenJS not found on window'));
+            }
+        };
+        script.onerror = () => reject(new Error('Failed to load PptxGenJS'));
+        document.head.appendChild(script);
+    });
+}
+
 // Load PDF.js and PptxGenJS libraries dynamically
 async function loadLibraries() {
     if (!pdfjsLib) {
@@ -218,8 +237,7 @@ async function loadLibraries() {
     }
 
     if (!PptxGenJS) {
-        const pptxModule = await import('pptxgenjs')
-        PptxGenJS = pptxModule.default
+        PptxGenJS = await loadPptxGenJS();
     }
 }
 
