@@ -107,7 +107,6 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@rollup/plugin-inject": "^5.0.5",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitest/coverage-c8": "^0.33.0",
     "@vue/test-utils": "^2.4.6",
