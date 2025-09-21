@@ -1,0 +1,21 @@
+export default {
+    name: 'PDFからPPTへの変換ツール - オンラインPDFからPowerPointツール',
+    description: '無料のオンラインPDFからPPTへの変換ツール、PDFファイルを編集可能なPowerPointプレゼンテーションに変換します。バッチ変換と元のレイアウトの保持をサポートし、完全にブラウザ内で処理され、ファイルの安全性を確保します。',
+    inputTitle: '入力PDFファイル',
+    outputTitle: '変換されたPPTファイル',
+    dragTip: 'PDFファイルをここにドラッグ＆ドロップするか、クリックしてアップロード',
+    supported: 'サポート形式: PDF',
+    convertBtn: 'PPTに変換',
+    converting: '変換中',
+    downloadBtn: 'ダウンロード',
+    noOutput: 'まだ出力ファイルがありません',
+    loadSample: 'サンプルファイルを読み込む',
+    preview: 'ファイルプレビュー',
+    clearAll: 'すべてクリア',
+    deletePDF: 'PDFファイルを削除',
+    batchDownload: 'バッチダウンロード (ZIP)',
+    exportFormat: 'エクスポート形式',
+    pages: 'ページ',
+    slides: 'スライド',
+    originalPDF: '元のPDF'
+};

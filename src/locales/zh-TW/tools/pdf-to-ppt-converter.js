@@ -1,0 +1,21 @@
+export default {
+    name: 'PDF轉PPT轉換器 - 在線PDF轉PowerPoint工具',
+    description: '免費在線PDF轉PPT轉換器，將PDF文件轉換為可編輯的PowerPoint演示文稿。支持批量轉換和保持原始排版，完全在瀏覽器中處理，確保文件安全。',
+    inputTitle: '輸入PDF文件',
+    outputTitle: '轉換後的PPT文件',
+    dragTip: '拖放PDF文件到這裡或點擊上傳',
+    supported: '支持的格式: PDF',
+    convertBtn: '轉換為PPT',
+    converting: '轉換中',
+    downloadBtn: '下載',
+    noOutput: '暫無輸出文件',
+    loadSample: '加載示例文件',
+    preview: '預覽文件',
+    clearAll: '清除全部',
+    deletePDF: '刪除PDF文件',
+    batchDownload: '批量下載 (ZIP)',
+    exportFormat: '導出格式',
+    pages: '頁',
+    slides: '幻燈片',
+    originalPDF: '原始PDF'
+};

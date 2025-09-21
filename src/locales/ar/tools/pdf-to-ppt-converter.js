@@ -1,0 +1,21 @@
+export default {
+    name: 'محول PDF إلى PPT - أداة عبر الإنترنت لتحويل PDF إلى PowerPoint',
+    description: 'محول مجاني عبر الإنترنت لتحويل PDF إلى PPT، يحول ملفات PDF إلى عروض تقديمية قابلة للتحرير في PowerPoint. يدعم التحويل المجمّع والحفاظ على التخطيط الأصلي، تتم المعالجة بالكامل في المتصفح لضمان أمان الملفات.',
+    inputTitle: 'ملفات PDF المدخلة',
+    outputTitle: 'ملفات PPT المحولة',
+    dragTip: 'اسحب وأفلت ملفات PDF هنا أو انقر للتحميل',
+    supported: 'التنسيقات المدعومة: PDF',
+    convertBtn: 'تحويل إلى PPT',
+    converting: 'جاري التحويل',
+    downloadBtn: 'تحميل',
+    noOutput: 'لا توجد ملفات مخرجات بعد',
+    loadSample: 'تحميل ملف نموذجي',
+    preview: 'معاينة الملف',
+    clearAll: 'مسح الكل',
+    deletePDF: 'حذف ملف PDF',
+    batchDownload: 'تحميل مجمّع (ZIP)',
+    exportFormat: 'تنسيق التصدير',
+    pages: 'صفحات',
+    slides: 'شرائح',
+    originalPDF: 'PDF الأصلي'
+};

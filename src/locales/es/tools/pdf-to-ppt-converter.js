@@ -1,0 +1,21 @@
+export default {
+    name: 'Convertidor de PDF a PPT - Herramienta en línea de PDF a PowerPoint',
+    description: 'Convertidor gratuito en línea de PDF a PPT, convierte archivos PDF a presentaciones de PowerPoint editables. Admite conversión por lotes y conserva el diseño original, procesado completamente en el navegador para garantizar la seguridad de los archivos.',
+    inputTitle: 'Archivos PDF de entrada',
+    outputTitle: 'Archivos PPT convertidos',
+    dragTip: 'Arrastre y suelte archivos PDF aquí o haga clic para cargar',
+    supported: 'Formatos admitidos: PDF',
+    convertBtn: 'Convertir a PPT',
+    converting: 'Convirtiendo',
+    downloadBtn: 'Descargar',
+    noOutput: 'Aún no hay archivos de salida',
+    loadSample: 'Cargar archivo de ejemplo',
+    preview: 'Vista previa del archivo',
+    clearAll: 'Borrar todo',
+    deletePDF: 'Eliminar archivo PDF',
+    batchDownload: 'Descarga por lotes (ZIP)',
+    exportFormat: 'Formato de exportación',
+    pages: 'páginas',
+    slides: 'diapositivas',
+    originalPDF: 'PDF original'
+};
