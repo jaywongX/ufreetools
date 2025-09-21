@@ -1,0 +1,22 @@
+export default {
+    name: 'Konverter PDF ke Excel - Alat Ekstraksi Tabel PDF Online',
+    description: 'Konverter PDF ke Excel online gratis yang mengekstrak data tabel dari file PDF dan mengubahnya menjadi spreadsheet Excel yang dapat diedit. Mendukung konversi batch dan mempertahankan struktur tabel asli, dengan pemrosesan penuh di browser untuk memastikan keamanan file.',
+    inputTitle: 'File PDF Masukan',
+    outputTitle: 'File Excel yang Dikonversi',
+    dragTip: 'Seret dan lepas file PDF di sini atau klik untuk mengunggah',
+    supported: 'Format yang didukung: PDF',
+    convertBtn: 'Ekstrak Tabel dan Konversi',
+    converting: 'Mengonversi',
+    downloadXLSX: 'Unduh XLSX',
+    downloadCSV: 'Unduh CSV',
+    noOutput: 'Belum ada file output',
+    loadSample: 'Muat File Sampel',
+    preview: 'Pratinjau File',
+    clearAll: 'Hapus Semua',
+    deletePDF: 'Hapus File PDF',
+    batchDownloadXLSX: 'Unduh Batch XLSX',
+    batchDownloadCSV: 'Unduh Batch CSV',
+    exportFormat: 'Format Ekspor',
+    pages: 'Halaman',
+    originalPDF: 'PDF Asli'
+};

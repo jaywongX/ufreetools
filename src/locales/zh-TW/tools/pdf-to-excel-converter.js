@@ -1,0 +1,22 @@
+export default {
+    name: 'PDF 轉 Excel 轉換器 - 線上 PDF 表格提取工具',
+    description: '免費線上 PDF 轉 Excel 轉換器，可從 PDF 檔案中提取表格資料並轉換為可編輯的 Excel 試算表。支援批次轉換並保留原始表格結構，全程瀏覽器處理確保檔案安全。',
+    inputTitle: '輸入 PDF 檔案',
+    outputTitle: '轉換的 Excel 檔案',
+    dragTip: '拖放 PDF 檔案到此處或點擊上傳',
+    supported: '支援格式: PDF',
+    convertBtn: '提取表格並轉換',
+    converting: '轉換中',
+    downloadXLSX: '下載 XLSX',
+    downloadCSV: '下載 CSV',
+    noOutput: '尚無輸出檔案',
+    loadSample: '載入範例檔案',
+    preview: '檔案預覽',
+    clearAll: '全部清除',
+    deletePDF: '刪除 PDF 檔案',
+    batchDownloadXLSX: '批次下載 XLSX',
+    batchDownloadCSV: '批次下載 CSV',
+    exportFormat: '匯出格式',
+    pages: '頁數',
+    originalPDF: '原始 PDF'
+};
