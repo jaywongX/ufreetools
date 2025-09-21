@@ -1,0 +1,21 @@
+export default {
+    name: 'PDF zu PPT Konverter - Online PDF zu PowerPoint Tool',
+    description: 'Kostenloser Online PDF zu PPT Konverter, konvertiert PDF-Dateien in bearbeitbare PowerPoint-Präsentationen. Unterstützt Stapelkonvertierung und bewahrt das ursprüngliche Layout, vollständig im Browser verarbeitet, um Dateisicherheit zu gewährleisten.',
+    inputTitle: 'Eingabe-PDF-Dateien',
+    outputTitle: 'Konvertierte PPT-Dateien',
+    dragTip: 'PDF-Dateien hierher ziehen und ablegen oder klicken zum Hochladen',
+    supported: 'Unterstützte Formate: PDF',
+    convertBtn: 'In PPT konvertieren',
+    converting: 'Wird konvertiert',
+    downloadBtn: 'Herunterladen',
+    noOutput: 'Noch keine Ausgabedateien',
+    loadSample: 'Beispieldatei laden',
+    preview: 'Dateivorschau',
+    clearAll: 'Alles löschen',
+    deletePDF: 'PDF-Datei löschen',
+    batchDownload: 'Stapeldownload (ZIP)',
+    exportFormat: 'Exportformat',
+    pages: 'Seiten',
+    slides: 'Folien',
+    originalPDF: 'Original-PDF'
+};

@@ -1,0 +1,21 @@
+export default {
+    name: 'PDF에서 PPT로 변환기 - 온라인 PDF에서 PowerPoint 도구',
+    description: '무료 온라인 PDF에서 PPT로 변환기, PDF 파일을 편집 가능한 PowerPoint 프레젠테이션으로 변환합니다. 일괄 변환을 지원하고 원본 레이아웃을 유지하며, 파일 보안을 위해 브라우저에서 완전히 처리됩니다.',
+    inputTitle: '입력 PDF 파일',
+    outputTitle: '변환된 PPT 파일',
+    dragTip: 'PDF 파일을 여기로 끌어다 놓거나 클릭하여 업로드',
+    supported: '지원 형식: PDF',
+    convertBtn: 'PPT로 변환',
+    converting: '변환 중',
+    downloadBtn: '다운로드',
+    noOutput: '아직 출력 파일이 없습니다',
+    loadSample: '샘플 파일 로드',
+    preview: '파일 미리보기',
+    clearAll: '모두 지우기',
+    deletePDF: 'PDF 파일 삭제',
+    batchDownload: '일괄 다운로드 (ZIP)',
+    exportFormat: '내보내기 형식',
+    pages: '페이지',
+    slides: '슬라이드',
+    originalPDF: '원본 PDF'
+};

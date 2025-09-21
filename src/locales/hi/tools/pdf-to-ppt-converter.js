@@ -1,0 +1,21 @@
+export default {
+    name: 'PDF से PPT कन्वर्टर - ऑनलाइन PDF से PowerPoint टूल',
+    description: 'मुफ्त ऑनलाइन PDF से PPT कन्वर्टर, PDF फाइलों को संपादन योग्य PowerPoint प्रस्तुतियों में बदलता है। बैच रूपांतरण और मूल लेआउट बनाए रखने का समर्थन करता है, पूरी तरह से ब्राउज़र में संसाधित होता है, फाइल सुरक्षा सुनिश्चित करता है।',
+    inputTitle: 'इनपुट PDF फाइलें',
+    outputTitle: 'रूपांतरित PPT फाइलें',
+    dragTip: 'PDF फाइलों को यहां खींचें और छोड़ें या अपलोड करने के लिए क्लिक करें',
+    supported: 'समर्थित प्रारूप: PDF',
+    convertBtn: 'PPT में कन्वर्ट करें',
+    converting: 'कन्वर्ट हो रहा है',
+    downloadBtn: 'डाउनलोड',
+    noOutput: 'अभी तक कोई आउटपुट फाइल नहीं',
+    loadSample: 'नमूना फाइल लोड करें',
+    preview: 'फाइल पूर्वावलोकन',
+    clearAll: 'सभी साफ करें',
+    deletePDF: 'PDF फाइल हटाएं',
+    batchDownload: 'बैच डाउनलोड (ZIP)',
+    exportFormat: 'निर्यात प्रारूप',
+    pages: 'पृष्ठ',
+    slides: 'स्लाइड्स',
+    originalPDF: 'मूल PDF'
+};

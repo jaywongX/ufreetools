@@ -1,0 +1,21 @@
+export default {
+    name: 'Konverter PDF ke PPT - Alat Online PDF ke PowerPoint',
+    description: 'Konverter online gratis PDF ke PPT, mengonversi file PDF menjadi presentasi PowerPoint yang dapat diedit. Mendukung konversi batch dan mempertahankan tata letak asli, diproses sepenuhnya di browser untuk memastikan keamanan file.',
+    inputTitle: 'File PDF Input',
+    outputTitle: 'File PPT yang Dikonversi',
+    dragTip: 'Seret dan lepas file PDF di sini atau klik untuk mengunggah',
+    supported: 'Format yang didukung: PDF',
+    convertBtn: 'Konversi ke PPT',
+    converting: 'Mengonversi',
+    downloadBtn: 'Unduh',
+    noOutput: 'Belum ada file output',
+    loadSample: 'Muat file contoh',
+    preview: 'Pratinjau file',
+    clearAll: 'Hapus semua',
+    deletePDF: 'Hapus file PDF',
+    batchDownload: 'Unduh batch (ZIP)',
+    exportFormat: 'Format ekspor',
+    pages: 'halaman',
+    slides: 'slide',
+    originalPDF: 'PDF asli'
+};
