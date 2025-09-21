@@ -14,11 +14,11 @@ export default defineConfig({
       buffer: 'buffer',
       // 为 os 模块提供一个简单的替代实现
       os: 'os-browserify/browser',
-      // 👇 新增：屏蔽 node-only 模块
-      fs: false,
-      http: false,
-      https: false,
-      url: false,
+      // 👇 屏蔽 node-only 模块（注意这里用 require.resolve 或空模块）
+      fs: require.resolve('./empty.js'),
+      http: require.resolve('./empty.js'),
+      https: require.resolve('./empty.js'),
+      url: require.resolve('./empty.js'),
     }
   },
   define: process.env.VITEST
