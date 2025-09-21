@@ -13,7 +13,12 @@ export default defineConfig({
       util: 'util/',
       buffer: 'buffer',
       // 为 os 模块提供一个简单的替代实现
-      os: 'os-browserify/browser'
+      os: 'os-browserify/browser',
+      // 👇 新增：屏蔽 node-only 模块
+      fs: false,
+      http: false,
+      https: false,
+      url: false,
     }
   },
   define: process.env.VITEST
