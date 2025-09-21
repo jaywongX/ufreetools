@@ -1,0 +1,22 @@
+export default {
+    name: 'Conversor de PDF para Excel - Ferramenta de Extração de Tabelas PDF Online',
+    description: 'Conversor online gratuito de PDF para Excel que extrai dados de tabelas de arquivos PDF e os converte em planilhas do Excel editáveis. Suporta conversão em lote e preserva a estrutura original da tabela, com processamento completo no navegador para garantir a segurança dos arquivos.',
+    inputTitle: 'Arquivos PDF de Entrada',
+    outputTitle: 'Arquivos Excel Convertidos',
+    dragTip: 'Arraste e solte arquivos PDF aqui ou clique para fazer upload',
+    supported: 'Formato suportado: PDF',
+    convertBtn: 'Extrair Tabelas e Converter',
+    converting: 'Convertendo',
+    downloadXLSX: 'Baixar XLSX',
+    downloadCSV: 'Baixar CSV',
+    noOutput: 'Nenhum arquivo de saída ainda',
+    loadSample: 'Carregar Arquivo de Exemplo',
+    preview: 'Visualização do Arquivo',
+    clearAll: 'Limpar Tudo',
+    deletePDF: 'Excluir Arquivo PDF',
+    batchDownloadXLSX: 'Download em Lote XLSX',
+    batchDownloadCSV: 'Download em Lote CSV',
+    exportFormat: 'Formato de Exportação',
+    pages: 'Páginas',
+    originalPDF: 'PDF Original'
+};

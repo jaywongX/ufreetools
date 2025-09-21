@@ -1,0 +1,22 @@
+export default {
+    name: 'محول PDF إلى Excel - أداة استخراج جداول PDF عبر الإنترنت',
+    description: 'محول مجاني عبر الإنترنت من PDF إلى Excel يستخرج بيانات الجداول من ملفات PDF ويحولها إلى جداول Excel قابلة للتحرير. يدعم التحويل الجماعي ويحافظ على بنية الجدول الأصلية، مع معالجة كاملة في المتصفح لضمان أمان الملفات.',
+    inputTitle: 'ملفات PDF المدخلة',
+    outputTitle: 'ملفات Excel المحولة',
+    dragTip: 'اسحب وأفلت ملفات PDF هنا أو انقر للتحميل',
+    supported: 'التنسيق المدعوم: PDF',
+    convertBtn: 'استخراج الجداول والتحويل',
+    converting: 'جاري التحويل',
+    downloadXLSX: 'تنزيل XLSX',
+    downloadCSV: 'تنزيل CSV',
+    noOutput: 'لا توجد ملفات مخرجة بعد',
+    loadSample: 'تحميل ملف نموذجي',
+    preview: 'معاينة الملف',
+    clearAll: 'مسح الكل',
+    deletePDF: 'حذف ملف PDF',
+    batchDownloadXLSX: 'تنزيل دفعة XLSX',
+    batchDownloadCSV: 'تنزيل دفعة CSV',
+    exportFormat: 'تنسيق التصدير',
+    pages: 'صفحات',
+    originalPDF: 'PDF الأصلي'
+};

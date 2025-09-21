@@ -1,0 +1,22 @@
+export default {
+    name: 'PDF转Excel转换器 - 在线PDF表格提取工具',
+    description: '免费在线PDF转Excel转换器，将PDF文件中的表格数据提取并转换为可编辑的Excel电子表格。支持批量转换和保留原始表格结构，完全在浏览器中处理，确保文件安全。',
+    inputTitle: '输入PDF文件',
+    outputTitle: '转换后的Excel文件',
+    dragTip: '拖放PDF文件到这里或点击上传',
+    supported: '支持的格式: PDF',
+    convertBtn: '提取表格并转换',
+    converting: '转换中',
+    downloadXLSX: '下载XLSX',
+    downloadCSV: '下载CSV',
+    noOutput: '暂无输出文件',
+    loadSample: '加载示例文件',
+    preview: '预览文件',
+    clearAll: '清除全部',
+    deletePDF: '删除PDF文件',
+    batchDownloadXLSX: '批量下载XLSX',
+    batchDownloadCSV: '批量下载CSV',
+    exportFormat: '导出格式',
+    pages: '页',
+    originalPDF: '原始PDF'
+};

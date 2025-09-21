@@ -1,0 +1,22 @@
+export default {
+    name: 'PDFからExcelへの変換ツール - オンラインPDF表抽出ツール',
+    description: '無料のオンラインPDFからExcelへの変換ツールで、PDFファイルから表データを抽出し、編集可能なExcelスプレッドシートに変換します。バッチ変換をサポートし、元の表構造を保持、ファイルセキュリティを確保するためにブラウザ内で完全処理を行います。',
+    inputTitle: '入力PDFファイル',
+    outputTitle: '変換されたExcelファイル',
+    dragTip: 'PDFファイルをここにドラッグ＆ドロップするか、クリックしてアップロード',
+    supported: '対応フォーマット: PDF',
+    convertBtn: '表を抽出して変換',
+    converting: '変換中',
+    downloadXLSX: 'XLSXをダウンロード',
+    downloadCSV: 'CSVをダウンロード',
+    noOutput: '出力ファイルがまだありません',
+    loadSample: 'サンプルファイルを読み込む',
+    preview: 'ファイルプレビュー',
+    clearAll: 'すべてクリア',
+    deletePDF: 'PDFファイルを削除',
+    batchDownloadXLSX: 'バッチダウンロードXLSX',
+    batchDownloadCSV: 'バッチダウンロードCSV',
+    exportFormat: 'エクスポート形式',
+    pages: 'ページ',
+    originalPDF: '元のPDF'
+};

@@ -1,0 +1,22 @@
+export default {
+    name: 'PDF to Excel Converter - Online PDF Table Extraction Tool',
+    description: 'Free online PDF to Excel converter that extracts table data from PDF files and converts them into editable Excel spreadsheets. Supports batch conversion and preserves original table structure, with full browser processing to ensure file security.',
+    inputTitle: 'Input PDF Files',
+    outputTitle: 'Converted Excel Files',
+    dragTip: 'Drag and drop PDF files here or click to upload',
+    supported: 'Supported format: PDF',
+    convertBtn: 'Extract Tables and Convert',
+    converting: 'Converting',
+    downloadXLSX: 'Download XLSX',
+    downloadCSV: 'Download CSV',
+    noOutput: 'No output files yet',
+    loadSample: 'Load Sample File',
+    preview: 'File Preview',
+    clearAll: 'Clear All',
+    deletePDF: 'Delete PDF File',
+    batchDownloadXLSX: 'Batch Download XLSX',
+    batchDownloadCSV: 'Batch Download CSV',
+    exportFormat: 'Export Format',
+    pages: 'Pages',
+    originalPDF: 'Original PDF'
+};

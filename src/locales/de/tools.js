@@ -138,6 +138,7 @@ import ProjectionZoneFinder from './tools/projection-zone-finder.js';
 import CoordinateTrajectoryComparator from './tools/coordinate-trajectory-comparator.js';
 import PDFToWordConverter from './tools/pdf-to-word-converter.js';
 import AddTextToGIF from './tools/add-text-to-gif.js';
+import PDFToExcelConverter from './tools/pdf-to-excel-converter.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -280,4 +281,5 @@ export default {
   'coordinate-trajectory-comparator': CoordinateTrajectoryComparator,
   'pdf-to-word-converter': PDFToWordConverter,
   'add-text-to-gif': AddTextToGIF,
+  'pdf-to-excel-converter': PDFToExcelConverter,
 };

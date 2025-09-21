@@ -1,0 +1,22 @@
+export default {
+    name: 'PDF에서 Excel로 변환기 - 온라인 PDF 테이블 추출 도구',
+    description: 'PDF 파일에서 테이블 데이터를 추출하여 편집 가능한 Excel 스프레드시트로 변환하는 무료 온라인 PDF에서 Excel로 변환기. 배치 변환을 지원하고 원본 테이블 구조를 유지하며 파일 보안을 위해 브라우저 내에서 완전 처리됩니다.',
+    inputTitle: '입력 PDF 파일',
+    outputTitle: '변환된 Excel 파일',
+    dragTip: 'PDF 파일을 여기로 드래그 앤 드롭하거나 클릭하여 업로드',
+    supported: '지원 형식: PDF',
+    convertBtn: '테이블 추출 및 변환',
+    converting: '변환 중',
+    downloadXLSX: 'XLSX 다운로드',
+    downloadCSV: 'CSV 다운로드',
+    noOutput: '아직 출력 파일이 없습니다',
+    loadSample: '샘플 파일 불러오기',
+    preview: '파일 미리보기',
+    clearAll: '모두 지우기',
+    deletePDF: 'PDF 파일 삭제',
+    batchDownloadXLSX: '배치 다운로드 XLSX',
+    batchDownloadCSV: '배치 다운로드 CSV',
+    exportFormat: '내보내기 형식',
+    pages: '페이지',
+    originalPDF: '원본 PDF'
+};
