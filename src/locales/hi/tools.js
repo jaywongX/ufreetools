@@ -140,6 +140,7 @@ import PDFToWordConverter from './tools/pdf-to-word-converter.js';
 import AddTextToGIF from './tools/add-text-to-gif.js';
 import PDFToExcelConverter from './tools/pdf-to-excel-converter.js';
 import PDFToPPTConverter from './tools/pdf-to-ppt-converter.js';
+import PdfToImageConverter from './tools/pdf-to-image-converter.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -284,4 +285,5 @@ export default {
   'add-text-to-gif': AddTextToGIF,
   'pdf-to-excel-converter': PDFToExcelConverter,
   'pdf-to-ppt-converter': PDFToPPTConverter,
+  'pdf-to-image-converter': PdfToImageConverter,
 };
