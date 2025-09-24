@@ -141,6 +141,7 @@ import AddTextToGIF from './tools/add-text-to-gif.js';
 import PDFToExcelConverter from './tools/pdf-to-excel-converter.js';
 import PDFToPPTConverter from './tools/pdf-to-ppt-converter.js';
 import PdfToImageConverter from './tools/pdf-to-image-converter.js';
+import BlurImageBackground from './tools/blur-image-background.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -286,4 +287,5 @@ export default {
   'pdf-to-excel-converter': PDFToExcelConverter,
   'pdf-to-ppt-converter': PDFToPPTConverter,
   'pdf-to-image-converter': PdfToImageConverter,
+  'blur-image-background': BlurImageBackground,
 };

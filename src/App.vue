@@ -823,6 +823,17 @@ const allTools = computed(() => [
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
     tags: ['image', 'gif', 'edit', 'photo']
   },
+  {
+    id: 'blur-image-background',
+    name: t('tools.blur-image-background.name'),
+    category: t(`categories.image.title`),
+    categoryId: 'image',
+    description: t('tools.blur-image-background.description'),
+    path: '/tools/blur-image-background',
+    component: 'BlurImageBackground',
+    icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    tags: ['image', 'background']
+  },
 
   // 转换工具
   {
@@ -1791,7 +1802,7 @@ const allTools = computed(() => [
     categoryId: 'pdf',
     description: t('tools.pdf-to-image-converter.description'),
     path: '/tools/pdf-to-image-converter',
-    component: 'PdfToImageConverter',
+    component: 'PDFToImageConverter',
     icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',
     tags: ['pdf', 'image', 'converter']
   },

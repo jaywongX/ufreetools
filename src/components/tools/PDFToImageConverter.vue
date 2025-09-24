@@ -255,7 +255,7 @@
         </div>
       </div>
     </div>
-    <PdfToImageConverterArticle />
+    <PDFToImageConverterArticle />
   </div>
 </template>
 
@@ -263,7 +263,7 @@
 import { ref, reactive, nextTick, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
-import PdfToImageConverterArticle from './PdfToImageConverterArticle.vue'
+import PDFToImageConverterArticle from './PDFToImageConverterArticle.vue'
 
 const { t } = useI18n()
 

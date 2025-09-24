@@ -129,6 +129,7 @@ const lazyComponentMap = {
   'ReduceImageSizeInKbMb': () => import('./components/tools/ReduceImageSizeInKbMb.vue'),
   'RoundCornersImage': () => import('./components/tools/RoundCornersImage.vue'),
   'AddTextToGIF': () => import('./components/tools/AddTextToGIF.vue'),
+  'BlurImageBackground': () => import('./components/tools/BlurImageBackground.vue'),
   
   // 网络与协议
   'ApiRequestTool': () => import('./components/tools/ApiRequestTool.vue'),
@@ -213,7 +214,7 @@ const lazyComponentMap = {
   'PDFToWordConverter': () => import('./components/tools/PDFToWordConverter.vue'),
   'PDFToExcelConverter': () => import('./components/tools/PDFToExcelConverter.vue'),
   'PDFToPPTConverter': () => import('./components/tools/PDFToPPTConverter.vue'),
-  'PdfToImageConverter': () => import('./components/tools/PdfToImageConverter.vue'),
+  'PDFToImageConverter': () => import('./components/tools/PDFToImageConverter.vue'),
 }
 
 // 用异步 IIFE 启动应用
