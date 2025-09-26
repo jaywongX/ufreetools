@@ -215,7 +215,7 @@ const lazyComponentMap = {
   'PDFToExcelConverter': () => import('./components/tools/PDFToExcelConverter.vue'),
   'PDFToPPTConverter': () => import('./components/tools/PDFToPPTConverter.vue'),
   'PDFToImageConverter': () => import('./components/tools/PDFToImageConverter.vue'),
-  'ImageToPdfConverter': () => import('./components/tools/ImageToPdfConverter.vue'),
+  'ImageToPdfConverter': () => import('./components/tools/ImageToPDFConverter.vue'),
 }
 
 // 用异步 IIFE 启动应用
