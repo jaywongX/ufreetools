@@ -142,6 +142,7 @@ import PDFToExcelConverter from './tools/pdf-to-excel-converter.js';
 import PDFToPPTConverter from './tools/pdf-to-ppt-converter.js';
 import PdfToImageConverter from './tools/pdf-to-image-converter.js';
 import BlurImageBackground from './tools/blur-image-background.js';
+import ImageToPdfConverter from './tools/image-to-pdf-converter.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -288,4 +289,5 @@ export default {
   'pdf-to-ppt-converter': PDFToPPTConverter,
   'pdf-to-image-converter': PdfToImageConverter,
   'blur-image-background': BlurImageBackground,
+  'image-to-pdf-converter': ImageToPdfConverter,
 };
