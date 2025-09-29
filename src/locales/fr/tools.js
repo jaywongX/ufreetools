@@ -143,6 +143,7 @@ import PDFToPPTConverter from './tools/pdf-to-ppt-converter.js';
 import PdfToImageConverter from './tools/pdf-to-image-converter.js';
 import BlurImageBackground from './tools/blur-image-background.js';
 import ImageToPdfConverter from './tools/image-to-pdf-converter.js';
+import MergePdfOnline from './tools/merge-pdf-online.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -290,4 +291,5 @@ export default {
   'pdf-to-image-converter': PdfToImageConverter,
   'blur-image-background': BlurImageBackground,
   'image-to-pdf-converter': ImageToPdfConverter,
+  'merge-pdf-online': MergePdfOnline,
 };
