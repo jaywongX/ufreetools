@@ -96,7 +96,7 @@ export default {
         {
             name: 'PDF Merger',
             description: 'Merge multiple PDF files into a single PDF document.',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-online'
         },
         {
             name: 'PDF Unlocker',

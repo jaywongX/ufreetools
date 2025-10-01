@@ -96,7 +96,7 @@ export default {
         {
             name: 'دامج PDF',
             description: 'دمج ملفات PDF متعددة في مستند PDF واحد.',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-online'
         },
         {
             name: 'فاتح قفل PDF',

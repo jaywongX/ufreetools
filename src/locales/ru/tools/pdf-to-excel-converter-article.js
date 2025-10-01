@@ -96,7 +96,7 @@ export default {
         {
             name: 'Объединение PDF',
             description: 'Объединение нескольких PDF-файлов в один PDF-документ.',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-online'
         },
         {
             name: 'Разблокировщик PDF',

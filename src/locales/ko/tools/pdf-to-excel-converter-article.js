@@ -96,7 +96,7 @@ export default {
         {
             name: 'PDF 병합기',
             description: '여러 PDF 파일을 단일 PDF 문서로 병합합니다.',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-online'
         },
         {
             name: 'PDF 잠금 해제기',

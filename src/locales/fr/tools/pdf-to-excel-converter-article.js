@@ -96,7 +96,7 @@ export default {
         {
             name: 'Fusionneur PDF',
             description: 'Fusionner plusieurs fichiers PDF en un seul document PDF.',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-online'
         },
         {
             name: 'Déverrouilleur PDF',

@@ -144,6 +144,7 @@ import PdfToImageConverter from './tools/pdf-to-image-converter.js';
 import BlurImageBackground from './tools/blur-image-background.js';
 import ImageToPdfConverter from './tools/image-to-pdf-converter.js';
 import MergePdfOnline from './tools/merge-pdf-online.js';
+import PDFSplitter from './tools/pdf-splitter.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -292,4 +293,5 @@ export default {
   'blur-image-background': BlurImageBackground,
   'image-to-pdf-converter': ImageToPdfConverter,
   'merge-pdf-online': MergePdfOnline,
+  'pdf-splitter': PDFSplitter,
 };
