@@ -96,7 +96,7 @@ export default {
         {
             name: 'Mesclador de PDF',
             description: 'Mesclar vários arquivos PDF em um único documento PDF.',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-online'
         },
         {
             name: 'Destravador de PDF',

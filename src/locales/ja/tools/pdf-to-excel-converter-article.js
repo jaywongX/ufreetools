@@ -96,7 +96,7 @@ export default {
         {
             name: 'PDF結合ツール',
             description: '複数のPDFファイルを単一のPDF文書に結合します。',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-online'
         },
         {
             name: 'PDFアンロックツール',

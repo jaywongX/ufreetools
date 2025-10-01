@@ -96,7 +96,7 @@ export default {
         {
             name: 'पीडीएफ मर्जर',
             description: 'एकल पीडीएफ दस्तावेज़ में कई पीडीएफ फ़ाइलों को मर्ज करें।',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-online'
         },
         {
             name: 'पीडीएफ अनलॉकर',

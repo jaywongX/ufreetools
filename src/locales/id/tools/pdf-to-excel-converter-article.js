@@ -96,7 +96,7 @@ export default {
         {
             name: 'Penggabung PDF',
             description: 'Menggabungkan beberapa file PDF menjadi satu dokumen PDF.',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-online'
         },
         {
             name: 'Pembuka Kunci PDF',

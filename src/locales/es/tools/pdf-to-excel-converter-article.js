@@ -96,7 +96,7 @@ export default {
         {
             name: 'Combinador de PDF',
             description: 'Combina múltiples archivos PDF en un solo documento PDF.',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-online'
         },
         {
             name: 'Desbloqueador de PDF',

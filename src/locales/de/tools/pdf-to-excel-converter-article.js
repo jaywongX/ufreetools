@@ -96,7 +96,7 @@ export default {
         {
             name: 'PDF-Merger',
             description: 'Fügen Sie mehrere PDF-Dateien zu einem einzigen PDF-Dokument zusammen.',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-online'
         },
         {
             name: 'PDF-Entsperrer',
