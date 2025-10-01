@@ -251,7 +251,7 @@
             </div>
         </div>
         
-        <PdfSplitterArticle />
+        <PDFSplitterArticle />
     </div>
 </template>
 
@@ -259,7 +259,7 @@
 import { ref, reactive, nextTick, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
-import PdfSplitterArticle from './PdfSplitterArticle.vue'
+import PDFSplitterArticle from './PDFSplitterArticle.vue'
 
 const { t } = useI18n()
 
