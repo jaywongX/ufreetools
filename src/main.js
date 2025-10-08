@@ -218,6 +218,7 @@ const lazyComponentMap = {
   'ImageToPdfConverter': () => import('./components/tools/ImageToPDFConverter.vue'),
   'MergePdfOnline': () => import('./components/tools/MergePdfOnline.vue'),
   'PDFSplitter': () => import('./components/tools/PDFSplitter.vue'),
+  'PDFWatermark': () => import('./components/tools/PDFWatermark.vue'),
 }
 
 // 用异步 IIFE 启动应用
