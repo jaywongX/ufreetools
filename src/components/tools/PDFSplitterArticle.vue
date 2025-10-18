@@ -1,7 +1,13 @@
 <template>
     <div class="mt-12 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
         <article class="prose dark:prose-invert max-w-none">
-            <h1 class="text-3xl font-bold mb-6">{{ $t('tools.pdf-splitter.article.title') }}</h1>
+            <h2 class="text-3xl font-bold mb-6">{{ $t('tools.pdf-splitter.article.title') }}</h2>
+
+            <!-- 产品页图片 -->
+            <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <img src="/public/images/pdf-splitter-cover.png" :alt="$t('tools.pdf-splitter.article.coverAlt')"
+                    class="w-full rounded border" />
+            </div>
 
             <!-- 工具功能介绍应用场景 -->
             <section class="mb-10">
@@ -188,7 +194,7 @@
                         rel="noopener noreferrer"
                         class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                         <h3 class="font-semibold mb-2">{{ $t('tools.pdf-splitter.article.relatedTools[0].name')
-                            }}</h3>
+                        }}</h3>
                         <p class="text-sm text-gray-600 dark:text-gray-400">{{
                             $t('tools.pdf-splitter.article.relatedTools[0].description') }}</p>
                     </a>
@@ -198,7 +204,7 @@
                         rel="noopener noreferrer"
                         class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                         <h3 class="font-semibold mb-2">{{ $t('tools.pdf-splitter.article.relatedTools[1].name')
-                            }}</h3>
+                        }}</h3>
                         <p class="text-sm text-gray-600 dark:text-gray-400">{{
                             $t('tools.pdf-splitter.article.relatedTools[1].description') }}</p>
                     </a>
@@ -208,7 +214,7 @@
                         rel="noopener noreferrer"
                         class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                         <h3 class="font-semibold mb-2">{{ $t('tools.pdf-splitter.article.relatedTools[2].name')
-                            }}</h3>
+                        }}</h3>
                         <p class="text-sm text-gray-600 dark:text-gray-400">{{
                             $t('tools.pdf-splitter.article.relatedTools[2].description') }}</p>
                     </a>
@@ -218,7 +224,7 @@
                         rel="noopener noreferrer"
                         class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                         <h3 class="font-semibold mb-2">{{ $t('tools.pdf-splitter.article.relatedTools[3].name')
-                            }}</h3>
+                        }}</h3>
                         <p class="text-sm text-gray-600 dark:text-gray-400">{{
                             $t('tools.pdf-splitter.article.relatedTools[3].description') }}</p>
                     </a>

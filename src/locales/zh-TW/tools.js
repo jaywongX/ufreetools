@@ -146,6 +146,7 @@ import ImageToPdfConverter from './tools/image-to-pdf-converter.js';
 import MergePdfOnline from './tools/merge-pdf-online.js';
 import PDFSplitter from './tools/pdf-splitter.js';
 import PDFWatermark from './tools/pdf-watermark.js';
+import PdfEncrypt from './tools/pdf-encrypt.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -296,4 +297,5 @@ export default {
   'merge-pdf-online': MergePdfOnline,
   'pdf-splitter': PDFSplitter,
   'pdf-watermark': PDFWatermark,
+  'pdf-encrypt': PdfEncrypt,
 };
