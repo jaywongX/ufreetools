@@ -269,7 +269,7 @@ async function loadQpdfWasm() {
       locateFile: (path) => {
         if (path.endsWith('.wasm')) {
           // 确保路径正确
-          return '/node_modules/@neslinesli93/qpdf-wasm/dist/qpdf.wasm'
+          return 'https://cdn.jsdelivr.net/npm/@neslinesli93/qpdf-wasm@0.3.0/dist/qpdf.wasm'
         }
         return path
       },
