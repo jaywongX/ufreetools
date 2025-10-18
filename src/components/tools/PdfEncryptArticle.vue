@@ -1,11 +1,11 @@
 <template>
   <div class="mt-12 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
     <article class="prose dark:prose-invert max-w-none">
-      <h1 class="text-3xl font-bold mb-6">{{ $t('tools.pdf-encrypt.article.title') }}</h1>
+      <h2 class="text-3xl font-bold mb-6">{{ $t('tools.pdf-encrypt.article.title') }}</h2>
 
       <!-- 产品页图片 -->
       <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src="/public/images/pdf-encrypt-cover.png" :alt="$t('tools.pdf-encrypt.article.coverAlt')" class="w-full rounded border" />
+        <img src="/public/images/pdf-encrypt-cover.png" class="w-full rounded border" />
       </div>
 
       <!-- 工具功能介绍应用场景 -->
