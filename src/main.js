@@ -219,6 +219,7 @@ const lazyComponentMap = {
   'MergePdfOnline': () => import('./components/tools/MergePdfOnline.vue'),
   'PDFSplitter': () => import('./components/tools/PDFSplitter.vue'),
   'PDFWatermark': () => import('./components/tools/PDFWatermark.vue'),
+  'PdfEncrypt': () => import('./components/tools/PdfEncrypt.vue'),
 }
 
 // 用异步 IIFE 启动应用
