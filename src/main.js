@@ -220,6 +220,7 @@ const lazyComponentMap = {
   'PDFSplitter': () => import('./components/tools/PDFSplitter.vue'),
   'PDFWatermark': () => import('./components/tools/PDFWatermark.vue'),
   'PdfEncrypt': () => import('./components/tools/PdfEncrypt.vue'),
+  'PdfDecrypt': () => import('./components/tools/PdfDecrypt.vue'),
 }
 
 // 用异步 IIFE 启动应用
