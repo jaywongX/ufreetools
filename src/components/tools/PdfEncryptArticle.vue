@@ -92,19 +92,19 @@
       <section class="mb-10">
         <h2 class="text-2xl font-semibold mb-6">{{ $t('tools.pdf-encrypt.article.relatedToolsTitle') }}</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <a href="$t('tools.pdf-encrypt.article.relatedTools[0].url')" target="_blank" rel="noopener noreferrer" class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <a :href="$t('tools.pdf-encrypt.article.relatedTools[0].url')" target="_blank" rel="noopener noreferrer" class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
             <h3 class="font-semibold mb-2">{{ $t('tools.pdf-encrypt.article.relatedTools[0].name') }}</h3>
             <p class="text-sm text-gray-600 dark:text-gray-400">{{ $t('tools.pdf-encrypt.article.relatedTools[0].description') }}</p>
           </a>
-          <a href="$t('tools.pdf-encrypt.article.relatedTools[1].url')" target="_blank" rel="noopener noreferrer" class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <a :href="$t('tools.pdf-encrypt.article.relatedTools[1].url')" target="_blank" rel="noopener noreferrer" class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
             <h3 class="font-semibold mb-2">{{ $t('tools.pdf-encrypt.article.relatedTools[1].name') }}</h3>
             <p class="text-sm text-gray-600 dark:text-gray-400">{{ $t('tools.pdf-encrypt.article.relatedTools[1].description') }}</p>
           </a>
-          <a href="$t('tools.pdf-encrypt.article.relatedTools[2].url')" target="_blank" rel="noopener noreferrer" class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <a :href="$t('tools.pdf-encrypt.article.relatedTools[2].url')" target="_blank" rel="noopener noreferrer" class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
             <h3 class="font-semibold mb-2">{{ $t('tools.pdf-encrypt.article.relatedTools[2].name') }}</h3>
             <p class="text-sm text-gray-600 dark:text-gray-400">{{ $t('tools.pdf-encrypt.article.relatedTools[2].description') }}</p>
           </a>
-          <a href="$t('tools.pdf-encrypt.article.relatedTools[3].url')" target="_blank" rel="noopener noreferrer" class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+          <a :href="$t('tools.pdf-encrypt.article.relatedTools[3].url')" target="_blank" rel="noopener noreferrer" class="p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
             <h3 class="font-semibold mb-2">{{ $t('tools.pdf-encrypt.article.relatedTools[3].name') }}</h3>
             <p class="text-sm text-gray-600 dark:text-gray-400">{{ $t('tools.pdf-encrypt.article.relatedTools[3].description') }}</p>
           </a>

@@ -147,6 +147,7 @@ import MergePdfOnline from './tools/merge-pdf-online.js';
 import PDFSplitter from './tools/pdf-splitter.js';
 import PDFWatermark from './tools/pdf-watermark.js';
 import PdfEncrypt from './tools/pdf-encrypt.js';
+import PdfDecrypt from './tools/pdf-decrypt.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -298,4 +299,5 @@ export default {
   'pdf-splitter': PDFSplitter,
   'pdf-watermark': PDFWatermark,
   'pdf-encrypt': PdfEncrypt,
+  'pdf-decrypt': PdfDecrypt,
 };
