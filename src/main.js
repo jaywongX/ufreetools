@@ -86,6 +86,7 @@ const lazyComponentMap = {
   'SensitiveWordFilter': () => import('./components/tools/SensitiveWordFilter.vue'),
   'WordShuffler': () => import('./components/tools/WordShuffler.vue'),
   'Asn1StructureParser': () => import('./components/tools/Asn1StructureParser.vue'),
+  'RemoveDuplicatesExcel': () => import('./components/tools/RemoveDuplicatesExcel.vue'),
   
   // 转换工具
   'Base64EncoderDecoder': () => import('./components/tools/Base64EncoderDecoder.vue'),
