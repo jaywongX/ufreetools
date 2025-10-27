@@ -76,5 +76,6 @@ export default {
     addAll: 'सभी जोड़ें',
     findLargest: 'सबसे बड़ा ढूंढें',
     findSmallest: 'सबसे छोटा ढूंढें',
-    findAverage: 'औसत निकालें'
+    findAverage: 'औसत निकालें',
+    resultTip: 'तुलना करने के लिए कृपया कम से कम दो अंक दर्ज करें'
 };

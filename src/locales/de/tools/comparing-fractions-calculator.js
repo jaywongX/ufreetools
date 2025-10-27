@@ -76,5 +76,6 @@ export default {
     addAll: 'Alle hinzufügen',
     findLargest: 'Größten finden',
     findSmallest: 'Kleinsten finden',
-    findAverage: 'Durchschnitt finden'
+    findAverage: 'Durchschnitt finden',
+    resultTip: 'Bitte geben Sie mindestens zwei Werte zum Vergleich ein'
 };

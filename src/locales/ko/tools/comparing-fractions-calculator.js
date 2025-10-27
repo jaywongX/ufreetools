@@ -76,5 +76,6 @@ export default {
     addAll: '모두 추가',
     findLargest: '최댓값 찾기',
     findSmallest: '최솟값 찾기',
-    findAverage: '평균 구하기'
+    findAverage: '평균 구하기',
+    resultTip: 'Harap masukkan setidaknya dua skor untuk dibandingkan'
 };

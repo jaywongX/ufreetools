@@ -76,5 +76,6 @@ export default {
     addAll: 'Add All',
     findLargest: 'Find Largest',
     findSmallest: 'Find Smallest',
-    findAverage: 'Find Average'
+    findAverage: 'Find Average',
+    resultTip: 'Please enter at least two scores for comparison'
 };

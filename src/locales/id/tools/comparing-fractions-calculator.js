@@ -76,5 +76,6 @@ export default {
     addAll: 'Tambah Semua',
     findLargest: 'Cari yang Terbesar',
     findSmallest: 'Cari yang Terkecil',
-    findAverage: 'Cari Rata-rata'
+    findAverage: 'Cari Rata-rata',
+    resultTip: 'Harap masukkan setidaknya dua skor untuk dibandingkan'
 };

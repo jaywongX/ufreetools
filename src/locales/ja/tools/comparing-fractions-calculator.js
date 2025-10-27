@@ -76,5 +76,6 @@ export default {
     addAll: 'すべて追加',
     findLargest: '最大値を探す',
     findSmallest: '最小値を探す',
-    findAverage: '平均を求める'
+    findAverage: '平均を求める',
+    resultTip: '比較するには少なくとも2つのスコアを入力してください'
 };

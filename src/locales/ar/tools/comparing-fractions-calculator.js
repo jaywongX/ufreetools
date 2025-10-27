@@ -76,5 +76,6 @@ export default {
     addAll: 'إضافة الكل',
     findLargest: 'العثور على الأكبر',
     findSmallest: 'العثور على الأصغر',
-    findAverage: 'العثور على المتوسط'
+    findAverage: 'العثور على المتوسط',
+    resultTip: 'يرجى إدخال علامتين على الأقل للمقارنة'
 };

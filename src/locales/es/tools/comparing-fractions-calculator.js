@@ -76,5 +76,6 @@ export default {
     addAll: 'Agregar Todo',
     findLargest: 'Encontrar el Mayor',
     findSmallest: 'Encontrar el Menor',
-    findAverage: 'Encontrar el Promedio'
+    findAverage: 'Encontrar el Promedio',
+    resultTip: 'Por favor, ingresa al menos dos puntuaciones para comparar'
 };

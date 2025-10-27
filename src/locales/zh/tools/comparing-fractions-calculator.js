@@ -76,5 +76,6 @@ export default {
     addAll: '全部相加',
     findLargest: '找最大值',
     findSmallest: '找最小值',
-    findAverage: '求平均值'
+    findAverage: '求平均值',
+    resultTip: '请输入至少两个分数进行比较'
 };

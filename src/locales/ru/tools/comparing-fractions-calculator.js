@@ -76,5 +76,6 @@ export default {
     addAll: 'Добавить все',
     findLargest: 'Найти наибольшее',
     findSmallest: 'Найти наименьшее',
-    findAverage: 'Найти среднее'
+    findAverage: 'Найти среднее',
+    resultTip: 'Пожалуйста, введите как минимум два балла для сравнения'
 };
