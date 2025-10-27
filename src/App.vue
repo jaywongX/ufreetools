@@ -1524,6 +1524,17 @@ const allTools = computed(() => [
     icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
     tags: ['utility', 'generator', 'china', 'business', 'test', 'validation', 'code', 'identifier']
   },
+  {
+    id: 'comparing-fractions-calculator',
+    name: t('tools.comparing-fractions-calculator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.comparing-fractions-calculator.description'),
+    path: '/tools/comparing-fractions-calculator',
+    component: 'ComparingFractionsCalculator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['calculator']
+  },
 
   // 测绘工具
   {

@@ -184,6 +184,7 @@ const lazyComponentMap = {
   'CashAppFeeCalculator': () => import('./components/tools/CashAppFeeCalculator.vue'),
   'IdNumberGenerator': () => import('./components/tools/IdNumberGenerator.vue'),
   'UnifiedCreditCodeGenerator': () => import('./components/tools/UnifiedCreditCodeGenerator.vue'),
+  'ComparingFractionsCalculator': () => import('./components/tools/ComparingFractionsCalculator.vue'),
   
   // 测绘
   'CoordinateConverter': () => import('./components/tools/CoordinateConverter.vue'),

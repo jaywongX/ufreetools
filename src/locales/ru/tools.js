@@ -149,6 +149,7 @@ import PDFWatermark from './tools/pdf-watermark.js';
 import PdfEncrypt from './tools/pdf-encrypt.js';
 import PdfDecrypt from './tools/pdf-decrypt.js';
 import RemoveDuplicatesExcel from './tools/remove-duplicates-excel.js';
+import ComparingFractionsCalculator from './tools/comparing-fractions-calculator.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -302,4 +303,5 @@ export default {
   'pdf-encrypt': PdfEncrypt,
   'pdf-decrypt': PdfDecrypt,
   'remove-duplicates-excel': RemoveDuplicatesExcel,
+  'comparing-fractions-calculator': ComparingFractionsCalculator,
 };
