@@ -131,6 +131,7 @@ const lazyComponentMap = {
   'RoundCornersImage': () => import('./components/tools/RoundCornersImage.vue'),
   'AddTextToGIF': () => import('./components/tools/AddTextToGIF.vue'),
   'BlurImageBackground': () => import('./components/tools/BlurImageBackground.vue'),
+  'ImageToSvg': () => import('./components/tools/ImageToSvg.vue'),
   
   // 网络与协议
   'ApiRequestTool': () => import('./components/tools/ApiRequestTool.vue'),
