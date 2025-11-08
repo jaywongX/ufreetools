@@ -151,6 +151,7 @@ import PdfDecrypt from './tools/pdf-decrypt.js';
 import RemoveDuplicatesExcel from './tools/remove-duplicates-excel.js';
 import ComparingFractionsCalculator from './tools/comparing-fractions-calculator.js';
 import ImageToSvg from './tools/image-to-svg.js';
+import PdfCompressor from './tools/pdf-compressor.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -305,5 +306,6 @@ export default {
   'pdf-decrypt': PdfDecrypt,
   'remove-duplicates-excel': RemoveDuplicatesExcel,
   'comparing-fractions-calculator': ComparingFractionsCalculator,
-  'image-to-svg': ImageToSvg
+  'image-to-svg': ImageToSvg,
+  'pdf-compressor': PdfCompressor
 };
