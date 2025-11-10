@@ -152,6 +152,7 @@ import RemoveDuplicatesExcel from './tools/remove-duplicates-excel.js';
 import ComparingFractionsCalculator from './tools/comparing-fractions-calculator.js';
 import ImageToSvg from './tools/image-to-svg.js';
 import PdfCompressor from './tools/pdf-compressor.js';
+import UsAddressGenerator from './tools/us-address-generator.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -307,5 +308,6 @@ export default {
   'remove-duplicates-excel': RemoveDuplicatesExcel,
   'comparing-fractions-calculator': ComparingFractionsCalculator,
   'image-to-svg': ImageToSvg,
-  'pdf-compressor': PdfCompressor
+  'pdf-compressor': PdfCompressor,
+  'us-address-generator': UsAddressGenerator
 };
