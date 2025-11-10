@@ -1546,6 +1546,17 @@ const allTools = computed(() => [
     icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
     tags: ['calculator']
   },
+  {
+    id: 'us-address-generator',
+    name: t('tools.us-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.us-address-generator.description'),
+    path: '/tools/us-address-generator',
+    component: 'UsAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
 
   // 测绘工具
   {
