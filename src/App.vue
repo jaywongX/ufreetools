@@ -1557,6 +1557,17 @@ const allTools = computed(() => [
     icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
     tags: ['generator']
   },
+  {
+    id: 'hk-address-generator',
+    name: t('tools.hk-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.hk-address-generator.description'),
+    path: '/tools/hk-address-generator',
+    component: 'HkAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
 
   // 测绘工具
   {
