@@ -187,6 +187,7 @@ const lazyComponentMap = {
   'UnifiedCreditCodeGenerator': () => import('./components/tools/UnifiedCreditCodeGenerator.vue'),
   'ComparingFractionsCalculator': () => import('./components/tools/ComparingFractionsCalculator.vue'),
   'UsAddressGenerator': () => import('./components/tools/UsAddressGenerator.vue'),
+  'HkAddressGenerator': () => import('./components/tools/HkAddressGenerator.vue'),
   
   // 测绘
   'CoordinateConverter': () => import('./components/tools/CoordinateConverter.vue'),

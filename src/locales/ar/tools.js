@@ -153,6 +153,7 @@ import ComparingFractionsCalculator from './tools/comparing-fractions-calculator
 import ImageToSvg from './tools/image-to-svg.js';
 import PdfCompressor from './tools/pdf-compressor.js';
 import UsAddressGenerator from './tools/us-address-generator.js';
+import HkAddressGenerator from './tools/hk-address-generator.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -309,5 +310,6 @@ export default {
   'comparing-fractions-calculator': ComparingFractionsCalculator,
   'image-to-svg': ImageToSvg,
   'pdf-compressor': PdfCompressor,
-  'us-address-generator': UsAddressGenerator
+  'us-address-generator': UsAddressGenerator,
+  'hk-address-generator': HkAddressGenerator
 };

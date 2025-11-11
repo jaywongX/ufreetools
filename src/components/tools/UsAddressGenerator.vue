@@ -175,6 +175,18 @@
                                 <div v-if="item.ssn">
                                     <div><span class="font-medium">{{ $t('tools.us-address-generator.ssnNumber') }}：</span> {{ item.ssn.number }}</div>
                                 </div>
+                                <div v-if="item.fingerprint" class="grid grid-cols-2 gap-2">
+                                    <div><span class="font-medium">{{ $t('tools.us-address-generator.os') }}：</span> {{ item.fingerprint.os }}</div>
+                                    <div><span class="font-medium">{{ $t('tools.us-address-generator.osVersion') }}：</span> {{ item.fingerprint.osVersion }}</div>
+                                    <div><span class="font-medium">{{ $t('tools.us-address-generator.browser') }}：</span> {{ item.fingerprint.browser }}</div>
+                                    <div><span class="font-medium">{{ $t('tools.us-address-generator.userAgent') }}：</span> {{ item.fingerprint.userAgent }}</div>
+                                    <div><span class="font-medium">{{ $t('tools.us-address-generator.screenResolution') }}：</span> {{ item.fingerprint.screenResolution }}</div>
+                                    <div><span class="font-medium">{{ $t('tools.us-address-generator.timezone') }}：</span> {{ item.fingerprint.timezone }}</div>
+                                    <div><span class="font-medium">{{ $t('tools.us-address-generator.guid') }}：</span> {{ item.fingerprint.guid }}</div>
+                                    <div><span class="font-medium">{{ $t('tools.us-address-generator.ipAddress') }}：</span> {{ item.fingerprint.ipAddress }}</div>
+                                    <div><span class="font-medium">{{ $t('tools.us-address-generator.macAddress') }}：</span> {{ item.fingerprint.macAddress }}</div>
+                                    <div><span class="font-medium">{{ $t('tools.us-address-generator.cookiePolicy') }}：</span> {{ item.fingerprint.cookiePolicy }}</div>
+                                </div>
                             </div>
 
                             <div class="mt-4 flex gap-2">
@@ -217,7 +229,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { faker } from '@faker-js/faker'
 import UsAddressGeneratorArticle from './UsAddressGeneratorArticle.vue'
@@ -310,6 +322,10 @@ const cities = {
     'NC': ['Charlotte', 'Raleigh', 'Greensboro', 'Durham', 'Winston-Salem'],
     'MI': ['Detroit', 'Grand Rapids', 'Warren', 'Sterling Heights', 'Lansing']
 }
+
+onMounted(() => {
+    loadSample()
+})
 
 const filteredCities = computed(() => {
     if (!config.state) return []
@@ -608,7 +624,7 @@ function loadSample() {
     config.includeCreditCard = true
     config.includeCareer = true
     config.includeSSN = true
-    config.includeFingerprint = false
+    config.includeFingerprint = true
     config.quantity = 3
     generateData()
 }
