@@ -1,0 +1,173 @@
+export default {
+    name: '在线EXIF查看器 - 图片元数据信息提取工具',
+    description: '免费在线EXIF查看器，快速提取图片拍摄信息、GPS位置、相机参数等元数据。支持JPEG、HEIC、WebP、PNG、RAW、TIFF格式，无需上传服务器，保护隐私安全',
+    inputTitle: '上传图片',
+    outputTitle: 'EXIF信息',
+    dragTip: '拖放图片到这里或点击上传',
+    supported: '支持的格式: JPEG, HEIC, WebP, PNG, RAW, TIFF',
+    loadSample: '加载示例图片',
+    preview: '预览图片',
+    clearAll: '清除全部',
+    deleteImage: '删除图片',
+    noOutput: '暂无EXIF信息',
+    processing: '正在处理...',
+    
+    // 基础信息
+    basicInfo: '基础拍摄信息',
+    cameraMake: '相机品牌',
+    cameraModel: '相机型号',
+    lensInfo: '镜头信息',
+    dateTime: '拍摄时间',
+    fileSize: '文件大小',
+    dimensions: '图片尺寸',
+    imageDescription: '图片描述',
+    
+    // 拍摄参数
+    shootingParams: '拍摄参数',
+    aperture: '光圈值',
+    shutterSpeed: '快门速度',
+    iso: 'ISO感光度',
+    focalLength: '焦距',
+    focalLength35mm: '35mm等效焦距',
+    exposureCompensation: '曝光补偿',
+    whiteBalance: '白平衡',
+    captureSettings: '拍摄模式与场景',
+    exposureProgram: '曝光程序',
+    exposureMode: '曝光模式',
+    sceneCaptureType: '场景类型',
+    lightSource: '光源',
+    digitalZoomRatio: '数字变焦',
+    
+    // GPS信息
+    gpsInfo: 'GPS地理位置',
+    latitude: '纬度',
+    longitude: '经度',
+    altitude: '海拔高度',
+    location: '地理位置',
+    gpsSpeed: '移动速度',
+    gpsDirection: '移动方向',
+    mapView: '地图视图',
+    reverseGeocode: '反向地理编码',
+    
+    // 高级元数据
+    advancedMetadata: '高级元数据',
+    colorSpace: '色彩空间',
+    flashMode: '闪光灯模式',
+    meteringMode: '测光模式',
+    focusMode: '对焦模式',
+    orientation: '图像方向',
+    sensingMethod: '感应方式',
+    creationInfo: '作者与软件信息',
+    software: '创建软件',
+    artist: '作者',
+    copyright: '版权',
+    
+    // 导出选项
+    exportOptions: '导出选项',
+    exportJson: '导出JSON',
+    exportCsv: '导出CSV',
+    exportSummary: '导出摘要报告',
+    downloadAll: '批量下载',
+    
+    // 其他
+    noExifData: '该图片不包含EXIF数据',
+    loading: '加载中...',
+    error: '处理出错',
+    unknown: '未知',
+    
+    // 格式化相关
+    second: '秒',
+    auto: '自动',
+    manual: '手动',
+    uncalibrated: '未校准',
+    flashNotUsed: '未使用',
+    flashUsed: '已使用',
+    meteringUnknown: '未知',
+    meteringAverage: '平均',
+    meteringCenterWeighted: '中央重点',
+    meteringSpot: '点测光',
+    meteringMultiSpot: '多点',
+    meteringMultiSegment: '多区域',
+    meteringPartial: '部分',
+    meteringOther: '其他',
+    orientationNormal: '正常',
+    orientationRotate180: '旋转180°',
+    orientationRotate90CW: '顺时针旋转90°',
+    orientationRotate90CCW: '逆时针旋转90°',
+    
+    // CSV导出
+    csvField: '字段',
+    csvValue: '值',
+    
+    // 摘要报告
+    summaryReport: 'EXIF信息摘要报告',
+    summaryFileName: '文件名',
+    summaryBasicInfo: '基础拍摄信息',
+    summaryShootingParams: '拍摄参数',
+    summaryGpsInfo: 'GPS地理位置',
+    summaryAdvancedMetadata: '高级元数据',
+    summaryCreationInfo: '作者与软件信息',
+    
+    // 图表
+    chartTitle: 'EXIF参数可视化图表',
+    chartIso: 'ISO',
+    chartAperture: '光圈',
+    chartShutter: '快门',
+    
+    // 地图
+    clickToViewLargeMap: '点击查看大地图',
+
+    // 枚举格式化
+    exposureProgramNotDefined: '未定义',
+    exposureProgramManual: '手动',
+    exposureProgramNormal: '程序自动',
+    exposureProgramAperture: '光圈优先',
+    exposureProgramShutter: '快门优先',
+    exposureProgramCreative: '景深优先',
+    exposureProgramAction: '高速/动作',
+    exposureProgramPortrait: '人像模式',
+    exposureProgramLandscape: '风景模式',
+
+    exposureModeAuto: '自动曝光',
+    exposureModeManual: '手动曝光',
+    exposureModeAutoBracket: '包围曝光',
+
+    sceneCaptureStandard: '标准',
+    sceneCaptureLandscape: '风景',
+    sceneCapturePortrait: '人像',
+    sceneCaptureNight: '夜景',
+
+    lightSourceUnknown: '未知光源',
+    lightSourceDaylight: '日光',
+    lightSourceFluorescent: '荧光灯',
+    lightSourceTungsten: '钨丝灯',
+    lightSourceFlash: '闪光灯',
+    lightSourceFineWeather: '晴天',
+    lightSourceCloudy: '阴天',
+    lightSourceShade: '阴影',
+    lightSourceDaylightFluorescent: '日光型荧光灯',
+    lightSourceDayWhiteFluorescent: '日白色荧光灯',
+    lightSourceCoolWhiteFluorescent: '冷白荧光灯',
+    lightSourceWhiteFluorescent: '白色荧光灯',
+    lightSourceStandardLightA: '标准光源A',
+    lightSourceStandardLightB: '标准光源B',
+    lightSourceStandardLightC: '标准光源C',
+    lightSourceD55: 'D55日光',
+    lightSourceD65: 'D65日光',
+    lightSourceD75: 'D75日光',
+    lightSourceStudioTungsten: '影棚钨丝灯',
+    lightSourceOther: '其他光源',
+
+    sensingMethodNotDefined: '未定义',
+    sensingMethodOneChip: '单片彩色区域',
+    sensingMethodTwoChip: '双片彩色区域',
+    sensingMethodThreeChip: '三片彩色区域',
+    sensingMethodColorSequential: '彩色序列区域',
+    sensingMethodTrilinear: '三线性传感器',
+    sensingMethodColorSequentialLinear: '彩色序列线性阵列',
+
+    gpsSpeedUnitKmh: 'km/h',
+    gpsSpeedUnitMph: 'mph',
+    gpsSpeedUnitKnots: '节'
+};
+
