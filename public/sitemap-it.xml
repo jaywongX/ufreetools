@@ -4854,4 +4854,24 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/tool/hk-address-generator" />
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/tool/hk-address-generator" />
   </url>
+  <url>
+    <loc>https://www.ufreetools.com/it/tool/exif-viewer</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ufreetools.com/zh/tool/exif-viewer" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ufreetools.com/en/tool/exif-viewer" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ufreetools.com/es/tool/exif-viewer" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.ufreetools.com/hi/tool/exif-viewer" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.ufreetools.com/ar/tool/exif-viewer" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ufreetools.com/ru/tool/exif-viewer" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ufreetools.com/fr/tool/exif-viewer" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.ufreetools.com/ja/tool/exif-viewer" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.ufreetools.com/pt/tool/exif-viewer" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.ufreetools.com/de/tool/exif-viewer" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.ufreetools.com/id/tool/exif-viewer" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.ufreetools.com/ko/tool/exif-viewer" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.ufreetools.com/it/tool/exif-viewer" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.ufreetools.com/zh-TW/tool/exif-viewer" />
+  </url>
 </urlset>
