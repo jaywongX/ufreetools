@@ -205,6 +205,7 @@ const lazyComponentMap = {
   'CoordinateFormatConverter': () => import('./components/tools/CoordinateFormatConverter.vue'),
   'ProjectionZoneFinder': () => import('./components/tools/ProjectionZoneFinder.vue'),
   'CoordinateTrajectoryComparator': () => import('./components/tools/CoordinateTrajectoryComparator.vue'),
+  'SevenParameterTransformer': () => import('./components/tools/SevenParameterTransformer.vue'),
   
   // AI
   'ImglyRemoveImageBackground': () => import('./components/tools/ImglyRemoveImageBackground.vue'),

@@ -155,6 +155,7 @@ import PdfCompressor from './tools/pdf-compressor.js';
 import UsAddressGenerator from './tools/us-address-generator.js';
 import HkAddressGenerator from './tools/hk-address-generator.js';
 import ExifViewer from './tools/exif-viewer.js';
+import SevenParameterTransformer from './tools/seven-parameter-transformer.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -313,5 +314,6 @@ export default {
   'pdf-compressor': PdfCompressor,
   'us-address-generator': UsAddressGenerator,
   'hk-address-generator': HkAddressGenerator,
-  'exif-viewer': ExifViewer
+  'exif-viewer': ExifViewer,
+  'seven-parameter-transformer': SevenParameterTransformer
 };
