@@ -1,0 +1,72 @@
+export default {
+    name: 'Trasformatore a Quattro Parametri - Conversione Batch con Modello di Similarità Planare e Modello Bursa Semplificato',
+    description: 'Trasformatore a quattro parametri di livello professionale che supporta la trasformazione di similarità planare, il modello Bursa semplificato, la trasformazione di Helmert e i modelli di parametri personalizzati. Adattabile ai sistemi di coordinate indipendenti locali, ai sistemi di coordinate ingegneristiche e alle coordinate di proiezione regionale, consentendo il calcolo diretto/inverso del punto singolo, la conversione batch, l\'analisi dei residui e la valutazione visiva.',
+    inputTitle: 'Input delle Coordinate e Impostazioni del Modello',
+    outputTitle: 'Risultati della Conversione e Analisi dell\'Accuratezza',
+    modelTitle: 'Selezione del Modello a Quattro Parametri',
+    modelOptions: {
+        similarity: 'Trasformazione di Similarità Planare',
+        bursa: 'Modello Bursa Semplificato',
+        helmert: 'Trasformazione di Helmert',
+        custom: 'Modello di Parametri Personalizzato'
+    },
+    parameterTitle: 'Definizione dei Parametri (Standardizzazione delle Unità)',
+    parameterFields: {
+        dx: 'ΔX (m)',
+        dy: 'ΔY (m)',
+        rotation: 'Rotazione θ (°)',
+        scale: 'Scala m (ppm)'
+    },
+    manualTitle: 'Input Punto Singolo',
+    manualFields: {
+        sourceX: 'X Sorgente (m)',
+        sourceY: 'Y Sorgente (m)',
+        targetX: 'X Destinazione (Opzionale)',
+        targetY: 'Y Destinazione (Opzionale)',
+        label: 'Nome del Punto'
+    },
+    appendPoint: 'Scrivi nei Dati Batch',
+    delimiterLabel: 'Delimitatore Personalizzato',
+    batchTitle: 'Input Testo Batch',
+    batchPlaceholder: 'Esempio:\n378933.221,3412554.881,378935.102,3412556.412,CP01\n378943.114,3412541.552,378945.020,3412543.030,CP02',
+    loadSample: 'Carica Esempio',
+    clearAll: 'Cancella Input',
+    fileTitle: 'Trascina File CSV/TXT',
+    dragTip: 'Trascina o clicca per caricare file, analisi in tempo reale delle coordinate planari',
+    supported: 'Supporta CSV, TXT, delimitato da virgole per impostazione predefinita, personalizzabile',
+    solverTitle: 'Parametri di Soluzione dei Punti Comuni',
+    solverPlaceholder: 'X Sorgente, Y Sorgente => X Destinazione, Y Destinazione\n378933.221,3412554.881 => 378935.102,3412556.412',
+    solveBtn: 'Adeguamento di Similarità Planare',
+    conversionBtn: 'Calcolo Diretto',
+    inverseBtn: 'Calcolo Inverso',
+    processTitle: 'Processo di Calcolo',
+    processToggle: 'Espandi / Comprimi',
+    processCopy: 'Copia Log',
+    progressLabel: 'Progresso Batch',
+    statsTitle: 'Statistiche di Accuratezza',
+    statsFields: {
+        rmse: 'RMSE (m)',
+        meanResidual: 'Residuo Medio (m)',
+        maxResidual: 'Residuo Massimo (m)',
+        ci95: 'Intervallo di Confidenza 95% (m)',
+        count: 'Conteggio Punti'
+    },
+    visualizationTitle: 'Distribuzione delle Coordinate e Grafico dei Residui',
+    scatterTitle: 'Grafico di Distribuzione dei Punti di Controllo',
+    residualTitle: 'Istogramma dei Residui',
+    heatTitle: 'Panoramica della Mappa di Calore dell\'Accuratezza',
+    exportBtn: 'Esporta Risultati (CSV)',
+    outputSummary: 'Output della Conversione Batch',
+    noOutput: 'Ancora nessun risultato, inserisci le coordinate ed esegui la conversione.',
+    sampleLoaded: 'Dati di esempio caricati',
+    solverNeedsPoints: 'La soluzione richiede almeno 2 punti di controllo',
+    invalidInput: 'Impossibile analizzare l\'input, controllare il delimitatore o l\'ordine delle colonne.',
+    conversionDone: 'Conversione completata, output e visualizzazione aggiornati.',
+    copySuccess: 'Log copiato',
+    historyApplied: 'Parametri di soluzione storici applicati',
+    precisionTitle: 'Controllo di Precisione',
+    precisionFields: {
+        decimal: 'Decimali delle Coordinate',
+        histogramBins: 'Intervalli dell\'Istogramma'
+    }
+}

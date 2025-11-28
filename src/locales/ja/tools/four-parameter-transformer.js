@@ -1,0 +1,72 @@
+export default {
+    name: '四パラメータ変換器 - 平面相似とブルサ簡略モデルのバッチ変換',
+    description: 'プロフェッショナルグレードの四パラメータ変換器で、平面相似変換、ブルサ簡略モデル、ヘルマート変換、およびカスタムパラメータモデルをサポート。地方独立座標系、工事座標系、地域投影座標に適応し、単点の順逆算、バッチ変換、残差分析、視覚的評価を実現。',
+    inputTitle: '座標入力とモデル設定',
+    outputTitle: '変換結果と精度分析',
+    modelTitle: '四パラメータモデル選択',
+    modelOptions: {
+        similarity: '平面相似変換',
+        bursa: 'ブルサ簡略モデル',
+        helmert: 'ヘルマート変換',
+        custom: 'カスタムパラメータモデル'
+    },
+    parameterTitle: 'パラメータ定義（単位標準化）',
+    parameterFields: {
+        dx: 'ΔX (m)',
+        dy: 'ΔY (m)',
+        rotation: '回転θ (°)',
+        scale: '尺度m (ppm)'
+    },
+    manualTitle: '単点入力',
+    manualFields: {
+        sourceX: '元X (m)',
+        sourceY: '元Y (m)',
+        targetX: '目標X(任意)',
+        targetY: '目標Y(任意)',
+        label: '点名'
+    },
+    appendPoint: 'バッチデータに書き込む',
+    delimiterLabel: 'カスタム区切り文字',
+    batchTitle: 'バッチテキスト入力',
+    batchPlaceholder: '例：\n378933.221,3412554.881,378935.102,3412556.412,CP01\n378943.114,3412541.552,378945.020,3412543.030,CP02',
+    loadSample: 'サンプル読み込み',
+    clearAll: '入力クリア',
+    fileTitle: 'CSV/TXTファイルをドラッグ',
+    dragTip: 'ファイルをドラッグまたはクリックしてアップロード、平面座標のリアルタイム解析',
+    supported: 'CSV、TXTをサポート、デフォルトはカンマ区切り、カスタマイズ可能',
+    solverTitle: '共通点解算パラメータ',
+    solverPlaceholder: '元X,元Y => 目標X,目標Y\n378933.221,3412554.881 => 378935.102,3412556.412',
+    solveBtn: '平面相似調整',
+    conversionBtn: '順算変換',
+    inverseBtn: '逆算変換',
+    processTitle: '計算プロセス',
+    processToggle: '展開 / 折りたたみ',
+    processCopy: 'ログコピー',
+    progressLabel: 'バッチ進捗',
+    statsTitle: '精度統計',
+    statsFields: {
+        rmse: 'RMSE (m)',
+        meanResidual: '平均残差 (m)',
+        maxResidual: '最大残差 (m)',
+        ci95: '95%信頼区間 (m)',
+        count: '点数'
+    },
+    visualizationTitle: '座標分布と残差図',
+    scatterTitle: '制御点分布図',
+    residualTitle: '残差ヒストグラム',
+    heatTitle: '精度ヒートマップ概観',
+    exportBtn: '結果エクスポート (CSV)',
+    outputSummary: 'バッチ変換出力',
+    noOutput: 'まだ結果がありません。座標を入力して変換を実行してください。',
+    sampleLoaded: 'サンプルデータ読み込み済み',
+    solverNeedsPoints: '解算には少なくとも2つの制御点が必要',
+    invalidInput: '入力を解析できません。区切り文字または列順序を確認してください。',
+    conversionDone: '変換完了、出力と可視化を更新しました。',
+    copySuccess: 'ログをコピーしました',
+    historyApplied: '履歴解算パラメータを適用しました',
+    precisionTitle: '精度制御',
+    precisionFields: {
+        decimal: '座標小数点以下桁数',
+        histogramBins: 'ヒストグラムビン'
+    }
+}

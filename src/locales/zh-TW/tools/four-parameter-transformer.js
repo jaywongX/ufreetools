@@ -1,0 +1,72 @@
+export default {
+    name: '四參數轉換器 - 平面相似與布爾莎簡化模型批次轉換',
+    description: '專業級四參數轉換器，支援平面相似變換、布爾莎簡化模型、赫爾默特變換以及自訂參數模型。適配地方獨立坐標系、工程坐標系與區域投影坐標，實現單點正反算、批次轉換、殘差分析與可視化評估。',
+    inputTitle: '坐標輸入與模型設定',
+    outputTitle: '轉換結果與精度分析',
+    modelTitle: '四參數模型選擇',
+    modelOptions: {
+        similarity: '平面相似變換',
+        bursa: '布爾莎簡化模型',
+        helmert: '赫爾默特變換',
+        custom: '自訂參數模型'
+    },
+    parameterTitle: '參數定義（單位標準化）',
+    parameterFields: {
+        dx: 'ΔX (m)',
+        dy: 'ΔY (m)',
+        rotation: '旋轉θ (°)',
+        scale: '尺度m (ppm)'
+    },
+    manualTitle: '單點輸入',
+    manualFields: {
+        sourceX: '源X (m)',
+        sourceY: '源Y (m)',
+        targetX: '目標X(可選)',
+        targetY: '目標Y(可選)',
+        label: '點名'
+    },
+    appendPoint: '寫入批次資料',
+    delimiterLabel: '自訂分隔符',
+    batchTitle: '批次文字輸入',
+    batchPlaceholder: '範例：\n378933.221,3412554.881,378935.102,3412556.412,CP01\n378943.114,3412541.552,378945.020,3412543.030,CP02',
+    loadSample: '載入範例',
+    clearAll: '清除輸入',
+    fileTitle: '拖曳CSV/TXT檔案',
+    dragTip: '拖曳或點擊上傳檔案，即時解析平面坐標',
+    supported: '支援CSV、TXT，預設逗號分隔，可自訂',
+    solverTitle: '共用點解算參數',
+    solverPlaceholder: '源X,源Y => 目標X,目標Y\n378933.221,3412554.881 => 378935.102,3412556.412',
+    solveBtn: '平面相似平差',
+    conversionBtn: '正算轉換',
+    inverseBtn: '反算轉換',
+    processTitle: '計算過程',
+    processToggle: '展開 / 摺疊',
+    processCopy: '複製日誌',
+    progressLabel: '批次進度',
+    statsTitle: '精度統計',
+    statsFields: {
+        rmse: 'RMSE (m)',
+        meanResidual: '平均殘差 (m)',
+        maxResidual: '最大殘差 (m)',
+        ci95: '95%信心區間 (m)',
+        count: '點數'
+    },
+    visualizationTitle: '坐標分佈與殘差圖',
+    scatterTitle: '控制點分佈圖',
+    residualTitle: '殘差直方圖',
+    heatTitle: '精度熱力概覽',
+    exportBtn: '匯出結果 (CSV)',
+    outputSummary: '批次轉換輸出',
+    noOutput: '暫無結果，請輸入坐標並執行轉換。',
+    sampleLoaded: '已載入範例資料',
+    solverNeedsPoints: '解算至少需要2個控制點',
+    invalidInput: '無法解析輸入，請檢查分隔符或欄位順序。',
+    conversionDone: '轉換完成，已更新輸出與可視化。',
+    copySuccess: '日誌已複製',
+    historyApplied: '已應用歷史解算參數',
+    precisionTitle: '精度控制',
+    precisionFields: {
+        decimal: '坐標小數位',
+        histogramBins: '直方圖分桶'
+    }
+}

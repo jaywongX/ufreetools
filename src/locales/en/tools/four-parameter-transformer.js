@@ -1,0 +1,72 @@
+export default {
+    name: 'Four-Parameter Transformer - Planar Similarity and Simplified Bursa Model Batch Conversion',
+    description: 'Professional-grade four-parameter transformer supporting planar similarity transformation, simplified Bursa model, Helmert transformation, and custom parameter models. Adaptable to local independent coordinate systems, engineering coordinate systems, and regional projection coordinates, enabling single-point forward/inverse calculation, batch conversion, residual analysis, and visual evaluation.',
+    inputTitle: 'Coordinate Input and Model Settings',
+    outputTitle: 'Conversion Results and Accuracy Analysis',
+    modelTitle: 'Four-Parameter Model Selection',
+    modelOptions: {
+        similarity: 'Planar Similarity Transformation',
+        bursa: 'Simplified Bursa Model',
+        helmert: 'Helmert Transformation',
+        custom: 'Custom Parameter Model'
+    },
+    parameterTitle: 'Parameter Definition (Unit Standardization)',
+    parameterFields: {
+        dx: 'ΔX (m)',
+        dy: 'ΔY (m)',
+        rotation: 'Rotation θ (°)',
+        scale: 'Scale m (ppm)'
+    },
+    manualTitle: 'Single Point Input',
+    manualFields: {
+        sourceX: 'Source X (m)',
+        sourceY: 'Source Y (m)',
+        targetX: 'Target X (Optional)',
+        targetY: 'Target Y (Optional)',
+        label: 'Point Name'
+    },
+    appendPoint: 'Write to Batch Data',
+    delimiterLabel: 'Custom Delimiter',
+    batchTitle: 'Batch Text Input',
+    batchPlaceholder: 'Example:\n378933.221,3412554.881,378935.102,3412556.412,CP01\n378943.114,3412541.552,378945.020,3412543.030,CP02',
+    loadSample: 'Load Sample',
+    clearAll: 'Clear Input',
+    fileTitle: 'Drag CSV/TXT Files',
+    dragTip: 'Drag or click to upload files, real-time parsing of planar coordinates',
+    supported: 'Supports CSV, TXT, comma delimited by default, customizable',
+    solverTitle: 'Common Point Solution Parameters',
+    solverPlaceholder: 'Source X, Source Y => Target X, Target Y\n378933.221,3412554.881 => 378935.102,3412556.412',
+    solveBtn: 'Planar Similarity Adjustment',
+    conversionBtn: 'Forward Calculation',
+    inverseBtn: 'Inverse Calculation',
+    processTitle: 'Calculation Process',
+    processToggle: 'Expand / Collapse',
+    processCopy: 'Copy Log',
+    progressLabel: 'Batch Progress',
+    statsTitle: 'Accuracy Statistics',
+    statsFields: {
+        rmse: 'RMSE (m)',
+        meanResidual: 'Mean Residual (m)',
+        maxResidual: 'Maximum Residual (m)',
+        ci95: '95% Confidence Interval (m)',
+        count: 'Point Count'
+    },
+    visualizationTitle: 'Coordinate Distribution and Residual Plot',
+    scatterTitle: 'Control Point Distribution Chart',
+    residualTitle: 'Residual Histogram',
+    heatTitle: 'Accuracy Heatmap Overview',
+    exportBtn: 'Export Results (CSV)',
+    outputSummary: 'Batch Conversion Output',
+    noOutput: 'No results yet, please enter coordinates and perform conversion.',
+    sampleLoaded: 'Sample data loaded',
+    solverNeedsPoints: 'Solution requires at least 2 control points',
+    invalidInput: 'Unable to parse input, please check delimiter or column order.',
+    conversionDone: 'Conversion completed, output and visualization updated.',
+    copySuccess: 'Log copied',
+    historyApplied: 'Historical solution parameters applied',
+    precisionTitle: 'Precision Control',
+    precisionFields: {
+        decimal: 'Coordinate Decimal Places',
+        histogramBins: 'Histogram Bins'
+    }
+}

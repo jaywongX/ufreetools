@@ -1,0 +1,72 @@
+export default {
+    name: 'Transformador de Quatro Parâmetros - Conversão em Lote de Modelo de Similaridade Planar e Modelo Bursa Simplificado',
+    description: 'Transformador de quatro parâmetros de nível profissional que suporta transformação de similaridade planar, modelo Bursa simplificado, transformação de Helmert e modelos de parâmetros personalizados. Adaptável a sistemas de coordenadas independentes locais, sistemas de coordenadas de engenharia e coordenadas de projeção regional, permitindo cálculo direto/inverso de ponto único, conversão em lote, análise de resíduos e avaliação visual.',
+    inputTitle: 'Entrada de Coordenadas e Configurações do Modelo',
+    outputTitle: 'Resultados da Conversão e Análise de Precisão',
+    modelTitle: 'Seleção do Modelo de Quatro Parâmetros',
+    modelOptions: {
+        similarity: 'Transformação de Similaridade Planar',
+        bursa: 'Modelo Bursa Simplificado',
+        helmert: 'Transformação de Helmert',
+        custom: 'Modelo de Parâmetros Personalizado'
+    },
+    parameterTitle: 'Definição de Parâmetros (Padronização de Unidades)',
+    parameterFields: {
+        dx: 'ΔX (m)',
+        dy: 'ΔY (m)',
+        rotation: 'Rotação θ (°)',
+        scale: 'Escala m (ppm)'
+    },
+    manualTitle: 'Entrada de Ponto Único',
+    manualFields: {
+        sourceX: 'X Fonte (m)',
+        sourceY: 'Y Fonte (m)',
+        targetX: 'X Alvo (Opcional)',
+        targetY: 'Y Alvo (Opcional)',
+        label: 'Nome do Ponto'
+    },
+    appendPoint: 'Escrever nos Dados em Lote',
+    delimiterLabel: 'Delimitador Personalizado',
+    batchTitle: 'Entrada de Texto em Lote',
+    batchPlaceholder: 'Exemplo:\n378933.221,3412554.881,378935.102,3412556.412,CP01\n378943.114,3412541.552,378945.020,3412543.030,CP02',
+    loadSample: 'Carregar Exemplo',
+    clearAll: 'Limpar Entrada',
+    fileTitle: 'Arrastar Arquivos CSV/TXT',
+    dragTip: 'Arraste ou clique para carregar arquivos, análise em tempo real de coordenadas planares',
+    supported: 'Suporta CSV, TXT, delimitado por vírgulas por padrão, personalizável',
+    solverTitle: 'Parâmetros de Solução de Pontos Comuns',
+    solverPlaceholder: 'X Fonte, Y Fonte => X Alvo, Y Alvo\n378933.221,3412554.881 => 378935.102,3412556.412',
+    solveBtn: 'Ajuste de Similaridade Planar',
+    conversionBtn: 'Cálculo Direto',
+    inverseBtn: 'Cálculo Inverso',
+    processTitle: 'Processo de Cálculo',
+    processToggle: 'Expandir / Recolher',
+    processCopy: 'Copiar Log',
+    progressLabel: 'Progresso em Lote',
+    statsTitle: 'Estatísticas de Precisão',
+    statsFields: {
+        rmse: 'RMSE (m)',
+        meanResidual: 'Resíduo Médio (m)',
+        maxResidual: 'Resíduo Máximo (m)',
+        ci95: 'Intervalo de Confiança 95% (m)',
+        count: 'Contagem de Pontos'
+    },
+    visualizationTitle: 'Distribuição de Coordenadas e Gráfico de Resíduos',
+    scatterTitle: 'Gráfico de Distribuição de Pontos de Controle',
+    residualTitle: 'Histograma de Resíduos',
+    heatTitle: 'Visão Geral do Mapa de Calor de Precisão',
+    exportBtn: 'Exportar Resultados (CSV)',
+    outputSummary: 'Saída da Conversão em Lote',
+    noOutput: 'Ainda não há resultados, por favor insira coordenadas e execute a conversão.',
+    sampleLoaded: 'Dados de exemplo carregados',
+    solverNeedsPoints: 'A solução requer pelo menos 2 pontos de controle',
+    invalidInput: 'Não foi possível analisar a entrada, por favor verifique o delimitador ou a ordem das colunas.',
+    conversionDone: 'Conversão concluída, saída e visualização atualizadas.',
+    copySuccess: 'Log copiado',
+    historyApplied: 'Parâmetros de solução históricos aplicados',
+    precisionTitle: 'Controle de Precisão',
+    precisionFields: {
+        decimal: 'Casas Decimais das Coordenadas',
+        histogramBins: 'Intervalos do Histograma'
+    }
+}

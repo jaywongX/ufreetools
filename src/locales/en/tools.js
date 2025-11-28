@@ -156,6 +156,7 @@ import UsAddressGenerator from './tools/us-address-generator.js';
 import HkAddressGenerator from './tools/hk-address-generator.js';
 import ExifViewer from './tools/exif-viewer.js';
 import SevenParameterTransformer from './tools/seven-parameter-transformer.js';
+import FourParameterTransformer from './tools/four-parameter-transformer.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -315,5 +316,6 @@ export default {
   'us-address-generator': UsAddressGenerator,
   'hk-address-generator': HkAddressGenerator,
   'exif-viewer': ExifViewer,
-  'seven-parameter-transformer': SevenParameterTransformer
+  'seven-parameter-transformer': SevenParameterTransformer,
+  'four-parameter-transformer': FourParameterTransformer
 };

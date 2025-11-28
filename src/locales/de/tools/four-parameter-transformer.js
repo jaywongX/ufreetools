@@ -1,0 +1,72 @@
+export default {
+    name: 'Vier-Parameter-Transformator - Batch-Konvertierung mit ebener Ähnlichkeits- und vereinfachtem Bursa-Modell',
+    description: 'Professioneller Vier-Parameter-Transformator, der ebene Ähnlichkeitstransformation, vereinfachtes Bursa-Modell, Helmert-Transformation und benutzerdefinierte Parametermodelle unterstützt. Anpassbar an lokale unabhängige Koordinatensysteme, Ingenieur-Koordinatensysteme und regionale Projektionskoordinaten, ermöglicht Einzelpunkt-Vorwärts-/Rückwärtsberechnung, Batch-Konvertierung, Residuenanalyse und visuelle Bewertung.',
+    inputTitle: 'Koordinateneingabe und Modelleinstellungen',
+    outputTitle: 'Konvertierungsergebnisse und Genauigkeitsanalyse',
+    modelTitle: 'Auswahl des Vier-Parameter-Modells',
+    modelOptions: {
+        similarity: 'Ebene Ähnlichkeitstransformation',
+        bursa: 'Vereinfachtes Bursa-Modell',
+        helmert: 'Helmert-Transformation',
+        custom: 'Benutzerdefiniertes Parametermodell'
+    },
+    parameterTitle: 'Parameterdefinition (Einheitenstandardisierung)',
+    parameterFields: {
+        dx: 'ΔX (m)',
+        dy: 'ΔY (m)',
+        rotation: 'Drehung θ (°)',
+        scale: 'Maßstab m (ppm)'
+    },
+    manualTitle: 'Einzelpunkteingabe',
+    manualFields: {
+        sourceX: 'Quell-X (m)',
+        sourceY: 'Quell-Y (m)',
+        targetX: 'Ziel-X (Optional)',
+        targetY: 'Ziel-Y (Optional)',
+        label: 'Punktname'
+    },
+    appendPoint: 'In Batch-Daten schreiben',
+    delimiterLabel: 'Benutzerdefiniertes Trennzeichen',
+    batchTitle: 'Batch-Texteingabe',
+    batchPlaceholder: 'Beispiel:\n378933.221,3412554.881,378935.102,3412556.412,CP01\n378943.114,3412541.552,378945.020,3412543.030,CP02',
+    loadSample: 'Beispiel laden',
+    clearAll: 'Eingabe löschen',
+    fileTitle: 'CSV/TXT-Dateien ziehen',
+    dragTip: 'Ziehen oder klicken zum Hochladen von Dateien, Echtzeit-Analyse ebener Koordinaten',
+    supported: 'Unterstützt CSV, TXT, standardmäßig durch Kommas getrennt, anpassbar',
+    solverTitle: 'Parameter für Gemeinsame Punktlösung',
+    solverPlaceholder: 'Quell-X, Quell-Y => Ziel-X, Ziel-Y\n378933.221,3412554.881 => 378935.102,3412556.412',
+    solveBtn: 'Ebenen Ähnlichkeitsausgleich',
+    conversionBtn: 'Vorwärtsberechnung',
+    inverseBtn: 'Rückwärtsberechnung',
+    processTitle: 'Berechnungsprozess',
+    processToggle: 'Erweitern / Einklappen',
+    processCopy: 'Protokoll kopieren',
+    progressLabel: 'Batch-Fortschritt',
+    statsTitle: 'Genauigkeitsstatistiken',
+    statsFields: {
+        rmse: 'RMSE (m)',
+        meanResidual: 'Mittleres Residuum (m)',
+        maxResidual: 'Maximales Residuum (m)',
+        ci95: '95% Konfidenzintervall (m)',
+        count: 'Punktzahl'
+    },
+    visualizationTitle: 'Koordinatenverteilung und Residuen-Diagramm',
+    scatterTitle: 'Verteilungsdiagramm der Kontrollpunkte',
+    residualTitle: 'Residuen-Histogramm',
+    heatTitle: 'Übersicht der Genauigkeits-Wärmekarte',
+    exportBtn: 'Ergebnisse exportieren (CSV)',
+    outputSummary: 'Batch-Konvertierungsausgabe',
+    noOutput: 'Noch keine Ergebnisse, bitte Koordinaten eingeben und Konvertierung durchführen.',
+    sampleLoaded: 'Beispieldaten geladen',
+    solverNeedsPoints: 'Lösung erfordert mindestens 2 Kontrollpunkte',
+    invalidInput: 'Eingabe kann nicht analysiert werden, bitte Trennzeichen oder Spaltenreihenfolge prüfen.',
+    conversionDone: 'Konvertierung abgeschlossen, Ausgabe und Visualisierung aktualisiert.',
+    copySuccess: 'Protokoll kopiert',
+    historyApplied: 'Historische Lösungsparameter angewendet',
+    precisionTitle: 'Genauigkeitskontrolle',
+    precisionFields: {
+        decimal: 'Dezimalstellen der Koordinaten',
+        histogramBins: 'Histogramm-Bins'
+    }
+}

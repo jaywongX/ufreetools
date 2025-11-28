@@ -1,0 +1,72 @@
+export default {
+    name: '4파라미터 변환기 - 평면 유사와 버사 간략 모델 배치 변환',
+    description: '전문가급 4파라미터 변환기로 평면 유사 변환, 버사 간략 모델, 헬머트 변환 및 사용자 정의 파라미터 모델을 지원합니다. 지역 독립 좌표계, 공학 좌표계 및 지역 투영 좌표에 적응하여 단점 정역산, 배치 변환, 잔차 분석 및 시각적 평가를 실현합니다.',
+    inputTitle: '좌표 입력 및 모델 설정',
+    outputTitle: '변환 결과 및 정확도 분석',
+    modelTitle: '4파라미터 모델 선택',
+    modelOptions: {
+        similarity: '평면 유사 변환',
+        bursa: '버사 간략 모델',
+        helmert: '헬머트 변환',
+        custom: '사용자 정의 파라미터 모델'
+    },
+    parameterTitle: '파라미터 정의 (단위 표준화)',
+    parameterFields: {
+        dx: 'ΔX (m)',
+        dy: 'ΔY (m)',
+        rotation: '회전θ (°)',
+        scale: '척도m (ppm)'
+    },
+    manualTitle: '단점 입력',
+    manualFields: {
+        sourceX: '원본X (m)',
+        sourceY: '원본Y (m)',
+        targetX: '목표X(선택사항)',
+        targetY: '목표Y(선택사항)',
+        label: '점명'
+    },
+    appendPoint: '배치 데이터에 쓰기',
+    delimiterLabel: '사용자 정의 구분자',
+    batchTitle: '배치 텍스트 입력',
+    batchPlaceholder: '예시:\n378933.221,3412554.881,378935.102,3412556.412,CP01\n378943.114,3412541.552,378945.020,3412543.030,CP02',
+    loadSample: '샘플 불러오기',
+    clearAll: '입력 지우기',
+    fileTitle: 'CSV/TXT 파일 드래그',
+    dragTip: '파일을 드래그하거나 클릭하여 업로드, 평면 좌표 실시간 분석',
+    supported: 'CSV, TXT 지원, 기본 쉼표 구분, 사용자 정의 가능',
+    solverTitle: '공통점 해산 파라미터',
+    solverPlaceholder: '원본X,원본Y => 목표X,목표Y\n378933.221,3412554.881 => 378935.102,3412556.412',
+    solveBtn: '평면 유사 조정',
+    conversionBtn: '정산 변환',
+    inverseBtn: '역산 변환',
+    processTitle: '계산 프로세스',
+    processToggle: '펼치기 / 접기',
+    processCopy: '로그 복사',
+    progressLabel: '배치 진행',
+    statsTitle: '정확도 통계',
+    statsFields: {
+        rmse: 'RMSE (m)',
+        meanResidual: '평균 잔차 (m)',
+        maxResidual: '최대 잔차 (m)',
+        ci95: '95% 신뢰 구간 (m)',
+        count: '점수'
+    },
+    visualizationTitle: '좌표 분포 및 잔차도',
+    scatterTitle: '제어점 분포도',
+    residualTitle: '잔차 히스토그램',
+    heatTitle: '정확도 히트맵 개요',
+    exportBtn: '결과 내보내기 (CSV)',
+    outputSummary: '배치 변환 출력',
+    noOutput: '아직 결과가 없습니다. 좌표를 입력하고 변환을 실행하세요.',
+    sampleLoaded: '샘플 데이터 로드됨',
+    solverNeedsPoints: '해산에는 최소 2개의 제어점이 필요합니다',
+    invalidInput: '입력을 분석할 수 없습니다. 구분자 또는 열 순서를 확인하세요.',
+    conversionDone: '변환 완료, 출력 및 시각화 업데이트됨.',
+    copySuccess: '로그 복사됨',
+    historyApplied: '이력 해산 파라미터 적용됨',
+    precisionTitle: '정확도 제어',
+    precisionFields: {
+        decimal: '좌표 소수점 이하 자릿수',
+        histogramBins: '히스토그램 구간'
+    }
+}
