@@ -1,0 +1,72 @@
+export default {
+    name: 'Transformateur à Quatre Paramètres - Conversion Batch par Modèle de Similitude Plane et Modèle Bursa Simplifié',
+    description: 'Transformateur à quatre paramètres de niveau professionnel prenant en charge la transformation de similitude plane, le modèle Bursa simplifié, la transformation de Helmert et les modèles de paramètres personnalisés. S\'adapte aux systèmes de coordonnées indépendants locaux, aux systèmes de coordonnées d\'ingénierie et aux coordonnées de projection régionale, permettant le calcul direct/inverse d\'un point unique, la conversion batch, l\'analyse des résidus et l\'évaluation visuelle.',
+    inputTitle: 'Saisie des Coordonnées et Paramètres du Modèle',
+    outputTitle: 'Résultats de Conversion et Analyse de Précision',
+    modelTitle: 'Sélection du Modèle à Quatre Paramètres',
+    modelOptions: {
+        similarity: 'Transformation de Similitude Plane',
+        bursa: 'Modèle Bursa Simplifié',
+        helmert: 'Transformation de Helmert',
+        custom: 'Modèle de Paramètres Personnalisé'
+    },
+    parameterTitle: 'Définition des Paramètres (Normalisation des Unités)',
+    parameterFields: {
+        dx: 'ΔX (m)',
+        dy: 'ΔY (m)',
+        rotation: 'Rotation θ (°)',
+        scale: 'Échelle m (ppm)'
+    },
+    manualTitle: 'Saisie d\'un Point Unique',
+    manualFields: {
+        sourceX: 'X Source (m)',
+        sourceY: 'Y Source (m)',
+        targetX: 'X Cible (Optionnel)',
+        targetY: 'Y Cible (Optionnel)',
+        label: 'Nom du Point'
+    },
+    appendPoint: 'Écrire dans les Données Batch',
+    delimiterLabel: 'Délimiteur Personnalisé',
+    batchTitle: 'Saisie de Texte Batch',
+    batchPlaceholder: 'Exemple :\n378933.221,3412554.881,378935.102,3412556.412,CP01\n378943.114,3412541.552,378945.020,3412543.030,CP02',
+    loadSample: 'Charger un Exemple',
+    clearAll: 'Effacer la Saisie',
+    fileTitle: 'Glisser des Fichiers CSV/TXT',
+    dragTip: 'Glissez ou cliquez pour télécharger des fichiers, analyse en temps réel des coordonnées planes',
+    supported: 'Prend en charge CSV, TXT, délimité par des virgules par défaut, personnalisable',
+    solverTitle: 'Paramètres de Résolution des Points Communs',
+    solverPlaceholder: 'X Source, Y Source => X Cible, Y Cible\n378933.221,3412554.881 => 378935.102,3412556.412',
+    solveBtn: 'Ajustement de Similitude Plane',
+    conversionBtn: 'Calcul Direct',
+    inverseBtn: 'Calcul Inverse',
+    processTitle: 'Processus de Calcul',
+    processToggle: 'Développer / Réduire',
+    processCopy: 'Copier le Journal',
+    progressLabel: 'Progression Batch',
+    statsTitle: 'Statistiques de Précision',
+    statsFields: {
+        rmse: 'RMSE (m)',
+        meanResidual: 'Résidu Moyen (m)',
+        maxResidual: 'Résidu Maximum (m)',
+        ci95: 'Intervalle de Confiance 95% (m)',
+        count: 'Nombre de Points'
+    },
+    visualizationTitle: 'Distribution des Coordonnées et Graphique des Résidus',
+    scatterTitle: 'Graphique de Distribution des Points de Contrôle',
+    residualTitle: 'Histogramme des Résidus',
+    heatTitle: 'Aperçu de la Carte Thermique de Précision',
+    exportBtn: 'Exporter les Résultats (CSV)',
+    outputSummary: 'Sortie de Conversion Batch',
+    noOutput: 'Aucun résultat pour le moment, veuillez saisir des coordonnées et effectuer la conversion.',
+    sampleLoaded: 'Données d\'exemple chargées',
+    solverNeedsPoints: 'La résolution nécessite au moins 2 points de contrôle',
+    invalidInput: 'Impossible d\'analyser la saisie, veuillez vérifier le délimiteur ou l\'ordre des colonnes.',
+    conversionDone: 'Conversion terminée, sortie et visualisation mises à jour.',
+    copySuccess: 'Journal copié',
+    historyApplied: 'Paramètres de résolution historiques appliqués',
+    precisionTitle: 'Contrôle de Précision',
+    precisionFields: {
+        decimal: 'Décimales des Coordonnées',
+        histogramBins: 'Intervalles d\'Histogramme'
+    }
+}

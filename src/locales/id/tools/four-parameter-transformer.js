@@ -1,0 +1,72 @@
+export default {
+    name: 'Transformator Empat Parameter - Konversi Batch Model Similaritas Planar dan Model Bursa Sederhana',
+    description: 'Transformator empat parameter tingkat profesional yang mendukung transformasi similaritas planar, model Bursa sederhana, transformasi Helmert, dan model parameter khusus. Dapat diadaptasi untuk sistem koordinat independen lokal, sistem koordinat teknik, dan koordinat proyeksi regional, memungkinkan perhitungan maju/mundur titik tunggal, konversi batch, analisis residu, dan evaluasi visual.',
+    inputTitle: 'Input Koordinat dan Pengaturan Model',
+    outputTitle: 'Hasil Konversi dan Analisis Akurasi',
+    modelTitle: 'Pemilihan Model Empat Parameter',
+    modelOptions: {
+        similarity: 'Transformasi Similaritas Planar',
+        bursa: 'Model Bursa Sederhana',
+        helmert: 'Transformasi Helmert',
+        custom: 'Model Parameter Khusus'
+    },
+    parameterTitle: 'Definisi Parameter (Standardisasi Unit)',
+    parameterFields: {
+        dx: 'ΔX (m)',
+        dy: 'ΔY (m)',
+        rotation: 'Rotasi θ (°)',
+        scale: 'Skala m (ppm)'
+    },
+    manualTitle: 'Input Titik Tunggal',
+    manualFields: {
+        sourceX: 'X Sumber (m)',
+        sourceY: 'Y Sumber (m)',
+        targetX: 'X Target (Opsional)',
+        targetY: 'Y Target (Opsional)',
+        label: 'Nama Titik'
+    },
+    appendPoint: 'Tulis ke Data Batch',
+    delimiterLabel: 'Pembatas Khusus',
+    batchTitle: 'Input Teks Batch',
+    batchPlaceholder: 'Contoh:\n378933.221,3412554.881,378935.102,3412556.412,CP01\n378943.114,3412541.552,378945.020,3412543.030,CP02',
+    loadSample: 'Muat Contoh',
+    clearAll: 'Bersihkan Input',
+    fileTitle: 'Seret File CSV/TXT',
+    dragTip: 'Seret atau klik untuk mengunggah file, analisis koordinat planar secara real-time',
+    supported: 'Mendukung CSV, TXT, dipisahkan koma secara default, dapat disesuaikan',
+    solverTitle: 'Parameter Solusi Titik Umum',
+    solverPlaceholder: 'X Sumber, Y Sumber => X Target, Y Target\n378933.221,3412554.881 => 378935.102,3412556.412',
+    solveBtn: 'Penyetelan Similaritas Planar',
+    conversionBtn: 'Perhitungan Maju',
+    inverseBtn: 'Perhitungan Mundur',
+    processTitle: 'Proses Perhitungan',
+    processToggle: 'Perluas / Ciutkan',
+    processCopy: 'Salin Log',
+    progressLabel: 'Kemajuan Batch',
+    statsTitle: 'Statistik Akurasi',
+    statsFields: {
+        rmse: 'RMSE (m)',
+        meanResidual: 'Residu Rata-rata (m)',
+        maxResidual: 'Residu Maksimum (m)',
+        ci95: 'Interval Kepercayaan 95% (m)',
+        count: 'Jumlah Titik'
+    },
+    visualizationTitle: 'Distribusi Koordinat dan Diagram Residu',
+    scatterTitle: 'Diagram Distribusi Titik Kontrol',
+    residualTitle: 'Histogram Residu',
+    heatTitle: 'Ikhtisar Peta Panas Akurasi',
+    exportBtn: 'Ekspor Hasil (CSV)',
+    outputSummary: 'Output Konversi Batch',
+    noOutput: 'Belum ada hasil, silakan masukkan koordinat dan lakukan konversi.',
+    sampleLoaded: 'Data contoh dimuat',
+    solverNeedsPoints: 'Solusi memerlukan minimal 2 titik kontrol',
+    invalidInput: 'Tidak dapat mengurai input, silakan periksa pembatas atau urutan kolom.',
+    conversionDone: 'Konversi selesai, output dan visualisasi diperbarui.',
+    copySuccess: 'Log disalin',
+    historyApplied: 'Parameter solusi historis diterapkan',
+    precisionTitle: 'Kontrol Akurasi',
+    precisionFields: {
+        decimal: 'Desimal Koordinat',
+        histogramBins: 'Bin Histogram'
+    }
+}
