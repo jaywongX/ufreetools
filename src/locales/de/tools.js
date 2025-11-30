@@ -157,6 +157,7 @@ import HkAddressGenerator from './tools/hk-address-generator.js';
 import ExifViewer from './tools/exif-viewer.js';
 import SevenParameterTransformer from './tools/seven-parameter-transformer.js';
 import FourParameterTransformer from './tools/four-parameter-transformer.js';
+import ExcelToCsvConverter from './tools/excel-to-csv-converter.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -317,5 +318,6 @@ export default {
   'hk-address-generator': HkAddressGenerator,
   'exif-viewer': ExifViewer,
   'seven-parameter-transformer': SevenParameterTransformer,
-  'four-parameter-transformer': FourParameterTransformer
+  'four-parameter-transformer': FourParameterTransformer,
+  'excel-to-csv-converter': ExcelToCsvConverter
 };
