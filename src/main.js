@@ -106,6 +106,7 @@ const lazyComponentMap = {
   'NumbersToWordsConverter': () => import('./components/tools/NumbersToWordsConverter.vue'),
   'BionicReadingConverter': () => import('./components/tools/BionicReadingConverter.vue'),
   'ExcelToCsvConverter': () => import('./components/tools/ExcelToCsvConverter.vue'),
+  'CsvToExcelConverter': () => import('./components/tools/CsvToExcelConverter.vue'),
   
   // 图像与多媒体
   'IdPhotoMaker': () => import('./components/tools/IdPhotoMaker.vue'),

@@ -1056,6 +1056,17 @@ const allTools = computed(() => [
     icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
     tags: ['convert', 'csv']
   },
+  {
+    id: 'csv-to-excel-converter',
+    name: t('tools.csv-to-excel-converter.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'convert',
+    description: t('tools.csv-to-excel-converter.description'),
+    path: '/tools/csv-to-excel-converter',
+    component: 'CsvToExcelConverter',
+    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
+    tags: ['convert', 'csv']
+  },
 
   // 网络与协议
   {
