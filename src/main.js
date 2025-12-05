@@ -107,7 +107,7 @@ const lazyComponentMap = {
   'BionicReadingConverter': () => import('./components/tools/BionicReadingConverter.vue'),
   'ExcelToCsvConverter': () => import('./components/tools/ExcelToCsvConverter.vue'),
   'CsvToExcelConverter': () => import('./components/tools/CsvToExcelConverter.vue'),
-  
+
   // 图像与多媒体
   'IdPhotoMaker': () => import('./components/tools/IdPhotoMaker.vue'),
   'ImageBatchResizer': () => import('./components/tools/ImageBatchResizer.vue'),
@@ -191,6 +191,7 @@ const lazyComponentMap = {
   'ComparingFractionsCalculator': () => import('./components/tools/ComparingFractionsCalculator.vue'),
   'UsAddressGenerator': () => import('./components/tools/UsAddressGenerator.vue'),
   'HkAddressGenerator': () => import('./components/tools/HkAddressGenerator.vue'),
+  'TaiwanAddressGenerator': () => import('./components/tools/TaiwanAddressGenerator.vue'),
   
   // 测绘
   'CoordinateConverter': () => import('./components/tools/CoordinateConverter.vue'),
