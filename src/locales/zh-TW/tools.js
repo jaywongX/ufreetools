@@ -160,6 +160,7 @@ import FourParameterTransformer from './tools/four-parameter-transformer.js';
 import ExcelToCsvConverter from './tools/excel-to-csv-converter.js';
 import CsvToExcelConverter from './tools/csv-to-excel-converter.js';
 import TaiwanAddressGenerator from './tools/taiwan-address-generator.js';
+import ExifRemover from './tools/exif-remover.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -323,5 +324,6 @@ export default {
   'four-parameter-transformer': FourParameterTransformer,
   'excel-to-csv-converter': ExcelToCsvConverter,
   'csv-to-excel-converter': CsvToExcelConverter,
-  'taiwan-address-generator': TaiwanAddressGenerator  
+  'taiwan-address-generator': TaiwanAddressGenerator,
+  'exif-remover': ExifRemover
 };
