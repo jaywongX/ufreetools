@@ -135,6 +135,7 @@ const lazyComponentMap = {
   'BlurImageBackground': () => import('./components/tools/BlurImageBackground.vue'),
   'ImageToSvg': () => import('./components/tools/ImageToSvg.vue'),
   'ExifViewer': () => import('./components/tools/ExifViewer.vue'),
+  'ExifRemover': () => import('./components/tools/ExifRemover.vue'),
   
   // 网络与协议
   'ApiRequestTool': () => import('./components/tools/ApiRequestTool.vue'),
