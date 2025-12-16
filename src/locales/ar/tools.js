@@ -161,6 +161,7 @@ import ExcelToCsvConverter from './tools/excel-to-csv-converter.js';
 import CsvToExcelConverter from './tools/csv-to-excel-converter.js';
 import TaiwanAddressGenerator from './tools/taiwan-address-generator.js';
 import ExifRemover from './tools/exif-remover.js';
+import WhatToEat from './tools/what-to-eat.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -325,5 +326,6 @@ export default {
   'excel-to-csv-converter': ExcelToCsvConverter,
   'csv-to-excel-converter': CsvToExcelConverter,
   'taiwan-address-generator': TaiwanAddressGenerator,
-  'exif-remover': ExifRemover
+  'exif-remover': ExifRemover,
+  'what-to-eat': WhatToEat
 };

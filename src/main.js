@@ -193,6 +193,7 @@ const lazyComponentMap = {
   'UsAddressGenerator': () => import('./components/tools/UsAddressGenerator.vue'),
   'HkAddressGenerator': () => import('./components/tools/HkAddressGenerator.vue'),
   'TaiwanAddressGenerator': () => import('./components/tools/TaiwanAddressGenerator.vue'),
+  'WhatToEat': () => import('./components/tools/WhatToEat.vue'),
   
   // 测绘
   'CoordinateConverter': () => import('./components/tools/CoordinateConverter.vue'),

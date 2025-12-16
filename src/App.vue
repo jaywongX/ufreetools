@@ -1623,6 +1623,17 @@ const allTools = computed(() => [
     icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
     tags: ['generator']
   },
+  {
+    id: 'what-to-eat',
+    name: t('tools.what-to-eat.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.what-to-eat.description'),
+    path: '/tools/what-to-eat',
+    component: 'WhatToEat',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['']
+  },
 
   // 测绘工具
   {
