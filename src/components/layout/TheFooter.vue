@@ -54,6 +54,18 @@
           >
           非猪ai导航
           </a>
+          <a href="https://fast-wan.com" target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light transition-colors"
+          >
+          Fast Wan
+          </a>
+          <a href="https://lbbai.com" target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light transition-colors"
+          >
+          老北鼻AI工具箱
+          </a>
           <!-- 可以在这里添加更多合作伙伴链接 -->
         </div>
       </div>
