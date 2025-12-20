@@ -48,8 +48,12 @@
           >
           别摸鱼导航
           </a>
-          
-
+          <a href="https://feizhuke.com" target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light transition-colors"
+          >
+          非猪ai导航
+          </a>
           <!-- 可以在这里添加更多合作伙伴链接 -->
         </div>
       </div>
