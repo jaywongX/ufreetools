@@ -136,6 +136,7 @@ const lazyComponentMap = {
   'ImageToSvg': () => import('./components/tools/ImageToSvg.vue'),
   'ExifViewer': () => import('./components/tools/ExifViewer.vue'),
   'ExifRemover': () => import('./components/tools/ExifRemover.vue'),
+  'ImageBase64Converter': () => import('./components/tools/ImageBase64Converter.vue'),
   
   // 网络与协议
   'ApiRequestTool': () => import('./components/tools/ApiRequestTool.vue'),
