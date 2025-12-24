@@ -163,6 +163,7 @@ import TaiwanAddressGenerator from './tools/taiwan-address-generator.js';
 import ExifRemover from './tools/exif-remover.js';
 import WhatToEat from './tools/what-to-eat.js';
 import ImageBase64Converter from './tools/image-base64-converter.js';
+import ImageToIco from './tools/image-to-ico.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -329,5 +330,6 @@ export default {
   'taiwan-address-generator': TaiwanAddressGenerator,
   'exif-remover': ExifRemover,
   'what-to-eat': WhatToEat,
-  'image-base64-converter': ImageBase64Converter
+  'image-base64-converter': ImageBase64Converter,
+  'image-to-ico': ImageToIco
 };
