@@ -66,6 +66,12 @@
           >
           老北鼻AI工具箱
           </a>
+          <a href="http://guozhivip.com" target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light transition-colors"
+          >
+          果汁导航
+          </a>
           <!-- 可以在这里添加更多合作伙伴链接 -->
         </div>
       </div>
