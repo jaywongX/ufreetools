@@ -1,9 +1,9 @@
 <template>
     <div class="mt-12 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
         <article class="prose dark:prose-invert max-w-none">
-            <h1 class="text-3xl font-bold mb-6">
+            <h2 class="text-3xl font-bold mb-6">
                 {{ $t('tools.image-to-ico.article.title') }}
-            </h1>
+            </h2>
 
             <!-- 工具功能介绍与应用场景 -->
             <section class="mb-10">

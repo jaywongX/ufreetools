@@ -164,6 +164,7 @@ import ExifRemover from './tools/exif-remover.js';
 import WhatToEat from './tools/what-to-eat.js';
 import ImageBase64Converter from './tools/image-base64-converter.js';
 import ImageToIco from './tools/image-to-ico.js';
+import ImageToJpg from './tools/image-to-jpg.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -331,5 +332,6 @@ export default {
   'exif-remover': ExifRemover,
   'what-to-eat': WhatToEat,
   'image-base64-converter': ImageBase64Converter,
-  'image-to-ico': ImageToIco
+  'image-to-ico': ImageToIco,
+  'image-to-jpg': ImageToJpg
 };
