@@ -628,7 +628,8 @@ function downloadSingleIco(index) {
         if (!entry) return
         const singleIcoBlob = createIcoFromBmpBuffers([entry])
         const fileName = `${baseName}-${size}x${size}.ico`
-        zip.file(fileName, singleIcoBlob)
+        // 确保将 Blob 转换为正确的类型，解决 Vercel 环境下的兼容性问题
+        zip.file(fileName, singleIcoBlob, { binary: true })
     })
 
     zip.generateAsync({ type: 'blob' }).then(content => {
@@ -657,7 +658,8 @@ async function downloadAllIco() {
                 if (!entry) return
                 const singleIcoBlob = createIcoFromBmpBuffers([entry])
                 const fileName = `${baseName}-${size}x${size}.ico`
-                zip.file(fileName, singleIcoBlob)
+                // 确保将 Blob 转换为正确的类型，解决 Vercel 环境下的兼容性问题
+                zip.file(fileName, singleIcoBlob, { binary: true })
             })
         } else {
             // 兜底：没有尺寸信息时，把预览用的多尺寸 ICO 直接放入 ZIP
@@ -709,5 +711,3 @@ async function downloadAllIco() {
     }
 }
 </style>
-
-
