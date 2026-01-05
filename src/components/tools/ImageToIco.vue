@@ -230,6 +230,20 @@
                             </div>
                         </div>
 
+                        <!-- 尺寸下载按钮 -->
+                        <div class="mb-3">
+                            <p class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                {{ $t('tools.image-to-ico.downloadSpecificSize') }}
+                            </p>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button v-for="size in getSizesArray(ico.sizes)" :key="size"
+                                    class="btn btn-outline text-xs py-1 px-2"
+                                    @click="downloadSpecificSize(idx, size)">
+                                    {{ size }}×{{ size }}
+                                </button>
+                            </div>
+                        </div>
+                        
                         <!-- 单个下载按钮 -->
                         <div class="flex gap-2">
                             <button class="btn btn-success flex-1"
@@ -628,7 +642,8 @@ function downloadSingleIco(index) {
         if (!entry) return
         const singleIcoBlob = createIcoFromBmpBuffers([entry])
         const fileName = `${baseName}-${size}x${size}.ico`
-        zip.file(fileName, singleIcoBlob)
+        // 确保将 Blob 转换为正确的类型，解决 Vercel 环境下的兼容性问题
+        zip.file(fileName, singleIcoBlob, { binary: true })
     })
 
     zip.generateAsync({ type: 'blob' }).then(content => {
@@ -657,7 +672,8 @@ async function downloadAllIco() {
                 if (!entry) return
                 const singleIcoBlob = createIcoFromBmpBuffers([entry])
                 const fileName = `${baseName}-${size}x${size}.ico`
-                zip.file(fileName, singleIcoBlob)
+                // 确保将 Blob 转换为正确的类型，解决 Vercel 环境下的兼容性问题
+                zip.file(fileName, singleIcoBlob, { binary: true })
             })
         } else {
             // 兜底：没有尺寸信息时，把预览用的多尺寸 ICO 直接放入 ZIP
@@ -672,6 +688,32 @@ async function downloadAllIco() {
     const a = document.createElement('a')
     a.href = url
     a.download = 'icons-multi-size.zip'
+    a.click()
+    URL.revokeObjectURL(url)
+}
+
+// 从尺寸字符串获取尺寸数组
+function getSizesArray(sizesStr) {
+    if (!sizesStr) return []
+    return sizesStr.split(',').map(s => parseInt(s.trim(), 10)).filter(n => !Number.isNaN(n))
+}
+
+// 下载特定尺寸的ICO
+function downloadSpecificSize(index, size) {
+    const ico = icoResults.value[index]
+    if (!ico || !ico.sizeBuffers || !ico.sizeBuffers.length) return
+    
+    const entry = ico.sizeBuffers.find(b => b.size === size)
+    if (!entry) return
+    
+    const singleIcoBlob = createIcoFromBmpBuffers([entry])
+    const baseName = (ico.name || 'icon.ico').replace(/\.ico$/i, '')
+    const fileName = `${baseName}-${size}x${size}.ico`
+    
+    const url = URL.createObjectURL(singleIcoBlob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = fileName
     a.click()
     URL.revokeObjectURL(url)
 }
@@ -698,6 +740,10 @@ async function downloadAllIco() {
     @apply bg-gray-600 hover:bg-gray-700 text-white;
 }
 
+.btn-outline {
+    @apply border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800;
+}
+
 /* 响应式调整 */
 @media (max-width: 768px) {
     .btn {
@@ -709,5 +755,3 @@ async function downloadAllIco() {
     }
 }
 </style>
-
-
