@@ -645,7 +645,7 @@ async function downloadSingleIco(index) {
 
         zip.file(
             `${baseName}-${size}x${size}.ico`,
-            new Uint8Array(buffer)
+            buffer
         )
     }
 
@@ -680,7 +680,7 @@ async function downloadAllIco() {
 
                 zip.file(
                     `${baseName}-${size}x${size}.ico`,
-                    new Uint8Array(buffer)
+                    buffer
                 )
             }
         } else {
