@@ -614,7 +614,7 @@ function createIcoFromBmpBuffers(entries) {
     return new Blob([buffer], { type: 'image/x-icon' })
 }
 
-function downloadSingleIco(index) {
+async function downloadSingleIco(index) {
     const ico = icoResults.value[index]
     if (!ico) return
     // 按需求：将当前图片已勾选的多个尺寸分别导出为单尺寸 ICO，一起放入一个 ZIP 中下载
