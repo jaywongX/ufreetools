@@ -281,6 +281,16 @@
 <script setup>
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+// 在 import JSZip 之前添加
+if (typeof Buffer === 'undefined') {
+  window.Buffer = {
+    isBuffer: (obj) => {
+      return obj != null && obj.constructor != null &&
+             typeof obj.constructor.isBuffer === 'function' &&
+             obj.constructor.isBuffer(obj);
+    }
+  };
+}
 import JSZip from 'jszip'
 import ImageToIcoArticle from './ImageToIcoArticle.vue'
 
