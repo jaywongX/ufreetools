@@ -642,8 +642,8 @@ function downloadSingleIco(index) {
         if (!entry) return
         const singleIcoBlob = createIcoFromBmpBuffers([entry])
         const fileName = `${baseName}-${size}x${size}.ico`
-        // 确保将 Blob 转换为正确的类型，解决 Vercel 环境下的兼容性问题
-        zip.file(fileName, singleIcoBlob, { binary: true })
+        const buffer = await singleIcoBlob.arrayBuffer()
+        zip.file(fileName, new Uint8Array(buffer))
     })
 
     zip.generateAsync({ type: 'blob' }).then(content => {
@@ -672,8 +672,8 @@ async function downloadAllIco() {
                 if (!entry) return
                 const singleIcoBlob = createIcoFromBmpBuffers([entry])
                 const fileName = `${baseName}-${size}x${size}.ico`
-                // 确保将 Blob 转换为正确的类型，解决 Vercel 环境下的兼容性问题
-                zip.file(fileName, singleIcoBlob, { binary: true })
+                const buffer = await singleIcoBlob.arrayBuffer()
+                zip.file(fileName, new Uint8Array(buffer))
             })
         } else {
             // 兜底：没有尺寸信息时，把预览用的多尺寸 ICO 直接放入 ZIP
