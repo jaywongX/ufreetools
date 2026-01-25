@@ -54,6 +54,7 @@
     "file-saver": "^2.0.5",
     "gif-frames": "^1.0.1",
     "gif.js": "^0.2.0",
+    "gifshot": "^0.4.5",
     "gifuct-js": "^2.1.2",
     "glfx": "^0.0.4",
     "grpc-web": "^1.4.2",
