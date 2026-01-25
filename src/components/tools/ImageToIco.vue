@@ -281,6 +281,16 @@
 <script setup>
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+// 在 import JSZip 之前添加
+if (typeof Buffer === 'undefined') {
+  window.Buffer = {
+    isBuffer: (obj) => {
+      return obj != null && obj.constructor != null &&
+             typeof obj.constructor.isBuffer === 'function' &&
+             obj.constructor.isBuffer(obj);
+    }
+  };
+}
 import JSZip from 'jszip'
 import ImageToIcoArticle from './ImageToIcoArticle.vue'
 
@@ -614,10 +624,10 @@ function createIcoFromBmpBuffers(entries) {
     return new Blob([buffer], { type: 'image/x-icon' })
 }
 
-function downloadSingleIco(index) {
+async function downloadSingleIco(index) {
     const ico = icoResults.value[index]
     if (!ico) return
-    // 按需求：将当前图片已勾选的多个尺寸分别导出为单尺寸 ICO，一起放入一个 ZIP 中下载
+
     const sizes = lastSelectedSizes.value.length
         ? lastSelectedSizes.value
         : (ico.sizes || '')
@@ -626,7 +636,6 @@ function downloadSingleIco(index) {
             .filter(n => !Number.isNaN(n))
 
     if (!ico.sizeBuffers || !ico.sizeBuffers.length || !sizes.length) {
-        // 兜底：退回到单个多尺寸 ICO 下载
         const a = document.createElement('a')
         a.href = ico.url
         a.download = ico.name || 'icon-multi-size.ico'
@@ -637,46 +646,54 @@ function downloadSingleIco(index) {
     const baseName = (ico.name || 'icon-multi-size.ico').replace(/\.ico$/i, '')
     const zip = new JSZip()
 
-    sizes.forEach(size => {
+    for (const size of sizes) {
         const entry = ico.sizeBuffers.find(b => b.size === size)
-        if (!entry) return
-        const singleIcoBlob = createIcoFromBmpBuffers([entry])
-        const fileName = `${baseName}-${size}x${size}.ico`
-        // 确保将 Blob 转换为正确的类型，解决 Vercel 环境下的兼容性问题
-        zip.file(fileName, singleIcoBlob, { binary: true })
-    })
+        if (!entry) continue
 
-    zip.generateAsync({ type: 'blob' }).then(content => {
-        const url = URL.createObjectURL(content)
-        const a = document.createElement('a')
-        a.href = url
-        a.download = `${baseName}-icons.zip`
-        a.click()
-        URL.revokeObjectURL(url)
-    })
+        const singleIcoBlob = createIcoFromBmpBuffers([entry])
+        const buffer = await singleIcoBlob.arrayBuffer()
+
+        zip.file(
+            `${baseName}-${size}x${size}.ico`,
+            buffer
+        )
+    }
+
+    const content = await zip.generateAsync({ type: 'blob' })
+    const url = URL.createObjectURL(content)
+
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `${baseName}-icons.zip`
+    a.click()
+
+    URL.revokeObjectURL(url)
 }
 
 async function downloadAllIco() {
     if (!icoResults.value.length) return
+
     const zip = new JSZip()
     const sizes = lastSelectedSizes.value.length ? lastSelectedSizes.value : []
 
-    for (let i = 0; i < icoResults.value.length; i += 1) {
+    for (let i = 0; i < icoResults.value.length; i++) {
         const ico = icoResults.value[i]
         const baseName = (ico.name || `icon-${i + 1}.ico`).replace(/\.ico$/i, '')
 
         if (ico.sizeBuffers && ico.sizeBuffers.length && sizes.length) {
-            // 为每张图片，将选中的每个尺寸导出为单尺寸 ICO
-            sizes.forEach(size => {
+            for (const size of sizes) {
                 const entry = ico.sizeBuffers.find(b => b.size === size)
-                if (!entry) return
+                if (!entry) continue
+
                 const singleIcoBlob = createIcoFromBmpBuffers([entry])
-                const fileName = `${baseName}-${size}x${size}.ico`
-                // 确保将 Blob 转换为正确的类型，解决 Vercel 环境下的兼容性问题
-                zip.file(fileName, singleIcoBlob, { binary: true })
-            })
+                const buffer = await singleIcoBlob.arrayBuffer()
+
+                zip.file(
+                    `${baseName}-${size}x${size}.ico`,
+                    buffer
+                )
+            }
         } else {
-            // 兜底：没有尺寸信息时，把预览用的多尺寸 ICO 直接放入 ZIP
             const response = await fetch(ico.url)
             const blob = await response.blob()
             zip.file(`${baseName}.ico`, blob)
@@ -685,10 +702,12 @@ async function downloadAllIco() {
 
     const content = await zip.generateAsync({ type: 'blob' })
     const url = URL.createObjectURL(content)
+
     const a = document.createElement('a')
     a.href = url
     a.download = 'icons-multi-size.zip'
     a.click()
+
     URL.revokeObjectURL(url)
 }
 
