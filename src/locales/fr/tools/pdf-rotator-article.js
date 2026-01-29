@@ -98,7 +98,7 @@ export default {
         {
             name: 'Fusionneur PDF',
             description: 'Fusionner plusieurs fichiers PDF en un document pour faciliter la gestion et le partage.',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-onliner'
         },
         {
             name: 'Diviseur PDF',

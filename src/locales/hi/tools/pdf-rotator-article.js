@@ -98,7 +98,7 @@ export default {
         {
             name: 'PDF मर्जर',
             description: 'एक दस्तावेज में कई PDF फाइलें मर्ज करें आसान प्रबंधन और साझा करने के लिए।',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-onliner'
         },
         {
             name: 'PDF स्प्लिटर',

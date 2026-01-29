@@ -98,7 +98,7 @@ export default {
         {
             name: 'Combinador de PDF',
             description: 'Combinar múltiplos arquivos PDF em um documento para facilitar gestão e compartilhamento.',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-onliner'
         },
         {
             name: 'Divisor de PDF',
