@@ -240,6 +240,7 @@ const lazyComponentMap = {
   'PdfEncrypt': () => import('./components/tools/PdfEncrypt.vue'),
   'PdfDecrypt': () => import('./components/tools/PdfDecrypt.vue'),
   'PdfCompressor': () => import('./components/tools/PdfCompressor.vue'),
+  'PdfRotator': () => import('./components/tools/PdfRotator.vue'),
 }
 
 // 用异步 IIFE 启动应用

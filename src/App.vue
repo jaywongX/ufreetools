@@ -2091,6 +2091,17 @@ const allTools = computed(() => [
     icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',
     tags: ['pdf', 'compressor']
   },
+  {
+    id: 'pdf-rotator',
+    name: t('tools.pdf-rotator.name'),
+    category: t(`categories.pdf.title`),
+    categoryId: 'pdf',
+    description: t('tools.pdf-rotator.description'),
+    path: '/tools/pdf-rotator',
+    component: 'PdfRotator',
+    icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',
+    tags: ['pdf']
+  },
 ])
 provide('allTools', allTools)
 
