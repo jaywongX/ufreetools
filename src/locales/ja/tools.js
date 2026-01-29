@@ -168,6 +168,7 @@ import ImageToJpg from './tools/image-to-jpg.js';
 import ImageToPng from './tools/image-to-png.js';
 import ImageToWebp from './tools/image-to-webp.js';
 import GifCompressor from './tools/gif-compressor.js';
+import PdfRotator from './tools/pdf-rotator.js';
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -339,5 +340,6 @@ export default {
   'image-to-jpg': ImageToJpg,
   'image-to-png': ImageToPng,
   'image-to-webp': ImageToWebp,
-  'gif-compressor': GifCompressor
+  'gif-compressor': GifCompressor,
+  'pdf-rotator': PdfRotator
 };
