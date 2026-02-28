@@ -98,7 +98,7 @@ export default {
         {
             name: 'PDFマージャー',
             description: '複数のPDFファイルを1つのドキュメントに結合し、管理と共有を容易にします。',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-onliner'
         },
         {
             name: 'PDFスプリッター',

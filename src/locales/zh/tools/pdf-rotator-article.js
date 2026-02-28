@@ -98,7 +98,7 @@ export default {
         {
             name: 'PDF合并器',
             description: '将多个PDF文件合并成一个文档，方便管理和分享。',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-onliner'
         },
         {
             name: 'PDF拆分器',

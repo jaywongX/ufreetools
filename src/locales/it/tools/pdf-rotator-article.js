@@ -98,7 +98,7 @@ export default {
         {
             name: 'Unisci PDF',
             description: 'Unisci più file PDF in un documento per facilitare la gestione e la condivisione.',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-onliner'
         },
         {
             name: 'Dividi PDF',

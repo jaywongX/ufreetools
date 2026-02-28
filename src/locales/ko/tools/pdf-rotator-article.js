@@ -98,7 +98,7 @@ export default {
         {
             name: 'PDF 병합기',
             description: '여러 PDF 파일을 하나의 문서로 병합하여 관리 및 공유를 쉽게 합니다.',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-onliner'
         },
         {
             name: 'PDF 분할기',

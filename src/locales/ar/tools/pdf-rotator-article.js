@@ -98,7 +98,7 @@ export default {
         {
             name: 'أداة دمج PDF',
             description: 'دمج ملفات PDF متعددة في مستند واحد سهل الإدارة والمشاركة.',
-            url: 'https://www.ufreetools.com/tool/pdf-merger'
+            url: 'https://www.ufreetools.com/tool/merge-pdf-onliner'
         },
         {
             name: 'أداة تقسيم PDF',

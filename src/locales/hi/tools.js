@@ -169,6 +169,7 @@ import ImageToPng from './tools/image-to-png.js';
 import ImageToWebp from './tools/image-to-webp.js';
 import GifCompressor from './tools/gif-compressor.js';
 import PdfRotator from './tools/pdf-rotator.js';
+import JpAddressGenerator from './tools/jp-address-generator.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -341,5 +342,6 @@ export default {
   'image-to-png': ImageToPng,
   'image-to-webp': ImageToWebp,
   'gif-compressor': GifCompressor,
-  'pdf-rotator': PdfRotator
+  'pdf-rotator': PdfRotator,
+  'jp-address-generator': JpAddressGenerator
 };

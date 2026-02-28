@@ -1690,6 +1690,17 @@ const allTools = computed(() => [
     tags: ['generator']
   },
   {
+    id: 'jp-address-generator',
+    name: t('tools.jp-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.jp-address-generator.description'),
+    path: '/tools/jp-address-generator',
+    component: 'JpAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
     id: 'what-to-eat',
     name: t('tools.what-to-eat.name'),
     category: t(`categories.utility.title`),
