@@ -171,6 +171,7 @@ import GifCompressor from './tools/gif-compressor.js';
 import PdfRotator from './tools/pdf-rotator.js';
 import JpAddressGenerator from './tools/jp-address-generator.js'
 import CaAddressGenerator from './tools/ca-address-generator.js'
+import MacAddressGenerator from './tools/mac-address-generator.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -345,5 +346,6 @@ export default {
   'gif-compressor': GifCompressor,
   'pdf-rotator': PdfRotator,
   'jp-address-generator': JpAddressGenerator,
-  'ca-address-generator': CaAddressGenerator
+  'ca-address-generator': CaAddressGenerator,
+  'mac-address-generator': MacAddressGenerator
 };

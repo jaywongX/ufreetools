@@ -192,7 +192,7 @@
             </section>
 
             <section class="mb-6">
-                <h2 class="text-2xl font-semibold mb-4">{{ $t('tools.hk-address-generator.article.referencesTitle') }}</h2>
+                <h2 class="text-2xl font-semibold mb-4">{{ $t('tools.hk-address-generator.article.relatedToolsTitle') }}</h2>
                 <ul class="space-y-4">
                     <li class="border-l-4 border-gray-300 pl-4 py-1">
                         <a :href="$t('tools.hk-address-generator.article.reference1Url')" target="_blank"
