@@ -201,6 +201,7 @@ const lazyComponentMap = {
   'JpAddressGenerator': () => import('./components/tools/JpAddressGenerator.vue'),
   'CaAddressGenerator': () => import('./components/tools/CaAddressGenerator.vue'),
   'MacAddressGenerator': () => import('./components/tools/MacAddressGenerator.vue'),
+  'CnAddressGenerator': () => import('./components/tools/CnAddressGenerator.vue'),
   'WhatToEat': () => import('./components/tools/WhatToEat.vue'),
   
   // 测绘
