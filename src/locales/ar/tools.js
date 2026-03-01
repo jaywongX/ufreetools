@@ -172,6 +172,7 @@ import PdfRotator from './tools/pdf-rotator.js';
 import JpAddressGenerator from './tools/jp-address-generator.js'
 import CaAddressGenerator from './tools/ca-address-generator.js'
 import MacAddressGenerator from './tools/mac-address-generator.js'
+import CnAddressGenerator from './tools/cn-address-generator.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -347,5 +348,6 @@ export default {
   'pdf-rotator': PdfRotator,
   'jp-address-generator': JpAddressGenerator,
   'ca-address-generator': CaAddressGenerator,
-  'mac-address-generator': MacAddressGenerator
+  'mac-address-generator': MacAddressGenerator,
+  'cn-address-generator': CnAddressGenerator
 };

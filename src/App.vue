@@ -1723,6 +1723,17 @@ const allTools = computed(() => [
     tags: ['generator']
   },
   {
+    id: 'cn-address-generator',
+    name: t('tools.cn-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.cn-address-generator.description'),
+    path: '/tools/cn-address-generator',
+    component: 'CnAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
     id: 'what-to-eat',
     name: t('tools.what-to-eat.name'),
     category: t(`categories.utility.title`),
