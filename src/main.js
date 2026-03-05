@@ -204,6 +204,7 @@ const lazyComponentMap = {
   'MacAddressGenerator': () => import('./components/tools/MacAddressGenerator.vue'),
   'CnAddressGenerator': () => import('./components/tools/CnAddressGenerator.vue'),
   'SgAddressGenerator': () => import('./components/tools/SgAddressGenerator.vue'),
+  'UkAddressGenerator': () => import('./components/tools/UkAddressGenerator.vue'),
   'WhatToEat': () => import('./components/tools/WhatToEat.vue'),
   
   // 测绘
