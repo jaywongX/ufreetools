@@ -69,22 +69,22 @@ export default {
     description: "Mejore su flujo de trabajo técnico con estas herramientas complementarias:",
     tool1: {
       name: "Editor Markdown",
-      url: "https://www.ufreetools.com/tools/markdown-editor", 
+      url: "https://www.ufreetools.com/tool/markdown-editor", 
       description: "Cree documentos formateados con soporte nativo para fórmulas LaTeX."
     },
     tool2: {
       name: "Imagen a ASCII",
-      url: "https://www.ufreetools.com/tools/image-to-ascii", 
+      url: "https://www.ufreetools.com/tool/image-to-ascii", 
       description: "Transforme imágenes en arte ASCII personalizable."
     },
     tool3: {
       name: "Selector y conversor de colores",
-      url: "https://www.ufreetools.com/tools/color-picker", 
+      url: "https://www.ufreetools.com/tool/color-picker", 
       description: "Elija los colores ideales para personalizar fórmulas y combinar con temas de documentos."
     },
     tool4: {
       name: "Compresor de imágenes",
-      url: "https://www.ufreetools.com/tools/image-compressor", 
+      url: "https://www.ufreetools.com/tool/image-compressor", 
       description: "Optimice las imágenes exportadas para web sin perder nitidez ni calidad."
     }
   },

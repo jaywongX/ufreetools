@@ -48,7 +48,7 @@ export default {
       },
       {
         question: "Algoritma hash apa yang harus saya gunakan untuk kebutuhan tertentu?",
-        answer: "Algoritma terbaik tergantung pada kebutuhan spesifik Anda:<br><strong>Penggunaan umum dan keamanan tinggi</strong>: SHA-256 menawarkan keseimbangan yang baik antara keamanan dan kinerja.<br><strong>Aplikasi blockchain</strong>: SHA-256 (Bitcoin) atau Keccak-256 (Ethereum) adalah standar industri.<br><strong>Data yang sangat sensitif</strong>: SHA-512 atau SHA3-512 memberikan keamanan tertinggi.<br><strong>Aplikasi yang mengutamakan kinerja</strong>: BLAKE2 atau BLAKE3 menawarkan keamanan dan kecepatan yang luar biasa.<br><strong>Kompatibilitas dengan sistem lama</strong>: Mungkin memerlukan SHA-1 atau MD5, tetapi ketahuilah batasan keamanannya.<br><strong>Checksum file</strong>: CRC32 cepat tetapi hanya untuk deteksi kesalahan, tidak memberikan keamanan; gunakan SHA-256 untuk checksum yang aman.<br>Jika ragu, SHA-256 adalah pilihan default yang andal untuk sebagian besar aplikasi modern yang membutuhkan keamanan. Coba <a href='https://www.ufreetools.com/tools/hash-calculator' target='_blank'>kalkulator hash</a> kami, eksperimen dengan berbagai algoritma dan bandingkan outputnya."
+        answer: "Algoritma terbaik tergantung pada kebutuhan spesifik Anda:<br><strong>Penggunaan umum dan keamanan tinggi</strong>: SHA-256 menawarkan keseimbangan yang baik antara keamanan dan kinerja.<br><strong>Aplikasi blockchain</strong>: SHA-256 (Bitcoin) atau Keccak-256 (Ethereum) adalah standar industri.<br><strong>Data yang sangat sensitif</strong>: SHA-512 atau SHA3-512 memberikan keamanan tertinggi.<br><strong>Aplikasi yang mengutamakan kinerja</strong>: BLAKE2 atau BLAKE3 menawarkan keamanan dan kecepatan yang luar biasa.<br><strong>Kompatibilitas dengan sistem lama</strong>: Mungkin memerlukan SHA-1 atau MD5, tetapi ketahuilah batasan keamanannya.<br><strong>Checksum file</strong>: CRC32 cepat tetapi hanya untuk deteksi kesalahan, tidak memberikan keamanan; gunakan SHA-256 untuk checksum yang aman.<br>Jika ragu, SHA-256 adalah pilihan default yang andal untuk sebagian besar aplikasi modern yang membutuhkan keamanan. Coba <a href='https://www.ufreetools.com/tool/hash-calculator' target='_blank'>kalkulator hash</a> kami, eksperimen dengan berbagai algoritma dan bandingkan outputnya."
       }
     ]
   },
@@ -70,17 +70,17 @@ export default {
       {
         name: "Pembuat Password",
         description: "Buat password yang kuat dan aman untuk akun Anda",
-        url: "https://www.ufreetools.com/tools/password-generator"
+        url: "https://www.ufreetools.com/tool/password-generator"
       },
       {
         name: "Pengkode/Decode Teks",
         description: "Konversi teks antara berbagai encoding seperti Base64, URL, dan HTML",
-        url: "https://www.ufreetools.com/tools/text-encoder-decoder"
+        url: "https://www.ufreetools.com/tool/text-encoder-decoder"
       },
       {
         name: "Konverter File",
         description: "Konversi file antara berbagai format",
-        url: "https://www.ufreetools.com/tools/file-converter"
+        url: "https://www.ufreetools.com/tool/file-converter"
       }
     ]
   },

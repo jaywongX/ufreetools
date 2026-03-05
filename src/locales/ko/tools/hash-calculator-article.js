@@ -52,7 +52,7 @@ export default {
       },
       {
         question: "특정 요구 사항에 어떤 해시 알고리즘을 사용해야 하나요?",
-        answer: "최적의 알고리즘은 특정 요구 사항에 따라 다릅니다:<br><strong>일반 용도 및 높은 보안</strong>: SHA-256은 보안과 성능의 좋은 균형을 제공합니다.<br><strong>블록체인 응용</strong>: SHA-256(비트코인) 또는 Keccak-256(이더리움)은 업계 표준입니다.<br><strong>극도로 민감한 데이터</strong>: SHA-512 또는 SHA3-512는 최고 수준의 보안을 제공합니다.<br><strong>성능이 중요한 응용</strong>: BLAKE2 또는 BLAKE3는 보안성과 탁월한 속도를 제공합니다.<br><strong>레거시 시스템 호환성</strong>: SHA-1 또는 MD5가 필요할 수 있지만 보안 제한 사항을 이해하세요.<br><strong>파일 체크섬</strong>: CRC32는 빠르지만 오류 감지 전용이며 보안에는 적합하지 않습니다. 보안 체크섬에는 SHA-256을 권장합니다.<br>의심스러운 경우 SHA-256은 보안이 필요한 대부분의 현대 응용에 대한 신뢰할 수 있는 기본 선택입니다. 우리의 <a href='https://www.ufreetools.com/tools/hash-calculator' target='_blank'>해시 계산기</a>를 사용하여 다양한 알고리즘을 실험하고 출력을 비교해 보세요."
+        answer: "최적의 알고리즘은 특정 요구 사항에 따라 다릅니다:<br><strong>일반 용도 및 높은 보안</strong>: SHA-256은 보안과 성능의 좋은 균형을 제공합니다.<br><strong>블록체인 응용</strong>: SHA-256(비트코인) 또는 Keccak-256(이더리움)은 업계 표준입니다.<br><strong>극도로 민감한 데이터</strong>: SHA-512 또는 SHA3-512는 최고 수준의 보안을 제공합니다.<br><strong>성능이 중요한 응용</strong>: BLAKE2 또는 BLAKE3는 보안성과 탁월한 속도를 제공합니다.<br><strong>레거시 시스템 호환성</strong>: SHA-1 또는 MD5가 필요할 수 있지만 보안 제한 사항을 이해하세요.<br><strong>파일 체크섬</strong>: CRC32는 빠르지만 오류 감지 전용이며 보안에는 적합하지 않습니다. 보안 체크섬에는 SHA-256을 권장합니다.<br>의심스러운 경우 SHA-256은 보안이 필요한 대부분의 현대 응용에 대한 신뢰할 수 있는 기본 선택입니다. 우리의 <a href='https://www.ufreetools.com/tool/hash-calculator' target='_blank'>해시 계산기</a>를 사용하여 다양한 알고리즘을 실험하고 출력을 비교해 보세요."
       }
     ]
   },
@@ -74,17 +74,17 @@ export default {
       {
         name: "비밀번호 생성기",
         description: "계정을 위한 강력하고 안전한 비밀번호 생성",
-        url: "https://www.ufreetools.com/tools/password-generator"
+        url: "https://www.ufreetools.com/tool/password-generator"
       },
       {
         name: "텍스트 인코더/디코더",
         description: "Base64, URL 및 HTML과 같은 다양한 인코딩 간에 텍스트 변환",
-        url: "https://www.ufreetools.com/tools/text-encoder-decoder"
+        url: "https://www.ufreetools.com/tool/text-encoder-decoder"
       },
       {
         name: "파일 변환기",
         description: "파일을 다른 형식으로 변환",
-        url: "https://www.ufreetools.com/tools/file-converter"
+        url: "https://www.ufreetools.com/tool/file-converter"
       }
     ]
   },

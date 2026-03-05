@@ -125,12 +125,12 @@ export default {
       {
         name: "Penampil GeoJSON",
         description: "Visualisasi dan edit file GeoJSON dengan alat peta interaktif kami.",
-        url: "https://www.ufreetools.com/tools/geojson-viewer"
+        url: "https://www.ufreetools.com/tool/geojson-viewer"
       },
       {
         name: "Pencari Lokasi IP",
         description: "Temukan lokasi geografis alamat IP dengan alat pencarian IP kami.",
-        url: "https://www.ufreetools.com/tools/ip-lookup"
+        url: "https://www.ufreetools.com/tool/ip-lookup"
       }
     ]
   },

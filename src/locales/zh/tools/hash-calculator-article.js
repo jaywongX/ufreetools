@@ -52,7 +52,7 @@ export default {
       },
       {
         question: "我应该为特定需求使用哪种哈希算法？",
-        answer: "最佳算法取决于您的具体要求：<br><strong>一般用途和高安全性</strong>：SHA-256提供了安全性和性能的良好平衡。<br><strong>区块链应用</strong>：SHA-256(比特币)或Keccak-256(以太坊)是行业标准。<br><strong>极其敏感的数据</strong>：SHA-512或SHA3-512提供最高安全性。<br><strong>性能关键应用</strong>：BLAKE2或BLAKE3提供安全性和卓越的速度。<br><strong>与遗留系统兼容</strong>：可能需要SHA-1或MD5，但请了解其安全限制。<br><strong>文件校验和</strong>：CRC32快速但仅用于错误检测，不提供安全性；推荐SHA-256用于安全校验和。<br>如有疑问，SHA-256是大多数需要安全性的现代应用的可靠默认选择。尝试我们的<a href='https://www.ufreetools.com/tools/hash-calculator' target='_blank'>哈希计算器</a>，实验不同算法并比较它们的输出。"
+        answer: "最佳算法取决于您的具体要求：<br><strong>一般用途和高安全性</strong>：SHA-256提供了安全性和性能的良好平衡。<br><strong>区块链应用</strong>：SHA-256(比特币)或Keccak-256(以太坊)是行业标准。<br><strong>极其敏感的数据</strong>：SHA-512或SHA3-512提供最高安全性。<br><strong>性能关键应用</strong>：BLAKE2或BLAKE3提供安全性和卓越的速度。<br><strong>与遗留系统兼容</strong>：可能需要SHA-1或MD5，但请了解其安全限制。<br><strong>文件校验和</strong>：CRC32快速但仅用于错误检测，不提供安全性；推荐SHA-256用于安全校验和。<br>如有疑问，SHA-256是大多数需要安全性的现代应用的可靠默认选择。尝试我们的<a href='https://www.ufreetools.com/tool/hash-calculator' target='_blank'>哈希计算器</a>，实验不同算法并比较它们的输出。"
       }
     ]
   },
@@ -74,17 +74,17 @@ export default {
       {
         name: "密码生成器",
         description: "为您的账户创建强大、安全的密码",
-        url: "https://www.ufreetools.com/tools/password-generator"
+        url: "https://www.ufreetools.com/tool/password-generator"
       },
       {
         name: "文本编码器/解码器",
         description: "在Base64、URL和HTML等不同编码之间转换文本",
-        url: "https://www.ufreetools.com/tools/text-encoder-decoder"
+        url: "https://www.ufreetools.com/tool/text-encoder-decoder"
       },
       {
         name: "文件转换器",
         description: "在不同格式之间转换文件",
-        url: "https://www.ufreetools.com/tools/file-converter"
+        url: "https://www.ufreetools.com/tool/file-converter"
       }
     ]
   },

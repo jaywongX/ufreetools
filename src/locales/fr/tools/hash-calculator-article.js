@@ -52,7 +52,7 @@ export default {
             },
             {
                 question: "Quel algorithme de hachage devrais-je utiliser pour un besoin spécifique ?",
-                answer: "Le meilleur algorithme dépend de vos besoins spécifiques :<br><strong>Usage général et haute sécurité</strong> : SHA-256 offre un bon équilibre entre sécurité et performance.<br><strong>Applications blockchain</strong> : SHA-256 (Bitcoin) ou Keccak-256 (Ethereum) sont des standards industriels.<br><strong>Données extrêmement sensibles</strong> : SHA-512 ou SHA3-512 offrent le plus haut niveau de sécurité.<br><strong>Applications critiques en performance</strong> : BLAKE2 ou BLAKE3 fournissent sécurité et vitesse exceptionnelle.<br><strong>Compatibilité avec des systèmes hérités</strong> : SHA-1 ou MD5 peuvent être nécessaires, mais comprenez leurs limites de sécurité.<br><strong>Sommes de contrôle de fichiers</strong> : CRC32 est rapide mais seulement pour la détection d'erreurs, sans sécurité ; SHA-256 est recommandé pour des sommes de contrôle sécurisées.<br>En cas de doute, SHA-256 est un choix fiable par défaut pour la plupart des applications modernes nécessitant de la sécurité. Essayez notre <a href='https://www.ufreetools.com/tools/hash-calculator' target='_blank'>calculateur de hachage</a> pour expérimenter avec différents algorithmes et comparer leurs sorties."
+                answer: "Le meilleur algorithme dépend de vos besoins spécifiques :<br><strong>Usage général et haute sécurité</strong> : SHA-256 offre un bon équilibre entre sécurité et performance.<br><strong>Applications blockchain</strong> : SHA-256 (Bitcoin) ou Keccak-256 (Ethereum) sont des standards industriels.<br><strong>Données extrêmement sensibles</strong> : SHA-512 ou SHA3-512 offrent le plus haut niveau de sécurité.<br><strong>Applications critiques en performance</strong> : BLAKE2 ou BLAKE3 fournissent sécurité et vitesse exceptionnelle.<br><strong>Compatibilité avec des systèmes hérités</strong> : SHA-1 ou MD5 peuvent être nécessaires, mais comprenez leurs limites de sécurité.<br><strong>Sommes de contrôle de fichiers</strong> : CRC32 est rapide mais seulement pour la détection d'erreurs, sans sécurité ; SHA-256 est recommandé pour des sommes de contrôle sécurisées.<br>En cas de doute, SHA-256 est un choix fiable par défaut pour la plupart des applications modernes nécessitant de la sécurité. Essayez notre <a href='https://www.ufreetools.com/tool/hash-calculator' target='_blank'>calculateur de hachage</a> pour expérimenter avec différents algorithmes et comparer leurs sorties."
             }
         ]
     },
@@ -74,17 +74,17 @@ export default {
             {
                 name: "Générateur de mots de passe",
                 description: "Créez des mots de passe forts et sécurisés pour vos comptes",
-                url: "https://www.ufreetools.com/tools/password-generator"
+                url: "https://www.ufreetools.com/tool/password-generator"
             },
             {
                 name: "Encodeur/Décodeur de texte",
                 description: "Convertissez du texte entre différents encodages comme Base64, URL et HTML",
-                url: "https://www.ufreetools.com/tools/text-encoder-decoder"
+                url: "https://www.ufreetools.com/tool/text-encoder-decoder"
             },
             {
                 name: "Convertisseur de fichiers",
                 description: "Convertissez des fichiers entre différents formats",
-                url: "https://www.ufreetools.com/tools/file-converter"
+                url: "https://www.ufreetools.com/tool/file-converter"
             }
         ]
     },

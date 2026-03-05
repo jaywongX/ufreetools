@@ -125,12 +125,12 @@ export default {
       {
         name: "Visualiseur GeoJSON",
         description: "Visualiser et éditer des fichiers GeoJSON.",
-        url: "https://www.ufreetools.com/tools/geojson-viewer"
+        url: "https://www.ufreetools.com/tool/geojson-viewer"
       },
       {
         name: "Localisation IP",
         description: "Trouver la position géographique d'une adresse IP.",
-        url: "https://www.ufreetools.com/tools/ip-lookup"
+        url: "https://www.ufreetools.com/tool/ip-lookup"
       }
     ]
   },

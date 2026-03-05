@@ -125,12 +125,12 @@ export default {
       {
         name: "عارض GeoJSON",
         description: "تصور وتحرير ملفات GeoJSON باستخدام أداة الخريطة التفاعلية لدينا.",
-        url: "https://www.ufreetools.com/tools/geojson-viewer"
+        url: "https://www.ufreetools.com/tool/geojson-viewer"
       },
       {
         name: "البحث عن الموقع الجغرافي لعنوان IP",
         description: "ابحث عن الموقع الجغرافي لعنوان IP باستخدام أداة البحث عن IP الخاصة بنا.",
-        url: "https://www.ufreetools.com/tools/ip-lookup"
+        url: "https://www.ufreetools.com/tool/ip-lookup"
       }
     ]
   },

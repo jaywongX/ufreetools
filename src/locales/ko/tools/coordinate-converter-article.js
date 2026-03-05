@@ -125,12 +125,12 @@ export default {
       {
         name: "GeoJSON 뷰어",
         description: "우리의 대화형 지도 도구로 GeoJSON 파일을 시각화하고 편집하세요.",
-        url: "https://www.ufreetools.com/tools/geojson-viewer"
+        url: "https://www.ufreetools.com/tool/geojson-viewer"
       },
       {
         name: "IP 지리적 위치 조회",
         description: "우리의 IP 조회 도구로 IP 주소의 지리적 위치를 찾으세요.",
-        url: "https://www.ufreetools.com/tools/ip-lookup"
+        url: "https://www.ufreetools.com/tool/ip-lookup"
       }
     ]
   },

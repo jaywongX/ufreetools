@@ -125,12 +125,12 @@ export default {
       {
         name: "GeoJSONビューア",
         description: "インタラクティブな地図ツールを使用してGeoJSONファイルを表示および編集します。",
-        url: "https://www.ufreetools.com/tools/geojson-viewer"
+        url: "https://www.ufreetools.com/tool/geojson-viewer"
       },
       {
         name: "IP地理位置検索",
         description: "IPアドレスの地理的位置を検索するためのIP検索ツールを使用します。",
-        url: "https://www.ufreetools.com/tools/ip-lookup"
+        url: "https://www.ufreetools.com/tool/ip-lookup"
       }
     ]
   },
