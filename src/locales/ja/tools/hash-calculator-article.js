@@ -52,7 +52,7 @@ export default {
       },
       {
         question: "特定のニーズにはどのハッシュアルゴリズムを使用すべきですか？",
-        answer: "最適なアルゴリズムは特定の要件によって異なります：<br><strong>一般的な用途と高いセキュリティ</strong>：SHA-256はセキュリティとパフォーマンスのバランスが良いです。<br><strong>ブロックチェーンアプリケーション</strong>：SHA-256（ビットコイン）またはKeccak-256（イーサリアム）が業界標準です。<br><strong>非常に機密性の高いデータ</strong>：SHA-512またはSHA3-512が最高のセキュリティを提供します。<br><strong>パフォーマンスが重要なアプリケーション</strong>：BLAKE2またはBLAKE3はセキュリティと優れた速度を提供します。<br><strong>レガシーシステムとの互換性</strong>：SHA-1またはMD5が必要かもしれませんが、そのセキュリティ制限を理解してください。<br><strong>ファイルチェックサム</strong>：CRC32は高速ですがエラー検出のみで、セキュリティは提供しません。安全なチェックサムにはSHA-256をお勧めします。<br>迷った場合、SHA-256はセキュリティが必要な現代のアプリケーションのほとんどに信頼できるデフォルトの選択肢です。当社の<a href='https://www.ufreetools.com/tools/hash-calculator' target='_blank'>ハッシュ計算ツール</a>を試して、異なるアルゴリズムを実験し、それらの出力を比較してください。"
+        answer: "最適なアルゴリズムは特定の要件によって異なります：<br><strong>一般的な用途と高いセキュリティ</strong>：SHA-256はセキュリティとパフォーマンスのバランスが良いです。<br><strong>ブロックチェーンアプリケーション</strong>：SHA-256（ビットコイン）またはKeccak-256（イーサリアム）が業界標準です。<br><strong>非常に機密性の高いデータ</strong>：SHA-512またはSHA3-512が最高のセキュリティを提供します。<br><strong>パフォーマンスが重要なアプリケーション</strong>：BLAKE2またはBLAKE3はセキュリティと優れた速度を提供します。<br><strong>レガシーシステムとの互換性</strong>：SHA-1またはMD5が必要かもしれませんが、そのセキュリティ制限を理解してください。<br><strong>ファイルチェックサム</strong>：CRC32は高速ですがエラー検出のみで、セキュリティは提供しません。安全なチェックサムにはSHA-256をお勧めします。<br>迷った場合、SHA-256はセキュリティが必要な現代のアプリケーションのほとんどに信頼できるデフォルトの選択肢です。当社の<a href='https://www.ufreetools.com/tool/hash-calculator' target='_blank'>ハッシュ計算ツール</a>を試して、異なるアルゴリズムを実験し、それらの出力を比較してください。"
       }
     ]
   },
@@ -74,17 +74,17 @@ export default {
       {
         name: "パスワードジェネレーター",
         description: "アカウント用の強力で安全なパスワードを作成",
-        url: "https://www.ufreetools.com/tools/password-generator"
+        url: "https://www.ufreetools.com/tool/password-generator"
       },
       {
         name: "テキストエンコーダー/デコーダー",
         description: "Base64、URL、HTMLなど異なるエンコーディング間でテキストを変換",
-        url: "https://www.ufreetools.com/tools/text-encoder-decoder"
+        url: "https://www.ufreetools.com/tool/text-encoder-decoder"
       },
       {
         name: "ファイルコンバーター",
         description: "異なる形式間でファイルを変換",
-        url: "https://www.ufreetools.com/tools/file-converter"
+        url: "https://www.ufreetools.com/tool/file-converter"
       }
     ]
   },

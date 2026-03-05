@@ -125,12 +125,12 @@ export default {
       {
         name: "GeoJSON查看器",
         description: "使用我們的交互式地圖工具可視化和編輯GeoJSON文件。",
-        url: "https://www.ufreetools.com/tools/geojson-viewer"
+        url: "https://www.ufreetools.com/tool/geojson-viewer"
       },
       {
         name: "IP地理位置查詢",
         description: "使用我們的IP查詢工具查找IP地址的地理位置。",
-        url: "https://www.ufreetools.com/tools/ip-lookup"
+        url: "https://www.ufreetools.com/tool/ip-lookup"
       }
     ]
   },

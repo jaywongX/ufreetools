@@ -52,7 +52,7 @@ export default {
       },
       {
         question: "Which hash algorithm should I use for my specific need?",
-        answer: "The best algorithm depends on your specific requirements:<br><strong>For general purpose use and high security</strong>: SHA-256 provides a good balance of security and performance.<br><strong>For blockchain applications</strong>: SHA-256 (Bitcoin) or Keccak-256 (Ethereum) are industry standards.<br><strong>For extremely sensitive data</strong>: SHA-512 or SHA3-512 offer maximum security.<br><strong>For performance-critical applications</strong>: BLAKE2 or BLAKE3 provide security with exceptional speed.<br><strong>For compatibility with legacy systems</strong>: SHA-1 or MD5 might be required, but understand their security limitations.<br><strong>For file checksums</strong>: CRC32 is fast but only for error detection, not security; SHA-256 is recommended for secure checksums.<br>When in doubt, SHA-256 is a solid default choice for most modern applications requiring security. Try our <a href='https://www.ufreetools.com/tools/hash-calculator' target='_blank'>Hash Calculator</a> to experiment with different algorithms and compare their outputs."
+        answer: "The best algorithm depends on your specific requirements:<br><strong>For general purpose use and high security</strong>: SHA-256 provides a good balance of security and performance.<br><strong>For blockchain applications</strong>: SHA-256 (Bitcoin) or Keccak-256 (Ethereum) are industry standards.<br><strong>For extremely sensitive data</strong>: SHA-512 or SHA3-512 offer maximum security.<br><strong>For performance-critical applications</strong>: BLAKE2 or BLAKE3 provide security with exceptional speed.<br><strong>For compatibility with legacy systems</strong>: SHA-1 or MD5 might be required, but understand their security limitations.<br><strong>For file checksums</strong>: CRC32 is fast but only for error detection, not security; SHA-256 is recommended for secure checksums.<br>When in doubt, SHA-256 is a solid default choice for most modern applications requiring security. Try our <a href='https://www.ufreetools.com/tool/hash-calculator' target='_blank'>Hash Calculator</a> to experiment with different algorithms and compare their outputs."
       }
     ]
   },
@@ -74,17 +74,17 @@ export default {
       {
         name: "Password Generator",
         description: "Create strong, secure passwords for your accounts",
-        url: "https://www.ufreetools.com/tools/password-generator"
+        url: "https://www.ufreetools.com/tool/password-generator"
       },
       {
         name: "Text Encoder/Decoder",
         description: "Convert text between different encodings like Base64, URL, and HTML",
-        url: "https://www.ufreetools.com/tools/text-encoder-decoder"
+        url: "https://www.ufreetools.com/tool/text-encoder-decoder"
       },
       {
         name: "File Converter",
         description: "Convert files between different formats",
-        url: "https://www.ufreetools.com/tools/file-converter"
+        url: "https://www.ufreetools.com/tool/file-converter"
       }
     ]
   },

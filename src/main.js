@@ -142,6 +142,7 @@ const lazyComponentMap = {
   'ImageToPng': () => import('./components/tools/ImageToPng.vue'),
   'ImageToWebp': () => import('./components/tools/ImageToWebp.vue'),
   'GifCompressor': () => import('./components/tools/GifCompressor.vue'),
+  'ImageToTextConverter': () => import('./components/tools/ImageToTextConverter.vue'),
   // 网络与协议
   'ApiRequestTool': () => import('./components/tools/ApiRequestTool.vue'),
   'CorsGenerator': () => import('./components/tools/CorsGenerator.vue'),

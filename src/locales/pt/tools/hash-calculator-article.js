@@ -52,7 +52,7 @@ export default {
     },
     {
       question: "Qual algoritmo de hash devo usar para uma necessidade específica?",
-      answer: "O melhor algoritmo depende de seus requisitos específicos:<br><strong>Uso geral e alta segurança</strong>: SHA-256 oferece um bom equilíbrio entre segurança e desempenho.<br><strong>Aplicações blockchain</strong>: SHA-256 (Bitcoin) ou Keccak-256 (Ethereum) são padrões do setor.<br><strong>Dados extremamente sensíveis</strong>: SHA-512 ou SHA3-512 oferecem o mais alto nível de segurança.<br><strong>Aplicações críticas de desempenho</strong>: BLAKE2 ou BLAKE3 oferecem segurança com velocidade excepcional.<br><strong>Compatibilidade com sistemas legados</strong>: Pode ser necessário usar SHA-1 ou MD5, mas esteja ciente de suas limitações de segurança.<br><strong>Verificação de arquivos</strong>: CRC32 é rápido mas apenas para detecção de erros; para checksums seguros recomenda-se SHA-256.<br>Em caso de dúvida, SHA-256 é uma escolha segura para a maioria das aplicações modernas que exigem segurança. Experimente nossa <a href='https://www.ufreetools.com/tools/hash-calculator' target='_blank'>calculadora de hash</a> para testar diferentes algoritmos e comparar seus resultados."
+      answer: "O melhor algoritmo depende de seus requisitos específicos:<br><strong>Uso geral e alta segurança</strong>: SHA-256 oferece um bom equilíbrio entre segurança e desempenho.<br><strong>Aplicações blockchain</strong>: SHA-256 (Bitcoin) ou Keccak-256 (Ethereum) são padrões do setor.<br><strong>Dados extremamente sensíveis</strong>: SHA-512 ou SHA3-512 oferecem o mais alto nível de segurança.<br><strong>Aplicações críticas de desempenho</strong>: BLAKE2 ou BLAKE3 oferecem segurança com velocidade excepcional.<br><strong>Compatibilidade com sistemas legados</strong>: Pode ser necessário usar SHA-1 ou MD5, mas esteja ciente de suas limitações de segurança.<br><strong>Verificação de arquivos</strong>: CRC32 é rápido mas apenas para detecção de erros; para checksums seguros recomenda-se SHA-256.<br>Em caso de dúvida, SHA-256 é uma escolha segura para a maioria das aplicações modernas que exigem segurança. Experimente nossa <a href='https://www.ufreetools.com/tool/hash-calculator' target='_blank'>calculadora de hash</a> para testar diferentes algoritmos e comparar seus resultados."
     }
   ]
 },
@@ -74,17 +74,17 @@ relatedTools: {
     {
       name: "Gerador de Senhas",
       description: "Crie senhas fortes e seguras para suas contas",
-      url: "https://www.ufreetools.com/tools/password-generator"
+      url: "https://www.ufreetools.com/tool/password-generator"
     },
     {
       name: "Codificador/Decodificador de Texto",
       description: "Converta texto entre diferentes codificações como Base64, URL e HTML",
-      url: "https://www.ufreetools.com/tools/text-encoder-decoder"
+      url: "https://www.ufreetools.com/tool/text-encoder-decoder"
     },
     {
       name: "Conversor de Arquivos",
       description: "Converta arquivos entre diferentes formatos",
-      url: "https://www.ufreetools.com/tools/file-converter"
+      url: "https://www.ufreetools.com/tool/file-converter"
     }
   ]
 },

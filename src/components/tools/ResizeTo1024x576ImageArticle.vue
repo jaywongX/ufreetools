@@ -80,7 +80,7 @@
                 </h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <a href="https://www.ufreetools.com/tools/image-compressor" target="_blank"
+                    <a href="https://www.ufreetools.com/tool/image-compressor" target="_blank"
                         class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow">
                         <h3 class="text-lg font-medium mb-2 text-gray-800 dark:text-white">
                             {{ $t('tools.resize-to-1024x576-image.article.relatedTool1Title') }}
@@ -90,7 +90,7 @@
                         </p>
                     </a>
 
-                    <a href="https://www.ufreetools.com/tools/image-batch-resizer" target="_blank"
+                    <a href="https://www.ufreetools.com/tool/image-batch-resizer" target="_blank"
                         class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow">
                         <h3 class="text-lg font-medium mb-2 text-gray-800 dark:text-white">
                             {{ $t('tools.resize-to-1024x576-image.article.relatedTool2Title') }}
@@ -100,7 +100,7 @@
                         </p>
                     </a>
 
-                    <a href="https://www.ufreetools.com/tools/image-watermark" target="_blank"
+                    <a href="https://www.ufreetools.com/tool/image-watermark" target="_blank"
                         class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow">
                         <h3 class="text-lg font-medium mb-2 text-gray-800 dark:text-white">
                             {{ $t('tools.resize-to-1024x576-image.article.relatedTool3Title') }}
@@ -110,7 +110,7 @@
                         </p>
                     </a>
 
-                    <a href="https://www.ufreetools.com/tools/image-filters" target="_blank"
+                    <a href="https://www.ufreetools.com/tool/image-filters" target="_blank"
                         class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow">
                         <h3 class="text-lg font-medium mb-2 text-gray-800 dark:text-white">
                             {{ $t('tools.resize-to-1024x576-image.article.relatedTool4Title') }}

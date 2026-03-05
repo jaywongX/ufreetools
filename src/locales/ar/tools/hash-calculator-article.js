@@ -51,7 +51,7 @@ export default {
       },
       {
         question: "ما هي خوارزمية التجزئة التي يجب أن أستخدمها لاحتياجات محددة؟",
-        answer: "تعتمد أفضل خوارزمية على متطلباتك المحددة: <br><strong>الاستخدامات العامة والأمان العالي</strong>: يوفر SHA-256 توازنًا جيدًا بين الأمان والأداء.<br><strong>تطبيقات سلسلة الكتل</strong>: SHA-256 (البيتكوين) أو Keccak-256 (إيثريوم) هي معايير الصناعة.<br><strong>البيانات شديدة الحساسية</strong>: توفر SHA-512 أو SHA3-512 أعلى مستوى من الأمان.<br><strong>التطبيقات الحرجة للأداء</strong>: توفر BLAKE2 أو BLAKE3 أمانًا وأداءً استثنائيًا.<br><strong>التوافق مع الأنظمة القديمة</strong>: قد تحتاج إلى SHA-1 أو MD5، ولكن كن على علم بقيود الأمان الخاصة بها.<br><strong>المجاميع الاختبارية للملفات</strong>: CRC32 سريعة ولكنها فقط للكشف عن الأخطاء، ولا توفر الأمان؛ نوصي بـ SHA-256 للمجاميع الاختبارية الآمنة.<br>في حالة الشك، يعتبر SHA-256 اختيارًا موثوقًا به لمعظم التطبيقات الحديثة التي تتطلب الأمان. جرب <a href='https://www.ufreetools.com/tools/hash-calculator' target='_blank'>حاسبة التجزئة</a> الخاصة بنا، واختبر خوارزميات مختلفة وقارن مخرجاتها."
+        answer: "تعتمد أفضل خوارزمية على متطلباتك المحددة: <br><strong>الاستخدامات العامة والأمان العالي</strong>: يوفر SHA-256 توازنًا جيدًا بين الأمان والأداء.<br><strong>تطبيقات سلسلة الكتل</strong>: SHA-256 (البيتكوين) أو Keccak-256 (إيثريوم) هي معايير الصناعة.<br><strong>البيانات شديدة الحساسية</strong>: توفر SHA-512 أو SHA3-512 أعلى مستوى من الأمان.<br><strong>التطبيقات الحرجة للأداء</strong>: توفر BLAKE2 أو BLAKE3 أمانًا وأداءً استثنائيًا.<br><strong>التوافق مع الأنظمة القديمة</strong>: قد تحتاج إلى SHA-1 أو MD5، ولكن كن على علم بقيود الأمان الخاصة بها.<br><strong>المجاميع الاختبارية للملفات</strong>: CRC32 سريعة ولكنها فقط للكشف عن الأخطاء، ولا توفر الأمان؛ نوصي بـ SHA-256 للمجاميع الاختبارية الآمنة.<br>في حالة الشك، يعتبر SHA-256 اختيارًا موثوقًا به لمعظم التطبيقات الحديثة التي تتطلب الأمان. جرب <a href='https://www.ufreetools.com/tool/hash-calculator' target='_blank'>حاسبة التجزئة</a> الخاصة بنا، واختبر خوارزميات مختلفة وقارن مخرجاتها."
       }
     ]
   },
@@ -73,17 +73,17 @@ export default {
       {
         name: "مولد كلمات المرور",
         description: "إنشاء كلمات مرور قوية وآمنة لحساباتك",
-        url: "https://www.ufreetools.com/tools/password-generator"
+        url: "https://www.ufreetools.com/tool/password-generator"
       },
       {
         name: "مشفير/فك تشفير النصوص",
         description: "تحويل النصوص بين تشفيرات مختلفة مثل Base64 وURL وHTML",
-        url: "https://www.ufreetools.com/tools/text-encoder-decoder"
+        url: "https://www.ufreetools.com/tool/text-encoder-decoder"
       },
       {
         name: "محول الملفات",
         description: "تحويل الملفات بين التنسيقات المختلفة",
-        url: "https://www.ufreetools.com/tools/file-converter"
+        url: "https://www.ufreetools.com/tool/file-converter"
       }
     ]
   },

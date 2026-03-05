@@ -52,7 +52,7 @@ export default {
       },
       {
         question: "我應該為特定需求使用哪種雜湊演算法？",
-        answer: "最佳演算法取決於您的具體要求：<br><strong>一般用途和高安全性</strong>：SHA-256提供了安全性和性能的良好平衡。<br><strong>區塊鏈應用</strong>：SHA-256(比特幣)或Keccak-256(以太坊)是行業標準。<br><strong>極其敏感的資料</strong>：SHA-512或SHA3-512提供最高安全性。<br><strong>性能關鍵應用</strong>：BLAKE2或BLAKE3提供安全性和卓越的速度。<br><strong>與遺留系統相容</strong>：可能需要SHA-1或MD5，但請了解其安全限制。<br><strong>檔案校驗和</strong>：CRC32快速但僅用於錯誤檢測，不提供安全性；推薦SHA-256用於安全校驗和。<br>如有疑問，SHA-256是大多數需要安全性的現代應用的可靠預設選擇。嘗試我們的<a href='https://www.ufreetools.com/tools/hash-calculator' target='_blank'>雜湊計算器</a>，實驗不同演算法並比較它們的輸出。"
+        answer: "最佳演算法取決於您的具體要求：<br><strong>一般用途和高安全性</strong>：SHA-256提供了安全性和性能的良好平衡。<br><strong>區塊鏈應用</strong>：SHA-256(比特幣)或Keccak-256(以太坊)是行業標準。<br><strong>極其敏感的資料</strong>：SHA-512或SHA3-512提供最高安全性。<br><strong>性能關鍵應用</strong>：BLAKE2或BLAKE3提供安全性和卓越的速度。<br><strong>與遺留系統相容</strong>：可能需要SHA-1或MD5，但請了解其安全限制。<br><strong>檔案校驗和</strong>：CRC32快速但僅用於錯誤檢測，不提供安全性；推薦SHA-256用於安全校驗和。<br>如有疑問，SHA-256是大多數需要安全性的現代應用的可靠預設選擇。嘗試我們的<a href='https://www.ufreetools.com/tool/hash-calculator' target='_blank'>雜湊計算器</a>，實驗不同演算法並比較它們的輸出。"
       }
     ]
   },
@@ -74,17 +74,17 @@ export default {
       {
         name: "密碼生成器",
         description: "為您的帳戶建立強大、安全的密碼",
-        url: "https://www.ufreetools.com/tools/password-generator"
+        url: "https://www.ufreetools.com/tool/password-generator"
       },
       {
         name: "文字編碼器/解碼器",
         description: "在Base64、URL和HTML等不同編碼之間轉換文字",
-        url: "https://www.ufreetools.com/tools/text-encoder-decoder"
+        url: "https://www.ufreetools.com/tool/text-encoder-decoder"
       },
       {
         name: "檔案轉換器",
         description: "在不同格式之間轉換檔案",
-        url: "https://www.ufreetools.com/tools/file-converter"
+        url: "https://www.ufreetools.com/tool/file-converter"
       }
     ]
   },

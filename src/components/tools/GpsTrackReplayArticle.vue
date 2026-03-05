@@ -108,12 +108,12 @@
             </a>
           </li>
           <!-- <li>
-            <a href="https://www.ufreetools.com/tools/geojson-viewer" target="_blank" class="text-blue-600 hover:underline">
+            <a href="https://www.ufreetools.com/tool/geojson-viewer" target="_blank" class="text-blue-600 hover:underline">
               {{ $t('tools.gps-track-replay.article.relatedTool2') }}
             </a>
           </li>
           <li>
-            <a href="https://www.ufreetools.com/tools/gpx-editor" target="_blank" class="text-blue-600 hover:underline">
+            <a href="https://www.ufreetools.com/tool/gpx-editor" target="_blank" class="text-blue-600 hover:underline">
               {{ $t('tools.gps-track-replay.article.relatedTool3') }}
             </a>
           </li> -->

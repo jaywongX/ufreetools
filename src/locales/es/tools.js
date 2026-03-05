@@ -174,6 +174,7 @@ import CaAddressGenerator from './tools/ca-address-generator.js'
 import MacAddressGenerator from './tools/mac-address-generator.js'
 import CnAddressGenerator from './tools/cn-address-generator.js'
 import SgAddressGenerator from './tools/sg-address-generator.js'
+import ImageToTextConverter from './tools/image-to-text-converter.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -351,5 +352,6 @@ export default {
   'ca-address-generator': CaAddressGenerator,
   'mac-address-generator': MacAddressGenerator,
   'cn-address-generator': CnAddressGenerator,
-  'sg-address-generator': SgAddressGenerator
+  'sg-address-generator': SgAddressGenerator,
+  'image-to-text-converter': ImageToTextConverter
 };

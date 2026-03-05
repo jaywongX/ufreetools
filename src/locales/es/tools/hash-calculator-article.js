@@ -52,7 +52,7 @@ export default {
       },
       {
         question: "¿Qué algoritmo debo elegir según mis necesidades?",
-        answer: "La elección depende de su caso:<br><strong>General y alta seguridad:</strong> SHA-256 equilibra bien seguridad y rendimiento.<br><strong>Blockchain:</strong> SHA-256 (Bitcoin) o Keccak-256 (Ethereum).<br><strong>Datos muy sensibles:</strong> SHA-512 o SHA3-512.<br><strong>Rendimiento crítico:</strong> BLAKE2 o BLAKE3 ofrecen gran velocidad y seguridad razonable.<br><strong>Compatibilidad con legacy:</strong> SHA-1 o MD5 pueden ser necesarios, pero evite usarlos en nuevos proyectos por vulnerabilidades.<br><strong>Checksum rápido:</strong> CRC32 es rápido pero solo para detección de errores, no para seguridad.<br>En duda, <strong>SHA-256</strong> es una opción segura y universal. Pruébelo con nuestra <a href='https://www.ufreetools.com/tools/hash-calculator'  target='_blank'>calculadora de hash</a>."
+        answer: "La elección depende de su caso:<br><strong>General y alta seguridad:</strong> SHA-256 equilibra bien seguridad y rendimiento.<br><strong>Blockchain:</strong> SHA-256 (Bitcoin) o Keccak-256 (Ethereum).<br><strong>Datos muy sensibles:</strong> SHA-512 o SHA3-512.<br><strong>Rendimiento crítico:</strong> BLAKE2 o BLAKE3 ofrecen gran velocidad y seguridad razonable.<br><strong>Compatibilidad con legacy:</strong> SHA-1 o MD5 pueden ser necesarios, pero evite usarlos en nuevos proyectos por vulnerabilidades.<br><strong>Checksum rápido:</strong> CRC32 es rápido pero solo para detección de errores, no para seguridad.<br>En duda, <strong>SHA-256</strong> es una opción segura y universal. Pruébelo con nuestra <a href='https://www.ufreetools.com/tool/hash-calculator'  target='_blank'>calculadora de hash</a>."
       }
     ]
   },
@@ -74,17 +74,17 @@ export default {
       {
         name: 'Generador de contraseñas',
         description: 'Cree contraseñas seguras para sus cuentas',
-        url: 'https://www.ufreetools.com/tools/password-generator' 
+        url: 'https://www.ufreetools.com/tool/password-generator' 
       },
       {
         name: 'Codificador/decodificador de texto',
         description: 'Convierta texto entre Base64, URL y codificaciones HTML',
-        url: 'https://www.ufreetools.com/tools/text-encoder-decoder' 
+        url: 'https://www.ufreetools.com/tool/text-encoder-decoder' 
       },
       {
         name: 'Convertidor de archivos',
         description: 'Transforme archivos entre diferentes formatos',
-        url: 'https://www.ufreetools.com/tools/file-converter' 
+        url: 'https://www.ufreetools.com/tool/file-converter' 
       }
     ]
   },

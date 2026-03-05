@@ -52,7 +52,7 @@ export default {
       },
       {
         question: "Какой алгоритм хеширования выбрать для моей задачи?",
-        answer: "Выбор зависит от требований:<br><strong>Общие задачи</strong>: SHA-256 — баланс безопасности и скорости.<br><strong>Блокчейн</strong>: SHA-256 (Биткоин) или Keccak-256 (Эфириум).<br><strong>Важные данные</strong>: SHA-512 или SHA3-512.<br><strong>Скорость</strong>: BLAKE2/BLAKE3.<br><strong>Совместимость</strong>: SHA-1 или MD5 (но знайте об ограничениях).<br><strong>Контрольные суммы</strong>: CRC32 (только для ошибок), SHA-256 для безопасности.<br>В сомнительных случаях выбирайте SHA-256. Экспериментируйте с нашим <a href='https://www.ufreetools.com/tools/hash-calculator' target='_blank'>калькулятором</a>."
+        answer: "Выбор зависит от требований:<br><strong>Общие задачи</strong>: SHA-256 — баланс безопасности и скорости.<br><strong>Блокчейн</strong>: SHA-256 (Биткоин) или Keccak-256 (Эфириум).<br><strong>Важные данные</strong>: SHA-512 или SHA3-512.<br><strong>Скорость</strong>: BLAKE2/BLAKE3.<br><strong>Совместимость</strong>: SHA-1 или MD5 (но знайте об ограничениях).<br><strong>Контрольные суммы</strong>: CRC32 (только для ошибок), SHA-256 для безопасности.<br>В сомнительных случаях выбирайте SHA-256. Экспериментируйте с нашим <a href='https://www.ufreetools.com/tool/hash-calculator' target='_blank'>калькулятором</a>."
       }
     ],
   },
@@ -74,17 +74,17 @@ export default {
       {
         name: "Генератор паролей",
         description: "Создавайте надежные пароли для аккаунтов",
-        url: "https://www.ufreetools.com/tools/password-generator"
+        url: "https://www.ufreetools.com/tool/password-generator"
       },
       {
         name: "Кодировщик/декодировщик",
         description: "Конвертируйте текст между Base64, URL и HTML форматами",
-        url: "https://www.ufreetools.com/tools/text-encoder-decoder"
+        url: "https://www.ufreetools.com/tool/text-encoder-decoder"
       },
       {
         name: "Конвертер файлов",
         description: "Преобразуйте файлы между разными форматами",
-        url: "https://www.ufreetools.com/tools/file-converter"
+        url: "https://www.ufreetools.com/tool/file-converter"
       }
     ]
   },
