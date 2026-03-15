@@ -123,6 +123,7 @@ import roundCornersImage from './tools/round-corners-image.js';
 import lidarPointCloudViewer from './tools/lidar-point-cloud-viewer.js';
 import JsonDiffChecker from './tools/json-diff-checker.js';
 import CodeToImageConverter from './tools/code-to-image-converter.js';
+import TextToImageConverter from './tools/text-to-image-converter.js';
 import TextToHandwritingConverter from './tools/text-to-handwriting-converter.js';
 import NumbersToWordsConverter from './tools/numbers-to-words-converter.js';
 import BionicReadingConverter from './tools/bionic-reading-converter.js';
@@ -304,6 +305,7 @@ export default {
   'lidar-point-cloud-viewer': lidarPointCloudViewer,
   'json-diff-checker': JsonDiffChecker,
   'code-to-image-converter': CodeToImageConverter,
+  'text-to-image-converter': TextToImageConverter,
   'text-to-handwriting-converter': TextToHandwritingConverter,
   'numbers-to-words-converter': NumbersToWordsConverter,
   'bionic-reading-converter': BionicReadingConverter,

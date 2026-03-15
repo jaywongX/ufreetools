@@ -102,6 +102,7 @@ const lazyComponentMap = {
   'HexadecimalCaseConverter': () => import('./components/tools/HexadecimalCaseConverter.vue'),
   'Base64HexConverter': () => import('./components/tools/Base64HexConverter.vue'),
   'CodeToImageConverter': () => import('./components/tools/CodeToImageConverter.vue'),
+  'TextToImageConverter': () => import('./components/tools/TextToImageConverter.vue'),
   'TextToHandwritingConverter': () => import('./components/tools/TextToHandwritingConverter.vue'),
   'NumbersToWordsConverter': () => import('./components/tools/NumbersToWordsConverter.vue'),
   'BionicReadingConverter': () => import('./components/tools/BionicReadingConverter.vue'),
