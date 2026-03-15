@@ -955,6 +955,17 @@ const allTools = computed(() => [
     icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
     tags: ['image', 'text', 'extract', 'convert']
   },
+  {
+    id: 'text-to-image-converter',
+    name: t('tools.text-to-image-converter.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'image',
+    description: t('tools.text-to-image-converter.description'),
+    path: '/tools/text-to-image-converter',
+    component: 'TextToImageConverter',
+    icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
+    tags: ['image', 'text', 'extract', 'convert']
+  },
 
   // 转换工具
   {
