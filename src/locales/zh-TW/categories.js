@@ -45,4 +45,8 @@ export default {
     title: 'PDF工具',
     description: 'PDF檔案的建立、編輯、轉換與最佳化工具'
   },
+  audio: {
+    title: '音訊工具',
+    description: '音訊檔案的轉換、編輯和處理工具'
+  },
 };

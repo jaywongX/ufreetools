@@ -45,4 +45,8 @@ export default {
     title: 'Ferramentas PDF',
     description: 'Ferramentas para criar, editar, converter e otimizar arquivos PDF'
   },
+  audio: {
+    title: 'Ferramentas de Áudio',
+    description: 'Ferramentas para conversão, edição e processamento de áudio'
+  },
 };

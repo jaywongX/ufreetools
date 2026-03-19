@@ -45,4 +45,8 @@ export default {
     title: 'PDF 도구',
     description: 'PDF 파일 생성, 편집, 변환 및 최적화 도구'
   },
+  audio: {
+    title: '오디오 도구',
+    description: '오디오 파일 변환, 편집 및 처리 도구'
+  },
 };

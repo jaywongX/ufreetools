@@ -45,4 +45,8 @@ export default {
     title: 'Alat PDF',
     description: 'Alat untuk membuat, mengedit, mengkonversi, dan mengoptimalkan file PDF'
   },
+  audio: {
+    title: 'Alat Audio',
+    description: 'Alat untuk konversi, pengeditan, dan pengolahan audio'
+  },
 };
