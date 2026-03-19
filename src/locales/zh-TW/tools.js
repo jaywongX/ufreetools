@@ -178,6 +178,7 @@ import CnAddressGenerator from './tools/cn-address-generator.js'
 import SgAddressGenerator from './tools/sg-address-generator.js'
 import UkAddressGenerator from './tools/uk-address-generator.js'
 import ImageToTextConverter from './tools/image-to-text-converter.js'
+import AudioToMp3 from './tools/audio-to-mp3.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,

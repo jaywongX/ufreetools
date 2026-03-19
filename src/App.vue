@@ -123,6 +123,13 @@ const categories = ref([
     name: 'PDF工具',
     description: 'PDF文件的创建、编辑、转换与优化工具',
     icon: 'M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm3 3h2v2H7V9zm0 3h2v2H7v-2zm0 3h2v2H7v-2zm5-6h2v2h-2V9zm0 3h2v2h-2v-2zm0 3h2v2h-2v-2z'
+  },
+  {
+    id: 'audio',
+    title: '音频工具',
+    name: '音频工具',
+    description: '音频文件的创建、编辑、转换与优化工具',
+    icon: "M11 5L6 9H2v6h4l5 4V5z M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
   }
 ])
 provide('categories', categories.value)
@@ -2200,6 +2207,19 @@ const allTools = computed(() => [
     component: 'PdfRotator',
     icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',
     tags: ['pdf']
+  },
+
+  // 音频工具
+  {
+    id: 'audio-to-mp3',
+    name: t('tools.audio-to-mp3.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'audio',
+    description: t('tools.audio-to-mp3.description'),
+    path: '/tools/audio-to-mp3',
+    component: 'AudioToMp3',
+    icon: 'M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3',
+    tags: ['audio', 'convert']
   },
 ])
 provide('allTools', allTools)

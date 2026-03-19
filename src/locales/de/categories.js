@@ -45,4 +45,8 @@ export default {
     title: 'PDF-Tools',
     description: 'Tools zum Erstellen, Bearbeiten, Konvertieren und Optimieren von PDF-Dateien'
   },
+  audio: {
+    title: 'Audio-Tools',
+    description: 'Tools zur Konvertierung, Bearbeitung und Verarbeitung von Audiodateien'
+  },
 };

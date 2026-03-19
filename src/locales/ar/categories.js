@@ -45,4 +45,8 @@ export default {
     title: 'أدوات PDF',
     description: 'أدوات لإنشاء وتحرير وتحويل وتحسين ملفات PDF'
   },
+  audio: {
+    title: 'أدوات الصوت',
+    description: 'أدوات لتحويل وتحرير ومعالجة الملفات الصوتية'
+  },
 };
