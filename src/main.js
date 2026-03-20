@@ -145,6 +145,7 @@ const lazyComponentMap = {
   'GifCompressor': () => import('./components/tools/GifCompressor.vue'),
   'ImageToTextConverter': () => import('./components/tools/ImageToTextConverter.vue'),
   'AudioToMp3': () => import('./components/tools/AudioToMp3.vue'),
+  'AudioToM4a': () => import('./components/tools/AudioToM4a.vue'),
   // 网络与协议
   'ApiRequestTool': () => import('./components/tools/ApiRequestTool.vue'),
   'CorsGenerator': () => import('./components/tools/CorsGenerator.vue'),

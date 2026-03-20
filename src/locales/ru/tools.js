@@ -361,5 +361,6 @@ export default {
   'sg-address-generator': SgAddressGenerator,
   'uk-address-generator': UkAddressGenerator,
   'image-to-text-converter': ImageToTextConverter,
-  'audio-to-mp3': AudioToMp3
+  'audio-to-mp3': AudioToMp3,
+  'audio-to-m4a': AudioToM4a
 };
