@@ -363,5 +363,6 @@ export default {
   'uk-address-generator': UkAddressGenerator,
   'image-to-text-converter': ImageToTextConverter,
   'audio-to-mp3': AudioToMp3,
-  'audio-to-m4a': AudioToM4a
+  'audio-to-m4a': AudioToM4a,
+  'audio-to-wav': AudioToWav
 };

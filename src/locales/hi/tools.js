@@ -179,6 +179,8 @@ import SgAddressGenerator from './tools/sg-address-generator.js'
 import UkAddressGenerator from './tools/uk-address-generator.js'
 import ImageToTextConverter from './tools/image-to-text-converter.js'
 import AudioToMp3 from './tools/audio-to-mp3.js'
+import AudioToM4a from './tools/audio-to-m4a.js'
+import AudioToWav from './tools/audio-to-wav.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -362,5 +364,6 @@ export default {
   'uk-address-generator': UkAddressGenerator,
   'image-to-text-converter': ImageToTextConverter,
   'audio-to-mp3': AudioToMp3,
-  'audio-to-m4a': AudioToM4a
+  'audio-to-m4a': AudioToM4a,
+  'audio-to-wav': AudioToWav
 };
