@@ -1,174 +1,85 @@
 export default {
-  name: 'تحويل الصوت إلى WAV',
-  description: 'تحويل مختلف تنسيقات الصوت إلى ملفات صوت WAV عالية الجودة بدون فقدان',
-  longDescription: 'محول صوت إلى WAV مجاني عبر الإنترنت. يدعم MP3 و M4A و FLAC و OGG و AAC و WMA وتنسيقات أخرى إلى صوت WAV بدون فقدان. اضبط معدل العينة والقنوات للحفاظ على أفضل جودة.',
-  
-  selectFile: 'اختر ملف صوتي',
-  dropFile: 'أو اسحب وأفلت الملفات الصوتية هنا',
-  supportedFormats: 'التنسيقات المدعومة: MP3، M4A، FLAC، OGG، AAC، WMA، AMR، AIFF، APE، إلخ.',
-  
-  converting: 'جاري التحويل...',
-  convertComplete: 'اكتمل التحويل!',
-  downloadAll: 'تحميل الكل',
-  clearAll: 'مسح الكل',
-  
-  settings: {
-    title: 'إعدادات التحويل',
-    sampleRate: 'معدل العينة',
-    sampleRates: {
-      '22050': '22050 هرتز (جودة صوتية)',
-      '44100': '44100 هرتز (جودة CD)',
-      '48000': '48000 هرتز (جودة احترافية)',
-      '96000': '96000 هرتز (دقة عالية)',
-      '192000': '192000 هرتز (جودة استوديو)'
-    },
-    channels: 'القنوات',
-    channelOptions: {
-      stereo: 'ستيريو',
-      mono: 'أحادي'
-    },
-    bitDepth: 'عمق البت',
-    bitDepths: {
-      '16': '16 بت (معيار CD)',
-      '24': '24 بت (احترافي)',
-      '32': '32 بت (استوديو)'
-    },
-    volume: 'مستوى الصوت',
-    volumeLabel: 'ضبط مستوى الصوت'
-  },
-  
-  errors: {
-    selectFile: 'يرجى اختيار ملف صوتي',
-    unsupportedFormat: 'تنسيق الملف غير مدعوم',
-    conversionFailed: 'فشل التحويل، يرجى المحاولة مرة أخرى',
-    fileTooLarge: 'الملف كبير جدًا، يرجى اختيار ملفات أصغر من 100 ميجابايت'
-  },
-  
-  fileInfo: {
-    name: 'اسم الملف',
-    size: 'الحجم',
-    duration: 'المدة',
-    format: 'التنسيق الأصلي',
-    status: 'الحالة',
-    actions: 'الإجراءات'
-  },
-  
-  status: {
-    pending: 'في الانتظار',
-    processing: 'جاري المعالجة',
-    completed: 'مكتمل',
-    failed: 'فشل'
-  },
-  
-  features: {
-    title: 'المميزات',
-    list: [
-      'يدعم تنسيقات صوت متعددة إلى WAV',
-      'معدلات عينة متعددة (22050-192000 هرتز)',
-      'عمق بت قابل للاختيار (16/24/32 بت)',
-      'دعم ستيريو وأحادي',
-      'ضبط مستوى الصوت',
-      'معالجة دفعية',
-      'يحافظ على الجودة الأصلية',
-      'مجاني تمامًا، بدون تسجيل'
-    ]
-  },
-  
-  article: {
-    title: 'دليل محول الصوت إلى WAV',
-    subtitle: 'ما هو تنسيق WAV؟',
-    description: 'WAV (Waveform Audio File Format) هو تنسيق صوت بدون فقدان طورته Microsoft، ويستخدم على نطاق واسع في إنتاج الصوت الاحترافي واستوديوهات التسجيل والإذاعة. كأحد أقدم تنسيقات الصوت الرقمية، يحافظ WAV على جميع بيانات الصوت، مما يوفر أفضل تجربة جودة.',
+    name: 'صوت إلى WAV - أداة تحويل الصوت عبر الإنترنت بدون فقدان',
+    description: 'أداة مجانية عبر الإنترنت لتحويل الصوت إلى WAV. تحويل MP3، FLAC, OGG، AAC، M4A، WMA والمزيد إلى صيغة WAV بدون فقدان. إعدادات معدل العينات، اختيار عمق البت، معالجة دفعية. مثالي لإنتاج الصوت الاحترافي وتحريره.',
+    inputTitle: 'الصوت المدخل',
+    outputTitle: 'الصوت WAV المحول',
+    dragTip: 'اسحب ملفات الصوت وأفلتها هنا أو انقر للتحميل (دعم الدفعات)',
+    pasteTip: 'أو اضغط Ctrl+V (Cmd+V) للصق مسار ملف الصوت من الحافظة',
+    supported: 'الصيغات المدعومة: MP3, FLAC, OGG, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: 'تحويل إلى WAV',
+    converting: 'جاري التحويل...',
+    downloadBtn: 'تنزيل WAV',
+    batchDownload: 'تنزيل دفعي (ZIP)',
+    noOutput: 'لا توجد نتائج تحويل بعد',
+    loadSample: 'تحميل عينة صوت',
+    preview: 'معاينة الصوت',
+    clearAll: 'مسح الكل',
+    originalAudio: 'الصوت الأصلي',
+    deleteAudio: 'حذف الصوت',
     
-    whyConvert: {
-      title: 'لماذا التحويل إلى WAV؟',
-      reasons: [
-        {
-          title: 'صوت بدون فقدان',
-          description: 'يستخدم WAV ضغطًا بدون فقدان، مما يحافظ على جميع تفاصيل الصوت الأصلي، وهو الخيار الأول لعشاق الصوت والمحترفين.'
-        },
-        {
-          title: 'تحرير احترافي',
-          description: 'برامج تحرير الصوت الاحترافية مثل Adobe Audition و Pro Tools تدعم WAV بشكل تفضيلي.'
-        },
-        {
-          title: 'توافق واسع',
-          description: 'تدعم جميع مشغلات الصوت وأنظمة التشغيل تقريبًا تنسيق WAV.'
-        },
-        {
-          title: 'أرشفة التسجيلات',
-          description: 'WAV هو التنسيق المثالي لملفات التسجيل.'
-        }
-      ]
-    },
+    // إعدادات الجودة
+    bitrateTitle: 'إعدادات عمق البت',
+    bitrateLabel: 'عمق البت: {bitrate} bit',
+    bitrateSlider: 'شريط عمق البت',
+    bitrate16: '16 bit (جودة CD)',
+    bitrate24: '24 bit (جودة احترافية)',
+    bitrate32: '32 bit (جودة استوديو)',
     
-    howToUse: {
-      title: 'كيفية استخدام محول الصوت إلى WAV',
-      steps: [
-        {
-          step: 'الخطوة 1',
-          description: 'اختر أو اسحب الملفات الصوتية التي تريد تحويلها.'
-        },
-        {
-          step: 'الخطوة 2',
-          description: 'اضبط معدل العينة وعمق البت والقنوات حسب الحاجة.'
-        },
-        {
-          step: 'الخطوة 3',
-          description: 'انقر على "بدء التحويل" وانتظر الاكتمال.'
-        },
-        {
-          step: 'الخطوة 4',
-          description: 'قم بتنزيل ملف WAV المحول.'
-        }
-      ]
-    },
+    // إعدادات معدل العينات
+    sampleRateTitle: 'إعدادات معدل العينات',
+    sampleRateLabel: 'معدل العينات: {rate} Hz',
+    sampleRateAuto: 'تلقائي (الحفاظ على الأصل)',
+    sampleRate44100: '44100 Hz (جودة CD)',
+    sampleRate48000: '48000 Hz (جودة احترافية)',
+    sampleRate22050: '22050 Hz (جودة صوت)',
+    sampleRate96000: '96000 Hz (جودة HD)',
     
-    faqs: [
-      {
-        question: 'ما الفرق بين WAV و MP3؟',
-        answer: 'WAV هو تنسيق بدون فقدان يحافظ على جميع بيانات الصوت، ملفات أكبر لكن جودة أفضل؛ MP3 هو تنسيق مع فقدان، ملفات أصغر لكن يفقد بعض الجودة.'
-      },
-      {
-        question: 'ما معدل العينة الذي يجب أن أختاره؟',
-        answer: 'للاستخدام العام يوصى بـ 44100 هرتز (جودة CD)؛ للتسجيل الاحترافي 48000 هرتز أو أعلى؛ لتسجيل الصوت 22050 هرتز كافٍ.'
-      },
-      {
-        question: 'لماذا ملفات WAV كبيرة جدًا؟',
-        answer: 'WAV هو تنسيق بدون فقدان يحافظ على جميع بيانات الصوت الأصلية بدون ضغط، لذا يكون حجم الملف أكبر.'
-      },
-      {
-        question: 'هل يمكن تحويل WAV إلى تنسيقات أخرى؟',
-        answer: 'نعم، تدعم أداتنا أيضًا تحويل WAV إلى MP3 و M4A وتنسيقات أخرى.'
-      }
-    ],
+    // إعدادات القنوات
+    channelTitle: 'إعدادات القنوات',
+    channelStereo: 'ستيريو',
+    channelMono: 'أحادي',
+    channelAuto: 'تلقائي (الحفاظ على الأصل)',
     
-    relatedTools: [
-      {
-        name: 'تحويل الصوت إلى MP3',
-        description: 'تحويل الصوت إلى تنسيق MP3 بأفضل توافق.',
-        url: 'https://www.ufreetools.com/tools/audio-to-mp3'
-      },
-      {
-        name: 'تحويل الصوت إلى M4A',
-        description: 'تحويل الصوت إلى تنسيق M4A المثالي لأجهزة Apple.',
-        url: 'https://www.ufreetools.com/tools/audio-to-m4a'
-      },
-      {
-        name: 'صورة إلى فن ASCII',
-        description: 'يحول الصور إلى فن أحرف ASCII لإنشاء تأثيرات فنية نصية فريدة.',
-        url: 'https://www.ufreetools.com/tools/image-to-ascii'
-      }
-    ],
+    // إعدادات مستوى الصوت
+    volumeTitle: 'إعدادات مستوى الصوت',
+    volumeLabel: 'مستوى الصوت: {volume}%',
+    volumeNormalize: 'تسوية مستوى الصوت',
     
-    references: [
-      {
-        title: 'ويكيبيديا تنسيق WAV',
-        url: 'https://ar.wikipedia.org/wiki/WAV'
-      },
-      {
-        title: 'أساسيات الصوت الرقمي',
-        url: 'https://www.ufreetools.com/blog/digital-audio-basics'
-      }
-    ]
-  }
-}
+    // معلومات الملف
+    fileSizeEstimate: 'الحجم المقدر للملف: {size}',
+    duration: 'المدة: {duration}',
+    originalFormat: 'الصيغة الأصلية: {format}',
+    originalSize: 'الحجم الأصلي: {size}',
+    convertedSize: 'الحجم المحول: {size}',
+    compressionRatio: 'تغير الحجم: {ratio}%',
+    
+    // المقارنة
+    beforeAfterTitle: 'مقارنة قبل/بعد',
+    beforeLabel: 'الصوت الأصلي',
+    afterLabel: 'معاينة WAV',
+    
+    // نصائح
+    tipsTitle: 'نصائح',
+    tipContent: 'WAV هو صيغة صوت بدون فقدان مثالية لإنتاج الصوت الاحترافي وتحريره. الملفات أكبر لكن جودة الصوت مثالية. الأفضل لمعالجة الصوت اللاحقة، إنتاج الموسيقى، والسيناريوهات التي تتطلب صوت عالي الجودة.',
+    convertError: 'فشل التحويل. يرجى التحقق من صيغة الصوت أو المحاولة مرة أخرى.',
+    processingMultiple: 'معالجة {current}/{total} ملفات صوت...',
+    convertSuccess: 'نجح التحويل!',
+    
+    // البيانات الوصفية
+    metadataTitle: 'البيانات الوصفية (اختياري)',
+    metadataTitle2: 'العنوان',
+    metadataArtist: 'الفنان',
+    metadataAlbum: 'الألبوم',
+    metadataYear: 'السنة',
+    metadataGenre: 'النوع',
+    
+    // خيارات متقدمة
+    advancedTitle: 'خيارات متقدمة',
+    trimAudio: 'قص الصوت',
+    trimStart: 'وقت البداية',
+    trimEnd: 'وقت النهاية',
+    fadeIn: 'تلاشي تدريجي للدخول',
+    fadeOut: 'تلاشي تدريجي للخروج',
+    
+    seoNote: 'أداة تحويل الصوت إلى WAV، محول صيغ الصوت عبر الإنترنت بدون فقدان، MP3 إلى WAV، FLAC إلى WAV، أداة إنتاج الصوت الاحترافي',
+};

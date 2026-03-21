@@ -1,174 +1,85 @@
 export default {
-  name: 'Audio en WAV',
-  description: 'Convertissez divers formats audio en fichiers audio WAV de haute qualité sans perte',
-  longDescription: 'Convertisseur audio en WAV en ligne gratuit. Prend en charge MP3, M4A, FLAC, OGG, AAC, WMA et autres formats vers audio WAV sans perte. Ajustez le taux d\'échantillonnage et les canaux pour maintenir la meilleure qualité.',
-  
-  selectFile: 'Sélectionner un fichier audio',
-  dropFile: 'Ou glissez-déposez les fichiers audio ici',
-  supportedFormats: 'Formats pris en charge : MP3, M4A, FLAC, OGG, AAC, WMA, AMR, AIFF, APE, etc.',
-  
-  converting: 'Conversion en cours...',
-  convertComplete: 'Conversion terminée !',
-  downloadAll: 'Tout télécharger',
-  clearAll: 'Tout effacer',
-  
-  settings: {
-    title: 'Paramètres de conversion',
-    sampleRate: 'Taux d\'échantillonnage',
-    sampleRates: {
-      '22050': '22050 Hz (Qualité voix)',
-      '44100': '44100 Hz (Qualité CD)',
-      '48000': '48000 Hz (Qualité professionnelle)',
-      '96000': '96000 Hz (Haute résolution)',
-      '192000': '192000 Hz (Qualité studio)'
-    },
-    channels: 'Canaux',
-    channelOptions: {
-      stereo: 'Stéréo',
-      mono: 'Mono'
-    },
-    bitDepth: 'Profondeur de bits',
-    bitDepths: {
-      '16': '16 bits (Standard CD)',
-      '24': '24 bits (Professionnel)',
-      '32': '32 bits (Studio)'
-    },
-    volume: 'Volume',
-    volumeLabel: 'Réglage du volume'
-  },
-  
-  errors: {
-    selectFile: 'Veuillez sélectionner un fichier audio',
-    unsupportedFormat: 'Format de fichier non pris en charge',
-    conversionFailed: 'Échec de la conversion, veuillez réessayer',
-    fileTooLarge: 'Fichier trop volumineux, veuillez sélectionner des fichiers de moins de 100 Mo'
-  },
-  
-  fileInfo: {
-    name: 'Nom du fichier',
-    size: 'Taille',
-    duration: 'Durée',
-    format: 'Format original',
-    status: 'Statut',
-    actions: 'Actions'
-  },
-  
-  status: {
-    pending: 'En attente',
-    processing: 'Traitement',
-    completed: 'Terminé',
-    failed: 'Échec'
-  },
-  
-  features: {
-    title: 'Caractéristiques',
-    list: [
-      'Prend en charge plusieurs formats audio vers WAV',
-      'Plusieurs taux d\'échantillonnage (22050Hz-192000Hz)',
-      'Profondeur de bits sélectionnable (16/24/32 bits)',
-      'Support stéréo et mono',
-      'Réglage du volume',
-      'Traitement par lots',
-      'Maintient la qualité originale',
-      'Entièrement gratuit, sans inscription'
-    ]
-  },
-  
-  article: {
-    title: 'Guide du Convertisseur Audio en WAV',
-    subtitle: 'Qu\'est-ce que le format WAV ?',
-    description: 'WAV (Waveform Audio File Format) est un format audio sans perte développé par Microsoft, largement utilisé dans la production audio professionnelle, les studios d\'enregistrement et la radiodiffusion. En tant que l\'un des formats audio numériques les plus originaux, WAV conserve toutes les données audio, offrant une expérience de qualité optimale.',
+    name: 'Audio en WAV - Convertisseur Audio en Ligne Sans Perte',
+    description: 'Outil gratuit en ligne de conversion audio en WAV. Convertissez MP3, FLAC, OGG, AAC, M4A, WMA et plus en format WAV sans perte. Paramètres de fréquence d\'échantillonnage, sélection de profondeur de bit. Traitement par lots. Idéal pour la production et l\'édition audio professionnelles.',
+    inputTitle: 'Audio d\'Entrée',
+    outputTitle: 'Audio WAV Converti',
+    dragTip: 'Glissez-déposez des fichiers audio ici ou cliquez pour télécharger (traitement par lots supporté)',
+    pasteTip: 'Ou appuyez sur Ctrl+V (Cmd+V) pour coller le chemin du fichier audio depuis le presse-papiers',
+    supported: 'Formats supportés: MP3, FLAC, OGG, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: 'Convertir en WAV',
+    converting: 'Conversion...',
+    downloadBtn: 'Télécharger WAV',
+    batchDownload: 'Téléchargement par Lots (ZIP)',
+    noOutput: 'Pas encore de résultats de conversion',
+    loadSample: 'Charger Audio Exemple',
+    preview: 'Prévisualiser Audio',
+    clearAll: 'Tout Effacer',
+    originalAudio: 'Audio Original',
+    deleteAudio: 'Supprimer Audio',
     
-    whyConvert: {
-      title: 'Pourquoi convertir en WAV ?',
-      reasons: [
-        {
-          title: 'Audio sans perte',
-          description: 'WAV utilise une compression sans perte, préservant tous les détails de l\'audio original, le premier choix des audiophiles et des professionnels.'
-        },
-        {
-          title: 'Édition professionnelle',
-          description: 'Les logiciels d\'édition audio professionnels comme Adobe Audition et Pro Tools prennent en charge préférentiellement WAV.'
-        },
-        {
-          title: 'Large compatibilité',
-          description: 'Presque tous les lecteurs audio et systèmes d\'exploitation prennent en charge WAV.'
-        },
-        {
-          title: 'Archive d\'enregistrements',
-          description: 'WAV est le format idéal pour les fichiers d\'enregistrement.'
-        }
-      ]
-    },
+    // Paramètres de qualité
+    bitrateTitle: 'Paramètres de Profondeur de Bit',
+    bitrateLabel: 'Profondeur de Bit: {bitrate} bit',
+    bitrateSlider: 'Curseur de Profondeur de Bit',
+    bitrate16: '16 bit (Qualité CD)',
+    bitrate24: '24 bit (Qualité Professionnelle)',
+    bitrate32: '32 bit (Qualité Studio)',
     
-    howToUse: {
-      title: 'Comment utiliser le convertisseur audio en WAV',
-      steps: [
-        {
-          step: 'Étape 1',
-          description: 'Sélectionnez ou glissez les fichiers audio que vous souhaitez convertir.'
-        },
-        {
-          step: 'Étape 2',
-          description: 'Ajustez le taux d\'échantillonnage, la profondeur de bits et les canaux selon vos besoins.'
-        },
-        {
-          step: 'Étape 3',
-          description: 'Cliquez sur "Démarrer la conversion" et attendez la fin.'
-        },
-        {
-          step: 'Étape 4',
-          description: 'Téléchargez le fichier WAV converti.'
-        }
-      ]
-    },
+    // Paramètres de fréquence d'échantillonnage
+    sampleRateTitle: 'Paramètres de Fréquence d\'Échantillonnage',
+    sampleRateLabel: 'Fréquence d\'Échantillonnage: {rate} Hz',
+    sampleRateAuto: 'Auto (Conserver l\'Original)',
+    sampleRate44100: '44100 Hz (Qualité CD)',
+    sampleRate48000: '48000 Hz (Qualité Professionnelle)',
+    sampleRate22050: '22050 Hz (Qualité Voix)',
+    sampleRate96000: '96000 Hz (Qualité HD)',
     
-    faqs: [
-      {
-        question: 'Quelle est la différence entre WAV et MP3 ?',
-        answer: 'WAV est un format sans perte qui conserve toutes les données audio, fichiers plus volumineux mais meilleure qualité ; MP3 est un format avec perte, fichiers plus petits mais perd en qualité.'
-      },
-      {
-        question: 'Quel taux d\'échantillonnage dois-je choisir ?',
-        answer: 'Pour un usage général, 44100Hz (qualité CD) est recommandé ; pour l\'enregistrement professionnel 48000Hz ou plus ; pour l\'enregistrement vocal 22050Hz suffit.'
-      },
-      {
-        question: 'Pourquoi les fichiers WAV sont-ils si volumineux ?',
-        answer: 'WAV est un format sans perte qui conserve toutes les données audio originales sans compression, donc la taille du fichier est plus importante.'
-      },
-      {
-        question: 'Puis-je convertir WAV en d\'autres formats ?',
-        answer: 'Oui, notre outil prend également en charge la conversion de WAV vers MP3, M4A et d\'autres formats.'
-      }
-    ],
+    // Paramètres de canaux
+    channelTitle: 'Paramètres de Canaux',
+    channelStereo: 'Stéréo',
+    channelMono: 'Mono',
+    channelAuto: 'Auto (Conserver l\'Original)',
     
-    relatedTools: [
-      {
-        name: 'Audio en MP3',
-        description: 'Convertissez l\'audio au format MP3 avec la meilleure compatibilité.',
-        url: 'https://www.ufreetools.com/tools/audio-to-mp3'
-      },
-      {
-        name: 'Audio en M4A',
-        description: 'Convertissez l\'audio au format M4A idéal pour les appareils Apple.',
-        url: 'https://www.ufreetools.com/tools/audio-to-m4a'
-      },
-      {
-        name: 'Image en Art ASCII',
-        description: 'Convertissez des images en art de caractères ASCII pour des effets artistiques uniques.',
-        url: 'https://www.ufreetools.com/tools/image-to-ascii'
-      }
-    ],
+    // Paramètres de volume
+    volumeTitle: 'Paramètres de Volume',
+    volumeLabel: 'Volume: {volume}%',
+    volumeNormalize: 'Normaliser le Volume',
     
-    references: [
-      {
-        title: 'Wikipédia Format WAV',
-        url: 'https://fr.wikipedia.org/wiki/WAV'
-      },
-      {
-        title: 'Fondamentaux de l\'Audio Numérique',
-        url: 'https://www.ufreetools.com/blog/digital-audio-basics'
-      }
-    ]
-  }
-}
+    // Informations fichier
+    fileSizeEstimate: 'Taille estimée du fichier: {size}',
+    duration: 'Durée: {duration}',
+    originalFormat: 'Format original: {format}',
+    originalSize: 'Taille originale: {size}',
+    convertedSize: 'Taille convertie: {size}',
+    compressionRatio: 'Changement de taille: {ratio}%',
+    
+    // Comparaison
+    beforeAfterTitle: 'Comparaison Avant/Après',
+    beforeLabel: 'Audio Original',
+    afterLabel: 'Prévisualisation WAV',
+    
+    // Conseils
+    tipsTitle: 'Conseils',
+    tipContent: 'WAV est un format audio sans perte idéal pour la production et l\'édition audio professionnelles. Les fichiers sont plus volumineux mais la qualité audio est parfaite. Idéal pour la post-production audio, la production musicale et les scénarios nécessitant un audio de haute qualité.',
+    convertError: 'La conversion a échoué. Veuillez vérifier le format audio ou réessayer.',
+    processingMultiple: 'Traitement de {current}/{total} fichiers audio...',
+    convertSuccess: 'Conversion réussie!',
+    
+    // Métadonnées
+    metadataTitle: 'Métadonnées (Optionnel)',
+    metadataTitle2: 'Titre',
+    metadataArtist: 'Artiste',
+    metadataAlbum: 'Album',
+    metadataYear: 'Année',
+    metadataGenre: 'Genre',
+    
+    // Options avancées
+    advancedTitle: 'Options Avancées',
+    trimAudio: 'Rogner l\'Audio',
+    trimStart: 'Temps de Début',
+    trimEnd: 'Temps de Fin',
+    fadeIn: 'Fondu à l\'Ouverture',
+    fadeOut: 'Fondu à la Fermeture',
+    
+    seoNote: 'Convertisseur audio en WAV, convertisseur de format audio en ligne sans perte, MP3 en WAV, FLAC en WAV, outil de production audio professionnelle',
+};
