@@ -2221,6 +2221,39 @@ const allTools = computed(() => [
     icon: 'M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3',
     tags: ['audio', 'convert']
   },
+  {
+    id: 'audio-to-m4a',
+    name: t('tools.audio-to-m4a.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'audio',
+    description: t('tools.audio-to-m4a.description'),
+    path: '/tools/audio-to-m4a',
+    component: 'AudioToM4a',
+    icon: 'M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3',
+    tags: ['audio', 'convert']
+  },
+  {
+    id: 'audio-to-wav',
+    name: t('tools.audio-to-wav.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'audio',
+    description: t('tools.audio-to-wav.description'),
+    path: '/tools/audio-to-wav',
+    component: 'AudioToWav',
+    icon: 'M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3',
+    tags: ['audio', 'convert']
+  },
+  {
+    id: 'audio-to-pcm',
+    name: t('tools.audio-to-pcm.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'audio',
+    description: t('tools.audio-to-pcm.description'),
+    path: '/tools/audio-to-pcm',
+    component: 'AudioToPcm',
+    icon: 'M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3',
+    tags: ['audio', 'convert']
+  },
 ])
 provide('allTools', allTools)
 
