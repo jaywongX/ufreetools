@@ -144,9 +144,7 @@ const lazyComponentMap = {
   'ImageToWebp': () => import('./components/tools/ImageToWebp.vue'),
   'GifCompressor': () => import('./components/tools/GifCompressor.vue'),
   'ImageToTextConverter': () => import('./components/tools/ImageToTextConverter.vue'),
-  'AudioToMp3': () => import('./components/tools/AudioToMp3.vue'),
-  'AudioToM4a': () => import('./components/tools/AudioToM4a.vue'),
-  'AudioToWav': () => import('./components/tools/AudioToWav.vue'),
+
   // 网络与协议
   'ApiRequestTool': () => import('./components/tools/ApiRequestTool.vue'),
   'CorsGenerator': () => import('./components/tools/CorsGenerator.vue'),
@@ -253,6 +251,12 @@ const lazyComponentMap = {
   'PdfDecrypt': () => import('./components/tools/PdfDecrypt.vue'),
   'PdfCompressor': () => import('./components/tools/PdfCompressor.vue'),
   'PdfRotator': () => import('./components/tools/PdfRotator.vue'),
+  
+  // 音频工具
+  'AudioToMp3': () => import('./components/tools/AudioToMp3.vue'),
+  'AudioToM4a': () => import('./components/tools/AudioToM4a.vue'),
+  'AudioToWav': () => import('./components/tools/AudioToWav.vue'),
+  'AudioToPcm': () => import('./components/tools/AudioToPcm.vue'),
 }
 
 // 用异步 IIFE 启动应用
