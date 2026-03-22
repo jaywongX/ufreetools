@@ -182,6 +182,7 @@ import AudioToMp3 from './tools/audio-to-mp3.js'
 import AudioToM4a from './tools/audio-to-m4a.js'
 import AudioToWav from './tools/audio-to-wav.js'
 import AudioToPcm from './tools/audio-to-pcm.js'
+import AudioToMidi from './tools/audio-to-midi.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -367,5 +368,6 @@ export default {
   'audio-to-mp3': AudioToMp3,
   'audio-to-m4a': AudioToM4a,
   'audio-to-wav': AudioToWav,
-  'audio-to-pcm': AudioToPcm
+  'audio-to-pcm': AudioToPcm,
+  'audio-to-midi': AudioToMidi
 };
