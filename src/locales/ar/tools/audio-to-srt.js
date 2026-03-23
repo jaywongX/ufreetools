@@ -1,0 +1,48 @@
+export default {
+    name: 'تحويل الصوت إلى ترجمة SRT - أداة تحويل الصوت إلى ترجمات عبر الإنترنت',
+    description: 'أداة مجانية عبر الإنترنت لتحويل الصوت إلى ترجمات SRT. تدعم WAV وMP3 وFLAC وOGG والمزيد من صيغ الصوت إلى SRT. اكتشاف تلقائي لمقاطع الكلام عبر تحليل طاقة الصوت مع إمكانية ضبط الحساسية وإعدادات مدة الترجمة ومعالجة الدفعات.',
+    inputTitle: 'إدخال الصوت',
+    outputTitle: 'ملفات ترجمة SRT المحولة',
+    dragTip: 'اسحب وأفلت ملفات الصوت هنا أو انقر للرفع (يدعم الدفعات)',
+    supported: 'الصيغ المدعومة: WAV, MP3, FLAC, OGG, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: 'تحويل إلى SRT',
+    converting: 'جارٍ التحويل...',
+    downloadBtn: 'تحميل SRT',
+    batchDownload: 'تحميل دفعة واحدة (ZIP)',
+    noOutput: 'لا توجد نتائج بعد',
+    loadSample: 'تحميل صوت تجريبي',
+    preview: 'معاينة الصوت',
+    clearAll: 'مسح الكل',
+    previewBtn: 'معاينة',
+    previewTitle: 'معاينة الترجمة',
+    subtitleCount: 'عدد الترجمات',
+    duration: 'المدة',
+    fileSize: 'حجم الملف',
+    
+    settingsTitle: 'إعدادات تحويل SRT',
+    sensitivityLabel: 'حساسية الكشف',
+    sensitivityHigh: 'حساسية عالية (للصوت منخفض الصوت)',
+    sensitivityMedium: 'حساسية متوسطة (موصى بها)',
+    sensitivityLow: 'حساسية منخفضة (للصوت المزعج)',
+    
+    maxDurationLabel: 'الحد الأقصى لمدة الترجمة',
+    maxDuration2: 'ثانيتان',
+    maxDuration3: '3 ثوانٍ',
+    maxDuration5: '5 ثوانٍ (موصى بها)',
+    maxDuration10: '10 ثوانٍ',
+    
+    minSilenceLabel: 'الحد الأدنى لفترة الصمت',
+    'minSilence0.3': '0.3 ثانية (كلام سريع)',
+    'minSilence0.5': '0.5 ثانية (موصى بها)',
+    'minSilence0.8': '0.8 ثانية (كلام عادي)',
+    'minSilence1.0': '1.0 ثانية (كلام بطيء)',
+    
+    encodingLabel: 'ترميز الملف',
+    
+    tipsTitle: 'نصائح الاستخدام',
+    tipContent: 'تحلل هذه الأداة طاقة الصوت للكشف تلقائيًا عن مقاطع الكلام وإنشاء رموز زمنية لـ SRT. تحتوي الترجمات المُنشأة على نص نائب يمكنك استبداله بنص حقيقي في برامج تحرير الترجمات.',
+    convertError: 'فشل التحويل. يرجى التحقق من صيغة الصوت أو المحاولة مرة أخرى.',
+    convertSuccess: 'تم التحويل بنجاح!',
+    
+    seoNote: 'أداة تحويل الصوت إلى SRT، محول الصوت إلى ترجمات عبر الإنترنت، WAV إلى SRT، MP3 إلى SRT',
+};

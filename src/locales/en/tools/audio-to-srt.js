@@ -1,0 +1,48 @@
+export default {
+    name: 'Audio to SRT Subtitles - Online Audio to Subtitle Converter',
+    description: 'Free online audio to SRT subtitle converter. Supports WAV, MP3, FLAC, OGG and more audio formats to SRT. Automatically detects speech segments via audio energy analysis with adjustable sensitivity, subtitle duration settings, and batch processing for video subtitling and podcast transcription.',
+    inputTitle: 'Input Audio',
+    outputTitle: 'Converted SRT Subtitle Files',
+    dragTip: 'Drag and drop audio files here or click to upload (batch supported)',
+    supported: 'Supported formats: WAV, MP3, FLAC, OGG, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: 'Convert to SRT',
+    converting: 'Converting...',
+    downloadBtn: 'Download SRT',
+    batchDownload: 'Batch Download (ZIP)',
+    noOutput: 'No conversion results yet',
+    loadSample: 'Load Sample Audio',
+    preview: 'Preview Audio',
+    clearAll: 'Clear All',
+    previewBtn: 'Preview Subtitles',
+    previewTitle: 'Subtitle Preview',
+    subtitleCount: 'Subtitle Count',
+    duration: 'Duration',
+    fileSize: 'File Size',
+    
+    settingsTitle: 'SRT Conversion Settings',
+    sensitivityLabel: 'Detection Sensitivity',
+    sensitivityHigh: 'High Sensitivity (for low-volume audio)',
+    sensitivityMedium: 'Medium Sensitivity (recommended)',
+    sensitivityLow: 'Low Sensitivity (for noisy audio)',
+    
+    maxDurationLabel: 'Max Subtitle Duration',
+    maxDuration2: '2 seconds',
+    maxDuration3: '3 seconds',
+    maxDuration5: '5 seconds (recommended)',
+    maxDuration10: '10 seconds',
+    
+    minSilenceLabel: 'Minimum Silence Gap',
+    'minSilence0.3': '0.3s (fast speech)',
+    'minSilence0.5': '0.5s (recommended)',
+    'minSilence0.8': '0.8s (normal speech)',
+    'minSilence1.0': '1.0s (slow speech)',
+    
+    encodingLabel: 'File Encoding',
+    
+    tipsTitle: 'Usage Tips',
+    tipContent: 'This tool analyzes audio energy to automatically detect speech segments and generate SRT timecodes. The generated subtitles contain placeholder text that you can replace with actual text in subtitle editing software. For best results, use clear audio with minimal background noise.',
+    convertError: 'Conversion failed. Please check the audio format or try again.',
+    convertSuccess: 'Conversion successful!',
+    
+    seoNote: 'Audio to SRT subtitle tool, online audio to subtitle converter, auto generate subtitles from audio, WAV to SRT, MP3 to SRT, video subtitle maker',
+};

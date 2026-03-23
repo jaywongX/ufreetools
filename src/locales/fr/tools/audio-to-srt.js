@@ -1,0 +1,48 @@
+export default {
+    name: 'Audio en SRT - Convertisseur Audio en Sous-titres en Ligne',
+    description: 'Convertisseur audio en SRT gratuit en ligne. Convertit WAV, MP3, FLAC, OGG et plus en SRT. Détection automatique des segments vocaux par analyse d\'énergie audio avec sensibilité réglable, paramètres de durée et traitement par lots.',
+    inputTitle: 'Audio d\'Entrée',
+    outputTitle: 'Fichiers SRT Convertis',
+    dragTip: 'Glissez-déposez vos fichiers audio ici ou cliquez pour charger (lots supportés)',
+    supported: 'Formats supportés : WAV, MP3, FLAC, OGG, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: 'Convertir en SRT',
+    converting: 'Conversion en cours...',
+    downloadBtn: 'Télécharger SRT',
+    batchDownload: 'Téléchargement par lots (ZIP)',
+    noOutput: 'Aucun résultat pour le moment',
+    loadSample: 'Charger un exemple',
+    preview: 'Aperçu audio',
+    clearAll: 'Tout effacer',
+    previewBtn: 'Aperçu',
+    previewTitle: 'Aperçu des sous-titres',
+    subtitleCount: 'Nombre de sous-titres',
+    duration: 'Durée',
+    fileSize: 'Taille du fichier',
+    
+    settingsTitle: 'Paramètres de conversion SRT',
+    sensitivityLabel: 'Sensibilité de détection',
+    sensitivityHigh: 'Haute sensibilité (audio faible volume)',
+    sensitivityMedium: 'Sensibilité moyenne (recommandée)',
+    sensitivityLow: 'Basse sensibilité (audio bruité)',
+    
+    maxDurationLabel: 'Durée maximale des sous-titres',
+    maxDuration2: '2 secondes',
+    maxDuration3: '3 secondes',
+    maxDuration5: '5 secondes (recommandé)',
+    maxDuration10: '10 secondes',
+    
+    minSilenceLabel: 'Intervalle de silence minimum',
+    'minSilence0.3': '0.3s (parole rapide)',
+    'minSilence0.5': '0.5s (recommandé)',
+    'minSilence0.8': '0.8s (parole normale)',
+    'minSilence1.0': '1.0s (parole lente)',
+    
+    encodingLabel: 'Encodage du fichier',
+    
+    tipsTitle: 'Conseils d\'utilisation',
+    tipContent: 'Cet outil analyse l\'énergie audio pour détecter automatiquement les segments vocaux et générer des codes temporels SRT. Les sous-titres générés contiennent un texte fictif remplaçable dans un éditeur de sous-titres.',
+    convertError: 'Échec de la conversion. Vérifiez le format audio ou réessayez.',
+    convertSuccess: 'Conversion réussie !',
+    
+    seoNote: 'Outil audio en SRT, convertisseur audio en sous-titres en ligne, WAV en SRT, MP3 en SRT',
+};

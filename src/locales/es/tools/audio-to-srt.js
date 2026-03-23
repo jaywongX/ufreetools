@@ -1,0 +1,48 @@
+export default {
+    name: 'Audio a SRT - Convertidor de Audio a Subtítulos en Línea',
+    description: 'Convertidor gratuito de audio a subtítulos SRT en línea. Convierte WAV, MP3, FLAC, OGG y más formatos de audio a SRT. Detecta segmentos de voz automáticamente mediante análisis de energía con sensibilidad ajustable, configuración de duración de subtítulos y procesamiento por lotes.',
+    inputTitle: 'Audio de Entrada',
+    outputTitle: 'Archivos SRT Convertidos',
+    dragTip: 'Arrastra y suelta archivos de audio aquí o haz clic para subir (lotes soportados)',
+    supported: 'Formatos soportados: WAV, MP3, FLAC, OGG, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: 'Convertir a SRT',
+    converting: 'Convirtiendo...',
+    downloadBtn: 'Descargar SRT',
+    batchDownload: 'Descarga por Lotes (ZIP)',
+    noOutput: 'Sin resultados de conversión',
+    loadSample: 'Cargar Audio de Ejemplo',
+    preview: 'Vista Previa del Audio',
+    clearAll: 'Borrar Todo',
+    previewBtn: 'Vista Previa',
+    previewTitle: 'Vista Previa de Subtítulos',
+    subtitleCount: 'Cantidad de Subtítulos',
+    duration: 'Duración',
+    fileSize: 'Tamaño del Archivo',
+    
+    settingsTitle: 'Configuración de Conversión SRT',
+    sensitivityLabel: 'Sensibilidad de Detección',
+    sensitivityHigh: 'Alta sensibilidad (para audio de bajo volumen)',
+    sensitivityMedium: 'Sensibilidad media (recomendada)',
+    sensitivityLow: 'Baja sensibilidad (para audio con ruido)',
+    
+    maxDurationLabel: 'Duración Máxima del Subtítulo',
+    maxDuration2: '2 segundos',
+    maxDuration3: '3 segundos',
+    maxDuration5: '5 segundos (recomendado)',
+    maxDuration10: '10 segundos',
+    
+    minSilenceLabel: 'Intervalo Mínimo de Silencio',
+    'minSilence0.3': '0.3s (habla rápida)',
+    'minSilence0.5': '0.5s (recomendado)',
+    'minSilence0.8': '0.8s (habla normal)',
+    'minSilence1.0': '1.0s (habla lenta)',
+    
+    encodingLabel: 'Codificación del Archivo',
+    
+    tipsTitle: 'Consejos de Uso',
+    tipContent: 'Esta herramienta analiza la energía del audio para detectar automáticamente segmentos de voz y generar códigos de tiempo SRT. Los subtítulos generados contienen texto de marcador de posición que puede reemplazar con texto real en software de edición de subtítulos.',
+    convertError: 'Error en la conversión. Verifique el formato de audio o intente de nuevo.',
+    convertSuccess: '¡Conversión exitosa!',
+    
+    seoNote: 'Herramienta de audio a SRT, convertidor de audio a subtítulos en línea, generar subtítulos automáticamente, WAV a SRT, MP3 a SRT',
+};
