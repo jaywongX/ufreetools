@@ -1,0 +1,48 @@
+export default {
+    name: '音頻轉SRT字幕 - 線上音頻轉字幕工具',
+    description: '免費線上音頻轉SRT字幕工具，支援WAV、MP3、FLAC、OGG等多種音頻格式轉換為SRT字幕檔案。透過音頻能量檢測自動識別語音段落，支援靈敏度調節、字幕時長設定、批次處理功能，適合影片字幕製作、Podcast轉文字等場景。',
+    inputTitle: '輸入音頻',
+    outputTitle: '轉換後的SRT字幕檔案',
+    dragTip: '拖放音頻檔案到這裡或點擊上傳（支援批次）',
+    supported: '支援的格式: WAV, MP3, FLAC, OGG, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: '轉換為SRT',
+    converting: '正在轉換...',
+    downloadBtn: '下載SRT',
+    batchDownload: '批次下載 (ZIP)',
+    noOutput: '暫無轉換結果',
+    loadSample: '載入示例音頻',
+    preview: '預覽音頻',
+    clearAll: '清除全部',
+    previewBtn: '預覽字幕',
+    previewTitle: '字幕預覽',
+    subtitleCount: '字幕數量',
+    duration: '時長',
+    fileSize: '檔案大小',
+    
+    settingsTitle: 'SRT轉換設定',
+    sensitivityLabel: '檢測靈敏度',
+    sensitivityHigh: '高靈敏度（適合低音量音頻）',
+    sensitivityMedium: '中等靈敏度（推薦）',
+    sensitivityLow: '低靈敏度（適合高噪音音頻）',
+    
+    maxDurationLabel: '最大字幕時長',
+    maxDuration2: '2秒',
+    maxDuration3: '3秒',
+    maxDuration5: '5秒（推薦）',
+    maxDuration10: '10秒',
+    
+    minSilenceLabel: '最小靜音間隔',
+    'minSilence0.3': '0.3秒（快速語速）',
+    'minSilence0.5': '0.5秒（推薦）',
+    'minSilence0.8': '0.8秒（正常語速）',
+    'minSilence1.0': '1.0秒（慢速語速）',
+    
+    encodingLabel: '檔案編碼',
+    
+    tipsTitle: '使用小貼士',
+    tipContent: '本工具透過分析音頻能量來自動檢測語音段落並生成SRT時間碼。生成的字幕為佔位文字，您可以後續在字幕編輯軟體中替換為實際文字。建議使用清晰、背景噪音小的音頻以獲得更準確的時間碼。',
+    convertError: '轉換失敗，請檢查音頻格式或重試。',
+    convertSuccess: '轉換成功！',
+    
+    seoNote: '音頻轉SRT字幕工具、線上音頻轉字幕轉換器、音頻自動生成字幕、WAV轉SRT、MP3轉SRT、影片字幕製作工具',
+};

@@ -259,6 +259,7 @@ const lazyComponentMap = {
   'AudioToPcm': () => import('./components/tools/AudioToPcm.vue'),
   'AudioToMidi': () => import('./components/tools/AudioToMidi.vue'),
   'AudioToAnimate': () => import('./components/tools/AudioToAnimate.vue'),
+  'AudioToSrt': () => import('./components/tools/AudioToSrt.vue'),
 }
 
 // 用异步 IIFE 启动应用

@@ -2276,6 +2276,17 @@ const allTools = computed(() => [
     icon: 'M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     tags: ['audio', 'convert']
   },
+  {
+    id: 'audio-to-srt',
+    name: t('tools.audio-to-srt.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'audio',
+    description: t('tools.audio-to-srt.description'),
+    path: '/tools/audio-to-srt',
+    component: 'AudioToSrt',
+    icon: 'M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z',
+    tags: ['audio', 'convert']
+  },
 ])
 provide('allTools', allTools)
 
