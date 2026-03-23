@@ -257,6 +257,8 @@ const lazyComponentMap = {
   'AudioToM4a': () => import('./components/tools/AudioToM4a.vue'),
   'AudioToWav': () => import('./components/tools/AudioToWav.vue'),
   'AudioToPcm': () => import('./components/tools/AudioToPcm.vue'),
+  'AudioToMidi': () => import('./components/tools/AudioToMidi.vue'),
+  'AudioToAnimate': () => import('./components/tools/AudioToAnimate.vue'),
 }
 
 // 用异步 IIFE 启动应用

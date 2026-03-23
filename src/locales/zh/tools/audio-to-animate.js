@@ -1,0 +1,65 @@
+export default {
+    name: '音频转动画 - 在线音频可视化动画生成工具',
+    description: '免费在线音频转动画工具，支持WAV、MP3、FLAC、OGG等多种音频格式转换为可视化动画。提供多种动画风格、颜色自定义、导出GIF/视频功能，适合音乐可视化、社交媒体分享等场景。',
+    inputTitle: '输入音频',
+    outputTitle: '生成的动画',
+    dragTip: '拖放音频文件到这里或点击上传（支持批量）',
+    supported: '支持的格式: WAV, MP3, FLAC, OGG, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: '生成动画',
+    converting: '正在生成动画...',
+    downloadBtn: '下载动画',
+    batchDownload: '批量下载 (ZIP)',
+    noOutput: '暂无生成结果',
+    loadSample: '加载示例音频',
+    preview: '预览音频',
+    clearAll: '清除全部',
+    previewBtn: '预览动画',
+    duration: '时长',
+    frameCount: '帧数',
+    
+    // 设置选项
+    settingsTitle: '动画设置',
+    styleLabel: '动画风格',
+    styleWave: '波形动画',
+    styleBars: '频谱条形',
+    styleCircle: '圆形频谱',
+    styleParticles: '粒子效果',
+    styleWaveform: '波形线条',
+    
+    colorLabel: '配色方案',
+    colorGradient: '渐变色彩',
+    colorRainbow: '彩虹色',
+    colorNeon: '霓虹灯',
+    colorOcean: '海洋蓝',
+    colorSunset: '日落橙',
+    colorCustom: '自定义颜色',
+    
+    resolutionLabel: '输出分辨率',
+    resolution480: '480p (854x480)',
+    resolution720: '720p (1280x720)',
+    resolution1080: '1080p (1920x1080)',
+    resolutionSquare: '正方形 (1080x1080)',
+    
+    fpsLabel: '帧率',
+    fps24: '24 FPS',
+    fps30: '30 FPS',
+    fps60: '60 FPS',
+    
+    durationLabel: '动画时长',
+    durationFull: '完整音频',
+    duration15: '15秒',
+    duration30: '30秒',
+    duration60: '60秒',
+    
+    backgroundColor: '背景颜色',
+    primaryColor: '主色调',
+    secondaryColor: '辅助色',
+    
+    // 提示信息
+    tipsTitle: '使用小贴士',
+    tipContent: '动画生成效果取决于音频的节奏和频率变化。节奏感强的音乐会产生更丰富的动画效果。建议使用高质量的音频文件以获得最佳视觉效果。短视频适合社交媒体分享。',
+    convertError: '动画生成失败，请检查音频格式或重试。',
+    convertSuccess: '动画生成成功！',
+    
+    seoNote: '音频转动画工具、在线音频可视化生成器、音乐可视化、音频转GIF、音频转视频、社交媒体音乐动画',
+};
