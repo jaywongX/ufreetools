@@ -32,10 +32,10 @@ export default {
     maxDuration10: '10 секунд',
     
     minSilenceLabel: 'Минимальная пауза',
-    'minSilence0.3': '0.3с (быстрая речь)',
-    'minSilence0.5': '0.5с (рекомендуется)',
-    'minSilence0.8': '0.8с (нормальная речь)',
-    'minSilence1.0': '1.0с (медленная речь)',
+    'minSilence03': '0.3с (быстрая речь)',
+    'minSilence05': '0.5с (рекомендуется)',
+    'minSilence08': '0.8с (нормальная речь)',
+    'minSilence10': '1.0с (медленная речь)',
     
     encodingLabel: 'Кодировка файла',
     

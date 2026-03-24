@@ -33,10 +33,10 @@ export default {
     maxDuration10: '10秒',
     
     minSilenceLabel: '最小無音間隔',
-    'minSilence0.3': '0.3秒（速い話速）',
-    'minSilence0.5': '0.5秒（推奨）',
-    'minSilence0.8': '0.8秒（通常の話速）',
-    'minSilence1.0': '1.0秒（遅い話速）',
+    'minSilence03': '0.3秒（速い話速）',
+    'minSilence05': '0.5秒（推奨）',
+    'minSilence08': '0.8秒（通常の話速）',
+    'minSilence10': '1.0秒（遅い話速）',
     
     encodingLabel: 'ファイルエンコーディング',
     

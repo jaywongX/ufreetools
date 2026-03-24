@@ -33,10 +33,10 @@ export default {
     maxDuration10: '10 Sekunden',
     
     minSilenceLabel: 'Minimales Stille-Intervall',
-    'minSilence0.3': '0,3 Sekunden (schnelles Sprechen)',
-    'minSilence0.5': '0,5 Sekunden (empfohlen)',
-    'minSilence0.8': '0,8 Sekunden (normales Sprechen)',
-    'minSilence1.0': '1,0 Sekunde (langsames Sprechen)',
+    'minSilence03': '0,3 Sekunden (schnelles Sprechen)',
+    'minSilence05': '0,5 Sekunden (empfohlen)',
+    'minSilence08': '0,8 Sekunden (normales Sprechen)',
+    'minSilence10': '1,0 Sekunde (langsames Sprechen)',
     
     encodingLabel: 'Dateikodierung',
     

@@ -33,10 +33,10 @@ export default {
     maxDuration10: '10 detik',
     
     minSilenceLabel: 'Interval Diam Minimum',
-    'minSilence0.3': '0,3 detik (bicara cepat)',
-    'minSilence0.5': '0,5 detik (direkomendasikan)',
-    'minSilence0.8': '0,8 detik (kecepatan normal)',
-    'minSilence1.0': '1,0 detik (bicara lambat)',
+    'minSilence03': '0,3 detik (bicara cepat)',
+    'minSilence05': '0,5 detik (direkomendasikan)',
+    'minSilence08': '0,8 detik (kecepatan normal)',
+    'minSilence10': '1,0 detik (bicara lambat)',
     
     encodingLabel: 'Encoding File',
     

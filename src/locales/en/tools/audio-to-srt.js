@@ -32,10 +32,10 @@ export default {
     maxDuration10: '10 seconds',
     
     minSilenceLabel: 'Minimum Silence Gap',
-    'minSilence0.3': '0.3s (fast speech)',
-    'minSilence0.5': '0.5s (recommended)',
-    'minSilence0.8': '0.8s (normal speech)',
-    'minSilence1.0': '1.0s (slow speech)',
+    'minSilence03': '0.3s (fast speech)',
+    'minSilence05': '0.5s (recommended)',
+    'minSilence08': '0.8s (normal speech)',
+    'minSilence10': '1.0s (slow speech)',
     
     encodingLabel: 'File Encoding',
     

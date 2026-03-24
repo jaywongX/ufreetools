@@ -2287,6 +2287,17 @@ const allTools = computed(() => [
     icon: 'M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z',
     tags: ['audio', 'convert']
   },
+  {
+    id: 'audio-to-flac',
+    name: t('tools.audio-to-flac.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'audio',
+    description: t('tools.audio-to-flac.description'),
+    path: '/tools/audio-to-flac',
+    component: 'AudioToFlac',
+    icon: 'M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z',
+    tags: ['audio', 'convert']
+  },
 ])
 provide('allTools', allTools)
 

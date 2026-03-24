@@ -32,10 +32,10 @@ export default {
     maxDuration10: '10秒',
     
     minSilenceLabel: '最小靜音間隔',
-    'minSilence0.3': '0.3秒（快速語速）',
-    'minSilence0.5': '0.5秒（推薦）',
-    'minSilence0.8': '0.8秒（正常語速）',
-    'minSilence1.0': '1.0秒（慢速語速）',
+    'minSilence03': '0.3秒（快速語速）',
+    'minSilence05': '0.5秒（推薦）',
+    'minSilence08': '0.8秒（正常語速）',
+    'minSilence10': '1.0秒（慢速語速）',
     
     encodingLabel: '檔案編碼',
     

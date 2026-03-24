@@ -32,10 +32,10 @@ export default {
     maxDuration10: '10 segundos',
     
     minSilenceLabel: 'Intervalo Mínimo de Silencio',
-    'minSilence0.3': '0.3s (habla rápida)',
-    'minSilence0.5': '0.5s (recomendado)',
-    'minSilence0.8': '0.8s (habla normal)',
-    'minSilence1.0': '1.0s (habla lenta)',
+    'minSilence03': '0.3s (habla rápida)',
+    'minSilence05': '0.5s (recomendado)',
+    'minSilence08': '0.8s (habla normal)',
+    'minSilence10': '1.0s (habla lenta)',
     
     encodingLabel: 'Codificación del Archivo',
     

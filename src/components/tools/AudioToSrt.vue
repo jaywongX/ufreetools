@@ -106,10 +106,10 @@
                             {{ $t('tools.audio-to-srt.minSilenceLabel') }}
                         </label>
                         <select v-model="minSilence" class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600">
-                            <option value="0.3">{{ $t('tools.audio-to-srt.minSilence0.3') }}</option>
-                            <option value="0.5">{{ $t('tools.audio-to-srt.minSilence0.5') }}</option>
-                            <option value="0.8">{{ $t('tools.audio-to-srt.minSilence0.8') }}</option>
-                            <option value="1.0">{{ $t('tools.audio-to-srt.minSilence1.0') }}</option>
+                            <option value="0.3">{{ $t('tools.audio-to-srt.minSilence03') }}</option>
+                            <option value="0.5">{{ $t('tools.audio-to-srt.minSilence05') }}</option>
+                            <option value="0.8">{{ $t('tools.audio-to-srt.minSilence08') }}</option>
+                            <option value="1.0">{{ $t('tools.audio-to-srt.minSilence10') }}</option>
                         </select>
                     </div>
                     

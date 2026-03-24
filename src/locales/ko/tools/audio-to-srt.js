@@ -33,10 +33,10 @@ export default {
     maxDuration10: '10초',
     
     minSilenceLabel: '최소 무음 간격',
-    'minSilence0.3': '0.3초 (빠른 말하기)',
-    'minSilence0.5': '0.5초 (권장)',
-    'minSilence0.8': '0.8초 (보통 속도)',
-    'minSilence1.0': '1.0초 (느린 말하기)',
+    'minSilence03': '0.3초 (빠른 말하기)',
+    'minSilence05': '0.5초 (권장)',
+    'minSilence08': '0.8초 (보통 속도)',
+    'minSilence10': '1.0초 (느린 말하기)',
     
     encodingLabel: '파일 인코딩',
     
