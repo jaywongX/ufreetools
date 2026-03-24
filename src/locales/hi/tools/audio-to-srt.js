@@ -32,10 +32,10 @@ export default {
     maxDuration10: '10 सेकंड',
     
     minSilenceLabel: 'न्यूनतम शांति अंतराल',
-    'minSilence0.3': '0.3s (तेज बोली)',
-    'minSilence0.5': '0.5s (अनुशंसित)',
-    'minSilence0.8': '0.8s (सामान्य बोली)',
-    'minSilence1.0': '1.0s (धीमी बोली)',
+    'minSilence03': '0.3s (तेज बोली)',
+    'minSilence05': '0.5s (अनुशंसित)',
+    'minSilence08': '0.8s (सामान्य बोली)',
+    'minSilence10': '1.0s (धीमी बोली)',
     
     encodingLabel: 'फ़ाइल एन्कोडिंग',
     

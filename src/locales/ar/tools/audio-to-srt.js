@@ -32,10 +32,10 @@ export default {
     maxDuration10: '10 ثوانٍ',
     
     minSilenceLabel: 'الحد الأدنى لفترة الصمت',
-    'minSilence0.3': '0.3 ثانية (كلام سريع)',
-    'minSilence0.5': '0.5 ثانية (موصى بها)',
-    'minSilence0.8': '0.8 ثانية (كلام عادي)',
-    'minSilence1.0': '1.0 ثانية (كلام بطيء)',
+    'minSilence03': '0.3 ثانية (كلام سريع)',
+    'minSilence05': '0.5 ثانية (موصى بها)',
+    'minSilence08': '0.8 ثانية (كلام عادي)',
+    'minSilence10': '1.0 ثانية (كلام بطيء)',
     
     encodingLabel: 'ترميز الملف',
     
