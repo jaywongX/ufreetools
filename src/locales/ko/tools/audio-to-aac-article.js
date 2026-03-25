@@ -1,0 +1,20 @@
+export default {
+    title: '오디오를 AAC로: 가이드',
+    functionTitle: '오디오를 AAC로란?',
+    intro: '우리의 <strong>오디오를 AAC로</strong> 도구는 다양한 오디오 형식을 AAC로 변환합니다.',
+    useCasesTitle: '사용 사례',
+    useCases: ['모바일 변환', '공간 절약'],
+    tipTitle: '팁:',
+    tipContent: 'AAC가 MP3보다 효율적입니다.',
+    conclusion: '<strong>오디오를 AAC로</strong>는 모두에게 유용합니다.',
+    faqTitle: 'FAQ',
+    faqs: [{ question: '형식?', answer: 'WAV, MP3, FLAC 등.' }],
+    tutorialTitle: '지침',
+    steps: [{ title: '업로드', description: '파일', note: 'OK' }],
+    successTitle: '완료!',
+    successContent: '성공.',
+    relatedToolsTitle: '관련',
+    relatedTools: [{ name: 'MP3', description: 'MP3', url: 'https://www.ufreetools.com/tool/audio-to-mp3' }],
+    referencesTitle: '참조',
+    references: [{ name: 'AAC', description: 'AAC', url: 'https://en.wikipedia.org/wiki/Advanced_Audio_Coding' }]
+};

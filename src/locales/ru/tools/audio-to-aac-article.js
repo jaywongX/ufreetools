@@ -1,0 +1,20 @@
+export default {
+    title: 'Аудио в AAC: Руководство',
+    functionTitle: 'Что такое Аудио в AAC?',
+    intro: 'Наш инструмент <strong>Аудио в AAC</strong> конвертирует различные аудио форматы в AAC.',
+    useCasesTitle: 'Случаи использования',
+    useCases: ['Конвертация для мобильных устройств', 'Экономия места'],
+    tipTitle: 'Совет:',
+    tipContent: 'AAC эффективнее MP3.',
+    conclusion: '<strong>Аудио в AAC</strong> полезно для всех.',
+    faqTitle: 'FAQ',
+    faqs: [{ question: 'Форматы?', answer: 'WAV, MP3, FLAC и др.' }],
+    tutorialTitle: 'Инструкция',
+    steps: [{ title: 'Загрузите', description: 'Файлы', note: 'OK' }],
+    successTitle: 'Готово!',
+    successContent: 'Успешно.',
+    relatedToolsTitle: 'Связанные',
+    relatedTools: [{ name: 'MP3', description: 'MP3', url: 'https://www.ufreetools.com/tool/audio-to-mp3' }],
+    referencesTitle: 'Ссылки',
+    references: [{ name: 'AAC', description: 'AAC', url: 'https://en.wikipedia.org/wiki/Advanced_Audio_Coding' }]
+};

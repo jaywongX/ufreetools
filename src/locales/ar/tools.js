@@ -186,6 +186,7 @@ import AudioToMidi from './tools/audio-to-midi.js'
 import AudioToAnimate from './tools/audio-to-animate.js'
 import AudioToSrt from './tools/audio-to-srt.js'
 import AudioToFlac from './tools/audio-to-flac.js'
+import AudioToAac from './tools/audio-to-aac.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -375,5 +376,6 @@ export default {
   'audio-to-midi': AudioToMidi,
   'audio-to-animate': AudioToAnimate,
   'audio-to-srt': AudioToSrt,
-  'audio-to-flac': AudioToFlac
+  'audio-to-flac': AudioToFlac,
+  'audio-to-aac': AudioToAac
 };
