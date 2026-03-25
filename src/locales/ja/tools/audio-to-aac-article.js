@@ -1,0 +1,20 @@
+export default {
+    title: 'オーディオからAAC: ガイド',
+    functionTitle: 'オーディオからAACとは?',
+    intro: '私たちの<strong>オーディオからAAC</strong>ツールは様々なオーディオ形式をAACに変換します。',
+    useCasesTitle: '使用例',
+    useCases: ['モバイル用変換', '容量節約'],
+    tipTitle: 'ヒント:',
+    tipContent: 'AACはMP3より効率的です。',
+    conclusion: '<strong>オーディオからAAC</strong>は全員に役立ちます。',
+    faqTitle: 'FAQ',
+    faqs: [{ question: '形式?', answer: 'WAV, MP3, FLACなど。' }],
+    tutorialTitle: '手順',
+    steps: [{ title: 'アップロード', description: 'ファイル', note: 'OK' }],
+    successTitle: '完了!',
+    successContent: '成功。',
+    relatedToolsTitle: '関連',
+    relatedTools: [{ name: 'MP3', description: 'MP3', url: 'https://www.ufreetools.com/tool/audio-to-mp3' }],
+    referencesTitle: '参照',
+    references: [{ name: 'AAC', description: 'AAC', url: 'https://en.wikipedia.org/wiki/Advanced_Audio_Coding' }]
+};

@@ -1,0 +1,20 @@
+export default {
+    title: 'Audio zu AAC: Anleitung',
+    functionTitle: 'Was ist Audio zu AAC?',
+    intro: 'Unser Tool <strong>Audio zu AAC</strong> konvertiert verschiedene Audioformate in AAC.',
+    useCasesTitle: 'Anwendungsfälle',
+    useCases: ['Mobile Konvertierung', 'Platzsparen'],
+    tipTitle: 'Tipp:',
+    tipContent: 'AAC ist effizienter als MP3.',
+    conclusion: '<strong>Audio zu AAC</strong> ist für alle nützlich.',
+    faqTitle: 'FAQ',
+    faqs: [{ question: 'Formate?', answer: 'WAV, MP3, FLAC und andere.' }],
+    tutorialTitle: 'Anleitung',
+    steps: [{ title: 'Laden', description: 'Dateien', note: 'OK' }],
+    successTitle: 'Fertig!',
+    successContent: 'Erfolg.',
+    relatedToolsTitle: 'Verwandte',
+    relatedTools: [{ name: 'MP3', description: 'MP3', url: 'https://www.ufreetools.com/tool/audio-to-mp3' }],
+    referencesTitle: 'Referenzen',
+    references: [{ name: 'AAC', description: 'AAC', url: 'https://en.wikipedia.org/wiki/Advanced_Audio_Coding' }]
+};

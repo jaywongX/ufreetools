@@ -1,0 +1,20 @@
+export default {
+    title: 'Audio ke AAC: Panduan',
+    functionTitle: 'Apa itu Audio ke AAC?',
+    intro: 'Tool <strong>Audio ke AAC</strong> kami mengkonversi berbagai format audio ke AAC.',
+    useCasesTitle: 'Kasus penggunaan',
+    useCases: ['Konversi untuk mobile', 'Hemat ruang'],
+    tipTitle: 'Tip:',
+    tipContent: 'AAC lebih efisien dari MP3.',
+    conclusion: '<strong>Audio ke AAC</strong> berguna untuk semua.',
+    faqTitle: 'FAQ',
+    faqs: [{ question: 'Format?', answer: 'WAV, MP3, FLAC dan lainnya.' }],
+    tutorialTitle: 'Instruksi',
+    steps: [{ title: 'Unggah', description: 'File', note: 'OK' }],
+    successTitle: 'Selesai!',
+    successContent: 'Sukses.',
+    relatedToolsTitle: 'Terkait',
+    relatedTools: [{ name: 'MP3', description: 'MP3', url: 'https://www.ufreetools.com/tool/audio-to-mp3' }],
+    referencesTitle: 'Referensi',
+    references: [{ name: 'AAC', description: 'AAC', url: 'https://en.wikipedia.org/wiki/Advanced_Audio_Coding' }]
+};
