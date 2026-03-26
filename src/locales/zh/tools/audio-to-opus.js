@@ -1,0 +1,50 @@
+export default {
+    name: '音频转Opus - 在线音频转Opus转换工具',
+    description: '免费在线音频转Opus工具，支持WAV、MP3、FLAC、OGG等多种音频格式转换为Opus。提供比特率调节、采样率设置、批量处理功能，适合网络传输、语音通话等场景。',
+    inputTitle: '输入音频',
+    outputTitle: '转换后的Opus文件',
+    dragTip: '拖放音频文件到这里或点击上传（支持批量）',
+    supported: '支持的格式: WAV, MP3, FLAC, OGG, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: '转换为Opus',
+    converting: '正在转换...',
+    downloadBtn: '下载Opus',
+    batchDownload: '批量下载 (ZIP)',
+    noOutput: '暂无转换结果',
+    loadSample: '加载示例音频',
+    preview: '预览音频',
+    clearAll: '清除全部',
+    originalSize: '原始大小',
+    convertedSize: '转换后大小',
+    
+    // 设置选项
+    bitrateTitle: '比特率设置',
+    bitrate16: '16 kbps (语音)',
+    bitrate24: '24 kbps (低质量)',
+    bitrate32: '32 kbps (标准语音)',
+    bitrate48: '48 kbps (高质量语音)',
+    bitrate64: '64 kbps (标准音乐)',
+    bitrate96: '96 kbps (高质量)',
+    bitrate128: '128 kbps (高质量音乐)',
+    bitrate192: '192 kbps (超高质量)',
+    bitrate256: '256 kbps (极高质量)',
+    
+    sampleRateTitle: '采样率设置',
+    sampleRateAuto: '自动检测',
+    sampleRate8000: '8000 Hz (电话质量)',
+    sampleRate12000: '12000 Hz (宽带语音)',
+    sampleRate16000: '16000 Hz (高清语音)',
+    sampleRate24000: '24000 Hz (高质量语音)',
+    sampleRate48000: '48000 Hz (专业音频)',
+    
+    channelsTitle: '声道设置',
+    channelsMono: '单声道',
+    channelsStereo: '立体声',
+    
+    // 提示信息
+    tipsTitle: '使用小贴士',
+    tipContent: 'Opus是一种高效的音频编码格式，特别适合网络传输。较低比特率（16-32kbps）适合语音，中等比特率（64-96kbps）适合普通音乐，高比特率（128-256kbps）适合高保真音乐。',
+    convertError: '转换失败，请检查音频格式或重试。',
+    convertSuccess: '转换成功！',
+    
+    seoNote: '音频转Opus工具、在线音频转Opus转换器、WAV转Opus、MP3转Opus、网络音频编码',
+};
