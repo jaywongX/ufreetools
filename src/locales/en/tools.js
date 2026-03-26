@@ -187,6 +187,7 @@ import AudioToAnimate from './tools/audio-to-animate.js'
 import AudioToSrt from './tools/audio-to-srt.js'
 import AudioToFlac from './tools/audio-to-flac.js'
 import AudioToAac from './tools/audio-to-aac.js'
+import AudioToOpus from './tools/audio-to-opus.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -377,5 +378,6 @@ export default {
   'audio-to-animate': AudioToAnimate,
   'audio-to-srt': AudioToSrt,
   'audio-to-flac': AudioToFlac,
-  'audio-to-aac': AudioToAac
+  'audio-to-aac': AudioToAac,
+  'audio-to-opus': AudioToOpus
 };
