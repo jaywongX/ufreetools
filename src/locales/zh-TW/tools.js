@@ -189,6 +189,7 @@ import AudioToFlac from './tools/audio-to-flac.js'
 import AudioToAac from './tools/audio-to-aac.js'
 import AudioToOpus from './tools/audio-to-opus.js'
 import AudioToAc3 from './tools/audio-to-ac3.js'
+import AudioToText from './tools/audio-to-text.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -381,5 +382,6 @@ export default {
   'audio-to-flac': AudioToFlac,
   'audio-to-aac': AudioToAac,
   'audio-to-opus': AudioToOpus,
-  'audio-to-ac3': AudioToAc3
+  'audio-to-ac3': AudioToAc3,
+  'audio-to-text': AudioToText
 };
