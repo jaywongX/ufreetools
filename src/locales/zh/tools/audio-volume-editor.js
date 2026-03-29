@@ -1,0 +1,50 @@
+export default {
+    name: '音频修改音量 - 在线音频音量调节工具',
+    description: '免费在线音频音量调节工具，支持WAV、MP3、FLAC、OGG等多种音频格式的音量调整。提供音量增大、减小、静音、标准化等功能，适合音频处理、视频配音、播客制作等场景。',
+    inputTitle: '输入音频',
+    outputTitle: '调节后的音频',
+    dragTip: '拖放音频文件到这里或点击上传（支持批量）',
+    supported: '支持的格式: WAV, MP3, FLAC, OGG, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: '调节音量',
+    converting: '正在处理...',
+    downloadBtn: '下载音频',
+    batchDownload: '批量下载 (ZIP)',
+    noOutput: '暂无处理结果',
+    loadSample: '加载示例音频',
+    preview: '预览音频',
+    clearAll: '清除全部',
+    previewBtn: '预览',
+    duration: '时长',
+    originalVolume: '原始音量',
+    newVolume: '新音量',
+    
+    // 设置选项
+    settingsTitle: '音量调节设置',
+    volumeLabel: '音量大小',
+    volumeUnit: '倍',
+    volumeDecrease: '降低音量',
+    volumeNormal: '原始音量',
+    volumeIncrease: '增大音量',
+    volumeDouble: '两倍音量',
+    volumeHalf: '一半音量',
+    
+    dbLabel: '音量增益 (dB)',
+    dbAuto: '自动标准化',
+    dbMinus6: '-6 dB (降低)',
+    dbMinus3: '-3 dB (轻微降低)',
+    db0: '0 dB (原始)',
+    dbPlus3: '+3 dB (轻微增大)',
+    dbPlus6: '+6 dB (增大)',
+    
+    normalizeLabel: '音量标准化',
+    normalizeOff: '关闭',
+    normalizeOn: '开启 (自动调整到最佳音量)',
+    
+    // 提示信息
+    tipsTitle: '使用小贴士',
+    tipContent: '调整音量时请注意避免音量过大导致失真。建议使用音量标准化功能自动调整到最佳音量。对于多个音频文件，可以先分别处理再合并。',
+    convertError: '处理失败，请检查音频格式或重试。',
+    convertSuccess: '处理成功！',
+    
+    seoNote: '音频音量调节工具、在线音频音量编辑器、音频增大音量、音频减小音量、音频标准化工具',
+};

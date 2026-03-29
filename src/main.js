@@ -260,6 +260,7 @@ const lazyComponentMap = {
   'AudioToMidi': () => import('./components/tools/AudioToMidi.vue'),
   'AudioVisualEditor': () => import('./components/tools/AudioVisualEditor.vue'),
   'AudioToAnimate': () => import('./components/tools/AudioToAnimate.vue'),
+  'AudioVolumeEditor': () => import('./components/tools/AudioVolumeEditor.vue'),
   'AudioToSrt': () => import('./components/tools/AudioToSrt.vue'),
   'AudioToFlac': () => import('./components/tools/AudioToFlac.vue'),
   'AudioToAac': () => import('./components/tools/AudioToAac.vue'),
