@@ -2353,6 +2353,17 @@ const allTools = computed(() => [
     icon: 'M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3',
     tags: ['audio', 'edit']
   },
+  {
+    id: 'audio-volume-editor',
+    name: t('tools.audio-volume-editor.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'audio',
+    description: t('tools.audio-volume-editor.description'),
+    path: '/tools/audio-volume-editor',
+    component: 'AudioVolumeEditor',
+    icon: 'M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z',
+    tags: ['audio', 'convert']
+  },
 ])
 provide('allTools', allTools)
 

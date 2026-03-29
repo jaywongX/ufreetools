@@ -191,6 +191,7 @@ import AudioToOpus from './tools/audio-to-opus.js'
 import AudioToAc3 from './tools/audio-to-ac3.js'
 import AudioToText from './tools/audio-to-text.js'
 import AudioVisualEditor from './tools/audio-visual-editor.js'
+import AudioVolumeEditor from './tools/audio-volume-editor.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -385,5 +386,6 @@ export default {
   'audio-to-opus': AudioToOpus,
   'audio-to-ac3': AudioToAc3,
   'audio-to-text': AudioToText,
-  'audio-visual-editor': AudioVisualEditor
+  'audio-visual-editor': AudioVisualEditor,
+  'audio-volume-editor': AudioVolumeEditor
 };
