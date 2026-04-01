@@ -193,6 +193,7 @@ import AudioToText from './tools/audio-to-text.js'
 import AudioVisualEditor from './tools/audio-visual-editor.js'
 import AudioVolumeEditor from './tools/audio-volume-editor.js'
 import AudioJoiner from './tools/audio-joiner.js'
+import AudioReverse from './tools/audio-reverse.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -389,5 +390,6 @@ export default {
   'audio-to-text': AudioToText,
   'audio-visual-editor': AudioVisualEditor,
   'audio-volume-editor': AudioVolumeEditor,
-  'audio-joiner': AudioJoiner
+  'audio-joiner': AudioJoiner,
+  'audio-reverse': AudioReverse
 };

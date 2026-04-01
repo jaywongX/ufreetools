@@ -268,6 +268,7 @@ const lazyComponentMap = {
   'AudioToOpus': () => import('./components/tools/AudioToOpus.vue'),
   'AudioToAc3': () => import('./components/tools/AudioToAc3.vue'),
   'AudioToText': () => import('./components/tools/AudioToText.vue'),
+  'AudioReverse': () => import('./components/tools/AudioReverse.vue'),
 }
 
 // 用异步 IIFE 启动应用

@@ -2375,6 +2375,17 @@ const allTools = computed(() => [
     icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
     tags: ['audio', 'convert']
   },
+  {
+    id: 'audio-reverse',
+    name: t('tools.audio-reverse.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'audio',
+    description: t('tools.audio-reverse.description'),
+    path: '/tools/audio-reverse',
+    component: 'AudioReverse',
+    icon: 'M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4',
+    tags: ['audio', 'convert']
+  },
 ])
 provide('allTools', allTools)
 
