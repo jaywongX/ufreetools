@@ -2364,6 +2364,17 @@ const allTools = computed(() => [
     icon: 'M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z',
     tags: ['audio', 'convert']
   },
+  {
+    id: 'audio-joiner',
+    name: t('tools.audio-joiner.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'audio',
+    description: t('tools.audio-joiner.description'),
+    path: '/tools/audio-joiner',
+    component: 'AudioJoiner',
+    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
+    tags: ['audio', 'convert']
+  },
 ])
 provide('allTools', allTools)
 
