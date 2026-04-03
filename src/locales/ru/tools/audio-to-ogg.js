@@ -1,0 +1,43 @@
+export default {
+    name: 'Аудио в OGG',
+    description: 'Бесплатный онлайн-конвертер аудио в OGG. Конвертируйте WAV, MP3, FLAC, AAC, M4A в формат OGG.',
+    inputTitle: 'Входное Аудио',
+    outputTitle: 'Конвертированные OGG Файлы',
+    dragTip: 'Перетащите аудиофайлы сюда или нажмите для загрузки',
+    supported: 'Поддерживаемые форматы: WAV, MP3, FLAC, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: 'Конвертировать в OGG',
+    converting: 'Конвертация...',
+    downloadBtn: 'Скачать OGG',
+    batchDownload: 'Пакетное Скачивание (ZIP)',
+    noOutput: 'Нет вывода',
+    loadSample: 'Загрузить Пример',
+    preview: 'Предпросмотр',
+    clearAll: 'Очистить Все',
+    previewBtn: 'Предпросмотр',
+    duration: 'Длительность',
+
+    settingsTitle: 'Настройки Конвертации OGG',
+    qualityLabel: 'Качество Аудио',
+    qualityLow: 'Низкое Качество (малый файл)',
+    qualityMedium: 'Среднее Качество (рекомендуется)',
+    qualityHigh: 'Высокое Качество (большой файл)',
+    qualityLossless: 'Качество Без Потерь',
+
+    sampleRateLabel: 'Частота Дискретизации',
+    sampleRateAuto: 'Авто',
+    sampleRate44100: '44.1 кГц (CD качество)',
+    sampleRate48000: '48 кГц (профессиональное аудио)',
+    sampleRate96000: '96 кГц (HD аудио)',
+
+    channelsLabel: 'Каналы',
+    channelsAuto: 'Авто',
+    channelsMono: 'Моно',
+    channelsStereo: 'Стерео',
+
+    tipsTitle: 'Советы',
+    tipContent: 'Формат OGG - это открытый бесплатный аудиоформат с отличной эффективностью сжатия и качеством звука. По сравнению с MP3, OGG обеспечивает лучшее качество при том же битрейте.',
+    convertError: 'Ошибка конвертации. Проверьте формат аудио.',
+    convertSuccess: 'Конвертация успешна!',
+
+    seoNote: 'инструмент аудио в OGG, онлайн конвертер аудио в OGG, WAV в OGG, MP3 в OGG',
+};

@@ -1,0 +1,43 @@
+export default {
+    name: '音頻轉OGG',
+    description: '免費在線音頻轉OGG工具，支援WAV、MP3、FLAC、AAC、M4A等多種音頻格式轉換為OGG。高效壓縮，音質優秀，適合串流傳輸。',
+    inputTitle: '輸入音頻',
+    outputTitle: '轉換後的OGG文件',
+    dragTip: '拖放音頻文件到這裡或點擊上傳（支援批量）',
+    supported: '支援的格式: WAV, MP3, FLAC, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: '轉換為OGG',
+    converting: '正在轉換...',
+    downloadBtn: '下載OGG',
+    batchDownload: '批量下載 (ZIP)',
+    noOutput: '暫無轉換結果',
+    loadSample: '載入範例音頻',
+    preview: '預覽音頻',
+    clearAll: '清除全部',
+    previewBtn: '預覽',
+    duration: '時長',
+
+    settingsTitle: 'OGG轉換設定',
+    qualityLabel: '音頻質量',
+    qualityLow: '低質量 (較小文件)',
+    qualityMedium: '中等質量 (推薦)',
+    qualityHigh: '高質量 (較大文件)',
+    qualityLossless: '無損質量',
+
+    sampleRateLabel: '採樣率',
+    sampleRateAuto: '自動',
+    sampleRate44100: '44.1 kHz (CD質量)',
+    sampleRate48000: '48 kHz (專業音頻)',
+    sampleRate96000: '96 kHz (高清音頻)',
+
+    channelsLabel: '聲道',
+    channelsAuto: '自動',
+    channelsMono: '單聲道',
+    channelsStereo: '立體聲',
+
+    tipsTitle: '使用小貼士',
+    tipContent: 'OGG格式是一種開源免費的音頻格式，具有優秀的壓縮效率和音質表現。相比MP3，OGG在相同碼率下提供更好的音質，特別適合音樂存儲和串流傳輸。',
+    convertError: '轉換失敗，請檢查音頻格式或重試。',
+    convertSuccess: '轉換成功！',
+
+    seoNote: '音頻轉OGG工具、在線音頻轉OGG轉換器、WAV轉OGG、MP3轉OGG、OGG格式轉換',
+};
