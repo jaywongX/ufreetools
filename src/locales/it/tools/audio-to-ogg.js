@@ -1,0 +1,43 @@
+export default {
+    name: 'Audio in OGG',
+    description: 'Convertitore audio in OGG online gratuito. Converti WAV, MP3, FLAC, AAC, M4A in formato OGG.',
+    inputTitle: 'Audio di Input',
+    outputTitle: 'File OGG Convertiti',
+    dragTip: 'Trascina e rilascia file audio qui o clicca per caricare',
+    supported: 'Formati supportati: WAV, MP3, FLAC, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: 'Converti in OGG',
+    converting: 'Conversione...',
+    downloadBtn: 'Scarica OGG',
+    batchDownload: 'Download Batch (ZIP)',
+    noOutput: 'Nessun output',
+    loadSample: 'Carica Esempio',
+    preview: 'Anteprima',
+    clearAll: 'Cancella Tutto',
+    previewBtn: 'Anteprima',
+    duration: 'Durata',
+
+    settingsTitle: 'Impostazioni Conversione OGG',
+    qualityLabel: 'Qualità Audio',
+    qualityLow: 'Bassa Qualità (file piccolo)',
+    qualityMedium: 'Qualità Media (consigliato)',
+    qualityHigh: 'Alta Qualità (file grande)',
+    qualityLossless: 'Qualità Senza Perdite',
+
+    sampleRateLabel: 'Campionamento',
+    sampleRateAuto: 'Auto',
+    sampleRate44100: '44.1 kHz (qualità CD)',
+    sampleRate48000: '48 kHz (audio professionale)',
+    sampleRate96000: '96 kHz (audio HD)',
+
+    channelsLabel: 'Canali',
+    channelsAuto: 'Auto',
+    channelsMono: 'Mono',
+    channelsStereo: 'Stereo',
+
+    tipsTitle: 'Suggerimenti',
+    tipContent: 'Il formato OGG è un formato audio open-source gratuito con eccellente efficienza di compressione e qualità sonora. Rispetto a MP3, OGG offre migliore qualità allo stesso bitrate.',
+    convertError: 'Conversione fallita. Verifica il formato audio.',
+    convertSuccess: 'Conversione riuscita!',
+
+    seoNote: 'strumento audio in OGG, convertitore audio in OGG online, WAV in OGG, MP3 in OGG',
+};

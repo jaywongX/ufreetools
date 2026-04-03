@@ -1,0 +1,43 @@
+export default {
+    name: 'オーディオからOGG',
+    description: '無料オンラインオーディオからOGGコンバーター。WAV、MP3、FLAC、AAC、M4AをOGG形式に変換。',
+    inputTitle: '入力オーディオ',
+    outputTitle: '変換されたOGGファイル',
+    dragTip: 'オーディオファイルをここにドラッグ＆ドロップまたはクリックしてアップロード',
+    supported: '対応形式: WAV, MP3, FLAC, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: 'OGGに変換',
+    converting: '変換中...',
+    downloadBtn: 'OGGをダウンロード',
+    batchDownload: '一括ダウンロード (ZIP)',
+    noOutput: '出力なし',
+    loadSample: 'サンプル読込',
+    preview: 'プレビュー',
+    clearAll: 'すべてクリア',
+    previewBtn: 'プレビュー',
+    duration: '長さ',
+
+    settingsTitle: 'OGG変換設定',
+    qualityLabel: 'オーディオ品質',
+    qualityLow: '低品質 (小さいファイル)',
+    qualityMedium: '中品質 (推奨)',
+    qualityHigh: '高品質 (大きいファイル)',
+    qualityLossless: 'ロスレス品質',
+
+    sampleRateLabel: 'サンプリングレート',
+    sampleRateAuto: '自動',
+    sampleRate44100: '44.1 kHz (CD品質)',
+    sampleRate48000: '48 kHz (プロフェッショナル)',
+    sampleRate96000: '96 kHz (HDオーディオ)',
+
+    channelsLabel: 'チャンネル',
+    channelsAuto: '自動',
+    channelsMono: 'モノラル',
+    channelsStereo: 'ステレオ',
+
+    tipsTitle: 'ヒント',
+    tipContent: 'OGG形式はオープンソースで無料のオーディオ形式で、優れた圧縮効率と音質を提供します。MP3と比較して、OGGは同じビットレートでより良い品質を提供します。',
+    convertError: '変換に失敗しました。オーディオ形式を確認してください。',
+    convertSuccess: '変換成功！',
+
+    seoNote: 'オーディオからOGGツール、オンラインオーディオからOGGコンバーター、WAVからOGG、MP3からOGG',
+};

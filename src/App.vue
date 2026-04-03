@@ -2343,6 +2343,17 @@ const allTools = computed(() => [
     tags: ['audio', 'convert', 'text']
   },
   {
+    id: 'audio-to-ogg',
+    name: t('tools.audio-to-ogg.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'audio',
+    description: t('tools.audio-to-ogg.description'),
+    path: '/tools/audio-to-ogg',
+    component: 'AudioToOgg',
+    icon: 'M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 3 2s3 .895 3 3 3zM9 10l12-3',
+    tags: ['audio', 'convert']
+  },
+  {
     id: 'audio-visual-editor',
     name: t('tools.audio-visual-editor.name'),
     category: t(`categories.convert.title`),

@@ -1,0 +1,43 @@
+export default {
+    name: 'الصوت إلى OGG',
+    description: 'محول صوت إلى OGG مجاني عبر الإنترنت. حوّل WAV, MP3, FLAC, AAC, M4A إلى تنسيق OGG.',
+    inputTitle: 'صوت الإدخال',
+    outputTitle: 'ملفات OGG المحولة',
+    dragTip: 'اسحب وأفلت ملفات الصوت هنا أو انقر للتحميل',
+    supported: 'الصيغ المدعومة: WAV, MP3, FLAC, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: 'تحويل إلى OGG',
+    converting: 'جاري التحويل...',
+    downloadBtn: 'تحميل OGG',
+    batchDownload: 'تحميل دفعي (ZIP)',
+    noOutput: 'لا يوجد إخراج',
+    loadSample: 'تحميل نموذج',
+    preview: 'معاينة',
+    clearAll: 'مسح الكل',
+    previewBtn: 'معاينة',
+    duration: 'المدة',
+
+    settingsTitle: 'إعدادات تحويل OGG',
+    qualityLabel: 'جودة الصوت',
+    qualityLow: 'جودة منخفضة (ملف صغير)',
+    qualityMedium: 'جودة متوسطة (موصى به)',
+    qualityHigh: 'جودة عالية (ملف كبير)',
+    qualityLossless: 'جودة بدون فقدان',
+
+    sampleRateLabel: 'معدل العينات',
+    sampleRateAuto: 'تلقائي',
+    sampleRate44100: '44.1 كيلوهرتز (جودة CD)',
+    sampleRate48000: '48 كيلوهرتز (صوت احترافي)',
+    sampleRate96000: '96 كيلوهرتز (صوت HD)',
+
+    channelsLabel: 'القنوات',
+    channelsAuto: 'تلقائي',
+    channelsMono: 'أحادي',
+    channelsStereo: 'ستيريو',
+
+    tipsTitle: 'نصائح',
+    tipContent: 'تنسيق OGG هو تنسيق صوت مفتوح المصدر ومجاني مع كفاءة ضغط وجودة صوت ممتازة. مقارنة بـ MP3، يوفر OGG جودة أفضل بنفس معدل البت.',
+    convertError: 'فشل التحويل. تحقق من تنسيق الصوت.',
+    convertSuccess: 'تم التحويل بنجاح!',
+
+    seoNote: 'أداة الصوت إلى OGG، محول الصوت إلى OGG عبر الإنترنت، WAV إلى OGG، MP3 إلى OGG',
+};

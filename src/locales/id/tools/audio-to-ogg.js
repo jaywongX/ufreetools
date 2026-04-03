@@ -1,0 +1,43 @@
+export default {
+    name: 'Audio ke OGG',
+    description: 'Konverter audio ke OGG online gratis. Konversi WAV, MP3, FLAC, AAC, M4A ke format OGG.',
+    inputTitle: 'Audio Input',
+    outputTitle: 'File OGG Terkonversi',
+    dragTip: 'Seret dan letakkan file audio di sini atau klik untuk mengunggah',
+    supported: 'Format yang didukung: WAV, MP3, FLAC, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: 'Konversi ke OGG',
+    converting: 'Mengkonversi...',
+    downloadBtn: 'Unduh OGG',
+    batchDownload: 'Unduh Batch (ZIP)',
+    noOutput: 'Tidak ada output',
+    loadSample: 'Muat Contoh',
+    preview: 'Pratinjau',
+    clearAll: 'Hapus Semua',
+    previewBtn: 'Pratinjau',
+    duration: 'Durasi',
+
+    settingsTitle: 'Pengaturan Konversi OGG',
+    qualityLabel: 'Kualitas Audio',
+    qualityLow: 'Kualitas Rendah (file kecil)',
+    qualityMedium: 'Kualitas Sedang (disarankan)',
+    qualityHigh: 'Kualitas Tinggi (file besar)',
+    qualityLossless: 'Kualitas Tanpa Kehilangan',
+
+    sampleRateLabel: 'Laju Sampel',
+    sampleRateAuto: 'Otomatis',
+    sampleRate44100: '44.1 kHz (kualitas CD)',
+    sampleRate48000: '48 kHz (audio profesional)',
+    sampleRate96000: '96 kHz (audio HD)',
+
+    channelsLabel: 'Saluran',
+    channelsAuto: 'Otomatis',
+    channelsMono: 'Mono',
+    channelsStereo: 'Stereo',
+
+    tipsTitle: 'Tips',
+    tipContent: 'Format OGG adalah format audio open-source gratis dengan efisiensi kompresi dan kualitas suara yang sangat baik. Dibandingkan MP3, OGG menawarkan kualitas lebih baik pada bitrate yang sama.',
+    convertError: 'Konversi gagal. Periksa format audio.',
+    convertSuccess: 'Konversi berhasil!',
+
+    seoNote: 'alat audio ke OGG, konverter audio ke OGG online, WAV ke OGG, MP3 ke OGG',
+};

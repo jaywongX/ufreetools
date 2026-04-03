@@ -1,0 +1,43 @@
+export default {
+    name: 'ऑडियो से OGG',
+    description: 'मुफ्त ऑनलाइन ऑडियो से OGG कन्वर्टर। WAV, MP3, FLAC, AAC, M4A को OGG प्रारूप में बदलें।',
+    inputTitle: 'इनपुट ऑडियो',
+    outputTitle: 'परिवर्तित OGG फाइलें',
+    dragTip: 'ऑडियो फाइलें यहां खींचें या अपलोड करने के लिए क्लिक करें',
+    supported: 'समर्थित प्रारूप: WAV, MP3, FLAC, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: 'OGG में बदलें',
+    converting: 'परिवर्तन...',
+    downloadBtn: 'OGG डाउनलोड करें',
+    batchDownload: 'बैच डाउनलोड (ZIP)',
+    noOutput: 'कोई आउटपुट नहीं',
+    loadSample: 'नमूना लोड करें',
+    preview: 'पूर्वावलोकन',
+    clearAll: 'सब साफ करें',
+    previewBtn: 'पूर्वावलोकन',
+    duration: 'अवधि',
+
+    settingsTitle: 'OGG परिवर्तन सेटिंग्स',
+    qualityLabel: 'ऑडियो गुणवत्ता',
+    qualityLow: 'कम गुणवत्ता (छोटी फाइल)',
+    qualityMedium: 'मध्यम गुणवत्ता (अनुशंसित)',
+    qualityHigh: 'उच्च गुणवत्ता (बड़ी फाइल)',
+    qualityLossless: 'दोषरहित गुणवत्ता',
+
+    sampleRateLabel: 'सैंपल रेट',
+    sampleRateAuto: 'ऑटो',
+    sampleRate44100: '44.1 kHz (CD गुणवत्ता)',
+    sampleRate48000: '48 kHz (पेशेवर ऑडियो)',
+    sampleRate96000: '96 kHz (HD ऑडियो)',
+
+    channelsLabel: 'चैनल',
+    channelsAuto: 'ऑटो',
+    channelsMono: 'मोनो',
+    channelsStereo: 'स्टीरियो',
+
+    tipsTitle: 'सुझाव',
+    tipContent: 'OGG प्रारूप एक ओपन-सोर्स मुफ्त ऑडियो प्रारूप है जिसमें उत्कृष्ट संपीड़न दक्षता और ध्वनि गुणवत्ता है। MP3 की तुलना में, OGG समान बिटरेट पर बेहतर गुणवत्ता प्रदान करता है।',
+    convertError: 'परिवर्तन विफल। ऑडियो प्रारूप जांचें।',
+    convertSuccess: 'परिवर्तन सफल!',
+
+    seoNote: 'ऑडियो से OGG उपकरण, ऑनलाइन ऑडियो से OGG कन्वर्टर, WAV से OGG, MP3 से OGG',
+};

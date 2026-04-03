@@ -1,0 +1,43 @@
+export default {
+    name: '오디오에서 OGG',
+    description: '무료 온라인 오디오에서 OGG 변환기. WAV, MP3, FLAC, AAC, M4A를 OGG 형식으로 변환.',
+    inputTitle: '입력 오디오',
+    outputTitle: '변환된 OGG 파일',
+    dragTip: '오디오 파일을 여기에 드래그 앤 드롭하거나 클릭하여 업로드',
+    supported: '지원 형식: WAV, MP3, FLAC, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: 'OGG로 변환',
+    converting: '변환 중...',
+    downloadBtn: 'OGG 다운로드',
+    batchDownload: '일괄 다운로드 (ZIP)',
+    noOutput: '출력 없음',
+    loadSample: '샘플 로드',
+    preview: '미리보기',
+    clearAll: '모두 지우기',
+    previewBtn: '미리보기',
+    duration: '길이',
+
+    settingsTitle: 'OGG 변환 설정',
+    qualityLabel: '오디오 품질',
+    qualityLow: '저품질 (작은 파일)',
+    qualityMedium: '중간 품질 (권장)',
+    qualityHigh: '고품질 (큰 파일)',
+    qualityLossless: '무손실 품질',
+
+    sampleRateLabel: '샘플링 레이트',
+    sampleRateAuto: '자동',
+    sampleRate44100: '44.1 kHz (CD 품질)',
+    sampleRate48000: '48 kHz (전문가용)',
+    sampleRate96000: '96 kHz (HD 오디오)',
+
+    channelsLabel: '채널',
+    channelsAuto: '자동',
+    channelsMono: '모노',
+    channelsStereo: '스테레오',
+
+    tipsTitle: '팁',
+    tipContent: 'OGG 형식은 오픈 소스 무료 오디오 형식으로 우수한 압축 효율과 음질을 제공합니다. MP3와 비교하여 OGG는 동일한 비트레이트에서 더 나은 품질을 제공합니다.',
+    convertError: '변환 실패. 오디오 형식을 확인하세요.',
+    convertSuccess: '변환 성공!',
+
+    seoNote: '오디오에서 OGG 도구, 온라인 오디오에서 OGG 변환기, WAV에서 OGG, MP3에서 OGG',
+};
