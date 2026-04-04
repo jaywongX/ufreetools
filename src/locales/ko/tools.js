@@ -195,6 +195,7 @@ import AudioVolumeEditor from './tools/audio-volume-editor.js'
 import AudioJoiner from './tools/audio-joiner.js'
 import AudioReverse from './tools/audio-reverse.js'
 import AudioToOgg from './tools/audio-to-ogg.js'
+import AudioSpeed from './tools/audio-speed.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -393,5 +394,6 @@ export default {
   'audio-volume-editor': AudioVolumeEditor,
   'audio-joiner': AudioJoiner,
   'audio-reverse': AudioReverse,
-  'audio-to-ogg': AudioToOgg
+  'audio-to-ogg': AudioToOgg,
+  'audio-speed': AudioSpeed
 };

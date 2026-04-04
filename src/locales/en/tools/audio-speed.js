@@ -1,0 +1,52 @@
+export default {
+    name: 'Audio Speed Changer - Online Audio Speed & Pitch Tool',
+    description: 'Free online audio speed changer tool. Adjust audio playback speed and pitch independently. Support time stretching without pitch change, pitch shifting without tempo change. Perfect for audio editing, music learning, and speech processing.',
+    inputTitle: 'Input Audio',
+    outputTitle: 'Adjusted Audio',
+    dragTip: 'Drag and drop audio files here or click to upload (batch supported)',
+    supported: 'Supported formats: WAV, MP3, FLAC, OGG, AAC, M4A, WMA, AMR, AIFF, APE',
+    convertBtn: 'Adjust Audio',
+    converting: 'Processing...',
+    downloadBtn: 'Download Audio',
+    batchDownload: 'Batch Download (ZIP)',
+    noOutput: 'No results yet',
+    loadSample: 'Load Sample Audio',
+    preview: 'Preview Audio',
+    clearAll: 'Clear All',
+    previewBtn: 'Preview',
+    originalSpeed: 'Original Speed',
+    duration: 'Duration',
+    
+    settingsTitle: 'Speed Settings',
+    speedLabel: 'Playback Speed',
+    speedSlow: 'Slow',
+    speedNormal: 'Normal',
+    speedFast: 'Fast',
+    speedCustom: 'Custom',
+    
+    pitchLabel: 'Pitch Adjustment',
+    pitchNone: 'None',
+    pitchUp: 'Higher',
+    pitchDown: 'Lower',
+    
+    preservePitchLabel: 'Preserve Pitch (Time Stretch)',
+    preservePitchYes: 'On (Recommended)',
+    preservePitchNo: 'Off',
+    
+    qualityLabel: 'Output Quality',
+    qualityLow: 'Low (Fast)',
+    qualityMedium: 'Medium (Recommended)',
+    qualityHigh: 'High Quality',
+    
+    outputFormatLabel: 'Output Format',
+    formatKeep: 'Keep Original',
+    formatWav: 'WAV (Lossless)',
+    formatMp3: 'MP3 (Universal)',
+    
+    tipsTitle: 'Tips',
+    tipContent: 'Enable "Preserve Pitch" to change speed without affecting the original pitch, ideal for language learning and audio editing. If you want to change both speed and pitch, disable this option.',
+    convertError: 'Processing failed. Please check audio format or try again.',
+    convertSuccess: 'Success!',
+    
+    seoNote: 'audio speed changer, online audio speed tool, pitch shifter, time stretch, audio editor',
+};
