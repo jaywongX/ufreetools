@@ -2397,6 +2397,17 @@ const allTools = computed(() => [
     icon: 'M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4',
     tags: ['audio', 'convert']
   },
+  {
+    id: 'audio-speed',
+    name: t('tools.audio-speed.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'audio',
+    description: t('tools.audio-speed.description'),
+    path: '/tools/audio-speed',
+    component: 'AudioSpeed',
+    icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+    tags: ['audio', 'convert']
+  },
 ])
 provide('allTools', allTools)
 
