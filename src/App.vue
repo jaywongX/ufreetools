@@ -2408,6 +2408,17 @@ const allTools = computed(() => [
     icon: 'M13 10V3L4 14h7v7l9-11h-7z',
     tags: ['audio', 'convert']
   },
+  {
+    id: 'audio-loop',
+    name: t('tools.audio-loop.name'),
+    category: t(`categories.convert.title`),
+    categoryId: 'audio',
+    description: t('tools.audio-loop.description'),
+    path: '/tools/audio-loop',
+    component: 'AudioLoop',
+    icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
+    tags: ['audio', 'convert']
+  },
 ])
 provide('allTools', allTools)
 
