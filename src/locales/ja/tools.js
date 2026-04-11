@@ -197,6 +197,7 @@ import AudioReverse from './tools/audio-reverse.js'
 import AudioToOgg from './tools/audio-to-ogg.js'
 import AudioSpeed from './tools/audio-speed.js'
 import AudioLoop from './tools/audio-loop.js'
+import AuAddressGenerator from './tools/au-address-generator.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -397,5 +398,6 @@ export default {
   'audio-reverse': AudioReverse,
   'audio-to-ogg': AudioToOgg,
   'audio-speed': AudioSpeed,
-  'audio-loop': AudioLoop
+  'audio-loop': AudioLoop,
+  'au-address-generator': AuAddressGenerator
 };

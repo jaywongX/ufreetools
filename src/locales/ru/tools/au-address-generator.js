@@ -1,0 +1,158 @@
+export default {
+    name: 'Генератор адресов Австралии - Генерация реальных австралийских адресов, идентификационной информации и контактов онлайн',
+    description: 'Бесплатный онлайн-генератор австралийских адресов, генерирующий адреса реального формата, номера телефонов, номера кредитных карт и полные профили идентичности. Фильтрация по штату, экспорт в JSON/CSV, работает полностью во фронтенде для защиты конфиденциальности.',
+    inputTitle: 'Настройки генерации',
+    outputTitle: 'Сгенерированные результаты',
+    generateBtn: 'Сгенерировать данные',
+    loadSampleBtn: 'Загрузить пример и сгенерировать',
+    clearAll: 'Очистить всё',
+    noOutput: 'Пока нет результатов',
+    preview: 'Предпросмотр данных',
+    
+    locationTitle: 'Фильтр местоположения',
+    selectState: 'Выбрать штат/территорию',
+    selectCity: 'Выбрать город',
+    allStates: 'Все штаты/территории',
+    allCities: 'Все города',
+    postalCodeLabel: 'Почтовый индекс',
+    validatePostalCode: 'Проверить индекс',
+    
+    addressTypeTitle: 'Тип адреса',
+    addressTypeResidential: 'Жилой адрес',
+    addressTypeCommercial: 'Коммерческий адрес',
+    addressTypePoBox: 'Абонентский ящик',
+    addressTypeCampus: 'Университетский кампус',
+    
+    identityTitle: 'Идентификационная информация',
+    fullName: 'Полное имя',
+    gender: 'Пол',
+    genderMale: 'Мужской',
+    genderFemale: 'Женский',
+    age: 'Возраст',
+    birthDate: 'Дата рождения',
+    zodiac: 'Знак зодиака',
+    height: 'Рост',
+    weight: 'Вес',
+    
+    contactTitle: 'Контактная информация',
+    phoneNumber: 'Номер телефона',
+    phoneType: 'Тип телефона',
+    phoneTypeMobile: 'Мобильный',
+    phoneTypeLandline: 'Стационарный',
+    areaCode: 'Код города',
+    email: 'Адрес электронной почты',
+    tempEmail: 'Временная почта',
+    
+    creditCardTitle: 'Информация о кредитной карте',
+    cardType: 'Тип карты',
+    cardNumber: 'Номер карты',
+    expiryDate: 'Срок действия',
+    cvv: 'CVV',
+    bankBin: 'Банковский BIN',
+    
+    careerTitle: 'Профиль карьеры',
+    jobTitle: 'Должность',
+    salary: 'Зарплата',
+    companyName: 'Название компании',
+    companySize: 'Размер компании',
+    industry: 'Отрасль',
+    employmentStatus: 'Статус занятости',
+    employmentFullTime: 'Полная занятость',
+    employmentPartTime: 'Частичная занятость',
+    
+    taxFileTitle: 'Налоговый номер Австралии',
+    taxFileNumber: 'Налоговый номер (TFN)',
+    
+    fingerprintTitle: 'Цифровой отпечаток',
+    os: 'Операционная система',
+    osVersion: 'Версия ОС',
+    browser: 'Браузер',
+    userAgent: 'User Agent',
+    screenResolution: 'Разрешение экрана',
+    timezone: 'Часовой пояс',
+    guid: 'GUID',
+    ipAddress: 'IP-адрес',
+    macAddress: 'MAC-адрес',
+    cookiePolicy: 'Политика Cookies',
+    
+    exportTitle: 'Формат экспорта',
+    exportJson: 'Экспорт в JSON',
+    exportCsv: 'Экспорт в CSV',
+    downloadBtn: 'Скачать',
+    copyBtn: 'Копировать',
+    viewDetails: 'Подробнее',
+    
+    batchTitle: 'Пакетная генерация',
+    quantityLabel: 'Количество',
+    quantityPlaceholder: 'Введите количество (1-100)',
+    
+    generating: 'Генерация...',
+    generated: 'Генерация завершена',
+    copySuccess: 'Скопировано в буфер обмена',
+    downloadSuccess: 'Скачивание завершено',
+    invalidQuantity: 'Пожалуйста, введите число от 1 до 100',
+    
+    resultCount: 'Сгенерировано {count} записей',
+    resultSummary: 'Сводка результатов',
+    showAll: 'Показать всё',
+    collapse: 'Свернуть',
+    
+    generateOptionsTitle: 'Параметры генерации',
+    
+    recordLabel: 'Запись #{num}',
+    addressLabel: 'Адрес',
+    streetLabel: 'Улица',
+    streetNumberLabel: 'Номер дома',
+    suburbLabel: 'Пригород',
+    stateLabel: 'Штат',
+    postcodeLabel: 'Почтовый индекс',
+    unitLabel: 'Квартира',
+    
+    addressNumber: '№',
+    addressFloor: 'Этаж',
+    addressUnit: 'Кв.',
+    commercialUnit: '(Коммерческий)',
+    australia: 'Австралия',
+    postOfficeBox: 'Абонентский ящик',
+    studentDormitory: 'Общежитие',
+    academicBuilding: 'Учебный корпус',
+    library: 'Библиотека',
+    buildingUnit: 'Корпус',
+    
+    states: {
+        NSW: 'Новый Южный Уэльс',
+        VIC: 'Виктория',
+        QLD: 'Квинсленд',
+        WA: 'Западная Австралия',
+        SA: 'Южная Австралия',
+        TAS: 'Тасмания',
+        ACT: 'Австралийская столичная территория',
+        NT: 'Северная территория'
+    },
+    
+    cities: {
+        NSW: { sydney: 'Сидней', newcastle: 'Ньюкасл', wollongong: 'Уоллонгонг', centralCoast: 'Центральное побережье', canberra: 'Канберра' },
+        VIC: { melbourne: 'Мельбурн', geelong: 'Джилонг', ballarat: 'Балларат', bendigo: 'Бендиго' },
+        QLD: { brisbane: 'Брисбен', goldCoast: 'Голд-Кост', sunshineCoast: 'Саншайн-Кост', townsville: 'Таунсвилл', cairns: 'Кэрнс' },
+        WA: { perth: 'Перт', fremantle: 'Фримантл', mandurah: 'Мандура' },
+        SA: { adelaide: 'Аделаида', mountGambier: 'Маунт-Гамбиер', whyalla: 'Уайалла' },
+        TAS: { hobart: 'Хобарт', launceston: 'Лонсестон', devonport: 'Девонпорт' },
+        ACT: { canberra: 'Канберра', queanbeyan: 'Квинбиан' },
+        NT: { darwin: 'Дарвин', aliceSprings: 'Алис-Спрингс', palmerston: 'Палмерстон' }
+    },
+    
+    universities: {
+        USYD: 'Сиднейский университет',
+        UNSW: 'Университет Нового Южного Уэльса',
+        UMELB: 'Мельбурнский университет',
+        UQ: 'Университет Квинсленда',
+        ANU: 'Австралийский национальный университет'
+    },
+    
+    csv: {
+        fullAddress: 'Полный адрес', street: 'Улица', streetNumber: 'Номер дома', suburb: 'Пригород',
+        state: 'Штат', postcode: 'Почтовый индекс', fullName: 'Полное имя', gender: 'Пол',
+        age: 'Возраст', birthDate: 'Дата рождения', phone: 'Телефон', email: 'Email',
+        cardType: 'Тип карты', cardNumber: 'Номер карты', taxFileNumber: 'Налоговый номер'
+    }
+};

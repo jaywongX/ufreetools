@@ -1,0 +1,158 @@
+export default {
+    name: 'Générateur d\'Adresses Australiennes - Générer des Adresses Australiennes Réelles, Informations d\'Identité et Contacts en Ligne',
+    description: 'Générateur gratuit d\'adresses australiennes en ligne qui génère des adresses australiennes au format réel, numéros de téléphone, numéros de carte de crédit et profils d\'identité complets. Filtrer par État, exporter en JSON/CSV, fonctionne entièrement dans le frontend pour protéger la vie privée.',
+    inputTitle: 'Paramètres de Génération',
+    outputTitle: 'Résultats Générés',
+    generateBtn: 'Générer les Données',
+    loadSampleBtn: 'Charger l\'Exemple et Générer',
+    clearAll: 'Tout Effacer',
+    noOutput: 'Pas encore de résultats',
+    preview: 'Aperçu des Données',
+    
+    locationTitle: 'Filtre de Localisation',
+    selectState: 'Sélectionner l\'État/Territoire',
+    selectCity: 'Sélectionner la Ville',
+    allStates: 'Tous les États/Territoires',
+    allCities: 'Toutes les Villes',
+    postalCodeLabel: 'Code Postal',
+    validatePostalCode: 'Valider le Code Postal',
+    
+    addressTypeTitle: 'Type d\'Adresse',
+    addressTypeResidential: 'Adresse Résidentielle',
+    addressTypeCommercial: 'Adresse Commerciale',
+    addressTypePoBox: 'Boîte Postale',
+    addressTypeCampus: 'Campus Universitaire',
+    
+    identityTitle: 'Informations d\'Identité',
+    fullName: 'Nom Complet',
+    gender: 'Genre',
+    genderMale: 'Masculin',
+    genderFemale: 'Féminin',
+    age: 'Âge',
+    birthDate: 'Date de Naissance',
+    zodiac: 'Zodiaque',
+    height: 'Taille',
+    weight: 'Poids',
+    
+    contactTitle: 'Informations de Contact',
+    phoneNumber: 'Numéro de Téléphone',
+    phoneType: 'Type de Téléphone',
+    phoneTypeMobile: 'Mobile',
+    phoneTypeLandline: 'Fixe',
+    areaCode: 'Code Régional',
+    email: 'Adresse Email',
+    tempEmail: 'Email Temporaire',
+    
+    creditCardTitle: 'Informations de Carte de Crédit',
+    cardType: 'Type de Carte',
+    cardNumber: 'Numéro de Carte',
+    expiryDate: 'Date d\'Expiration',
+    cvv: 'CVV',
+    bankBin: 'BIN Bancaire',
+    
+    careerTitle: 'Profil Professionnel',
+    jobTitle: 'Titre du Poste',
+    salary: 'Salaire',
+    companyName: 'Nom de l\'Entreprise',
+    companySize: 'Taille de l\'Entreprise',
+    industry: 'Industrie',
+    employmentStatus: 'Statut d\'Emploi',
+    employmentFullTime: 'Temps Plein',
+    employmentPartTime: 'Temps Partiel',
+    
+    taxFileTitle: 'Numéro de Fichier Fiscal Australien',
+    taxFileNumber: 'Numéro de Fichier Fiscal (TFN)',
+    
+    fingerprintTitle: 'Empreinte Digitale',
+    os: 'Système d\'Exploitation',
+    osVersion: 'Version de l\'OS',
+    browser: 'Navigateur',
+    userAgent: 'User Agent',
+    screenResolution: 'Résolution d\'Écran',
+    timezone: 'Fuseau Horaire',
+    guid: 'GUID',
+    ipAddress: 'Adresse IP',
+    macAddress: 'Adresse MAC',
+    cookiePolicy: 'Politique de Cookies',
+    
+    exportTitle: 'Format d\'Exportation',
+    exportJson: 'Exporter en JSON',
+    exportCsv: 'Exporter en CSV',
+    downloadBtn: 'Télécharger',
+    copyBtn: 'Copier',
+    viewDetails: 'Voir les Détails',
+    
+    batchTitle: 'Génération par Lots',
+    quantityLabel: 'Quantité',
+    quantityPlaceholder: 'Entrer la quantité (1-100)',
+    
+    generating: 'Génération...',
+    generated: 'Génération Terminée',
+    copySuccess: 'Copié dans le presse-papier',
+    downloadSuccess: 'Téléchargement réussi',
+    invalidQuantity: 'Veuillez entrer un nombre entre 1-100',
+    
+    resultCount: '{count} enregistrements générés',
+    resultSummary: 'Résumé des Résultats',
+    showAll: 'Tout Afficher',
+    collapse: 'Réduire',
+    
+    generateOptionsTitle: 'Options de Génération',
+    
+    recordLabel: 'Enregistrement #{num}',
+    addressLabel: 'Adresse',
+    streetLabel: 'Rue',
+    streetNumberLabel: 'Numéro de Rue',
+    suburbLabel: 'Banlieue',
+    stateLabel: 'État',
+    postcodeLabel: 'Code Postal',
+    unitLabel: 'Unité',
+    
+    addressNumber: 'N°',
+    addressFloor: 'Étage',
+    addressUnit: 'Unité',
+    commercialUnit: '(Commercial)',
+    australia: 'Australie',
+    postOfficeBox: 'Boîte Postale',
+    studentDormitory: 'Résidence Étudiante',
+    academicBuilding: 'Bâtiment Académique',
+    library: 'Bibliothèque',
+    buildingUnit: 'Bâtiment',
+    
+    states: {
+        NSW: 'Nouvelle-Galles du Sud',
+        VIC: 'Victoria',
+        QLD: 'Queensland',
+        WA: 'Australie-Occidentale',
+        SA: 'Australie-Méridionale',
+        TAS: 'Tasmanie',
+        ACT: 'Territoire de la Capitale Australienne',
+        NT: 'Territoire du Nord'
+    },
+    
+    cities: {
+        NSW: { sydney: 'Sydney', newcastle: 'Newcastle', wollongong: 'Wollongong', centralCoast: 'Central Coast', canberra: 'Canberra' },
+        VIC: { melbourne: 'Melbourne', geelong: 'Geelong', ballarat: 'Ballarat', bendigo: 'Bendigo' },
+        QLD: { brisbane: 'Brisbane', goldCoast: 'Gold Coast', sunshineCoast: 'Sunshine Coast', townsville: 'Townsville', cairns: 'Cairns' },
+        WA: { perth: 'Perth', fremantle: 'Fremantle', mandurah: 'Mandurah' },
+        SA: { adelaide: 'Adélaïde', mountGambier: 'Mount Gambier', whyalla: 'Whyalla' },
+        TAS: { hobart: 'Hobart', launceston: 'Launceston', devonport: 'Devonport' },
+        ACT: { canberra: 'Canberra', queanbeyan: 'Queanbeyan' },
+        NT: { darwin: 'Darwin', aliceSprings: 'Alice Springs', palmerston: 'Palmerston' }
+    },
+    
+    universities: {
+        USYD: 'Université de Sydney',
+        UNSW: 'Université de Nouvelle-Galles du Sud',
+        UMELB: 'Université de Melbourne',
+        UQ: 'Université du Queensland',
+        ANU: 'Université Nationale d\'Australie'
+    },
+    
+    csv: {
+        fullAddress: 'Adresse Complète', street: 'Rue', streetNumber: 'Numéro', suburb: 'Banlieue',
+        state: 'État', postcode: 'Code Postal', fullName: 'Nom Complet', gender: 'Genre',
+        age: 'Âge', birthDate: 'Date de Naissance', phone: 'Téléphone', email: 'Email',
+        cardType: 'Type de Carte', cardNumber: 'Numéro de Carte', taxFileNumber: 'Numéro Fiscal'
+    }
+};

@@ -1,0 +1,158 @@
+export default {
+    name: 'Generador de Direcciones de Australia - Generar Direcciones Australianas Reales, Información de Identidad y Contactos en Línea',
+    description: 'Generador gratuito de direcciones australianas en línea que genera direcciones australianas de formato real, números de teléfono, números de tarjeta de crédito y perfiles de identidad completos. Filtrar por estado, exportar a JSON/CSV, se ejecuta completamente en el frontend para proteger la privacidad.',
+    inputTitle: 'Configuración de Generación',
+    outputTitle: 'Resultados Generados',
+    generateBtn: 'Generar Datos',
+    loadSampleBtn: 'Cargar Muestra y Generar',
+    clearAll: 'Limpiar Todo',
+    noOutput: 'Sin resultados aún',
+    preview: 'Vista Previa de Datos',
+    
+    locationTitle: 'Filtro de Ubicación',
+    selectState: 'Seleccionar Estado/Territorio',
+    selectCity: 'Seleccionar Ciudad',
+    allStates: 'Todos los Estados/Territorios',
+    allCities: 'Todas las Ciudades',
+    postalCodeLabel: 'Código Postal',
+    validatePostalCode: 'Validar Código Postal',
+    
+    addressTypeTitle: 'Tipo de Dirección',
+    addressTypeResidential: 'Dirección Residencial',
+    addressTypeCommercial: 'Dirección Comercial',
+    addressTypePoBox: 'Apartado Postal',
+    addressTypeCampus: 'Campus Universitario',
+    
+    identityTitle: 'Información de Identidad',
+    fullName: 'Nombre Completo',
+    gender: 'Género',
+    genderMale: 'Masculino',
+    genderFemale: 'Femenino',
+    age: 'Edad',
+    birthDate: 'Fecha de Nacimiento',
+    zodiac: 'Zodíaco',
+    height: 'Altura',
+    weight: 'Peso',
+    
+    contactTitle: 'Información de Contacto',
+    phoneNumber: 'Número de Teléfono',
+    phoneType: 'Tipo de Teléfono',
+    phoneTypeMobile: 'Móvil',
+    phoneTypeLandline: 'Fijo',
+    areaCode: 'Código de Área',
+    email: 'Correo Electrónico',
+    tempEmail: 'Correo Temporal',
+    
+    creditCardTitle: 'Información de Tarjeta de Crédito',
+    cardType: 'Tipo de Tarjeta',
+    cardNumber: 'Número de Tarjeta',
+    expiryDate: 'Fecha de Vencimiento',
+    cvv: 'CVV',
+    bankBin: 'BIN Bancario',
+    
+    careerTitle: 'Perfil Profesional',
+    jobTitle: 'Cargo',
+    salary: 'Salario',
+    companyName: 'Nombre de Empresa',
+    companySize: 'Tamaño de Empresa',
+    industry: 'Industria',
+    employmentStatus: 'Estado de Empleo',
+    employmentFullTime: 'Tiempo Completo',
+    employmentPartTime: 'Medio Tiempo',
+    
+    taxFileTitle: 'Número de Archivo Fiscal Australiano',
+    taxFileNumber: 'Número de Archivo Fiscal (TFN)',
+    
+    fingerprintTitle: 'Huella Digital',
+    os: 'Sistema Operativo',
+    osVersion: 'Versión del SO',
+    browser: 'Navegador',
+    userAgent: 'User Agent',
+    screenResolution: 'Resolución de Pantalla',
+    timezone: 'Zona Horaria',
+    guid: 'GUID',
+    ipAddress: 'Dirección IP',
+    macAddress: 'Dirección MAC',
+    cookiePolicy: 'Política de Cookies',
+    
+    exportTitle: 'Formato de Exportación',
+    exportJson: 'Exportar JSON',
+    exportCsv: 'Exportar CSV',
+    downloadBtn: 'Descargar',
+    copyBtn: 'Copiar',
+    viewDetails: 'Ver Detalles',
+    
+    batchTitle: 'Generación por Lotes',
+    quantityLabel: 'Cantidad',
+    quantityPlaceholder: 'Ingrese cantidad (1-100)',
+    
+    generating: 'Generando...',
+    generated: 'Generación Completa',
+    copySuccess: 'Copiado al portapapeles',
+    downloadSuccess: 'Descarga exitosa',
+    invalidQuantity: 'Ingrese un número entre 1-100',
+    
+    resultCount: 'Generados {count} registros',
+    resultSummary: 'Resumen de Resultados',
+    showAll: 'Mostrar Todo',
+    collapse: 'Colapsar',
+    
+    generateOptionsTitle: 'Opciones de Generación',
+    
+    recordLabel: 'Registro #{num}',
+    addressLabel: 'Dirección',
+    streetLabel: 'Calle',
+    streetNumberLabel: 'Número de Calle',
+    suburbLabel: 'Suburbio',
+    stateLabel: 'Estado',
+    postcodeLabel: 'Código Postal',
+    unitLabel: 'Unidad',
+    
+    addressNumber: 'Núm.',
+    addressFloor: 'Piso',
+    addressUnit: 'Unidad',
+    commercialUnit: '(Comercial)',
+    australia: 'Australia',
+    postOfficeBox: 'Apartado Postal',
+    studentDormitory: 'Residencia Estudiantil',
+    academicBuilding: 'Edificio Académico',
+    library: 'Biblioteca',
+    buildingUnit: 'Edificio',
+    
+    states: {
+        NSW: 'Nueva Gales del Sur',
+        VIC: 'Victoria',
+        QLD: 'Queensland',
+        WA: 'Australia Occidental',
+        SA: 'Australia Meridional',
+        TAS: 'Tasmania',
+        ACT: 'Territorio de la Capital Australiana',
+        NT: 'Territorio del Norte'
+    },
+    
+    cities: {
+        NSW: { sydney: 'Sídney', newcastle: 'Newcastle', wollongong: 'Wollongong', centralCoast: 'Costa Central', canberra: 'Canberra' },
+        VIC: { melbourne: 'Melbourne', geelong: 'Geelong', ballarat: 'Ballarat', bendigo: 'Bendigo' },
+        QLD: { brisbane: 'Brisbane', goldCoast: 'Costa Dorada', sunshineCoast: 'Costa del Sol', townsville: 'Townsville', cairns: 'Cairns' },
+        WA: { perth: 'Perth', fremantle: 'Fremantle', mandurah: 'Mandurah' },
+        SA: { adelaide: 'Adelaida', mountGambier: 'Mount Gambier', whyalla: 'Whyalla' },
+        TAS: { hobart: 'Hobart', launceston: 'Launceston', devonport: 'Devonport' },
+        ACT: { canberra: 'Canberra', queanbeyan: 'Queanbeyan' },
+        NT: { darwin: 'Darwin', aliceSprings: 'Alice Springs', palmerston: 'Palmerston' }
+    },
+    
+    universities: {
+        USYD: 'Universidad de Sídney',
+        UNSW: 'Universidad de Nueva Gales del Sur',
+        UMELB: 'Universidad de Melbourne',
+        UQ: 'Universidad de Queensland',
+        ANU: 'Universidad Nacional de Australia'
+    },
+    
+    csv: {
+        fullAddress: 'Dirección Completa', street: 'Calle', streetNumber: 'Número', suburb: 'Suburbio',
+        state: 'Estado', postcode: 'Código Postal', fullName: 'Nombre Completo', gender: 'Género',
+        age: 'Edad', birthDate: 'Fecha de Nacimiento', phone: 'Teléfono', email: 'Correo',
+        cardType: 'Tipo de Tarjeta', cardNumber: 'Número de Tarjeta', taxFileNumber: 'Número Fiscal'
+    }
+};

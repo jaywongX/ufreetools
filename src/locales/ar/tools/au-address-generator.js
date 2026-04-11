@@ -1,0 +1,158 @@
+export default {
+    name: 'مولد عناوين أستراليا - توليد عناوين أسترالية حقيقية ومعلومات الهوية وجهات الاتصال عبر الإنترنت',
+    description: 'مولد عناوين أسترالية مجاني عبر الإنترنت يولد عناوين أسترالية بتنسيق حقيقي وأرقام هواتف وأرقام بطاقات ائتمان وملفات تعريف هوية كاملة. التصفية حسب الولاية، التصدير إلى JSON/CSV، يعمل بالكامل في الواجهة الأمامية لحماية الخصوصية.',
+    inputTitle: 'إعدادات التوليد',
+    outputTitle: 'النتائج المولدة',
+    generateBtn: 'توليد البيانات',
+    loadSampleBtn: 'تحميل العينة والتوليد',
+    clearAll: 'مسح الكل',
+    noOutput: 'لا توجد نتائج بعد',
+    preview: 'معاينة البيانات',
+    
+    locationTitle: 'فلتر الموقع',
+    selectState: 'اختر الولاية/الإقليم',
+    selectCity: 'اختر المدينة',
+    allStates: 'جميع الولايات/الأقاليم',
+    allCities: 'جميع المدن',
+    postalCodeLabel: 'الرمز البريدي',
+    validatePostalCode: 'التحقق من الرمز البريدي',
+    
+    addressTypeTitle: 'نوع العنوان',
+    addressTypeResidential: 'عنوان سكني',
+    addressTypeCommercial: 'عنوان تجاري',
+    addressTypePoBox: 'صندوق بريد',
+    addressTypeCampus: 'حرم جامعي',
+    
+    identityTitle: 'معلومات الهوية',
+    fullName: 'الاسم الكامل',
+    gender: 'الجنس',
+    genderMale: 'ذكر',
+    genderFemale: 'أنثى',
+    age: 'العمر',
+    birthDate: 'تاريخ الميلاد',
+    zodiac: 'البرج',
+    height: 'الطول',
+    weight: 'الوزن',
+    
+    contactTitle: 'معلومات الاتصال',
+    phoneNumber: 'رقم الهاتف',
+    phoneType: 'نوع الهاتف',
+    phoneTypeMobile: 'جوال',
+    phoneTypeLandline: 'أرضي',
+    areaCode: 'رمز المنطقة',
+    email: 'عنوان البريد الإلكتروني',
+    tempEmail: 'بريد مؤقت',
+    
+    creditCardTitle: 'معلومات بطاقة الائتمان',
+    cardType: 'نوع البطاقة',
+    cardNumber: 'رقم البطاقة',
+    expiryDate: 'تاريخ الانتهاء',
+    cvv: 'CVV',
+    bankBin: 'BIN البنك',
+    
+    careerTitle: 'الملف الوظيفي',
+    jobTitle: 'المسمى الوظيفي',
+    salary: 'الراتب',
+    companyName: 'اسم الشركة',
+    companySize: 'حجم الشركة',
+    industry: 'الصناعة',
+    employmentStatus: 'حالة التوظيف',
+    employmentFullTime: 'دوام كامل',
+    employmentPartTime: 'دوام جزئي',
+    
+    taxFileTitle: 'رقم الملف الضريبي الأسترالي',
+    taxFileNumber: 'رقم الملف الضريبي (TFN)',
+    
+    fingerprintTitle: 'البصمة الرقمية',
+    os: 'نظام التشغيل',
+    osVersion: 'إصدار النظام',
+    browser: 'المتصفح',
+    userAgent: 'User Agent',
+    screenResolution: 'دقة الشاشة',
+    timezone: 'المنطقة الزمنية',
+    guid: 'GUID',
+    ipAddress: 'عنوان IP',
+    macAddress: 'عنوان MAC',
+    cookiePolicy: 'سياسة Cookies',
+    
+    exportTitle: 'تنسيق التصدير',
+    exportJson: 'تصدير JSON',
+    exportCsv: 'تصدير CSV',
+    downloadBtn: 'تنزيل',
+    copyBtn: 'نسخ',
+    viewDetails: 'عرض التفاصيل',
+    
+    batchTitle: 'التوليد الدفعي',
+    quantityLabel: 'الكمية',
+    quantityPlaceholder: 'أدخل الكمية (1-100)',
+    
+    generating: 'جاري التوليد...',
+    generated: 'اكتمل التوليد',
+    copySuccess: 'تم النسخ إلى الحافظة',
+    downloadSuccess: 'تم التنزيل بنجاح',
+    invalidQuantity: 'يرجى إدخال رقم بين 1-100',
+    
+    resultCount: 'تم توليد {count} سجل',
+    resultSummary: 'ملخص النتائج',
+    showAll: 'عرض الكل',
+    collapse: 'طي',
+    
+    generateOptionsTitle: 'خيارات التوليد',
+    
+    recordLabel: 'سجل #{num}',
+    addressLabel: 'العنوان',
+    streetLabel: 'الشارع',
+    streetNumberLabel: 'رقم الشارع',
+    suburbLabel: 'الضاحية',
+    stateLabel: 'الولاية',
+    postcodeLabel: 'الرمز البريدي',
+    unitLabel: 'الوحدة',
+    
+    addressNumber: 'رقم',
+    addressFloor: 'الطابق',
+    addressUnit: 'الوحدة',
+    commercialUnit: '(تجاري)',
+    australia: 'أستراليا',
+    postOfficeBox: 'صندوق بريد',
+    studentDormitory: 'سكن طلابي',
+    academicBuilding: 'مبنى أكاديمي',
+    library: 'مكتبة',
+    buildingUnit: 'مبنى',
+    
+    states: {
+        NSW: 'نيو ساوث ويلز',
+        VIC: 'فيكتوريا',
+        QLD: 'كوينزلاند',
+        WA: 'أستراليا الغربية',
+        SA: 'أستراليا الجنوبية',
+        TAS: 'تاسمانيا',
+        ACT: 'إقليم العاصمة الأسترالية',
+        NT: 'الإقليم الشمالي'
+    },
+    
+    cities: {
+        NSW: { sydney: 'سيدني', newcastle: 'نيوكاسل', wollongong: 'وولونغونغ', centralCoast: 'الساحل الأوسط', canberra: 'كانبيرا' },
+        VIC: { melbourne: 'ملبورن', geelong: 'جيلونغ', ballarat: 'بولارات', bendigo: 'بنديجو' },
+        QLD: { brisbane: 'بريزبين', goldCoast: 'غولد كوست', sunshineCoast: 'سانشاين كوست', townsville: 'تاونسفيل', cairns: 'كيرنز' },
+        WA: { perth: 'بيرث', fremantle: 'فريمانتل', mandurah: 'ماندوراه' },
+        SA: { adelaide: 'أديلايد', mountGambier: 'ماونت غامبير', whyalla: 'وايالا' },
+        TAS: { hobart: 'هوبارت', launceston: 'لونسيستون', devonport: 'ديفونبورت' },
+        ACT: { canberra: 'كانبيرا', queanbeyan: 'كوينبيان' },
+        NT: { darwin: 'داروين', aliceSprings: 'أليس سبرينغز', palmerston: 'بالميرستون' }
+    },
+    
+    universities: {
+        USYD: 'جامعة سيدني',
+        UNSW: 'جامعة نيو ساوث ويلز',
+        UMELB: 'جامعة ملبورن',
+        UQ: 'جامعة كوينزلاند',
+        ANU: 'الجامعة الوطنية الأسترالية'
+    },
+    
+    csv: {
+        fullAddress: 'العنوان الكامل', street: 'الشارع', streetNumber: 'رقم الشارع', suburb: 'الضاحية',
+        state: 'الولاية', postcode: 'الرمز البريدي', fullName: 'الاسم الكامل', gender: 'الجنس',
+        age: 'العمر', birthDate: 'تاريخ الميلاد', phone: 'الهاتف', email: 'البريد الإلكتروني',
+        cardType: 'نوع البطاقة', cardNumber: 'رقم البطاقة', taxFileNumber: 'الرقم الضريبي'
+    }
+};
