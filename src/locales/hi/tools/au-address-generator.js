@@ -1,0 +1,158 @@
+export default {
+    name: 'ऑस्ट्रेलिया पता जनरेटर - ऑनलाइन वास्तविक ऑस्ट्रेलियाई पते, पहचान जानकारी और संपर्क उत्पन्न करें',
+    description: 'मुफ्त ऑनलाइन ऑस्ट्रेलियाई पता जनरेटर जो वास्तविक प्रारूप ऑस्ट्रेलियाई पते, फोन नंबर, क्रेडिट कार्ड नंबर और पूर्ण पहचान प्रोफाइल उत्पन्न करता है। राज्य द्वारा फ़िल्टर करें, JSON/CSV निर्यात करें, गोपनीयता की रक्षा के लिए पूरी तरह से फ्रंटएंड में चलता है।',
+    inputTitle: 'जनरेशन सेटिंग्स',
+    outputTitle: 'उत्पन्न परिणाम',
+    generateBtn: 'डेटा उत्पन्न करें',
+    loadSampleBtn: 'नमूना लोड करें और उत्पन्न करें',
+    clearAll: 'सब साफ़ करें',
+    noOutput: 'अभी तक कोई परिणाम नहीं',
+    preview: 'डेटा पूर्वावलोकन',
+    
+    locationTitle: 'स्थान फ़िल्टर',
+    selectState: 'राज्य/क्षेत्र चुनें',
+    selectCity: 'शहर चुनें',
+    allStates: 'सभी राज्य/क्षेत्र',
+    allCities: 'सभी शहर',
+    postalCodeLabel: 'पिन कोड',
+    validatePostalCode: 'पिन कोड सत्यापित करें',
+    
+    addressTypeTitle: 'पता प्रकार',
+    addressTypeResidential: 'आवासीय पता',
+    addressTypeCommercial: 'वाणिज्यिक पता',
+    addressTypePoBox: 'पोस्ट बॉक्स',
+    addressTypeCampus: 'विश्वविद्यालय परिसर',
+    
+    identityTitle: 'पहचान जानकारी',
+    fullName: 'पूरा नाम',
+    gender: 'लिंग',
+    genderMale: 'पुरुष',
+    genderFemale: 'महिला',
+    age: 'आयु',
+    birthDate: 'जन्म तिथि',
+    zodiac: 'राशि',
+    height: 'ऊंचाई',
+    weight: 'वजन',
+    
+    contactTitle: 'संपर्क जानकारी',
+    phoneNumber: 'फोन नंबर',
+    phoneType: 'फोन प्रकार',
+    phoneTypeMobile: 'मोबाइल',
+    phoneTypeLandline: 'लैंडलाइन',
+    areaCode: 'एरिया कोड',
+    email: 'ईमेल पता',
+    tempEmail: 'अस्थायी ईमेल',
+    
+    creditCardTitle: 'क्रेडिट कार्ड जानकारी',
+    cardType: 'कार्ड प्रकार',
+    cardNumber: 'कार्ड नंबर',
+    expiryDate: 'समाप्ति तिथि',
+    cvv: 'CVV',
+    bankBin: 'बैंक BIN',
+    
+    careerTitle: 'करियर प्रोफाइल',
+    jobTitle: 'नौकरी शीर्षक',
+    salary: 'वेतन',
+    companyName: 'कंपनी का नाम',
+    companySize: 'कंपनी का आकार',
+    industry: 'उद्योग',
+    employmentStatus: 'रोजगार स्थिति',
+    employmentFullTime: 'पूर्णकालिक',
+    employmentPartTime: 'अंशकालिक',
+    
+    taxFileTitle: 'ऑस्ट्रेलियाई कर फाइल नंबर',
+    taxFileNumber: 'कर फाइल नंबर (TFN)',
+    
+    fingerprintTitle: 'डिजिटल फिंगरप्रिंट',
+    os: 'ऑपरेटिंग सिस्टम',
+    osVersion: 'OS संस्करण',
+    browser: 'ब्राउज़र',
+    userAgent: 'User Agent',
+    screenResolution: 'स्क्रीन रिज़ॉल्यूशन',
+    timezone: 'समय क्षेत्र',
+    guid: 'GUID',
+    ipAddress: 'IP पता',
+    macAddress: 'MAC पता',
+    cookiePolicy: 'Cookie नीति',
+    
+    exportTitle: 'निर्यात प्रारूप',
+    exportJson: 'JSON निर्यात करें',
+    exportCsv: 'CSV निर्यात करें',
+    downloadBtn: 'डाउनलोड करें',
+    copyBtn: 'कॉपी करें',
+    viewDetails: 'विवरण देखें',
+    
+    batchTitle: 'बैच जनरेशन',
+    quantityLabel: 'मात्रा',
+    quantityPlaceholder: 'मात्रा दर्ज करें (1-100)',
+    
+    generating: 'उत्पन्न हो रहा है...',
+    generated: 'जनरेशन पूर्ण',
+    copySuccess: 'क्लिपबोर्ड पर कॉपी किया गया',
+    downloadSuccess: 'डाउनलोड सफल',
+    invalidQuantity: 'कृपया 1-100 के बीच एक संख्या दर्ज करें',
+    
+    resultCount: '{count} रिकॉर्ड उत्पन्न हुए',
+    resultSummary: 'परिणाम सारांश',
+    showAll: 'सब दिखाएं',
+    collapse: 'संक्षिप्त करें',
+    
+    generateOptionsTitle: 'जनरेशन विकल्प',
+    
+    recordLabel: 'रिकॉर्ड #{num}',
+    addressLabel: 'पता',
+    streetLabel: 'गली',
+    streetNumberLabel: 'घर नंबर',
+    suburbLabel: 'उपनगर',
+    stateLabel: 'राज्य',
+    postcodeLabel: 'पिन कोड',
+    unitLabel: 'इकाई',
+    
+    addressNumber: 'सं.',
+    addressFloor: 'मंजिल',
+    addressUnit: 'इकाई',
+    commercialUnit: '(वाणिज्यिक)',
+    australia: 'ऑस्ट्रेलिया',
+    postOfficeBox: 'पोस्ट बॉक्स',
+    studentDormitory: 'छात्रावास',
+    academicBuilding: 'शैक्षणिक भवन',
+    library: 'पुस्तकालय',
+    buildingUnit: 'भवन',
+    
+    states: {
+        NSW: 'न्यू साउथ वेल्स',
+        VIC: 'विक्टोरिया',
+        QLD: 'क्वींसलैंड',
+        WA: 'पश्चिमी ऑस्ट्रेलिया',
+        SA: 'दक्षिणी ऑस्ट्रेलिया',
+        TAS: 'तस्मानिया',
+        ACT: 'ऑस्ट्रेलियाई राजधानी क्षेत्र',
+        NT: 'उत्तरी क्षेत्र'
+    },
+    
+    cities: {
+        NSW: { sydney: 'सिडनी', newcastle: 'न्यूकैसल', wollongong: 'वोलोंगॉन्ग', centralCoast: 'सेंट्रल कोस्ट', canberra: 'कैनबरा' },
+        VIC: { melbourne: 'मेलबर्न', geelong: 'जीलॉन्ग', ballarat: 'बैलारत', bendigo: 'बेंडिगो' },
+        QLD: { brisbane: 'ब्रिस्बेन', goldCoast: 'गोल्ड कोस्ट', sunshineCoast: 'सनशाइन कोस्ट', townsville: 'टाउन्सविले', cairns: 'केर्न्स' },
+        WA: { perth: 'पर्थ', fremantle: 'फ्रीमेंटल', mandurah: 'मंडूरा' },
+        SA: { adelaide: 'एडिलेड', mountGambier: 'माउंट गैंबियर', whyalla: 'व्हायला' },
+        TAS: { hobart: 'होबार्ट', launceston: 'लॉन्सेस्टन', devonport: 'डेवनपोर्ट' },
+        ACT: { canberra: 'कैनबरा', queanbeyan: 'क्वीनबियन' },
+        NT: { darwin: 'डार्विन', aliceSprings: 'एलिस स्प्रिंग्स', palmerston: 'पामर्स्टन' }
+    },
+    
+    universities: {
+        USYD: 'सिडनी विश्वविद्यालय',
+        UNSW: 'न्यू साउथ वेल्स विश्वविद्यालय',
+        UMELB: 'मेलबर्न विश्वविद्यालय',
+        UQ: 'क्वींसलैंड विश्वविद्यालय',
+        ANU: 'ऑस्ट्रेलियाई राष्ट्रीय विश्वविद्यालय'
+    },
+    
+    csv: {
+        fullAddress: 'पूरा पता', street: 'गली', streetNumber: 'घर नंबर', suburb: 'उपनगर',
+        state: 'राज्य', postcode: 'पिन कोड', fullName: 'पूरा नाम', gender: 'लिंग',
+        age: 'आयु', birthDate: 'जन्म तिथि', phone: 'फोन', email: 'ईमेल',
+        cardType: 'कार्ड प्रकार', cardNumber: 'कार्ड नंबर', taxFileNumber: 'कर फाइल नंबर'
+    }
+};

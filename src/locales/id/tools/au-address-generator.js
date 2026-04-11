@@ -1,0 +1,158 @@
+export default {
+    name: 'Generator Alamat Australia - Hasilkan Alamat Australia Nyata, Informasi Identitas & Kontak Online',
+    description: 'Generator alamat Australia online gratis yang menghasilkan alamat Australia format nyata, nomor telepon, nomor kartu kredit, dan profil identitas lengkap. Filter berdasarkan negara bagian, ekspor ke JSON/CSV, berjalan sepenuhnya di frontend untuk melindungi privasi.',
+    inputTitle: 'Pengaturan Pembuatan',
+    outputTitle: 'Hasil yang Dihasilkan',
+    generateBtn: 'Hasilkan Data',
+    loadSampleBtn: 'Muat Sampel dan Hasilkan',
+    clearAll: 'Hapus Semua',
+    noOutput: 'Belum ada hasil',
+    preview: 'Pratinjau Data',
+    
+    locationTitle: 'Filter Lokasi',
+    selectState: 'Pilih Negara Bagian/Wilayah',
+    selectCity: 'Pilih Kota',
+    allStates: 'Semua Negara Bagian/Wilayah',
+    allCities: 'Semua Kota',
+    postalCodeLabel: 'Kode Pos',
+    validatePostalCode: 'Validasi Kode Pos',
+    
+    addressTypeTitle: 'Tipe Alamat',
+    addressTypeResidential: 'Alamat Tempat Tinggal',
+    addressTypeCommercial: 'Alamat Komersial',
+    addressTypePoBox: 'Kotak PO',
+    addressTypeCampus: 'Kampus Universitas',
+    
+    identityTitle: 'Informasi Identitas',
+    fullName: 'Nama Lengkap',
+    gender: 'Jenis Kelamin',
+    genderMale: 'Laki-laki',
+    genderFemale: 'Perempuan',
+    age: 'Usia',
+    birthDate: 'Tanggal Lahir',
+    zodiac: 'Zodiak',
+    height: 'Tinggi',
+    weight: 'Berat',
+    
+    contactTitle: 'Informasi Kontak',
+    phoneNumber: 'Nomor Telepon',
+    phoneType: 'Tipe Telepon',
+    phoneTypeMobile: 'Ponsel',
+    phoneTypeLandline: 'Telepon Rumah',
+    areaCode: 'Kode Area',
+    email: 'Alamat Email',
+    tempEmail: 'Email Sementara',
+    
+    creditCardTitle: 'Informasi Kartu Kredit',
+    cardType: 'Tipe Kartu',
+    cardNumber: 'Nomor Kartu',
+    expiryDate: 'Tanggal Kadaluarsa',
+    cvv: 'CVV',
+    bankBin: 'BIN Bank',
+    
+    careerTitle: 'Profil Karier',
+    jobTitle: 'Jabatan',
+    salary: 'Gaji',
+    companyName: 'Nama Perusahaan',
+    companySize: 'Ukuran Perusahaan',
+    industry: 'Industri',
+    employmentStatus: 'Status Pekerjaan',
+    employmentFullTime: 'Penuh Waktu',
+    employmentPartTime: 'Paruh Waktu',
+    
+    taxFileTitle: 'Nomor File Pajak Australia',
+    taxFileNumber: 'Nomor File Pajak (TFN)',
+    
+    fingerprintTitle: 'Sidik Jari Digital',
+    os: 'Sistem Operasi',
+    osVersion: 'Versi OS',
+    browser: 'Browser',
+    userAgent: 'User Agent',
+    screenResolution: 'Resolusi Layar',
+    timezone: 'Zona Waktu',
+    guid: 'GUID',
+    ipAddress: 'Alamat IP',
+    macAddress: 'Alamat MAC',
+    cookiePolicy: 'Kebijakan Cookie',
+    
+    exportTitle: 'Format Ekspor',
+    exportJson: 'Ekspor JSON',
+    exportCsv: 'Ekspor CSV',
+    downloadBtn: 'Unduh',
+    copyBtn: 'Salin',
+    viewDetails: 'Lihat Detail',
+    
+    batchTitle: 'Pembuatan Batch',
+    quantityLabel: 'Jumlah',
+    quantityPlaceholder: 'Masukkan jumlah (1-100)',
+    
+    generating: 'Menghasilkan...',
+    generated: 'Pembuatan Selesai',
+    copySuccess: 'Disalin ke clipboard',
+    downloadSuccess: 'Unduhan berhasil',
+    invalidQuantity: 'Silakan masukkan angka antara 1-100',
+    
+    resultCount: 'Menghasilkan {count} catatan',
+    resultSummary: 'Ringkasan Hasil',
+    showAll: 'Tampilkan Semua',
+    collapse: 'Lipat',
+    
+    generateOptionsTitle: 'Opsi Pembuatan',
+    
+    recordLabel: 'Catatan #{num}',
+    addressLabel: 'Alamat',
+    streetLabel: 'Jalan',
+    streetNumberLabel: 'Nomor Jalan',
+    suburbLabel: 'Pinggiran Kota',
+    stateLabel: 'Negara Bagian',
+    postcodeLabel: 'Kode Pos',
+    unitLabel: 'Unit',
+    
+    addressNumber: 'No.',
+    addressFloor: 'Lantai',
+    addressUnit: 'Unit',
+    commercialUnit: '(Komersial)',
+    australia: 'Australia',
+    postOfficeBox: 'Kotak PO',
+    studentDormitory: 'Asrama Mahasiswa',
+    academicBuilding: 'Gedung Akademik',
+    library: 'Perpustakaan',
+    buildingUnit: 'Gedung',
+    
+    states: {
+        NSW: 'New South Wales',
+        VIC: 'Victoria',
+        QLD: 'Queensland',
+        WA: 'Australia Barat',
+        SA: 'Australia Selatan',
+        TAS: 'Tasmania',
+        ACT: 'Wilayah Ibu Kota Australia',
+        NT: 'Wilayah Utara'
+    },
+    
+    cities: {
+        NSW: { sydney: 'Sydney', newcastle: 'Newcastle', wollongong: 'Wollongong', centralCoast: 'Central Coast', canberra: 'Canberra' },
+        VIC: { melbourne: 'Melbourne', geelong: 'Geelong', ballarat: 'Ballarat', bendigo: 'Bendigo' },
+        QLD: { brisbane: 'Brisbane', goldCoast: 'Gold Coast', sunshineCoast: 'Sunshine Coast', townsville: 'Townsville', cairns: 'Cairns' },
+        WA: { perth: 'Perth', fremantle: 'Fremantle', mandurah: 'Mandurah' },
+        SA: { adelaide: 'Adelaide', mountGambier: 'Mount Gambier', whyalla: 'Whyalla' },
+        TAS: { hobart: 'Hobart', launceston: 'Launceston', devonport: 'Devonport' },
+        ACT: { canberra: 'Canberra', queanbeyan: 'Queanbeyan' },
+        NT: { darwin: 'Darwin', aliceSprings: 'Alice Springs', palmerston: 'Palmerston' }
+    },
+    
+    universities: {
+        USYD: 'Universitas Sydney',
+        UNSW: 'Universitas New South Wales',
+        UMELB: 'Universitas Melbourne',
+        UQ: 'Universitas Queensland',
+        ANU: 'Universitas Nasional Australia'
+    },
+    
+    csv: {
+        fullAddress: 'Alamat Lengkap', street: 'Jalan', streetNumber: 'Nomor Jalan', suburb: 'Pinggiran Kota',
+        state: 'Negara Bagian', postcode: 'Kode Pos', fullName: 'Nama Lengkap', gender: 'Jenis Kelamin',
+        age: 'Usia', birthDate: 'Tanggal Lahir', phone: 'Telepon', email: 'Email',
+        cardType: 'Tipe Kartu', cardNumber: 'Nomor Kartu', taxFileNumber: 'Nomor File Pajak'
+    }
+};

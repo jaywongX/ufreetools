@@ -1,0 +1,158 @@
+export default {
+    name: 'Generatore di Indirizzi Australiani - Genera Indirizzi Australiani Reali, Informazioni Identità e Contatti Online',
+    description: 'Generatore gratuito di indirizzi australiani online che genera indirizzi australiani in formato reale, numeri di telefono, numeri di carta di credito e profili di identità completi. Filtra per stato, esporta in JSON/CSV, funziona interamente nel frontend per proteggere la privacy.',
+    inputTitle: 'Impostazioni di Generazione',
+    outputTitle: 'Risultati Generati',
+    generateBtn: 'Genera Dati',
+    loadSampleBtn: 'Carica Esempio e Genera',
+    clearAll: 'Cancella Tutto',
+    noOutput: 'Nessun risultato ancora',
+    preview: 'Anteprima Dati',
+    
+    locationTitle: 'Filtro Località',
+    selectState: 'Seleziona Stato/Territorio',
+    selectCity: 'Seleziona Città',
+    allStates: 'Tutti gli Stati/Territori',
+    allCities: 'Tutte le Città',
+    postalCodeLabel: 'Codice Postale',
+    validatePostalCode: 'Valida Codice Postale',
+    
+    addressTypeTitle: 'Tipo di Indirizzo',
+    addressTypeResidential: 'Indirizzo Residenziale',
+    addressTypeCommercial: 'Indirizzo Commerciale',
+    addressTypePoBox: 'Casella Postale',
+    addressTypeCampus: 'Campus Universitario',
+    
+    identityTitle: 'Informazioni Identità',
+    fullName: 'Nome Completo',
+    gender: 'Sesso',
+    genderMale: 'Maschio',
+    genderFemale: 'Femmina',
+    age: 'Età',
+    birthDate: 'Data di Nascita',
+    zodiac: 'Zodiaco',
+    height: 'Altezza',
+    weight: 'Peso',
+    
+    contactTitle: 'Informazioni Contatto',
+    phoneNumber: 'Numero di Telefono',
+    phoneType: 'Tipo di Telefono',
+    phoneTypeMobile: 'Cellulare',
+    phoneTypeLandline: 'Fisso',
+    areaCode: 'Prefisso',
+    email: 'Indirizzo Email',
+    tempEmail: 'Email Temporanea',
+    
+    creditCardTitle: 'Informazioni Carta di Credito',
+    cardType: 'Tipo di Carta',
+    cardNumber: 'Numero di Carta',
+    expiryDate: 'Data di Scadenza',
+    cvv: 'CVV',
+    bankBin: 'BIN Bancario',
+    
+    careerTitle: 'Profilo Professionale',
+    jobTitle: 'Posizione',
+    salary: 'Stipendio',
+    companyName: 'Nome Azienda',
+    companySize: 'Dimensione Azienda',
+    industry: 'Settore',
+    employmentStatus: 'Stato Occupazionale',
+    employmentFullTime: 'Tempo Pieno',
+    employmentPartTime: 'Part-time',
+    
+    taxFileTitle: 'Numero di File Fiscale Australiano',
+    taxFileNumber: 'Numero di File Fiscale (TFN)',
+    
+    fingerprintTitle: 'Impronta Digitale',
+    os: 'Sistema Operativo',
+    osVersion: 'Versione SO',
+    browser: 'Browser',
+    userAgent: 'User Agent',
+    screenResolution: 'Risoluzione Schermo',
+    timezone: 'Fuso Orario',
+    guid: 'GUID',
+    ipAddress: 'Indirizzo IP',
+    macAddress: 'Indirizzo MAC',
+    cookiePolicy: 'Policy Cookie',
+    
+    exportTitle: 'Formato di Esportazione',
+    exportJson: 'Esporta JSON',
+    exportCsv: 'Esporta CSV',
+    downloadBtn: 'Scarica',
+    copyBtn: 'Copia',
+    viewDetails: 'Vedi Dettagli',
+    
+    batchTitle: 'Generazione Batch',
+    quantityLabel: 'Quantità',
+    quantityPlaceholder: 'Inserisci quantità (1-100)',
+    
+    generating: 'Generazione...',
+    generated: 'Generazione Completata',
+    copySuccess: 'Copiato negli appunti',
+    downloadSuccess: 'Download completato',
+    invalidQuantity: 'Inserisci un numero tra 1-100',
+    
+    resultCount: 'Generati {count} record',
+    resultSummary: 'Riepilogo Risultati',
+    showAll: 'Mostra Tutto',
+    collapse: 'Comprimi',
+    
+    generateOptionsTitle: 'Opzioni di Generazione',
+    
+    recordLabel: 'Record #{num}',
+    addressLabel: 'Indirizzo',
+    streetLabel: 'Via',
+    streetNumberLabel: 'Numero Civico',
+    suburbLabel: 'Sobborgo',
+    stateLabel: 'Stato',
+    postcodeLabel: 'Codice Postale',
+    unitLabel: 'Unità',
+    
+    addressNumber: 'N.',
+    addressFloor: 'Piano',
+    addressUnit: 'Unità',
+    commercialUnit: '(Commerciale)',
+    australia: 'Australia',
+    postOfficeBox: 'Casella Postale',
+    studentDormitory: 'Dormitorio Studenti',
+    academicBuilding: 'Edificio Accademico',
+    library: 'Biblioteca',
+    buildingUnit: 'Edificio',
+    
+    states: {
+        NSW: 'Nuovo Galles del Sud',
+        VIC: 'Victoria',
+        QLD: 'Queensland',
+        WA: 'Australia Occidentale',
+        SA: 'Australia Meridionale',
+        TAS: 'Tasmania',
+        ACT: 'Territorio della Capitale Australiana',
+        NT: 'Territorio del Nord'
+    },
+    
+    cities: {
+        NSW: { sydney: 'Sydney', newcastle: 'Newcastle', wollongong: 'Wollongong', centralCoast: 'Central Coast', canberra: 'Canberra' },
+        VIC: { melbourne: 'Melbourne', geelong: 'Geelong', ballarat: 'Ballarat', bendigo: 'Bendigo' },
+        QLD: { brisbane: 'Brisbane', goldCoast: 'Gold Coast', sunshineCoast: 'Sunshine Coast', townsville: 'Townsville', cairns: 'Cairns' },
+        WA: { perth: 'Perth', fremantle: 'Fremantle', mandurah: 'Mandurah' },
+        SA: { adelaide: 'Adelaide', mountGambier: 'Mount Gambier', whyalla: 'Whyalla' },
+        TAS: { hobart: 'Hobart', launceston: 'Launceston', devonport: 'Devonport' },
+        ACT: { canberra: 'Canberra', queanbeyan: 'Queanbeyan' },
+        NT: { darwin: 'Darwin', aliceSprings: 'Alice Springs', palmerston: 'Palmerston' }
+    },
+    
+    universities: {
+        USYD: 'Università di Sydney',
+        UNSW: 'Università del Nuovo Galles del Sud',
+        UMELB: 'Università di Melbourne',
+        UQ: 'Università del Queensland',
+        ANU: 'Università Nazionale Australiana'
+    },
+    
+    csv: {
+        fullAddress: 'Indirizzo Completo', street: 'Via', streetNumber: 'Numero Civico', suburb: 'Sobborgo',
+        state: 'Stato', postcode: 'Codice Postale', fullName: 'Nome Completo', gender: 'Sesso',
+        age: 'Età', birthDate: 'Data di Nascita', phone: 'Telefono', email: 'Email',
+        cardType: 'Tipo Carta', cardNumber: 'Numero Carta', taxFileNumber: 'Numero Fiscale'
+    }
+};
