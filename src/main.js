@@ -273,6 +273,7 @@ const lazyComponentMap = {
   'AudioSpeed': () => import('./components/tools/AudioSpeed.vue'),
   'AudioLoop': () => import('./components/tools/AudioLoop.vue'),
   'AuAddressGenerator': () => import('./components/tools/AuAddressGenerator.vue'),
+  'NgAddressGenerator': () => import('./components/tools/NgAddressGenerator.vue'),
 }
 
 // 用异步 IIFE 启动应用
