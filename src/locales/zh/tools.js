@@ -199,6 +199,7 @@ import AudioSpeed from './tools/audio-speed.js'
 import AudioLoop from './tools/audio-loop.js'
 import AuAddressGenerator from './tools/au-address-generator.js'
 import NgAddressGenerator from './tools/ng-address-generator.js'
+import DeAddressGenerator from './tools/de-address-generator.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -401,5 +402,6 @@ export default {
   'audio-speed': AudioSpeed,
   'audio-loop': AudioLoop,
   'au-address-generator': AuAddressGenerator,
-  'ng-address-generator': NgAddressGenerator
+  'ng-address-generator': NgAddressGenerator,
+  'de-address-generator': DeAddressGenerator
 };
