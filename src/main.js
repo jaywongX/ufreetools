@@ -275,6 +275,7 @@ const lazyComponentMap = {
   'AuAddressGenerator': () => import('./components/tools/AuAddressGenerator.vue'),
   'NgAddressGenerator': () => import('./components/tools/NgAddressGenerator.vue'),
   'DeAddressGenerator': () => import('./components/tools/DeAddressGenerator.vue'),
+  'RandomIpGenerator': () => import('./components/tools/RandomIpGenerator.vue'),
 }
 
 // 用异步 IIFE 启动应用

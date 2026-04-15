@@ -200,6 +200,7 @@ import AudioLoop from './tools/audio-loop.js'
 import AuAddressGenerator from './tools/au-address-generator.js'
 import NgAddressGenerator from './tools/ng-address-generator.js'
 import DeAddressGenerator from './tools/de-address-generator.js'
+import RandomIpGenerator from './tools/random-ip-generator.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -403,5 +404,6 @@ export default {
   'audio-loop': AudioLoop,
   'au-address-generator': AuAddressGenerator,
   'ng-address-generator': NgAddressGenerator,
-  'de-address-generator': DeAddressGenerator
+  'de-address-generator': DeAddressGenerator,
+  'random-ip-generator': RandomIpGenerator
 };
