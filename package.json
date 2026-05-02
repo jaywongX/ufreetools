@@ -6,12 +6,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "vercel-build": "npm run build:prerender",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
-    "test:skip-components": "vitest run --testNamePattern='^(?!.*Component).*$'"
+    "test:skip-components": "vitest run --testNamePattern='^(?!.*Component).*$'",
+    "build:prerender": "node scripts/run-prerender-build.js core 0",
+    "build:prerender:all": "node scripts/run-prerender-build.js all",
+    "generate:routes": "node scripts/print-prerender-routes.js core",
+    "generate:routes:all": "node scripts/print-prerender-routes.js all"
   },
   "dependencies": {
     "@faker-js/faker": "^10.1.0",
@@ -114,6 +119,8 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "vite-prerender-plugin": "^0.5.13",
+    "puppeteer": "^23.0.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitest/coverage-c8": "^0.33.0",
     "@vue/test-utils": "^2.4.6",
