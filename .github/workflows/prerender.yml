@@ -21,6 +21,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Rollup native modules for Linux
+        run: |
+          npm install @rollup/rollup-linux-x64-gnu --no-save || true
+          npm install @rollup/rollup-linux-x64-musl --no-save || true
+
       - name: Run pre-render build
         run: npm run build:prerender
         env:
