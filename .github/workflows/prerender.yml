@@ -35,9 +35,10 @@ jobs:
         run: npm install -g vercel@latest
 
       - name: Deploy to Vercel
-        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
+        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --yes --archive=tgz
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           NODE_OPTIONS: "--max-old-space-size=4096"
           VERCEL_FORCE_HTTP2: '0'
+          VERCEL_DISABLE_GIT: '1'
