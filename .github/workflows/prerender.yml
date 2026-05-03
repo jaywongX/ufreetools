@@ -2,7 +2,9 @@ name: Pre-render and Deploy
 
 on:
   push:
-    branches: [v1.0]
+    branches:
+      - main
+      - v1.0
   workflow_dispatch:
 
 jobs:

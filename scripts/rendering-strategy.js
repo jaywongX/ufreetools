@@ -123,7 +123,7 @@ export const PRIORITY_TOOL_IDS = [
   'http-proxy-detector',
   'http-status-code-lookup',
   'id-number-generator',
-  'id-photo-maker',
+  // 'id-photo-maker',
   'image-base64-converter',
   'image-batch-resizer',
   'image-color-extractor',
