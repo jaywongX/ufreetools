@@ -1,0 +1,44 @@
+name: Pre-render and Deploy
+
+on:
+  push:
+    branches: [v1.0]
+  workflow_dispatch:
+
+jobs:
+  prerender:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Rollup native modules for Linux
+        run: |
+          npm install @rollup/rollup-linux-x64-gnu --no-save || true
+          npm install @rollup/rollup-linux-x64-musl --no-save || true
+
+      - name: Run pre-render build
+        run: npm run build:prerender
+        env:
+          NODE_OPTIONS: '--max-old-space-size=8192'
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Deploy to Vercel
+        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --yes --archive=tgz
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          NODE_OPTIONS: "--max-old-space-size=4096"
+          VERCEL_FORCE_HTTP2: '0'
+          VERCEL_DISABLE_GIT: '1'

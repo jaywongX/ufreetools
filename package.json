@@ -6,12 +6,18 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "vercel-build": "echo 'Pre-rendered by CI, dist already ready'",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
-    "test:skip-components": "vitest run --testNamePattern='^(?!.*Component).*$'"
+    "test:skip-components": "vitest run --testNamePattern='^(?!.*Component).*$'",
+    "build:prerender": "node scripts/run-prerender-build.js core 0",
+    "build:prerender:all": "node scripts/run-prerender-build.js all",
+    "build:spa": "vite build",
+    "generate:routes": "node scripts/print-prerender-routes.js core",
+    "generate:routes:all": "node scripts/print-prerender-routes.js all"
   },
   "dependencies": {
     "@faker-js/faker": "^10.1.0",
@@ -116,6 +122,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitest/coverage-c8": "^0.33.0",
+    "@vue/server-renderer": "^3.5.33",
     "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.20",
     "highlight.js": "^11.11.1",
@@ -126,10 +133,12 @@
     "papaparse": "^5.5.2",
     "patch-package": "^8.0.0",
     "postcss": "^8.4.31",
+    "puppeteer": "^23.0.0",
     "random-useragent": "^0.5.0",
     "rollup-plugin-node-polyfills": "^0.2.1",
     "tailwindcss": "^3.4.1",
     "vite": "^6.2.0",
+    "vite-prerender-plugin": "^0.5.13",
     "vitest": "^0.34.6"
   }
 }

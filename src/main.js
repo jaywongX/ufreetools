@@ -278,8 +278,11 @@ const lazyComponentMap = {
   'RandomIpGenerator': () => import('./components/tools/RandomIpGenerator.vue'),
 }
 
-// 用异步 IIFE 启动应用
+// 用异步 IIFE 启动应用（仅在浏览器环境中执行）
 ;(async () => {
+  // SSR 守卫：在 Node.js 预渲染环境中跳过挂载
+  if (typeof document === 'undefined') return;
+
   // 先加载默认语言包
   const messages = await loadLocaleMessages(defaultLocale)
   i18n.global.setLocaleMessage(defaultLocale, messages)
