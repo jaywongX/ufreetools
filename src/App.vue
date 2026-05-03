@@ -1351,6 +1351,17 @@ const allTools = computed(() => [
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
     tags: ['network', 'http', 'browser', 'cookie', 'privacy', 'security']
   },
+  {
+    id: 'api-request-tool',
+    name: t('tools.api-request-tool.name'),
+    category: t(`categories.network.title`),
+    categoryId: 'network',
+    description: t('tools.api-request-tool.description'),
+    path: '/tools/api-request-tool',
+    component: 'ApiRequestTool',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    tags: ['network', 'ip']
+  }, 
 
   // 加密安全工具
   {
