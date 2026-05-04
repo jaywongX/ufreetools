@@ -243,6 +243,7 @@
     <!-- 添加文章组件 -->
     <LoanCalculatorArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -251,6 +252,9 @@ import { useI18n } from 'vue-i18n';
 import * as XLSX from 'xlsx';
 import LoanCalculatorArticle from './LoanCalculatorArticle.vue';
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t, locale } = useI18n();
 
 // 表单数据
@@ -535,7 +539,7 @@ function formatCurrency(amount) {
 function exportToExcel() {
   // 如果没有还款计划数据，提示用户
   if (!paymentSchedule.value || paymentSchedule.value.length === 0) {
-    alert(t('tools.loan-calculator.calculate') + ' - ' + t('tools.loan-calculator.tip'));
+    toastRef.value.show(t('tools.loan-calculator.calculate') + ' - ' + t('tools.loan-calculator.tip'));
     return;
   }
   

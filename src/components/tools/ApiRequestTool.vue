@@ -313,12 +313,16 @@
       </div>
     </div>
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
 import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 请求配置
@@ -420,7 +424,7 @@ function copyResponse() {
   
   navigator.clipboard.writeText(formattedResponse.value)
     .then(() => {
-      alert('已复制到剪贴板')
+      toastRef.value.show('已复制到剪贴板')
     })
     .catch(err => {
       console.error('复制失败:', err)

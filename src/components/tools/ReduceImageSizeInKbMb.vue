@@ -289,6 +289,7 @@
     </div>
     <ReduceImageSizeInKbMbArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -298,6 +299,9 @@ import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import ReduceImageSizeInKbMbArticle from './ReduceImageSizeInKbMbArticle.vue';
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n();
 
 // 状态变量
@@ -531,7 +535,7 @@ const reduceImageToTargetSize = async (file) => {
   // 如果目标大小大于原始大小，返回原始图像并显示提示
   if (targetSize > actualOriginalSize) {
     // 显示提示
-    alert(t('tools.reduce-image-size-in-kb-mb.sizeIncreaseNotSupported'));
+    toastRef.value.show(t('tools.reduce-image-size-in-kb-mb.sizeIncreaseNotSupported'));
 
     // 转换为指定格式的高质量版本，但不尝试增大大小
     const originalResult = await compressWithQuality(file, 1.0);

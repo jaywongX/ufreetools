@@ -146,6 +146,7 @@
     </div>
     <LaTeXFormulaGeneratorArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -154,6 +155,9 @@ import { useI18n } from 'vue-i18n';
 import debounce from 'lodash/debounce';
 import LaTeXFormulaGeneratorArticle from './LaTeXFormulaGeneratorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n();
 
 // 状态
@@ -252,7 +256,7 @@ const exportImage = async () => {
 const copyLatex = () => {
   navigator.clipboard.writeText(latexInput.value).then(() => {
     // 这里可以添加复制成功的提示
-    alert(t('tools.latex-formula-generator.copied'));
+    toastRef.value.show(t('tools.latex-formula-generator.copied'));
   });
 };
 

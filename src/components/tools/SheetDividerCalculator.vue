@@ -190,6 +190,7 @@
         </div>
         <SheetDividerCalculatorArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -200,6 +201,9 @@ import * as XLSX from 'xlsx'
 // import { jsPDF } from 'jspdf'
 // import 'jspdf-autotable'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 输入数据
@@ -439,11 +443,11 @@ function exportToExcel() {
 
         // 显示成功提示
         setTimeout(() => {
-            alert(t('tools.sheet-divider-calculator.excelExportSuccess'))
+            toastRef.value.show(t('tools.sheet-divider-calculator.excelExportSuccess'))
         }, 500)
     } catch (error) {
         console.error('导出Excel失败:', error)
-        alert(t('tools.sheet-divider-calculator.exportFailed'))
+        toastRef.value.show(t('tools.sheet-divider-calculator.exportFailed'))
     } finally {
         isExporting.value = false
     }

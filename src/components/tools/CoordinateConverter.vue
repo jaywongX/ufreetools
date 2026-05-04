@@ -289,6 +289,7 @@
     <!-- Article content from localization -->
     <CoordinateConverterArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -300,6 +301,9 @@ import * as turf from '@turf/turf';
 import { wgs84togcj02, gcj02towgs84, gcj02tobd09, bd09togcj02 } from 'coordtransform';
 
 // 初始化国际化
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n();
 
 // 坐标转换所需的常量
@@ -454,17 +458,17 @@ function resetForm() {
 
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(() => {
-    alert(t('tools.coordinate-converter.messages.copied'));
+    toastRef.value.show(t('tools.coordinate-converter.messages.copied'));
   }).catch(err => {
     console.error('Could not copy text: ', err);
-    alert(t('tools.coordinate-converter.errors.copyFailed'));
+    toastRef.value.show(t('tools.coordinate-converter.errors.copyFailed'));
   });
 }
 
 // 坐标转换主函数
 async function convertCoordinates() {
   if (!latitude.value || !longitude.value) {
-    alert(t('tools.coordinate-converter.messages.noCoordinates'));
+    toastRef.value.show(t('tools.coordinate-converter.messages.noCoordinates'));
     return;
   }
   
@@ -586,7 +590,7 @@ async function convertCoordinates() {
     }
   } catch (error) {
     console.error('Conversion error:', error);
-    alert(t('tools.coordinate-converter.errors.conversionFailed'));
+    toastRef.value.show(t('tools.coordinate-converter.errors.conversionFailed'));
   } finally {
     isConverting.value = false;
   }
@@ -595,7 +599,7 @@ async function convertCoordinates() {
 // 批量转换功能
 async function convertBatch() {
   if (!batchInput.value.trim()) {
-    alert(t('tools.coordinate-converter.messages.noCoordinates'));
+    toastRef.value.show(t('tools.coordinate-converter.messages.noCoordinates'));
     return;
   }
   
@@ -748,13 +752,13 @@ async function convertBatch() {
     }
     
     if (failureCount > 0 && failureCount < lines.length) {
-      alert(t('tools.coordinate-converter.errors.batchFailed'));
+      toastRef.value.show(t('tools.coordinate-converter.errors.batchFailed'));
     } else if (failureCount === 0) {
-      alert(t('tools.coordinate-converter.messages.batchSuccess'));
+      toastRef.value.show(t('tools.coordinate-converter.messages.batchSuccess'));
     }
   } catch (error) {
     console.error('Batch conversion error:', error);
-    alert(error.message);
+    toastRef.value.show(error.message);
   } finally {
     isBatchConverting.value = false;
   }

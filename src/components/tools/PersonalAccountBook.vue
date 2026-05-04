@@ -577,17 +577,20 @@
     <!-- 在底部添加文章部分 -->
     <PersonalAccountBookArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script>
 import { defineComponent } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
 import PersonalAccountBookArticle from './PersonalAccountBookArticle.vue';
+import Toast from '../common/Toast.vue';
 
 export default defineComponent({
   name: 'PersonalAccountBook',
   components: {
-    PersonalAccountBookArticle
+    PersonalAccountBookArticle,
+    Toast
   },
   data() {
     return {
@@ -825,17 +828,17 @@ export default defineComponent({
       const transaction = { ...this.currentTransaction };
       
       if (!transaction.amount || transaction.amount <= 0) {
-        alert(this.$t('tools.personal-account-book.ui.enterValidAmount') || 'Please enter a valid amount');
+        this.$refs.toastRef.show(this.$t('tools.personal-account-book.ui.enterValidAmount') || 'Please enter a valid amount');
         return;
       }
       
       if (!transaction.date) {
-        alert(this.$t('tools.personal-account-book.ui.selectDate') || 'Please select a date');
+        this.$refs.toastRef.show(this.$t('tools.personal-account-book.ui.selectDate') || 'Please select a date');
         return;
       }
       
       if (!transaction.category) {
-        alert(this.$t('tools.personal-account-book.ui.selectCategory') || 'Please select a category');
+        this.$refs.toastRef.show(this.$t('tools.personal-account-book.ui.selectCategory') || 'Please select a category');
         return;
       }
       
@@ -867,7 +870,7 @@ export default defineComponent({
     },
     saveBudget() {
       if (!this.budget.amount || this.budget.amount <= 0) {
-        alert('Please enter a valid budget amount');
+        this.$refs.toastRef.show('Please enter a valid budget amount');
         return;
       }
       
@@ -894,10 +897,10 @@ export default defineComponent({
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
         
-        alert(this.$t('tools.personal-account-book.ui.successfullyExported'));
+        this.$refs.toastRef.show(this.$t('tools.personal-account-book.ui.successfullyExported'));
       } catch (e) {
         console.error('Export error:', e);
-        alert(this.$t('tools.personal-account-book.ui.errorExporting'));
+        this.$refs.toastRef.show(this.$t('tools.personal-account-book.ui.errorExporting'));
       }
     },
     importData() {
@@ -923,10 +926,10 @@ export default defineComponent({
             }
             
             this.saveData();
-            alert(this.$t('tools.personal-account-book.ui.successfullyImported'));
+            this.$refs.toastRef.show(this.$t('tools.personal-account-book.ui.successfullyImported'));
           } catch (e) {
             console.error('Import error:', e);
-            alert(this.$t('tools.personal-account-book.ui.errorImporting'));
+            this.$refs.toastRef.show(this.$t('tools.personal-account-book.ui.errorImporting'));
           }
         };
         
@@ -987,7 +990,7 @@ export default defineComponent({
     clearTransactions() {
       this.transactions = [];
       this.saveData();
-      alert(this.$t('tools.personal-account-book.ui.transactionsCleared'));
+      this.$refs.toastRef.show(this.$t('tools.personal-account-book.ui.transactionsCleared'));
     },
   }
 });

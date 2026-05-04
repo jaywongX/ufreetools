@@ -219,6 +219,7 @@
         </div>
         <AudioToFlacArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -227,6 +228,9 @@ import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
 import AudioToFlacArticle from './AudioToFlacArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 const fileInput = ref(null)
@@ -542,7 +546,7 @@ async function convertAll() {
         }
     } catch (error) {
         console.error('转换失败', error)
-        alert(t('tools.audio-to-flac.convertError'))
+        toastRef.value.show(t('tools.audio-to-flac.convertError'))
     } finally {
         isConverting.value = false
     }

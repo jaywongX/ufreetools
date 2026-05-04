@@ -397,6 +397,7 @@
             </div>
         </div>
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -408,6 +409,9 @@ import forge from 'node-forge';
 import asn1 from 'asn1.js';
 import Sm2SignatureVerifierArticle from './Sm2SignatureVerifierArticle.vue';
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n();
 
 // Key pair state
@@ -605,7 +609,7 @@ function extractBase64FromPem(pem) {
 }
 
 function showToast(message, isError = false) {
-    alert(message); // Simple toast implementation
+    toastRef.value.show(message); // Simple toast implementation
 }
 
 // Process ID parameter based on format

@@ -204,6 +204,7 @@
         </div>
         <AudioVisualEditorArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -211,6 +212,9 @@ import { ref, computed, onMounted, onUnmounted, watch, h } from 'vue'
 import { useI18n } from 'vue-i18n'
 import AudioVisualEditorArticle from './AudioVisualEditorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 const fileInput = ref(null)
@@ -342,7 +346,7 @@ async function loadAudioFile(file) {
         setTimeout(() => drawWaveform(), 0)
     } catch (error) {
         console.error('Failed to load audio:', error)
-        alert(t('tools.audio-visual-editor.loadError'))
+        toastRef.value.show(t('tools.audio-visual-editor.loadError'))
     }
 }
 

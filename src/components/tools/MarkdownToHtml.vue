@@ -187,6 +187,7 @@
     <!-- 添加文章组件 -->
     <MarkdownToHtmlArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -197,6 +198,9 @@ import { useI18n } from 'vue-i18n'
 import MarkdownToHtmlArticle from './MarkdownToHtmlArticle.vue'
 
 // 初始化国际化
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t, locale } = useI18n()
 
 // 状态变量
@@ -351,7 +355,7 @@ async function pasteFromClipboard() {
     convertMarkdownToHtml()
   } catch (err) {
     console.error('无法从剪贴板读取:', err)
-    alert('无法从剪贴板读取文本。您可能需要在安全的上下文(HTTPS)中运行，或授予网站权限。')
+    toastRef.value.show('无法从剪贴板读取文本。您可能需要在安全的上下文(HTTPS)中运行，或授予网站权限。')
   }
 }
 
@@ -365,7 +369,7 @@ async function copyOutput() {
     }, 2000)
   } catch (err) {
     console.error('复制失败:', err)
-    alert('复制HTML到剪贴板失败')
+    toastRef.value.show('复制HTML到剪贴板失败')
   }
 }
 

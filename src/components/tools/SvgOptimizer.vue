@@ -286,6 +286,7 @@
     <!-- 在最末尾添加文章组件 -->
     <SvgOptimizerArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -293,6 +294,9 @@ import { ref, reactive, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import SvgOptimizerArticle from './SvgOptimizerArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 组件状态
@@ -352,7 +356,7 @@ function onDrop(event) {
 // 处理文件
 function handleFile(file) {
   if (!file.name.toLowerCase().endsWith('.svg')) {
-    alert(t('tools.svg-optimizer.messages.onlySvgAllowed'))
+    toastRef.value.show(t('tools.svg-optimizer.messages.onlySvgAllowed'))
     return
   }
   
@@ -439,7 +443,7 @@ async function optimizeSvg() {
     
   } catch (error) {
     console.error('SVG优化失败:', error)
-    alert(t('tools.svg-optimizer.messages.optimizationFailed', { error: error.message }))
+    toastRef.value.show(t('tools.svg-optimizer.messages.optimizationFailed', { error: error.message }))
   } finally {
     isOptimizing.value = false
   }
@@ -515,10 +519,10 @@ function formatSvgCode(svgString) {
 // 复制到剪贴板
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(() => {
-    alert(t('tools.svg-optimizer.messages.copied'))
+    toastRef.value.show(t('tools.svg-optimizer.messages.copied'))
   }).catch(err => {
     console.error('复制失败:', err)
-    alert(t('tools.svg-optimizer.messages.copyFailed'))
+    toastRef.value.show(t('tools.svg-optimizer.messages.copyFailed'))
   })
 }
 

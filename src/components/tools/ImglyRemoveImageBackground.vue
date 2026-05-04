@@ -242,6 +242,7 @@
     </div>
     <ImglyRemoveImageBackgroundArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -252,6 +253,9 @@ import { saveAs } from 'file-saver';
 import { removeBackground } from '@imgly/background-removal';
 import ImglyRemoveImageBackgroundArticle from './ImglyRemoveImageBackgroundArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n();
 
 // 状态变量
@@ -506,7 +510,7 @@ const processAllImages = async () => {
         console.error('Error processing image:', image.file.name, error);
         // 即使出错也要继续处理其他图片，并更新进度
         processingProgress.value = Math.round(currentProgress + progressPerImage);
-        alert(`处理图片 "${image.file.name}" 时出错: ${error.message}`);
+        toastRef.value.show(`处理图片 "${image.file.name}" 时出错: ${error.message}`);
       }
     }
     
@@ -515,7 +519,7 @@ const processAllImages = async () => {
     console.log('All images processed successfully');
   } catch (error) {
     console.error('Error processing images:', error);
-    alert('处理图片时出错，请重试。');
+    toastRef.value.show('处理图片时出错，请重试。');
   } finally {
     isProcessing.value = false;
     // 延迟重置进度，让用户看到100%

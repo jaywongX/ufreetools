@@ -276,12 +276,16 @@
         </div>
         <ImageToIcoArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 // 在 import JSZip 之前添加
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 if (typeof Buffer === 'undefined') {
   window.Buffer = {
     isBuffer: (obj) => {
@@ -446,7 +450,7 @@ async function generateIco() {
         }
     } catch (error) {
         console.error('generate ico error', error)
-        alert(t('tools.image-to-ico.generateError'))
+        toastRef.value.show(t('tools.image-to-ico.generateError'))
     } finally {
         isGenerating.value = false
     }

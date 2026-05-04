@@ -281,6 +281,7 @@
         
         <AIAgeGenderEstimatorArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -290,6 +291,9 @@ import JSZip from 'jszip'
 import AIAgeGenderEstimatorArticle from './AIAgeGenderEstimatorArticle.vue'
 import * as faceapi from 'face-api.js'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 const fileInput = ref(null)
@@ -839,7 +843,7 @@ async function downloadAll() {
         URL.revokeObjectURL(url)
     } catch (error) {
         console.error('Error creating zip:', error)
-        alert(t('tools.ai-age-gender-estimator.zipError'))
+        toastRef.value.show(t('tools.ai-age-gender-estimator.zipError'))
     } finally {
         isProcessing.value = false
     }

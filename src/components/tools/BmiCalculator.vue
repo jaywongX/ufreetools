@@ -237,12 +237,16 @@
       </div>
     </div>
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
 import { ref, computed, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t, locale } = useI18n();
 
 // 表单状态
@@ -295,7 +299,7 @@ watch(unitSystem, (newSystem) => {
 // 计算BMI
 function calculateBMI() {
   if (heightInMeters.value <= 0 || weightInKg.value <= 0) {
-    alert('请输入有效的身高和体重');
+    toastRef.value.show('请输入有效的身高和体重');
     return;
   }
   

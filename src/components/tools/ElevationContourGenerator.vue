@@ -484,6 +484,7 @@
         </div>
         <ElevationContourGeneratorArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -491,6 +492,9 @@ import { ref, reactive, onMounted, onUnmounted, watch, nextTick, computed } from
 import { useI18n } from 'vue-i18n'
 import ElevationContourGeneratorArticle from './ElevationContourGeneratorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 地图相关 - 使用Leaflet替代Mapbox
@@ -1011,11 +1015,11 @@ async function searchLocation() {
                     .openPopup()
             }
         } else {
-            alert(t('tools.elevation-contour-generator.locationNotFound'))
+            toastRef.value.show(t('tools.elevation-contour-generator.locationNotFound'))
         }
     } catch (error) {
         console.error('Search error:', error)
-        alert(t('tools.elevation-contour-generator.searchFailed'))
+        toastRef.value.show(t('tools.elevation-contour-generator.searchFailed'))
     } finally {
         loading.value = false
     }
@@ -1042,11 +1046,11 @@ function getCurrentLocation() {
             (error) => {
                 console.error('Error getting current location:', error)
                 loading.value = false
-                alert(error.message)
+                toastRef.value.show(error.message)
             }
         )
     } else {
-        alert('Geolocation is not supported by this browser.')
+        toastRef.value.show('Geolocation is not supported by this browser.')
     }
 }
 
@@ -1437,7 +1441,7 @@ async function generateContours() {
         window.contoursLayer.clearLayers()
 
         if (contours.length === 0) {
-            alert(`${t('tools.elevation-contour-generator.contourGenerationFailed')}\n- ${t('tools.elevation-contour-generator.noDataAvailable')}\n- ${t('tools.elevation-contour-generator.suggestions')}\n- ${t('tools.elevation-contour-generator.dataPoints', { count: validPoints.length + '/' + gridPoints.length })}`)
+            toastRef.value.show(`${t('tools.elevation-contour-generator.contourGenerationFailed')}\n- ${t('tools.elevation-contour-generator.noDataAvailable')}\n- ${t('tools.elevation-contour-generator.suggestions')}\n- ${t('tools.elevation-contour-generator.dataPoints', { count: validPoints.length + '/' + gridPoints.length })}`)
             return
         }
 
@@ -1526,7 +1530,7 @@ async function generateContours() {
             errorMessage += '• ' + t('tools.elevation-contour-generator.unknownError')
         }
         errorMessage += '\n' + t('tools.elevation-contour-generator.suggestions') + '：\n• ' + t('tools.elevation-contour-generator.tryReduceArea') + '\n• ' + t('tools.elevation-contour-generator.increaseInterval') + '\n• ' + t('tools.elevation-contour-generator.checkNetwork')
-        alert(errorMessage)
+        toastRef.value.show(errorMessage)
     } finally {
         loading.value = false
     }
@@ -1809,7 +1813,7 @@ async function addMeasurementPoint(lat, lng) {
 
     } catch (error) {
         console.error('Error adding measurement point:', error)
-        alert(t('tools.elevation-contour-generator.addMeasurementPointFailed'))
+        toastRef.value.show(t('tools.elevation-contour-generator.addMeasurementPointFailed'))
     } finally {
         loading.value = false
     }

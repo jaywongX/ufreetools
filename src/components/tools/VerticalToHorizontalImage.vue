@@ -468,6 +468,7 @@
     <!-- 引入文章组件 -->
     <VerticalToHorizontalImageArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -475,6 +476,9 @@ import { ref, reactive, onMounted } from 'vue';
 import VerticalToHorizontalImageArticle from './VerticalToHorizontalImageArticle.vue';
 
 // 状态变量
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const fileInput = ref(null);
 const isDragging = ref(false);
 const previewImage = ref(null);
@@ -674,7 +678,7 @@ function onFileSelected(e) {
 // 处理文件
 function processFile(file) {
   if (!file.type.match('image.*')) {
-    alert('Please select an image file.');
+    toastRef.value.show('Please select an image file.');
     return;
   }
   

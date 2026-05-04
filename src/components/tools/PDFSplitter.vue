@@ -253,6 +253,7 @@
         
         <PDFSplitterArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -261,6 +262,9 @@ import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
 import PDFSplitterArticle from './PDFSplitterArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 动态加载的库
@@ -391,7 +395,7 @@ async function loadFromUrl() {
         pdfUrl.value = ''
     } catch (error) {
         console.error('Error loading PDF from URL:', error)
-        alert(t('tools.pdf-splitter.urlError'))
+        toastRef.value.show(t('tools.pdf-splitter.urlError'))
     }
 }
 
@@ -471,7 +475,7 @@ async function splitPdfs() {
         }
     } catch (error) {
         console.error('Error splitting PDFs:', error)
-        alert(t('tools.pdf-splitter.splitError'))
+        toastRef.value.show(t('tools.pdf-splitter.splitError'))
     } finally {
         isProcessing.value = false
     }

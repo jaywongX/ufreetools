@@ -287,6 +287,7 @@
 
         <LidarPointCloudViewerArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -294,6 +295,9 @@ import { ref, reactive, onMounted, onUnmounted, watch, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import LidarPointCloudViewerArticle from './LidarPointCloudViewerArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 响应式数据
@@ -488,7 +492,7 @@ async function loadPointCloudFile(file) {
 
     } catch (error) {
         console.error('Error loading point cloud:', error)
-        alert(t('tools.lidar-point-cloud-viewer.error.loadFailed'))
+        toastRef.value.show(t('tools.lidar-point-cloud-viewer.error.loadFailed'))
     } finally {
         isLoading.value = false
         loadingProgress.value = 100
@@ -1063,7 +1067,7 @@ async function loadFromUrl() {
         await loadPointCloudFile(file)
     } catch (error) {
         console.error('Error loading from URL:', error)
-        alert(t('tools.lidar-point-cloud-viewer.error.urlLoadFailed'))
+        toastRef.value.show(t('tools.lidar-point-cloud-viewer.error.urlLoadFailed'))
     } finally {
         isLoading.value = false
     }

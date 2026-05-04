@@ -202,6 +202,7 @@
 
         <ImageToTextConverterArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -209,6 +210,9 @@ import { ref, reactive, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import ImageToTextConverterArticle from './ImageToTextConverterArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 状态
@@ -303,7 +307,7 @@ async function pasteFromClipboard() {
         }
     } catch (err) {
         console.error('Failed to paste from clipboard:', err)
-        alert(t('tools.image-to-text-converter.clipboardError'))
+        toastRef.value.show(t('tools.image-to-text-converter.clipboardError'))
     }
 }
 
@@ -375,7 +379,7 @@ async function startRecognition() {
         statusText.value = t('tools.image-to-text-converter.completed')
     } catch (err) {
         console.error('OCR Error:', err)
-        alert(t('tools.image-to-text-converter.ocrError'))
+        toastRef.value.show(t('tools.image-to-text-converter.ocrError'))
     } finally {
         isProcessing.value = false
     }
@@ -385,7 +389,7 @@ async function startRecognition() {
 async function copyText() {
     try {
         await navigator.clipboard.writeText(extractedText.value)
-        alert(t('tools.image-to-text-converter.copySuccess'))
+        toastRef.value.show(t('tools.image-to-text-converter.copySuccess'))
     } catch (err) {
         console.error('Copy failed:', err)
     }

@@ -545,6 +545,7 @@
         </div>
       </div>
     </div>
+      <Toast ref="toastRef" />
   </template>
   
   <script setup>
@@ -554,6 +555,9 @@
   import html2pdf from 'html2pdf.js'
   
   // 注册 Chart.js 组件
+  import Toast from '../common/Toast.vue'
+
+  const toastRef = ref(null)
   Chart.register(...registerables)
   
   const { t } = useI18n()
@@ -719,13 +723,13 @@
     
     // 检查必填项
     if (!destination.value || !startDate.value || !endDate.value || !travelers.value || tripDuration.value <= 0) {
-      alert(t('tools.travel-budget-planner.messages.error'))
+      toastRef.value.show(t('tools.travel-budget-planner.messages.error'))
       return
     }
     
     // 检查日期有效性
     if (tripDuration.value <= 0) {
-      alert(t('tools.travel-budget-planner.messages.dateError'))
+      toastRef.value.show(t('tools.travel-budget-planner.messages.dateError'))
       return
     }
     
@@ -874,7 +878,7 @@
   const saveAsPDF = async () => {
     // 确保结果已显示
     if (!showResults.value) {
-      alert(t('tools.travel-budget-planner.messages.error'))
+      toastRef.value.show(t('tools.travel-budget-planner.messages.error'))
       return
     }
     
@@ -1025,10 +1029,10 @@
       await html2pdf().from(element).set(opt).save()
       
       // 显示成功消息
-    alert(t('tools.travel-budget-planner.messages.saved'))
+    toastRef.value.show(t('tools.travel-budget-planner.messages.saved'))
     } catch (error) {
       console.error('PDF生成错误:', error)
-      alert('PDF生成失败: ' + error.message)
+      toastRef.value.show('PDF生成失败: ' + error.message)
     }
   }
   

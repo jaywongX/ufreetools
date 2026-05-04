@@ -210,6 +210,7 @@
         </div>
         <PdfRotatorArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -218,6 +219,9 @@ import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
 import PdfRotatorArticle from './PdfRotatorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 const fileInput = ref(null)
@@ -334,7 +338,7 @@ async function loadPdfFile(file) {
         })
     } catch (error) {
         console.error('Error loading PDF:', error)
-        alert(t('tools.pdf-rotator.errorMessage'))
+        toastRef.value.show(t('tools.pdf-rotator.errorMessage'))
     }
 }
 
@@ -450,7 +454,7 @@ async function rotateAll() {
         }
     } catch (error) {
         console.error('Error rotating PDF:', error)
-        alert(t('tools.pdf-rotator.error'))
+        toastRef.value.show(t('tools.pdf-rotator.error'))
     } finally {
         processing.value = false
     }

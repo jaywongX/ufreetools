@@ -262,6 +262,7 @@
         
         <ComparingFractionsCalculatorArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -269,6 +270,9 @@ import { ref, reactive, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import ComparingFractionsCalculatorArticle from './ComparingFractionsCalculatorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 响应式数据
@@ -451,7 +455,7 @@ function compareFractions() {
     const validFractions = fractions.value.filter(f => f.parsed)
     
     if (validFractions.length < 2) {
-        alert('请输入至少两个有效分数')
+        toastRef.value.show('请输入至少两个有效分数')
         return
     }
 

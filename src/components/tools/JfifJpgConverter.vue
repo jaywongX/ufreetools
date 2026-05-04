@@ -398,6 +398,7 @@
       </div>
     </div>
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -408,6 +409,9 @@ import { saveAs } from 'file-saver';
 import JfifJpgConverterArticle from './JfifJpgConverterArticle.vue';
 
 // State variables
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 const fileInput = ref(null);
 const isDragging = ref(false);
@@ -467,7 +471,7 @@ function processFiles(newFiles) {
   });
   
   if (validFiles.length === 0) {
-    alert(t('tools.jfif-jpg-converter.messages.noValidFiles'));
+    toastRef.value.show(t('tools.jfif-jpg-converter.messages.noValidFiles'));
     return;
   }
   

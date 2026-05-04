@@ -206,6 +206,7 @@
     
     <IdNumberGeneratorArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -214,6 +215,9 @@ import * as XLSX from 'xlsx';
 import { useI18n } from 'vue-i18n';
 import IdNumberGeneratorArticle from './IdNumberGeneratorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n();
 
 // 地区编码数据
@@ -426,7 +430,7 @@ function generateIds() {
 function copyId(id) {
   navigator.clipboard.writeText(id)
     .then(() => {
-      alert($t('tools.id-number-generator.copiedToClipboard'));
+      toastRef.value.show($t('tools.id-number-generator.copiedToClipboard'));
     })
     .catch(err => {
       console.error('复制失败:', err);
@@ -438,7 +442,7 @@ function copyAll() {
   const allIds = generatedIds.value.join('\n');
   navigator.clipboard.writeText(allIds)
     .then(() => {
-      alert($t('tools.id-number-generator.allCopiedToClipboard'));
+      toastRef.value.show($t('tools.id-number-generator.allCopiedToClipboard'));
     })
     .catch(err => {
       console.error('复制失败:', err);

@@ -297,6 +297,7 @@
         </div>
         <AudioToTextArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -305,6 +306,9 @@ import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
 import AudioToTextArticle from './AudioToTextArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 模式
@@ -340,7 +344,7 @@ function initSpeechRecognition() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
     
     if (!SpeechRecognition) {
-        alert(t('tools.audio-to-text.noSpeechSupport'))
+        toastRef.value.show(t('tools.audio-to-text.noSpeechSupport'))
         return null
     }
     
@@ -371,7 +375,7 @@ function initSpeechRecognition() {
     recognition.onerror = (event) => {
         console.error('Speech recognition error:', event.error)
         if (event.error === 'not-allowed') {
-            alert(t('tools.audio-to-text.microphonePermission'))
+            toastRef.value.show(t('tools.audio-to-text.microphonePermission'))
         }
         isRecording.value = false
     }
@@ -671,7 +675,7 @@ async function convertAll() {
         }
     } catch (error) {
         console.error('Conversion failed:', error)
-        alert(t('tools.audio-to-text.convertError'))
+        toastRef.value.show(t('tools.audio-to-text.convertError'))
     } finally {
         isConverting.value = false
     }
@@ -684,7 +688,7 @@ async function copyText(idx) {
     
     try {
         await navigator.clipboard.writeText(text.content)
-        alert(t('tools.audio-to-text.copied'))
+        toastRef.value.show(t('tools.audio-to-text.copied'))
     } catch (err) {
         console.error('Copy failed:', err)
     }

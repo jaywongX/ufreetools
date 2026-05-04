@@ -194,12 +194,16 @@
     </div>
     <CoordinatePickerAndLatitudeLongitudeQueryToolArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue';
 import CoordinatePickerAndLatitudeLongitudeQueryToolArticle from './CoordinatePickerAndLatitudeLongitudeQueryToolArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const mapEl = ref(null);
 let map = null;
 let L = null;
@@ -400,7 +404,7 @@ function copyAllText() {
     setTimeout(() => (copied.value = false), 1600);
   } catch (e) {
     copied.value = false;
-    alert(window?.$t ? window.$t('tools.coordinate-picker-and-latitude-longitude-query-tool.copyFail') : 'Copy failed');
+    toastRef.value.show(window?.$t ? window.$t('tools.coordinate-picker-and-latitude-longitude-query-tool.copyFail') : 'Copy failed');
   }
 }
 

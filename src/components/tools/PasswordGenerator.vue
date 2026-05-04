@@ -262,6 +262,7 @@
     <!-- 新增工具文章部分 -->
     <PasswordGeneratorArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -269,6 +270,9 @@ import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import PasswordGeneratorArticle from './PasswordGeneratorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t, locale } = useI18n()
 
 // 基本参数
@@ -378,7 +382,7 @@ function generatePassword() {
   
   const charset = generateCharset()
   if (!charset) {
-    alert(t('tools.password-generator.messages.invalidOptions'))
+    toastRef.value.show(t('tools.password-generator.messages.invalidOptions'))
     return
   }
   
@@ -485,10 +489,10 @@ function shuffleString(str) {
 // 复制单个密码
 function copyPassword(password) {
   navigator.clipboard.writeText(password).then(() => {
-    alert(t('tools.password-generator.messages.copied'))
+    toastRef.value.show(t('tools.password-generator.messages.copied'))
   }).catch(err => {
     console.error(t('tools.password-generator.errors.copyFailed'), err)
-    alert(t('tools.password-generator.errors.copyFailedManual'))
+    toastRef.value.show(t('tools.password-generator.errors.copyFailedManual'))
   })
 }
 
@@ -496,10 +500,10 @@ function copyPassword(password) {
 function copyAllPasswords() {
   const allPasswords = generatedPasswords.value.join('\n')
   navigator.clipboard.writeText(allPasswords).then(() => {
-    alert(t('tools.password-generator.messages.allCopied'))
+    toastRef.value.show(t('tools.password-generator.messages.allCopied'))
   }).catch(err => {
     console.error(t('tools.password-generator.errors.copyFailed'), err)
-    alert(t('tools.password-generator.errors.copyFailedManual'))
+    toastRef.value.show(t('tools.password-generator.errors.copyFailedManual'))
   })
 }
 

@@ -178,6 +178,7 @@
   
         <GpsTrackReplayArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
   
 <script setup>
@@ -192,6 +193,9 @@ import { CanvasRenderer } from 'echarts/renderers';
 import GpsTrackReplayArticle from './GpsTrackReplayArticle.vue';
 import { useI18n } from 'vue-i18n'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 注册 ECharts 组件
@@ -336,11 +340,11 @@ const processFile = (file) => {
           parseGeoJSONFile(e.target.result);
           break;
         default:
-          alert('Unsupported file format');
+          toastRef.value.show('Unsupported file format');
       }
     } catch (error) {
       console.error('Error parsing file:', error);
-      alert('Error parsing file. Please check the format.');
+      toastRef.value.show('Error parsing file. Please check the format.');
     }
   };
   
@@ -424,7 +428,7 @@ const parseGPXFile = (content) => {
     trackData.value = points;
     initializeMap();
   } else {
-    alert('No track points found in the GPX file.');
+    toastRef.value.show('No track points found in the GPX file.');
   }
 };
 
@@ -475,14 +479,14 @@ const parseTXTFile = (content) => {
     trackData.value = points;
     initializeMap();
   } else {
-    alert('No valid track points found in the TXT file.');
+    toastRef.value.show('No valid track points found in the TXT file.');
   }
 };
 
 const parseCSVFile = (content) => {
   const lines = content.split('\n');
   if (lines.length < 1) {
-    alert('CSV file is empty.');
+    toastRef.value.show('CSV file is empty.');
     return;
   }
   
@@ -542,7 +546,7 @@ const parseCSVFile = (content) => {
     trackData.value = points;
     initializeMap();
   } else {
-    alert('No valid track points found in the CSV file.');
+    toastRef.value.show('No valid track points found in the CSV file.');
   }
 };
 
@@ -624,11 +628,11 @@ const parseGeoJSONFile = (content) => {
       trackData.value = points;
       initializeMap();
     } else {
-      alert('No track points found in the GeoJSON file.');
+      toastRef.value.show('No track points found in the GeoJSON file.');
     }
   } catch (error) {
     console.error('Error parsing GeoJSON:', error);
-    alert('Invalid GeoJSON format.');
+    toastRef.value.show('Invalid GeoJSON format.');
   }
 };
 

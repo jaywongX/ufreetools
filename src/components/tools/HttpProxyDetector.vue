@@ -307,12 +307,16 @@
     </div>
     <HttpProxyDetectorArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import HttpProxyDetectorArticle from './HttpProxyDetectorArticle.vue'
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 状态管理
@@ -472,11 +476,11 @@ function copyHeadersToClipboard() {
   
   navigator.clipboard.writeText(headersText)
     .then(() => {
-      alert(t('tools.http-proxy-detector.messages.copied'))
+      toastRef.value.show(t('tools.http-proxy-detector.messages.copied'))
     })
     .catch(err => {
       console.error(err)
-      alert(t('tools.http-proxy-detector.messages.copyFailed'))
+      toastRef.value.show(t('tools.http-proxy-detector.messages.copyFailed'))
     })
 }
 

@@ -231,6 +231,7 @@
 
         <KrAddressGeneratorArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -239,6 +240,9 @@ import { useI18n } from 'vue-i18n'
 import { faker } from '@faker-js/faker'
 import KrAddressGeneratorArticle from './KrAddressGeneratorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 配置
@@ -579,7 +583,7 @@ function generateFingerprint() {
 // 生成数据
 function generateData() {
     if (config.quantity < 1 || config.quantity > 100) {
-        alert(t('tools.kr-address-generator.invalidQuantity'))
+        toastRef.value.show(t('tools.kr-address-generator.invalidQuantity'))
         return
     }
     
@@ -653,7 +657,7 @@ function toggleExpand(idx) {
 // 复制项目
 function copyItem(item) {
     navigator.clipboard.writeText(JSON.stringify(item, null, 2))
-    alert(t('tools.kr-address-generator.copySuccess'))
+    toastRef.value.show(t('tools.kr-address-generator.copySuccess'))
 }
 
 // 导出项目

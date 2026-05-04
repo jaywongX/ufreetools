@@ -407,6 +407,7 @@
       </div>
     </div>
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -415,6 +416,9 @@ import * as sm2 from 'sm-crypto/src/sm2'
 import { sm3 } from 'sm-crypto'
 import { useI18n } from 'vue-i18n'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 通用状态
@@ -472,7 +476,7 @@ function generateKeyPair() {
     publicKey.value = keypair.publicKey
   } catch (err) {
     console.error('生成密钥对时出错:', err)
-    alert(t('tools.sm2-crypto.messages.keygenError', { error: err.message }))
+    toastRef.value.show(t('tools.sm2-crypto.messages.keygenError', { error: err.message }))
   } finally {
     isGenerating.value = false
   }
@@ -536,9 +540,9 @@ function processSignVerify() {
 // 复制内容到剪贴板
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(() => {
-    alert(t('tools.sm2-crypto.messages.copied'))
+    toastRef.value.show(t('tools.sm2-crypto.messages.copied'))
   }).catch(err => {
-    alert(t('tools.sm2-crypto.messages.copyFailed'))
+    toastRef.value.show(t('tools.sm2-crypto.messages.copyFailed'))
     console.error('复制失败:', err)
   })
 }

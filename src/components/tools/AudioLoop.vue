@@ -204,6 +204,7 @@
         </div>
         <AudioLoopArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -212,6 +213,9 @@ import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
 import AudioLoopArticle from './AudioLoopArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 const fileInput = ref(null)
@@ -490,7 +494,7 @@ async function processAll() {
         }
     } catch (error) {
         console.error('处理失败', error)
-        alert(t('tools.audio-loop.processError'))
+        toastRef.value.show(t('tools.audio-loop.processError'))
     } finally {
         isProcessing.value = false
     }

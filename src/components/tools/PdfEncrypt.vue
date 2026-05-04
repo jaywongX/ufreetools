@@ -190,6 +190,7 @@
 
     <PdfEncryptArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -199,6 +200,9 @@ import JSZip from 'jszip'
 import createQpdfModule from '@neslinesli93/qpdf-wasm'
 import PdfEncryptArticle from './PdfEncryptArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 文件队列与状态
@@ -308,7 +312,7 @@ onMounted(async () => {
     await loadSample()
   } catch (error) {
     console.error('Failed to load libraries:', error)
-    alert(t('tools.pdf-encrypt.libLoadFailed'))
+    toastRef.value.show(t('tools.pdf-encrypt.libLoadFailed'))
   }
 })
 
@@ -361,7 +365,7 @@ function addUrls() {
     })
   }).catch((err) => {
     console.error(err)
-    alert(t('tools.pdf-encrypt.urlImportFailed'))
+    toastRef.value.show(t('tools.pdf-encrypt.urlImportFailed'))
   })
 }
 
@@ -569,7 +573,7 @@ function buildQpdfRestrictions() {
 // 加密执行
 async function encryptAll() {
   if (!QPDF) {
-    alert(t('tools.pdf-encrypt.qpdfMissing'))
+    toastRef.value.show(t('tools.pdf-encrypt.qpdfMissing'))
     return
   }
 
@@ -667,7 +671,7 @@ async function encryptAll() {
       continue;
     }
   }
-  alert(allOk ? t('tools.pdf-encrypt.encryptSuccess') : t('tools.pdf-encrypt.encryptFailed'))
+  toastRef.value.show(allOk ? t('tools.pdf-encrypt.encryptSuccess') : t('tools.pdf-encrypt.encryptFailed'))
 }
 
 // 下载当前

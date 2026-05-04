@@ -121,6 +121,7 @@
 
     <PdfDecryptArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -130,6 +131,9 @@ import JSZip from 'jszip'
 import createQpdfModule from '@neslinesli93/qpdf-wasm'
 import PdfDecryptArticle from './PdfDecryptArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 文件队列与状态
@@ -220,7 +224,7 @@ onMounted(async () => {
     await loadSample()
   } catch (error) {
     console.error('Failed to load libraries:', error)
-    alert(t('tools.pdf-decrypt.libLoadFailed'))
+    toastRef.value.show(t('tools.pdf-decrypt.libLoadFailed'))
   }
 })
 
@@ -272,7 +276,7 @@ function addUrls() {
     })
   }).catch((err) => {
     console.error(err)
-    alert(t('tools.pdf-decrypt.urlImportFailed'))
+    toastRef.value.show(t('tools.pdf-decrypt.urlImportFailed'))
   })
 }
 
@@ -419,7 +423,7 @@ function clearCanvas(canvasEl) {
 // 解密执行
 async function decryptAll() {
   if (!QPDF) {
-    alert(t('tools.pdf-decrypt.qpdfMissing'))
+    toastRef.value.show(t('tools.pdf-decrypt.qpdfMissing'))
     return
   }
 
@@ -489,7 +493,7 @@ async function decryptAll() {
       continue
     }
   }
-  alert(allOk ? t('tools.pdf-decrypt.decryptSuccess') : t('tools.pdf-decrypt.decryptFailed'))
+  toastRef.value.show(allOk ? t('tools.pdf-decrypt.decryptSuccess') : t('tools.pdf-decrypt.decryptFailed'))
 }
 
 function downloadAtIndex(i) {

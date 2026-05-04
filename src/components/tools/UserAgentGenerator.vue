@@ -171,6 +171,7 @@
     <!-- 添加文章组件 -->
     <UserAgentGeneratorArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -179,6 +180,9 @@ import randomUseragent from 'random-useragent'
 import { useI18n } from 'vue-i18n'
 import UserAgentGeneratorArticle from './UserAgentGeneratorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 过滤条件
@@ -272,11 +276,11 @@ function clearResults() {
 function copyUserAgent(ua) {
   navigator.clipboard.writeText(ua)
     .then(() => {
-      alert(t('tools.user-agent-generator.messages.copied'))
+      toastRef.value.show(t('tools.user-agent-generator.messages.copied'))
     })
     .catch(err => {
       console.error('复制失败:', err)
-      alert(t('tools.user-agent-generator.messages.copyFailed'))
+      toastRef.value.show(t('tools.user-agent-generator.messages.copyFailed'))
     })
 }
 
@@ -288,11 +292,11 @@ function copyAllUserAgents() {
   
   navigator.clipboard.writeText(text)
     .then(() => {
-      alert(t('tools.user-agent-generator.messages.allCopied'))
+      toastRef.value.show(t('tools.user-agent-generator.messages.allCopied'))
     })
     .catch(err => {
       console.error('复制失败:', err)
-      alert(t('tools.user-agent-generator.messages.copyFailed'))
+      toastRef.value.show(t('tools.user-agent-generator.messages.copyFailed'))
     })
 }
 

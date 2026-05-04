@@ -302,6 +302,7 @@
     <!-- 在底部添加文章部分 -->
     <XmlJsonConverterArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -311,6 +312,9 @@ import { useI18n } from 'vue-i18n'
 import XmlJsonConverterArticle from './XmlJsonConverterArticle.vue'
 
 // 初始化国际化
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 转换方向
@@ -443,11 +447,11 @@ function copyOutput() {
   
   navigator.clipboard.writeText(outputText.value)
     .then(() => {
-      alert(t('tools.xml-json-converter.alerts.copied'))
+      toastRef.value.show(t('tools.xml-json-converter.alerts.copied'))
     })
     .catch(err => {
       console.error('复制失败:', err)
-      alert('复制失败，请手动复制')
+      toastRef.value.show('复制失败，请手动复制')
     })
 }
 

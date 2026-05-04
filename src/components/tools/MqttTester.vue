@@ -402,6 +402,7 @@
     </div>
     <MqttTesterArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -410,6 +411,9 @@ import { useI18n } from 'vue-i18n'
 import MqttTesterArticle from './MqttTesterArticle.vue'
 
 // 初始化国际化
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // MQTT客户端
@@ -609,7 +613,7 @@ function publishMessage() {
         publishing.value = false
         if (err) {
           console.error(t('tools.mqtt-tester.notifications.publishError', { error: err.message }), err)
-          alert(t('tools.mqtt-tester.notifications.publishError', { error: err.message }))
+          toastRef.value.show(t('tools.mqtt-tester.notifications.publishError', { error: err.message }))
         } else {
           console.log(t('tools.mqtt-tester.notifications.publishSuccess', { topic: publishTopic.value }))
           // 清空消息框(可选)
@@ -620,7 +624,7 @@ function publishMessage() {
   } catch (error) {
     publishing.value = false
     console.error(t('tools.mqtt-tester.notifications.publishError', { error: error.message }), error)
-    alert(t('tools.mqtt-tester.notifications.publishError', { error: error.message }))
+    toastRef.value.show(t('tools.mqtt-tester.notifications.publishError', { error: error.message }))
   }
 }
 
@@ -630,7 +634,7 @@ function subscribe() {
   
   // 检查是否已订阅
   if (activeSubscriptions.value.includes(subscribeTopic.value)) {
-    alert(t('tools.mqtt-tester.notifications.subscribeError', { error: t('tools.mqtt-tester.messages.duplicate') }))
+    toastRef.value.show(t('tools.mqtt-tester.notifications.subscribeError', { error: t('tools.mqtt-tester.messages.duplicate') }))
     return
   }
   
@@ -640,7 +644,7 @@ function subscribe() {
     subscriptionLoading.value = false
     if (err) {
       console.error(t('tools.mqtt-tester.notifications.subscribeError', { error: err.message }), err)
-      alert(t('tools.mqtt-tester.notifications.subscribeError', { error: err.message }))
+      toastRef.value.show(t('tools.mqtt-tester.notifications.subscribeError', { error: err.message }))
     } else {
       console.log(t('tools.mqtt-tester.notifications.subscribeSuccess', { topic: subscribeTopic.value }))
       activeSubscriptions.value.push(subscribeTopic.value)
@@ -657,7 +661,7 @@ function unsubscribe(topic) {
   mqttClient.unsubscribe(topic, (err) => {
     if (err) {
       console.error(t('tools.mqtt-tester.notifications.unsubscribeError', { error: err.message }), err)
-      alert(t('tools.mqtt-tester.notifications.unsubscribeError', { error: err.message }))
+      toastRef.value.show(t('tools.mqtt-tester.notifications.unsubscribeError', { error: err.message }))
     } else {
       console.log(t('tools.mqtt-tester.notifications.unsubscribeSuccess', { topic: topic }))
       activeSubscriptions.value = activeSubscriptions.value.filter(t => t !== topic)

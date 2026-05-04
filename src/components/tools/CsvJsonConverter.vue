@@ -259,6 +259,7 @@
     <!-- 在底部添加文章部分 -->
     <CsvJsonConverterArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -267,6 +268,9 @@ import Papa from 'papaparse'
 import { useI18n } from 'vue-i18n'
 import CsvJsonConverterArticle from './CsvJsonConverterArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 状态变量
@@ -379,11 +383,11 @@ function copyResult() {
   
   navigator.clipboard.writeText(outputText.value)
     .then(() => {
-      alert(t('tools.csv-json-converter.results.copied'))
+      toastRef.value.show(t('tools.csv-json-converter.results.copied'))
     })
     .catch(err => {
       console.error(err)
-      alert(err)
+      toastRef.value.show(err)
     })
 }
 
