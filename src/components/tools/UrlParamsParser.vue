@@ -400,6 +400,7 @@
     <!-- 在最末尾添加文章组件 -->
     <UrlParamsParserArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -407,6 +408,9 @@ import { ref, computed, watch, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import UrlParamsParserArticle from './UrlParamsParserArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 状态变量
@@ -669,11 +673,11 @@ const formattedJson = computed(() => {
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text)
     .then(() => {
-      alert(t('tools.url-params-parser.messages.copied'))
+      toastRef.value.show(t('tools.url-params-parser.messages.copied'))
     })
     .catch(err => {
       console.error('复制失败:', err)
-      alert(t('tools.url-params-parser.messages.error', { message: t('tools.url-params-parser.messages.copyFailed') }))
+      toastRef.value.show(t('tools.url-params-parser.messages.error', { message: t('tools.url-params-parser.messages.copyFailed') }))
     })
 }
 

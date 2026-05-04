@@ -246,6 +246,7 @@
       <NumberConverterArticle />
     </div>
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -254,6 +255,9 @@ import { useI18n } from 'vue-i18n'
 import NumberConverterArticle from './NumberConverterArticle.vue'
 
 // 初始化国际化
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t, locale } = useI18n()
 
 // 输入值和选择的进制
@@ -538,11 +542,11 @@ function clearInput() {
 function copyResult(type) {
   navigator.clipboard.writeText(results[type])
     .then(() => {
-      alert(t('tools.number-converter.messages.copied'))
+      toastRef.value.show(t('tools.number-converter.messages.copied'))
     })
     .catch(err => {
       console.error('复制失败:', err)
-      alert('复制失败，请手动复制')
+      toastRef.value.show('复制失败，请手动复制')
     })
 }
 
@@ -561,11 +565,11 @@ function copyAllResults() {
   
   navigator.clipboard.writeText(allResults.join('\n'))
     .then(() => {
-      alert(t('tools.number-converter.messages.copied'))
+      toastRef.value.show(t('tools.number-converter.messages.copied'))
     })
     .catch(err => {
       console.error('复制失败:', err)
-      alert('复制失败，请手动复制')
+      toastRef.value.show('复制失败，请手动复制')
     })
 }
 

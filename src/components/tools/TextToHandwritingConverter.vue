@@ -216,6 +216,7 @@
         <!-- 文章组件 -->
         <TextToHandwritingConverterArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -225,6 +226,9 @@ import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
 import TextToHandwritingConverterArticle from './TextToHandwritingConverterArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 响应式数据
@@ -486,7 +490,7 @@ async function exportHandwriting() {
         }
     } catch (error) {
         console.error('Export failed:', error)
-        alert(t('tools.text-to-handwriting-converter.exportError'))
+        toastRef.value.show(t('tools.text-to-handwriting-converter.exportError'))
     }
 }
 
@@ -565,15 +569,15 @@ async function copyToClipboard() {
                 await navigator.clipboard.write([
                     new ClipboardItem({ 'image/png': blob })
                 ])
-                alert(t('tools.text-to-handwriting-converter.copySuccess'))
+                toastRef.value.show(t('tools.text-to-handwriting-converter.copySuccess'))
             } catch (error) {
                 console.error('Copy failed:', error)
-                alert(t('tools.text-to-handwriting-converter.copyError'))
+                toastRef.value.show(t('tools.text-to-handwriting-converter.copyError'))
             }
         })
     } catch (error) {
         console.error('Copy failed:', error)
-        alert(t('tools.text-to-handwriting-converter.copyError'))
+        toastRef.value.show(t('tools.text-to-handwriting-converter.copyError'))
     }
 }
 

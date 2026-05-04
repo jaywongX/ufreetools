@@ -323,6 +323,7 @@
         </div>
         <GeodeticMeasurementCalculatorArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -332,6 +333,9 @@ import GeodeticMeasurementCalculatorArticle from './GeodeticMeasurementCalculato
 import { jsPDF } from 'jspdf'
 import * as XLSX from 'xlsx'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 地图相关
@@ -496,7 +500,7 @@ function loadSample() {
 // 计算函数
 function calculate() {
     if (!canCalculate.value) {
-        alert(t('tools.geodetic-measurement-calculator.needMorePoints'))
+        toastRef.value.show(t('tools.geodetic-measurement-calculator.needMorePoints'))
         return
     }
 

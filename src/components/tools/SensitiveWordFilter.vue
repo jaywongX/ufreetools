@@ -181,6 +181,7 @@
     <!-- 添加文章部分 -->
     <SensitiveWordFilterArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -190,6 +191,9 @@ import { useI18n } from 'vue-i18n'
 import { CensorSensor } from 'censor-sensor'
 import SensitiveWordFilterArticle from './SensitiveWordFilterArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 状态
@@ -259,11 +263,11 @@ function filterText() {
 function copyFilteredText() {
   navigator.clipboard.writeText(filteredText.value)
     .then(() => {
-      alert(t('tools.sensitive-word-filter.messages.copied'))
+      toastRef.value.show(t('tools.sensitive-word-filter.messages.copied'))
     })
     .catch(err => {
       console.error('复制失败:', err)
-      alert(t('tools.sensitive-word-filter.messages.copyFailed'))
+      toastRef.value.show(t('tools.sensitive-word-filter.messages.copyFailed'))
     })
 }
 

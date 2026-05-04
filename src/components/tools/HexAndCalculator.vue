@@ -357,11 +357,15 @@
       </div>
     </div>
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script>
+import Toast from '../common/Toast.vue'
+
 export default {
   name: 'HexAndCalculator',
+  components: { Toast },
   data() {
     return {
       inputs: [
@@ -535,7 +539,7 @@ export default {
               this.inputs.forEach((input, idx) => this.validateHexInput(idx));
             } catch (error) {
               console.error('Error importing file:', error);
-              alert(this.$t('tools.hex-and-calculator.importError'));
+              this.$refs.toastRef.show(this.$t('tools.hex-and-calculator.importError'));
             }
           };
           reader.readAsText(file);
@@ -556,7 +560,7 @@ export default {
     copyAllInputs() {
       const text = this.inputs.map((input, idx) => `${idx + 1}: 0x${input.value}`).join('\n');
       navigator.clipboard.writeText(text).then(() => {
-        alert(this.$t('tools.hex-and-calculator.inputsCopied'));
+        this.$refs.toastRef.show(this.$t('tools.hex-and-calculator.inputsCopied'));
       });
     },
     
@@ -601,7 +605,7 @@ export default {
         `${this.$t('tools.hex-and-calculator.binary')}: ${this.result.binary}`;
         
       navigator.clipboard.writeText(text).then(() => {
-        alert(this.$t('tools.hex-and-calculator.resultsCopied'));
+        this.$refs.toastRef.show(this.$t('tools.hex-and-calculator.resultsCopied'));
       });
     },
     

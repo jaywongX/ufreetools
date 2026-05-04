@@ -239,6 +239,7 @@
     <!-- 在底部添加文章部分 -->
     <TimezoneConverterArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -246,6 +247,9 @@ import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import TimezoneConverterArticle from './TimezoneConverterArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t, locale } = useI18n()
 
 // 基本状态
@@ -408,7 +412,7 @@ function convertTime() {
     showConversionResult.value = true
   } catch (error) {
     console.error('Time conversion error:', error)
-    alert(t('tools.timezone-converter.messages.invalid'))
+    toastRef.value.show(t('tools.timezone-converter.messages.invalid'))
   }
 }
 
@@ -438,7 +442,7 @@ function getTimezoneOffset(tzName) {
 // 显示添加时区界面
 function addTimezoneToCompare() {
   if (comparedTimezones.value.length >= 10) {
-    alert(t('tools.timezone-converter.messages.maxTimezones'))
+    toastRef.value.show(t('tools.timezone-converter.messages.maxTimezones'))
     return
   }
   

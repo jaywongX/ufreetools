@@ -416,6 +416,7 @@
     <!-- 文章组件 -->
     <PDFWatermarkArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -425,6 +426,9 @@ import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
 
 // 动态加载 pdf-lib（缓存一次）
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 let _pdfLib = null
 // 库引用（将在 onMounted 中赋值）
 let PDFDocument = null
@@ -652,7 +656,7 @@ async function generatePreview() {
   try {
     // const { PDFDocument, rgb, degrees, StandardFonts } = await getPdfLib()
     if (!PDFDocument || !pdfjsLib) {
-      alert(t('tools.pdf-watermark.libNotReady'))
+      toastRef.value.show(t('tools.pdf-watermark.libNotReady'))
       return
     }
     const mm2pt = (mm) => (mm == null ? 0 : (mm * 72) / 25.4)
@@ -746,7 +750,7 @@ async function generatePreview() {
         })
       } else if (isImage) {
         if (imageWatermark.file.type.includes('svg')) {
-          alert(t('tools.pdf-watermark.svgNotSupported'))
+          toastRef.value.show(t('tools.pdf-watermark.svgNotSupported'))
         }
         const imgBytes = await imageWatermark.file.arrayBuffer()
         let imageEmbed = null
@@ -837,7 +841,7 @@ async function addWatermark() {
   try {
     // const { PDFDocument, rgb, degrees, StandardFonts } = await getPdfLib()
     if (!PDFDocument) {
-      alert(t('tools.pdf-watermark.libNotReady'))
+      toastRef.value.show(t('tools.pdf-watermark.libNotReady'))
       return
     }
     const mm2pt = (mm) => (mm == null ? 0 : (mm * 72) / 25.4)
@@ -929,7 +933,7 @@ async function addWatermark() {
       // 图片水印
       else if (watermarkType.value === 'image' && imageWatermark.file) {
         if (imageWatermark.file.type.includes('svg')) {
-          alert(t('tools.pdf-watermark.svgNotSupported'))
+          toastRef.value.show(t('tools.pdf-watermark.svgNotSupported'))
         }
         const imageBytes = await imageWatermark.file.arrayBuffer()
         let imageEmbed = null
@@ -938,7 +942,7 @@ async function addWatermark() {
         } else if (imageWatermark.file.type.includes('jpeg') || imageWatermark.file.type.includes('jpg')) {
           imageEmbed = await pdfDoc.embedJpg(imageBytes)
         } else {
-          alert(t('tools.pdf-watermark.imageFormatNotSupported'))
+          toastRef.value.show(t('tools.pdf-watermark.imageFormatNotSupported'))
         }
 
         if (imageEmbed) {
@@ -1011,7 +1015,7 @@ async function addWatermark() {
     }
   } catch (error) {
     console.error('Error adding watermark:', error)
-    alert(`${t('tools.pdf-watermark.addFailed')}：${error?.message || t('tools.pdf-watermark.unknownError')}`)
+    toastRef.value.show(`${t('tools.pdf-watermark.addFailed')}：${error?.message || t('tools.pdf-watermark.unknownError')}`)
   } finally {
     isProcessing.value = false
   }
@@ -1208,7 +1212,7 @@ onMounted(async () => {
     loadSample() // 如果需要自动加载示例，可取消注释
   } catch (error) {
     console.error('Failed to load PDF libraries:', error)
-    alert(t('tools.pdf-watermark.libLoadFailed'))
+    toastRef.value.show(t('tools.pdf-watermark.libLoadFailed'))
   }
 })
 

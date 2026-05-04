@@ -165,6 +165,7 @@
 
     <BionicReadingConverterArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -173,6 +174,9 @@ import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
 import BionicReadingConverterArticle from './BionicReadingConverterArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // Inputs and controls
@@ -326,7 +330,7 @@ async function handlePDF(e) {
     inputText.value = out.trim()
   } catch (err) {
     console.error(err)
-    alert(t('tools.bionic-reading-converter.errorPDF'))
+    toastRef.value.show(t('tools.bionic-reading-converter.errorPDF'))
   } finally {
     isProcessing.value = false
     e.target.value = ''
@@ -350,7 +354,7 @@ async function handleEPUB(e) {
     inputText.value = out.trim() || inputText.value
   } catch (err) {
     console.error(err)
-    alert(t('tools.bionic-reading-converter.errorEPUB'))
+    toastRef.value.show(t('tools.bionic-reading-converter.errorEPUB'))
   } finally {
     isProcessing.value = false
     e.target.value = ''
@@ -583,7 +587,7 @@ async function copyPNG() {
       if (!blob) return resolve()
       try {
         await navigator.clipboard.write([new window.ClipboardItem({ 'image/png': blob })])
-        alert(t('tools.bionic-reading-converter.copied'))
+        toastRef.value.show(t('tools.bionic-reading-converter.copied'))
       } catch (e) {
         console.error(e)
       }
@@ -594,12 +598,12 @@ async function copyPNG() {
 
 function copyHTML() {
   const html = currentHtml()
-  navigator.clipboard.writeText(html).then(() => alert(t('tools.bionic-reading-converter.copied')))
+  navigator.clipboard.writeText(html).then(() => toastRef.value.show(t('tools.bionic-reading-converter.copied')))
 }
 
 function copyMarkdown() {
   const md = htmlToMarkdown(currentHtml())
-  navigator.clipboard.writeText(md).then(() => alert(t('tools.bionic-reading-converter.copied')))
+  navigator.clipboard.writeText(md).then(() => toastRef.value.show(t('tools.bionic-reading-converter.copied')))
 }
 
 // External scripts loader

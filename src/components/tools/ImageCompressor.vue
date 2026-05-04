@@ -214,6 +214,7 @@
 
     <ImageCompressorArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -221,6 +222,9 @@ import { ref, computed, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
 import ImageCompressorArticle from './ImageCompressorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 上传和预览状态
@@ -260,7 +264,7 @@ function handleFiles(selectedFiles) {
   // 过滤出图片文件
   const imageFiles = selectedFiles.filter(file => file.type.startsWith('image/'))
   if (imageFiles.length === 0) {
-    alert(t('tools.image-compressor.messages.invalidImage'))
+    toastRef.value.show(t('tools.image-compressor.messages.invalidImage'))
     return
   }
   
@@ -327,7 +331,7 @@ async function compressImages() {
     }
   } catch (error) {
     console.error('压缩图片时出错:', error)
-    alert('压缩图片时出错: ' + error.message)
+    toastRef.value.show('压缩图片时出错: ' + error.message)
   } finally {
     isCompressing.value = false
   }
@@ -438,11 +442,11 @@ async function downloadAllImages() {
   
   try {
     // 如果浏览器支持JSZip，则打包下载
-    alert(t('tools.image-compressor.messages.batchDownloadNotSupported'))
+    toastRef.value.show(t('tools.image-compressor.messages.batchDownloadNotSupported'))
     // 在实际应用中，这里可以添加使用JSZip库创建zip文件的代码
   } catch (error) {
     console.error(error)
-    alert(t('tools.image-compressor.messages.batchDownloadError', { error: error.message }))
+    toastRef.value.show(t('tools.image-compressor.messages.batchDownloadError', { error: error.message }))
   }
 }
 

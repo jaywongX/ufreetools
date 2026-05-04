@@ -207,6 +207,7 @@
         </div>
         <TrajectoryComparatorArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -217,6 +218,9 @@ import TrajectoryComparatorArticle from './CoordinateTrajectoryComparatorArticle
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // DOM引用
@@ -617,7 +621,7 @@ function copyResults() {
     
     navigator.clipboard.writeText(textToCopy)
         .then(() => {
-            alert(t('tools.coordinate-trajectory-comparator.resultsCopied'))
+            toastRef.value.show(t('tools.coordinate-trajectory-comparator.resultsCopied'))
         })
 }
 

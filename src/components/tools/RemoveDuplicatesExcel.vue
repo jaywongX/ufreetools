@@ -287,6 +287,7 @@
 
         <RemoveDuplicatesExcelArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -295,6 +296,9 @@ import { useI18n } from 'vue-i18n'
 import * as XLSX from 'xlsx'
 import RemoveDuplicatesExcelArticle from './RemoveDuplicatesExcelArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 响应式数据
@@ -445,7 +449,7 @@ async function processDuplicates() {
 
     } catch (error) {
         console.error('处理文件时出错:', error)
-        alert(t('tools.remove-duplicates-excel.processError'))
+        toastRef.value.show(t('tools.remove-duplicates-excel.processError'))
     }
 }
 
@@ -725,7 +729,7 @@ function saveTemplate() {
 
     savedTemplates.value.push(template)
     localStorage.setItem('excel-dedup-templates', JSON.stringify(savedTemplates.value))
-    alert(t('tools.remove-duplicates-excel.templateSaved'))
+    toastRef.value.show(t('tools.remove-duplicates-excel.templateSaved'))
 }
 
 // 重置配置

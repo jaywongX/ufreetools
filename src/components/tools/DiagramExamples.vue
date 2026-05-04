@@ -72,6 +72,7 @@
       <DiagramExamplesArticle />
     </div>
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -80,6 +81,9 @@ import { useI18n } from 'vue-i18n'
 import DiagramExamplesArticle from './DiagramExamplesArticle.vue'
 import mermaid from 'mermaid'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 存储渲染后的图表HTML
@@ -124,10 +128,10 @@ async function copyExample(exampleKey) {
   try {
     const code = t(`tools.diagram-examples.exampleCodes.${exampleKey}`)
     await navigator.clipboard.writeText(code)
-    alert(t('tools.diagram-examples.messages.copied'))
+    toastRef.value.show(t('tools.diagram-examples.messages.copied'))
   } catch (error) {
     console.error('复制失败:', error)
-    alert(t('tools.diagram-examples.messages.copyFailed'))
+    toastRef.value.show(t('tools.diagram-examples.messages.copyFailed'))
   }
 }
 </script>

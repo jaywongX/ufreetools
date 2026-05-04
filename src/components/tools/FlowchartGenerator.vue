@@ -133,6 +133,7 @@
   
   <!-- 添加文章部分 -->
   <FlowchartGeneratorArticle />
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -141,6 +142,9 @@ import { useI18n } from 'vue-i18n'
 import mermaid from 'mermaid'
 import FlowchartGeneratorArticle from './FlowchartGeneratorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 状态变量
@@ -1073,10 +1077,10 @@ async function copyToClipboard() {
     const svgData = new XMLSerializer().serializeToString(svgEl)
     
     await navigator.clipboard.writeText(svgData)
-    alert(t('tools.flowchart-generator.messages.copied'))
+    toastRef.value.show(t('tools.flowchart-generator.messages.copied'))
   } catch (error) {
     console.error('复制SVG失败:', error)
-    alert(t('tools.flowchart-generator.messages.copyFailed'))
+    toastRef.value.show(t('tools.flowchart-generator.messages.copyFailed'))
   }
 }
 </script>

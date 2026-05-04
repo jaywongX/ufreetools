@@ -217,6 +217,7 @@
         </div>
         <AudioToM4aArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -225,6 +226,9 @@ import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
 import AudioToM4aArticle from './AudioToM4aArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 const fileInput = ref(null)
@@ -462,7 +466,7 @@ async function convertAll() {
         }
     } catch (error) {
         console.error('转换失败', error)
-        alert(t('tools.audio-to-m4a.convertError'))
+        toastRef.value.show(t('tools.audio-to-m4a.convertError'))
     } finally {
         isConverting.value = false
     }

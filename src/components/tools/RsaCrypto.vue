@@ -394,6 +394,7 @@
       </div>
     </div>
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -401,6 +402,9 @@ import { ref, computed, onMounted } from 'vue'
 import JSEncrypt from 'jsencrypt'
 
 // 通用状态
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const selectedTab = ref('keygen')
 
 // 密钥生成状态
@@ -463,7 +467,7 @@ async function generateKeyPair() {
     }, 100) // 小延迟让UI更新
   } catch (err) {
     console.error('生成密钥对时出错:', err)
-    alert('生成RSA密钥对时出错：' + err.message)
+    toastRef.value.show('生成RSA密钥对时出错：' + err.message)
     isGenerating.value = false
   }
 }
@@ -536,9 +540,9 @@ function processSignVerify() {
 // 复制内容到剪贴板
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(() => {
-    alert('已复制到剪贴板')
+    toastRef.value.show('已复制到剪贴板')
   }).catch(err => {
-    alert('复制失败，请手动复制')
+    toastRef.value.show('复制失败，请手动复制')
     console.error('复制失败:', err)
   })
 }

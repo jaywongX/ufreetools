@@ -228,6 +228,7 @@
 
         <MacAddressGeneratorArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -235,6 +236,9 @@ import { ref, reactive, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import MacAddressGeneratorArticle from './MacAddressGeneratorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 配置
@@ -329,7 +333,7 @@ function generateMacAddress() {
     if (config.customPrefix) {
         ouiBytes = parseOuiPrefix(config.customPrefix)
         if (!ouiBytes) {
-            alert(t('tools.mac-address-generator.invalidPrefix'))
+            toastRef.value.show(t('tools.mac-address-generator.invalidPrefix'))
             return null
         }
     } else if (config.vendor && vendorOuis[config.vendor]) {
@@ -415,7 +419,7 @@ function getAddressTypeDescription(macAddress) {
 // 生成数据
 function generateData() {
     if (config.quantity < 1 || config.quantity > 1000) {
-        alert(t('tools.mac-address-generator.invalidQuantity'))
+        toastRef.value.show(t('tools.mac-address-generator.invalidQuantity'))
         return
     }
     
@@ -423,7 +427,7 @@ function generateData() {
     if (config.customPrefix) {
         const parsed = parseOuiPrefix(config.customPrefix)
         if (!parsed) {
-            alert(t('tools.mac-address-generator.invalidPrefix'))
+            toastRef.value.show(t('tools.mac-address-generator.invalidPrefix'))
             return
         }
     }
@@ -500,14 +504,14 @@ function copyToClipboard(text) {
 // 复制项目
 function copyItem(item) {
     navigator.clipboard.writeText(JSON.stringify(item, null, 2))
-    alert(t('tools.mac-address-generator.copySuccess'))
+    toastRef.value.show(t('tools.mac-address-generator.copySuccess'))
 }
 
 // 复制全部MAC地址
 function copyAll() {
     const allMacs = generatedData.value.map(item => item.macAddress).join('\n')
     navigator.clipboard.writeText(allMacs)
-    alert(t('tools.mac-address-generator.copySuccess'))
+    toastRef.value.show(t('tools.mac-address-generator.copySuccess'))
 }
 
 // 下载项目

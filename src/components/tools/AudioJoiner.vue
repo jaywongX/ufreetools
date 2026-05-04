@@ -215,6 +215,7 @@
         </div>
         <AudioJoinerArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -222,6 +223,9 @@ import { ref, computed, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import AudioJoinerArticle from './AudioJoinerArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 const fileInput = ref(null)
@@ -582,7 +586,7 @@ async function joinAudios() {
         audioContext.close()
     } catch (error) {
         console.error('拼接失败', error)
-        alert(t('tools.audio-joiner.convertError'))
+        toastRef.value.show(t('tools.audio-joiner.convertError'))
     } finally {
         isConverting.value = false
     }

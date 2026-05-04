@@ -398,6 +398,7 @@
         </div>
       </div>
     </div>
+      <Toast ref="toastRef" />
   </template>
   
   <script setup>
@@ -408,6 +409,9 @@
   import JpgJfifConverterArticle from './JpgJfifConverterArticle.vue';
   
   // State variables
+  import Toast from '../common/Toast.vue'
+
+  const toastRef = ref(null)
   const { t } = useI18n()
   const fileInput = ref(null);
   const isDragging = ref(false);
@@ -467,7 +471,7 @@
     });
     
     if (validFiles.length === 0) {
-      alert(t('tools.jpg-jfif-converter.messages.noValidFiles'));
+      toastRef.value.show(t('tools.jpg-jfif-converter.messages.noValidFiles'));
       return;
     }
     

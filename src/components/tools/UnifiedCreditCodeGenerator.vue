@@ -223,15 +223,18 @@
                 </div>
             </div>
         </div>
+        <Toast ref="toastRef" />
+
         <UnifiedCreditCodeGeneratorArticle />
     </div>
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import * as XLSX from 'xlsx'
 import UnifiedCreditCodeGeneratorArticle from './UnifiedCreditCodeGeneratorArticle.vue'
+import Toast from '../common/Toast.vue'
 
 const { t } = useI18n()
 
@@ -326,6 +329,9 @@ const regionCode = ref('random') // 默认随机
 const quantity = ref(5) // 默认生成5个
 const generatedCodes = ref([])
 
+// Toast 组件引用
+const toastRef = ref(null)
+
 // 生成统一社会信用代码
 const generateCodes = () => {
     const codes = []
@@ -402,7 +408,7 @@ const calculateChecksum = (code) => {
 // 复制单个代码到剪贴板
 const copyToClipboard = (code) => {
     navigator.clipboard.writeText(code).then(() => {
-        alert(t('tools.unified-credit-code-generator.copiedToClipboard'))
+        toastRef.value.show(t('tools.unified-credit-code-generator.copiedToClipboard'))
     })
 }
 
@@ -410,7 +416,7 @@ const copyToClipboard = (code) => {
 const copyAllToClipboard = () => {
     const allCodes = generatedCodes.value.join('\n')
     navigator.clipboard.writeText(allCodes).then(() => {
-        alert(t('tools.unified-credit-code-generator.allCopiedToClipboard'))
+        toastRef.value.show(t('tools.unified-credit-code-generator.allCopiedToClipboard'))
     })
 }
 

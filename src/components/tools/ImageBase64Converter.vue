@@ -255,6 +255,7 @@
         </div>
         <ImageBase64ConverterArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -263,6 +264,9 @@ import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
 import ImageBase64ConverterArticle from './ImageBase64ConverterArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 const fileInput = ref(null)
@@ -410,11 +414,11 @@ function convertBase64ToImage() {
         }
         
         image.onerror = () => {
-            alert(t('tools.image-base64-converter.invalidBase64'))
+            toastRef.value.show(t('tools.image-base64-converter.invalidBase64'))
         }
     } catch (error) {
         console.error('Error converting base64 to image:', error)
-        alert(t('tools.image-base64-converter.invalidBase64'))
+        toastRef.value.show(t('tools.image-base64-converter.invalidBase64'))
     }
 }
 
@@ -422,7 +426,7 @@ function convertBase64ToImage() {
 function copyBase64(idx) {
     const result = outputResults[idx]
     navigator.clipboard.writeText(result.base64).then(() => {
-        alert(t('tools.image-base64-converter.copied'))
+        toastRef.value.show(t('tools.image-base64-converter.copied'))
     }).catch(() => {
         // 降级方案
         const textarea = document.createElement('textarea')
@@ -431,7 +435,7 @@ function copyBase64(idx) {
         textarea.select()
         document.execCommand('copy')
         document.body.removeChild(textarea)
-        alert(t('tools.image-base64-converter.copied'))
+        toastRef.value.show(t('tools.image-base64-converter.copied'))
     })
 }
 

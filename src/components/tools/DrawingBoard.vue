@@ -233,6 +233,7 @@
     <!-- 添加文章部分 -->
     <DrawingBoardArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -240,6 +241,9 @@ import { ref, onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import DrawingBoardArticle from './DrawingBoardArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 画布引用和上下文
@@ -492,7 +496,7 @@ onMounted(() => {
     ctx = canvas.value.getContext('2d');
     
     if (!ctx) {
-      alert(t('tools.drawing-board.messages.unsupportedBrowser'));
+      toastRef.value.show(t('tools.drawing-board.messages.unsupportedBrowser'));
       return;
     }
     
@@ -504,7 +508,7 @@ onMounted(() => {
     saveState();
   } catch (error) {
     console.error('Error initializing canvas:', error);
-    alert(t('tools.drawing-board.messages.unsupportedBrowser'));
+    toastRef.value.show(t('tools.drawing-board.messages.unsupportedBrowser'));
   }
   
   // 处理窗口尺寸变化，保持画布比例

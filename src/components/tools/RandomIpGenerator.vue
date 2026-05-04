@@ -185,6 +185,7 @@
 
         <RandomIpGeneratorArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -192,6 +193,9 @@ import { ref, reactive, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import RandomIpGeneratorArticle from './RandomIpGeneratorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 配置
@@ -378,7 +382,7 @@ function generateGeo(region) {
 // 生成数据
 function generateData() {
     if (config.quantity < 1 || config.quantity > 1000) {
-        alert(t('tools.random-ip-generator.invalidQuantity'))
+        toastRef.value.show(t('tools.random-ip-generator.invalidQuantity'))
         return
     }
     
@@ -482,7 +486,7 @@ function copyToClipboard() {
         ? JSON.stringify(generatedData.value, null, 2)
         : plainOutput.value
     navigator.clipboard.writeText(text)
-    alert(t('tools.random-ip-generator.copySuccess'))
+    toastRef.value.show(t('tools.random-ip-generator.copySuccess'))
 }
 
 // 导出JSON

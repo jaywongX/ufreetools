@@ -257,6 +257,7 @@
     </div>
     <PDFToImageConverterArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -265,6 +266,9 @@ import { useI18n } from 'vue-i18n'
 import JSZip from 'jszip'
 import PDFToImageConverterArticle from './PDFToImageConverterArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // PDF查看器类
@@ -715,7 +719,7 @@ async function importFromUrl() {
 
     await renderCurrentPage()
   } catch (error) {
-    alert(error.message)
+    toastRef.value.show(error.message)
   } finally {
     isLoadingPage.value = false
   }
@@ -735,7 +739,7 @@ async function loadPdfFromFile(file) {
 
     await renderCurrentPage()
   } catch (error) {
-    alert(error.message)
+    toastRef.value.show(error.message)
   } finally {
     isLoadingPage.value = false
   }
@@ -755,7 +759,7 @@ async function loadSamplePdf() {
 
     await renderCurrentPage()
   } catch (error) {
-    alert(t('tools.pdf-to-image-converter.error.failedToLoad'))
+    toastRef.value.show(t('tools.pdf-to-image-converter.error.failedToLoad'))
     console.error(error)
   } finally {
     isLoadingPage.value = false
@@ -839,7 +843,7 @@ async function convertToImages() {
       }
     }
   } catch (error) {
-    alert(t('tools.pdf-to-image-converter.error.failedToProcess'))
+    toastRef.value.show(t('tools.pdf-to-image-converter.error.failedToProcess'))
     console.error(error)
   } finally {
     isProcessing.value = false
@@ -893,7 +897,7 @@ async function downloadAll() {
     URL.revokeObjectURL(url)
   } catch (error) {
     console.error('Error generating zip:', error)
-    alert('Failed to create zip file')
+    toastRef.value.show('Failed to create zip file')
   }
 }
 

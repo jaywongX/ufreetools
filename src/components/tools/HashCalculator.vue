@@ -327,6 +327,7 @@
     <!-- 添加文章部分 -->
     <HashCalculatorArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -347,6 +348,9 @@ import { sha512_224, sha512_256 } from 'js-sha512'
 import { Buffer } from 'buffer'
 
 // Make Buffer globally available
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 if (typeof window !== 'undefined') {
   window.Buffer = Buffer;
 }
@@ -1195,7 +1199,7 @@ async function calculateAllHashes() {
     }
   } catch (error) {
     console.error(error)
-    alert(t('tools.hash-calculator.messages.processingError', {error: error.message}))
+    toastRef.value.show(t('tools.hash-calculator.messages.processingError', {error: error.message}))
   } finally {
     isCalculating.value = false
   }
@@ -1224,7 +1228,7 @@ async function calculateHash() {
     hashResultBase64.value = result.base64
     verifyHash.value = result.hex
   } catch (error) {
-    alert(t('tools.hash-calculator.messages.processingError', {error: error.message}))
+    toastRef.value.show(t('tools.hash-calculator.messages.processingError', {error: error.message}))
   } finally {
     isCalculating.value = false
   }
@@ -1233,9 +1237,9 @@ async function calculateHash() {
 // 复制到剪贴板
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(() => {
-    alert(t('tools.hash-calculator.results.copied'))
+    toastRef.value.show(t('tools.hash-calculator.results.copied'))
   }).catch(err => {
-    alert(t('tools.hash-calculator.results.copyFailed'))
+    toastRef.value.show(t('tools.hash-calculator.results.copyFailed'))
     console.error(t('tools.hash-calculator.messages.processingError', {error: err}))
   })
 }

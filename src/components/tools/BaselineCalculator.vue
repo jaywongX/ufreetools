@@ -284,6 +284,7 @@
         </div>
         <BaselineCalculatorArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -291,6 +292,9 @@ import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BaselineCalculatorArticle from './BaselineCalculatorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 输入数据
@@ -637,7 +641,7 @@ function copyResult(result) {
     const text = generateResultText(result)
 
     navigator.clipboard.writeText(text).then(() => {
-        alert(t('tools.baseline-calculator.copySuccess'))
+        toastRef.value.show(t('tools.baseline-calculator.copySuccess'))
     })
 }
 </script>

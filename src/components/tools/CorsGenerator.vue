@@ -332,6 +332,7 @@
     <!-- 文章组件 -->
     <CorsGeneratorArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -339,6 +340,9 @@ import { ref, reactive, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import CorsGeneratorArticle from './CorsGeneratorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 域名配置
@@ -658,10 +662,10 @@ Access-Control-Expose-Headers: ${getExposeHeaders.value}
 // 复制配置
 function copyConfig() {
   navigator.clipboard.writeText(generatedConfig.value).then(() => {
-    alert(t('tools.cors-generator.config.copied'))
+    toastRef.value.show(t('tools.cors-generator.config.copied'))
   }).catch(err => {
     console.error(err)
-    alert(err)
+    toastRef.value.show(err)
   })
 }
 </script> 

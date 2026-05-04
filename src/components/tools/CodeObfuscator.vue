@@ -248,6 +248,7 @@
       <CodeObfuscatorArticle />
     </div>
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -256,6 +257,9 @@ import JavaScriptObfuscator from 'javascript-obfuscator'
 import { useI18n } from 'vue-i18n'
 import CodeObfuscatorArticle from './CodeObfuscatorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 语言选择
@@ -536,11 +540,11 @@ function copyResult() {
   
   navigator.clipboard.writeText(resultCode.value)
     .then(() => {
-      alert('已复制到剪贴板')
+      toastRef.value.show('已复制到剪贴板')
     })
     .catch(err => {
       console.error('复制失败:', err)
-      alert('复制失败，请手动复制')
+      toastRef.value.show('复制失败，请手动复制')
     })
 }
 

@@ -319,12 +319,16 @@
         </div>
       </div>
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t, locale } = useI18n()
 
 // 参数设置
@@ -421,7 +425,7 @@ function resetSettings() {
 // 复制单个名字
 function copyName(name) {
   navigator.clipboard.writeText(name).then(() => {
-    alert(t('tools.name-generator.copied'))
+    toastRef.value.show(t('tools.name-generator.copied'))
   })
 }
 
@@ -429,7 +433,7 @@ function copyName(name) {
 function copyAllNames() {
   const text = generatedNames.value.join('\n')
   navigator.clipboard.writeText(text).then(() => {
-    alert(t('tools.name-generator.copied'))
+    toastRef.value.show(t('tools.name-generator.copied'))
   })
 }
 

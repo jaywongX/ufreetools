@@ -300,6 +300,7 @@
         </div>
         <AreaPerimeterCalculatorArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -308,6 +309,9 @@ import { useI18n } from 'vue-i18n'
 import AreaPerimeterCalculatorArticle from './AreaPerimeterCalculatorArticle.vue'
 
 // 全局变量声明
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 let L = null
 let drawControl = null
 let drawnItems = null
@@ -380,7 +384,7 @@ function setCalculationMode(mode) {
 // 从坐标输入计算面积和周长
 function calculateFromCoordinates() {
     if (!coordinateInput.value.trim()) {
-        alert(t('tools.area-perimeter-calculator.noCoordinates'))
+        toastRef.value.show(t('tools.area-perimeter-calculator.noCoordinates'))
         return
     }
     
@@ -433,7 +437,7 @@ function calculateFromCoordinates() {
         
         // 确保至少有3个点形成多边形
         if (coordinates.length < 3) {
-            alert(t('tools.area-perimeter-calculator.notEnoughPoints'))
+            toastRef.value.show(t('tools.area-perimeter-calculator.notEnoughPoints'))
             return
         }
         
@@ -457,7 +461,7 @@ function calculateFromCoordinates() {
         coordinateInput.value = ''
     } catch (error) {
         console.error('Error parsing coordinates:', error)
-        alert(error.message || t('tools.area-perimeter-calculator.coordinateParseError'))
+        toastRef.value.show(error.message || t('tools.area-perimeter-calculator.coordinateParseError'))
     }
 }
 
@@ -655,7 +659,7 @@ function exportAsGeoJSON() {
         // 确保 saveAs 已定义
         if (!saveAs) {
             console.error('FileSaver is not defined')
-            alert(t('tools.area-perimeter-calculator.exportError'))
+            toastRef.value.show(t('tools.area-perimeter-calculator.exportError'))
             return
         }
         
@@ -686,7 +690,7 @@ function exportAsGeoJSON() {
         saveAs(blob, 'area-perimeter-shapes.geojson')
     } catch (error) {
         console.error('Error exporting GeoJSON:', error)
-        alert(t('tools.area-perimeter-calculator.exportError'))
+        toastRef.value.show(t('tools.area-perimeter-calculator.exportError'))
     }
 }
 
@@ -698,7 +702,7 @@ function exportAsKML() {
         // 确保 tokml 和 saveAs 已定义
         if (!tokml || !saveAs) {
             console.error('tokml or FileSaver is not defined')
-            alert(t('tools.area-perimeter-calculator.exportError'))
+            toastRef.value.show(t('tools.area-perimeter-calculator.exportError'))
             return
         }
         
@@ -729,7 +733,7 @@ function exportAsKML() {
         saveAs(blob, 'area-perimeter-shapes.kml')
     } catch (error) {
         console.error('Error exporting KML:', error)
-        alert(t('tools.area-perimeter-calculator.exportError'))
+        toastRef.value.show(t('tools.area-perimeter-calculator.exportError'))
     }
 }
 
@@ -741,7 +745,7 @@ function exportAsImage() {
         // 确保 html2canvas 和 saveAs 已定义
         if (!html2canvas || !saveAs) {
             console.error('html2canvas or FileSaver is not defined')
-            alert(t('tools.area-perimeter-calculator.exportError'))
+            toastRef.value.show(t('tools.area-perimeter-calculator.exportError'))
             return
         }
         
@@ -752,7 +756,7 @@ function exportAsImage() {
         })
     } catch (error) {
         console.error('Error exporting image:', error)
-        alert(t('tools.area-perimeter-calculator.exportError'))
+        toastRef.value.show(t('tools.area-perimeter-calculator.exportError'))
     }
 }
 
@@ -764,7 +768,7 @@ function exportAsCSV() {
         // 确保 saveAs 已定义
         if (!saveAs) {
             console.error('FileSaver is not defined')
-            alert(t('tools.area-perimeter-calculator.exportError'))
+            toastRef.value.show(t('tools.area-perimeter-calculator.exportError'))
             return
         }
         
@@ -780,7 +784,7 @@ function exportAsCSV() {
         saveAs(blob, 'area-perimeter-measurements.csv')
     } catch (error) {
         console.error('Error exporting CSV:', error)
-        alert(t('tools.area-perimeter-calculator.exportError'))
+        toastRef.value.show(t('tools.area-perimeter-calculator.exportError'))
     }
 }
 
@@ -792,7 +796,7 @@ function exportAsTXT() {
         // 确保 saveAs 已定义
         if (!saveAs) {
             console.error('FileSaver is not defined')
-            alert(t('tools.area-perimeter-calculator.exportError'))
+            toastRef.value.show(t('tools.area-perimeter-calculator.exportError'))
             return
         }
         
@@ -853,7 +857,7 @@ function exportAsTXT() {
         saveAs(blob, 'area-perimeter-measurements.txt')
     } catch (error) {
         console.error('Error exporting TXT:', error)
-        alert(t('tools.area-perimeter-calculator.exportError'))
+        toastRef.value.show(t('tools.area-perimeter-calculator.exportError'))
     }
 }
 
@@ -865,7 +869,7 @@ function exportAsPDF() {
         // 确保 jsPDF 已定义
         if (!window.jspdf) {
             console.error('jsPDF is not defined')
-            alert(t('tools.area-perimeter-calculator.exportError'))
+            toastRef.value.show(t('tools.area-perimeter-calculator.exportError'))
             return
         }
         
@@ -995,7 +999,7 @@ function exportAsPDF() {
         doc.save('area-perimeter-measurements.pdf')
     } catch (error) {
         console.error('Error exporting PDF:', error)
-        alert(t('tools.area-perimeter-calculator.exportError'))
+        toastRef.value.show(t('tools.area-perimeter-calculator.exportError'))
     }
 }
 

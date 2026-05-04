@@ -324,6 +324,7 @@
 
         <ImageToPDFConverterArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -334,6 +335,9 @@ import 'jspdf/dist/polyfills.es.js'
 import ImageToPDFConverterArticle from './ImageToPDFConverterArticle.vue'
 import Sortable from 'sortablejs'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 状态变量
@@ -482,7 +486,7 @@ function removeImage(idx) {
 // 从URL导入图片
 async function importFromUrl() {
     if (!isValidUrl.value) {
-        alert(t('tools.image-to-pdf-converter.invalidUrl'))
+        toastRef.value.show(t('tools.image-to-pdf-converter.invalidUrl'))
         return
     }
 
@@ -504,7 +508,7 @@ async function importFromUrl() {
         showUrlModal.value = false
     } catch (error) {
         console.error('Failed to import image from URL:', error)
-        alert(t('tools.image-to-pdf-converter.error') + ': ' + error.message)
+        toastRef.value.show(t('tools.image-to-pdf-converter.error') + ': ' + error.message)
     }
 }
 
@@ -527,7 +531,7 @@ async function initCamera() {
         }
     } catch (error) {
         console.error('Error accessing camera:', error)
-        alert(t('tools.image-to-pdf-converter.error') + ': ' + error.message)
+        toastRef.value.show(t('tools.image-to-pdf-converter.error') + ': ' + error.message)
     }
 }
 
@@ -723,7 +727,7 @@ async function generatePDF() {
 
     } catch (error) {
         console.error('Error generating PDF:', error)
-        alert(t('tools.image-to-pdf-converter.error') + ': ' + error.message)
+        toastRef.value.show(t('tools.image-to-pdf-converter.error') + ': ' + error.message)
     } finally {
         isGenerating.value = false
     }

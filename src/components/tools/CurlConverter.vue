@@ -107,6 +107,7 @@
   
   <!-- 添加文章部分 -->
   <CurlConverterArticle />
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -115,6 +116,9 @@ import { onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import CurlConverterArticle from './CurlConverterArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 当前输入的cURL命令
@@ -244,10 +248,10 @@ function copyCode() {
   if (!convertedCode.value) return
   
   navigator.clipboard.writeText(convertedCode.value).then(() => {
-    alert(t('tools.curl-converter.messages.copied'))
+    toastRef.value.show(t('tools.curl-converter.messages.copied'))
   }).catch(err => {
     console.error('复制失败:', err)
-    alert(t('tools.curl-converter.messages.copyFailed'))
+    toastRef.value.show(t('tools.curl-converter.messages.copyFailed'))
   })
 }
 

@@ -287,6 +287,7 @@ message HelloResponse {
     <!-- 添加文章组件 -->
     <GrpcDebuggerArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -296,6 +297,9 @@ import * as grpcWeb from 'grpc-web'
 import { useI18n } from 'vue-i18n'
 import GrpcDebuggerArticle from './GrpcDebuggerArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 状态变量
@@ -687,11 +691,11 @@ function copyResponse() {
   
   navigator.clipboard.writeText(JSON.stringify(response.value, null, 2))
     .then(() => {
-      alert(t('tools.grpc-debugger.messages.copied'))
+      toastRef.value.show(t('tools.grpc-debugger.messages.copied'))
     })
     .catch(err => {
       console.error('复制失败:', err)
-      alert(t('tools.grpc-debugger.messages.copyFailed'))
+      toastRef.value.show(t('tools.grpc-debugger.messages.copyFailed'))
     })
 }
 

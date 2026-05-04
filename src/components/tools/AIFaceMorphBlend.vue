@@ -270,6 +270,7 @@
 
         <AIFaceMorphBlendArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -278,6 +279,9 @@ import { useI18n } from 'vue-i18n'
 import * as faceapi from 'face-api.js'
 import AIFaceMorphBlendArticle from './AIFaceMorphBlendArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // Refs
@@ -483,7 +487,7 @@ async function detectFace(index) {
             faceLandmarks.value[index] = detection.landmarks
         } else {
             console.error('No face detected in image', index)
-            alert(t('tools.ai-face-morph-blend.noFaceDetected'))
+            toastRef.value.show(t('tools.ai-face-morph-blend.noFaceDetected'))
         }
     } catch (error) {
         console.error('Error detecting face:', error)
@@ -496,7 +500,7 @@ async function detectFace(index) {
 async function startMorphing() {
     if (originalImages.value.length !== 2) return
     if (!faceLandmarks.value[0] || !faceLandmarks.value[1]) {
-        alert(t('tools.ai-face-morph-blend.noFaceDetected'))
+        toastRef.value.show(t('tools.ai-face-morph-blend.noFaceDetected'))
         return
     }
     

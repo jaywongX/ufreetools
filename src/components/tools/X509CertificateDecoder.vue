@@ -710,6 +710,7 @@
     </div>
     <X509CertificateDecoderArticle/>
 </div>
+    <Toast ref="toastRef" />
 </template>
   
 <script setup>
@@ -721,6 +722,9 @@ import jsPDF from 'jspdf'
 import X509CertificateDecoderArticle from './X509CertificateDecoderArticle.vue'
 
 // Define state variables
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const loading = ref(false)
 const error = ref(null)
 const certificateText = ref('')
@@ -1603,7 +1607,7 @@ function downloadReportPDF() {
     doc.save(`certificate-report-${new Date().toISOString().slice(0, 10)}.pdf`);
   } catch (e) {
     console.error("PDF generation error:", e);
-    alert("Error generating PDF, downloading as text instead");
+    toastRef.value.show("Error generating PDF, downloading as text instead");
     downloadReportTXT();
   }
 }
@@ -2039,11 +2043,11 @@ function copyToClipboard(section, customValue = null) {
   navigator.clipboard.writeText(content)
     .then(() => {
       // 显示成功消息
-      alert(t('tools.x509-certificate-decoder.messages.copiedToClipboard'));
+      toastRef.value.show(t('tools.x509-certificate-decoder.messages.copiedToClipboard'));
     })
     .catch(err => {
       console.error('Error copying to clipboard:', err);
-      alert(t('tools.x509-certificate-decoder.messages.copyError'));
+      toastRef.value.show(t('tools.x509-certificate-decoder.messages.copyError'));
     });
 }
 

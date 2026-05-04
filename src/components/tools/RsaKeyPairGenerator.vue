@@ -242,6 +242,7 @@
         </div>
         <RsaKeyPairGeneratorArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -250,6 +251,9 @@ import { useI18n } from 'vue-i18n'
 import forge from 'node-forge'
 import RsaKeyPairGeneratorArticle from './RsaKeyPairGeneratorArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // State variables
@@ -289,7 +293,7 @@ async function generateKeyPairs() {
         generationProgress.value = 100
     } catch (error) {
         console.error('Error generating RSA key pairs:', error)
-        alert(t('tools.rsa-key-pair-generator.generationError'))
+        toastRef.value.show(t('tools.rsa-key-pair-generator.generationError'))
     } finally {
         isGenerating.value = false
     }
@@ -360,7 +364,7 @@ function generateRsaKeyPair() {
 // Copy text to clipboard
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
-        alert(t('tools.rsa-key-pair-generator.copied'));
+        toastRef.value.show(t('tools.rsa-key-pair-generator.copied'));
     });
 }
 

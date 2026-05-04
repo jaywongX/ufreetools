@@ -482,6 +482,7 @@
     <!-- 可选: 添加文章组件 -->
     <HorizontalToVerticalImageArticle />
   </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -489,6 +490,9 @@ import { ref, reactive, onMounted } from 'vue';
 import HorizontalToVerticalImageArticle from './HorizontalToVerticalImageArticle.vue';
 
 // 状态变量
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const fileInput = ref(null);
 const isDragging = ref(false);
 const previewImage = ref(null);
@@ -608,7 +612,7 @@ function onFileSelected(e) {
 // 处理文件
 function processFile(file) {
   if (!file.type.match('image.*')) {
-    alert($t('tools.horizontal-to-vertical-image.messages.imageOnly'));
+    toastRef.value.show($t('tools.horizontal-to-vertical-image.messages.imageOnly'));
     return;
   }
   

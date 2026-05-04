@@ -390,6 +390,7 @@
         </div>
         <MergePdfOnlineArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -398,6 +399,9 @@ import { useI18n } from 'vue-i18n'
 import draggable from 'vuedraggable'
 import MergePdfOnlineArticle from './MergePdfOnlineArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 let pdfjsLib = null
 let PDFDocument = null
 let StandardFonts = null
@@ -535,7 +539,7 @@ async function addFromUrl() {
         pdfUrl.value = ''
     } catch (error) {
         console.error('Error importing PDF from URL:', error)
-        alert('Failed to import PDF from URL. Please check the URL and try again.')
+        toastRef.value.show('Failed to import PDF from URL. Please check the URL and try again.')
     }
 }
 
@@ -857,7 +861,7 @@ async function mergePdfs() {
         await nextTick()
     } catch (error) {
         console.error('Error merging PDFs:', error)
-        alert('Failed to merge PDFs. Please try again.')
+        toastRef.value.show('Failed to merge PDFs. Please try again.')
     } finally {
         merging.value = false
     }

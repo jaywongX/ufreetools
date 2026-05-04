@@ -247,6 +247,7 @@
         </div>
         <GnssTimeConverterArticle />
     </div>
+    <Toast ref="toastRef" />
 </template>
 
 <script setup>
@@ -254,6 +255,9 @@ import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import GnssTimeConverterArticle from './GnssTimeConverterArticle.vue'
 
+import Toast from '../common/Toast.vue'
+
+const toastRef = ref(null)
 const { t } = useI18n()
 
 // 输入数据
@@ -519,7 +523,7 @@ function copyResult(result) {
         `${t('tools.gnss-time-converter.bdtTime')}: ${result.bdtWeek} ${result.bdtTow.toFixed(3)}`
 
     navigator.clipboard.writeText(text).then(() => {
-        alert(t('tools.gnss-time-converter.copySuccess'))
+        toastRef.value.show(t('tools.gnss-time-converter.copySuccess'))
     })
 }
 
@@ -528,7 +532,7 @@ function exportToCSV() {
     isExporting.value = true
     // 模拟导出过程
     setTimeout(() => {
-        alert(t('tools.gnss-time-converter.csvExportSuccess'))
+        toastRef.value.show(t('tools.gnss-time-converter.csvExportSuccess'))
         isExporting.value = false
     }, 1000)
 }
