@@ -202,6 +202,7 @@ import NgAddressGenerator from './tools/ng-address-generator.js'
 import DeAddressGenerator from './tools/de-address-generator.js'
 import RandomIpGenerator from './tools/random-ip-generator.js'
 import StlTo3mfConverter from './tools/stl-to-3mf-converter.js'
+import StlToObjConverter from './tools/stl-to-obj-converter.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -407,5 +408,6 @@ export default {
   'ng-address-generator': NgAddressGenerator,
   'de-address-generator': DeAddressGenerator,
   'random-ip-generator': RandomIpGenerator,
-  'stl-to-3mf-converter': StlTo3mfConverter
+  'stl-to-3mf-converter': StlTo3mfConverter,
+  'stl-to-obj-converter': StlToObjConverter
 };
