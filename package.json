@@ -13,7 +13,7 @@
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
     "test:skip-components": "vitest run --testNamePattern='^(?!.*Component).*$'",
-    "build:prerender": "node scripts/run-prerender-build.js core 0",
+    "build:prerender": "node scripts/run-prerender-build.js all",
     "build:prerender:all": "node scripts/run-prerender-build.js all",
     "build:spa": "vite build",
     "generate:routes": "node scripts/print-prerender-routes.js core",
