@@ -74,7 +74,7 @@ export const PRIORITY_TOOL_IDS = [
   'code-beautifier',
   'code-complexity-analyzer',
   'code-diff',
-  'code-formatter',
+  // 'code-formatter',
   'code-obfuscator',
   'code-to-image-converter',
   'color-picker',
