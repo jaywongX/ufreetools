@@ -276,6 +276,9 @@ const lazyComponentMap = {
   'NgAddressGenerator': () => import('./components/tools/NgAddressGenerator.vue'),
   'DeAddressGenerator': () => import('./components/tools/DeAddressGenerator.vue'),
   'RandomIpGenerator': () => import('./components/tools/RandomIpGenerator.vue'),
+
+  // 3D打印
+  'StlTo3mfConverter': () => import('./components/tools/StlTo3mfConverter.vue'),
 }
 
 // 用异步 IIFE 启动应用（仅在浏览器环境中执行）

@@ -49,4 +49,8 @@ export default {
     title: 'Alat Audio',
     description: 'Alat untuk konversi, pengeditan, dan pengolahan audio'
   },
+  printing_3d: {
+    title: 'Pencetakan 3D',
+    description: 'Alat untuk pembuatan, optimasi, dan konversi model pencetakan 3D'
+  },
 };

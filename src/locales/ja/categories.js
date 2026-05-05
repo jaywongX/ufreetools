@@ -49,4 +49,8 @@ export default {
     title: 'オーディオツール',
     description: 'オーディオファイルの変換、編集、処理ツール'
   },
+  printing_3d: {
+    title: '3Dプリンティング',
+    description: '3Dプリンティングモデルの生成、最適化、変換ツール'
+  },
 };

@@ -49,4 +49,8 @@ export default {
     title: '오디오 도구',
     description: '오디오 파일 변환, 편집 및 처리 도구'
   },
+  printing_3d: {
+    title: '3D 프린팅',
+    description: '3D 프린팅 모델 생성, 최적화 및 변환 도구'
+  },
 };

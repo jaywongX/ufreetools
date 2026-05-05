@@ -49,4 +49,8 @@ export default {
     title: '音频工具',
     description: '音频文件的转换、编辑和处理工具'
   },
+  printing_3d: {
+    title: '3D打印',
+    description: '3D打印模型生成、优化和转换工具'
+  },
 }; 
