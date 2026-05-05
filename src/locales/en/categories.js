@@ -49,4 +49,8 @@ export default {
     title: 'Audio Tools',
     description: 'Tools for audio conversion, editing and processing'
   },
+  printing_3d: {
+    title: '3D Printing',
+    description: 'Tools for 3D printing model generation, optimization and conversion'
+  },
 };

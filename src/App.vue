@@ -130,6 +130,13 @@ const categories = ref([
     name: '音频工具',
     description: '音频文件的创建、编辑、转换与优化工具',
     icon: "M11 5L6 9H2v6h4l5 4V5z M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+  },
+  {
+    id: 'printing_3d',
+    title: '3D打印',
+    name: '3D打印',
+    description: '3D打印模型生成、优化和转换工具',
+    icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4'
   }
 ])
 provide('categories', categories.value)
@@ -2473,6 +2480,19 @@ const allTools = computed(() => [
     component: 'AudioLoop',
     icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
     tags: ['audio', 'convert']
+  },
+
+  // 3D打印工具
+  {
+    id: 'stl-to-3mf-converter',
+    name: t('tools.stl-to-3mf-converter.name'),
+    category: t(`categories.printing_3d.title`),
+    categoryId: 'printing_3d',
+    description: t('tools.stl-to-3mf-converter.description'),
+    path: '/tools/stl-to-3mf-converter',
+    component: 'StlTo3mfConverter',
+    icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
+    tags: ['convert']
   },
 ])
 provide('allTools', allTools)
