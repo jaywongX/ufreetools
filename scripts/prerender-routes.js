@@ -8,7 +8,7 @@
  * 输出: 控制台输出 JSON 格式的路由数组
  */
 
-import { readdir } from 'fs/promises';
+import { readFile } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import {
@@ -23,19 +23,31 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = join(__dirname, '..');
 
 /**
- * 从 en/tools 目录提取所有工具 ID
+ * 从 App.vue 中提取所有工具 ID
  */
 async function getToolIds() {
-  const toolsDir = join(projectRoot, 'src', 'locales', 'en', 'tools');
+  const appVuePath = join(projectRoot, 'src', 'App.vue');
   try {
-    const files = await readdir(toolsDir);
-    // 排除 article 文件，只取工具 ID
-    const toolIds = files
-      .filter(f => f.endsWith('.js') && !f.endsWith('-article.js'))
-      .map(f => f.replace('.js', ''));
-    return toolIds;
+    const content = await readFile(appVuePath, 'utf-8');
+    
+    // 匹配 id: 'xxx' 模式，只提取工具 ID（排除分类和标签）
+    const toolIdRegex = /^\s*id:\s*'([\w-]+)',\s*$/gm;
+    const toolIds = [];
+    let match;
+    
+    // 跳过前13个匹配（分类和标签）
+    let count = 0;
+    while ((match = toolIdRegex.exec(content)) !== null) {
+      count++;
+      if (count > 13) { // 跳过分类和标签
+        toolIds.push(match[1]);
+      }
+    }
+    
+    // 去重并排序
+    return [...new Set(toolIds)].sort();
   } catch (err) {
-    console.error('Error reading tools directory:', err);
+    console.error('Error reading App.vue:', err);
     return [];
   }
 }
@@ -68,15 +80,16 @@ function getPrerenderConfig(toolIds) {
     mode === 'all' ? ALL_LANGS : PRIORITY_LANGS
   ).filter(lang => ALL_LANGS.includes(lang));
 
-  let selectedToolIds;
-  if (mode === 'all') {
-    selectedToolIds = toolIds;
-  } else {
-    const coreTools = PRIORITY_TOOL_IDS.filter(id => toolIds.includes(id));
-    selectedToolIds = Number.isFinite(toolLimit) && toolLimit > 0
-      ? coreTools.slice(0, toolLimit)
-      : coreTools;
-  }
+  let selectedToolIds = toolIds;
+  // if (mode === 'all') {
+  //   selectedToolIds = toolIds;
+  // } else {
+  //   // 选择特定的工具
+  //   const coreTools = PRIORITY_TOOL_IDS.filter(id => toolIds.includes(id));
+  //   selectedToolIds = Number.isFinite(toolLimit) && toolLimit > 0
+  //     ? coreTools.slice(0, toolLimit)
+  //     : coreTools;
+  // }
 
   return {
     mode,
