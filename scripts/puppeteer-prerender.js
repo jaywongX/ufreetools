@@ -111,7 +111,7 @@ async function prerenderRoute(browser, route, baseUrl) {
     // 导航到页面
     await page.goto(url, {
       waitUntil: 'networkidle2',
-      timeout: 60000,
+      timeout: 120000,
     });
 
     // 等待 Vue 应用渲染完成
