@@ -2505,6 +2505,17 @@ const allTools = computed(() => [
     icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
     tags: ['convert']
   },
+  {
+    id: 'stl-3mf-model-viewer',
+    name: t('tools.stl-3mf-model-viewer.name'),
+    category: t(`categories.printing_3d.title`),
+    categoryId: 'printing_3d',
+    description: t('tools.stl-3mf-model-viewer.description'),
+    path: '/tools/stl-3mf-model-viewer',
+    component: 'Stl3mfModelViewer',
+    icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
+    tags: []
+  },
 ])
 provide('allTools', allTools)
 

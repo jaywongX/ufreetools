@@ -280,6 +280,7 @@ const lazyComponentMap = {
   // 3D打印
   'StlTo3mfConverter': () => import('./components/tools/StlTo3mfConverter.vue'),
   'StlToObjConverter': () => import('./components/tools/StlToObjConverter.vue'),
+  'Stl3mfModelViewer': () => import('./components/tools/Stl3mfModelViewer.vue'),
 }
 
 // 用异步 IIFE 启动应用（仅在浏览器环境中执行）
