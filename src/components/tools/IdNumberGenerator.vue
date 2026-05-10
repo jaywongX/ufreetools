@@ -430,7 +430,7 @@ function generateIds() {
 function copyId(id) {
   navigator.clipboard.writeText(id)
     .then(() => {
-      toastRef.value.show($t('tools.id-number-generator.copiedToClipboard'));
+      toastRef.value.show(t('tools.id-number-generator.copiedToClipboard'));
     })
     .catch(err => {
       console.error('复制失败:', err);
@@ -442,7 +442,7 @@ function copyAll() {
   const allIds = generatedIds.value.join('\n');
   navigator.clipboard.writeText(allIds)
     .then(() => {
-      toastRef.value.show($t('tools.id-number-generator.allCopiedToClipboard'));
+      toastRef.value.show(t('tools.id-number-generator.allCopiedToClipboard'));
     })
     .catch(err => {
       console.error('复制失败:', err);
@@ -487,7 +487,7 @@ function exportAsCsv() {
 // 导出为Excel
 function exportAsExcel() {
   const worksheet = XLSX.utils.aoa_to_sheet([
-    [$t('tools.id-number-generator.idNumber')], 
+    [t('tools.id-number-generator.idNumber')], 
     ...generatedIds.value.map(id => [id])
   ]);
   

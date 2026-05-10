@@ -19,7 +19,7 @@ const props = defineProps({
     },
     position: {
         type: String,
-        default: 'top-right',
+        default: 'top-center',
         validator(value) {
             return ['top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right'].includes(value)
         }
@@ -70,11 +70,11 @@ defineExpose({ show })
 
 .toast-enter-from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateY(-20px);
 }
 
 .toast-leave-to {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateY(-20px);
 }
 </style>
