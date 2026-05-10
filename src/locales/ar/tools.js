@@ -155,9 +155,18 @@ import ImageToSvg from './tools/image-to-svg.js';
 import PdfCompressor from './tools/pdf-compressor.js';
 import UsAddressGenerator from './tools/us-address-generator.js';
 import HkAddressGenerator from './tools/hk-address-generator.js';
-import GoogleAddressGenerator from './tools/google-address-generator.js';
 import TurkeyAddressGenerator from './tools/turkey-address-generator.js';
-
+import FranceAddressGenerator from './tools/france-address-generator.js';
+import FinlandAddressGenerator from './tools/finland-address-generator.js';
+import VietnamAddressGenerator from './tools/vietnam-address-generator.js';
+import NetherlandsAddressGenerator from './tools/netherlands-address-generator.js';
+import MalaysiaAddressGenerator from './tools/malaysia-address-generator.js';
+import ThailandAddressGenerator from './tools/thailand-address-generator.js';
+import IndiaAddressGenerator from './tools/india-address-generator.js';
+import PakistanAddressGenerator from './tools/pakistan-address-generator.js';
+import ItalyAddressGenerator from './tools/italy-address-generator.js';
+import SpainAddressGenerator from './tools/spain-address-generator.js';
+import RussiaAddressGenerator from './tools/russia-address-generator.js';
 import KrAddressGenerator from './tools/kr-address-generator.js';
 import ExifViewer from './tools/exif-viewer.js';
 import SevenParameterTransformer from './tools/seven-parameter-transformer.js';
@@ -366,9 +375,18 @@ export default {
   'pdf-compressor': PdfCompressor,
   'us-address-generator': UsAddressGenerator,
   'hk-address-generator': HkAddressGenerator,
-  'google-address-generator': GoogleAddressGenerator,
   'turkey-address-generator': TurkeyAddressGenerator,
-
+  'france-address-generator': FranceAddressGenerator,
+  'finland-address-generator': FinlandAddressGenerator,
+  'vietnam-address-generator': VietnamAddressGenerator,
+  'netherlands-address-generator': NetherlandsAddressGenerator,
+  'malaysia-address-generator': MalaysiaAddressGenerator,
+  'thailand-address-generator': ThailandAddressGenerator,
+  'india-address-generator': IndiaAddressGenerator,
+  'pakistan-address-generator': PakistanAddressGenerator,
+  'italy-address-generator': ItalyAddressGenerator,
+  'spain-address-generator': SpainAddressGenerator,
+  'russia-address-generator': RussiaAddressGenerator,
   'kr-address-generator': KrAddressGenerator,
   'exif-viewer': ExifViewer,
   'seven-parameter-transformer': SevenParameterTransformer,

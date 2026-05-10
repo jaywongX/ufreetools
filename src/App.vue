@@ -1737,6 +1737,127 @@ const allTools = computed(() => [
     tags: ['generator']
   },
   {
+    id: 'france-address-generator',
+    name: t('tools.france-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.france-address-generator.description'),
+    path: '/tools/france-address-generator',
+    component: 'FranceAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
+    id: 'finland-address-generator',
+    name: t('tools.finland-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.finland-address-generator.description'),
+    path: '/tools/finland-address-generator',
+    component: 'FinlandAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
+    id: 'vietnam-address-generator',
+    name: t('tools.vietnam-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.vietnam-address-generator.description'),
+    path: '/tools/vietnam-address-generator',
+    component: 'VietnamAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
+    id: 'netherlands-address-generator',
+    name: t('tools.netherlands-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.netherlands-address-generator.description'),
+    path: '/tools/netherlands-address-generator',
+    component: 'NetherlandsAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
+    id: 'malaysia-address-generator',
+    name: t('tools.malaysia-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.malaysia-address-generator.description'),
+    path: '/tools/malaysia-address-generator',
+    component: 'MalaysiaAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
+    id: 'thailand-address-generator',
+    name: t('tools.thailand-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.thailand-address-generator.description'),
+    path: '/tools/thailand-address-generator',
+    component: 'ThailandAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
+    id: 'india-address-generator',
+    name: t('tools.india-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.india-address-generator.description'),
+    path: '/tools/india-address-generator',
+    component: 'IndiaAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
+    id: 'pakistan-address-generator',
+    name: t('tools.pakistan-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.pakistan-address-generator.description'),
+    path: '/tools/pakistan-address-generator',
+    component: 'PakistanAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
+    id: 'italy-address-generator',
+    name: t('tools.italy-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.italy-address-generator.description'),
+    path: '/tools/italy-address-generator',
+    component: 'ItalyAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
+    id: 'spain-address-generator',
+    name: t('tools.spain-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.spain-address-generator.description'),
+    path: '/tools/spain-address-generator',
+    component: 'SpainAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
+    id: 'russia-address-generator',
+    name: t('tools.russia-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.russia-address-generator.description'),
+    path: '/tools/russia-address-generator',
+    component: 'RussiaAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
     id: 'taiwan-address-generator',
     name: t('tools.taiwan-address-generator.name'),
     category: t(`categories.utility.title`),
