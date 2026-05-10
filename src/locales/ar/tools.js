@@ -155,6 +155,9 @@ import ImageToSvg from './tools/image-to-svg.js';
 import PdfCompressor from './tools/pdf-compressor.js';
 import UsAddressGenerator from './tools/us-address-generator.js';
 import HkAddressGenerator from './tools/hk-address-generator.js';
+import GoogleAddressGenerator from './tools/google-address-generator.js';
+import TurkeyAddressGenerator from './tools/turkey-address-generator.js';
+
 import KrAddressGenerator from './tools/kr-address-generator.js';
 import ExifViewer from './tools/exif-viewer.js';
 import SevenParameterTransformer from './tools/seven-parameter-transformer.js';
@@ -363,6 +366,9 @@ export default {
   'pdf-compressor': PdfCompressor,
   'us-address-generator': UsAddressGenerator,
   'hk-address-generator': HkAddressGenerator,
+  'google-address-generator': GoogleAddressGenerator,
+  'turkey-address-generator': TurkeyAddressGenerator,
+
   'kr-address-generator': KrAddressGenerator,
   'exif-viewer': ExifViewer,
   'seven-parameter-transformer': SevenParameterTransformer,

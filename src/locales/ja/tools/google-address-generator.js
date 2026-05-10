@@ -1,0 +1,252 @@
+export default {
+    name: 'Google住所ジェネレーター - 実在するアメリカの住所、身分情報、連絡先情報をオンラインで生成',
+    description: '無料のオンラインGoogle住所ジェネレーター。実在する形式のアメリカの住所、社会保険番号、電話番号、クレジットカード番号、完全な身分プロファイルを作成します。州のフィルタリング、JSON/CSVエクスポート形式をサポートし、プライバシー保護のためにすべてブラウザ内で実行されます。',
+    inputTitle: '生成設定',
+    outputTitle: '生成結果',
+    generateBtn: 'データを生成',
+    loadSampleBtn: 'サンプルを読み込んで生成',
+    clearAll: 'すべてクリア',
+    noOutput: 'まだ結果が生成されていません',
+    preview: 'データをプレビュー',
+    
+    // 地理的フィルタリング
+    locationTitle: '地理的フィルタリング',
+    selectState: '州を選択',
+    selectCity: '都市を選択',
+    allStates: 'すべての州',
+    allCities: 'すべての都市',
+    postalCodeLabel: '郵便番号',
+    validatePostalCode: '郵便番号を検証',
+    
+    // 住所タイプ
+    addressTypeTitle: '住所タイプ',
+    addressTypeResidential: '住宅住所',
+    addressTypeCommercial: '商業住所',
+    addressTypeVirtual: '仮想邮箱',
+    addressTypeCampus: '大学キャンパス',
+    
+    // 身分情報
+    identityTitle: '身分情報',
+    fullName: '氏名',
+    gender: '性別',
+    genderMale: '男性',
+    genderFemale: '女性',
+    age: '年齢',
+    birthDate: '生年月日',
+    zodiac: '星座',
+    height: '身長',
+    weight: '体重',
+    
+    // 連絡先情報
+    contactTitle: '連絡先情報',
+    phoneNumber: '電話番号',
+    phoneType: '電話タイプ',
+    phoneTypeMobile: '携帯電話',
+    phoneTypeLandline: '固定電話',
+    areaCode: '市外局番',
+    email: 'メールアドレス',
+    tempEmail: '一時メール',
+    
+    // クレジットカード
+    creditCardTitle: 'クレジットカード情報',
+    cardType: 'カードタイプ',
+    cardNumber: 'カード番号',
+    expiryDate: '有効期限',
+    cvv: 'CVV',
+    bankBin: '銀行BINコード',
+    
+    // 職業
+    careerTitle: '職業プロファイル',
+    jobTitle: '役職',
+    salary: '給料',
+    companyName: '会社名',
+    companySize: '会社規模',
+    industry: '業界',
+    employmentStatus: '雇用形態',
+    employmentFullTime: '正社員',
+    employmentPartTime: 'パートタイム',
+    
+    // 社会保険番号
+    idCardTitle: '社会保険番号',
+    idCardNumber: '社会保険番号',
+    ssn: 'SSN',
+    
+    // デジタルフィンガープリント
+    fingerprintTitle: 'デジタルフィンガープリント',
+    os: 'オペレーティングシステム',
+    osVersion: 'OSバージョン',
+    browser: 'ブラウザ',
+    userAgent: 'ユーザーエージェント',
+    screenResolution: '画面解像度',
+    timezone: 'タイムゾーン',
+    guid: 'GUID',
+    ipAddress: 'IPアドレス',
+    macAddress: 'MACアドレス',
+    cookiePolicy: 'Cookieポリシー',
+    
+    // エクスポートオプション
+    exportTitle: 'エクスポート形式',
+    exportJson: 'JSONをエクスポート',
+    exportCsv: 'CSVをエクスポート',
+    downloadBtn: 'ダウンロード',
+    copyBtn: 'コピー',
+    viewDetails: '詳細を表示',
+    
+    // バッチ生成
+    batchTitle: 'バッチ生成',
+    quantityLabel: '数量',
+    quantityPlaceholder: '数量を入力（1-100）',
+    
+    // メッセージ
+    generating: '生成中...',
+    generated: '生成完了',
+    copySuccess: 'クリップボードにコピーしました',
+    downloadSuccess: 'ダウンロード成功',
+    invalidQuantity: '1-100の数字を入力してください',
+    
+    // 結果
+    resultCount: '{count}件のレコードが生成されました',
+    resultSummary: '生成サマリー',
+    showAll: 'すべて表示',
+    collapse: '折りたたむ',
+    
+    // 生成オプション
+    generateOptionsTitle: '生成オプション',
+    
+    // レコード表示
+    recordLabel: 'レコード #{num}',
+    addressLabel: '住所',
+    streetLabel: '通り',
+    houseNumberLabel: '番地',
+    buildingLabel: '建物',
+    floorLabel: '階',
+    unitLabel: '号室',
+    districtLabel: '州',
+    cityLabel: '都市',
+    stateLabel: '州',
+    zipCodeLabel: 'ZIPコード',
+    
+    // 住所形式
+    addressNumber: '号',
+    addressFloor: '階',
+    addressUnit: '号室',
+    suiteLabel: 'スイート',
+    apartmentLabel: 'アパート',
+    
+    // 州
+    states: {
+        AL: 'Alabama',
+        AK: 'Alaska',
+        AZ: 'Arizona',
+        AR: 'Arkansas',
+        CA: 'California',
+        CO: 'Colorado',
+        CT: 'Connecticut',
+        DE: 'Delaware',
+        FL: 'Florida',
+        GA: 'Georgia',
+        HI: 'Hawaii',
+        ID: 'Idaho',
+        IL: 'Illinois',
+        IN: 'Indiana',
+        IA: 'Iowa',
+        KS: 'Kansas',
+        KY: 'Kentucky',
+        LA: 'Louisiana',
+        ME: 'Maine',
+        MD: 'Maryland',
+        MA: 'Massachusetts',
+        MI: 'Michigan',
+        MN: 'Minnesota',
+        MS: 'Mississippi',
+        MO: 'Missouri',
+        MT: 'Montana',
+        NE: 'Nebraska',
+        NV: 'Nevada',
+        NH: 'New Hampshire',
+        NJ: 'New Jersey',
+        NM: 'New Mexico',
+        NY: 'New York',
+        NC: 'North Carolina',
+        ND: 'North Dakota',
+        OH: 'Ohio',
+        OK: 'Oklahoma',
+        OR: 'Oregon',
+        PA: 'Pennsylvania',
+        RI: 'Rhode Island',
+        SC: 'South Carolina',
+        SD: 'South Dakota',
+        TN: 'Tennessee',
+        TX: 'Texas',
+        UT: 'Utah',
+        VT: 'Vermont',
+        VA: 'Virginia',
+        WA: 'Washington',
+        WV: 'West Virginia',
+        WI: 'Wisconsin',
+        WY: 'Wyoming'
+    },
+    
+    // 都市
+    cities: {
+        CA: ['Los Angeles', 'San Francisco', 'San Diego', 'San Jose', 'Sacramento'],
+        NY: ['New York City', 'Buffalo', 'Rochester', 'Syracuse', 'Albany'],
+        TX: ['Houston', 'Dallas', 'San Antonio', 'Austin', 'Fort Worth'],
+        FL: ['Miami', 'Orlando', 'Tampa', 'Jacksonville', 'Fort Lauderdale'],
+        IL: ['Chicago', 'Aurora', 'Joliet', 'Naperville', 'Springfield'],
+        PA: ['Philadelphia', 'Pittsburgh', 'Allentown', 'Erie', 'Scranton'],
+        OH: ['Columbus', 'Cleveland', 'Cincinnati', 'Toledo', 'Akron'],
+        GA: ['Atlanta', 'Augusta', 'Savannah', 'Athens', 'Macon'],
+        NC: ['Charlotte', 'Raleigh', 'Greensboro', 'Durham', 'Winston-Salem'],
+        MI: ['Detroit', 'Grand Rapids', 'Ann Arbor', 'Lansing', 'Flint'],
+        NJ: ['Newark', 'Jersey City', 'Paterson', 'Elizabeth', 'Camden'],
+        VA: ['Virginia Beach', 'Norfolk', 'Arlington', 'Richmond', 'Newport News'],
+        WA: ['Seattle', 'Spokane', 'Tacoma', 'Bellevue', 'Everett'],
+        AZ: ['Phoenix', 'Tucson', 'Mesa', 'Chandler', 'Gilbert'],
+        MA: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge'],
+        TN: ['Nashville', 'Memphis', 'Knoxville', 'Chattanooga', 'Bristol'],
+        IN: ['Indianapolis', 'Fort Wayne', 'Evansville', 'South Bend', 'Gary'],
+        MO: ['Kansas City', 'St. Louis', 'Springfield', 'Independence', 'Columbia'],
+        MD: ['Baltimore', 'Frederick', 'Rockville', 'Gaithersburg', 'Bowie'],
+        WI: ['Milwaukee', 'Madison', 'Green Bay', 'Kenosha', 'Racine'],
+        CO: ['Denver', 'Colorado Springs', 'Aurora', 'Littleton', 'Boulder'],
+        MN: ['Minneapolis', 'St. Paul', 'Bloomington', 'Plymouth', 'St. Cloud'],
+        SC: ['Charleston', 'Columbia', 'North Charleston', 'Greenville', 'Myrtle Beach'],
+        AL: ['Birmingham', 'Montgomery', 'Huntsville', 'Mobile', 'Tuscaloosa'],
+        LA: ['New Orleans', 'Shreveport', 'Baton Rouge', 'Lafayette', 'Lake Charles'],
+        KY: ['Louisville', 'Lexington', 'Bowling Green', 'Owensboro', 'Covington'],
+        OR: ['Portland', 'Eugene', 'Salem', 'Bend', 'Beaverton'],
+        OK: ['Oklahoma City', 'Tulsa', 'Norman', 'Lawton', 'Edmond'],
+        CT: ['Bridgeport', 'New Haven', 'Stamford', 'Hartford', 'Waterbury'],
+        UT: ['Salt Lake City', 'West Valley City', 'Ogden', 'Provo', 'West Jordan']
+    },
+    
+    // 大学
+    universities: {
+        MIT: 'Massachusetts Institute of Technology',
+        Stanford: 'Stanford University',
+        Harvard: 'Harvard University',
+        CalTech: 'California Institute of Technology',
+        Columbia: 'Columbia University'
+    },
+    
+    // CSVヘッダー
+    csv: {
+        fullAddress: 'Full Address',
+        street: 'Street',
+        houseNumber: 'House Number',
+        building: 'Building',
+        city: 'City',
+        state: 'State',
+        zipCode: 'ZIP Code',
+        fullName: 'Full Name',
+        gender: 'Gender',
+        age: 'Age',
+        birthDate: 'Birth Date',
+        phone: 'Phone',
+        email: 'Email',
+        cardType: 'Card Type',
+        cardNumber: 'Card Number',
+        ssn: 'SSN'
+    }
+};

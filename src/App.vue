@@ -1726,6 +1726,17 @@ const allTools = computed(() => [
     tags: ['generator']
   },
   {
+    id: 'turkey-address-generator',
+    name: t('tools.turkey-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.turkey-address-generator.description'),
+    path: '/tools/turkey-address-generator',
+    component: 'TurkeyAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
     id: 'taiwan-address-generator',
     name: t('tools.taiwan-address-generator.name'),
     category: t(`categories.utility.title`),

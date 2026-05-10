@@ -1,0 +1,252 @@
+export default {
+    name: 'Google 주소 생성기 - 실제 미국 주소, 신분 정보 및 연락처 온라인 생성',
+    description: '무료 온라인 Google 주소 생성기. 실제 형식의 미국 주소, 사회보장번호, 전화번호, 신용카드 번호 및 완전한 신분 프로필을 만듭니다. 주 필터링, JSON/CSV 내보내기 형식을 지원하며, 개인정보 보호를 위해 브라우저 내에서 완전히 실행됩니다.',
+    inputTitle: '생성 설정',
+    outputTitle: '생성 결과',
+    generateBtn: '데이터 생성',
+    loadSampleBtn: '샘플 로드 및 생성',
+    clearAll: '모두 지우기',
+    noOutput: '아직 결과가 생성되지 않았습니다',
+    preview: '데이터 미리보기',
+    
+    // 지리적 필터링
+    locationTitle: '지리적 필터링',
+    selectState: '주 선택',
+    selectCity: '도시 선택',
+    allStates: '모든 주',
+    allCities: '모든 도시',
+    postalCodeLabel: '우편번호',
+    validatePostalCode: '우편번호 검증',
+    
+    // 주소 유형
+    addressTypeTitle: '주소 유형',
+    addressTypeResidential: '주거지 주소',
+    addressTypeCommercial: '상업용 주소',
+    addressTypeVirtual: '가상 우체국',
+    addressTypeCampus: '대학교 캠퍼스',
+    
+    // 신분 정보
+    identityTitle: '신분 정보',
+    fullName: '성명',
+    gender: '성별',
+    genderMale: '남성',
+    genderFemale: '여성',
+    age: '나이',
+    birthDate: '생년월일',
+    zodiac: '별자리',
+    height: '키',
+    weight: '체중',
+    
+    // 연락처 정보
+    contactTitle: '연락처 정보',
+    phoneNumber: '전화번호',
+    phoneType: '전화 유형',
+    phoneTypeMobile: '휴대전화',
+    phoneTypeLandline: '유선전화',
+    areaCode: '지역번호',
+    email: '이메일 주소',
+    tempEmail: '임시 이메일',
+    
+    // 신용카드
+    creditCardTitle: '신용카드 정보',
+    cardType: '카드 유형',
+    cardNumber: '카드 번호',
+    expiryDate: '유효기간',
+    cvv: 'CVV',
+    bankBin: '은행 BIN 코드',
+    
+    // 직업
+    careerTitle: '직업 프로필',
+    jobTitle: '직책',
+    salary: '연봉',
+    companyName: '회사명',
+    companySize: '회사 규모',
+    industry: '산업',
+    employmentStatus: '고용 상태',
+    employmentFullTime: '정규직',
+    employmentPartTime: '파트타임',
+    
+    // 사회보장번호
+    idCardTitle: '사회보장번호',
+    idCardNumber: '사회보장번호',
+    ssn: 'SSN',
+    
+    // 디지털 지문
+    fingerprintTitle: '디지털 지문',
+    os: '운영 체제',
+    osVersion: 'OS 버전',
+    browser: '브라우저',
+    userAgent: '사용자 에이전트',
+    screenResolution: '화면 해상도',
+    timezone: '시간대',
+    guid: 'GUID',
+    ipAddress: 'IP 주소',
+    macAddress: 'MAC 주소',
+    cookiePolicy: '쿠키 정책',
+    
+    // 내보내기 옵션
+    exportTitle: '내보내기 형식',
+    exportJson: 'JSON 내보내기',
+    exportCsv: 'CSV 내보내기',
+    downloadBtn: '다운로드',
+    copyBtn: '복사',
+    viewDetails: '세부 정보 보기',
+    
+    // 배치 생성
+    batchTitle: '배치 생성',
+    quantityLabel: '수량',
+    quantityPlaceholder: '수량 입력 (1-100)',
+    
+    // 메시지
+    generating: '생성 중...',
+    generated: '생성 완료',
+    copySuccess: '클립보드에 복사됨',
+    downloadSuccess: '다운로드 성공',
+    invalidQuantity: '1-100 사이의 숫자를 입력하세요',
+    
+    // 결과
+    resultCount: '{count}개 레코드가 생성되었습니다',
+    resultSummary: '생성 요약',
+    showAll: '모두 보기',
+    collapse: '접기',
+    
+    // 생성 옵션
+    generateOptionsTitle: '생성 옵션',
+    
+    // 레코드 표시
+    recordLabel: '레코드 #{num}',
+    addressLabel: '주소',
+    streetLabel: '거리',
+    houseNumberLabel: '집 번호',
+    buildingLabel: '건물',
+    floorLabel: '층',
+    unitLabel: '호실',
+    districtLabel: '주',
+    cityLabel: '도시',
+    stateLabel: '주',
+    zipCodeLabel: 'ZIP 코드',
+    
+    // 주소 형식
+    addressNumber: '번지',
+    addressFloor: '층',
+    addressUnit: '호실',
+    suiteLabel: '스위트',
+    apartmentLabel: '아파트',
+    
+    // 주
+    states: {
+        AL: 'Alabama',
+        AK: 'Alaska',
+        AZ: 'Arizona',
+        AR: 'Arkansas',
+        CA: 'California',
+        CO: 'Colorado',
+        CT: 'Connecticut',
+        DE: 'Delaware',
+        FL: 'Florida',
+        GA: 'Georgia',
+        HI: 'Hawaii',
+        ID: 'Idaho',
+        IL: 'Illinois',
+        IN: 'Indiana',
+        IA: 'Iowa',
+        KS: 'Kansas',
+        KY: 'Kentucky',
+        LA: 'Louisiana',
+        ME: 'Maine',
+        MD: 'Maryland',
+        MA: 'Massachusetts',
+        MI: 'Michigan',
+        MN: 'Minnesota',
+        MS: 'Mississippi',
+        MO: 'Missouri',
+        MT: 'Montana',
+        NE: 'Nebraska',
+        NV: 'Nevada',
+        NH: 'New Hampshire',
+        NJ: 'New Jersey',
+        NM: 'New Mexico',
+        NY: 'New York',
+        NC: 'North Carolina',
+        ND: 'North Dakota',
+        OH: 'Ohio',
+        OK: 'Oklahoma',
+        OR: 'Oregon',
+        PA: 'Pennsylvania',
+        RI: 'Rhode Island',
+        SC: 'South Carolina',
+        SD: 'South Dakota',
+        TN: 'Tennessee',
+        TX: 'Texas',
+        UT: 'Utah',
+        VT: 'Vermont',
+        VA: 'Virginia',
+        WA: 'Washington',
+        WV: 'West Virginia',
+        WI: 'Wisconsin',
+        WY: 'Wyoming'
+    },
+    
+    // 도시
+    cities: {
+        CA: ['Los Angeles', 'San Francisco', 'San Diego', 'San Jose', 'Sacramento'],
+        NY: ['New York City', 'Buffalo', 'Rochester', 'Syracuse', 'Albany'],
+        TX: ['Houston', 'Dallas', 'San Antonio', 'Austin', 'Fort Worth'],
+        FL: ['Miami', 'Orlando', 'Tampa', 'Jacksonville', 'Fort Lauderdale'],
+        IL: ['Chicago', 'Aurora', 'Joliet', 'Naperville', 'Springfield'],
+        PA: ['Philadelphia', 'Pittsburgh', 'Allentown', 'Erie', 'Scranton'],
+        OH: ['Columbus', 'Cleveland', 'Cincinnati', 'Toledo', 'Akron'],
+        GA: ['Atlanta', 'Augusta', 'Savannah', 'Athens', 'Macon'],
+        NC: ['Charlotte', 'Raleigh', 'Greensboro', 'Durham', 'Winston-Salem'],
+        MI: ['Detroit', 'Grand Rapids', 'Ann Arbor', 'Lansing', 'Flint'],
+        NJ: ['Newark', 'Jersey City', 'Paterson', 'Elizabeth', 'Camden'],
+        VA: ['Virginia Beach', 'Norfolk', 'Arlington', 'Richmond', 'Newport News'],
+        WA: ['Seattle', 'Spokane', 'Tacoma', 'Bellevue', 'Everett'],
+        AZ: ['Phoenix', 'Tucson', 'Mesa', 'Chandler', 'Gilbert'],
+        MA: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge'],
+        TN: ['Nashville', 'Memphis', 'Knoxville', 'Chattanooga', 'Bristol'],
+        IN: ['Indianapolis', 'Fort Wayne', 'Evansville', 'South Bend', 'Gary'],
+        MO: ['Kansas City', 'St. Louis', 'Springfield', 'Independence', 'Columbia'],
+        MD: ['Baltimore', 'Frederick', 'Rockville', 'Gaithersburg', 'Bowie'],
+        WI: ['Milwaukee', 'Madison', 'Green Bay', 'Kenosha', 'Racine'],
+        CO: ['Denver', 'Colorado Springs', 'Aurora', 'Littleton', 'Boulder'],
+        MN: ['Minneapolis', 'St. Paul', 'Bloomington', 'Plymouth', 'St. Cloud'],
+        SC: ['Charleston', 'Columbia', 'North Charleston', 'Greenville', 'Myrtle Beach'],
+        AL: ['Birmingham', 'Montgomery', 'Huntsville', 'Mobile', 'Tuscaloosa'],
+        LA: ['New Orleans', 'Shreveport', 'Baton Rouge', 'Lafayette', 'Lake Charles'],
+        KY: ['Louisville', 'Lexington', 'Bowling Green', 'Owensboro', 'Covington'],
+        OR: ['Portland', 'Eugene', 'Salem', 'Bend', 'Beaverton'],
+        OK: ['Oklahoma City', 'Tulsa', 'Norman', 'Lawton', 'Edmond'],
+        CT: ['Bridgeport', 'New Haven', 'Stamford', 'Hartford', 'Waterbury'],
+        UT: ['Salt Lake City', 'West Valley City', 'Ogden', 'Provo', 'West Jordan']
+    },
+    
+    // 대학교
+    universities: {
+        MIT: 'Massachusetts Institute of Technology',
+        Stanford: 'Stanford University',
+        Harvard: 'Harvard University',
+        CalTech: 'California Institute of Technology',
+        Columbia: 'Columbia University'
+    },
+    
+    // CSV 헤더
+    csv: {
+        fullAddress: 'Full Address',
+        street: 'Street',
+        houseNumber: 'House Number',
+        building: 'Building',
+        city: 'City',
+        state: 'State',
+        zipCode: 'ZIP Code',
+        fullName: 'Full Name',
+        gender: 'Gender',
+        age: 'Age',
+        birthDate: 'Birth Date',
+        phone: 'Phone',
+        email: 'Email',
+        cardType: 'Card Type',
+        cardNumber: 'Card Number',
+        ssn: 'SSN'
+    }
+};

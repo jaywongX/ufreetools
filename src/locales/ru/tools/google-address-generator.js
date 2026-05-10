@@ -1,0 +1,252 @@
+export default {
+    name: 'Генератор адресов Google - Генерация реальных американских адресов, информации о личности и контактных данных онлайн',
+    description: 'Бесплатный онлайн-генератор адресов Google, создающий реальные форматы американских адресов, номера социального страхования, номера телефонов, номера кредитных карт и полные профили личности. Поддерживает фильтрацию по штатам, форматы экспорта JSON/CSV и работает полностью в браузере для защиты конфиденциальности.',
+    inputTitle: 'Настройки генерации',
+    outputTitle: 'Сгенерированные результаты',
+    generateBtn: 'Сгенерировать данные',
+    loadSampleBtn: 'Загрузить пример и сгенерировать',
+    clearAll: 'Очистить все',
+    noOutput: 'Результаты еще не сгенерированы',
+    preview: 'Предварительный просмотр данных',
+    
+    // Географическая фильтрация
+    locationTitle: 'Географическая фильтрация',
+    selectState: 'Выбрать штат',
+    selectCity: 'Выбрать город',
+    allStates: 'Все штаты',
+    allCities: 'Все города',
+    postalCodeLabel: 'Почтовый индекс',
+    validatePostalCode: 'Проверить почтовый индекс',
+    
+    // Типы адресов
+    addressTypeTitle: 'Тип адреса',
+    addressTypeResidential: 'Жилой адрес',
+    addressTypeCommercial: 'Коммерческий адрес',
+    addressTypeVirtual: 'Виртуальный почтовый ящик',
+    addressTypeCampus: 'Университетский кампус',
+    
+    // Информация о личности
+    identityTitle: 'Информация о личности',
+    fullName: 'Полное имя',
+    gender: 'Пол',
+    genderMale: 'Мужской',
+    genderFemale: 'Женский',
+    age: 'Возраст',
+    birthDate: 'Дата рождения',
+    zodiac: 'Знак зодиака',
+    height: 'Рост',
+    weight: 'Вес',
+    
+    // Контактная информация
+    contactTitle: 'Контактная информация',
+    phoneNumber: 'Номер телефона',
+    phoneType: 'Тип телефона',
+    phoneTypeMobile: 'Мобильный',
+    phoneTypeLandline: 'Стационарный',
+    areaCode: 'Код региона',
+    email: 'Электронная почта',
+    tempEmail: 'Временная почта',
+    
+    // Кредитная карта
+    creditCardTitle: 'Информация о кредитной карте',
+    cardType: 'Тип карты',
+    cardNumber: 'Номер карты',
+    expiryDate: 'Дата истечения',
+    cvv: 'CVV',
+    bankBin: 'Код BIN банка',
+    
+    // Карьера
+    careerTitle: 'Профессиональный профиль',
+    jobTitle: 'Должность',
+    salary: 'Зарплата',
+    companyName: 'Название компании',
+    companySize: 'Размер компании',
+    industry: 'Отрасль',
+    employmentStatus: 'Статус занятости',
+    employmentFullTime: 'Полная занятость',
+    employmentPartTime: 'Частичная занятость',
+    
+    // Номер социального страхования
+    idCardTitle: 'Номер социального страхования',
+    idCardNumber: 'Номер социального страхования',
+    ssn: 'SSN',
+    
+    // Цифровой отпечаток
+    fingerprintTitle: 'Цифровой отпечаток',
+    os: 'Операционная система',
+    osVersion: 'Версия ОС',
+    browser: 'Браузер',
+    userAgent: 'User Agent',
+    screenResolution: 'Разрешение экрана',
+    timezone: 'Часовой пояс',
+    guid: 'GUID',
+    ipAddress: 'IP-адрес',
+    macAddress: 'MAC-адрес',
+    cookiePolicy: 'Политика файлов cookie',
+    
+    // Параметры экспорта
+    exportTitle: 'Формат экспорта',
+    exportJson: 'Экспорт JSON',
+    exportCsv: 'Экспорт CSV',
+    downloadBtn: 'Скачать',
+    copyBtn: 'Копировать',
+    viewDetails: 'Посмотреть подробности',
+    
+    // Пакетная генерация
+    batchTitle: 'Пакетная генерация',
+    quantityLabel: 'Количество',
+    quantityPlaceholder: 'Введите количество (1-100)',
+    
+    // Сообщения
+    generating: 'Генерация...',
+    generated: 'Генерация завершена',
+    copySuccess: 'Скопировано в буфер обмена',
+    downloadSuccess: 'Скачивание успешно',
+    invalidQuantity: 'Пожалуйста, введите число от 1 до 100',
+    
+    // Результаты
+    resultCount: 'Сгенерировано {count} записей',
+    resultSummary: 'Сводка генерации',
+    showAll: 'Показать все',
+    collapse: 'Свернуть',
+    
+    // Параметры генерации
+    generateOptionsTitle: 'Параметры генерации',
+    
+    // Отображение записей
+    recordLabel: 'Запись #{num}',
+    addressLabel: 'Адрес',
+    streetLabel: 'Улица',
+    houseNumberLabel: 'Номер дома',
+    buildingLabel: 'Здание',
+    floorLabel: 'Этаж',
+    unitLabel: 'Квартира',
+    districtLabel: 'Штат',
+    cityLabel: 'Город',
+    stateLabel: 'Штат',
+    zipCodeLabel: 'Почтовый индекс',
+    
+    // Формат адреса
+    addressNumber: 'номер',
+    addressFloor: 'этаж',
+    addressUnit: 'кв.',
+    suiteLabel: 'Сьют',
+    apartmentLabel: 'Квартира',
+    
+    // Штаты
+    states: {
+        AL: 'Alabama',
+        AK: 'Alaska',
+        AZ: 'Arizona',
+        AR: 'Arkansas',
+        CA: 'California',
+        CO: 'Colorado',
+        CT: 'Connecticut',
+        DE: 'Delaware',
+        FL: 'Florida',
+        GA: 'Georgia',
+        HI: 'Hawaii',
+        ID: 'Idaho',
+        IL: 'Illinois',
+        IN: 'Indiana',
+        IA: 'Iowa',
+        KS: 'Kansas',
+        KY: 'Kentucky',
+        LA: 'Louisiana',
+        ME: 'Maine',
+        MD: 'Maryland',
+        MA: 'Massachusetts',
+        MI: 'Michigan',
+        MN: 'Minnesota',
+        MS: 'Mississippi',
+        MO: 'Missouri',
+        MT: 'Montana',
+        NE: 'Nebraska',
+        NV: 'Nevada',
+        NH: 'New Hampshire',
+        NJ: 'New Jersey',
+        NM: 'New Mexico',
+        NY: 'New York',
+        NC: 'North Carolina',
+        ND: 'North Dakota',
+        OH: 'Ohio',
+        OK: 'Oklahoma',
+        OR: 'Oregon',
+        PA: 'Pennsylvania',
+        RI: 'Rhode Island',
+        SC: 'South Carolina',
+        SD: 'South Dakota',
+        TN: 'Tennessee',
+        TX: 'Texas',
+        UT: 'Utah',
+        VT: 'Vermont',
+        VA: 'Virginia',
+        WA: 'Washington',
+        WV: 'West Virginia',
+        WI: 'Wisconsin',
+        WY: 'Wyoming'
+    },
+    
+    // Города
+    cities: {
+        CA: ['Los Angeles', 'San Francisco', 'San Diego', 'San Jose', 'Sacramento'],
+        NY: ['New York City', 'Buffalo', 'Rochester', 'Syracuse', 'Albany'],
+        TX: ['Houston', 'Dallas', 'San Antonio', 'Austin', 'Fort Worth'],
+        FL: ['Miami', 'Orlando', 'Tampa', 'Jacksonville', 'Fort Lauderdale'],
+        IL: ['Chicago', 'Aurora', 'Joliet', 'Naperville', 'Springfield'],
+        PA: ['Philadelphia', 'Pittsburgh', 'Allentown', 'Erie', 'Scranton'],
+        OH: ['Columbus', 'Cleveland', 'Cincinnati', 'Toledo', 'Akron'],
+        GA: ['Atlanta', 'Augusta', 'Savannah', 'Athens', 'Macon'],
+        NC: ['Charlotte', 'Raleigh', 'Greensboro', 'Durham', 'Winston-Salem'],
+        MI: ['Detroit', 'Grand Rapids', 'Ann Arbor', 'Lansing', 'Flint'],
+        NJ: ['Newark', 'Jersey City', 'Paterson', 'Elizabeth', 'Camden'],
+        VA: ['Virginia Beach', 'Norfolk', 'Arlington', 'Richmond', 'Newport News'],
+        WA: ['Seattle', 'Spokane', 'Tacoma', 'Bellevue', 'Everett'],
+        AZ: ['Phoenix', 'Tucson', 'Mesa', 'Chandler', 'Gilbert'],
+        MA: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge'],
+        TN: ['Nashville', 'Memphis', 'Knoxville', 'Chattanooga', 'Bristol'],
+        IN: ['Indianapolis', 'Fort Wayne', 'Evansville', 'South Bend', 'Gary'],
+        MO: ['Kansas City', 'St. Louis', 'Springfield', 'Independence', 'Columbia'],
+        MD: ['Baltimore', 'Frederick', 'Rockville', 'Gaithersburg', 'Bowie'],
+        WI: ['Milwaukee', 'Madison', 'Green Bay', 'Kenosha', 'Racine'],
+        CO: ['Denver', 'Colorado Springs', 'Aurora', 'Littleton', 'Boulder'],
+        MN: ['Minneapolis', 'St. Paul', 'Bloomington', 'Plymouth', 'St. Cloud'],
+        SC: ['Charleston', 'Columbia', 'North Charleston', 'Greenville', 'Myrtle Beach'],
+        AL: ['Birmingham', 'Montgomery', 'Huntsville', 'Mobile', 'Tuscaloosa'],
+        LA: ['New Orleans', 'Shreveport', 'Baton Rouge', 'Lafayette', 'Lake Charles'],
+        KY: ['Louisville', 'Lexington', 'Bowling Green', 'Owensboro', 'Covington'],
+        OR: ['Portland', 'Eugene', 'Salem', 'Bend', 'Beaverton'],
+        OK: ['Oklahoma City', 'Tulsa', 'Norman', 'Lawton', 'Edmond'],
+        CT: ['Bridgeport', 'New Haven', 'Stamford', 'Hartford', 'Waterbury'],
+        UT: ['Salt Lake City', 'West Valley City', 'Ogden', 'Provo', 'West Jordan']
+    },
+    
+    // Университеты
+    universities: {
+        MIT: 'Massachusetts Institute of Technology',
+        Stanford: 'Stanford University',
+        Harvard: 'Harvard University',
+        CalTech: 'California Institute of Technology',
+        Columbia: 'Columbia University'
+    },
+    
+    // Заголовки CSV
+    csv: {
+        fullAddress: 'Full Address',
+        street: 'Street',
+        houseNumber: 'House Number',
+        building: 'Building',
+        city: 'City',
+        state: 'State',
+        zipCode: 'ZIP Code',
+        fullName: 'Full Name',
+        gender: 'Gender',
+        age: 'Age',
+        birthDate: 'Birth Date',
+        phone: 'Phone',
+        email: 'Email',
+        cardType: 'Card Type',
+        cardNumber: 'Card Number',
+        ssn: 'SSN'
+    }
+};

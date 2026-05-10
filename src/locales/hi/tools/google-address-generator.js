@@ -1,0 +1,252 @@
+export default {
+    name: 'गूगल पता जनरेटर - वास्तविक अमेरिकी पते, पहचान जानकारी और संपर्क विवरण ऑनलाइन उत्पन्न करें',
+    description: 'मुफ्त ऑनलाइन गूगल पता जनरेटर जो वास्तविक प्रारूप अमेरिकी पते, सामाजिक सुरक्षा नंबर, फोन नंबर, क्रेडिट कार्ड नंबर और पूर्ण पहचान प्रोफाइल बनाता है। राज्य फ़िल्टरिंग, JSON/CSV निर्यात प्रारूपों का समर्थन करता है, और गोपनीयता सुरक्षा के लिए पूरी तरह से ब्राउज़र में चलता है।',
+    inputTitle: 'जनरेशन सेटिंग्स',
+    outputTitle: 'उत्पन्न परिणाम',
+    generateBtn: 'डेटा उत्पन्न करें',
+    loadSampleBtn: 'नमूना लोड करें और उत्पन्न करें',
+    clearAll: 'सब साफ़ करें',
+    noOutput: 'अभी तक कोई परिणाम नहीं',
+    preview: 'डेटा पूर्वावलोकन',
+    
+    // भौगोलिक फ़िल्टरिंग
+    locationTitle: 'भौगोलिक फ़िल्टरिंग',
+    selectState: 'राज्य चुनें',
+    selectCity: 'शहर चुनें',
+    allStates: 'सभी राज्य',
+    allCities: 'सभी शहर',
+    postalCodeLabel: 'पोस्टल कोड',
+    validatePostalCode: 'पोस्टल कोड सत्यापित करें',
+    
+    // पता प्रकार
+    addressTypeTitle: 'पता प्रकार',
+    addressTypeResidential: 'आवासीय पता',
+    addressTypeCommercial: 'वाणिज्यिक पता',
+    addressTypeVirtual: 'वर्चुअल मेलबॉक्स',
+    addressTypeCampus: 'विश्वविद्यालय परिसर',
+    
+    // पहचान जानकारी
+    identityTitle: 'पहचान जानकारी',
+    fullName: 'पूरा नाम',
+    gender: 'लिंग',
+    genderMale: 'पुरुष',
+    genderFemale: 'महिला',
+    age: 'आयु',
+    birthDate: 'जन्म तिथि',
+    zodiac: 'राशि',
+    height: 'ऊंचाई',
+    weight: 'वजन',
+    
+    // संपर्क जानकारी
+    contactTitle: 'संपर्क जानकारी',
+    phoneNumber: 'फोन नंबर',
+    phoneType: 'फोन प्रकार',
+    phoneTypeMobile: 'मोबाइल',
+    phoneTypeLandline: 'लैंडलाइन',
+    areaCode: 'एरिया कोड',
+    email: 'ईमेल पता',
+    tempEmail: 'अस्थायी ईमेल',
+    
+    // क्रेडिट कार्ड
+    creditCardTitle: 'क्रेडिट कार्ड जानकारी',
+    cardType: 'कार्ड प्रकार',
+    cardNumber: 'कार्ड नंबर',
+    expiryDate: 'समाप्ति तिथि',
+    cvv: 'CVV',
+    bankBin: 'बैंक BIN कोड',
+    
+    // करियर
+    careerTitle: 'करियर प्रोफाइल',
+    jobTitle: 'जॉब टाइटल',
+    salary: 'वेतन',
+    companyName: 'कंपनी का नाम',
+    companySize: 'कंपनी का आकार',
+    industry: 'उद्योग',
+    employmentStatus: 'रोजगार स्थिति',
+    employmentFullTime: 'पूर्णकालिक',
+    employmentPartTime: 'अंशकालिक',
+    
+    // सामाजिक सुरक्षा नंबर
+    idCardTitle: 'सामाजिक सुरक्षा नंबर',
+    idCardNumber: 'सामाजिक सुरक्षा नंबर',
+    ssn: 'SSN',
+    
+    // डिजिटल फिंगरप्रिंट
+    fingerprintTitle: 'डिजिटल फिंगरप्रिंट',
+    os: 'ऑपरेटिंग सिस्टम',
+    osVersion: 'ओएस संस्करण',
+    browser: 'ब्राउज़र',
+    userAgent: 'यूजर एजेंट',
+    screenResolution: 'स्क्रीन रिज़ॉल्यूशन',
+    timezone: 'टाइमज़ोन',
+    guid: 'GUID',
+    ipAddress: 'IP पता',
+    macAddress: 'MAC पता',
+    cookiePolicy: 'कुकी नीति',
+    
+    // निर्यात विकल्प
+    exportTitle: 'निर्यात प्रारूप',
+    exportJson: 'JSON निर्यात करें',
+    exportCsv: 'CSV निर्यात करें',
+    downloadBtn: 'डाउनलोड',
+    copyBtn: 'कॉपी',
+    viewDetails: 'विवरण देखें',
+    
+    // बैच जनरेशन
+    batchTitle: 'बैच जनरेशन',
+    quantityLabel: 'मात्रा',
+    quantityPlaceholder: 'मात्रा दर्ज करें (1-100)',
+    
+    // संदेश
+    generating: 'उत्पन्न हो रहा है...',
+    generated: 'जनरेशन पूर्ण',
+    copySuccess: 'क्लिपबोर्ड में कॉपी किया गया',
+    downloadSuccess: 'डाउनलोड सफल',
+    invalidQuantity: 'कृपया 1-100 के बीच एक संख्या दर्ज करें',
+    
+    // परिणाम
+    resultCount: '{count} रिकॉर्ड उत्पन्न',
+    resultSummary: 'जनरेशन सारांश',
+    showAll: 'सभी दिखाएं',
+    collapse: 'संक्षिप्त करें',
+    
+    // जनरेशन विकल्प
+    generateOptionsTitle: 'जनरेशन विकल्प',
+    
+    // रिकॉर्ड प्रदर्शन
+    recordLabel: 'रिकॉर्ड #{num}',
+    addressLabel: 'पता',
+    streetLabel: 'सड़क',
+    houseNumberLabel: 'घर संख्या',
+    buildingLabel: 'भवन',
+    floorLabel: 'मंजिल',
+    unitLabel: 'इकाई',
+    districtLabel: 'राज्य',
+    cityLabel: 'शहर',
+    stateLabel: 'राज्य',
+    zipCodeLabel: 'ज़िप कोड',
+    
+    // पता प्रारूप
+    addressNumber: '号',
+    addressFloor: 'मंजिल',
+    addressUnit: 'इकाई',
+    suiteLabel: 'सुइट',
+    apartmentLabel: 'अपार्टमेंट',
+    
+    // राज्य
+    states: {
+        AL: 'Alabama',
+        AK: 'Alaska',
+        AZ: 'Arizona',
+        AR: 'Arkansas',
+        CA: 'California',
+        CO: 'Colorado',
+        CT: 'Connecticut',
+        DE: 'Delaware',
+        FL: 'Florida',
+        GA: 'Georgia',
+        HI: 'Hawaii',
+        ID: 'Idaho',
+        IL: 'Illinois',
+        IN: 'Indiana',
+        IA: 'Iowa',
+        KS: 'Kansas',
+        KY: 'Kentucky',
+        LA: 'Louisiana',
+        ME: 'Maine',
+        MD: 'Maryland',
+        MA: 'Massachusetts',
+        MI: 'Michigan',
+        MN: 'Minnesota',
+        MS: 'Mississippi',
+        MO: 'Missouri',
+        MT: 'Montana',
+        NE: 'Nebraska',
+        NV: 'Nevada',
+        NH: 'New Hampshire',
+        NJ: 'New Jersey',
+        NM: 'New Mexico',
+        NY: 'New York',
+        NC: 'North Carolina',
+        ND: 'North Dakota',
+        OH: 'Ohio',
+        OK: 'Oklahoma',
+        OR: 'Oregon',
+        PA: 'Pennsylvania',
+        RI: 'Rhode Island',
+        SC: 'South Carolina',
+        SD: 'South Dakota',
+        TN: 'Tennessee',
+        TX: 'Texas',
+        UT: 'Utah',
+        VT: 'Vermont',
+        VA: 'Virginia',
+        WA: 'Washington',
+        WV: 'West Virginia',
+        WI: 'Wisconsin',
+        WY: 'Wyoming'
+    },
+    
+    // शहर
+    cities: {
+        CA: ['Los Angeles', 'San Francisco', 'San Diego', 'San Jose', 'Sacramento'],
+        NY: ['New York City', 'Buffalo', 'Rochester', 'Syracuse', 'Albany'],
+        TX: ['Houston', 'Dallas', 'San Antonio', 'Austin', 'Fort Worth'],
+        FL: ['Miami', 'Orlando', 'Tampa', 'Jacksonville', 'Fort Lauderdale'],
+        IL: ['Chicago', 'Aurora', 'Joliet', 'Naperville', 'Springfield'],
+        PA: ['Philadelphia', 'Pittsburgh', 'Allentown', 'Erie', 'Scranton'],
+        OH: ['Columbus', 'Cleveland', 'Cincinnati', 'Toledo', 'Akron'],
+        GA: ['Atlanta', 'Augusta', 'Savannah', 'Athens', 'Macon'],
+        NC: ['Charlotte', 'Raleigh', 'Greensboro', 'Durham', 'Winston-Salem'],
+        MI: ['Detroit', 'Grand Rapids', 'Ann Arbor', 'Lansing', 'Flint'],
+        NJ: ['Newark', 'Jersey City', 'Paterson', 'Elizabeth', 'Camden'],
+        VA: ['Virginia Beach', 'Norfolk', 'Arlington', 'Richmond', 'Newport News'],
+        WA: ['Seattle', 'Spokane', 'Tacoma', 'Bellevue', 'Everett'],
+        AZ: ['Phoenix', 'Tucson', 'Mesa', 'Chandler', 'Gilbert'],
+        MA: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge'],
+        TN: ['Nashville', 'Memphis', 'Knoxville', 'Chattanooga', 'Bristol'],
+        IN: ['Indianapolis', 'Fort Wayne', 'Evansville', 'South Bend', 'Gary'],
+        MO: ['Kansas City', 'St. Louis', 'Springfield', 'Independence', 'Columbia'],
+        MD: ['Baltimore', 'Frederick', 'Rockville', 'Gaithersburg', 'Bowie'],
+        WI: ['Milwaukee', 'Madison', 'Green Bay', 'Kenosha', 'Racine'],
+        CO: ['Denver', 'Colorado Springs', 'Aurora', 'Littleton', 'Boulder'],
+        MN: ['Minneapolis', 'St. Paul', 'Bloomington', 'Plymouth', 'St. Cloud'],
+        SC: ['Charleston', 'Columbia', 'North Charleston', 'Greenville', 'Myrtle Beach'],
+        AL: ['Birmingham', 'Montgomery', 'Huntsville', 'Mobile', 'Tuscaloosa'],
+        LA: ['New Orleans', 'Shreveport', 'Baton Rouge', 'Lafayette', 'Lake Charles'],
+        KY: ['Louisville', 'Lexington', 'Bowling Green', 'Owensboro', 'Covington'],
+        OR: ['Portland', 'Eugene', 'Salem', 'Bend', 'Beaverton'],
+        OK: ['Oklahoma City', 'Tulsa', 'Norman', 'Lawton', 'Edmond'],
+        CT: ['Bridgeport', 'New Haven', 'Stamford', 'Hartford', 'Waterbury'],
+        UT: ['Salt Lake City', 'West Valley City', 'Ogden', 'Provo', 'West Jordan']
+    },
+    
+    // विश्वविद्यालय
+    universities: {
+        MIT: 'Massachusetts Institute of Technology',
+        Stanford: 'Stanford University',
+        Harvard: 'Harvard University',
+        CalTech: 'California Institute of Technology',
+        Columbia: 'Columbia University'
+    },
+    
+    // CSV शीर्षक
+    csv: {
+        fullAddress: 'पूरा पता',
+        street: 'सड़क',
+        houseNumber: 'घर संख्या',
+        building: 'भवन',
+        city: 'शहर',
+        state: 'राज्य',
+        zipCode: 'ज़िप कोड',
+        fullName: 'पूरा नाम',
+        gender: 'लिंग',
+        age: 'आयु',
+        birthDate: 'जन्म तिथि',
+        phone: 'फोन',
+        email: 'ईमेल',
+        cardType: 'कार्ड प्रकार',
+        cardNumber: 'कार्ड नंबर',
+        ssn: 'SSN'
+    }
+};

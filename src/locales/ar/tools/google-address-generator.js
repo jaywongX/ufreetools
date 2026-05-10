@@ -1,0 +1,252 @@
+export default {
+    name: 'مولّد عناوين جوجل - توليد عناوين أمريكية حقيقية ومعلومات الهوية وبيانات الاتصال عبر الإنترنت',
+    description: 'مولّد عناوين جوجل مجاني عبر الإنترنت يُنشئ عناوين أمريكية بتنسيق حقيقي وأرقام الضمان الاجتماعي وأرقام الهواتف وأرقام بطاقات الائتمان وملفات تعريف الهوية الكاملة. يدعم تصفية الولايات وتنسيقات تصدير JSON/CSV، ويعمل بالكامل في المتصفح لحماية الخصوصية.',
+    inputTitle: 'إعدادات التوليد',
+    outputTitle: 'النتائج المولدة',
+    generateBtn: 'توليد البيانات',
+    loadSampleBtn: 'تحميل العينة والتوليد',
+    clearAll: 'مسح الكل',
+    noOutput: 'لا توجد نتائج بعد',
+    preview: 'معاينة البيانات',
+    
+    // التصفية الجغرافية
+    locationTitle: 'التصفية الجغرافية',
+    selectState: 'اختر الولاية',
+    selectCity: 'اختر المدينة',
+    allStates: 'جميع الولايات',
+    allCities: 'جميع المدن',
+    postalCodeLabel: 'الرمز البريدي',
+    validatePostalCode: 'التحقق من الرمز البريدي',
+    
+    // أنواع العناوين
+    addressTypeTitle: 'نوع العنوان',
+    addressTypeResidential: 'عنوان سكني',
+    addressTypeCommercial: 'عنوان تجاري',
+    addressTypeVirtual: 'صندوق بريد افتراضي',
+    addressTypeCampus: 'حرم جامعي',
+    
+    // معلومات الهوية
+    identityTitle: 'معلومات الهوية',
+    fullName: 'الاسم الكامل',
+    gender: 'الجنس',
+    genderMale: 'ذكر',
+    genderFemale: 'أنثى',
+    age: 'العمر',
+    birthDate: 'تاريخ الميلاد',
+    zodiac: 'البرج',
+    height: 'الطول',
+    weight: 'الوزن',
+    
+    // معلومات الاتصال
+    contactTitle: 'معلومات الاتصال',
+    phoneNumber: 'رقم الهاتف',
+    phoneType: 'نوع الهاتف',
+    phoneTypeMobile: 'جوال',
+    phoneTypeLandline: 'أرضي',
+    areaCode: 'رمز المنطقة',
+    email: 'عنوان البريد الإلكتروني',
+    tempEmail: 'بريد مؤقت',
+    
+    // بطاقة الائتمان
+    creditCardTitle: 'معلومات بطاقة الائتمان',
+    cardType: 'نوع البطاقة',
+    cardNumber: 'رقم البطاقة',
+    expiryDate: 'تاريخ الانتهاء',
+    cvv: 'CVV',
+    bankBin: 'رمز BIN البنكي',
+    
+    // المهنة
+    careerTitle: 'الملف المهني',
+    jobTitle: 'المسمى الوظيفي',
+    salary: 'الراتب',
+    companyName: 'اسم الشركة',
+    companySize: 'حجم الشركة',
+    industry: 'الصناعة',
+    employmentStatus: 'حالة التوظيف',
+    employmentFullTime: 'دوام كامل',
+    employmentPartTime: 'دوام جزئي',
+    
+    // رقم الضمان الاجتماعي
+    idCardTitle: 'رقم الضمان الاجتماعي',
+    idCardNumber: 'رقم الضمان الاجتماعي',
+    ssn: 'SSN',
+    
+    // البصمة الرقمية
+    fingerprintTitle: 'البصمة الرقمية',
+    os: 'نظام التشغيل',
+    osVersion: 'إصدار نظام التشغيل',
+    browser: 'المتصفح',
+    userAgent: 'وكيل المستخدم',
+    screenResolution: 'دقة الشاشة',
+    timezone: 'المنطقة الزمنية',
+    guid: 'GUID',
+    ipAddress: 'عنوان IP',
+    macAddress: 'عنوان MAC',
+    cookiePolicy: 'سياسة ملفات تعريف الارتباط',
+    
+    // خيارات التصدير
+    exportTitle: 'تنسيق التصدير',
+    exportJson: 'تصدير JSON',
+    exportCsv: 'تصدير CSV',
+    downloadBtn: 'تنزيل',
+    copyBtn: 'نسخ',
+    viewDetails: 'عرض التفاصيل',
+    
+    // التوليد الدفعي
+    batchTitle: 'التوليد الدفعي',
+    quantityLabel: 'الكمية',
+    quantityPlaceholder: 'أدخل الكمية (1-100)',
+    
+    // الرسائل
+    generating: 'جاري التوليد...',
+    generated: 'اكتمل التوليد',
+    copySuccess: 'تم النسخ إلى الحافظة',
+    downloadSuccess: 'تم التنزيل بنجاح',
+    invalidQuantity: 'يرجى إدخال رقم بين 1-100',
+    
+    // النتائج
+    resultCount: 'تم توليد {count} سجل',
+    resultSummary: 'ملخص التوليد',
+    showAll: 'عرض الكل',
+    collapse: 'طي',
+    
+    // خيارات التوليد
+    generateOptionsTitle: 'خيارات التوليد',
+    
+    // عرض السجلات
+    recordLabel: 'سجل #{num}',
+    addressLabel: 'العنوان',
+    streetLabel: 'الشارع',
+    houseNumberLabel: 'رقم المنزل',
+    buildingLabel: 'المبنى',
+    floorLabel: 'الطابق',
+    unitLabel: 'الوحدة',
+    districtLabel: 'الولاية',
+    cityLabel: 'المدينة',
+    stateLabel: 'الولاية',
+    zipCodeLabel: 'الرمز البريدي',
+    
+    // تنسيق العنوان
+    addressNumber: '号',
+    addressFloor: 'الطابق',
+    addressUnit: 'الوحدة',
+    suiteLabel: 'جناح',
+    apartmentLabel: 'شقة',
+    
+    // الولايات
+    states: {
+        AL: 'Alabama',
+        AK: 'Alaska',
+        AZ: 'Arizona',
+        AR: 'Arkansas',
+        CA: 'California',
+        CO: 'Colorado',
+        CT: 'Connecticut',
+        DE: 'Delaware',
+        FL: 'Florida',
+        GA: 'Georgia',
+        HI: 'Hawaii',
+        ID: 'Idaho',
+        IL: 'Illinois',
+        IN: 'Indiana',
+        IA: 'Iowa',
+        KS: 'Kansas',
+        KY: 'Kentucky',
+        LA: 'Louisiana',
+        ME: 'Maine',
+        MD: 'Maryland',
+        MA: 'Massachusetts',
+        MI: 'Michigan',
+        MN: 'Minnesota',
+        MS: 'Mississippi',
+        MO: 'Missouri',
+        MT: 'Montana',
+        NE: 'Nebraska',
+        NV: 'Nevada',
+        NH: 'New Hampshire',
+        NJ: 'New Jersey',
+        NM: 'New Mexico',
+        NY: 'New York',
+        NC: 'North Carolina',
+        ND: 'North Dakota',
+        OH: 'Ohio',
+        OK: 'Oklahoma',
+        OR: 'Oregon',
+        PA: 'Pennsylvania',
+        RI: 'Rhode Island',
+        SC: 'South Carolina',
+        SD: 'South Dakota',
+        TN: 'Tennessee',
+        TX: 'Texas',
+        UT: 'Utah',
+        VT: 'Vermont',
+        VA: 'Virginia',
+        WA: 'Washington',
+        WV: 'West Virginia',
+        WI: 'Wisconsin',
+        WY: 'Wyoming'
+    },
+    
+    // المدن
+    cities: {
+        CA: ['Los Angeles', 'San Francisco', 'San Diego', 'San Jose', 'Sacramento'],
+        NY: ['New York City', 'Buffalo', 'Rochester', 'Syracuse', 'Albany'],
+        TX: ['Houston', 'Dallas', 'San Antonio', 'Austin', 'Fort Worth'],
+        FL: ['Miami', 'Orlando', 'Tampa', 'Jacksonville', 'Fort Lauderdale'],
+        IL: ['Chicago', 'Aurora', 'Joliet', 'Naperville', 'Springfield'],
+        PA: ['Philadelphia', 'Pittsburgh', 'Allentown', 'Erie', 'Scranton'],
+        OH: ['Columbus', 'Cleveland', 'Cincinnati', 'Toledo', 'Akron'],
+        GA: ['Atlanta', 'Augusta', 'Savannah', 'Athens', 'Macon'],
+        NC: ['Charlotte', 'Raleigh', 'Greensboro', 'Durham', 'Winston-Salem'],
+        MI: ['Detroit', 'Grand Rapids', 'Ann Arbor', 'Lansing', 'Flint'],
+        NJ: ['Newark', 'Jersey City', 'Paterson', 'Elizabeth', 'Camden'],
+        VA: ['Virginia Beach', 'Norfolk', 'Arlington', 'Richmond', 'Newport News'],
+        WA: ['Seattle', 'Spokane', 'Tacoma', 'Bellevue', 'Everett'],
+        AZ: ['Phoenix', 'Tucson', 'Mesa', 'Chandler', 'Gilbert'],
+        MA: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge'],
+        TN: ['Nashville', 'Memphis', 'Knoxville', 'Chattanooga', 'Bristol'],
+        IN: ['Indianapolis', 'Fort Wayne', 'Evansville', 'South Bend', 'Gary'],
+        MO: ['Kansas City', 'St. Louis', 'Springfield', 'Independence', 'Columbia'],
+        MD: ['Baltimore', 'Frederick', 'Rockville', 'Gaithersburg', 'Bowie'],
+        WI: ['Milwaukee', 'Madison', 'Green Bay', 'Kenosha', 'Racine'],
+        CO: ['Denver', 'Colorado Springs', 'Aurora', 'Littleton', 'Boulder'],
+        MN: ['Minneapolis', 'St. Paul', 'Bloomington', 'Plymouth', 'St. Cloud'],
+        SC: ['Charleston', 'Columbia', 'North Charleston', 'Greenville', 'Myrtle Beach'],
+        AL: ['Birmingham', 'Montgomery', 'Huntsville', 'Mobile', 'Tuscaloosa'],
+        LA: ['New Orleans', 'Shreveport', 'Baton Rouge', 'Lafayette', 'Lake Charles'],
+        KY: ['Louisville', 'Lexington', 'Bowling Green', 'Owensboro', 'Covington'],
+        OR: ['Portland', 'Eugene', 'Salem', 'Bend', 'Beaverton'],
+        OK: ['Oklahoma City', 'Tulsa', 'Norman', 'Lawton', 'Edmond'],
+        CT: ['Bridgeport', 'New Haven', 'Stamford', 'Hartford', 'Waterbury'],
+        UT: ['Salt Lake City', 'West Valley City', 'Ogden', 'Provo', 'West Jordan']
+    },
+    
+    // الجامعات
+    universities: {
+        MIT: 'Massachusetts Institute of Technology',
+        Stanford: 'Stanford University',
+        Harvard: 'Harvard University',
+        CalTech: 'California Institute of Technology',
+        Columbia: 'Columbia University'
+    },
+    
+    // رؤوس أعمدة CSV
+    csv: {
+        fullAddress: 'العنوان الكامل',
+        street: 'الشارع',
+        houseNumber: 'رقم المنزل',
+        building: 'المبنى',
+        city: 'المدينة',
+        state: 'الولاية',
+        zipCode: 'الرمز البريدي',
+        fullName: 'الاسم الكامل',
+        gender: 'الجنس',
+        age: 'العمر',
+        birthDate: 'تاريخ الميلاد',
+        phone: 'الهاتف',
+        email: 'البريد الإلكتروني',
+        cardType: 'نوع البطاقة',
+        cardNumber: 'رقم البطاقة',
+        ssn: 'SSN'
+    }
+};

@@ -1,0 +1,252 @@
+export default {
+    name: 'Generator Alamat Google - Hasilkan Alamat AS Nyata, Informasi Identitas & Detail Kontak Online',
+    description: 'Generator alamat Google online gratis yang membuat alamat format nyata AS, nomor jaminan sosial, nomor telepon, nomor kartu kredit, dan profil identitas lengkap. Mendukung filter negara bagian, format ekspor JSON/CSV, dan berjalan sepenuhnya di browser untuk perlindungan privasi.',
+    inputTitle: 'Pengaturan Pembuatan',
+    outputTitle: 'Hasil yang Dihasilkan',
+    generateBtn: 'Hasilkan Data',
+    loadSampleBtn: 'Muat Sampel & Hasilkan',
+    clearAll: 'Hapus Semua',
+    noOutput: 'Belum ada hasil',
+    preview: 'Pratinjau Data',
+    
+    // Filter Geografis
+    locationTitle: 'Filter Geografis',
+    selectState: 'Pilih Negara Bagian',
+    selectCity: 'Pilih Kota',
+    allStates: 'Semua Negara Bagian',
+    allCities: 'Semua Kota',
+    postalCodeLabel: 'Kode Pos',
+    validatePostalCode: 'Validasi Kode Pos',
+    
+    // Tipe Alamat
+    addressTypeTitle: 'Tipe Alamat',
+    addressTypeResidential: 'Alamat Tempat Tinggal',
+    addressTypeCommercial: 'Alamat Komersial',
+    addressVirtual: 'Kotak Surat Virtual',
+    addressTypeCampus: 'Kampus Universitas',
+    
+    // Informasi Identitas
+    identityTitle: 'Informasi Identitas',
+    fullName: 'Nama Lengkap',
+    gender: 'Jenis Kelamin',
+    genderMale: 'Laki-laki',
+    genderFemale: 'Perempuan',
+    age: 'Usia',
+    birthDate: 'Tanggal Lahir',
+    zodiac: 'Zodiak',
+    height: 'Tinggi',
+    weight: 'Berat',
+    
+    // Informasi Kontak
+    contactTitle: 'Informasi Kontak',
+    phoneNumber: 'Nomor Telepon',
+    phoneType: 'Tipe Telepon',
+    phoneTypeMobile: 'Ponsel',
+    phoneTypeLandline: 'Telepon Rumah',
+    areaCode: 'Kode Area',
+    email: 'Alamat Email',
+    tempEmail: 'Email Sementara',
+    
+    // Kartu Kredit
+    creditCardTitle: 'Informasi Kartu Kredit',
+    cardType: 'Tipe Kartu',
+    cardNumber: 'Nomor Kartu',
+    expiryDate: 'Tanggal Kadaluarsa',
+    cvv: 'CVV',
+    bankBin: 'Kode BIN Bank',
+    
+    // Karir
+    careerTitle: 'Profil Karir',
+    jobTitle: 'Judul Pekerjaan',
+    salary: 'Gaji',
+    companyName: 'Nama Perusahaan',
+    companySize: 'Ukuran Perusahaan',
+    industry: 'Industri',
+    employmentStatus: 'Status Pekerjaan',
+    employmentFullTime: 'Penuh Waktu',
+    employmentPartTime: 'Paruh Waktu',
+    
+    // Nomor Jaminan Sosial
+    idCardTitle: 'Nomor Jaminan Sosial',
+    idCardNumber: 'Nomor Jaminan Sosial',
+    ssn: 'SSN',
+    
+    // Sidik Jari Digital
+    fingerprintTitle: 'Sidik Jari Digital',
+    os: 'Sistem Operasi',
+    osVersion: 'Versi OS',
+    browser: 'Browser',
+    userAgent: 'User Agent',
+    screenResolution: 'Resolusi Layar',
+    timezone: 'Zona Waktu',
+    guid: 'GUID',
+    ipAddress: 'Alamat IP',
+    macAddress: 'Alamat MAC',
+    cookiePolicy: 'Kebijakan Cookie',
+    
+    // Opsi Ekspor
+    exportTitle: 'Format Ekspor',
+    exportJson: 'Ekspor JSON',
+    exportCsv: 'Ekspor CSV',
+    downloadBtn: 'Unduh',
+    copyBtn: 'Salin',
+    viewDetails: 'Lihat Detail',
+    
+    // Pembuatan Batch
+    batchTitle: 'Pembuatan Batch',
+    quantityLabel: 'Jumlah',
+    quantityPlaceholder: 'Masukkan jumlah (1-100)',
+    
+    // Pesan
+    generating: 'Sedang membuat...',
+    generated: 'Pembuatan selesai',
+    copySuccess: 'Disalin ke clipboard',
+    downloadSuccess: 'Unduhan berhasil',
+    invalidQuantity: 'Masukkan angka antara 1-100',
+    
+    // Hasil
+    resultCount: '{count} catatan dihasilkan',
+    resultSummary: 'Ringkasan Pembuatan',
+    showAll: 'Tampilkan Semua',
+    collapse: 'Ciutkan',
+    
+    // Opsi Pembuatan
+    generateOptionsTitle: 'Opsi Pembuatan',
+    
+    // Tampilan Catatan
+    recordLabel: 'Catatan #{num}',
+    addressLabel: 'Alamat',
+    streetLabel: 'Jalan',
+    houseNumberLabel: 'Nomor Rumah',
+    buildingLabel: 'Gedung',
+    floorLabel: 'Lantai',
+    unitLabel: 'Unit',
+    districtLabel: 'Negara Bagian',
+    cityLabel: 'Kota',
+    stateLabel: 'Negara Bagian',
+    zipCodeLabel: 'Kode ZIP',
+    
+    // Format Alamat
+    addressNumber: '号',
+    addressFloor: 'Lantai',
+    addressUnit: 'Unit',
+    suiteLabel: 'Suite',
+    apartmentLabel: 'Apartemen',
+    
+    // Negara Bagian
+    states: {
+        AL: 'Alabama',
+        AK: 'Alaska',
+        AZ: 'Arizona',
+        AR: 'Arkansas',
+        CA: 'California',
+        CO: 'Colorado',
+        CT: 'Connecticut',
+        DE: 'Delaware',
+        FL: 'Florida',
+        GA: 'Georgia',
+        HI: 'Hawaii',
+        ID: 'Idaho',
+        IL: 'Illinois',
+        IN: 'Indiana',
+        IA: 'Iowa',
+        KS: 'Kansas',
+        KY: 'Kentucky',
+        LA: 'Louisiana',
+        ME: 'Maine',
+        MD: 'Maryland',
+        MA: 'Massachusetts',
+        MI: 'Michigan',
+        MN: 'Minnesota',
+        MS: 'Mississippi',
+        MO: 'Missouri',
+        MT: 'Montana',
+        NE: 'Nebraska',
+        NV: 'Nevada',
+        NH: 'New Hampshire',
+        NJ: 'New Jersey',
+        NM: 'New Mexico',
+        NY: 'New York',
+        NC: 'North Carolina',
+        ND: 'North Dakota',
+        OH: 'Ohio',
+        OK: 'Oklahoma',
+        OR: 'Oregon',
+        PA: 'Pennsylvania',
+        RI: 'Rhode Island',
+        SC: 'South Carolina',
+        SD: 'South Dakota',
+        TN: 'Tennessee',
+        TX: 'Texas',
+        UT: 'Utah',
+        VT: 'Vermont',
+        VA: 'Virginia',
+        WA: 'Washington',
+        WV: 'West Virginia',
+        WI: 'Wisconsin',
+        WY: 'Wyoming'
+    },
+    
+    // Kota
+    cities: {
+        CA: ['Los Angeles', 'San Francisco', 'San Diego', 'San Jose', 'Sacramento'],
+        NY: ['New York City', 'Buffalo', 'Rochester', 'Syracuse', 'Albany'],
+        TX: ['Houston', 'Dallas', 'San Antonio', 'Austin', 'Fort Worth'],
+        FL: ['Miami', 'Orlando', 'Tampa', 'Jacksonville', 'Fort Lauderdale'],
+        IL: ['Chicago', 'Aurora', 'Joliet', 'Naperville', 'Springfield'],
+        PA: ['Philadelphia', 'Pittsburgh', 'Allentown', 'Erie', 'Scranton'],
+        OH: ['Columbus', 'Cleveland', 'Cincinnati', 'Toledo', 'Akron'],
+        GA: ['Atlanta', 'Augusta', 'Savannah', 'Athens', 'Macon'],
+        NC: ['Charlotte', 'Raleigh', 'Greensboro', 'Durham', 'Winston-Salem'],
+        MI: ['Detroit', 'Grand Rapids', 'Ann Arbor', 'Lansing', 'Flint'],
+        NJ: ['Newark', 'Jersey City', 'Paterson', 'Elizabeth', 'Camden'],
+        VA: ['Virginia Beach', 'Norfolk', 'Arlington', 'Richmond', 'Newport News'],
+        WA: ['Seattle', 'Spokane', 'Tacoma', 'Bellevue', 'Everett'],
+        AZ: ['Phoenix', 'Tucson', 'Mesa', 'Chandler', 'Gilbert'],
+        MA: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge'],
+        TN: ['Nashville', 'Memphis', 'Knoxville', 'Chattanooga', 'Bristol'],
+        IN: ['Indianapolis', 'Fort Wayne', 'Evansville', 'South Bend', 'Gary'],
+        MO: ['Kansas City', 'St. Louis', 'Springfield', 'Independence', 'Columbia'],
+        MD: ['Baltimore', 'Frederick', 'Rockville', 'Gaithersburg', 'Bowie'],
+        WI: ['Milwaukee', 'Madison', 'Green Bay', 'Kenosha', 'Racine'],
+        CO: ['Denver', 'Colorado Springs', 'Aurora', 'Littleton', 'Boulder'],
+        MN: ['Minneapolis', 'St. Paul', 'Bloomington', 'Plymouth', 'St. Cloud'],
+        SC: ['Charleston', 'Columbia', 'North Charleston', 'Greenville', 'Myrtle Beach'],
+        AL: ['Birmingham', 'Montgomery', 'Huntsville', 'Mobile', 'Tuscaloosa'],
+        LA: ['New Orleans', 'Shreveport', 'Baton Rouge', 'Lafayette', 'Lake Charles'],
+        KY: ['Louisville', 'Lexington', 'Bowling Green', 'Owensboro', 'Covington'],
+        OR: ['Portland', 'Eugene', 'Salem', 'Bend', 'Beaverton'],
+        OK: ['Oklahoma City', 'Tulsa', 'Norman', 'Lawton', 'Edmond'],
+        CT: ['Bridgeport', 'New Haven', 'Stamford', 'Hartford', 'Waterbury'],
+        UT: ['Salt Lake City', 'West Valley City', 'Ogden', 'Provo', 'West Jordan']
+    },
+    
+    // Universitas
+    universities: {
+        MIT: 'Massachusetts Institute of Technology',
+        Stanford: 'Stanford University',
+        Harvard: 'Harvard University',
+        CalTech: 'California Institute of Technology',
+        Columbia: 'Columbia University'
+    },
+    
+    // Header CSV
+    csv: {
+        fullAddress: 'Alamat Lengkap',
+        street: 'Jalan',
+        houseNumber: 'Nomor Rumah',
+        building: 'Gedung',
+        city: 'Kota',
+        state: 'Negara Bagian',
+        zipCode: 'Kode ZIP',
+        fullName: 'Nama Lengkap',
+        gender: 'Jenis Kelamin',
+        age: 'Usia',
+        birthDate: 'Tanggal Lahir',
+        phone: 'Telepon',
+        email: 'Email',
+        cardType: 'Tipe Kartu',
+        cardNumber: 'Nomor Kartu',
+        ssn: 'SSN'
+    }
+};

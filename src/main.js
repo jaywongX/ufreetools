@@ -200,6 +200,7 @@ const lazyComponentMap = {
   'ComparingFractionsCalculator': () => import('./components/tools/ComparingFractionsCalculator.vue'),
   'UsAddressGenerator': () => import('./components/tools/UsAddressGenerator.vue'),
   'HkAddressGenerator': () => import('./components/tools/HkAddressGenerator.vue'),
+  'TurkeyAddressGenerator': () => import('./components/tools/TurkeyAddressGenerator.vue'),
   'TaiwanAddressGenerator': () => import('./components/tools/TaiwanAddressGenerator.vue'),
   'JpAddressGenerator': () => import('./components/tools/JpAddressGenerator.vue'),
   'CaAddressGenerator': () => import('./components/tools/CaAddressGenerator.vue'),

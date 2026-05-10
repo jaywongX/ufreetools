@@ -1,0 +1,252 @@
+export default {
+    name: 'Générateur d\'adresse Google - Générez de vraies adresses américaines, des informations d\'identité et des coordonnées en ligne',
+    description: 'Générateur d\'adresse Google gratuit en ligne qui crée des adresses américaines au format réel, des numéros de sécurité sociale, des numéros de téléphone, des numéros de carte de crédit et des profils d\'identité complets. Prend en charge le filtrage par état, les formats d\'exportation JSON/CSV et s\'exécute entièrement dans le navigateur pour la protection de la vie privée.',
+    inputTitle: 'Paramètres de génération',
+    outputTitle: 'Résultats générés',
+    generateBtn: 'Générer les données',
+    loadSampleBtn: 'Charger un exemple et générer',
+    clearAll: 'Tout effacer',
+    noOutput: 'Aucun résultat généré pour le moment',
+    preview: 'Aperçu des données',
+    
+    // Filtrage géographique
+    locationTitle: 'Filtrage géographique',
+    selectState: 'Sélectionner un état',
+    selectCity: 'Sélectionner une ville',
+    allStates: 'Tous les états',
+    allCities: 'Toutes les villes',
+    postalCodeLabel: 'Code postal',
+    validatePostalCode: 'Valider le code postal',
+    
+    // Types d'adresse
+    addressTypeTitle: 'Type d\'adresse',
+    addressTypeResidential: 'Adresse résidentielle',
+    addressTypeCommercial: 'Adresse commerciale',
+    addressTypeVirtual: 'Boîte aux lettres virtuelle',
+    addressTypeCampus: 'Campus universitaire',
+    
+    // Informations d'identité
+    identityTitle: 'Informations d\'identité',
+    fullName: 'Nom complet',
+    gender: 'Genre',
+    genderMale: 'Homme',
+    genderFemale: 'Femme',
+    age: 'Âge',
+    birthDate: 'Date de naissance',
+    zodiac: 'Signe du zodiaque',
+    height: 'Taille',
+    weight: 'Poids',
+    
+    // Informations de contact
+    contactTitle: 'Informations de contact',
+    phoneNumber: 'Numéro de téléphone',
+    phoneType: 'Type de téléphone',
+    phoneTypeMobile: 'Portable',
+    phoneTypeLandline: 'Ligne fixe',
+    areaCode: 'Indicatif régional',
+    email: 'Adresse e-mail',
+    tempEmail: 'E-mail temporaire',
+    
+    // Carte de crédit
+    creditCardTitle: 'Informations de carte de crédit',
+    cardType: 'Type de carte',
+    cardNumber: 'Numéro de carte',
+    expiryDate: 'Date d\'expiration',
+    cvv: 'CVV',
+    bankBin: 'Code BIN de la banque',
+    
+    // Carrière
+    careerTitle: 'Profil de carrière',
+    jobTitle: 'Titre du poste',
+    salary: 'Salaire',
+    companyName: 'Nom de l\'entreprise',
+    companySize: 'Taille de l\'entreprise',
+    industry: 'Secteur d\'activité',
+    employmentStatus: 'Statut d\'emploi',
+    employmentFullTime: 'Temps plein',
+    employmentPartTime: 'Temps partiel',
+    
+    // Numéro de sécurité sociale
+    idCardTitle: 'Numéro de sécurité sociale',
+    idCardNumber: 'Numéro de sécurité sociale',
+    ssn: 'SSN',
+    
+    // Empreinte numérique
+    fingerprintTitle: 'Empreinte numérique',
+    os: 'Système d\'exploitation',
+    osVersion: 'Version du système d\'exploitation',
+    browser: 'Navigateur',
+    userAgent: 'Agent utilisateur',
+    screenResolution: 'Résolution de l\'écran',
+    timezone: 'Fuseau horaire',
+    guid: 'GUID',
+    ipAddress: 'Adresse IP',
+    macAddress: 'Adresse MAC',
+    cookiePolicy: 'Politique des cookies',
+    
+    // Options d'exportation
+    exportTitle: 'Format d\'exportation',
+    exportJson: 'Exporter en JSON',
+    exportCsv: 'Exporter en CSV',
+    downloadBtn: 'Télécharger',
+    copyBtn: 'Copier',
+    viewDetails: 'Voir les détails',
+    
+    // Génération par lots
+    batchTitle: 'Génération par lots',
+    quantityLabel: 'Quantité',
+    quantityPlaceholder: 'Entrez la quantité (1-100)',
+    
+    // Messages
+    generating: 'Génération en cours...',
+    generated: 'Génération terminée',
+    copySuccess: 'Copié dans le presse-papiers',
+    downloadSuccess: 'Téléchargement réussi',
+    invalidQuantity: 'Veuillez entrer un nombre entre 1 et 100',
+    
+    // Résultats
+    resultCount: '{count} enregistrements générés',
+    resultSummary: 'Résumé de la génération',
+    showAll: 'Tout afficher',
+    collapse: 'Réduire',
+    
+    // Options de génération
+    generateOptionsTitle: 'Options de génération',
+    
+    // Affichage des enregistrements
+    recordLabel: 'Enregistrement #{num}',
+    addressLabel: 'Adresse',
+    streetLabel: 'Rue',
+    houseNumberLabel: 'Numéro de maison',
+    buildingLabel: 'Bâtiment',
+    floorLabel: 'Étage',
+    unitLabel: 'Unité',
+    districtLabel: 'État',
+    cityLabel: 'Ville',
+    stateLabel: 'État',
+    zipCodeLabel: 'Code postal',
+    
+    // Format d'adresse
+    addressNumber: 'Numéro',
+    addressFloor: 'Étage',
+    addressUnit: 'Unité',
+    suiteLabel: 'Suite',
+    apartmentLabel: 'Appartement',
+    
+    // États
+    states: {
+        AL: 'Alabama',
+        AK: 'Alaska',
+        AZ: 'Arizona',
+        AR: 'Arkansas',
+        CA: 'Californie',
+        CO: 'Colorado',
+        CT: 'Connecticut',
+        DE: 'Delaware',
+        FL: 'Floride',
+        GA: 'Géorgie',
+        HI: 'Hawaï',
+        ID: 'Idaho',
+        IL: 'Illinois',
+        IN: 'Indiana',
+        IA: 'Iowa',
+        KS: 'Kansas',
+        KY: 'Kentucky',
+        LA: 'Louisiane',
+        ME: 'Maine',
+        MD: 'Maryland',
+        MA: 'Massachusetts',
+        MI: 'Michigan',
+        MN: 'Minnesota',
+        MS: 'Mississippi',
+        MO: 'Missouri',
+        MT: 'Montana',
+        NE: 'Nebraska',
+        NV: 'Nevada',
+        NH: 'New Hampshire',
+        NJ: 'New Jersey',
+        NM: 'Nouveau-Mexique',
+        NY: 'New York',
+        NC: 'Caroline du Nord',
+        ND: 'Dakota du Nord',
+        OH: 'Ohio',
+        OK: 'Oklahoma',
+        OR: 'Oregon',
+        PA: 'Pennsylvanie',
+        RI: 'Rhode Island',
+        SC: 'Caroline du Sud',
+        SD: 'Dakota du Sud',
+        TN: 'Tennessee',
+        TX: 'Texas',
+        UT: 'Utah',
+        VT: 'Vermont',
+        VA: 'Virginie',
+        WA: 'Washington',
+        WV: 'Virginie-Occidentale',
+        WI: 'Wisconsin',
+        WY: 'Wyoming'
+    },
+    
+    // Villes
+    cities: {
+        CA: ['Los Angeles', 'San Francisco', 'San Diego', 'San Jose', 'Sacramento'],
+        NY: ['New York City', 'Buffalo', 'Rochester', 'Syracuse', 'Albany'],
+        TX: ['Houston', 'Dallas', 'San Antonio', 'Austin', 'Fort Worth'],
+        FL: ['Miami', 'Orlando', 'Tampa', 'Jacksonville', 'Fort Lauderdale'],
+        IL: ['Chicago', 'Aurora', 'Joliet', 'Naperville', 'Springfield'],
+        PA: ['Philadelphia', 'Pittsburgh', 'Allentown', 'Erie', 'Scranton'],
+        OH: ['Columbus', 'Cleveland', 'Cincinnati', 'Toledo', 'Akron'],
+        GA: ['Atlanta', 'Augusta', 'Savannah', 'Athens', 'Macon'],
+        NC: ['Charlotte', 'Raleigh', 'Greensboro', 'Durham', 'Winston-Salem'],
+        MI: ['Detroit', 'Grand Rapids', 'Ann Arbor', 'Lansing', 'Flint'],
+        NJ: ['Newark', 'Jersey City', 'Paterson', 'Elizabeth', 'Camden'],
+        VA: ['Virginia Beach', 'Norfolk', 'Arlington', 'Richmond', 'Newport News'],
+        WA: ['Seattle', 'Spokane', 'Tacoma', 'Bellevue', 'Everett'],
+        AZ: ['Phoenix', 'Tucson', 'Mesa', 'Chandler', 'Gilbert'],
+        MA: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge'],
+        TN: ['Nashville', 'Memphis', 'Knoxville', 'Chattanooga', 'Bristol'],
+        IN: ['Indianapolis', 'Fort Wayne', 'Evansville', 'South Bend', 'Gary'],
+        MO: ['Kansas City', 'St. Louis', 'Springfield', 'Independence', 'Columbia'],
+        MD: ['Baltimore', 'Frederick', 'Rockville', 'Gaithersburg', 'Bowie'],
+        WI: ['Milwaukee', 'Madison', 'Green Bay', 'Kenosha', 'Racine'],
+        CO: ['Denver', 'Colorado Springs', 'Aurora', 'Littleton', 'Boulder'],
+        MN: ['Minneapolis', 'St. Paul', 'Bloomington', 'Plymouth', 'St. Cloud'],
+        SC: ['Charleston', 'Columbia', 'North Charleston', 'Greenville', 'Myrtle Beach'],
+        AL: ['Birmingham', 'Montgomery', 'Huntsville', 'Mobile', 'Tuscaloosa'],
+        LA: ['New Orleans', 'Shreveport', 'Baton Rouge', 'Lafayette', 'Lake Charles'],
+        KY: ['Louisville', 'Lexington', 'Bowling Green', 'Owensboro', 'Covington'],
+        OR: ['Portland', 'Eugene', 'Salem', 'Bend', 'Beaverton'],
+        OK: ['Oklahoma City', 'Tulsa', 'Norman', 'Lawton', 'Edmond'],
+        CT: ['Bridgeport', 'New Haven', 'Stamford', 'Hartford', 'Waterbury'],
+        UT: ['Salt Lake City', 'West Valley City', 'Ogden', 'Provo', 'West Jordan']
+    },
+    
+    // Universités
+    universities: {
+        MIT: 'Massachusetts Institute of Technology',
+        Stanford: 'Stanford University',
+        Harvard: 'Harvard University',
+        CalTech: 'California Institute of Technology',
+        Columbia: 'Columbia University'
+    },
+    
+    // En-têtes CSV
+    csv: {
+        fullAddress: 'Adresse complète',
+        street: 'Rue',
+        houseNumber: 'Numéro de maison',
+        building: 'Bâtiment',
+        city: 'Ville',
+        state: 'État',
+        zipCode: 'Code postal',
+        fullName: 'Nom complet',
+        gender: 'Genre',
+        age: 'Âge',
+        birthDate: 'Date de naissance',
+        phone: 'Téléphone',
+        email: 'E-mail',
+        cardType: 'Type de carte',
+        cardNumber: 'Numéro de carte',
+        ssn: 'SSN'
+    }
+};
