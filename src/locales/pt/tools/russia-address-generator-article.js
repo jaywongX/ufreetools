@@ -17,7 +17,7 @@ export default {
     
     faqTitle: 'Perguntas frequentes sobre o gerador de endereços Rússia',
     faq1Question: 'O gerador de endereços Rússia gera endereços realmente existentes?',
-    fa1Answer: 'Os endereços gerados pelo gerador de endereços Rússia seguem o formato real de endereços russos, incluindo nomes de ruas válidos, códigos postais corretos e características regionais, mas esses endereços são combinações aleatórias e não endereços específicos realmente existentes.',
+    faq1Answer: 'Os endereços gerados pelo gerador de endereços Rússia seguem o formato real de endereços russos, incluindo nomes de ruas válidos, códigos postais corretos e características regionais, mas esses endereços são combinações aleatórias e não endereços específicos realmente existentes.',
     
     faq2Question: 'É possível usar os números INN/SNILS gerados?',
     faq2Answer: 'Não. Embora os números INN/SNILS gerados pelo gerador de endereços Rússia tenham o formato correto, são números de identidade virtuais que não podem ser usados para verificação de identidade real. O INN é composto por 10 dígitos (para pessoas jurídicas) ou 12 dígitos (para pessoas físicas).',

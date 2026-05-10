@@ -61,7 +61,7 @@ export default {
     
     relatedToolsTitle: 'Verwandte Tools, die Sie ausprobieren könnten',
     relatedTool1Name: 'Zufälliger Passwort-Generator',
-    relativeTool1Description: 'Erstellen Sie sichere und zuverlässige zufällige Passwörter zum Schutz der Kontosicherheit.',
+    relatedTool1Description: 'Erstellen Sie sichere und zuverlässige zufällige Passwörter zum Schutz der Kontosicherheit.',
     relatedTool1Url: 'https://www.ufreetools.com/tool/password-generator',
     
     relatedTool2Name: 'UUID-Generator',
