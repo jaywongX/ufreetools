@@ -212,6 +212,7 @@ const lazyComponentMap = {
   'ItalyAddressGenerator': () => import('./components/tools/ItalyAddressGenerator.vue'),
   'SpainAddressGenerator': () => import('./components/tools/SpainAddressGenerator.vue'),
   'RussiaAddressGenerator': () => import('./components/tools/RussiaAddressGenerator.vue'),
+  'KazakhstanAddressGenerator': () => import('./components/tools/KazakhstanAddressGenerator.vue'),
   'TaiwanAddressGenerator': () => import('./components/tools/TaiwanAddressGenerator.vue'),
   'JpAddressGenerator': () => import('./components/tools/JpAddressGenerator.vue'),
   'CaAddressGenerator': () => import('./components/tools/CaAddressGenerator.vue'),
@@ -220,6 +221,7 @@ const lazyComponentMap = {
   'SgAddressGenerator': () => import('./components/tools/SgAddressGenerator.vue'),
   'UkAddressGenerator': () => import('./components/tools/UkAddressGenerator.vue'),
   'KrAddressGenerator': () => import('./components/tools/KrAddressGenerator.vue'),
+  'MexicoAddressGenerator': () => import('./components/tools/MexicoAddressGenerator.vue'),
   'WhatToEat': () => import('./components/tools/WhatToEat.vue'),
   
   // 测绘

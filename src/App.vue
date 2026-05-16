@@ -1858,6 +1858,28 @@ const allTools = computed(() => [
     tags: ['generator']
   },
   {
+    id: 'kazakhstan-address-generator',
+    name: t('tools.kazakhstan-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.kazakhstan-address-generator.description'),
+    path: '/tools/kazakhstan-address-generator',
+    component: 'KazakhstanAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
+    id: 'mexico-address-generator',
+    name: t('tools.mexico-address-generator.name'),
+    category: t(`categories.utility.title`),
+    categoryId: 'utility',
+    description: t('tools.mexico-address-generator.description'),
+    path: '/tools/mexico-address-generator',
+    component: 'MexicoAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator']
+  },
+  {
     id: 'taiwan-address-generator',
     name: t('tools.taiwan-address-generator.name'),
     category: t(`categories.utility.title`),
