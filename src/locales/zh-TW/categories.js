@@ -53,4 +53,8 @@ export default {
     title: '3D列印',
     description: '3D列印模型生成、優化和轉換工具'
   },
+  address: {
+    title: '地址生成器',
+    description: '各國地址生成工具'
+  },
 };

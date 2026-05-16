@@ -353,6 +353,20 @@
         </div>
       </section>
 
+      <!-- 地址生成器 -->
+      <section v-if="selectedTags.length === 0" class="mb-10" id="addressTools">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-xl font-bold">{{ $t('categories.address.title') }}</h2>
+          <router-link :to="localizedRoute('/category/address')"
+            class="text-primary dark:text-primary-light hover:underline text-sm">
+            {{ $t('common.home.viewAllFavorites') }}
+          </router-link>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <ToolCard v-for="tool in addressTools" :key="tool.id" :tool="tool" @tag-click="addTagToFilter" />
+        </div>
+      </section>
+
       <!-- 测绘工具 -->
       <section v-if="selectedTags.length === 0" class="mb-10" id="samTools">
         <div class="flex justify-between items-center mb-6">
@@ -570,6 +584,10 @@ const utilityTools = computed(() => {
   return toolsArray.value.filter(tool => tool.categoryId === 'utility').slice(0, 6);
 });
 
+const addressTools = computed(() => {
+  return toolsArray.value.filter(tool => tool.categoryId === 'address').slice(0, 6);
+});
+
 const SAMTools = computed(() => {
   return toolsArray.value.filter(tool => tool.categoryId === 'surveying_and_mapping').slice(0, 6);
 });
@@ -619,6 +637,7 @@ const toolSections = computed(() => [
   // { id: 'networkTools', title: t('categories.network.title'), color: 'cyan-500' },
   // { id: 'cryptoTools', title: t('categories.crypto.title'), color: 'red-500' },
   // { id: 'utilityTools', title: t('categories.utility.title'), color: 'violet-500' },
+  // { id: 'addressTools', title: t('categories.address.title'), color: 'teal-500' },
   // { id: 'samTools', title: t('categories.surveying_and_mapping.title'), color: 'emerald-500' }
 ])
 
@@ -636,6 +655,7 @@ const sectionIds = {
   networkTools: 'networkTools',
   cryptoTools: 'cryptoTools',
   utilityTools: 'utilityTools',
+  addressTools: 'addressTools',
   samTools: 'samTools'
 }
 

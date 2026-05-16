@@ -53,4 +53,8 @@ export default {
     title: 'Impression 3D',
     description: 'Outils pour la génération, l\'optimisation et la conversion de modèles d\'impression 3D'
   },
+  address: {
+    title: 'Générateur d\'adresses',
+    description: 'Outils de génération d\'adresses pour divers pays'
+  },
 };

@@ -53,4 +53,8 @@ export default {
     title: '3D-Druck',
     description: 'Tools zur Erstellung, Optimierung und Konvertierung von 3D-Druckmodellen'
   },
+  address: {
+    title: 'Adressgenerator',
+    description: 'Adressgenerierungstools für verschiedene Länder'
+  },
 };

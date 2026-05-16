@@ -53,4 +53,8 @@ export default {
     title: '3D 프린팅',
     description: '3D 프린팅 모델 생성, 최적화 및 변환 도구'
   },
+  address: {
+    title: '주소 생성기',
+    description: '각국 주소 생성 도구'
+  },
 };

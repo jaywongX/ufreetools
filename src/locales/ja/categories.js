@@ -53,4 +53,8 @@ export default {
     title: '3Dプリンティング',
     description: '3Dプリンティングモデルの生成、最適化、変換ツール'
   },
+  address: {
+    title: '住所ジェネレーター',
+    description: '各国の住所生成ツール'
+  },
 };

@@ -53,4 +53,8 @@ export default {
     title: 'Pencetakan 3D',
     description: 'Alat untuk pembuatan, optimasi, dan konversi model pencetakan 3D'
   },
+  address: {
+    title: 'Pembuat Alamat',
+    description: 'Alat pembuatan alamat untuk berbagai negara'
+  },
 };

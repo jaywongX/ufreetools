@@ -53,4 +53,8 @@ export default {
     title: '3D Printing',
     description: 'Tools for 3D printing model generation, optimization and conversion'
   },
+  address: {
+    title: 'Address Generator',
+    description: 'Address generation tools for various countries'
+  },
 };
