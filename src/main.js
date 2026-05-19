@@ -271,6 +271,11 @@ const lazyComponentMap = {
   'StlTo3mfConverter': () => import('./components/tools/StlTo3mfConverter.vue'),
   'StlToObjConverter': () => import('./components/tools/StlToObjConverter.vue'),
   'Stl3mfModelViewer': () => import('./components/tools/Stl3mfModelViewer.vue'),
+  'ObjToStlConverter': () => import('./components/tools/ObjToStlConverter.vue'),
+  'ThreeMfToStlConverter': () => import('./components/tools/ThreeMfToStlConverter.vue'),
+  'StlToGlbConverter': () => import('./components/tools/StlToGlbConverter.vue'),
+  'GlbToStlConverter': () => import('./components/tools/GlbToStlConverter.vue'),
+  'ObjToThreeMfConverter': () => import('./components/tools/ObjToThreeMfConverter.vue'),
 
   // 地址生成器
   'UsAddressGenerator': () => import('./components/tools/UsAddressGenerator.vue'),

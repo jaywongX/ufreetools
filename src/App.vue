@@ -2677,6 +2677,61 @@ const allTools = computed(() => [
     icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
     tags: []
   },
+  {
+    id: 'obj-to-stl-converter',
+    name: t('tools.obj-to-stl-converter.name'),
+    category: t(`categories.printing_3d.title`),
+    categoryId: 'printing_3d',
+    description: t('tools.obj-to-stl-converter.description'),
+    path: '/tools/obj-to-stl-converter',
+    component: 'ObjToStlConverter',
+    icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
+    tags: ['convert']
+  },
+  {
+    id: '3mf-to-stl-converter',
+    name: t('tools.3mf-to-stl-converter.name'),
+    category: t(`categories.printing_3d.title`),
+    categoryId: 'printing_3d',
+    description: t('tools.3mf-to-stl-converter.description'),
+    path: '/tools/3mf-to-stl-converter',
+    component: 'ThreeMfToStlConverter',
+    icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
+    tags: ['convert']
+  },
+  {
+    id: 'stl-to-glb-converter',
+    name: t('tools.stl-to-glb-converter.name'),
+    category: t(`categories.printing_3d.title`),
+    categoryId: 'printing_3d',
+    description: t('tools.stl-to-glb-converter.description'),
+    path: '/tools/stl-to-glb-converter',
+    component: 'StlToGlbConverter',
+    icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
+    tags: ['convert']
+  },
+  {
+    id: 'glb-to-stl-converter',
+    name: t('tools.glb-to-stl-converter.name'),
+    category: t(`categories.printing_3d.title`),
+    categoryId: 'printing_3d',
+    description: t('tools.glb-to-stl-converter.description'),
+    path: '/tools/glb-to-stl-converter',
+    component: 'GlbToStlConverter',
+    icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
+    tags: ['convert']
+  },
+  {
+    id: 'obj-to-3mf-converter',
+    name: t('tools.obj-to-3mf-converter.name'),
+    category: t(`categories.printing_3d.title`),
+    categoryId: 'printing_3d',
+    description: t('tools.obj-to-3mf-converter.description'),
+    path: '/tools/obj-to-3mf-converter',
+    component: 'ObjToThreeMfConverter',
+    icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
+    tags: ['convert']
+  },
 ])
 provide('allTools', allTools)
 

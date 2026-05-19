@@ -218,6 +218,11 @@ import StlToObjConverter from './tools/stl-to-obj-converter.js'
 import Stl3mfModelViewer from './tools/stl-3mf-model-viewer.js'
 import KazakhstanAddressGenerator from './tools/kazakhstan-address-generator.js'
 import MexicoAddressGenerator from './tools/mexico-address-generator.js'
+import ObjToStlConverter from './tools/obj-to-stl-converter.js'
+import ThreeMfToStlConverter from './tools/3mf-to-stl-converter.js'
+import StlToGlbConverter from './tools/stl-to-glb-converter.js'
+import GlbToStlConverter from './tools/glb-to-stl-converter.js'
+import ObjToThreeMfConverter from './tools/obj-to-3mf-converter.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -439,5 +444,10 @@ export default {
   'stl-to-obj-converter': StlToObjConverter,
   'stl-3mf-model-viewer': Stl3mfModelViewer,
   'kazakhstan-address-generator': KazakhstanAddressGenerator,
-  'mexico-address-generator': MexicoAddressGenerator
+  'mexico-address-generator': MexicoAddressGenerator,
+  'obj-to-stl-converter': ObjToStlConverter,
+  '3mf-to-stl-converter': ThreeMfToStlConverter,
+  'stl-to-glb-converter': StlToGlbConverter,
+  'glb-to-stl-converter': GlbToStlConverter,
+  'obj-to-3mf-converter': ObjToThreeMfConverter
 };

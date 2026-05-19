@@ -216,6 +216,11 @@ import RandomIpGenerator from './tools/random-ip-generator.js'
 import StlTo3mfConverter from './tools/stl-to-3mf-converter.js'
 import StlToObjConverter from './tools/stl-to-obj-converter.js'
 import Stl3mfModelViewer from './tools/stl-3mf-model-viewer.js'
+import ObjToStlConverter from './tools/obj-to-stl-converter.js'
+import ThreeMfToStlConverter from './tools/3mf-to-stl-converter.js'
+import StlToGlbConverter from './tools/stl-to-glb-converter.js'
+import GlbToStlConverter from './tools/glb-to-stl-converter.js'
+import ObjToThreeMfConverter from './tools/obj-to-3mf-converter.js'
 import KazakhstanAddressGenerator from './tools/kazakhstan-address-generator.js'
 import MexicoAddressGenerator from './tools/mexico-address-generator.js'
 export default {
@@ -438,6 +443,11 @@ export default {
   'stl-to-3mf-converter': StlTo3mfConverter,
   'stl-to-obj-converter': StlToObjConverter,
   'stl-3mf-model-viewer': Stl3mfModelViewer,
+  'obj-to-stl-converter': ObjToStlConverter,
+  '3mf-to-stl-converter': ThreeMfToStlConverter,
+  'stl-to-glb-converter': StlToGlbConverter,
+  'glb-to-stl-converter': GlbToStlConverter,
+  'obj-to-3mf-converter': ObjToThreeMfConverter,
   'kazakhstan-address-generator': KazakhstanAddressGenerator,
   'mexico-address-generator': MexicoAddressGenerator
 };
