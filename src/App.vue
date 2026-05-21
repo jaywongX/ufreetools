@@ -1887,6 +1887,17 @@ const allTools = computed(() => [
     tags: ['generator']
   },
   {
+    id: 'world-address-generator',
+    name: t('tools.world-address-generator.name'),
+    category: t(`categories.address.title`),
+    categoryId: 'address',
+    description: t('tools.world-address-generator.description'),
+    path: '/tools/world-address-generator',
+    component: 'WorldAddressGenerator',
+    icon: 'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z',
+    tags: ['generator', 'world', 'global']
+  },
+  {
     id: 'taiwan-address-generator',
     name: t('tools.taiwan-address-generator.name'),
     category: t(`categories.address.title`),

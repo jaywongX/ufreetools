@@ -302,6 +302,7 @@ const lazyComponentMap = {
   'UkAddressGenerator': () => import('./components/tools/UkAddressGenerator.vue'),
   'KrAddressGenerator': () => import('./components/tools/KrAddressGenerator.vue'),
   'MexicoAddressGenerator': () => import('./components/tools/MexicoAddressGenerator.vue'),
+  'WorldAddressGenerator': () => import('./components/tools/WorldAddressGenerator.vue'),
 }
 
 // 用异步 IIFE 启动应用（仅在浏览器环境中执行）

@@ -218,6 +218,7 @@ import StlToObjConverter from './tools/stl-to-obj-converter.js'
 import Stl3mfModelViewer from './tools/stl-3mf-model-viewer.js'
 import KazakhstanAddressGenerator from './tools/kazakhstan-address-generator.js'
 import MexicoAddressGenerator from './tools/mexico-address-generator.js'
+import WorldAddressGenerator from './tools/world-address-generator.js'
 import ObjToStlConverter from './tools/obj-to-stl-converter.js'
 import ThreeMfToStlConverter from './tools/3mf-to-stl-converter.js'
 import StlToGlbConverter from './tools/stl-to-glb-converter.js'
@@ -445,6 +446,7 @@ export default {
   'stl-3mf-model-viewer': Stl3mfModelViewer,
   'kazakhstan-address-generator': KazakhstanAddressGenerator,
   'mexico-address-generator': MexicoAddressGenerator,
+  'world-address-generator': WorldAddressGenerator,
   'obj-to-stl-converter': ObjToStlConverter,
   '3mf-to-stl-converter': ThreeMfToStlConverter,
   'stl-to-glb-converter': StlToGlbConverter,

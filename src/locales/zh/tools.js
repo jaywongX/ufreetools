@@ -223,6 +223,7 @@ import GlbToStlConverter from './tools/glb-to-stl-converter.js'
 import ObjToThreeMfConverter from './tools/obj-to-3mf-converter.js'
 import KazakhstanAddressGenerator from './tools/kazakhstan-address-generator.js'
 import MexicoAddressGenerator from './tools/mexico-address-generator.js'
+import WorldAddressGenerator from './tools/world-address-generator.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -449,5 +450,6 @@ export default {
   'glb-to-stl-converter': GlbToStlConverter,
   'obj-to-3mf-converter': ObjToThreeMfConverter,
   'kazakhstan-address-generator': KazakhstanAddressGenerator,
-  'mexico-address-generator': MexicoAddressGenerator
+  'mexico-address-generator': MexicoAddressGenerator,
+  'world-address-generator': WorldAddressGenerator
 };
