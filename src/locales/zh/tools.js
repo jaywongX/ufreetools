@@ -224,6 +224,7 @@ import ObjToThreeMfConverter from './tools/obj-to-3mf-converter.js'
 import KazakhstanAddressGenerator from './tools/kazakhstan-address-generator.js'
 import MexicoAddressGenerator from './tools/mexico-address-generator.js'
 import WorldAddressGenerator from './tools/world-address-generator.js'
+import PhilippinesAddressGenerator from './tools/philippines-address-generator.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -451,5 +452,6 @@ export default {
   'obj-to-3mf-converter': ObjToThreeMfConverter,
   'kazakhstan-address-generator': KazakhstanAddressGenerator,
   'mexico-address-generator': MexicoAddressGenerator,
-  'world-address-generator': WorldAddressGenerator
+  'world-address-generator': WorldAddressGenerator,
+  'philippines-address-generator': PhilippinesAddressGenerator
 };
