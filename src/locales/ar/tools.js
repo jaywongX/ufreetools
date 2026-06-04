@@ -225,6 +225,7 @@ import ThreeMfToStlConverter from './tools/3mf-to-stl-converter.js'
 import StlToGlbConverter from './tools/stl-to-glb-converter.js'
 import GlbToStlConverter from './tools/glb-to-stl-converter.js'
 import ObjToThreeMfConverter from './tools/obj-to-3mf-converter.js'
+import MaltaAddressGenerator from './tools/malta-address-generator.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -453,5 +454,6 @@ export default {
   '3mf-to-stl-converter': ThreeMfToStlConverter,
   'stl-to-glb-converter': StlToGlbConverter,
   'glb-to-stl-converter': GlbToStlConverter,
-  'obj-to-3mf-converter': ObjToThreeMfConverter
+  'obj-to-3mf-converter': ObjToThreeMfConverter,
+  'malta-address-generator': MaltaAddressGenerator
 };

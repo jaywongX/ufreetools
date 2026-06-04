@@ -225,6 +225,7 @@ import KazakhstanAddressGenerator from './tools/kazakhstan-address-generator.js'
 import MexicoAddressGenerator from './tools/mexico-address-generator.js'
 import WorldAddressGenerator from './tools/world-address-generator.js'
 import PhilippinesAddressGenerator from './tools/philippines-address-generator.js'
+import MaltaAddressGenerator from './tools/malta-address-generator.js'
 export default {
   'json-formatter': jsonFormatter,
   'regex-tester': regexTester,
@@ -453,5 +454,6 @@ export default {
   'kazakhstan-address-generator': KazakhstanAddressGenerator,
   'mexico-address-generator': MexicoAddressGenerator,
   'world-address-generator': WorldAddressGenerator,
-  'philippines-address-generator': PhilippinesAddressGenerator
+  'philippines-address-generator': PhilippinesAddressGenerator,
+  'malta-address-generator': MaltaAddressGenerator
 };
