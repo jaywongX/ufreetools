@@ -3,11 +3,6 @@
         <article class="article-container prose dark:prose-invert max-w-none">
             <h2 class="text-3xl font-bold mb-6">{{ $t('tools.canada-address-generator.article.title') }}</h2>
 
-            <!-- 产品页图片（1:1） -->
-            <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <img src="/public/images/canada-address-generator-logo.png" class="w-full rounded border" />
-            </div>
-
             <section class="mb-10">
                 <h2 class="text-2xl font-semibold mb-4">{{ $t('tools.canada-address-generator.article.functionTitle') }}</h2>
 
