@@ -155,6 +155,176 @@ import ImageToSvg from './tools/image-to-svg.js';
 import PdfCompressor from './tools/pdf-compressor.js';
 import UsAddressGenerator from './tools/us-address-generator.js';
 import HkAddressGenerator from './tools/hk-address-generator.js';
+import IndonesiaAddressGenerator from './tools/indonesia-address-generator.js';
+import BangladeshAddressGenerator from './tools/bangladesh-address-generator.js';
+import SaudiArabiaAddressGenerator from './tools/saudi-arabia-address-generator.js';
+import UaeAddressGenerator from './tools/uae-address-generator.js';
+import IsraelAddressGenerator from './tools/israel-address-generator.js';
+import QatarAddressGenerator from './tools/qatar-address-generator.js';
+import PortugalAddressGenerator from './tools/portugal-address-generator.js';
+import PolandAddressGenerator from './tools/poland-address-generator.js';
+import SwedenAddressGenerator from './tools/sweden-address-generator.js';
+import SwitzerlandAddressGenerator from './tools/switzerland-address-generator.js';
+import BelgiumAddressGenerator from './tools/belgium-address-generator.js';
+import AustriaAddressGenerator from './tools/austria-address-generator.js';
+import IrelandAddressGenerator from './tools/ireland-address-generator.js';
+import DenmarkAddressGenerator from './tools/denmark-address-generator.js';
+import NorwayAddressGenerator from './tools/norway-address-generator.js';
+import GreeceAddressGenerator from './tools/greece-address-generator.js';
+import AlbaniaAddressGenerator from './tools/albania-address-generator.js';
+import AndorraAddressGenerator from './tools/andorra-address-generator.js';
+import BelarusAddressGenerator from './tools/belarus-address-generator.js';
+import BosniaAndHerzegovinaAddressGenerator from './tools/bosnia-and-herzegovina-address-generator.js';
+import BulgariaAddressGenerator from './tools/bulgaria-address-generator.js';
+import CroatiaAddressGenerator from './tools/croatia-address-generator.js';
+import CzechiaAddressGenerator from './tools/czechia-address-generator.js';
+import EstoniaAddressGenerator from './tools/estonia-address-generator.js';
+import HolySeeVaticanAddressGenerator from './tools/holy-see-vatican-address-generator.js';
+import HungaryAddressGenerator from './tools/hungary-address-generator.js';
+import IcelandAddressGenerator from './tools/iceland-address-generator.js';
+import LatviaAddressGenerator from './tools/latvia-address-generator.js';
+import LiechtensteinAddressGenerator from './tools/liechtenstein-address-generator.js';
+import LithuaniaAddressGenerator from './tools/lithuania-address-generator.js';
+import LuxembourgAddressGenerator from './tools/luxembourg-address-generator.js';
+import MoldovaAddressGenerator from './tools/moldova-address-generator.js';
+import MonacoAddressGenerator from './tools/monaco-address-generator.js';
+import MontenegroAddressGenerator from './tools/montenegro-address-generator.js';
+import NorthMacedoniaAddressGenerator from './tools/north-macedonia-address-generator.js';
+import RomaniaAddressGenerator from './tools/romania-address-generator.js';
+import SanMarinoAddressGenerator from './tools/san-marino-address-generator.js';
+import SerbiaAddressGenerator from './tools/serbia-address-generator.js';
+import SlovakiaAddressGenerator from './tools/slovakia-address-generator.js';
+import SloveniaAddressGenerator from './tools/slovenia-address-generator.js';
+import UkraineAddressGenerator from './tools/ukraine-address-generator.js';
+import AfghanistanAddressGenerator from './tools/afghanistan-address-generator.js';
+import ArmeniaAddressGenerator from './tools/armenia-address-generator.js';
+import AzerbaijanAddressGenerator from './tools/azerbaijan-address-generator.js';
+import BahrainAddressGenerator from './tools/bahrain-address-generator.js';
+import BhutanAddressGenerator from './tools/bhutan-address-generator.js';
+import BruneiAddressGenerator from './tools/brunei-address-generator.js';
+import CambodiaAddressGenerator from './tools/cambodia-address-generator.js';
+import CyprusAddressGenerator from './tools/cyprus-address-generator.js';
+import GeorgiaAddressGenerator from './tools/georgia-address-generator.js';
+import IranAddressGenerator from './tools/iran-address-generator.js';
+import IraqAddressGenerator from './tools/iraq-address-generator.js';
+import JordanAddressGenerator from './tools/jordan-address-generator.js';
+import KuwaitAddressGenerator from './tools/kuwait-address-generator.js';
+import KyrgyzstanAddressGenerator from './tools/kyrgyzstan-address-generator.js';
+import LaosAddressGenerator from './tools/laos-address-generator.js';
+import LebanonAddressGenerator from './tools/lebanon-address-generator.js';
+import MaldivesAddressGenerator from './tools/maldives-address-generator.js';
+import MongoliaAddressGenerator from './tools/mongolia-address-generator.js';
+import MyanmarAddressGenerator from './tools/myanmar-address-generator.js';
+import NepalAddressGenerator from './tools/nepal-address-generator.js';
+import NorthKoreaAddressGenerator from './tools/north-korea-address-generator.js';
+import OmanAddressGenerator from './tools/oman-address-generator.js';
+import PalestineAddressGenerator from './tools/palestine-address-generator.js';
+import SriLankaAddressGenerator from './tools/sri-lanka-address-generator.js';
+import SyriaAddressGenerator from './tools/syria-address-generator.js';
+import TajikistanAddressGenerator from './tools/tajikistan-address-generator.js';
+import TimorLesteAddressGenerator from './tools/timor-leste-address-generator.js';
+import TurkmenistanAddressGenerator from './tools/turkmenistan-address-generator.js';
+import UzbekistanAddressGenerator from './tools/uzbekistan-address-generator.js';
+import YemenAddressGenerator from './tools/yemen-address-generator.js';
+import AntiguaAndBarbudaAddressGenerator from './tools/antigua-and-barbuda-address-generator.js';
+import ArgentinaAddressGenerator from './tools/argentina-address-generator.js';
+import BahamasAddressGenerator from './tools/bahamas-address-generator.js';
+import BarbadosAddressGenerator from './tools/barbados-address-generator.js';
+import BelizeAddressGenerator from './tools/belize-address-generator.js';
+import BoliviaAddressGenerator from './tools/bolivia-address-generator.js';
+import BrazilAddressGenerator from './tools/brazil-address-generator.js';
+import ChileAddressGenerator from './tools/chile-address-generator.js';
+import ColombiaAddressGenerator from './tools/colombia-address-generator.js';
+import CostaRicaAddressGenerator from './tools/costa-rica-address-generator.js';
+import CubaAddressGenerator from './tools/cuba-address-generator.js';
+import DominicaAddressGenerator from './tools/dominica-address-generator.js';
+import DominicanRepublicAddressGenerator from './tools/dominican-republic-address-generator.js';
+import EcuadorAddressGenerator from './tools/ecuador-address-generator.js';
+import ElSalvadorAddressGenerator from './tools/el-salvador-address-generator.js';
+import GrenadaAddressGenerator from './tools/grenada-address-generator.js';
+import GuatemalaAddressGenerator from './tools/guatemala-address-generator.js';
+import GuyanaAddressGenerator from './tools/guyana-address-generator.js';
+import HaitiAddressGenerator from './tools/haiti-address-generator.js';
+import HondurasAddressGenerator from './tools/honduras-address-generator.js';
+import JamaicaAddressGenerator from './tools/jamaica-address-generator.js';
+import NicaraguaAddressGenerator from './tools/nicaragua-address-generator.js';
+import PanamaAddressGenerator from './tools/panama-address-generator.js';
+import ParaguayAddressGenerator from './tools/paraguay-address-generator.js';
+import PeruAddressGenerator from './tools/peru-address-generator.js';
+import SaintKittsAndNevisAddressGenerator from './tools/saint-kitts-and-nevis-address-generator.js';
+import SaintLuciaAddressGenerator from './tools/saint-lucia-address-generator.js';
+import SaintVincentAndTheGrenadinesAddressGenerator from './tools/saint-vincent-and-the-grenadines-address-generator.js';
+import SurinameAddressGenerator from './tools/suriname-address-generator.js';
+import TrinidadAndTobagoAddressGenerator from './tools/trinidad-and-tobago-address-generator.js';
+import UruguayAddressGenerator from './tools/uruguay-address-generator.js';
+import VenezuelaAddressGenerator from './tools/venezuela-address-generator.js';
+import AlgeriaAddressGenerator from './tools/algeria-address-generator.js';
+import AngolaAddressGenerator from './tools/angola-address-generator.js';
+import BeninAddressGenerator from './tools/benin-address-generator.js';
+import BotswanaAddressGenerator from './tools/botswana-address-generator.js';
+import BurkinaFasoAddressGenerator from './tools/burkina-faso-address-generator.js';
+import BurundiAddressGenerator from './tools/burundi-address-generator.js';
+import CaboVerdeAddressGenerator from './tools/cabo-verde-address-generator.js';
+import CameroonAddressGenerator from './tools/cameroon-address-generator.js';
+import CentralAfricanRepublicAddressGenerator from './tools/central-african-republic-address-generator.js';
+import ChadAddressGenerator from './tools/chad-address-generator.js';
+import ComorosAddressGenerator from './tools/comoros-address-generator.js';
+import RepublicOfTheCongoAddressGenerator from './tools/republic-of-the-congo-address-generator.js';
+import DemocraticRepublicOfTheCongoAddressGenerator from './tools/democratic-republic-of-the-congo-address-generator.js';
+import DjiboutiAddressGenerator from './tools/djibouti-address-generator.js';
+import EgyptAddressGenerator from './tools/egypt-address-generator.js';
+import EquatorialGuineaAddressGenerator from './tools/equatorial-guinea-address-generator.js';
+import EritreaAddressGenerator from './tools/eritrea-address-generator.js';
+import EswatiniAddressGenerator from './tools/eswatini-address-generator.js';
+import EthiopiaAddressGenerator from './tools/ethiopia-address-generator.js';
+import GabonAddressGenerator from './tools/gabon-address-generator.js';
+import GambiaAddressGenerator from './tools/gambia-address-generator.js';
+import GhanaAddressGenerator from './tools/ghana-address-generator.js';
+import GuineaAddressGenerator from './tools/guinea-address-generator.js';
+import GuineaBissauAddressGenerator from './tools/guinea-bissau-address-generator.js';
+import CoteDIvoireAddressGenerator from './tools/cote-d-ivoire-address-generator.js';
+import KenyaAddressGenerator from './tools/kenya-address-generator.js';
+import LesothoAddressGenerator from './tools/lesotho-address-generator.js';
+import LiberiaAddressGenerator from './tools/liberia-address-generator.js';
+import LibyaAddressGenerator from './tools/libya-address-generator.js';
+import MadagascarAddressGenerator from './tools/madagascar-address-generator.js';
+import MalawiAddressGenerator from './tools/malawi-address-generator.js';
+import MaliAddressGenerator from './tools/mali-address-generator.js';
+import MauritaniaAddressGenerator from './tools/mauritania-address-generator.js';
+import MauritiusAddressGenerator from './tools/mauritius-address-generator.js';
+import MoroccoAddressGenerator from './tools/morocco-address-generator.js';
+import MozambiqueAddressGenerator from './tools/mozambique-address-generator.js';
+import NamibiaAddressGenerator from './tools/namibia-address-generator.js';
+import NigerAddressGenerator from './tools/niger-address-generator.js';
+import RwandaAddressGenerator from './tools/rwanda-address-generator.js';
+import SaoTomeAndPrincipeAddressGenerator from './tools/sao-tome-and-principe-address-generator.js';
+import SenegalAddressGenerator from './tools/senegal-address-generator.js';
+import SeychellesAddressGenerator from './tools/seychelles-address-generator.js';
+import SierraLeoneAddressGenerator from './tools/sierra-leone-address-generator.js';
+import SomaliaAddressGenerator from './tools/somalia-address-generator.js';
+import SouthAfricaAddressGenerator from './tools/south-africa-address-generator.js';
+import SouthSudanAddressGenerator from './tools/south-sudan-address-generator.js';
+import SudanAddressGenerator from './tools/sudan-address-generator.js';
+import TanzaniaAddressGenerator from './tools/tanzania-address-generator.js';
+import TogoAddressGenerator from './tools/togo-address-generator.js';
+import TunisiaAddressGenerator from './tools/tunisia-address-generator.js';
+import UgandaAddressGenerator from './tools/uganda-address-generator.js';
+import ZambiaAddressGenerator from './tools/zambia-address-generator.js';
+import ZimbabweAddressGenerator from './tools/zimbabwe-address-generator.js';
+import FijiAddressGenerator from './tools/fiji-address-generator.js';
+import KiribatiAddressGenerator from './tools/kiribati-address-generator.js';
+import MarshallIslandsAddressGenerator from './tools/marshall-islands-address-generator.js';
+import MicronesiaAddressGenerator from './tools/micronesia-address-generator.js';
+import NauruAddressGenerator from './tools/nauru-address-generator.js';
+import NewZealandAddressGenerator from './tools/new-zealand-address-generator.js';
+import PalauAddressGenerator from './tools/palau-address-generator.js';
+import PapuaNewGuineaAddressGenerator from './tools/papua-new-guinea-address-generator.js';
+import SamoaAddressGenerator from './tools/samoa-address-generator.js';
+import SolomonIslandsAddressGenerator from './tools/solomon-islands-address-generator.js';
+import TongaAddressGenerator from './tools/tonga-address-generator.js';
+import TuvaluAddressGenerator from './tools/tuvalu-address-generator.js';
+import VanuatuAddressGenerator from './tools/vanuatu-address-generator.js';
+import KosovoAddressGenerator from './tools/kosovo-address-generator.js';
 import TurkeyAddressGenerator from './tools/turkey-address-generator.js';
 import FranceAddressGenerator from './tools/france-address-generator.js';
 import FinlandAddressGenerator from './tools/finland-address-generator.js';
@@ -385,6 +555,176 @@ export default {
   'pdf-compressor': PdfCompressor,
   'us-address-generator': UsAddressGenerator,
   'hk-address-generator': HkAddressGenerator,
+  'indonesia-address-generator': IndonesiaAddressGenerator,
+  'bangladesh-address-generator': BangladeshAddressGenerator,
+  'saudi-arabia-address-generator': SaudiArabiaAddressGenerator,
+  'uae-address-generator': UaeAddressGenerator,
+  'israel-address-generator': IsraelAddressGenerator,
+  'qatar-address-generator': QatarAddressGenerator,
+  'portugal-address-generator': PortugalAddressGenerator,
+  'poland-address-generator': PolandAddressGenerator,
+  'sweden-address-generator': SwedenAddressGenerator,
+  'switzerland-address-generator': SwitzerlandAddressGenerator,
+  'belgium-address-generator': BelgiumAddressGenerator,
+  'austria-address-generator': AustriaAddressGenerator,
+  'ireland-address-generator': IrelandAddressGenerator,
+  'denmark-address-generator': DenmarkAddressGenerator,
+  'norway-address-generator': NorwayAddressGenerator,
+  'greece-address-generator': GreeceAddressGenerator,
+  'albania-address-generator': AlbaniaAddressGenerator,
+  'andorra-address-generator': AndorraAddressGenerator,
+  'belarus-address-generator': BelarusAddressGenerator,
+  'bosnia-and-herzegovina-address-generator': BosniaAndHerzegovinaAddressGenerator,
+  'bulgaria-address-generator': BulgariaAddressGenerator,
+  'croatia-address-generator': CroatiaAddressGenerator,
+  'czechia-address-generator': CzechiaAddressGenerator,
+  'estonia-address-generator': EstoniaAddressGenerator,
+  'holy-see-vatican-address-generator': HolySeeVaticanAddressGenerator,
+  'hungary-address-generator': HungaryAddressGenerator,
+  'iceland-address-generator': IcelandAddressGenerator,
+  'latvia-address-generator': LatviaAddressGenerator,
+  'liechtenstein-address-generator': LiechtensteinAddressGenerator,
+  'lithuania-address-generator': LithuaniaAddressGenerator,
+  'luxembourg-address-generator': LuxembourgAddressGenerator,
+  'moldova-address-generator': MoldovaAddressGenerator,
+  'monaco-address-generator': MonacoAddressGenerator,
+  'montenegro-address-generator': MontenegroAddressGenerator,
+  'north-macedonia-address-generator': NorthMacedoniaAddressGenerator,
+  'romania-address-generator': RomaniaAddressGenerator,
+  'san-marino-address-generator': SanMarinoAddressGenerator,
+  'serbia-address-generator': SerbiaAddressGenerator,
+  'slovakia-address-generator': SlovakiaAddressGenerator,
+  'slovenia-address-generator': SloveniaAddressGenerator,
+  'ukraine-address-generator': UkraineAddressGenerator,
+  'afghanistan-address-generator': AfghanistanAddressGenerator,
+  'armenia-address-generator': ArmeniaAddressGenerator,
+  'azerbaijan-address-generator': AzerbaijanAddressGenerator,
+  'bahrain-address-generator': BahrainAddressGenerator,
+  'bhutan-address-generator': BhutanAddressGenerator,
+  'brunei-address-generator': BruneiAddressGenerator,
+  'cambodia-address-generator': CambodiaAddressGenerator,
+  'cyprus-address-generator': CyprusAddressGenerator,
+  'georgia-address-generator': GeorgiaAddressGenerator,
+  'iran-address-generator': IranAddressGenerator,
+  'iraq-address-generator': IraqAddressGenerator,
+  'jordan-address-generator': JordanAddressGenerator,
+  'kuwait-address-generator': KuwaitAddressGenerator,
+  'kyrgyzstan-address-generator': KyrgyzstanAddressGenerator,
+  'laos-address-generator': LaosAddressGenerator,
+  'lebanon-address-generator': LebanonAddressGenerator,
+  'maldives-address-generator': MaldivesAddressGenerator,
+  'mongolia-address-generator': MongoliaAddressGenerator,
+  'myanmar-address-generator': MyanmarAddressGenerator,
+  'nepal-address-generator': NepalAddressGenerator,
+  'north-korea-address-generator': NorthKoreaAddressGenerator,
+  'oman-address-generator': OmanAddressGenerator,
+  'palestine-address-generator': PalestineAddressGenerator,
+  'sri-lanka-address-generator': SriLankaAddressGenerator,
+  'syria-address-generator': SyriaAddressGenerator,
+  'tajikistan-address-generator': TajikistanAddressGenerator,
+  'timor-leste-address-generator': TimorLesteAddressGenerator,
+  'turkmenistan-address-generator': TurkmenistanAddressGenerator,
+  'uzbekistan-address-generator': UzbekistanAddressGenerator,
+  'yemen-address-generator': YemenAddressGenerator,
+  'antigua-and-barbuda-address-generator': AntiguaAndBarbudaAddressGenerator,
+  'argentina-address-generator': ArgentinaAddressGenerator,
+  'bahamas-address-generator': BahamasAddressGenerator,
+  'barbados-address-generator': BarbadosAddressGenerator,
+  'belize-address-generator': BelizeAddressGenerator,
+  'bolivia-address-generator': BoliviaAddressGenerator,
+  'brazil-address-generator': BrazilAddressGenerator,
+  'chile-address-generator': ChileAddressGenerator,
+  'colombia-address-generator': ColombiaAddressGenerator,
+  'costa-rica-address-generator': CostaRicaAddressGenerator,
+  'cuba-address-generator': CubaAddressGenerator,
+  'dominica-address-generator': DominicaAddressGenerator,
+  'dominican-republic-address-generator': DominicanRepublicAddressGenerator,
+  'ecuador-address-generator': EcuadorAddressGenerator,
+  'el-salvador-address-generator': ElSalvadorAddressGenerator,
+  'grenada-address-generator': GrenadaAddressGenerator,
+  'guatemala-address-generator': GuatemalaAddressGenerator,
+  'guyana-address-generator': GuyanaAddressGenerator,
+  'haiti-address-generator': HaitiAddressGenerator,
+  'honduras-address-generator': HondurasAddressGenerator,
+  'jamaica-address-generator': JamaicaAddressGenerator,
+  'nicaragua-address-generator': NicaraguaAddressGenerator,
+  'panama-address-generator': PanamaAddressGenerator,
+  'paraguay-address-generator': ParaguayAddressGenerator,
+  'peru-address-generator': PeruAddressGenerator,
+  'saint-kitts-and-nevis-address-generator': SaintKittsAndNevisAddressGenerator,
+  'saint-lucia-address-generator': SaintLuciaAddressGenerator,
+  'saint-vincent-and-the-grenadines-address-generator': SaintVincentAndTheGrenadinesAddressGenerator,
+  'suriname-address-generator': SurinameAddressGenerator,
+  'trinidad-and-tobago-address-generator': TrinidadAndTobagoAddressGenerator,
+  'uruguay-address-generator': UruguayAddressGenerator,
+  'venezuela-address-generator': VenezuelaAddressGenerator,
+  'algeria-address-generator': AlgeriaAddressGenerator,
+  'angola-address-generator': AngolaAddressGenerator,
+  'benin-address-generator': BeninAddressGenerator,
+  'botswana-address-generator': BotswanaAddressGenerator,
+  'burkina-faso-address-generator': BurkinaFasoAddressGenerator,
+  'burundi-address-generator': BurundiAddressGenerator,
+  'cabo-verde-address-generator': CaboVerdeAddressGenerator,
+  'cameroon-address-generator': CameroonAddressGenerator,
+  'central-african-republic-address-generator': CentralAfricanRepublicAddressGenerator,
+  'chad-address-generator': ChadAddressGenerator,
+  'comoros-address-generator': ComorosAddressGenerator,
+  'republic-of-the-congo-address-generator': RepublicOfTheCongoAddressGenerator,
+  'democratic-republic-of-the-congo-address-generator': DemocraticRepublicOfTheCongoAddressGenerator,
+  'djibouti-address-generator': DjiboutiAddressGenerator,
+  'egypt-address-generator': EgyptAddressGenerator,
+  'equatorial-guinea-address-generator': EquatorialGuineaAddressGenerator,
+  'eritrea-address-generator': EritreaAddressGenerator,
+  'eswatini-address-generator': EswatiniAddressGenerator,
+  'ethiopia-address-generator': EthiopiaAddressGenerator,
+  'gabon-address-generator': GabonAddressGenerator,
+  'gambia-address-generator': GambiaAddressGenerator,
+  'ghana-address-generator': GhanaAddressGenerator,
+  'guinea-address-generator': GuineaAddressGenerator,
+  'guinea-bissau-address-generator': GuineaBissauAddressGenerator,
+  'cote-d-ivoire-address-generator': CoteDIvoireAddressGenerator,
+  'kenya-address-generator': KenyaAddressGenerator,
+  'lesotho-address-generator': LesothoAddressGenerator,
+  'liberia-address-generator': LiberiaAddressGenerator,
+  'libya-address-generator': LibyaAddressGenerator,
+  'madagascar-address-generator': MadagascarAddressGenerator,
+  'malawi-address-generator': MalawiAddressGenerator,
+  'mali-address-generator': MaliAddressGenerator,
+  'mauritania-address-generator': MauritaniaAddressGenerator,
+  'mauritius-address-generator': MauritiusAddressGenerator,
+  'morocco-address-generator': MoroccoAddressGenerator,
+  'mozambique-address-generator': MozambiqueAddressGenerator,
+  'namibia-address-generator': NamibiaAddressGenerator,
+  'niger-address-generator': NigerAddressGenerator,
+  'rwanda-address-generator': RwandaAddressGenerator,
+  'sao-tome-and-principe-address-generator': SaoTomeAndPrincipeAddressGenerator,
+  'senegal-address-generator': SenegalAddressGenerator,
+  'seychelles-address-generator': SeychellesAddressGenerator,
+  'sierra-leone-address-generator': SierraLeoneAddressGenerator,
+  'somalia-address-generator': SomaliaAddressGenerator,
+  'south-africa-address-generator': SouthAfricaAddressGenerator,
+  'south-sudan-address-generator': SouthSudanAddressGenerator,
+  'sudan-address-generator': SudanAddressGenerator,
+  'tanzania-address-generator': TanzaniaAddressGenerator,
+  'togo-address-generator': TogoAddressGenerator,
+  'tunisia-address-generator': TunisiaAddressGenerator,
+  'uganda-address-generator': UgandaAddressGenerator,
+  'zambia-address-generator': ZambiaAddressGenerator,
+  'zimbabwe-address-generator': ZimbabweAddressGenerator,
+  'fiji-address-generator': FijiAddressGenerator,
+  'kiribati-address-generator': KiribatiAddressGenerator,
+  'marshall-islands-address-generator': MarshallIslandsAddressGenerator,
+  'micronesia-address-generator': MicronesiaAddressGenerator,
+  'nauru-address-generator': NauruAddressGenerator,
+  'new-zealand-address-generator': NewZealandAddressGenerator,
+  'palau-address-generator': PalauAddressGenerator,
+  'papua-new-guinea-address-generator': PapuaNewGuineaAddressGenerator,
+  'samoa-address-generator': SamoaAddressGenerator,
+  'solomon-islands-address-generator': SolomonIslandsAddressGenerator,
+  'tonga-address-generator': TongaAddressGenerator,
+  'tuvalu-address-generator': TuvaluAddressGenerator,
+  'vanuatu-address-generator': VanuatuAddressGenerator,
+  'kosovo-address-generator': KosovoAddressGenerator,
   'turkey-address-generator': TurkeyAddressGenerator,
   'france-address-generator': FranceAddressGenerator,
   'finland-address-generator': FinlandAddressGenerator,
