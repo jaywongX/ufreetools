@@ -1,7 +1,7 @@
 export default {
     title: '線上PDF壓縮器：智慧分級壓縮與影像優化全攻略',
     functionTitle: '線上PDF壓縮器如何幫助你快速優化文件？',
-    intro: '<div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4"><p><img src="/public/images/pdf-compressor-logo.png" alt="線上PDF壓縮器工具Logo" class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4" loading="lazy" /><strong>線上PDF壓縮器</strong>透過純前端技術即時處理PDF檔案，結合分級壓縮預設、圖片品質滑桿、解析度控制與色彩模式切換，實現隱私安全的文件瘦身。線上PDF壓縮器可在保持閱讀體驗的前提下顯著降低檔案大小，解決郵箱附件超限、企業歸檔佔用空間、網站上傳速度慢等痛點，同時線上PDF壓縮器不會上傳任何資料到伺服器，確保敏感資料安全。</p></div>',
+    intro: '<div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4"><p><img src="/images/pdf-compressor-logo-thumb.jpg" alt="線上PDF壓縮器工具Logo" class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4" loading="lazy" decoding="async" /><strong>線上PDF壓縮器</strong>透過純前端技術即時處理PDF檔案，結合分級壓縮預設、圖片品質滑桿、解析度控制與色彩模式切換，實現隱私安全的文件瘦身。線上PDF壓縮器可在保持閱讀體驗的前提下顯著降低檔案大小，解決郵箱附件超限、企業歸檔佔用空間、網站上傳速度慢等痛點，同時線上PDF壓縮器不會上傳任何資料到伺服器，確保敏感資料安全。</p></div>',
     useCasesTitle: '線上PDF壓縮器的典型應用場景',
     useCase1: '<strong>企業報告歸檔：</strong>線上PDF壓縮器幫助企業將年度報告、財務報表在不損失關鍵資訊的情況下壓縮至合適體積，方便歸檔與共享。',
     useCase2: '<strong>高校作業提交：</strong>線上PDF壓縮器可壓縮含多圖的論文、實驗報告，滿足教學平台對檔案大小的限制。',

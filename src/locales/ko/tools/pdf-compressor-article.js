@@ -1,7 +1,7 @@
 export default {
     title: '온라인 PDF 압축기: 지능형 단계 압축과 이미지 최적화 완벽 가이드',
     functionTitle: '온라인 PDF 압축기가 문서 최적화를 빠르게 도와주는 방법은?',
-    intro: '<div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4"><p><img src="/public/images/pdf-compressor-logo.png" alt="온라인 PDF 압축기 도구 로고" class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4" loading="lazy" /><strong>온라인 PDF 압축기</strong>는 순수 프론트엔드 기술을 통해 PDF 파일을 즉시 처리하며, 단계별 압축 사전설정, 이미지 품질 슬라이더, 해상도 제어 및 색상 모드 전환을 결합하여 개인정보 보안 문서 축소를 실현합니다. 온라인 PDF 압축기는 읽기 경험을 유지하면서 파일 크기를 현저히 줄이고, 이메일 첨부파일 제한, 기업 아카이브 공간 점유, 웹사이트 업로드 속도 저하 등의 문제를 해결하며, 어떠한 데이터도 서버에 업로드하지 않아 민감한 문서의 보안을 보장합니다.</p></div>',
+    intro: '<div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4"><p><img src="/images/pdf-compressor-logo-thumb.jpg" alt="온라인 PDF 압축기 도구 로고" class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4" loading="lazy" decoding="async" /><strong>온라인 PDF 압축기</strong>는 순수 프론트엔드 기술을 통해 PDF 파일을 즉시 처리하며, 단계별 압축 사전설정, 이미지 품질 슬라이더, 해상도 제어 및 색상 모드 전환을 결합하여 개인정보 보안 문서 축소를 실현합니다. 온라인 PDF 압축기는 읽기 경험을 유지하면서 파일 크기를 현저히 줄이고, 이메일 첨부파일 제한, 기업 아카이브 공간 점유, 웹사이트 업로드 속도 저하 등의 문제를 해결하며, 어떠한 데이터도 서버에 업로드하지 않아 민감한 문서의 보안을 보장합니다.</p></div>',
     useCasesTitle: '온라인 PDF 압축기의 전형적인 응용 시나리오',
     useCase1: '<strong>기업 보고서 아카이빙:</strong> 온라인 PDF 압축기는 기업이 연간 보고서와 재무제표를 중요한 정보 손실 없이 적절한 크기로 압축하여 아카이빙과 공유를 용이하게 합니다.',
     useCase2: '<strong>대학 과제 제출:</strong> 온라인 PDF 압축기는 다수의 이미지가 포함된 논문과 실험 보고서를 압축하여 교육 플랫폼의 파일 크기 제한을 충족시킵니다.',

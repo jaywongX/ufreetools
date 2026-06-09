@@ -25,9 +25,9 @@
                     <h4 class="font-bold text-blue-700 dark:text-blue-300">{{
                         $t('tools.csv-to-excel-converter.article.tipTitle') }}</h4>
                     <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <img src="/public/images/csv-to-excel-converter-logo.png"
+                        <img src="/images/csv-to-excel-converter-logo-thumb.jpg"
                             :alt="$t('tools.csv-to-excel-converter.article.logoAlt')" class="w-full rounded border"
-                            loading="lazy" />
+                            loading="lazy" decoding="async" />
                     </div>
                 </div>
 

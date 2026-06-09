@@ -18,9 +18,9 @@
                 </ul>
 
                 <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500 mt-6 ">
-                    <img src="/public/images/seven-parameter-transformer-logo.png"
+                    <img src="/images/seven-parameter-transformer-logo-thumb.jpg"
                         :alt="$t('tools.seven-parameter-transformer.article.logoAlt')"
-                        class="w-full rounded border" loading="lazy" />
+                        class="w-full rounded border" loading="lazy" decoding="async" />
                     <div v-html="$t('tools.seven-parameter-transformer.article.tipContent')"></div>
                 </div>
 

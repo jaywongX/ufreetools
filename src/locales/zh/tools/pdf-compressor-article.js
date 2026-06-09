@@ -1,7 +1,7 @@
 export default {
     title: '在线PDF压缩器：智能分级压缩与图像优化全攻略',
     functionTitle: '在线PDF压缩器如何帮助你快速优化文档？',
-    intro: '<div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4"><p><img src="/public/images/pdf-compressor-logo.png" alt="在线PDF压缩器工具Logo" class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4" loading="lazy" /><strong>在线PDF压缩器</strong>通过纯前端技术即时处理PDF文件，结合分级压缩预设、图片质量滑块、分辨率控制与色彩模式切换，实现隐私安全的文档瘦身。在线PDF压缩器可在保持阅读体验的前提下显著降低文件大小，解决邮箱附件超限、企业归档占用空间、网站上传速度慢等痛点，同时在线PDF压缩器不会上传任何数据到服务器，确保敏感资料安全。</p></div>',
+    intro: '<div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4"><p><img src="/images/pdf-compressor-logo-thumb.jpg" alt="在线PDF压缩器工具Logo" class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4" loading="lazy" decoding="async" /><strong>在线PDF压缩器</strong>通过纯前端技术即时处理PDF文件，结合分级压缩预设、图片质量滑块、分辨率控制与色彩模式切换，实现隐私安全的文档瘦身。在线PDF压缩器可在保持阅读体验的前提下显著降低文件大小，解决邮箱附件超限、企业归档占用空间、网站上传速度慢等痛点，同时在线PDF压缩器不会上传任何数据到服务器，确保敏感资料安全。</p></div>',
     useCasesTitle: '在线PDF压缩器的典型应用场景',
     useCase1: '<strong>企业报告归档：</strong>在线PDF压缩器帮助企业将年度报告、财务报表在不损失关键信息的情况下压缩至合适体积，方便归档与共享。',
     useCase2: '<strong>高校作业提交：</strong>在线PDF压缩器可压缩含多图的论文、实验报告，满足教学平台对文件大小的限制。',

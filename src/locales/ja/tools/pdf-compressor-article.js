@@ -1,7 +1,7 @@
 export default {
     title: 'オンラインPDF圧縮ツール：インテリジェント段階圧縮と画像最適化の完全ガイド',
     functionTitle: 'オンラインPDF圧縮ツールはドキュメントの迅速な最適化にどのように役立ちますか？',
-    intro: '<div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4"><p><img src="/public/images/pdf-compressor-logo.png" alt="オンラインPDF圧縮ツールロゴ" class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4" loading="lazy" /><strong>オンラインPDF圧縮ツール</strong>は純粋なフロントエンド技術でPDFファイルを即座に処理し、段階的圧縮プリセット、画像品質スライダー、解像度コントロール、カラーモード切替を組み合わせて、プライバシー保護の文書スリム化を実現します。オンラインPDF圧縮ツールは読書体験を維持しながらファイルサイズを大幅に削減し、メール添付ファイルの制限、企業アーカイブの容量占有、ウェブサイトアップロードの遅さなどの課題を解決し、サーバーへのデータアップロードを行わず、機密文書の安全性を確保します。</p></div>',
+    intro: '<div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4"><p><img src="/images/pdf-compressor-logo-thumb.jpg" alt="オンラインPDF圧縮ツールロゴ" class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4" loading="lazy" decoding="async" /><strong>オンラインPDF圧縮ツール</strong>は純粋なフロントエンド技術でPDFファイルを即座に処理し、段階的圧縮プリセット、画像品質スライダー、解像度コントロール、カラーモード切替を組み合わせて、プライバシー保護の文書スリム化を実現します。オンラインPDF圧縮ツールは読書体験を維持しながらファイルサイズを大幅に削減し、メール添付ファイルの制限、企業アーカイブの容量占有、ウェブサイトアップロードの遅さなどの課題を解決し、サーバーへのデータアップロードを行わず、機密文書の安全性を確保します。</p></div>',
     useCasesTitle: 'オンラインPDF圧縮ツールの典型的な応用シーン',
     useCase1: '<strong>企業レポートアーカイブ：</strong>オンラインPDF圧縮ツールは企業が年次報告書や財務諸表を重要な情報を失うことなく適切なサイズに圧縮し、アーカイブと共有を容易にします。',
     useCase2: '<strong>大学課題提出：</strong>オンラインPDF圧縮ツールは画像を多く含む論文や実験報告書を圧縮し、教育プラットフォームのファイルサイズ制限を満たします。',

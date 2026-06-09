@@ -5,7 +5,7 @@
 
             <!-- 产品页图片（1:1） -->
             <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <img src="/public/images/hk-address-generator-logo.png" class="w-full rounded border" />
+                <img src="/images/hk-address-generator-logo-thumb.jpg" class="w-full rounded border" loading="lazy" decoding="async" />
             </div>
 
             <section class="mb-10">

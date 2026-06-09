@@ -5,7 +5,12 @@
 
       <!-- 产品页图片 -->
       <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src="/public/images/pdf-encrypt-cover.png" class="w-full rounded border" />
+        <img
+          src="/images/pdf-encrypt-cover-thumb.jpg"
+          class="w-full rounded border"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
 
       <!-- 工具功能介绍应用场景 -->

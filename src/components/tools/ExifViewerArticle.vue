@@ -5,7 +5,13 @@
             <h2 class="text-3xl font-bold mb-6">{{ $t('tools.exif-viewer.article.title') }}</h2>
             <!-- 产品图片 -->
             <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <img src="/public/images/exif-viewer-logo.png" :alt="$t('tools.exif-viewer.article.imageAlt')" class="w-full rounded border" />
+                <img
+                    src="/images/exif-viewer-logo-thumb.jpg"
+                    :alt="$t('tools.exif-viewer.article.imageAlt')"
+                    class="w-full rounded border"
+                    loading="lazy"
+                    decoding="async"
+                />
             </div>
 
             <!-- 工具功能介绍应用场景 -->

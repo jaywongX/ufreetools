@@ -24,9 +24,9 @@
                     <h4 class="font-bold text-blue-700 dark:text-blue-300">{{
                         $t('tools.excel-to-csv-converter.article.tipTitle') }}</h4>
                     <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <img src="/public/images/excel-to-csv-converter-logo.png"
+                        <img src="/images/excel-to-csv-converter-logo-thumb.jpg"
                             :alt="$t('tools.excel-to-csv-converter.article.logoAlt')"
-                            class="w-full rounded border" loading="lazy" />
+                            class="w-full rounded border" loading="lazy" decoding="async" />
                     </div>
                     <p class="text-blue-600 dark:text-blue-200">{{ $t('tools.excel-to-csv-converter.article.tipContent') }}
                     </p>

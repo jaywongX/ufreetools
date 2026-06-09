@@ -5,8 +5,13 @@
 
             <!-- 产品页图片 -->
             <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <img src="/public/images/pdf-splitter-cover.png" :alt="$t('tools.pdf-splitter.article.coverAlt')"
-                    class="w-full rounded border" />
+                <img
+                    src="/images/pdf-splitter-cover-thumb.jpg"
+                    :alt="$t('tools.pdf-splitter.article.coverAlt')"
+                    class="w-full rounded border"
+                    loading="lazy"
+                    decoding="async"
+                />
             </div>
 
             <!-- 工具功能介绍应用场景 -->
