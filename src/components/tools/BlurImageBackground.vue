@@ -466,7 +466,7 @@ async function importUrl() {
 
 function loadSample() {
   // 使用更适合展示模糊效果的图片
-  fetch('https://www.ufreetools.com/images/profile-sample3.png')
+  fetch('https://www.ufreetools.com/images/profile-sample3.webp')
     .then(r => r.blob())
     .then(b => addInputFromBlob(b, 'sample.png'))
     .catch(() => {

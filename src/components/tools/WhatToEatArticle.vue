@@ -5,7 +5,7 @@
 
             <!-- 产品图片 -->
             <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <img src="/images/what-to-eat-logo.png" :alt="$t('tools.what-to-eat.article.imageAlt')" class="w-full rounded border" />
+                <img src="/images/what-to-eat-logo.webp" :alt="$t('tools.what-to-eat.article.imageAlt')" class="w-full rounded border" />
             </div>
 
             <!-- 工具功能介绍与应用场景 -->

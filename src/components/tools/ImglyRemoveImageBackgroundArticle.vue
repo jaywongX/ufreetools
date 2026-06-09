@@ -13,11 +13,11 @@
         <!-- 对比图容器 -->
         <div class="image-comparison-container mb-4">
           <div class="image-wrapper original">
-            <img src="/images/landing-illustration-dark.png" alt="Original Image" class="comparison-img" />
+            <img src="/images/landing-illustration-dark.webp" alt="Original Image" class="comparison-img" />
             <div class="label">{{ $t('tools.imgly-remove-image-background.article.originalImageLabel') }}</div>
           </div>
           <div class="image-wrapper result">
-            <img src="/images/landing-illustration-dark_no_bg.png" alt="Image with Background Removed" class="comparison-img" />
+            <img src="/images/landing-illustration-dark_no_bg.webp" alt="Image with Background Removed" class="comparison-img" />
             <div class="label">{{ $t('tools.imgly-remove-image-background.article.resultImageLabel') }}</div>
           </div>
         </div>

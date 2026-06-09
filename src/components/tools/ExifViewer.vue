@@ -363,9 +363,9 @@ onMounted(async () => {
 // 示例图片
 const sampleImages = [
     {
-        name: 'sample-exif.jpeg',
-        url: '/images/sample-exif.jpeg',
-        fallbackUrl: 'https://www.ufreetools.com/images/sample-exif.jpeg'
+        name: 'sample-exif.webp',
+        url: '/images/sample-exif.webp',
+        fallbackUrl: 'https://www.ufreetools.com/images/sample-exif.webp'
     }
 ]
 

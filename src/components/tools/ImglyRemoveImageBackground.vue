@@ -319,7 +319,7 @@ const createPreview = (file) => {
 // 加载示例图片
 const loadExampleImage = async () => {
   try {
-    const response = await fetch('/images/landing-illustration-dark.png');
+    const response = await fetch('/images/landing-illustration-dark.webp');
     const blob = await response.blob();
     const file = new File([blob], 'landing-illustration-dark.png', { type: blob.type });
     const preview = await createPreview(file);

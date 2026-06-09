@@ -13,7 +13,7 @@
                 <p v-html="$t('tools.reduce-image-size-in-kb-mb.article.intro')"></p>
 
                 <div class="my-6">
-                    <img src="/images/reduce-image-size-in-kb-mb.png" alt="Image Size Reducer Tool"
+                    <img src="/images/reduce-image-size-in-kb-mb.webp" alt="Image Size Reducer Tool"
                         class="rounded-lg shadow-md w-full max-w-2xl mx-auto" />
                 </div>
 

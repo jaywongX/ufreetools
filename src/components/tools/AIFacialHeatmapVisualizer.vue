@@ -366,14 +366,14 @@ const getHeatmapColors = () => {
 // 示例图片
 const sampleImages = [
     {
-        name: 'ai-facial-heatmap-visualizer-sample-face-1.png',
-        url: '/images/ai-facial-heatmap-visualizer-sample-face-1.png',
-        fallbackUrl: 'https://www.ufreetools.com/images/ai-facial-heatmap-visualizer-sample-face-1.png'
+        name: 'ai-facial-heatmap-visualizer-sample-face-1.webp',
+        url: '/images/ai-facial-heatmap-visualizer-sample-face-1.webp',
+        fallbackUrl: 'https://www.ufreetools.com/images/ai-facial-heatmap-visualizer-sample-face-1.webp'
     },
     {
-        name: 'ai-facial-heatmap-visualizer-sample-face-2.png',
-        url: '/images/ai-facial-heatmap-visualizer-sample-face-2.png',
-        fallbackUrl: 'https://www.ufreetools.com/images/ai-facial-heatmap-visualizer-sample-face-2.png'
+        name: 'ai-facial-heatmap-visualizer-sample-face-2.webp',
+        url: '/images/ai-facial-heatmap-visualizer-sample-face-2.webp',
+        fallbackUrl: 'https://www.ufreetools.com/images/ai-facial-heatmap-visualizer-sample-face-2.webp'
     }
 ]
 

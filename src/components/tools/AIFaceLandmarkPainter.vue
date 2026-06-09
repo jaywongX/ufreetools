@@ -330,9 +330,9 @@ const lineWidth = ref(2)
 // 示例图片
 const sampleImages = [
     {
-        name: 'face-landmark-sample.png',
-        url: '/images/face-landmark-sample.png',
-        fallbackUrl: 'https://www.ufreetools.com/images/face-landmark-sample.png'
+        name: 'face-landmark-sample.webp',
+        url: '/images/face-landmark-sample.webp',
+        fallbackUrl: 'https://www.ufreetools.com/images/face-landmark-sample.webp'
     }
 ]
 

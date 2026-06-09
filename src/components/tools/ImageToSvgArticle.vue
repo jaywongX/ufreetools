@@ -6,7 +6,7 @@
             <!-- 产品页图片（1:1） -->
       <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <img
-                    src="/images/image-to-svg-online-logo-thumb.jpg"
+                    src="/images/image-to-svg-online-logo-thumb.webp"
                     :alt="$t('tools.image-to-svg.article.logoAlt')"
                     class="w-full rounded border"
                     loading="lazy"

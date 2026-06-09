@@ -326,9 +326,9 @@ const cornerPresets = computed(() => [
 // 示例图片
 const sampleImages = [
     {
-        name: 'round-corners-image-sample-1.png',
-        url: '/images/round-corners-image-sample-1.png',
-        fallbackUrl: 'https://www.ufreetools.com/images/round-corners-image-sample-1.png'
+        name: 'round-corners-image-sample-1.webp',
+        url: '/images/round-corners-image-sample-1.webp',
+        fallbackUrl: 'https://www.ufreetools.com/images/round-corners-image-sample-1.webp'
     }
 ]
 

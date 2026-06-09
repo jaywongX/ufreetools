@@ -6,7 +6,7 @@
             <!-- 产品图片 -->
             <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <img
-                    src="/images/exif-remover-logo-thumb.jpg"
+                    src="/images/exif-remover-logo-thumb.webp"
                     :alt="$t('tools.exif-remover.article.imageAlt')"
                     class="w-full rounded border"
                     loading="lazy"

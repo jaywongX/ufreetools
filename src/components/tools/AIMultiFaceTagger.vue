@@ -299,9 +299,9 @@ const transformStates = reactive([])
 // Sample images
 const sampleImages = [
     {
-        name: 'profile-sample3.png',
-        url: '/images/profile-sample3.png',
-        fallbackUrl: 'https://www.ufreetools.com/images/profile-sample3.png'
+        name: 'profile-sample3.webp',
+        url: '/images/profile-sample3.webp',
+        fallbackUrl: 'https://www.ufreetools.com/images/profile-sample3.webp'
     }
 ]
 

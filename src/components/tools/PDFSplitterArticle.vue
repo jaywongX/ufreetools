@@ -6,7 +6,7 @@
             <!-- 产品页图片 -->
             <div class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <img
-                    src="/images/pdf-splitter-cover-thumb.jpg"
+                    src="/images/pdf-splitter-cover-thumb.webp"
                     :alt="$t('tools.pdf-splitter.article.coverAlt')"
                     class="w-full rounded border"
                     loading="lazy"

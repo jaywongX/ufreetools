@@ -319,14 +319,14 @@ const transformState = reactive({
 // Sample images
 const sampleImages = [
     {
-        name: 'ai-face-morph-blend-sample-1.png',
-        url: '/images/ai-face-morph-blend-sample-1.png',
-        fallbackUrl: 'https://www.ufreetools.com/images/ai-face-morph-blend-sample-1.png'
+        name: 'ai-face-morph-blend-sample-1.webp',
+        url: '/images/ai-face-morph-blend-sample-1.webp',
+        fallbackUrl: 'https://www.ufreetools.com/images/ai-face-morph-blend-sample-1.webp'
     },
     {
-        name: 'ai-face-morph-blend-sample-2.png',
-        url: '/images/ai-face-morph-blend-sample-2.png',
-        fallbackUrl: 'https://www.ufreetools.com/images/ai-face-morph-blend-sample-2.png'
+        name: 'ai-face-morph-blend-sample-2.webp',
+        url: '/images/ai-face-morph-blend-sample-2.webp',
+        fallbackUrl: 'https://www.ufreetools.com/images/ai-face-morph-blend-sample-2.webp'
     }
 ]
 

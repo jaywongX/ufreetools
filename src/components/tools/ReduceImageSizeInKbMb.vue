@@ -890,7 +890,7 @@ const calculateReduction = (originalSize, newSize) => {
 const loadExampleImage = async () => {
   try {
     // 使用示例图片
-    const exampleImageUrl = '/images/reduce-image-size-in-kb-mb.png';
+    const exampleImageUrl = '/images/reduce-image-size-in-kb-mb.webp';
     const response = await fetch(exampleImageUrl);
     const blob = await response.blob();
     const file = new File([blob], 'example.png', { type: 'image/png' });

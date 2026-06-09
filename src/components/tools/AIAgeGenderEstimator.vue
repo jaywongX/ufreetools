@@ -313,14 +313,14 @@ const transformStates = reactive([])
 // 修改示例图片部分
 const sampleImages = [
     {
-        name: 'sample-portrait.png',
-        url: '/images/sample-portrait.png',
-        fallbackUrl: 'https://www.ufreetools.com/images/sample-portrait.png'
+        name: 'sample-portrait.webp',
+        url: '/images/sample-portrait.webp',
+        fallbackUrl: 'https://www.ufreetools.com/images/sample-portrait.webp'
     },
     {
-        name: 'sample-portrait2.png',
-        url: '/images/sample-portrait2.png',
-        fallbackUrl: 'https://www.ufreetools.com/images/sample-portrait2.png'
+        name: 'sample-portrait2.webp',
+        url: '/images/sample-portrait2.webp',
+        fallbackUrl: 'https://www.ufreetools.com/images/sample-portrait2.webp'
     }
 ]
 

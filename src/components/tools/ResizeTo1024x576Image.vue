@@ -340,7 +340,7 @@ const resizeImage = (file) => {
 const loadExampleImage = async () => {
   try {
     // 使用简单的示例图片数据
-    const exampleImageBlob = await fetch('/images/resize-to-1024x576-image.png').then(r => r.blob());
+    const exampleImageBlob = await fetch('/images/resize-to-1024x576-image.webp').then(r => r.blob());
     const file = new File([exampleImageBlob], 'resize-to-1024x576-image.png', { type: 'image/jpeg' });
     handleFiles([file]);
   } catch (error) {
