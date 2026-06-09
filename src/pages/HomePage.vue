@@ -42,19 +42,43 @@
                   <!-- Chrome -->
                   <a href="https://chromewebstore.google.com/detail/ufreetools/helippppkokcmlcngkegfmdmodlihjid"
                     target="_blank" rel="noopener" class="browser-ext-btn">
-                    <img src="/chrome-96x96.webp" sizes="32x32" alt="Chrome Browser Plugin" class="browser-ext-icon" />
+                    <img
+                      src="/chrome-96x96.webp"
+                      width="96"
+                      height="96"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Chrome Browser Plugin"
+                      class="browser-ext-icon"
+                    />
                     <span>{{ $t('common.addToChrome') }}</span>
                   </a>
                   <!-- Firefox -->
                   <a href="https://addons.mozilla.org/firefox/addon/ufreetools/" target="_blank" rel="noopener"
                     class="browser-ext-btn">
-                    <img src="/Firefox_logo,_2019.webp"  sizes="32x32"alt="Firefox Browser Plugin" class="browser-ext-icon" />
+                    <img
+                      src="/Firefox_logo,_2019.webp"
+                      width="96"
+                      height="90"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Firefox Browser Plugin"
+                      class="browser-ext-icon"
+                    />
                     <span>{{ $t('common.addToFireFox') }}</span>
                   </a>
                   <!-- Edge -->
                   <a href="https://microsoftedge.microsoft.com/addons/detail/ufreetools/bnacfmkhnhbpgkjkgkndoiakkpceigfb"
                     target="_blank" rel="noopener" class="browser-ext-btn">
-                    <img src="/Microsoft_Edge_logo_(2019).webp"  sizes="32x32"alt="Edge Browser Plugin" class="browser-ext-icon" />
+                    <img
+                      src="/Microsoft_Edge_logo_(2019).webp"
+                      width="96"
+                      height="96"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Edge Browser Plugin"
+                      class="browser-ext-icon"
+                    />
                     <span>{{ $t('common.addToEdge') }}</span>
                   </a>
                 </div>
@@ -64,7 +88,15 @@
 
           <!-- 右侧插图 -->
           <div class="w-full md:w-1/2 mt-8 md:mt-0">
-            <img src="/landing-illustration.webp" alt="Landing Page Illustration" class="w-full h-auto" />
+            <img
+              src="/landing-illustration.webp"
+              width="595"
+              height="478"
+              fetchpriority="high"
+              decoding="async"
+              alt="Landing Page Illustration"
+              class="w-full h-auto"
+            />
           </div>
 
         </div>
@@ -382,6 +414,7 @@
 
 <script setup>
 import { ref, inject, computed, onMounted, watch, onUpdated } from 'vue'
+import { useHead } from '@vueuse/head'
 import { useRoute, useRouter } from 'vue-router'
 import TagBadge from '../components/ui/TagBadge.vue'
 import ToolCard from '../components/ui/ToolCard.vue'
@@ -396,6 +429,18 @@ const route = useRoute()
 const router = useRouter()
 const { t } = useI18n()
 const { localizedRoute } = useInternationalizedRoute()
+
+useHead({
+  link: [
+    {
+      rel: 'preload',
+      as: 'image',
+      href: '/landing-illustration.webp',
+      type: 'image/webp',
+      fetchpriority: 'high'
+    }
+  ]
+})
 
 // 搜索功能
 const searchQuery = ref('')
