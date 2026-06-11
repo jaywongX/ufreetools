@@ -38,17 +38,65 @@ export default defineConfig({
     },
   },
   build: {
+    minify: 'esbuild', // 使用 esbuild，比 terser 快很多且内存占用少
+    target: 'es2015',
+    cssCodeSplit: true,
     commonjsOptions: {
       transformMixedEsModules: true,
     },
     rollupOptions: {
       // 提供这些依赖的浏览器版本
       output: {
-        manualChunks: {
-          vendor: ['buffer', 'process'],
+        chunkSizeWarningLimit: 500,
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            // Vue 核心生态
+            if (id.includes('vue') || id.includes('pinia') || id.includes('@vueuse')) {
+              return 'vendor-vue';
+            }
+            // AI/ML 相关库 (通常很大)
+            if (id.includes('@tensorflow') || id.includes('face-api') || id.includes('@mediapipe') || id.includes('@imgly/background-removal')) {
+              return 'vendor-ai';
+            }
+            // 图像处理库 - jimp 依赖保持在一起
+            if (id.includes('jimp') || id.includes('@jimp')) {
+              return 'vendor-jimp';
+            }
+            if (id.includes('fabric') || id.includes('pica') || id.includes('cropperjs') || id.includes('gif') || id.includes('html2canvas')) {
+              return 'vendor-image';
+            }
+            // PDF 处理库
+            if (id.includes('pdf-lib') || id.includes('pdfjs-dist') || id.includes('qpdf')) {
+              return 'vendor-pdf';
+            }
+            // 加密和安全库
+            if (id.includes('crypto-js') || id.includes('node-forge') || id.includes('jose') || id.includes('jsencrypt') || id.includes('sm-crypto')) {
+              return 'vendor-crypto';
+            }
+            // 图表和可视化
+            if (id.includes('chart.js') || id.includes('echarts') || id.includes('mermaid')) {
+              return 'vendor-charts';
+            }
+            // 地图相关
+            if (id.includes('leaflet') || id.includes('mapbox') || id.includes('@turf') || id.includes('proj4')) {
+              return 'vendor-maps';
+            }
+            // 编辑器
+            if (id.includes('monaco-editor') || id.includes('markdown-it') || id.includes('marked')) {
+              return 'vendor-editor';
+            }
+            // 大型库单独分离，其他保持默认
+            if (id.includes('three')) {
+              return 'vendor-three';
+            }
+          }
         },
       },
     },
+  },
+  esbuild: {
+    drop: ['console', 'debugger'],
+    legalComments: 'none'
   },
   test: {
     setupFiles: ['./tests/setup.js', './tests/componentTestSetup.js'],
