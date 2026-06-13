@@ -43,7 +43,7 @@
             <p>{{ $t('common.scanToSupport') || '扫描下面的二维码进行赞赏' }}</p>
             <div class="qr-code-wrapper">
               <!-- 这里可以替换为实际的微信赞赏码图片 -->
-              <img src="/wechat-donate.jpg" alt="WeChat Donation QR Code" class="qr-image" width="300" height="300" />
+              <img src="/wechat-donate.jpg" alt="WeChat Donation QR Code" class="qr-image" width="300" height="300" loading="lazy" />
             </div>
             <p class="text-sm text-gray-500 mt-2">{{ $t('common.thankYouForSupport') || '感谢您的支持！' }}</p>
           </div>
