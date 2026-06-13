@@ -45,6 +45,10 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
     rollupOptions: {
+      treeshake: {
+        preset: 'recommended',
+        moduleSideEffects: false
+      },
       // 提供这些依赖的浏览器版本
       output: {
         chunkSizeWarningLimit: 500,
@@ -96,7 +100,8 @@ export default defineConfig({
   },
   esbuild: {
     drop: ['console', 'debugger'],
-    legalComments: 'none'
+    legalComments: 'none',
+    treeShaking: true
   },
   test: {
     setupFiles: ['./tests/setup.js', './tests/componentTestSetup.js'],
