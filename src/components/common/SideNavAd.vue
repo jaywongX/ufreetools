@@ -84,7 +84,25 @@ const initAd = async () => {
       // 初始化新广告
       setTimeout(() => {
         try {
-          (window.adsbygoogle = window.adsbygoogle || []).push({})
+          const newAdElement = adContainer.value.querySelector('.adsbygoogle');
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+          // 监听广告加载完成，添加淡入效果
+          const observer = new MutationObserver(() => {
+            const status = newAdElement.getAttribute('data-ad-status');
+            if (status === 'filled') {
+              adContainer.value.classList.add('ad-loaded');
+              observer.disconnect();
+            } else if (status === 'unfilled') {
+              // 广告加载失败，保持透明
+              observer.disconnect();
+            }
+          });
+
+          observer.observe(newAdElement, {
+            attributes: true,
+            attributeFilter: ['data-ad-status']
+          });
         } catch (error) {
           console.warn('Failed to push ad:', error);
         }
@@ -118,7 +136,21 @@ onMounted(() => {
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  min-height: 90px;
+  /* 为侧边栏广告预留固定空间，防止CLS */
+  min-height: 250px;
+  /* 透明背景，只占位不显示 */
   background-color: transparent;
+  border-radius: 8px;
+  /* 使用 content-visibility 优化渲染 */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 250px;
+  /* 广告加载前透明 */
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+/* 广告加载完成后显示 */
+.ad-container.ad-loaded {
+  opacity: 1;
 }
 </style> 
