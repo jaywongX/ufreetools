@@ -39,4 +39,21 @@ export default {
     conversionError: 'Erro durante o processo de conversão',
     zipCreationError: 'Erro ao criar arquivo ZIP',
     sampleFileName: 'exemplo.pdf'
+,
+    pdfType: 'PDF Type',
+    pdfTypes: {
+        text: 'Text-based',
+        scanned: 'Scanned',
+        mixed: 'Mixed'
+    },
+    conversionMode: 'Conversion Mode',
+    modes: {
+        editable: 'Editable First',
+        layout: 'Layout First',
+        ocr: 'OCR Recognition'
+    },
+    recommendedMode: 'Recommended',
+    detecting: 'Detecting...',
+    processingPage: 'Processing page',
+    totalProgress: 'Total Progress'
 };

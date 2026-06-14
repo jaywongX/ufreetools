@@ -38,5 +38,21 @@ export default {
     processingError: '处理 PDF 文件时出错',
     conversionError: '转换过程中出错',
     zipCreationError: '创建 ZIP 文件时出错',
-    sampleFileName: 'sample.pdf'
+    sampleFileName: 'sample.pdf',
+    pdfType: 'PDF 类型',
+    pdfTypes: {
+        text: '文本型',
+        scanned: '扫描型',
+        mixed: '混合型'
+    },
+    conversionMode: '转换模式',
+    modes: {
+        editable: '可编辑优先',
+        layout: '版式优先',
+        ocr: 'OCR 识别'
+    },
+    recommendedMode: '推荐模式',
+    detecting: '检测中...',
+    processingPage: '处理页面',
+    totalProgress: '总体进度'
 };

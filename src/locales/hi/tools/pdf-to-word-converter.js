@@ -39,4 +39,21 @@ export default {
     conversionError: 'रूपांतरण प्रक्रिया के दौरान त्रुटि',
     zipCreationError: 'ZIP फाइल बनाने में त्रुटि',
     sampleFileName: 'sample.pdf'
+,
+    pdfType: 'PDF Type',
+    pdfTypes: {
+        text: 'Text-based',
+        scanned: 'Scanned',
+        mixed: 'Mixed'
+    },
+    conversionMode: 'Conversion Mode',
+    modes: {
+        editable: 'Editable First',
+        layout: 'Layout First',
+        ocr: 'OCR Recognition'
+    },
+    recommendedMode: 'Recommended',
+    detecting: 'Detecting...',
+    processingPage: 'Processing page',
+    totalProgress: 'Total Progress'
 };
