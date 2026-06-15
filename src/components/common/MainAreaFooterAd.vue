@@ -161,18 +161,20 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* 广告加载前透明 */
-  opacity: 0;
+  /* 广告加载前隐藏但保留空间 */
+  visibility: hidden;
   transition: opacity 0.3s ease-in;
 }
 
 /* 广告加载完成后显示 */
 .ad-item :deep(.adsbygoogle[data-ad-status="filled"]) {
+  visibility: visible;
   opacity: 1;
 }
 
 /* 或者使用 JavaScript 添加 class 后显示 */
 .ad-item.ad-loaded {
+  visibility: visible;
   opacity: 1;
 }
 
