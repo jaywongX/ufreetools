@@ -39,4 +39,21 @@ export default {
     conversionError: '轉換過程中出錯',
     zipCreationError: '創建 ZIP 文件時出錯',
     sampleFileName: 'sample.pdf'
+,
+    pdfType: 'PDF Type',
+    pdfTypes: {
+        text: 'Text-based',
+        scanned: 'Scanned',
+        mixed: 'Mixed'
+    },
+    conversionMode: 'Conversion Mode',
+    modes: {
+        editable: 'Editable First',
+        layout: 'Layout First',
+        ocr: 'OCR Recognition'
+    },
+    recommendedMode: 'Recommended',
+    detecting: 'Detecting...',
+    processingPage: 'Processing page',
+    totalProgress: 'Total Progress'
 };

@@ -39,4 +39,21 @@ export default {
     conversionError: 'Kesalahan selama proses konversi',
     zipCreationError: 'Kesalahan saat membuat file ZIP',
     sampleFileName: 'contoh.pdf'
+,
+    pdfType: 'PDF Type',
+    pdfTypes: {
+        text: 'Text-based',
+        scanned: 'Scanned',
+        mixed: 'Mixed'
+    },
+    conversionMode: 'Conversion Mode',
+    modes: {
+        editable: 'Editable First',
+        layout: 'Layout First',
+        ocr: 'OCR Recognition'
+    },
+    recommendedMode: 'Recommended',
+    detecting: 'Detecting...',
+    processingPage: 'Processing page',
+    totalProgress: 'Total Progress'
 };

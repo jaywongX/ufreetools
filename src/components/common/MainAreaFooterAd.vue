@@ -46,45 +46,27 @@ const route = useRoute()
 const initAds = () => {
   try {
     const adElements = adContainer.value.querySelectorAll('.adsbygoogle');
-
+    
     // 清除现有广告
     adElements.forEach(ad => {
       ad.innerHTML = '';
       ad.removeAttribute('data-adsbygoogle-initialized');
       ad.removeAttribute('data-adsbygoogle-status');
     });
-
+    
     // 重新创建广告元素
     recreateAdSlot(adSlot1);
     recreateAdSlot(adSlot2);
     recreateAdSlot(adSlot3);
-
+    
     // 给DOM更新一点时间
     setTimeout(() => {
       // 初始化新广告
       const newAdElements = adContainer.value.querySelectorAll('.adsbygoogle');
-      newAdElements.forEach((ad, index) => {
+      newAdElements.forEach(ad => {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
-
-        // 监听广告加载完成，添加淡入效果
-        const observer = new MutationObserver(() => {
-          const status = ad.getAttribute('data-ad-status');
-          const parentSlot = ad.closest('.ad-item');
-          if (status === 'filled' && parentSlot) {
-            parentSlot.classList.add('ad-loaded');
-            observer.disconnect();
-          } else if (status === 'unfilled' && parentSlot) {
-            // 广告加载失败，保持透明
-            observer.disconnect();
-          }
-        });
-
-        observer.observe(ad, {
-          attributes: true,
-          attributeFilter: ['data-ad-status']
-        });
       });
-
+      
       console.log('Ads reinitialized on route change');
     }, 50);
   } catch (error) {
@@ -136,14 +118,8 @@ onMounted(() => {
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  /* 为广告预留固定空间，防止CLS */
-  min-height: 280px;
-  /* 透明背景，只占位不显示 */
+  min-height: 90px;
   background-color: transparent;
-  border-radius: 8px;
-  /* 使用 content-visibility 优化渲染 */
-  content-visibility: auto;
-  contain-intrinsic-size: auto 280px;
 }
 
 .ad-flex-container {
@@ -151,60 +127,19 @@ onMounted(() => {
   flex-wrap: wrap;
   /* gap: 20px; */
   justify-content: space-between;
-  min-height: 280px;
 }
 
 .ad-item {
   flex: 1;
   min-width: 300px;
   min-height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* 广告加载前透明 */
-  opacity: 0;
-  transition: opacity 0.3s ease-in;
 }
 
-/* 广告加载完成后显示 */
-.ad-item :deep(.adsbygoogle[data-ad-status="filled"]) {
-  opacity: 1;
-}
-
-/* 或者使用 JavaScript 添加 class 后显示 */
-.ad-item.ad-loaded {
-  opacity: 1;
-}
-
-/* 平板设备：2个广告 */
-@media (max-width: 1023px) and (min-width: 769px) {
-  .ad-container {
-    min-height: 180px;
-  }
-
-  .ad-flex-container {
-    min-height: 180px;
-  }
-
-  .ad-item:nth-child(3) {
-    display: none;
-  }
-}
-
-/* 移动设备：1个广告 */
 @media (max-width: 768px) {
-  .ad-container {
-    min-height: 100px;
-  }
-
-  .ad-flex-container {
-    min-height: 100px;
-  }
-
   .ad-item {
     flex: 100%;
   }
-
+  
   .desktop-only {
     display: none;
   }
