@@ -24,8 +24,6 @@ export default defineConfig({
       'process.platform': JSON.stringify('browser'),
       'process.version': JSON.stringify(''),
       'global': 'window',
-      // Buffer polyfill
-      'Buffer': ['buffer', 'Buffer'],
       // 为一些 Node.js 全局变量提供替代值
       'os.EOL': JSON.stringify('\n')
     },

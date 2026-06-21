@@ -407,6 +407,7 @@ import * as sm2 from 'sm-crypto/src/sm2';
 import { sm3 } from 'sm-crypto';
 import forge from 'node-forge';
 import asn1 from 'asn1.js';
+import { Buffer } from 'buffer';
 import Sm2SignatureVerifierArticle from './Sm2SignatureVerifierArticle.vue';
 
 import Toast from '../common/Toast.vue'
