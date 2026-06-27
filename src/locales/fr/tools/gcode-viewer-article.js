@@ -1,0 +1,20 @@
+export default {
+    title: 'Outil Visionneuse GCode : Guide d\'Aperçu d\'Impression 3D',
+    functionTitle: 'Qu\'est-ce que la Visionneuse GCode ?',
+    intro: 'Notre <strong>Visionneuse GCode</strong> est un outil professionnel d\'aperçu d\'impression 3D.',
+    useCasesTitle: 'Cas d\'Utilisation Courants',
+    useCases: ['Prévisualiser les fichiers GCode avant l\'impression', 'Vérifier les paramètres d\'impression', 'Voir le processus couche par couche', 'Visualiser les trajectoires d\'impression', 'Capturer des écrans pour la documentation', 'Voir les fichiers GCode sans logiciel de découpe', 'Prévisualiser plusieurs fichiers GCode', 'Montrer les designs aux clients'],
+    tipTitle: 'Conseil Professionnel :',
+    tipContent: 'Utilisez le bouton gauche pour tourner, le droit pour déplacer et la molette pour zoomer.',
+    conclusion: 'La <strong>Visionneuse GCode</strong> est utile pour les passionnés d\'impression 3D.',
+    faqTitle: 'Questions Fréquentes',
+    faqs: [{ question: 'Quels formats sont supportés ?', answer: 'Le format GCode est supporté.' }, { question: 'Comment tourner et zoomer ?', answer: 'Utilisez la souris pour tourner et zoomer.' }, { question: 'Que affiche le panneau d\'info ?', answer: 'Lignes totales, commandes, taille du fichier.' }, { question: 'Qu\'est-ce que le contrôle des couches ?', answer: 'Permet de voir le chemin couche par couche.' }, { question: 'Puis-je exporter des captures ?', answer: 'Oui, l\'export de captures haute résolution est supporté.' }, { question: 'Le processus est-il sécurisé ?', answer: 'Tout est traité localement dans votre navigateur.' }, { question: 'Quelle taille de fichier est supportée ?', answer: 'Les fichiers GCode de différentes tailles sont supportés.' }],
+    tutorialTitle: 'Tutoriel d\'Utilisation',
+    steps: [{ title: 'Télécharger le fichier GCode', description: 'Cliquez sur la zone ou glissez les fichiers.', note: 'Les fichiers GCode standard sont supportés.' }, { title: 'Voir le Trajet', description: 'Le chemin s\'affiche automatiquement.', note: 'Les lignes vertes indiquent les chemins normaux.' }, { title: 'Voir les Informations', description: 'Consultez les infos dans le panneau gauche.', note: 'Ces infos aident à vérifier les paramètres.' }, { title: 'Voir Couche par Couche', description: 'Utilisez le contrôle des couches.', note: 'La vue couche par couche aide à détecter les problèmes.' }, { title: 'Ajuster et Exporter', description: 'Ajustez les paramètres et exportez.', note: 'Formats PNG et JPG supportés.' }],
+    successTitle: 'Succès !',
+    successContent: 'Vous maîtrisez l\'utilisation de la Visionneuse GCode.',
+    relatedToolsTitle: 'Outils Associés',
+    relatedTools: [{ name: 'Visionneuse STL/3MF', description: 'Aperçu des modèles STL et 3MF', url: '/tools/stl-3mf-model-viewer' }, { name: 'STL vers 3MF', description: 'Convertir STL en 3MF', url: '/tools/stl-to-3mf-converter' }, { name: 'STL vers OBJ', description: 'Convertir STL en OBJ', url: '/tools/stl-to-obj-converter' }, { name: 'OBJ vers STL', description: 'Convertir OBJ en STL', url: '/tools/obj-to-stl-converter' }],
+    referencesTitle: 'Ressources de Référence',
+    references: [{ name: 'Bases de GCode', description: 'Apprenez les bases de GCode', url: 'https://en.wikipedia.org/wiki/G-code' }, { name: 'Comparaison des Slicers', description: 'Caractéristiques des différents logiciels', url: 'https://all3dp.com/1/best-3d-slicer-software/' }, { name: 'Guide de Dépannage', description: 'Résoudre les problèmes courants', url: 'https://www.simplify3d.com/resources/print-quality-troubleshooting/' }]
+};

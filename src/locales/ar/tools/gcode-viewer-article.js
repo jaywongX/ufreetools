@@ -1,0 +1,20 @@
+export default {
+    title: 'أداة عارض GCode: دليل معاينة الطباعة ثلاثية الأبعاد',
+    functionTitle: 'ما هي أداة عارض GCode؟',
+    intro: 'عارض <strong>GCode</strong> هو أداة احترافية لمعاينة الطباعة ثلاثية الأبعاد.',
+    useCasesTitle: 'حالات الاستخدام الشائعة',
+    useCases: ['معاينة ملفات GCode قبل الطباعة', 'التحقق من إعدادات الطباعة', 'عرض عملية الطباعة طبقة بطبقة', 'تصور مسارات الطباعة', 'التقاط لقطات شاشة للتوثيق', 'عرض ملفات GCode بدون برامج التقطيع', 'معاينة عدة ملفات GCode', 'عرض تصاميم الطباعة للعملاء'],
+    tipTitle: 'نصيحة احترافية:',
+    tipContent: 'استخدم زر الماوس الأيسر للتدوير واليمنى للتحريك وعجلة الماوس للتكبير.',
+    conclusion: 'عارض <strong>GCode</strong> مفيد لعشاق الطباعة ثلاثية الأبعاد والمصممين والمهندسين.',
+    faqTitle: 'الأسئلة الشائعة',
+    faqs: [{ question: 'ما التنسيقات المدعومة؟', answer: 'يدعم تنسيق GCode.' }, { question: 'كيف أدور وأكبر؟', answer: 'استخدم الماوس للتدوير والتكبير.' }, { question: 'ماذا يعرض لوحة المعلومات؟', answer: 'إجمالي الأسطر والأوامر وحجم الملف.' }, { question: 'ما التحكم بالطبقات؟', answer: 'يتيح عرض مسار الطباعة طبقة بطبقة.' }, { question: 'هل يمكنني تصدير لقطات؟', answer: 'نعم، يدعم تصدير لقطات عالية الدقة.' }, { question: 'هل العملية آمنة؟', answer: 'آمنة تماماً، كل شيء يُعالج محلياً.' }, { question: 'ما أحجام الملفات المدعومة؟', answer: 'يدعم ملفات GCode بأحجام مختلفة.' }],
+    tutorialTitle: 'دليل الاستخدام',
+    steps: [{ title: 'تحميل ملف GCode', description: 'انقر على منطقة التحميل أو اسحب ملفات GCode.', note: 'يدعم ملفات GCode القياسية.' }, { title: 'عرض المسار', description: 'يعرض مسار الطباعة تلقائياً بعد التحميل.', note: 'الخطوط الخضراء تشير لمسارات الطباعة العادية.' }, { title: 'عرض المعلومات', description: 'اعرض معلومات GCode في اللوحة اليسرى.', note: 'هذه المعلومات تساعد في التحقق من المعلمات.' }, { title: 'عرض طبقة بطبقة', description: 'استخدم التحكم بالطبقات لعرض العملية.', note: 'يساعد في اكتشاف المشكلات المحتملة.' }, { title: 'التعديل والتصدير', description: 'اضبط الإعدادات وصدّر لقطات الشاشة.', note: 'يدعم تنسيقي PNG و JPG.' }],
+    successTitle: 'نجاح!',
+    successContent: 'لقد أتقنت استخدام عارض GCode بنجاح.',
+    relatedToolsTitle: 'أدوات ذات صلة',
+    relatedTools: [{ name: 'عارض STL/3MF', description: 'معاينة نماذج STL و 3MF', url: '/tools/stl-3mf-model-viewer' }, { name: 'STL إلى 3MF', description: 'تحويل STL إلى 3MF', url: '/tools/stl-to-3mf-converter' }, { name: 'STL إلى OBJ', description: 'تحويل STL إلى OBJ', url: '/tools/stl-to-obj-converter' }, { name: 'OBJ إلى STL', description: 'تحويل OBJ إلى STL', url: '/tools/obj-to-stl-converter' }],
+    referencesTitle: 'موارد مرجعية',
+    references: [{ name: 'أساسيات GCode', description: 'تعلم بنية GCode الأساسية', url: 'https://en.wikipedia.org/wiki/G-code' }, { name: 'مقارنة برامج التقطيع', description: 'اكتشف مميزات مختلف البرامج', url: 'https://all3dp.com/1/best-3d-slicer-software/' }, { name: 'دليل استكشاف الأخطاء', description: 'حل مشكلات الطباعة الشائعة', url: 'https://www.simplify3d.com/resources/print-quality-troubleshooting/' }]
+};

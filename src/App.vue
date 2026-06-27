@@ -4581,6 +4581,17 @@ const allTools = computed(() => [
     tags: []
   },
   {
+    id: 'gcode-viewer',
+    name: t('tools.gcode-viewer.name'),
+    category: t(`categories.printing_3d.title`),
+    categoryId: 'printing_3d',
+    description: t('tools.gcode-viewer.description'),
+    path: '/tools/gcode-viewer',
+    component: 'GCodeViewer',
+    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+    tags: []
+  },
+  {
     id: 'obj-to-stl-converter',
     name: t('tools.obj-to-stl-converter.name'),
     category: t(`categories.printing_3d.title`),

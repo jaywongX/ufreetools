@@ -1,0 +1,20 @@
+export default {
+    title: 'Herramienta Visor GCode: Guía de Vista Previa de Impresión 3D',
+    functionTitle: '¿Qué es la Herramienta Visor GCode y sus Usos?',
+    intro: 'Nuestro <strong>Visor GCode</strong> es una herramienta profesional de vista previa de impresión 3D que puede cargar y previsualizar rápidamente archivos GCode.',
+    useCasesTitle: 'Casos de Uso Comunes del Visor GCode',
+    useCases: ['Previsualizar archivos GCode antes de imprimir en 3D', 'Verificar configuraciones de impresión', 'Ver el proceso de impresión capa por capa', 'Visualizar trayectorias de impresión', 'Capturar pantallas para documentación', 'Ver archivos GCode sin software de corte', 'Previsualizar múltiples archivos GCode', 'Mostrar diseños de impresión a clientes'],
+    tipTitle: 'Consejo Profesional:',
+    tipContent: 'Usa el botón izquierdo del ratón para rotar, el derecho para desplazar y la rueda para zoom. Doble clic para centrar.',
+    conclusion: 'El <strong>Visor GCode</strong> es útil para entusiastas de la impresión 3D, diseñadores e ingenieros.',
+    faqTitle: 'Preguntas Frecuentes',
+    faqs: [{ question: '¿Qué formatos de archivo soporta?', answer: 'Soporta archivos GCode.' }, { question: '¿Cómo rotar y ampliar?', answer: 'Usa el ratón para rotar, desplazar y hacer zoom.' }, { question: '¿Qué información muestra el panel?', answer: 'Muestra líneas totales, comandos, tamaño del archivo, etc.' }, { question: '¿Qué es el control de capas?', answer: 'Permite ver la trayectoria de impresión capa por capa.' }, { question: '¿Puedo exportar capturas?', answer: 'Sí, soporta exportación de capturas de alta resolución.' }, { question: '¿Es seguro el proceso?', answer: 'Completamente seguro, todo se procesa localmente.' }, { question: '¿Qué tamaño de archivos soporta?', answer: 'Soporta archivos GCode de varios tamaños.' }],
+    tutorialTitle: 'Tutorial de Uso',
+    steps: [{ title: 'Subir Archivo GCode', description: 'Haz clic en el área de carga o arrastra archivos GCode.', note: 'Soporta archivos GCode estándar.' }, { title: 'Ver Trayectoria', description: 'La trayectoria se muestra automáticamente después de la carga.', note: 'Las líneas verdes indican trayectorias normales.' }, { title: 'Ver Información', description: 'Consulta la información GCode en el panel izquierdo.', note: 'Esta información ayuda a verificar los parámetros.' }, { title: 'Ver Capa por Capa', description: 'Usa el control de capas para ver el proceso.', note: 'La visualización por capas ayuda a descubrir problemas.' }, { title: 'Ajustar y Exportar', description: 'Ajusta la configuración y exporta capturas.', note: 'Soporta formatos PNG y JPG.' }],
+    successTitle: '¡Éxito!',
+    successContent: 'Has dominado el uso del Visor GCode.',
+    relatedToolsTitle: 'Herramientas Relacionadas',
+    relatedTools: [{ name: 'Visor STL/3MF', description: 'Vista previa de modelos 3D STL y 3MF', url: '/tools/stl-3mf-model-viewer' }, { name: 'STL a 3MF', description: 'Convertir STL a 3MF', url: '/tools/stl-to-3mf-converter' }, { name: 'STL a OBJ', description: 'Convertir STL a OBJ', url: '/tools/stl-to-obj-converter' }, { name: 'OBJ a STL', description: 'Convertir OBJ a STL', url: '/tools/obj-to-stl-converter' }],
+    referencesTitle: 'Recursos de Referencia',
+    references: [{ name: 'Tutorial Básico de GCode', description: 'Aprende la sintaxis básica de GCode', url: 'https://en.wikipedia.org/wiki/G-code' }, { name: 'Comparativa de Software de Corte', description: 'Conoce las características de diferentes software', url: 'https://all3dp.com/1/best-3d-slicer-software/' }, { name: 'Guía de Solución de Problemas', description: 'Resuelve problemas comunes de impresión 3D', url: 'https://www.simplify3d.com/resources/print-quality-troubleshooting/' }]
+};

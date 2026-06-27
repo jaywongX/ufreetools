@@ -386,6 +386,7 @@ import RandomIpGenerator from './tools/random-ip-generator.js'
 import StlTo3mfConverter from './tools/stl-to-3mf-converter.js'
 import StlToObjConverter from './tools/stl-to-obj-converter.js'
 import Stl3mfModelViewer from './tools/stl-3mf-model-viewer.js'
+import GCodeViewer from './tools/gcode-viewer.js'
 import KazakhstanAddressGenerator from './tools/kazakhstan-address-generator.js'
 import MexicoAddressGenerator from './tools/mexico-address-generator.js'
 import WorldAddressGenerator from './tools/world-address-generator.js'
@@ -786,6 +787,7 @@ export default {
   'stl-to-3mf-converter': StlTo3mfConverter,
   'stl-to-obj-converter': StlToObjConverter,
   'stl-3mf-model-viewer': Stl3mfModelViewer,
+  'gcode-viewer': GCodeViewer,
   'kazakhstan-address-generator': KazakhstanAddressGenerator,
   'mexico-address-generator': MexicoAddressGenerator,
   'world-address-generator': WorldAddressGenerator,

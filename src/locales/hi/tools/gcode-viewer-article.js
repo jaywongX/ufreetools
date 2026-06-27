@@ -1,0 +1,20 @@
+export default {
+    title: 'GCode व्यूअर उपकरण: ऑनलाइन 3D प्रिंट पूर्वावलोकन गाइड',
+    functionTitle: 'GCode व्यूअर उपकरण क्या है?',
+    intro: 'हमारा <strong>GCode व्यूअर</strong> एक पेशेवर ऑनलाइन 3D प्रिंट पूर्वावलोकन उपकरण है।',
+    useCasesTitle: 'GCode व्यूअर के सामान्य उपयोग',
+    useCases: ['3D प्रिंट से पहले GCode फ़ाइलों का पूर्वावलोकन', 'प्रिंट सेटिंग्स की जांच', 'परत दर परत प्रिंट प्रक्रिया देखें', 'प्रिंट पथ विज़ुअलाइज़ेशन', 'दस्तावेज़ीकरण के लिए स्क्रीनशॉट', 'स्लाइसिंग सॉफ़्टवेयर के बिना GCode देखें', 'एकाधिक GCode फ़ाइलों का पूर्वावलोकन', 'ग्राहकों को प्रिंट डिज़ाइन दिखाएं'],
+    tipTitle: 'पेशेवर सुझाव:',
+    tipContent: 'घुमाने के लिए माउस बायाँ बटन, पैन के लिए दायाँ बटन, ज़ूम के लिए स्क्रॉल व्हील का उपयोग करें।',
+    conclusion: '<strong>GCode व्यूअर</strong> 3D प्रिंटिंग उत्साही लोगों के लिए उपयोगी है।',
+    faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
+    faqs: [{ question: 'कौन से फ़ाइल प्रारूप समर्थित हैं?', answer: 'GCode प्रारूप समर्थित है।' }, { question: 'कैसे घुमाएं और ज़ूम करें?', answer: 'माउस से घुमाएं और ज़ूम करें।' }, { question: 'जानकारी पैनल क्या दिखाता है?', answer: 'कुल पंक्तियाँ, कमांड, फ़ाइल आकार आदि।' }, { question: 'लेयर नियंत्रण क्या है?', answer: 'परत दर परत प्रिंट पथ देखने की सुविधा।' }, { question: 'स्क्रीनशॉट निर्यात कर सकते हैं?', answer: 'हाँ, उच्च रिज़ॉल्यूशन स्क्रीनशॉट निर्यात समर्थित है।' }, { question: 'क्या यह सुरक्षित है?', answer: 'पूरी तरह सुरक्षित, सब कुछ स्थानीय रूप से संसाधित होता है।' }, { question: 'कितने बड़े फ़ाइल समर्थित हैं?', answer: 'विभिन्न आकारों की GCode फ़ाइलें समर्थित हैं।' }],
+    tutorialTitle: 'उपयोग ट्यूटोरियल',
+    steps: [{ title: 'GCode फ़ाइल अपलोड करें', description: 'अपलोड क्षेत्र पर क्लिक करें या GCode फ़ाइलें खींचें।', note: 'मानक GCode प्रारूप समर्थित।' }, { title: 'प्रिंट पथ देखें', description: 'अपलोड के बाद 3D प्रिंट पथ स्वचालित रूप से प्रदर्शित होता है।', note: 'हरी रेखाएँ सामान्य प्रिंट पथ दर्शाती हैं।' }, { title: 'जानकारी देखें', description: 'बाएँ पैनल में GCode जानकारी देखें।', note: 'यह जानकारी पैरामीटर सत्यापित करने में मदद करती है।' }, { title: 'परत दर परत देखें', description: 'लेयर नियंत्रण का उपयोग करें।', note: 'परत दर परत देखने से समस्याओं का पता चलता है।' }, { title: 'समायोजित करें और निर्यात करें', description: 'सेटिंग्स समायोजित करें और स्क्रीनशॉट निर्यात करें।', note: 'PNG और JPG प्रारूप समर्थित।' }],
+    successTitle: 'सफल!',
+    successContent: 'आपने GCode व्यूअर का उपयोग सफलतापूर्वक सीख लिया है।',
+    relatedToolsTitle: 'संबंधित उपकरण',
+    relatedTools: [{ name: 'STL/3MF मॉडल व्यूअर', description: 'STL और 3MF मॉडल फ़ाइलें देखें', url: '/tools/stl-3mf-model-viewer' }, { name: 'STL से 3MF', description: 'STL को 3MF में बदलें', url: '/tools/stl-to-3mf-converter' }, { name: 'STL से OBJ', description: 'STL को OBJ में बदलें', url: '/tools/stl-to-obj-converter' }, { name: 'OBJ से STL', description: 'OBJ को STL में बदलें', url: '/tools/obj-to-stl-converter' }],
+    referencesTitle: 'संदर्भ संसाधन',
+    references: [{ name: 'GCode बेसिक ट्यूटोरियल', description: 'GCode की मूल बातें सीखें', url: 'https://en.wikipedia.org/wiki/G-code' }, { name: 'स्लाइसिंग सॉफ़्टवेयर तुलना', description: 'विभिन्न सॉफ़्टवेयर की विशेषताएं', url: 'https://all3dp.com/1/best-3d-slicer-software/' }, { name: 'समस्या निवारण गाइड', description: 'सामान्य 3D प्रिंटिंग समस्याओं का समाधान', url: 'https://www.simplify3d.com/resources/print-quality-troubleshooting/' }]
+};

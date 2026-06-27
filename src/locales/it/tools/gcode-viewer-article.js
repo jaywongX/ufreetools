@@ -1,0 +1,20 @@
+export default {
+    title: 'Strumento Visualizzatore GCode: Guida Anteprima Stampa 3D',
+    functionTitle: 'Cos\'è il Visualizzatore GCode?',
+    intro: 'Il nostro <strong>Visualizzatore GCode</strong> è uno strumento professionale di anteprima di stampa 3D.',
+    useCasesTitle: 'Casi d\'Uso Comuni',
+    useCases: ['Anteprima file GCode prima della stampa', 'Verificare impostazioni di stampa', 'Vedere il processo livello per livello', 'Visualizzare percorsi di stampa', 'Catturare schermate per documentazione', 'Vedere GCode senza software di slicing', 'Anteprima di più file GCode', 'Mostrare design ai clienti'],
+    tipTitle: 'Suggerimento Professionale:',
+    tipContent: 'Usa il tasto sinistro per ruotare, destro per spostare, rotella per zoom.',
+    conclusion: 'Il <strong>Visualizzatore GCode</strong> è utile per gli appassionati di stampa 3D.',
+    faqTitle: 'Domande Frequenti',
+    faqs: [{ question: 'Quali formati sono supportati?', answer: 'Il formato GCode è supportato.' }, { question: 'Come ruotare e zoomare?', answer: 'Usa il mouse.' }, { question: 'Cosa mostra il pannello info?', answer: 'Righe totali, comandi, dimensione file.' }, { question: 'Cos\'è il controllo livelli?', answer: 'Permette di vedere il percorso livello per livello.' }, { question: 'Posso esportare screenshot?', answer: 'Sì, l\'export ad alta risoluzione è supportato.' }, { question: 'Il processo è sicuro?', answer: 'Completamente sicuro, tutto elaborato localmente.' }, { question: 'Quali dimensioni file?', answer: 'File GCode di varie dimensioni.' }],
+    tutorialTitle: 'Tutorial d\'Uso',
+    steps: [{ title: 'Carica File GCode', description: 'Clicca sull\'area o trascina i file.', note: 'Formato GCode standard supportato.' }, { title: 'Vedi Percorso', description: 'Il percorso si mostra automaticamente.', note: 'Le linee verdi indicano percorsi normali.' }, { title: 'Vedi Informazioni', description: 'Consulta le info nel pannello sinistro.', note: 'Aiuta a verificare i parametri.' }, { title: 'Vedi Livello per Livello', description: 'Usa il controllo livelli.', note: 'Aiuta a trovare problemi.' }, { title: 'Regola ed Esporta', description: 'Regola le impostazioni ed esporta.', note: 'Formati PNG e JPG supportati.' }],
+    successTitle: 'Successo!',
+    successContent: 'Hai padroneggiato l\'uso del Visualizzatore GCode.',
+    relatedToolsTitle: 'Strumenti Correlati',
+    relatedTools: [{ name: 'Visualizzatore STL/3MF', description: 'Anteprima modelli STL e 3MF', url: '/tools/stl-3mf-model-viewer' }, { name: 'STL a 3MF', description: 'Converti STL in 3MF', url: '/tools/stl-to-3mf-converter' }, { name: 'STL a OBJ', description: 'Converti STL in OBJ', url: '/tools/stl-to-obj-converter' }, { name: 'OBJ a STL', description: 'Converti OBJ in STL', url: '/tools/obj-to-stl-converter' }],
+    referencesTitle: 'Risorse di Riferimento',
+    references: [{ name: 'Basi di GCode', description: 'Impara le basi di GCode', url: 'https://en.wikipedia.org/wiki/G-code' }, { name: 'Confronto Slicer', description: 'Caratteristiche dei vari software', url: 'https://all3dp.com/1/best-3d-slicer-software/' }, { name: 'Guida Risoluzione Problemi', description: 'Risolvere problemi comuni', url: 'https://www.simplify3d.com/resources/print-quality-troubleshooting/' }]
+};

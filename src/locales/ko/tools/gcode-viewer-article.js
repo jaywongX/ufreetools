@@ -1,0 +1,20 @@
+export default {
+    title: 'GCode 뷰어 도구: 온라인 3D 프린트 미리보기 가이드',
+    functionTitle: 'GCode 뷰어란?',
+    intro: '우리의 <strong>GCode 뷰어</strong>는 전문적인 온라인 3D 프린트 미리보기 도구입니다.',
+    useCasesTitle: '일반적인 사용 사례',
+    useCases: ['인쇄 전 GCode 파일 미리보기', '인쇄 설정 확인', '레이어별 프로세스 보기', '인쇄 경로 시각화', '문서용 스크린샷', '슬라이서 없이 GCode 보기', '여러 파일 미리보기', '고객에게 디자인 소개'],
+    tipTitle: '전문가 팁:',
+    tipContent: '마우스 왼쪽 버튼으로 회전, 오른쪽으로 이동, 휠로 줌.',
+    conclusion: '<strong>GCode 뷰어</strong>는 3D 프린팅 애호가에게 유용합니다.',
+    faqTitle: '자주 묻는 질문',
+    faqs: [{ question: '지원 형식은?', answer: 'GCode 형식이 지원됩니다.' }, { question: '회전 및 줌 방법은?', answer: '마우스를 사용하세요.' }, { question: '정보 패널 내용은?', answer: '총 줄 수, 명령, 파일 크기.' }, { question: '레이어 제어란?', answer: '레이어별 인쇄 경로를 볼 수 있습니다.' }, { question: '스크린샷 내보내기?', answer: '고해상도 내보내기가 지원됩니다.' }, { question: '안전한가요?', answer: '모두 로컬에서 처리되어 안전합니다.' }, { question: '지원 파일 크기는?', answer: '다양한 크기의 GCode 파일이 지원됩니다.' }],
+    tutorialTitle: '사용 튜토리얼',
+    steps: [{ title: 'GCode 파일 업로드', description: '업로드 영역을 클릭하거나 파일을 드래그하세요.', note: '표준 GCode 형식이 지원됩니다.' }, { title: '경로 보기', description: '업로드 후 3D 경로가 자동으로 표시됩니다.', note: '녹색 선은 일반 경로를 나타냅니다.' }, { title: '정보 보기', description: '왼쪽 패널에서 GCode 정보를 확인하세요.', note: '파라미터 확인에 도움이 됩니다.' }, { title: '레이어별 보기', description: '레이어 제어를 사용하세요.', note: '문제 발견에 도움이 됩니다.' }, { title: '조정 및 내보내기', description: '설정을 조정하고 스크린샷을 내보내세요.', note: 'PNG와 JPG 형식이 지원됩니다.' }],
+    successTitle: '성공!',
+    successContent: 'GCode 뷰어 사용법을 성공적으로 익혔습니다.',
+    relatedToolsTitle: '관련 도구',
+    relatedTools: [{ name: 'STL/3MF 뷰어', description: 'STL과 3MF 모델 미리보기', url: '/tools/stl-3mf-model-viewer' }, { name: 'STL to 3MF', description: 'STL을 3MF로 변환', url: '/tools/stl-to-3mf-converter' }, { name: 'STL to OBJ', description: 'STL을 OBJ로 변환', url: '/tools/stl-to-obj-converter' }, { name: 'OBJ to STL', description: 'OBJ를 STL로 변환', url: '/tools/obj-to-stl-converter' }],
+    referencesTitle: '참고 자료',
+    references: [{ name: 'GCode 기초', description: 'GCode 기본 배우기', url: 'https://en.wikipedia.org/wiki/G-code' }, { name: '슬라이서 비교', description: '다양한 소프트웨어 특징', url: 'https://all3dp.com/1/best-3d-slicer-software/' }, { name: '문제 해결 가이드', description: '일반적인 문제 해결', url: 'https://www.simplify3d.com/resources/print-quality-troubleshooting/' }]
+};

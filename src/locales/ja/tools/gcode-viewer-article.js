@@ -1,0 +1,20 @@
+export default {
+    title: 'GCodeビューアツール：オンライン3D印刷プレビューガイド',
+    functionTitle: 'GCodeビューアツールとは？',
+    intro: '当社の<strong>GCodeビューア</strong>はプロフェッショナルなオンライン3D印刷プレビューツールです。',
+    useCasesTitle: '一般的な使用例',
+    useCases: ['印刷前のGCodeファイルプレビュー', '印刷設定の確認', 'レイヤーごとの印刷プロセス表示', '印刷パスの可視化', 'ドキュメント用スクリーンショット', 'スライサーなしでGCode表示', '複数GCodeファイルの一括プレビュー', 'クライアントへの印刷デザイン紹介'],
+    tipTitle: 'プロのヒント：',
+    tipContent: 'マウス左ボタンで回転、右ボタンでパン、ホイールでズーム。',
+    conclusion: '<strong>GCodeビューア</strong>は3D印刷愛好家やデザイナーに最適です。',
+    faqTitle: 'よくある質問',
+    faqs: [{ question: '対応フォーマットは？', answer: 'GCodeフォーマットに対応。' }, { question: '回転・ズーム方法は？', answer: 'マウスで操作できます。' }, { question: '情報パネルの内容は？', answer: '総行数、コマンド数、ファイルサイズ等。' }, { question: 'レイヤー制御とは？', answer: 'レイヤーごとの印刷パスを表示。' }, { question: 'スクリーンショットは？', answer: '高解像度スクリーンショットのエクスポートに対応。' }, { question: '安全性は？', answer: 'すべてローカルで処理され安全です。' }, { question: '対応ファイルサイズは？', answer: '様々なサイズのGCodeファイルに対応。' }],
+    tutorialTitle: 'チュートリアル',
+    steps: [{ title: 'GCodeファイルをアップロード', description: 'アップロードエリアをクリックまたはファイルをドラッグ。', note: '標準GCodeフォーマットに対応。' }, { title: '印刷パスを表示', description: 'アップロード後に3Dパスが自動表示。', note: '緑色の線が通常のパス。' }, { title: '情報を確認', description: '左パネルでGCode情報を確認。', note: 'パラメータの確認に役立ちます。' }, { title: 'レイヤー表示', description: 'レイヤー制御でプロセスを確認。', note: '問題の発見に役立ちます。' }, { title: '調整とエクスポート', description: '設定を調整してスクリーンショットをエクスポート。', note: 'PNGとJPGに対応。' }],
+    successTitle: '成功！',
+    successContent: 'GCodeビューアの使用方法を習得しました。',
+    relatedToolsTitle: '関連ツール',
+    relatedTools: [{ name: 'STL/3MFビューア', description: 'STLと3MFモデルをプレビュー', url: '/tools/stl-3mf-model-viewer' }, { name: 'STL→3MF', description: 'STLを3MFに変換', url: '/tools/stl-to-3mf-converter' }, { name: 'STL→OBJ', description: 'STLをOBJに変換', url: '/tools/stl-to-obj-converter' }, { name: 'OBJ→STL', description: 'OBJをSTLに変換', url: '/tools/obj-to-stl-converter' }],
+    referencesTitle: '参考資料',
+    references: [{ name: 'GCode基礎教程', description: 'GCodeの基本を学ぶ', url: 'https://en.wikipedia.org/wiki/G-code' }, { name: 'スライサー比較', description: '各ソフトウェアの特徴', url: 'https://all3dp.com/1/best-3d-slicer-software/' }, { name: 'トラブルシューティング', description: '一般的な問題の解決', url: 'https://www.simplify3d.com/resources/print-quality-troubleshooting/' }]
+};

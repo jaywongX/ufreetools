@@ -1,0 +1,20 @@
+export default {
+    title: 'GCode-Viewer: Online 3D-Druckvorschau-Anleitung',
+    functionTitle: 'Was ist der GCode-Viewer?',
+    intro: 'Unser <strong>GCode-Viewer</strong> ist ein professionelles Online-Tool für 3D-Druckvorschau.',
+    useCasesTitle: 'Häufige Anwendungsfälle',
+    useCases: ['GCode-Dateien vor dem Drucken vorschauen', 'Druckeinstellungen überprüfen', 'Schicht-für-Schicht-Ansicht', 'Druckpfade visualisieren', 'Screenshots für Dokumentation', 'GCode ohne Slicer anzeigen', 'Mehrere Dateien vorschauen', 'Designs Kunden präsentieren'],
+    tipTitle: 'Profi-Tipp:',
+    tipContent: 'Linke Maustaste zum Drehen, rechte zum Verschieben, Mausrad zum Zoomen.',
+    conclusion: 'Der <strong>GCode-Viewer</strong> ist nützlich für 3D-Druck-Enthusiasten.',
+    faqTitle: 'Häufig gestellte Fragen',
+    faqs: [{ question: 'Welche Formate werden unterstützt?', answer: 'GCode-Format wird unterstützt.' }, { question: 'Wie drehe und zoome ich?', answer: 'Verwenden Sie die Maus.' }, { question: 'Was zeigt die Info-Panel?', answer: 'Gesamtzeilen, Befehle, Dateigröße.' }, { question: 'Was ist Schichtkontrolle?', answer: 'Ermöglicht schichtweise Ansicht.' }, { question: 'Kann ich Screenshots exportieren?', answer: 'Ja, HD-Export wird unterstützt.' }, { question: 'Ist der Prozess sicher?', answer: 'Vollständig sicher, alles lokal.' }, { question: 'Welche Dateigrößen?', answer: 'Verschiedene GCode-Größen.' }],
+    tutorialTitle: 'Anleitung',
+    steps: [{ title: 'GCode-Datei hochladen', description: 'Auf Upload-Bereich klicken oder Dateien ziehen.', note: 'Standard GCode wird unterstützt.' }, { title: 'Druckpfad anzeigen', description: 'Wird automatisch nach Upload angezeigt.', note: 'Grüne Linien = normale Pfade.' }, { title: 'Informationen anzeigen', description: 'Im linken Panel prüfen.', note: 'Hilft bei Parameter-Überprüfung.' }, { title: 'Schichtweise anzeigen', description: 'Schichtkontrolle verwenden.', note: 'Hilft Probleme zu finden.' }, { title: 'Anpassen und Exportieren', description: 'Einstellungen anpassen und exportieren.', note: 'PNG und JPG unterstützt.' }],
+    successTitle: 'Erfolg!',
+    successContent: 'Sie haben den GCode-Viewer gemeistert.',
+    relatedToolsTitle: 'Verwandte Tools',
+    relatedTools: [{ name: 'STL/3MF-Viewer', description: 'STL und 3MF Modelle anzeigen', url: '/tools/stl-3mf-model-viewer' }, { name: 'STL zu 3MF', description: 'STL in 3MF konvertieren', url: '/tools/stl-to-3mf-converter' }, { name: 'STL zu OBJ', description: 'STL in OBJ konvertieren', url: '/tools/stl-to-obj-converter' }, { name: 'OBJ zu STL', description: 'OBJ in STL konvertieren', url: '/tools/obj-to-stl-converter' }],
+    referencesTitle: 'Referenzressourcen',
+    references: [{ name: 'GCode-Grundlagen', description: 'GCode-Grundlagen lernen', url: 'https://en.wikipedia.org/wiki/G-code' }, { name: 'Slicer-Vergleich', description: 'Verschiedene Software-Features', url: 'https://all3dp.com/1/best-3d-slicer-software/' }, { name: 'Fehlerbehebung', description: 'Häufige Probleme lösen', url: 'https://www.simplify3d.com/resources/print-quality-troubleshooting/' }]
+};

@@ -271,6 +271,7 @@ const lazyComponentMap = {
   'StlTo3mfConverter': () => import('./components/tools/StlTo3mfConverter.vue'),
   'StlToObjConverter': () => import('./components/tools/StlToObjConverter.vue'),
   'Stl3mfModelViewer': () => import('./components/tools/Stl3mfModelViewer.vue'),
+  'GCodeViewer': () => import('./components/tools/GCodeViewer.vue'),
   'ObjToStlConverter': () => import('./components/tools/ObjToStlConverter.vue'),
   'ThreeMfToStlConverter': () => import('./components/tools/ThreeMfToStlConverter.vue'),
   'StlToGlbConverter': () => import('./components/tools/StlToGlbConverter.vue'),

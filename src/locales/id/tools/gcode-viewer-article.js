@@ -1,0 +1,20 @@
+export default {
+    title: 'Alat Penampil GCode: Panduan Pratinjau Cetak 3D',
+    functionTitle: 'Apa itu Penampil GCode?',
+    intro: '<strong>Penampil GCode</strong> kami adalah alat profesional pratinjau cetak 3D online.',
+    useCasesTitle: 'Kasus Penggunaan Umum',
+    useCases: ['Pratinjau file GCode sebelum mencetak', 'Periksa pengaturan cetak', 'Lihat proses lapisan demi lapisan', 'Visualisasikan jalur cetak', 'Tangkap layar untuk dokumentasi', 'Lihat GCode tanpa software slicing', 'Pratinjau beberapa file GCode', 'Tunjukkan desain ke klien'],
+    tipTitle: 'Tips Profesional:',
+    tipContent: 'Gunakan tombol kiri mouse untuk memutar, kanan untuk menggeser, roda untuk zoom.',
+    conclusion: '<strong>Penampil GCode</strong> berguna untuk penggemar cetak 3D.',
+    faqTitle: 'Pertanyaan Umum',
+    faqs: [{ question: 'Format apa yang didukung?', answer: 'Format GCode didukung.' }, { question: 'Bagaimana cara memutar?', answer: 'Gunakan mouse.' }, { question: 'Apa yang ditampilkan panel info?', answer: 'Total baris, perintah, ukuran file.' }, { question: 'Apa itu kontrol lapisan?', answer: 'Melihat jalur cetak lapisan demi lapisan.' }, { question: 'Bisa ekspor tangkapan layar?', answer: 'Ya, ekspor resolusi tinggi didukung.' }, { question: 'Apakah aman?', answer: 'Sangat aman, semua diproses lokal.' }, { question: 'Ukuran file berapa?', answer: 'Berbagai ukuran GCode didukung.' }],
+    tutorialTitle: 'Tutorial Penggunaan',
+    steps: [{ title: 'Unggah File GCode', description: 'Klik area unggah atau seret file.', note: 'Format GCode standar didukung.' }, { title: 'Lihat Jalur', description: 'Jalur ditampilkan otomatis setelah unggah.', note: 'Garis hijau = jalur normal.' }, { title: 'Lihat Informasi', description: 'Lihat info di panel kiri.', note: 'Membantu verifikasi parameter.' }, { title: 'Lihat Lapisan', description: 'Gunakan kontrol lapisan.', note: 'Membantu menemukan masalah.' }, { title: 'Sesuaikan dan Ekspor', description: 'Sesuaikan pengaturan dan ekspor.', note: 'Format PNG dan JPG didukung.' }],
+    successTitle: 'Berhasil!',
+    successContent: 'Anda telah menguasai Penampil GCode.',
+    relatedToolsTitle: 'Alat Terkait',
+    relatedTools: [{ name: 'Penampil STL/3MF', description: 'Pratinjau model STL dan 3MF', url: '/tools/stl-3mf-model-viewer' }, { name: 'STL ke 3MF', description: 'Konversi STL ke 3MF', url: '/tools/stl-to-3mf-converter' }, { name: 'STL ke OBJ', description: 'Konversi STL ke OBJ', url: '/tools/stl-to-obj-converter' }, { name: 'OBJ ke STL', description: 'Konversi OBJ ke STL', url: '/tools/obj-to-stl-converter' }],
+    referencesTitle: 'Sumber Referensi',
+    references: [{ name: 'Dasar GCode', description: 'Pelajari dasar GCode', url: 'https://en.wikipedia.org/wiki/G-code' }, { name: 'Perbandingan Slicer', description: 'Fitur berbagai software', url: 'https://all3dp.com/1/best-3d-slicer-software/' }, { name: 'Panduan Pemecahan Masalah', description: 'Selesaikan masalah cetak umum', url: 'https://www.simplify3d.com/resources/print-quality-troubleshooting/' }]
+};

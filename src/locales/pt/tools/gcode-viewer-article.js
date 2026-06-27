@@ -1,0 +1,20 @@
+export default {
+    title: 'Ferramenta Visualizador GCode: Guia de Pré-visualização 3D',
+    functionTitle: 'O que é o Visualizador GCode?',
+    intro: 'Nosso <strong>Visualizador GCode</strong> é uma ferramenta profissional de pré-visualização de impressão 3D.',
+    useCasesTitle: 'Casos de Uso Comuns',
+    useCases: ['Pré-visualizar arquivos GCode antes da impressão', 'Verificar configurações de impressão', 'Ver processo camada por camada', 'Visualizar caminhos de impressão', 'Capturar telas para documentação', 'Ver arquivos GCode sem software de corte', 'Pré-visualizar múltiplos arquivos', 'Mostrar designs aos clientes'],
+    tipTitle: 'Dica Profissional:',
+    tipContent: 'Use o botão esquerdo para girar, direito para mover e roda para zoom.',
+    conclusion: 'O <strong>Visualizador GCode</strong> é útil para entusiastas de impressão 3D.',
+    faqTitle: 'Perguntas Frequentes',
+    faqs: [{ question: 'Quais formatos são suportados?', answer: 'Formato GCode é suportado.' }, { question: 'Como girar e ampliar?', answer: 'Use o mouse para girar e ampliar.' }, { question: 'O que exibe o painel?', answer: 'Linhas totais, comandos, tamanho do arquivo.' }, { question: 'O que é controle de camadas?', answer: 'Permite ver o caminho camada por camada.' }, { question: 'Posso exportar capturas?', answer: 'Sim, exportação de alta resolução é suportada.' }, { question: 'O processo é seguro?', answer: 'Totalmente seguro, tudo processado localmente.' }, { question: 'Qual tamanho de arquivo é suportado?', answer: 'Arquivos GCode de vários tamanhos.' }],
+    tutorialTitle: 'Tutorial de Uso',
+    steps: [{ title: 'Carregar Arquivo GCode', description: 'Clique na área ou arraste os arquivos.', note: 'Arquivos GCode padrão são suportados.' }, { title: 'Ver Caminho', description: 'O caminho é exibido automaticamente.', note: 'Linhas verdes indicam caminhos normais.' }, { title: 'Ver Informações', description: 'Consulte as informações no painel.', note: 'Ajuda a verificar os parâmetros.' }, { title: 'Ver Camada por Camada', description: 'Use o controle de camadas.', note: 'Ajuda a detectar problemas.' }, { title: 'Ajustar e Exportar', description: 'Ajuste configurações e exporte.', note: 'Formatos PNG e JPG suportados.' }],
+    successTitle: 'Sucesso!',
+    successContent: 'Você dominou o uso do Visualizador GCode.',
+    relatedToolsTitle: 'Ferramentas Relacionadas',
+    relatedTools: [{ name: 'Visualizador STL/3MF', description: 'Visualizar modelos STL e 3MF', url: '/tools/stl-3mf-model-viewer' }, { name: 'STL para 3MF', description: 'Converter STL para 3MF', url: '/tools/stl-to-3mf-converter' }, { name: 'STL para OBJ', description: 'Converter STL para OBJ', url: '/tools/stl-to-obj-converter' }, { name: 'OBJ para STL', description: 'Converter OBJ para STL', url: '/tools/obj-to-stl-converter' }],
+    referencesTitle: 'Recursos de Referência',
+    references: [{ name: 'Básico de GCode', description: 'Aprenda o básico de GCode', url: 'https://en.wikipedia.org/wiki/G-code' }, { name: 'Comparação de Slicers', description: 'Características dos diferentes softwares', url: 'https://all3dp.com/1/best-3d-slicer-software/' }, { name: 'Guia de Solução de Problemas', description: 'Resolver problemas comuns', url: 'https://www.simplify3d.com/resources/print-quality-troubleshooting/' }]
+};
